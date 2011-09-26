@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="testLevel1" Width="960" Height="640">
+  <Layer Name="background" BackColor="#00FFFFF0">
+    <Image Source="chargers.jpg" Bounds="0,0,480,320" Opacity=".41"/>
+  </Layer>
+  <Layer Name="action" BackColor="#00FFFFFF">
+    <Tower Bounds="0,0,70,70" SignalSpeed="200"/>
+    <Hero Bounds="400,0,50,50" Speed="100" Move="None"/>
+    <Block Bounds="400,270,100,100" DefaultEdge="Bounce" />
+    <Block Bounds="300,270,100,100" DefaultEdge="Bounce">
+      <Edge Align="Top" Type="Stick" />
+      <Teleport Align="Bottom" Id="funkyShit" />
+    </Block>
+    <Block Bounds="500,270,100,100" DefaultEdge="Bounce">
+      <Teleport Align="Top" Id="funkyShit" />
+    </Block>
+  </Layer>
+</Level>

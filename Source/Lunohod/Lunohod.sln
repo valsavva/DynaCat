@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod", "Lunohod\Lunohod.csproj", "{D3106B11-6847-4C7F-BA46-C1086EDEC350}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", "{E21ED8F7-4ABF-42AF-9593-75442041545A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lidgren.Network.iOS", "..\ThirtParty\MonoGame\ThirdParty\Lidgren.Network\Lidgren.Network.iOS.csproj", "{734EAA48-F1CA-481A-B391-0285BC0E8B40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Framework.iOS", "..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj", "{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Release|iPhone.Build.0 = Release|Any CPU
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Debug|iPhone.Build.0 = Debug|iPhone
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Release|iPhone.ActiveCfg = Release|iPhone
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Release|iPhone.Build.0 = Release|iPhone
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{D3106B11-6847-4C7F-BA46-C1086EDEC350}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Debug|iPhone.Build.0 = Debug|iPhone
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Release|iPhone.ActiveCfg = Release|iPhone
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Release|iPhone.Build.0 = Release|iPhone
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{734EAA48-F1CA-481A-B391-0285BC0E8B40} = {E21ED8F7-4ABF-42AF-9593-75442041545A}
+		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47} = {E21ED8F7-4ABF-42AF-9593-75442041545A}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Lunohod\Lunohod.csproj
+	EndGlobalSection
+EndGlobal
