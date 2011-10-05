@@ -39,21 +39,19 @@ namespace Lunohod
 			
 			LoadLevelObjects();
 			
-			level.Initialize(initializeParameters);
-			
 			this.Resources = level.Resources;
 		}
 		
 		private void LoadLevelObjects()
 		{
-			string levelXmlFile = Path.Combine(this.gameEngine.Content.RootDirectory, "Levels");
-			levelXmlFile = Path.Combine(levelXmlFile, this.name);
-			levelXmlFile = Path.ChangeExtension(levelXmlFile, ".xml");
-			
-			XmlSerializer serializer = new XmlSerializer(typeof(XLevel));
+			string levelXmlFile = Path.ChangeExtension(
+				Path.Combine(this.gameEngine.Content.RootDirectory, "Levels", this.name), ".xml"
+			);
 			
 			try
 			{
+				XmlSerializer serializer = new XmlSerializer(typeof(XLevel));
+				
 				using (FileStream stream = new FileStream(levelXmlFile, FileMode.Open))
 				{
 					this.level = (XLevel)serializer.Deserialize(stream);
@@ -65,6 +63,9 @@ namespace Lunohod
 				
 				throw;
 			}
+			
+			level.InitHierarchy();
+			level.Initialize(initializeParameters);
 		}
 		
 		public override void Update(GameTime gameTime)
@@ -80,8 +81,13 @@ namespace Lunohod
 			
 			try 
 			{
+				//scale(40/viewport.Height) * scale(1, -1) * translate(viewport.Width/2, viewport.Height/2)
+					
 				Matrix transform = Matrix.Identity *
-					Matrix.CreateScale(new Vector3(1f, 1f, 1f));
+					Matrix.CreateScale(40f / 320) *
+					//Matrix.CreateScale(1, -1, 1) *
+					Matrix.CreateTranslation(480f / 2, 320f / 2, 0);
+						
 
 				this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
 					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );

@@ -3,11 +3,12 @@
 	<!-- Resources -->
 	<Resources RootFolder="Levels/TestLevel">
 		<Texture Id="chargers" Source="chargers.jpg" />
+		<Texture Id="blank" Source="blank.png" />
 	</Resources>
 	
 	<!-- Layers -->
 	<Layer Name="background" BackColor="#FFFFFFFF">
-    <Image TextureId="chargers" Bounds="0,0,480,320" Opacity="1"/>
+    <Image TextureId="chargers" Bounds="0,0,960,640" Opacity="1"/>
   </Layer>
 	
   <Layer Name="action" BackColor="#00FFFFFF">
@@ -15,6 +16,7 @@
     <Hero Bounds="400,0,50,50" Speed="100" Move="None"/>
     <Block Bounds="400,270,100,100" DefaultEdge="Bounce" />
     <Block Bounds="300,270,100,100" DefaultEdge="Bounce">
+	    <Image TextureId="blank" Bounds="300,270,100,100" BackColor="#FFFFFFFF" Opacity="0.5"/>
       <Edge Align="Top" Type="Stick" />
       <Teleport Align="Bottom" Id="funkyShit" />
     </Block>

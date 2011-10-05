@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,38 +10,31 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     [XmlType("Level")]
-    public class XLevel : XObject
+    public class XLevel : XComponent
     {
         [XmlAttribute]
         public string Name;
-        [XmlElement("Layer")]
-        public XLayer[] Layers;
         [XmlAttribute]
         public double Width;
         [XmlAttribute]
         public double Height;
 		
-		public XResourceBundle Resources;
+        [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
+        [XmlElement(ElementName = "Layer", Type = typeof(XLayer))]
+        public override XComponent[] Subcomponents { get; set; }
+		
+		[XmlIgnore]
+		public XLayer[] Layers;
+		
+		[XmlIgnore]
+		public XResourceBundle Resources { get; private set; }
 		
 		public override void Initialize(InitializeParameters p)
 		{
-			if (this.Resources != null)
-				this.Resources.Initialize(p);
+			this.Resources = this.GetComponent<XResourceBundle>();
+			this.Layers = this.GetComponents<XLayer>().ToArray();
 			
-			foreach(var layer in this.Layers)
-				layer.Initialize(p);
-		}
-		
-		public override void Update(UpdateParameters p)
-		{
-			foreach(var layer in this.Layers)
-				layer.Update(p);
-		}
-
-		public void Draw(DrawParameters p)
-		{
-			foreach(var layer in this.Layers)
-				layer.Draw(p);
+			base.Initialize(p);
 		}
 		
 		public override void Dispose()

@@ -27,13 +27,15 @@ namespace Lunohod.Objects
 			get { return image; }
 		}
 
-		public override void Initialize(InitializeParameters p, XResourceBundle r)
+		public override void Initialize(InitializeParameters p)
 		{
-			base.Initialize(p, r);
+			base.Initialize(p);
 			
 //			string fileName = Path.Combine(
 //				Path.Combine(p.Game.Content.RootDirectory, r.RootFolder), this.Source
 //			);
+			
+			XResourceBundle r = (XResourceBundle)this.Parent;
 			
 			string fileName = Path.Combine(r.RootFolder, this.Source);
 			
@@ -43,7 +45,7 @@ namespace Lunohod.Objects
 		public override void Dispose()
 		{
 			base.Dispose();
-			
+
 			image.Dispose();
 		}
 	}

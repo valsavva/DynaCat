@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,7 @@ using System.Drawing;
 namespace Lunohod.Objects
 {
     [XmlInclude(typeof(XImage))]
-    public class XElement : XObject
+    public class XElement : XComponent
     {
 		[XmlIgnore]
         public RectangleF Bounds;
@@ -37,28 +37,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
-        public XElement[] Elements;
-
-		public override void Initialize(InitializeParameters p)
-		{
-			if (Elements != null)
-				foreach(var child in Elements)
-					child.Initialize(p);
-		}
-		
-		public override void Update(UpdateParameters p)
-		{
-			if (Elements != null)
-				foreach(var child in Elements)
-					child.Update(p);
-		}
-
-		public virtual void Draw(DrawParameters p)
-		{
-			if (Elements != null)
-				foreach(var child in Elements)
-					child.Draw(p);
-		}
+        public override XComponent[] Subcomponents { get; set; }
 
         public virtual void ProcessCollision(LevelEngine engine, RectangleF newBounds)
         {
@@ -66,12 +45,5 @@ namespace Lunohod.Objects
             hero.AlignToBoundaryOf(this, hero.Move);
             hero.Move = XHeroMoveType.None;
         }
-		
-		public override void Dispose()
-		{
-			base.Dispose ();
-
-			Elements.ForEach(e => e.Dispose());
-		}
     }
 }

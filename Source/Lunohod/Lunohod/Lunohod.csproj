@@ -103,7 +103,6 @@
     <Compile Include="Engine\Objects\XLevel.cs" />
     <Compile Include="Engine\Objects\XTeleport.cs" />
     <Compile Include="Engine\Objects\XTower.cs" />
-    <Compile Include="Engine\Objects\XObject.cs" />
     <Compile Include="Engine\Objects\InitializeParameters.cs" />
     <Compile Include="Engine\LevelEngine.cs" />
     <Compile Include="Engine\Objects\UpateParameters.cs" />
@@ -112,6 +111,7 @@
     <Compile Include="Engine\Objects\XTextureResource.cs" />
     <Compile Include="Engine\Objects\XResourceBundle.cs" />
     <Compile Include="Engine\Objects\XResource.cs" />
+    <Compile Include="Engine\Objects\XComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -134,10 +134,13 @@
     <Content Include="Content\Levels\TestLevel\chargers.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Global\dash 2a.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Global\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Global\dash 2a.png">
+    <Content Include="Content\Levels\TestLevel\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
