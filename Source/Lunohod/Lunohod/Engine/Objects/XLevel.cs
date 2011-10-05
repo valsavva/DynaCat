@@ -5,6 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Lunohod;
 
 namespace Lunohod.Objects
 {
@@ -20,8 +21,13 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public double Height;
 		
+		public XResourceBundle Resources;
+		
 		public override void Initialize(InitializeParameters p)
 		{
+			if (this.Resources != null)
+				this.Resources.Initialize(p);
+			
 			foreach(var layer in this.Layers)
 				layer.Initialize(p);
 		}
@@ -36,6 +42,13 @@ namespace Lunohod.Objects
 		{
 			foreach(var layer in this.Layers)
 				layer.Draw(p);
+		}
+		
+		public override void Dispose()
+		{
+			base.Dispose();
+
+			Layers.ForEach(l => l.Dispose());
 		}
     }
 }

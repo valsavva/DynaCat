@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Level Name="testLevel1" Width="960" Height="640">
-  <Layer Name="background" BackColor="#00FFFFF0">
-    <Image Source="chargers.jpg" Bounds="0,0,480,320" Opacity=".41"/>
+	<!-- Resources -->
+	<Resources RootFolder="Levels/TestLevel">
+		<Texture Id="chargers" Source="chargers.jpg" />
+	</Resources>
+	
+	<!-- Layers -->
+	<Layer Name="background" BackColor="#FFFFFFFF">
+    <Image TextureId="chargers" Bounds="0,0,480,320" Opacity="1"/>
   </Layer>
+	
   <Layer Name="action" BackColor="#00FFFFFF">
     <Tower Bounds="0,0,70,70" SignalSpeed="200"/>
     <Hero Bounds="400,0,50,50" Speed="100" Move="None"/>
@@ -11,6 +18,7 @@
       <Edge Align="Top" Type="Stick" />
       <Teleport Align="Bottom" Id="funkyShit" />
     </Block>
+		
     <Block Bounds="500,270,100,100" DefaultEdge="Bounce">
       <Teleport Align="Top" Id="funkyShit" />
     </Block>

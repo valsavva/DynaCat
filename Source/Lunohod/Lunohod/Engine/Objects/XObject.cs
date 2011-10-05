@@ -3,8 +3,10 @@ using System.Xml.Serialization;
 
 namespace Lunohod.Objects
 {
-	abstract public class XObject
+	abstract public class XObject : IDisposable
 	{
+		protected bool isDisposed = false;
+		
 		public XObject ()
 		{
 		}
@@ -18,6 +20,13 @@ namespace Lunohod.Objects
 		{
 
 		}
+
+		#region IDisposable implementation
+		public virtual void Dispose()
+		{
+			isDisposed = true;
+		}
+		#endregion
 	}
 }
 

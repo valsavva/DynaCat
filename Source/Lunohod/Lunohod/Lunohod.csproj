@@ -27,8 +27,7 @@
     <MtouchUseSGen>false</MtouchUseSGen>
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
-    <MtouchSdkVersion>4.0</MtouchSdkVersion>
-    <MtouchMinimumOS>4.0</MtouchMinimumOS>
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
     <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -61,7 +60,8 @@
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchUseLlvm>false</MtouchUseLlvm>
-    <MtouchMinimumOS>3.0</MtouchMinimumOS>
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
+    <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -86,11 +86,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="Game.xml" />
+    <None Include="Content\Global\dash 2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindow.xib.designer.cs">
-      <DependentUpon>MainWindow.xib</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="GameEngine.cs" />
@@ -110,9 +109,9 @@
     <Compile Include="Engine\Objects\UpateParameters.cs" />
     <Compile Include="Engine\Objects\DrawParameters.cs" />
     <Compile Include="ScreenEngine.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="MainWindow.xib" />
+    <Compile Include="Engine\Objects\XTextureResource.cs" />
+    <Compile Include="Engine\Objects\XResourceBundle.cs" />
+    <Compile Include="Engine\Objects\XResource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -133,6 +132,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Levels\TestLevel\chargers.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\blank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\dash 2a.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

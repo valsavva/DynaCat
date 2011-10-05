@@ -1,6 +1,8 @@
 using System;
 using Lunohod.Objects;
 using Microsoft.Xna.Framework;
+using MonoTouch.UIKit;
+using MonoTouch.Foundation;
 
 namespace Lunohod
 {
@@ -26,7 +28,7 @@ namespace Lunohod
 		{
 			base.LoadContent ();
 		}
-		
+
 		protected override void Update(GameTime gameTime)
 		{
 			base.Update (gameTime);
@@ -39,12 +41,14 @@ namespace Lunohod
 
 			screenEngine.Update(gameTime);
 		}
-		
+
 		protected override void Draw(GameTime gameTime)
 		{
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
 			this.screenEngine.Draw(gameTime);
+			
+			base.Draw(gameTime);
 		}
 		
 		protected override void UnloadContent()

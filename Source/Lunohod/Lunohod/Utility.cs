@@ -90,5 +90,14 @@ namespace Lunohod
         {
             return rect.Width * rect.Height;
         }
+		
+		public static void ForEach<T>(this IEnumerable<T> collection, Action<T> a)
+		{
+			if (collection == null)
+				return;
+			
+			foreach(T item in collection)
+				a(item);
+		}
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Game Bounds="0,0,480,320">
+	
+	<!-- Resources -->	
+	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank.png" />
+		<Texture Id="dashboard" Source="dash 2a.png" />
+	</Resources>
+	
+	<Dashboard Bounds="0,0,480,320">
+		<Viewport Bounds="50,50,430,270" />
+    <Image TextureId="dashboard" Opacity="1"/>
+	</Dashboard>
+</Game>

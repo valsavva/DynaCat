@@ -13,7 +13,7 @@ namespace Lunohod.Objects
     [XmlType("Image")]
     public class XImage : XElement
     {
-		private Texture2D image;
+		private XTextureResource texture;
 		
         public XImage()
         {
@@ -21,23 +21,21 @@ namespace Lunohod.Objects
         }
 
         [XmlAttribute]
-        public string Source;
+        public string TextureId;
 
 		public override void Initialize (InitializeParameters p)
 		{
 			base.Initialize (p);
-			
-			byte opacityByte = (byte)(Math.Round(this.Opacity * 255));
-			this.BackColor = new Color(opacityByte, opacityByte, opacityByte, opacityByte);
-			
-			string fileName = Path.Combine(p.Game.screenEngine.PrivateContentFolder, this.Source);
-			
-			image = p.Game.Content.Load<Texture2D>(fileName);
+
+			this.BackColor *= this.Opacity;
 		}
 		
 		public override void Draw(DrawParameters p)
 		{
-			p.SpriteBatch.Draw(this.image, this.Bounds.ToXnaRectangle(), this.BackColor);
+			if (this.texture == null)
+				this.texture = p.Game.screenEngine.Resources.Textures[this.TextureId];
+
+			p.SpriteBatch.Draw(this.texture.Image, this.Bounds.ToXnaRectangle(), null, this.BackColor);
 		}
     }
 }

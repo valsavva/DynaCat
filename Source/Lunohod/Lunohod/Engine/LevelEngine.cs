@@ -24,15 +24,11 @@ namespace Lunohod
 		
 		private SpriteBatch spriteBatch;
 		
-		private string privateContentFolder;
-		
-		public override string PrivateContentFolder { get { return privateContentFolder; } }
-		
 		public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
 		{
 		}
-
+		
 		public override void Initialize()
 		{
 			initializeParameters = new InitializeParameters() { Game = gameEngine };
@@ -41,11 +37,11 @@ namespace Lunohod
 		
 			spriteBatch = new SpriteBatch(this.gameEngine.GraphicsDevice);
 			
-			privateContentFolder = Path.Combine("Levels", name);
-
 			LoadLevelObjects();
 			
 			level.Initialize(initializeParameters);
+			
+			this.Resources = level.Resources;
 		}
 		
 		private void LoadLevelObjects()
@@ -55,9 +51,19 @@ namespace Lunohod
 			levelXmlFile = Path.ChangeExtension(levelXmlFile, ".xml");
 			
 			XmlSerializer serializer = new XmlSerializer(typeof(XLevel));
-			using (FileStream stream = new FileStream(levelXmlFile, FileMode.Open))
+			
+			try
 			{
-				this.level = (XLevel)serializer.Deserialize(stream);
+				using (FileStream stream = new FileStream(levelXmlFile, FileMode.Open))
+				{
+					this.level = (XLevel)serializer.Deserialize(stream);
+				}
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.ToString());
+				
+				throw;
 			}
 		}
 		
@@ -72,15 +78,32 @@ namespace Lunohod
 			drawParameters.GameTime = gameTime;
 			drawParameters.SpriteBatch = this.spriteBatch;
 			
-			this.spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-			
-			this.level.Draw(drawParameters);
-			
-			this.spriteBatch.End();
+			try 
+			{
+				Matrix transform = Matrix.Identity *
+					Matrix.CreateScale(new Vector3(1f, 1f, 1f));
+
+				this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
+					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
+				
+				this.level.Draw(drawParameters);
+				
+				this.spriteBatch.End();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			}
 		}
 
 		public override void Unload()
 		{
+			this.level.Dispose();
+			this.spriteBatch.Dispose();
+
+			this.level = null;
+			this.obstacles = null;
+			this.spriteBatch = null;
 		}
 	}
 }	

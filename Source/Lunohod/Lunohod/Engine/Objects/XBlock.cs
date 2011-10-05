@@ -5,10 +5,12 @@ using System.Text;
 using System.Xml.Serialization;
 using Lunohod;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Drawing;
 
 namespace Lunohod.Objects
 {
+	
     [XmlType("Block")]
     public class XBlock : XElement
     {
@@ -44,5 +46,10 @@ namespace Lunohod.Objects
 
             edge.ProcessCollision(engine, this, newBounds);
         }
+		
+		public override void Draw(DrawParameters p)
+		{
+			base.Draw (p);
+		}
     }
 }

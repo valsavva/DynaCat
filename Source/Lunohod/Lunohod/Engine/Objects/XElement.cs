@@ -18,7 +18,7 @@ namespace Lunohod.Objects
         [XmlIgnore]
         public Color BackColor;
         [XmlAttribute]
-        public double Opacity = 1.0;
+        public float Opacity = 1.0f;
 
 		[XmlAttribute("Bounds")]
 		public string zBounds
@@ -66,5 +66,12 @@ namespace Lunohod.Objects
             hero.AlignToBoundaryOf(this, hero.Move);
             hero.Move = XHeroMoveType.None;
         }
+		
+		public override void Dispose()
+		{
+			base.Dispose ();
+
+			Elements.ForEach(e => e.Dispose());
+		}
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using System.IO;
+using Lunohod.Objects;
 
 namespace Lunohod
 {
@@ -15,7 +16,7 @@ namespace Lunohod
 			this.name = name;
 		}
 		
-		public abstract string PrivateContentFolder { get;}
+		public XResourceBundle Resources { get; protected set;}
 		
 		public virtual void Initialize()
 		{
