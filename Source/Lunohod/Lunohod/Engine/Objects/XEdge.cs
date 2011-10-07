@@ -24,7 +24,7 @@ namespace Lunohod.Objects
     }
 
     [XmlType("Edge")]
-    public class XEdge
+    public class XEdge : XElement
     {
         [XmlAttribute]
         public XAlignType Align;
@@ -57,5 +57,28 @@ namespace Lunohod.Objects
             }
             return Color.Black;
         }
+		
+		public override void Initialize(InitializeParameters p)
+		{
+			
+			
+			base.Initialize(p);
+		}
+		
+		public override void Draw(DrawParameters p)
+		{
+			XBlock block = (XBlock)this.Parent;
+			this.Bounds = block.Bounds;
+			
+			switch (this.Align)
+			{
+				case XAlignType.Top : this.Bounds.Height = 3; break;
+				case XAlignType.Bottom : this.Bounds.Y -= 3; goto case XAlignType.Top;
+				case XAlignType.Left : this.Bounds.Width = 3; break;
+				case XAlignType.Right : this.Bounds.X -= 3; goto case XAlignType.Left;
+			}
+			
+			
+		}
     }
 }

@@ -16,8 +16,6 @@ namespace Lunohod
 			this.name = name;
 		}
 		
-		public XResourceBundle Resources { get; protected set;}
-		
 		public virtual void Initialize()
 		{
 		}

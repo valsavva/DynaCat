@@ -13,8 +13,19 @@ namespace Lunohod.Objects
     [XmlInclude(typeof(XImage))]
     public class XElement : XComponent
     {
+		private RectangleF? bounds;
+		
 		[XmlIgnore]
-        public RectangleF Bounds;
+        public RectangleF Bounds
+		{
+			get {
+				if (this.bounds.HasValue)
+					return this.bounds.Value;
+				else
+					return ((XElement)this.Parent).Bounds;
+			}
+			set { this.bounds = value; }
+		}
         [XmlIgnore]
         public Color BackColor;
         [XmlAttribute]
@@ -32,12 +43,25 @@ namespace Lunohod.Objects
 			set { this.BackColor = value.ToColor(); }
 			get { return Utility.ToString(this.BackColor); }
 		}
-
+		
+		public bool InheritsBounds
+		{
+			get {
+				return this.bounds.HasValue == false;
+			}
+			set {
+				if (value)
+					this.bounds = null;
+				else
+					this.bounds = this.Bounds;
+			}
+		}
+		
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
-        public override XComponent[] Subcomponents { get; set; }
+        public override List<XComponent> Subcomponents { get; set; }
 
         public virtual void ProcessCollision(LevelEngine engine, RectangleF newBounds)
         {

@@ -1,28 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Level Name="testLevel1" Width="960" Height="640">
-	<!-- Resources -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level Name="testLevel1" Bounds="0,0,480,320">
+	<!-- resources -->
 	<Resources RootFolder="Levels/TestLevel">
 		<Texture Id="chargers" Source="chargers.jpg" />
 		<Texture Id="blank" Source="blank.png" />
 	</Resources>
-	
-	<!-- Layers -->
+	<!-- background layer -->
 	<Layer Name="background" BackColor="#FFFFFFFF">
-    <Image TextureId="chargers" Bounds="0,0,960,640" Opacity="1"/>
-  </Layer>
-	
-  <Layer Name="action" BackColor="#00FFFFFF">
-    <Tower Bounds="0,0,70,70" SignalSpeed="200"/>
-    <Hero Bounds="400,0,50,50" Speed="100" Move="None"/>
-    <Block Bounds="400,270,100,100" DefaultEdge="Bounce" />
-    <Block Bounds="300,270,100,100" DefaultEdge="Bounce">
-	    <Image TextureId="blank" Bounds="300,270,100,100" BackColor="#FFFFFFFF" Opacity="0.5"/>
-      <Edge Align="Top" Type="Stick" />
-      <Teleport Align="Bottom" Id="funkyShit" />
-    </Block>
-		
-    <Block Bounds="500,270,100,100" DefaultEdge="Bounce">
-      <Teleport Align="Top" Id="funkyShit" />
-    </Block>
-  </Layer>
+		<Image TextureId="chargers" Opacity="1" />
+	</Layer>
+	<!-- main layer -->
+	<Layer Name="action" BackColor="#77FFFFFF">
+		<Tower Bounds="0,0,35,35" SignalSpeed="100" />
+		<Hero Bounds="200,0,35,35" Speed="100" Move="None" />
+		<!-- just a block (invisible by default) with bouncy walls -->
+		<Block Bounds="200,135,50,50" DefaultEdge="Bounce" />
+		<!-- block with content -->
+		<Block Bounds="150,135,50,50" DefaultEdge="Bounce">
+			<!-- fill the background with white, make it semi-transparent -->
+			<Image TextureId="blank" BackColor="#FFFFFFFF" Opacity="0.5" />
+			<!-- make the top edge sticky -->
+			<Edge Align="Top" Type="Stick" />
+			<!-- make the bottom edge a teleport -->
+			<Teleport Align="Bottom" Id="funkyShit" />
+		</Block>
+		<!-- block with content -->
+		<Block Bounds="250,135,50,50" DefaultEdge="Bounce">
+			<!-- make the top edge a teleport -->
+			<Teleport Align="Top" Id="funkyShit" />
+		</Block>
+	</Layer>
 </Level>

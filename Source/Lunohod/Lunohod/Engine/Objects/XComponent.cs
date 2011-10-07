@@ -16,7 +16,7 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public XComponent Parent {get; private set;}
 		
-		public virtual XComponent[] Subcomponents {get; set;}
+		public virtual List<XComponent> Subcomponents {get; set;}
 		
 		public void InitHierarchy()
 		{

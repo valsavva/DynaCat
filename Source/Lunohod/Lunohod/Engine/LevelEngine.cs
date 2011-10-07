@@ -11,7 +11,6 @@ using System.Xml.Serialization;
 
 namespace Lunohod
 {
-
 	public class LevelEngine : ScreenEngine
 	{
 		public XHero hero;
@@ -31,15 +30,13 @@ namespace Lunohod
 		
 		public override void Initialize()
 		{
-			initializeParameters = new InitializeParameters() { Game = gameEngine };
-			updateParameters = new UpdateParameters() { Game = gameEngine };
-			drawParameters = new DrawParameters() { Game = gameEngine };
-		
 			spriteBatch = new SpriteBatch(this.gameEngine.GraphicsDevice);
+
+			initializeParameters = new InitializeParameters() { Game = gameEngine, ScreenEngine = this };
+			updateParameters = new UpdateParameters() { Game = gameEngine, ScreenEngine = this };
+			drawParameters = new DrawParameters() { Game = gameEngine, ScreenEngine = this, SpriteBatch = spriteBatch };
 			
 			LoadLevelObjects();
-			
-			this.Resources = level.Resources;
 		}
 		
 		private void LoadLevelObjects()
@@ -77,16 +74,15 @@ namespace Lunohod
 		public override void Draw(GameTime gameTime)
 		{
 			drawParameters.GameTime = gameTime;
-			drawParameters.SpriteBatch = this.spriteBatch;
 			
 			try 
 			{
 				//scale(40/viewport.Height) * scale(1, -1) * translate(viewport.Width/2, viewport.Height/2)
 					
-				Matrix transform = Matrix.Identity *
-					Matrix.CreateScale(40f / 320) *
-					//Matrix.CreateScale(1, -1, 1) *
-					Matrix.CreateTranslation(480f / 2, 320f / 2, 0);
+				Matrix transform = Matrix.Identity;// *
+//					Matrix.CreateScale(40f / 320) *
+//					//Matrix.CreateScale(1, -1, 1) *
+//					Matrix.CreateTranslation(480f / 2, 320f / 2, 0);
 						
 
 				this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,

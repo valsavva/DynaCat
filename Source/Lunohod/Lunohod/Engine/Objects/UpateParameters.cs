@@ -10,6 +10,8 @@ namespace Lunohod.Objects
 		}
 		
 		public GameEngine Game;
+		public ScreenEngine ScreenEngine;
+		public XResourceBundle Resources;
 		public GameTime GameTime;
 	}
 }

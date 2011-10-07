@@ -9,11 +9,9 @@ namespace Lunohod.Objects
 		{
 		}
 		
-		public GameEngine Game
-		{
-			get;
-			set;
-		}
+		public GameEngine Game;
+		public ScreenEngine ScreenEngine;
+		public XResourceBundle Resources;
 	}
 }
 

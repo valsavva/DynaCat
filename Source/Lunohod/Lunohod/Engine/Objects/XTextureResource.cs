@@ -14,7 +14,7 @@ namespace Lunohod.Objects
 	public class XTextureResource : XResource
 	{
 		private Texture2D image;
-
+		
 		public XTextureResource ()
 		{
 		}
