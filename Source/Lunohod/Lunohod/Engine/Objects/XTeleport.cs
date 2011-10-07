@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
-using System.Drawing;
 
 namespace Lunohod.Objects
 {
@@ -19,7 +18,7 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public string Id;
 
-        public override void ProcessCollision(LevelEngine engine, XBlock block, RectangleF newBounds)
+        public override void ProcessCollision(LevelEngine engine, XBlock block, Rectangle newBounds)
         {
             XEdge otherEdge = null;
             XBlock otherBlock = engine.obstacles
@@ -42,10 +41,10 @@ namespace Lunohod.Objects
 
             var hero = engine.hero;
 
-            RectangleF blockBounds = block.Bounds;
-            RectangleF otherBounds = otherBlock.Bounds;
+            Rectangle blockBounds = block.Bounds;
+            Rectangle otherBounds = otherBlock.Bounds;
 
-            float delta = 0;
+            int delta = 0;
 
             if (this.Align == XAlignType.Left || this.Align == XAlignType.Right)
                 delta = (newBounds.Y - blockBounds.Y);

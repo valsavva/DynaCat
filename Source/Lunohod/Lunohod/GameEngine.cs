@@ -3,6 +3,7 @@ using Lunohod.Objects;
 using Microsoft.Xna.Framework;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Lunohod
 {
@@ -11,6 +12,8 @@ namespace Lunohod
         private GraphicsDeviceManager graphics;
 		
 		public ScreenEngine screenEngine;
+		
+		public Texture2D BlankTexture {get; private set;}
 		
 		public GameEngine()
 		{
@@ -26,6 +29,7 @@ namespace Lunohod
 		
 		protected override void LoadContent()
 		{
+			this.BlankTexture = this.Content.Load<Texture2D>("Global/blank.png");
 			base.LoadContent ();
 		}
 

@@ -7,10 +7,10 @@
 	</Resources>
 	<!-- background layer -->
 	<Layer Name="background" BackColor="#FFFFFFFF">
-		<Image TextureId="chargers" Opacity="1" />
+		<Image TextureId="chargers" Opacity="0.2" />
 	</Layer>
 	<!-- main layer -->
-	<Layer Name="action" BackColor="#77FFFFFF">
+	<Layer Name="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="100" />
 		<Hero Bounds="200,0,35,35" Speed="100" Move="None" />
 		<!-- just a block (invisible by default) with bouncy walls -->
@@ -18,7 +18,7 @@
 		<!-- block with content -->
 		<Block Bounds="150,135,50,50" DefaultEdge="Bounce">
 			<!-- fill the background with white, make it semi-transparent -->
-			<Image TextureId="blank" BackColor="#FFFFFFFF" Opacity="0.5" />
+			<Image TextureId="blank" BackColor="#FFFFFFFF" Opacity="0.3" />
 			<!-- make the top edge sticky -->
 			<Edge Align="Top" Type="Stick" />
 			<!-- make the bottom edge a teleport -->
@@ -26,6 +26,8 @@
 		</Block>
 		<!-- block with content -->
 		<Block Bounds="250,135,50,50" DefaultEdge="Bounce">
+			<!-- fill the background with red, make it semi-transparent -->
+			<Image TextureId="blank" BackColor="#FFFF0000" Opacity="0.3" />
 			<!-- make the top edge a teleport -->
 			<Teleport Align="Top" Id="funkyShit" />
 		</Block>

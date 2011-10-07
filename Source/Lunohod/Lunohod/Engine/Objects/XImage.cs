@@ -18,8 +18,6 @@ namespace Lunohod.Objects
 		
         public XImage()
         {
-            this.zBackColor = "#FFFFFFFF";
-			this.Stretch = true;
         }
 
         [XmlAttribute]
@@ -36,14 +34,15 @@ namespace Lunohod.Objects
 			this.texture = p.Resources.Textures[this.TextureId];
 		}
 		
-		public override void Draw(DrawParameters p)
+		public override void Draw(	DrawParameters p)
 		{
-			if (this.Stretch)
-				p.SpriteBatch.Draw(this.texture.Image, this.Bounds.ToXnaRectangle(), null, this.BackColor);
+			if (this.Stretch || this.Bounds.IsEmpty)
+				p.SpriteBatch.Draw(this.texture.Image, this.GetScreenBounds(), null, this.BackColor);
 			else
 			{
-				this.location.X = this.Bounds.X;
-				this.location.Y = this.Bounds.Y;
+				var screenBounds = this.GetScreenBounds();
+				this.location.X = screenBounds.X;
+				this.location.Y = screenBounds.Y;
 				p.SpriteBatch.Draw(this.texture.Image, this.location, null, this.BackColor);
 			}
 		}

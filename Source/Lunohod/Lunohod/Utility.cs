@@ -24,10 +24,10 @@ namespace Lunohod
             return c;
         }
 
-        public static RectangleF ToRect(this string s)
+        public static Microsoft.Xna.Framework.Rectangle ToRect(this string s)
         {
             string[] parts = s.Split(',');
-            return new RectangleF(
+            return new Microsoft.Xna.Framework.Rectangle(
                 int.Parse(parts[0], CultureInfo.InvariantCulture),
                 int.Parse(parts[1], CultureInfo.InvariantCulture),
                 int.Parse(parts[2], CultureInfo.InvariantCulture),
@@ -50,7 +50,7 @@ namespace Lunohod
 			return c.ToString();
 		}
 
-        public static string ToBounds(this RectangleF rect)
+        public static string ToBounds(this Microsoft.Xna.Framework.Rectangle rect)
         {
             return rect.Left.ToString(CultureInfo.InvariantCulture) + "," + rect.Top.ToString(CultureInfo.InvariantCulture) + "," + rect.Width.ToString(CultureInfo.InvariantCulture) + "," + rect.Height.ToString(CultureInfo.InvariantCulture);
         }

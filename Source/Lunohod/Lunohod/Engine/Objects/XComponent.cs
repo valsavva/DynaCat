@@ -14,7 +14,7 @@ namespace Lunohod.Objects
 		}
 		
 		[XmlIgnore]
-		public XComponent Parent {get; private set;}
+		public XComponent Parent {get; set;}
 		
 		public virtual List<XComponent> Subcomponents {get; set;}
 		

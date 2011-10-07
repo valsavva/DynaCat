@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
-using System.Drawing;
 
 namespace Lunohod.Objects
 {
@@ -27,8 +26,8 @@ namespace Lunohod.Objects
 
         public void AlignToBoundaryOf(XElement e, XHeroMoveType moveType)
         {
-            RectangleF newBounds = this.Bounds;
-            RectangleF elementBounds = e.Bounds;
+            Rectangle newBounds = this.Bounds;
+            Rectangle elementBounds = e.Bounds;
 
             if (moveType == XHeroMoveType.Left)
                 newBounds.X = elementBounds.Right + 1;

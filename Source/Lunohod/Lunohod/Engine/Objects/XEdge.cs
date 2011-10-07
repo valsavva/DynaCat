@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
-using System.Drawing;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Lunohod.Objects
 {
@@ -31,7 +31,7 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public XEdgeType Type = XEdgeType.Stick;
 
-        public virtual void ProcessCollision(LevelEngine engine, XBlock block, RectangleF newBounds)
+        public virtual void ProcessCollision(LevelEngine engine, XBlock block, Rectangle newBounds)
         {
             var hero = engine.hero;
 
@@ -47,7 +47,7 @@ namespace Lunohod.Objects
             }
         }
 
-        public Color GetBrush()
+        public Color GetDefaultColor()
         {
             switch (this.Type)
             {
@@ -60,25 +60,49 @@ namespace Lunohod.Objects
 		
 		public override void Initialize(InitializeParameters p)
 		{
-			
+			if (!this.OverridesBackColor)
+				this.BackColor = this.GetDefaultColor();
 			
 			base.Initialize(p);
 		}
 		
 		public override void Draw(DrawParameters p)
 		{
-			XBlock block = (XBlock)this.Parent;
-			this.Bounds = block.Bounds;
+			var blockBounds = ((XBlock)this.Parent).Bounds;
 			
 			switch (this.Align)
 			{
-				case XAlignType.Top : this.Bounds.Height = 3; break;
-				case XAlignType.Bottom : this.Bounds.Y -= 3; goto case XAlignType.Top;
-				case XAlignType.Left : this.Bounds.Width = 3; break;
-				case XAlignType.Right : this.Bounds.X -= 3; goto case XAlignType.Left;
+				case XAlignType.Top :
+				{
+					this.Bounds.X = 0;
+					this.Bounds.Y = 0;
+					this.Bounds.Width = blockBounds.Width;
+					this.Bounds.Height = 3;
+				}; break;
+				case XAlignType.Bottom :
+				{
+					this.Bounds.X = 0;
+					this.Bounds.Y = blockBounds.Height - 3;
+					this.Bounds.Width = blockBounds.Width;
+					this.Bounds.Height = 3;
+				}; break;
+				case XAlignType.Left :
+				{
+					this.Bounds.X = 0;
+					this.Bounds.Y = 0;
+					this.Bounds.Width = 3;
+					this.Bounds.Height = blockBounds.Height;
+				}; break;
+				case XAlignType.Right :
+				{
+					this.Bounds.X = blockBounds.Width - 3;
+					this.Bounds.Y = 0;
+					this.Bounds.Width = 3;
+					this.Bounds.Height = blockBounds.Height;
+				}; break;
 			}
 			
-			
+			p.SpriteBatch.Draw(p.Game.BlankTexture, this.GetScreenBounds(), this.BackColor);
 		}
     }
 }

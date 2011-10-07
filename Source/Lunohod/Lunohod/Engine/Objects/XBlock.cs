@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 using Lunohod;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Drawing;
 
 namespace Lunohod.Objects
 {
@@ -19,37 +18,38 @@ namespace Lunohod.Objects
 
         [XmlElement(ElementName = "Edge", Type = typeof(XEdge))]
         [XmlElement(ElementName = "Teleport", Type = typeof(XTeleport))]
-        public XEdge[] Edges;
+		public XEdge[] Edges;
 		
 		public override void Initialize (InitializeParameters p)
 		{
-			base.Initialize(p);
-
 			InitializeEdges();
+
+			base.Initialize(p);
         }
 
         private void InitializeEdges()
         {
             var tmp = this.Edges ?? new XEdge[0];
-            this.Edges = new XEdge[4];
+
+			this.Edges = new XEdge[4];
             for (int i = 0; i < 4; i++)
             {
-                this.Edges[i] = tmp.FirstOrDefault(e => (int)e.Align == i) ?? new XEdge() { Align = (XAlignType)i, Type = this.DefaultEdge };
+                this.Edges[i] = tmp.FirstOrDefault(e => (int)e.Align == i)
+					?? new XEdge() {  Align = (XAlignType)i, Type = this.DefaultEdge };
             }
+			
+			this.Edges.ForEach(e => e.Parent = this);
+			
+			this.Subcomponents.AddRange(this.Edges);
         }
 
-        public override void ProcessCollision(LevelEngine engine, RectangleF newBounds)
+        public override void ProcessCollision(LevelEngine engine, Rectangle newBounds)
         {
             var hero = engine.hero;
 
-            XEdge edge = this.Edges[(int)hero.Move.ReverseEdge()];
+            XEdge edge = (XEdge)this.Edges[(int)hero.Move.ReverseEdge()];
 
             edge.ProcessCollision(engine, this, newBounds);
         }
-		
-		public override void Draw(DrawParameters p)
-		{
-			base.Draw (p);
-		}
     }
 }
