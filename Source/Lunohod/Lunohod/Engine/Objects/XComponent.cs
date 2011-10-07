@@ -9,10 +9,9 @@ namespace Lunohod.Objects
 	{
 		protected bool isDisposed = false;
 		
-		public XComponent ()
-		{
-		}
-		
+		[XmlAttribute]
+		public string Id { get; set;}
+
 		[XmlIgnore]
 		public XComponent Parent {get; set;}
 		

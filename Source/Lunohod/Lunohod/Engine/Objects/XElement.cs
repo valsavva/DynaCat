@@ -59,9 +59,9 @@ namespace Lunohod.Objects
 			get { return Utility.ToString(this.BackColor); }
 		}
 		
-        [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
+        [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
         public override List<XComponent> Subcomponents { get; set; }
 

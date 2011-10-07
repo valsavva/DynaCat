@@ -7,8 +7,10 @@
 		<Texture Id="dashboard" Source="dash 2a.png" />
 	</Resources>
 	
-	<Dashboard Bounds="0,0,480,320">
+	<Dashboard BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270" />
-    <Image TextureId="dashboard" Opacity="1"/>
+    	<Image TextureId="dashboard" Opacity="0.7"/>
+		<TapArea Bounds="0,0,35,35" FireEvent="system:left" />
+		<TapArea Bounds="445,0,35,35" FireEvent="system:right" />
 	</Dashboard>
 </Game>

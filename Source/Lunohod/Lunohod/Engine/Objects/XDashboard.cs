@@ -12,9 +12,10 @@ namespace Lunohod.Objects
 	[XmlType("Dashboard")]
 	public class XDashboard : XElement
 	{
-		public XDashboard()
-		{
-		}
+        [XmlElement(ElementName = "Image", Type = typeof(XImage))]
+        [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
+        [XmlElement(ElementName = "Viewport", Type = typeof(XViewport))]
+        public override List<XComponent> Subcomponents { get; set; }
 	}
 }
 

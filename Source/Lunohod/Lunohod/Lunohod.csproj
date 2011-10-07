@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="Game.xml" />
     <None Include="Content\Global\dash 2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +92,7 @@
     <Compile Include="Engine\Objects\XGame.cs" />
     <Compile Include="Engine\Objects\XViewport.cs" />
     <Compile Include="Engine\Objects\XDashboard.cs" />
+    <Compile Include="Engine\Objects\XTapArea.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -122,6 +122,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Levels\TestLevel\blank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

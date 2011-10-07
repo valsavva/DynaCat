@@ -10,7 +10,5 @@ namespace Lunohod.Objects
     [XmlType("Layer")]
     public class XLayer : XElement
     {
-        [XmlAttribute]
-        public string Name;
 	}
 }

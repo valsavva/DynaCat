@@ -6,11 +6,11 @@
 		<Texture Id="blank" Source="blank.png" />
 	</Resources>
 	<!-- background layer -->
-	<Layer Name="background" BackColor="#FFFFFFFF">
+	<Layer Id="background" BackColor="#FFFFFFFF">
 		<Image TextureId="chargers" Opacity="0.2" />
 	</Layer>
 	<!-- main layer -->
-	<Layer Name="action" BackColor="#FFFFFFFF">
+	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="100" />
 		<Hero Bounds="200,0,35,35" Speed="100" Move="None" />
 		<!-- just a block (invisible by default) with bouncy walls -->

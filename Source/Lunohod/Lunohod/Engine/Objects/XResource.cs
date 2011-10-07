@@ -8,12 +8,6 @@ namespace Lunohod.Objects
 		public XResource()
 		{
 		}
-
-		[XmlAttribute]
-		public string Id {
-			get;
-			set;
-		}
 	}
 }
 

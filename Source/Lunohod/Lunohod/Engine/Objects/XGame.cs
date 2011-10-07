@@ -10,8 +10,11 @@ using Lunohod;
 namespace Lunohod.Objects
 {
 	[XmlType("Game")]
-	public class XGame : XComponent
+	public class XGame : XElement
 	{
+        [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
+        [XmlElement(ElementName = "Dashboard", Type = typeof(XDashboard))]
+        public override List<XComponent> Subcomponents { get; set; }
 	}
 }
 

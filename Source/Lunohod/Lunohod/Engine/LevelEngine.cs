@@ -89,6 +89,7 @@ namespace Lunohod
 					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
 				
 				this.level.Draw(drawParameters);
+				this.gameEngine.GameDesriptor.Draw(drawParameters);
 				
 				this.spriteBatch.End();
 			}

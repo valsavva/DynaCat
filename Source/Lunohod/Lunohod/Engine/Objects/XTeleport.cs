@@ -15,9 +15,6 @@ namespace Lunohod.Objects
             this.Type = XEdgeType.Teleport;
         }
 
-        [XmlAttribute]
-        public string Id;
-
         public override void ProcessCollision(LevelEngine engine, XBlock block, Rectangle newBounds)
         {
             XEdge otherEdge = null;
