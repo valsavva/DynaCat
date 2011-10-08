@@ -49,7 +49,7 @@ namespace Lunohod
 			{
 				XmlSerializer serializer = new XmlSerializer(typeof(XLevel));
 				
-				using (FileStream stream = new FileStream(levelXmlFile, FileMode.Open))
+				using (FileStream stream = new FileStream(levelXmlFile, FileMode.Open, FileAccess.Read))
 				{
 					this.level = (XLevel)serializer.Deserialize(stream);
 				}

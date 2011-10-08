@@ -23,7 +23,20 @@ namespace Lunohod
 
         static void Main (string [] args)
         {
-            UIApplication.Main (args,null,"AppDelegate");
+			AppDomain.CurrentDomain.UnhandledException += HandleAppDomainCurrentDomainUnhandledException;;
+			try
+			{
+	            UIApplication.Main (args,null,"AppDelegate");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			}
+        }
+
+        static void HandleAppDomainCurrentDomainUnhandledException (object sender, UnhandledExceptionEventArgs e)
+        {
+        	Console.WriteLine(e.ExceptionObject.ToString());
         }
     }
 

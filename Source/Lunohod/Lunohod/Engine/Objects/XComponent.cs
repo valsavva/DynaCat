@@ -20,8 +20,9 @@ namespace Lunohod.Objects
 		public void InitHierarchy()
 		{
 			if (this.Subcomponents != null)
-				foreach(var subcomponent in this.Subcomponents)
+				for(int i = 0; i < this.Subcomponents.Count; i++)
 				{
+					var subcomponent = this.Subcomponents[i];
 					subcomponent.Parent = this;
 					subcomponent.InitHierarchy();
 				}
@@ -30,22 +31,31 @@ namespace Lunohod.Objects
 		public virtual void Initialize(InitializeParameters p)
 		{
 			if (this.Subcomponents != null)
-				foreach(var subcomponent in this.Subcomponents)
+				for(int i = 0; i < this.Subcomponents.Count; i++)
+				{
+					var subcomponent = this.Subcomponents[i];
 					subcomponent.Initialize(p);
+				}
 		}
 		
 		public virtual void Update(UpdateParameters p)
 		{
 			if (this.Subcomponents != null)
-				foreach(var subcomponent in this.Subcomponents)
+				for(int i = 0; i < this.Subcomponents.Count; i++)
+				{
+					var subcomponent = this.Subcomponents[i];
 					subcomponent.Update(p);
+				}
 		}
 		
 		public virtual void Draw(DrawParameters p)
 		{
 			if (this.Subcomponents != null)
-				foreach(var child in this.Subcomponents)
-					child.Draw(p);
+				for(int i = 0; i < this.Subcomponents.Count; i++)
+				{
+					var subcomponent = this.Subcomponents[i];
+					subcomponent.Draw(p);
+				}
 		}
 		
 		public T GetComponent<T>() where T : XComponent
@@ -71,8 +81,11 @@ namespace Lunohod.Objects
 			isDisposed = true;
 			
 			if (this.Subcomponents != null)
-				foreach(var subcomponent in this.Subcomponents)
+				for(int i = 0; i < this.Subcomponents.Count; i++)
+				{
+					var subcomponent = this.Subcomponents[i];
 					subcomponent.Dispose();
+				}
 		}
 		#endregion
 	}

@@ -1,10 +1,12 @@
 using System;
+using System.Linq;
 using Lunohod.Objects;
 using Microsoft.Xna.Framework;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace Lunohod
 {
@@ -48,13 +50,13 @@ namespace Lunohod
 
 		protected void LoadGameElement()
 		{
-			string gameXmlFile = Path.Combine(this.Content.RootDirectory, "game.xml");
+			string gameXmlFile = Path.Combine(this.Content.RootDirectory, "Game.xml");
 			
 			try
 			{
 				var serializer = new System.Xml.Serialization.XmlSerializer(typeof(XGame));
 				
-				using (FileStream stream = new FileStream(gameXmlFile, FileMode.Open))
+				using (FileStream stream = new FileStream(gameXmlFile, FileMode.Open, FileAccess.Read))
 				{
 					this.gameDesriptor = (XGame)serializer.Deserialize(stream);
 				}
@@ -81,6 +83,11 @@ namespace Lunohod
 			}
 
 			screenEngine.Update(gameTime);
+			
+		var touches = TouchPanel.GetState();
+			touches
+				.Where(t => t.State == TouchLocationState.Released)
+				.ForEach(t => Console.WriteLine("Touch! {0}", t.Position.ToString()));
 		}
 
 		protected override void Draw(GameTime gameTime)
