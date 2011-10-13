@@ -14,15 +14,42 @@ namespace Lunohod
     {
         public static Color ToColor(this string s)
         {
-            Color c = new Color(
-                Byte.Parse(s.Substring(3,2), System.Globalization.NumberStyles.AllowHexSpecifier),
-                Byte.Parse(s.Substring(5,2), System.Globalization.NumberStyles.AllowHexSpecifier),
-                Byte.Parse(s.Substring(7,2), System.Globalization.NumberStyles.AllowHexSpecifier),
-                Byte.Parse(s.Substring(1,2), System.Globalization.NumberStyles.AllowHexSpecifier)
-            );
-
+			Color c;
+			if (s.Length == 8)
+			{
+	            c = new Color(
+	                Byte.Parse(s.Substring(3,2), System.Globalization.NumberStyles.AllowHexSpecifier),
+	                Byte.Parse(s.Substring(5,2), System.Globalization.NumberStyles.AllowHexSpecifier),
+	                Byte.Parse(s.Substring(7,2), System.Globalization.NumberStyles.AllowHexSpecifier),
+	                Byte.Parse(s.Substring(1,2), System.Globalization.NumberStyles.AllowHexSpecifier)
+	            );
+			} 
+			else
+			{
+	            c = new Color(
+	                Byte.Parse(s.Substring(1,2), System.Globalization.NumberStyles.AllowHexSpecifier),
+	                Byte.Parse(s.Substring(3,2), System.Globalization.NumberStyles.AllowHexSpecifier),
+	                Byte.Parse(s.Substring(5,2), System.Globalization.NumberStyles.AllowHexSpecifier)
+	            );
+			}
+				
             return c;
         }
+		
+		public static Vector2 ToVector2(this string s)
+		{
+            string[] parts = s.Split(',');
+			return new Vector2(
+                float.Parse(parts[0], CultureInfo.InvariantCulture),
+                float.Parse(parts[1], CultureInfo.InvariantCulture)
+			);
+		}
+		
+		public static string ToStr(this Vector2 v)
+		{
+            return v.X.ToString(CultureInfo.InvariantCulture) + 
+                v.Y.ToString(CultureInfo.InvariantCulture);
+		}
 
         public static Microsoft.Xna.Framework.Rectangle ToRect(this string s)
         {
@@ -45,7 +72,7 @@ namespace Lunohod
 			);
 		}
 		
-		public static string ToString(this Color c)
+		public static string ToStr(this Color c)
 		{
 			return c.ToString();
 		}
@@ -55,49 +82,17 @@ namespace Lunohod
             return rect.Left.ToString(CultureInfo.InvariantCulture) + "," + rect.Top.ToString(CultureInfo.InvariantCulture) + "," + rect.Width.ToString(CultureInfo.InvariantCulture) + "," + rect.Height.ToString(CultureInfo.InvariantCulture);
         }
 
-        public static XHeroMoveType ReverseMove(this XAlignType m)
-        {
-            return ReverseMove((XHeroMoveType)m);
-        }
-
-        public static XHeroMoveType ReverseMove(this XHeroMoveType m)
-        {
-            XHeroMoveType r = XHeroMoveType.Left;
-            switch (m)
-            {
-                case XHeroMoveType.Left: r = XHeroMoveType.Right; break;
-                case XHeroMoveType.Right: r = XHeroMoveType.Left; break;
-                case XHeroMoveType.Up: r = XHeroMoveType.Down; break;
-                case XHeroMoveType.Down: r = XHeroMoveType.Up; break;
-            }
-            return r;
-        }
-
-        public static XAlignType ReverseEdge(this XHeroMoveType m)
-        {
-            XAlignType r = XAlignType.Left;
-            switch (m)
-            {
-                case XHeroMoveType.Left: r = XAlignType.Right; break;
-                case XHeroMoveType.Right: r = XAlignType.Left; break;
-                case XHeroMoveType.Up: r = XAlignType.Bottom; break;
-                case XHeroMoveType.Down: r = XAlignType.Top; break;
-            }
-			return r;
-        }
-
         public static double Area(this RectangleF rect)
         {
             return rect.Width * rect.Height;
         }
 		
-		public static void ForEach<T>(this IEnumerable<T> collection, Action<T> a)
+		public static void ForEach<T>(this IList<T> collection, Action<T> a)
 		{
 			if (collection == null)
 				return;
-			
-			foreach(T item in collection)
-				a(item);
+			for(int i = 0; i < collection.Count; i++)
+				a(collection[i]);
 		}
     }
 }

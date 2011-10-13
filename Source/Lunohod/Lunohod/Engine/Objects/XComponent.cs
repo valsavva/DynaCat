@@ -74,6 +74,24 @@ namespace Lunohod.Objects
 			return this.Subcomponents.Where(c => c.GetType() == typeof(T)).Cast<T>();
 		}
 		
+		public XComponent FindDescendant(string id)
+		{
+			if (this.Id == id)
+				return this;
+			
+			if (this.Subcomponents == null)
+				return null;
+			
+			XComponent result = null;
+
+			for(int i = 0; i < this.Subcomponents.Count; i++)
+			{
+				if ((result = this.Subcomponents[i].FindDescendant(id)) != null)
+					return result;
+			}
+			
+			return null;
+		}
 		
 		#region IDisposable implementation
 		public virtual void Dispose()

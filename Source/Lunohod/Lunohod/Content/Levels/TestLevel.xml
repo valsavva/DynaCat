@@ -12,11 +12,14 @@
 	<!-- main layer -->
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="100" />
-		<Hero Bounds="200,0,35,35" Speed="100" Move="None" />
+		<Hero Bounds="200,0,35,35" DefaultSpeed="100" Speed="0" Direction="0,0" />
 		<!-- just a block (invisible by default) with bouncy walls -->
-		<Block Bounds="200,135,50,50" DefaultEdge="Bounce" />
+		<Block Id="boxImage" Bounds="0,0,50,50" DefaultEdge="Bounce">
+			<Image TextureId="chargers" Opacity="1" />
+		</Block>
+		<Block Id="box2" Bounds="200,135,50,50" DefaultEdge="Bounce" />
 		<!-- block with content -->
-		<Block Bounds="150,135,50,50" DefaultEdge="Bounce">
+		<Block Id="box1" Bounds="150,135,50,50" DefaultEdge="Bounce">
 			<!-- fill the background with white, make it semi-transparent -->
 			<Image TextureId="blank" BackColor="#FFFFFFFF" Opacity="0.3" />
 			<!-- make the top edge sticky -->
@@ -25,11 +28,18 @@
 			<Teleport Align="Bottom" Id="funkyShit" />
 		</Block>
 		<!-- block with content -->
-		<Block Bounds="250,135,50,50" DefaultEdge="Bounce">
+		<Block Id="box3" Bounds="250,135,50,50" DefaultEdge="Bounce">
 			<!-- fill the background with red, make it semi-transparent -->
 			<Image TextureId="blank" BackColor="#FFFF0000" Opacity="0.3" />
 			<!-- make the top edge a teleport -->
 			<Teleport Align="Top" Id="funkyShit" />
 		</Block>
+		<Block Id="animationDemo" Bounds="200,185,50,50" DefaultEdge="Stick" />
+		
+		<IntValueAnimation From="200" To="400" Duration="00:00:01" Autoreverse="true" TargetId="animationDemo" TargetProperty="X" />
+		<IntValueAnimation From="150" To="350" Duration="00:00:01" Autoreverse="true" TargetId="box1" TargetProperty="X" />
+		<IntValueAnimation From="200" To="400" Duration="00:00:01" Autoreverse="true" TargetId="box2" TargetProperty="X" />
+		<IntValueAnimation From="250" To="450" Duration="00:00:01" Autoreverse="true" TargetId="box3" TargetProperty="X" />
+		<IntValueAnimation From="0" To="430" Duration="00:00:2" Autoreverse="true" TargetId="boxImage" TargetProperty="X" />
 	</Layer>
 </Level>

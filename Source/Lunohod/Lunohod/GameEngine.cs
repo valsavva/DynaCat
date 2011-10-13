@@ -14,16 +14,16 @@ namespace Lunohod
 	{
         private GraphicsDeviceManager graphics;
 
-		private XGame gameDesriptor;
+		private XGame gameObject;
 
 		private ScreenEngine screenEngine;
 		
 		public Texture2D BlankTexture {get; private set;}
 
-		public XGame GameDesriptor
+		public XGame GameObject
 		{
 			get {
-				return this.gameDesriptor;
+				return this.gameObject;
 			}
 		}		
 
@@ -58,7 +58,7 @@ namespace Lunohod
 				
 				using (FileStream stream = new FileStream(gameXmlFile, FileMode.Open, FileAccess.Read))
 				{
-					this.gameDesriptor = (XGame)serializer.Deserialize(stream);
+					this.gameObject = (XGame)serializer.Deserialize(stream);
 				}
 			}
 			catch (Exception ex)
@@ -68,8 +68,8 @@ namespace Lunohod
 				throw;
 			}
 			
-			gameDesriptor.InitHierarchy();
-			gameDesriptor.Initialize(new InitializeParameters() { Game = this });
+			gameObject.InitHierarchy();
+			gameObject.Initialize(new InitializeParameters() { Game = this });
 		}
 
 		protected override void Update(GameTime gameTime)
@@ -84,9 +84,10 @@ namespace Lunohod
 
 			screenEngine.Update(gameTime);
 			
-		var touches = TouchPanel.GetState();
+			var touches = TouchPanel.GetState();
 			touches
 				.Where(t => t.State == TouchLocationState.Released)
+				.ToArray()
 				.ForEach(t => Console.WriteLine("Touch! {0}", t.Position.ToString()));
 		}
 

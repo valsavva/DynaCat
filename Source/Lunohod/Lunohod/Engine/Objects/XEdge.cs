@@ -33,18 +33,6 @@ namespace Lunohod.Objects
 
         public virtual void ProcessCollision(LevelEngine engine, XBlock block, Rectangle newBounds)
         {
-            var hero = engine.hero;
-
-            if (this.Type == XEdgeType.Stick)
-            {
-                hero.AlignToBoundaryOf(block, hero.Move);
-                hero.Move = XHeroMoveType.None;
-            }
-            else if (this.Type == XEdgeType.Bounce)
-            {
-                hero.AlignToBoundaryOf(block, hero.Move);
-                hero.Move = hero.Move.ReverseMove();
-            }
         }
 
         public Color GetDefaultColor()

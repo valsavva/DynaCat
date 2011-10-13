@@ -7,38 +7,26 @@ using Microsoft.Xna.Framework;
 
 namespace Lunohod.Objects
 {
-    public enum XHeroMoveType
-    {
-        None = -1,
-        Up = 0,
-        Down = 1,
-        Left = 2,
-        Right = 3
-    }
-
     [XmlType("Hero")]
     public class XHero : XElement
     {
         [XmlAttribute]
-        public double Speed;
-        [XmlAttribute]
-        public XHeroMoveType Move;
+        public float DefaultSpeed;
+		[XmlIgnore]
+		public float Speed;
+		
+		[XmlIgnore]
+		public Vector2 Direction;
 
-        public void AlignToBoundaryOf(XElement e, XHeroMoveType moveType)
+        [XmlAttribute("Direction")]
+        public string zDirection
+		{
+			get { return this.Direction.ToStr(); }
+			set { this.Direction = value.ToVector2(); }
+		}
+		
+        public void AlignToBoundaryOf(XElement e, Vector2 direction)
         {
-            Rectangle newBounds = this.Bounds;
-            Rectangle elementBounds = e.Bounds;
-
-            if (moveType == XHeroMoveType.Left)
-                newBounds.X = elementBounds.Right + 1;
-            else if (moveType == XHeroMoveType.Right)
-                newBounds.X = elementBounds.Left - newBounds.Width - 1;
-            else if (moveType == XHeroMoveType.Up)
-                newBounds.Y = elementBounds.Bottom + 1;
-            else if (moveType == XHeroMoveType.Down)
-                newBounds.Y = elementBounds.Top - newBounds.Height - 1;
-			
-			this.Bounds = newBounds;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Lunohod.Objects;
+using Microsoft.Xna.Framework;
 
 namespace Lunohod
 {
@@ -12,7 +13,7 @@ namespace Lunohod
         {
         }
 
-        public XHeroMoveType Move;
+        public Vector2 Direction;
         public DateTime StartTime;
     }
 }

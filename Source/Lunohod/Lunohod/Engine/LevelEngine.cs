@@ -27,6 +27,8 @@ namespace Lunohod
 			: base(gameEngine, name)
 		{
 		}
+
+		public override XComponent RootComponent { get { return level; } }
 		
 		public override void Initialize()
 		{
@@ -89,7 +91,7 @@ namespace Lunohod
 					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
 				
 				this.level.Draw(drawParameters);
-				this.gameEngine.GameDesriptor.Draw(drawParameters);
+				this.gameEngine.GameObject.Draw(drawParameters);
 				
 				this.spriteBatch.End();
 			}

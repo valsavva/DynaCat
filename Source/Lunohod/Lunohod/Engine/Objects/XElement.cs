@@ -56,20 +56,18 @@ namespace Lunohod.Objects
         public string zBackColor
 		{
 			set { this.BackColor = value.ToColor(); }
-			get { return Utility.ToString(this.BackColor); }
+			get { return this.BackColor.ToStr(); }
 		}
 		
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
+        [XmlElement(ElementName = "IntValueAnimation", Type = typeof(XIntValueAnimation))]
         public override List<XComponent> Subcomponents { get; set; }
 
         public virtual void ProcessCollision(LevelEngine engine, Rectangle newBounds)
         {
-            var hero = engine.hero;
-            hero.AlignToBoundaryOf(this, hero.Move);
-            hero.Move = XHeroMoveType.None;
         }
     }
 }

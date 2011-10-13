@@ -45,11 +45,6 @@ namespace Lunohod.Objects
 
         public override void ProcessCollision(LevelEngine engine, Rectangle newBounds)
         {
-            var hero = engine.hero;
-
-            XEdge edge = (XEdge)this.Edges[(int)hero.Move.ReverseEdge()];
-
-            edge.ProcessCollision(engine, this, newBounds);
         }
     }
 }
