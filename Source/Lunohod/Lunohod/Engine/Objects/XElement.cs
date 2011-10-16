@@ -63,6 +63,16 @@ namespace Lunohod.Objects
 			return parent.Rotation + this.Rotation;
 		}
 		
+		public float GetScreenOpacity()
+		{
+			XElement parent = this.Parent as XElement;
+
+			if (this.Parent == null)
+				return this.Opacity;
+
+			return parent.Opacity * this.Opacity;
+		}
+		
 		public Rectangle GetScreenBounds()
 		{
 			XElement parent = this.Parent as XElement;

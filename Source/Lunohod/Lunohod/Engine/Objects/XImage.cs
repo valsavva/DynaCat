@@ -32,23 +32,23 @@ namespace Lunohod.Objects
 		{
 			base.Initialize (p);
 
-			this.BackColor *= this.Opacity;
 			this.texture = p.Resources.Textures[this.TextureId];
 		}
 		
 		public override void Draw(	DrawParameters p)
 		{
 			var screenBounds = this.GetScreenBounds();
+			var backColor = this.BackColor * this.GetScreenOpacity();
 			
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{
 				if (this.UseRotation)
 				{
 					var screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
-					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, this.BackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
+					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, backColor, screenRotation, this.Origin, SpriteEffects.None, 0);
 				}
 				else
-					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, this.BackColor);
+					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, backColor);
 			}
 			else
 			{
@@ -58,10 +58,10 @@ namespace Lunohod.Objects
 				if (this.UseRotation)
 				{
 					var screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
-					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, this.BackColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
+					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, backColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
 				}
 				else
-					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, this.BackColor);
+					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, backColor);
 			}
 		}
     }

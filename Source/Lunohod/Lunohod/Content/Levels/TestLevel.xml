@@ -13,7 +13,7 @@
 	<!-- main layer -->
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		
-		<IntValueAnimation From="0" To="430" Duration="00:00:2" Autoreverse="true" TargetId="boxImage" TargetProperty="X" />
+		<IntValueAnimation From="0" To="430" Duration="00:00:2" Autoreverse="true" Target="boxImage.X" />
 		<FloatValueAnimation From="0" To="360" Duration="00:00:08" Autoreverse="false" Target="image.Rotation" />
 		<FloatValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage1.Rotation" />
 		<FloatValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage2.Rotation" />
@@ -25,6 +25,7 @@
 		
 		<IntValueAnimation From="0" To="7" Duration="00:00:00.3" Target="ship.CurrentFrame" />
 		<IntValueAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="ship.X" />
+		<FloatValueAnimation From="0.1" To="1" Duration="00:00:00.5" Autoreverse="true" Target="ship.Opacity" />
 		
 		<Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8" />
 

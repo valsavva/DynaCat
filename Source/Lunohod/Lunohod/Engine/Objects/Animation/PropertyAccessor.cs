@@ -43,6 +43,7 @@ namespace Lunohod.Objects
 				case "Height": return new PropertyAccessor<int>(target, property, GetHeight, SetHeight);
 				case "Width": return new PropertyAccessor<int>(target, property, GetWidth, SetWidth);
 				case "Rotation": return new PropertyAccessor<float>(target, property, GetRotation, SetRotation);
+				case "Opacity": return new PropertyAccessor<float>(target, property, GetOpacity, SetOpacity);
 				case "CurrentFrame": return new PropertyAccessor<int>(target, property, GetCurrentFrame, SetCurrentFrame);
 				default: throw new InvalidOperationException("Unknown attribute");
 			}
@@ -95,6 +96,14 @@ namespace Lunohod.Objects
 		private static void SetCurrentFrame(XElement e, int v)
 		{
 			((XSprite)e).CurrentFrame = v;
+		}
+		private static float GetOpacity(XElement e)
+		{
+			return e.Opacity;
+		}
+		private static void SetOpacity(XElement e, float v)
+		{
+			e.Opacity = v;
 		}
 	}
 	
