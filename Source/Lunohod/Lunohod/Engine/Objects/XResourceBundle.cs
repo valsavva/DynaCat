@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Lunohod.Objects
 {
 	[XmlType("Resources")]	
-	public class XResourceBundle : XComponent
+	public class XResourceBundle : XObject
 	{
 		public XResourceBundle()
 		{
@@ -20,7 +20,7 @@ namespace Lunohod.Objects
 		public string RootFolder;
 		
         [XmlElement(ElementName = "Texture", Type = typeof(XTextureResource))]
-		public override List<XComponent> Subcomponents {get; set;}
+		public override List<XObject> Subcomponents {get; set;}
 		
 		[XmlIgnore]
 		public Dictionary<string, XTextureResource> Textures = new Dictionary<string, XTextureResource>();

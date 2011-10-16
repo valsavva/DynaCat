@@ -16,7 +16,7 @@ namespace Lunohod
 			this.name = name;
 		}
 		
-		public abstract XComponent RootComponent { get; }
+		public abstract XObject RootComponent { get; }
 		
 		public virtual void Initialize()
 		{

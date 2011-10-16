@@ -10,6 +10,7 @@ namespace Lunohod.Objects
 {
     public enum XEdgeType
     {
+		None,
         Bounce,
         Stick,
         Teleport
@@ -56,6 +57,9 @@ namespace Lunohod.Objects
 		
 		public override void Draw(DrawParameters p)
 		{
+			if (this.Type == XEdgeType.None)
+				return;
+			
 			var blockBounds = ((XBlock)this.Parent).Bounds;
 			
 			switch (this.Align)

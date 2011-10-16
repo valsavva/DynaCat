@@ -38,19 +38,63 @@ namespace Lunohod.Objects
 		{
 			switch(property)
 			{
-				case "X": return new PropertyAccessor<int>(target, property, GetWidth, SetWidth);
-				default: throw new InvalidOperationException("WTF?");
+				case "X": return new PropertyAccessor<int>(target, property, GetX, SetX);
+				case "Y": return new PropertyAccessor<int>(target, property, GetY, SetY);
+				case "Height": return new PropertyAccessor<int>(target, property, GetHeight, SetHeight);
+				case "Width": return new PropertyAccessor<int>(target, property, GetWidth, SetWidth);
+				case "Rotation": return new PropertyAccessor<float>(target, property, GetRotation, SetRotation);
+				case "CurrentFrame": return new PropertyAccessor<int>(target, property, GetCurrentFrame, SetCurrentFrame);
+				default: throw new InvalidOperationException("Unknown attribute");
 			}
 		}
 					
-		private static int GetWidth(XElement e)
+		private static int GetX(XElement e)
 		{
 			return e.Bounds.X;
 		}
-		
-		private static void SetWidth(XElement e, int v)
+		private static void SetX(XElement e, int v)
 		{
 			e.Bounds.X = v;
+		}
+		private static int GetY(XElement e)
+		{
+			return e.Bounds.Y;
+		}
+		private static void SetY(XElement e, int v)
+		{
+			e.Bounds.Y = v;
+		}
+		private static int GetWidth(XElement e)
+		{
+			return e.Bounds.Width;
+		}
+		private static void SetWidth(XElement e, int v)
+		{
+			e.Bounds.Width = v;
+		}
+		private static int GetHeight(XElement e)
+		{
+			return e.Bounds.Height;
+		}
+		private static void SetHeight(XElement e, int v)
+		{
+			e.Bounds.Height = v;
+		}
+		private static float GetRotation(XElement e)
+		{
+			return e.Rotation;
+		}
+		private static void SetRotation(XElement e, float v)
+		{
+			e.Rotation = v;
+		}
+		private static int GetCurrentFrame(XElement e)
+		{
+			return ((XSprite)e).CurrentFrame;
+		}
+		private static void SetCurrentFrame(XElement e, int v)
+		{
+			((XSprite)e).CurrentFrame = v;
 		}
 	}
 	

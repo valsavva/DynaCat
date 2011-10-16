@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace Lunohod.Objects
 {
-	abstract public class XComponent : IDisposable
+	abstract public class XObject : IDisposable
 	{
 		protected bool isDisposed = false;
 		
@@ -13,9 +13,9 @@ namespace Lunohod.Objects
 		public string Id { get; set;}
 
 		[XmlIgnore]
-		public XComponent Parent {get; set;}
+		public XObject Parent {get; set;}
 		
-		public virtual List<XComponent> Subcomponents {get; set;}
+		public virtual List<XObject> Subcomponents {get; set;}
 		
 		public void InitHierarchy()
 		{
@@ -58,7 +58,7 @@ namespace Lunohod.Objects
 				}
 		}
 		
-		public T GetComponent<T>() where T : XComponent
+		public T GetComponent<T>() where T : XObject
 		{
 			if (this.Subcomponents == null)
 				return null;
@@ -66,7 +66,7 @@ namespace Lunohod.Objects
 			return (T)this.Subcomponents.FirstOrDefault(c => c.GetType() == typeof(T));
 		}
 		
-		public IEnumerable<T> GetComponents<T>() where T : XComponent
+		public IEnumerable<T> GetComponents<T>() where T : XObject
 		{
 			if (this.Subcomponents == null)
 				return null;
@@ -74,7 +74,7 @@ namespace Lunohod.Objects
 			return this.Subcomponents.Where(c => c.GetType() == typeof(T)).Cast<T>();
 		}
 		
-		public XComponent FindDescendant(string id)
+		public XObject FindDescendant(string id)
 		{
 			if (this.Id == id)
 				return this;
@@ -82,7 +82,7 @@ namespace Lunohod.Objects
 			if (this.Subcomponents == null)
 				return null;
 			
-			XComponent result = null;
+			XObject result = null;
 
 			for(int i = 0; i < this.Subcomponents.Count; i++)
 			{

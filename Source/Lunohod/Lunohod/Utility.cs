@@ -51,6 +51,21 @@ namespace Lunohod
                 v.Y.ToString(CultureInfo.InvariantCulture);
 		}
 
+		public static Microsoft.Xna.Framework.Point ToPoint(this string s)
+		{
+            string[] parts = s.Split(',');
+			return new Microsoft.Xna.Framework.Point(
+                int.Parse(parts[0], CultureInfo.InvariantCulture),
+                int.Parse(parts[1], CultureInfo.InvariantCulture)
+			);
+		}
+		
+		public static string ToStr(this Microsoft.Xna.Framework.Point p)
+		{
+            return p.X.ToString(CultureInfo.InvariantCulture) + 
+                p.Y.ToString(CultureInfo.InvariantCulture);
+		}
+
         public static Microsoft.Xna.Framework.Rectangle ToRect(this string s)
         {
             string[] parts = s.Split(',');

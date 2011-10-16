@@ -9,17 +9,17 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	[XmlType("IntValueAnimation")]
-	public class XIntValueAnimation : XAnimationBase
+	[XmlType("FloatValueAnimation")]
+	public class XFloatValueAnimation : XAnimationBase
 	{
 		private NumericValueTimeline timeline;
-		private PropertyAccessor<int> propertyAccessor;
+		private PropertyAccessor<float> propertyAccessor;
 		private TimeSpan elapsedTime;
-			
+		
 		[XmlAttribute]
-		public int From;
+		public float From;
 		[XmlAttribute]
-		public int To;
+		public float To;
 		
 		public override void Initialize(InitializeParameters p)
 		{
@@ -34,7 +34,7 @@ namespace Lunohod.Objects
 			
 			XElement target = (XElement)p.ScreenEngine.RootComponent.FindDescendant(this.TargetId);
 			
-			propertyAccessor = (PropertyAccessor<int>)PropertyAccessorBase.CreatePropertyAccessor(
+			propertyAccessor = (PropertyAccessor<float>)PropertyAccessorBase.CreatePropertyAccessor(
 				target, this.TargetProperty
 			);
 		}
@@ -45,7 +45,7 @@ namespace Lunohod.Objects
 			
 			this.elapsedTime += p.GameTime.ElapsedGameTime;
 			
-			var newPropertyValue = timeline.GetIntValue(this.elapsedTime);
+			var newPropertyValue = (float)timeline.GetValue(this.elapsedTime);
 			
 			propertyAccessor.PropertyValue = newPropertyValue;
 		}

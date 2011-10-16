@@ -90,16 +90,18 @@
     <Compile Include="Engine\Objects\XTextureResource.cs" />
     <Compile Include="Engine\Objects\XResourceBundle.cs" />
     <Compile Include="Engine\Objects\XResource.cs" />
-    <Compile Include="Engine\Objects\XComponent.cs" />
     <Compile Include="Engine\Objects\XGame.cs" />
     <Compile Include="Engine\Objects\XViewport.cs" />
     <Compile Include="Engine\Objects\XDashboard.cs" />
     <Compile Include="Engine\Objects\XTapArea.cs" />
     <Compile Include="Engine\Objects\XEvent.cs" />
     <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs" />
-    <Compile Include="Engine\Objects\Animation\XIntValueAnimation.cs" />
     <Compile Include="Engine\Objects\Animation\XAnimationBase.cs" />
     <Compile Include="Engine\Objects\Animation\PropertyAccessor.cs" />
+    <Compile Include="Engine\Objects\XObject.cs" />
+    <Compile Include="Engine\Objects\Animation\XIntValueAnimation.cs" />
+    <Compile Include="Engine\Objects\Animation\XFloatValueAnimation.cs" />
+    <Compile Include="Engine\Objects\XSprite.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -135,5 +137,6 @@
     <Content Include="Content\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Levels\TestLevel\shipAnimation.png" />
   </ItemGroup>
 </Project>

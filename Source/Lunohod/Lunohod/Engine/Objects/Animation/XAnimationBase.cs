@@ -9,12 +9,12 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	public class XAnimationBase : XComponent
+	public class XAnimationBase : XObject
 	{
 		public XAnimationBase()
 		{
 		}
-		
+
 		[XmlIgnore]
 		public TimeSpan Duration;
 		
@@ -26,6 +26,21 @@ namespace Lunohod.Objects
 		
 		[XmlAttribute]
 		public string TargetProperty;
+		
+		[XmlAttribute]
+		public string Target
+		{
+			get {
+				if (TargetId == null || TargetProperty == null)
+					return null;
+				return TargetId + "." + TargetProperty;
+			}
+			set {
+				var parts = value.Split('.');
+				this.TargetId = parts[0];
+				this.TargetProperty = parts[1];
+			}
+		}
 
 		[XmlAttribute("Duration")]
 		public string zDuration

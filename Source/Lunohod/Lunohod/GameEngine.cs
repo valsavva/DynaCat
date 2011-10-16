@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Lunohod.Objects;
 using Microsoft.Xna.Framework;
@@ -31,7 +32,10 @@ namespace Lunohod
 		{
             graphics = new GraphicsDeviceManager(this);
 			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
+			graphics.PreferMultiSampling = true;
             Content.RootDirectory = "Content";
+			
+			this.IsFixedTimeStep = false;
 		}
 		
 		protected override void Initialize()
@@ -93,7 +97,7 @@ namespace Lunohod
 
 		protected override void Draw(GameTime gameTime)
 		{
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+			GraphicsDevice.Clear(Color.CornflowerBlue);
 			
 			this.screenEngine.Draw(gameTime);
 			

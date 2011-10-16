@@ -28,7 +28,7 @@ namespace Lunohod
 		{
 		}
 
-		public override XComponent RootComponent { get { return level; } }
+		public override XObject RootComponent { get { return level; } }
 		
 		public override void Initialize()
 		{
@@ -81,19 +81,26 @@ namespace Lunohod
 			{
 				//scale(40/viewport.Height) * scale(1, -1) * translate(viewport.Width/2, viewport.Height/2)
 					
-				Matrix transform = Matrix.Identity;// *
+				//Matrix transform = Matrix.Identity;
+				
+				// *
 //					Matrix.CreateScale(40f / 320) *
 //					//Matrix.CreateScale(1, -1, 1) *
 //					Matrix.CreateTranslation(480f / 2, 320f / 2, 0);
 						
-
+				Matrix transform = Matrix.Identity;
+//				Matrix transform = Matrix.Identity *
+//					Matrix.CreateScale(2, 2, 1);
 				this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
 					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
+
+				//this.spriteBatch.Begin();
 				
 				this.level.Draw(drawParameters);
 				this.gameEngine.GameObject.Draw(drawParameters);
 				
 				this.spriteBatch.End();
+				
 			}
 			catch (Exception ex)
 			{

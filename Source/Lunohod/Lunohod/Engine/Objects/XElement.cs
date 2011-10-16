@@ -10,12 +10,16 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     [XmlInclude(typeof(XImage))]
-    public class XElement : XComponent
+    public class XElement : XObject
     {
 		private Color? backColor = null;
+		private float? rotation;
+		private Rectangle tmpBounds;
 		
 		[XmlIgnore]
         public Rectangle Bounds;
+		[XmlIgnore]
+        public Point Location;
         [XmlIgnore]
         public Color BackColor
 		{
@@ -24,26 +28,62 @@ namespace Lunohod.Objects
 		}
         [XmlAttribute]
         public float Opacity = 1.0f;
+        [XmlAttribute]
+        public float Rotation
+		{
+			get { return this.rotation ?? 0.0f; }
+			set { this.rotation = value; }
+		}
+		[XmlIgnore]
+		public Vector2 Origin;
+		
+		public bool UseRotation
+		{
+			get { 
+				if (this.rotation.HasValue)
+					return true;
+				
+				XElement parent = this.Parent as XElement;
+				return parent == null ? false : parent.UseRotation;
+			}
+		}
 		
 		public bool OverridesBackColor
 		{
 			get { return this.backColor.HasValue; }
 		}
 		
+		public float GetScreenRotation()
+		{
+			XElement parent = this.Parent as XElement;
+
+			if (this.Parent == null)
+				return this.Rotation;
+
+			return parent.Rotation + this.Rotation;
+		}
+		
 		public Rectangle GetScreenBounds()
 		{
-			if (this.Parent == null)
-				return this.Bounds;
-			
-			var screenBounds = ((XElement)this.Parent).GetScreenBounds();
+			XElement parent = this.Parent as XElement;
 
-			if (this.Bounds.IsEmpty == false)
+			if (parent == null)
+				tmpBounds = this.Bounds;
+			else
 			{
-				screenBounds.Offset(this.Bounds.X, this.Bounds.Y);
-				screenBounds.Width = this.Bounds.Width;
-				screenBounds.Height = this.Bounds.Height;
+				tmpBounds = parent.GetScreenBounds();
+	
+				if (this.Bounds.IsEmpty == false)
+				{
+					tmpBounds.Offset(this.Bounds.X, this.Bounds.Y);
+					tmpBounds.Width = this.Bounds.Width;
+					tmpBounds.Height = this.Bounds.Height;
+				}
 			}
-			return screenBounds;
+			
+			tmpBounds.Offset(this.Location);
+			
+			return tmpBounds;
 		}
 
 		[XmlAttribute("Bounds")]
@@ -58,13 +98,27 @@ namespace Lunohod.Objects
 			set { this.BackColor = value.ToColor(); }
 			get { return this.BackColor.ToStr(); }
 		}
+		[XmlAttribute("Origin")]
+		public string zOrigin
+		{
+			set { this.Origin = value.ToVector2(); }
+			get { return this.Origin.ToStr(); }
+		}
+		[XmlAttribute("Location")]
+		public string zLocation
+		{
+			set { this.Location = value.ToPoint(); }
+			get { return this.Location.ToStr(); }
+		}
 		
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
+        [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
         [XmlElement(ElementName = "IntValueAnimation", Type = typeof(XIntValueAnimation))]
-        public override List<XComponent> Subcomponents { get; set; }
+        [XmlElement(ElementName = "FloatValueAnimation", Type = typeof(XFloatValueAnimation))]
+        public override List<XObject> Subcomponents { get; set; }
 
         public virtual void ProcessCollision(LevelEngine engine, Rectangle newBounds)
         {
