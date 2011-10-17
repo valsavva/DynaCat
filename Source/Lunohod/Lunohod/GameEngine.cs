@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Lunohod.Objects;
 using Microsoft.Xna.Framework;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
-using Microsoft.Xna.Framework.Input.Touch;
 
 namespace Lunohod
 {
@@ -88,11 +85,11 @@ namespace Lunohod
 
 			screenEngine.Update(gameTime);
 			
-			var touches = TouchPanel.GetState();
-			touches
-				.Where(t => t.State == TouchLocationState.Released)
-				.ToArray()
-				.ForEach(t => Console.WriteLine("Touch! {0}", t.Position.ToString()));
+            //var touches = TouchPanel.GetState();
+            //touches
+            //    .Where(t => t.State == TouchLocationState.Released)
+            //    .ToArray()
+            //    .ForEach(t => Console.WriteLine("Touch! {0}", t.Position.ToString()));
 		}
 
 		protected override void Draw(GameTime gameTime)

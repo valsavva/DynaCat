@@ -2,7 +2,7 @@
 <Level Name="testLevel1" Bounds="0,0,480,320">
 	<!-- resources -->
 	<Resources RootFolder="Levels/TestLevel">
-		<Texture Id="chargers" Source="chargers.jpg" />
+		<Texture Id="chargers" Source="chargers.png" />
 		<Texture Id="blank" Source="blank.png" />
 		<Texture Id="shipAnimation" Source="shipAnimation.png" />
 	</Resources>

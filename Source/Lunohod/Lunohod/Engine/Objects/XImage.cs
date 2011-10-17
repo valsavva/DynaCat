@@ -39,6 +39,7 @@ namespace Lunohod.Objects
 		{
 			var screenBounds = this.GetScreenBounds();
 			var backColor = this.BackColor * this.GetScreenOpacity();
+            //var backColor = this.BackColor; backColor.A = (byte)(255.0f * this.GetScreenOpacity());
 			
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{

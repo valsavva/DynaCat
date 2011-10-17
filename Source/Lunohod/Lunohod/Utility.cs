@@ -6,7 +6,6 @@ using System.Globalization;
 using Lunohod.Objects;
 
 using Microsoft.Xna.Framework;
-using System.Drawing;
 
 namespace Lunohod
 {
@@ -77,16 +76,6 @@ namespace Lunohod
             );
         }
 		
-		public static Microsoft.Xna.Framework.Rectangle ToXnaRectangle(this RectangleF r)
-		{
-			return new Microsoft.Xna.Framework.Rectangle(
-				(int)Math.Round(r.X),
-				(int)Math.Round(r.Y),
-				(int)Math.Round(r.Width),
-				(int)Math.Round(r.Height)
-			);
-		}
-		
 		public static string ToStr(this Color c)
 		{
 			return c.ToString();
@@ -97,11 +86,6 @@ namespace Lunohod
             return rect.Left.ToString(CultureInfo.InvariantCulture) + "," + rect.Top.ToString(CultureInfo.InvariantCulture) + "," + rect.Width.ToString(CultureInfo.InvariantCulture) + "," + rect.Height.ToString(CultureInfo.InvariantCulture);
         }
 
-        public static double Area(this RectangleF rect)
-        {
-            return rect.Width * rect.Height;
-        }
-		
 		public static void ForEach<T>(this IList<T> collection, Action<T> a)
 		{
 			if (collection == null)

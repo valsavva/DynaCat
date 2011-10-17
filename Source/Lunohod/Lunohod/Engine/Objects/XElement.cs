@@ -120,15 +120,6 @@ namespace Lunohod.Objects
 			set { this.Location = value.ToPoint(); }
 			get { return this.Location.ToStr(); }
 		}
-		
-        [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
-        [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
-        [XmlElement(ElementName = "Image", Type = typeof(XImage))]
-        [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
-        [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
-        [XmlElement(ElementName = "IntValueAnimation", Type = typeof(XIntValueAnimation))]
-        [XmlElement(ElementName = "FloatValueAnimation", Type = typeof(XFloatValueAnimation))]
-        public override List<XObject> Subcomponents { get; set; }
 
         public virtual void ProcessCollision(LevelEngine engine, Rectangle newBounds)
         {

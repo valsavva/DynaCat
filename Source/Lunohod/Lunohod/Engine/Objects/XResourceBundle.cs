@@ -20,7 +20,7 @@ namespace Lunohod.Objects
 		public string RootFolder;
 		
         [XmlElement(ElementName = "Texture", Type = typeof(XTextureResource))]
-		public override List<XObject> Subcomponents {get; set;}
+        public List<XObject> ResourceSubcomponents { get { return base.Subcomponents; } set { this.Subcomponents = value; } }
 		
 		[XmlIgnore]
 		public Dictionary<string, XTextureResource> Textures = new Dictionary<string, XTextureResource>();

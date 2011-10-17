@@ -13,10 +13,6 @@ namespace Lunohod.Objects
 	[Serializable]
 	public class XGame : XElement
 	{
-        [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
-        [XmlElement(ElementName = "Dashboard", Type = typeof(XDashboard))]
-        public override List<XObject> Subcomponents { get; set; }
-		
 		public XGame()
 		{
 		}

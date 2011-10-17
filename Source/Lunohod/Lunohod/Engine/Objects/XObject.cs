@@ -14,8 +14,27 @@ namespace Lunohod.Objects
 
 		[XmlIgnore]
 		public XObject Parent {get; set;}
-		
-		public virtual List<XObject> Subcomponents {get; set;}
+
+
+        // Game
+        [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
+        [XmlElement(ElementName = "Dashboard", Type = typeof(XDashboard))]
+
+        // Dashboard
+        [XmlElement(ElementName = "Viewport", Type = typeof(XViewport))]
+
+        // Level
+        [XmlElement(ElementName = "Layer", Type = typeof(XLayer))]
+
+        // Generic
+        [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
+        [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
+        [XmlElement(ElementName = "Image", Type = typeof(XImage))]
+        [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
+        [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
+        [XmlElement(ElementName = "IntValueAnimation", Type = typeof(XIntValueAnimation))]
+        [XmlElement(ElementName = "FloatValueAnimation", Type = typeof(XFloatValueAnimation))]
+        public List<XObject> Subcomponents { get; set; }
 		
 		public void InitHierarchy()
 		{

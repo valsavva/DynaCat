@@ -14,9 +14,5 @@ namespace Lunohod.Objects
     {
         [XmlAttribute]
         public string Name;
-		
-        [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
-        [XmlElement(ElementName = "Layer", Type = typeof(XLayer))]
-        public override List<XObject> Subcomponents { get; set; }
     }
 }
