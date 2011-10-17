@@ -15,8 +15,9 @@ namespace Lunohod
 		private XGame gameObject;
 
 		private ScreenEngine screenEngine;
-		
-		public Texture2D BlankTexture {get; private set;}
+
+        public Texture2D BlankTexture { get; private set; }
+        public Texture2D chargersTexture { get; private set; }
 
 		public XGame GameObject
 		{
@@ -30,9 +31,14 @@ namespace Lunohod
             graphics = new GraphicsDeviceManager(this);
 			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 			graphics.PreferMultiSampling = true;
+
+#if WINDOWS
+            graphics.PreferredBackBufferHeight = 320;
+            graphics.PreferredBackBufferWidth = 480;
+#endif
+
+
             Content.RootDirectory = "Content";
-			
-			this.IsFixedTimeStep = false;
 		}
 		
 		protected override void Initialize()
@@ -42,7 +48,8 @@ namespace Lunohod
 		
 		protected override void LoadContent()
 		{
-			this.BlankTexture = this.Content.Load<Texture2D>("Global/blank.png");
+			this.BlankTexture = this.Content.Load<Texture2D>("Global/blank");
+            this.chargersTexture = this.Content.Load<Texture2D>("Global/ch");
 			
 			LoadGameElement();
 			

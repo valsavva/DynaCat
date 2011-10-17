@@ -62,6 +62,16 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Avatar, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Video, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
@@ -110,78 +120,116 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Game.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Global\blank.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Global\dash 2.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Global\dash 2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Global\dash 2a.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Levels\TestLevel.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Levels\TestLevel\blank.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Levels\TestLevel\chargers.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Levels\TestLevel\chargers.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Levels\TestLevel\shipAnimation.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Engine\ActionInfo.cs" />
-    <Compile Include="Engine\LevelEngine.cs" />
-    <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs" />
-    <Compile Include="Engine\Objects\Animation\PropertyAccessor.cs" />
-    <Compile Include="Engine\Objects\Animation\XAnimationBase.cs" />
-    <Compile Include="Engine\Objects\Animation\XFloatValueAnimation.cs" />
-    <Compile Include="Engine\Objects\Animation\XIntValueAnimation.cs" />
-    <Compile Include="Engine\Objects\DrawParameters.cs" />
-    <Compile Include="Engine\Objects\InitializeParameters.cs" />
-    <Compile Include="Engine\Objects\Rect.cs" />
-    <Compile Include="Engine\Objects\UpateParameters.cs" />
-    <Compile Include="Engine\Objects\XBlock.cs" />
-    <Compile Include="Engine\Objects\XDashboard.cs" />
-    <Compile Include="Engine\Objects\XEdge.cs" />
-    <Compile Include="Engine\Objects\XElement.cs" />
-    <Compile Include="Engine\Objects\XEvent.cs" />
-    <Compile Include="Engine\Objects\XGame.cs" />
-    <Compile Include="Engine\Objects\XHero.cs" />
-    <Compile Include="Engine\Objects\XImage.cs" />
-    <Compile Include="Engine\Objects\XLayer.cs" />
-    <Compile Include="Engine\Objects\XLevel.cs" />
-    <Compile Include="Engine\Objects\XObject.cs" />
-    <Compile Include="Engine\Objects\XResource.cs" />
-    <Compile Include="Engine\Objects\XResourceBundle.cs" />
-    <Compile Include="Engine\Objects\XSprite.cs" />
-    <Compile Include="Engine\Objects\XTapArea.cs" />
-    <Compile Include="Engine\Objects\XTeleport.cs" />
-    <Compile Include="Engine\Objects\XTextureResource.cs" />
-    <Compile Include="Engine\Objects\XTower.cs" />
-    <Compile Include="Engine\Objects\XViewport.cs" />
+    <Compile Include="Engine\ActionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\LevelEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\Animation\PropertyAccessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\Animation\XAnimationBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\Animation\XFloatValueAnimation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\Animation\XIntValueAnimation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\DrawParameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\InitializeParameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\Rect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\UpateParameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XDashboard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XEdge.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XHero.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XLevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XResourceBundle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XSprite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XTapArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XTeleport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XTextureResource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XTower.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XViewport.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GameEngine.cs" />
     <Compile Include="OS\Windows\Program.cs" />
     <Compile Include="ScreenEngine.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.Windows.csproj">
-      <Project>{7DE47032-A904-4C29-BD22-2D235E8D91BA}</Project>
-      <Name>MonoGame.Framework.Windows</Name>
+    <ProjectReference Include="Content\Lunohod.Windows.Content.contentproj">
+      <Project>{97CDA369-4DEB-40E5-ADB6-909311C78448}</Project>
+      <Name>Lunohod.Windows.Content %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Game.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Levels\TestLevel.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

@@ -3,8 +3,8 @@
 	
 	<!-- Resources -->	
 	<Resources RootFolder="Global">
-		<Texture Id="blank" Source="blank.png" />
-		<Texture Id="dashboard" Source="dash 2a.png" />
+		<Texture Id="blank" Source="blank" />
+		<Texture Id="dashboard" Source="dash 2a" />
 	</Resources>
 	
 	<Dashboard BackColor="#FFFFFFFF">

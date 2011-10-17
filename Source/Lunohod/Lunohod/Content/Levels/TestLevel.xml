@@ -2,9 +2,9 @@
 <Level Name="testLevel1" Bounds="0,0,480,320">
 	<!-- resources -->
 	<Resources RootFolder="Levels/TestLevel">
-		<Texture Id="chargers" Source="chargers.png" />
-		<Texture Id="blank" Source="blank.png" />
-		<Texture Id="shipAnimation" Source="shipAnimation.png" />
+		<Texture Id="chargers" Source="chargers" />
+		<Texture Id="blank" Source="blank" />
+		<Texture Id="shipAnimation" Source="shipAnimation" />
 	</Resources>
 	<!-- background layer -->
 	<Layer Id="background" BackColor="#FFFFFFFF">

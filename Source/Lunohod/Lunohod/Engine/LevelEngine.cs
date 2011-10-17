@@ -75,6 +75,15 @@ namespace Lunohod
 		
 		public override void Draw(GameTime gameTime)
 		{
+            //this.spriteBatch.Begin();
+            //spriteBatch.Draw(gameEngine.chargersTexture, Vector2.Zero, Color.White);
+            //this.spriteBatch.End();
+
+            //base.Draw(gameTime);
+
+            //return;
+
+
 			drawParameters.GameTime = gameTime;
 			
 			try 
