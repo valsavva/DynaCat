@@ -32,8 +32,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
         [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
-        [XmlElement(ElementName = "IntValueAnimation", Type = typeof(XIntValueAnimation))]
-        [XmlElement(ElementName = "FloatValueAnimation", Type = typeof(XFloatValueAnimation))]
+        [XmlElement(ElementName = "NumValueAnimation", Type = typeof(XNumValueAnimation))]
         public List<XObject> Subcomponents { get; set; }
 		
 		public void InitHierarchy()

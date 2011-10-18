@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
-    <XnaProfile>HiDef</XnaProfile>
+    <XnaProfile>Reach</XnaProfile>
     <XnaCrossPlatformGroupID>828d116c-15bd-4818-a306-125cfd093e57</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>
@@ -135,12 +135,7 @@
     <Compile Include="Engine\Objects\Animation\XAnimationBase.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\Animation\XFloatValueAnimation.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Engine\Objects\Animation\XIntValueAnimation.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Engine\Objects\Animation\XNumValuesAnimation.cs" />
     <Compile Include="Engine\Objects\DrawParameters.cs">
       <SubType>Code</SubType>
     </Compile>

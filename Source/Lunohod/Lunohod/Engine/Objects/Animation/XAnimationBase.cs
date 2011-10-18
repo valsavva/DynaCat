@@ -9,23 +9,31 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	public class XAnimationBase : XObject
+	public abstract class XAnimationBase : XObject
 	{
-		public XAnimationBase()
+        protected TimeSpan elapsedTime;
+
+        public TimeSpan ElapsedTime
+        {
+            get { return elapsedTime; }
+        }
+        
+        public XAnimationBase()
 		{
 		}
 
 		[XmlIgnore]
 		public TimeSpan Duration;
-		
 		[XmlAttribute]
 		public bool Autoreverse;
-		
 		[XmlAttribute]
 		public string TargetId;
-		
 		[XmlAttribute]
 		public string TargetProperty;
+        [XmlIgnore]
+        public TimeSpan RepeatTime;
+        [XmlAttribute]
+        public float RepeatCount;
 		
 		[XmlAttribute]
 		public string Target
@@ -48,6 +56,46 @@ namespace Lunohod.Objects
 			get { return this.Duration.ToString(); }
 			set { this.Duration = TimeSpan.Parse(value, CultureInfo.InvariantCulture); }
 		}
-	}
+
+        [XmlAttribute("RepeatTime")]
+        public string zRepeatTime
+        {
+            get { return this.RepeatTime.ToString(); }
+            set { this.RepeatTime = TimeSpan.Parse(value, CultureInfo.InvariantCulture); }
+        }
+
+        public override void Update(UpdateParameters p)
+        {
+            base.Update(p);
+
+            if (this.RepeatTime != TimeSpan.Zero)
+            {
+                if (this.elapsedTime > this.RepeatTime)
+                {
+                    EndAnimation();
+                    return;
+                }
+            }
+            else if (this.RepeatCount != 0)
+            {
+                if ((this.elapsedTime.TotalMilliseconds > 0) && ((this.elapsedTime.TotalMilliseconds / this.Duration.TotalMilliseconds) > this.RepeatCount))
+                {
+                    EndAnimation();
+                    return;
+                }
+            }
+
+            this.elapsedTime += p.GameTime.ElapsedGameTime;
+
+            UpdateAnimation(p);
+        }
+
+        private void EndAnimation()
+        {
+            
+        }
+
+        public abstract void UpdateAnimation(UpdateParameters p);
+    }
 }
 

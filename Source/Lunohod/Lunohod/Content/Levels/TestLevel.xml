@@ -1,66 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level Name="testLevel1" Bounds="0,0,480,320">
-	<!-- resources -->
-	<Resources RootFolder="Levels/TestLevel">
-		<Texture Id="chargers" Source="chargers" />
-		<Texture Id="blank" Source="blank" />
-		<Texture Id="shipAnimation" Source="shipAnimation" />
-	</Resources>
-	<!-- background layer -->
-	<Layer Id="background" BackColor="#FFFFFFFF">
-		<Image TextureId="chargers" Opacity="0.2" />
-	</Layer>
-	<!-- main layer -->
-	<Layer Id="action" BackColor="#FFFFFFFF">
-		
-		<IntValueAnimation From="0" To="430" Duration="00:00:2" Autoreverse="true" Target="boxImage.X" />
-		<FloatValueAnimation From="0" To="360" Duration="00:00:08" Autoreverse="false" Target="image.Rotation" />
-		<FloatValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage1.Rotation" />
-		<FloatValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage2.Rotation" />
+  <!-- resources -->
+  <Resources RootFolder="Levels/TestLevel">
+    <Texture Id="chargers" Source="chargers" />
+    <Texture Id="blank" Source="blank" />
+    <Texture Id="shipAnimation" Source="shipAnimation" />
+  </Resources>
+  <!-- background layer -->
+  <Layer Id="background" BackColor="#FFFFFFFF">
+    <Image TextureId="chargers" Opacity="0.2" />
+  </Layer>
+  <!-- main layer -->
+  <Layer Id="action" BackColor="#FFFFFFFF">
 
-		<IntValueAnimation From="200" To="400" Duration="00:00:01" Autoreverse="true" Target="animationDemo.X" />
-		<IntValueAnimation From="150" To="350" Duration="00:00:01" Autoreverse="true" Target="box1.X" />
-		<IntValueAnimation From="200" To="400" Duration="00:00:01" Autoreverse="true" Target="box2.X" />
-		<IntValueAnimation From="250" To="450" Duration="00:00:01" Autoreverse="true" Target="box3.X" />
-		
-		<IntValueAnimation From="0" To="7" Duration="00:00:00.3" Target="ship.CurrentFrame" />
-		<IntValueAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="ship.X" />
-		<FloatValueAnimation From="0.1" To="1" Duration="00:00:00.5" Autoreverse="true" Target="ship.Opacity" />
-		
-		<Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8" />
+    <NumValueAnimation From="0" To="430" Duration="00:00:2" Autoreverse="true" Target="boxImage.X" />
+    <NumValueAnimation From="0" To="360" Duration="00:00:08" Autoreverse="false" Target="image.Rotation" />
+    <NumValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage1.Rotation" RepeatCount="4" />
+    <NumValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage2.Rotation" RepeatTime="00:00:02"/>
 
-		<Tower Bounds="0,0,35,35" SignalSpeed="100" />
-		<Hero Bounds="200,0,35,35" DefaultSpeed="100" Speed="0" Direction="0,0" />
-		<!-- just a block (invisible by default) with bouncy walls -->
-		<Block Id="boxImage" Bounds="0,0,50,50" DefaultEdge="None">
-			<Image Id="image" TextureId="chargers" Location="25,25" Origin="25,25" Opacity="1" />
-		</Block>
+    <NumValueAnimation From="200" To="400" Duration="00:00:01" Autoreverse="true" Target="animationDemo.X" />
+    <NumValueAnimation From="150" To="350" Duration="00:00:01" Autoreverse="true" Target="box1.X" />
+    <NumValueAnimation From="200" To="400" Duration="00:00:01" Autoreverse="true" Target="box2.X" />
+    <NumValueAnimation From="250" To="450" Duration="00:00:01" Autoreverse="true" Target="box3.X" />
 
-		<Block Id="boxImage1" Bounds="25,75,50,50" DefaultEdge="None">
-			<Image Id="image2" TextureId="chargers" Origin="25,25" Opacity="1" />
-		</Block>
-		<Block Id="boxImage2" Bounds="455,75,50,50" DefaultEdge="None">
-			<Image Id="image2" TextureId="chargers" Origin="25,25" Opacity="1" />
-		</Block>
+    <NumValueAnimation From="0" To="7" Duration="00:00:00.3" Target="ship.CurrentFrame" />
+    <NumValueAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="ship.X" />
+    <NumValueAnimation From="0.1" To="1" Duration="00:00:00.5" Autoreverse="true" Target="ship.Opacity" />
 
-		<Block Id="box2" Bounds="200,135,50,50" DefaultEdge="Bounce" />
-		<!-- block with content -->
-		<Block Id="box1" Bounds="150,135,50,50" DefaultEdge="Bounce">
-			<!-- fill the background with white, make it semi-transparent -->
-			<Image TextureId="blank" BackColor="#FFFFFFFF" Opacity="0.3" />
-			<!-- make the top edge sticky -->
-			<Edge Align="Top" Type="Stick" />
-			<!-- make the bottom edge a teleport -->
-			<Teleport Align="Bottom" Id="funkyShit" />
-		</Block>
-		<!-- block with content -->
-		<Block Id="box3" Bounds="250,135,50,50" DefaultEdge="Bounce">
-			<!-- fill the background with red, make it semi-transparent -->
-			<Image TextureId="blank" BackColor="#FFFF0000" Opacity="0.3" />
-			<!-- make the top edge a teleport -->
-			<Teleport Align="Top" Id="funkyShit" />
-		</Block>
+    <Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8" />
 
-		<Block Id="animationDemo" Bounds="200,185,50,50" Origin="25,25" DefaultEdge="Stick" />
-	</Layer>
+    <Tower Bounds="0,0,35,35" SignalSpeed="100" />
+    <Hero Bounds="200,0,35,35" DefaultSpeed="100" Speed="0" Direction="0,0" />
+    <!-- just a block (invisible by default) with bouncy walls -->
+    <Block Id="boxImage" Bounds="0,0,50,50" DefaultEdge="None">
+      <Image Id="image" TextureId="chargers" Location="25,25" Origin="25,25" Opacity="1" />
+    </Block>
+
+    <Block Id="boxImage1" Bounds="25,75,50,50" DefaultEdge="None">
+      <Image Id="image2" TextureId="chargers" Origin="25,25" Opacity="1" />
+    </Block>
+    <Block Id="boxImage2" Bounds="455,75,50,50" DefaultEdge="None">
+      <Image Id="image2" TextureId="chargers" Origin="25,25" Opacity="1" />
+    </Block>
+
+    <Block Id="box2" Bounds="200,135,50,50" DefaultEdge="Bounce" />
+    <!-- block with content -->
+    <Block Id="box1" Bounds="150,135,50,50" DefaultEdge="Bounce">
+      <!-- fill the background with white, make it semi-transparent -->
+      <Image TextureId="blank" BackColor="#FFFFFFFF" Opacity="0.3" />
+      <!-- make the top edge sticky -->
+      <Edge Align="Top" Type="Stick" />
+      <!-- make the bottom edge a teleport -->
+      <Teleport Align="Bottom" Id="funkyShit" />
+    </Block>
+    <!-- block with content -->
+    <Block Id="box3" Bounds="250,135,50,50" DefaultEdge="Bounce">
+      <!-- fill the background with red, make it semi-transparent -->
+      <Image TextureId="blank" BackColor="#FFFF0000" Opacity="0.3" />
+      <!-- make the top edge a teleport -->
+      <Teleport Align="Top" Id="funkyShit" />
+    </Block>
+
+    <Block Id="animationDemo" Bounds="200,185,50,50" Origin="25,25" DefaultEdge="Stick" />
+  </Layer>
 </Level>

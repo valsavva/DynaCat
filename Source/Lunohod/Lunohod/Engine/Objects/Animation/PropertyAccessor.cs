@@ -9,15 +9,20 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	public abstract class PropertyAccessorBase
+	public class PropertyAccessor
 	{
 		private XElement target;
 		private string property;
 
-		public PropertyAccessorBase(XElement target, string property)
+		private Func<XElement, float> getter;
+		private Action<XElement, float> setter;
+
+		private PropertyAccessor(XElement target, string property, Func<XElement, float> getter, Action<XElement, float> setter)
 		{
-			this.target = target;
-			this.property = property;
+            this.target = target;
+            this.property = property;
+            this.getter = getter;
+			this.setter = setter;
 		}
 
 		public XElement Target
@@ -34,52 +39,58 @@ namespace Lunohod.Objects
 			}
 		}
 		
-		public static PropertyAccessorBase CreatePropertyAccessor(XElement target, string property)
+        public float PropertyValue
+        {
+            get { return this.getter(target);  }
+            set { setter(target, value);  }
+        }
+
+		public static PropertyAccessor CreatePropertyAccessor(XElement target, string property)
 		{
 			switch(property)
 			{
-				case "X": return new PropertyAccessor<int>(target, property, GetX, SetX);
-				case "Y": return new PropertyAccessor<int>(target, property, GetY, SetY);
-				case "Height": return new PropertyAccessor<int>(target, property, GetHeight, SetHeight);
-				case "Width": return new PropertyAccessor<int>(target, property, GetWidth, SetWidth);
-				case "Rotation": return new PropertyAccessor<float>(target, property, GetRotation, SetRotation);
-				case "Opacity": return new PropertyAccessor<float>(target, property, GetOpacity, SetOpacity);
-				case "CurrentFrame": return new PropertyAccessor<int>(target, property, GetCurrentFrame, SetCurrentFrame);
+				case "X": return new PropertyAccessor(target, property, GetX, SetX);
+				case "Y": return new PropertyAccessor(target, property, GetY, SetY);
+				case "Height": return new PropertyAccessor(target, property, GetHeight, SetHeight);
+				case "Width": return new PropertyAccessor(target, property, GetWidth, SetWidth);
+				case "Rotation": return new PropertyAccessor(target, property, GetRotation, SetRotation);
+				case "Opacity": return new PropertyAccessor(target, property, GetOpacity, SetOpacity);
+				case "CurrentFrame": return new PropertyAccessor(target, property, GetCurrentFrame, SetCurrentFrame);
 				default: throw new InvalidOperationException("Unknown attribute");
 			}
 		}
 					
-		private static int GetX(XElement e)
+		private static float GetX(XElement e)
 		{
 			return e.Bounds.X;
 		}
-		private static void SetX(XElement e, int v)
+		private static void SetX(XElement e, float v)
 		{
-			e.Bounds.X = v;
+			e.Bounds.X = (int)Math.Round(v);
 		}
-		private static int GetY(XElement e)
+		private static float GetY(XElement e)
 		{
 			return e.Bounds.Y;
 		}
-		private static void SetY(XElement e, int v)
+		private static void SetY(XElement e, float v)
 		{
-			e.Bounds.Y = v;
+			e.Bounds.Y = (int)Math.Round(v);
 		}
-		private static int GetWidth(XElement e)
+		private static float GetWidth(XElement e)
 		{
 			return e.Bounds.Width;
 		}
-		private static void SetWidth(XElement e, int v)
+		private static void SetWidth(XElement e, float v)
 		{
-			e.Bounds.Width = v;
+			e.Bounds.Width = (int)Math.Round(v);
 		}
-		private static int GetHeight(XElement e)
+		private static float GetHeight(XElement e)
 		{
 			return e.Bounds.Height;
 		}
-		private static void SetHeight(XElement e, int v)
+		private static void SetHeight(XElement e, float v)
 		{
-			e.Bounds.Height = v;
+			e.Bounds.Height = (int)Math.Round(v);
 		}
 		private static float GetRotation(XElement e)
 		{
@@ -89,13 +100,13 @@ namespace Lunohod.Objects
 		{
 			e.Rotation = v;
 		}
-		private static int GetCurrentFrame(XElement e)
+		private static float GetCurrentFrame(XElement e)
 		{
 			return ((XSprite)e).CurrentFrame;
 		}
-		private static void SetCurrentFrame(XElement e, int v)
+		private static void SetCurrentFrame(XElement e, float v)
 		{
-			((XSprite)e).CurrentFrame = v;
+			((XSprite)e).CurrentFrame = (int)Math.Round(v);
 		}
 		private static float GetOpacity(XElement e)
 		{
@@ -104,25 +115,6 @@ namespace Lunohod.Objects
 		private static void SetOpacity(XElement e, float v)
 		{
 			e.Opacity = v;
-		}
-	}
-	
-	public class PropertyAccessor<T> : PropertyAccessorBase
-	{
-		private Func<XElement,T> getter;
-		private Action<XElement,T> setter;
-
-		public PropertyAccessor(XElement target, string property, Func<XElement,T> getter, Action<XElement,T> setter)
-			:base(target, property)
-		{
-			this.getter = getter;
-			this.setter = setter;
-		}
-		
-		public T PropertyValue
-		{
-			get { return getter(this.Target); }
-			set { setter(this.Target, value); }
 		}
 	}
 }
