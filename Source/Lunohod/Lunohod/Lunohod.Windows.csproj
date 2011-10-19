@@ -142,9 +142,6 @@
     <Compile Include="Engine\Objects\InitializeParameters.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\Rect.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Engine\Objects\UpateParameters.cs">
       <SubType>Code</SubType>
     </Compile>
