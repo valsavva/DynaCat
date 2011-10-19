@@ -16,7 +16,7 @@
     <NumValueAnimation From="0" To="430" Duration="00:00:2" Autoreverse="true" Target="boxImage.X" />
     <NumValueAnimation From="0" To="360" Duration="00:00:08" Autoreverse="false" Target="image.Rotation" />
     <NumValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage1.Rotation" RepeatCount="4" />
-    <NumValueAnimation From="360" To="0" Duration="00:00:02" Autoreverse="false" Target="boxImage2.Rotation" RepeatTime="00:00:03"/>
+    <NumValueAnimation From="0" To="360" Duration="00:00:02" Autoreverse="false" Target="boxImage2.Rotation" RepeatTime="00:00:02"/>
 
     <NumValueAnimation From="200" To="400" Duration="00:00:01" Autoreverse="true" Target="animationDemo.X" />
     <NumValueAnimation From="150" To="350" Duration="00:00:01" Autoreverse="true" Target="box1.X" />

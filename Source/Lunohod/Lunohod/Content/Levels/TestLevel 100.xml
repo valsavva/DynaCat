@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level Name="testLevel1" Bounds="0,0,480,320">
+  <!-- resources -->
+  <Resources RootFolder="Levels/TestLevel">
+    <Texture Id="chargers" Source="chargers"/>
+    <Texture Id="blank" Source="blank"/>
+    <Texture Id="shipAnimation" Source="shipAnimation"/>
+  </Resources>
+  <!-- background layer -->
+  <Layer Id="background" BackColor="#FFFFFFFF">
+    <Image TextureId="chargers" Opacity="0.2"/>
+  </Layer>
+  <!-- main layer -->
+  <Layer Id="action" BackColor="#FFFFFFFF">
+<Block Id="box1" Bounds="449,160,13,13" DefaultEdge="None">
+  <Image Id="img1" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="26" To="226" Duration="00:00:8.7" Autoreverse="false" Target="box1.Y"/>
+<NumValueAnimation From="27" To="154" Duration="00:00:8.7" Autoreverse="false" Target="box1.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:8.7" Autoreverse="false" Target="box1.Opacity"/>
+
+<Block Id="box2" Bounds="366,160,13,13" DefaultEdge="None">
+  <Image Id="img2" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="14" To="214" Duration="00:00:7.6" Autoreverse="false" Target="box2.Y"/>
+<NumValueAnimation From="20" To="-236" Duration="00:00:7.6" Autoreverse="false" Target="box2.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:7.6" Autoreverse="false" Target="box2.Opacity"/>
+
+<Block Id="box3" Bounds="292,160,13,13" DefaultEdge="None">
+  <Image Id="img3" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="34" To="234" Duration="00:00:5.6" Autoreverse="false" Target="box3.Y"/>
+<NumValueAnimation From="-106" To="288" Duration="00:00:5.6" Autoreverse="false" Target="box3.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.6" Autoreverse="false" Target="box3.Opacity"/>
+
+<Block Id="box4" Bounds="352,160,12,12" DefaultEdge="None">
+  <Image Id="img4" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="33" To="233" Duration="00:00:8.9" Autoreverse="false" Target="box4.Y"/>
+<NumValueAnimation From="-284" To="-290" Duration="00:00:8.9" Autoreverse="false" Target="box4.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:8.9" Autoreverse="false" Target="box4.Opacity"/>
+
+<Block Id="box5" Bounds="445,160,11,11" DefaultEdge="None">
+  <Image Id="img5" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="51" To="251" Duration="00:00:7.1" Autoreverse="false" Target="box5.Y"/>
+<NumValueAnimation From="116" To="-227" Duration="00:00:7.1" Autoreverse="false" Target="box5.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:7.1" Autoreverse="false" Target="box5.Opacity"/>
+
+<Block Id="box6" Bounds="153,160,13,13" DefaultEdge="None">
+  <Image Id="img6" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="29" To="229" Duration="00:00:9" Autoreverse="false" Target="box6.Y"/>
+<NumValueAnimation From="-51" To="161" Duration="00:00:9" Autoreverse="false" Target="box6.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:9" Autoreverse="false" Target="box6.Opacity"/>
+
+<Block Id="box7" Bounds="360,160,19,19" DefaultEdge="None">
+  <Image Id="img7" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="24" To="224" Duration="00:00:1.9" Autoreverse="false" Target="box7.Y"/>
+<NumValueAnimation From="221" To="272" Duration="00:00:1.9" Autoreverse="false" Target="box7.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:1.9" Autoreverse="false" Target="box7.Opacity"/>
+
+<Block Id="box8" Bounds="288,160,16,16" DefaultEdge="None">
+  <Image Id="img8" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="15" To="215" Duration="00:00:7.5" Autoreverse="false" Target="box8.Y"/>
+<NumValueAnimation From="-314" To="82" Duration="00:00:7.5" Autoreverse="false" Target="box8.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:7.5" Autoreverse="false" Target="box8.Opacity"/>
+
+<Block Id="box9" Bounds="231,160,11,11" DefaultEdge="None">
+  <Image Id="img9" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="30" To="230" Duration="00:00:5.9" Autoreverse="false" Target="box9.Y"/>
+<NumValueAnimation From="107" To="210" Duration="00:00:5.9" Autoreverse="false" Target="box9.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.9" Autoreverse="false" Target="box9.Opacity"/>
+
+<Block Id="box10" Bounds="26,160,14,14" DefaultEdge="None">
+  <Image Id="img10" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="25" To="225" Duration="00:00:5.8" Autoreverse="false" Target="box10.Y"/>
+<NumValueAnimation From="95" To="-44" Duration="00:00:5.8" Autoreverse="false" Target="box10.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.8" Autoreverse="false" Target="box10.Opacity"/>
+
+<Block Id="box11" Bounds="103,160,16,16" DefaultEdge="None">
+  <Image Id="img11" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="20" To="220" Duration="00:00:6.3" Autoreverse="false" Target="box11.Y"/>
+<NumValueAnimation From="-284" To="176" Duration="00:00:6.3" Autoreverse="false" Target="box11.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:6.3" Autoreverse="false" Target="box11.Opacity"/>
+
+<Block Id="box12" Bounds="345,160,12,12" DefaultEdge="None">
+  <Image Id="img12" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="48" To="248" Duration="00:00:9.2" Autoreverse="false" Target="box12.Y"/>
+<NumValueAnimation From="-224" To="-140" Duration="00:00:9.2" Autoreverse="false" Target="box12.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:9.2" Autoreverse="false" Target="box12.Opacity"/>
+
+<Block Id="box13" Bounds="456,160,17,17" DefaultEdge="None">
+  <Image Id="img13" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="22" To="222" Duration="00:00:2.8" Autoreverse="false" Target="box13.Y"/>
+<NumValueAnimation From="13" To="61" Duration="00:00:2.8" Autoreverse="false" Target="box13.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:2.8" Autoreverse="false" Target="box13.Opacity"/>
+
+<Block Id="box14" Bounds="109,160,20,20" DefaultEdge="None">
+  <Image Id="img14" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="31" To="231" Duration="00:00:6" Autoreverse="false" Target="box14.Y"/>
+<NumValueAnimation From="267" To="-185" Duration="00:00:6" Autoreverse="false" Target="box14.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:6" Autoreverse="false" Target="box14.Opacity"/>
+
+<Block Id="box15" Bounds="305,160,17,17" DefaultEdge="None">
+  <Image Id="img15" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="26" To="226" Duration="00:00:5.8" Autoreverse="false" Target="box15.Y"/>
+<NumValueAnimation From="143" To="-101" Duration="00:00:5.8" Autoreverse="false" Target="box15.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:5.8" Autoreverse="false" Target="box15.Opacity"/>
+
+<Block Id="box16" Bounds="133,160,14,14" DefaultEdge="None">
+  <Image Id="img16" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="25" To="225" Duration="00:00:8.6" Autoreverse="false" Target="box16.Y"/>
+<NumValueAnimation From="113" To="-318" Duration="00:00:8.6" Autoreverse="false" Target="box16.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:8.6" Autoreverse="false" Target="box16.Opacity"/>
+
+<Block Id="box17" Bounds="431,160,10,10" DefaultEdge="None">
+  <Image Id="img17" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="38" To="238" Duration="00:00:5" Autoreverse="false" Target="box17.Y"/>
+<NumValueAnimation From="-244" To="-270" Duration="00:00:5" Autoreverse="false" Target="box17.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:5" Autoreverse="false" Target="box17.Opacity"/>
+
+<Block Id="box18" Bounds="84,160,13,13" DefaultEdge="None">
+  <Image Id="img18" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="43" To="243" Duration="00:00:10" Autoreverse="false" Target="box18.Y"/>
+<NumValueAnimation From="-234" To="-323" Duration="00:00:10" Autoreverse="false" Target="box18.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:10" Autoreverse="false" Target="box18.Opacity"/>
+
+<Block Id="box19" Bounds="364,160,15,15" DefaultEdge="None">
+  <Image Id="img19" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="13" To="213" Duration="00:00:3.8" Autoreverse="false" Target="box19.Y"/>
+<NumValueAnimation From="-104" To="-173" Duration="00:00:3.8" Autoreverse="false" Target="box19.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:3.8" Autoreverse="false" Target="box19.Opacity"/>
+
+<Block Id="box20" Bounds="132,160,17,17" DefaultEdge="None">
+  <Image Id="img20" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="36" To="236" Duration="00:00:5.1" Autoreverse="false" Target="box20.Y"/>
+<NumValueAnimation From="277" To="113" Duration="00:00:5.1" Autoreverse="false" Target="box20.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.1" Autoreverse="false" Target="box20.Opacity"/>
+
+<Block Id="box21" Bounds="234,160,15,15" DefaultEdge="None">
+  <Image Id="img21" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="27" To="227" Duration="00:00:4.8" Autoreverse="false" Target="box21.Y"/>
+<NumValueAnimation From="209" To="298" Duration="00:00:4.8" Autoreverse="false" Target="box21.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:4.8" Autoreverse="false" Target="box21.Opacity"/>
+
+<Block Id="box22" Bounds="125,160,10,10" DefaultEdge="None">
+  <Image Id="img22" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="46" To="246" Duration="00:00:8.4" Autoreverse="false" Target="box22.Y"/>
+<NumValueAnimation From="134" To="-141" Duration="00:00:8.4" Autoreverse="false" Target="box22.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:8.4" Autoreverse="false" Target="box22.Opacity"/>
+
+<Block Id="box23" Bounds="388,160,16,16" DefaultEdge="None">
+  <Image Id="img23" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="22" To="222" Duration="00:00:8.3" Autoreverse="false" Target="box23.Y"/>
+<NumValueAnimation From="-83" To="-134" Duration="00:00:8.3" Autoreverse="false" Target="box23.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:8.3" Autoreverse="false" Target="box23.Opacity"/>
+
+<Block Id="box24" Bounds="250,160,14,14" DefaultEdge="None">
+  <Image Id="img24" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="50" To="250" Duration="00:00:8.6" Autoreverse="false" Target="box24.Y"/>
+<NumValueAnimation From="-41" To="-360" Duration="00:00:8.6" Autoreverse="false" Target="box24.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:8.6" Autoreverse="false" Target="box24.Opacity"/>
+
+<Block Id="box25" Bounds="231,160,14,14" DefaultEdge="None">
+  <Image Id="img25" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="58" To="258" Duration="00:00:1.2" Autoreverse="false" Target="box25.Y"/>
+<NumValueAnimation From="246" To="-74" Duration="00:00:1.2" Autoreverse="false" Target="box25.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:1.2" Autoreverse="false" Target="box25.Opacity"/>
+
+<Block Id="box26" Bounds="340,160,15,15" DefaultEdge="None">
+  <Image Id="img26" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="38" To="238" Duration="00:00:7.1" Autoreverse="false" Target="box26.Y"/>
+<NumValueAnimation From="-44" To="207" Duration="00:00:7.1" Autoreverse="false" Target="box26.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:7.1" Autoreverse="false" Target="box26.Opacity"/>
+
+<Block Id="box27" Bounds="311,160,14,14" DefaultEdge="None">
+  <Image Id="img27" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="54" To="254" Duration="00:00:3.4" Autoreverse="false" Target="box27.Y"/>
+<NumValueAnimation From="-139" To="-305" Duration="00:00:3.4" Autoreverse="false" Target="box27.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:3.4" Autoreverse="false" Target="box27.Opacity"/>
+
+<Block Id="box28" Bounds="290,160,11,11" DefaultEdge="None">
+  <Image Id="img28" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="11" To="211" Duration="00:00:6" Autoreverse="false" Target="box28.Y"/>
+<NumValueAnimation From="202" To="-152" Duration="00:00:6" Autoreverse="false" Target="box28.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:6" Autoreverse="false" Target="box28.Opacity"/>
+
+<Block Id="box29" Bounds="170,160,11,11" DefaultEdge="None">
+  <Image Id="img29" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="38" To="238" Duration="00:00:5.2" Autoreverse="false" Target="box29.Y"/>
+<NumValueAnimation From="-190" To="24" Duration="00:00:5.2" Autoreverse="false" Target="box29.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.2" Autoreverse="false" Target="box29.Opacity"/>
+
+<Block Id="box30" Bounds="33,160,10,10" DefaultEdge="None">
+  <Image Id="img30" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="51" To="251" Duration="00:00:5.9" Autoreverse="false" Target="box30.Y"/>
+<NumValueAnimation From="212" To="195" Duration="00:00:5.9" Autoreverse="false" Target="box30.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:5.9" Autoreverse="false" Target="box30.Opacity"/>
+
+<Block Id="box31" Bounds="53,160,14,14" DefaultEdge="None">
+  <Image Id="img31" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="59" To="259" Duration="00:00:1.1" Autoreverse="false" Target="box31.Y"/>
+<NumValueAnimation From="-113" To="-19" Duration="00:00:1.1" Autoreverse="false" Target="box31.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:1.1" Autoreverse="false" Target="box31.Opacity"/>
+
+<Block Id="box32" Bounds="156,160,18,18" DefaultEdge="None">
+  <Image Id="img32" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="21" To="221" Duration="00:00:8.1" Autoreverse="false" Target="box32.Y"/>
+<NumValueAnimation From="135" To="-312" Duration="00:00:8.1" Autoreverse="false" Target="box32.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:8.1" Autoreverse="false" Target="box32.Opacity"/>
+
+<Block Id="box33" Bounds="157,160,16,16" DefaultEdge="None">
+  <Image Id="img33" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="14" To="214" Duration="00:00:7.8" Autoreverse="false" Target="box33.Y"/>
+<NumValueAnimation From="4" To="-157" Duration="00:00:7.8" Autoreverse="false" Target="box33.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:7.8" Autoreverse="false" Target="box33.Opacity"/>
+
+<Block Id="box34" Bounds="394,160,18,18" DefaultEdge="None">
+  <Image Id="img34" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="64" To="264" Duration="00:00:1.4" Autoreverse="false" Target="box34.Y"/>
+<NumValueAnimation From="344" To="-287" Duration="00:00:1.4" Autoreverse="false" Target="box34.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:1.4" Autoreverse="false" Target="box34.Opacity"/>
+
+<Block Id="box35" Bounds="172,160,18,18" DefaultEdge="None">
+  <Image Id="img35" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="18" To="218" Duration="00:00:5.3" Autoreverse="false" Target="box35.Y"/>
+<NumValueAnimation From="-37" To="-163" Duration="00:00:5.3" Autoreverse="false" Target="box35.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.3" Autoreverse="false" Target="box35.Opacity"/>
+
+<Block Id="box36" Bounds="157,160,19,19" DefaultEdge="None">
+  <Image Id="img36" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="23" To="223" Duration="00:00:4.5" Autoreverse="false" Target="box36.Y"/>
+<NumValueAnimation From="-195" To="156" Duration="00:00:4.5" Autoreverse="false" Target="box36.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:4.5" Autoreverse="false" Target="box36.Opacity"/>
+
+<Block Id="box37" Bounds="241,160,15,15" DefaultEdge="None">
+  <Image Id="img37" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="27" To="227" Duration="00:00:1.3" Autoreverse="false" Target="box37.Y"/>
+<NumValueAnimation From="-283" To="-345" Duration="00:00:1.3" Autoreverse="false" Target="box37.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.3" Autoreverse="false" Target="box37.Opacity"/>
+
+<Block Id="box38" Bounds="31,160,16,16" DefaultEdge="None">
+  <Image Id="img38" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="41" To="241" Duration="00:00:6.2" Autoreverse="false" Target="box38.Y"/>
+<NumValueAnimation From="139" To="-270" Duration="00:00:6.2" Autoreverse="false" Target="box38.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:6.2" Autoreverse="false" Target="box38.Opacity"/>
+
+<Block Id="box39" Bounds="60,160,16,16" DefaultEdge="None">
+  <Image Id="img39" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="41" To="241" Duration="00:00:2.5" Autoreverse="false" Target="box39.Y"/>
+<NumValueAnimation From="-18" To="-190" Duration="00:00:2.5" Autoreverse="false" Target="box39.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:2.5" Autoreverse="false" Target="box39.Opacity"/>
+
+<Block Id="box40" Bounds="332,160,11,11" DefaultEdge="None">
+  <Image Id="img40" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="25" To="225" Duration="00:00:2.6" Autoreverse="false" Target="box40.Y"/>
+<NumValueAnimation From="9" To="-267" Duration="00:00:2.6" Autoreverse="false" Target="box40.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:2.6" Autoreverse="false" Target="box40.Opacity"/>
+
+<Block Id="box41" Bounds="282,160,16,16" DefaultEdge="None">
+  <Image Id="img41" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="32" To="232" Duration="00:00:4.8" Autoreverse="false" Target="box41.Y"/>
+<NumValueAnimation From="255" To="-227" Duration="00:00:4.8" Autoreverse="false" Target="box41.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:4.8" Autoreverse="false" Target="box41.Opacity"/>
+
+<Block Id="box42" Bounds="232,160,10,10" DefaultEdge="None">
+  <Image Id="img42" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="28" To="228" Duration="00:00:6.1" Autoreverse="false" Target="box42.Y"/>
+<NumValueAnimation From="-54" To="-195" Duration="00:00:6.1" Autoreverse="false" Target="box42.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:6.1" Autoreverse="false" Target="box42.Opacity"/>
+
+<Block Id="box43" Bounds="22,160,17,17" DefaultEdge="None">
+  <Image Id="img43" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="16" To="216" Duration="00:00:9.2" Autoreverse="false" Target="box43.Y"/>
+<NumValueAnimation From="54" To="-35" Duration="00:00:9.2" Autoreverse="false" Target="box43.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:9.2" Autoreverse="false" Target="box43.Opacity"/>
+
+<Block Id="box44" Bounds="177,160,15,15" DefaultEdge="None">
+  <Image Id="img44" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="43" To="243" Duration="00:00:1.3" Autoreverse="false" Target="box44.Y"/>
+<NumValueAnimation From="305" To="142" Duration="00:00:1.3" Autoreverse="false" Target="box44.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.3" Autoreverse="false" Target="box44.Opacity"/>
+
+<Block Id="box45" Bounds="194,160,10,10" DefaultEdge="None">
+  <Image Id="img45" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="35" To="235" Duration="00:00:4.3" Autoreverse="false" Target="box45.Y"/>
+<NumValueAnimation From="110" To="186" Duration="00:00:4.3" Autoreverse="false" Target="box45.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:4.3" Autoreverse="false" Target="box45.Opacity"/>
+
+<Block Id="box46" Bounds="20,160,15,15" DefaultEdge="None">
+  <Image Id="img46" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="53" To="253" Duration="00:00:5.5" Autoreverse="false" Target="box46.Y"/>
+<NumValueAnimation From="276" To="316" Duration="00:00:5.5" Autoreverse="false" Target="box46.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:5.5" Autoreverse="false" Target="box46.Opacity"/>
+
+<Block Id="box47" Bounds="187,160,14,14" DefaultEdge="None">
+  <Image Id="img47" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="50" To="250" Duration="00:00:8" Autoreverse="false" Target="box47.Y"/>
+<NumValueAnimation From="-230" To="131" Duration="00:00:8" Autoreverse="false" Target="box47.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:8" Autoreverse="false" Target="box47.Opacity"/>
+
+<Block Id="box48" Bounds="131,160,10,10" DefaultEdge="None">
+  <Image Id="img48" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="53" To="253" Duration="00:00:1.2" Autoreverse="false" Target="box48.Y"/>
+<NumValueAnimation From="353" To="162" Duration="00:00:1.2" Autoreverse="false" Target="box48.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.2" Autoreverse="false" Target="box48.Opacity"/>
+
+<Block Id="box49" Bounds="223,160,18,18" DefaultEdge="None">
+  <Image Id="img49" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="57" To="257" Duration="00:00:7.9" Autoreverse="false" Target="box49.Y"/>
+<NumValueAnimation From="-69" To="7" Duration="00:00:7.9" Autoreverse="false" Target="box49.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:7.9" Autoreverse="false" Target="box49.Opacity"/>
+
+<Block Id="box50" Bounds="288,160,12,12" DefaultEdge="None">
+  <Image Id="img50" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="19" To="219" Duration="00:00:8" Autoreverse="false" Target="box50.Y"/>
+<NumValueAnimation From="-306" To="-198" Duration="00:00:8" Autoreverse="false" Target="box50.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:8" Autoreverse="false" Target="box50.Opacity"/>
+
+<Block Id="box51" Bounds="40,160,13,13" DefaultEdge="None">
+  <Image Id="img51" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="37" To="237" Duration="00:00:7.5" Autoreverse="false" Target="box51.Y"/>
+<NumValueAnimation From="-85" To="-295" Duration="00:00:7.5" Autoreverse="false" Target="box51.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:7.5" Autoreverse="false" Target="box51.Opacity"/>
+
+<Block Id="box52" Bounds="140,160,19,19" DefaultEdge="None">
+  <Image Id="img52" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="29" To="229" Duration="00:00:3.4" Autoreverse="false" Target="box52.Y"/>
+<NumValueAnimation From="108" To="-37" Duration="00:00:3.4" Autoreverse="false" Target="box52.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:3.4" Autoreverse="false" Target="box52.Opacity"/>
+
+<Block Id="box53" Bounds="358,160,18,18" DefaultEdge="None">
+  <Image Id="img53" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="61" To="261" Duration="00:00:2.4" Autoreverse="false" Target="box53.Y"/>
+<NumValueAnimation From="-158" To="290" Duration="00:00:2.4" Autoreverse="false" Target="box53.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:2.4" Autoreverse="false" Target="box53.Opacity"/>
+
+<Block Id="box54" Bounds="251,160,16,16" DefaultEdge="None">
+  <Image Id="img54" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="29" To="229" Duration="00:00:5.2" Autoreverse="false" Target="box54.Y"/>
+<NumValueAnimation From="-284" To="5" Duration="00:00:5.2" Autoreverse="false" Target="box54.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:5.2" Autoreverse="false" Target="box54.Opacity"/>
+
+<Block Id="box55" Bounds="182,160,19,19" DefaultEdge="None">
+  <Image Id="img55" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="60" To="260" Duration="00:00:9.8" Autoreverse="false" Target="box55.Y"/>
+<NumValueAnimation From="-117" To="-146" Duration="00:00:9.8" Autoreverse="false" Target="box55.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:9.8" Autoreverse="false" Target="box55.Opacity"/>
+
+<Block Id="box56" Bounds="434,160,20,20" DefaultEdge="None">
+  <Image Id="img56" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="70" To="270" Duration="00:00:5.5" Autoreverse="false" Target="box56.Y"/>
+<NumValueAnimation From="227" To="61" Duration="00:00:5.5" Autoreverse="false" Target="box56.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.5" Autoreverse="false" Target="box56.Opacity"/>
+
+<Block Id="box57" Bounds="397,160,19,19" DefaultEdge="None">
+  <Image Id="img57" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="37" To="237" Duration="00:00:6.2" Autoreverse="false" Target="box57.Y"/>
+<NumValueAnimation From="285" To="-354" Duration="00:00:6.2" Autoreverse="false" Target="box57.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:6.2" Autoreverse="false" Target="box57.Opacity"/>
+
+<Block Id="box58" Bounds="114,160,16,16" DefaultEdge="None">
+  <Image Id="img58" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="13" To="213" Duration="00:00:2.9" Autoreverse="false" Target="box58.Y"/>
+<NumValueAnimation From="-75" To="274" Duration="00:00:2.9" Autoreverse="false" Target="box58.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:2.9" Autoreverse="false" Target="box58.Opacity"/>
+
+<Block Id="box59" Bounds="381,160,13,13" DefaultEdge="None">
+  <Image Id="img59" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="38" To="238" Duration="00:00:4.4" Autoreverse="false" Target="box59.Y"/>
+<NumValueAnimation From="27" To="-354" Duration="00:00:4.4" Autoreverse="false" Target="box59.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:4.4" Autoreverse="false" Target="box59.Opacity"/>
+
+<Block Id="box60" Bounds="64,160,17,17" DefaultEdge="None">
+  <Image Id="img60" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="69" To="269" Duration="00:00:9.5" Autoreverse="false" Target="box60.Y"/>
+<NumValueAnimation From="178" To="261" Duration="00:00:9.5" Autoreverse="false" Target="box60.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:9.5" Autoreverse="false" Target="box60.Opacity"/>
+
+<Block Id="box61" Bounds="245,160,11,11" DefaultEdge="None">
+  <Image Id="img61" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="69" To="269" Duration="00:00:3.7" Autoreverse="false" Target="box61.Y"/>
+<NumValueAnimation From="151" To="-164" Duration="00:00:3.7" Autoreverse="false" Target="box61.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:3.7" Autoreverse="false" Target="box61.Opacity"/>
+
+<Block Id="box62" Bounds="143,160,18,18" DefaultEdge="None">
+  <Image Id="img62" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="70" To="270" Duration="00:00:1" Autoreverse="false" Target="box62.Y"/>
+<NumValueAnimation From="-69" To="-327" Duration="00:00:1" Autoreverse="false" Target="box62.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1" Autoreverse="false" Target="box62.Opacity"/>
+
+<Block Id="box63" Bounds="120,160,15,15" DefaultEdge="None">
+  <Image Id="img63" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="67" To="267" Duration="00:00:4.4" Autoreverse="false" Target="box63.Y"/>
+<NumValueAnimation From="-226" To="-358" Duration="00:00:4.4" Autoreverse="false" Target="box63.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:4.4" Autoreverse="false" Target="box63.Opacity"/>
+
+<Block Id="box64" Bounds="345,160,11,11" DefaultEdge="None">
+  <Image Id="img64" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="47" To="247" Duration="00:00:5.1" Autoreverse="false" Target="box64.Y"/>
+<NumValueAnimation From="-276" To="-314" Duration="00:00:5.1" Autoreverse="false" Target="box64.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.1" Autoreverse="false" Target="box64.Opacity"/>
+
+<Block Id="box65" Bounds="153,160,17,17" DefaultEdge="None">
+  <Image Id="img65" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="51" To="251" Duration="00:00:3.1" Autoreverse="false" Target="box65.Y"/>
+<NumValueAnimation From="-108" To="216" Duration="00:00:3.1" Autoreverse="false" Target="box65.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:3.1" Autoreverse="false" Target="box65.Opacity"/>
+
+<Block Id="box66" Bounds="103,160,13,13" DefaultEdge="None">
+  <Image Id="img66" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="56" To="256" Duration="00:00:7.5" Autoreverse="false" Target="box66.Y"/>
+<NumValueAnimation From="66" To="-96" Duration="00:00:7.5" Autoreverse="false" Target="box66.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:7.5" Autoreverse="false" Target="box66.Opacity"/>
+
+<Block Id="box67" Bounds="251,160,16,16" DefaultEdge="None">
+  <Image Id="img67" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="64" To="264" Duration="00:00:1.1" Autoreverse="false" Target="box67.Y"/>
+<NumValueAnimation From="-309" To="-250" Duration="00:00:1.1" Autoreverse="false" Target="box67.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.1" Autoreverse="false" Target="box67.Opacity"/>
+
+<Block Id="box68" Bounds="394,160,17,17" DefaultEdge="None">
+  <Image Id="img68" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="59" To="259" Duration="00:00:4.4" Autoreverse="false" Target="box68.Y"/>
+<NumValueAnimation From="163" To="-231" Duration="00:00:4.4" Autoreverse="false" Target="box68.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:4.4" Autoreverse="false" Target="box68.Opacity"/>
+
+<Block Id="box69" Bounds="342,160,10,10" DefaultEdge="None">
+  <Image Id="img69" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="62" To="262" Duration="00:00:5.2" Autoreverse="false" Target="box69.Y"/>
+<NumValueAnimation From="-357" To="121" Duration="00:00:5.2" Autoreverse="false" Target="box69.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.2" Autoreverse="false" Target="box69.Opacity"/>
+
+<Block Id="box70" Bounds="423,160,12,12" DefaultEdge="None">
+  <Image Id="img70" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="40" To="240" Duration="00:00:6.9" Autoreverse="false" Target="box70.Y"/>
+<NumValueAnimation From="-224" To="181" Duration="00:00:6.9" Autoreverse="false" Target="box70.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:6.9" Autoreverse="false" Target="box70.Opacity"/>
+
+<Block Id="box71" Bounds="393,160,10,10" DefaultEdge="None">
+  <Image Id="img71" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="38" To="238" Duration="00:00:4.1" Autoreverse="false" Target="box71.Y"/>
+<NumValueAnimation From="-179" To="102" Duration="00:00:4.1" Autoreverse="false" Target="box71.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:4.1" Autoreverse="false" Target="box71.Opacity"/>
+
+<Block Id="box72" Bounds="288,160,17,17" DefaultEdge="None">
+  <Image Id="img72" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="50" To="250" Duration="00:00:1.5" Autoreverse="false" Target="box72.Y"/>
+<NumValueAnimation From="298" To="-167" Duration="00:00:1.5" Autoreverse="false" Target="box72.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.5" Autoreverse="false" Target="box72.Opacity"/>
+
+<Block Id="box73" Bounds="392,160,19,19" DefaultEdge="None">
+  <Image Id="img73" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="12" To="212" Duration="00:00:2.6" Autoreverse="false" Target="box73.Y"/>
+<NumValueAnimation From="-232" To="-210" Duration="00:00:2.6" Autoreverse="false" Target="box73.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:2.6" Autoreverse="false" Target="box73.Opacity"/>
+
+<Block Id="box74" Bounds="225,160,18,18" DefaultEdge="None">
+  <Image Id="img74" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="23" To="223" Duration="00:00:3.6" Autoreverse="false" Target="box74.Y"/>
+<NumValueAnimation From="-337" To="299" Duration="00:00:3.6" Autoreverse="false" Target="box74.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:3.6" Autoreverse="false" Target="box74.Opacity"/>
+
+<Block Id="box75" Bounds="383,160,15,15" DefaultEdge="None">
+  <Image Id="img75" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="44" To="244" Duration="00:00:2.6" Autoreverse="false" Target="box75.Y"/>
+<NumValueAnimation From="195" To="275" Duration="00:00:2.6" Autoreverse="false" Target="box75.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:2.6" Autoreverse="false" Target="box75.Opacity"/>
+
+<Block Id="box76" Bounds="397,160,20,20" DefaultEdge="None">
+  <Image Id="img76" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="62" To="262" Duration="00:00:2.1" Autoreverse="false" Target="box76.Y"/>
+<NumValueAnimation From="-262" To="200" Duration="00:00:2.1" Autoreverse="false" Target="box76.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:2.1" Autoreverse="false" Target="box76.Opacity"/>
+
+<Block Id="box77" Bounds="131,160,11,11" DefaultEdge="None">
+  <Image Id="img77" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="33" To="233" Duration="00:00:5" Autoreverse="false" Target="box77.Y"/>
+<NumValueAnimation From="38" To="-135" Duration="00:00:5" Autoreverse="false" Target="box77.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:5" Autoreverse="false" Target="box77.Opacity"/>
+
+<Block Id="box78" Bounds="377,160,18,18" DefaultEdge="None">
+  <Image Id="img78" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="51" To="251" Duration="00:00:7" Autoreverse="false" Target="box78.Y"/>
+<NumValueAnimation From="210" To="221" Duration="00:00:7" Autoreverse="false" Target="box78.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:7" Autoreverse="false" Target="box78.Opacity"/>
+
+<Block Id="box79" Bounds="345,160,11,11" DefaultEdge="None">
+  <Image Id="img79" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="31" To="231" Duration="00:00:3.6" Autoreverse="false" Target="box79.Y"/>
+<NumValueAnimation From="-158" To="-1" Duration="00:00:3.6" Autoreverse="false" Target="box79.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:3.6" Autoreverse="false" Target="box79.Opacity"/>
+
+<Block Id="box80" Bounds="439,160,10,10" DefaultEdge="None">
+  <Image Id="img80" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="50" To="250" Duration="00:00:8.6" Autoreverse="false" Target="box80.Y"/>
+<NumValueAnimation From="317" To="134" Duration="00:00:8.6" Autoreverse="false" Target="box80.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:8.6" Autoreverse="false" Target="box80.Opacity"/>
+
+<Block Id="box81" Bounds="183,160,11,11" DefaultEdge="None">
+  <Image Id="img81" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="40" To="240" Duration="00:00:5.6" Autoreverse="false" Target="box81.Y"/>
+<NumValueAnimation From="-66" To="157" Duration="00:00:5.6" Autoreverse="false" Target="box81.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.6" Autoreverse="false" Target="box81.Opacity"/>
+
+<Block Id="box82" Bounds="343,160,14,14" DefaultEdge="None">
+  <Image Id="img82" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="21" To="221" Duration="00:00:2.4" Autoreverse="false" Target="box82.Y"/>
+<NumValueAnimation From="315" To="-35" Duration="00:00:2.4" Autoreverse="false" Target="box82.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:2.4" Autoreverse="false" Target="box82.Opacity"/>
+
+<Block Id="box83" Bounds="324,160,20,20" DefaultEdge="None">
+  <Image Id="img83" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="40" To="240" Duration="00:00:5.2" Autoreverse="false" Target="box83.Y"/>
+<NumValueAnimation From="-127" To="-97" Duration="00:00:5.2" Autoreverse="false" Target="box83.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:5.2" Autoreverse="false" Target="box83.Opacity"/>
+
+<Block Id="box84" Bounds="405,160,14,14" DefaultEdge="None">
+  <Image Id="img84" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="68" To="268" Duration="00:00:5.3" Autoreverse="false" Target="box84.Y"/>
+<NumValueAnimation From="-149" To="-307" Duration="00:00:5.3" Autoreverse="false" Target="box84.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:5.3" Autoreverse="false" Target="box84.Opacity"/>
+
+<Block Id="box85" Bounds="444,160,17,17" DefaultEdge="None">
+  <Image Id="img85" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="40" To="240" Duration="00:00:3.7" Autoreverse="false" Target="box85.Y"/>
+<NumValueAnimation From="-147" To="-265" Duration="00:00:3.7" Autoreverse="false" Target="box85.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:3.7" Autoreverse="false" Target="box85.Opacity"/>
+
+<Block Id="box86" Bounds="350,160,17,17" DefaultEdge="None">
+  <Image Id="img86" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="60" To="260" Duration="00:00:4.5" Autoreverse="false" Target="box86.Y"/>
+<NumValueAnimation From="205" To="-190" Duration="00:00:4.5" Autoreverse="false" Target="box86.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:4.5" Autoreverse="false" Target="box86.Opacity"/>
+
+<Block Id="box87" Bounds="193,160,14,14" DefaultEdge="None">
+  <Image Id="img87" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="36" To="236" Duration="00:00:2.1" Autoreverse="false" Target="box87.Y"/>
+<NumValueAnimation From="-84" To="-193" Duration="00:00:2.1" Autoreverse="false" Target="box87.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:2.1" Autoreverse="false" Target="box87.Opacity"/>
+
+<Block Id="box88" Bounds="151,160,16,16" DefaultEdge="None">
+  <Image Id="img88" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="16" To="216" Duration="00:00:8.7" Autoreverse="false" Target="box88.Y"/>
+<NumValueAnimation From="-303" To="-121" Duration="00:00:8.7" Autoreverse="false" Target="box88.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:8.7" Autoreverse="false" Target="box88.Opacity"/>
+
+<Block Id="box89" Bounds="234,160,13,13" DefaultEdge="None">
+  <Image Id="img89" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="18" To="218" Duration="00:00:8" Autoreverse="false" Target="box89.Y"/>
+<NumValueAnimation From="112" To="184" Duration="00:00:8" Autoreverse="false" Target="box89.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:8" Autoreverse="false" Target="box89.Opacity"/>
+
+<Block Id="box90" Bounds="146,160,20,20" DefaultEdge="None">
+  <Image Id="img90" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="68" To="268" Duration="00:00:8.5" Autoreverse="false" Target="box90.Y"/>
+<NumValueAnimation From="-203" To="-264" Duration="00:00:8.5" Autoreverse="false" Target="box90.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:8.5" Autoreverse="false" Target="box90.Opacity"/>
+
+<Block Id="box91" Bounds="302,160,16,16" DefaultEdge="None">
+  <Image Id="img91" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="18" To="218" Duration="00:00:2.8" Autoreverse="false" Target="box91.Y"/>
+<NumValueAnimation From="193" To="31" Duration="00:00:2.8" Autoreverse="false" Target="box91.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:2.8" Autoreverse="false" Target="box91.Opacity"/>
+
+<Block Id="box92" Bounds="311,160,17,17" DefaultEdge="None">
+  <Image Id="img92" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="66" To="266" Duration="00:00:1.9" Autoreverse="false" Target="box92.Y"/>
+<NumValueAnimation From="221" To="107" Duration="00:00:1.9" Autoreverse="false" Target="box92.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.9" Autoreverse="false" Target="box92.Opacity"/>
+
+<Block Id="box93" Bounds="235,160,18,18" DefaultEdge="None">
+  <Image Id="img93" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="43" To="243" Duration="00:00:4.7" Autoreverse="false" Target="box93.Y"/>
+<NumValueAnimation From="225" To="156" Duration="00:00:4.7" Autoreverse="false" Target="box93.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:4.7" Autoreverse="false" Target="box93.Opacity"/>
+
+<Block Id="box94" Bounds="333,160,17,17" DefaultEdge="None">
+  <Image Id="img94" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="24" To="224" Duration="00:00:1.7" Autoreverse="false" Target="box94.Y"/>
+<NumValueAnimation From="275" To="-92" Duration="00:00:1.7" Autoreverse="false" Target="box94.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.7" Autoreverse="false" Target="box94.Opacity"/>
+
+<Block Id="box95" Bounds="362,160,11,11" DefaultEdge="None">
+  <Image Id="img95" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="52" To="252" Duration="00:00:2.3" Autoreverse="false" Target="box95.Y"/>
+<NumValueAnimation From="280" To="-19" Duration="00:00:2.3" Autoreverse="false" Target="box95.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:2.3" Autoreverse="false" Target="box95.Opacity"/>
+
+<Block Id="box96" Bounds="78,160,10,10" DefaultEdge="None">
+  <Image Id="img96" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="22" To="222" Duration="00:00:6.7" Autoreverse="false" Target="box96.Y"/>
+<NumValueAnimation From="354" To="307" Duration="00:00:6.7" Autoreverse="false" Target="box96.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:6.7" Autoreverse="false" Target="box96.Opacity"/>
+
+<Block Id="box97" Bounds="351,160,12,12" DefaultEdge="None">
+  <Image Id="img97" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="56" To="256" Duration="00:00:8.2" Autoreverse="false" Target="box97.Y"/>
+<NumValueAnimation From="262" To="-319" Duration="00:00:8.2" Autoreverse="false" Target="box97.Rotation"/>
+<NumValueAnimation From="0.8" To="0" Duration="00:00:8.2" Autoreverse="false" Target="box97.Opacity"/>
+
+<Block Id="box98" Bounds="458,160,10,10" DefaultEdge="None">
+  <Image Id="img98" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="16" To="216" Duration="00:00:4.2" Autoreverse="false" Target="box98.Y"/>
+<NumValueAnimation From="81" To="-254" Duration="00:00:4.2" Autoreverse="false" Target="box98.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:4.2" Autoreverse="false" Target="box98.Opacity"/>
+
+<Block Id="box99" Bounds="85,160,12,12" DefaultEdge="None">
+  <Image Id="img99" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="50" To="250" Duration="00:00:4.8" Autoreverse="false" Target="box99.Y"/>
+<NumValueAnimation From="86" To="-328" Duration="00:00:4.8" Autoreverse="false" Target="box99.Rotation"/>
+<NumValueAnimation From="1" To="0" Duration="00:00:4.8" Autoreverse="false" Target="box99.Opacity"/>
+
+<Block Id="box100" Bounds="213,160,18,18" DefaultEdge="None">
+  <Image Id="img100" TextureId="chargers" Origin="25,25" Opacity="1"/>
+</Block>
+<NumValueAnimation From="31" To="231" Duration="00:00:1.6" Autoreverse="false" Target="box100.Y"/>
+<NumValueAnimation From="48" To="183" Duration="00:00:1.6" Autoreverse="false" Target="box100.Rotation"/>
+<NumValueAnimation From="0.9" To="0" Duration="00:00:1.6" Autoreverse="false" Target="box100.Opacity"/>
+
+
+</Layer>
+</Level>
+
+
+
+
+
+
+
+

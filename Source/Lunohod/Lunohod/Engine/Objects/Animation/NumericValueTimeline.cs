@@ -24,23 +24,34 @@ namespace Lunohod.Objects
 		
 		public double MinValueChange = 1f;
 		
+		private bool grow;
+		
 		public void BuildTimeline()
 		{
-			distance = this.To - this.From;
+			distance = Math.Abs(this.To - this.From);
 			speed = this.distance / this.Duration.TotalSeconds;
+			grow = this.To > this.From;
 		}
 		
 		public double GetValue(TimeSpan time)
 		{
+			double dx;
+			
 			if (this.Autoreverse)
 			{
-				var v = this.speed * (time.TotalSeconds % (this.Duration.TotalSeconds * 2));
-				if (v > this.distance)
-					v = this.distance - (v - this.distance);
-				return this.From + v;
+				dx = this.speed * (time.TotalSeconds % (this.Duration.TotalSeconds * 2));
+				if (dx > this.distance)
+					dx = this.distance - (dx - this.distance);
 			}
 			else
-				return this.From + this.speed * (time.TotalSeconds % this.Duration.TotalSeconds);
+			{
+				dx = this.speed * (time.TotalSeconds % this.Duration.TotalSeconds);
+			}
+			
+			if (grow)
+				return this.From + dx;
+			else
+				return this.From - dx;
 		}
 		
 		public int GetIntValue(TimeSpan time)
