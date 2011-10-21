@@ -123,9 +123,8 @@
     <Compile Include="Engine\ActionInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\LevelEngine.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
     <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -135,10 +134,15 @@
     <Compile Include="Engine\Objects\Animation\XAnimationBase.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\Animation\XNumValuesAnimation.cs" />
+    <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
+    <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Objects\DrawParameters.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
+    <Compile Include="Engine\Objects\Events\XEvent.cs" />
+    <Compile Include="Engine\Objects\Events\XTrigger.cs" />
+    <Compile Include="Engine\Objects\Events\XValueTrigger.cs" />
     <Compile Include="Engine\Objects\InitializeParameters.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -155,9 +159,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\XElement.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Engine\Objects\XEvent.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\XGame.cs">
@@ -203,6 +204,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GameEngine.cs" />
+    <Compile Include="LevelEngine.cs" />
     <Compile Include="OS\Windows\Program.cs" />
     <Compile Include="ScreenEngine.cs" />
     <Compile Include="Utility.cs" />
