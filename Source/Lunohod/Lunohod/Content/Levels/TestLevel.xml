@@ -5,6 +5,7 @@
 		<Texture Id="chargers" Source="chargers" />
 		<Texture Id="blank" Source="blank" />
 		<Texture Id="shipAnimation" Source="shipAnimation" />
+		<Texture Id="cat" Source="cat" />
 	</Resources>
 	<!-- background layer -->
 	<Layer Id="background" BackColor="#FFFFFFFF">
@@ -30,6 +31,10 @@
 				<ValueTrigger Property="boxImage1Animation.IsActive" Value="false" EnterAction="Start" />
 			</NumAnimation>
 		</Block>
+
+		<Image Id="imageCat" TextureId="cat" Bounds="20,20,40,40" Origin="20,20" Rotation="0" Opacity="1">
+			<NumAnimation From="20" To="460" Duration="00:00:2" Autoreverse="true" Target="X"/>
+		</Image>
 
 		<Image Id="imageA" TextureId="chargers" Bounds="125,225,50,50" Origin="25,25" Rotation="0" Opacity="1" />
 		<Image Id="imageB" TextureId="chargers" Bounds="225,225,50,50" Origin="25,25" Rotation="0" Opacity="1">
