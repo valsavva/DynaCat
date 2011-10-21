@@ -1,51 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level Name="testLevel1" Bounds="0,0,480,320">
-  <!-- resources -->
-  <Resources RootFolder="Levels/TestLevel">
-    <Texture Id="chargers" Source="chargers" />
-    <Texture Id="blank" Source="blank" />
-    <Texture Id="shipAnimation" Source="shipAnimation" />
-  </Resources>
-  <!-- background layer -->
-  <Layer Id="background" BackColor="#FFFFFFFF">
-    <Image TextureId="chargers" Opacity="0.2" />
-  </Layer>
-  <!-- main layer -->
-  <Layer Id="action" BackColor="#FFFFFFFF">
-    <Tower Bounds="0,0,35,35" SignalSpeed="100" />
-    <Hero Bounds="200,0,35,35" DefaultSpeed="100" Speed="0" Direction="0,0" />
+	<!-- resources -->
+	<Resources RootFolder="Levels/TestLevel">
+		<Texture Id="chargers" Source="chargers" />
+		<Texture Id="blank" Source="blank" />
+		<Texture Id="shipAnimation" Source="shipAnimation" />
+	</Resources>
+	<!-- background layer -->
+	<Layer Id="background" BackColor="#FFFFFFFF">
+		<Image TextureId="chargers" Opacity="0.2" />
+	</Layer>
+	<!-- main layer -->
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Tower Bounds="0,0,35,35" SignalSpeed="100" />
+		<Hero Bounds="200,0,35,35" DefaultSpeed="100" Speed="0" Direction="0,0" />
 
-	<Block Id="boxImage1" Bounds="25,75,50,50" DefaultEdge="None">
-		<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1" />
+		<Block Id="boxImage1" Bounds="25,75,50,50" DefaultEdge="None">
+			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1" />
 
-		<NumAnimation Id="boxImage1Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false">
-			<ValueTrigger Property="boxImage2Animation.IsActive" Value="false" EnterAction="Start" />
-		</NumAnimation>
-	</Block>
+			<NumAnimation Id="boxImage1Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false">
+				<ValueTrigger Property="boxImage2Animation.IsActive" Value="false" EnterAction="Start" />
+			</NumAnimation>
+		</Block>
 
-	<Block Id="boxImage2" Bounds="455,75,50,50" DefaultEdge="None">
-      	<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" pacity="1" />
+		<Block Id="boxImage2" Bounds="455,75,50,50" DefaultEdge="None">
+			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" pacity="1" />
 
-	    <NumAnimation Id="boxImage2Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false" IsActive="false">
-			<ValueTrigger Property="boxImage1Animation.IsActive" Value="false" EnterAction="Start" />
-		</NumAnimation>
-	</Block>
+			<NumAnimation Id="boxImage2Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false" IsActive="false">
+				<ValueTrigger Property="boxImage1Animation.IsActive" Value="false" EnterAction="Start" />
+			</NumAnimation>
+		</Block>
 
-	<Image Id="imageA" TextureId="chargers" Bounds="125,225,50,50" Origin="25,25" Rotation="0" Opacity="1" />
-	<Image Id="imageB" TextureId="chargers" Bounds="225,225,50,50" Origin="25,25" Rotation="0" Opacity="1">
-	    <NumAnimation Target="Rotation" From="0" To="360" Duration="00:00:02">
-			<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Pause" />
-			<ValueTrigger Property="ship.X" Compare="G" Value="200" EnterAction="Resume" />
-		</NumAnimation>
-	</Image>
-	<Image Id="imageC" TextureId="chargers" Bounds="325,225,50,50" Origin="25,25" Rotation="0" Opacity="1" />
+		<Image Id="imageA" TextureId="chargers" Bounds="125,225,50,50" Origin="25,25" Rotation="0" Opacity="1" />
+		<Image Id="imageB" TextureId="chargers" Bounds="225,225,50,50" Origin="25,25" Rotation="0" Opacity="1">
+			<NumAnimation Target="Rotation" From="0" To="360" Duration="00:00:02">
+				<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Pause" />
+				<ValueTrigger Property="ship.X" Compare="G" Value="200" EnterAction="Resume" />
+			</NumAnimation>
+		</Image>
+		<Image Id="imageC" TextureId="chargers" Bounds="325,225,50,50" Origin="25,25" Rotation="0" Opacity="1" />
 
 
-		
-    <Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8">
-	    <NumAnimation From="0" To="7" Duration="00:00:00.3" Target="CurrentFrame" />
-	    <NumAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="X" />
-	    <NumAnimation From="0.1" To="1" Duration="00:00:00.5" Autoreverse="true" Target="Opacity" />
-	</Sprite>
-  </Layer>
+
+		<Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8">
+			<NumAnimation From="0" To="7" Duration="00:00:00.3" Target="CurrentFrame" />
+			<NumAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="X" />
+			<NumAnimation From="0.1" To="1" Duration="00:00:00.5" Autoreverse="true" Target="Opacity" />
+		</Sprite>
+	</Layer>
 </Level>
