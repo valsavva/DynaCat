@@ -25,6 +25,10 @@ namespace Lunohod.Objects
 
         // Level
         [XmlElement(ElementName = "Layer", Type = typeof(XLayer))]
+		
+		// Trigger
+		[XmlElement(ElementName = "Trigger", Type = typeof(XTrigger))]
+		[XmlElement(ElementName = "ValueTrigger", Type = typeof(XValueTrigger))]
 
         // Generic
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
@@ -32,7 +36,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
         [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
-        [XmlElement(ElementName = "NumValueAnimation", Type = typeof(XNumValueAnimation))]
+        [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
         public List<XObject> Subcomponents { get; set; }
 		
 		public void InitHierarchy()
@@ -109,6 +113,32 @@ namespace Lunohod.Objects
 			}
 			
 			return null;
+		}
+		
+		public XObject GetRoot()
+		{
+			if (this.Parent == null)
+				return this;
+			return this.Parent.GetRoot();
+		}
+		
+		public void GetTargetFromDescriptor(string descriptor, out XObject target, out string targetMember)
+		{
+			if (descriptor.Contains("."))
+			{
+				var parts = descriptor.Split('.');
+
+				target = this.GetRoot().FindDescendant(parts[0]);
+				
+				if (target == null)
+					throw new InvalidOperationException(string.Format("Could not find object with id [{0}]", parts[0]));
+				targetMember = parts[1];
+			}
+			else
+			{
+				target = this.Parent;
+				targetMember = descriptor;
+			}
 		}
 		
 		#region IDisposable implementation

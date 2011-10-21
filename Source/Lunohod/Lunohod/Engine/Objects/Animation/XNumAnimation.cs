@@ -9,11 +9,11 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-    [XmlType("FloatValueAnimation")]
-    public class XNumValueAnimation : XAnimationBase
+    [XmlType("NumAnimation")]
+    public class XNumAnimation : XAnimationBase
     {
         private NumericValueTimeline timeline;
-        private PropertyAccessor propertyAccessor;
+        private FloatPropertyAccessor propertyAccessor;
 
         [XmlAttribute]
         public float From;
@@ -31,17 +31,13 @@ namespace Lunohod.Objects
             timeline.Autoreverse = this.Autoreverse;
             timeline.BuildTimeline();
 
-            XElement target = (XElement)p.ScreenEngine.RootComponent.FindDescendant(this.TargetId);
-
-            propertyAccessor = PropertyAccessor.CreatePropertyAccessor(
-                target, this.TargetProperty
-            );
+            propertyAccessor = (FloatPropertyAccessor)PropertyAccessor.CreatePropertyAccessor(this, this.Target);
         }
 
-        public override void UpdateAnimation(UpdateParameters p)
+        public override void UpdateAnimation()
         {
             var newPropertyValue = (float)timeline.GetValue(this.elapsedTime);
-            propertyAccessor.PropertyValue = newPropertyValue;
+            propertyAccessor.FloatPropertyValue = newPropertyValue;
         }
     }
 }

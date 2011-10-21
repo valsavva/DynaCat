@@ -9,15 +9,10 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	public enum XEventType
+    [XmlType("XTrigger")]
+	public class XTrigger : XObject
 	{
-	}
-	
-	public class XEvent
-	{
-		public XEvent()
-		{
-		}
+		
 	}
 }
 

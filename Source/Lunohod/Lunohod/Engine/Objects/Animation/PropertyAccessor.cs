@@ -6,57 +6,84 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using System.Reflection;
 
 namespace Lunohod.Objects
 {
 	public class PropertyAccessor
 	{
-		private XElement target;
+		protected XObject target;
 		private string property;
+		private PropertyInfo propertyInfo;
+		private Type targetType;
 
-		private Func<XElement, float> getter;
-		private Action<XElement, float> setter;
-
-		private PropertyAccessor(XElement target, string property, Func<XElement, float> getter, Action<XElement, float> setter)
+		protected PropertyAccessor(XObject target, string property)
 		{
             this.target = target;
             this.property = property;
-            this.getter = getter;
-			this.setter = setter;
-		}
 
-		public XElement Target
+			targetType = target.GetType();
+			this.propertyInfo = targetType.GetProperty(property);
+			
+			if (this.GetType() == typeof(PropertyAccessor) && this.propertyInfo == null)
+				throw new InvalidOperationException(
+					string.Format("Could not find property [{0}] on object [{1}] of type [{2}])",
+						property, this.target.Id, targetType.FullName)
+				);
+		}
+		
+		public XObject Target
 		{
-			get {
-				return this.target;
-			}
-		}		
+			get { return this.target; }
+		}	
+
+		public Type TargetType
+		{
+			get { return this.targetType; }
+		}
 
 		public string Property
 		{
-			get {
-				return this.property;
-			}
+			get { return this.property; }
 		}
 		
-        public float PropertyValue
+		public virtual Type PropertyType
+		{
+			get { return this.propertyInfo.PropertyType; }
+		}
+		
+        public virtual object PropertyValue
         {
-            get { return this.getter(target);  }
-            set { setter(target, value);  }
+            get { return propertyInfo.GetValue(target, null);  }
+            set { 
+				try
+				{
+					propertyInfo.SetValue(target, value, null);
+				}
+				catch
+				{
+					var newValue = Convert.ChangeType(value, propertyInfo.PropertyType);
+					propertyInfo.SetValue(target, newValue, null);
+				}
+			}
         }
 
-		public static PropertyAccessor CreatePropertyAccessor(XElement target, string property)
+		public static PropertyAccessor CreatePropertyAccessor(XObject currentObject, string memberDescriptor)
 		{
+			XObject target;
+			string property;
+			currentObject.GetTargetFromDescriptor(memberDescriptor, out target, out property);
+			
 			switch(property)
 			{
-				case "X": return new PropertyAccessor(target, property, GetX, SetX);
-				case "Y": return new PropertyAccessor(target, property, GetY, SetY);
-				case "Height": return new PropertyAccessor(target, property, GetHeight, SetHeight);
-				case "Width": return new PropertyAccessor(target, property, GetWidth, SetWidth);
-				case "Rotation": return new PropertyAccessor(target, property, GetRotation, SetRotation);
-				case "Opacity": return new PropertyAccessor(target, property, GetOpacity, SetOpacity);
-				case "CurrentFrame": return new PropertyAccessor(target, property, GetCurrentFrame, SetCurrentFrame);
-				default: throw new InvalidOperationException("Unknown attribute");
+				case "X": return new FloatPropertyAccessor(target, property, GetX, SetX);
+				case "Y": return new FloatPropertyAccessor(target, property, GetY, SetY);
+				case "Height": return new FloatPropertyAccessor(target, property, GetHeight, SetHeight);
+				case "Width": return new FloatPropertyAccessor(target, property, GetWidth, SetWidth);
+				case "Rotation": return new FloatPropertyAccessor(target, property, GetRotation, SetRotation);
+				case "Opacity": return new FloatPropertyAccessor(target, property, GetOpacity, SetOpacity);
+				case "CurrentFrame": return new FloatPropertyAccessor(target, property, GetCurrentFrame, SetCurrentFrame);
+				default: return new PropertyAccessor(target, property);
 			}
 		}
 					
