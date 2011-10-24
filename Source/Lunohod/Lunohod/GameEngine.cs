@@ -10,6 +10,7 @@ namespace Lunohod
 {
 	public class GameEngine : Game
 	{
+        public const string MetadataRootDirectory = "Metadata";
         private GraphicsDeviceManager graphics;
 
 		private XGame gameObject;
@@ -17,7 +18,6 @@ namespace Lunohod
 		private ScreenEngine screenEngine;
 
         public Texture2D BlankTexture { get; private set; }
-        public Texture2D chargersTexture { get; private set; }
 
 		public XGame GameObject
 		{
@@ -30,8 +30,8 @@ namespace Lunohod
 		{
             graphics = new GraphicsDeviceManager(this);
 			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
-			graphics.PreferMultiSampling = true;
-
+			//graphics.PreferMultiSampling = true;
+            this.IsFixedTimeStep = false;
 #if WINDOWS
             graphics.PreferredBackBufferHeight = 320;
             graphics.PreferredBackBufferWidth = 480;
@@ -49,16 +49,15 @@ namespace Lunohod
 		protected override void LoadContent()
 		{
 			this.BlankTexture = this.Content.Load<Texture2D>("Global/blank");
-            this.chargersTexture = this.Content.Load<Texture2D>("Global/ch");
-			
-			LoadGameElement();
+
+            LoadGameElement();
 			
 			base.LoadContent ();
 		}
 
 		protected void LoadGameElement()
 		{
-			string gameXmlFile = Path.Combine(this.Content.RootDirectory, "Game.xml");
+			string gameXmlFile = Path.Combine(GameEngine.MetadataRootDirectory, "Game.xml");
 			
 			try
 			{

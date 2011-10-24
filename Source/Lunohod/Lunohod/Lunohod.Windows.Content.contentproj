@@ -25,7 +25,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <ContentRootDirectory>Content</ContentRootDirectory>
+    <ContentRootDirectory>.</ContentRootDirectory>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>ContentProject</RootNamespace>
@@ -73,51 +73,51 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global\blank.png">
+    <Compile Include="Content\Global\blank.png">
       <Name>blank</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Global\ch.png">
+    <Compile Include="Content\Global\ch.png">
       <Name>ch</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Global\dash 2.png">
+    <Compile Include="Content\Global\dash 2.png">
       <Name>dash 2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Global\dash 2a.png">
+    <Compile Include="Content\Global\dash 2a.png">
       <Name>dash 2a</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Levels\TestLevel\blank.png">
+    <Compile Include="Content\TestLevel\blank.png">
       <Name>blank</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Levels\TestLevel\chargers.png">
+    <Compile Include="Content\TestLevel\chargers.png">
       <Name>chargers</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Levels\TestLevel\shipAnimation.png">
+    <Compile Include="Content\TestLevel\shipAnimation.png">
       <Name>shipAnimation</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Levels\TestLevel\cat.png">
+    <Compile Include="Content\TestLevel\cat.png">
       <Name>cat</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Levels\TestLevel\rat.png">
+    <Compile Include="Content\TestLevel\rat.png">
       <Name>rat</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

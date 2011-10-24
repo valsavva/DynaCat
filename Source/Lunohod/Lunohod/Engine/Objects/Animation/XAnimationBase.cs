@@ -52,7 +52,12 @@ namespace Lunohod.Objects
 		public string zDuration
 		{
 			get { return this.Duration.ToString(); }
-			set { this.Duration = TimeSpan.Parse(value, CultureInfo.InvariantCulture); }
+			set {
+                if (value.Contains(":"))
+                    this.Duration = TimeSpan.Parse(value, CultureInfo.InvariantCulture);
+                else
+                    this.Duration = TimeSpan.FromSeconds(double.Parse(value));
+            }
 		}
 
         [XmlAttribute("RepeatTime")]

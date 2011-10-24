@@ -31,14 +31,24 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-//			string fileName = Path.Combine(
-//				Path.Combine(p.Game.Content.RootDirectory, r.RootFolder), this.Source
-//			);
-			
 			XResourceBundle r = (XResourceBundle)this.Parent;
 			
-			string fileName = Path.Combine(r.RootFolder, this.Source);
-			
+			string fileName = Path.Combine(r.RootFolder.Replace('/', Path.DirectorySeparatorChar), this.Source);
+
+#if WINDOWS
+            var pngFileName = Path.ChangeExtension(Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, fileName), "png");
+            var xnbFileName = Path.ChangeExtension(Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, fileName), "xnb");
+            var outputPath = Path.GetDirectoryName(pngFileName);
+            if (File.Exists(pngFileName) && !File.Exists(xnbFileName))
+            {
+                using (Lunohod.ContentLoading.ContentBuilder b = new ContentLoading.ContentBuilder(outputPath))
+                {
+                    b.Add(pngFileName, this.Source, "", "TextureProcessor");
+                    b.Build();
+                }
+            }
+#endif
+
 			image = p.Game.Content.Load<Texture2D>(fileName);
 		}
 		

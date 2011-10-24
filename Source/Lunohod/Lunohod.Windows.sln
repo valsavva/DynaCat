@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod.Windows", "Lunohod\Lunohod.Windows.csproj", "{669A160E-877C-462B-ACBF-93FEF1899EAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod.Windows.Content", "Lunohod\Content\Lunohod.Windows.Content.contentproj", "{97CDA369-4DEB-40E5-ADB6-909311C78448}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod.Windows.Content", "Lunohod\Lunohod.Windows.Content.contentproj", "{97CDA369-4DEB-40E5-ADB6-909311C78448}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

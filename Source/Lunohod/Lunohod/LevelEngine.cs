@@ -44,7 +44,7 @@ namespace Lunohod
 		private void LoadLevelObjects()
 		{
 			string levelXmlFile = Path.ChangeExtension(
-				Path.Combine(this.gameEngine.Content.RootDirectory, "Levels", this.name), ".xml"
+				Path.Combine(GameEngine.MetadataRootDirectory, this.name), ".xml"
 			);
 			
 			try
