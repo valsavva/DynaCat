@@ -179,8 +179,13 @@ namespace Microsoft.Xna.Framework.Graphics
 			GL.FrontFace (FrontFaceDirection.Cw);
 			GL.Color4 (1.0f, 1.0f, 1.0f, 1.0f);
 
-			_batcher.DrawBatch (_sortMode);
+			_batcher.DrawBatch (_sortMode, _samplerState);
 	
+			// Disable Scissor Tests if necessary
+			if (this.graphicsDevice.RasterizerState.ScissorTestEnable) {
+				GL.Disable (EnableCap.ScissorTest);
+			}
+
 			// clear out the textures
 			graphicsDevice.Textures._textures.Clear ();
 			

@@ -94,7 +94,7 @@ namespace Lunohod.Objects
 				}; break;
 			}
 			
-			p.SpriteBatch.Draw(p.Game.BlankTexture, this.GetScreenBounds(), this.BackColor);
+			//p.SpriteBatch.Draw(p.Game.BlankTexture, this.GetScreenBounds(), this.BackColor);
 		}
     }
 }

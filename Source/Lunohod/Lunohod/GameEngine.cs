@@ -5,6 +5,7 @@ using Lunohod.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
+using System.Text;
 
 namespace Lunohod
 {
@@ -30,7 +31,7 @@ namespace Lunohod
 		{
             graphics = new GraphicsDeviceManager(this);
 			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
-			//graphics.PreferMultiSampling = true;
+			graphics.PreferMultiSampling = true;
             this.IsFixedTimeStep = false;
 #if WINDOWS
             graphics.PreferredBackBufferHeight = 320;
@@ -48,11 +49,10 @@ namespace Lunohod
 		
 		protected override void LoadContent()
 		{
-			this.BlankTexture = this.Content.Load<Texture2D>("Global/blank");
-
             LoadGameElement();
+            this.BlankTexture = ((XTextureResource)this.gameObject.FindDescendant("blank")).Image;
 			
-			base.LoadContent ();
+			base.LoadContent();
 		}
 
 		protected void LoadGameElement()
@@ -79,8 +79,13 @@ namespace Lunohod
 			gameObject.Initialize(new InitializeParameters() { Game = this });
 		}
 
+        List<Tuple<DateTime, DateTime, string>> log = new List<Tuple<DateTime,DateTime,string>>();
+        DateTime begin = DateTime.Now;
+
 		protected override void Update(GameTime gameTime)
 		{
+            //DateTime start = DateTime.Now;
+
 			base.Update (gameTime);
 			
 			if (screenEngine == null)
@@ -91,6 +96,28 @@ namespace Lunohod
 
 			screenEngine.Update(gameTime);
 			
+            //log.Add(Tuple.Create(start, DateTime.Now, "Update"));
+
+            //if (begin.AddSeconds(10) <= DateTime.Now)
+            //{
+            //    System.Threading.ThreadPool.QueueUserWorkItem(o =>
+            //    {
+            //        StringBuilder sb = new StringBuilder();
+            //        var array = log.ToArray();
+            //        log.Clear();
+            //        begin = DateTime.Now;
+            //        foreach (var t in array)
+            //        {
+            //            sb.Append(string.Format(
+            //                "\r\n{0} {1} {2}", t.Item1.ToString("MM:ss:ffff"), t.Item2.ToString("MM:ss:ffff"), t.Item3
+            //                ));
+            //        }
+
+            //        File.WriteAllText("log.txt", sb.ToString());
+            //    });
+            //}
+
+
             //var touches = TouchPanel.GetState();
             //touches
             //    .Where(t => t.State == TouchLocationState.Released)
@@ -100,12 +127,16 @@ namespace Lunohod
 
 		protected override void Draw(GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+            //DateTime start = DateTime.Now;
+            
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 			
 			this.screenEngine.Draw(gameTime);
 			
 			base.Draw(gameTime);
-		}
+
+            //log.Add(Tuple.Create(start, DateTime.Now, "Draw"));
+        }
 		
 		protected override void UnloadContent()
 		{

@@ -101,13 +101,13 @@ namespace Microsoft.Xna.Framework.Media
 			}
 			
 			// Concat the file name with valid extensions
-            if (Contains(FileName + ".3gp", files))
-                return FileName + ".3gp";
-            if (Contains(FileName + ".mp4", files))
-                return FileName + ".mp4";
-			
-			return null;
+			return Path.Combine(path, TryFindAnyCased(file, files, ".3gp", ".mp4"));
 		}
+		
+		private static string TryFindAnyCased(string search, string[] arr, params string[] extensions)
+        {
+            return arr.FirstOrDefault(s => extensions.Any(ext => s.ToLower() == (search.ToLower() + ext)));
+        }
 
         private static bool Contains(string search, string[] arr)
         {
@@ -117,8 +117,15 @@ namespace Microsoft.Xna.Framework.Media
 		internal void Prepare()
 		{
             Player = new Android.Media.MediaPlayer();
-            Player.SetDataSource(Game.contextInstance.Assets.OpenFd(_fileName).FileDescriptor);
-            Player.Prepare();
+			if (Player != null )
+			{
+				var fd = Game.contextInstance.Assets.OpenFd(_fileName).FileDescriptor;
+				if (fd != null)
+				{
+		            Player.SetDataSource(fd);			
+		            Player.Prepare();
+				}
+			}
 		}
 		
 		public void Dispose()

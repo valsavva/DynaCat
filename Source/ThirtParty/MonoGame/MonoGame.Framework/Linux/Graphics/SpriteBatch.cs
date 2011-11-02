@@ -147,16 +147,17 @@ namespace Microsoft.Xna.Framework.Graphics
 			GL.Ortho (0, vp.Width, vp.Height, 0, -1, 1);
 			
 			// Enable Scissor Tests if necessary
-			if (this.graphicsDevice.RenderState.ScissorTestEnable) {
+			if (this.graphicsDevice.RasterizerState.ScissorTestEnable) {
 				GL.Enable (EnableCap.ScissorTest);				
 			}
 
 			GL.MatrixMode (MatrixMode.Modelview);			
 			
-			GL.Viewport (vp.X, vp.Y, vp.Width, vp.Height);
+			GL.Viewport (0, 0, vp.Width, vp.Height);
+			//GL.Viewport (vp.X, vp.Y, vp.Width, vp.Height);
 
 			// Enable Scissor Tests if necessary
-			if (this.graphicsDevice.RenderState.ScissorTestEnable) {
+			if (this.graphicsDevice.RasterizerState.ScissorTestEnable) {
 				GL.Scissor (this.graphicsDevice.ScissorRectangle.X, this.graphicsDevice.ScissorRectangle.Y, this.graphicsDevice.ScissorRectangle.Width, this.graphicsDevice.ScissorRectangle.Height);
 			}
 
@@ -174,8 +175,13 @@ namespace Microsoft.Xna.Framework.Graphics
 			GL.Enable (EnableCap.CullFace);
 			GL.FrontFace (FrontFaceDirection.Cw);
 			GL.Color4 (1.0f, 1.0f, 1.0f, 1.0f);			
-			
-			_batcher.DrawBatch (_sortMode);
+
+			_batcher.DrawBatch (_sortMode, _samplerState);
+
+			// Disable Scissor Tests if necessary
+			if (this.graphicsDevice.RasterizerState.ScissorTestEnable) {
+				GL.Disable (EnableCap.ScissorTest);
+			}
 
 			// clear out the textures
 			graphicsDevice.Textures._textures.Clear ();
