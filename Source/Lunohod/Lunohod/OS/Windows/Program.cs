@@ -10,10 +10,29 @@ namespace Lunohod.Windows
         /// </summary>
         static void Main(string[] args)
         {
-            using (GameEngine game = new GameEngine())
+            AppDomain.CurrentDomain.UnhandledException += HandleAppDomainCurrentDomainUnhandledException; ;
+            try
             {
-                game.Run();
+                using (GameEngine game = new GameEngine())
+                {
+                    game.Run();
+                }
             }
+            catch (Exception ex)
+            {
+                LogError(ex);
+            }
+        }
+
+        static void HandleAppDomainCurrentDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            LogError((Exception)e.ExceptionObject);
+        }
+
+        static void LogError(Exception ex)
+        {
+            //System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "lunohod_error.txt", ex.ToString());
+            System.IO.File.WriteAllText("lunohod_error.txt", ex.ToString());
         }
     }
 #endif
