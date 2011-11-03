@@ -56,7 +56,7 @@ namespace Lunohod.Objects
                 if (value.Contains(":"))
                     this.Duration = TimeSpan.Parse(value, CultureInfo.InvariantCulture);
                 else
-                    this.Duration = TimeSpan.FromSeconds(double.Parse(value));
+                    this.Duration = TimeSpan.FromSeconds(double.Parse(value, CultureInfo.InvariantCulture));
             }
 		}
 

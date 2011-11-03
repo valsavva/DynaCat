@@ -64,7 +64,7 @@ namespace Lunohod.Objects
 				objValue = bool.Parse(this.ValueString);
 			else if (propertyAccessor.PropertyType == typeof(float))
 			{
-				floatValue = float.Parse(this.ValueString);
+				floatValue = float.Parse(this.ValueString, CultureInfo.InvariantCulture);
 				objValue = floatValue;
 			}
 			
