@@ -79,9 +79,27 @@ namespace Lunohod
 			gameObject.Initialize(new InitializeParameters() { Game = this });
 		}
 
+		/*
         List<Tuple<DateTime, DateTime, string>> log = new List<Tuple<DateTime,DateTime,string>>();
         DateTime begin = DateTime.Now;
 
+		
+		int[] ccounts = new int[3];
+		
+		private void CollectionCounts()
+		{
+			for (int i = 0; i < ccounts.Length; i++)
+			{
+				int c = GC.CollectionCount(i);
+				if (ccounts[i] != c)
+				{
+					Console.WriteLine("Collection occured. Generation: {0} Count: {1}", i, c);
+					ccounts[i] = c;
+				}
+			}
+		}
+		*/
+		
 		protected override void Update(GameTime gameTime)
 		{
             //DateTime start = DateTime.Now;
@@ -92,11 +110,15 @@ namespace Lunohod
 			{
 				screenEngine = new LevelEngine(this, "TestLevel");
 				screenEngine.Initialize();
+				
+				GC.Collect();
 			}
 
 			screenEngine.Update(gameTime);
 			
-            //log.Add(Tuple.Create(start, DateTime.Now, "Update"));
+			//CollectionCounts();
+
+			//log.Add(Tuple.Create(start, DateTime.Now, "Update"));
 
             //if (begin.AddSeconds(10) <= DateTime.Now)
             //{

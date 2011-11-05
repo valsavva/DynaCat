@@ -70,20 +70,14 @@ namespace Lunohod
 		public override void Update(GameTime gameTime)
 		{
 			updateParameters.GameTime = gameTime;
+			
+			this.gameEngine.GameObject.Update(updateParameters);
+			
 			this.level.Update(updateParameters);
 		}
 		
 		public override void Draw(GameTime gameTime)
 		{
-            //this.spriteBatch.Begin();
-            //spriteBatch.Draw(gameEngine.chargersTexture, Vector2.Zero, Color.White);
-            //this.spriteBatch.End();
-
-            //base.Draw(gameTime);
-
-            //return;
-
-
 			drawParameters.GameTime = gameTime;
 			
 			try 
@@ -98,12 +92,18 @@ namespace Lunohod
 //					Matrix.CreateTranslation(480f / 2, 320f / 2, 0);
 						
 //				Matrix transform = Matrix.Identity;
-				//Matrix transform = Matrix.Identity *
-				//	Matrix.CreateScale(this.gameEngine.Window.conten;
-				//this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
-				//	DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
-
-				this.spriteBatch.Begin();
+				
+				if (this.gameEngine.Window.ClientBounds.Height > 900)
+				{
+					Matrix transform = Matrix.Identity *
+						Matrix.CreateScale(2.0f);
+					this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
+						DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
+				}
+				else
+				{
+					this.spriteBatch.Begin();
+				}
 				
 				this.level.Draw(drawParameters);
 				this.gameEngine.GameObject.Draw(drawParameters);

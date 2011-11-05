@@ -9,14 +9,15 @@ namespace Lunohod.Objects
 	{
 		protected bool isDisposed = false;
 		
+		private XObject parent;
+
 		[XmlAttribute]
 		public string Id { get; set;}
 
 		[XmlIgnore]
-		public XObject Parent {get; set;}
+		public XObject Parent { get; set; }
 
-
-        // Game
+		// Game
         [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
         [XmlElement(ElementName = "Dashboard", Type = typeof(XDashboard))]
 

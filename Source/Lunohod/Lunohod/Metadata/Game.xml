@@ -10,7 +10,13 @@
 	<Dashboard BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270" />
     	<Image TextureId="dashboard" Opacity="0.2"/>
-		<TapArea Bounds="0,0,35,35" FireEvent="system:left" />
-		<TapArea Bounds="445,0,35,35" FireEvent="system:right" />
+		<TapArea Bounds="0,170,45,45" FireEvent="system:left" />
+		<TapArea Bounds="435,170,45,45" FireEvent="system:right" />
+
+		<TapArea Bounds="0,115,45,45" FireEvent="system:up" />
+		<TapArea Bounds="435,115,45,45" FireEvent="system:up" />
+
+		<TapArea Bounds="0,225,45,45" FireEvent="system:down" />
+		<TapArea Bounds="435,225,45,45" FireEvent="system:down" />
 	</Dashboard>
 </Game>

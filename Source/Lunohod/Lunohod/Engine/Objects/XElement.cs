@@ -23,7 +23,7 @@ namespace Lunohod.Objects
         [XmlIgnore]
         public Color BackColor
 		{
-			get { return this.backColor ?? ((XElement)this.Parent).BackColor; }
+			get { return this.backColor ?? this.ParentElement.BackColor; }
 			set { this.backColor = value; }
 		}
         [XmlAttribute]
@@ -37,51 +37,48 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public Vector2 Origin;
 		
+		[XmlIgnore]
+		public XElement ParentElement { get; set; }
+		
 		public bool UseRotation
 		{
 			get { 
 				if (this.rotation.HasValue)
 					return true;
-				
-				XElement parent = this.Parent as XElement;
-				return parent == null ? false : parent.UseRotation;
+				if (this.ParentElement == null)
+					return false;
+				return this.ParentElement.UseRotation;
 			}
 		}
 		
-		public bool OverridesBackColor
+		public bool UseBackColor
 		{
 			get { return this.backColor.HasValue; }
 		}
 		
 		public float GetScreenRotation()
 		{
-			XElement parent = this.Parent as XElement;
-
-			if (this.Parent == null)
+			if (this.ParentElement == null)
 				return this.Rotation;
 
-			return parent.Rotation + this.Rotation;
+			return this.ParentElement.Rotation + this.Rotation;
 		}
 		
 		public float GetScreenOpacity()
 		{
-			XElement parent = this.Parent as XElement;
-
-			if (this.Parent == null)
+			if (this.ParentElement == null)
 				return this.Opacity;
 
-			return parent.Opacity * this.Opacity;
+			return this.ParentElement.Opacity * this.Opacity;
 		}
 		
 		public Rectangle GetScreenBounds()
 		{
-			XElement parent = this.Parent as XElement;
-
-			if (parent == null)
+			if (this.ParentElement == null)
 				tmpBounds = this.Bounds;
 			else
 			{
-				tmpBounds = parent.GetScreenBounds();
+				tmpBounds = this.ParentElement.GetScreenBounds();
 	
 				if (this.Bounds.IsEmpty == false)
 				{
@@ -120,9 +117,17 @@ namespace Lunohod.Objects
 			set { this.Location = value.ToPoint(); }
 			get { return this.Location.ToStr(); }
 		}
-
+		
+		public override void Initialize(InitializeParameters p)
+		{
+			base.Initialize(p);
+			
+			this.ParentElement = this.Parent as XElement;
+		}
+		
         public virtual void ProcessCollision(LevelEngine engine, Rectangle newBounds)
         {
+			
         }
     }
 }

@@ -65,7 +65,6 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\Global\dash 2.png" />
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
@@ -112,8 +111,6 @@
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Content\Global\" />
-    <Folder Include="Content\Levels\" />
-    <Folder Include="Content\Levels\TestLevel\" />
     <Folder Include="Engine\" />
     <Folder Include="Engine\Objects\Animation\" />
     <Folder Include="OS\iOS\" />
@@ -126,23 +123,44 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Levels\TestLevel.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Global\dash 2a.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Levels\TestLevel\blank.png">
+    <Content Include="Content\Global\ch.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Game.xml">
+    <Content Include="Content\TestLevel\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Levels\TestLevel\shipAnimation.png" />
-    <Content Include="Content\Global\ch.png" />
-    <Content Include="Content\Levels\TestLevel\chargers.png" />
+    <Content Include="Content\TestLevel\cat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel\chargers.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel\ch-png.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel\rat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel\rat_walk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel\shipAnimation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Game.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestLevel.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\dash 2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

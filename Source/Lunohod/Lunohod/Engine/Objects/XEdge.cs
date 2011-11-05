@@ -27,11 +27,13 @@ namespace Lunohod.Objects
     [XmlType("Edge")]
     public class XEdge : XElement
     {
-        [XmlAttribute]
+		private XBlock parentBlock;
+		
+		[XmlAttribute]
         public XAlignType Align;
         [XmlAttribute]
         public XEdgeType Type = XEdgeType.Stick;
-
+		
         public virtual void ProcessCollision(LevelEngine engine, XBlock block, Rectangle newBounds)
         {
         }
@@ -49,8 +51,10 @@ namespace Lunohod.Objects
 		
 		public override void Initialize(InitializeParameters p)
 		{
-			if (!this.OverridesBackColor)
+			if (!this.UseBackColor)
 				this.BackColor = this.GetDefaultColor();
+			
+			this.parentBlock = (XBlock)this.Parent;
 			
 			base.Initialize(p);
 		}
@@ -60,7 +64,7 @@ namespace Lunohod.Objects
 			if (this.Type == XEdgeType.None)
 				return;
 			
-			var blockBounds = ((XBlock)this.Parent).Bounds;
+			var blockBounds = this.parentBlock.Bounds;
 			
 			switch (this.Align)
 			{
