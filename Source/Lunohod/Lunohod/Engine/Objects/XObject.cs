@@ -9,8 +9,6 @@ namespace Lunohod.Objects
 	{
 		protected bool isDisposed = false;
 		
-		private XObject parent;
-
 		[XmlAttribute]
 		public string Id { get; set;}
 
@@ -20,6 +18,7 @@ namespace Lunohod.Objects
 		// Game
         [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
         [XmlElement(ElementName = "Dashboard", Type = typeof(XDashboard))]
+        [XmlElement(ElementName = "TapArea", Type = typeof(XTapArea))]
 
         // Dashboard
         [XmlElement(ElementName = "Viewport", Type = typeof(XViewport))]

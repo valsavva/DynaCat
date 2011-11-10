@@ -25,6 +25,8 @@ namespace Lunohod.Objects
 			InitializeEdges();
 
 			base.Initialize(p);
+			
+			p.LevelEngine.obstacles.Add(this);
         }
 
         private void InitializeEdges()

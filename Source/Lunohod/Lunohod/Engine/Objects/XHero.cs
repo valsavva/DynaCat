@@ -10,9 +10,9 @@ namespace Lunohod.Objects
     [XmlType("Hero")]
     public class XHero : XElement
     {
-        [XmlAttribute]
-        public float DefaultSpeed;
-		[XmlIgnore]
+		private Vector2 offset;
+		
+		[XmlAttribute]
 		public float Speed;
 		
 		[XmlIgnore]
@@ -25,7 +25,23 @@ namespace Lunohod.Objects
 			set { this.Direction = value.ToVector2(); }
 		}
 		
-        public void AlignToBoundaryOf(XElement e, Vector2 direction)
+		public override void Initialize(InitializeParameters p)
+		{
+			base.Initialize(p);
+
+			p.LevelEngine.hero = this;
+		}
+		
+		public override void Update(UpdateParameters p)
+		{
+			base.Update(p);
+			
+			offset = this.Direction * (Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
+			
+			this.Bounds.Offset((int)Math.Round(offset.X), (int)Math.Round(offset.Y));
+		}
+		
+		public void AlignToBoundaryOf(XElement e, Vector2 direction)
         {
         }
     }

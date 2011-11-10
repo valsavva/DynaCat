@@ -6,19 +6,41 @@ using MonoTouch.UIKit;
 
 namespace Lunohod
 {
+	
+    [Register("AppDelegate")]
+    class Program : UIApplicationDelegate
+    {
+        public override void FinishedLaunching(UIApplication app)
+        {
+            // Fun begins..
+            using (GameEngine game = new GameEngine())
+            {
+                game.Run();
+            }
+        }
+
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        static void Main(string[] args)
+        {
+            UIApplication.Main(args, null, "AppDelegate");
+        }
+    }    
+/*	
     [Register ("AppDelegate")]
     class Application : UIApplicationDelegate 
     {
-        private GameEngine game;
-
         public override void FinishedLaunching (UIApplication app)
         {
+            using (var game = new GameEngine())
+			{
+            	game.Run();
+			}
         }
 		
 		public override void OnActivated(UIApplication application)
 		{
-            game = new GameEngine();
-            game.Run();
 		}
 
         static void Main (string [] args)
@@ -39,7 +61,7 @@ namespace Lunohod
         	Console.WriteLine(e.ExceptionObject.ToString());
         }
     }
-
+	 */
 	
 //	[Register ("AppDelegate")]
 //	public class Application

@@ -6,40 +6,58 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Text;
+using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Xna.Framework.Input;
 
 namespace Lunohod
 {
 	public class GameEngine : Game
 	{
         public const string MetadataRootDirectory = "Metadata";
-        private GraphicsDeviceManager graphics;
+        public const string ContentRootDirectory = "Content";
+
+		private GraphicsDeviceManager graphics;
+		private ScreenEngine screenEngine;
+		
+		private GameEventQueue eventQueue;
+		
+		private TouchCollection touches;
+		private KeyboardState keyboardState;
 
 		private XGame gameObject;
 
-		private ScreenEngine screenEngine;
-
-        public Texture2D BlankTexture { get; private set; }
+		public Texture2D BlankTexture { get; private set; }
 
 		public XGame GameObject
 		{
-			get {
-				return this.gameObject;
-			}
+			get { return this.gameObject; }
 		}		
+		
+		public TouchCollection Touches
+		{
+			get { return this.touches; }
+		}
+		
+		public KeyboardState KeyboardState
+		{
+			get { return this.keyboardState; }
+		}
 
 		public GameEngine()
 		{
-            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = ContentRootDirectory;
+
+			graphics = new GraphicsDeviceManager(this);
 			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 			graphics.PreferMultiSampling = true;
             this.IsFixedTimeStep = false;
+			
+			this.eventQueue = new GameEventQueue();
+
 #if WINDOWS
             graphics.PreferredBackBufferHeight = 320;
             graphics.PreferredBackBufferWidth = 480;
 #endif
-
-
-            Content.RootDirectory = "Content";
 		}
 		
 		protected override void Initialize()
@@ -78,7 +96,12 @@ namespace Lunohod
 			gameObject.InitHierarchy();
 			gameObject.Initialize(new InitializeParameters() { Game = this });
 		}
-
+		
+		public void EnqueueEvent(GameEvent e)
+		{
+			this.eventQueue.Enqueue(e);
+		}
+		
 		/*
         List<Tuple<DateTime, DateTime, string>> log = new List<Tuple<DateTime,DateTime,string>>();
         DateTime begin = DateTime.Now;
@@ -103,16 +126,21 @@ namespace Lunohod
 		protected override void Update(GameTime gameTime)
 		{
             //DateTime start = DateTime.Now;
-
-			base.Update (gameTime);
+			this.touches = TouchPanel.GetState();
 			
+
 			if (screenEngine == null)
 			{
 				screenEngine = new LevelEngine(this, "TestLevel");
 				screenEngine.Initialize();
 				
 				GC.Collect();
+
 			}
+			
+			ProcessQueue();
+			
+			base.Update (gameTime);
 
 			screenEngine.Update(gameTime);
 			
@@ -139,12 +167,26 @@ namespace Lunohod
             //    });
             //}
 
-
             //var touches = TouchPanel.GetState();
             //touches
             //    .Where(t => t.State == TouchLocationState.Released)
             //    .ToArray()
             //    .ForEach(t => Console.WriteLine("Touch! {0}", t.Position.ToString()));
+		}
+
+		protected void ProcessQueue()
+		{
+			while (this.eventQueue.Count > 0)
+			{
+				var e = this.eventQueue.Dequeue();
+				
+				this.screenEngine.ProcessEvent(e);
+				
+				if (e.IsHandled)
+					continue;
+				
+				// handle the event on system level
+			}
 		}
 
 		protected override void Draw(GameTime gameTime)
@@ -166,4 +208,3 @@ namespace Lunohod
 		}
 	}
 }
-

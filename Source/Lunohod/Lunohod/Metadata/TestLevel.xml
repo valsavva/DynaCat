@@ -16,7 +16,9 @@
 	<!-- main layer -->
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="100"/>
-		<Hero Bounds="200,0,35,35" DefaultSpeed="100" Speed="0" Direction="0,0"/>
+		<Hero Bounds="200,0,40,37" Speed="50" Direction="0,0">
+			<Image Id="imageHero" TextureId="cat" />
+		</Hero>
 
 		<Block Id="boxImage1" Bounds="25,75,50,50" DefaultEdge="None">
 			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1"/>

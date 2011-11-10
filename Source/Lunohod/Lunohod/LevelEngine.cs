@@ -26,9 +26,28 @@ namespace Lunohod
 		public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
 		{
+			this.obstacles = new List<XElement>();
 		}
 
 		public override XObject RootComponent { get { return level; } }
+		
+		
+		public override void ProcessEvent(GameEvent e)
+		{
+			e.IsHandled = true;
+			
+			switch (e.EventType)
+			{
+				case GameEventType.Up : this.hero.Direction = new Vector2(0, -1); break;
+				case GameEventType.Down : this.hero.Direction = new Vector2(0, 1); break;
+				case GameEventType.Left : this.hero.Direction = new Vector2(-1, 0); break;
+				case GameEventType.Right : this.hero.Direction = new Vector2(1, 0); break;
+				default: e.IsHandled = false; break;
+			}
+			
+			base.ProcessEvent(e);
+		}
+		
 		
 		public override void Initialize()
 		{

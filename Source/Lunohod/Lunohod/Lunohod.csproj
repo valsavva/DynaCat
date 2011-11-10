@@ -42,7 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer: Valeri Savvateev (4U3N9BYNEH)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <ConsolePause>false</ConsolePause>
     <MtouchI18n />
     <IpaPackageName />
@@ -106,6 +106,11 @@
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
     <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
     <Compile Include="Engine\Objects\Events\XValueTrigger.cs" />
+    <Compile Include="GameEvent.cs" />
+    <Compile Include="GameEventQueue.cs" />
+    <Compile Include="OS\GameEventType.cs" />
+    <Compile Include="Engine\Objects\ParamentersBase.cs" />
+    <Compile Include="KeyboardProcessor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -115,12 +120,6 @@
     <Folder Include="Engine\Objects\Animation\" />
     <Folder Include="OS\iOS\" />
     <Folder Include="Engine\Objects\Events\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
-      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
-      <Name>MonoGame.Framework.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Global\dash 2a.png">
@@ -162,5 +161,11 @@
     <Content Include="Content\Global\dash 2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
+      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
+      <Name>MonoGame.Framework.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
