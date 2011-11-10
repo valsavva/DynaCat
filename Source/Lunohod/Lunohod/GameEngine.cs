@@ -22,7 +22,7 @@ namespace Lunohod
 		private GameEventQueue eventQueue;
 		
 		private TouchCollection touches;
-		private KeyboardState keyboardState;
+		private KeyboardProcessor keyboardProcessor;
 
 		private XGame gameObject;
 
@@ -38,11 +38,6 @@ namespace Lunohod
 			get { return this.touches; }
 		}
 		
-		public KeyboardState KeyboardState
-		{
-			get { return this.keyboardState; }
-		}
-
 		public GameEngine()
 		{
             Content.RootDirectory = ContentRootDirectory;
@@ -51,10 +46,13 @@ namespace Lunohod
 			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 			graphics.PreferMultiSampling = true;
             this.IsFixedTimeStep = false;
-			
+
+
+            keyboardProcessor = new KeyboardProcessor(this);
 			this.eventQueue = new GameEventQueue();
 
 #if WINDOWS
+            this.IsMouseVisible = true;
             graphics.PreferredBackBufferHeight = 320;
             graphics.PreferredBackBufferWidth = 480;
 #endif
@@ -127,7 +125,8 @@ namespace Lunohod
 		{
             //DateTime start = DateTime.Now;
 			this.touches = TouchPanel.GetState();
-			
+
+            keyboardProcessor.Process(gameTime);
 
 			if (screenEngine == null)
 			{

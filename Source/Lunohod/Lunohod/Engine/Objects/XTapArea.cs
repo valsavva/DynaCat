@@ -33,10 +33,15 @@ namespace Lunohod.Objects
 				
 				if (touch.State != TouchLocationState.Pressed)
 					continue;
+#if WINDOWS
+                if (!this.Bounds.Contains((int)touch.Position.X, (int)touch.Position.Y))
+                    continue;
+#else
 				if (!this.Bounds.Contains(touch.Position))
 					continue;
+#endif
 
-				p.Game.EnqueueEvent(new GameEvent(this.Event, p.GameTime));
+                p.Game.EnqueueEvent(new GameEvent(this.Event, p.GameTime));
 			}
 		}
 	}
