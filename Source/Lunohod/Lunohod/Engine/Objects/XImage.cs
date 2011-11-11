@@ -24,7 +24,7 @@ namespace Lunohod.Objects
         public string TextureId;
 		
 		[XmlAttribute]
-		public bool Stretch;
+		public bool Stretch = true;
 		
 		protected Rectangle? SourceRectangle;
 		
@@ -38,14 +38,10 @@ namespace Lunohod.Objects
 		private Rectangle screenBounds;
 		private Color actualBackColor;
 		
-		int c0, c1, c2;
-		
 		public override void Draw(	DrawParameters p)
 		{
 			screenBounds = this.GetScreenBounds();
 			actualBackColor = this.BackColor * this.GetScreenOpacity();
-            //var backColor = this.BackColor; backColor.A = (byte)(255.0f * this.GetScreenOpacity());
-			
 			
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{
