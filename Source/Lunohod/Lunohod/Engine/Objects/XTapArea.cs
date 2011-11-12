@@ -21,6 +21,13 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public string Event;
 		
+		public override void Initialize(InitializeParameters p)
+		{
+			base.Initialize(p);
+			
+			p.LevelEngine.tapAreas.Add(this);
+		}
+		
 		public override void Update(UpdateParameters p)
 		{
 			base.Update(p);

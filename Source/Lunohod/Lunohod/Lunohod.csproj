@@ -108,9 +108,12 @@
     <Compile Include="Engine\Objects\Events\XValueTrigger.cs" />
     <Compile Include="GameEvent.cs" />
     <Compile Include="GameEventQueue.cs" />
-    <Compile Include="OS\GameEventType.cs" />
     <Compile Include="Engine\Objects\ParamentersBase.cs" />
-    <Compile Include="KeyboardProcessor.cs" />
+    <Compile Include="GameEventType.cs" />
+    <Compile Include="Input\KeyboardProcessor.cs" />
+    <Compile Include="Input\InputProcessorBase.cs" />
+    <Compile Include="Input\TouchPanelProcessor.cs" />
+    <Compile Include="Input\MouseProcessor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

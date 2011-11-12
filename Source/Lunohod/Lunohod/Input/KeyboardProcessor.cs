@@ -6,20 +6,18 @@ using Microsoft.Xna.Framework;
 
 namespace Lunohod
 {
-	public class KeyboardProcessor
+	public class KeyboardProcessor : InputProcessorBase
 	{
-		
 		private static readonly Keys[] emptyKeys = new Keys[0];
-		private GameEngine game;
-		
+
 		private Keys[] pressedKeys;
 		
 		public KeyboardProcessor(GameEngine game)
+			: base(game)
 		{
-			this.game = game;
 		}
 		
-		public void Process(GameTime gameTime)
+		public override void Process(GameTime gameTime)
 		{
 			var state = Keyboard.GetState();
 			
@@ -45,7 +43,7 @@ namespace Lunohod
 			pressedKeys = newPressedKeys;
 		}
 
-		public void ProcessPressed(GameTime gameTime, Keys key)
+		private void ProcessPressed(GameTime gameTime, Keys key)
 		{
 			switch (key)
 			{

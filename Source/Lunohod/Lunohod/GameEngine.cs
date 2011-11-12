@@ -23,7 +23,7 @@ namespace Lunohod
 		
 		private TouchCollection touches;
 		private KeyboardProcessor keyboardProcessor;
-
+		
 		private XGame gameObject;
 
 		public Texture2D BlankTexture { get; private set; }
@@ -37,7 +37,11 @@ namespace Lunohod
 		{
 			get { return this.touches; }
 		}
-		
+
+		public ScreenEngine ScreenEngine
+		{
+			get { return this.screenEngine; }
+		}		
 		public GameEngine()
 		{
             Content.RootDirectory = ContentRootDirectory;
@@ -134,7 +138,6 @@ namespace Lunohod
 				screenEngine.Initialize();
 				
 				GC.Collect();
-
 			}
 			
 			ProcessQueue();
@@ -186,6 +189,24 @@ namespace Lunohod
 				
 				// handle the event on system level
 			}
+		}
+		
+		public bool ProcessTouch(GameTime gameTime, int x, int y)
+		{
+			var tapAreas = this.ScreenEngine.tapAreas;
+			
+			for(int j = 0; j < tapAreas.Count; j++)
+			{
+				var tapArea = tapAreas[j];
+				
+				if (tapArea.Bounds.Contains(x, y))
+				{
+		            this.EnqueueEvent(new GameEvent(tapArea.Event, gameTime));
+					
+					return true;
+				}
+			}
+			return false;
 		}
 
 		protected override void Draw(GameTime gameTime)

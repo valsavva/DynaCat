@@ -2,17 +2,20 @@ using System;
 using Microsoft.Xna.Framework;
 using System.IO;
 using Lunohod.Objects;
+using System.Collections.Generic;
 
 namespace Lunohod
 {
 	abstract public class ScreenEngine
 	{
-		protected GameEngine gameEngine;
+		protected GameEngine game;
 		protected string name;
+
+		public List<XTapArea> tapAreas;
 		
-		public ScreenEngine(GameEngine gameEngine, string name)
+		public ScreenEngine(GameEngine game, string name)
 		{
-			this.gameEngine = gameEngine;
+			this.game = game;
 			this.name = name;
 		}
 		
@@ -25,6 +28,7 @@ namespace Lunohod
 		
 		public virtual void Initialize()
 		{
+			this.tapAreas = new List<XTapArea>();
 		}
 		
 		public virtual void Update(GameTime gameTime)

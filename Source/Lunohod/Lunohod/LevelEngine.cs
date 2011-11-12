@@ -26,7 +26,6 @@ namespace Lunohod
 		public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
 		{
-			this.obstacles = new List<XElement>();
 		}
 
 		public override XObject RootComponent { get { return level; } }
@@ -51,11 +50,15 @@ namespace Lunohod
 		
 		public override void Initialize()
 		{
-			spriteBatch = new SpriteBatch(this.gameEngine.GraphicsDevice);
+			base.Initialize();
+			
+			this.obstacles = new List<XElement>();
 
-			initializeParameters = new InitializeParameters() { Game = gameEngine, ScreenEngine = this };
-			updateParameters = new UpdateParameters() { Game = gameEngine, ScreenEngine = this };
-			drawParameters = new DrawParameters() { Game = gameEngine, ScreenEngine = this, SpriteBatch = spriteBatch };
+			spriteBatch = new SpriteBatch(this.game.GraphicsDevice);
+
+			initializeParameters = new InitializeParameters() { Game = game, ScreenEngine = this };
+			updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
+			drawParameters = new DrawParameters() { Game = game, ScreenEngine = this, SpriteBatch = spriteBatch };
 			
 			LoadLevelObjects();
 		}
@@ -90,7 +93,7 @@ namespace Lunohod
 		{
 			updateParameters.GameTime = gameTime;
 			
-			this.gameEngine.GameObject.Update(updateParameters);
+			this.game.GameObject.Update(updateParameters);
 			
 			this.level.Update(updateParameters);
 		}
@@ -112,7 +115,7 @@ namespace Lunohod
 						
 //				Matrix transform = Matrix.Identity;
 				
-				if (this.gameEngine.Window.ClientBounds.Height > 900)
+				if (this.game.Window.ClientBounds.Height > 900)
 				{
 					Matrix transform = Matrix.Identity *
 						Matrix.CreateScale(2.0f);
@@ -125,7 +128,7 @@ namespace Lunohod
 				}
 				
 				this.level.Draw(drawParameters);
-				this.gameEngine.GameObject.Draw(drawParameters);
+				this.game.GameObject.Draw(drawParameters);
 				
 				this.spriteBatch.End();
 				
