@@ -25,31 +25,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			p.LevelEngine.tapAreas.Add(this);
-		}
-		
-		public override void Update(UpdateParameters p)
-		{
-			base.Update(p);
-
-			var touches = p.Game.Touches;
-			
-			for(int i = 0; i < touches.Count; i++)
-			{
-				var touch = touches[i];
-				
-				if (touch.State != TouchLocationState.Pressed)
-					continue;
-#if WINDOWS
-                if (!this.Bounds.Contains((int)touch.Position.X, (int)touch.Position.Y))
-                    continue;
-#else
-				if (!this.Bounds.Contains(touch.Position))
-					continue;
-#endif
-
-                p.Game.EnqueueEvent(new GameEvent(this.Event, p.GameTime));
-			}
+			p.Game.ScreenEngine.tapAreas.Add(this);
 		}
 	}
 }

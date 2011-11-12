@@ -21,10 +21,8 @@ namespace Lunohod
 		
 		private GameEventQueue eventQueue;
 		
-		private TouchCollection touches;
-		private KeyboardProcessor keyboardProcessor;
-		
 		private XGame gameObject;
+        private InputProcessorBase[] inputProcessors;
 
 		public Texture2D BlankTexture { get; private set; }
 
@@ -33,11 +31,6 @@ namespace Lunohod
 			get { return this.gameObject; }
 		}		
 		
-		public TouchCollection Touches
-		{
-			get { return this.touches; }
-		}
-
 		public ScreenEngine ScreenEngine
 		{
 			get { return this.screenEngine; }
@@ -51,16 +44,23 @@ namespace Lunohod
 			graphics.PreferMultiSampling = true;
             this.IsFixedTimeStep = false;
 
-
-            keyboardProcessor = new KeyboardProcessor(this);
 			this.eventQueue = new GameEventQueue();
 
 #if WINDOWS
+            inputProcessors = new InputProcessorBase[] {
+                new KeyboardProcessor(this),
+                new MouseProcessor(this)
+            };
+
             this.IsMouseVisible = true;
             graphics.PreferredBackBufferHeight = 320;
             graphics.PreferredBackBufferWidth = 480;
+#else
+            inputProcessors = new InputProcessorBase[] {
+                new TouchPanelProcessor(this)
+            };
 #endif
-		}
+        }
 		
 		protected override void Initialize()
 		{
@@ -128,19 +128,21 @@ namespace Lunohod
 		protected override void Update(GameTime gameTime)
 		{
             //DateTime start = DateTime.Now;
-			this.touches = TouchPanel.GetState();
 
-            keyboardProcessor.Process(gameTime);
+            if (screenEngine == null)
+            {
+                screenEngine = new LevelEngine(this, "TestLevel");
+                screenEngine.Initialize();
 
-			if (screenEngine == null)
-			{
-				screenEngine = new LevelEngine(this, "TestLevel");
-				screenEngine.Initialize();
-				
-				GC.Collect();
-			}
-			
-			ProcessQueue();
+                GC.Collect();
+            }
+
+            for (int i = 0; i < inputProcessors.Length; i++)
+            {
+                inputProcessors[i].Process(gameTime);
+            }
+            
+            ProcessQueue();
 			
 			base.Update (gameTime);
 
