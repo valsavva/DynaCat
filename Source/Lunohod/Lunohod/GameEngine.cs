@@ -23,6 +23,8 @@ namespace Lunohod
 		
 		private XGame gameObject;
         private InputProcessorBase[] inputProcessors;
+		
+		private Vector3 scale = new Vector3(1,1,1);
 
 		public Texture2D BlankTexture { get; private set; }
 
@@ -34,7 +36,13 @@ namespace Lunohod
 		public ScreenEngine ScreenEngine
 		{
 			get { return this.screenEngine; }
-		}		
+		}	
+		
+		public Vector3 Scale
+		{
+			get { return this.scale; }
+		}
+
 		public GameEngine()
 		{
             Content.RootDirectory = ContentRootDirectory;
@@ -65,6 +73,10 @@ namespace Lunohod
 		protected override void Initialize()
 		{
 			base.Initialize ();
+			
+			float singleScale = this.Window.ClientBounds.Height * 1.0f / 480.0f;
+			
+			this.scale = new Vector3(singleScale, singleScale, 1.0f);
 		}
 		
 		protected override void LoadContent()
@@ -200,6 +212,8 @@ namespace Lunohod
 		
 		public bool ProcessTouch(GameTime gameTime, int x, int y)
 		{
+			Console.WriteLine("Touch: {0},{1}", x, y);
+
 			var tapAreas = this.ScreenEngine.tapAreas;
 			
 			for(int j = 0; j < tapAreas.Count; j++)

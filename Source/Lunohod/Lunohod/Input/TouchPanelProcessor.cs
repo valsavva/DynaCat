@@ -25,7 +25,7 @@ namespace Lunohod
 				if (touch.State != TouchLocationState.Pressed)
 					continue;
 				
-				game.ProcessTouch(gameTime, (int)touch.Position.X, (int)touch.Position.Y);
+				game.ProcessTouch(gameTime, (int)(touch.Position.X / game.Scale.X), (int)(touch.Position.Y / game.Scale.Y));
 			}
 		}
 	}
