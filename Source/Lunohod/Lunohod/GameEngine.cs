@@ -77,15 +77,23 @@ namespace Lunohod
 
 		protected void LoadGameElement()
 		{
-			string gameXmlFile = Path.Combine(GameEngine.MetadataRootDirectory, "Game.xml");
+			this.gameObject = (XGame)LoadMetadata("Game.xml", typeof(XGame));
+			
+			gameObject.InitHierarchy();
+			gameObject.Initialize(new InitializeParameters() { Game = this });
+		}
+		
+		public static XObject LoadMetadata(string fileName, Type type)
+		{
+			string gameXmlFile = Path.Combine(GameEngine.MetadataRootDirectory, fileName);
 			
 			try
 			{
-				var serializer = new System.Xml.Serialization.XmlSerializer(typeof(XGame));
+				var serializer = new System.Xml.Serialization.XmlSerializer(type);
 				
 				using (FileStream stream = new FileStream(gameXmlFile, FileMode.Open, FileAccess.Read))
 				{
-					this.gameObject = (XGame)serializer.Deserialize(stream);
+					 return (XObject)serializer.Deserialize(stream);
 				}
 			}
 			catch (Exception ex)
@@ -94,9 +102,6 @@ namespace Lunohod
 				
 				throw;
 			}
-			
-			gameObject.InitHierarchy();
-			gameObject.Initialize(new InitializeParameters() { Game = this });
 		}
 		
 		public void EnqueueEvent(GameEvent e)

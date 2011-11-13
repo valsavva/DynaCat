@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level Name="testLevel1" Bounds="0,0,480,320">
+
 	<!-- resources -->
 	<Resources RootFolder="TestLevel">
 		<Texture Id="chargers" Source="chargers"/>
@@ -67,14 +68,15 @@
 			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" RepeatCount="3" Target="Rotation"/>
 		</Image>
 
-
-
 		<Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8">
 			<NumAnimation From="0" To="7" Duration="00:00:00.3" Target="CurrentFrame"/>
 			<NumAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="X"/>
 
 		</Sprite>
 	</Layer>
+
+	<Include File="Dashboard.xml" />	
+
 </Level>
 
 

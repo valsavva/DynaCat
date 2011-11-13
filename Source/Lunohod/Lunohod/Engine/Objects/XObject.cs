@@ -19,6 +19,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
         [XmlElement(ElementName = "Dashboard", Type = typeof(XDashboard))]
         [XmlElement(ElementName = "TapArea", Type = typeof(XTapArea))]
+        [XmlElement(ElementName = "Include", Type = typeof(XInclude))]
 
         // Dashboard
         [XmlElement(ElementName = "Viewport", Type = typeof(XViewport))]
@@ -39,8 +40,21 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
         public List<XObject> Subcomponents { get; set; }
 		
-		public void InitHierarchy()
+		public virtual void InitHierarchy()
 		{
+			// replace includes with their children
+			var index = this.Subcomponents.FindIndex(c => c is XInclude);
+			
+			while (index != -1)
+			{
+				var include = this.Subcomponents[index];
+				this.Subcomponents.RemoveAt(index);
+				this.Subcomponents.InsertRange(index, include.Subcomponents);
+				
+				index = this.Subcomponents.FindIndex(c => c is XInclude);
+			}
+			
+			// set the parent property to the current node
 			if (this.Subcomponents != null)
 				for(int i = 0; i < this.Subcomponents.Count; i++)
 				{
