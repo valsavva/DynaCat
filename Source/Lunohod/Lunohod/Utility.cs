@@ -76,6 +76,11 @@ namespace Lunohod
             );
         }
 		
+		public static int Area(this Microsoft.Xna.Framework.Rectangle rect)
+		{
+			return rect.Width * rect.Height;
+		}
+		
 		public static string ToStr(this Color c)
 		{
 			return c.ToString();

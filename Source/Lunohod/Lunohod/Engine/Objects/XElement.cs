@@ -80,7 +80,7 @@ namespace Lunohod.Objects
 			{
 				tmpBounds = this.ParentElement.GetScreenBounds();
 	
-				if (this.Bounds.IsEmpty == false)
+				if (!this.Bounds.IsEmpty)
 				{
 					tmpBounds.Offset(this.Bounds.X, this.Bounds.Y);
 					tmpBounds.Width = this.Bounds.Width;
@@ -125,7 +125,17 @@ namespace Lunohod.Objects
 			this.ParentElement = this.Parent as XElement;
 		}
 		
-        public virtual void ProcessCollision(LevelEngine engine, Rectangle newBounds)
+		public bool Intersects(XElement e)
+		{
+			return this.GetScreenBounds().Intersects(e.GetScreenBounds());
+		}
+		
+		public Rectangle Intersect(XElement e)
+		{
+			return Rectangle.Intersect(this.GetScreenBounds(), e.GetScreenBounds());
+		}
+		
+        public virtual void ProcessCollision(LevelEngine level, Rectangle intersect)
         {
 			
         }

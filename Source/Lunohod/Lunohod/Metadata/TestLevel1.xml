@@ -2,7 +2,7 @@
 <Level Name="testLevel1" Bounds="0,0,480,320">
 
 	<!-- resources -->
-	<Resources RootFolder="TestLevel">
+	<Resources RootFolder="TestLevel1">
 		<Texture Id="chargers" Source="chargers"/>
 		<Texture Id="blank" Source="blank"/>
 		<Texture Id="shipAnimation" Source="shipAnimation"/>
@@ -71,7 +71,6 @@
 		<Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8">
 			<NumAnimation From="0" To="7" Duration="00:00:00.3" Target="CurrentFrame"/>
 			<NumAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="X"/>
-
 		</Sprite>
 	</Layer>
 

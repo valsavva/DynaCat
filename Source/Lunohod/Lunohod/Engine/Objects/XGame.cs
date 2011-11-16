@@ -10,12 +10,14 @@ using Lunohod;
 namespace Lunohod.Objects
 {
 	[XmlType("Game")]
-	[Serializable]
 	public class XGame : XElement
 	{
 		public XGame()
 		{
 		}
+		
+		[XmlArray]
+		public XLevel[] Levels;
 	}
 }
 

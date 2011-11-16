@@ -14,5 +14,8 @@ namespace Lunohod.Objects
     {
         [XmlAttribute]
         public string Name;
+		
+		[XmlAttribute]
+		public string File;
     }
 }

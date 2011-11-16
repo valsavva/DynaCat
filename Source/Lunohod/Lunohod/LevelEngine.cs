@@ -37,10 +37,10 @@ namespace Lunohod
 			
 			switch (e.EventType)
 			{
-				case GameEventType.Up : this.hero.Direction = new Vector2(0, -1); break;
-				case GameEventType.Down : this.hero.Direction = new Vector2(0, 1); break;
-				case GameEventType.Left : this.hero.Direction = new Vector2(-1, 0); break;
-				case GameEventType.Right : this.hero.Direction = new Vector2(1, 0); break;
+				case GameEventType.Up : this.hero.Direction = Direction.VectorUp; break;
+				case GameEventType.Down : this.hero.Direction = Direction.VectorDown; break;
+				case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
+				case GameEventType.Right : this.hero.Direction = Direction.VectorRight; break;
 				default: e.IsHandled = false; break;
 			}
 			
@@ -96,6 +96,45 @@ namespace Lunohod
 			this.game.GameObject.Update(updateParameters);
 			
 			this.level.Update(updateParameters);
+			
+			ProcessCollisions();
+		}
+		
+		private List<Tuple<XElement, Rectangle, int>> colliders = new List<Tuple<XElement, Rectangle, int>>();
+		
+		public void ProcessCollisions()
+		{
+			FindCollisions ();
+			
+			if (colliders.Count() == 0)
+				return;
+
+			colliders.Sort((t1, t2) => t1.Item3.CompareTo(t2.Item3));
+			
+			colliders[0].Item1.ProcessCollision(this, colliders[0].Item2);
+		}
+
+		void FindCollisions()
+		{
+			colliders.Clear();
+			
+			XElement obstacle;
+			Rectangle heroBounds = this.hero.Bounds;
+			Rectangle obstacleBounds;
+			Rectangle intersect;
+			
+			for(int i = 0; i < this.obstacles.Count; i++)
+			{
+				obstacle = this.obstacles[i];
+				obstacleBounds = obstacle.GetScreenBounds();
+				
+				Rectangle.Intersect(ref heroBounds, ref obstacleBounds, out intersect);
+				
+				if (!intersect.IsEmpty)
+				{
+					colliders.Add(Tuple.Create(obstacle, intersect, intersect.Area()));
+				}
+			}
 		}
 		
 		public override void Draw(GameTime gameTime)

@@ -3,4 +3,8 @@
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
 	</Resources>
+	<Levels>
+		<Level Name="TestLevel1" File="TestLevel2.xml" />
+		<Level Name="TestLevel2" File="TestLevel2.xml" />
+	</Levels>
 </Game>

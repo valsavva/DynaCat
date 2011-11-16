@@ -13,9 +13,13 @@ namespace Lunohod.Objects
     [XmlType("Block")]
     public class XBlock : XElement
     {
+		/// <summary>
+		/// The default edge.
+		/// </summary>
         [XmlAttribute]
         public XEdgeType DefaultEdge;
-
+		
+		
         [XmlElement(ElementName = "Edge", Type = typeof(XEdge))]
         [XmlElement(ElementName = "Teleport", Type = typeof(XTeleport))]
 		public XEdge[] Edges;
@@ -38,15 +42,18 @@ namespace Lunohod.Objects
             {
                 this.Edges[i] = tmp.FirstOrDefault(e => (int)e.Align == i)
 					?? new XEdge() {  Align = (XAlignType)i, Type = this.DefaultEdge };
+				
+				this.Edges[i].Parent = this;
             }
-			
-			this.Edges.ForEach(e => e.Parent = this);
-			
+
 			this.Subcomponents.AddRange(this.Edges);
         }
 
-        public override void ProcessCollision(LevelEngine engine, Rectangle newBounds)
+        public override void ProcessCollision(LevelEngine level, Rectangle intersect)
         {
+			// find the edge that is the opposite of the hero's directio
+			var edgeAlign = level.hero.Direction.ToAlign().Reverse();
+			this.Edges[(int)edgeAlign].ProcessCollision(level, intersect);
         }
     }
 }

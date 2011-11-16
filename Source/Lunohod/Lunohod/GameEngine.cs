@@ -148,7 +148,7 @@ namespace Lunohod
 
             if (screenEngine == null)
             {
-                screenEngine = new LevelEngine(this, "TestLevel");
+                screenEngine = new LevelEngine(this, this.gameObject.Levels[0].File);
                 screenEngine.Initialize();
 
                 GC.Collect();

@@ -19,9 +19,9 @@ namespace Lunohod.Objects
     public enum XAlignType
     {
         Top = 0,
-        Bottom = 1,
-        Left = 2,
-        Right = 3
+        Left = 1,
+        Right = 2,
+        Bottom = 3
     }
 
     [XmlType("Edge")]
@@ -34,10 +34,6 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public XEdgeType Type = XEdgeType.Stick;
 		
-        public virtual void ProcessCollision(LevelEngine engine, XBlock block, Rectangle newBounds)
-        {
-        }
-
         public Color GetDefaultColor()
         {
             switch (this.Type)
@@ -100,5 +96,34 @@ namespace Lunohod.Objects
 			
 			//p.SpriteBatch.Draw(p.Game.BlankTexture, this.GetScreenBounds(), this.BackColor);
 		}
+
+		public override void ProcessCollision(LevelEngine level, Rectangle intersect)
+        {
+			switch (this.Type)
+			{
+				case XEdgeType.None : return;
+				case XEdgeType.Bounce : {
+					// change hero's direction
+					level.hero.Direction = this.Align.ToVector();
+					
+					level.hero.Bounds.Offset(
+						(int)(intersect.Width * level.hero.Direction.X),
+						(int)(intersect.Height * level.hero.Direction.Y)
+					);
+				}; break;
+				case XEdgeType.Stick : {
+					// don't change hero's direction, just keep him in place
+					var direction = this.Align.ToVector();
+					
+					level.hero.Bounds.Offset(
+						(int)(intersect.Width * direction.X),
+						(int)(intersect.Height * direction.Y)
+					);
+				}; break;
+				case XEdgeType.Teleport : {
+					return;
+				}; break;
+			}
+        }
     }
 }
