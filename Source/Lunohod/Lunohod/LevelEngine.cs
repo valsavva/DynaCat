@@ -104,6 +104,9 @@ namespace Lunohod
 		
 		public void ProcessCollisions()
 		{
+            if (this.hero.Direction == Direction.VectorStop)
+                return;
+
 			FindCollisions ();
 			
 			if (colliders.Count() == 0)
