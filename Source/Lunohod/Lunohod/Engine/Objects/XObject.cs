@@ -94,6 +94,16 @@ namespace Lunohod.Objects
 				}
 		}
 		
+		public virtual void DrawDebug(DrawParameters p)
+		{
+			if (this.Subcomponents != null)
+				for(int i = 0; i < this.Subcomponents.Count; i++)
+				{
+					var subcomponent = this.Subcomponents[i];
+					subcomponent.Draw(p);
+				}
+		}
+		
 		public T GetComponent<T>() where T : XObject
 		{
 			if (this.Subcomponents == null)

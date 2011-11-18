@@ -27,6 +27,7 @@ namespace Lunohod
 		private Vector3 scale = new Vector3(1,1,1);
 
 		public Texture2D BlankTexture { get; private set; }
+		public SpriteFont SystemFont { get; private set; }
 
 		public XGame GameObject
 		{
@@ -42,7 +43,18 @@ namespace Lunohod
 		{
 			get { return this.scale; }
 		}
-
+		
+		public bool DrawDebugInfo
+		{
+			get { 
+#if WINDOWS
+				return Keyboard.GetState().IsKeyDown(Keys.LeftShift);
+#else
+				return false;
+#endif
+			}
+		}
+		
 		public GameEngine()
 		{
             Content.RootDirectory = ContentRootDirectory;
@@ -83,6 +95,7 @@ namespace Lunohod
 		{
             LoadGameElement();
             this.BlankTexture = ((XTextureResource)this.gameObject.FindDescendant("blank")).Image;
+			this.SystemFont = ((XFontResource)this.gameObject.FindDescendant("SystemFont")).Font;
 			
 			base.LoadContent();
 		}

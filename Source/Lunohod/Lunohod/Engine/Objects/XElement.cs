@@ -15,6 +15,7 @@ namespace Lunohod.Objects
 		private Color? backColor = null;
 		private float? rotation;
 		private Rectangle tmpBounds;
+		private Vector2 tmpVector;
 		
 		[XmlIgnore]
         public Rectangle Bounds;
@@ -135,9 +136,51 @@ namespace Lunohod.Objects
 			return Rectangle.Intersect(this.GetScreenBounds(), e.GetScreenBounds());
 		}
 		
-        public virtual void ProcessCollision(LevelEngine level, Rectangle intersect)
+        public virtual bool ProcessCollision(LevelEngine level, Rectangle intersect)
         {
-			
+			return false;
         }
+		
+		public override void Draw(DrawParameters p)
+		{
+			if (p.Game.DrawDebugInfo)
+			{
+				DrawDebug(p);
+			}
+			
+			base.Draw(p);
+		}
+		
+		public override void DrawDebug(DrawParameters p)
+		{
+			if (!(this is XImage) && !(this is XBlock))
+				return;
+			
+			tmpBounds =  this.GetScreenBounds();
+		
+#if WINDOWS
+			tmpVector = MouseProcessor.LastPosition;
+#else
+			tmpVector = TouchPanelProcessor.LastPosition;
+#endif
+			
+			if (!tmpBounds.Contains(tmpVector))
+				return;
+			
+			Color c = Color.Red * 0.3f;
+			
+			
+			p.SpriteBatch.Draw(p.Game.BlankTexture, tmpBounds, c);
+			
+			if (!string.IsNullOrEmpty(this.Id))
+			{
+				tmpVector.X = tmpBounds.X;
+				tmpVector.Y = tmpBounds.Y;
+				
+				p.SpriteBatch.DrawString(p.Game.SystemFont, this.Id, tmpVector, Color.Yellow);
+			}
+
+			base.DrawDebug(p);
+		}
     }
 }

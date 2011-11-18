@@ -14,9 +14,14 @@ namespace Lunohod
 		{
 		}
 
+		public static Vector2 LastPosition;
+		
 		public override void Process(GameTime gameTime)
 		{
 			var mouseState = Mouse.GetState();
+			
+			LastPosition.X = mouseState.X;
+			LastPosition.Y = mouseState.Y;
 
 			if (mouseState.LeftButton == ButtonState.Pressed)
 				game.ProcessTouch(gameTime, (int)mouseState.X, (int)mouseState.Y);

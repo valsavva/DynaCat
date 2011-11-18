@@ -104,17 +104,26 @@ namespace Lunohod
 		
 		public void ProcessCollisions()
 		{
+			// if not moving - we don't process collisions
             if (this.hero.Direction == Direction.VectorStop)
                 return;
-
-			FindCollisions ();
+			
+			// find objects we collided with
+			FindCollisions();
 			
 			if (colliders.Count() == 0)
 				return;
-
+			
+			// sort them by the amounth of intersection
 			colliders.Sort((t1, t2) => t1.Item3.CompareTo(t2.Item3));
 			
-			colliders[0].Item1.ProcessCollision(this, colliders[0].Item2);
+			for(int i = 0; i < colliders.Count; i++)
+			{
+				// process collision with the object
+				if (colliders[i].Item1.ProcessCollision(this, colliders[i].Item2))
+					// quit if collision was processed or go to the next object
+					break;
+			}
 		}
 
 		void FindCollisions()

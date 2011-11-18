@@ -49,11 +49,13 @@ namespace Lunohod.Objects
 			this.Subcomponents.AddRange(this.Edges);
         }
 
-        public override void ProcessCollision(LevelEngine level, Rectangle intersect)
+        public override bool ProcessCollision(LevelEngine level, Rectangle intersect)
         {
 			// find the edge that is the opposite of the hero's directio
 			var edgeAlign = level.hero.Direction.ToAlign().Reverse();
-			this.Edges[(int)edgeAlign].ProcessCollision(level, intersect);
+			var edge = this.Edges[(int)edgeAlign];
+			
+			return edge.ProcessCollision(level, intersect);
         }
     }
 }

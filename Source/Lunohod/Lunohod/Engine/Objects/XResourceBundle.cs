@@ -19,6 +19,7 @@ namespace Lunohod.Objects
 		[XmlAttribute("RootFolder")]
 		public string RootFolder;
 		
+        [XmlElement(ElementName = "Font", Type = typeof(XFontResource))]
         [XmlElement(ElementName = "Texture", Type = typeof(XTextureResource))]
         public List<XObject> ResourceSubcomponents { get { return base.Subcomponents; } set { this.Subcomponents = value; } }
 		

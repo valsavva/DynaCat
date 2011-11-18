@@ -38,7 +38,7 @@ namespace Lunohod.Objects
 		private Rectangle screenBounds;
 		private Color actualBackColor;
 		
-		public override void Draw(	DrawParameters p)
+		public override void Draw(DrawParameters p)
 		{
 			screenBounds = this.GetScreenBounds();
 			actualBackColor = this.BackColor * this.GetScreenOpacity();
@@ -66,6 +66,8 @@ namespace Lunohod.Objects
 				else
 					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor);
 			}
+			
+			base.Draw(p);
 		}
     }
 }

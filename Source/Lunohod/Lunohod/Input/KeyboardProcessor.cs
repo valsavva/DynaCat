@@ -10,7 +10,7 @@ namespace Lunohod
 	{
 		private static readonly Keys[] emptyKeys = new Keys[0];
 
-		private Keys[] pressedKeys;
+		private Keys[] pressedKeys = emptyKeys;
 		
 		public KeyboardProcessor(GameEngine game)
 			: base(game)
@@ -43,6 +43,11 @@ namespace Lunohod
 			pressedKeys = newPressedKeys;
 		}
 
+		public bool IsKeyPressed(Keys key)
+		{
+			return Array.IndexOf(pressedKeys, key) >= 0;
+		}
+		
 		private void ProcessPressed(GameTime gameTime, Keys key)
 		{
 			switch (key)

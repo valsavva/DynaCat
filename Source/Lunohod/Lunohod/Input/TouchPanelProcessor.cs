@@ -13,7 +13,9 @@ namespace Lunohod
 			: base(game)
 		{
 		}
-
+		
+		public static Vector2 LastPosition;
+		
 		public override void Process(GameTime gameTime)
 		{
 			var touches = TouchPanel.GetState();
@@ -21,7 +23,9 @@ namespace Lunohod
 			for(int i = 0; i < touches.Count; i++)
 			{
 				var touch = touches[i];
-
+				
+				LastPosition = touch.Position;
+				
 				if (touch.State != TouchLocationState.Pressed)
 					continue;
 				

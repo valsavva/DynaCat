@@ -97,11 +97,11 @@ namespace Lunohod.Objects
 			//p.SpriteBatch.Draw(p.Game.BlankTexture, this.GetScreenBounds(), this.BackColor);
 		}
 
-		public override void ProcessCollision(LevelEngine level, Rectangle intersect)
+		public override bool ProcessCollision(LevelEngine level, Rectangle intersect)
         {
 			switch (this.Type)
 			{
-				case XEdgeType.None : return;
+				case XEdgeType.None : break;
 				case XEdgeType.Bounce : {
 					// change hero's direction
 					level.hero.Direction = this.Align.ToVector();
@@ -121,9 +121,22 @@ namespace Lunohod.Objects
 					);
 				}; break;
 				case XEdgeType.Teleport : {
-					return;
-				}; break;
+					return ProcessTeleport(level, intersect);
+				};
 			}
+			
+			return true;
         }
+		private bool ProcessTeleport(LevelEngine level, Rectangle intersect)
+		{
+			return true;
+			
+			var heroDirectionAlign = level.hero.Direction.ToAlign();
+			
+			if (this.Align == heroDirectionAlign)
+				// hero is exiting
+				return true;
+			
+		}
     }
 }
