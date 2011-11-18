@@ -48,7 +48,8 @@ namespace Lunohod
 		{
 			get { 
 #if WINDOWS
-				return Keyboard.GetState().IsKeyDown(Keys.LeftShift);
+				return Keyboard.GetState().IsKeyDown(Keys.LeftShift)
+                    || Keyboard.GetState().IsKeyDown(Keys.RightShift);
 #else
 				return false;
 #endif
