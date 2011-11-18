@@ -31,7 +31,21 @@ namespace Lunohod.Objects
 			
 			string fileName = Path.Combine(r.RootFolder.Replace('/', Path.DirectorySeparatorChar), this.Source);
 
-			font = p.Game.Content.Load<SpriteFont>(fileName);
+#if WINDOWS
+            var sf = Path.ChangeExtension(Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, fileName), "spritefont");
+            var xnbFileName = Path.ChangeExtension(Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, fileName), "xnb");
+            var outputPath = Path.GetDirectoryName(sf);
+            if (File.Exists(sf) && !File.Exists(xnbFileName))
+            {
+                using (Lunohod.ContentLoading.ContentBuilder b = new ContentLoading.ContentBuilder(outputPath))
+                {
+                    b.Add(sf, this.Source, "", "FontDescriptionProcessor");
+                    b.Build();
+                }
+            }
+#endif
+            
+            font = p.Game.Content.Load<SpriteFont>(fileName);
 		}
 		
 		public override void Dispose()
