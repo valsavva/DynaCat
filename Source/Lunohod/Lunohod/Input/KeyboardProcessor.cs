@@ -55,7 +55,8 @@ namespace Lunohod
 				case Keys.Up : game.EnqueueEvent(new GameEvent(GameEventType.Up, gameTime)); break;
 				case Keys.Down : game.EnqueueEvent(new GameEvent(GameEventType.Down, gameTime)); break;
 				case Keys.Left : game.EnqueueEvent(new GameEvent(GameEventType.Left, gameTime)); break;
-				case Keys.Right : game.EnqueueEvent(new GameEvent(GameEventType.Right, gameTime)); break;
+                case Keys.Right: game.EnqueueEvent(new GameEvent(GameEventType.Right, gameTime)); break;
+                case Keys.Space: game.EnqueueEvent(new GameEvent(GameEventType.Stop, gameTime)); break;
 			}
 		}
 	}

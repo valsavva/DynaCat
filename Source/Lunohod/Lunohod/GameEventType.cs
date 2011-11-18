@@ -8,7 +8,8 @@ namespace Lunohod
 		Up,
 		Down,
 		Left,
-		Right
+		Right,
+        Stop
 	}
 }
 

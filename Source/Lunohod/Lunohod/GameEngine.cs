@@ -225,8 +225,6 @@ namespace Lunohod
 		
 		public bool ProcessTouch(GameTime gameTime, int x, int y)
 		{
-			Console.WriteLine("Touch: {0},{1}", x, y);
-
 			var tapAreas = this.ScreenEngine.tapAreas;
 			
 			for(int j = 0; j < tapAreas.Count; j++)
@@ -242,6 +240,17 @@ namespace Lunohod
 			}
 			return false;
 		}
+
+        public void MoveHero(int x, int y)
+        {
+            var levelEngine = this.ScreenEngine as LevelEngine;
+
+            if (levelEngine == null)
+                return;
+
+            levelEngine.hero.Bounds.X = x - levelEngine.hero.Bounds.Width / 2;
+            levelEngine.hero.Bounds.Y = y - levelEngine.hero.Bounds.Height / 2;
+        }
 
 		protected override void Draw(GameTime gameTime)
 		{

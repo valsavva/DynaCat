@@ -164,7 +164,7 @@ namespace Lunohod.Objects
 			tmpVector = TouchPanelProcessor.LastPosition;
 #endif
 			
-			if (!tmpBounds.Contains(tmpVector))
+			if (!tmpBounds.Contains((int)tmpVector.X, (int)tmpVector.Y))
 				return;
 			
 			Color c = Color.Red * 0.3f;

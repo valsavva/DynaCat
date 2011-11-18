@@ -40,7 +40,8 @@ namespace Lunohod
 				case GameEventType.Up : this.hero.Direction = Direction.VectorUp; break;
 				case GameEventType.Down : this.hero.Direction = Direction.VectorDown; break;
 				case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
-				case GameEventType.Right : this.hero.Direction = Direction.VectorRight; break;
+                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
+                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
 				default: e.IsHandled = false; break;
 			}
 			

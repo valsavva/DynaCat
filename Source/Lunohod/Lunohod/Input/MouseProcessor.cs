@@ -25,6 +25,8 @@ namespace Lunohod
 
 			if (mouseState.LeftButton == ButtonState.Pressed)
 				game.ProcessTouch(gameTime, (int)mouseState.X, (int)mouseState.Y);
+            if (mouseState.RightButton == ButtonState.Pressed)
+                game.MoveHero((int)mouseState.X, (int)mouseState.Y);
 		}
 	}
 }
