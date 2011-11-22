@@ -8,6 +8,7 @@ using System.IO;
 using System.Text;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
 
 namespace Lunohod
 {
@@ -28,6 +29,8 @@ namespace Lunohod
 
 		public Texture2D BlankTexture { get; private set; }
 		public SpriteFont SystemFont { get; private set; }
+		
+		//public Stopwatch gameWatch = new Stopwatch();
 
 		public XGame GameObject
 		{
@@ -90,6 +93,8 @@ namespace Lunohod
 			float singleScale = this.Window.ClientBounds.Height * 1.0f / 480.0f;
 			
 			this.scale = new Vector3(singleScale, singleScale, 1.0f);
+			
+			//this.gameWatch.Start();
 		}
 		
 		protected override void LoadContent()
@@ -159,8 +164,12 @@ namespace Lunohod
 		protected override void Update(GameTime gameTime)
 		{
             //DateTime start = DateTime.Now;
+			//gameWatch.Stop();
+			//gameTime = new GameTime(TimeSpan.Zero, TimeSpan.Zero, TimeSpan.Zero, gameWatch.Elapsed);
+			//gameWatch.Reset();
+			//gameWatch.Start();
 
-            if (screenEngine == null)
+			if (screenEngine == null)
             {
                 screenEngine = new LevelEngine(this, this.gameObject.Levels[0].File);
                 screenEngine.Initialize();
@@ -255,7 +264,12 @@ namespace Lunohod
 
 		protected override void Draw(GameTime gameTime)
 		{
-            //DateTime start = DateTime.Now;
+			//gameWatch.Stop();
+			//gameTime = new GameTime(TimeSpan.Zero, TimeSpan.Zero, TimeSpan.Zero, gameWatch.Elapsed);
+			//gameWatch.Reset();
+			//gameWatch.Start();
+
+			//DateTime start = DateTime.Now;
             
             GraphicsDevice.Clear(Color.CornflowerBlue);
 			

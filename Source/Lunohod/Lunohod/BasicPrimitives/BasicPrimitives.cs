@@ -444,7 +444,7 @@ namespace BasicPrimitiveRendering
         /// <param name="_graphicsDevice">The graphics device object to use.</param>
         /// <param name="_SpriteBatch">The sprite batch object to use.</param>
         //////////////////////////////////////////////////////////////////////////
-        public BasicPrimitives(GraphicsDevice _graphicsDevice, SpriteBatch _SpriteBatch)
+        public BasicPrimitives(GraphicsDevice _graphicsDevice, SpriteBatch _SpriteBatch, Texture2D pixel)
         {
             //////////////////////////////////////////////////////////////////////////
             // Set members.
@@ -452,8 +452,9 @@ namespace BasicPrimitiveRendering
             m_SpriteBatch = _SpriteBatch;
 
             // Create the pixel texture.
-            m_Pixel = new Texture2D(_graphicsDevice, 1, 1, false, SurfaceFormat.Color);
-            m_Pixel.SetData<Color>(new Color[] { Color.White });
+            //m_Pixel = new Texture2D(_graphicsDevice, 1, 1, false, SurfaceFormat.Color);
+            //m_Pixel.SetData<Color>(new Color[] { Color.White });
+			m_Pixel = pixel;
 
             /// Setup view and projection matrix.
             m_View = Matrix.CreateLookAt(Vector3.UnitZ, -Vector3.UnitZ, Vector3.Up);
@@ -1570,338 +1571,338 @@ namespace BasicPrimitiveRendering
             //////////////////////////////////////////////////////////////////////////
         }
 
-        //////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Calculate fill in shape by using triangulation.
-        /// </summary>
-        /// <param name="_WindingOrder">Winding order of the shape used for triangulating.</param>
-        //////////////////////////////////////////////////////////////////////////
-        public void CalculateFillInShape(Triangulator.WindingOrder _WindingOrder) 
-        {
-            //////////////////////////////////////////////////////////////////////////
-            // Validate.
-            if (m_VectorList.Count <= 2)
-                return;
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create a list of vertices.
-            Vector2[] vSourceVertices = new Vector2[m_VectorList.Count];
-            for (int i = m_VectorList.Count - 1; i >= 0; --i)
-                vSourceVertices[i] = m_VectorList[i];
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create a list of indices.
-            int[] nSourceIndices;
-
-            // Triangulate vertices and indices.
-            Triangulator.Triangulator.Triangulate(vSourceVertices,
-                                                  _WindingOrder,
-                                                  out vSourceVertices,
-                                                  out nSourceIndices);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Store number of vertices and primitives for rendering.
-            m_nVertices = vSourceVertices.Length;
-            m_nPrimitives = nSourceIndices.Length / 3;
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create and setup the list of vertex data.
-            VertexPositionColor[] verts = new VertexPositionColor[vSourceVertices.Length];
-            for (int i = vSourceVertices.Length - 1; i >= 0; --i)
-                verts[i] = new VertexPositionColor(m_GraphicsDevice.Viewport.Unproject(new Vector3(vSourceVertices[i], 0f),
-                                                                                                   m_Projection,
-                                                                                                   m_View,
-                                                                                                   Matrix.Identity), m_FillInColor);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Clean up old data.
-            if (m_VertexBuffer != null)
-            {
-                m_VertexBuffer.Dispose();
-                m_VertexBuffer = null;
-            }
-            if (m_IndexBuffer != null)
-            {
-                m_IndexBuffer.Dispose();
-                m_IndexBuffer = null;
-            }
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create vertex buffer.
-            m_VertexBuffer = new VertexBuffer(m_GraphicsDevice,
-                                              VertexPositionColor.VertexDeclaration,
-                                              verts.Length * VertexPositionColor.VertexDeclaration.VertexStride,
-                                              BufferUsage.WriteOnly);
-            m_VertexBuffer.SetData(verts);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Branch here to convert our indices to shorts if possible for wider GPU support.
-            if (verts.Length < UInt16.MaxValue /*65535*/)
-            {
-                //////////////////////////////////////////////////////////////////////////
-                // Create a list of indices.
-                short[] sIndices = new short[nSourceIndices.Length];
-                for (int i = nSourceIndices.Length - 1; i >= 0; --i)
-                    sIndices[i] = (short)nSourceIndices[i];
-                //
-                //////////////////////////////////////////////////////////////////////////
-
-                //////////////////////////////////////////////////////////////////////////
-                // Create index buffer.
-                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
-                                                IndexElementSize.SixteenBits,
-                                                sIndices.Length * sizeof(short),
-                                                BufferUsage.WriteOnly);
-                m_IndexBuffer.SetData(sIndices);
-                //
-                //////////////////////////////////////////////////////////////////////////
-            }
-            else
-            {
-                //////////////////////////////////////////////////////////////////////////
-                // Create index buffer.
-                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
-                                                IndexElementSize.ThirtyTwoBits,
-                                                nSourceIndices.Length * sizeof(int),
-                                                BufferUsage.WriteOnly);
-                m_IndexBuffer.SetData(nSourceIndices);
-                //
-                //////////////////////////////////////////////////////////////////////////
-            }
-            //
-            //////////////////////////////////////////////////////////////////////////
-        }
-
-        //////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Calculate fill in shape by using triangulation.
-        /// </summary>
-        /// <param name="_WindingOrder">Winding order of the shape used for triangulating.</param>
-        /// <param name="_vHoleList">List of vertices to cut out. The positions should be within the shape.</param>
-        //////////////////////////////////////////////////////////////////////////
-        public void CalculateFillInShape(Triangulator.WindingOrder _WindingOrder, Vector2[] _vHoleList)
-        {
-            //////////////////////////////////////////////////////////////////////////
-            // Validate.
-            if (m_VectorList.Count <= 2)
-                return;
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create a list of vertices.
-            Vector2[] vSourceVertices = new Vector2[m_VectorList.Count];
-            for (int i = m_VectorList.Count - 1; i >= 0; --i)
-                vSourceVertices[i] = m_VectorList[i];
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Cut hole in the shape.
-            vSourceVertices = Triangulator.Triangulator.CutHoleInShape(vSourceVertices, _vHoleList);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create a list of indices.
-            int[] nSourceIndices;
-
-            // Triangulate vertices and indices.
-            Triangulator.Triangulator.Triangulate(vSourceVertices,
-                                                  _WindingOrder,
-                                                  out vSourceVertices,
-                                                  out nSourceIndices);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Store number of vertices and primitives for rendering.
-            m_nVertices = vSourceVertices.Length;
-            m_nPrimitives = nSourceIndices.Length / 3;
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create and setup the list of vertex data.
-            VertexPositionColor[] verts = new VertexPositionColor[vSourceVertices.Length];
-            for (int i = vSourceVertices.Length - 1; i >= 0; --i)
-                verts[i] = new VertexPositionColor(m_GraphicsDevice.Viewport.Unproject(new Vector3(vSourceVertices[i], 0f),
-                                                                                                   m_Projection,
-                                                                                                   m_View,
-                                                                                                   Matrix.Identity), m_FillInColor);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create vertex buffer.
-            m_VertexBuffer = new VertexBuffer(m_GraphicsDevice,
-                                              VertexPositionColor.VertexDeclaration,
-                                              verts.Length * VertexPositionColor.VertexDeclaration.VertexStride,
-                                              BufferUsage.WriteOnly);
-            m_VertexBuffer.SetData(verts);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Branch here to convert our indices to shorts if possible for wider GPU support.
-            if (verts.Length < UInt16.MaxValue /*65535*/)
-            {
-                //////////////////////////////////////////////////////////////////////////
-                // Create a list of indices.
-                short[] sIndices = new short[nSourceIndices.Length];
-                for (int i = nSourceIndices.Length - 1; i >= 0; --i)
-                    sIndices[i] = (short)nSourceIndices[i];
-                //
-                //////////////////////////////////////////////////////////////////////////
-
-                //////////////////////////////////////////////////////////////////////////
-                // Create index buffer.
-                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
-                                                IndexElementSize.SixteenBits,
-                                                sIndices.Length * sizeof(short),
-                                                BufferUsage.WriteOnly);
-                m_IndexBuffer.SetData(sIndices);
-                //
-                //////////////////////////////////////////////////////////////////////////
-            }
-            else
-            {
-                //////////////////////////////////////////////////////////////////////////
-                // Create index buffer.
-                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
-                                                IndexElementSize.ThirtyTwoBits,
-                                                nSourceIndices.Length * sizeof(int),
-                                                BufferUsage.WriteOnly);
-                m_IndexBuffer.SetData(nSourceIndices);
-                //
-                //////////////////////////////////////////////////////////////////////////
-            }
-            //
-            //////////////////////////////////////////////////////////////////////////
-        }
-
-        //////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Calculate fill in shape by using triangulation.
-        /// </summary>
-        /// <param name="_WindingOrder">Winding order of the shape used for triangulating.</param>
-        /// <param name="_vHoleList">Multiple list of vertices to cut out. The positions should be within the shape.</param>
-        //////////////////////////////////////////////////////////////////////////
-        public void CalculateFillInShape(Triangulator.WindingOrder _WindingOrder, List<Vector2[]> _vHoleList)
-        {
-            //////////////////////////////////////////////////////////////////////////
-            // Validate.
-            if (m_VectorList.Count <= 2)
-                return;
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create a list of vertices.
-            Vector2[] vSourceVertices = new Vector2[m_VectorList.Count];
-            for (int i = m_VectorList.Count - 1; i >= 0; --i)
-                vSourceVertices[i] = m_VectorList[i];
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Cut hole in the shape.
-            foreach (Vector2[] vList in _vHoleList)
-                vSourceVertices = Triangulator.Triangulator.CutHoleInShape(vSourceVertices, vList);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create a list of indices.
-            int[] nSourceIndices;
-
-            // Triangulate vertices and indices.
-            Triangulator.Triangulator.Triangulate(vSourceVertices,
-                                                  _WindingOrder,
-                                                  out vSourceVertices,
-                                                  out nSourceIndices);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Store number of vertices and primitives for rendering.
-            m_nVertices = vSourceVertices.Length;
-            m_nPrimitives = nSourceIndices.Length / 3;
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create and setup the list of vertex data.
-            VertexPositionColor[] verts = new VertexPositionColor[vSourceVertices.Length];
-            for (int i = vSourceVertices.Length - 1; i >= 0; --i)
-                verts[i] = new VertexPositionColor(m_GraphicsDevice.Viewport.Unproject(new Vector3(vSourceVertices[i], 0f),
-                                                                                                   m_Projection,
-                                                                                                   m_View,
-                                                                                                   Matrix.Identity), m_FillInColor);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Create vertex buffer.
-            m_VertexBuffer = new VertexBuffer(m_GraphicsDevice,
-                                              VertexPositionColor.VertexDeclaration,
-                                              verts.Length * VertexPositionColor.VertexDeclaration.VertexStride,
-                                              BufferUsage.WriteOnly);
-            m_VertexBuffer.SetData(verts);
-            //
-            //////////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////////
-            // Branch here to convert our indices to shorts if possible for wider GPU support.
-            if (verts.Length < UInt16.MaxValue /*65535*/)
-            {
-                //////////////////////////////////////////////////////////////////////////
-                // Create a list of indices.
-                short[] sIndices = new short[nSourceIndices.Length];
-                for (int i = nSourceIndices.Length - 1; i >= 0; --i)
-                    sIndices[i] = (short)nSourceIndices[i];
-                //
-                //////////////////////////////////////////////////////////////////////////
-
-                //////////////////////////////////////////////////////////////////////////
-                // Create index buffer.
-                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
-                                                IndexElementSize.SixteenBits,
-                                                sIndices.Length * sizeof(short),
-                                                BufferUsage.WriteOnly);
-                m_IndexBuffer.SetData(sIndices);
-                //
-                //////////////////////////////////////////////////////////////////////////
-            }
-            else
-            {
-                //////////////////////////////////////////////////////////////////////////
-                // Create index buffer.
-                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
-                                                IndexElementSize.ThirtyTwoBits,
-                                                nSourceIndices.Length * sizeof(int),
-                                                BufferUsage.WriteOnly);
-                m_IndexBuffer.SetData(nSourceIndices);
-                //
-                //////////////////////////////////////////////////////////////////////////
-            }
-            //
-            //////////////////////////////////////////////////////////////////////////
-        }
+//        //////////////////////////////////////////////////////////////////////////
+//        /// <summary>
+//        /// Calculate fill in shape by using triangulation.
+//        /// </summary>
+//        /// <param name="_WindingOrder">Winding order of the shape used for triangulating.</param>
+//        //////////////////////////////////////////////////////////////////////////
+//        public void CalculateFillInShape(Triangulator.WindingOrder _WindingOrder) 
+//        {
+//            //////////////////////////////////////////////////////////////////////////
+//            // Validate.
+//            if (m_VectorList.Count <= 2)
+//                return;
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create a list of vertices.
+//            Vector2[] vSourceVertices = new Vector2[m_VectorList.Count];
+//            for (int i = m_VectorList.Count - 1; i >= 0; --i)
+//                vSourceVertices[i] = m_VectorList[i];
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create a list of indices.
+//            int[] nSourceIndices;
+//
+//            // Triangulate vertices and indices.
+//            Triangulator.Triangulator.Triangulate(vSourceVertices,
+//                                                  _WindingOrder,
+//                                                  out vSourceVertices,
+//                                                  out nSourceIndices);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Store number of vertices and primitives for rendering.
+//            m_nVertices = vSourceVertices.Length;
+//            m_nPrimitives = nSourceIndices.Length / 3;
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create and setup the list of vertex data.
+//            VertexPositionColor[] verts = new VertexPositionColor[vSourceVertices.Length];
+//            for (int i = vSourceVertices.Length - 1; i >= 0; --i)
+//                verts[i] = new VertexPositionColor(m_GraphicsDevice.Viewport.Unproject(new Vector3(vSourceVertices[i], 0f),
+//                                                                                                   m_Projection,
+//                                                                                                   m_View,
+//                                                                                                   Matrix.Identity), m_FillInColor);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Clean up old data.
+//            if (m_VertexBuffer != null)
+//            {
+//                m_VertexBuffer.Dispose();
+//                m_VertexBuffer = null;
+//            }
+//            if (m_IndexBuffer != null)
+//            {
+//                m_IndexBuffer.Dispose();
+//                m_IndexBuffer = null;
+//            }
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create vertex buffer.
+//            m_VertexBuffer = new VertexBuffer(m_GraphicsDevice,
+//                                              VertexPositionColor.VertexDeclaration,
+//                                              verts.Length * VertexPositionColor.VertexDeclaration.VertexStride,
+//                                              BufferUsage.WriteOnly);
+//            m_VertexBuffer.SetData(verts);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Branch here to convert our indices to shorts if possible for wider GPU support.
+//            if (verts.Length < UInt16.MaxValue /*65535*/)
+//            {
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create a list of indices.
+//                short[] sIndices = new short[nSourceIndices.Length];
+//                for (int i = nSourceIndices.Length - 1; i >= 0; --i)
+//                    sIndices[i] = (short)nSourceIndices[i];
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create index buffer.
+//                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
+//                                                IndexElementSize.SixteenBits,
+//                                                sIndices.Length * sizeof(short),
+//                                                BufferUsage.WriteOnly);
+//                m_IndexBuffer.SetData(sIndices);
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//            }
+//            else
+//            {
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create index buffer.
+//                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
+//                                                IndexElementSize.ThirtyTwoBits,
+//                                                nSourceIndices.Length * sizeof(int),
+//                                                BufferUsage.WriteOnly);
+//                m_IndexBuffer.SetData(nSourceIndices);
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//            }
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//        }
+//
+//        //////////////////////////////////////////////////////////////////////////
+//        /// <summary>
+//        /// Calculate fill in shape by using triangulation.
+//        /// </summary>
+//        /// <param name="_WindingOrder">Winding order of the shape used for triangulating.</param>
+//        /// <param name="_vHoleList">List of vertices to cut out. The positions should be within the shape.</param>
+//        //////////////////////////////////////////////////////////////////////////
+//        public void CalculateFillInShape(Triangulator.WindingOrder _WindingOrder, Vector2[] _vHoleList)
+//        {
+//            //////////////////////////////////////////////////////////////////////////
+//            // Validate.
+//            if (m_VectorList.Count <= 2)
+//                return;
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create a list of vertices.
+//            Vector2[] vSourceVertices = new Vector2[m_VectorList.Count];
+//            for (int i = m_VectorList.Count - 1; i >= 0; --i)
+//                vSourceVertices[i] = m_VectorList[i];
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Cut hole in the shape.
+//            vSourceVertices = Triangulator.Triangulator.CutHoleInShape(vSourceVertices, _vHoleList);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create a list of indices.
+//            int[] nSourceIndices;
+//
+//            // Triangulate vertices and indices.
+//            Triangulator.Triangulator.Triangulate(vSourceVertices,
+//                                                  _WindingOrder,
+//                                                  out vSourceVertices,
+//                                                  out nSourceIndices);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Store number of vertices and primitives for rendering.
+//            m_nVertices = vSourceVertices.Length;
+//            m_nPrimitives = nSourceIndices.Length / 3;
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create and setup the list of vertex data.
+//            VertexPositionColor[] verts = new VertexPositionColor[vSourceVertices.Length];
+//            for (int i = vSourceVertices.Length - 1; i >= 0; --i)
+//                verts[i] = new VertexPositionColor(m_GraphicsDevice.Viewport.Unproject(new Vector3(vSourceVertices[i], 0f),
+//                                                                                                   m_Projection,
+//                                                                                                   m_View,
+//                                                                                                   Matrix.Identity), m_FillInColor);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create vertex buffer.
+//            m_VertexBuffer = new VertexBuffer(m_GraphicsDevice,
+//                                              VertexPositionColor.VertexDeclaration,
+//                                              verts.Length * VertexPositionColor.VertexDeclaration.VertexStride,
+//                                              BufferUsage.WriteOnly);
+//            m_VertexBuffer.SetData(verts);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Branch here to convert our indices to shorts if possible for wider GPU support.
+//            if (verts.Length < UInt16.MaxValue /*65535*/)
+//            {
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create a list of indices.
+//                short[] sIndices = new short[nSourceIndices.Length];
+//                for (int i = nSourceIndices.Length - 1; i >= 0; --i)
+//                    sIndices[i] = (short)nSourceIndices[i];
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create index buffer.
+//                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
+//                                                IndexElementSize.SixteenBits,
+//                                                sIndices.Length * sizeof(short),
+//                                                BufferUsage.WriteOnly);
+//                m_IndexBuffer.SetData(sIndices);
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//            }
+//            else
+//            {
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create index buffer.
+//                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
+//                                                IndexElementSize.ThirtyTwoBits,
+//                                                nSourceIndices.Length * sizeof(int),
+//                                                BufferUsage.WriteOnly);
+//                m_IndexBuffer.SetData(nSourceIndices);
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//            }
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//        }
+//
+//        //////////////////////////////////////////////////////////////////////////
+//        /// <summary>
+//        /// Calculate fill in shape by using triangulation.
+//        /// </summary>
+//        /// <param name="_WindingOrder">Winding order of the shape used for triangulating.</param>
+//        /// <param name="_vHoleList">Multiple list of vertices to cut out. The positions should be within the shape.</param>
+//        //////////////////////////////////////////////////////////////////////////
+//        public void CalculateFillInShape(Triangulator.WindingOrder _WindingOrder, List<Vector2[]> _vHoleList)
+//        {
+//            //////////////////////////////////////////////////////////////////////////
+//            // Validate.
+//            if (m_VectorList.Count <= 2)
+//                return;
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create a list of vertices.
+//            Vector2[] vSourceVertices = new Vector2[m_VectorList.Count];
+//            for (int i = m_VectorList.Count - 1; i >= 0; --i)
+//                vSourceVertices[i] = m_VectorList[i];
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Cut hole in the shape.
+//            foreach (Vector2[] vList in _vHoleList)
+//                vSourceVertices = Triangulator.Triangulator.CutHoleInShape(vSourceVertices, vList);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create a list of indices.
+//            int[] nSourceIndices;
+//
+//            // Triangulate vertices and indices.
+//            Triangulator.Triangulator.Triangulate(vSourceVertices,
+//                                                  _WindingOrder,
+//                                                  out vSourceVertices,
+//                                                  out nSourceIndices);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Store number of vertices and primitives for rendering.
+//            m_nVertices = vSourceVertices.Length;
+//            m_nPrimitives = nSourceIndices.Length / 3;
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create and setup the list of vertex data.
+//            VertexPositionColor[] verts = new VertexPositionColor[vSourceVertices.Length];
+//            for (int i = vSourceVertices.Length - 1; i >= 0; --i)
+//                verts[i] = new VertexPositionColor(m_GraphicsDevice.Viewport.Unproject(new Vector3(vSourceVertices[i], 0f),
+//                                                                                                   m_Projection,
+//                                                                                                   m_View,
+//                                                                                                   Matrix.Identity), m_FillInColor);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Create vertex buffer.
+//            m_VertexBuffer = new VertexBuffer(m_GraphicsDevice,
+//                                              VertexPositionColor.VertexDeclaration,
+//                                              verts.Length * VertexPositionColor.VertexDeclaration.VertexStride,
+//                                              BufferUsage.WriteOnly);
+//            m_VertexBuffer.SetData(verts);
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//
+//            //////////////////////////////////////////////////////////////////////////
+//            // Branch here to convert our indices to shorts if possible for wider GPU support.
+//            if (verts.Length < UInt16.MaxValue /*65535*/)
+//            {
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create a list of indices.
+//                short[] sIndices = new short[nSourceIndices.Length];
+//                for (int i = nSourceIndices.Length - 1; i >= 0; --i)
+//                    sIndices[i] = (short)nSourceIndices[i];
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create index buffer.
+//                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
+//                                                IndexElementSize.SixteenBits,
+//                                                sIndices.Length * sizeof(short),
+//                                                BufferUsage.WriteOnly);
+//                m_IndexBuffer.SetData(sIndices);
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//            }
+//            else
+//            {
+//                //////////////////////////////////////////////////////////////////////////
+//                // Create index buffer.
+//                m_IndexBuffer = new IndexBuffer(m_GraphicsDevice,
+//                                                IndexElementSize.ThirtyTwoBits,
+//                                                nSourceIndices.Length * sizeof(int),
+//                                                BufferUsage.WriteOnly);
+//                m_IndexBuffer.SetData(nSourceIndices);
+//                //
+//                //////////////////////////////////////////////////////////////////////////
+//            }
+//            //
+//            //////////////////////////////////////////////////////////////////////////
+//        }
 
         #endregion // Public Methods
 
