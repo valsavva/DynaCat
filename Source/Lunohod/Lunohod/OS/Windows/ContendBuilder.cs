@@ -42,6 +42,8 @@ namespace Lunohod.ContentLoading
             "Microsoft.Xna.Framework.Content.Pipeline.XImporter" + xnaVersion,
             "Microsoft.Xna.Framework.Content.Pipeline.TextureImporter" + xnaVersion,
             "Microsoft.Xna.Framework.Content.Pipeline.EffectImporter" + xnaVersion,
+            "Microsoft.Xna.Framework.Content.Pipeline.AudioImporters" + xnaVersion,
+            "Microsoft.Xna.Framework.Content.Pipeline.VideoImporters" + xnaVersion,
 
             // If you want to use custom importers or processors from
             // a Content Pipeline Extension Library, add them here.

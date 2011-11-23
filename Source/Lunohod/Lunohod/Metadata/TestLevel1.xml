@@ -13,11 +13,11 @@
 	</Resources>
 	
 	<Resources RootFolder="Sound">
-		<MusicFile Id="gameMusic" Source="gameMusic.mp3" />
-		<SoundFile Id="explosion1" Source="explosion.wav" />
-		<SoundFile Id="explosion2" Source="explosion.wav" />
-		<SoundFile Id="explosion3" Source="explosion.wav" />
-		<SoundFile Id="laserFire" Source="laserFire.wav" />
+		<MusicFile Id="gameMusic" Source="gameMusic" />
+		<SoundFile Id="explosion1" Source="explosion" />
+		<SoundFile Id="explosion2" Source="explosion" />
+		<SoundFile Id="explosion3" Source="explosion" />
+		<SoundFile Id="laserFire" Source="laserFire" />
 	</Resources>
 	
 	<Music FileId="gameMusic" />
@@ -87,8 +87,8 @@
 			<NumAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="X"/>
 		</Sprite>
 
-		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="200,250,67,67" FrameBounds="0,0,67,67" FrameCount="12">
-			<NumAnimation From="0" To="11" Duration="1.5" Autoreverse="false" Target="CurrentFrame" IsActive="false" RepeatCount="1">
+		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="200,250,134,134" FrameBounds="0,0,134,134" FrameCount="12">
+			<NumAnimation From="0" To="11" Duration="1" Autoreverse="false" Target="CurrentFrame" IsActive="false" RepeatCount="1">
 				<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
 			</NumAnimation>
 		</Sprite>
@@ -97,11 +97,11 @@
 			<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Play"/>
 		</Sound>
 		
-		<Sound FileId="explosion2" Volume="0.5" Pitch="0.5" Pan="-2">
+		<Sound FileId="explosion2" Volume="0.5" Pitch="0.5" Pan="-1">
 			<ValueTrigger Property="ship.X" Compare="G" Value="140" EnterAction="Play"/>
 		</Sound>
 		
-		<Sound FileId="explosion3" Pitch="1.5" Pan="2">
+		<Sound FileId="explosion3" Pitch="1" Pan="1">
 			<ValueTrigger Property="ship.X" Compare="G" Value="180" EnterAction="Play"/>
 		</Sound>
 		

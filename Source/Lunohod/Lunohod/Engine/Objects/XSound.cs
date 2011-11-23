@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Lunohod.Objects
 {
-    [XmlType("Music")]
+    [XmlType("Sound")]
 	public class XSound : XObject
 	{
 		private XSoundResource soundFile;
