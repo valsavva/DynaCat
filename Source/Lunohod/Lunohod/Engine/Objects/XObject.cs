@@ -21,6 +21,10 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "TapArea", Type = typeof(XTapArea))]
         [XmlElement(ElementName = "Include", Type = typeof(XInclude))]
 
+        // Media
+        [XmlElement(ElementName = "Music", Type = typeof(XMusic))]
+        [XmlElement(ElementName = "Sound", Type = typeof(XSound))]
+		
         // Dashboard
         [XmlElement(ElementName = "Viewport", Type = typeof(XViewport))]
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="testLevel1" Bounds="0,0,480,320">
+
+	<!-- resources -->
+	<Resources RootFolder="TestLevel1">
+		<Texture Id="cat" Source="cat"/>
+		<Texture Id="explosionSprite" Source="explosion1"/>
+		<Texture Id="rat_walk" Source="rat_walk"/>
+	</Resources>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Hero Bounds="200,0,40,37" Speed="50" Direction="0,0">
+			<Image Id="imageHero" TextureId="cat" />
+		</Hero>
+	
+		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="0,250,67,67" FrameBounds="0,0,67,67" FrameCount="12">
+			<NumAnimation From="0" To="11" Duration="3" Autoreverse="false" Target="CurrentFrame" />
+		</Sprite>
+	</Layer>
+</Level>
+
+
+

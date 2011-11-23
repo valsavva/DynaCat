@@ -21,19 +21,9 @@ namespace Lunohod.Objects
 		
         [XmlElement(ElementName = "Font", Type = typeof(XFontResource))]
         [XmlElement(ElementName = "Texture", Type = typeof(XTextureResource))]
-        public List<XObject> ResourceSubcomponents { get { return base.Subcomponents; } set { this.Subcomponents = value; } }
-		
-		[XmlIgnore]
-		public Dictionary<string, XTextureResource> Textures = new Dictionary<string, XTextureResource>();
-		
-		public override void Initialize(InitializeParameters p)
-		{
-			base.Initialize(p);
-			
-			this.Textures = this.GetComponents<XTextureResource>().ToDictionary(t => t.Id);
-			
-			p.Resources = this;
-		}
+        [XmlElement(ElementName = "MusicFile", Type = typeof(XMusicResource))]
+        [XmlElement(ElementName = "SoundFile", Type = typeof(XSoundResource))]
+        public List<XObject> ResourceSubcomponents { get { return this.Subcomponents; } set { this.Subcomponents = value; } }
 	}
 }
 

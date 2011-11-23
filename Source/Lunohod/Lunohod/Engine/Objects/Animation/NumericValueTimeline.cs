@@ -36,16 +36,32 @@ namespace Lunohod.Objects
 		public double GetValue(TimeSpan time)
 		{
 			double dx;
+			double dt;
 			
 			if (this.Autoreverse)
 			{
-				dx = this.speed * (time.TotalSeconds % (this.Duration.TotalSeconds * 2));
+				double totalDuration = (this.Duration.TotalSeconds * 2);
+				
+				dt = time.TotalSeconds;
+				
+				if (dt > totalDuration)
+					dt = dt % totalDuration;
+				
+				dx = this.speed * dt;
+				
 				if (dx > this.distance)
 					dx = this.distance - (dx - this.distance);
 			}
 			else
 			{
-				dx = this.speed * (time.TotalSeconds % this.Duration.TotalSeconds);
+				double totalDuration = this.Duration.TotalSeconds;
+
+				dt = time.TotalSeconds;
+				
+				if (dt > totalDuration)
+					dt = dt % totalDuration;
+
+				dx = this.speed * dt;
 			}
 			
 			if (grow)

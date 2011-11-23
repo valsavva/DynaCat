@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Microsoft.Xna.Framework;
 
 namespace Lunohod
 {
 	
     [Register("AppDelegate")]
-    class Program : UIApplicationDelegate
+    class Program : MonoGameProgram
     {
         public override void FinishedLaunching(UIApplication app)
         {
             // Fun begins..
-            using (GameEngine game = new GameEngine())
-            {
-                game.Run();
-            }
+            this.MonoGameGame = new GameEngine();
+            this.MonoGameGame.Run();
         }
 
         /// <summary>

@@ -32,7 +32,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize (p);
 
-			this.texture = p.Resources.Textures[this.TextureId];
+			this.texture = (XTextureResource)p.ScreenEngine.RootComponent.FindDescendant(this.TextureId);
 		}
 		
 		private Rectangle screenBounds;

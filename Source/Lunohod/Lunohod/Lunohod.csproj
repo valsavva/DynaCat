@@ -84,9 +84,6 @@
     <Compile Include="Engine\Objects\UpateParameters.cs" />
     <Compile Include="Engine\Objects\DrawParameters.cs" />
     <Compile Include="ScreenEngine.cs" />
-    <Compile Include="Engine\Objects\XTextureResource.cs" />
-    <Compile Include="Engine\Objects\XResourceBundle.cs" />
-    <Compile Include="Engine\Objects\XResource.cs" />
     <Compile Include="Engine\Objects\XGame.cs" />
     <Compile Include="Engine\Objects\XViewport.cs" />
     <Compile Include="Engine\Objects\XDashboard.cs" />
@@ -116,7 +113,14 @@
     <Compile Include="Input\MouseProcessor.cs" />
     <Compile Include="Engine\Objects\XInclude.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="Engine\Objects\XFontResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XResourceBundle.cs" />
+    <Compile Include="Engine\Objects\Resources\XTextureResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XFontResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XSoundResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XMusicResource.cs" />
+    <Compile Include="Engine\Objects\XMusic.cs" />
+    <Compile Include="Engine\Objects\XSound.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -126,6 +130,7 @@
     <Folder Include="Engine\Objects\Animation\" />
     <Folder Include="OS\iOS\" />
     <Folder Include="Engine\Objects\Events\" />
+    <Folder Include="Engine\Objects\Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Global\dash 2a.png">
@@ -237,6 +242,24 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\SystemFont.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\gameMusic.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\explosion.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\laserFire.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel1\explosion.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestLevel3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel1\explosion1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

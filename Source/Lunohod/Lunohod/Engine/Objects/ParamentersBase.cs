@@ -17,7 +17,6 @@ namespace Lunohod.Objects
 			}
 		}
 		public LevelEngine LevelEngine { get; private set; }
-		public XResourceBundle Resources;
 	}
 }
 
