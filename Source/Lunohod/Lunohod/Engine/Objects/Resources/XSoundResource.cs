@@ -39,6 +39,13 @@ namespace Lunohod.Objects
 		
 			this.soundEffect = p.Game.Content.Load<SoundEffect>(fileName);
 		}
+		
+		public override void Dispose()
+		{
+			this.soundEffect.Dispose();
+
+			base.Dispose();
+		}
 	}
 }
 

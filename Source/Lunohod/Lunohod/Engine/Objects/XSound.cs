@@ -8,6 +8,7 @@ using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Lunohod.Objects
 {
@@ -15,6 +16,7 @@ namespace Lunohod.Objects
 	public class XSound : XObject
 	{
 		private XSoundResource soundFile;
+		private SoundEffectInstance soundEffectInstance;
 		
 		public XSound()
 		{
@@ -32,11 +34,15 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public float Pan = 0;
 		
+		[XmlAttribute]
+		public bool IsLooped;
+		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
 			
 			this.soundFile = (XSoundResource)p.ScreenEngine.RootComponent.FindDescendant(this.FileId);
+			this.soundEffectInstance = this.soundFile.SoundEffect.CreateInstance();
 		}
 		
 		public override void Update(UpdateParameters p)
@@ -46,7 +52,23 @@ namespace Lunohod.Objects
 		
 		public void Play()
 		{
-			this.soundFile.SoundEffect.Play(this.Volume, this.Pitch, this.Pan);
+			this.soundEffectInstance.Volume = this.Volume;
+			this.soundEffectInstance.Pitch = this.Pitch;
+			this.soundEffectInstance.Pan = this.Pan;
+			this.soundEffectInstance.IsLooped = this.IsLooped;
+			this.soundEffectInstance.Play();
+		}
+		public void Stop()
+		{
+			this.soundEffectInstance.Stop();
+		}
+		public void Pause()
+		{
+			this.soundEffectInstance.Pause();
+		}
+		public void Resume()
+		{
+			this.soundEffectInstance.Resume();
 		}
 	}
 }
