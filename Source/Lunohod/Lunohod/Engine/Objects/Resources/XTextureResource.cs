@@ -19,9 +19,6 @@ namespace Lunohod.Objects
 		{
 		}
 
-		[XmlAttribute]
-        public string Source;
-		
 		public Texture2D Image
 		{
 			get { return image; }
@@ -30,26 +27,8 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-			
-			XResourceBundle r = (XResourceBundle)this.Parent;
-			
-			string fileName = Path.Combine(r.RootFolder.Replace('/', Path.DirectorySeparatorChar), this.Source);
 
-#if WINDOWS
-            var pngFileName = Path.ChangeExtension(Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, fileName), "png");
-            var xnbFileName = Path.ChangeExtension(Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, fileName), "xnb");
-            var outputPath = Path.GetDirectoryName(pngFileName);
-            if (File.Exists(pngFileName) && !File.Exists(xnbFileName))
-            {
-                using (Lunohod.ContentLoading.ContentBuilder b = new ContentLoading.ContentBuilder(outputPath))
-                {
-                    b.Add(pngFileName, this.Source, "", "TextureProcessor");
-                    b.Build();
-                }
-            }
-#endif
-
-			image = p.Game.Content.Load<Texture2D>(fileName);
+            image = LoadResource<Texture2D>(p.Game.Content, "TextureProcessor", "png", "xnb");
 		}
 		
 		public override void Dispose()

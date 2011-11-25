@@ -21,9 +21,6 @@ namespace Lunohod.Objects
 		{
 		}
 
-		[XmlAttribute]
-        public string Source;
-		
 		public SoundEffect SoundEffect
 		{
 			get { return this.soundEffect; }
@@ -32,12 +29,8 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-			
-			XResourceBundle r = (XResourceBundle)this.Parent;
-			
-			string fileName = Path.Combine(r.RootFolder.Replace('/', Path.DirectorySeparatorChar), this.Source);
-		
-			this.soundEffect = p.Game.Content.Load<SoundEffect>(fileName);
+
+            this.soundEffect = LoadResource<SoundEffect>(p.Game.Content, "SoundEffectProcessor", "wav", "xnb");
 		}
 		
 		public override void Dispose()

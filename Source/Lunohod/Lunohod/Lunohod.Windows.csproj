@@ -161,6 +161,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\ParamentersBase.cs" />
+    <Compile Include="Engine\Objects\Resources\XFontResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XMusicResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XResourceBundle.cs" />
+    <Compile Include="Engine\Objects\Resources\XSoundResource.cs" />
+    <Compile Include="Engine\Objects\Resources\XTextureResource.cs" />
     <Compile Include="Engine\Objects\UpateParameters.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -176,7 +182,6 @@
     <Compile Include="Engine\Objects\XElement.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\XFontResource.cs" />
     <Compile Include="Engine\Objects\XGame.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -193,15 +198,11 @@
     <Compile Include="Engine\Objects\XLevel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\XMusic.cs" />
     <Compile Include="Engine\Objects\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\XResource.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Engine\Objects\XResourceBundle.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Engine\Objects\XSound.cs" />
     <Compile Include="Engine\Objects\XSprite.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -209,9 +210,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\XTeleport.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Engine\Objects\XTextureResource.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\XTower.cs">
@@ -248,6 +246,15 @@
     <Content Include="Content\Global\dash 2a.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Sound\explosion.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\gameMusic.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\laserFire.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\TestLevel1\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -258,6 +265,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\TestLevel1\chargers.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel1\explosion.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\TestLevel1\explosion1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\TestLevel1\rat.png">
@@ -343,6 +356,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestLevel2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestLevel3.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

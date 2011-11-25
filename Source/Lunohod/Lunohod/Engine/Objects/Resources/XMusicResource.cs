@@ -19,9 +19,6 @@ namespace Lunohod.Objects
 		public XMusicResource()
 		{
 		}
-
-		[XmlAttribute]
-        public string Source;
 		
 		public Song Song
 		{
@@ -31,12 +28,8 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-			
-			XResourceBundle r = (XResourceBundle)this.Parent;
-			
-			string fileName = Path.Combine(r.RootFolder.Replace('/', Path.DirectorySeparatorChar), this.Source);
-		
-			this.song = p.Game.Content.Load<Song>(fileName);
+
+            this.song = LoadResource<Song>(p.Game.Content, "SongProcessor", "mp3", "wma");
 		}
 	}
 }
