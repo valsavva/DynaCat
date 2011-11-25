@@ -43,7 +43,10 @@ namespace Lunohod.Objects
 			
 			this.soundFile = (XSoundResource)p.ScreenEngine.RootComponent.FindDescendant(this.FileId);
 			this.soundEffectInstance = this.soundFile.SoundEffect.CreateInstance();
-		}
+
+            // this can be set only once
+            this.soundEffectInstance.IsLooped = this.IsLooped;
+        }
 		
 		public override void Update(UpdateParameters p)
 		{
@@ -55,7 +58,6 @@ namespace Lunohod.Objects
 			this.soundEffectInstance.Volume = this.Volume;
 			this.soundEffectInstance.Pitch = this.Pitch;
 			this.soundEffectInstance.Pan = this.Pan;
-			this.soundEffectInstance.IsLooped = this.IsLooped;
 			this.soundEffectInstance.Play();
 		}
 		public void Stop()

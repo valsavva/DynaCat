@@ -354,6 +354,7 @@
     </Content>
     <Content Include="Metadata\TestLevel1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\TestLevel2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

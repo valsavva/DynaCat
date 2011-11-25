@@ -97,12 +97,12 @@
 			<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Play"/>
 		</Sound>
 		
-		<Sound FileId="explosion2" Volume="0.5" Pitch="0.5" Pan="-1">
-			<ValueTrigger Property="ship.X" Compare="G" Value="140" EnterAction="Play"/>
+		<Sound FileId="explosion1" Volume="0.5" Pitch="0.5" Pan="-1">
+			<ValueTrigger Property="ship.X" Compare="G" Value="110" EnterAction="Play"/>
 		</Sound>
 		
-		<Sound FileId="explosion3" Pitch="1" Pan="1">
-			<ValueTrigger Property="ship.X" Compare="G" Value="180" EnterAction="Play"/>
+		<Sound FileId="explosion1" Pitch="1" Pan="1">
+			<ValueTrigger Property="ship.X" Compare="G" Value="120" EnterAction="Play"/>
 		</Sound>
 		
 	</Layer>
