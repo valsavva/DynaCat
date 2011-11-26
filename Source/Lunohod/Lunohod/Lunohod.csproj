@@ -121,6 +121,7 @@
     <Compile Include="Engine\Objects\Resources\XMusicResource.cs" />
     <Compile Include="Engine\Objects\XMusic.cs" />
     <Compile Include="Engine\Objects\XSound.cs" />
+    <Compile Include="Engine\Objects\XGroup.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -36,6 +36,7 @@ namespace Lunohod.Objects
 		[XmlElement(ElementName = "ValueTrigger", Type = typeof(XValueTrigger))]
 
         // Generic
+        [XmlElement(ElementName = "Group", Type = typeof(XGroup))]
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]

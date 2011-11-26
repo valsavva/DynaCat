@@ -23,6 +23,13 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public string FileId;
 		
+		[XmlAttribute]
+		public float Volume
+		{
+			get { return MediaPlayer.Volume; }
+			set { MediaPlayer.Volume = value; }
+		}
+		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
@@ -35,10 +42,10 @@ namespace Lunohod.Objects
 			base.Update(p);
 			
 			if (MediaPlayer.State == MediaState.Stopped)
-				PlayMusic();
+				Play();
 		}
 		
-        private void PlayMusic()
+        public void Play()
         {
             // Due to the way the MediaPlayer plays music,
             // we have to catch the exception. Music will play when the game is not tethered
@@ -52,6 +59,18 @@ namespace Lunohod.Objects
             }
             catch { }
         }
+		public void Pause()
+		{
+			MediaPlayer.Pause();
+		}
+		public void Resume()
+		{
+			MediaPlayer.Resume();
+		}
+		public void Stop()
+		{
+			MediaPlayer.Stop();
+		}
 	}
 }
 

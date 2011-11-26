@@ -66,8 +66,12 @@
 			<NumAnimation From="20" To="160" Duration="00:00:3" Autoreverse="true" Target="Y"/>
 		</Image>
 
-		<Image Id="imageA" TextureId="chargers" Bounds="125,225,50,50" Origin="25,25" Rotation="0" Opacity="1"/>
-		<NumAnimation Target="imageA.X" From="0" To="360" Duration="00:00:06"/>
+		<!--Group example-->		
+		<Group Bounds="25,225,50,50">
+			<NumAnimation Target="X" From="25" To="75" Duration="1" Autoreverse="true"/>
+			<Image Id="imageA" TextureId="chargers" Bounds="25,0,50,50" />
+			<Image Id="imageC" TextureId="chargers" Bounds="325,0,50,50" />
+		</Group>		
 		
 		<Image Id="imageB" TextureId="chargers" Bounds="225,225,50,50" Origin="25,25" Rotation="0" Opacity="1">
 			<NumAnimation Target="Rotation" From="0" To="360" Duration="00:00:02">
@@ -76,7 +80,6 @@
 			</NumAnimation>
 		</Image>
 		
-		<Image Id="imageC" TextureId="chargers" Bounds="325,225,50,50" Origin="25,25" Rotation="0" Opacity="1"/>
 
 		<Image Id="imageRat2" TextureId="rat" Bounds="100,200,40,41" Origin="100,100" Rotation="0" Opacity="1">
 			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" RepeatCount="3" Target="Rotation"/>

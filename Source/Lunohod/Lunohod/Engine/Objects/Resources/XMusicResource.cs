@@ -31,6 +31,10 @@ namespace Lunohod.Objects
 
             this.song = LoadResource<Song>(p.Game.Content, "SongProcessor", "mp3", "wma");
 		}
+		public override void Dispose()
+		{
+			this.song.Dispose();
+		}
 	}
 }
 
