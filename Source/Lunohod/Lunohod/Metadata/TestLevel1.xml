@@ -69,7 +69,11 @@
 		<!--Group example-->		
 		<Group Bounds="25,225,50,50">
 			<NumAnimation Target="X" From="25" To="75" Duration="1" Autoreverse="true"/>
+			<!--dark-ish shadow-->
+			<Image TextureId="chargers" Bounds="30,5,50,50" BackColor="#444444" />
 			<Image Id="imageA" TextureId="chargers" Bounds="25,0,50,50" />
+			<!--black shadow-->
+			<Image TextureId="chargers" Bounds="330,5,50,50" BackColor="#000000" />
 			<Image Id="imageC" TextureId="chargers" Bounds="325,0,50,50" />
 		</Group>		
 		
