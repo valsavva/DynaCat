@@ -12,9 +12,10 @@ using Microsoft.Xna.Framework.Media;
 namespace Lunohod.Objects
 {
     [XmlType("Music")]
-	public class XMusic : XObject
+	public class XMusic : XObject, IHasVolume
 	{
 		private XMusicResource musicFile;
+		private float volume;
 		
 		public XMusic()
 		{
@@ -26,8 +27,11 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public float Volume
 		{
-			get { return MediaPlayer.Volume; }
-			set { MediaPlayer.Volume = value; }
+			get { return this.volume; }
+			set { 
+				this.volume = value;
+				MediaPlayer.Volume = this.volume;
+			}
 		}
 		
 		public override void Initialize(InitializeParameters p)
@@ -53,6 +57,7 @@ namespace Lunohod.Objects
             {
                 // Play the music
                 MediaPlayer.Play(this.musicFile.Song);
+				MediaPlayer.Volume = this.Volume;
 
                 // Loop the currently playing song
                 MediaPlayer.IsRepeating = true;

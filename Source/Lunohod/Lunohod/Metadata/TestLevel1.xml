@@ -20,7 +20,9 @@
 		<SoundFile Id="laserFire" Source="laserFire" />
 	</Resources>
 	
-	<Music FileId="gameMusic" />
+	<Music FileId="gameMusic" Volume="0">
+		<!-- <NumAnimation Target="Volume" From="0.05" To="0.3" Duration="0.0625" Autoreverse="true"/> -->
+	</Music>
 	
 	<!-- background layer -->
 	<Layer Id="background" BackColor="#FFFFFFFF">
@@ -37,15 +39,15 @@
 			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1"/>
 
 			<NumAnimation Id="boxImage1Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false">
-				<ValueTrigger Property="boxImage2Animation.IsActive" Value="false" EnterAction="Start"/>
+				<ValueTrigger Property="boxImage2Animation.InProgress" Value="false" EnterAction="Start"/>
 			</NumAnimation>
 		</Block>
 
 		<Block Id="boxImage2" Bounds="455,75,50,50" DefaultEdge="None">
 			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" pacity="1"/>
 
-			<NumAnimation Id="boxImage2Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false" IsActive="false">
-				<ValueTrigger Property="boxImage1Animation.IsActive" Value="false" EnterAction="Start"/>
+			<NumAnimation Id="boxImage2Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false" InProgress="false">
+				<ValueTrigger Property="boxImage1Animation.InProgress" Value="false" EnterAction="Start"/>
 			</NumAnimation>
 		</Block>
 
@@ -67,8 +69,12 @@
 		</Image>
 
 		<!--Group example-->		
-		<Group Bounds="25,225,50,50">
-			<NumAnimation Target="X" From="25" To="75" Duration="1" Autoreverse="true"/>
+		<Group Id="group1" Bounds="50,225,100,50">
+			<Sequence Id="group1AnimationSequence" RepeatCount="1" InProgress="false">
+				<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
+				<NumAnimation Target="group1.X" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
+				<NumAnimation Target="group1.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
+			</Sequence>
 			<Image Id="imageA" TextureId="chargers" Bounds="25,0,50,50" />
 			<Image Id="imageC" TextureId="chargers" Bounds="325,0,50,50" />
 		</Group>		
@@ -87,24 +93,24 @@
 
 		<Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8">
 			<NumAnimation From="0" To="7" Duration="00:00:00.3" Target="CurrentFrame"/>
-			<NumAnimation From="-115" To="480" Duration="00:00:05" Autoreverse="false" Target="X"/>
+			<NumAnimation From="-115" To="480" Duration="00:00:15" Autoreverse="false" Target="X"/>
 		</Sprite>
 
 		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="200,250,134,134" FrameBounds="0,0,134,134" FrameCount="12">
-			<NumAnimation From="0" To="11" Duration="1" Autoreverse="false" Target="CurrentFrame" IsActive="false" RepeatCount="1">
+			<NumAnimation From="0" To="11" Duration="1" Autoreverse="false" Target="CurrentFrame" InProgress="false" RepeatCount="1">
 				<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
 			</NumAnimation>
 		</Sprite>
 
-		<Sound FileId="explosion1">
+		<Sound FileId="explosion1" Volume="0">
 			<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Play"/>
 		</Sound>
 		
-		<Sound FileId="explosion1" Volume="0.5" Pitch="0.5" Pan="-1">
+		<Sound FileId="explosion2" Volume="0" Pitch="0.5" Pan="-1">
 			<ValueTrigger Property="ship.X" Compare="G" Value="110" EnterAction="Play"/>
 		</Sound>
 		
-		<Sound FileId="explosion1" Pitch="1" Pan="1">
+		<Sound FileId="explosion3" Volume="0" Pitch="1" Pan="1">
 			<ValueTrigger Property="ship.X" Compare="G" Value="120" EnterAction="Play"/>
 		</Sound>
 		

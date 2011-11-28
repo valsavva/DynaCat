@@ -13,23 +13,57 @@ namespace Lunohod.Objects
 	public class PropertyAccessor
 	{
 		protected XObject target;
+		
+		private XElement element;
+		private XSprite sprite;
+		private IHasVolume audio;
+		
 		private string property;
 		private PropertyInfo propertyInfo;
 		private Type targetType;
+		private Type propertyType;
 
-		protected PropertyAccessor(XObject target, string property)
+		private Func<float> floatGetter;
+		private Action<float> floatSetter;
+		
+		public PropertyAccessor(XObject currentObject, string memberDescriptor)
 		{
-            this.target = target;
-            this.property = property;
+			this.target = null;
+            this.property = null;
 
-			targetType = target.GetType();
-			this.propertyInfo = targetType.GetProperty(property);
+			currentObject.GetTargetFromDescriptor(memberDescriptor, out this.target, out this.property);
 			
-			if (this.GetType() == typeof(PropertyAccessor) && this.propertyInfo == null)
-				throw new InvalidOperationException(
-					string.Format("Could not find property [{0}] on object [{1}] of type [{2}])",
-						property, this.target.Id, targetType.FullName)
-				);
+			this.targetType = target.GetType();
+			this.propertyInfo = targetType.GetProperty(property);
+
+			this.element = target as XElement;
+			this.sprite = target as XSprite;
+			this.audio = target as IHasVolume;
+			
+			this.propertyType = typeof(float);
+			
+			switch(property)
+			{
+				case "X": floatGetter = GetX; floatSetter = SetX; break;
+				case "Y": floatGetter = GetY; floatSetter = SetY; break;
+				case "Height": floatGetter = GetHeight; floatSetter = SetHeight; break;
+				case "Width": floatGetter = GetWidth; floatSetter = SetWidth; break;
+				case "Rotation": floatGetter = GetRotation; floatSetter = SetRotation; break;
+				case "Opacity": floatGetter = GetOpacity; floatSetter = SetOpacity; break;
+				case "CurrentFrame": floatGetter = GetCurrentFrame; floatSetter = SetCurrentFrame; break;
+				case "Volume": floatGetter = GetVolume; floatSetter = SetVolume; break;
+				default :
+				{
+					if (this.propertyInfo == null)
+						throw new InvalidOperationException(
+							string.Format("Could not find property [{0}] on object [{1}] of type [{2}])",
+								property, this.target.Id, targetType.FullName)
+						);
+				
+					propertyType = propertyInfo.PropertyType;
+				
+				}; break;
+			}
 		}
 		
 		public XObject Target
@@ -49,13 +83,25 @@ namespace Lunohod.Objects
 		
 		public virtual Type PropertyType
 		{
-			get { return this.propertyInfo.PropertyType; }
+			get { return propertyType; }
 		}
 		
         public virtual object PropertyValue
         {
-            get { return propertyInfo.GetValue(target, null);  }
-            set { 
+            get {
+				if (floatGetter != null)
+					return floatGetter();
+				
+				return propertyInfo.GetValue(target, null);
+			}
+            set {
+				
+				if (floatSetter != null)
+				{
+					floatSetter((float)value);
+					return;
+				}
+				
 				try
 				{
 					propertyInfo.SetValue(target, value, null);
@@ -67,82 +113,79 @@ namespace Lunohod.Objects
 				}
 			}
         }
-
-		public static PropertyAccessor CreatePropertyAccessor(XObject currentObject, string memberDescriptor)
+		
+		public virtual float FloatPropertyValue
 		{
-			XObject target;
-			string property;
-			currentObject.GetTargetFromDescriptor(memberDescriptor, out target, out property);
-			
-			switch(property)
-			{
-				case "X": return new FloatPropertyAccessor(target, property, GetX, SetX);
-				case "Y": return new FloatPropertyAccessor(target, property, GetY, SetY);
-				case "Height": return new FloatPropertyAccessor(target, property, GetHeight, SetHeight);
-				case "Width": return new FloatPropertyAccessor(target, property, GetWidth, SetWidth);
-				case "Rotation": return new FloatPropertyAccessor(target, property, GetRotation, SetRotation);
-				case "Opacity": return new FloatPropertyAccessor(target, property, GetOpacity, SetOpacity);
-				case "CurrentFrame": return new FloatPropertyAccessor(target, property, GetCurrentFrame, SetCurrentFrame);
-				default: return new PropertyAccessor(target, property);
-			}
+			get { return this.floatGetter(); }
+			set { this.floatSetter(value); }
 		}
-					
-		private static float GetX(XElement e)
+		
+		#region numeric Getters/Setters
+		private float GetX()
 		{
-			return e.Bounds.X;
+			return element.Bounds.X;
 		}
-		private static void SetX(XElement e, float v)
+		private void SetX(float v)
 		{
-			e.Bounds.X = (int)Math.Round(v);
+			element.Bounds.X = (int)Math.Round(v);
 		}
-		private static float GetY(XElement e)
+		private float GetY()
 		{
-			return e.Bounds.Y;
+			return element.Bounds.Y;
 		}
-		private static void SetY(XElement e, float v)
+		private void SetY(float v)
 		{
-			e.Bounds.Y = (int)Math.Round(v);
+			element.Bounds.Y = (int)Math.Round(v);
 		}
-		private static float GetWidth(XElement e)
+		private float GetWidth()
 		{
-			return e.Bounds.Width;
+			return element.Bounds.Width;
 		}
-		private static void SetWidth(XElement e, float v)
+		private void SetWidth(float v)
 		{
-			e.Bounds.Width = (int)Math.Round(v);
+			element.Bounds.Width = (int)Math.Round(v);
 		}
-		private static float GetHeight(XElement e)
+		private float GetHeight()
 		{
-			return e.Bounds.Height;
+			return element.Bounds.Height;
 		}
-		private static void SetHeight(XElement e, float v)
+		private void SetHeight(float v)
 		{
-			e.Bounds.Height = (int)Math.Round(v);
+			element.Bounds.Height = (int)Math.Round(v);
 		}
-		private static float GetRotation(XElement e)
+		private float GetRotation()
 		{
-			return e.Rotation;
+			return element.Rotation;
 		}
-		private static void SetRotation(XElement e, float v)
+		private void SetRotation(float v)
 		{
-			e.Rotation = v;
+			element.Rotation = v;
 		}
-		private static float GetCurrentFrame(XElement e)
+		private float GetCurrentFrame()
 		{
-			return ((XSprite)e).CurrentFrame;
+			return sprite.CurrentFrame;
 		}
-		private static void SetCurrentFrame(XElement e, float v)
+		private void SetCurrentFrame(float v)
 		{
-			((XSprite)e).CurrentFrame = (int)Math.Round(v);
+			sprite.CurrentFrame = (int)Math.Round(v);
 		}
-		private static float GetOpacity(XElement e)
+		private float GetOpacity()
 		{
-			return e.Opacity;
+			return element.Opacity;
 		}
-		private static void SetOpacity(XElement e, float v)
+		private void SetOpacity(float v)
 		{
-			e.Opacity = v;
+			element.Opacity = v;
 		}
+		private float GetVolume()
+		{
+			return audio.Volume;
+		}
+		private void SetVolume(float v)
+		{
+			audio.Volume = v;
+		}
+		#endregion
 	}
 }
 

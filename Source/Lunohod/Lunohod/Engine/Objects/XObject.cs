@@ -42,6 +42,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
         [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
+        [XmlElement(ElementName = "Sequence", Type = typeof(XSequence))]
         [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
         public List<XObject> Subcomponents { get; set; }
 		
@@ -114,7 +115,7 @@ namespace Lunohod.Objects
 			if (this.Subcomponents == null)
 				return null;
 			
-			return (T)this.Subcomponents.FirstOrDefault(c => c.GetType() == typeof(T));
+			return (T)this.Subcomponents.FirstOrDefault(c => c is T);
 		}
 		
 		public IEnumerable<T> GetComponents<T>() where T : XObject
@@ -122,7 +123,7 @@ namespace Lunohod.Objects
 			if (this.Subcomponents == null)
 				return null;
 			
-			return this.Subcomponents.Where(c => c.GetType() == typeof(T)).Cast<T>();
+			return this.Subcomponents.Where(c => c is T).Cast<T>();
 		}
 		
 		public XObject FindDescendant(string id)

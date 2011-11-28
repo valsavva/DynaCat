@@ -12,7 +12,7 @@ namespace Lunohod.Objects
 	public abstract class XAnimationBase : XObject
 	{
         protected TimeSpan elapsedTime;
-		protected bool isActive = true;
+		protected bool inProgress = true;
 		protected bool isPaused = false;
 
         public TimeSpan ElapsedTime
@@ -20,10 +20,10 @@ namespace Lunohod.Objects
             get { return elapsedTime; }
         }
 		[XmlAttribute]
-        public bool IsActive
+        public bool InProgress
 		{
-			get { return this.isActive; }
-			set { this.isActive = value; }
+			get { return this.inProgress; }
+			set { this.inProgress = value; }
 		}
 		public bool IsPaused
 		{
@@ -71,9 +71,9 @@ namespace Lunohod.Objects
         {
             base.Update(p);
 			
-			if (!this.isActive || this.isPaused)
+			if (!this.inProgress || this.isPaused)
 				return;
-
+		
 			UpdateTime(p);
 
             UpdateAnimation();
@@ -90,7 +90,7 @@ namespace Lunohod.Objects
 			}
 			else if (this.RepeatCount != 0)
 			{
-				if ((this.elapsedTime.TotalMilliseconds > 0) && ((this.elapsedTime.TotalMilliseconds / this.Duration.TotalMilliseconds) >= this.RepeatCount))
+				if ((this.elapsedTime.TotalMilliseconds > 0) && (this.Duration != TimeSpan.Zero) && ((this.elapsedTime.TotalMilliseconds / this.Duration.TotalMilliseconds) >= this.RepeatCount * (this.Autoreverse ? 2 : 1)))
 					Stop();
 			} 
 		}
@@ -98,31 +98,32 @@ namespace Lunohod.Objects
 		//protected abstract void Reset();
         public abstract void UpdateAnimation();
 		
-		public void Start()
+		public virtual void Start()
 		{
 			this.elapsedTime = TimeSpan.Zero;
-			this.isActive = true;
+			this.inProgress = true;
 			this.isPaused = false;
 		}
-		public void Pause()
+		public virtual void Pause()
 		{
 			this.isPaused = true;
 		}
-		public void Resume()
+		public virtual void Resume()
 		{
-			if (!this.isActive)
-				Start();
-			else
-				this.isPaused = false;
+//			if (!this.inProgress)
+//				Start();
+//			else
+			
+			this.isPaused = false;
 		}
-        public void Stop()
+        public virtual void Stop()
         {
 			if (this.FillBehavior == XAnimationFillBehavior.Reset)
 				this.elapsedTime = TimeSpan.Zero;
 			else
-				this.elapsedTime = this.Duration;
+				this.elapsedTime = this.Duration + (this.Autoreverse ? this.Duration : TimeSpan.Zero);
 			
-			this.isActive = false;
+			this.inProgress = false;
 			this.isPaused = false;
         }
     }

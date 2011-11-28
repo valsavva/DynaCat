@@ -119,9 +119,11 @@
     <Compile Include="Engine\Objects\Resources\XResource.cs" />
     <Compile Include="Engine\Objects\Resources\XSoundResource.cs" />
     <Compile Include="Engine\Objects\Resources\XMusicResource.cs" />
-    <Compile Include="Engine\Objects\XMusic.cs" />
-    <Compile Include="Engine\Objects\XSound.cs" />
     <Compile Include="Engine\Objects\XGroup.cs" />
+    <Compile Include="Engine\Objects\Animation\XSequence.cs" />
+    <Compile Include="Engine\Objects\Media\XMusic.cs" />
+    <Compile Include="Engine\Objects\Media\XSound.cs" />
+    <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -132,6 +134,7 @@
     <Folder Include="OS\iOS\" />
     <Folder Include="Engine\Objects\Events\" />
     <Folder Include="Engine\Objects\Resources\" />
+    <Folder Include="Engine\Objects\Media\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Global\dash 2a.png">

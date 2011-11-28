@@ -58,7 +58,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			propertyAccessor = PropertyAccessor.CreatePropertyAccessor(this, this.Property);
+			propertyAccessor = new PropertyAccessor(this, this.Property);
 			
 			if (propertyAccessor.PropertyType == typeof(bool))
 				objValue = bool.Parse(this.ValueString);

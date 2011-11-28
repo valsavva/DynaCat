@@ -13,10 +13,12 @@ using Microsoft.Xna.Framework.Audio;
 namespace Lunohod.Objects
 {
     [XmlType("Sound")]
-	public class XSound : XObject
+	public class XSound : XObject, IHasVolume
 	{
 		private XSoundResource soundFile;
 		private SoundEffectInstance soundEffectInstance;
+		
+		private float volume;
 		
 		public XSound()
 		{
@@ -26,7 +28,15 @@ namespace Lunohod.Objects
         public string FileId;
 		
 		[XmlAttribute]
-		public float Volume = 1;
+		public float Volume
+		{
+			get { return this.volume; }
+			set { 
+				this.volume = value;
+				if (this.soundEffectInstance != null)
+					this.soundEffectInstance.Volume = this.volume;
+			}
+		}
 		
 		[XmlAttribute]
 		public float Pitch = 0;

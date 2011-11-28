@@ -18,7 +18,7 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public int FrameCount;
 		[XmlAttribute]
-		public int CurrentFrame;
+		public int CurrentFrame { get; set; }
 		
 		[XmlAttribute("FrameBounds")]
 		public string zFrameBounds
