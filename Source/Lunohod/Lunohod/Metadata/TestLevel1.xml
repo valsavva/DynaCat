@@ -76,6 +76,8 @@
 				<NumAnimation Target="group1.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			</Sequence>
 			<Image Id="imageA" TextureId="chargers" Bounds="25,0,50,50" />
+			<!--black shadow-->
+			<Image TextureId="chargers" Bounds="330,5,50,50" BackColor="#000000" />
 			<Image Id="imageC" TextureId="chargers" Bounds="325,0,50,50" />
 		</Group>		
 		

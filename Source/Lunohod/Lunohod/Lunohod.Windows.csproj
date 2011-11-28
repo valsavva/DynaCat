@@ -185,6 +185,7 @@
     <Compile Include="Engine\Objects\XGame.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\XGroup.cs" />
     <Compile Include="Engine\Objects\XHero.cs">
       <SubType>Code</SubType>
     </Compile>
