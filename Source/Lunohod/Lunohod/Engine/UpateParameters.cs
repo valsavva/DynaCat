@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace Lunohod.Objects
+namespace Lunohod
 {
 	public class UpdateParameters : ParamentersBase
 	{

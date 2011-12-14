@@ -14,8 +14,11 @@ namespace Lunohod
 	public class LevelEngine : ScreenEngine
 	{
 		public XHero hero;
+		public XTower tower;
 		public List<XElement> obstacles;
 		private XLevel level;
+		
+		private List<RadioWave> waves;
 
 		private InitializeParameters initializeParameters;
 		private UpdateParameters updateParameters;
@@ -45,6 +48,9 @@ namespace Lunohod
 				default: e.IsHandled = false; break;
 			}
 			
+			if (e.IsHandled)
+				waves.Add(new RadioWave(e.Time));
+			
 			base.ProcessEvent(e);
 		}
 		
@@ -54,6 +60,7 @@ namespace Lunohod
 			base.Initialize();
 			
 			this.obstacles = new List<XElement>();
+			this.waves = new List<RadioWave>();
 
 			spriteBatch = new SpriteBatch(this.game.GraphicsDevice);
 
@@ -97,6 +104,9 @@ namespace Lunohod
 			this.game.GameObject.Update(updateParameters);
 			
 			this.level.Update(updateParameters);
+
+			for(int i = 0; i < waves.Count; i++)
+				waves[i].Update(updateParameters);
 			
 			ProcessCollisions();
 		}
@@ -180,6 +190,10 @@ namespace Lunohod
 				}
 				
 				this.level.Draw(drawParameters);
+				
+				for(int i = 0; i < waves.Count; i++)
+					waves[i].Draw(drawParameters);
+				
 				this.game.GameObject.Draw(drawParameters);
 				
 				this.spriteBatch.End();

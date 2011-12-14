@@ -11,7 +11,14 @@ namespace Lunohod.Objects
     {
         [XmlAttribute]
         public double SignalSpeed;
-
+		
+		public override void Initialize(InitializeParameters p)
+		{
+			base.Initialize(p);
+			
+			p.LevelEngine.tower = this;
+		}
+		
         public double ActionRadius(ActionInfo actionInfo)
         {
             return this.SignalSpeed * (DateTime.Now - actionInfo.StartTime).TotalSeconds;

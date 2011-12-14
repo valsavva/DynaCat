@@ -30,7 +30,7 @@
 	</Layer>
 	<!-- main layer -->
 	<Layer Id="action" BackColor="#FFFFFFFF">
-		<Tower Bounds="0,0,35,35" SignalSpeed="100"/>
+		<Tower Bounds="0,0,35,35" SignalSpeed="50"/>
 		<Hero Bounds="200,0,40,37" Speed="50" Direction="0,0">
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>
@@ -57,11 +57,11 @@
 		</Sprite>
 
 		<Image Id="imageCat" TextureId="cat" Bounds="20,20,40,37" Origin="20,20" Rotation="0" Opacity="1">
-			<NumAnimation From="0" To="438" Duration="00:00:6" Autoreverse="false" Target="X"/>
+			<NumAnimation From="0" To="400" Duration="00:00:8" Autoreverse="false" Target="X"/>
 		</Image>
 
 		<Image Id="imageCat1" TextureId="cat" Bounds="20,60,40,37" Origin="20,20" Rotation="0" Opacity="1">
-			<NumAnimation From="0" To="440" Duration="00:00:6" Autoreverse="false" Target="X"/>
+			<NumAnimation From="0" To="400" Duration="00:00:8" Autoreverse="false" Target="X"/>
 		</Image>
 
 		<Image Id="imageRat" TextureId="rat" Bounds="400,20,40,41" Origin="20,20" Rotation="30" Opacity="1">

@@ -18,7 +18,7 @@ namespace Lunohod
 		
 		private GameEvent(GameTime gameTime)
 		{
-			this.Time = gameTime.ElapsedGameTime;
+			this.Time = gameTime.TotalGameTime;
 			this.IsHandled = false;
 		}
 		

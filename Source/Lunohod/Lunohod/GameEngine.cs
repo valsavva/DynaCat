@@ -29,6 +29,7 @@ namespace Lunohod
 
 		public Texture2D BlankTexture { get; private set; }
 		public SpriteFont SystemFont { get; private set; }
+		public List<Texture2D> WaveTextures { get; private set; }
 		
 		//public Stopwatch gameWatch = new Stopwatch();
 
@@ -100,8 +101,16 @@ namespace Lunohod
 		protected override void LoadContent()
 		{
             LoadGameElement();
-            this.BlankTexture = ((XTextureResource)this.gameObject.FindDescendant("blank")).Image;
+
+			this.BlankTexture = ((XTextureResource)this.gameObject.FindDescendant("blank")).Image;
 			this.SystemFont = ((XFontResource)this.gameObject.FindDescendant("SystemFont")).Font;
+			
+			this.WaveTextures = new List<Texture2D>();
+			for (int i = 50; i <= 1100; i += 50)
+			{
+				string textureId = "wave" + i.ToString("0000");
+				this.WaveTextures.Add(((XTextureResource)this.gameObject.FindDescendant(textureId)).Image);
+			}
 			
 			base.LoadContent();
 		}

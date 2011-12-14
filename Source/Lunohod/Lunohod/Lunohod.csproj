@@ -80,9 +80,6 @@
     <Compile Include="Engine\Objects\XLevel.cs" />
     <Compile Include="Engine\Objects\XTeleport.cs" />
     <Compile Include="Engine\Objects\XTower.cs" />
-    <Compile Include="Engine\Objects\InitializeParameters.cs" />
-    <Compile Include="Engine\Objects\UpateParameters.cs" />
-    <Compile Include="Engine\Objects\DrawParameters.cs" />
     <Compile Include="ScreenEngine.cs" />
     <Compile Include="Engine\Objects\XGame.cs" />
     <Compile Include="Engine\Objects\XViewport.cs" />
@@ -105,7 +102,6 @@
     <Compile Include="Engine\Objects\Events\XValueTrigger.cs" />
     <Compile Include="GameEvent.cs" />
     <Compile Include="GameEventQueue.cs" />
-    <Compile Include="Engine\Objects\ParamentersBase.cs" />
     <Compile Include="GameEventType.cs" />
     <Compile Include="Input\KeyboardProcessor.cs" />
     <Compile Include="Input\InputProcessorBase.cs" />
@@ -124,6 +120,11 @@
     <Compile Include="Engine\Objects\Media\XMusic.cs" />
     <Compile Include="Engine\Objects\Media\XSound.cs" />
     <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
+    <Compile Include="Engine\DrawParameters.cs" />
+    <Compile Include="Engine\InitializeParameters.cs" />
+    <Compile Include="Engine\ParamentersBase.cs" />
+    <Compile Include="Engine\UpateParameters.cs" />
+    <Compile Include="Engine\RadioWave.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -264,6 +265,72 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\TestLevel1\explosion1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0050.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0150.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0250.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0300.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0350.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0400.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0450.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0500.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0550.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0600.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0650.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0700.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0750.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0800.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0850.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0900.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave0950.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave1000.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave1050.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\wave1100.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

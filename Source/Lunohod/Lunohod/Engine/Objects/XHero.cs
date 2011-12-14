@@ -12,6 +12,8 @@ namespace Lunohod.Objects
     {
 		private Vector2 offset;
 		
+		private Vector2 location;
+		
 		[XmlAttribute]
 		public float Speed;
 		
@@ -30,15 +32,22 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 
 			p.LevelEngine.hero = this;
+			
+			location = new Vector2(this.Bounds.X, this.Bounds.Y);
 		}
 		
 		public override void Update(UpdateParameters p)
 		{
 			base.Update(p);
 			
-			offset = this.Direction * (Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
+			offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
 			
-			this.Bounds.Offset((int)Math.Round(offset.X), (int)Math.Round(offset.Y));
+			location += offset;
+			
+			this.Bounds.X = (int)location.X;
+			this.Bounds.Y = (int)location.Y;
+			
+			//this.Bounds.Offset((int)Math.Round(offset.X), (int)Math.Round(offset.Y));
 		}
 		
 		public void AlignToBoundaryOf(XElement e, Vector2 direction)

@@ -1,6 +1,6 @@
 using System;
 
-namespace Lunohod.Objects
+namespace Lunohod
 {
 	public abstract class ParamentersBase
 	{

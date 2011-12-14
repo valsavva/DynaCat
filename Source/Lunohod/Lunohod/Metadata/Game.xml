@@ -3,6 +3,28 @@
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
+		<Texture Id="wave0050" Source="wave0050.png" />
+		<Texture Id="wave0100" Source="wave0100.png" />
+		<Texture Id="wave0150" Source="wave0150.png" />
+		<Texture Id="wave0200" Source="wave0200.png" />
+		<Texture Id="wave0250" Source="wave0250.png" />
+		<Texture Id="wave0300" Source="wave0300.png" />
+		<Texture Id="wave0350" Source="wave0350.png" />
+		<Texture Id="wave0400" Source="wave0400.png" />
+		<Texture Id="wave0450" Source="wave0450.png" />
+		<Texture Id="wave0500" Source="wave0500.png" />
+		<Texture Id="wave0550" Source="wave0550.png" />
+		<Texture Id="wave0600" Source="wave0600.png" />
+		<Texture Id="wave0650" Source="wave0650.png" />
+		<Texture Id="wave0700" Source="wave0700.png" />
+		<Texture Id="wave0750" Source="wave0750.png" />
+		<Texture Id="wave0800" Source="wave0800.png" />
+		<Texture Id="wave0850" Source="wave0850.png" />
+		<Texture Id="wave0900" Source="wave0900.png" />
+		<Texture Id="wave0950" Source="wave0950.png" />
+		<Texture Id="wave1000" Source="wave1000.png" />
+		<Texture Id="wave1050" Source="wave1050.png" />
+		<Texture Id="wave1100" Source="wave1100.png" />
 	</Resources>
 	<Levels>
 		<Level Name="TestLevel1" File="TestLevel1.xml" />
