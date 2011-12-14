@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
+    <Compile Include="Engine\Objects\Animation\XSequence.cs" />
     <Compile Include="Engine\Objects\DrawParameters.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -160,6 +161,9 @@
     <Compile Include="Engine\Objects\InitializeParameters.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
+    <Compile Include="Engine\Objects\Media\XMusic.cs" />
+    <Compile Include="Engine\Objects\Media\XSound.cs" />
     <Compile Include="Engine\Objects\ParamentersBase.cs" />
     <Compile Include="Engine\Objects\Resources\XFontResource.cs" />
     <Compile Include="Engine\Objects\Resources\XMusicResource.cs" />
@@ -199,11 +203,9 @@
     <Compile Include="Engine\Objects\XLevel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\XMusic.cs" />
     <Compile Include="Engine\Objects\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\XSound.cs" />
     <Compile Include="Engine\Objects\XSprite.cs">
       <SubType>Code</SubType>
     </Compile>
