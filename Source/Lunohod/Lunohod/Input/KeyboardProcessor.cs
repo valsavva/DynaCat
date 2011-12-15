@@ -50,14 +50,25 @@ namespace Lunohod
 		
 		private void ProcessPressed(GameTime gameTime, Keys key)
 		{
+            GameEvent e = null;
+
 			switch (key)
 			{
-				case Keys.Up : game.EnqueueEvent(new GameEvent(GameEventType.Up, gameTime)); break;
-				case Keys.Down : game.EnqueueEvent(new GameEvent(GameEventType.Down, gameTime)); break;
-				case Keys.Left : game.EnqueueEvent(new GameEvent(GameEventType.Left, gameTime)); break;
-                case Keys.Right: game.EnqueueEvent(new GameEvent(GameEventType.Right, gameTime)); break;
-                case Keys.Space: game.EnqueueEvent(new GameEvent(GameEventType.Stop, gameTime)); break;
+				case Keys.Up : e = new GameEvent(GameEventType.Up, gameTime); break;
+                case Keys.Down: e = new GameEvent(GameEventType.Down, gameTime); break;
+                case Keys.Left: e = new GameEvent(GameEventType.Left, gameTime); break;
+                case Keys.Right: e = new GameEvent(GameEventType.Right, gameTime); break;
+                case Keys.Space: e = new GameEvent(GameEventType.Stop, gameTime); break;
 			}
+
+            if (e != null)
+            {
+                e.IsInstant = e.EventType == GameEventType.Stop
+                    || pressedKeys.Contains(Keys.LeftControl)
+                    || pressedKeys.Contains(Keys.RightControl);
+
+                game.EnqueueEvent(e);
+            }
 		}
 	}
 }

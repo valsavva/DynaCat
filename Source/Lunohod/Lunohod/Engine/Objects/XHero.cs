@@ -62,8 +62,8 @@ namespace Lunohod.Objects
 			
 			location += offset;
 			
-			this.Bounds.X = (int)location.X;
-			this.Bounds.Y = (int)location.Y;
+			this.Bounds.X = (int)Math.Round(location.X);
+			this.Bounds.Y = (int)Math.Round(location.Y);
 			
 			// calculate distance to the tower
 			p.LevelEngine.tower.Bounds.Center.ToVector2(ref towerCenter);
