@@ -47,8 +47,7 @@ namespace Lunohod
 			bounds.X = (p.LevelEngine.tower.Bounds.X + p.LevelEngine.tower.Bounds.Width / 2 - (int)(diameter / 2));
 			bounds.Y = (p.LevelEngine.tower.Bounds.Y + p.LevelEngine.tower.Bounds.Height / 2 - (int)(diameter / 2));
 			
-			bounds.Width = (int)(diameter);
-			bounds.Height = (int)(diameter);
+			bounds.Width = bounds.Height = (int)(diameter);
 		}
 		
 		public override void Draw(DrawParameters p)

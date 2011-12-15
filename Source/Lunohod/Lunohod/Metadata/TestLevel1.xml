@@ -30,7 +30,7 @@
 	</Layer>
 	<!-- main layer -->
 	<Layer Id="action" BackColor="#FFFFFFFF">
-		<Tower Bounds="0,0,35,35" SignalSpeed="50"/>
+		<Tower Bounds="0,0,35,35" SignalSpeed="150"/>
 		<Hero Bounds="200,0,40,37" Speed="50" Direction="0,0">
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>

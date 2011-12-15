@@ -18,7 +18,7 @@ namespace Lunohod
 		public List<XElement> obstacles;
 		private XLevel level;
 		
-		private List<RadioWave> waves;
+		private Dictionary<GameEvent, RadioWave> waves;
 
 		private InitializeParameters initializeParameters;
 		private UpdateParameters updateParameters;
@@ -34,24 +34,37 @@ namespace Lunohod
 		public override XObject RootComponent { get { return level; } }
 		
 		
-		public override void ProcessEvent(GameEvent e)
+		public override void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
-			e.IsHandled = true;
+			bool signalReachedHero = true;
 			
-			switch (e.EventType)
+			if (!e.IsInstant)
 			{
-				case GameEventType.Up : this.hero.Direction = Direction.VectorUp; break;
-				case GameEventType.Down : this.hero.Direction = Direction.VectorDown; break;
-				case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
-                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
-                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
-				default: e.IsHandled = false; break;
+				double signalTraveledDistance = this.tower.SignalSpeed * (gameTime.TotalGameTime - e.Time).TotalSeconds;
+				signalReachedHero = signalTraveledDistance >= this.hero.DistanceToTower;
+
+				if (signalReachedHero)
+					waves.Remove(e);
+				else if (!waves.ContainsKey(e))
+					waves.Add(e, new RadioWave(e.Time));
 			}
 			
-			if (e.IsHandled)
-				waves.Add(new RadioWave(e.Time));
-			
-			base.ProcessEvent(e);
+			if (signalReachedHero)
+			{
+				e.IsHandled = true;
+				
+				switch (e.EventType)
+				{
+					case GameEventType.Up : this.hero.Direction = Direction.VectorUp; break;
+					case GameEventType.Down : this.hero.Direction = Direction.VectorDown; break;
+					case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
+	                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
+	                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
+					default: e.IsHandled = false; break;
+				}
+			}
+
+			base.ProcessEvent(gameTime, e);
 		}
 		
 		
@@ -60,7 +73,7 @@ namespace Lunohod
 			base.Initialize();
 			
 			this.obstacles = new List<XElement>();
-			this.waves = new List<RadioWave>();
+			this.waves = new Dictionary<GameEvent, RadioWave>();
 
 			spriteBatch = new SpriteBatch(this.game.GraphicsDevice);
 
@@ -104,9 +117,9 @@ namespace Lunohod
 			this.game.GameObject.Update(updateParameters);
 			
 			this.level.Update(updateParameters);
-
-			for(int i = 0; i < waves.Count; i++)
-				waves[i].Update(updateParameters);
+			
+			foreach(var wave in waves.Values)
+				wave.Update(updateParameters);
 			
 			ProcessCollisions();
 		}
@@ -166,17 +179,6 @@ namespace Lunohod
 			
 			try 
 			{
-				//scale(40/viewport.Height) * scale(1, -1) * translate(viewport.Width/2, viewport.Height/2)
-					
-				//Matrix transform = Matrix.Identity;
-				
-				// *
-//					Matrix.CreateScale(40f / 320) *
-//					//Matrix.CreateScale(1, -1, 1) *
-//					Matrix.CreateTranslation(480f / 2, 320f / 2, 0);
-						
-//				Matrix transform = Matrix.Identity;
-				
 				if (this.game.Window.ClientBounds.Height > 900)
 				{
 					Matrix transform = Matrix.Identity *
@@ -191,8 +193,8 @@ namespace Lunohod
 				
 				this.level.Draw(drawParameters);
 				
-				for(int i = 0; i < waves.Count; i++)
-					waves[i].Draw(drawParameters);
+				foreach(var wave in waves.Values)
+					wave.Draw(drawParameters);
 				
 				this.game.GameObject.Draw(drawParameters);
 				

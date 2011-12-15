@@ -42,6 +42,8 @@ namespace Lunohod
 		public TimeSpan Time;
 		
 		public GameEventType EventType;
+
+		public bool IsInstant;
 		
 		public bool IsHandled;
 	}

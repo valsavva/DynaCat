@@ -186,14 +186,11 @@ namespace Lunohod
                 GC.Collect();
             }
 
-            for (int i = 0; i < inputProcessors.Length; i++)
-            {
-                inputProcessors[i].Process(gameTime);
-            }
+			ProcessInputProcessors(gameTime);
             
-            ProcessQueue();
+            ProcessQueue(gameTime);
 			
-			base.Update (gameTime);
+			base.Update(gameTime);
 
 			screenEngine.Update(gameTime);
 			
@@ -226,19 +223,26 @@ namespace Lunohod
             //    .ToArray()
             //    .ForEach(t => Console.WriteLine("Touch! {0}", t.Position.ToString()));
 		}
-
-		protected void ProcessQueue()
+		
+		
+		private void ProcessInputProcessors(GameTime gameTime)
 		{
-			while (this.eventQueue.Count > 0)
+            for (int i = 0; i < inputProcessors.Length; i++)
+            {
+                inputProcessors[i].Process(gameTime);
+            }
+		}			
+
+		protected void ProcessQueue(GameTime gameTime)
+		{
+			for (int i = 0; i < this.eventQueue.Count; i++)
 			{
 				var e = this.eventQueue.Dequeue();
 				
-				this.screenEngine.ProcessEvent(e);
+				this.screenEngine.ProcessEvent(gameTime, e);
 				
-				if (e.IsHandled)
-					continue;
-				
-				// handle the event on system level
+				if (!e.IsHandled)
+					this.eventQueue.Enqueue(e);
 			}
 		}
 		

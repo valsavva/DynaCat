@@ -21,7 +21,7 @@ namespace Lunohod
 		
 		public abstract XObject RootComponent { get; }
 		
-		public virtual void ProcessEvent(GameEvent e)
+		public virtual void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
 			
 		}

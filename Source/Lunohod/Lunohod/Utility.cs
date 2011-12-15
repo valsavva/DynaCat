@@ -98,5 +98,22 @@ namespace Lunohod
 			for(int i = 0; i < collection.Count; i++)
 				a(collection[i]);
 		}
+		
+		public static void ToVector2(this Rectangle r, ref Vector2 v)
+		{
+			v.X = r.X;
+			v.Y = r.Y;
+		}
+		
+		public static void ToVector2(this Point p, ref Vector2 v)
+		{
+			v.X = p.X;
+			v.Y = p.Y;
+		}
+		
+		public static Point Location(this Rectangle r)
+		{
+			return new Point(r.X, r.Y);
+		}
     }
 }
