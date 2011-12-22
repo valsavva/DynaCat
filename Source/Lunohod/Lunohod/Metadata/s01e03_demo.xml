@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="D:\Lunohod\Levels\s01e03_demo\s01e03_demo.svg" Bounds="0, 0, 480, 320">
+    <Resources RootFolder="TestLevel2">
+        <Texture Id="s01e03_demo_bckgrnd" Source="s01e03_demo_bckgrnd" />
+        <Texture Id="_T_" Source="_T_" />
+        <Texture Id="cat" Source="cat" />
+        <Texture Id="zil" Source="zil" />
+        <Texture Id="sausage" Source="sausage" />
+        <Texture Id="crack" Source="crack" />
+        <Texture Id="metall" Source="metall" />
+        <Texture Id="rat" Source="rat" />
+        <Texture Id="rat_as_aim" Source="rat_as_aim" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="image4409" TextureId="s01e03_demo_bckgrnd" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" />
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="0, 0, 30, 30" SignalSpeed="200" SvgId="#id" />
+        <Hero Bounds="74, 75, 40, 37" Speed="82" Move="None" SvgId="image3053">
+            <Image Id="imageHero" TextureId="cat" />
+        </Hero>
+        <Block Id="image3037" Bounds="-20, -6, 520, 20" DefaultEdge="Bounce" />
+        <Image Id="image3075" TextureId="zil" Bounds="408, 196, 33, 43" Stretch="true" Opacity="1" />
+        <Image Id="image3254" TextureId="sausage" Bounds="189, 90, 26, 9" Stretch="false" Opacity="1" />
+        <Block Id="image3030" Bounds="480, 0, 20, 320" DefaultEdge="Bounce" />
+        <Block Id="image3033" Bounds="-20, 0, 20, 320" DefaultEdge="Bounce" />
+        <Block Id="image3035" Bounds="-20, 320, 520, 20" DefaultEdge="Bounce" />
+        <Image Id="image3097" TextureId="crack" Bounds="61, 176, 71, 17" Stretch="true" Opacity="1" />
+        <Image Id="image3981" TextureId="sausage" Bounds="278, 219, 26, 9" Stretch="false" Opacity="1" />
+        <Block Id="image3215_block" Bounds="-39, 14, 558, 6" DefaultEdge="Bounce">
+            <Image Id="image3215" TextureId="metall" Opacity="1" />
+        </Block>
+        <Sprite Id="image4057" TextureId="rat_as_aim" Bounds="280, 74, 42, 40" FrameBounds="0,0,42,40">
+            <NumAnimation From="0" To="10" Duration="1.6" Autoreverse="false" Target="CurrentFrame" />
+        </Sprite>
+        <Block Id="image4412_block" Bounds="-39, 314, 558, 6" DefaultEdge="Bounce">
+            <Image Id="image4412" TextureId="metall" Opacity="1" />
+        </Block>
+        <Block Id="image4414_block" Bounds="0, -32, 6, 374" DefaultEdge="Bounce">
+            <Image Id="image4414" TextureId="metall" Opacity="1" />
+        </Block>
+        <Block Id="image4416_block" Bounds="474, -28, 6, 371" DefaultEdge="Bounce">
+            <Image Id="image4416" TextureId="metall" Opacity="1" />
+        </Block>
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
