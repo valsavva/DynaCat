@@ -30,6 +30,9 @@ namespace Lunohod
 		public Texture2D BlankTexture { get; private set; }
 		public SpriteFont SystemFont { get; private set; }
 		public List<Texture2D> WaveTextures { get; private set; }
+        public const int MinWaveRadius = 200;
+        public const int MaxWaveRadius = 1100;
+        public const int WaveRadiusStep = 200;
 		
 		//public Stopwatch gameWatch = new Stopwatch();
 
@@ -106,7 +109,7 @@ namespace Lunohod
 			this.SystemFont = ((XFontResource)this.gameObject.FindDescendant("SystemFont")).Font;
 			
 			this.WaveTextures = new List<Texture2D>();
-			for (int i = 50; i <= 1100; i += 50)
+			for (int i = MinWaveRadius; i <= MaxWaveRadius; i += WaveRadiusStep)
 			{
 				string textureId = "wave" + i.ToString("0000");
 				this.WaveTextures.Add(((XTextureResource)this.gameObject.FindDescendant(textureId)).Image);
