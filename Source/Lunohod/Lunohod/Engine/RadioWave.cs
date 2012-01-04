@@ -32,7 +32,7 @@ namespace Lunohod
 
 			diameter = p.LevelEngine.tower.SignalSpeed * (p.GameTime.TotalGameTime - this.startTime).TotalSeconds * 2.0;
 
-			if (diameter > GameEngine.MaxWaveRadius)
+			if (diameter > GameEngine.MaxWaveRadius * 2)
 				return;
 
             if (diameter <= GameEngine.MinWaveRadius)
@@ -53,8 +53,8 @@ namespace Lunohod
 		public override void Draw(DrawParameters p)
 		{
 			base.Draw(p);
-			
-			if (diameter > 2000)
+
+            if (diameter > GameEngine.MaxWaveRadius * 2)
 				return;
 			
 			p.SpriteBatch.Draw(texture, bounds, Color.White);
