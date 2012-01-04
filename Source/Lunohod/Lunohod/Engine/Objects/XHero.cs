@@ -50,20 +50,20 @@ namespace Lunohod.Objects
 		{
 			base.Update(p);
 			
-			// calculate the new location of the hero
-			offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
-
 			if (oldLocation.X != this.Bounds.X || oldLocation.Y != this.Bounds.Y)
 			{
 				this.Bounds.ToVector2(ref location);
-
-				oldLocation = this.Bounds.Location();
 			}
 			
+			// calculate the new location of the hero
+			offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
+
 			location += offset;
 			
 			this.Bounds.X = (int)Math.Round(location.X);
 			this.Bounds.Y = (int)Math.Round(location.Y);
+
+			oldLocation = this.Bounds.Location();
 			
 			// calculate distance to the tower
 			p.LevelEngine.tower.Bounds.Center.ToVector2(ref towerCenter);

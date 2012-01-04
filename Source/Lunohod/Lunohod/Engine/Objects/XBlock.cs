@@ -17,45 +17,44 @@ namespace Lunohod.Objects
 		/// The default edge.
 		/// </summary>
         [XmlAttribute]
-        public XEdgeType DefaultEdge;
-		
-		
-        [XmlElement(ElementName = "Edge", Type = typeof(XEdge))]
-        [XmlElement(ElementName = "Teleport", Type = typeof(XTeleport))]
-		public XEdge[] Edges;
+        public XEdgeType Edges;
 		
 		public override void Initialize (InitializeParameters p)
 		{
-			InitializeEdges();
-
 			base.Initialize(p);
 			
 			p.LevelEngine.obstacles.Add(this);
         }
 
-        private void InitializeEdges()
-        {
-            var tmp = this.Edges ?? new XEdge[0];
-
-			this.Edges = new XEdge[4];
-            for (int i = 0; i < 4; i++)
-            {
-                this.Edges[i] = tmp.FirstOrDefault(e => (int)e.Align == i)
-					?? new XEdge() {  Align = (XAlignType)i, Type = this.DefaultEdge };
-				
-				this.Edges[i].Parent = this;
-            }
-
-			this.Subcomponents.AddRange(this.Edges);
-        }
-
         public override bool ProcessCollision(LevelEngine level, Rectangle intersect)
         {
-			// find the edge that is the opposite of the hero's directio
-			var edgeAlign = level.hero.Direction.ToAlign().Reverse();
-			var edge = this.Edges[(int)edgeAlign];
+			switch (this.Edges)
+			{
+				case XEdgeType.None : break;
+				case XEdgeType.Bounce : {
+					// change hero's direction
+					level.hero.Direction = level.hero.Direction.Reverse();
+					
+					level.hero.Bounds.Offset(
+						(int)(intersect.Width * level.hero.Direction.X),
+						(int)(intersect.Height * level.hero.Direction.Y)
+					);
+				}; break;
+				case XEdgeType.Stick : {
+					// don't change hero's direction, just keep him in place
+					var direction = level.hero.Direction.Reverse();
+					
+					level.hero.Bounds.Offset(
+						(int)(intersect.Width * direction.X),
+						(int)(intersect.Height * direction.Y)
+					);
+				
+					level.hero.Direction = Direction.VectorStop;
+				}; break;
+				case XEdgeType.Teleport : break;
+			}
 			
-			return edge.ProcessCollision(level, intersect);
+			return true;
         }
     }
 }
