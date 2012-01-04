@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Include>
+	<!-- Resources -->	
+	<Resources RootFolder="Global">
+		<Texture Id="dashboard" Source="dash_demo_3_size52" />
+	</Resources>
+	
+	<Dashboard BackColor="#FFFFFFFF">
+		<Viewport Bounds="50,50,380,270" />
+    	<Image TextureId="dashboard" Opacity="0.2"/>
+
+		<TapArea Bounds="0,118,57,52" Event="system:up" />
+		<TapArea Bounds="423,118,57,52" Event="system:up" />
+
+
+		<TapArea Bounds="0,178,57,52" Event="system:left" />
+		<TapArea Bounds="423,178,57,52" Event="system:right" />
+
+
+		<TapArea Bounds="0,238,57,52" Event="system:down" />
+		<TapArea Bounds="423,238,57,52" Event="system:down" />
+		
+		<TapArea Bounds="158,263,52,57" Event="system:stop" /> <!-- pause -->
+		<TapArea Bounds="270,263,52,57" Event="system:stop" /> <!-- bomb -->
+	</Dashboard>
+</Include>

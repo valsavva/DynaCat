@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Level Name="memory_test" Bounds="0, 0, 480, 320">
-    <Resources RootFolder="memory_test">
+    <Resources RootFolder="TestLevel2">
         <Texture Id="_T_" Source="_T_" />
         <Texture Id="cat" Source="cat" />
-        <Texture Id="phon" Source="phon" />
+        <Texture Id="phon" Source="s01e03_demo_bckgrndBIG" />
         <Texture Id="txtr_1" Source="img_1" />
         <Texture Id="txtr_2" Source="img_2" />
         <Texture Id="txtr_3" Source="img_3" />
@@ -104,6 +104,22 @@
         <Texture Id="txtr_98" Source="img_98" />
         <Texture Id="txtr_99" Source="img_99" />
         <Texture Id="txtr_100" Source="img_100" />
+
+				
+		<Texture Id="i300_1" Source="i300_1" />
+		<Texture Id="i300_2" Source="i300_2" />
+		<Texture Id="i300_3" Source="i300_3" />
+		<Texture Id="i300_4" Source="i300_4" />
+		<Texture Id="i300_5" Source="i300_5" />
+		<Texture Id="i300_6" Source="i300_6" />
+		<Texture Id="i300_7" Source="i300_7" />
+		<Texture Id="i300_8" Source="i300_8" />
+		<Texture Id="i300_9" Source="i300_9" />
+		<Texture Id="i300_10" Source="i300_10" />
+		
+		<Texture Id="real big 1" Source="real big 1" />
+		<Texture Id="real big 2" Source="real big 2" />
+	
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="image4409" TextureId="phon" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" />
@@ -113,6 +129,28 @@
         <Hero Bounds="74, 75, 40, 37" Speed="82" Move="None" SvgId="image3053">
             <Image Id="imageHero" TextureId="cat" />
         </Hero>
+		
+
+		<Image Id="img_i300_1" TextureId="i300_1" Bounds="10, 10, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_2" TextureId="i300_2" Bounds="20, 20, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_3" TextureId="i300_3" Bounds="30, 30, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_4" TextureId="i300_4" Bounds="40, 40, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_5" TextureId="i300_5" Bounds="50, 50, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_6" TextureId="i300_6" Bounds="60, 60, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_7" TextureId="i300_7" Bounds="70, 70, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_8" TextureId="i300_8" Bounds="80, 80, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_9" TextureId="i300_9" Bounds="90, 90, 100, 100" Opacity="0.5" />
+		<Image Id="img_i300_10" TextureId="i300_10" Bounds="100, 100, 100, 100" Opacity="0.5" />
+
+		<Image Id="img_real_big_1" TextureId="real big 1" Bounds="0, 0, 100, 100" Opacity="0.5" >
+			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+		</Image>
+		<Image Id="img_real_big_2" TextureId="real big 2" Bounds="100, 100, 100, 100" Opacity="0.5" >
+			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+		</Image>
+		
+		
+		
 		<Image Id="img1" TextureId="txtr_1" Bounds="384, 21, 34, 34" Opacity="0.5">
 			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
 		</Image>

@@ -8,9 +8,16 @@
 		<Texture Id="wave0600" Source="wave0600" />
 		<Texture Id="wave0800" Source="wave0800" />
 		<Texture Id="wave1000" Source="wave1000" />
+		
+
+
+
 	</Resources>
 	<Levels>
-		<Level Name="TestLevel1" File="s01e03_demo.xml" />
+<!--
+		<Level Name="TestLevel2" File="s01e03_demo.xml" />
+-->
+		<Level Name="TestLevel1" File="test_b-2_stick_and_bounce_objects.xml" />
 		<Level Name="TestLevel2" File="TestLevel2.xml" />
 	</Levels>
 </Game>
