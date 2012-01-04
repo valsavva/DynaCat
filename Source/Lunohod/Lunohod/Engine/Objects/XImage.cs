@@ -33,6 +33,11 @@ namespace Lunohod.Objects
 			base.Initialize (p);
 
 			this.texture = (XTextureResource)p.ScreenEngine.RootComponent.FindDescendant(this.TextureId);
+			
+			if (this.texture == null)
+				throw new InvalidOperationException(string.Format(
+					"Texture was not found. ImageID:{0} TextureId:{1}", this.Id, this.TextureId
+                ));
 		}
 		
 		private Rectangle screenBounds;

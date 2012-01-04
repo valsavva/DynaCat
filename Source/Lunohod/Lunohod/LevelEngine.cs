@@ -166,7 +166,7 @@ namespace Lunohod
 				
 				Rectangle.Intersect(ref heroBounds, ref obstacleBounds, out intersect);
 				
-				if (!intersect.IsEmpty)
+				if (intersect.Area() != 0)
 				{
 					colliders.Add(Tuple.Create(obstacle, intersect, intersect.Area()));
 				}

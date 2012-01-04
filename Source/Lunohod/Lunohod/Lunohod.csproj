@@ -72,13 +72,11 @@
     <Compile Include="GameEngine.cs" />
     <Compile Include="Engine\ActionInfo.cs" />
     <Compile Include="Engine\Objects\XBlock.cs" />
-    <Compile Include="Engine\Objects\XEdge.cs" />
     <Compile Include="Engine\Objects\XElement.cs" />
     <Compile Include="Engine\Objects\XHero.cs" />
     <Compile Include="Engine\Objects\XImage.cs" />
     <Compile Include="Engine\Objects\XLayer.cs" />
     <Compile Include="Engine\Objects\XLevel.cs" />
-    <Compile Include="Engine\Objects\XTeleport.cs" />
     <Compile Include="Engine\Objects\XTower.cs" />
     <Compile Include="ScreenEngine.cs" />
     <Compile Include="Engine\Objects\XGame.cs" />
@@ -125,6 +123,7 @@
     <Compile Include="Engine\ParamentersBase.cs" />
     <Compile Include="Engine\UpateParameters.cs" />
     <Compile Include="Engine\RadioWave.cs" />
+    <Compile Include="Engine\Objects\XEdgeType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

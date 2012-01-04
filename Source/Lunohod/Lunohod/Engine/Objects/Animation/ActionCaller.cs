@@ -13,13 +13,11 @@ namespace Lunohod.Objects
 	public class ActionCaller
 	{
 		private XObject target;
-		private string action;
 		private MethodInfo methodInfo;
 
 		public ActionCaller(XObject target, string action)
 		{
             this.target = target;
-            this.action = action;
 			
 			Type type = this.target.GetType();
 			this.methodInfo = type.GetMethod(action);

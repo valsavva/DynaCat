@@ -3,21 +3,34 @@
 
 	<!-- resources -->
 	<Resources RootFolder="TestLevel1">
+		<Texture Id="blank" Source="blank" />
+		<Texture Id="chargers" Source="chargers" />
 		<Texture Id="cat" Source="cat"/>
 		<Texture Id="explosionSprite" Source="explosion1"/>
 		<Texture Id="rat_walk" Source="rat_walk"/>
 	</Resources>
 
 	<Layer Id="action" BackColor="#FFFFFFFF">
-		<Hero Bounds="200,0,40,37" Speed="50" Direction="0,0">
+		<Tower Bounds="0,0,35,35" SignalSpeed="150"/>
+		<Hero Bounds="455,75,40,37" Speed="50" Direction="0,0">
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>
 	
 		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="0,250,67,67" FrameBounds="0,0,67,67" FrameCount="12">
 			<NumAnimation From="0" To="11" Duration="3" Autoreverse="false" Target="CurrentFrame" />
 		</Sprite>
+		
+		<Block Id="boxImage1" Bounds="125,75,50,50" Edges="None">
+			<Image TextureId="chargers"/>
+		</Block>
+		<Block Id="boxImage2" Bounds="225,75,50,50" Edges="Bounce">
+			<Image TextureId="chargers"/>
+		</Block>
+		<Block Id="boxImage3" Bounds="355,75,50,50" Edges="Stick">
+			<Image TextureId="chargers"/>
+		</Block>
 	</Layer>
+
+	<Include File="Dashboard.xml" />	
+
 </Level>
-
-
-

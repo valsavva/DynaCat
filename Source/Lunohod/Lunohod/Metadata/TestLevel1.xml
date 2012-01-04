@@ -35,7 +35,7 @@
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>
 
-		<Block Id="boxImage1" Bounds="25,75,50,50" DefaultEdge="None">
+		<Block Id="boxImage1" Bounds="25,75,50,50" Edges="None">
 			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1"/>
 
 			<NumAnimation Id="boxImage1Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false">
@@ -43,8 +43,8 @@
 			</NumAnimation>
 		</Block>
 
-		<Block Id="boxImage2" Bounds="455,75,50,50" DefaultEdge="None">
-			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" pacity="1"/>
+		<Block Id="boxImage2" Bounds="455,75,50,50" Edges="None">
+			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1"/>
 
 			<NumAnimation Id="boxImage2Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false" InProgress="false">
 				<ValueTrigger Property="boxImage1Animation.InProgress" Value="false" EnterAction="Start"/>
