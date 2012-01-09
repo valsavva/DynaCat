@@ -32,8 +32,9 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Layer", Type = typeof(XLayer))]
 		
 		// Trigger
-		[XmlElement(ElementName = "Trigger", Type = typeof(XTrigger))]
-		[XmlElement(ElementName = "ValueTrigger", Type = typeof(XValueTrigger))]
+		[XmlElement(ElementName = "DistanceTrigger", Type = typeof(XDistanceTrigger))]
+		[XmlElement(ElementName = "BoolTrigger", Type = typeof(XBoolTrigger))]
+		[XmlElement(ElementName = "NumTrigger", Type = typeof(XNumTrigger))]
 
         // Generic
         [XmlElement(ElementName = "Group", Type = typeof(XGroup))]

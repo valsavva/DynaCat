@@ -1,0 +1,17 @@
+<Class Id="classHero">
+	<Resources RootFolder="TestLevel1">
+		<Texture Id="cat" Source="cat"/>
+	</Resources>
+
+	<Hero>
+		<State Id="ratIsClose" When="hero:closeEnemy">
+			<Image TextureId="cat" Bounds="20,20,40,37" Origin="20,20">
+				<NumAnimation Target="Rotation" From="0" To="360" Duration="00:00:01" Autoreverse="true" InProgress="true" />
+			</Image>
+		</State>
+		<State Id="default">
+			<Image TextureId="cat" />
+		</State>
+	</Hero>	
+</Class>
+

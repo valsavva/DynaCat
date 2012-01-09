@@ -14,7 +14,7 @@ namespace Lunohod
         public static Color ToColor(this string s)
         {
 			Color c;
-			if (s.Length == 8)
+			if (s.Length == 9)
 			{
 	            c = new Color(
 	                Byte.Parse(s.Substring(3,2), System.Globalization.NumberStyles.AllowHexSpecifier),
@@ -114,6 +114,13 @@ namespace Lunohod
 		public static Point Location(this Rectangle r)
 		{
 			return new Point(r.X, r.Y);
+		}
+		
+		public static float DistanceTo(this Point p1, Point p2)
+		{
+			int dx = p1.X - p2.X;
+			int dy = p1.Y - p2.Y;
+			return (float)Math.Sqrt(dx * dx + dy * dy);
 		}
     }
 }

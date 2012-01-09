@@ -1,0 +1,18 @@
+<Class Id="classRat">
+	<Resources RootFolder="TestLevel1">
+		<Texture Id="rat" Source="rat"/>
+		<Texture Id="rat_walk" Source="rat_walk"/>
+	</Resources>
+
+	<Enemy>
+		<!-- this fires the event "hero:closeEnemy" for as long as the element has hero -->
+		<DistanceTrigger ObjectId1="this" ObjectId2="hero" Value="80" Action="hero:closeEnemy" />
+		
+		<State Id="default">
+			<Sprite Id="ratSprite" TextureId="rat_walk" Bounds="0,00,46,47" FrameBounds="0,0,46,47">
+				<NumAnimation From="0" To="3" Duration="0.2" Autoreverse="false" Target="CurrentFrame" />
+				<NumAnimation From="0" To="50" Duration="00:00:6" Autoreverse="true" IsDelta="true" Target="X"/>
+			</Sprite>
+		</State>
+	</Enemy>	
+</Class>

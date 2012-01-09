@@ -110,11 +110,10 @@ namespace Lunohod.Objects
 		}
 		public virtual void Resume()
 		{
-//			if (!this.inProgress)
-//				Start();
-//			else
-			
-			this.isPaused = false;
+			if (!this.inProgress)
+				Start();
+			else			
+				this.isPaused = false;
 		}
         public virtual void Stop()
         {

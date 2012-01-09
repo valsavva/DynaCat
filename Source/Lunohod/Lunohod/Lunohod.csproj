@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="Metadata\ClassRat.xml" />
+    <None Include="Metadata\ClassHero.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utility.cs" />
@@ -93,11 +95,9 @@
     <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
     <Compile Include="Engine\Objects\Events\XEvent.cs" />
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
-    <Compile Include="Engine\Objects\Events\XTrigger.cs" />
     <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
     <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
-    <Compile Include="Engine\Objects\Events\XValueTrigger.cs" />
     <Compile Include="GameEvent.cs" />
     <Compile Include="GameEventQueue.cs" />
     <Compile Include="GameEventType.cs" />
@@ -124,6 +124,11 @@
     <Compile Include="Engine\UpateParameters.cs" />
     <Compile Include="Engine\RadioWave.cs" />
     <Compile Include="Engine\Objects\XEdgeType.cs" />
+    <Compile Include="Engine\Objects\Events\XDistanceTrigger.cs" />
+    <Compile Include="Engine\Objects\Events\XNumTriggerBase.cs" />
+    <Compile Include="Engine\Objects\Events\XNumTrigger.cs" />
+    <Compile Include="Engine\Objects\Events\XTriggerBase.cs" />
+    <Compile Include="Engine\Objects\Events\XBoolTrigger.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

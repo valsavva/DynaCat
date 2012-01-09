@@ -31,7 +31,7 @@
 	<!-- main layer -->
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="150"/>
-		<Hero Bounds="200,0,40,37" Speed="50" Direction="0,0">
+		<Hero Id="hero" Bounds="200,0,40,37" Speed="50" Direction="0,0">
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>
 
@@ -39,7 +39,7 @@
 			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1"/>
 
 			<NumAnimation Id="boxImage1Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false">
-				<ValueTrigger Property="boxImage2Animation.InProgress" Value="false" EnterAction="Start"/>
+				<BoolTrigger Property="boxImage2Animation.InProgress" Value="false" EnterAction="Start"/>
 			</NumAnimation>
 		</Block>
 
@@ -47,7 +47,7 @@
 			<Image Id="image2" TextureId="chargers" Origin="25,25" Rotation="0" Opacity="1"/>
 
 			<NumAnimation Id="boxImage2Animation" Target="Rotation" From="0" To="360" Duration="00:00:01" RepeatCount="2" Autoreverse="false" InProgress="false">
-				<ValueTrigger Property="boxImage1Animation.InProgress" Value="false" EnterAction="Start"/>
+				<BoolTrigger Property="boxImage1Animation.InProgress" Value="false" EnterAction="Start"/>
 			</NumAnimation>
 		</Block>
 
@@ -71,7 +71,7 @@
 		<!--Group example-->		
 		<Group Id="group1" Bounds="50,225,100,50">
 			<Sequence Id="group1AnimationSequence" RepeatCount="1" InProgress="false">
-				<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
+				<NumTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
 				<NumAnimation Target="group1.X" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 				<NumAnimation Target="group1.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			</Sequence>
@@ -81,13 +81,13 @@
 			<Image Id="imageC" TextureId="chargers" Bounds="325,0,50,50" />
 		</Group>		
 		
-		<Image Id="imageB" TextureId="chargers" Bounds="225,225,50,50" Origin="25,25" Rotation="0" Opacity="1">
-			<NumAnimation Target="Rotation" From="0" To="360" Duration="00:00:02">
-				<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Pause"/>
-				<ValueTrigger Property="ship.X" Compare="G" Value="200" EnterAction="Resume"/>
-			</NumAnimation>
-		</Image>
-		
+		<Group Id="imageB" Bounds="250,250,50,50" Edges="None">
+			<Image TextureId="chargers" Bounds="25,25,50,50" Origin="25,25" Rotation="0" Opacity="1">
+				<NumAnimation Target="Rotation" From="0" To="360" Duration="00:00:02" InProgress="false">
+					<DistanceTrigger ObjectId1="imageB" ObjectId2="hero" Compare="L" Value="100" EnterAction="Resume" ExitAction="Pause"/>
+				</NumAnimation>
+			</Image>
+		</Group>
 
 		<Image Id="imageRat2" TextureId="rat" Bounds="100,200,40,41" Origin="100,100" Rotation="0" Opacity="1">
 			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" RepeatCount="3" Target="Rotation"/>
@@ -100,22 +100,22 @@
 
 		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="200,250,134,134" FrameBounds="0,0,134,134" FrameCount="12">
 			<NumAnimation From="0" To="11" Duration="1" Autoreverse="false" Target="CurrentFrame" InProgress="false" RepeatCount="1">
-				<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
+				<NumTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
 			</NumAnimation>
 		</Sprite>
 
 		<Sound FileId="explosion1" Volume="0">
-			<ValueTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Play"/>
+			<NumTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Play"/>
 		</Sound>
 		
 		<Sound FileId="explosion2" Volume="0" Pitch="0.5" Pan="-1">
-			<ValueTrigger Property="ship.X" Compare="G" Value="110" EnterAction="Play"/>
+			<NumTrigger Property="ship.X" Compare="G" Value="110" EnterAction="Play"/>
 		</Sound>
 		
 		<Sound FileId="explosion3" Volume="0" Pitch="1" Pan="1">
-			<ValueTrigger Property="ship.X" Compare="G" Value="120" EnterAction="Play"/>
+			<NumTrigger Property="ship.X" Compare="G" Value="120" EnterAction="Play"/>
 		</Sound>
-		
+
 	</Layer>
 
 	<Include File="Dashboard.xml" />	

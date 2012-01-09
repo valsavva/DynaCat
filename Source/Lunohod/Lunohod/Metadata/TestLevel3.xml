@@ -12,7 +12,7 @@
 
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="150"/>
-		<Hero Bounds="455,75,40,37" Speed="50" Direction="0,0">
+		<Hero Id="hero" Bounds="50,250,40,37" Speed="50" Direction="0,0">
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>
 	
@@ -20,15 +20,25 @@
 			<NumAnimation From="0" To="11" Duration="3" Autoreverse="false" Target="CurrentFrame" />
 		</Sprite>
 		
-		<Block Id="boxImage1" Bounds="125,75,50,50" Edges="None">
-			<Image TextureId="chargers"/>
-		</Block>
+		<Group Id="boxImage1" Bounds="125,75,50,50" Edges="None">
+			<Image TextureId="blank"/>
+		</Group>
+
 		<Block Id="boxImage2" Bounds="225,75,50,50" Edges="Bounce">
 			<Image TextureId="chargers"/>
 		</Block>
+
 		<Block Id="boxImage3" Bounds="355,75,50,50" Edges="Stick">
 			<Image TextureId="chargers"/>
 		</Block>
+
+		<Group Id="imageB" Bounds="250,250,50,50" Edges="None">
+			<Image TextureId="chargers" Bounds="25,25,50,50" Origin="25,25" Rotation="0" Opacity="1">
+				<NumAnimation Target="Rotation" From="0" To="360" Duration="00:00:02" InProgress="false">
+					<DistanceTrigger ObjectId1="imageB" ObjectId2="hero" Compare="L" Value="100" EnterAction="Resume" ExitAction="Pause"/>
+				</NumAnimation>
+			</Image>
+		</Group>
 	</Layer>
 
 	<Include File="Dashboard.xml" />	
