@@ -10,7 +10,7 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Levels>
-		<Level Name="TestLevel1" File="TestLevel1.xml" />
+		<Level Name="TestLevel1" File="TestClasses.xml" />
 		<Level Name="TestLevel2" File="TestLevel2.xml" />
 	</Levels>
 </Game>

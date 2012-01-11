@@ -122,5 +122,12 @@ namespace Lunohod
 			int dy = p1.Y - p2.Y;
 			return (float)Math.Sqrt(dx * dx + dy * dy);
 		}
+		
+		public static float SquaredDistanceTo(this Point p1, Point p2)
+		{
+			int dx = p1.X - p2.X;
+			int dy = p1.Y - p2.Y;
+			return dx * dx + dy * dy;
+		}
     }
 }

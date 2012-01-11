@@ -20,7 +20,7 @@ namespace Lunohod.Objects
 	
 	public abstract class XNumTriggerBase : XTriggerBase
 	{
-		private Func<float, float, bool> compareFunc;
+		protected Func<float, float, bool> compareFunc;
 		
 		private static readonly Dictionary<XValueComparison, Func<float, float, bool>> compareFuncs = new Dictionary<XValueComparison, Func<float, float, bool>>
 		{

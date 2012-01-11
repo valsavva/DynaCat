@@ -16,7 +16,8 @@ namespace Lunohod.Objects
 		private XElement object2;
 		private Point c1;
 		private Point c2;
-		private float distance;
+		private float squaredDistance;
+		private float squaredValue;
 		
 		[XmlAttribute]
 		public string ObjectId1;
@@ -36,6 +37,7 @@ namespace Lunohod.Objects
 			
 			object1 = FindObject(ObjectId1);
 			object2 = FindObject(ObjectId2);
+			squaredValue = this.Value * this.Value;
 		}
 		
 		private XElement FindObject(string id)
@@ -51,9 +53,15 @@ namespace Lunohod.Objects
 			c1 = object1.GetScreenBounds().Center;
 			c2 = object2.GetScreenBounds().Center;
 			
-			distance = c1.DistanceTo(c2);
+			squaredDistance = c1.SquaredDistanceTo(c2);
 			
-			return distance;
+			return squaredDistance;
+		}
+		
+		public override bool IsTriggered()
+		{
+			var v = GetNewValue();
+			return compareFunc(v, squaredValue);
 		}
 	}
 }

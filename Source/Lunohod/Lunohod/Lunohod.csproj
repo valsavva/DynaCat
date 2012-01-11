@@ -66,8 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="Metadata\ClassRat.xml" />
-    <None Include="Metadata\ClassHero.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utility.cs" />
@@ -129,6 +127,11 @@
     <Compile Include="Engine\Objects\Events\XNumTrigger.cs" />
     <Compile Include="Engine\Objects\Events\XTriggerBase.cs" />
     <Compile Include="Engine\Objects\Events\XBoolTrigger.cs" />
+    <Compile Include="Engine\Objects\XEnemy.cs" />
+    <Compile Include="Engine\Objects\XClass.cs" />
+    <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
+    <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
+    <Compile Include="Engine\Objects\XState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -707,6 +710,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\TestLevel2\tower_demo_Untitled-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestClasses.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassRat.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassHero.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -10,7 +10,12 @@ using System.Reflection;
 
 namespace Lunohod.Objects
 {
-	public class ActionCaller
+	public abstract class ActionCallerBase
+	{
+		public abstract void Call();
+	}
+	
+	public class ActionCaller : ActionCallerBase
 	{
 		private XObject target;
 		private MethodInfo methodInfo;
@@ -29,12 +34,12 @@ namespace Lunohod.Objects
 				);
 		}
 		
-		public void Call()
+		public override void Call()
 		{
 			methodInfo.Invoke(target, null);
 		}
 		
-		public static ActionCaller CreateActionCaller(XObject trigger, string memberDescriptor)
+		public static ActionCallerBase CreateActionCaller(XObject trigger, string memberDescriptor)
 		{
 			if (string.IsNullOrEmpty(memberDescriptor))
 				return null;
@@ -43,7 +48,10 @@ namespace Lunohod.Objects
 			string actoin;
 			trigger.GetTargetFromDescriptor(memberDescriptor, out target, out actoin);
 			
-			return new ActionCaller(target, actoin);
+			if (memberDescriptor.Contains(":"))
+				return new EventCaller(target, actoin);
+			else
+				return new ActionCaller(target, actoin);
 		}
 	}
 }

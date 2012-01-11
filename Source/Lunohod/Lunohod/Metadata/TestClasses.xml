@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="testLevel1" Bounds="0,0,480,320">
+
+	<Include File="ClassHero.xml" />
+	<Include File="ClassRat.xml" />
+
+	<!-- resources -->
+	<Resources RootFolder="TestLevel1">
+		<Texture Id="blank" Source="blank" />
+		<Texture Id="chargers" Source="chargers" />
+		<Texture Id="cat" Source="cat"/>
+		<Texture Id="explosionSprite" Source="explosion1"/>
+		<Texture Id="rat_walk" Source="rat_walk"/>
+	</Resources>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Tower Bounds="0,0,35,35" SignalSpeed="600"/>
+
+		<Hero Id="hero" Bounds="240,0,40,37" Class="classHero"/>
+	
+		<Enemy Id="rat1" Bounds="240,150,46,47" Class="classRat"/>
+	</Layer>
+
+	<Include File="Dashboard.xml" />	
+
+</Level>
+

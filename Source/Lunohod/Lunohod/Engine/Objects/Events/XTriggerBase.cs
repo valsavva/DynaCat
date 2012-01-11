@@ -13,9 +13,9 @@ namespace Lunohod.Objects
 	{
 		private bool isTriggered;
 			
-		private ActionCaller action;
-		private ActionCaller enterAction;
-		private ActionCaller exitAction;
+		private ActionCallerBase action;
+		private ActionCallerBase enterAction;
+		private ActionCallerBase exitAction;
 		
 		[XmlAttribute]
 		public string EnterAction;
