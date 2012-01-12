@@ -140,6 +140,7 @@
     <Compile Include="Engine\DrawParameters.cs" />
     <Compile Include="Engine\InitializeParameters.cs" />
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
     <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
     <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs">
       <SubType>Code</SubType>
@@ -154,9 +155,13 @@
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Objects\Animation\XSequence.cs" />
     <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
+    <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
+    <Compile Include="Engine\Objects\Events\XBoolTrigger.cs" />
+    <Compile Include="Engine\Objects\Events\XDistanceTrigger.cs" />
     <Compile Include="Engine\Objects\Events\XEvent.cs" />
-    <Compile Include="Engine\Objects\Events\XTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\XValueTrigger.cs" />
+    <Compile Include="Engine\Objects\Events\XNumTrigger.cs" />
+    <Compile Include="Engine\Objects\Events\XNumTriggerBase.cs" />
+    <Compile Include="Engine\Objects\Events\XTriggerBase.cs" />
     <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
     <Compile Include="Engine\Objects\Media\XMusic.cs" />
     <Compile Include="Engine\Objects\Media\XSound.cs" />
@@ -169,6 +174,7 @@
     <Compile Include="Engine\Objects\XBlock.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\XClass.cs" />
     <Compile Include="Engine\Objects\XDashboard.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -176,6 +182,7 @@
     <Compile Include="Engine\Objects\XElement.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\XEnemy.cs" />
     <Compile Include="Engine\Objects\XGame.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -199,6 +206,7 @@
     <Compile Include="Engine\Objects\XSprite.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\XState.cs" />
     <Compile Include="Engine\Objects\XTapArea.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -761,6 +769,12 @@
     <Content Include="Content\TestLevel2\_T_.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\ClassHero.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassRat.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\Dashboard.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -772,6 +786,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\s01e03_demo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestClasses.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestLevel1.xml">
