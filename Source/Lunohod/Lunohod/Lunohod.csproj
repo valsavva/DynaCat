@@ -132,6 +132,7 @@
     <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
     <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
     <Compile Include="Engine\Objects\XState.cs" />
+    <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
