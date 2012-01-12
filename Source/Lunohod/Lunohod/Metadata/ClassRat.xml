@@ -8,12 +8,19 @@
 	
 		<Enemy>
 			<!-- this fires the event "hero:closeEnemy" for as long as the element has hero -->
+
 			<DistanceTrigger ObjectId1="this" ObjectId2="hero" Value="80" Action="hero:closeEnemy" />
-			
+
+			<DistanceTrigger ObjectId1="this" ObjectId2="hero" Value="80" Action="this:eatHero" />
+
+
+			<State Id="eatHero" When="this:eathHero">
+				<Sprite Id="ratSprite" TextureId="rat_walk" Bounds="0,00,46,47" FrameBounds="0,0,46,47"/>
+			</State>
 			<State Id="default">
 				<Sprite Id="ratSprite" TextureId="rat_walk" Bounds="0,00,46,47" FrameBounds="0,0,46,47">
 					<NumAnimation From="0" To="3" Duration="0.2" Autoreverse="false" Target="CurrentFrame" />
-					<NumAnimation From="0" To="50" Duration="6" Autoreverse="true" IsDelta="true" Target="X"/>
+					<NumAnimation From="0" To="50" Duration="6" Autoreverse="true" IsDelta="true" Target="this.X"/>
 				</Sprite>
 			</State>
 		</Enemy>	

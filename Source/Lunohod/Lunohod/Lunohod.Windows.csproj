@@ -155,6 +155,7 @@
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Objects\Animation\XSequence.cs" />
     <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
+    <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
     <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
     <Compile Include="Engine\Objects\Events\XBoolTrigger.cs" />
     <Compile Include="Engine\Objects\Events\XDistanceTrigger.cs" />

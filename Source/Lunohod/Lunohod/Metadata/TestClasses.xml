@@ -16,9 +16,15 @@
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="600"/>
 
+		<Image Id="ccc" TextureId="cat" Bounds="0,0,40,37" Origin="20,20" />
+
 		<Hero Id="hero" Bounds="240,0,40,37" Class="classHero"/>
-	
+
+		<IntersectionTrigger ObjectId1="ccc" ObjectId2="hero" Action="hero:closeEnemy" />
+
 		<Enemy Id="rat1" Bounds="240,150,46,47" Class="classRat"/>
+		<Enemy Id="rat2" Bounds="140,150,46,47" Class="classRat"/>
+		<Enemy Id="rat3" Bounds="340,150,46,47" Class="classRat"/>
 	</Layer>
 
 	<Include File="Dashboard.xml" />	
