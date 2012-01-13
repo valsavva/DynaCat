@@ -49,11 +49,6 @@ namespace Lunohod.Objects
 			screenBounds = this.GetScreenBounds();
 			actualBackColor = this.BackColor * this.GetScreenOpacity();
 			
-			if (this.Id != null)
-			{
-				Console.WriteLine("abc");
-			}
-			
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{
 				if (this.UseRotation)

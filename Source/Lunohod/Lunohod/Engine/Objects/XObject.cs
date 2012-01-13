@@ -254,7 +254,10 @@ namespace Lunohod.Objects
 		
 		public SignalContainer GetSignalContainer()
 		{
-			return signalContainer ?? (signalContainer = new SignalContainer());
+			if (signalContainer == null)
+				signalContainer = new SignalContainer();
+			
+			return signalContainer;
 		}
 		
 		#region IDisposable implementation
