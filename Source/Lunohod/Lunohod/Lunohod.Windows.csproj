@@ -204,6 +204,7 @@
     <Compile Include="Engine\Objects\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\XObjectCollection.cs" />
     <Compile Include="Engine\Objects\XSprite.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -772,6 +773,7 @@
     </Content>
     <Content Include="Metadata\ClassHero.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassRat.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
