@@ -9,6 +9,7 @@ namespace Lunohod.Objects
 	{
 		protected bool isDisposed = false;
 		private SignalContainer signalContainer = null;
+		private XObjectCollection subcomponents = null;
 		
 		[XmlAttribute]
 		public string Id { get; set;}
@@ -22,7 +23,7 @@ namespace Lunohod.Objects
 		public virtual XObject Copy()
 		{
 			var result = (XObject)this.MemberwiseClone();
-			result.Subcomponents = new List<XObject>(this.Subcomponents.Count);
+			result.Subcomponents = new XObjectCollection(this.Subcomponents.Count);
 			for(int i = 0; i < this.Subcomponents.Count; i++)
 			{
 				result.Subcomponents.Add(this.Subcomponents[i].Copy());
@@ -70,7 +71,22 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
         [XmlElement(ElementName = "Sequence", Type = typeof(XSequence))]
         [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
-        public List<XObject> Subcomponents { get; set; }
+        public XObjectCollection Subcomponents
+		{
+			get { return subcomponents; }
+			set {
+				if (subcomponents == value)
+					return;
+				
+				if (subcomponents != null)
+					subcomponents.Parent = null;
+				
+				subcomponents = value;
+				
+				if (subcomponents != null)
+					subcomponents.Parent = this;
+			}
+		}
 		
 		public virtual void InitHierarchy()
 		{
@@ -93,14 +109,14 @@ namespace Lunohod.Objects
 				return;
 			}
 			else
-				// set the parent property to the current node
+			{
 				if (this.Subcomponents != null)
 					for(int i = 0; i < this.Subcomponents.Count; i++)
 					{
 						var subcomponent = this.Subcomponents[i];
-						subcomponent.Parent = this;
 						subcomponent.InitHierarchy();
 					}
+			}
 		}
 		
 		public virtual void Initialize(InitializeParameters p)

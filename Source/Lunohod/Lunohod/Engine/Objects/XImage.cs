@@ -7,6 +7,7 @@ using System.IO;
 using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Lunohod.Objects
 {
@@ -47,6 +48,11 @@ namespace Lunohod.Objects
 		{
 			screenBounds = this.GetScreenBounds();
 			actualBackColor = this.BackColor * this.GetScreenOpacity();
+			
+			if (this.Id != null)
+			{
+				Console.WriteLine("abc");
+			}
 			
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{

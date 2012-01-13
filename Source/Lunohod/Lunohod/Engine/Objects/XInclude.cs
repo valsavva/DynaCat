@@ -23,7 +23,7 @@ namespace Lunohod.Objects
 			set { 
 				this.file = value;
 				
-				this.Subcomponents = new List<XObject> 
+				this.Subcomponents = new XObjectCollection
 				{
 					GameEngine.LoadMetadata(this.file, typeof(XInclude))
 				};

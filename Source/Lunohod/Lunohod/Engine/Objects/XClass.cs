@@ -23,18 +23,25 @@ namespace Lunohod.Objects
 		public XObject CreateInstance(XObject placeholder)
 		{
 			var instance = templateObject.Copy();
-
-			var parent = placeholder.Parent;
-
-			int instanceIndex = parent.Subcomponents.IndexOf(placeholder);
-			parent.Subcomponents[instanceIndex] = instance;
-			instance.Parent = parent;
-			
 			CopyAttributes(placeholder, instance);
 			
-			ReplaceThisKeyword(instance);
+			// move subcomponents from the placeholder to the new instance
+			while(placeholder.Subcomponents.Count > 0)
+			{
+				var subcomponent = placeholder.Subcomponents[0];
+				placeholder.Subcomponents.RemoveAt(0);
+				
+				instance.Subcomponents.Add(subcomponent);
+			}
+
+			var parent = placeholder.Parent;
 			
-			placeholder.Parent = null;
+			// replace the placeholder with the new instance
+			int instanceIndex = parent.Subcomponents.IndexOf(placeholder);
+			parent.Subcomponents.RemoveAt(instanceIndex);
+			parent.Subcomponents.Insert(instanceIndex, instance);
+			
+			ReplaceThisKeyword(instance);
 			
 			return instance;
 		}

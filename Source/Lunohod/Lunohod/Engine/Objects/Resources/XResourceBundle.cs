@@ -23,7 +23,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Texture", Type = typeof(XTextureResource))]
         [XmlElement(ElementName = "MusicFile", Type = typeof(XMusicResource))]
         [XmlElement(ElementName = "SoundFile", Type = typeof(XSoundResource))]
-        public List<XObject> ResourceSubcomponents { get { return this.Subcomponents; } set { this.Subcomponents = value; } }
+        public XObjectCollection ResourceSubcomponents { get { return this.Subcomponents; } set { this.Subcomponents = value; } }
 	}
 }
 

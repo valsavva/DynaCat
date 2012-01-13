@@ -7,8 +7,8 @@
 	
 		<Hero Speed="50" Direction="0,0">
 			<State Id="ratIsClose" When="this:closeEnemy">
-				<Image TextureId="cat" Bounds="20,20,40,37" Origin="20,20">
-					<NumAnimation Target="Rotation" From="0" To="360" Duration="1" Autoreverse="true" InProgress="true" />
+				<Image Id="abc" TextureId="cat" Bounds="20,20,40,37" Origin="20,20">
+					<NumAnimation Target="this.Rotation" From="0" To="360" Duration="1" Autoreverse="true" InProgress="true" />
 				</Image>
 			</State>
 			<State Id="default">

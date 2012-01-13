@@ -18,7 +18,9 @@
 
 		<Image Id="ccc" TextureId="cat" Bounds="0,0,40,37" Origin="20,20" />
 
-		<Hero Id="hero" Bounds="240,0,40,37" Class="classHero"/>
+		<Hero Id="hero" Bounds="240,0,40,37" Class="classHero">
+			<Image TextureId="cat" Bounds="8,8,40,37" Opacity="0.5" BackColor="#444444"/>
+		</Hero>
 
 		<IntersectionTrigger ObjectId1="ccc" ObjectId2="hero" Action="hero:closeEnemy" />
 

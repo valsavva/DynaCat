@@ -32,7 +32,14 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public float Rotation
 		{
-			get { return this.rotation ?? 0.0f; }
+			get { 
+				if (this.rotation.HasValue)
+					return this.rotation.Value;
+				else if (this.ParentElement != null)
+					return this.ParentElement.Rotation;
+				else
+					return 0.0f;
+			}
 			set { this.rotation = value; }
 		}
 		[XmlIgnore]
