@@ -72,7 +72,8 @@ namespace Lunohod.Objects
 				XAnimationBase animation = subcomponent as XAnimationBase;
 				if (animation != null)
 				{
-					animation.Target = animation.Target.Replace("this", instance.Id);
+                    if (animation.Target != null)
+					    animation.Target = animation.Target.Replace("this", instance.Id);
 				}
 				
 				// triggers
