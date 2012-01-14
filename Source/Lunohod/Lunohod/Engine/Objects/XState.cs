@@ -12,13 +12,12 @@ namespace Lunohod.Objects
 	{
 		private XObject target;
 		private string evnt;
+
+        private bool enabled;
 		
 		[XmlAttribute]
 		public string When;
 
-		public bool Updated { get; set; }
-		public bool Drew { get; set; }
-		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
@@ -29,19 +28,19 @@ namespace Lunohod.Objects
 		
 		public override void Update(UpdateParameters p)
 		{
-			if (this.Updated = EvaluateCondition(o => (o is XState) && (((XState)o).Updated)))
+			if (this.enabled = EvaluateCondition())
 				base.Update(p);
 		}
 		
 		public override void Draw(DrawParameters p)
 		{
-			if (this.Drew = EvaluateCondition(o => (o is XState) && (((XState)o).Drew)))
+			if (this.enabled)
 				base.Draw(p);
 		}
 		
-		private bool EvaluateCondition(Predicate<XObject> ran)
+		private bool EvaluateCondition()
 		{
-			int ranIndex = this.Parent.Subcomponents.FindIndex(ran);
+			int ranIndex = this.Parent.Subcomponents.FindIndex(o => o is XState && ((XState)o).enabled);
 			int thisIndex = this.Parent.Subcomponents.IndexOf(this);
 			
 			// a preceding state has already performed
