@@ -99,9 +99,11 @@ namespace Lunohod.Objects
 				XState state = subcomponent as XState;
 				if (state != null)
 				{
-					if (state.When != null)
-						state.When = state.When.Replace("this", instance.Id);
-				}
+                    if (state.When != null)
+                        state.When = state.When.Replace("this", instance.Id);
+                    if (state.AlwaysOnce != null)
+                        state.AlwaysOnce = state.AlwaysOnce.Replace("this", instance.Id);
+                }
 			}
 			
 			
