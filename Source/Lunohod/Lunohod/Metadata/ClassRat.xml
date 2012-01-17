@@ -9,7 +9,7 @@
 
 			<State Id="this_closeHero" When="this:closeHero">
 				<Image TextureId="cat">
-					<NumAnimation Id="qq" From="0" To="360" Duration="2" Target="this.Rotation" Fill="Reset"/>
+					<NumAnimation Id="qq" From="0" To="360" Duration="2" RepeatCount="9999" Target="this.Rotation" Fill="Reset" InProgress="true"/>
 				</Image>
 			</State>
 			<State Id="this_default">

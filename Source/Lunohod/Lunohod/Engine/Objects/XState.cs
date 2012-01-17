@@ -31,16 +31,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 
-            runnables = new List<IRunnable>();
-            var descendants = this.GetAllDescendants();
-
-            for (int i = 0; i < descendants.Count; i++)
-            {
-                IRunnable runnable = descendants[i] as IRunnable;
-
-                if (runnable != null)
-                    runnables.Add(runnable);
-            }
+            runnables = CollectRunnables();
 
             if (!string.IsNullOrEmpty(this.When))
                 this.GetTargetFromDescriptor(this.When, out whenTarget, out whenEvnt);
@@ -63,7 +54,12 @@ namespace Lunohod.Objects
 
         private void DoResetContent()
         {
-            runnables.ForEach(r => r.Stop());
+            runnables.ForEach(r => {
+                bool running = r.InProgress;
+                r.Stop();
+                if (running)
+                    r.Start();
+            });
         }
 		
 		public override void Draw(DrawParameters p)
@@ -84,7 +80,7 @@ namespace Lunohod.Objects
             if (alwaysEnabled)
                 return true;
 
-            if (aonceTarget != null)
+            if (aonceTarget != null)                            
             {
                 if (alwaysEnabled = aonceTarget.GetSignalContainer().IsSignaled(aonceEvnt))
                     return true;
