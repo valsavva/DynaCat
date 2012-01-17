@@ -9,10 +9,10 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	public abstract class XAnimationBase : XObject
+	public abstract class XAnimationBase : XObject, IRunnable
 	{
         protected TimeSpan elapsedTime;
-		protected bool inProgress = true;
+		protected bool inProgress = false;
 		protected bool isPaused = false;
 
         public TimeSpan ElapsedTime
@@ -43,7 +43,7 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public float RepeatCount;
 		[XmlAttribute]
-		public XAnimationFillBehavior FillBehavior;
+		public XAnimationFillBehavior Fill;
 		
 		[XmlAttribute]
 		public string Target;
@@ -117,11 +117,13 @@ namespace Lunohod.Objects
 		}
         public virtual void Stop()
         {
-			if (this.FillBehavior == XAnimationFillBehavior.Reset)
+			if (this.Fill == XAnimationFillBehavior.Reset)
 				this.elapsedTime = TimeSpan.Zero;
 			else
 				this.elapsedTime = this.Duration + (this.Autoreverse ? this.Duration : TimeSpan.Zero);
-			
+
+            UpdateAnimation();
+
 			this.inProgress = false;
 			this.isPaused = false;
         }

@@ -105,15 +105,15 @@
 		</Sprite>
 
 		<Sound FileId="explosion1" Volume="0">
-			<NumTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Play"/>
+			<NumTrigger Property="ship.X" Compare="G" Value="100" EnterAction="Start"/>
 		</Sound>
 		
 		<Sound FileId="explosion2" Volume="0" Pitch="0.5" Pan="-1">
-			<NumTrigger Property="ship.X" Compare="G" Value="110" EnterAction="Play"/>
+			<NumTrigger Property="ship.X" Compare="G" Value="110" EnterAction="Start"/>
 		</Sound>
 		
 		<Sound FileId="explosion3" Volume="0" Pitch="1" Pan="1">
-			<NumTrigger Property="ship.X" Compare="G" Value="120" EnterAction="Play"/>
+			<NumTrigger Property="ship.X" Compare="G" Value="120" EnterAction="Start"/>
 		</Sound>
 
 	</Layer>

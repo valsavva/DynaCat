@@ -9,15 +9,15 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-    [XmlType("Sequence")]
-	public class XSequence : XAnimationBase
+    [XmlType("SequenceSet")]
+	public class XSequenceSet : XSetBase
 	{
-		private List<XAnimationBase> animations;
-		private XAnimationBase currentAnimation;
+		private List<IRunnable> runnables;
+		private IRunnable currentRunnable;
 		
 		private int repeatsDone = 0;
 		
-		public XSequence()
+		public XSequenceSet()
 		{
 		}
 		
@@ -25,46 +25,45 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			animations = this.GetComponents<XAnimationBase>().ToList();
-			animations.ForEach(a => a.InProgress = false );
+			runnables = this.CollectRunnables();
 		}
 
 		public override void Update(UpdateParameters p)
 		{
 			if (this.inProgress && !this.isPaused)
 			{
-				if (currentAnimation == null)
+				if (currentRunnable == null)
 				{	
-					currentAnimation = animations[0];
-					currentAnimation.Start();
+					currentRunnable = runnables[0];
+					currentRunnable.Start();
 				}
 				else
 				{
-					if (!currentAnimation.InProgress)
+					if (!currentRunnable.InProgress)
 					{
 						// the current animation is finished - on to the next one
-						var curIndex = animations.IndexOf(currentAnimation);
+						var curIndex = runnables.IndexOf(currentRunnable);
 						if (curIndex < 0)
 							throw new InvalidOperationException("WFT?");
 						
 						curIndex++;
 						
-						if (curIndex >= animations.Count)
+						if (curIndex >= runnables.Count)
 						{	
 							repeatsDone++;
 							
-							if (this.RepeatCount > 0 && repeatsDone == this.RepeatCount)
+							if (repeatsDone >= this.RepeatCount)
 							{
 								this.Stop();
 								return;
 							}
 	
-							curIndex -= animations.Count;
+							curIndex -= runnables.Count;
 						}
 						
 						
-						currentAnimation = animations[curIndex];
-						currentAnimation.Start();
+						currentRunnable = runnables[curIndex];
+						currentRunnable.Start();
 					}
 				}
 			}
@@ -77,37 +76,37 @@ namespace Lunohod.Objects
 			base.Start();
 			
 			repeatsDone = 0;
-			animations.ForEach(a => a.Stop());
+			runnables.ForEach(a => a.Stop());
 
-			currentAnimation = null;
+			currentRunnable = null;
 		}
 		public override void Pause()
 		{
 			base.Pause();
 
-			if (currentAnimation == null)
+			if (currentRunnable == null)
 				return;
 			
-			currentAnimation.Pause();
+			currentRunnable.Pause();
 		}
 		public override void Resume()
 		{
 			base.Resume();
 
-			if (currentAnimation == null)
+			if (currentRunnable == null)
 				return;
 			
-			currentAnimation.Resume();
+			currentRunnable.Resume();
 		}
 		public override void Stop()
 		{
 			base.Stop();
 
-			if (currentAnimation == null)
+			if (currentRunnable == null)
 				return;
 			
 			repeatsDone = 0;
-			animations.ForEach(a => a.Stop());
+			runnables.ForEach(a => a.Stop());
 		}
 		public override void UpdateAnimation()
 		{

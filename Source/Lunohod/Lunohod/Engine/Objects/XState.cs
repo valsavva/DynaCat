@@ -18,14 +18,29 @@ namespace Lunohod.Objects
         private bool enabled;
         private bool alwaysEnabled;
 
+        List<IRunnable> runnables;
+
         [XmlAttribute]
         public string When;
         [XmlAttribute]
         public string AlwaysOnce;
+        [XmlAttribute]
+        public bool ResetContent = true;
 
-		public override void Initialize(InitializeParameters p)
+        public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
+
+            runnables = new List<IRunnable>();
+            var descendants = this.GetAllDescendants();
+
+            for (int i = 0; i < descendants.Count; i++)
+            {
+                IRunnable runnable = descendants[i] as IRunnable;
+
+                if (runnable != null)
+                    runnables.Add(runnable);
+            }
 
             if (!string.IsNullOrEmpty(this.When))
                 this.GetTargetFromDescriptor(this.When, out whenTarget, out whenEvnt);
@@ -35,9 +50,21 @@ namespace Lunohod.Objects
 		
 		public override void Update(UpdateParameters p)
 		{
-			if (this.enabled = EvaluateCondition())
-				base.Update(p);
+            bool oldEnabled = this.enabled;
+                
+            this.enabled = EvaluateCondition();
+
+            if (!this.enabled && oldEnabled)
+                DoResetContent();
+
+            if (this.enabled)
+                base.Update(p);
 		}
+
+        private void DoResetContent()
+        {
+            runnables.ForEach(r => r.Stop());
+        }
 		
 		public override void Draw(DrawParameters p)
 		{

@@ -140,6 +140,8 @@
     <Compile Include="Engine\DrawParameters.cs" />
     <Compile Include="Engine\InitializeParameters.cs" />
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Animation\XParallelSet.cs" />
+    <Compile Include="Engine\Objects\Animation\XRandomSet.cs" />
     <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
     <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
     <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs">
@@ -153,7 +155,8 @@
     </Compile>
     <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
-    <Compile Include="Engine\Objects\Animation\XSequence.cs" />
+    <Compile Include="Engine\Objects\Animation\XSequenceSet.cs" />
+    <Compile Include="Engine\Objects\Animation\XSetBase.cs" />
     <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
     <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
     <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
@@ -163,6 +166,7 @@
     <Compile Include="Engine\Objects\Events\XNumTrigger.cs" />
     <Compile Include="Engine\Objects\Events\XNumTriggerBase.cs" />
     <Compile Include="Engine\Objects\Events\XTriggerBase.cs" />
+    <Compile Include="Engine\Objects\IRunnable.cs" />
     <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
     <Compile Include="Engine\Objects\Media\XMusic.cs" />
     <Compile Include="Engine\Objects\Media\XSound.cs" />
@@ -793,6 +797,7 @@
     </Content>
     <Content Include="Metadata\TestClasses.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\TestLevel1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -802,6 +807,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestLevel3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestSets.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\test_b-1.xml">

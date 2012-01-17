@@ -69,7 +69,9 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
         [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
-        [XmlElement(ElementName = "Sequence", Type = typeof(XSequence))]
+        [XmlElement(ElementName = "SequenceSet", Type = typeof(XSequenceSet))]
+        [XmlElement(ElementName = "RandomSet", Type = typeof(XRandomSet))]
+        [XmlElement(ElementName = "ParallelSet", Type = typeof(XParallelSet))]
         [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
         public XObjectCollection Subcomponents
 		{
@@ -259,6 +261,35 @@ namespace Lunohod.Objects
 			
 			return signalContainer;
 		}
+
+        public List<IRunnable> CollectRunnables(List<IRunnable> result = null)
+        {
+            if (result == null)
+                result = new List<IRunnable>();
+
+            if (this.Subcomponents != null)
+                for (int i = 0; i < this.Subcomponents.Count; i++)
+                {
+                    var subcomponent = this.Subcomponents[i];
+                    IRunnable runnable = subcomponent as IRunnable;
+                    if (runnable != null)
+                        result.Add(runnable);
+
+                    // we don't collect other sets' runnables
+                    if (!(subcomponent is XSetBase))
+                        subcomponent.CollectRunnables(result);
+                }
+
+            return result;
+        }
+        //public IEnumerable<T> TraverseChildren<T>() where T : class
+        //{
+        //    for (int i = 0; i < this.Subcomponents.Count; i++)
+        //    {
+        //        if (this.Subcomponents[i] is T)
+        //            yield return (this.Subcomponents[i] as T);
+        //    }
+        //}
 		
 		#region IDisposable implementation
 		public virtual void Dispose()

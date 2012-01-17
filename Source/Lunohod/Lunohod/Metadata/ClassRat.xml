@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Include>
 	<Class Id="classRat">
-		<Resources RootFolder="TestLevel1">
-			<Texture Id="rat" Source="rat"/>
-			<Texture Id="rat_walk" Source="rat_walk"/>
-		</Resources>
-	
 		<Enemy>
-			<!-- this fires the event "hero:closeEnemy" for as long as this enemy 80 points or closer to hero -->
+			<!--
 			<DistanceTrigger ObjectId1="this" ObjectId2="hero" Value="80" Action="hero:closeEnemy"/>
-			<!-- this will switch this enemy to stop once hero gets 80 points or closer -->
-			<DistanceTrigger ObjectId1="this" ObjectId2="hero" Value="80" Action="this:eatHero"/>
+			-->
+			<DistanceTrigger ObjectId1="this" ObjectId2="hero" Value="80" Action="this:closeHero"/>
 
-
-			<!-- note that the id is prefixed with "this_", which will be replace with the enemy's id when it's instantiated.
-				this ensures that the state id is unique -->
-			<State Id="this_stop" When="this:eatHero">
-				<Sprite TextureId="rat" Bounds="0,00,46,47" FrameBounds="0,0,46,47"/>
+			<State Id="this_closeHero" When="this:closeHero">
+				<Image TextureId="cat">
+					<NumAnimation Id="qq" From="0" To="360" Duration="2" Target="this.Rotation" Fill="Reset"/>
+				</Image>
 			</State>
 			<State Id="this_default">
-				<Sprite TextureId="rat_walk" Bounds="0,00,46,47" FrameBounds="0,0,46,47">
-					<NumAnimation From="0" To="3" Duration="0.2" Autoreverse="false" Target="CurrentFrame"/>
-					<NumAnimation From="0" To="50" Duration="6" Autoreverse="true" IsDelta="true" Target="this.X"/>
-				</Sprite>
+				<Image TextureId="rat" />
 			</State>
 		</Enemy>	
 	</Class>

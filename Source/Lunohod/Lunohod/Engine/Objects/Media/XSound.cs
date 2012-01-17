@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Audio;
 namespace Lunohod.Objects
 {
     [XmlType("Sound")]
-	public class XSound : XObject, IHasVolume
+	public class XSound : XObject, IHasVolume, IRunnable
 	{
 		private XSoundResource soundFile;
 		private SoundEffectInstance soundEffectInstance;
@@ -62,8 +62,16 @@ namespace Lunohod.Objects
 		{
 			base.Update(p);
 		}
-		
-		public void Play()
+
+        public bool InProgress
+        {
+            get { return this.soundEffectInstance.State == SoundState.Playing; }
+            set
+            {
+                // noop for now
+            }
+        }
+        public void Start()
 		{
 			this.soundEffectInstance.Volume = this.Volume;
 			this.soundEffectInstance.Pitch = this.Pitch;

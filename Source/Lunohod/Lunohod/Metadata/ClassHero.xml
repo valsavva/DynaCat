@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Include>
 	<Class Id="classHero">
-		<Resources RootFolder="TestLevel1">
-			<Texture Id="cat" Source="cat"/>
-		</Resources>
-	
-		<Hero Speed="50" Direction="0,0">
+		<Hero Speed="150" Direction="0,0">
 			<State Id="ratIsClose" When="this:closeEnemy">
 				<Image Id="abc" TextureId="cat" Bounds="20,20,40,37" Origin="20,20">
 					<NumAnimation Target="Rotation" From="0" To="360" Duration="1" Autoreverse="true" InProgress="true" />

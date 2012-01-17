@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 namespace Lunohod.Objects
 {
     [XmlType("Music")]
-	public class XMusic : XObject, IHasVolume
+	public class XMusic : XObject, IHasVolume, IRunnable
 	{
 		private XMusicResource musicFile;
 		private float volume;
@@ -46,10 +46,18 @@ namespace Lunohod.Objects
 			base.Update(p);
 			
 			if (MediaPlayer.State == MediaState.Stopped)
-				Play();
+				Start();
 		}
 		
-        public void Play()
+        public bool InProgress
+        {
+            get { return MediaPlayer.State == MediaState.Playing; }
+            set
+            {
+                // noop for now
+            }
+        }
+        public void Start()
         {
             // Due to the way the MediaPlayer plays music,
             // we have to catch the exception. Music will play when the game is not tethered
