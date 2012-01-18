@@ -12,18 +12,58 @@ namespace Lunohod.Objects
     [XmlType("RandomSet")]
     public class XRandomSet : XSetBase
     {
+        private class ProbabilityList : List<double>
+        {
+            private Random random;
+            private double total;
+
+            public ProbabilityList(Random random, IEnumerable<double> source)
+                : base(source)
+            {
+                this.random = random;
+                total = this.Sum();
+            }
+
+            public int NextIndex()
+            {
+                double n = random.NextDouble() * total;
+                double sum = 0;
+
+                for (int i = 0; i < this.Count - 1; i++)
+                {
+                    sum += this[i];
+                    if (sum >= n)
+                        return i;
+                }
+
+                return this.Count - 1;
+            }
+        }
+
         private Random random = new Random();
 
         private List<IRunnable> runnables;
         private IRunnable currentRunnable;
+        private ProbabilityList probabilities;
 
         private int repeatsDone = 0;
+
+        [XmlAttribute]
+        public string Probabilities;
 
         public override void Initialize(InitializeParameters p)
         {
             base.Initialize(p);
 
             runnables = this.CollectRunnables();
+
+            if (!string.IsNullOrWhiteSpace(this.Probabilities))
+            {
+                probabilities = new ProbabilityList(this.random, this.Probabilities.Split(',').Select(s => double.Parse(s)));
+
+                if (probabilities.Count != runnables.Count)
+                    throw new InvalidOperationException(string.Format("Number of probabilities does not match the number of runnables - {0} != {1}", probabilities.Count, runnables));
+            }
         }
 
         public override void Update(UpdateParameters p)
@@ -55,7 +95,9 @@ namespace Lunohod.Objects
 
         private IRunnable GetNextAnimation()
         {
-            return runnables[random.Next(this.runnables.Count)];
+            int index = probabilities == null ? random.Next(this.runnables.Count) : probabilities.NextIndex();
+
+            return runnables[index];
         }
 
         public override void Start()
@@ -89,9 +131,6 @@ namespace Lunohod.Objects
         {
             base.Stop();
 
-            if (currentRunnable == null)
-                return;
-
             repeatsDone = 0;
             runnables.ForEach(a => a.Stop());
         }
@@ -100,4 +139,3 @@ namespace Lunohod.Objects
         }
     }
 }
-

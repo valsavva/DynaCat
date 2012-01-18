@@ -34,14 +34,18 @@
 			<NumAnimation Target="image1.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			<Sound FileId="laserFire" Volume="0.5"/>
 		</SequenceSet>
-		
+
 		<Image Id="image2" TextureId="chargers" Bounds="240,250,50,50" Rotation="0" Opacity="1"/>
-		<RandomSet>
-			<IntersectionTrigger ObjectId1="image2" ObjectId2="hero" EnterAction="Resume"/>
-			<NumAnimation Target="image2.X" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
+		<RandomSet Probabilities="2,1,2,1,8">
+			<IntersectionTrigger ObjectId1="image2" ObjectId2="hero" Action="Resume"/>
+			<NumAnimation Id="X1" Target="image2.X" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			<Sound FileId="laserFire" Volume="0.5"/>
-			<NumAnimation Target="image2.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
+			<NumAnimation Id="X2" Target="image2.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			<Sound FileId="laserFire" Volume="0.5"/>
+			<ParallelSet>
+				<NumAnimation Target="image2.X" From="0" To="-50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
+				<NumAnimation Target="image2.Y" From="0" To="-50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
+			</ParallelSet>
 		</RandomSet>
 
 		<Image Id="image3" TextureId="chargers" Bounds="350,150,50,50" Rotation="0" Opacity="1"/>

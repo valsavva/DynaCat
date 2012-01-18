@@ -781,6 +781,7 @@
     </Content>
     <Content Include="Metadata\ClassRat.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\Dashboard.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -811,6 +812,7 @@
     </Content>
     <Content Include="Metadata\TestSets.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\test_b-1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

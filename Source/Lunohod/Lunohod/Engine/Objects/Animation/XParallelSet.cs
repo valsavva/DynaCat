@@ -21,17 +21,34 @@ namespace Lunohod.Objects
         
         public override void Update(UpdateParameters p)
         {
+            if (this.inProgress && !this.isPaused)
+            {
+                if (runnables.All(a => !a.InProgress))
+                {
+                    // all animations executed
+                    repeatsDone++;
+
+                    if (repeatsDone >= this.RepeatCount)
+                        this.Stop();
+                    else
+                        this.Start();
+                }
+            }
+
             base.Update(p);
 
-            if (!runnables.Any(a => a.InProgress))
+            if (this.inProgress && !this.isPaused)
             {
-                // all animations executed
-                repeatsDone++;
+                if (runnables.All(a => !a.InProgress))
+                {
+                    // all animations executed
+                    repeatsDone++;
 
-                if (repeatsDone >= this.RepeatCount)
-                    this.Stop();
-                else
-                    this.Start();
+                    if (repeatsDone >= this.RepeatCount)
+                        this.Stop();
+                    else
+                        this.Start();
+                }
             }
         }
 
