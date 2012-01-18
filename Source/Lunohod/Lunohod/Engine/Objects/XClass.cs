@@ -86,14 +86,23 @@ namespace Lunohod.Objects
 						trigger.Action = trigger.Action.Replace("this", instance.Id);
 					if (trigger.ExitAction != null)
 						trigger.ExitAction = trigger.ExitAction.Replace("this", instance.Id);
-					
-					XDistanceTrigger distanceTrigger = trigger as XDistanceTrigger;
-					if (distanceTrigger != null)
-					{
-						distanceTrigger.ObjectId1 = distanceTrigger.ObjectId1.Replace("this", instance.Id);
-						distanceTrigger.ObjectId2 = distanceTrigger.ObjectId2.Replace("this", instance.Id);
-					}
-				}
+
+                    XDistanceTrigger distanceTrigger = trigger as XDistanceTrigger;
+                    if (distanceTrigger != null)
+                    {
+                        distanceTrigger.ObjectId1 = distanceTrigger.ObjectId1.Replace("this", instance.Id);
+                        distanceTrigger.ObjectId2 = distanceTrigger.ObjectId2.Replace("this", instance.Id);
+                    }
+                    else
+                    {
+                        XIntersectionTrigger intersectionTrigger = trigger as XIntersectionTrigger;
+                        if (intersectionTrigger != null)
+                        {
+                            intersectionTrigger.ObjectId1 = intersectionTrigger.ObjectId1.Replace("this", instance.Id);
+                            intersectionTrigger.ObjectId2 = intersectionTrigger.ObjectId2.Replace("this", instance.Id);
+                        }
+                    }
+                }
 				
 				// states
 				XState state = subcomponent as XState;
