@@ -13,9 +13,8 @@ namespace Lunohod.Objects
 	public class XBoolTrigger : XTriggerBase
 	{
 		private PropertyAccessor propertyAccessor;
+        private bool not = false;
 		
-		[XmlAttribute]
-		public bool Not;
 		[XmlAttribute]
 		public string Property;
 		
@@ -23,12 +22,20 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 
-			propertyAccessor = new PropertyAccessor(this, this.Property);
+            string property = this.Property;
+
+            if (property.StartsWith("!"))
+            {
+                property = property.Substring(1);
+                not = true;
+            }
+
+			propertyAccessor = new PropertyAccessor(this, property);
 		}
 		
 		public override bool IsTriggered()
 		{
-			return !this.Not && (bool)propertyAccessor.PropertyValue;
+			return not ^ (bool)propertyAccessor.PropertyValue;
 		}
 	}
 }

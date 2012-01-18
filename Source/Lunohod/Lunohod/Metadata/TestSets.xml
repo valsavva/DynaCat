@@ -25,7 +25,13 @@
 
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="600"/>
-
+		
+		<Image Id="z" TextureId="chargers" Bounds="0,0,35,35">
+			<NumAnimation From="0" To="10" Target="z.X" Duration="1" RepeatCount="1" IsDelta="true" Autoreverse="false" InProgress="true" Fill="Hold">
+				<BoolTrigger Property="!InProgress" EnterAction="Start" />
+			</NumAnimation>
+		</Image>
+		
 		<Image Id="image1" TextureId="chargers" Bounds="50,150,50,50" Rotation="0" Opacity="1"/>
 		<SequenceSet>
 			<IntersectionTrigger ObjectId1="image1" ObjectId2="hero" EnterAction="Resume"/>
