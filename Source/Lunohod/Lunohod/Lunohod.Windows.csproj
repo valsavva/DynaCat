@@ -63,7 +63,7 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build" />
@@ -834,8 +834,8 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <PropertyGroup>
     <PostBuildEvent>del c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar
-"C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar $(TargetDir)
-</PostBuildEvent>
+powershell start-process -WindowStyle Hidden $(ProjectDir)\pack.bat  $(TargetDir)
+rem start /B "C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
   <!--
       To modify your build process, add your task inside one of the targets below and uncomment it. 

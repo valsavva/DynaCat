@@ -1,0 +1,1 @@
+"C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar %1
