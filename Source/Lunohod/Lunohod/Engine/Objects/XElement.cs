@@ -35,9 +35,7 @@ namespace Lunohod.Objects
 			get { 
 				if (this.rotation.HasValue)
 					return this.rotation.Value;
-				else if (this.ParentElement != null)
-					return this.ParentElement.Rotation;
-				else
+                else
 					return 0.0f;
 			}
 			set { this.rotation = value; }
@@ -68,8 +66,8 @@ namespace Lunohod.Objects
 		{
 			if (this.ParentElement == null)
 				return this.Rotation;
-
-			return this.ParentElement.Rotation + this.Rotation;
+                                                              
+			return this.ParentElement.GetScreenRotation() + this.Rotation;
 		}
 		
 		public float GetScreenOpacity()

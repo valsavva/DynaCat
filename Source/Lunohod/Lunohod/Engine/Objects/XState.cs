@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
+using System.Collections;
 
 namespace Lunohod.Objects
 {
@@ -18,7 +19,8 @@ namespace Lunohod.Objects
         private bool enabled;
         private bool alwaysEnabled;
 
-        List<IRunnable> runnables;
+        private List<IRunnable> runnables;
+        private bool[] runnableRunning;
 
         [XmlAttribute]
         public string When;
@@ -32,6 +34,7 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 
             runnables = CollectRunnables();
+            runnableRunning = runnables.Select(r => r.InProgress).ToArray();
 
             if (!string.IsNullOrEmpty(this.When))
                 this.GetTargetFromDescriptor(this.When, out whenTarget, out whenEvnt);
@@ -45,23 +48,39 @@ namespace Lunohod.Objects
                 
             this.enabled = EvaluateCondition();
 
+            if (this.enabled && !oldEnabled)
+                OnEnter();
+
             if (!this.enabled && oldEnabled)
-                DoResetContent();
+                OnExit();
 
             if (this.enabled)
                 base.Update(p);
 		}
 
-        private void DoResetContent()
+        private void OnEnter()
         {
-            runnables.ForEach(r => {
-                bool running = r.InProgress;
-                r.Stop();
-                if (running)
-                    r.Start();
-            });
+            if (this.ResetContent)
+            {
+                for (int i = 0; i < runnables.Count; i++)
+                {
+                    if (runnableRunning[i])
+                        runnables[i].Start();
+                }
+            }
         }
-		
+
+        private void OnExit()
+        {
+            if (this.ResetContent)
+            {
+                for (int i = 0; i < runnables.Count; i++)
+                {
+                    runnables[i].Stop();
+                }
+            }
+        }
+
 		public override void Draw(DrawParameters p)
 		{
 			if (this.enabled)

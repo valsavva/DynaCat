@@ -11,6 +11,10 @@ namespace Lunohod.Objects
 {
     public class XSetBase : XAnimationBase
     {
+        public XSetBase()
+        {
+        }
+
         public override void UpdateAnimation()
         {
         }
