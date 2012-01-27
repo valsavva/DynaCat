@@ -112,7 +112,6 @@
     <Compile Include="Engine\Objects\Resources\XSoundResource.cs" />
     <Compile Include="Engine\Objects\Resources\XMusicResource.cs" />
     <Compile Include="Engine\Objects\XGroup.cs" />
-    <Compile Include="Engine\Objects\Animation\XSequence.cs" />
     <Compile Include="Engine\Objects\Media\XMusic.cs" />
     <Compile Include="Engine\Objects\Media\XSound.cs" />
     <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
@@ -134,6 +133,11 @@
     <Compile Include="Engine\Objects\XState.cs" />
     <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
     <Compile Include="Engine\Objects\XObjectCollection.cs" />
+    <Compile Include="Engine\Objects\Animation\XParallelSet.cs" />
+    <Compile Include="Engine\Objects\Animation\XRandomSet.cs" />
+    <Compile Include="Engine\Objects\Animation\XSequenceSet.cs" />
+    <Compile Include="Engine\Objects\Animation\XSetBase.cs" />
+    <Compile Include="Engine\Objects\IRunnable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -721,6 +725,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassHero.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestSets.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
