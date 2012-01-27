@@ -67,7 +67,7 @@
 		<Image Id="imageRat" TextureId="rat" Bounds="20,100,40,41">
 			<NumAnimation Duration="7" Autoreverse="false" Target="X,Y" InProgress="true">
 				<KeyFrame Time="0" Value="100,100" Smoothing="Smooth" />
-				<KeyFrame Time="1" Value="400,100" />
+				<KeyFrame Time="1" Value="400,100" Smoothing="Linear"/>
 				<KeyFrame Time="3" Value="hero.X,hero.Y" />
 				<KeyFrame Time="5" Value="400,200" Smoothing="Smooth" />
 				<KeyFrame Time="6" Value="100,200" Smoothing="Smooth" />

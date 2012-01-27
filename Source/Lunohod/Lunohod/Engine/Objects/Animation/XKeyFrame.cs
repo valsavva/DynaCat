@@ -21,7 +21,7 @@ namespace Lunohod.Objects
         public string Value;
 
         [XmlAttribute]
-        public CurveTangent Smoothing;
+        public CurveTangent Smoothing = CurveTangent.Linear;
 
         [XmlIgnore]
         public List<CurveKey> CurveKeys { get; private set; }
