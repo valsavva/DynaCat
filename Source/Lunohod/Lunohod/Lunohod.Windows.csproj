@@ -140,13 +140,13 @@
     <Compile Include="Engine\DrawParameters.cs" />
     <Compile Include="Engine\InitializeParameters.cs" />
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
+    <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
+    <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\XParallelSet.cs" />
     <Compile Include="Engine\Objects\Animation\XRandomSet.cs" />
     <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
     <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
-    <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Engine\Objects\Animation\PropertyAccessor.cs">
       <SubType>Code</SubType>
     </Compile>

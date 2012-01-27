@@ -50,7 +50,15 @@ namespace Lunohod
                 v.Y.ToString(CultureInfo.InvariantCulture);
 		}
 
-		public static Microsoft.Xna.Framework.Point ToPoint(this string s)
+        public static TimeSpan ToDuration(this string s)
+        {
+            if (s.Contains(":"))
+                return TimeSpan.Parse(s, CultureInfo.InvariantCulture);
+            else
+                return TimeSpan.FromSeconds(double.Parse(s, CultureInfo.InvariantCulture));
+        }
+        
+        public static Microsoft.Xna.Framework.Point ToPoint(this string s)
 		{
             string[] parts = s.Split(',');
 			return new Microsoft.Xna.Framework.Point(

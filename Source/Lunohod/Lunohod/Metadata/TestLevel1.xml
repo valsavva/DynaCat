@@ -57,15 +57,22 @@
 		</Sprite>
 
 		<Image Id="imageCat" TextureId="cat" Bounds="20,20,40,37" Origin="20,20" Rotation="0" Opacity="1">
-			<NumAnimation From="0" To="400" Duration="00:00:8" Autoreverse="false" Target="X"/>
+			<NumAnimation From="100" To="400" Duration="4" Autoreverse="false" Target="X" InProgress="true"/>
 		</Image>
 
-		<Image Id="imageCat1" TextureId="cat" Bounds="20,60,40,37" Origin="20,20" Rotation="0" Opacity="1">
-			<NumAnimation From="0" To="400" Duration="00:00:8" Autoreverse="false" Target="X"/>
+		<Image Id="imageCat1" TextureId="cat" Bounds="20,60,40,37">
+			<NumAnimation From="100,60" To="400,160" Duration="4" Autoreverse="true" Target="X,Y" InProgress="true"/>
 		</Image>
 
-		<Image Id="imageRat" TextureId="rat" Bounds="400,20,40,41" Origin="20,20" Rotation="30" Opacity="1">
-			<NumAnimation From="20" To="160" Duration="00:00:3" Autoreverse="true" Target="Y"/>
+		<Image Id="imageRat" TextureId="rat" Bounds="20,100,40,41">
+			<NumAnimation Duration="7" Autoreverse="false" Target="X,Y" InProgress="true">
+				<KeyFrame Time="0" Value="100,100" Smoothing="Smooth" />
+				<KeyFrame Time="1" Value="400,100" />
+				<KeyFrame Time="3" Value="imageCat1.X,imageCat1.Y" />
+				<KeyFrame Time="5" Value="400,200" Smoothing="Smooth" />
+				<KeyFrame Time="6" Value="100,200" Smoothing="Smooth" />
+				<KeyFrame Time="7" Value="100,100" />
+			</NumAnimation>
 		</Image>
 
 		<!--Group example-->		

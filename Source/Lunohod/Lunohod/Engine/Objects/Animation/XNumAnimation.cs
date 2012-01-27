@@ -12,52 +12,88 @@ namespace Lunohod.Objects
     [XmlType("NumAnimation")]
     public class XNumAnimation : XAnimationBase
     {
-        private NumericValueTimeline timeline;
-        private PropertyAccessor propertyAccessor;
-		
+        private List<TimeCurve> curves;
+        private List<PropertyAccessor> targets;
+        private List<XKeyFrame> keyFrames;
+
         [XmlAttribute]
-        public float From;
+        public string Target;
         [XmlAttribute]
-        public float To;
+        public string From;
+        [XmlAttribute]
+        public string To;
 		[XmlAttribute]
 		public bool IsDelta;
 		
-		private float? startValue;
+		private List<float?> startValues;
 		
         public override void Initialize(InitializeParameters p)
         {
+            if (!string.IsNullOrEmpty(this.From))
+            {
+                // Use the From/To properties
+                this.Subcomponents.Add(new XKeyFrame() { Time = TimeSpan.Zero, Value = this.From });
+                this.Subcomponents.Add(new XKeyFrame() { Time = this.Duration, Value = this.To });
+            }
+
             base.Initialize(p);
 
-            timeline = new NumericValueTimeline();
-            timeline.Duration = this.Duration;
-            timeline.From = this.From;
-            timeline.To = this.To;
-            timeline.Autoreverse = this.Autoreverse;
-            timeline.BuildTimeline();
+            // get targets
+            targets = this.Target.Split(',').Select(s => new PropertyAccessor(this, s)).ToList();
 
-            propertyAccessor = new PropertyAccessor(this, this.Target);
+            // collect keyFrames and check for consistency
+            keyFrames = this.GetComponents<XKeyFrame>().ToList();
+            if (keyFrames.Any(k => k.CurveKeys.Count != targets.Count))
+                throw new InvalidOperationException("Number of values in key frames must match number of targets.");
+            if (keyFrames.Count < 2)
+                throw new InvalidOperationException("Number of key frames must be 2 or more.");
+
+            // create curves
+            curves = new List<TimeCurve>(targets.Count);
+            for (int i = 0; i < targets.Count; i++)
+            {
+                var curve = new TimeCurve();
+                curve.PostLoop = this.Autoreverse ? CurveLoopType.Oscillate : CurveLoopType.Cycle;
+                curve.PreLoop = this.Autoreverse ? CurveLoopType.Oscillate : CurveLoopType.Cycle;
+
+                for (int j = 0; j < keyFrames.Count; j++)
+                {
+                    curve.Keys.Add(keyFrames[j].CurveKeys[i]);
+                }
+
+                curves.Add(curve);
+            }
         }
 		
 		public override void Start()
 		{
 			base.Start();
-			
-			startValue = null;
+
+            for (int i = 0; i < startValues.Count; i++)
+                startValues[i] = null;
 		}
 
         public override void UpdateAnimation()
         {
-            var newPropertyValue = (float)timeline.GetValue(this.elapsedTime);
+            for (int i = 0; i < targets.Count; i++)
+            {
+                for (int j = 0; j < curves[i].Keys.Count; j++)
+                {
+                    curves[i].ComputeT(j, keyFrames[j].Smoothing);
+                }
 
-			if (this.IsDelta)
-			{
-				if (!startValue.HasValue)
-					startValue = propertyAccessor.FloatPropertyValue;
-				
-				newPropertyValue += startValue.Value;
-			}
-            
-			propertyAccessor.FloatPropertyValue = newPropertyValue;
+                var newPropertyValue = (float)curves[i].Evaluate((float)this.elapsedTime.TotalMilliseconds);
+
+                if (this.IsDelta)
+                {
+                    if (!startValues[i].HasValue)
+                        startValues[i] = targets[i].FloatPropertyValue;
+
+                    newPropertyValue += startValues[i].Value;
+                }
+
+                targets[i].FloatPropertyValue = newPropertyValue;
+            }
         }
     }
 }

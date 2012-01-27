@@ -63,16 +63,21 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Enemy", Type = typeof(XEnemy))]
-		
+
+		// Sets
+        [XmlElement(ElementName = "SequenceSet", Type = typeof(XSequenceSet))]
+        [XmlElement(ElementName = "RandomSet", Type = typeof(XRandomSet))]
+        [XmlElement(ElementName = "ParallelSet", Type = typeof(XParallelSet))]
+
+        // Animation
+        [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
+        [XmlElement(ElementName = "KeyFrame", Type = typeof(XKeyFrame))]
+
 		// Basic elements
 		[XmlElement(ElementName = "Group", Type = typeof(XGroup))]
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
         [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
-        [XmlElement(ElementName = "SequenceSet", Type = typeof(XSequenceSet))]
-        [XmlElement(ElementName = "RandomSet", Type = typeof(XRandomSet))]
-        [XmlElement(ElementName = "ParallelSet", Type = typeof(XParallelSet))]
-        [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
         public XObjectCollection Subcomponents
 		{
 			get { return subcomponents; }

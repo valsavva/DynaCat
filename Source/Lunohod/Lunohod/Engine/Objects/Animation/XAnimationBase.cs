@@ -44,20 +44,12 @@ namespace Lunohod.Objects
         public float RepeatCount;
 		[XmlAttribute]
 		public XAnimationFillBehavior Fill;
-		
-		[XmlAttribute]
-		public string Target;
 
 		[XmlAttribute("Duration")]
 		public string zDuration
 		{
 			get { return this.Duration.ToString(); }
-			set {
-                if (value.Contains(":"))
-                    this.Duration = TimeSpan.Parse(value, CultureInfo.InvariantCulture);
-                else
-                    this.Duration = TimeSpan.FromSeconds(double.Parse(value, CultureInfo.InvariantCulture));
-            }
+            set { this.Duration = value.ToDuration(); }
 		}
 
         [XmlAttribute("RepeatTime")]
