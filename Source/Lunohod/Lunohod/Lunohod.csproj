@@ -138,6 +138,9 @@
     <Compile Include="Engine\Objects\Animation\XSequenceSet.cs" />
     <Compile Include="Engine\Objects\Animation\XSetBase.cs" />
     <Compile Include="Engine\Objects\IRunnable.cs" />
+    <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
+    <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
+    <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

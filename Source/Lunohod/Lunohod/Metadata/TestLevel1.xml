@@ -30,7 +30,7 @@
 	</Layer>
 	<!-- main layer -->
 	<Layer Id="action" BackColor="#FFFFFFFF">
-		<Tower Bounds="0,0,35,35" SignalSpeed="150"/>
+		<Tower Bounds="0,0,35,35" SignalSpeed="400"/>
 		<Hero Id="hero" Bounds="200,0,40,37" Speed="50" Direction="0,0">
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>
@@ -68,7 +68,7 @@
 			<NumAnimation Duration="7" Autoreverse="false" Target="X,Y" InProgress="true">
 				<KeyFrame Time="0" Value="100,100" Smoothing="Smooth" />
 				<KeyFrame Time="1" Value="400,100" />
-				<KeyFrame Time="3" Value="imageCat1.X,imageCat1.Y" />
+				<KeyFrame Time="3" Value="hero.X,hero.Y" />
 				<KeyFrame Time="5" Value="400,200" Smoothing="Smooth" />
 				<KeyFrame Time="6" Value="100,200" Smoothing="Smooth" />
 				<KeyFrame Time="7" Value="100,100" />

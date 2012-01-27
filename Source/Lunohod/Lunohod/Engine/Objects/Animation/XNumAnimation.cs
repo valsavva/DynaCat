@@ -40,6 +40,7 @@ namespace Lunohod.Objects
 
             // get targets
             targets = this.Target.Split(',').Select(s => new PropertyAccessor(this, s)).ToList();
+			startValues = new List<float?>(new float?[targets.Count]);
 
             // collect keyFrames and check for consistency
             keyFrames = this.GetComponents<XKeyFrame>().ToList();
