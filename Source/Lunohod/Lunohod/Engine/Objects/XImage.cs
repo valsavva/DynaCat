@@ -41,19 +41,26 @@ namespace Lunohod.Objects
                 ));
 		}
 		
-		private Rectangle screenBounds;
+		private System.Drawing.RectangleF screenBounds;
+        private float screenRotation;
 		private Color actualBackColor;
-		
+
+        public override void Update(UpdateParameters p)
+        {
+            base.Update(p);
+
+            screenBounds = this.GetScreenBounds();
+            actualBackColor = this.BackColor * this.GetScreenOpacity();
+			if (this.UseRotation)
+				screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
+        }
+
 		public override void Draw(DrawParameters p)
 		{
-			screenBounds = this.GetScreenBounds();
-			actualBackColor = this.BackColor * this.GetScreenOpacity();
-			
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{
 				if (this.UseRotation)
 				{
-					var screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
 					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
 				}
 				else
@@ -66,7 +73,6 @@ namespace Lunohod.Objects
 				
 				if (this.UseRotation)
 				{
-					var screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
 					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
 				}
 				else

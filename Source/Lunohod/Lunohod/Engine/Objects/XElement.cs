@@ -14,13 +14,13 @@ namespace Lunohod.Objects
     {
 		private Color? backColor = null;
 		private float? rotation;
-		private Rectangle tmpBounds;
+		private System.Drawing.RectangleF tmpBounds;
 		private Vector2 tmpVector;
 		
 		[XmlIgnore]
-        public Rectangle Bounds;
+        public System.Drawing.RectangleF Bounds;
 		[XmlIgnore]
-        public Point Location;
+        public System.Drawing.PointF Location;
         [XmlIgnore]
         public Color BackColor
 		{
@@ -78,7 +78,7 @@ namespace Lunohod.Objects
 			return this.ParentElement.Opacity * this.Opacity;
 		}
 		
-		public Rectangle GetScreenBounds()
+		public System.Drawing.RectangleF GetScreenBounds()
 		{
 			if (this.ParentElement == null)
 				tmpBounds = this.Bounds;
@@ -102,8 +102,8 @@ namespace Lunohod.Objects
 		[XmlAttribute("Bounds")]
 		public string zBounds
 		{
-			set { this.Bounds = value.ToRect(); }
-			get { return Utility.ToBounds(this.Bounds); }
+			set { this.Bounds = value.ToRectF(); }
+			get { return this.Bounds.ToStr(); }
 		}
         [XmlAttribute("BackColor")]
         public string zBackColor
@@ -120,7 +120,7 @@ namespace Lunohod.Objects
 		[XmlAttribute("Location")]
 		public string zLocation
 		{
-			set { this.Location = value.ToPoint(); }
+			set { this.Location = value.ToPointF(); }
 			get { return this.Location.ToStr(); }
 		}
 		
@@ -133,15 +133,15 @@ namespace Lunohod.Objects
 		
 		public bool Intersects(XElement e)
 		{
-			return this.GetScreenBounds().Intersects(e.GetScreenBounds());
+			return this.GetScreenBounds().IntersectsWith(e.GetScreenBounds());
 		}
 		
-		public Rectangle Intersect(XElement e)
+		public System.Drawing.RectangleF Intersect(XElement e)
 		{
-			return Rectangle.Intersect(this.GetScreenBounds(), e.GetScreenBounds());
+			return System.Drawing.RectangleF.Intersect(this.GetScreenBounds(), e.GetScreenBounds());
 		}
 		
-        public virtual bool ProcessCollision(LevelEngine level, Rectangle intersect)
+        public virtual bool ProcessCollision(LevelEngine level, System.Drawing.RectangleF intersect)
         {
 			return false;
         }

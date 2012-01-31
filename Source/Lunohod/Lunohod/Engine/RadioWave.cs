@@ -13,7 +13,7 @@ namespace Lunohod
 		private double diameter;
 		private double textureDiameter;
 		private Texture2D texture;
-		private Rectangle bounds;
+		private System.Drawing.RectangleF bounds;
 
 		public RadioWave(TimeSpan startTime)
 		{

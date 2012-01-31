@@ -26,7 +26,7 @@ namespace Lunohod.Objects
 			p.LevelEngine.obstacles.Add(this);
         }
 
-        public override bool ProcessCollision(LevelEngine level, Rectangle intersect)
+        public override bool ProcessCollision(LevelEngine level, System.Drawing.RectangleF intersect)
         {
 			switch (this.Edges)
 			{

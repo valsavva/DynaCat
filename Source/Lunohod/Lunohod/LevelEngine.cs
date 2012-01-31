@@ -24,7 +24,7 @@ namespace Lunohod
 		private UpdateParameters updateParameters;
 		private DrawParameters drawParameters;
 		
-		private SpriteBatch spriteBatch;
+		private SpriteBatchWithFloats spriteBatch;
 		
 		public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
@@ -75,7 +75,7 @@ namespace Lunohod
 			this.obstacles = new List<XElement>();
 			this.waves = new Dictionary<GameEvent, RadioWave>();
 
-			spriteBatch = new SpriteBatch(this.game.GraphicsDevice);
+			spriteBatch = new SpriteBatchWithFloats(this.game.GraphicsDevice);
 
 			initializeParameters = new InitializeParameters() { Game = game, ScreenEngine = this };
 			updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
@@ -124,7 +124,7 @@ namespace Lunohod
 			ProcessCollisions();
 		}
 		
-		private List<Tuple<XElement, Rectangle, int>> colliders = new List<Tuple<XElement, Rectangle, int>>();
+		private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
 		
 		public void ProcessCollisions()
 		{
@@ -155,16 +155,16 @@ namespace Lunohod
 			colliders.Clear();
 			
 			XElement obstacle;
-			Rectangle heroBounds = this.hero.Bounds;
-			Rectangle obstacleBounds;
-			Rectangle intersect;
+			System.Drawing.RectangleF heroBounds = this.hero.Bounds;
+			System.Drawing.RectangleF obstacleBounds;
+			System.Drawing.RectangleF intersect;
 			
 			for(int i = 0; i < this.obstacles.Count; i++)
 			{
 				obstacle = this.obstacles[i];
 				obstacleBounds = obstacle.GetScreenBounds();
 				
-				Rectangle.Intersect(ref heroBounds, ref obstacleBounds, out intersect);
+				Utility.Intersect(ref heroBounds, ref obstacleBounds, out intersect);
 				
 				if (intersect.Area() != 0)
 				{

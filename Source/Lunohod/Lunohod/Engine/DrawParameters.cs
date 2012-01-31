@@ -7,7 +7,7 @@ namespace Lunohod
 	public class DrawParameters : ParamentersBase
 	{
 		public GameTime GameTime;
-		public SpriteBatch SpriteBatch;
+		public SpriteBatchWithFloats SpriteBatch;
 	}
 }
 

@@ -57,21 +57,36 @@ namespace Lunohod
             else
                 return TimeSpan.FromSeconds(double.Parse(s, CultureInfo.InvariantCulture));
         }
-        
+
         public static Microsoft.Xna.Framework.Point ToPoint(this string s)
-		{
+        {
             string[] parts = s.Split(',');
-			return new Microsoft.Xna.Framework.Point(
+            return new Microsoft.Xna.Framework.Point(
                 int.Parse(parts[0], CultureInfo.InvariantCulture),
                 int.Parse(parts[1], CultureInfo.InvariantCulture)
-			);
-		}
-		
-		public static string ToStr(this Microsoft.Xna.Framework.Point p)
-		{
-            return p.X.ToString(CultureInfo.InvariantCulture) + 
+            );
+        }
+
+        public static System.Drawing.PointF ToPointF(this string s)
+        {
+            string[] parts = s.Split(',');
+            return new System.Drawing.PointF(
+                int.Parse(parts[0], CultureInfo.InvariantCulture),
+                int.Parse(parts[1], CultureInfo.InvariantCulture)
+            );
+        }
+
+        public static string ToStr(this Microsoft.Xna.Framework.Point p)
+        {
+            return p.X.ToString(CultureInfo.InvariantCulture) +
                 p.Y.ToString(CultureInfo.InvariantCulture);
-		}
+        }
+
+        public static string ToStr(this System.Drawing.PointF p)
+        {
+            return p.X.ToString(CultureInfo.InvariantCulture) +
+                p.Y.ToString(CultureInfo.InvariantCulture);
+        }
 
         public static Microsoft.Xna.Framework.Rectangle ToRect(this string s)
         {
@@ -83,8 +98,19 @@ namespace Lunohod
                 int.Parse(parts[3], CultureInfo.InvariantCulture)
             );
         }
-		
-		public static int Area(this Microsoft.Xna.Framework.Rectangle rect)
+
+        public static System.Drawing.RectangleF ToRectF(this string s)
+        {
+            string[] parts = s.Split(',');
+            return new System.Drawing.RectangleF(
+                int.Parse(parts[0], CultureInfo.InvariantCulture),
+                int.Parse(parts[1], CultureInfo.InvariantCulture),
+                int.Parse(parts[2], CultureInfo.InvariantCulture),
+                int.Parse(parts[3], CultureInfo.InvariantCulture)
+            );
+        }
+
+        public static int Area(this Microsoft.Xna.Framework.Rectangle rect)
 		{
 			return rect.Width * rect.Height;
 		}
@@ -94,26 +120,37 @@ namespace Lunohod
 			return c.ToString();
 		}
 
-        public static string ToBounds(this Microsoft.Xna.Framework.Rectangle rect)
+        public static string ToStr(this Microsoft.Xna.Framework.Rectangle rect)
         {
             return rect.Left.ToString(CultureInfo.InvariantCulture) + "," + rect.Top.ToString(CultureInfo.InvariantCulture) + "," + rect.Width.ToString(CultureInfo.InvariantCulture) + "," + rect.Height.ToString(CultureInfo.InvariantCulture);
         }
 
-		public static void ForEach<T>(this IList<T> collection, Action<T> a)
+        public static string ToStr(this System.Drawing.RectangleF rect)
+        {
+            return rect.Left.ToString(CultureInfo.InvariantCulture) + "," + rect.Top.ToString(CultureInfo.InvariantCulture) + "," + rect.Width.ToString(CultureInfo.InvariantCulture) + "," + rect.Height.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static void ForEach<T>(this IList<T> collection, Action<T> a)
 		{
 			if (collection == null)
 				return;
 			for(int i = 0; i < collection.Count; i++)
 				a(collection[i]);
 		}
-		
-		public static void ToVector2(this Rectangle r, ref Vector2 v)
-		{
-			v.X = r.X;
-			v.Y = r.Y;
-		}
-		
-		public static void ToVector2(this Point p, ref Vector2 v)
+
+        public static void ToVector2(this Rectangle r, ref Vector2 v)
+        {
+            v.X = r.X;
+            v.Y = r.Y;
+        }
+
+        public static void ToVector2(this System.Drawing.RectangleF r, ref Vector2 v)
+        {
+            v.X = r.X;
+            v.Y = r.Y;
+        }
+
+        public static void ToVector2(this Point p, ref Vector2 v)
 		{
 			v.X = p.X;
 			v.Y = p.Y;
@@ -130,12 +167,49 @@ namespace Lunohod
 			int dy = p1.Y - p2.Y;
 			return (float)Math.Sqrt(dx * dx + dy * dy);
 		}
-		
-		public static float SquaredDistanceTo(this Point p1, Point p2)
+
+        public static float SquaredDistanceTo(this Point p1, Point p2)
+        {
+            int dx = p1.X - p2.X;
+            int dy = p1.Y - p2.Y;
+            return dx * dx + dy * dy;
+        }
+
+        public static float SquaredDistanceTo(this System.Drawing.PointF p1, System.Drawing.PointF p2)
 		{
-			int dx = p1.X - p2.X;
-			int dy = p1.Y - p2.Y;
+			float dx = p1.X - p2.X;
+			float dy = p1.Y - p2.Y;
 			return dx * dx + dy * dy;
 		}
+
+        public static System.Drawing.PointF Center(this System.Drawing.RectangleF rect)
+        {
+            return new System.Drawing.PointF(rect.X + rect.Width / 2.0f, rect.Y + rect.Height / 2.0F);
+        }
+
+        public static void Center(this System.Drawing.RectangleF rect, ref Vector2 v)
+        {
+            v.X = rect.X + rect.Width / 2.0f;
+            v.Y = rect.Y + rect.Height / 2.0F;
+        }
+
+        public static void Intersect(ref System.Drawing.RectangleF rect1, ref System.Drawing.RectangleF rect2, out System.Drawing.RectangleF rectInt)
+        {
+            rectInt = rect1;
+            rectInt.Intersect(rect2);
+        }
+
+        public static float Area(this System.Drawing.RectangleF rect)
+        {
+            return rect.Width * rect.Height;
+        }
+
+        public static void ToRectangle(this System.Drawing.RectangleF rectF, ref Rectangle rect)
+        {
+            rect.X = (int)Math.Round(rectF.X);
+            rect.Y = (int)Math.Round(rectF.Y);
+            rect.Width = (int)Math.Round(rectF.Width);
+            rect.Height = (int)Math.Round(rectF.Height);
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace Lunohod.Objects
 		public string zFrameBounds
 		{
 			set { this.FrameBounds = value.ToRect(); }
-			get { return this.FrameBounds.ToBounds(); }
+			get { return this.FrameBounds.ToStr(); }
 		}
 		
 		public override void Draw(DrawParameters p)

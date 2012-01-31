@@ -14,8 +14,8 @@ namespace Lunohod.Objects
 	{
 		private XElement object1;
 		private XElement object2;
-		private Point c1;
-		private Point c2;
+		private System.Drawing.PointF c1;
+		private System.Drawing.PointF c2;
 		private float squaredDistance;
 		private float squaredValue;
 		
@@ -50,8 +50,8 @@ namespace Lunohod.Objects
 		
 		public override float GetNewValue()
 		{
-			c1 = object1.GetScreenBounds().Center;
-			c2 = object2.GetScreenBounds().Center;
+			c1 = object1.GetScreenBounds().Center();
+			c2 = object2.GetScreenBounds().Center();
 			
 			squaredDistance = c1.SquaredDistanceTo(c2);
 			

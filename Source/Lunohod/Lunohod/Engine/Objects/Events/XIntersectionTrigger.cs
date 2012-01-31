@@ -14,9 +14,9 @@ namespace Lunohod.Objects
     {
         private XElement object1;
         private XElement object2;
-        private Rectangle rect1;
-        private Rectangle rect2;
-        private Rectangle rectInt;
+        private System.Drawing.RectangleF rect1;
+        private System.Drawing.RectangleF rect2;
+        private System.Drawing.RectangleF rectInt;
 
         [XmlAttribute]
         public string ObjectId1;
@@ -50,7 +50,7 @@ namespace Lunohod.Objects
             rect1 = object1.GetScreenBounds();
             rect2 = object2.GetScreenBounds();
 
-            Rectangle.Intersect(ref rect1, ref rect2, out rectInt);
+            Utility.Intersect(ref rect1, ref rect2, out rectInt);
 
             return rectInt.Area();
         }

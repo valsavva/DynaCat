@@ -91,6 +91,7 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml">
       <Private>False</Private>
@@ -225,6 +226,7 @@
     <Compile Include="Engine\ParamentersBase.cs" />
     <Compile Include="Engine\RadioWave.cs" />
     <Compile Include="Engine\UpateParameters.cs" />
+    <None Include="Engine\zzz.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="GameEvent.cs" />
     <Compile Include="GameEventQueue.cs" />
@@ -238,6 +240,7 @@
     <Compile Include="OS\Windows\ErrorLogger.cs" />
     <Compile Include="OS\Windows\Program.cs" />
     <Compile Include="ScreenEngine.cs" />
+    <Compile Include="SpriteBatchWithFloats.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>

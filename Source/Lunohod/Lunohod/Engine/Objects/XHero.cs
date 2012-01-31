@@ -11,12 +11,9 @@ namespace Lunohod.Objects
     public class XHero : XElement
     {
 		private Vector2 offset;
-		private Vector2 location;
 		private Vector2 towerCenter;
 		private Vector2 heroCenter;
 		private double distanceToTower;
-		private Point oldLocation;
-		
 		
 		[XmlAttribute]
 		public float Speed;
@@ -50,24 +47,14 @@ namespace Lunohod.Objects
 		{
 			base.Update(p);
 			
-			if (oldLocation.X != this.Bounds.X || oldLocation.Y != this.Bounds.Y)
-			{
-				this.Bounds.ToVector2(ref location);
-			}
-			
 			// calculate the new location of the hero
 			offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
 
-			location += offset;
-			
-			this.Bounds.X = (int)Math.Round(location.X);
-			this.Bounds.Y = (int)Math.Round(location.Y);
-
-			oldLocation = this.Bounds.Location();
+            this.Bounds.Offset(offset.X, offset.Y);
 			
 			// calculate distance to the tower
-			p.LevelEngine.tower.Bounds.Center.ToVector2(ref towerCenter);
-			this.Bounds.Center.ToVector2(ref heroCenter);
+            p.LevelEngine.tower.Bounds.Center(ref towerCenter);
+			this.Bounds.Center(ref heroCenter);
 			distanceToTower = (towerCenter - heroCenter).Length();
 		}
 		
