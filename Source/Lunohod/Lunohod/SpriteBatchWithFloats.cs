@@ -9,7 +9,6 @@ namespace Lunohod
 {
     public class SpriteBatchWithFloats : SpriteBatch
     {
-        private Vector2 location;
         private Rectangle tmpRect;
 
         public SpriteBatchWithFloats(GraphicsDevice graphicsDevice)
@@ -21,7 +20,7 @@ namespace Lunohod
         {
             screenBounds.ToRectangle(ref tmpRect);
 
-            base.Draw(texture2D, location, tmpRect, color, rotation, origin, new Vector2(), spriteEffects, layerDepth);
+            base.Draw(texture2D, tmpRect, sourceRectangle, color, rotation, origin, spriteEffects, layerDepth);
         }
 
         internal void Draw(Texture2D texture2D, System.Drawing.RectangleF screenBounds, Rectangle? sourceRectangle, Color actualBackColor)

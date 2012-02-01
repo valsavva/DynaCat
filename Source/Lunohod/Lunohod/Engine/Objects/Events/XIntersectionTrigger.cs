@@ -28,7 +28,6 @@ namespace Lunohod.Objects
             this.Compare = XValueComparison.G;
         }
 
-
         public override void Initialize(InitializeParameters p)
         {
             base.Initialize(p);
@@ -45,7 +44,7 @@ namespace Lunohod.Objects
             return o;
         }
 
-        public override float GetNewValue()
+        public override float GetValue1()
         {
             rect1 = object1.GetScreenBounds();
             rect2 = object2.GetScreenBounds();

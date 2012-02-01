@@ -12,7 +12,7 @@ namespace Lunohod.Objects
     [XmlType("NumTrigger")]
 	public class XNumTrigger : XNumTriggerBase
 	{
-		private PropertyAccessor propertyAccessor;
+		private NumValueReader value1Reader;
 		
 		[XmlAttribute]
 		public string Property;
@@ -21,12 +21,12 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			propertyAccessor = new PropertyAccessor(this, this.Property);
+			value1Reader = new NumValueReader(this, this.Property);
 		}
 
-		public override float GetNewValue()
+		public override float GetValue1()
 		{
-			return propertyAccessor.FloatPropertyValue;
+			return value1Reader.Value;
 		}
 	}
 }
