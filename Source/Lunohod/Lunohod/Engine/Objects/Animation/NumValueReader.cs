@@ -15,7 +15,7 @@ namespace Lunohod.Objects
 
         public NumValueReader(XObject currentObject, string descriptor)
         {
-            if (!float.TryParse(descriptor, out floatValue))
+            if (!string.IsNullOrEmpty(descriptor) && !float.TryParse(descriptor, out floatValue))
                 this.accessor = new PropertyAccessor(currentObject, descriptor);
         }
 

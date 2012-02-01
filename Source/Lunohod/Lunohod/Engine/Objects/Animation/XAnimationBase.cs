@@ -98,7 +98,8 @@ namespace Lunohod.Objects
 		}
 		public virtual void Pause()
 		{
-			this.isPaused = true;
+			if (this.inProgress)
+				this.isPaused = true;
 		}
 		public virtual void Resume()
 		{
@@ -109,16 +110,18 @@ namespace Lunohod.Objects
 		}
         public virtual void Stop()
         {
-			if (this.Fill == XAnimationFillBehavior.Reset)
-				this.elapsedTime = TimeSpan.Zero;
-			else
-				this.elapsedTime = this.Duration + (this.Autoreverse ? this.Duration : TimeSpan.Zero);
+			if (this.inProgress)
+			{
+				if (this.Fill == XAnimationFillBehavior.Reset)
+					this.elapsedTime = TimeSpan.Zero;
+				else
+					this.elapsedTime = this.Duration + (this.Autoreverse ? this.Duration : TimeSpan.Zero);
 
-            UpdateAnimation();
+				UpdateAnimation();
+			}
 
 			this.inProgress = false;
 			this.isPaused = false;
         }
     }
 }
-

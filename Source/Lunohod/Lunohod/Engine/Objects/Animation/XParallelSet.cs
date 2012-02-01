@@ -9,14 +9,11 @@ namespace Lunohod.Objects
     [XmlType("ParallelSet")]
     public class XParallelSet : XSetBase
     {
-        private List<IRunnable> runnables;
         private int repeatsDone = 0;
 
         public override void Initialize(InitializeParameters p)
         {
             base.Initialize(p);
-
-            runnables = this.CollectRunnables();
         }
         
         public override void Update(UpdateParameters p)

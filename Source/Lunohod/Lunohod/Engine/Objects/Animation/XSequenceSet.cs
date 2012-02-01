@@ -12,7 +12,6 @@ namespace Lunohod.Objects
     [XmlType("SequenceSet")]
 	public class XSequenceSet : XSetBase
 	{
-		private List<IRunnable> runnables;
 		private IRunnable currentRunnable;
 		
 		private int repeatsDone = 0;
@@ -24,8 +23,6 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-			
-			runnables = this.CollectRunnables();
 		}
 
 		public override void Update(UpdateParameters p)
@@ -107,9 +104,6 @@ namespace Lunohod.Objects
 			
 			repeatsDone = 0;
 			runnables.ForEach(a => a.Stop());
-		}
-		public override void UpdateAnimation()
-		{
 		}
 	}
 }

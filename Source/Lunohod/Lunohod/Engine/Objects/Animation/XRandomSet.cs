@@ -42,7 +42,6 @@ namespace Lunohod.Objects
 
         private Random random = new Random();
 
-        private List<IRunnable> runnables;
         private IRunnable currentRunnable;
         private ProbabilityList probabilities;
 
@@ -55,14 +54,12 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            runnables = this.CollectRunnables();
-
             if (!string.IsNullOrWhiteSpace(this.Probabilities))
             {
                 probabilities = new ProbabilityList(this.random, this.Probabilities.Split(',').Select(s => double.Parse(s)));
 
                 if (probabilities.Count != runnables.Count)
-                    throw new InvalidOperationException(string.Format("Number of probabilities does not match the number of runnables - {0} != {1}", probabilities.Count, runnables));
+                    throw new InvalidOperationException(string.Format("Number of probabilities must match the number of runnables - {0} != {1}", probabilities.Count, runnables));
             }
         }
 

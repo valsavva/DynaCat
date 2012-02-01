@@ -11,12 +11,22 @@ namespace Lunohod.Objects
 {
     public class XSetBase : XAnimationBase
     {
-        public XSetBase()
+		protected List<IRunnable> runnables;
+
+		public XSetBase()
         {
         }
 
-        public override void UpdateAnimation()
-        {
-        }
-    }
+		public override void Initialize(InitializeParameters p)
+		{
+			base.Initialize(p);
+			
+			runnables = this.CollectRunnables();
+		}
+		
+		public override void UpdateAnimation()
+		{
+			
+		}
+	}
 }
