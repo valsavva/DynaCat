@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="AnimationSamples.xml" Bounds="0,0,480,320">
+
+	<Include File="Textures.xml" />
+	<Include File="ClassCursor.xml" />
+
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
+        <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
+    </Layer>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Tower Bounds="0,0,35,35" SignalSpeed="800"/>	
+		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor" />
+		
+		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
+		<Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
+		<Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
+		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
+		
+		<Enemy Id="abr101" Bounds="250, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr102" Bounds="250, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr103" Bounds="250, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr104" Bounds="250, 220, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr105" Bounds="250, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr106" Bounds="230, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr107" Bounds="270, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr108" Bounds="290, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr109" Bounds="210, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr110" Bounds="230, 140, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr111" Bounds="300, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr112" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr113" Bounds="280, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr114" Bounds="300, 320, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr115" Bounds="280, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr116" Bounds="300, 260, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr117" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr118" Bounds="300, 280, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr119" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr120" Bounds="300, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr201" Bounds="250, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr202" Bounds="250, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr203" Bounds="250, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr204" Bounds="250, 230, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr205" Bounds="250, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr206" Bounds="230, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr207" Bounds="270, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr208" Bounds="290, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr209" Bounds="210, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr210" Bounds="230, 150, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr211" Bounds="300, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr212" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr213" Bounds="280, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr214" Bounds="300, 330, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr215" Bounds="280, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr216" Bounds="300, 270, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr217" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr218" Bounds="300, 290, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr219" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr220" Bounds="300, 250, 10, 10" Class="clsAbr" />
+
+		<Enemy Id="abr1101" Bounds="250, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1102" Bounds="250, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1103" Bounds="250, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1104" Bounds="250, 220, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1105" Bounds="250, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1106" Bounds="230, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1107" Bounds="270, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1108" Bounds="290, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1109" Bounds="210, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1110" Bounds="230, 140, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1111" Bounds="300, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1112" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1113" Bounds="280, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1114" Bounds="300, 320, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1115" Bounds="280, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1116" Bounds="300, 260, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1117" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1118" Bounds="300, 280, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1119" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1120" Bounds="300, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1201" Bounds="250, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1202" Bounds="250, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1203" Bounds="250, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1204" Bounds="250, 230, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1205" Bounds="250, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1206" Bounds="230, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1207" Bounds="270, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1208" Bounds="290, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1209" Bounds="210, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1210" Bounds="230, 150, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1211" Bounds="300, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1212" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1213" Bounds="280, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1214" Bounds="300, 330, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1215" Bounds="280, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1216" Bounds="300, 270, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1217" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1218" Bounds="300, 290, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1219" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr1220" Bounds="300, 250, 10, 10" Class="clsAbr" />
+
+		<Enemy Id="abr2101" Bounds="250, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2102" Bounds="250, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2103" Bounds="250, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2104" Bounds="250, 220, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2105" Bounds="250, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2106" Bounds="230, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2107" Bounds="270, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2108" Bounds="290, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2109" Bounds="210, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2110" Bounds="230, 140, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2111" Bounds="300, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2112" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2113" Bounds="280, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2114" Bounds="300, 320, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2115" Bounds="280, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2116" Bounds="300, 260, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2117" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2118" Bounds="300, 280, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2119" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2120" Bounds="300, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2201" Bounds="250, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2202" Bounds="250, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2203" Bounds="250, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2204" Bounds="250, 230, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2205" Bounds="250, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2206" Bounds="230, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2207" Bounds="270, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2208" Bounds="290, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2209" Bounds="210, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2210" Bounds="230, 150, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2211" Bounds="300, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2212" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2213" Bounds="280, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2214" Bounds="300, 330, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2215" Bounds="280, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2216" Bounds="300, 270, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2217" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2218" Bounds="300, 290, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2219" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr2220" Bounds="300, 250, 10, 10" Class="clsAbr" />
+
+		<Enemy Id="abr3101" Bounds="250, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3102" Bounds="250, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3103" Bounds="250, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3104" Bounds="250, 220, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3105" Bounds="250, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3106" Bounds="230, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3107" Bounds="270, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3108" Bounds="290, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3109" Bounds="210, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3110" Bounds="230, 140, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3111" Bounds="300, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3112" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3113" Bounds="280, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3114" Bounds="300, 320, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3115" Bounds="280, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3116" Bounds="300, 260, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3117" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3118" Bounds="300, 280, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3119" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3120" Bounds="300, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3201" Bounds="250, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3202" Bounds="250, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3203" Bounds="250, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3204" Bounds="250, 230, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3205" Bounds="250, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3206" Bounds="230, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3207" Bounds="270, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3208" Bounds="290, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3209" Bounds="210, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3210" Bounds="230, 150, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3211" Bounds="300, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3212" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3213" Bounds="280, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3214" Bounds="300, 330, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3215" Bounds="280, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3216" Bounds="300, 270, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3217" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3218" Bounds="300, 290, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3219" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr3220" Bounds="300, 250, 10, 10" Class="clsAbr" />
+		
+		<Enemy Id="abr4101" Bounds="250, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4102" Bounds="250, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4103" Bounds="250, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4104" Bounds="250, 220, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4105" Bounds="250, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4106" Bounds="230, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4107" Bounds="270, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4108" Bounds="290, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4109" Bounds="210, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4110" Bounds="230, 140, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4111" Bounds="300, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4112" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4113" Bounds="280, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4114" Bounds="300, 320, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4115" Bounds="280, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4116" Bounds="300, 260, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4117" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4118" Bounds="300, 280, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4119" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4120" Bounds="300, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4201" Bounds="250, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4202" Bounds="250, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4203" Bounds="250, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4204" Bounds="250, 230, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4205" Bounds="250, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4206" Bounds="230, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4207" Bounds="270, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4208" Bounds="290, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4209" Bounds="210, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4210" Bounds="230, 150, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4211" Bounds="300, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4212" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4213" Bounds="280, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4214" Bounds="300, 330, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4215" Bounds="280, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4216" Bounds="300, 270, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4217" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4218" Bounds="300, 290, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4219" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr4220" Bounds="300, 250, 10, 10" Class="clsAbr" />
+
+		
+		<Enemy Id="abr5101" Bounds="250, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5102" Bounds="250, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5103" Bounds="250, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5104" Bounds="250, 220, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5105" Bounds="250, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5106" Bounds="230, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5107" Bounds="270, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5108" Bounds="290, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5109" Bounds="210, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5110" Bounds="230, 140, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5111" Bounds="300, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5112" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5113" Bounds="280, 200, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5114" Bounds="300, 320, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5115" Bounds="280, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5116" Bounds="300, 260, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5117" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5118" Bounds="300, 280, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5119" Bounds="280, 160, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5120" Bounds="300, 240, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5201" Bounds="250, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5202" Bounds="250, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5203" Bounds="250, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5204" Bounds="250, 230, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5205" Bounds="250, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5206" Bounds="230, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5207" Bounds="270, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5208" Bounds="290, 190, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5209" Bounds="210, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5210" Bounds="230, 150, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5211" Bounds="300, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5212" Bounds="300, 180, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5213" Bounds="280, 210, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5214" Bounds="300, 330, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5215" Bounds="280, 250, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5216" Bounds="300, 270, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5217" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5218" Bounds="300, 290, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5219" Bounds="280, 170, 10, 10" Class="clsAbr" />
+		<Enemy Id="abr5220" Bounds="300, 250, 10, 10" Class="clsAbr" />
+	</Layer>
+
+	<Include File="Dashboard.xml" />	
+
+</Level>
+
