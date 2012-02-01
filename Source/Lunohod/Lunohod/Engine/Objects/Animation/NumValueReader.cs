@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Lunohod.Objects;
+using System.Globalization;
 
 namespace Lunohod.Objects
 {
@@ -16,7 +17,7 @@ namespace Lunohod.Objects
 
         public NumValueReader(XObject currentObject, string descriptor)
         {
-            if (!string.IsNullOrEmpty(descriptor) && !float.TryParse(descriptor, out floatValue))
+            if (!string.IsNullOrEmpty(descriptor) && !float.TryParse(descriptor, NumberStyles.Number, CultureInfo.InvariantCulture, out floatValue))
 			{
                 this.accessor = new PropertyAccessor(currentObject, descriptor);
 				func = this.ReturnAccessorValue;
