@@ -46,7 +46,7 @@ namespace Lunohod
 		
 		public static string ToStr(this Vector2 v)
 		{
-            return v.X.ToString(CultureInfo.InvariantCulture) + 
+            return v.X.ToString(CultureInfo.InvariantCulture) + "," +
                 v.Y.ToString(CultureInfo.InvariantCulture);
 		}
 
@@ -67,22 +67,7 @@ namespace Lunohod
             );
         }
 
-        public static System.Drawing.PointF ToPointF(this string s)
-        {
-            string[] parts = s.Split(',');
-            return new System.Drawing.PointF(
-                int.Parse(parts[0], CultureInfo.InvariantCulture),
-                int.Parse(parts[1], CultureInfo.InvariantCulture)
-            );
-        }
-
         public static string ToStr(this Microsoft.Xna.Framework.Point p)
-        {
-            return p.X.ToString(CultureInfo.InvariantCulture) +
-                p.Y.ToString(CultureInfo.InvariantCulture);
-        }
-
-        public static string ToStr(this System.Drawing.PointF p)
         {
             return p.X.ToString(CultureInfo.InvariantCulture) +
                 p.Y.ToString(CultureInfo.InvariantCulture);
@@ -175,16 +160,16 @@ namespace Lunohod
             return dx * dx + dy * dy;
         }
 
-        public static float SquaredDistanceTo(this System.Drawing.PointF p1, System.Drawing.PointF p2)
+        public static float SquaredDistanceTo(this Vector2 p1, Vector2 p2)
 		{
 			float dx = p1.X - p2.X;
 			float dy = p1.Y - p2.Y;
 			return dx * dx + dy * dy;
 		}
 
-        public static System.Drawing.PointF Center(this System.Drawing.RectangleF rect)
+        public static Vector2 Center(this System.Drawing.RectangleF rect)
         {
-            return new System.Drawing.PointF(rect.X + rect.Width / 2.0f, rect.Y + rect.Height / 2.0F);
+            return new Vector2(rect.X + rect.Width / 2.0f, rect.Y + rect.Height / 2.0F);
         }
 
         public static void Center(this System.Drawing.RectangleF rect, ref Vector2 v)

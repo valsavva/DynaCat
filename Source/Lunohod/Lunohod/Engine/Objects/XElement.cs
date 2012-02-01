@@ -20,7 +20,7 @@ namespace Lunohod.Objects
 		[XmlIgnore]
         public System.Drawing.RectangleF Bounds;
 		[XmlIgnore]
-        public System.Drawing.PointF Location;
+        public Vector2 Location;
         [XmlIgnore]
         public Color BackColor
 		{
@@ -94,7 +94,7 @@ namespace Lunohod.Objects
 				}
 			}
 			
-			tmpBounds.Offset(this.Location);
+			tmpBounds.Offset(this.Location.X, this.Location.Y);
 			
 			return tmpBounds;
 		}
@@ -120,7 +120,7 @@ namespace Lunohod.Objects
 		[XmlAttribute("Location")]
 		public string zLocation
 		{
-			set { this.Location = value.ToPointF(); }
+			set { this.Location = value.ToVector2(); }
 			get { return this.Location.ToStr(); }
 		}
 		

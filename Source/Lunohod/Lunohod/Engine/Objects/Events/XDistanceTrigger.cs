@@ -14,8 +14,8 @@ namespace Lunohod.Objects
 	{
 		private XElement object1;
 		private XElement object2;
-		private System.Drawing.PointF c1;
-		private System.Drawing.PointF c2;
+		private Vector2 c1;
+		private Vector2 c2;
 		private float squaredDistance;
 		private float squaredValue;
 		

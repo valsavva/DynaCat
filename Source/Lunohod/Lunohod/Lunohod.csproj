@@ -141,6 +141,7 @@
     <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
+    <Compile Include="SpriteBatchWithFloats.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
