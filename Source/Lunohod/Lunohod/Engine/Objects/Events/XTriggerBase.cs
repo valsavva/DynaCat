@@ -13,9 +13,9 @@ namespace Lunohod.Objects
 	{
 		private bool isTriggered;
 			
-		private ActionCallerBase action;
-		private ActionCallerBase enterAction;
-		private ActionCallerBase exitAction;
+		private List<ActionCallerBase> actions;
+		private List<ActionCallerBase> enterActions;
+		private List<ActionCallerBase> exitActions;
 		
 		[XmlAttribute]
 		public string EnterAction;
@@ -23,33 +23,64 @@ namespace Lunohod.Objects
 		public string ExitAction;
 		[XmlAttribute]
 		public string Action;
+		[XmlAttribute]
+		public string Group;
+		[XmlAttribute]
+		public bool StayTriggered;
 
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-
-			this.action = ActionCaller.CreateActionCaller(this, this.Action);
-			this.enterAction = ActionCaller.CreateActionCaller(this, this.EnterAction);
-			this.exitAction = ActionCaller.CreateActionCaller(this, this.ExitAction);
+			if (this.Action != null)
+				this.actions = this.Action.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
+			if (this.EnterAction != null)
+				this.enterActions = this.EnterAction.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
+			if (this.ExitAction != null)
+				this.exitActions = this.ExitAction.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
 		}
 		
 		public abstract bool IsTriggered();
 		
 		public override void Update(UpdateParameters p)
 		{
-			base.Update(p);
-			
 			bool oldIsTriggered = this.isTriggered;
-			this.isTriggered = this.IsTriggered();
 			
-			if (this.isTriggered && !oldIsTriggered && enterAction != null)
-				enterAction.Call();
-			if (this.isTriggered && action != null)
-				action.Call();
-			if (!this.isTriggered && oldIsTriggered && exitAction != null)
-				exitAction.Call();
+			if (oldIsTriggered && this.StayTriggered)
+			{
+				// once we're triggered, we stay triggered
+			}
+			// if we belong to a group of triggers and one of them has already signaled - get out
+			else if (this.Group != null && this.Parent.GetSignalContainer("triggerGroups").IsSignaled(this.Group))
+			{
+				this.isTriggered = false;
+			}
+			else
+			{
+				// get new state
+				this.isTriggered = this.IsTriggered();
+			}
+			
+			// if triggered and belong to a group - need to signal it for others in the group
+			if (this.isTriggered && this.Group != null)
+				this.Parent.GetSignalContainer("triggerGroups").Signal(this.Group);
+			
+			// fire appropriate actions
+			if (this.isTriggered && !oldIsTriggered && enterActions != null)
+				enterActions.ForEach(a => a.Call());
+			if (this.isTriggered && actions != null)
+				actions.ForEach(a => a.Call());
+			if (!this.isTriggered && oldIsTriggered && exitActions != null)
+				exitActions.ForEach(a => a.Call());
+
+			if (this.isTriggered)
+				base.Update(p);
 		}
 		
+		public override void Draw(DrawParameters p)
+		{
+			if (this.isTriggered)
+				base.Draw(p);
+		}
 	}
 }
 

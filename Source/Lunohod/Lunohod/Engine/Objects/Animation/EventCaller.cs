@@ -23,7 +23,7 @@ namespace Lunohod.Objects
 		
 		public override void Call()
 		{
-			target.GetSignalContainer().Signal(evnt);
+			target.GetSignalContainer("events").Signal(evnt);
 		}
 	}
 }

@@ -22,6 +22,7 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 			
 			runnables = this.CollectRunnables();
+			runnables.ForEach(r => r.InProgress = false);
 		}
 		
 		public override void UpdateAnimation()

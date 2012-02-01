@@ -8,7 +8,7 @@ namespace Lunohod.Objects
 	abstract public class XObject : IDisposable
 	{
 		protected bool isDisposed = false;
-		private SignalContainer signalContainer = null;
+		private Dictionary<string, SignalContainer> signalContainers = null;
 		private XObjectCollection subcomponents = null;
 		
 		[XmlAttribute]
@@ -55,9 +55,8 @@ namespace Lunohod.Objects
 		[XmlElement(ElementName = "BoolTrigger", Type = typeof(XBoolTrigger))]
 		[XmlElement(ElementName = "NumTrigger", Type = typeof(XNumTrigger))]
 		
-		// Classes and states
+		// Classes
         [XmlElement(ElementName = "Class", Type = typeof(XClass))]
-        [XmlElement(ElementName = "State", Type = typeof(XState))]
 
 		// Characters
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
@@ -156,8 +155,11 @@ namespace Lunohod.Objects
 					subcomponent.Update(p);
 				}
 
-			if (signalContainer != null)
-				signalContainer.Clear();
+			if (signalContainers != null)
+			{
+				foreach(var item in signalContainers)
+					item.Value.Clear();
+			}
 		}
 		
 		public virtual void Draw(DrawParameters p)
@@ -233,6 +235,18 @@ namespace Lunohod.Objects
 			return null;
 		}
 		
+		public XObject FindAncestor(Predicate<XObject> p)
+		{
+			XObject result = this.Parent;
+			
+			while((result != null) && !p(result))
+			{
+				result = result.Parent;
+			}
+			
+			return result;
+		}
+		
 		public XObject GetRoot()
 		{
 			if (this.Parent == null)
@@ -259,12 +273,20 @@ namespace Lunohod.Objects
 			}
 		}
 		
-		public SignalContainer GetSignalContainer()
+		public SignalContainer GetSignalContainer(string containerName)
 		{
-			if (signalContainer == null)
-				signalContainer = new SignalContainer();
+			if (signalContainers == null)
+				signalContainers = new Dictionary<string, SignalContainer>();
 			
-			return signalContainer;
+			SignalContainer container = null;
+			
+			if (!signalContainers.TryGetValue(containerName, out container))
+			{
+				container = new SignalContainer();
+				signalContainers.Add(containerName, container);
+			}
+			
+			return container;
 		}
 
         public List<IRunnable> CollectRunnables(List<IRunnable> result = null)

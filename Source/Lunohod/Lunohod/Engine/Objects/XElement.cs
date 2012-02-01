@@ -128,7 +128,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			this.ParentElement = this.Parent as XElement;
+			this.ParentElement = this.FindAncestor(o => o is XElement) as XElement;
 		}
 		
 		public bool Intersects(XElement e)

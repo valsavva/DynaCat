@@ -86,36 +86,35 @@ namespace Lunohod.Objects
 						trigger.Action = trigger.Action.Replace("this", instance.Id);
 					if (trigger.ExitAction != null)
 						trigger.ExitAction = trigger.ExitAction.Replace("this", instance.Id);
-
-                    XDistanceTrigger distanceTrigger = trigger as XDistanceTrigger;
-                    if (distanceTrigger != null)
-                    {
+					
+					if (trigger is XDistanceTrigger)
+					{
+	                    XDistanceTrigger distanceTrigger = trigger as XDistanceTrigger;
                         distanceTrigger.ObjectId1 = distanceTrigger.ObjectId1.Replace("this", instance.Id);
                         distanceTrigger.ObjectId2 = distanceTrigger.ObjectId2.Replace("this", instance.Id);
                     }
-                    else
+                    else if (trigger is XIntersectionTrigger)
                     {
                         XIntersectionTrigger intersectionTrigger = trigger as XIntersectionTrigger;
-                        if (intersectionTrigger != null)
-                        {
-                            intersectionTrigger.ObjectId1 = intersectionTrigger.ObjectId1.Replace("this", instance.Id);
-                            intersectionTrigger.ObjectId2 = intersectionTrigger.ObjectId2.Replace("this", instance.Id);
-                        }
+                        intersectionTrigger.ObjectId1 = intersectionTrigger.ObjectId1.Replace("this", instance.Id);
+                        intersectionTrigger.ObjectId2 = intersectionTrigger.ObjectId2.Replace("this", instance.Id);
+					}
+					else if (trigger is XBoolTrigger)
+					{
+						XBoolTrigger boolTrigger = trigger as XBoolTrigger;
+						if (boolTrigger.Condition != null)
+							boolTrigger.Condition = boolTrigger.Condition.Replace("this", instance.Id);
                     }
-                }
-				
-				// states
-				XState state = subcomponent as XState;
-				if (state != null)
-				{
-                    if (state.When != null)
-                        state.When = state.When.Replace("this", instance.Id);
-                    if (state.AlwaysOnce != null)
-                        state.AlwaysOnce = state.AlwaysOnce.Replace("this", instance.Id);
+					else if (trigger is XNumTrigger)
+					{
+						XNumTrigger numTrigger = trigger as XNumTrigger;
+
+						numTrigger.Property = numTrigger.Property.Replace("this", instance.Id);
+						if (numTrigger.Value != null)
+							numTrigger.Value = numTrigger.Value.Replace("this", instance.Id);
+					}
                 }
 			}
-			
-			
 		}
 	}
 }

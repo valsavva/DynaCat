@@ -52,6 +52,7 @@ namespace Lunohod.Objects
         public override void Start()
         {
             base.Start();
+			repeatsDone = 0;
             runnables.ForEach(a => a.Start());
         }
 

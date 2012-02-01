@@ -131,8 +131,5 @@ namespace Lunohod.Objects
             repeatsDone = 0;
             runnables.ForEach(a => a.Stop());
         }
-        public override void UpdateAnimation()
-        {
-        }
     }
 }

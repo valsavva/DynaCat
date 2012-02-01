@@ -102,7 +102,6 @@ namespace Lunohod.Objects
 			if (currentRunnable == null)
 				return;
 			
-			repeatsDone = 0;
 			runnables.ForEach(a => a.Stop());
 		}
 	}
