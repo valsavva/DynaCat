@@ -141,6 +141,7 @@
     <Compile Include="Engine\DrawParameters.cs" />
     <Compile Include="Engine\InitializeParameters.cs" />
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
     <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
@@ -213,7 +214,6 @@
     <Compile Include="Engine\Objects\XSprite.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\XState.cs" />
     <Compile Include="Engine\Objects\XTapArea.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -777,6 +777,42 @@
     <Content Include="Content\TestLevel2\_T_.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\cursor_50x50_blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_50x50_brown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_50x50_gray.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_50x50_green.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_50x50_light_blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_50x50_purple.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_50x50_red.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_50x50_yellow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\grid_480x320.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\white_clear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\AnimationSamples.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassCursor.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\ClassHero.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -820,6 +856,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\test_b-2_stick_and_bounce_objects.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Textures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
