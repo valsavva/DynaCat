@@ -141,6 +141,7 @@
     <Compile Include="Engine\DrawParameters.cs" />
     <Compile Include="Engine\InitializeParameters.cs" />
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
     <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
@@ -213,7 +214,6 @@
     <Compile Include="Engine\Objects\XSprite.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\Objects\XState.cs" />
     <Compile Include="Engine\Objects\XTapArea.cs">
       <SubType>Code</SubType>
     </Compile>
