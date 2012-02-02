@@ -168,6 +168,10 @@ namespace Lunohod.Objects
 		
 		public override void DrawDebug(DrawParameters p)
 		{
+#if WINDOWS
+#else
+			return;
+#endif
 			if (!(this is XImage) && !(this is XBlock))
 				return;
 			
