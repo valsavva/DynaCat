@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Xml.Serialization;
+using System.Diagnostics;
 
 namespace Lunohod
 {
@@ -198,6 +199,9 @@ namespace Lunohod
 				
 				this.game.GameObject.Draw(drawParameters);
 				
+				if (this.game.DrawDebugInfo)
+					this.DrawDebugInfo(drawParameters);
+				
 				this.spriteBatch.End();
 				
 			}
@@ -205,6 +209,20 @@ namespace Lunohod
 			{
 				Console.WriteLine(ex.ToString());
 			}
+		}
+
+		Stopwatch sw = new Stopwatch();
+		Vector2 fpsPos = new Vector2(5, 280);
+		double fps = 0;
+		public void DrawDebugInfo(DrawParameters dp)
+		{
+			sw.Stop();
+			if (sw.Elapsed.TotalMilliseconds > 0)
+				fps = fps * 0.9 + (1000.0 / sw.Elapsed.TotalMilliseconds) * 0.1;
+			sw.Reset();
+			sw.Start();
+			
+			dp.SpriteBatch.DrawString(game.SystemFont, Math.Round(fps).ToString(), fpsPos, Color.Red);
 		}
 
 		public override void Unload()

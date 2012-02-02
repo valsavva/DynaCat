@@ -59,6 +59,7 @@ namespace Lunohod
                     || Keyboard.GetState().IsKeyDown(Keys.RightShift);
 #else
 				return false;
+				return true;
 #endif
 			}
 		}
