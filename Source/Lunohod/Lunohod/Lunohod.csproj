@@ -142,6 +142,7 @@
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
     <Compile Include="SpriteBatchWithFloats.cs" />
     <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
+    <Compile Include="Engine\Objects\Animation\XDo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
