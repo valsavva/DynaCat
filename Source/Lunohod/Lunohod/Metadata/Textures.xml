@@ -9,6 +9,18 @@
 		<Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
 		<Texture Id="cursor_50x50_red" Source="cursor_50x50_red" />
 		<Texture Id="cursor_50x50_yellow" Source="cursor_50x50_yellow" />
+
+
+		<Texture Id="cursor_solid_50x50_blue" Source="cursor_solid_50x50_blue" />
+		<Texture Id="cursor_solid_50x50_green" Source="cursor_solid_50x50_green" />
+		<Texture Id="cursor_solid_50x50_red" Source="cursor_solid_50x50_red" />
+
+		<Texture Id="cursor_solid_10x10_black_blue" Source="cursor_solid_10x10_black_blue" />
+		<Texture Id="cursor_solid_10x10_black_green" Source="cursor_solid_10x10_black_green" />
+		<Texture Id="cursor_solid_10x10_black_red" Source="cursor_solid_10x10_black_red" />
+		<Texture Id="cursor_solid_10x10_black_yellow" Source="cursor_solid_10x10_black_yellow" />
+		
+		
 		<Texture Id="grid_480x320" Source="grid_480x320" />
 		<Texture Id="white_clear" Source="white_clear" />
 	</Resources>

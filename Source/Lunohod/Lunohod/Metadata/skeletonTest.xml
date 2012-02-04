@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- version: 1.1 -->
+<!-- date: 04/02 2012 20:17 -->
+<Level Name="D:\Lunohod\Levels\_skeleton\skeletonTest.svg" Bounds="0, 0, 480, 320">
+    <Include File="skeletonClassCursor.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="white_clear" Source="white_clear" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+        <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />
+        <Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3130" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3130"/>
+        <Image Id="DefaultMask_image3141" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.12" TraceId="image3141"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+        <Hero Id="hero" Bounds="195, 124, 50, 40" Class="clsHero" TraceId="image3015"/>
+        <Block Id="blk_image3048" Bounds="315, 95, 21, 124" Edges="Stick" TraceId="image3048">
+            <Image Id="image3048" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Group Id="grp_g3118">
+            <Enemy Id="enm_image3026-4" Bounds="234, 240, 50, 40" Class="clsEnemy" TraceId="image3026-4"/>
+            <NumAnimation Id="anm_image3115" From="0" To="200" Target="X" Duration="1" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3115"/>
+        </Group>
+        <Block Id="blk_image3931" Bounds="-51, -2, 50, 322" Edges="Bounce" TraceId="image3931"/>
+        <Block Id="blk_image3934" Bounds="481, -2, 50, 322" Edges="Bounce" TraceId="image3934"/>
+        <Block Id="blk_image3936" Bounds="-7, -41, 493, 41" Edges="Bounce" TraceId="image3936"/>
+        <Block Id="blk_image3938" Bounds="-7, 319, 493, 41" Edges="Bounce" TraceId="image3938"/>
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+

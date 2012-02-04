@@ -2,7 +2,9 @@
 <Include>
 	<!-- Resources -->	
 	<Resources RootFolder="Global">
+		
 		<Texture Id="dashboard" Source="dash_demo_3_size52" />
+		
 	</Resources>
 	
 	<Dashboard BackColor="#FFFFFFFF">

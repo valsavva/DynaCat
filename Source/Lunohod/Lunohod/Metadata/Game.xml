@@ -10,9 +10,9 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Levels>
-		<Level Name="TestLevel1" File="AnimationSamples.xml" />
-		<Level Name="TestLevel4" File="TestClasses.xml" />
-		<Level Name="TestLevel3" File="TestLevel1.xml" />
-		<Level Name="TestLevel2" File="TestLevel2.xml" />
+		<Level Name="3" File="skeletonNozhnicy.xml" />
+		<Level Name="2" File="skeletonElochka.xml" />
+		<Level Name="1" File="skeletonLabirinth.xml" />
+		<Level Name="4" File="TestLevel2.xml" />
 	</Levels>
 </Game>

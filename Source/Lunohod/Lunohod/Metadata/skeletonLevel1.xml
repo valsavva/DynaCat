@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="skeletonLevel1" Bounds="0,0,480,320">
+
+	<Include File="Textures.xml" />
+	<Include File="skeletonClassCursor.xml" />
+
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
+        <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
+    </Layer>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Tower Bounds="0,0,35,35" SignalSpeed="220"/>	
+		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHero" />
+		
+		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
+		<Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
+		<Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
+		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
+
+
+		<Enemy Id="Enemy1" Bounds="200, 150, 50, 50" Class="clsEnemy" />
+		<Enemy Id="Food1" Bounds="100, 050, 50, 50" Class="clsFood" />
+		<Enemy Id="Enemy2" Bounds="300, 250, 50, 50" Class="clsEnemy" />
+		<Enemy Id="Food2" Bounds="300, 150, 50, 50" Class="clsFood" />
+	</Layer>
+
+	<Include File="Dashboard.xml" />	
+
+</Level>
+
+										    		
