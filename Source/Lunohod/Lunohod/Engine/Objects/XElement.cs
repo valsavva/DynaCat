@@ -146,27 +146,17 @@ namespace Lunohod.Objects
 			return false;
         }
 		
-		
-//		private int oldx = 0;
-		
 		public override void Draw(DrawParameters p)
 		{
-//			tmpBounds = this.GetScreenBounds();
-//			if (this.Id == "imageA" && oldx != tmpBounds.X)
-//			{
-//				Console.WriteLine("X:{0} oldx:{1} time:{2}", tmpBounds.X, oldx, p.GameTime.TotalGameTime);
-//				oldx = tmpBounds.X;
-//			}
-			
-			if (p.Game.DrawDebugInfo)
-			{
-				DrawDebug(p);
-			}
-			
 			base.Draw(p);
-		}
+
+            if (p.Game.DrawDebugInfo)
+            {
+                DrawDebug(p);
+            }
+        }
 		
-		public override void DrawDebug(DrawParameters p)
+		public void DrawDebug(DrawParameters p)
 		{
 #if WINDOWS
 #else
@@ -198,8 +188,6 @@ namespace Lunohod.Objects
 				
 				p.SpriteBatch.DrawString(p.Game.SystemFont, this.Id, tmpVector, Color.Yellow);
 			}
-
-			base.DrawDebug(p);
 		}
     }
 }

@@ -143,6 +143,7 @@
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
     <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
+    <Compile Include="Engine\Objects\Animation\XDo.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
     <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\XParallelSet.cs" />
@@ -832,6 +833,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\s01e03_demo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestActionsAndEnabled.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestClasses.xml">
