@@ -19,6 +19,9 @@ namespace Lunohod.Objects
 
 		[XmlIgnore]
 		public XObject Parent { get; set; }
+
+        [XmlAttribute]
+        public bool Enabled = true;
 		
 		public virtual XObject Copy()
 		{
@@ -67,6 +70,9 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "SequenceSet", Type = typeof(XSequenceSet))]
         [XmlElement(ElementName = "RandomSet", Type = typeof(XRandomSet))]
         [XmlElement(ElementName = "ParallelSet", Type = typeof(XParallelSet))]
+
+        // Actions
+        [XmlElement(ElementName = "Do", Type = typeof(XDo))]
 
         // Animation
         [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
@@ -152,7 +158,8 @@ namespace Lunohod.Objects
 				for(int i = 0; i < this.Subcomponents.Count; i++)
 				{
 					var subcomponent = this.Subcomponents[i];
-					subcomponent.Update(p);
+                    if (subcomponent.Enabled)
+    					subcomponent.Update(p);
 				}
 
 			if (signalContainers != null)
@@ -168,20 +175,21 @@ namespace Lunohod.Objects
 				for(int i = 0; i < this.Subcomponents.Count; i++)
 				{
 					var subcomponent = this.Subcomponents[i];
-					subcomponent.Draw(p);
+                    if (subcomponent.Enabled)
+                        subcomponent.Draw(p);
 				}
 		}
 		
-		public virtual void DrawDebug(DrawParameters p)
-		{
-			if (this.Subcomponents != null)
-				for(int i = 0; i < this.Subcomponents.Count; i++)
-				{
-					var subcomponent = this.Subcomponents[i];
-					subcomponent.Draw(p);
-				}
-		}
-		
+        public void Enable()
+        {
+            this.Enabled = true;
+        }
+
+        public void Disable()
+        {
+            this.Enabled = false;
+        }
+
 		public T GetComponent<T>() where T : XObject
 		{
 			if (this.Subcomponents == null)
