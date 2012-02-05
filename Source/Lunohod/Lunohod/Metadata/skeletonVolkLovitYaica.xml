@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+<!-- date: 05/02 2012 23:18 -->
+<Level Name="D:\Lunohod\Levels\_skeleton\skeletonVolkLovitYaica\skeletonVolkLovitYaica.svg" Bounds="0, 0, 480, 320">
+    <Include File="skeletonClassCursor.xml" />
+ 	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank" />
+		<Font Id="SystemFont" Source="SystemFont" />
+	</Resources>
+   <Resources RootFolder="Textures">
+        <Texture Id="white_clear" Source="white_clear" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+        <Texture Id="_E_" Source="_E_" />
+        <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />
+        <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
+        <Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3056" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3056"/>
+        <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.1" TraceId="image3067"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+        <Hero Id="hero" Bounds="215, 268, 50, 40" Class="clsHero" TraceId="image3015"/>
+        <Block Id="blk1" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+        <Block Id="blk2" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+        <Block Id="blk3" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+        <Block Id="blk4" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+        <Block Id="blk_image3034" Bounds="0, 0, 50, 50" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+        <Block Id="blk5" Bounds="60, 256, 20, 64" Edges="Stick" TraceId="image3048-1">
+            <Image Id="image3048-1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Block Id="blk6" Bounds="400, 256, 20, 64" Edges="Stick" TraceId="image3073">
+            <Image Id="image3073" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        
+<!-- >>> HANDEDIT >>> -->
+<!-- >>> HANDEDIT >>> -->
+<!-- FIX FOR START AFTER LOAD LEVEL DECREASE 10 SEC. -->
+
+        <Food Id="fd1" Points="1" Bounds="90, -98, 24, 12" Class="clsFood" TraceId="image3037-7-1">
+        	<!--<Text FontId="SystemFont" Text="1" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="15" />
+            	<NumAnimation Id="anm1" From="0" To="500" Target="fd1.Y" Duration="7" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+
+        <Food Id="fd2" Points="1" Bounds="112, -95, 24, 12" Class="clsFood" TraceId="image3037-7-16">
+        	<!--<Text FontId="SystemFont" Text="2" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="17" />
+            	<NumAnimation Id="anm2" From="0" To="500" Target="fd2.Y" Duration="9" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+        
+        <Food Id="fd3" Points="1" Bounds="245, -95, 24, 12" Class="clsFood" TraceId="image3037-7-5">
+        	<!--<Text FontId="SystemFont" Text="3" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="20" />
+            	<NumAnimation Id="anm3" From="0" To="500" Target="fd3.Y" Duration="7" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+           
+        <Food Id="fd4" Points="1" Bounds="360, -94, 24, 12" Class="clsFood" TraceId="image3037-7-18">
+        	<!--<Text FontId="SystemFont" Text="4" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="18.6" />
+            	<NumAnimation Id="anm4" From="0" To="500" Target="fd4.Y" Duration="12" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+        
+        <Food Id="fd5" Points="1" Bounds="204, -94, 24, 12" Class="clsFood" TraceId="image3037-7-2">
+        	<!--<Text FontId="SystemFont" Text="5" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="23" />
+            	<NumAnimation Id="anm5" From="0" To="500" Target="fd5.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+
+        <Food Id="fd6" Points="1" Bounds="300, -94, 24, 12" Class="clsFood" TraceId="image3037-7-54">
+        	<!--<Text FontId="SystemFont" Text="6" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="24" />
+            	<NumAnimation Id="anm6" From="0" To="500" Target="fd6.Y" Duration="10" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+    
+        <Food Id="fd7" Points="1" Bounds="350, -94, 24, 12" Class="clsFood" TraceId="image3037-7-12">
+        	<!--<Text FontId="SystemFont" Text="7" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="29" />
+            	<NumAnimation Id="anm7" From="0" To="500" Target="fd7.Y" Duration="4" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+
+        <Food Id="fd8" Points="1" Bounds="350, -94, 24, 12" Class="clsFood" TraceId="image3037-7-4">
+        	<!--<Text FontId="SystemFont" Text="8" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="28" />
+            	<NumAnimation Id="anm8" From="0" To="500" Target="fd8.Y" Duration="19" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+
+        <Food Id="fd9" Points="1" Bounds="90, -94, 24, 12" Class="clsFood" TraceId="image3037-7-13">
+        	<!--<Text FontId="SystemFont" Text="9" Location="24,12" Color="#000000" />-->
+        	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="31" />
+            	<NumAnimation Id="anm9" From="0" To="500" Target="fd9.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+
+        <Food Id="fd10" Points="1" Bounds="90, -94, 24, 12" Class="clsFood" TraceId="image3037-7-42">
+        	<!--<Text FontId="SystemFont" Text="10" Location="24,12" Color="#000000" />-->
+         	<SequenceSet InProgress="true" RepeatCount="1">
+            	<Delay Duration="38" />
+            	<NumAnimation Id="anm10" From="0" To="500" Target="fd10.Y" Duration="10" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3037-4-4-7"/>
+        	</SequenceSet>
+        </Food>
+        
+<!-- <<< HANDEDIT <<< -->
+<!-- <<< HANDEDIT <<< -->
+
+         <Group Id="grp_g3319">
+            <Enemy Id="enm1" Bounds="6, 270, 50, 40" Class="clsEnemy" TraceId="image3026"/>
+            <NumAnimation Id="anm11" From="0" To="-200" Target="Y" Duration="7" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3265"/>
+        </Group>
+        <Group Id="grp_g3323">
+            <NumAnimation Id="anm12" From="0" To="200" Target="Y" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3291"/>
+            <Enemy Id="enm2" Bounds="425, 51, 50, 40" Class="clsEnemy" TraceId="image3302"/>
+        </Group>
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+

@@ -20,7 +20,7 @@
 		<Hero Speed="84" Direction="0,0">
 			<BoolTrigger Condition="this:death" EnterAction="this_anmDeath.Start" StayTriggered="false" Group="heroStates">
 				<Image TextureId="cursor_50x50_light_blue">
-					<NumAnimation Id="this_anmDeath" Duration="0.1" Target="Opacity" Autoreverse="true" From="1" To="0" RepeatCount="7777777"/>
+					<NumAnimation Id="this_anmDeath" Duration="0.1" Target="Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
 				</Image>
 			</BoolTrigger>
 			<BoolTrigger Id="default" Group="heroStates">
@@ -36,14 +36,14 @@
     <Resources RootFolder="Textures">
         <Texture Id="cursor_50x50_red" Source="cursor_50x50_red" />
     </Resources>
-
+         
 	<Class Id="clsEnemy">
 		<Enemy>
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" Action="hero:death" StayTriggered="false" Group="enemyStates">
+   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" Action="hero:death" StayTriggered="true" Group="enemyStates">
 				<Image Id="skin" TextureId="cursor_50x50_red"/>
 			</IntersectionTrigger>
 			<BoolTrigger Id="this_default" Group="enemyStates">
-				<Image TextureId="cursor_50x50_purple" />
+				<Image Id="skin2" TextureId="cursor_50x50_purple" />
 			</BoolTrigger>
 		</Enemy>
 	</Class>
@@ -53,16 +53,17 @@
 	<!-- =========================================================================================  -->
 
 	<Class Id="clsFood">
-		<Enemy>
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start" StayTriggered="true" Group="enemyStates">
-				<Image TextureId="cursor_50x50_green">
-					<NumAnimation Id="this_anmEated" Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="Hold" RepeatCount="5"/>
-				</Image>
+		<Food>
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start" StayTriggered="true" Group="foodStates">
+					<Image TextureId="cursor_50x50_blue">
+						<NumAnimation Id="this_anmEated" Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5"/>
+					</Image>
 			</IntersectionTrigger>
-			<BoolTrigger Id="this_default" Group="enemyStates">
+			
+			<BoolTrigger Id="this_default" Group="foodStates">
 				<Image TextureId="cursor_50x50_green" />
 			</BoolTrigger>	
-		</Enemy>	
+		</Food>	
 	</Class>
 
 </Include>

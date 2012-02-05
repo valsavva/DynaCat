@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- programme version: 1.1 -->
-<!-- date: 05/02 2012 04:17 -->
+<!-- programme version: 1.2 -->
+<!-- date: 05/02 2012 18:48 -->
 <Level Name="D:\Lunohod\Levels\_skeleton\skeletonCehSPressami\skeletonCehSPressami.svg" Bounds="0, 0, 480, 320">
     <Include File="skeletonClassCursor.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="white_clear" Source="white_clear" />
         <Texture Id="grid_480x320" Source="grid_480x320" />
-        <Texture Id="blank" Source="blank" />
         <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
         <Texture Id="_E_" Source="_E_" />
         <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
@@ -23,22 +22,22 @@
         <Hero Id="hero" Bounds="5, 274, 50, 40" Class="clsHero" TraceId="image3015"/>
         
         <Group Id="grp_g3266" Bounds="0, 0, 480, 320">
-        	<Image TextureId="blank" Bounds="0,0,1,1" Id="imgblank" />
             <Enemy Id="enm_image3026-7" Bounds="178, -37, 83, 99" Class="clsEnemy" TraceId="image3026-7"/>
             <Enemy Id="enm_image3026-7-1" Bounds="61, 168, 50, 99" Class="clsEnemy" TraceId="image3026-7-1"/>
             <Enemy Id="enm_image3026-7-1-1" Bounds="325, 168, 50, 99" Class="clsEnemy" TraceId="image3026-7-1-1"/>
 <!-- >>> HANDMADE >>> -->
-            <SequenceSet InProgress="true" RepeatCount="7777777">
-                <NumAnimation Id="anm_image3261" From="0" To="50" Target="grp_g3266.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3261"/>
-                <NumAnimation Id="delay1" From="0" To="1" Target="imgblank.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3261"/>
-                <NumAnimation Id="anm_image3261-a" From="0" To="5" Target="grp_g3266.Y" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3261"/>
-                <NumAnimation Id="delay2" From="0" To="1" Target="imgblank.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3261"/>
-                <NumAnimation Id="anm_image32613" From="0" To="-55" Target="grp_g3266.Y" Duration="2" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3261"/>
-                <NumAnimation Id="delay3" From="0" To="1" Target="imgblank.Y" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3261"/>
+            <SequenceSet InProgress="true" RepeatCount="0">
+                <NumAnimation Id="anm_image3261" From="0" To="50" Target="grp_g3266.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3261"/>
+                <Delay  Duration="0.5"/>
+                <NumAnimation Id="anm_image3261-a" From="0" To="5" Target="grp_g3266.Y" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3261"/>
+                <Delay Duration="0.5"/>
+                <NumAnimation Id="anm_image32613" From="0" To="-55" Target="grp_g3266.Y" Duration="2" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3261"/>
+                <Delay Duration="1.6"/>
             </SequenceSet>	
 <!-- <<< HANDMADE <<< -->
-        </Group>        
+        </Group> 
         
+          			
         <Block Id="blk_image3070" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
         <Block Id="blk_image3072" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
         <Block Id="blk_image3074" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
@@ -46,10 +45,8 @@
         <Block Id="blk_image3034" Bounds="430, 270, 50, 50" Edges="Stick" TraceId="image3034">
             <Image Id="image3034" TextureId="_E_" Opacity="1" />
         </Block>
-        <Enemy Id="fd_image3037-1" Bounds="136, 279, 24, 12" Class="clsFood" TraceId="image3037-1"/>
-        <Enemy Id="fd_image3037-7" Bounds="134, 83, 24, 12" Class="clsFood" TraceId="image3037-7"/>
-        <Enemy Id="fd_image3037-4" Bounds="280, 279, 24, 12" Class="clsFood" TraceId="image3037-4"/>
-        <Enemy Id="fd_image3037-0" Bounds="391, 277, 24, 12" Class="clsFood" TraceId="image3037-0"/>
+        <Food Id="fd_image3037-1" Points="1" Bounds="134, 290, 24, 12" Class="clsFood" TraceId="image3037-1"/>
+        <Food Id="fd_image3037-7" Points="1" Bounds="134, 84, 24, 12" Class="clsFood" TraceId="image3037-7"/>
         <Block Id="blk_image3059-9" Bounds="0, 0, 115, 269" Edges="Bounce" TraceId="image3059-9">
             <Image Id="image3059-9" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
         </Block>
@@ -59,7 +56,6 @@
         <Block Id="blk_image3048-8" Bounds="115, -1, 63, 65" Edges="Stick" TraceId="image3048-8">
             <Image Id="image3048-8" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
-        <Enemy Id="fd_image3037-7-8" Bounds="280, 82, 24, 12" Class="clsFood" TraceId="image3037-7-8"/>
         <Block Id="blk_image3059-2" Bounds="323, 116, 157, 153" Edges="Bounce" TraceId="image3059-2">
             <Image Id="image3059-2" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
         </Block>
@@ -76,6 +72,14 @@
             <Image Id="image3048-8-1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
         <Block Id="blk_image3039" Bounds="328, 320, 157, 10" Edges="Bounce" TraceId="image3039"/>
+        <Food Id="fd_image3037-1-7" Points="1" Bounds="134, 239, 24, 12" Class="clsFood" TraceId="image3037-1-7"/>
+        <Food Id="fd_image3037-1-0" Points="1" Bounds="134, 187, 24, 12" Class="clsFood" TraceId="image3037-1-0"/>
+        <Food Id="fd_image3037-1-48" Points="1" Bounds="134, 136, 24, 12" Class="clsFood" TraceId="image3037-1-48"/>
+        <Food Id="fd_image3037-1-15" Points="1" Bounds="282, 290, 24, 12" Class="clsFood" TraceId="image3037-1-15"/>
+        <Food Id="fd_image3037-7-2" Points="1" Bounds="282, 84, 24, 12" Class="clsFood" TraceId="image3037-7-2"/>
+        <Food Id="fd_image3037-1-7-6" Points="1" Bounds="282, 239, 24, 12" Class="clsFood" TraceId="image3037-1-7-6"/>
+        <Food Id="fd_image3037-1-4-1" Points="1" Bounds="282, 187, 24, 12" Class="clsFood" TraceId="image3037-1-4-1"/>
+        <Food Id="fd_image3037-1-0-4" Points="1" Bounds="282, 136, 24, 12" Class="clsFood" TraceId="image3037-1-0-4"/>
     </Layer>
     <Include File="Dashboard.xml" />
 </Level>

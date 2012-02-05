@@ -10,16 +10,20 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Levels>
-		<Level Name="5" File="TestFood.xml" />
-		<Level Name="4" File="TestTextAndDelay.xml" />
+		<Level Name="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
+		<Level Name="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
+		<Level Name="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
 		<Level Name="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
-		<Level Name="TestLevel1" File="TestActionsAndEnabled.xml" />
-		<Level Name="TestLevel4" File="TestClasses.xml" />
-		<Level Name="TestLevel3" File="TestLevel1.xml" />
+		<Level Name="skeletonParavozik" File="skeletonParavozik.xml" />
+		<Level Name="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
+		<Level Name="skeletonElochka" File="skeletonElochka.xml" />
+		<Level Name="skeletonLabirinth" File="skeletonLabirinth.xml" />
+		<Level Name="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
+		<Level Name="TestFood" File="TestFood.xml" />
+		<Level Name="TestTextAndDelay" File="TestTextAndDelay.xml" />
+		<Level Name="TestActionsAndEnabled" File="TestActionsAndEnabled.xml" />
+		<Level Name="TestClasses" File="TestClasses.xml" />
+		<Level Name="TestLevel1" File="TestLevel1.xml" />
 		<Level Name="TestLevel2" File="TestLevel2.xml" />
-		<Level Name="3" File="skeletonNozhnicy.xml" />
-		<Level Name="2" File="skeletonElochka.xml" />
-		<Level Name="1" File="skeletonLabirinth.xml" />
-		<Level Name="4" File="TestLevel2.xml" />
 	</Levels>
 </Game>
