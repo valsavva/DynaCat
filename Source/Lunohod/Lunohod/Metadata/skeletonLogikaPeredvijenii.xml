@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+    <!-- date: 06/02 2012 01:14 -->
+        <Level Name="D:\Lunohod\Levels\_skeleton\skeletonLogikaPeredvijenii\skeletonLogikaPeredvijenii.svg" Bounds="0, 0, 480, 320">
+            <Include File="skeletonClassCursor.xml" />
+            <Resources RootFolder="Textures">
+                <Texture Id="white_clear" Source="white_clear" />
+                <Texture Id="grid_480x320" Source="grid_480x320" />
+                <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+                <Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
+                <Texture Id="_E_" Source="_E_" />
+                <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />
+                <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
+            </Resources>
+            <Layer Id="background" BackColor="#FFFFFFFF">
+                <Image Id="DefaultMask_image3056" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3056"/>
+                <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.1" TraceId="image3067"/>
+            </Layer>
+            <Layer Id="action" BackColor="#FFFFFFFF">
+                <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+                <Hero Id="hero" Bounds="35, 160, 50, 40" Class="clsHero" TraceId="image3015"/>
+                <Enemy Id="enm1" Bounds="400, 200, 50, 40" Class="clsEnemy" TraceId="image3026"/>
+                <Block Id="blk1" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+                <Block Id="blk2" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+                <Block Id="blk3" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+                <Block Id="blk4" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+                <Block Id="blk_image3034" Bounds="350, 256, 50, 50" Edges="Stick" TraceId="image3034">
+                    <Image Id="image3034" TextureId="_E_" Opacity="1" />
+                </Block>
+                <Block Id="blk5" Bounds="460, 64, 20, 256" Edges="Stick" TraceId="image3020">
+                    <Image Id="image3020" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk6" Bounds="400, 0, 80, 64" Edges="Stick" TraceId="image3022">
+                    <Image Id="image3022" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk7" Bounds="0, 0, 20, 300" Edges="Stick" TraceId="image3035">
+                    <Image Id="image3035" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk8" Bounds="0, 280, 80, 20" Edges="Stick" TraceId="image3038">
+                    <Image Id="image3038" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk9" Bounds="220, 240, 20, 80" Edges="Stick" TraceId="image3040">
+                    <Image Id="image3040" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk10" Bounds="80, 0, 320, 20" Edges="Stick" TraceId="image3042">
+                    <Image Id="image3042" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Enemy Id="enm2" Bounds="300, 120, 50, 40" Class="clsEnemy" TraceId="image3026-0"/>
+                <Enemy Id="enm3" Bounds="120, 200, 50, 40" Class="clsEnemy" TraceId="image3026-9"/>
+                <Enemy Id="enm4" Bounds="120, 24, 50, 40" Class="clsEnemy" TraceId="image3026-4"/>
+                <Food Id="fd1" Points="1" Bounds="105, 102, 24, 12" Class="clsFood" TraceId="image3037-8"/>
+                <Food Id="fd2" Points="1" Bounds="400, 102, 24, 12" Class="clsFood" TraceId="image3037-45"/>
+                <Food Id="fd3" Points="1" Bounds="326, 198, 24, 12" Class="clsFood" TraceId="image3037-5"/>
+                <Food Id="fd4" Points="1" Bounds="35, 102, 24, 12" Class="clsFood" TraceId="image3037-1"/>
+                <Food Id="fd5" Points="1" Bounds="170, 102, 24, 12" Class="clsFood" TraceId="image3037-7"/>
+                <Food Id="fd6" Points="1" Bounds="371, 23, 24, 12" Class="clsFood" TraceId="image3037-76"/>
+                <Food Id="fd7" Points="1" Bounds="326, 64, 24, 12" Class="clsFood" TraceId="image3037-2"/>
+                <Food Id="fd8" Points="1" Bounds="220, 52, 24, 12" Class="clsFood" TraceId="image3037-52"/>
+                <Block Id="blk11" Bounds="0, 0, 80, 60" Edges="Stick" TraceId="image5815">
+                    <Image Id="image5815" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk12" Bounds="0, 300, 480, 20" Edges="Stick" TraceId="image5817">
+                    <Image Id="image5817" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk13" Bounds="170, 280, 50, 20" Edges="Stick" TraceId="image3038-1">
+                    <Image Id="image3038-1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk14" Bounds="240, 280, 50, 20" Edges="Stick" TraceId="image3038-1-2">
+                    <Image Id="image3038-1-2" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Block Id="blk15" Bounds="410, 280, 80, 20" Edges="Stick" TraceId="image3038-3">
+                    <Image Id="image3038-3" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                </Block>
+                <Food Id="fd9" Points="1" Bounds="35, 248, 24, 12" Class="clsFood" TraceId="image3037-1-2"/>
+            </Layer>
+            <Include File="Dashboard.xml" />
+        </Level>
+        
