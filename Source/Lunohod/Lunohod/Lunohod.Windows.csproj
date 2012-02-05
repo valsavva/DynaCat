@@ -142,12 +142,12 @@
     <Compile Include="Engine\InitializeParameters.cs" />
     <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
     <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
+    <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
+    <Compile Include="Engine\Objects\Animation\XDelay.cs" />
     <Compile Include="Engine\Objects\Animation\XDo.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
     <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
-    <Compile Include="Engine\Objects\Animation\XParallelSet.cs" />
-    <Compile Include="Engine\Objects\Animation\XRandomSet.cs" />
     <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
     <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
     <Compile Include="Engine\Objects\Animation\PropertyAccessor.cs">
@@ -158,8 +158,7 @@
     </Compile>
     <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
-    <Compile Include="Engine\Objects\Animation\XSequenceSet.cs" />
-    <Compile Include="Engine\Objects\Animation\XSetBase.cs" />
+    <Compile Include="Engine\Objects\Animation\XRunnableBase.cs" />
     <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
     <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
     <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
@@ -179,6 +178,10 @@
     <Compile Include="Engine\Objects\Resources\XResourceBundle.cs" />
     <Compile Include="Engine\Objects\Resources\XSoundResource.cs" />
     <Compile Include="Engine\Objects\Resources\XTextureResource.cs" />
+    <Compile Include="Engine\Objects\Sets\XParallelSet.cs" />
+    <Compile Include="Engine\Objects\Sets\XRandomSet.cs" />
+    <Compile Include="Engine\Objects\Sets\XSequenceSet.cs" />
+    <Compile Include="Engine\Objects\Sets\XSetBase.cs" />
     <Compile Include="Engine\Objects\XBlock.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -191,6 +194,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\XEnemy.cs" />
+    <Compile Include="Engine\Objects\XFood.cs" />
     <Compile Include="Engine\Objects\XGame.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -218,6 +222,7 @@
     <Compile Include="Engine\Objects\XTapArea.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Objects\XText.cs" />
     <Compile Include="Engine\Objects\XTower.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -778,6 +783,9 @@
     <Content Include="Content\TestLevel2\_T_.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\blank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\cursor_50x50_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -802,10 +810,40 @@
     <Content Include="Content\Textures\cursor_50x50_yellow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\cursor_solid_10x10_black_blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_solid_10x10_black_green.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_solid_10x10_black_red.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_solid_10x10_black_yellow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_solid_50x50_blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_solid_50x50_green.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_solid_50x50_red.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_wall_50x50_bounce.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\cursor_wall_50x50_stick.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\grid_480x320.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\white_clear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\_E_.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\AnimationSamples.xml">
@@ -813,6 +851,7 @@
     </Content>
     <Content Include="Metadata\ClassCursor.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassHero.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -835,12 +874,36 @@
     <Content Include="Metadata\s01e03_demo.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\skeletonCehSPressami.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\skeletonClassCursor.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\skeletonElochka.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\skeletonLabirinth.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\skeletonLevel1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\skeletonNozhnicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\skeletonTest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\TestActionsAndEnabled.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestClasses.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Metadata\TestFood.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestLevel1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -853,6 +916,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestSets.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Metadata\TestTextAndDelay.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
