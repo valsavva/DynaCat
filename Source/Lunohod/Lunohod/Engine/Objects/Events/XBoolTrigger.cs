@@ -28,5 +28,13 @@ namespace Lunohod.Objects
 		{
 			return valueReader.Value;
 		}
+		
+		public override void ReplaceThis(string iid)
+		{
+			if (this.Condition != null)
+				this.Condition = this.Condition.Replace("this", iid);
+
+			base.ReplaceThis(iid);
+		}
 	}
 }

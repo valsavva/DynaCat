@@ -46,5 +46,13 @@ namespace Lunohod.Objects
         public void Resume()
         {
         }
+		
+		public override void ReplaceThis(string iid)
+		{
+			if (this.Action != null)
+				this.Action = this.Action.Replace("this", iid);
+			
+			base.ReplaceThis(iid);
+		}
     }
 }

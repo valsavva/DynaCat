@@ -84,6 +84,18 @@ namespace Lunohod.Objects
 			if (this.isTriggered)
 				base.Draw(p);
 		}
+		
+		public override void ReplaceThis(string iid)
+		{
+			if (this.EnterAction != null)
+				this.EnterAction = this.EnterAction.Replace("this", iid);
+			if (this.Action != null)
+				this.Action = this.Action.Replace("this", iid);
+			if (this.ExitAction != null)
+				this.ExitAction = this.ExitAction.Replace("this", iid);
+			
+			base.ReplaceThis(iid);
+		}
 	}
 }
 

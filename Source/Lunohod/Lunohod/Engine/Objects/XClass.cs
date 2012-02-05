@@ -59,62 +59,9 @@ namespace Lunohod.Objects
 
 		public void ReplaceThisKeyword(XObject instance)
 		{
-			var descendants = instance.GetAllDescendants();
-			
-			for(int i = 0; i < descendants.Count; i++)
-			{
-				var subcomponent = descendants[i];
-				
-				if (subcomponent.Id != null)
-					subcomponent.Id = subcomponent.Id.Replace("this", instance.Id);
-				
-				// animation
-                XNumAnimation animation = subcomponent as XNumAnimation;
-				if (animation != null)
-				{
-                    if (animation.Target != null)
-					    animation.Target = animation.Target.Replace("this", instance.Id);
-				}
-				
-				// triggers
-				XTriggerBase trigger = subcomponent as XTriggerBase;
-				if (trigger != null)
-				{
-					if (trigger.EnterAction != null)
-						trigger.EnterAction = trigger.EnterAction.Replace("this", instance.Id);
-					if (trigger.Action != null)
-						trigger.Action = trigger.Action.Replace("this", instance.Id);
-					if (trigger.ExitAction != null)
-						trigger.ExitAction = trigger.ExitAction.Replace("this", instance.Id);
-					
-					if (trigger is XDistanceTrigger)
-					{
-	                    XDistanceTrigger distanceTrigger = trigger as XDistanceTrigger;
-                        distanceTrigger.ObjectId1 = distanceTrigger.ObjectId1.Replace("this", instance.Id);
-                        distanceTrigger.ObjectId2 = distanceTrigger.ObjectId2.Replace("this", instance.Id);
-                    }
-                    else if (trigger is XIntersectionTrigger)
-                    {
-                        XIntersectionTrigger intersectionTrigger = trigger as XIntersectionTrigger;
-                        intersectionTrigger.ObjectId1 = intersectionTrigger.ObjectId1.Replace("this", instance.Id);
-                        intersectionTrigger.ObjectId2 = intersectionTrigger.ObjectId2.Replace("this", instance.Id);
-					}
-					else if (trigger is XBoolTrigger)
-					{
-						XBoolTrigger boolTrigger = trigger as XBoolTrigger;
-						if (boolTrigger.Condition != null)
-							boolTrigger.Condition = boolTrigger.Condition.Replace("this", instance.Id);
-                    }
-					else if (trigger is XNumTrigger)
-					{
-						XNumTrigger numTrigger = trigger as XNumTrigger;
-
-						numTrigger.Property = numTrigger.Property.Replace("this", instance.Id);
-						if (numTrigger.Value != null)
-							numTrigger.Value = numTrigger.Value.Replace("this", instance.Id);
-					}
-                }
-			}
+			if (instance.Subcomponents != null)
+				for(int i = 0; i < instance.Subcomponents.Count; i++)
+					instance.ReplaceThis(instance.Id);
 		}
 	}
 }

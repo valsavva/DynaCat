@@ -328,6 +328,16 @@ namespace Lunohod.Objects
         //            yield return (this.Subcomponents[i] as T);
         //    }
         //}
+
+		public virtual void ReplaceThis(string iid)
+		{
+			if (this.Id != null)
+				this.Id = this.Id.Replace("this", iid);
+			
+			if (this.subcomponents != null)
+				for(int i = 0; i < this.subcomponents.Count; i++)
+					subcomponents[i].ReplaceThis(iid);
+		}
 		
 		#region IDisposable implementation
 		public virtual void Dispose()
