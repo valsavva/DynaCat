@@ -51,8 +51,6 @@ namespace Lunohod.Objects
 		
         public override void Stop()
         {
-			base.Stop();
-			
 			if (this.inProgress)
 			{
 				if (this.Fill == XAnimationFillBehavior.Reset)
@@ -62,6 +60,8 @@ namespace Lunohod.Objects
 
 				UpdateAnimation();
 			}
+
+			base.Stop();
         }
     }
 }

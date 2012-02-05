@@ -60,9 +60,7 @@ namespace Lunohod.Objects
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{
 				if (this.UseRotation)
-				{
 					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
-				}
 				else
 					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, actualBackColor);
 			}
@@ -72,9 +70,7 @@ namespace Lunohod.Objects
 				this.location.Y = screenBounds.Y;
 				
 				if (this.UseRotation)
-				{
 					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
-				}
 				else
 					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor);
 			}

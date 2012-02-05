@@ -144,6 +144,8 @@
     <Compile Include="Engine\Objects\Sets\XSetBase.cs" />
     <Compile Include="Engine\Objects\Animation\XDo.cs" />
     <Compile Include="Engine\Objects\Animation\XRunnableBase.cs" />
+    <Compile Include="Engine\Objects\XText.cs" />
+    <Compile Include="Engine\Objects\Animation\XDelay.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -832,6 +834,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\blank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestTextAndDelay.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="TextText" Bounds="0,0,480,320">
+
+	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank" />
+		<Font Id="SystemFont" Source="SystemFont" />
+	</Resources>
+	
+	<Include File="Textures.xml" />
+
+	<Layer Id="background" BackColor="#FFFFFFFF">
+	</Layer>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
+		<Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
+		<Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
+		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
+
+		<Tower Bounds="0,0,35,35" SignalSpeed="400"/>
+		<Hero Id="hero" Bounds="50,150,50,50">
+			<Image TextureId="cursor_solid_50x50_green" />
+		</Hero>
+
+		<Tower Bounds="0,0,35,35" SignalSpeed="1800"/>
+
+		<Text FontId="SystemFont" Text="Hooray, we have text!" Location="50,50" Color="#000000" />
+		<Text Id="txtR" FontId="SystemFont" Text="Can rotate!" Location="200,150" Origin="30,10" Color="#000000">
+			<SequenceSet RepeatCount="0" InProgress="true">
+				<NumAnimation Target="txtR.Rotation" From="0" To="360" Duration="1" RepeatCount="1" Fill="End"/>
+				<Delay Duration="1"/>
+				<NumAnimation Target="txtR.Rotation" From="360" To="0" Duration="1" RepeatCount="1" Fill="End"/>
+				<Delay Duration="1"/>
+			</SequenceSet>
+		</Text>
+	</Layer>
+
+	<Include File="Dashboard.xml" />
+
+</Level>
+

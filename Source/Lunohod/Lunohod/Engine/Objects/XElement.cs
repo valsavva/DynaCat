@@ -20,7 +20,11 @@ namespace Lunohod.Objects
 		[XmlIgnore]
         public System.Drawing.RectangleF Bounds;
 		[XmlIgnore]
-        public Vector2 Location;
+        public Vector2 Location
+		{
+			get { this.Bounds.ToVector2(ref tmpVector); return tmpVector; }
+			set { this.Bounds.X = value.X; this.Bounds.Y = value.Y; }
+		}
         [XmlIgnore]
         public Color BackColor
 		{
@@ -49,7 +53,7 @@ namespace Lunohod.Objects
 		public bool UseRotation
 		{
 			get { 
-				if (this.rotation.HasValue)
+				if (this.rotation.HasValue || this.Origin != Vector2.Zero)
 					return true;
 				if (this.ParentElement == null)
 					return false;
@@ -86,15 +90,13 @@ namespace Lunohod.Objects
 			{
 				tmpBounds = this.ParentElement.GetScreenBounds();
 	
-				if (!this.Bounds.IsEmpty)
+				if (!this.Bounds.IsZero())
 				{
 					tmpBounds.Offset(this.Bounds.X, this.Bounds.Y);
 					tmpBounds.Width = this.Bounds.Width;
 					tmpBounds.Height = this.Bounds.Height;
 				}
 			}
-			
-			tmpBounds.Offset(this.Location.X, this.Location.Y);
 			
 			return tmpBounds;
 		}

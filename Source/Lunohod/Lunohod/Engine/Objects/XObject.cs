@@ -73,6 +73,7 @@ namespace Lunohod.Objects
 
         // Actions
         [XmlElement(ElementName = "Do", Type = typeof(XDo))]
+        [XmlElement(ElementName = "Delay", Type = typeof(XDelay))]
 
         // Animation
         [XmlElement(ElementName = "NumAnimation", Type = typeof(XNumAnimation))]
@@ -81,6 +82,7 @@ namespace Lunohod.Objects
 		// Basic elements
 		[XmlElement(ElementName = "Group", Type = typeof(XGroup))]
         [XmlElement(ElementName = "Image", Type = typeof(XImage))]
+        [XmlElement(ElementName = "Text", Type = typeof(XText))]
         [XmlElement(ElementName = "Block", Type = typeof(XBlock))]
         [XmlElement(ElementName = "Sprite", Type = typeof(XSprite))]
         public XObjectCollection Subcomponents
