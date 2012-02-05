@@ -880,21 +880,20 @@
     <Content Include="Metadata\skeletonClassCursor.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\skeletonDiraVRyadahVragov.xml" />
     <Content Include="Metadata\skeletonElochka.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonLabirinth.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\skeletonLevel1.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Metadata\skeletonLogikaPeredvijenii.xml" />
     <Content Include="Metadata\skeletonNozhnicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\skeletonTest.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Metadata\skeletonNozhnicy2Hockey.xml" />
+    <Content Include="Metadata\skeletonParavozik.xml" />
+    <Content Include="Metadata\skeletonVolkLovitYaica.xml" />
     <Content Include="Metadata\TestActionsAndEnabled.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
