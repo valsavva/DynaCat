@@ -17,7 +17,7 @@
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
         <Hero Id="hero" Bounds="195, 124, 50, 40" Class="clsHero" TraceId="image3015"/>
-        <Block Id="blk_image3048" Bounds="315, 95, 21, 124" Edges="Stick" TraceId="image3048">
+        <Block Id="blk_image3048" Bounds="300, 95, 21, 124" Edges="Stick" TraceId="image3048">
             <Image Id="image3048" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
         <Group Id="grp_g3118">

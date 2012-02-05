@@ -180,8 +180,7 @@ namespace Lunohod
 
         public static void Intersect(ref System.Drawing.RectangleF rect1, ref System.Drawing.RectangleF rect2, out System.Drawing.RectangleF rectInt)
         {
-            rectInt = rect1;
-            rectInt.Intersect(rect2);
+			rectInt = System.Drawing.RectangleF.Intersect(rect1, rect2);
         }
 
         public static float Area(this System.Drawing.RectangleF rect)

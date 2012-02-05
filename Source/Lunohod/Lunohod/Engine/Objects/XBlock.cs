@@ -36,8 +36,8 @@ namespace Lunohod.Objects
 					level.hero.Direction = level.hero.Direction.Reverse();
 					
 					level.hero.Bounds.Offset(
-						(int)(intersect.Width * level.hero.Direction.X),
-						(int)(intersect.Height * level.hero.Direction.Y)
+						intersect.Width * level.hero.Direction.X,
+						intersect.Height * level.hero.Direction.Y
 					);
 				}; break;
 				case XEdgeType.Stick : {
@@ -45,8 +45,8 @@ namespace Lunohod.Objects
 					var direction = level.hero.Direction.Reverse();
 					
 					level.hero.Bounds.Offset(
-						(int)(intersect.Width * direction.X),
-						(int)(intersect.Height * direction.Y)
+						intersect.Width * direction.X,
+						intersect.Height * direction.Y
 					);
 				
 					level.hero.Direction = Direction.VectorStop;
