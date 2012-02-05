@@ -65,6 +65,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Tower", Type = typeof(XTower))]
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Enemy", Type = typeof(XEnemy))]
+        [XmlElement(ElementName = "Food", Type = typeof(XFood))]
 
 		// Sets
         [XmlElement(ElementName = "SequenceSet", Type = typeof(XSequenceSet))]

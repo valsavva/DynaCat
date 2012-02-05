@@ -18,7 +18,7 @@
 		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
 
 		<Tower Bounds="0,0,35,35" SignalSpeed="400"/>
-		<Hero Id="hero" Bounds="50,150,50,50">
+		<Hero Id="hero" Bounds="50,150,50,50" Speed="50">
 			<Image TextureId="cursor_solid_50x50_green" />
 		</Hero>
 
