@@ -139,8 +139,8 @@ namespace Lunohod
 			if (colliders.Count() == 0)
 				return;
 			
-			// sort them by the amounth of intersection
-			colliders.Sort((t1, t2) => t1.Item3.CompareTo(t2.Item3));
+			// sort them by the amounth of intersection (descending)
+			colliders.Sort((t1, t2) => t2.Item3.CompareTo(t1.Item3));
 			
 			for(int i = 0; i < colliders.Count; i++)
 			{
