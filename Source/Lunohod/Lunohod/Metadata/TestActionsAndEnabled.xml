@@ -7,7 +7,7 @@
 	<!-- clsHeroCursor -->
 	<!-- ========================================================================================= -->
 	<Class Id="clsHeroCursor">
-		<Hero Direction="0,0" Speed="84">
+		<Hero Direction="0,0" Speed="44">
 			<BoolTrigger Id="default">
 				<Image TextureId="cursor_50x50_blue"/>
 			</BoolTrigger>
@@ -19,33 +19,32 @@
 	<!-- ========================================================================================= -->
 	<Class Id="clsAbr">
 		<Enemy>
-			<!-- Заметь что этот группе не принадлежит, он всегда будет исполятся как только пересечение произойдет.
-				Resume заставит анимашки продолжать. -->
-			<IntersectionTrigger ObjectId2="this" ObjectId1="hero" EnterAction="setRunAway.Start">
-				<RandomSet Id="setRunAway" RepeatCount="999">
-					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="-10,0" From="0,0"/>
-					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="10,0" From="0,0"/>
-					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="0,-10" From="0,0"/>
-					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="0,10" From="0,0"/>
+			<IntersectionTrigger ObjectId2="this" ObjectId1="hero" EnterAction="setRunAway.Start;setPickColor.Start" Group="enemyStates">
+				<!-- Выбираем случайно куда бежать -->
+				<!-- Если Probabilities одинаковые, то их можно не указывать. -->
+				<!-- По умолчанию у сэтов RepeatCount - единица. То есть, они исполняются один раз после запуска.
+				   Но мы хотим чтобы этот исполнялся постоянно (запускал новую анимацию, как только старая заканчивается). -->
+				<RandomSet Id="setRunAway" RepeatCount="0">
+					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="-100,0" From="0,0"/>
+					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="100,0" From="0,0"/>
+					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="0,-100" From="0,0"/>
+					<NumAnimation InProgress="true" RepeatCount="1" Fill="Hold" Target="this.X,this.Y" IsDelta="true" Autoreverse="false" Duration="1" To="0,100" From="0,0"/>
 				</RandomSet>
-			</IntersectionTrigger>
 
-			<!-- Этот выберет цвет для убегания. Он является стэйтом (он в группе с дефолтом) -->
-			<IntersectionTrigger ObjectId2="this" ObjectId1="hero" EnterAction="setPickColor.Start" Group="enemyStates">
+				<!-- Этот выберет цвет для убегания.-->
 				<SequenceSet Id="setPickColor">
 					<!-- Гасим все имиджи -->
 					<Do Action="aa1.Disable;aa2.Disable;aa3.Disable;aa4.Disable" />
 					<!-- Выбираем случайный -->
-					<!--
-					<RandomSet Probabilities="1,1,1,1">
+					<RandomSet>
 						<Do Action="aa1.Enable" />
 						<Do Action="aa2.Enable" />
 						<Do Action="aa3.Enable" />
 						<Do Action="aa4.Enable" />
 					</RandomSet>
-					-->
 				</SequenceSet>
 
+				<!-- Цвета на выбор. Размещаем их после сэтов, чтобы отрисовывались сразу на первом апдэйте. -->				
 				<Image Id="aa1" TextureId="cursor_50x50_light_blue" />
 				<Image Id="aa2" TextureId="cursor_50x50_green" />
 				<Image Id="aa3" TextureId="cursor_50x50_blue" />

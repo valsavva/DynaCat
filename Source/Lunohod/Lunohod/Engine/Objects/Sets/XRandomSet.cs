@@ -18,21 +18,24 @@ namespace Lunohod.Objects
             private double total;
 
             public ProbabilityList(Random random, IEnumerable<double> source)
-                : base(source)
+				: base(source)
             {
                 this.random = random;
-                total = this.Sum();
+                total = 0;
+				for(int i = 0; i < this.Count; i++)
+				{
+					total += this[i];
+					this[i] = total;
+				}
             }
 
             public int NextIndex()
             {
                 double n = random.NextDouble() * total;
-                double sum = 0;
 
                 for (int i = 0; i < this.Count - 1; i++)
                 {
-                    sum += this[i];
-                    if (sum >= n)
+                    if (this[i] >= n)
                         return i;
                 }
 
@@ -44,8 +47,6 @@ namespace Lunohod.Objects
 
         private IRunnable currentRunnable;
         private ProbabilityList probabilities;
-
-        private int repeatsDone = 0;
 
         [XmlAttribute]
         public string Probabilities;
@@ -63,32 +64,22 @@ namespace Lunohod.Objects
             }
         }
 
-        public override void Update(UpdateParameters p)
+        public override void UpdateProgress(UpdateParameters p)
         {
-            if (this.inProgress && !this.isPaused)
+            if (currentRunnable == null)
             {
-                if (currentRunnable == null)
-                {
-                    currentRunnable = GetNextAnimation();
-                    currentRunnable.Start();
-                }
-                else if (!currentRunnable.InProgress)
-                {
-                    repeatsDone++;
-
-                    if (repeatsDone >= this.RepeatCount)
-                    {
-                        this.Stop();
-                        return;
-                    }
-
-                    currentRunnable = GetNextAnimation();
-                    currentRunnable.Start();
-                }
+                currentRunnable = GetNextAnimation();
+                currentRunnable.Start();
             }
 
-            base.Update(p);
-        }
+			currentRunnable.Update(p);
+
+            if (!currentRunnable.InProgress)
+			{
+                repeatsDone++;
+				currentRunnable = null;
+			}
+		}
 
         private IRunnable GetNextAnimation()
         {
@@ -101,8 +92,8 @@ namespace Lunohod.Objects
         {
             base.Start();
 
-            repeatsDone = 0;
-            runnables.ForEach(a => a.Stop());
+			if (currentRunnable != null)
+				currentRunnable.Stop();
 
             currentRunnable = null;
         }
@@ -110,26 +101,22 @@ namespace Lunohod.Objects
         {
             base.Pause();
 
-            if (currentRunnable == null)
-                return;
-
-            currentRunnable.Pause();
+            if (currentRunnable != null)
+	            currentRunnable.Pause();
         }
         public override void Resume()
         {
             base.Resume();
 
-            if (currentRunnable == null)
-                return;
-
-            currentRunnable.Resume();
+            if (currentRunnable != null)
+	            currentRunnable.Resume();
         }
         public override void Stop()
         {
             base.Stop();
-
-            repeatsDone = 0;
-            runnables.ForEach(a => a.Stop());
+            
+			if (currentRunnable != null)
+	            currentRunnable.Stop();
         }
     }
 }

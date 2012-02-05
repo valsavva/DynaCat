@@ -9,12 +9,13 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-    public class XSetBase : XAnimationBase
+    public abstract class XSetBase : XRunnableBase
     {
 		protected List<IRunnable> runnables;
 
 		public XSetBase()
         {
+			this.RepeatCount = 1;
         }
 
 		public override void Initialize(InitializeParameters p)
@@ -23,11 +24,14 @@ namespace Lunohod.Objects
 			
 			runnables = this.CollectRunnables();
 			runnables.ForEach(r => r.InProgress = false);
+
+			if (this.inProgress)
+				this.Start();
 		}
 		
-		public override void UpdateAnimation()
+		public override int CalculateRepeatsDone()
 		{
-			
+			return this.repeatsDone;
 		}
 	}
 }

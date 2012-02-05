@@ -132,16 +132,18 @@
     <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
     <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
     <Compile Include="Engine\Objects\XObjectCollection.cs" />
-    <Compile Include="Engine\Objects\Animation\XParallelSet.cs" />
-    <Compile Include="Engine\Objects\Animation\XRandomSet.cs" />
-    <Compile Include="Engine\Objects\Animation\XSequenceSet.cs" />
-    <Compile Include="Engine\Objects\Animation\XSetBase.cs" />
     <Compile Include="Engine\Objects\IRunnable.cs" />
     <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
     <Compile Include="SpriteBatchWithFloats.cs" />
     <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
+    <Compile Include="Engine\Objects\Sets\XParallelSet.cs" />
+    <Compile Include="Engine\Objects\Sets\XRandomSet.cs" />
+    <Compile Include="Engine\Objects\Sets\XSequenceSet.cs" />
+    <Compile Include="Engine\Objects\Sets\XSetBase.cs" />
+    <Compile Include="Engine\Objects\Animation\XDo.cs" />
+    <Compile Include="Engine\Objects\Animation\XRunnableBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -154,6 +156,7 @@
     <Folder Include="Engine\Objects\Resources\" />
     <Folder Include="Engine\Objects\Media\" />
     <Folder Include="Content\Textures\" />
+    <Folder Include="Engine\Objects\Sets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Global\dash 2a.png">
@@ -820,6 +823,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonNozhnicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestActionsAndEnabled.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

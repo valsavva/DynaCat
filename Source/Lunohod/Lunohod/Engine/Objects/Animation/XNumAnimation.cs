@@ -73,8 +73,8 @@ namespace Lunohod.Objects
             for (int i = 0; i < startValues.Count; i++)
                 startValues[i] = null;
 		}
-
-        public override void UpdateAnimation()
+		
+		protected override void UpdateAnimation()
         {
             for (int i = 0; i < targets.Count; i++)
             {

@@ -13,5 +13,7 @@ namespace Lunohod.Objects
         void Stop();
         void Pause();
         void Resume();
+		
+		void Update(UpdateParameters p);
     }
 }

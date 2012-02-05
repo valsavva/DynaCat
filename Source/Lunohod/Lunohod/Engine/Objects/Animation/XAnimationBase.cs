@@ -9,27 +9,8 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	public abstract class XAnimationBase : XObject, IRunnable
+	public abstract class XAnimationBase : XRunnableBase
 	{
-        protected TimeSpan elapsedTime;
-		protected bool inProgress = false;
-		protected bool isPaused = false;
-
-        public TimeSpan ElapsedTime
-        {
-            get { return elapsedTime; }
-        }
-		[XmlAttribute]
-        public bool InProgress
-		{
-			get { return this.inProgress; }
-			set { this.inProgress = value; }
-		}
-		public bool IsPaused
-		{
-			get { return this.isPaused; }
-		}
-		
         public XAnimationBase()
 		{
 		}
@@ -38,10 +19,6 @@ namespace Lunohod.Objects
 		public TimeSpan Duration;
 		[XmlAttribute]
 		public bool Autoreverse;
-        [XmlIgnore]
-        public TimeSpan RepeatTime;
-        [XmlAttribute]
-        public float RepeatCount;
 		[XmlAttribute]
 		public XAnimationFillBehavior Fill;
 
@@ -51,77 +28,40 @@ namespace Lunohod.Objects
 			get { return this.Duration.ToString(); }
             set { this.Duration = value.ToDuration(); }
 		}
-
-        [XmlAttribute("RepeatTime")]
-        public string zRepeatTime
-        {
-            get { return this.RepeatTime.ToString(); }
-            set { this.RepeatTime = TimeSpan.Parse(value, CultureInfo.InvariantCulture); }
-        }
-
-        public override void Update(UpdateParameters p)
-        {
-            base.Update(p);
+		
+		public override int CalculateRepeatsDone()
+		{
+			if (this.elapsedTime == TimeSpan.Zero || this.Duration == TimeSpan.Zero)
+				return 0;
 			
-			if (!this.inProgress || this.isPaused)
-				return;
-		
-			UpdateTime(p);
-
-            UpdateAnimation();
-        }
-
-		void UpdateTime(UpdateParameters p)
-		{
-			this.elapsedTime += p.GameTime.ElapsedGameTime;
-        	
-    		if (this.RepeatTime != TimeSpan.Zero)
-			{
-				if (this.elapsedTime > this.RepeatTime)
-					  Stop();
-			}
-			else if (this.RepeatCount != 0)
-			{
-				if ((this.elapsedTime.TotalMilliseconds > 0) && (this.Duration != TimeSpan.Zero) && ((this.elapsedTime.TotalMilliseconds / this.Duration.TotalMilliseconds) >= this.RepeatCount * (this.Autoreverse ? 2 : 1)))
-					Stop();
-			} 
+			if (this.Autoreverse)
+				return (int)(this.elapsedTime.TotalMilliseconds / (this.Duration.TotalMilliseconds * 2.0f));
+			else
+				return (int)(this.elapsedTime.TotalMilliseconds / this.Duration.TotalMilliseconds);
 		}
 		
-		//protected abstract void Reset();
-        public abstract void UpdateAnimation();
+		public override void UpdateProgress(UpdateParameters p)
+		{
+			UpdateAnimation();
+			
+			this.UpdateChildren(p);
+		}
 		
-		public virtual void Start()
-		{
-			this.elapsedTime = TimeSpan.Zero;
-			this.inProgress = true;
-			this.isPaused = false;
-		}
-		public virtual void Pause()
-		{
-			if (this.inProgress)
-				this.isPaused = true;
-		}
-		public virtual void Resume()
-		{
-			if (!this.inProgress)
-				Start();
-			else			
-				this.isPaused = false;
-		}
-        public virtual void Stop()
+		protected abstract void UpdateAnimation();
+		
+        public override void Stop()
         {
+			base.Stop();
+			
 			if (this.inProgress)
 			{
 				if (this.Fill == XAnimationFillBehavior.Reset)
 					this.elapsedTime = TimeSpan.Zero;
-				else
+				else if (this.Fill == XAnimationFillBehavior.End)
 					this.elapsedTime = this.Duration + (this.Autoreverse ? this.Duration : TimeSpan.Zero);
 
 				UpdateAnimation();
 			}
-
-			this.inProgress = false;
-			this.isPaused = false;
         }
     }
 }

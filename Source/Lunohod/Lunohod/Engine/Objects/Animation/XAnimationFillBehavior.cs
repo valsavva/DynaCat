@@ -5,7 +5,8 @@ namespace Lunohod
 	public enum XAnimationFillBehavior
 	{
 		Hold,
-		Reset
+		Reset,
+		End
 	}
 }
 
