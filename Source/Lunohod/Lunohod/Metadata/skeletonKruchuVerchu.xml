@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+<!-- date: 06/02 2012 20:45 -->
+<Level Name="D:\Lunohod\Levels\_skeleton\skeletonKruchuVerchu\skeletonKruchuVerchu.svg" Bounds="0, 0, 480, 320">
+    <Include File="skeletonClassCursor.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="white_clear" Source="white_clear" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+        <Texture Id="_E_" Source="_E_" />
+        <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />
+        <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
+        <Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
+        <Texture Id="cursor_wall_50x50_bounce" Source="cursor_wall_50x50_bounce" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3056" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3056"/>
+        <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.1" TraceId="image3067"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+        <Hero Id="hero" Bounds="30, 20, 50, 40" Class="clsHero" TraceId="image3015"/>
+        <Block Id="blk1" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+        <Block Id="blk2" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+        <Block Id="blk3" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+        <Block Id="blk4" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+        
+        <!-- Выход -->
+        <Block Id="blkExit" Bounds="400, 256, 50, 50" Edges="Stick" TraceId="image3034" Enabled="false" Opacity="0">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+        
+		<!-- бордюры -->
+        <Block Id="blk5" Bounds="490, 100, 110, 20" Edges="Stick" TraceId="image3095">
+            <Image Id="image3095" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+
+        <Block Id="blk6" Bounds="350, -110, 20, 100" Edges="Stick" TraceId="image3101">
+            <Image Id="image3101" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        
+        <!-- еда - крючок -->
+        <Food Id="fd1" Points="23" Bounds="444, 24, 24, 12" Class="clsFood" TraceId="fdKey"/>
+        
+        <Group Id="grpAllNap">
+   	 	<!-- первый наперсток -->      	
+        <Group Id="nap1">
+            <Enemy Id="enmNap1" Bounds="-95, 145, 30, 30" Class="clsEnemy" TraceId="image3026"/>
+            <Block Id="blkNap1" Bounds="-105, 135, 50, 50" Edges="None" TraceId="image4047">
+            	<DistanceTrigger ObjectId1="blkNap1" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap1.Disable" />
+                <Image Id="image4047" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+        </Group>            
+        
+        <!-- второй наперсток -->
+        <Group Id="nap2">
+            <Enemy Id="enmNap2" Bounds="545, 145, 30, 30" Class="clsEnemy" TraceId="image3026-5"/>
+            <Block Id="blkNap2" Bounds="535, 135, 50, 50" Edges="None" TraceId="image4047-1">
+            	<DistanceTrigger ObjectId1="blkNap2" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap2.Disable" />
+                <Image Id="image4047-1" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+        </Group>
+        
+        <!-- третий наперсток -->
+        <Group Id="nap3">
+            <Food Id="fdNap3" Points="23" Bounds="225, 395, 30, 30" Class="clsFood" TraceId="image3037"/>
+            <Block Id="blkNap3" Bounds="215, 385, 50, 50" Edges="None" TraceId="image4045">
+            	<DistanceTrigger ObjectId1="blkNap3" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap3.Disable" />
+                <Image Id="image4045" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+        </Group>
+        </Group>
+        
+        <!-- мышеловка -->        
+    	<IntersectionTrigger ObjectId1="fd1" ObjectId2="hero" StayTriggered="true" >
+
+			 <!-- мышеловка захлопывается -->
+    		<ParallelSet Id="m1" RepeatCount="1" InProgress="true">
+    			<!-- выезд бордюры -->
+	        	<NumAnimation Id="anm1" From="0" To="-120" Target="blk5.X" Duration="0.25" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4090"/>
+	        	<NumAnimation Id="anm2" From="0" To="110" Target="blk6.Y" Duration="0.25" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4101"/>                		                    
+	        	
+	        	<!-- появление первый наперсток -->
+		    	<SequenceSet Id="init1" InProgress="false" RepeatCount="1">
+		        	<Delay Duration="2" />
+		        	<NumAnimation Id="anm3" From="0" To="250" Target="nap1.X" Duration="0.4" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4131"/>
+		    	</SequenceSet>
+		    	
+		    	<!-- появление второй наперсток -->
+ 		    	<SequenceSet Id="init2" InProgress="false" RepeatCount="1">
+		        	<Delay Duration="3" />
+		        	<NumAnimation Id="anm4" From="0" To="-250" Target="nap2.X" Duration="0.2" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4142"/>
+		    	</SequenceSet>
+		    	
+		    	<!-- появление третий наперсток -->
+ 		    	<SequenceSet Id="init3" InProgress="false" RepeatCount="1">
+		        	<Delay Duration="2.4" />
+		        	<NumAnimation Id="anm5" From="0" To="-250" Target="nap3.Y" Duration="0.3" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4153"/>
+		    	</SequenceSet>
+		    	
+		    	
+	    		<SequenceSet Id="init3" InProgress="true" RepeatCount="1">
+	    			<!-- показываем что под наперстками -->
+		        	<Delay Duration="3.4" />
+		        	<NumAnimation Id="anm6" From="0" To="100" Target="blkNap1.Rotation" Duration="0.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4153"/>
+		        	<NumAnimation Id="anm7" From="0" To="-100" Target="blkNap2.Rotation" Duration="0.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4153"/>
+		        	<NumAnimation Id="anm8" From="0" To="-100" Target="blkNap3.Rotation" Duration="0.7" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4153"/>
+		        	<Delay Duration="0.6" />
+		        	
+		        	<!-- путаем наперстки! -->
+	        		<NumAnimation Duration="1.3" Target="nap1.X,nap1.Y,nap2.X,nap2.Y,nap3.X,nap3.Y,grpAllNap.X,grpAllNap.Y" Autoreverse="true" InProgress="true" IsDelta="true" RepeatCount="1">
+	        			<KeyFrame Time="0" Value="0,0,0,0,0,0,0,0" Smoothing="Smooth" />
+	        			<KeyFrame Time="0.5" Value="40,60,200,100,100,60,-50,-50" Smoothing="Smooth" />
+	        			<KeyFrame Time="0.9" Value="300,100,60,40,60,140,-100,-100" Smoothing="Smooth" />
+	        			<KeyFrame Time="1.3" Value="80,280,10,140,200,60,-250,-200" Smoothing="Smooth" />
+	        		</NumAnimation>
+	        		
+	    			<!-- въезд бордюры -->
+		        	<NumAnimation Id="anm11" From="0" To="120" Target="blk5.X" Duration="0.25" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4090"/>
+		        	<NumAnimation Id="anm12" From="0" To="-110" Target="blk6.Y" Duration="0.25" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4101"/>                		                   
+		        	
+		        	<Do Action="blkExit.Enable" />
+		        	<NumAnimation Duration="3" Target="blkExit.Opacity" From="0" To="1" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End"/>
+		        	
+			    </SequenceSet>
+		    
+    		</ParallelSet>
+    				    
+    	</IntersectionTrigger>
+   	 	
+        
+
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+
