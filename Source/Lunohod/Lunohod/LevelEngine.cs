@@ -16,108 +16,26 @@ namespace Lunohod
 	{
 		public XHero hero;
 		public XTower tower;
-		public List<XElement> obstacles;
-		private XLevel level;
 		
 		private Dictionary<GameEvent, RadioWave> waves;
 
-		private InitializeParameters initializeParameters;
-		private UpdateParameters updateParameters;
-		private DrawParameters drawParameters;
-		
-		private SpriteBatchWithFloats spriteBatch;
-		
 		public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
 		{
 		}
 
-		public override XObject RootComponent { get { return level; } }
-		
-		
-		public override void ProcessEvent(GameTime gameTime, GameEvent e)
-		{
-			bool signalReachedHero = true;
-			
-			if (!e.IsInstant)
-			{
-				double signalTraveledDistance = this.tower.SignalSpeed * (gameTime.TotalGameTime - e.Time).TotalSeconds;
-				signalReachedHero = signalTraveledDistance >= this.hero.DistanceToTower;
-
-				if (signalReachedHero)
-					waves.Remove(e);
-				else if (!waves.ContainsKey(e))
-					waves.Add(e, new RadioWave(e.Time));
-			}
-			
-			if (signalReachedHero)
-			{
-				e.IsHandled = true;
-				
-				switch (e.EventType)
-				{
-					case GameEventType.Up : this.hero.Direction = Direction.VectorUp; break;
-					case GameEventType.Down : this.hero.Direction = Direction.VectorDown; break;
-					case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
-	                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
-	                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
-					default: e.IsHandled = false; break;
-				}
-			}
-
-			base.ProcessEvent(gameTime, e);
-		}
-		
+		public override Type RootComponentType { get { return typeof(XLevel); } }
 		
 		public override void Initialize()
 		{
 			base.Initialize();
 			
-			this.obstacles = new List<XElement>();
 			this.waves = new Dictionary<GameEvent, RadioWave>();
-
-			spriteBatch = new SpriteBatchWithFloats(this.game.GraphicsDevice);
-
-			initializeParameters = new InitializeParameters() { Game = game, ScreenEngine = this };
-			updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
-			drawParameters = new DrawParameters() { Game = game, ScreenEngine = this, SpriteBatch = spriteBatch };
-			
-			LoadLevelObjects();
-		}
-		
-		private void LoadLevelObjects()
-		{
-			string levelXmlFile = Path.ChangeExtension(
-				Path.Combine(GameEngine.MetadataRootDirectory, this.name), ".xml"
-			);
-			
-			try
-			{
-				XmlSerializer serializer = new XmlSerializer(typeof(XLevel));
-				
-				using (FileStream stream = new FileStream(levelXmlFile, FileMode.Open, FileAccess.Read))
-				{
-					this.level = (XLevel)serializer.Deserialize(stream);
-				}
-			}
-			catch (Exception ex)
-			{
-				System.Diagnostics.Debug.WriteLine(ex.ToString());
-				
-				throw;
-			}
-			
-			level.InitHierarchy();
-			level.Initialize(initializeParameters);
 		}
 		
 		public override void Update(GameTime gameTime)
 		{
-			updateParameters.GameTime = gameTime;
-			
-			this.game.GameObject.Update(updateParameters);
-			
-			this.level.Update(updateParameters);
+			base.Update(gameTime);
 			
 			foreach(var wave in waves.Values)
 				wave.Update(updateParameters);
@@ -125,6 +43,36 @@ namespace Lunohod
 			ProcessCollisions();
 		}
 		
+		public override void Draw(GameTime gameTime)
+		{
+			try 
+			{
+				PreDraw(gameTime);
+				
+				this.RootComponent.Draw(drawParameters);
+				
+				foreach(var wave in waves.Values)
+					wave.Draw(drawParameters);
+
+				PostDraw();				
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			}
+		}
+
+		public override void Unload()
+		{
+			base.Unload();
+
+			this.hero = null;
+			this.tower = null;
+			this.waves = null;
+		}
+
+		#region Collisions
+
 		private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
 		
 		public void ProcessCollisions()
@@ -173,66 +121,40 @@ namespace Lunohod
 				}
 			}
 		}
+
+#endregion
 		
-		public override void Draw(GameTime gameTime)
+		public override void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
-			drawParameters.GameTime = gameTime;
+			bool signalReachedHero = true;
 			
-			try 
+			if (!e.IsInstant)
 			{
-				if (this.game.Window.ClientBounds.Height > 900)
-				{
-					Matrix transform = Matrix.Identity *
-						Matrix.CreateScale(2.0f);
-					this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
-						DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
-				}
-				else
-				{
-					this.spriteBatch.Begin();
-				}
-				
-				this.level.Draw(drawParameters);
-				
-				foreach(var wave in waves.Values)
-					wave.Draw(drawParameters);
-				
-				this.game.GameObject.Draw(drawParameters);
-				
-				if (this.game.DrawDebugInfo)
-					this.DrawDebugInfo(drawParameters);
-				
-				this.spriteBatch.End();
-				
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.ToString());
-			}
-		}
+				double signalTraveledDistance = this.tower.SignalSpeed * (gameTime.TotalGameTime - e.Time).TotalSeconds;
+				signalReachedHero = signalTraveledDistance >= this.hero.DistanceToTower;
 
-		Stopwatch sw = new Stopwatch();
-		Vector2 fpsPos = new Vector2(5, 280);
-		double fps = 0;
-		public void DrawDebugInfo(DrawParameters dp)
-		{
-			sw.Stop();
-			if (sw.Elapsed.TotalMilliseconds > 0)
-				fps = fps * 0.9 + (1000.0 / sw.Elapsed.TotalMilliseconds) * 0.1;
-			sw.Reset();
-			sw.Start();
+				if (signalReachedHero)
+					waves.Remove(e);
+				else if (!waves.ContainsKey(e))
+					waves.Add(e, new RadioWave(e.Time));
+			}
 			
-			dp.SpriteBatch.DrawString(game.SystemFont, Math.Round(fps).ToString(), fpsPos, Color.Red);
-		}
+			if (signalReachedHero)
+			{
+				e.IsHandled = true;
+				
+				switch (e.EventType)
+				{
+					case GameEventType.Up : this.hero.Direction = Direction.VectorUp; break;
+					case GameEventType.Down : this.hero.Direction = Direction.VectorDown; break;
+					case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
+	                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
+	                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
+					default: e.IsHandled = false; break;
+				}
+			}
 
-		public override void Unload()
-		{
-			this.level.Dispose();
-			this.spriteBatch.Dispose();
-
-			this.level = null;
-			this.obstacles = null;
-			this.spriteBatch = null;
+			base.ProcessEvent(gameTime, e);
 		}
 	}
 }	

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Screen Name="Main" Bounds="0,0,480,320">
+
+	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank" />
+		<Font Id="SystemFont" Source="SystemFont" />
+	</Resources>
+	
+	<Include File="Textures.xml" />
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
+        <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
+    </Layer>
+	
+	<Layer Id="action" BackColor="#FFFFFFFF">
+<!--
+		<TapArea Bounds="0,50,100,80" Action="system.StartLevel(0)" />
+		<Text FontId="SystemFont" Text="system.GetLevelName(0)" Location="50,50" Color="#000000" />
+-->
+	</Layer>
+	
+</Screen>

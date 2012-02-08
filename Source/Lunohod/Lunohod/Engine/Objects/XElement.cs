@@ -13,7 +13,6 @@ namespace Lunohod.Objects
     public class XElement : XObject
     {
 		private Color? backColor = null;
-		private float? rotation;
 		private System.Drawing.RectangleF tmpBounds;
 		private Vector2 tmpVector;
 		
@@ -34,37 +33,12 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public float Opacity = 1.0f;
         [XmlAttribute]
-        public float Rotation
-		{
-			get { 
-				if (this.rotation.HasValue)
-					return this.rotation.Value;
-                else
-					return 0.0f;
-			}
-			set { this.rotation = value; }
-		}
+        public float Rotation;
 		[XmlIgnore]
 		public Vector2 Origin;
 		
 		[XmlIgnore]
 		public XElement ParentElement { get; set; }
-		
-		public bool UseRotation
-		{
-			get { 
-				if (this.rotation.HasValue || this.Origin != Vector2.Zero)
-					return true;
-				if (this.ParentElement == null)
-					return false;
-				return this.ParentElement.UseRotation;
-			}
-		}
-		
-		public bool UseBackColor
-		{
-			get { return this.backColor.HasValue; }
-		}
 		
 		public float GetScreenRotation()
 		{

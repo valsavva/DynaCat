@@ -25,7 +25,7 @@ namespace Lunohod.Objects
 				
 				this.Subcomponents = new XObjectCollection
 				{
-					GameEngine.LoadMetadata(this.file, typeof(XInclude))
+					GameEngine.LoadXml<XInclude>(this.file)
 				};
 			}
 		}

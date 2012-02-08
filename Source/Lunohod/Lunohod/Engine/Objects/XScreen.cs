@@ -9,21 +9,13 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-	[XmlType("Game")]
-	public class XGame : XElement
-	{
-		public XGame()
-		{
-		}
+    [XmlType("Screen")]
+    public class XScreen : XElement
+    {
+        [XmlAttribute]
+        public string Name;
 		
 		[XmlAttribute]
-		public string StartScreen;
-
-		[XmlArray]
-		public XLevel[] Levels;
-
-		[XmlArray]
-		public XScreen[] Screens;
-	}
+		public string File;
+    }
 }
-

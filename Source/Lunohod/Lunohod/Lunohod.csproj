@@ -46,6 +46,8 @@
     <ConsolePause>false</ConsolePause>
     <MtouchI18n />
     <IpaPackageName />
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseSGen>true</MtouchUseSGen>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -147,6 +149,8 @@
     <Compile Include="Engine\Objects\XText.cs" />
     <Compile Include="Engine\Objects\Animation\XDelay.cs" />
     <Compile Include="Engine\Objects\XFood.cs" />
+    <Compile Include="Engine\Objects\XSystem.cs" />
+    <Compile Include="Engine\Objects\XScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -853,6 +857,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonKruchuVerchu.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ScreenMain.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

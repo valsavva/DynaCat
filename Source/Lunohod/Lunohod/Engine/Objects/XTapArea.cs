@@ -14,6 +14,8 @@ namespace Lunohod.Objects
     [XmlType("TapArea")]
 	public class XTapArea : XElement
 	{
+		private ActionCaller actionCaller;
+		
 		public XTapArea()
 		{
 		}
@@ -21,11 +23,19 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public string Event;
 		
+		[XmlAttribute]
+		public string Action;
+		
+		public ActionCaller ActionCaller { get { return actionCaller; } }
+		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
 			
 			p.Game.ScreenEngine.tapAreas.Add(this);
+			
+			if (this.Action != null)
+				actionCaller = new ActionCaller(this, this.Action);
 		}
 	}
 }

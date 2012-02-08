@@ -44,22 +44,25 @@ namespace Lunohod.Objects
 		private System.Drawing.RectangleF screenBounds;
         private float screenRotation;
 		private Color actualBackColor;
-
+		
+		private int i = 0;
         public override void Update(UpdateParameters p)
         {
             base.Update(p);
-
+			
+//			if (++i > 10)
+//				return;
+			
             screenBounds = this.GetScreenBounds();
             actualBackColor = this.BackColor * this.GetScreenOpacity();
-			if (this.UseRotation)
-				screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
+			screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
         }
 
 		public override void Draw(DrawParameters p)
 		{
 			if (this.Stretch || this.Bounds.IsEmpty)
 			{
-				if (this.UseRotation)
+				if (screenRotation != 0 || this.Origin != Vector2.Zero)
 					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
 				else
 					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, actualBackColor);
@@ -69,7 +72,7 @@ namespace Lunohod.Objects
 				this.location.X = screenBounds.X;
 				this.location.Y = screenBounds.Y;
 				
-				if (this.UseRotation)
+				if (screenRotation != 0 || this.Origin != Vector2.Zero)
 					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
 				else
 					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor);

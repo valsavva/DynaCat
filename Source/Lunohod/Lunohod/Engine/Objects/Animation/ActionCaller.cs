@@ -19,10 +19,14 @@ namespace Lunohod.Objects
 	{
 		private XObject target;
 		private MethodInfo methodInfo;
+		private List<NumValueReader> parameters;
+		private object[] parameterValues;
 
 		public ActionCaller(XObject target, string action)
 		{
             this.target = target;
+			
+			ParseParameters(ref action);
 			
 			Type type = this.target.GetType();
 			this.methodInfo = type.GetMethod(action);
@@ -33,10 +37,39 @@ namespace Lunohod.Objects
 						action, this.target.Id, this.GetType().FullName)
 				);
 		}
+
+		public void ParseParameters(ref string action)
+		{
+			int lpIndex = action.IndexOf("(");
+			int rpIndex = action.IndexOf(")");
+			
+			if (lpIndex == -1 && rpIndex == -1)
+				return;
+			
+			if ((lpIndex == -1 || rpIndex == -1) || (lpIndex > rpIndex))
+				throw new InvalidOperationException("Wrong number of parenthesis");
+			
+			var paramsString = action.Substring(lpIndex, rpIndex - lpIndex - 1);
+			action = action.Substring(0, lpIndex);
+			
+			if (rpIndex == lpIndex + 1)
+				return;
+			
+			parameters = paramsString.Split(',').Select(s => new NumValueReader(this.target, s)).ToList();
+			parameterValues = new object[parameters.Count];
+		}
 		
 		public override void Call()
 		{
-			methodInfo.Invoke(target, null);
+			if (parameters == null || parameters.Count == 0)
+				methodInfo.Invoke(target, null);
+			else
+			{
+				for(int i = 0; i < parameters.Count; i++)
+					parameterValues[i] = parameters[i].Value;
+
+				methodInfo.Invoke(target, parameterValues);
+			}
 		}
 		
 		public static ActionCallerBase CreateActionCaller(XObject trigger, string memberDescriptor)
