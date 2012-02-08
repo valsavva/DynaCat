@@ -18,7 +18,7 @@
 			<Block Id="heroLD" Bounds="-40, 50, 40, 40" />
 
 			<BoolTrigger Id="something" When="this:something" InProgress="true" Group="heroStates">
-				<Image TextureId="cursor_solid_50x50_blue" />
+				<Image TextureId="cursor_50x50_light_blue" />
 			</BoolTrigger>
 			
 			<BoolTrigger Id="default" Group="heroStates">

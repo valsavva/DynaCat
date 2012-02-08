@@ -19,7 +19,7 @@
 	<!-- ========================================================================================= -->
 	<Class Id="clsAbr">
 		<Enemy>
-			<IntersectionTrigger ObjectId2="this" ObjectId1="hero" EnterAction="setRunAway.Start;setPickColor.Start" Group="enemyStates">
+			<IntersectionTrigger ObjectId2="this" ObjectId1="hero" EnterAction="setRunAway.Start();setPickColor.Start" Group="enemyStates">
 				<!-- Выбираем случайно куда бежать -->
 				<!-- Если Probabilities одинаковые, то их можно не указывать. -->
 				<!-- По умолчанию у сэтов RepeatCount - единица. То есть, они исполняются один раз после запуска.

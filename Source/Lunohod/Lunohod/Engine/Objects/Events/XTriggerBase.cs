@@ -66,10 +66,7 @@ namespace Lunohod.Objects
 			
 			// fire appropriate actions
 			if (this.isTriggered && !oldIsTriggered && enterActions != null)
-			{
 				enterActions.ForEach(a => a.Call());
-				Console.WriteLine(this.EnterAction);
-			}
 			if (this.isTriggered && actions != null)
 				actions.ForEach(a => a.Call());
 			if (!this.isTriggered && oldIsTriggered && exitActions != null)

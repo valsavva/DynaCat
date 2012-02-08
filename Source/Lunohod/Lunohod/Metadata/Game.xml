@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Game Bounds="0,0,480,320">
+<Game Bounds="0,0,480,320" StartScreen="ScreenMain.xml">
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
@@ -9,6 +9,9 @@
 		<Texture Id="wave0800" Source="wave0800" />
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
+	<Screens>
+		<Screen Name="ScreenMain" File="ScreenMain.xml" />
+	</Screens>
 	<Levels>
 		<Level Name="skeletonVKolce" File="skeletonVKolce.xml" />
 		<Level Name="robocat_demo" File="robocat_demo.xml" />
