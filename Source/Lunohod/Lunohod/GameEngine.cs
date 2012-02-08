@@ -109,7 +109,7 @@ namespace Lunohod
 		{
             LoadGameElement();
 
-			LoadLevel("AnimationSamples.xml");
+			LoadLevel(gameObject.Levels[0].File);
 			//LoadScreen(gameObject.StartScreen);
 
 			base.LoadContent();
