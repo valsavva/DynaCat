@@ -45,13 +45,9 @@ namespace Lunohod.Objects
         private float screenRotation;
 		private Color actualBackColor;
 		
-		private int i = 0;
         public override void Update(UpdateParameters p)
         {
             base.Update(p);
-			
-//			if (++i > 10)
-//				return;
 			
             screenBounds = this.GetScreenBounds();
             actualBackColor = this.BackColor * this.GetScreenOpacity();

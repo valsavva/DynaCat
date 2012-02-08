@@ -5,10 +5,8 @@
 	<Include File="ClassCursor.xml" />
 
     <Layer Id="background" BackColor="#FFFFFFFF">
-		<!--
         <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
         <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
-		-->
     </Layer>
 
 	<Layer Id="action" BackColor="#FFFFFFFF">

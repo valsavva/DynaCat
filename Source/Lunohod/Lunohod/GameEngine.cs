@@ -35,7 +35,9 @@ namespace Lunohod
 		//public Stopwatch gameWatch = new Stopwatch();
 		
 		public static GameEngine Instance { get; private set; }
-			
+
+		public int CycleNumber { get; private set; }
+		
 		public XGame GameObject
 		{
 			get { return this.gameObject; }
@@ -115,6 +117,8 @@ namespace Lunohod
 
 		protected override void Update(GameTime gameTime)
 		{
+			this.CycleNumber++;
+			
 			ProcessInputProcessors(gameTime);
             
             ProcessQueue(gameTime);
