@@ -8,7 +8,7 @@
 	
 	<Class Id="clsHeroCursor">
 		<Hero Speed="84" Direction="0,0">
-<!--			<Block Id="heroL" Bounds="-50, 0, 50, 50" /> 
+			<Block Id="heroL" Bounds="-50, 0, 50, 50" /> 
 			<Block Id="heroLU" Bounds="-40, -40, 40, 40" />
 			<Block Id="heroU" Bounds="0, -50, 50, 50" />
 			<Block Id="heroRU" Bounds="50, -40, 40, 40" />
@@ -22,8 +22,8 @@
 			</BoolTrigger>
 			
 			<BoolTrigger Id="default" Group="heroStates">
--->				<Image TextureId="cursor_solid_50x50_blue" />
-<!--			</BoolTrigger>-->
+				<Image TextureId="cursor_solid_50x50_blue" />
+			</BoolTrigger>
 
 		</Hero>
 	</Class>
@@ -79,7 +79,7 @@
 			
 			<!-- Finally, this is the best option. Notice that RandomSet gets started explicitly through the EnterAction in the trigger.
 			-->
-<!--			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setMoves.Start;this_setRotations.Start" StayTriggered="true" Group="enemyStates">
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setMoves.Start;this_setRotations.Start" StayTriggered="true" Group="enemyStates">
 			<Image TextureId="cursor_solid_10x10_black_red" Origin="-5,-5" Stretch="false" >
 					<RandomSet Id="this_setMoves" Probabilities="1,1,1,1">
 						<NumAnimation From="0,0" To="-1000,0" Duration="10" Autoreverse="false" IsDelta="true" Target="this.X,this.Y" Fill="Hold" RepeatCount="1"/>
@@ -92,13 +92,13 @@
 						<NumAnimation From="360" To="0" Duration="1.6" Autoreverse="false" Target="this.Rotation"/>
 					</RandomSet>
 				</Image>
--->					<!-- Uncomment this for fun :) -->
+					<!-- Uncomment this for fun :) -->
 				<!-- <NumTrigger Property="hero.X" Compare="G" Value="330" EnterAction="this_setMoves.Pause" ExitAction="this_setMoves.Resume" /> -->
-<!--			</IntersectionTrigger>
+			</IntersectionTrigger>
 			
 			<BoolTrigger Id="this_default" Group="enemyStates">	
---> 				<Image Id="imgN2" TextureId="cursor_solid_10x10_black_green" />
-<!--			</BoolTrigger>	-->
+ 				<Image Id="imgN2" TextureId="cursor_solid_10x10_black_green" />
+-			</BoolTrigger>	
 	</Enemy>	
 	</Class>
 </Include>
