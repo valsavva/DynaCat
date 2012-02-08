@@ -10,6 +10,9 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Levels>
+		<Level Name="robocat_demo" File="robocat_demo.xml" />
+		<Level Name="skeletonLoshadka" File="skeletonLoshadka.xml" />
+		<Level Name="skeletonElochka" File="skeletonElochka.xml" />
 		<Level Name="skeletonKruchuVerchu" File="skeletonKruchuVerchu.xml" />
 		<Level Name="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
 		<Level Name="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
@@ -17,7 +20,6 @@
 		<Level Name="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
 		<Level Name="skeletonParavozik" File="skeletonParavozik.xml" />
 		<Level Name="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
-		<Level Name="skeletonElochka" File="skeletonElochka.xml" />
 		<Level Name="skeletonLabirinth" File="skeletonLabirinth.xml" />
 		<Level Name="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
 		<Level Name="TestFood" File="TestFood.xml" />

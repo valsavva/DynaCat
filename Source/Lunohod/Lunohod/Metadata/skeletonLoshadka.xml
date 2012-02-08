@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+<!-- date: 07/02 2012 02:51 -->
+<Level Name="D:\Lunohod\Levels\_skeleton\skeletonLoshadka\skeletonLoshadka.svg" Bounds="0, 0, 480, 320">
+    <Include File="skeletonClassCursor.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="white_clear" Source="white_clear" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+        <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />
+        <Texture Id="cursor_wall_50x50_bounce" Source="cursor_wall_50x50_bounce" />
+        <Texture Id="_E_" Source="_E_" />
+        <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
+        <Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3056" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3056"/>
+        <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.1" TraceId="image3067"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+        <Hero Id="hero" Bounds="80, 150, 50, 40" Class="clsHero" TraceId="image3015"/>
+        <Block Id="blk1" Bounds="0, 190, 480, 20" Edges="Stick" TraceId="image3048">
+            <Image Id="image3048" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Block Id="blk2" Bounds="0, 0, 480, 81" Edges="Bounce" TraceId="image3059">
+            <Image Id="image3059" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk3" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+        <Block Id="blk4" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+        <Block Id="blk5" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+        <Block Id="blk6" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+        <Group Id="grp_g3394">
+            <Block Id="blk_image3034" Bounds="7147, 140, 50, 50" Edges="Stick" TraceId="image3034">
+                <Image Id="image3034" TextureId="_E_" Opacity="1" />
+            </Block>
+            <Food Id="fd1" Points="1" Bounds="610, 178, 24, 12" Class="clsFood" TraceId="image3037"/>
+            <NumAnimation Id="anm1" From="0" To="-6727" Target="X" Duration="80.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3048-0"/>
+            <Enemy Id="enm1" Bounds="556, 178, 24, 12" Class="clsEnemy" TraceId="image3026"/>
+            <Enemy Id="enm2" Bounds="738, 178, 24, 12" Class="clsEnemy" TraceId="image3046"/>
+            <Enemy Id="enm3" Bounds="898, 178, 24, 12" Class="clsEnemy" TraceId="image3049"/>
+            <Enemy Id="enm4" Bounds="1078, 178, 24, 12" Class="clsEnemy" TraceId="image3051"/>
+            <Food Id="fd2" Points="1" Bounds="810, 178, 24, 12" Class="clsFood" TraceId="image3083"/>
+            <Food Id="fd3" Points="1" Bounds="1170, 178, 24, 12" Class="clsFood" TraceId="image3085"/>
+            <Food Id="fd4" Points="1" Bounds="1270, 178, 24, 12" Class="clsFood" TraceId="image3087"/>
+            <Food Id="fd5" Points="1" Bounds="1330, 178, 24, 12" Class="clsFood" TraceId="image3089"/>
+            <Enemy Id="enm5" Bounds="1438, 178, 24, 12" Class="clsEnemy" TraceId="image3091"/>
+            <Enemy Id="enm6" Bounds="1538, 178, 24, 12" Class="clsEnemy" TraceId="image3093"/>
+            <Enemy Id="enm7" Bounds="1578, 178, 24, 12" Class="clsEnemy" TraceId="image3095"/>
+            <Enemy Id="enm8" Bounds="1618, 178, 24, 12" Class="clsEnemy" TraceId="image3097"/>
+            <Enemy Id="enm9" Bounds="1618, 178, 24, 12" Class="clsEnemy" TraceId="image3099"/>
+            <Food Id="fd6" Points="1" Bounds="1810, 178, 24, 12" Class="clsFood" TraceId="image3101"/>
+            <Food Id="fd7" Points="1" Bounds="1870, 178, 24, 12" Class="clsFood" TraceId="image3103"/>
+            <Food Id="fd8" Points="1" Bounds="1930, 178, 24, 12" Class="clsFood" TraceId="image3105"/>
+            <Food Id="fd9" Points="1" Bounds="1930, 178, 24, 12" Class="clsFood" TraceId="image3107"/>
+            <Enemy Id="enm10" Bounds="1998, 178, 24, 12" Class="clsEnemy" TraceId="image3109"/>
+            <Enemy Id="enm11" Bounds="2058, 178, 24, 12" Class="clsEnemy" TraceId="image3111"/>
+            <Enemy Id="enm12" Bounds="2278, 178, 24, 12" Class="clsEnemy" TraceId="image3113"/>
+            <Enemy Id="enm13" Bounds="2398, 178, 24, 12" Class="clsEnemy" TraceId="image3115"/>
+            <Enemy Id="enm14" Bounds="2398, 178, 24, 12" Class="clsEnemy" TraceId="image3117"/>
+            <Food Id="fd10" Points="1" Bounds="2490, 178, 24, 12" Class="clsFood" TraceId="image3119"/>
+            <Food Id="fd11" Points="1" Bounds="2550, 178, 24, 12" Class="clsFood" TraceId="image3121"/>
+            <Enemy Id="enm15" Bounds="2638, 178, 24, 12" Class="clsEnemy" TraceId="image3235"/>
+            <Enemy Id="enm16" Bounds="2638, 178, 24, 12" Class="clsEnemy" TraceId="image3237"/>
+            <Enemy Id="enm17" Bounds="2662, 178, 24, 12" Class="clsEnemy" TraceId="image3239"/>
+            <Enemy Id="enm18" Bounds="2662, 178, 24, 12" Class="clsEnemy" TraceId="image3241"/>
+            <Enemy Id="enm19" Bounds="2686, 178, 24, 12" Class="clsEnemy" TraceId="image3243"/>
+            <Enemy Id="enm20" Bounds="2686, 178, 24, 12" Class="clsEnemy" TraceId="image3245"/>
+            <Enemy Id="enm21" Bounds="2710, 178, 24, 12" Class="clsEnemy" TraceId="image3247"/>
+            <Enemy Id="enm22" Bounds="2710, 178, 24, 12" Class="clsEnemy" TraceId="image3249"/>
+            <Food Id="fd12" Points="1" Bounds="3030, 178, 24, 12" Class="clsFood" TraceId="image3251"/>
+            <Enemy Id="enm23" Bounds="3570, 178, 24, 12" Class="clsEnemy" TraceId="image3259"/>
+            <Enemy Id="enm24" Bounds="3570, 178, 24, 12" Class="clsEnemy" TraceId="image3261"/>
+            <Food Id="fd13" Points="1" Bounds="3056, 178, 24, 12" Class="clsFood" TraceId="image3267"/>
+            <Food Id="fd14" Points="1" Bounds="3030, 164, 24, 12" Class="clsFood" TraceId="image3269"/>
+            <Food Id="fd15" Points="1" Bounds="3056, 164, 24, 12" Class="clsFood" TraceId="image3271"/>
+            <Enemy Id="enm25" Bounds="3596, 178, 24, 12" Class="clsEnemy" TraceId="image3273"/>
+            <Enemy Id="enm26" Bounds="3596, 178, 24, 12" Class="clsEnemy" TraceId="image3275"/>
+            <Enemy Id="enm27" Bounds="3570, 164, 24, 12" Class="clsEnemy" TraceId="image3277"/>
+            <Enemy Id="enm28" Bounds="3570, 164, 24, 12" Class="clsEnemy" TraceId="image3279"/>
+            <Enemy Id="enm29" Bounds="3596, 164, 24, 12" Class="clsEnemy" TraceId="image3281"/>
+            <Enemy Id="enm30" Bounds="3596, 164, 24, 12" Class="clsEnemy" TraceId="image3283"/>
+            <Food Id="fd16" Points="1" Bounds="3310, 178, 24, 12" Class="clsFood" TraceId="image3285"/>
+            <Food Id="fd17" Points="1" Bounds="3336, 178, 24, 12" Class="clsFood" TraceId="image3287"/>
+            <Food Id="fd18" Points="1" Bounds="3310, 164, 24, 12" Class="clsFood" TraceId="image3289"/>
+            <Food Id="fd19" Points="1" Bounds="3336, 164, 24, 12" Class="clsFood" TraceId="image3291"/>
+            <Enemy Id="enm31" Bounds="3870, 178, 24, 12" Class="clsEnemy" TraceId="image3293"/>
+            <Enemy Id="enm32" Bounds="3870, 178, 24, 12" Class="clsEnemy" TraceId="image3295"/>
+            <Enemy Id="enm33" Bounds="3896, 178, 24, 12" Class="clsEnemy" TraceId="image3297"/>
+            <Enemy Id="enm34" Bounds="3896, 178, 24, 12" Class="clsEnemy" TraceId="image3299"/>
+            <Enemy Id="enm35" Bounds="3870, 164, 24, 12" Class="clsEnemy" TraceId="image3301"/>
+            <Enemy Id="enm36" Bounds="3870, 164, 24, 12" Class="clsEnemy" TraceId="image3303"/>
+            <Enemy Id="enm37" Bounds="3896, 164, 24, 12" Class="clsEnemy" TraceId="image3305"/>
+            <Enemy Id="enm38" Bounds="3896, 164, 24, 12" Class="clsEnemy" TraceId="image3307"/>
+            <Food Id="fd20" Points="1" Bounds="4030, 178, 24, 12" Class="clsFood" TraceId="image3309"/>
+            <Food Id="fd21" Points="1" Bounds="4056, 178, 24, 12" Class="clsFood" TraceId="image3311"/>
+            <Food Id="fd22" Points="1" Bounds="4030, 164, 24, 12" Class="clsFood" TraceId="image3313"/>
+            <Food Id="fd23" Points="1" Bounds="4056, 164, 24, 12" Class="clsFood" TraceId="image3315"/>
+            <Food Id="fd24" Points="1" Bounds="4110, 178, 24, 12" Class="clsFood" TraceId="image3317"/>
+            <Food Id="fd25" Points="1" Bounds="4136, 178, 24, 12" Class="clsFood" TraceId="image3319"/>
+            <Food Id="fd26" Points="1" Bounds="4110, 164, 24, 12" Class="clsFood" TraceId="image3321"/>
+            <Food Id="fd27" Points="1" Bounds="4136, 164, 24, 12" Class="clsFood" TraceId="image3323"/>
+            <Enemy Id="enm39" Bounds="4330, 178, 24, 12" Class="clsEnemy" TraceId="image3325"/>
+            <Enemy Id="enm40" Bounds="4330, 178, 24, 12" Class="clsEnemy" TraceId="image3327"/>
+            <Enemy Id="enm41" Bounds="4356, 178, 24, 12" Class="clsEnemy" TraceId="image3329"/>
+            <Enemy Id="enm42" Bounds="4356, 178, 24, 12" Class="clsEnemy" TraceId="image3331"/>
+            <Enemy Id="enm43" Bounds="4330, 164, 24, 12" Class="clsEnemy" TraceId="image3333"/>
+            <Enemy Id="enm44" Bounds="4330, 164, 24, 12" Class="clsEnemy" TraceId="image3335"/>
+            <Enemy Id="enm45" Bounds="4356, 164, 24, 12" Class="clsEnemy" TraceId="image3337"/>
+            <Enemy Id="enm46" Bounds="4356, 164, 24, 12" Class="clsEnemy" TraceId="image3339"/>
+            <Enemy Id="enm47" Bounds="4650, 178, 24, 12" Class="clsEnemy" TraceId="image3341"/>
+            <Enemy Id="enm48" Bounds="4650, 178, 24, 12" Class="clsEnemy" TraceId="image3343"/>
+            <Enemy Id="enm49" Bounds="4676, 178, 24, 12" Class="clsEnemy" TraceId="image3345"/>
+            <Enemy Id="enm50" Bounds="4676, 178, 24, 12" Class="clsEnemy" TraceId="image3347"/>
+            <Enemy Id="enm51" Bounds="4650, 164, 24, 12" Class="clsEnemy" TraceId="image3349"/>
+            <Enemy Id="enm52" Bounds="4650, 164, 24, 12" Class="clsEnemy" TraceId="image3351"/>
+            <Enemy Id="enm53" Bounds="4676, 164, 24, 12" Class="clsEnemy" TraceId="image3353"/>
+            <Enemy Id="enm54" Bounds="4676, 164, 24, 12" Class="clsEnemy" TraceId="image3355"/>
+            <Food Id="fd28" Points="1" Bounds="4810, 178, 24, 12" Class="clsFood" TraceId="image3357"/>
+            <Food Id="fd29" Points="1" Bounds="4836, 178, 24, 12" Class="clsFood" TraceId="image3359"/>
+            <Food Id="fd30" Points="1" Bounds="4810, 164, 24, 12" Class="clsFood" TraceId="image3361"/>
+            <Food Id="fd31" Points="1" Bounds="4836, 164, 24, 12" Class="clsFood" TraceId="image3363"/>
+            <Food Id="fd32" Points="1" Bounds="4890, 178, 24, 12" Class="clsFood" TraceId="image3365"/>
+            <Food Id="fd33" Points="1" Bounds="4916, 178, 24, 12" Class="clsFood" TraceId="image3367"/>
+            <Food Id="fd34" Points="1" Bounds="4890, 164, 24, 12" Class="clsFood" TraceId="image3369"/>
+            <Food Id="fd35" Points="1" Bounds="4916, 164, 24, 12" Class="clsFood" TraceId="image3371"/>
+            <Enemy Id="enm55" Bounds="5090, 178, 24, 12" Class="clsEnemy" TraceId="image3373"/>
+            <Enemy Id="enm56" Bounds="5090, 178, 24, 12" Class="clsEnemy" TraceId="image3375"/>
+            <Enemy Id="enm57" Bounds="5116, 178, 24, 12" Class="clsEnemy" TraceId="image3377"/>
+            <Enemy Id="enm58" Bounds="5116, 178, 24, 12" Class="clsEnemy" TraceId="image3379"/>
+            <Enemy Id="enm59" Bounds="5090, 164, 24, 12" Class="clsEnemy" TraceId="image3381"/>
+            <Enemy Id="enm60" Bounds="5090, 164, 24, 12" Class="clsEnemy" TraceId="image3383"/>
+            <Enemy Id="enm61" Bounds="5116, 164, 24, 12" Class="clsEnemy" TraceId="image3385"/>
+            <Enemy Id="enm62" Bounds="5116, 164, 24, 12" Class="clsEnemy" TraceId="image3387"/>
+            <Enemy Id="enm63" Bounds="5170, 178, 24, 12" Class="clsEnemy" TraceId="image3389"/>
+            <Enemy Id="enm64" Bounds="5170, 178, 24, 12" Class="clsEnemy" TraceId="image3391"/>
+            <Enemy Id="enm65" Bounds="5196, 178, 24, 12" Class="clsEnemy" TraceId="image3393"/>
+            <Enemy Id="enm66" Bounds="5196, 178, 24, 12" Class="clsEnemy" TraceId="image3395"/>
+            <Enemy Id="enm67" Bounds="5170, 164, 24, 12" Class="clsEnemy" TraceId="image3397"/>
+            <Enemy Id="enm68" Bounds="5170, 164, 24, 12" Class="clsEnemy" TraceId="image3399"/>
+            <Enemy Id="enm69" Bounds="5196, 164, 24, 12" Class="clsEnemy" TraceId="image3401"/>
+            <Enemy Id="enm70" Bounds="5196, 164, 24, 12" Class="clsEnemy" TraceId="image3403"/>
+            <Food Id="fd36" Points="1" Bounds="4970, 178, 24, 12" Class="clsFood" TraceId="image3405"/>
+            <Food Id="fd37" Points="1" Bounds="4996, 178, 24, 12" Class="clsFood" TraceId="image3407"/>
+            <Food Id="fd38" Points="1" Bounds="4970, 164, 24, 12" Class="clsFood" TraceId="image3409"/>
+            <Food Id="fd39" Points="1" Bounds="4996, 164, 24, 12" Class="clsFood" TraceId="image3411"/>
+            <Food Id="fd40" Points="1" Bounds="5396, 178, 24, 12" Class="clsFood" TraceId="image3413"/>
+            <Food Id="fd41" Points="1" Bounds="5396, 164, 24, 12" Class="clsFood" TraceId="image3417"/>
+            <Food Id="fd42" Points="1" Bounds="5396, 150, 24, 12" Class="clsFood" TraceId="image3419"/>
+            <Food Id="fd43" Points="1" Bounds="5422, 178, 24, 12" Class="clsFood" TraceId="image3421"/>
+            <Food Id="fd44" Points="1" Bounds="5422, 164, 24, 12" Class="clsFood" TraceId="image3423"/>
+            <Food Id="fd45" Points="1" Bounds="5422, 150, 24, 12" Class="clsFood" TraceId="image3425"/>
+            <Food Id="fd46" Points="1" Bounds="5448, 178, 24, 12" Class="clsFood" TraceId="image3427"/>
+            <Food Id="fd47" Points="1" Bounds="5448, 164, 24, 12" Class="clsFood" TraceId="image3429"/>
+            <Food Id="fd48" Points="1" Bounds="5448, 150, 24, 12" Class="clsFood" TraceId="image3431"/>
+            <Food Id="fd49" Points="1" Bounds="5556, 178, 24, 12" Class="clsFood" TraceId="image3433"/>
+            <Food Id="fd50" Points="1" Bounds="5556, 164, 24, 12" Class="clsFood" TraceId="image3435"/>
+            <Food Id="fd51" Points="1" Bounds="5556, 150, 24, 12" Class="clsFood" TraceId="image3437"/>
+            <Food Id="fd52" Points="1" Bounds="5582, 178, 24, 12" Class="clsFood" TraceId="image3439"/>
+            <Food Id="fd53" Points="1" Bounds="5582, 164, 24, 12" Class="clsFood" TraceId="image3441"/>
+            <Food Id="fd54" Points="1" Bounds="5582, 150, 24, 12" Class="clsFood" TraceId="image3443"/>
+            <Food Id="fd55" Points="1" Bounds="5608, 178, 24, 12" Class="clsFood" TraceId="image3445"/>
+            <Food Id="fd56" Points="1" Bounds="5608, 164, 24, 12" Class="clsFood" TraceId="image3447"/>
+            <Food Id="fd57" Points="1" Bounds="5608, 150, 24, 12" Class="clsFood" TraceId="image3449"/>
+            <Enemy Id="enm71" Bounds="6430, 178, 24, 12" Class="clsEnemy" TraceId="image3451"/>
+            <Enemy Id="enm72" Bounds="6430, 178, 24, 12" Class="clsEnemy" TraceId="image3453"/>
+            <Enemy Id="enm73" Bounds="6456, 178, 24, 12" Class="clsEnemy" TraceId="image3455"/>
+            <Enemy Id="enm74" Bounds="6456, 178, 24, 12" Class="clsEnemy" TraceId="image3457"/>
+            <Enemy Id="enm75" Bounds="6430, 164, 24, 12" Class="clsEnemy" TraceId="image3459"/>
+            <Enemy Id="enm76" Bounds="6430, 164, 24, 12" Class="clsEnemy" TraceId="image3461"/>
+            <Enemy Id="enm77" Bounds="6456, 164, 24, 12" Class="clsEnemy" TraceId="image3463"/>
+            <Enemy Id="enm78" Bounds="6456, 164, 24, 12" Class="clsEnemy" TraceId="image3465"/>
+            <Enemy Id="enm79" Bounds="6430, 150, 24, 12" Class="clsEnemy" TraceId="image3467"/>
+            <Enemy Id="enm80" Bounds="6430, 150, 24, 12" Class="clsEnemy" TraceId="image3469"/>
+            <Enemy Id="enm81" Bounds="6456, 150, 24, 12" Class="clsEnemy" TraceId="image3471"/>
+            <Enemy Id="enm82" Bounds="6456, 150, 24, 12" Class="clsEnemy" TraceId="image3473"/>
+            <Enemy Id="enm83" Bounds="6482, 178, 24, 12" Class="clsEnemy" TraceId="image3475"/>
+            <Enemy Id="enm84" Bounds="6482, 178, 24, 12" Class="clsEnemy" TraceId="image3477"/>
+            <Enemy Id="enm85" Bounds="6482, 164, 24, 12" Class="clsEnemy" TraceId="image3479"/>
+            <Enemy Id="enm86" Bounds="6482, 164, 24, 12" Class="clsEnemy" TraceId="image3481"/>
+            <Enemy Id="enm87" Bounds="6482, 150, 24, 12" Class="clsEnemy" TraceId="image3483"/>
+            <Enemy Id="enm88" Bounds="6482, 150, 24, 12" Class="clsEnemy" TraceId="image3485"/>
+            <Food Id="fd58" Points="1" Bounds="6028, 178, 24, 12" Class="clsFood" TraceId="image3487"/>
+            <Food Id="fd59" Points="1" Bounds="6148, 178, 24, 12" Class="clsFood" TraceId="image3489"/>
+            <Food Id="fd60" Points="1" Bounds="6268, 178, 24, 12" Class="clsFood" TraceId="image3491"/>
+            <Food Id="fd61" Points="1" Bounds="7006, 178, 24, 12" Class="clsFood" TraceId="image3312"/>
+            <Food Id="fd62" Points="1" Bounds="7006, 164, 24, 12" Class="clsFood" TraceId="image3316"/>
+            <Food Id="fd63" Points="1" Bounds="7006, 150, 24, 12" Class="clsFood" TraceId="image3318"/>
+            <Food Id="fd64" Points="1" Bounds="7006, 136, 24, 12" Class="clsFood" TraceId="image3320"/>
+            <Food Id="fd65" Points="1" Bounds="7006, 122, 24, 12" Class="clsFood" TraceId="image3322"/>
+            <Food Id="fd66" Points="1" Bounds="6926, 166, 24, 12" Class="clsFood" TraceId="image3348"/>
+            <Food Id="fd67" Points="1" Bounds="6900, 164, 24, 12" Class="clsFood" TraceId="image3350"/>
+            <Food Id="fd68" Points="1" Bounds="6900, 150, 24, 12" Class="clsFood" TraceId="image3352"/>
+            <Food Id="fd69" Points="1" Bounds="6900, 136, 24, 12" Class="clsFood" TraceId="image3354"/>
+            <Food Id="fd70" Points="1" Bounds="6952, 136, 24, 12" Class="clsFood" TraceId="image3356"/>
+            <Food Id="fd71" Points="1" Bounds="6952, 164, 24, 12" Class="clsFood" TraceId="image3358"/>
+            <Food Id="fd72" Points="1" Bounds="6952, 150, 24, 12" Class="clsFood" TraceId="image3360"/>
+            <Food Id="fd73" Points="1" Bounds="6900, 122, 24, 12" Class="clsFood" TraceId="image3362"/>
+            <Food Id="fd74" Points="1" Bounds="6952, 122, 24, 12" Class="clsFood" TraceId="image3364"/>
+            <Food Id="fd75" Points="1" Bounds="6910, 178, 24, 12" Class="clsFood" TraceId="image3366"/>
+            <Food Id="fd76" Points="1" Bounds="6942, 178, 24, 12" Class="clsFood" TraceId="image3368"/>
+            <Food Id="fd77" Points="1" Bounds="7074, 144, 24, 12" Class="clsFood" TraceId="image3370"/>
+            <Food Id="fd78" Points="1" Bounds="7060, 164, 24, 12" Class="clsFood" TraceId="image3372"/>
+            <Food Id="fd79" Points="1" Bounds="7060, 150, 24, 12" Class="clsFood" TraceId="image3374"/>
+            <Food Id="fd80" Points="1" Bounds="7060, 136, 24, 12" Class="clsFood" TraceId="image3376"/>
+            <Food Id="fd81" Points="1" Bounds="7112, 136, 24, 12" Class="clsFood" TraceId="image3378"/>
+            <Food Id="fd82" Points="1" Bounds="7112, 164, 24, 12" Class="clsFood" TraceId="image3380"/>
+            <Food Id="fd83" Points="1" Bounds="7112, 150, 24, 12" Class="clsFood" TraceId="image3382"/>
+            <Food Id="fd84" Points="1" Bounds="7060, 122, 24, 12" Class="clsFood" TraceId="image3384"/>
+            <Food Id="fd85" Points="1" Bounds="7112, 122, 24, 12" Class="clsFood" TraceId="image3386"/>
+            <Food Id="fd86" Points="1" Bounds="7060, 178, 24, 12" Class="clsFood" TraceId="image3388"/>
+            <Food Id="fd87" Points="1" Bounds="7112, 178, 24, 12" Class="clsFood" TraceId="image3390"/>
+            <Food Id="fd88" Points="1" Bounds="7098, 156, 24, 12" Class="clsFood" TraceId="image3392"/>
+        </Group>
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+
