@@ -9,15 +9,64 @@
 	
 	<Include File="Textures.xml" />
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
-        <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
     </Layer>
 	
 	<Layer Id="action" BackColor="#FFFFFFFF">
-<!--
-		<TapArea Bounds="0,50,100,80" Action="system.StartLevel(0)" />
-		<Text FontId="SystemFont" Text="system.GetLevelName(0)" Location="50,50" Color="#000000" />
--->
+		<TapArea Bounds="0,30,100,30" Action="system.StartLevel(0)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(0)" Location="0,30" Color="#000000" />
+
+		<TapArea Bounds="0,60,100,30" Action="system.StartLevel(1)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(1)" Location="0,60" Color="#000000" />
+
+		<TapArea Bounds="0,90,100,30" Action="system.StartLevel(2)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(2)" Location="0,90" Color="#000000" />
+
+		<TapArea Bounds="0,120,100,30" Action="system.StartLevel(3)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(3)" Location="0,120" Color="#000000" />
+
+		<TapArea Bounds="0,180,100,30" Action="system.StartLevel(4)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(4)" Location="0,150" Color="#000000" />
+
+		<TapArea Bounds="0,180,100,30" Action="system.StartLevel(5)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(5)" Location="0,180" Color="#000000" />
+
+		<TapArea Bounds="0,210,100,30" Action="system.StartLevel(6)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(6)" Location="0,210" Color="#000000" />
+
+		<TapArea Bounds="0,240,100,30" Action="system.StartLevel(7)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(7)" Location="0,240" Color="#000000" />
+
+		<TapArea Bounds="0,270,100,30" Action="system.StartLevel(8)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(8)" Location="0,270" Color="#000000" />
+
+		<TapArea Bounds="0,300,100,30" Action="system.StartLevel(9)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(9)" Location="0,300" Color="#000000" />
+
+		<TapArea Bounds="200,30,100,30" Action="system.StartLevel(10)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(10)" Location="200,30" Color="#000000" />
+
+		<TapArea Bounds="200,60,100,30" Action="system.StartLevel(11)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(11)" Location="200,60" Color="#000000" />
+
+		<TapArea Bounds="200,90,100,30" Action="system.StartLevel(12)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(12)" Location="200,90" Color="#000000" />
+
+		<TapArea Bounds="200,120,100,30" Action="system.StartLevel(13)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(13)" Location="200,120" Color="#000000" />
+
+		<TapArea Bounds="200,150,100,30" Action="system.StartLevel(14)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(14)" Location="200,150" Color="#000000" />
+
+		<TapArea Bounds="200,180,100,30" Action="system.StartLevel(15)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(15)" Location="200,180" Color="#000000" />
+
+		<TapArea Bounds="200,210,100,30" Action="system.StartLevel(16)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(16)" Location="200,210" Color="#000000" />
+
+		<TapArea Bounds="200,240,100,30" Action="system.StartLevel(17)" />
+		<Text FontId="SystemFont" Text="=system.GetLevelName(17)" Location="200,240" Color="#000000" />
+
+
 	</Layer>
 	
 </Screen>

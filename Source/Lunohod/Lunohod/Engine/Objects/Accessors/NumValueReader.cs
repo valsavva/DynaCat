@@ -11,13 +11,13 @@ namespace Lunohod.Objects
     // Accordingly returns the numeric value or the property value.
     public class NumValueReader
     {
-        private float floatValue;
+        private float stringValue;
         private PropertyAccessor accessor;
 		private Func<float> func;
 
         public NumValueReader(XObject currentObject, string descriptor)
         {
-            if (!string.IsNullOrEmpty(descriptor) && !float.TryParse(descriptor, NumberStyles.Number, CultureInfo.InvariantCulture, out floatValue))
+            if (!string.IsNullOrEmpty(descriptor) && !float.TryParse(descriptor, NumberStyles.Number, CultureInfo.InvariantCulture, out stringValue))
 			{
                 this.accessor = new PropertyAccessor(currentObject, descriptor);
 				func = this.ReturnAccessorValue;
@@ -35,7 +35,7 @@ namespace Lunohod.Objects
 		
 		private float ReturnFloatValue()
 		{
-			return floatValue;
+			return stringValue;
 		}
 		
         public float Value

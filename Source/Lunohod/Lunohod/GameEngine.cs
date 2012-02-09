@@ -109,8 +109,8 @@ namespace Lunohod
 		{
             LoadGameElement();
 
-			LoadLevel(gameObject.Levels[0].File);
-			//LoadScreen(gameObject.StartScreen);
+			//LoadLevel(gameObject.Levels[0].File);
+			LoadScreen(gameObject.StartScreen);
 
 			base.LoadContent();
 		}
@@ -152,13 +152,13 @@ namespace Lunohod
 		{
             var newScreenEngine = new ScreenEngine(this, xmlName);
 			screenEngines.Add(newScreenEngine);
-
+			
 			newScreenEngine.Initialize();
 			
             GC.Collect();
 		}
 
-		protected void LoadLevel(string xmlName)
+		public void LoadLevel(string xmlName)
 		{
             var newScreenEngine = new LevelEngine(this, xmlName);
 			screenEngines.Add(newScreenEngine);
@@ -207,7 +207,11 @@ namespace Lunohod
 				
 				using (FileStream stream = new FileStream(gameXmlFile, FileMode.Open, FileAccess.Read))
 				{
-					 return (XObject)serializer.Deserialize(stream);
+					var result = (XObject)serializer.Deserialize(stream);
+					if (result is XScreen)
+						result.Subcomponents.Insert(0, new XSystem());
+					
+					return result;
 				}
 			}
 			catch (Exception ex)

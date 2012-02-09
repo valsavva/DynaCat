@@ -21,9 +21,11 @@ namespace Lunohod.Objects
 			this.evnt = evnt;
 		}
 		
-		public override void Call()
+		public override object Call()
 		{
 			target.GetSignalContainer("events").Signal(evnt);
+			
+			return null;
 		}
 	}
 }

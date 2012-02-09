@@ -10,12 +10,7 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     [XmlType("Level")]
-    public class XLevel : XElement
+    public class XLevel : XScreen
     {
-        [XmlAttribute]
-        public string Name;
-		
-		[XmlAttribute]
-		public string File;
     }
 }

@@ -85,9 +85,7 @@
     <Compile Include="Engine\Objects\XViewport.cs" />
     <Compile Include="Engine\Objects\XDashboard.cs" />
     <Compile Include="Engine\Objects\XTapArea.cs" />
-    <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs" />
     <Compile Include="Engine\Objects\Animation\XAnimationBase.cs" />
-    <Compile Include="Engine\Objects\Animation\PropertyAccessor.cs" />
     <Compile Include="Engine\Objects\XObject.cs" />
     <Compile Include="Engine\Objects\XSprite.cs" />
     <Compile Include="OS\iOS\Main.cs" />
@@ -96,8 +94,6 @@
     <Compile Include="Engine\Objects\Events\XEvent.cs" />
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
-    <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
-    <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
     <Compile Include="GameEvent.cs" />
     <Compile Include="GameEventQueue.cs" />
     <Compile Include="GameEventType.cs" />
@@ -131,15 +127,12 @@
     <Compile Include="Engine\Objects\XEnemy.cs" />
     <Compile Include="Engine\Objects\XClass.cs" />
     <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
-    <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
     <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
     <Compile Include="Engine\Objects\XObjectCollection.cs" />
     <Compile Include="Engine\Objects\IRunnable.cs" />
-    <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
     <Compile Include="SpriteBatchWithFloats.cs" />
-    <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
     <Compile Include="Engine\Objects\Sets\XParallelSet.cs" />
     <Compile Include="Engine\Objects\Sets\XRandomSet.cs" />
     <Compile Include="Engine\Objects\Sets\XSequenceSet.cs" />
@@ -151,6 +144,12 @@
     <Compile Include="Engine\Objects\XFood.cs" />
     <Compile Include="Engine\Objects\XSystem.cs" />
     <Compile Include="Engine\Objects\XScreen.cs" />
+    <Compile Include="Engine\Objects\Accessors\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Accessors\BoolValueReader.cs" />
+    <Compile Include="Engine\Objects\Accessors\EventCaller.cs" />
+    <Compile Include="Engine\Objects\Accessors\NumValueReader.cs" />
+    <Compile Include="Engine\Objects\Accessors\PropertyAccessor.cs" />
+    <Compile Include="Engine\Objects\Accessors\StrValueReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -164,6 +163,7 @@
     <Folder Include="Engine\Objects\Media\" />
     <Folder Include="Content\Textures\" />
     <Folder Include="Engine\Objects\Sets\" />
+    <Folder Include="Engine\Objects\Accessors\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Global\dash 2a.png">

@@ -20,9 +20,11 @@ namespace Lunohod.Objects
 			this.game = p.Game;
 		}
 		
-		public string GetLevelName(int i)
+		public string GetLevelName(string si)
 		{
-			if (i > game.GameObject.Levels.Length)
+			int i = int.Parse(si);
+			
+			if (i >= game.GameObject.Levels.Length)
 				return "";
 			
 			var level = game.GameObject.Levels[i];
@@ -30,9 +32,14 @@ namespace Lunohod.Objects
 			return level.Name;
 		}
 		
-		public void StartLevel(int i)
+		public void StartLevel(string si)
 		{
+			int i = int.Parse(si);
 			
+			if (i >= game.GameObject.Levels.Length)
+				return;
+
+			game.LoadLevel(game.GameObject.Levels[i].File);
 		}
 	}
 }

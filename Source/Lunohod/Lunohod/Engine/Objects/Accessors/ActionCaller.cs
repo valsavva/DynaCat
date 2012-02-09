@@ -12,14 +12,14 @@ namespace Lunohod.Objects
 {
 	public abstract class ActionCallerBase
 	{
-		public abstract void Call();
+		public abstract object Call();
 	}
 	
 	public class ActionCaller : ActionCallerBase
 	{
 		private XObject target;
 		private MethodInfo methodInfo;
-		private List<NumValueReader> parameters;
+		private List<StrValueReader> parameters;
 		private object[] parameterValues;
 
 		public ActionCaller(XObject target, string action)
@@ -49,26 +49,25 @@ namespace Lunohod.Objects
 			if ((lpIndex == -1 || rpIndex == -1) || (lpIndex > rpIndex))
 				throw new InvalidOperationException("Wrong number of parenthesis");
 			
-			var paramsString = action.Substring(lpIndex, rpIndex - lpIndex - 1);
+			var paramsString = action.Substring(lpIndex + 1, rpIndex - lpIndex - 1);
 			action = action.Substring(0, lpIndex);
 			
 			if (rpIndex == lpIndex + 1)
 				return;
 			
-			parameters = paramsString.Split(',').Select(s => new NumValueReader(this.target, s)).ToList();
+			parameters = paramsString.Split(',').Select(s => new StrValueReader(this.target, s)).ToList();
 			parameterValues = new object[parameters.Count];
 		}
 		
-		public override void Call()
+		public override object Call()
 		{
 			if (parameters == null || parameters.Count == 0)
-				methodInfo.Invoke(target, null);
+				return methodInfo.Invoke(target, null);
 			else
 			{
 				for(int i = 0; i < parameters.Count; i++)
 					parameterValues[i] = parameters[i].Value;
-
-				methodInfo.Invoke(target, parameterValues);
+				return methodInfo.Invoke(target, parameterValues);
 			}
 		}
 		

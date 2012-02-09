@@ -105,6 +105,9 @@ namespace Lunohod.Objects
 		
 		public virtual void InitHierarchy()
 		{
+			if (this.Subcomponents == null)
+				return;
+			
 			// replace includes with their children
 			var index = this.Subcomponents.FindIndex(c => c is XInclude);
 			

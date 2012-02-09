@@ -16,6 +16,7 @@ namespace Lunohod.Objects
 	{
 		private XFontResource font;
 		private Vector2 location;
+		private StrValueReader strValueReader;
 
         [XmlIgnore]
         public Color ForeColor;
@@ -41,6 +42,7 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 			
 			this.font = (XFontResource)p.ScreenEngine.RootComponent.FindDescendant(this.FontId);
+			this.strValueReader = new StrValueReader(this, this.Text);
 			
 			if (this.font == null)
 				throw new InvalidOperationException(string.Format(
@@ -65,9 +67,9 @@ namespace Lunohod.Objects
 			this.location.Y = screenBounds.Y;
 			
 			if (screenRotation != 0 || this.Origin != Vector2.Zero)
-				p.SpriteBatch.DrawString(this.font.Font, this.Text, this.location, this.ForeColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
+				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
 			else
-				p.SpriteBatch.DrawString(this.font.Font, this.Text, this.location, this.ForeColor);
+				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor);
 			
 			base.Draw(p);
 		}
