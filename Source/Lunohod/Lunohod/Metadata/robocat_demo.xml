@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+<!-- date: 07/02 2012 00:13 -->
+<Level Name="D:\Lunohod\Levels\robocat_demo\robocat_demo.svg" Bounds="0, 0, 480, 320">
+    <Resources RootFolder="Textures">
+        <Texture Id="Phon_Demo_480x320" Source="Phon_Demo_480x320" />
+        <Texture Id="color_test" Source="color_test" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="construction_1_demo" Source="construction_1_demo" />
+        <Texture Id="lathe_3_demo" Source="lathe_3_demo" />
+        <Texture Id="construction_3hor2_demo" Source="construction_3hor2_demo" />
+        <Texture Id="construction_3hor1_demo" Source="construction_3hor1_demo" />
+        <Texture Id="lathe_5_demo" Source="lathe_5_demo" />
+        <Texture Id="barrel_1_demo" Source="barrel_1_demo" />
+        <Texture Id="lathe_1_demo" Source="lathe_1_demo" />
+        <Texture Id="hero_40_catsocket_demo_no_antenna" Source="hero_40_catsocket_demo_no_antenna" />
+        <Texture Id="antenna_1_demo" Source="antenna_1_demo" />
+        <Texture Id="lathe_4_demo" Source="lathe_4_demo" />
+        <Texture Id="car_1_demo" Source="car_1_demo" />
+        <Texture Id="lathe_2_demo" Source="lathe_2_demo" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3110" TextureId="Phon_Demo_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image3110"/>
+        <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0" TraceId="image3067"/>
+        <Image Id="ccc" TextureId="color_test" Bounds="0, -3200, 480, 3200" Stretch="true" Opacity="1" TraceId="image3067">
+		</Image>
+
+	</Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="-5, -5, 10, 10" SignalSpeed="256" TraceId="image3004"/>
+		            
+        <Block Id="blk10" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+        <Block Id="blk11" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+        <Block Id="blk12" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+        <Block Id="blk13" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+        <Block Id="blk14" Bounds="240, 44, 125, 30" Edges="Bounce" TraceId="image3097">
+            <Image Id="image3097" TextureId="construction_1_demo" Opacity="1" />
+        </Block>
+        <Block Id="blk15" Bounds="337, 44, 125, 30" Edges="Bounce" TraceId="image3100">
+            <Image Id="image3100" TextureId="construction_1_demo" Opacity="1" />
+        </Block>
+        <Image Id="DefaultMask_image3889" TextureId="lathe_3_demo" Bounds="243, 72, 151, 50" Stretch="false" Opacity="1" TraceId="image3889"/>
+        <Block Id="blk16" Bounds="433, 141, 30, 97" Edges="Bounce" TraceId="image3900">
+            <Image Id="image3900" TextureId="construction_3hor2_demo" Opacity="1" />
+        </Block>
+        <Block Id="blk17" Bounds="434, 44, 30, 97" Edges="Bounce" TraceId="image3911">
+            <Image Id="image3911" TextureId="construction_3hor1_demo" Opacity="1" />
+        </Block>
+        <Block Id="blk18" Bounds="433, -21, 30, 97" Edges="Bounce" TraceId="image3914">
+            <Image Id="image3914" TextureId="construction_3hor2_demo" Opacity="1" />
+        </Block>
+        <Image Id="DefaultMask_image3037-17" TextureId="lathe_5_demo" Bounds="80, 160, 50, 54" Stretch="false" Opacity="1" TraceId="image3037-17"/>
+        <Image Id="DefaultMask_image3935" TextureId="barrel_1_demo" Bounds="82, 208, 30, 34" Stretch="false" Opacity="1" TraceId="image3935"/>
+        <Image Id="DefaultMask_image3946" TextureId="lathe_1_demo" Bounds="190, 196, 50, 60" Stretch="false" Opacity="1" TraceId="image3946"/>
+        <Image Id="DefaultMask_image3935-4" TextureId="barrel_1_demo" Bounds="122, 203, 30, 34" Stretch="false" Opacity="1" TraceId="image3935-4"/>
+        <Image Id="DefaultMask_image3935-9" TextureId="barrel_1_demo" Bounds="102, 218, 30, 34" Stretch="false" Opacity="1" TraceId="image3935-9"/>
+        <Image Id="l4" TextureId="lathe_4_demo" Bounds="430, 256, 50, 45" Stretch="false" Opacity="1" TraceId="image3070-4">
+			<IntersectionTrigger ObjectId2="l4" ObjectId1="hero" >
+				<NumAnimation Id="dds" From="0" To="3200" Duration="50" Target="ccc.Y" IsDelta="true" Autoreverse="false" RepeatCount="77777" InProgress="true" />
+			</IntersectionTrigger>
+		</Image>
+        <Image Id="DefaultMask_image3081" TextureId="car_1_demo" Bounds="303, 10, 60, 29" Stretch="false" Opacity="1" TraceId="image3081"/>
+		
+
+		
+        <Group>
+            <Image Id="enmL" TextureId="lathe_2_demo" Bounds="336, 242, 50, 68" Stretch="false" Opacity="1" TraceId="image3059">
+			</Image>
+            <NumAnimation Id="anm2" From="0" To="-291" Target="X" Duration="5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3048-0"/>
+        </Group>
+		
+        <Hero Id="hero" Bounds="20, 64, 60, 37" Speed="84" Direction="0,0" TraceId="image4015">
+            <Image Id="antenna" TextureId="antenna_1_demo" Bounds="29, -23, 11, 23" Stretch="false" Opacity="1" TraceId="image4026"/>
+            <Image Id="body" TextureId="hero_40_catsocket_demo_no_antenna" Stretch="false" Opacity="1" TraceId="image4026"/>
+		</Hero>       
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+
