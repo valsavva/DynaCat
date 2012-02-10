@@ -124,6 +124,7 @@ namespace Lunohod
 
 			this.spriteBatch.Dispose();
 			this.spriteBatch = null;
+			
 			this.obstacles = null;
 		}
 	}

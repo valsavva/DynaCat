@@ -10,6 +10,7 @@ namespace Lunohod.Objects
 		protected bool isDisposed = false;
 		private Dictionary<string, SignalContainer> signalContainers = null;
 		private XObjectCollection subcomponents = null;
+		private Dictionary<string, XObject> componentDict;
 		
 		[XmlAttribute]
 		public string Id { get; set;}
@@ -138,6 +139,9 @@ namespace Lunohod.Objects
 						subcomponent.InitHierarchy();
 					}
 			}
+			
+			// force to rebiuld subcomponent hash
+			this.componentDict = null;
 		}
 		
 		public virtual void Initialize(InitializeParameters p)
@@ -235,21 +239,37 @@ namespace Lunohod.Objects
 				
 		public XObject FindDescendant(string id)
 		{
-			if (this.Id == id)
-				return this;
-			
-			if (this.Subcomponents == null)
-				return null;
-			
-			XObject result = null;
-
-			for(int i = 0; i < this.Subcomponents.Count; i++)
+			if (this.componentDict == null)
 			{
-				if ((result = this.Subcomponents[i].FindDescendant(id)) != null)
-					return result;
+				this.componentDict = new Dictionary<string, XObject>();
+				this.TraveseTree(o => {
+					if (o.Id != null)
+					{
+						if (!this.componentDict.ContainsKey(o.Id))
+							this.componentDict.Add(o.Id, o);
+		#if DEBUG
+						else
+							Console.WriteLine("*** Component with id '{0}' already exists! ***", this.Id);
+		#endif
+					}
+				});
 			}
 			
-			return null;
+			
+			XObject result = null;
+			
+			this.componentDict.TryGetValue(id, out result);
+			
+			return result;
+		}
+		
+		public void TraveseTree(Action<XObject> action)
+		{
+			action(this);
+
+			if (this.Subcomponents != null)
+				for(int i = 0; i < this.Subcomponents.Count; i++)
+					this.Subcomponents[i].TraveseTree(action);
 		}
 		
 		public XObject FindAncestor(Predicate<XObject> p)
