@@ -27,7 +27,7 @@
 
 		<!-- Два "телепорта" -->
 		<Image TextureId="cursor_50x50_green" Bounds="20,20,80,80">
-			<Group Id="imgPort1In" Bounds="20,20,20,20"/>
+			<Group Id="grpPort1In" Bounds="20,20,20,20"/>
 		</Image>
 		<Image TextureId="cursor_50x50_purple" Bounds="380,20,80,80" />
 		
@@ -49,7 +49,7 @@
 		</SequenceSet>
 
 		<!-- Просто триггер отслеживающий вхождение героя внутрь телепорта и запускающий переход -->		
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="imgPort1In" EnterAction="setTeleportClassic.Start()"/>
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpPort1In" EnterAction="setTeleportClassic.Start()"/>
 
 		<!-- ************************************************************************************ -->
 		<!-- ************************************************************************************ -->
@@ -86,20 +86,21 @@
 		</Class>
 		
 		<!-- Два "телепорта" -->
-		<Image TextureId="cursor_50x50_green" Bounds="20,240,80,80">
-			<Group Id="imgPort2In" Bounds="20,20,20,20"/>
+		<Image Id="imgPort2In" TextureId="cursor_50x50_green" Bounds="20,240,80,80">
+			<Group Id="grpPort2In" Bounds="20,20,20,20"/>
 		</Image>
-		<Image TextureId="cursor_50x50_green" Bounds="140,135,80,80">
-			<Group Id="imgPort3In" Bounds="20,20,20,20"/>
+		<Image Id="imgPort3In" TextureId="cursor_50x50_green" Bounds="140,135,80,80">
+			<NumAnimation Target="Y" From="-20" To="120" IsDelta="true" Autoreverse="true" Duration="1" InProgress="true"/>
+			<Group Id="grpPort3In" Bounds="20,20,20,20"/>
 		</Image>
 		<Image TextureId="cursor_50x50_purple" Bounds="380,240,80,80"/>
 
 		<!-- Тут мы используем мощь классов. Программируем переход между двумя парами порталов, используя класс. -->		
-		<SequenceSet Id="setTeleportGhost1" Class="clsTeleportGhost" ClassParams="@fromX=40,@fromY=255,@toX=395,@toY=255" />
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="imgPort2In" EnterAction="setTeleportGhost1.Start()"/>
+		<SequenceSet Id="setTeleportGhost1" Class="clsTeleportGhost" ClassParams="@fromX=imgPort2In.X,@fromY=imgPort2In.Y,@toX=395,@toY=255" />
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpPort2In" EnterAction="setTeleportGhost1.Start()"/>
 
-		<SequenceSet Id="setTeleportGhost2" Class="clsTeleportGhost" ClassParams="@fromX=155,@fromY=150,@toX=395,@toY=255" />
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="imgPort3In" EnterAction="setTeleportGhost2.Start()"/>
+		<SequenceSet Id="setTeleportGhost2" Class="clsTeleportGhost" ClassParams="@fromX=imgPort3In.X,@fromY=imgPort3In.Y,@toX=395,@toY=255" />
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpPort3In" EnterAction="setTeleportGhost2.Start()"/>
 
 	</Layer>
 
