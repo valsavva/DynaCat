@@ -34,6 +34,7 @@ namespace Lunohod.Objects
 			get { return distanceToTower; }
 		}
 		
+        [XmlIgnore]
 		public bool InTransaction { get; private set; }
 		
 		public override void Initialize(InitializeParameters p)
