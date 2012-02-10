@@ -96,12 +96,12 @@ namespace Lunohod.Objects
                 targets[i].FloatPropertyValue = newPropertyValue;
             }
         }
-		public override void ReplaceThis(string iid)
+		public override void ReplaceParameter(string par, string val)
 		{
 	        if (this.Target != null)
-			    this.Target = this.Target.Replace("this", iid);
+			    this.Target = this.Target.Replace(par, val);
 			
-			base.ReplaceThis(iid);
+			base.ReplaceParameter(par, val);
 		}
     }
 }

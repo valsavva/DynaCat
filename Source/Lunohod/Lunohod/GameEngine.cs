@@ -260,7 +260,7 @@ namespace Lunohod
 			{
 				var tapArea = tapAreas[j];
 				
-				if (tapArea.Bounds.Contains(x, y))
+				if (tapArea.GetScreenBounds().Contains(x, y))
 				{
 					if (tapArea.ActionCaller != null)
 						tapArea.ActionCaller.Call();

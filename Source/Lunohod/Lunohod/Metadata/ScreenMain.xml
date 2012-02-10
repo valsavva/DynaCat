@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Screen Name="Main" Bounds="0,0,480,320">
+	<Class Id="clsLevelButton">
+		<Group>
+			<TapArea Action="system.StartLevel(@levelNum)" />
+			<Text FontId="SystemFont" Origin="50,10" Location="50,10" Text="=system.GetLevelName(@levelNum)" Color="#000000" />
+			<RandomSet RepeatCount="0" InProgress="true">
+				<NumAnimation Target="this.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
+					<KeyFrame Time="0" Value="0" />
+					<KeyFrame Time="0.01" Value="-3" />
+					<KeyFrame Time="0.05" Value="3" />
+				</NumAnimation>
+				<Delay Duration="3" />
+			</RandomSet>
+			<RandomSet RepeatCount="0" InProgress="true">
+				<NumAnimation Target="this.X" Autoreverse="true" RepeatCount="1" Duration="1" IsDelta="true" Fill="Reset">
+					<KeyFrame Time="0" Value="0" Smoothness="Smooth" />
+					<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth" />
+					<KeyFrame Time="0.6" Value="6" Smoothness="Smooth" />
+					<KeyFrame Time="1" Value="0" Smoothness="Smooth" />
+				</NumAnimation>
+				<Delay Duration="3" />
+			</RandomSet>
+		</Group>
+	</Class>
 
+	
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
@@ -12,67 +36,27 @@
     </Layer>
 	
 	<Layer Id="action" BackColor="#FFFFFFFF">
-		<TapArea Bounds="0,30,180,30" Action="system.StartLevel(0)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(0)" Location="0,30" Color="#000000" />
-
-		<TapArea Bounds="0,60,180,30" Action="system.StartLevel(1)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(1)" Location="0,60" Color="#000000" />
-
-		<TapArea Bounds="0,90,180,30" Action="system.StartLevel(2)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(2)" Location="0,90" Color="#000000" />
-
-		<TapArea Bounds="0,120,180,30" Action="system.StartLevel(3)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(3)" Location="0,120" Color="#000000" />
-
-		<TapArea Bounds="0,180,180,30" Action="system.StartLevel(4)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(4)" Location="0,150" Color="#000000" />
-
-		<TapArea Bounds="0,180,180,30" Action="system.StartLevel(5)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(5)" Location="0,180" Color="#000000" />
-
-		<TapArea Bounds="0,210,180,30" Action="system.StartLevel(6)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(6)" Location="0,210" Color="#000000" />
-
-		<TapArea Bounds="0,240,180,30" Action="system.StartLevel(7)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(7)" Location="0,240" Color="#000000" />
-
-		<TapArea Bounds="0,270,180,30" Action="system.StartLevel(8)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(8)" Location="0,270" Color="#000000" />
-
-		<TapArea Bounds="0,300,180,30" Action="system.StartLevel(9)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(9)" Location="0,300" Color="#000000" />
-
-		<TapArea Bounds="200,30,180,30" Action="system.StartLevel(10)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(10)" Location="200,30" Color="#000000" />
-
-		<TapArea Bounds="200,60,180,30" Action="system.StartLevel(11)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(11)" Location="200,60" Color="#000000" />
-
-		<TapArea Bounds="200,90,180,30" Action="system.StartLevel(12)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(12)" Location="200,90" Color="#000000" />
-
-		<TapArea Bounds="200,120,180,30" Action="system.StartLevel(13)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(13)" Location="200,120" Color="#000000" />
-
-		<TapArea Bounds="200,150,180,30" Action="system.StartLevel(14)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(14)" Location="200,150" Color="#000000" />
-
-		<TapArea Bounds="200,180,180,30" Action="system.StartLevel(15)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(15)" Location="200,180" Color="#000000" />
-
-		<TapArea Bounds="200,210,180,30" Action="system.StartLevel(16)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(16)" Location="200,210" Color="#000000" />
-
-		<TapArea Bounds="200,240,180,30" Action="system.StartLevel(17)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(17)" Location="200,240" Color="#000000" />
-
-		<TapArea Bounds="200,270,180,30" Action="system.StartLevel(18)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(18)" Location="200,270" Color="#000000" />
-
-		<TapArea Bounds="200,300,180,30" Action="system.StartLevel(19)" />
-		<Text FontId="SystemFont" Text="=system.GetLevelName(19)" Location="200,300" Color="#000000" />
-
-
+		
+		<Group Id="grpL01" Bounds="050,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=00"/>
+		<Group Id="grpL02" Bounds="050,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=01"/>
+		<Group Id="grpL03" Bounds="050,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=02"/>
+		<Group Id="grpL04" Bounds="050,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=03"/>
+		<Group Id="grpL05" Bounds="050,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=04"/>
+		<Group Id="grpL06" Bounds="050,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=05"/>
+		<Group Id="grpL07" Bounds="050,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=06"/>
+		<Group Id="grpL08" Bounds="050,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=07"/>
+		<Group Id="grpL09" Bounds="050,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=08"/>
+		
+		<Group Id="grpL10" Bounds="250,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=09"/>
+		<Group Id="grpL11" Bounds="250,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=10"/>
+		<Group Id="grpL12" Bounds="250,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=11"/>
+		<Group Id="grpL13" Bounds="250,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=12"/>
+		<Group Id="grpL14" Bounds="250,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=13"/>
+		<Group Id="grpL15" Bounds="250,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=14"/>
+		<Group Id="grpL17" Bounds="250,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=16"/>
+		<Group Id="grpL18" Bounds="250,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=17"/>
+		<Group Id="grpL16" Bounds="250,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=15"/>
+		
 	</Layer>
 	
 </Screen>

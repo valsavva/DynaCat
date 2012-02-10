@@ -47,12 +47,12 @@ namespace Lunohod.Objects
         {
         }
 		
-		public override void ReplaceThis(string iid)
+		public override void ReplaceParameter(string par, string val)
 		{
 			if (this.Action != null)
-				this.Action = this.Action.Replace("this", iid);
+				this.Action = this.Action.Replace(par, val);
 			
-			base.ReplaceThis(iid);
+			base.ReplaceParameter(par, val);
 		}
     }
 }

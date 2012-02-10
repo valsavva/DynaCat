@@ -54,12 +54,12 @@ namespace Lunohod.Objects
             return rectInt.Area();
         }
 
-		public override void ReplaceThis(string iid)
+		public override void ReplaceParameter(string par, string val)
 		{
-            this.ObjectId1 = this.ObjectId1.Replace("this", iid);
-            this.ObjectId2 = this.ObjectId2.Replace("this", iid);
+            this.ObjectId1 = this.ObjectId1.Replace(par, val);
+            this.ObjectId2 = this.ObjectId2.Replace(par, val);
 
-			base.ReplaceThis(iid);
+			base.ReplaceParameter(par, val);
 		}
 	}
 }

@@ -41,7 +41,7 @@ namespace Lunohod.Objects
 			parent.Subcomponents.RemoveAt(instanceIndex);
 			parent.Subcomponents.Insert(instanceIndex, instance);
 			
-			ReplaceThisKeyword(instance);
+			ReplaceParameters(instance, placeholder.ClassParams);
 			
 			return instance;
 		}
@@ -57,11 +57,22 @@ namespace Lunohod.Objects
 			}
 		}
 
-		public void ReplaceThisKeyword(XObject instance)
+		public void ReplaceParameters(XObject instance, string classParams)
 		{
-			if (instance.Subcomponents != null)
-				for(int i = 0; i < instance.Subcomponents.Count; i++)
-					instance.ReplaceThis(instance.Id);
+			List<string> pars = new List<string> { "this" };
+			List<string> vals = new List<string> { instance.Id };
+			
+			if (classParams != null)
+			{
+				classParams.Split(',').ForEach(p => {
+					var ss = p.Split('=');
+					
+					pars.Add(ss[0].Trim());
+					vals.Add(ss[1].Trim());
+				});
+			}
+			
+			instance.ReplaceParameters(pars, vals);
 		}
 	}
 }

@@ -82,16 +82,16 @@ namespace Lunohod.Objects
 				base.Draw(p);
 		}
 		
-		public override void ReplaceThis(string iid)
+		public override void ReplaceParameter(string par, string val)
 		{
 			if (this.EnterAction != null)
-				this.EnterAction = this.EnterAction.Replace("this", iid);
+				this.EnterAction = this.EnterAction.Replace(par, val);
 			if (this.Action != null)
-				this.Action = this.Action.Replace("this", iid);
+				this.Action = this.Action.Replace(par, val);
 			if (this.ExitAction != null)
-				this.ExitAction = this.ExitAction.Replace("this", iid);
+				this.ExitAction = this.ExitAction.Replace(par, val);
 			
-			base.ReplaceThis(iid);
+			base.ReplaceParameter(par, val);
 		}
 	}
 }

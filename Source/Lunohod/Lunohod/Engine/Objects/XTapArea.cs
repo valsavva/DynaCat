@@ -37,6 +37,14 @@ namespace Lunohod.Objects
 			if (this.Action != null)
 				actionCaller = Lunohod.Objects.ActionCaller.CreateActionCaller(this, this.Action);
 		}
+		
+		public override void ReplaceParameter(string par, string val)
+		{
+			if (this.Action != null)
+				this.Action = this.Action.Replace(par, val);
+			
+			base.ReplaceParameter(par, val);
+		}
 	}
 }
 

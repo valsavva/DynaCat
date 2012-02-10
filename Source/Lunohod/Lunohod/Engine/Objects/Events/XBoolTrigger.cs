@@ -29,12 +29,12 @@ namespace Lunohod.Objects
 			return valueReader.Value;
 		}
 		
-		public override void ReplaceThis(string iid)
+		public override void ReplaceParameter(string par, string val)
 		{
 			if (this.Condition != null)
-				this.Condition = this.Condition.Replace("this", iid);
+				this.Condition = this.Condition.Replace(par, val);
 
-			base.ReplaceThis(iid);
+			base.ReplaceParameter(par, val);
 		}
 	}
 }

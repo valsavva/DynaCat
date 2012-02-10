@@ -17,6 +17,9 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public string Class { get; set; }
 
+		[XmlAttribute]
+		public string ClassParams { get; set; }
+
 		[XmlIgnore]
 		public XObject Parent { get; set; }
 
@@ -332,14 +335,21 @@ namespace Lunohod.Objects
         //    }
         //}
 
-		public virtual void ReplaceThis(string iid)
+		public virtual void ReplaceParameter(string par, string val)
 		{
 			if (this.Id != null)
-				this.Id = this.Id.Replace("this", iid);
-			
+				this.Id = this.Id.Replace(par, val);
+		}
+		
+		public void ReplaceParameters(List<string> pars, List<string> vals)
+		{
 			if (this.subcomponents != null)
 				for(int i = 0; i < this.subcomponents.Count; i++)
-					subcomponents[i].ReplaceThis(iid);
+				{
+					for(int j = 0; j < pars.Count; j++)
+						subcomponents[i].ReplaceParameter(pars[j], vals[j]);
+					subcomponents[i].ReplaceParameters(pars, vals);
+				}
 		}
 		
 		#region IDisposable implementation
