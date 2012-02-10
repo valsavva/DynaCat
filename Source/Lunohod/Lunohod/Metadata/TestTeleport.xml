@@ -102,6 +102,9 @@
 		<SequenceSet Id="setTeleportGhost2" Class="clsTeleportGhost" ClassParams="@fromX=imgPort3In.X,@fromY=imgPort3In.Y,@toX=395,@toY=255" />
 		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpPort3In" EnterAction="setTeleportGhost2.Start()"/>
 
+		<!-- Exit! -->		
+		<Image Id="imgExit" TextureId="_E_" Bounds="215,135,50,50"/>
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="imgExit" Value="400" EnterAction="system.EndCurrentLevel()" />
 	</Layer>
 
 	<Include File="Dashboard.xml" />

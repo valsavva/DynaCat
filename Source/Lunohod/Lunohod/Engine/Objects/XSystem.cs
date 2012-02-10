@@ -41,6 +41,16 @@ namespace Lunohod.Objects
 
 			game.LoadLevel(game.GameObject.Levels[i].File);
 		}
+		
+		public void CloseCurrentScreen()
+		{
+			game.EnqueueEvent(new GameEvent(GameEventType.CloseCurrentScreen, GameEngine.Instance.CurrentUpdateTime) { IsInstant = true });
+		}
+		
+		public void EndCurrentLevel()
+		{
+			this.CloseCurrentScreen();
+		}
 	}
 }
 

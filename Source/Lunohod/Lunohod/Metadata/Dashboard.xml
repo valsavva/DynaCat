@@ -2,9 +2,8 @@
 <Include>
 	<!-- Resources -->	
 	<Resources RootFolder="Global">
-		
 		<Texture Id="dashboard" Source="dash_demo_3_size52" />
-		
+		<Texture Id="blank" Source="blank"/>
 	</Resources>
 	
 	<Dashboard BackColor="#FFFFFFFF">
@@ -24,5 +23,8 @@
 		
 		<TapArea Bounds="158,263,52,57" Event="system:stop" /> <!-- pause -->
 		<TapArea Bounds="270,263,52,57" Event="system:stop" /> <!-- bomb -->
+		
+		<Image TextureId="blank" Bounds="450,10,20,20" BackColor="#FF0000" Opacity="0.2"/>
+		<TapArea Bounds="450,10,20,20" Action="system.EndCurrentLevel()" />
 	</Dashboard>
 </Include>

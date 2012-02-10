@@ -38,6 +38,8 @@ namespace Lunohod
 
 		public int CycleNumber { get; private set; }
 		
+		public GameTime CurrentUpdateTime { get; private set; }
+		
 		public XGame GameObject
 		{
 			get { return this.gameObject; }
@@ -45,7 +47,13 @@ namespace Lunohod
 		
 		public ScreenEngine ScreenEngine
 		{
-			get { return this.screenEngines[this.screenEngines.Count - 1]; }
+			get
+			{ 
+				lock(this.screenEngines)
+				{
+					return this.screenEngines[this.screenEngines.Count - 1];
+				}
+			}
 		}	
 		
 		public Vector3 Scale { get; private set; }
@@ -118,6 +126,7 @@ namespace Lunohod
 		protected override void Update(GameTime gameTime)
 		{
 			this.CycleNumber++;
+			this.CurrentUpdateTime = gameTime;
 			
 			ProcessInputProcessors(gameTime);
             
@@ -184,6 +193,19 @@ namespace Lunohod
 			PrepareGlobals();
 		}
 
+		public void CloseCurrentScreen()
+		{
+			ScreenEngine screenEngine;
+			
+			lock(this.screenEngines)
+			{
+				screenEngine = this.screenEngines[this.screenEngines.Count - 1];
+				this.screenEngines.Remove(screenEngine);
+			}
+			
+			screenEngine.Unload();
+		}
+		
 		void PrepareGlobals()
 		{
 			this.BlankTexture = ((XTextureResource)this.gameObject.FindDescendant("blank")).Image;
@@ -243,7 +265,19 @@ namespace Lunohod
 			{
 				var e = this.eventQueue.Dequeue();
 				
-				this.ScreenEngine.ProcessEvent(gameTime, e);
+				switch (e.EventType)
+				{
+					case GameEventType.EndCurrentLevel :
+					case GameEventType.CloseCurrentScreen :{
+						this.CloseCurrentScreen();
+						e.IsHandled = true;
+					}; break;
+				}
+				
+				if (!e.IsHandled)
+				{
+					this.ScreenEngine.ProcessEvent(gameTime, e);
+				}
 				
 				if (!e.IsHandled)
 					this.eventQueue.Enqueue(e);

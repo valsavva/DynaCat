@@ -9,7 +9,9 @@ namespace Lunohod
 		Down,
 		Left,
 		Right,
-        Stop
+        Stop,
+		CloseCurrentScreen,
+		EndCurrentLevel
 	}
 }
 
