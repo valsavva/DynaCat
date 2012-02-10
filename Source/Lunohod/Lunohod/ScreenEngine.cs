@@ -84,7 +84,7 @@ namespace Lunohod
 		
 		protected void PostDraw()
 		{
-			if (this.game.DrawDebugInfo)
+			if (this.game.GameObject.ShowFPS)
 				this.DrawDebugInfo(drawParameters);
 			
 			this.spriteBatch.End();

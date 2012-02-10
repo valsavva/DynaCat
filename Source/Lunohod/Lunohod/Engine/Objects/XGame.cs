@@ -24,6 +24,12 @@ namespace Lunohod.Objects
 
 		[XmlArray]
 		public XScreen[] Screens;
+		
+		[XmlAttribute]
+		public bool ShowFPS;
+		
+		[XmlAttribute]
+		public bool ShowDebugInfo;
 	}
 }
 

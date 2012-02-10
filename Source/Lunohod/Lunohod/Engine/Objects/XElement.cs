@@ -126,7 +126,7 @@ namespace Lunohod.Objects
 		{
 			base.Draw(p);
 
-            if (p.Game.DrawDebugInfo)
+            if (p.Game.GameObject.ShowDebugInfo && p.Game.DrawDebugInfo)
             {
                 DrawDebug(p);
             }
@@ -134,10 +134,6 @@ namespace Lunohod.Objects
 		
 		public void DrawDebug(DrawParameters p)
 		{
-#if WINDOWS
-#else
-			return;
-#endif
 			if (!(this is XImage) && !(this is XBlock))
 				return;
 			
