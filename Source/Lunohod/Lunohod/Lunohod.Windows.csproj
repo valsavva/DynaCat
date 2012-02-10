@@ -140,19 +140,16 @@
     </Compile>
     <Compile Include="Engine\DrawParameters.cs" />
     <Compile Include="Engine\InitializeParameters.cs" />
-    <Compile Include="Engine\Objects\Animation\ActionCaller.cs" />
-    <Compile Include="Engine\Objects\Animation\BoolValueReader.cs" />
-    <Compile Include="Engine\Objects\Animation\NumericValueTimeline.cs" />
+    <Compile Include="Engine\Objects\Accessors\ActionCaller.cs" />
+    <Compile Include="Engine\Objects\Accessors\BoolValueReader.cs" />
+    <Compile Include="Engine\Objects\Accessors\EventCaller.cs" />
+    <Compile Include="Engine\Objects\Accessors\NumValueReader.cs" />
+    <Compile Include="Engine\Objects\Accessors\PropertyAccessor.cs" />
+    <Compile Include="Engine\Objects\Accessors\StrValueReader.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
     <Compile Include="Engine\Objects\Animation\XDelay.cs" />
     <Compile Include="Engine\Objects\Animation\XDo.cs" />
     <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
-    <Compile Include="Engine\Objects\Animation\NumValueReader.cs" />
-    <Compile Include="Engine\Objects\Animation\EventCaller.cs" />
-    <Compile Include="Engine\Objects\Animation\FloatPropertyAccessor.cs" />
-    <Compile Include="Engine\Objects\Animation\PropertyAccessor.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Engine\Objects\Animation\XAnimationBase.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -930,7 +927,9 @@
     <Content Include="Metadata\skeletonClassCursor.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\skeletonDiraVRyadahVragov.xml" />
+    <Content Include="Metadata\skeletonDiraVRyadahVragov.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\skeletonElochka.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -940,19 +939,27 @@
     <Content Include="Metadata\skeletonLabirinth.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\skeletonLogikaPeredvijenii.xml" />
+    <Content Include="Metadata\skeletonLogikaPeredvijenii.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\skeletonLoshadka.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonNozhnicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\skeletonNozhnicy2Hockey.xml" />
-    <Content Include="Metadata\skeletonParavozik.xml" />
+    <Content Include="Metadata\skeletonNozhnicy2Hockey.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\skeletonParavozik.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\skeletonVKolce.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\skeletonVolkLovitYaica.xml" />
+    <Content Include="Metadata\skeletonVolkLovitYaica.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\TestActionsAndEnabled.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
