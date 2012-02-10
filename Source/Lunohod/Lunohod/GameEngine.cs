@@ -123,8 +123,11 @@ namespace Lunohod
             
             ProcessQueue(gameTime);
 			
+			this.ScreenEngine.Update(gameTime);
+			/*
 			for(int i = 0; i < screenEngines.Count; i++)
 				screenEngines[i].Update(gameTime);
+				*/
 
 			base.Update(gameTime);
 		}
@@ -133,8 +136,11 @@ namespace Lunohod
 		{
             GraphicsDevice.Clear(Color.CornflowerBlue);
 			
+			this.ScreenEngine.Draw(gameTime);
+			/*
 			for(int i = 0; i < screenEngines.Count; i++)
 				screenEngines[i].Draw(gameTime);
+				*/
 			
 			base.Draw(gameTime);
         }

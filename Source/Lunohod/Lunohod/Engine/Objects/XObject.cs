@@ -219,24 +219,6 @@ namespace Lunohod.Objects
 			return this.Subcomponents.Where(c => c is T).Cast<T>();
 		}
 		
-		public List<XObject> GetAllDescendants()
-		{
-			List<XObject> all = new List<XObject>();
-			this.GetAllDescendants(all);
-			return all;
-		}
-
-		private void GetAllDescendants(List<XObject> all)
-		{
-			if (this.Subcomponents == null)
-				return;
-			
-			all.AddRange(this.Subcomponents);
-			
-			for(int i = 0; i < this.Subcomponents.Count; i++)
-				this.Subcomponents[i].GetAllDescendants(all);
-		}
-				
 		public XObject FindDescendant(string id)
 		{
 			if (this.componentDict == null)
@@ -254,7 +236,6 @@ namespace Lunohod.Objects
 					}
 				});
 			}
-			
 			
 			XObject result = null;
 			
@@ -286,9 +267,12 @@ namespace Lunohod.Objects
 		
 		public XObject GetRoot()
 		{
-			if (this.Parent == null)
-				return this;
-			return this.Parent.GetRoot();
+			XObject result = this;
+	
+			while (result.Parent != null)
+				result = result.Parent;
+
+			return result;
 		}
 		
 		public void GetTargetFromDescriptor(string descriptor, out XObject target, out string targetMember)

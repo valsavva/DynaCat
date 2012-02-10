@@ -34,6 +34,8 @@ namespace Lunohod.Objects
 			get { return distanceToTower; }
 		}
 		
+		public bool InTransaction { get; private set; }
+		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
@@ -48,9 +50,12 @@ namespace Lunohod.Objects
 			base.Update(p);
 			
 			// calculate the new location of the hero
-			offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
-
-            this.Bounds.Offset(offset.X, offset.Y);
+			if (!this.InTransaction)
+			{
+				offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
+	
+	            this.Bounds.Offset(offset.X, offset.Y);
+			}
 			
 			// calculate distance to the tower
             p.LevelEngine.tower.Bounds.Center(ref towerCenter);
@@ -58,8 +63,22 @@ namespace Lunohod.Objects
 			distanceToTower = (towerCenter - heroCenter).Length();
 		}
 		
-		public void AlignToBoundaryOf(XElement e, Vector2 direction)
-        {
-        }
+		public void StartTransaction()
+		{
+			this.InTransaction = true;
+		}
+
+		public void EndTransaction()
+		{
+			this.InTransaction = false;
+		}
+		
+		public void SetDirection(string sx, string sy)
+		{
+			int x = int.Parse(sx);
+			int y = int.Parse(sy);
+			
+			this.Direction = new Vector2(x, y);
+		}
     }
 }

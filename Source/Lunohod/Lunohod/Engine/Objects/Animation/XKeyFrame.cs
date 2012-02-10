@@ -50,5 +50,12 @@ namespace Lunohod.Objects
                 this.CurveKeys[i].Value = this.valueReaders[i].Value;
             }
         }
+		
+		public override void ReplaceParameter(string par, string val)
+		{
+			this.Value = this.Value.Replace(par, val);
+			
+			base.ReplaceParameter(par, val);
+		}
     }
 }

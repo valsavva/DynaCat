@@ -36,15 +36,15 @@ namespace Lunohod.Objects
 		}
 		
         [XmlIgnore]
-        public TimeSpan RunTime;
+        public TimeSpan RepeatTime;
         [XmlAttribute]
         public float RepeatCount;
 
-        [XmlAttribute("RunTime")]
+        [XmlAttribute("RepeatTime")]
         public string zRunTime
         {
-            get { return this.RunTime.ToString(); }
-            set { this.RunTime = value.ToDuration(); }
+            get { return this.RepeatTime.ToString(); }
+            set { this.RepeatTime = value.ToDuration(); }
         }
 
         public override void Update(UpdateParameters p)
@@ -72,9 +72,9 @@ namespace Lunohod.Objects
 		{
 			this.elapsedTime += p.GameTime.ElapsedGameTime;
         	
-    		if (this.RunTime != TimeSpan.Zero)
+    		if (this.RepeatTime != TimeSpan.Zero)
 			{
-				if (this.elapsedTime > this.RunTime)
+				if (this.elapsedTime > this.RepeatTime)
 					  Stop();
 			}
 			else if (this.RepeatCount != 0)
