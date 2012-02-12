@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+<!-- date: 12/02 2012 05:02 -->
+<Level Name="D:\Lunohod\Levels\_skeleton\skeletonVodoprovodniiNindzya\skeletonVodoprovodniiNindzya.svg" Bounds="0, 0, 480, 320">
+    <Include File="skeletonClassCursor.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="white_clear" Source="white_clear" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="skeletonVodoprovodniiNindzya_TLPs" Source="skeletonVodoprovodniiNindzya_TLPs" />
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+        <Texture Id="_E_" Source="_E_" />
+        <Texture Id="tlp1_demo_anm" Source="tlp1_demo_anm" />
+        <Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
+        <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
+        <Texture Id="cursor_wall_50x50_bounce" Source="cursor_wall_50x50_bounce" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3056" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3056"/>
+        <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.1" TraceId="image3067"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image4312" TextureId="skeletonVodoprovodniiNindzya_TLPs" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image4312"/>
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+        <Hero Id="hero" Bounds="414, 24, 50, 40" Class="clsHero" TraceId="image3015"/>
+ 
+ <!-- >>> HAND EDIT >>> -->
+ 
+        <Block Id="Exit" Bounds="10, 200, 50, 50" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+ 
+         <Class Id="clstlp_1sec">
+        	<Group>
+				<SequenceSet Id="this_set">
+					<Do Action="hero.StartTransaction()"/>
+					<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
+					<Do Action="imgAnmTlp.Enable()" />
+					<NumAnimation Id="grpTeleport1in_anm" Target="imgAnmTlp.X,imgAnmTlp.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" Fill="End" TraceId="image4056">
+						<KeyFrame Time="0" Value="@taFX,@toHY" />
+						<KeyFrame Time="1" Value="@taTX,@toHY" />						
+					</NumAnimation>
+					<NumAnimation Target="hero.X,hero.Y" Duration="0.01" RepeatCount="1" Fill="End">
+						<KeyFrame Time="0" Value="@toHX,@toHY" />
+						<KeyFrame Time="0.01" Value="@toHX,@toHY" />
+					</NumAnimation>
+					<Do Action="imgAnmTlp.Disable()" />
+					<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
+					<Do Action="hero.SetDirection(0,0)"/>
+					<Do Action="hero.EndTransaction()"/>
+				</SequenceSet>
+				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" Value="200" EnterAction="this_set.Start(),this_anm.Start()"/>
+			</Group>
+        </Class>
+       
+        <Class Id="clstlp_2sec">
+        	<Group>
+				<SequenceSet Id="this_set">
+					<Do Action="hero.StartTransaction()"/>
+					<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
+					<Do Action="imgAnmTlp.Enable()" />
+					<NumAnimation Id="grpTeleport1in_anm" Target="imgAnmTlp.X,imgAnmTlp.Y" Duration="2" IsDelta="false" Autoreverse="false" RepeatCount="1" Fill="End" TraceId="image4056">
+						<KeyFrame Time="0" Value="@taFX,@toHY" />
+						<KeyFrame Time="2" Value="@taTX,@toHY" />						
+					</NumAnimation>
+					<NumAnimation Target="hero.X,hero.Y" Duration="0.01" RepeatCount="1" Fill="End">
+						<KeyFrame Time="0" Value="@toHX,@toHY" />
+						<KeyFrame Time="0.01" Value="@toHX,@toHY" />
+					</NumAnimation>
+					<Do Action="imgAnmTlp.Disable()" />
+					<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
+					<Do Action="hero.SetDirection(0,0)"/>
+					<Do Action="hero.EndTransaction()"/>
+				</SequenceSet>
+				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" Value="200" EnterAction="this_set.Start(),this_anm.Start()"/>
+			</Group>
+        </Class>
+        
+        
+        <Group Id="grpTeleport1in" Bounds="385, 21, 10, 50" TraceId="In1"  Class="clstlp_2sec" ClassParams="@toHX=31,@toHY=25,@taFX=360,@taTX=81" />
+		<Group Id="grpTeleport1out" Bounds="83, 25, 10, 50" TraceId="Out1" Class="clstlp_2sec" ClassParams="@toHX=397,@toHY=21,@taFX=80,@taTX=360" />
+        <Group Id="grpTeleport2in" Bounds="404, 135, 10, 50" TraceId="In2" Class="clstlp_2sec" ClassParams="@toHX=39,@toHY=136,@taFX=380,@taTX=100" />
+        <Group Id="grpTeleport2out" Bounds="91, 136, 10, 50" TraceId="Out2" Class="clstlp_2sec" ClassParams="@toHX=416,@toHY=135,@taFX=100,@taTX=380" />
+        <Group Id="grpTeleport3in" Bounds="390, 250, 10, 50" TraceId="In3" Class="clstlp_1sec" ClassParams="@toHX=219,@toHY=252,@taFX=360,@taTX=280" />
+        <Group Id="grpTeleport3out" Bounds="271, 252, 10, 50" TraceId="Out3" Class="clstlp_1sec" ClassParams="@toHX=402,@toHY=250,@taFX=280,@taTX=360" />
+        <Group Id="grpTeleport4in" Bounds="199, 252, 10, 50" TraceId="In4" Class="clstlp_1sec" ClassParams="@toHX=31,@toHY=251,@taFX=169,@taTX=91" />
+        <Group Id="grpTeleport4out" Bounds="81, 250, 10, 50" TraceId="Out4" Class="clstlp_1sec" ClassParams="@toHX=207,@toHY=251,@taFX=91,@taTX=169" />
+   
+        
+		<Image Id="imgAnmTlp" TextureId="tlp1_demo_anm" Bounds="-1000, -1000, 38, 45" Stretch="false" Opacity="1" Enabled="false" TraceId="imgAnmTlp1i"/>
+
+            <Enemy Id="enm1" Bounds="302, 40, 50, 40" Class="clsEnemy" TraceId="image3115"/>
+            <ParallelSet InProgress="true" RepeatCount="0" >
+            	<SequenceSet InProgress="true" RepeatCount="0" >
+		            <NumAnimation Id="anm9" From="0" To="150" Target="enm1.Y" Duration="1.3" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3037-4"/>
+		            <NumAnimation Id="anm9a" From="0" To="100" Target="enm1.Y" Duration="1.5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3037-4"/>
+	            </SequenceSet>
+	            <NumAnimation Id="anm10" From="0" To="-200" Target="enm1.X" Duration="1" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3048-0"/>
+            </ParallelSet>
+
+ <!-- <<< HAND EDIT <<< -->
+            
+        <Enemy Id="enm2" Bounds="127, 117, 50, 40" Class="clsEnemy" TraceId="image3129"/>
+        <Group Id="grp_g4210">
+            <Enemy Id="enm3" Bounds="214, 232, 50, 40" Class="clsEnemy" TraceId="image3026"/>
+            <NumAnimation Id="anm11" From="0" To="-209" Target="Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3026-7"/>
+        </Group>
+        <Food Id="fd1" Points="1" Bounds="25, 51, 24, 12" Class="clsFood" TraceId="image3037-7"/>
+        <Food Id="fd2" Points="1" Bounds="42, 99, 24, 12" Class="clsFood" TraceId="image3037-40"/>
+        <Food Id="fd3" Points="1" Bounds="12, 155, 24, 12" Class="clsFood" TraceId="image3037-9"/>
+        <Food Id="fd4" Points="1" Bounds="424, 148, 24, 12" Class="clsFood" TraceId="image3037-8"/>
+        <Food Id="fd5" Points="1" Bounds="430, 213, 24, 12" Class="clsFood" TraceId="image3037-2"/>
+        <Food Id="fd6" Points="1" Bounds="422, 267, 24, 12" Class="clsFood" TraceId="image3037-45"/>
+        <Block Id="blk1" Bounds="400, 99, 80, 10" Edges="Bounce" TraceId="image4182">
+            <Image Id="image4182" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk2" Bounds="0, 198, 80, 10" Edges="Bounce" TraceId="image4185">
+            <Image Id="image4185" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk3" Bounds="0, 0, 480, 10" Edges="Bounce" TraceId="image4262">
+            <Image Id="image4262" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk4" Bounds="0, 310, 480, 10" Edges="Bounce" TraceId="image4264">
+            <Image Id="image4264" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk5" Bounds="470, 0, 10, 320" Edges="Bounce" TraceId="image4266">
+            <Image Id="image4266" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk6" Bounds="0, 0, 10, 320" Edges="Bounce" TraceId="image4268">
+            <Image Id="image4268" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Group Id="grp_g4283">
+            <Enemy Id="enm4" Bounds="47, 82, 50, 40" Class="clsEnemy" TraceId="image3097"/>
+            <NumAnimation Id="anm12" From="0" To="270" Target="X" Duration="3" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image4280"/>
+        </Group>
+        <Group Id="grp_g4300">
+            <Enemy Id="enm5" Bounds="360, 196, 50, 40" Class="clsEnemy" TraceId="image3127"/>
+            <NumAnimation Id="anm13" From="0" To="-200" Target="X" Duration="3.5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image4297"/>
+        </Group>
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+
