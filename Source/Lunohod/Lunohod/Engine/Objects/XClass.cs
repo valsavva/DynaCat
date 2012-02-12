@@ -51,6 +51,8 @@ namespace Lunohod.Objects
 			dest.Id = src.Id;
 			//dest.Class = src.Class;
 			
+			dest.Enabled = src.Enabled;
+			
 			if (src is XElement)
 			{
 				((XElement)dest).Bounds = ((XElement)src).Bounds;
