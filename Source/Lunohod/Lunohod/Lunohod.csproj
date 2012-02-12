@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="Metadata\skeletonAlisa.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utility.cs" />

@@ -29,11 +29,11 @@
         <Block Id="blk3" Bounds="480, 0, 1000, 320" Edges="Bounce" TraceId="image3072"/>
         <Block Id="blk4" Bounds="0, -1000, 480, 1000" Edges="Bounce" TraceId="image3074"/>
         <Block Id="blk5" Bounds="0, 320, 480, 1000" Edges="Bounce" TraceId="image3076"/>
-        <Block Id="blk_image3034" Bounds="10, 270, 360, 50" Edges="Stick" TraceId="image3034">
+        <Block Id="blk_image3034" Class="clsExit" Bounds="10, 270, 360, 50" Edges="Stick" TraceId="image3034">
             <Image Id="image3034" TextureId="_E_" Opacity="1" />
         </Block>
 
-        <Block Id="blk_image3140" Bounds="10, 0, 360, 50" Edges="Stick" TraceId="image3140">
+        <Block Id="blk_image3140" Class="clsExit" Bounds="10, 0, 360, 50" Edges="Stick" TraceId="image3140">
             <Image Id="image3140" TextureId="_E_" Opacity="1" />
         </Block>
         <Group Id="grp_g3313">
