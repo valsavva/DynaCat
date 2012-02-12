@@ -100,6 +100,10 @@ namespace Lunohod.Objects
 		{
 	        if (this.Target != null)
 			    this.Target = this.Target.Replace(par, val);
+			if (this.From != null)
+				this.From = this.From.Replace(par, val);
+			if (this.To != null)
+				this.To = this.To.Replace(par, val);
 			
 			base.ReplaceParameter(par, val);
 		}
