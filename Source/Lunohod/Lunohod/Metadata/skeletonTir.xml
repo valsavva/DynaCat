@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+<!-- date: 11/02 2012 05:42 -->
+<Level Name="D:\Lunohod\Levels\_skeleton\skeletonTir\skeletonTir.svg" Bounds="0, 0, 480, 320">
+    <Include File="skeletonClassCursor.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="white_clear" Source="white_clear" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+        <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />
+        <Texture Id="_E_" Source="_E_" />
+        <Texture Id="cursor_wall_50x50_bounce" Source="cursor_wall_50x50_bounce" />
+        <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3056" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3056"/>
+        <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.1" TraceId="image3067"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+        <Hero Id="hero" Bounds="10, 140, 50, 40" Class="clsHeroTir" TraceId="image3015"/>
+        <Block Id="blk1" Bounds="0, 0, 10, 320" Edges="Stick" TraceId="image3048">
+            <Image Id="image3048" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Block Id="blk2" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+        <Block Id="blk3" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+        <Block Id="blk4" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+        <Block Id="blk5" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+        <Block Id="blk_image3034" Bounds="10, 270, 360, 50" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+        <Block Id="blk6" Bounds="370, 185, 10, 135" Edges="Bounce" TraceId="image3027">
+            <Image Id="image3027" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk7" Bounds="370, 0, 10, 135" Edges="Bounce" TraceId="image3029">
+            <Image Id="image3029" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+        </Block>
+        <Block Id="blk_image3140" Bounds="10, 0, 360, 50" Edges="Stick" TraceId="image3140">
+            <Image Id="image3140" TextureId="_E_" Opacity="1" />
+        </Block>
+        <Group Id="grp_g3313">
+
+<!-- >>> HANDEDIT >>> -->    
+            <NumAnimation Id="anm3" Target="Y" Duration="10" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3037-4">
+            	<KeyFrame Time="0" Value="0" Smoothing="Flat" />
+            	<KeyFrame Time="10" Value="880" Smoothing="Flat" />
+            </NumAnimation>
+<!-- <<< HANDEDIT <<< -->    
+
+            <Food Id="fd1" Points="1" Bounds="410, -724, 56, 28" Class="clsFood" TraceId="image3037-1"/>
+            <Food Id="fd2" Points="1" Bounds="431, -602, 35, 17" Class="clsFood" TraceId="image3037-7"/>
+            <Food Id="fd3" Points="1" Bounds="442, -484, 24, 12" Class="clsFood" TraceId="image3037-40"/>
+            <Food Id="fd4" Points="1" Bounds="423, -403, 43, 22" Class="clsFood" TraceId="image3037-9"/>
+            <Food Id="fd5" Points="1" Bounds="407, -365, 59, 30" Class="clsFood" TraceId="image3037-48"/>
+            <Food Id="fd6" Points="1" Bounds="447, -275, 19, 9" Class="clsFood" TraceId="image3037-8"/>
+            <Food Id="fd7" Points="1" Bounds="427, -171, 39, 19" Class="clsFood" TraceId="image3037-2"/>
+            <Food Id="fd8" Points="1" Bounds="386, -136, 80, 40" Class="clsFood" TraceId="image3037-45"/>
+            <Food Id="fd9" Points="1" Bounds="420, -72, 46, 23" Class="clsFood" TraceId="image3037-5"/>
+            <Food Id="fd10" Points="1" Bounds="407, 4, 59, 30" Class="clsFood" TraceId="image3037-11"/>
+            <Block Id="blk8" Bounds="470, -15, 10, 50" Edges="Bounce" TraceId="image3144">
+                <Image Id="image3144" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk9" Bounds="470, -75, 10, 50" Edges="Bounce" TraceId="image3150">
+                <Image Id="image3150" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk10" Bounds="470, -135, 10, 50" Edges="Bounce" TraceId="image3152">
+                <Image Id="image3152" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk11" Bounds="470, -195, 10, 50" Edges="Bounce" TraceId="image3154">
+                <Image Id="image3154" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk12" Bounds="470, -255, 10, 50" Edges="Bounce" TraceId="image3156">
+                <Image Id="image3156" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk13" Bounds="470, -315, 10, 50" Edges="Bounce" TraceId="image3158">
+                <Image Id="image3158" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk14" Bounds="470, -375, 10, 50" Edges="Bounce" TraceId="image3160">
+                <Image Id="image3160" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk15" Bounds="470, -435, 10, 50" Edges="Bounce" TraceId="image3162">
+                <Image Id="image3162" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk16" Bounds="470, -495, 10, 50" Edges="Bounce" TraceId="image3164">
+                <Image Id="image3164" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk17" Bounds="470, -555, 10, 50" Edges="Bounce" TraceId="image3166">
+                <Image Id="image3166" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk18" Bounds="470, -615, 10, 50" Edges="Bounce" TraceId="image3168">
+                <Image Id="image3168" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk19" Bounds="470, -675, 10, 50" Edges="Bounce" TraceId="image3170">
+                <Image Id="image3170" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk20" Bounds="470, 45, 10, 50" Edges="Bounce" TraceId="image3172">
+                <Image Id="image3172" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk21" Bounds="470, -735, 10, 50" Edges="Bounce" TraceId="image3057">
+                <Image Id="image3057" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk22" Bounds="470, -795, 10, 50" Edges="Bounce" TraceId="image3059">
+                <Image Id="image3059" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk23" Bounds="470, -855, 10, 50" Edges="Bounce" TraceId="image3061">
+                <Image Id="image3061" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk24" Bounds="470, -915, 10, 50" Edges="Bounce" TraceId="image3063">
+                <Image Id="image3063" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk25" Bounds="470, 105, 10, 50" Edges="Bounce" TraceId="image3065">
+                <Image Id="image3065" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk26" Bounds="470, 165, 10, 50" Edges="Bounce" TraceId="image3068">
+                <Image Id="image3068" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk27" Bounds="470, 225, 10, 50" Edges="Bounce" TraceId="image3071">
+                <Image Id="image3071" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk28" Bounds="470, 285, 10, 50" Edges="Bounce" TraceId="image3073">
+                <Image Id="image3073" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Block Id="blk29" Bounds="470, -975, 10, 50" Edges="Bounce" TraceId="image3303">
+                <Image Id="image3303" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+            <Food Id="fd11" Points="1" Bounds="442, -464, 24, 12" Class="clsFood" TraceId="image3307"/>
+            <Food Id="fd12" Points="1" Bounds="442, -504, 24, 12" Class="clsFood" TraceId="image3309"/>
+            <Block Id="blk30" Bounds="470, -1035, 10, 50" Edges="Bounce" TraceId="image3311">
+                <Image Id="image3311" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+            </Block>
+        </Group>
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+
