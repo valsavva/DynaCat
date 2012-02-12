@@ -30,6 +30,28 @@
 	</Class>
 
 	<!-- =========================================================================================  -->
+	<!-- clsHeroTir -->
+	<!-- =========================================================================================  -->
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="cursor_50x50_light_blue" Source="cursor_50x50_light_blue" />
+    </Resources>
+	
+	<Class Id="clsHeroTir">
+		<Hero Speed="1680" Direction="0,0">
+			<BoolTrigger Condition="this:death" EnterAction="this_anmDeath.Start" StayTriggered="false" Group="heroStates">
+				<Image TextureId="cursor_50x50_light_blue">
+					<NumAnimation Id="this_anmDeath" Duration="0.1" Target="Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+				</Image>
+			</BoolTrigger>
+			<BoolTrigger Id="default" Group="heroStates">
+				<Image TextureId="cursor_50x50_blue" />
+			</BoolTrigger>
+		</Hero>
+	</Class>
+
+	
+	<!-- =========================================================================================  -->
 	<!-- clsEnemy -->
 	<!-- =========================================================================================  -->
 	
@@ -67,6 +89,39 @@
 				<Image TextureId="cursor_50x50_green" />
 			</BoolTrigger>	
 		</Food>	
+	</Class>
+
+
+	<!-- =========================================================================================  -->
+	<!-- clsFoodDisabled -->
+	<!-- copy of clsFood, but Enabled="false" -->
+	<!-- =========================================================================================  -->
+
+	<Class Id="clsFoodDisabled">
+		<Food Enabled="false">
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start" StayTriggered="true" Group="foodStates">
+				<Image TextureId="cursor_50x50_blue">
+					<SequenceSet InProgress="true">
+						<NumAnimation Id="this_anmEated" Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" />
+						<Do Action="this.Disable" />
+					</SequenceSet>
+				</Image>
+			</IntersectionTrigger>
+			
+			<BoolTrigger Id="this_default" Group="foodStates">
+				<Image TextureId="cursor_50x50_green" />
+			</BoolTrigger>	
+		</Food>	
+	</Class>
+
+	<!-- =========================================================================================  -->
+	<!-- clsExit -->
+	<!-- =========================================================================================  -->
+
+	<Class Id="clsExit">
+		<Block>
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="system.EndCurrentLevel()"/>
+		</Block>	
 	</Class>
 
 </Include>

@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3 -->
+<!-- date: 11/02 2012 18:30 -->
+<Level Name="D:\Lunohod\Levels\_skeleton\skeletonChelnok\skeletonChelnok.svg" Bounds="0, 0, 480, 320">
+    <Include File="skeletonClassCursor.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="white_clear" Source="white_clear" />
+        <Texture Id="grid_480x320" Source="grid_480x320" />
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
+        <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />
+        <Texture Id="_E_" Source="_E_" />
+        <Texture Id="cursor_50x50_purple" Source="cursor_50x50_purple" />
+        <Texture Id="cursor_50x50_green" Source="cursor_50x50_green" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="DefaultMask_image3056" TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3056"/>
+        <Image Id="DefaultMask_image3067" TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="0.1" TraceId="image3067"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+        <Hero Id="hero" Bounds="19, 260, 50, 40" Class="clsHero" TraceId="image3015"/>
+        <Block Id="blk1" Bounds="0, -6, 480, 10" Edges="Stick" TraceId="image3064">
+            <Image Id="image3064" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Block Id="blk2" Bounds="476, 0, 10, 320" Edges="Stick" TraceId="image3068">
+            <Image Id="image3068" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Block Id="blk3" Bounds="0, 316, 480, 10" Edges="Stick" TraceId="image3071">
+            <Image Id="image3071" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Block Id="blk4" Bounds="-6, 0, 10, 320" Edges="Stick" TraceId="image3073">
+            <Image Id="image3073" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        
+        <Group Id="grpTeleport2" Bounds="240, 130, 40, 60" TraceId="image3010"/>
+        <Block Id="blk_image3034" Bounds="215, 270, 50, 50" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+        
+        <Block Id="blk5" Bounds="200, -10, 80, 140" Edges="Stick" TraceId="image3023">
+            <Image Id="image3023" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Block Id="blk6" Bounds="200, 190, 80, 80" Edges="Stick" TraceId="image3027">
+            <Image Id="image3027" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        </Block>
+        <Group Id="grpTeleport1" Bounds="200, 130, 40, 60" TraceId="image3033"/>
+        
+<!-- >>> HANDEDIT >>> -->
+        
+		<SequenceSet Id="setTeleport1">
+			<Do Action="hero.StartTransaction()"/>
+			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
+			<NumAnimation Target="hero.X,hero.Y" From="281,135" To="280,135" Duration="0.001" RepeatCount="1" Fill="End"/>
+			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
+			<Do Action="hero.SetDirection(1,0)"/>
+			<Do Action="hero.EndTransaction()"/>
+		</SequenceSet>
+
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport1" EnterAction="setTeleport1.Start()"/>		
+
+		<SequenceSet Id="setTeleport2">
+			<Do Action="hero.StartTransaction()"/>
+			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
+			<NumAnimation Target="hero.X,hero.Y" From="159,135" To="150,135" Duration="0.001" RepeatCount="1" Fill="End"/>
+			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
+			<Do Action="hero.SetDirection(-1,0)"/>
+			<Do Action="hero.EndTransaction()"/>
+		</SequenceSet>
+
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport2" EnterAction="setTeleport2.Start()"/>		
+				
+
+        <Enemy Id="enm1" Bounds="0, -30, 200, 10" Class="clsEnemy" TraceId="image3031"/>
+        <Enemy Id="enm2" Bounds="280, -30, 200, 10" Class="clsEnemy" TraceId="image3029"/>
+        
+        <SequenceSet InProgress="true" RepeatCount="1">
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="16" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="16" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="12" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="12" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="4" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="4" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="2" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="2" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+	        <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+	        <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+		    <NumAnimation Id="anm1" From="0" To="360" Target="enm1.Y" Duration="1" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" TraceId="image3037-4-1"/>
+		    <NumAnimation Id="anm2" From="0" To="360" Target="enm2.Y" Duration="1" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" TraceId="image3037-4-1-9"/>
+		</SequenceSet>
+		
+<!-- <<< HANDEDIT <<< -->        
+        
+        
+        <Food Id="fdimage3053-1" Points="1" Bounds="26, 28, 24, 12" Class="clsFoodDisabled" TraceId="image3053-1"/>
+        <SequenceSet Id="setfdimage3053-1" InProgress="true" RepeatCount="1" >
+            <Delay Duration="1" />
+            <Do Action="fdimage3053-1.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7" Points="1" Bounds="433, 292, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7"/>
+        <SequenceSet Id="setfdimage3053-7" InProgress="true" RepeatCount="1" >
+            <Delay Duration="2" />
+            <Do Action="fdimage3053-7.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-4" Points="1" Bounds="89, 292, 24, 12" Class="clsFoodDisabled" TraceId="image3053-4"/>
+        <SequenceSet Id="setfdimage3053-4" InProgress="true" RepeatCount="1" >
+            <Delay Duration="3" />
+            <Do Action="fdimage3053-4.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-0" Points="1" Bounds="451, 17, 24, 12" Class="clsFoodDisabled" TraceId="image3053-0"/>
+        <SequenceSet Id="setfdimage3053-0" InProgress="true" RepeatCount="1" >
+            <Delay Duration="4" />
+            <Do Action="fdimage3053-0.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-9" Points="1" Bounds="144, 141, 24, 12" Class="clsFoodDisabled" TraceId="image3053-9"/>
+        <SequenceSet Id="setfdimage3053-9" InProgress="true" RepeatCount="1" >
+            <Delay Duration="5" />
+            <Do Action="fdimage3053-9.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-48" Points="1" Bounds="298, 92, 24, 12" Class="clsFoodDisabled" TraceId="image3053-48"/>
+        <SequenceSet Id="setfdimage3053-48" InProgress="true" RepeatCount="1" >
+            <Delay Duration="6" />
+            <Do Action="fdimage3053-48.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-8" Points="1" Bounds="158, 291, 24, 12" Class="clsFoodDisabled" TraceId="image3053-8"/>
+        <SequenceSet Id="setfdimage3053-8" InProgress="true" RepeatCount="1" >
+            <Delay Duration="7" />
+            <Do Action="fdimage3053-8.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-2" Points="1" Bounds="374, 144, 24, 12" Class="clsFoodDisabled" TraceId="image3053-2"/>
+        <SequenceSet Id="setfdimage3053-2" InProgress="true" RepeatCount="1" >
+            <Delay Duration="8" />
+            <Do Action="fdimage3053-2.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-45" Points="1" Bounds="157, 21, 24, 12" Class="clsFoodDisabled" TraceId="image3053-45"/>
+        <SequenceSet Id="setfdimage3053-45" InProgress="true" RepeatCount="1" >
+            <Delay Duration="9" />
+            <Do Action="fdimage3053-45.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-5" Points="1" Bounds="351, 285, 24, 12" Class="clsFoodDisabled" TraceId="image3053-5"/>
+        <SequenceSet Id="setfdimage3053-5" InProgress="true" RepeatCount="1" >
+            <Delay Duration="10" />
+            <Do Action="fdimage3053-5.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-17" Points="1" Bounds="38, 148, 24, 12" Class="clsFoodDisabled" TraceId="image3053-17"/>
+        <SequenceSet Id="setfdimage3053-17" InProgress="true" RepeatCount="1" >
+            <Delay Duration="11" />
+            <Do Action="fdimage3053-17.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-11" Points="1" Bounds="358, 20, 24, 12" Class="clsFoodDisabled" TraceId="image3053-11"/>
+        <SequenceSet Id="setfdimage3053-11" InProgress="true" RepeatCount="1" >
+            <Delay Duration="12" />
+            <Do Action="fdimage3053-11.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-52" Points="1" Bounds="93, 198, 24, 12" Class="clsFoodDisabled" TraceId="image3053-52"/>
+        <SequenceSet Id="setfdimage3053-52" InProgress="true" RepeatCount="1" >
+            <Delay Duration="13" />
+            <Do Action="fdimage3053-52.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-76" Points="1" Bounds="432, 211, 24, 12" Class="clsFoodDisabled" TraceId="image3053-76"/>
+        <SequenceSet Id="setfdimage3053-76" InProgress="true" RepeatCount="1" >
+            <Delay Duration="14" />
+            <Do Action="fdimage3053-76.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-14" Points="1" Bounds="101, 81, 24, 12" Class="clsFoodDisabled" TraceId="image3053-14"/>
+        <SequenceSet Id="setfdimage3053-14" InProgress="true" RepeatCount="1" >
+            <Delay Duration="15" />
+            <Do Action="fdimage3053-14.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-23" Points="1" Bounds="434, 102, 24, 12" Class="clsFoodDisabled" TraceId="image3053-23"/>
+        <SequenceSet Id="setfdimage3053-23" InProgress="true" RepeatCount="1" >
+            <Delay Duration="16" />
+            <Do Action="fdimage3053-23.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-22" Points="1" Bounds="157, 211, 24, 12" Class="clsFoodDisabled" TraceId="image3053-22"/>
+        <SequenceSet Id="setfdimage3053-22" InProgress="true" RepeatCount="1" >
+            <Delay Duration="17" />
+            <Do Action="fdimage3053-22.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-16" Points="1" Bounds="320, 213, 24, 12" Class="clsFoodDisabled" TraceId="image3053-16"/>
+        <SequenceSet Id="setfdimage3053-16" InProgress="true" RepeatCount="1" >
+            <Delay Duration="18" />
+            <Do Action="fdimage3053-16.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-85" Points="1" Bounds="22, 94, 24, 12" Class="clsFoodDisabled" TraceId="image3053-85"/>
+        <SequenceSet Id="setfdimage3053-85" InProgress="true" RepeatCount="1" >
+            <Delay Duration="19" />
+            <Do Action="fdimage3053-85.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-761" Points="1" Bounds="305, 34, 24, 12" Class="clsFoodDisabled" TraceId="image3053-761"/>
+        <SequenceSet Id="setfdimage3053-761" InProgress="true" RepeatCount="1" >
+            <Delay Duration="20" />
+            <Do Action="fdimage3053-761.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-89" Points="1" Bounds="17, 226, 24, 12" Class="clsFoodDisabled" TraceId="image3053-89"/>
+        <SequenceSet Id="setfdimage3053-89" InProgress="true" RepeatCount="1" >
+            <Delay Duration="21" />
+            <Do Action="fdimage3053-89.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-27" Points="1" Bounds="376, 81, 24, 12" Class="clsFoodDisabled" TraceId="image3053-27"/>
+        <SequenceSet Id="setfdimage3053-27" InProgress="true" RepeatCount="1" >
+            <Delay Duration="22" />
+            <Do Action="fdimage3053-27.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-95" Points="1" Bounds="109, 245, 24, 12" Class="clsFoodDisabled" TraceId="image3053-95"/>
+        <SequenceSet Id="setfdimage3053-95" InProgress="true" RepeatCount="1" >
+            <Delay Duration="23" />
+            <Do Action="fdimage3053-95.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-43" Points="1" Bounds="310, 143, 24, 12" Class="clsFoodDisabled" TraceId="image3053-43"/>
+        <SequenceSet Id="setfdimage3053-43" InProgress="true" RepeatCount="1" >
+            <Delay Duration="24" />
+            <Do Action="fdimage3053-43.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-12" Points="1" Bounds="26, 275, 24, 12" Class="clsFoodDisabled" TraceId="image3053-12"/>
+        <SequenceSet Id="setfdimage3053-12" InProgress="true" RepeatCount="1" >
+            <Delay Duration="25" />
+            <Do Action="fdimage3053-12.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-3" Points="1" Bounds="374, 220, 24, 12" Class="clsFoodDisabled" TraceId="image3053-3"/>
+        <SequenceSet Id="setfdimage3053-3" InProgress="true" RepeatCount="1" >
+            <Delay Duration="26" />
+            <Do Action="fdimage3053-3.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-34" Points="1" Bounds="93, 30, 24, 12" Class="clsFoodDisabled" TraceId="image3053-34"/>
+        <SequenceSet Id="setfdimage3053-34" InProgress="true" RepeatCount="1" >
+            <Delay Duration="27" />
+            <Do Action="fdimage3053-34.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-113" Points="1" Bounds="290, 287, 24, 12" Class="clsFoodDisabled" TraceId="image3053-113"/>
+        <SequenceSet Id="setfdimage3053-113" InProgress="true" RepeatCount="1" >
+            <Delay Duration="28" />
+            <Do Action="fdimage3053-113.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-87" Points="1" Bounds="83, 132, 24, 12" Class="clsFoodDisabled" TraceId="image3053-87"/>
+        <SequenceSet Id="setfdimage3053-87" InProgress="true" RepeatCount="1" >
+            <Delay Duration="29" />
+            <Do Action="fdimage3053-87.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-42" Points="1" Bounds="440, 162, 24, 12" Class="clsFoodDisabled" TraceId="image3053-42"/>
+        <SequenceSet Id="setfdimage3053-42" InProgress="true" RepeatCount="1" >
+            <Delay Duration="30" />
+            <Do Action="fdimage3053-42.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-1" Points="1" Bounds="41, 188, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-1"/>
+        <SequenceSet Id="setfdimage3053-7-1" InProgress="true" RepeatCount="1" >
+            <Delay Duration="31" />
+            <Do Action="fdimage3053-7-1.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-7" Points="1" Bounds="146, 99, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-7"/>
+        <SequenceSet Id="setfdimage3053-7-7" InProgress="true" RepeatCount="1" >
+            <Delay Duration="32" />
+            <Do Action="fdimage3053-7-7.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-4" Points="1" Bounds="415, 50, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-4"/>
+        <SequenceSet Id="setfdimage3053-7-4" InProgress="true" RepeatCount="1" >
+            <Delay Duration="33" />
+            <Do Action="fdimage3053-7-4.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-0" Points="1" Bounds="347, 182, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-0"/>
+        <SequenceSet Id="setfdimage3053-7-0" InProgress="true" RepeatCount="1" >
+            <Delay Duration="34" />
+            <Do Action="fdimage3053-7-0.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-9" Points="1" Bounds="99, 164, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-9"/>
+        <SequenceSet Id="setfdimage3053-7-9" InProgress="true" RepeatCount="1" >
+            <Delay Duration="35" />
+            <Do Action="fdimage3053-7-9.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-48" Points="1" Bounds="356, 112, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-48"/>
+        <SequenceSet Id="setfdimage3053-7-48" InProgress="true" RepeatCount="1" >
+            <Delay Duration="36" />
+            <Do Action="fdimage3053-7-48.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-8" Points="1" Bounds="54, 62, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-8"/>
+        <SequenceSet Id="setfdimage3053-7-8" InProgress="true" RepeatCount="1" >
+            <Delay Duration="37" />
+            <Do Action="fdimage3053-7-8.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-2" Points="1" Bounds="416, 253, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-2"/>
+        <SequenceSet Id="setfdimage3053-7-2" InProgress="true" RepeatCount="1" >
+            <Delay Duration="38" />
+            <Do Action="fdimage3053-7-2.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-45" Points="1" Bounds="156, 254, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-45"/>
+        <SequenceSet Id="setfdimage3053-7-45" InProgress="true" RepeatCount="1" >
+            <Delay Duration="39" />
+            <Do Action="fdimage3053-7-45.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-5" Points="1" Bounds="300, 249, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-5"/>
+        <SequenceSet Id="setfdimage3053-7-5" InProgress="true" RepeatCount="1" >
+            <Delay Duration="40" />
+            <Do Action="fdimage3053-7-5.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-17" Points="1" Bounds="11, 120, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-17"/>
+        <SequenceSet Id="setfdimage3053-7-17" InProgress="true" RepeatCount="1" >
+            <Delay Duration="41" />
+            <Do Action="fdimage3053-7-17.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-11" Points="1" Bounds="346, 62, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-11"/>
+        <SequenceSet Id="setfdimage3053-7-11" InProgress="true" RepeatCount="1" >
+            <Delay Duration="42" />
+            <Do Action="fdimage3053-7-11.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-52" Points="1" Bounds="60, 100, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-52"/>
+        <SequenceSet Id="setfdimage3053-7-52" InProgress="true" RepeatCount="1" >
+            <Delay Duration="43" />
+            <Do Action="fdimage3053-7-52.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-76" Points="1" Bounds="393, 295, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-76"/>
+        <SequenceSet Id="setfdimage3053-7-76" InProgress="true" RepeatCount="1" >
+            <Delay Duration="44" />
+            <Do Action="fdimage3053-7-76.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-14" Points="1" Bounds="296, 164, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-14"/>
+        <SequenceSet Id="setfdimage3053-7-14" InProgress="true" RepeatCount="1" >
+            <Delay Duration="45" />
+            <Do Action="fdimage3053-7-14.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-23" Points="1" Bounds="9, 158, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-23"/>
+        <SequenceSet Id="setfdimage3053-7-23" InProgress="true" RepeatCount="1" >
+            <Delay Duration="46" />
+            <Do Action="fdimage3053-7-23.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-22" Points="1" Bounds="447, 266, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-22"/>
+        <SequenceSet Id="setfdimage3053-7-22" InProgress="true" RepeatCount="1" >
+            <Delay Duration="47" />
+            <Do Action="fdimage3053-7-22.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-16" Points="1" Bounds="135, 56, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-16"/>
+        <SequenceSet Id="setfdimage3053-7-16" InProgress="true" RepeatCount="1" >
+            <Delay Duration="48" />
+            <Do Action="fdimage3053-7-16.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-85" Points="1" Bounds="408, 13, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-85"/>
+        <SequenceSet Id="setfdimage3053-7-85" InProgress="true" RepeatCount="1" >
+            <Delay Duration="49" />
+            <Do Action="fdimage3053-7-85.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-761" Points="1" Bounds="62, 234, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-761"/>
+        <SequenceSet Id="setfdimage3053-7-761" InProgress="true" RepeatCount="1" >
+            <Delay Duration="50" />
+            <Do Action="fdimage3053-7-761.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-89" Points="1" Bounds="390, 174, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-89"/>
+        <SequenceSet Id="setfdimage3053-7-89" InProgress="true" RepeatCount="1" >
+            <Delay Duration="51" />
+            <Do Action="fdimage3053-7-89.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-27" Points="1" Bounds="62, 17, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-27"/>
+        <SequenceSet Id="setfdimage3053-7-27" InProgress="true" RepeatCount="1" >
+            <Delay Duration="52" />
+            <Do Action="fdimage3053-7-27.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-95" Points="1" Bounds="355, 257, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-95"/>
+        <SequenceSet Id="setfdimage3053-7-95" InProgress="true" RepeatCount="1" >
+            <Delay Duration="53" />
+            <Do Action="fdimage3053-7-95.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-43" Points="1" Bounds="78, 267, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-43"/>
+        <SequenceSet Id="setfdimage3053-7-43" InProgress="true" RepeatCount="1" >
+            <Delay Duration="54" />
+            <Do Action="fdimage3053-7-43.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-12" Points="1" Bounds="414, 120, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-12"/>
+        <SequenceSet Id="setfdimage3053-7-12" InProgress="true" RepeatCount="1" >
+            <Delay Duration="55" />
+            <Do Action="fdimage3053-7-12.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-3" Points="1" Bounds="101, 112, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-3"/>
+        <SequenceSet Id="setfdimage3053-7-3" InProgress="true" RepeatCount="1" >
+            <Delay Duration="56" />
+            <Do Action="fdimage3053-7-3.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-34" Points="1" Bounds="311, 57, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-34"/>
+        <SequenceSet Id="setfdimage3053-7-34" InProgress="true" RepeatCount="1" >
+            <Delay Duration="57" />
+            <Do Action="fdimage3053-7-34.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-113" Points="1" Bounds="6, 68, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-113"/>
+        <SequenceSet Id="setfdimage3053-7-113" InProgress="true" RepeatCount="1" >
+            <Delay Duration="58" />
+            <Do Action="fdimage3053-7-113.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-87" Points="1" Bounds="442, 64, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-87"/>
+        <SequenceSet Id="setfdimage3053-7-87" InProgress="true" RepeatCount="1" >
+            <Delay Duration="59" />
+            <Do Action="fdimage3053-7-87.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-42" Points="1" Bounds="132, 175, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-42"/>
+        <SequenceSet Id="setfdimage3053-7-42" InProgress="true" RepeatCount="1" >
+            <Delay Duration="60" />
+            <Do Action="fdimage3053-7-42.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-77" Points="1" Bounds="406, 225, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-77"/>
+        <SequenceSet Id="setfdimage3053-7-77" InProgress="true" RepeatCount="1" >
+            <Delay Duration="61" />
+            <Do Action="fdimage3053-7-77.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-93" Points="1" Bounds="51, 214, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-93"/>
+        <SequenceSet Id="setfdimage3053-7-93" InProgress="true" RepeatCount="1" >
+            <Delay Duration="62" />
+            <Do Action="fdimage3053-7-93.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-19" Points="1" Bounds="338, 235, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-19"/>
+        <SequenceSet Id="setfdimage3053-7-19" InProgress="true" RepeatCount="1" >
+            <Delay Duration="63" />
+            <Do Action="fdimage3053-7-19.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-86" Points="1" Bounds="117, 214, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-86"/>
+        <SequenceSet Id="setfdimage3053-7-86" InProgress="true" RepeatCount="1" >
+            <Delay Duration="64" />
+            <Do Action="fdimage3053-7-86.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-50" Points="1" Bounds="291, 117, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-50"/>
+        <SequenceSet Id="setfdimage3053-7-50" InProgress="true" RepeatCount="1" >
+            <Delay Duration="65" />
+            <Do Action="fdimage3053-7-50.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-28" Points="1" Bounds="126, 286, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-28"/>
+        <SequenceSet Id="setfdimage3053-7-28" InProgress="true" RepeatCount="1" >
+            <Delay Duration="66" />
+            <Do Action="fdimage3053-7-28.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-6" Points="1" Bounds="288, 206, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-6"/>
+        <SequenceSet Id="setfdimage3053-7-6" InProgress="true" RepeatCount="1" >
+            <Delay Duration="67" />
+            <Do Action="fdimage3053-7-6.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-02" Points="1" Bounds="8, 193, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-02"/>
+        <SequenceSet Id="setfdimage3053-7-02" InProgress="true" RepeatCount="1" >
+            <Delay Duration="68" />
+            <Do Action="fdimage3053-7-02.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-486" Points="1" Bounds="7, 301, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-486"/>
+        <SequenceSet Id="setfdimage3053-7-486" InProgress="true" RepeatCount="1" >
+            <Delay Duration="69" />
+            <Do Action="fdimage3053-7-486.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-509" Points="1" Bounds="285, 226, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-509"/>
+        <SequenceSet Id="setfdimage3053-7-509" InProgress="true" RepeatCount="1" >
+            <Delay Duration="70" />
+            <Do Action="fdimage3053-7-509.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-00" Points="1" Bounds="409, 72, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-00"/>
+        <SequenceSet Id="setfdimage3053-7-00" InProgress="true" RepeatCount="1" >
+            <Delay Duration="71" />
+            <Do Action="fdimage3053-7-00.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-61" Points="1" Bounds="296, 11, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-61"/>
+        <SequenceSet Id="setfdimage3053-7-61" InProgress="true" RepeatCount="1" >
+            <Delay Duration="72" />
+            <Do Action="fdimage3053-7-61.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-38" Points="1" Bounds="164, 57, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-38"/>
+        <SequenceSet Id="setfdimage3053-7-38" InProgress="true" RepeatCount="1" >
+            <Delay Duration="73" />
+            <Do Action="fdimage3053-7-38.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-934" Points="1" Bounds="158, 171, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-934"/>
+        <SequenceSet Id="setfdimage3053-7-934" InProgress="true" RepeatCount="1" >
+            <Delay Duration="74" />
+            <Do Action="fdimage3053-7-934.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-46" Points="1" Bounds="409, 152, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-46"/>
+        <SequenceSet Id="setfdimage3053-7-46" InProgress="true" RepeatCount="1" >
+            <Delay Duration="75" />
+            <Do Action="fdimage3053-7-46.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-06" Points="1" Bounds="318, 282, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-06"/>
+        <SequenceSet Id="setfdimage3053-7-06" InProgress="true" RepeatCount="1" >
+            <Delay Duration="76" />
+            <Do Action="fdimage3053-7-06.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-618" Points="1" Bounds="141, 241, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-618"/>
+        <SequenceSet Id="setfdimage3053-7-618" InProgress="true" RepeatCount="1" >
+            <Delay Duration="77" />
+            <Do Action="fdimage3053-7-618.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-49" Points="1" Bounds="401, 191, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-49"/>
+        <SequenceSet Id="setfdimage3053-7-49" InProgress="true" RepeatCount="1" >
+            <Delay Duration="78" />
+            <Do Action="fdimage3053-7-49.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-63" Points="1" Bounds="43, 117, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-63"/>
+        <SequenceSet Id="setfdimage3053-7-63" InProgress="true" RepeatCount="1" >
+            <Delay Duration="79" />
+            <Do Action="fdimage3053-7-63.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-78" Points="1" Bounds="337, 139, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-78"/>
+        <SequenceSet Id="setfdimage3053-7-78" InProgress="true" RepeatCount="1" >
+            <Delay Duration="80" />
+            <Do Action="fdimage3053-7-78.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-82" Points="1" Bounds="72, 160, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-82"/>
+        <SequenceSet Id="setfdimage3053-7-82" InProgress="true" RepeatCount="1" >
+            <Delay Duration="81" />
+            <Do Action="fdimage3053-7-82.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-91" Points="1" Bounds="325, 84, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-91"/>
+        <SequenceSet Id="setfdimage3053-7-91" InProgress="true" RepeatCount="1" >
+            <Delay Duration="82" />
+            <Do Action="fdimage3053-7-91.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-35" Points="1" Bounds="58, 39, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-35"/>
+        <SequenceSet Id="setfdimage3053-7-35" InProgress="true" RepeatCount="1" >
+            <Delay Duration="83" />
+            <Do Action="fdimage3053-7-35.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-98" Points="1" Bounds="376, 39, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-98"/>
+        <SequenceSet Id="setfdimage3053-7-98" InProgress="true" RepeatCount="1" >
+            <Delay Duration="84" />
+            <Do Action="fdimage3053-7-98.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-40" Points="1" Bounds="165, 123, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-40"/>
+        <SequenceSet Id="setfdimage3053-7-40" InProgress="true" RepeatCount="1" >
+            <Delay Duration="85" />
+            <Do Action="fdimage3053-7-40.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-763" Points="1" Bounds="442, 129, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-763"/>
+        <SequenceSet Id="setfdimage3053-7-763" InProgress="true" RepeatCount="1" >
+            <Delay Duration="86" />
+            <Do Action="fdimage3053-7-763.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-615" Points="1" Bounds="114, 266, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-615"/>
+        <SequenceSet Id="setfdimage3053-7-615" InProgress="true" RepeatCount="1" >
+            <Delay Duration="87" />
+            <Do Action="fdimage3053-7-615.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-420" Points="1" Bounds="442, 237, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-420"/>
+        <SequenceSet Id="setfdimage3053-7-420" InProgress="true" RepeatCount="1" >
+            <Delay Duration="88" />
+            <Do Action="fdimage3053-7-420.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-97" Points="1" Bounds="82, 217, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-97"/>
+        <SequenceSet Id="setfdimage3053-7-97" InProgress="true" RepeatCount="1" >
+            <Delay Duration="89" />
+            <Do Action="fdimage3053-7-97.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-37" Points="1" Bounds="448, 185, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-37"/>
+        <SequenceSet Id="setfdimage3053-7-37" InProgress="true" RepeatCount="1" >
+            <Delay Duration="90" />
+            <Do Action="fdimage3053-7-37.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-26" Points="1" Bounds="117, 130, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-26"/>
+        <SequenceSet Id="setfdimage3053-7-26" InProgress="true" RepeatCount="1" >
+            <Delay Duration="91" />
+            <Do Action="fdimage3053-7-26.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-01" Points="1" Bounds="401, 99, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-01"/>
+        <SequenceSet Id="setfdimage3053-7-01" InProgress="true" RepeatCount="1" >
+            <Delay Duration="92" />
+            <Do Action="fdimage3053-7-01.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-65" Points="1" Bounds="105, 46, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-65"/>
+        <SequenceSet Id="setfdimage3053-7-65" InProgress="true" RepeatCount="1" >
+            <Delay Duration="93" />
+            <Do Action="fdimage3053-7-65.Enable()" />
+        </SequenceSet>
+        <Food Id="fdimage3053-7-75" Points="1" Bounds="331, 35, 24, 12" Class="clsFoodDisabled" TraceId="image3053-7-75"/>
+        <SequenceSet Id="setfdimage3053-7-75" InProgress="true" RepeatCount="1" >
+            <Delay Duration="94" />
+            <Do Action="fdimage3053-7-75.Enable()" />
+        </SequenceSet>
+    </Layer>
+    <Include File="Dashboard.xml" />
+</Level>
+
