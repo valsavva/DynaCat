@@ -49,6 +49,7 @@ namespace Lunohod.Objects
 				case "Height": floatGetter = GetHeight; floatSetter = SetHeight; break;
 				case "Width": floatGetter = GetWidth; floatSetter = SetWidth; break;
 				case "Rotation": floatGetter = GetRotation; floatSetter = SetRotation; break;
+				case "Scale": floatGetter = GetScale; floatSetter = SetScale; break;
 				case "Opacity": floatGetter = GetOpacity; floatSetter = SetOpacity; break;
 				case "CurrentFrame": floatGetter = GetCurrentFrame; floatSetter = SetCurrentFrame; break;
 				case "Volume": floatGetter = GetVolume; floatSetter = SetVolume; break;
@@ -176,6 +177,14 @@ namespace Lunohod.Objects
 		private void SetOpacity(float v)
 		{
 			element.Opacity = v;
+		}
+		private float GetScale()
+		{
+			return element.Scale;
+		}
+		private void SetScale(float v)
+		{
+			element.Scale = v;
 		}
 		private float GetVolume()
 		{

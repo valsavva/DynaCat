@@ -1728,11 +1728,6 @@ namespace Microsoft.Xna.Framework
         }
 
 
-        public override string ToString()
-        {
-            throw new NotImplementedException();
-        }
-
 
         public static Matrix Transpose(Matrix matrix)
         {

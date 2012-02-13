@@ -8,14 +8,6 @@
 	
 	<Class Id="clsHeroCursor">
 		<Hero Speed="84" Direction="0,0">
-			<Block Id="heroL" Bounds="-50, 0, 50, 50" /> 
-			<Block Id="heroLU" Bounds="-40, -40, 40, 40" />
-			<Block Id="heroU" Bounds="0, -50, 50, 50" />
-			<Block Id="heroRU" Bounds="50, -40, 40, 40" />
-			<Block Id="heroR" Bounds="50, 0, 50, 50" />
-			<Block Id="heroRD" Bounds="50, 50, 40, 40" />
-			<Block Id="heroD" Bounds="0, 50, 50, 50" />
-			<Block Id="heroLD" Bounds="-40, 50, 40, 40" />
 
 			<BoolTrigger Id="something" When="this:something" InProgress="true" Group="heroStates">
 				<Image TextureId="cursor_50x50_light_blue" />

@@ -15,8 +15,7 @@ namespace Lunohod.Objects
     public class XImage : XElement
     {
 		private XTextureResource texture;
-		private Vector2 location;
-		
+
         public XImage()
         {
         }
@@ -41,7 +40,6 @@ namespace Lunohod.Objects
                 ));
 		}
 		
-		private System.Drawing.RectangleF screenBounds;
         private float screenRotation;
 		private Color actualBackColor;
 		
@@ -49,31 +47,33 @@ namespace Lunohod.Objects
         {
             base.Update(p);
 			
-            screenBounds = this.GetScreenBounds();
-            actualBackColor = this.BackColor * this.GetScreenOpacity();
-			screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
+            this.GetScreenBounds();
+            actualBackColor = this.PropState.BackColor * this.PropState.Opacity;
+			screenRotation = MathHelper.ToRadians(this.PropState.Rotation);
         }
 
 		public override void Draw(DrawParameters p)
 		{
-			if (this.Stretch || this.Bounds.IsEmpty)
+
+			if ((this.Bounds.X != 0 || this.Bounds.Y != 0) && this.Bounds.Width == 0 && this.Bounds.Height == 0)
 			{
-				if (screenRotation != 0 || this.Origin != Vector2.Zero)
-					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
+				// we're using location
+				this.tmpVector1.X = this.PropState.ScreenBounds.Value.X;
+				this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
+				
+				if (screenRotation != 0 || this.Origin != Vector2.Zero || this.ScaleVector != Vector2.One)
+					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, this.ScaleVector, SpriteEffects.None, 0);
 				else
-					p.SpriteBatch.Draw(this.texture.Image, screenBounds, this.SourceRectangle, actualBackColor);
+					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor);
 			}
 			else
 			{
-				this.location.X = screenBounds.X;
-				this.location.Y = screenBounds.Y;
-				
 				if (screenRotation != 0 || this.Origin != Vector2.Zero)
-					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
+					p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
 				else
-					p.SpriteBatch.Draw(this.texture.Image, this.location, this.SourceRectangle, actualBackColor);
+					p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor);
 			}
-			
+
 			base.Draw(p);
 		}
     }

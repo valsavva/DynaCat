@@ -78,8 +78,8 @@ namespace Lunohod
 		public void ProcessCollisions()
 		{
 			// if not moving - we don't process collisions
-            if (this.hero.Direction == Direction.VectorStop)
-                return;
+            //if (this.hero.Direction == Direction.VectorStop)
+            //    return;
 			
 			// find objects we collided with
 			FindCollisions();

@@ -58,7 +58,7 @@ namespace Lunohod.Objects
             base.Update(p);
 
             screenBounds = this.GetScreenBounds();
-			screenRotation = MathHelper.ToRadians(this.GetScreenRotation());
+			screenRotation = MathHelper.ToRadians(this.PropState.Rotation);
         }
 
 		public override void Draw(DrawParameters p)
@@ -67,7 +67,7 @@ namespace Lunohod.Objects
 			this.location.Y = screenBounds.Y;
 			
 			if (screenRotation != 0 || this.Origin != Vector2.Zero)
-				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, 1, SpriteEffects.None, 0);
+				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, this.ScaleVector, SpriteEffects.None, 0);
 			else
 				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor);
 			

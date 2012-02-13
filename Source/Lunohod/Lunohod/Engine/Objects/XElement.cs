@@ -12,16 +12,40 @@ namespace Lunohod.Objects
     [XmlInclude(typeof(XImage))]
     public class XElement : XObject
     {
+		public struct ElementState
+		{
+			public int TransformCycle;
+			public Matrix LocationTransform;
+			public Matrix ScaleTransform;
+		}
+		
+		public struct PropertiesState
+		{
+			public int PropCycle;
+			public Vector2 Size;
+			public float Rotation;
+			public float Opacity;
+			public Color BackColor;
+			public System.Drawing.RectangleF? ScreenBounds;
+		}
+		
+		private Vector2 rotationCenter;
 		private Color? backColor = null;
 		private System.Drawing.RectangleF tmpBounds;
-		private Vector2 tmpVector;
+		protected Vector2 tmpVector1;
+		protected Vector2 tmpVector2;
+		
+		[XmlIgnore]
+		public ElementState TransState;
+		[XmlIgnore]
+		public PropertiesState PropState;
 		
 		[XmlIgnore]
         public System.Drawing.RectangleF Bounds;
 		[XmlIgnore]
         public Vector2 Location
 		{
-			get { this.Bounds.ToVector2(ref tmpVector); return tmpVector; }
+			get { this.Bounds.ToVector2(ref tmpVector1); return tmpVector1; }
 			set { this.Bounds.X = value.X; this.Bounds.Y = value.Y; }
 		}
         [XmlIgnore]
@@ -36,43 +60,135 @@ namespace Lunohod.Objects
         public float Rotation;
 		[XmlIgnore]
 		public Vector2 Origin;
+		[XmlIgnore]
+		public Vector2 RotationCenter
+		{
+			get { return this.rotationCenter; }
+			set { this.rotationCenter = this.Origin = value; }
+		}
+		[XmlIgnore]
+		public Vector2 ScaleVector = new Vector2(1.0f, 1.0f);
+		[XmlIgnore]
+		public float Scale
+		{
+			get { return this.ScaleVector.X; }
+			set { this.ScaleVector.X = this.ScaleVector.Y = value; }
+		}
 		
 		[XmlIgnore]
 		public XElement ParentElement { get; set; }
 		
-		public float GetScreenRotation()
+		public void UpdateTransforms()
 		{
+			if (TransState.TransformCycle == GameEngine.Instance.CycleNumber)
+				return;
+			
+			// Initialize state
 			if (this.ParentElement == null)
-				return this.Rotation;
-                                                              
-			return this.ParentElement.GetScreenRotation() + this.Rotation;
+			{
+				TransState.TransformCycle = GameEngine.Instance.CycleNumber;
+				TransState.LocationTransform = Matrix.Identity;
+				TransState.ScaleTransform = Matrix.Identity;
+			}
+			else
+			{
+				this.ParentElement.UpdateTransforms();
+				TransState = this.ParentElement.TransState;
+			}			
+			
+			// Location transform
+			if (this.Origin != Vector2.Zero)
+				TransState.LocationTransform *= Matrix.CreateTranslation(-this.Origin.X, -this.Origin.Y, 0);
+			
+			if (this.Rotation != 0)
+				TransState.LocationTransform *= Matrix.CreateRotationZ(MathHelper.ToRadians(this.Rotation));
+			// Scale transform
+			if (this.ScaleVector != Vector2.Zero)
+			{
+				TransState.LocationTransform *= Matrix.CreateScale(this.ScaleVector.X, this.ScaleVector.Y, 1.0f);
+				TransState.ScaleTransform *= Matrix.CreateScale(this.ScaleVector.X, this.ScaleVector.Y, 1.0f);
+			}
+			if (this.Bounds.X != 0 || this.Bounds.Y != 0 || this.RotationCenter != Vector2.Zero)
+				TransState.LocationTransform *= Matrix.CreateTranslation(this.Bounds.X + this.RotationCenter.X, this.Bounds.Y + this.RotationCenter.Y, 0);
+			
 		}
-		
-		public float GetScreenOpacity()
-		{
-			if (this.ParentElement == null)
-				return this.Opacity;
 
-			return this.ParentElement.Opacity * this.Opacity;
+		void UpdateProps()
+		{
+			if (PropState.PropCycle == GameEngine.Instance.CycleNumber)
+				return;
+			
+			if  (this.ParentElement == null)
+			{
+				PropState.PropCycle = GameEngine.Instance.CycleNumber;
+				PropState.Opacity = 1.0f;
+				PropState.Rotation = 0;
+				PropState.BackColor = Color.White;
+			}
+			else
+			{
+				this.ParentElement.UpdateProps();
+				PropState = this.ParentElement.PropState;
+			}
+			
+			PropState.ScreenBounds = null;
+			//---
+			PropState.Rotation += this.Rotation;
+			
+			if (!this.Bounds.IsEmpty)
+			{
+				PropState.Size.X = this.Bounds.Width;
+				PropState.Size.Y = this.Bounds.Height;
+			}
+			
+			if (this.backColor.HasValue)
+				PropState.BackColor = this.backColor.Value;
+			
+			PropState.Opacity *= this.Opacity;
 		}
 		
 		public System.Drawing.RectangleF GetScreenBounds()
 		{
-			if (this.ParentElement == null)
-				tmpBounds = this.Bounds;
-			else
+			if (this.ParentElement != null)
 			{
-				tmpBounds = this.ParentElement.GetScreenBounds();
-	
-				if (!this.Bounds.IsZero())
+				this.ParentElement.UpdateTransforms();
+				
+				this.UpdateProps();
+			
+				if (!PropState.ScreenBounds.HasValue)
 				{
-					tmpBounds.Offset(this.Bounds.X, this.Bounds.Y);
-					tmpBounds.Width = this.Bounds.Width;
-					tmpBounds.Height = this.Bounds.Height;
+					tmpBounds = this.Bounds;
+					
+					if (this.ParentElement.TransState.LocationTransform != Matrix.Identity)
+					{
+						tmpVector1.X = this.Bounds.X + this.rotationCenter.X;
+						tmpVector1.Y = this.Bounds.Y + this.rotationCenter.Y;
+						Vector2.Transform(ref tmpVector1, ref this.ParentElement.TransState.LocationTransform, out tmpVector2);
+						tmpBounds.X = tmpVector2.X;
+						tmpBounds.Y = tmpVector2.Y;
+					}
+
+					if (this.ParentElement.TransState.ScaleTransform != Matrix.Identity)
+					{
+						Vector2.Transform(ref PropState.Size, ref this.ParentElement.TransState.ScaleTransform, out tmpVector2);
+						tmpBounds.Width = tmpVector2.X;
+						tmpBounds.Height = tmpVector2.Y;
+					}
+					else
+					{
+						tmpBounds.Width = PropState.Size.X;
+						tmpBounds.Height = PropState.Size.Y;
+					}
+	
+					PropState.ScreenBounds = tmpBounds;
 				}
 			}
+			else
+			{
+				PropState.ScreenBounds = this.Bounds;
+			}
 			
-			return tmpBounds;
+			return PropState.ScreenBounds.Value;
 		}
 
 		[XmlAttribute("Bounds")]
@@ -92,6 +208,25 @@ namespace Lunohod.Objects
 		{
 			set { this.Origin = value.ToVector2(); }
 			get { return this.Origin.ToStr(); }
+		}
+		[XmlAttribute("RotationCenter")]
+		public string zRotationCenter
+		{
+			set { this.RotationCenter = value.ToVector2(); }
+			get { return this.RotationCenter.ToStr(); }
+		}
+		[XmlAttribute("Scale")]
+		public string zScale
+		{
+			set { 
+				float v;
+				
+				if (float.TryParse(value, out v))
+					this.Scale = v;
+				else
+					this.ScaleVector = value.ToVector2();
+			}
+			get { return this.ScaleVector.ToStr(); }
 		}
 		[XmlAttribute("Location")]
 		public string zLocation
@@ -140,12 +275,12 @@ namespace Lunohod.Objects
 			tmpBounds =  this.GetScreenBounds();
 		
 #if WINDOWS
-			tmpVector = MouseProcessor.LastPosition;
+			tmpVector1 = MouseProcessor.LastPosition;
 #else
-			tmpVector = TouchPanelProcessor.LastPosition;
+			tmpVector1 = TouchPanelProcessor.LastPosition;
 #endif
 			
-			if (!tmpBounds.Contains((int)tmpVector.X, (int)tmpVector.Y))
+			if (!tmpBounds.Contains((int)tmpVector1.X, (int)tmpVector1.Y))
 				return;
 			
 			Color c = Color.Red * 0.3f;
@@ -155,10 +290,10 @@ namespace Lunohod.Objects
 			
 			if (!string.IsNullOrEmpty(this.Id))
 			{
-				tmpVector.X = tmpBounds.X;
-				tmpVector.Y = tmpBounds.Y;
+				tmpVector1.X = tmpBounds.X;
+				tmpVector1.Y = tmpBounds.Y;
 				
-				p.SpriteBatch.DrawString(p.Game.SystemFont, this.Id, tmpVector, Color.Yellow);
+				p.SpriteBatch.DrawString(p.Game.SystemFont, this.Id, tmpVector1, Color.Yellow);
 			}
 		}
     }

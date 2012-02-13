@@ -13,10 +13,10 @@
 		<Tower Bounds="0,0,35,35" SignalSpeed="800"/>	
 		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor" />
 		
-		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
-		<Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
-		<Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
-		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
+		<Block Id="blk1" Bounds="0,-10,480,10" Edges="Bounce" />
+		<Block Id="blk2" Bounds="480,0,10,320" Edges="Bounce" />
+		<Block Id="blk3" Bounds="0,320,480,10" Edges="Bounce" />
+		<Block Id="blk4" Bounds="-10,0,10,320" Edges="Bounce" />
 		
 		<Enemy Id="abr101" Bounds="250, 160, 10, 10" Class="clsAbr" />
 		<Enemy Id="abr102" Bounds="250, 180, 10, 10" Class="clsAbr" />
