@@ -942,6 +942,9 @@
     <Content Include="Metadata\skeletonTir.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+<<<<<<< HEAD
+    <Content Include="Metadata\TestOriginAndRotationCenterAndScale.xml">
+=======
     <Content Include="Metadata\skeletonVodoprovodniiNindzya.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -949,9 +952,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonAlisa.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Metadata\TestOriginAndRotationCenterAndScale.xml">
+>>>>>>> 17b96e2879d5bc81cbe28f0a63b17ee4afadb86b
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

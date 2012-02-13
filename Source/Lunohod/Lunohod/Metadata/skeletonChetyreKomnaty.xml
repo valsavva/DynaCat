@@ -22,10 +22,13 @@
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Image Id="DefaultMask_image3388" TextureId="skeletonChetyreKomnaty_teleports_demo" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image3388"/>
-        <Block Id="blk1" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
-        <Block Id="blk2" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
-        <Block Id="blk3" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
-        <Block Id="blk4" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+
+<!-- >>> HANDEDIT >>> -->	
+
+        <Block Id="blk1" Bounds="-1000, 0, 1000, 320" Edges="Bounce" TraceId="image3070"/>
+        <Block Id="blk2" Bounds="480, 0, 1000, 320" Edges="Bounce" TraceId="image3072"/>
+        <Block Id="blk3" Bounds="0, -1000, 480, 1000" Edges="Bounce" TraceId="image3074"/>
+        <Block Id="blk4" Bounds="0, 320, 480, 1000" Edges="Bounce" TraceId="image3076"/>
         <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
         <Hero Id="hero" Bounds="4, 4, 50, 40" Class="clsHero" TraceId="image3015"/>
         <Food Id="fd1" Points="1" Bounds="350, 20, 24, 12" Class="clsFood" TraceId="image3037-4"/>
@@ -39,7 +42,7 @@
         <Food Id="fd9" Points="1" Bounds="290, 234, 24, 12" Class="clsFood" TraceId="image3037-82-7"/>
         <Food Id="fd10" Points="1" Bounds="410, 235, 24, 12" Class="clsFood" TraceId="image3037-82-6"/>
 
-<!-- >>> HANDEDIT >>> -->	
+
         <Image Id="imgAnmTlp1" TextureId="tlp1_demo_anm" Bounds="213, 6, 38, 45" Stretch="false" Opacity="1" Enabled="false" TraceId="image3068"/>
         <Image Id="imgAnmTlp3" TextureId="tlp3_demo_anm" Bounds="221, -17, 47, 42" Stretch="false" Opacity="1" Enabled="false" TraceId="image3046"/>
 		<Image Id="imgAnmTlp2" TextureId="tlp2_demo_anm" Bounds="457, 173, 38, 45" Stretch="false" Enabled="false" Opacity="1" TraceId="image3079"/>
@@ -59,14 +62,14 @@
 			<Do Action="imgAnmTlp1.Enable()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<!--<Delay Duration="1" />-->
-			<NumAnimation From="0" To="161" Target="imgAnmTlp1.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3112" Fill="End"/>
-			<NumAnimation Target="hero.X,hero.Y" From="249,168" To="248,168" Duration="0.001" RepeatCount="1" Fill="End"/>
+			<NumAnimation From="6" To="167" Target="imgAnmTlp1.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3112" Fill="End" />
+			<NumAnimation Target="hero.X,hero.Y" From="252,172" To="252,172" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp1.Disable()"/>
 			<Do Action="hero.SetDirection(1,0)"/>
 			<Do Action="hero.EndTransaction()"/>
 		</SequenceSet>
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport1" EnterAction="setTeleport1.Start()"/>		
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport1" Value="100" EnterAction="setTeleport1.Start()"/>		
 
         <Group Id="grpTeleport2" Bounds="466, 168, 10, 50" TraceId="In2"/>
         <Group Id="grpTeleport2" Bounds="466, 4, 10, 50" TraceId="Out2"/>
@@ -75,14 +78,14 @@
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<!--<Delay Duration="1" />-->
 			<Do Action="imgAnmTlp2.Enable()"/>
-			<NumAnimation Id="anm4" From="0" To="-167" Target="imgAnmTlp2.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3101" Fill="End" />
-			<NumAnimation Target="hero.X,hero.Y" From="435,4" To="436,4" Duration="0.001" RepeatCount="1" Fill="End"/>
+			<NumAnimation Id="anm4" From="184" To="17" Target="imgAnmTlp2.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3101" Fill="End" />
+			<NumAnimation Target="hero.X,hero.Y" From="420,6" To="420,6" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp2.Disable()"/>
 			<Do Action="hero.SetDirection(-1,0)"/>
 			<Do Action="hero.EndTransaction()"/>
 		</SequenceSet>
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport2" EnterAction="setTeleport2.Start()"/>		
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport2" Value="100" EnterAction="setTeleport2.Start()"/>		
 		
         <Group Id="grpTeleport3" Bounds="254, 4, 10, 50" TraceId="In3"/>
         <Group Id="grpTeleport3" Bounds="4, 168, 50, 10" TraceId="Out3"/>
@@ -91,15 +94,15 @@
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp3.Enable()"/>
 			<!--<Delay Duration="2" />-->
-			<NumAnimation From="0" To="-235" Target="imgAnmTlp3.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3123" Fill="End" />
-	        <NumAnimation From="0" To="174" Target="imgAnmTlp3.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3142" Fill="End" />
-			<NumAnimation Target="hero.X,hero.Y" From="5,168" To="4,168" Duration="0.001" RepeatCount="1" Fill="End"/>
+			<NumAnimation From="239,-6" To="-14,-16" Target="imgAnmTlp3.X,imgAnmTlp3.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3123" Fill="End" />
+	        <NumAnimation From="-14,-16" To="-14,168" Target="imgAnmTlp3.X,imgAnmTlp3.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3142" Fill="End" />
+			<NumAnimation Target="hero.X,hero.Y" From="6,172" To="6,172" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp3.Disable()"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="hero.SetDirection(0,1)"/>
 			<Do Action="hero.EndTransaction()"/>
 		</SequenceSet>
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport3" EnterAction="setTeleport3.Start()"/>		
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport3" Value="100" EnterAction="setTeleport3.Start()"/>		
 		
         <Group Id="grpTeleport4" Bounds="4, 306, 50, 10" TraceId="In4"/>
         <Group Id="grpTeleport4" Bounds="222, 102, 10, 50" TraceId="Out4"/>
@@ -108,16 +111,16 @@
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp4.Enable()"/>
 			<!--<Delay Duration="2" />-->
-			<NumAnimation Id="anm5" From="0" To="212" Target="imgAnmTlp4.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3090" Fill="End" />
-			<NumAnimation Id="anm6" From="0" To="-183" Target="imgAnmTlp4.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3158" Fill="End" />
+			<NumAnimation Id="anm5" From="3,297" To="215,297" Target="imgAnmTlp4.X,imgAnmTlp4.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3090" Fill="End"  />
+			<NumAnimation Id="anm6" From="215,297" To="215,114" Target="imgAnmTlp4.X,imgAnmTlp4.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3158" Fill="End"   />
          
-			<NumAnimation Target="hero.X,hero.Y" From="181,102" To="182,102" Duration="0.001" RepeatCount="1" Fill="End"/>
+			<NumAnimation Target="hero.X,hero.Y" From="178,102" To="178,102" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp4.Disable()"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="hero.SetDirection(-1,0)"/>
 			<Do Action="hero.EndTransaction()"/>
 		</SequenceSet>
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport4" EnterAction="setTeleport4.Start()"/>		
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport4" Value="100" EnterAction="setTeleport4.Start()"/>		
 		
 <!-- <<< HANDEDIT <<< -->		        
 

@@ -32,11 +32,18 @@
 		<Level Name="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
 		
 		<Level Name="AnimationSamples" File="AnimationSamples.xml" />
+<<<<<<< HEAD
+		<Level Name="robocat_demo" File="robocat_demo.xml" />
+		
 		<Level Name="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
+		<Level Name="TestTeleport" File="TestTeleport.xml" />
+=======
+
 <!--		<Level Name="robocat_demo" File="robocat_demo.xml" />
 
 		<Level Name="TestTeleport" File="TestTeleport.xml" />		
 		<Level Name="TestFood" File="TestFood.xml" />
+>>>>>>> 17b96e2879d5bc81cbe28f0a63b17ee4afadb86b
 		<Level Name="TestActionsAndEnabled" File="TestActionsAndEnabled.xml" />
 		<Level Name="TestClasses" File="TestClasses.xml" />
 		<Level Name="TestLevel1" File="TestLevel1.xml" />

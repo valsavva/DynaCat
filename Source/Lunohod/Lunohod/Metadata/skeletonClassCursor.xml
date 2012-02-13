@@ -120,7 +120,14 @@
 
 	<Class Id="clsExit">
 		<Block>
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="system.EndCurrentLevel()"/>
+			<SequenceSet Id="this_setExit" InProgress="false" >
+				<Do Action="hero.StartTransaction()"/>
+				<Do Action="hero.SetDirection(0,0)"/>
+				<NumAnimation Target="this.Opacity" Duration="0.2" Autoreverse="false" From="1" To="0" InProgress="true" RepeatCount="10" />
+				<Do Action="hero.EndTransaction()"/>
+				<Do Action="system.EndCurrentLevel()" />
+			</SequenceSet>
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start()" />
 		</Block>	
 	</Class>
 
