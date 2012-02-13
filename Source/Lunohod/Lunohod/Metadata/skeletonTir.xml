@@ -19,15 +19,6 @@
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
         <Hero Id="hero" Bounds="10, 140, 50, 40" Class="clsHeroTir" TraceId="image3015"/>
-<<<<<<< HEAD
-        <Block Id="blk1" Bounds="-50, 0, 60, 320" Edges="Stick" TraceId="image3048">
-            <Image Id="image3048" TextureId="cursor_wall_50x50_stick" Opacity="1" />
-        </Block>
-        <Block Id="blk3" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
-        <Block Id="blk4" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
-        <Block Id="blk5" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
-        <Block Id="blk_image3034" Bounds="10, 270, 360, 50" Edges="Stick" TraceId="image3034">
-=======
 
 <!-- >>> HANDEDIT >>> -->    
 
@@ -39,7 +30,6 @@
         <Block Id="blk4" Bounds="0, -1000, 480, 1000" Edges="Bounce" TraceId="image3074"/>
         <Block Id="blk5" Bounds="0, 320, 480, 1000" Edges="Bounce" TraceId="image3076"/>
         <Block Id="blk_image3034" Class="clsExit" Bounds="10, 270, 360, 50" Edges="Stick" TraceId="image3034">
->>>>>>> 17b96e2879d5bc81cbe28f0a63b17ee4afadb86b
             <Image Id="image3034" TextureId="_E_" Opacity="1" />
         </Block>
 

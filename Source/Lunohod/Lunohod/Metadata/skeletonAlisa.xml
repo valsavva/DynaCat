@@ -120,8 +120,8 @@
 		<SequenceSet Id="setCresser">
 			<Do Action="hero.StartTransaction()"/>
 			<ParallelSet InProgress="true" RepeatCount="1" >
+				<NumAnimation Target="hero.X,hero.Y" From="130,186" To="130,202" Duration="3" IsDelta="false" RepeatCount="1" Fill="End" />
 				<NumAnimation Target="hero.Width,hero.Height" From="20,16" To="75,60" Duration="3" RepeatCount="1" Fill="End"/>
-				<NumAnimation Target="hero.Y" From="180" To="202" Duration="3" IsDelta="false" RepeatCount="1" Fill="End" />
 			</ParallelSet>
 			<Do Action="hero.SetDirection(0,1)"/>
 			<Do Action="hero.EndTransaction()"/>
