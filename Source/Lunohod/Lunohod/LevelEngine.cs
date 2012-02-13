@@ -111,6 +111,10 @@ namespace Lunohod
 			for(int i = 0; i < this.obstacles.Count; i++)
 			{
 				obstacle = this.obstacles[i];
+
+                if (!obstacle.Enabled)
+                    continue;
+
 				obstacleBounds = obstacle.GetScreenBounds();
 				
 				Utility.Intersect(ref heroBounds, ref obstacleBounds, out intersect);
