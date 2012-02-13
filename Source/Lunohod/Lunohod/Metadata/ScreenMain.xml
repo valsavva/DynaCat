@@ -37,26 +37,29 @@
 	
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		
-		<Group Id="grpL01" Bounds="050,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=00"/>
-		<Group Id="grpL02" Bounds="050,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=01"/>
-		<Group Id="grpL03" Bounds="050,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=02"/>
-		<Group Id="grpL04" Bounds="050,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=03"/>
-		<Group Id="grpL05" Bounds="050,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=04"/>
-		<Group Id="grpL06" Bounds="050,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=05"/>
-		<Group Id="grpL07" Bounds="050,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=06"/>
-		<Group Id="grpL08" Bounds="050,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=07"/>
-		<Group Id="grpL09" Bounds="050,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=08"/>
-		
-		<Group Id="grpL10" Bounds="250,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=09"/>
-		<Group Id="grpL11" Bounds="250,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=10"/>
-		<Group Id="grpL12" Bounds="250,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=11"/>
-		<Group Id="grpL13" Bounds="250,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=12"/>
-		<Group Id="grpL14" Bounds="250,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=13"/>
-		<Group Id="grpL15" Bounds="250,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=14"/>
-		<Group Id="grpL17" Bounds="250,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=16"/>
-		<Group Id="grpL18" Bounds="250,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=17"/>
-		<Group Id="grpL16" Bounds="250,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=15"/>
-		
+		<Group Bounds="50,5,500,500">
+			<Group Id="grpL01" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=00"/>
+			<Group Id="grpL02" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=01"/>
+			<Group Id="grpL03" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=02"/>
+			<Group Id="grpL04" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=03"/>
+			<Group Id="grpL05" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=04"/>
+			<Group Id="grpL06" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=05"/>
+			<Group Id="grpL07" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=06"/>
+			<Group Id="grpL08" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=07"/>
+			<Group Id="grpL09" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=08"/>
+			<Group Id="grpL10" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=09"/>
+			
+			<Group Id="grpL11" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=10"/>
+			<Group Id="grpL12" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=11"/>
+			<Group Id="grpL13" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=12"/>
+			<Group Id="grpL14" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=13"/>
+			<Group Id="grpL15" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=14"/>
+			<Group Id="grpL16" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=15"/>
+			<Group Id="grpL17" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=16"/>
+			<Group Id="grpL18" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=17"/>
+			<Group Id="grpL19" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=18"/>
+			<Group Id="grpL20" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=19"/>
+		</Group>
 	</Layer>
 	
 </Screen>

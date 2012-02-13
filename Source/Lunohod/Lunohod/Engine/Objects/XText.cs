@@ -50,24 +50,23 @@ namespace Lunohod.Objects
                 ));
 		}
 		
-		private System.Drawing.RectangleF screenBounds;
         private float screenRotation;
 
         public override void Update(UpdateParameters p)
         {
             base.Update(p);
 
-            screenBounds = this.GetScreenBounds();
+            this.GetScreenBounds();
 			screenRotation = MathHelper.ToRadians(this.PropState.Rotation);
         }
 
 		public override void Draw(DrawParameters p)
 		{
-			this.location.X = screenBounds.X;
-			this.location.Y = screenBounds.Y;
+			this.location.X = this.PropState.ScreenBounds.Value.X;
+			this.location.Y = this.PropState.ScreenBounds.Value.Y;
 			
-			if (screenRotation != 0 || this.Origin != Vector2.Zero)
-				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, this.ScaleVector, SpriteEffects.None, 0);
+			if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
+				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
 			else
 				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor);
 			

@@ -33,9 +33,11 @@
 		<Group Bounds="250,50,150,150" RotationCenter="75,75" Rotation="45">
 			<Image TextureId="blank" BackColor="#005500" Opacity="0.3"/>
 			<NumAnimation Target="Rotation" From="0" To="360" Duration="10" InProgress="true" />
-			<Image Location="50,50" TextureId="chargers" RotationCenter="25,25" BackColor="#FF0000">
 				<NumAnimation Target="Scale" From="1" To="2" Duration="0.4" Autoreverse="true" InProgress="true"/>
+			<Image Location="20,20" TextureId="chargers" RotationCenter="25,25" BackColor="#FF0000">
+				<NumAnimation Target="Rotation" From="0" To="360" Duration="10" InProgress="true" />
 			</Image>
+			<Text FontId="SystemFont" Location="15,105" Text="Text scales too!" Color="#000000"/>
 		</Group>
 	</Layer>
 

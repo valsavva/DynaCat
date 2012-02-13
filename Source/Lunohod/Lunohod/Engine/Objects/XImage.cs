@@ -61,8 +61,8 @@ namespace Lunohod.Objects
 				this.tmpVector1.X = this.PropState.ScreenBounds.Value.X;
 				this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
 				
-				if (screenRotation != 0 || this.Origin != Vector2.Zero || this.ScaleVector != Vector2.One)
-					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, this.ScaleVector, SpriteEffects.None, 0);
+				if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
+					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
 				else
 					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor);
 			}

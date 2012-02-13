@@ -25,6 +25,7 @@ namespace Lunohod.Objects
 			public Vector2 Size;
 			public float Rotation;
 			public float Opacity;
+			public Vector2 Scale;
 			public Color BackColor;
 			public System.Drawing.RectangleF? ScreenBounds;
 		}
@@ -67,7 +68,7 @@ namespace Lunohod.Objects
 			set { this.rotationCenter = this.Origin = value; }
 		}
 		[XmlIgnore]
-		public Vector2 ScaleVector = new Vector2(1.0f, 1.0f);
+		public Vector2 ScaleVector = Vector2.One;
 		[XmlIgnore]
 		public float Scale
 		{
@@ -123,6 +124,7 @@ namespace Lunohod.Objects
 				PropState.PropCycle = GameEngine.Instance.CycleNumber;
 				PropState.Opacity = 1.0f;
 				PropState.Rotation = 0;
+				PropState.Scale = Vector2.One;
 				PropState.BackColor = Color.White;
 			}
 			else
@@ -134,6 +136,7 @@ namespace Lunohod.Objects
 			PropState.ScreenBounds = null;
 			//---
 			PropState.Rotation += this.Rotation;
+			PropState.Scale *= this.Scale;
 			
 			if (!this.Bounds.IsEmpty)
 			{
