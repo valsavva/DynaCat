@@ -79,7 +79,7 @@ namespace Lunohod
             Content.RootDirectory = ContentRootDirectory;
 
 			graphics = new GraphicsDeviceManager(this);
-			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeLeft;
+			graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 			graphics.PreferMultiSampling = true;
             this.IsFixedTimeStep = false;
 
