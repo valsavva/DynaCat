@@ -347,11 +347,12 @@ namespace Lunohod.Objects
 		
 		public void ReplaceParameters(List<string> pars, List<string> vals)
 		{
+			for (int i = 0; i < pars.Count; i++)
+				this.ReplaceParameter(pars[i], vals[i]);
+
 			if (this.subcomponents != null)
 				for(int i = 0; i < this.subcomponents.Count; i++)
 				{
-					for(int j = 0; j < pars.Count; j++)
-						subcomponents[i].ReplaceParameter(pars[j], vals[j]);
 					subcomponents[i].ReplaceParameters(pars, vals);
 				}
 		}
