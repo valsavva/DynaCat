@@ -22,11 +22,21 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public XAnimationFillBehavior Fill;
 
+		private string durationStr;
+		
 		[XmlAttribute("Duration")]
 		public string zDuration
 		{
-			get { return this.Duration.ToString(); }
-            set { this.Duration = value.ToDuration(); }
+			get { return this.durationStr ?? this.Duration.ToString(); }
+            set { 
+				try
+				{
+					this.Duration = value.ToDuration();
+					this.durationStr = null;
+				} catch {
+					this.durationStr = value;
+				}
+			}
 		}
 		
 		public override int CalculateRepeatsDone()
@@ -63,5 +73,13 @@ namespace Lunohod.Objects
 
 			base.Stop();
         }
+		
+		public override void ReplaceParameter(string par, string val)
+		{
+			if (this.durationStr != null)
+				this.zDuration = this.durationStr.Replace(par, val);
+			    
+			base.ReplaceParameter(par, val);
+		}
     }
 }
