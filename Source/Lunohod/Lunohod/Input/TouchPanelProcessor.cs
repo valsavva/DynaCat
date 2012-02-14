@@ -24,7 +24,9 @@ namespace Lunohod
 			{
 				var touch = touches[i];
 				
-				//Console.WriteLine("Touch: {0},{1} State: {2}", touch.Position.X, touch.Position.Y, touch.State);
+#if DEBUG
+				Console.WriteLine("Touch: {0},{1} State: {2}", touch.Position.X, touch.Position.Y, touch.State);
+#endif
 				
 				LastPosition = touch.Position;
 				
