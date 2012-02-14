@@ -9,6 +9,10 @@
 		<Texture Id="chargers" Source="ch"/>
 	</Resources>
 
+	<Class Id="clsRotationAnimation">
+		<NumAnimation Target="Rotation" From="0" To="360" Duration="@duration" InProgress="true" />
+	</Class>
+	
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
         <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
@@ -25,15 +29,15 @@
 		
 		<Group Bounds="50,100,150,150" Rotation="45">
 			<Image TextureId="blank" BackColor="#005500" Opacity="0.3"/>
-			<NumAnimation Target="Rotation" From="0" To="360" Duration="10" InProgress="true" />
+			<NumAnimation Class="clsRotationAnimation" ClassParams="@duration=10" />
 			<Image Location="50,50" TextureId="chargers" BackColor="#FF0000"/>
 			<Text FontId="SystemFont" Location="15,105" Text="We rotate together!" Color="#000000"/>
 		</Group>
 
 		<Group Bounds="250,50,150,150" RotationCenter="75,75" Rotation="45">
 			<Image TextureId="blank" BackColor="#005500" Opacity="0.3"/>
-			<NumAnimation Target="Rotation" From="0" To="360" Duration="10" InProgress="true" />
-				<NumAnimation Target="Scale" From="1" To="2" Duration="0.4" Autoreverse="true" InProgress="true"/>
+			<NumAnimation Class="clsRotationAnimation" ClassParams="@duration=2" />
+			<NumAnimation Target="Scale" From="1" To="2" Duration="0.4" Autoreverse="true" InProgress="true"/>
 			<Image Location="20,20" TextureId="chargers" RotationCenter="25,25" BackColor="#FF0000">
 				<NumAnimation Target="Rotation" From="0" To="360" Duration="10" InProgress="true" />
 			</Image>
