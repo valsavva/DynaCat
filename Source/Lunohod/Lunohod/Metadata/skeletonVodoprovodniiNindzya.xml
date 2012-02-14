@@ -29,20 +29,14 @@
             <Image Id="image3034" TextureId="_E_" Opacity="1" />
         </Block>
  
-         <Class Id="clstlp_1sec">
+         <Class Id="clsTlp">
         	<Group>
 				<SequenceSet Id="this_set">
 					<Do Action="hero.StartTransaction()"/>
 					<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 					<Do Action="imgAnmTlp.Enable()" />
-					<NumAnimation Id="grpTeleport1in_anm" Target="imgAnmTlp.X,imgAnmTlp.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" Fill="End" TraceId="image4056">
-						<KeyFrame Time="0" Value="@taFX,@toHY" />
-						<KeyFrame Time="1" Value="@taTX,@toHY" />						
-					</NumAnimation>
-					<NumAnimation Target="hero.X,hero.Y" Duration="0.01" RepeatCount="1" Fill="End">
-						<KeyFrame Time="0" Value="@toHX,@toHY" />
-						<KeyFrame Time="0.01" Value="@toHX,@toHY" />
-					</NumAnimation>
+					<NumAnimation Id="grpTeleport1in_anm" From="@taFX,@toHY" To="@taTX,@toHY" Target="imgAnmTlp.X,imgAnmTlp.Y" Duration="@duration" IsDelta="false" Autoreverse="false" RepeatCount="1" Fill="End" TraceId="image4056" />
+					<NumAnimation Target="hero.X,hero.Y" From="@toHX,@toHY" To="@toHX,@toHY" Duration="0.01" RepeatCount="1" Fill="End" />
 					<Do Action="imgAnmTlp.Disable()" />
 					<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 					<Do Action="hero.SetDirection(0,0)"/>
@@ -50,40 +44,16 @@
 				</SequenceSet>
 				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" Value="200" EnterAction="this_set.Start(),this_anm.Start()"/>
 			</Group>
-        </Class>
-       
-        <Class Id="clstlp_2sec">
-        	<Group>
-				<SequenceSet Id="this_set">
-					<Do Action="hero.StartTransaction()"/>
-					<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
-					<Do Action="imgAnmTlp.Enable()" />
-					<NumAnimation Id="grpTeleport1in_anm" Target="imgAnmTlp.X,imgAnmTlp.Y" Duration="2" IsDelta="false" Autoreverse="false" RepeatCount="1" Fill="End" TraceId="image4056">
-						<KeyFrame Time="0" Value="@taFX,@toHY" />
-						<KeyFrame Time="2" Value="@taTX,@toHY" />						
-					</NumAnimation>
-					<NumAnimation Target="hero.X,hero.Y" Duration="0.01" RepeatCount="1" Fill="End">
-						<KeyFrame Time="0" Value="@toHX,@toHY" />
-						<KeyFrame Time="0.01" Value="@toHX,@toHY" />
-					</NumAnimation>
-					<Do Action="imgAnmTlp.Disable()" />
-					<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
-					<Do Action="hero.SetDirection(0,0)"/>
-					<Do Action="hero.EndTransaction()"/>
-				</SequenceSet>
-				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" Value="200" EnterAction="this_set.Start(),this_anm.Start()"/>
-			</Group>
-        </Class>
+        </Class>        
         
-        
-        <Group Id="grpTeleport1in" Bounds="385, 21, 10, 50" TraceId="In1"  Class="clstlp_2sec" ClassParams="@toHX=31,@toHY=25,@taFX=360,@taTX=81" />
-		<Group Id="grpTeleport1out" Bounds="83, 25, 10, 50" TraceId="Out1" Class="clstlp_2sec" ClassParams="@toHX=397,@toHY=21,@taFX=80,@taTX=360" />
-        <Group Id="grpTeleport2in" Bounds="404, 135, 10, 50" TraceId="In2" Class="clstlp_2sec" ClassParams="@toHX=39,@toHY=136,@taFX=380,@taTX=100" />
-        <Group Id="grpTeleport2out" Bounds="91, 136, 10, 50" TraceId="Out2" Class="clstlp_2sec" ClassParams="@toHX=416,@toHY=135,@taFX=100,@taTX=380" />
-        <Group Id="grpTeleport3in" Bounds="390, 250, 10, 50" TraceId="In3" Class="clstlp_1sec" ClassParams="@toHX=219,@toHY=252,@taFX=360,@taTX=280" />
-        <Group Id="grpTeleport3out" Bounds="271, 252, 10, 50" TraceId="Out3" Class="clstlp_1sec" ClassParams="@toHX=402,@toHY=250,@taFX=280,@taTX=360" />
-        <Group Id="grpTeleport4in" Bounds="199, 252, 10, 50" TraceId="In4" Class="clstlp_1sec" ClassParams="@toHX=31,@toHY=251,@taFX=169,@taTX=91" />
-        <Group Id="grpTeleport4out" Bounds="81, 250, 10, 50" TraceId="Out4" Class="clstlp_1sec" ClassParams="@toHX=207,@toHY=251,@taFX=91,@taTX=169" />
+        <Group Id="grpTeleport1in" Bounds="385, 21, 10, 50" TraceId="In1"  Class="clsTlp" ClassParams="@duration=2,@toHX=31,@toHY=25,@taFX=360,@taTX=81" />
+		<Group Id="grpTeleport1out" Bounds="83, 25, 10, 50" TraceId="Out1" Class="clsTlp" ClassParams="@duration=2,@toHX=397,@toHY=21,@taFX=80,@taTX=360" />
+        <Group Id="grpTeleport2in" Bounds="404, 135, 10, 50" TraceId="In2" Class="clsTlp" ClassParams="@duration=2,@toHX=39,@toHY=136,@taFX=380,@taTX=100" />
+        <Group Id="grpTeleport2out" Bounds="91, 136, 10, 50" TraceId="Out2" Class="clsTlp" ClassParams="@duration=2,@toHX=416,@toHY=135,@taFX=100,@taTX=380" />
+        <Group Id="grpTeleport3in" Bounds="390, 250, 10, 50" TraceId="In3" Class="clsTlp" ClassParams="@duration=1,@toHX=219,@toHY=252,@taFX=360,@taTX=280" />
+        <Group Id="grpTeleport3out" Bounds="271, 252, 10, 50" TraceId="Out3" Class="clsTlp" ClassParams="@duration=1,@toHX=402,@toHY=250,@taFX=280,@taTX=360" />
+        <Group Id="grpTeleport4in" Bounds="199, 252, 10, 50" TraceId="In4" Class="clsTlp" ClassParams="@duration=1,@toHX=31,@toHY=251,@taFX=169,@taTX=91" />
+        <Group Id="grpTeleport4out" Bounds="81, 250, 10, 50" TraceId="Out4" Class="clsTlp" ClassParams="@duration=1,@toHX=207,@toHY=251,@taFX=91,@taTX=169" />
    
         
 		<Image Id="imgAnmTlp" TextureId="tlp1_demo_anm" Bounds="-1000, -1000, 38, 45" Stretch="false" Opacity="1" Enabled="false" TraceId="imgAnmTlp1i"/>
