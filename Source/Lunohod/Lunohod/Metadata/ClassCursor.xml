@@ -89,8 +89,8 @@
 			</IntersectionTrigger>
 			
 			<BoolTrigger Id="this_default" Group="enemyStates">	
- 				<Image Id="imgN2" TextureId="cursor_solid_10x10_black_green" />
--			</BoolTrigger>	
+ 				<Image Id="this_imgN2" TextureId="cursor_solid_10x10_black_green" />
+			</BoolTrigger>	
 	</Enemy>	
 	</Class>
 </Include>
