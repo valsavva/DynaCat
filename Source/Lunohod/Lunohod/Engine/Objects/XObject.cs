@@ -225,13 +225,13 @@ namespace Lunohod.Objects
 			{
 				this.componentDict = new Dictionary<string, XObject>();
 				this.TraveseTree(o => {
-					if (o.Id != null)
+					if (!string.IsNullOrEmpty(o.Id))
 					{
 						if (!this.componentDict.ContainsKey(o.Id))
 							this.componentDict.Add(o.Id, o);
 		#if DEBUG
 						else
-							Console.WriteLine("*** Component with id '{0}' already exists! ***", this.Id);
+							Console.WriteLine("*** Component with id '{0}' already exists! ***", o.Id);
 		#endif
 					}
 				});

@@ -14,17 +14,17 @@
 		<TapArea Bounds="423,118,57,52" Event="system:up" />
 
 
-		<TapArea Bounds="0,178,57,52" Event="system:left" />
-		<TapArea Bounds="423,178,57,52" Event="system:right" />
+		<TapArea Bounds="0,173,60,60" Event="system:left" />
+		<TapArea Bounds="423,173,60,60" Event="system:right" />
 
 
-		<TapArea Bounds="0,238,57,52" Event="system:down" />
-		<TapArea Bounds="423,238,57,52" Event="system:down" />
+		<TapArea Bounds="0,233,57,52" Event="system:down" />
+		<TapArea Bounds="423,233,57,52" Event="system:down" />
 		
-		<TapArea Bounds="158,263,52,57" Event="system:stop" /> <!-- pause -->
-		<TapArea Bounds="270,263,52,57" Event="system:stop" /> <!-- bomb -->
+		<TapArea Bounds="158,258,60,60" Event="system:stop" /> <!-- pause -->
+		<TapArea Bounds="270,258,60,60" Event="system:stop" /> <!-- bomb -->
 		
-		<Image TextureId="blank" Bounds="450,10,20,20" BackColor="#FF0000" Opacity="0.2"/>
-		<TapArea Bounds="450,10,20,20" Action="system.EndCurrentLevel()" />
+		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
+		<TapArea Bounds="430,00,60,60" Action="system.EndCurrentLevel()" />
 	</Dashboard>
 </Include>
