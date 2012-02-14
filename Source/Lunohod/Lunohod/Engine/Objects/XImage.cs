@@ -54,26 +54,27 @@ namespace Lunohod.Objects
 
 		public override void Draw(DrawParameters p)
 		{
-
-			if ((this.Bounds.X != 0 || this.Bounds.Y != 0) && this.Bounds.Width == 0 && this.Bounds.Height == 0)
+			if (this.PropState.ScreenBounds.HasValue)
 			{
-				// we're using location
-				this.tmpVector1.X = this.PropState.ScreenBounds.Value.X;
-				this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
-				
-				if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
-					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
+				if ((this.Bounds.X != 0 || this.Bounds.Y != 0) && this.Bounds.Width == 0 && this.Bounds.Height == 0)
+				{
+					// we're using location
+					this.tmpVector1.X = this.PropState.ScreenBounds.Value.X;
+					this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
+					
+					if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
+						p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
+					else
+						p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor);
+				}
 				else
-					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor);
+				{
+					if (screenRotation != 0 || this.Origin != Vector2.Zero)
+						p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
+					else
+						p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor);
+				}
 			}
-			else
-			{
-				if (screenRotation != 0 || this.Origin != Vector2.Zero)
-					p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
-				else
-					p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor);
-			}
-
 			base.Draw(p);
 		}
     }

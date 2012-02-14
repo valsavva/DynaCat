@@ -62,13 +62,16 @@ namespace Lunohod.Objects
 
 		public override void Draw(DrawParameters p)
 		{
-			this.location.X = this.PropState.ScreenBounds.Value.X;
-			this.location.Y = this.PropState.ScreenBounds.Value.Y;
-			
-			if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
-				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
-			else
-				p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor);
+			if (this.PropState.ScreenBounds.HasValue)
+			{
+				this.location.X = this.PropState.ScreenBounds.Value.X;
+				this.location.Y = this.PropState.ScreenBounds.Value.Y;
+				
+				if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
+					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
+				else
+					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor);
+			}
 			
 			base.Draw(p);
 		}
