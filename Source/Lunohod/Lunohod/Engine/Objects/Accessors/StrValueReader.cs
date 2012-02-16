@@ -19,6 +19,8 @@ namespace Lunohod.Objects
 			if (!descriptor.StartsWith("="))
 			{
 				stringValue = descriptor;
+				if (stringValue.Length > 1 && stringValue.StartsWith("'") && stringValue.EndsWith("'"))
+					stringValue = stringValue.Substring(1, stringValue.Length - 2);
 				func = ReturnStringValue;
 			}
 			else 

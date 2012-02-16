@@ -54,10 +54,16 @@ namespace Lunohod.Objects
 				case "Stop" : return this.ActionStop;
 				case "Pause" : return this.ActionPause;
 				case "Resume" : return this.ActionResume;
-				case "GetLevelName" : return this.ActionGetLevelName;
+				
+				case "GetLevelId" : return this.ActionGetLevelId;
 				case "StartLevel" : return this.ActionStartLevel;
+				case "StartScreen" : return this.ActionStartScreen;
 				case "CloseCurrentScreen" : return this.ActionCloseCurrentScreen;
 				case "EndCurrentLevel" : return this.ActionEndCurrentLevel;
+	
+				case "StartTransaction" : return this.ActionStartTransaction;
+				case "EndTransaction" : return this.ActionEndTransaction;
+				case "SetDirection" : return this.ActionSetDirection;
 				default:
 				{
 					Debug.WriteLine("Using reflection to access method: " + action);
@@ -117,11 +123,13 @@ namespace Lunohod.Objects
 		
 		#region Well known actions
 		
+		// Generic
 		public object ActionInvokeMehodInfo(object[] ps)
 		{
 			return methodInfo.Invoke(this.target.Object, ps);
 		}
-			
+		
+		// Runnables
 		public object ActionStart(object[] ps)
 		{
 			((IRunnable)this.target.Object).Start();
@@ -142,13 +150,20 @@ namespace Lunohod.Objects
 			((IRunnable)this.target.Object).Pause();
 			return null;
 		}
-		public object ActionGetLevelName(object[] ps)
+		
+		// System
+		public object ActionGetLevelId(object[] ps)
 		{
-			return ((XSystem)this.target.Object).GetLevelName((string)ps[0]);
+			return ((XSystem)this.target.Object).GetLevelId((string)ps[0]);
 		}
 		public object ActionStartLevel(object[] ps)
 		{
 			((XSystem)this.target.Object).StartLevel((string)ps[0]);
+			return null;
+		}
+		public object ActionStartScreen(object[] ps)
+		{
+			((XSystem)this.target.Object).StartScreen((string)ps[0]);
 			return null;
 		}
 		public object ActionCloseCurrentScreen(object[] ps)
@@ -162,6 +177,22 @@ namespace Lunohod.Objects
 			return null;
 		}
 		
+		// Hero
+		public object ActionStartTransaction(object[] ps)
+		{
+			((XHero)this.target.Object).StartTransaction();
+			return null;
+		}
+		public object ActionEndTransaction(object[] ps)
+		{
+			((XHero)this.target.Object).EndTransaction();
+			return null;
+		}
+		public object ActionSetDirection(object[] ps)
+		{
+			((XHero)this.target.Object).SetDirection((string)ps[0],(string)ps[1]);
+			return null;
+		}
 		#endregion
 	}
 }

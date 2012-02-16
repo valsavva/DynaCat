@@ -278,6 +278,8 @@ namespace Lunohod.Objects
 			return result;
 		}
 		
+		private static char[] delimiters = new char[] {'.', ':'};
+		
 		public void GetTargetFromDescriptor(string descriptor, out XObject target, out string targetMember)
 		{
 			if (descriptor.StartsWith(".") || descriptor.StartsWith(":"))
@@ -285,13 +287,16 @@ namespace Lunohod.Objects
 			
 			if (descriptor.Contains(".") || descriptor.Contains(":"))
 			{
-				var parts = descriptor.Split('.', ':');
-
-				target = this.GetRoot().FindDescendant(parts[0]);
+				int index = descriptor.IndexOfAny(delimiters);
+				
+				var targetId = descriptor.Substring(0, index);
+				
+				target = this.GetRoot().FindDescendant(targetId);
 				
 				if (target == null)
-					throw new InvalidOperationException(string.Format("Could not find object with id [{0}]", parts[0]));
-				targetMember = parts[1];
+					throw new InvalidOperationException(string.Format("Could not find object with id [{0}]", targetId));
+				
+				targetMember = descriptor.Substring(index + 1);
 			}
 			else
 			{

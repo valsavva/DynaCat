@@ -163,9 +163,9 @@ namespace Lunohod
 		
 		#region Content management
 
-		protected void LoadScreen(string xmlName)
+		public void LoadScreen(string id)
 		{
-            var newScreenEngine = new ScreenEngine(this, xmlName);
+            var newScreenEngine = new ScreenEngine(this, this.gameObject.Screens.First(s => s.Id == id).File);
 			screenEngines.Add(newScreenEngine);
 			
 			newScreenEngine.Initialize();
@@ -173,9 +173,9 @@ namespace Lunohod
             GC.Collect();
 		}
 
-		public void LoadLevel(string xmlName)
+		public void LoadLevel(string id)
 		{
-            var newScreenEngine = new LevelEngine(this, xmlName);
+            var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.First(l => l.Id == id).File);
 			screenEngines.Add(newScreenEngine);
 
 			newScreenEngine.Initialize();

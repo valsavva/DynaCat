@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Screen Name="Tests" Bounds="0,0,480,320">
+	<Class Id="clsLevelButton">
+		<Group>
+			<TapArea Action="system.StartLevel(@levelNum)" />
+			<Text Id="this_text" FontId="SystemFont" Origin="50,10" Location="50,10" Text="=system.GetLevelId(@levelNum)" Color="#FF0000" />
+			<RandomSet RepeatCount="0" InProgress="true">
+				<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
+					<KeyFrame Time="0" Value="0" />
+					<KeyFrame Time="0.01" Value="-3" />
+					<KeyFrame Time="0.05" Value="3" />
+				</NumAnimation>
+				<Delay Duration="3" />
+			</RandomSet>
+			<RandomSet RepeatCount="0" InProgress="true">
+				<NumAnimation Target="this.X" Autoreverse="true" RepeatCount="1" Duration="1" IsDelta="true" Fill="Reset">
+					<KeyFrame Time="0" Value="0" Smoothness="Smooth" />
+					<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth" />
+					<KeyFrame Time="0.6" Value="6" Smoothness="Smooth" />
+					<KeyFrame Time="1" Value="0" Smoothness="Smooth" />
+				</NumAnimation>
+				<Delay Duration="3" />
+			</RandomSet>
+		</Group>
+	</Class>
+
+	
+	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank" />
+		<Font Id="SystemFont" Source="SystemFont" />
+	</Resources>
+	
+	<Include File="Textures.xml" />
+    <Layer Id="background" BackColor="#FFFFFFFF">
+    </Layer>
+	
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		
+		<Group Bounds="50,5,500,500">
+			<Group Id="grpL21" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=20"/>
+			<Group Id="grpL22" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=21"/>
+			<Group Id="grpL23" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=22"/>
+			<Group Id="grpL24" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=23"/>
+			<Group Id="grpL25" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=24"/>
+			<Group Id="grpL26" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=25"/>
+			<Group Id="grpL27" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=26"/>
+			<Group Id="grpL28" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=27"/>
+			<Group Id="grpL29" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=28"/>
+			<Group Id="grpL20" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=29"/>
+			
+			<Group Id="grpL31" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=30"/>
+			<Group Id="grpL32" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=31"/>
+			<Group Id="grpL33" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=32"/>
+			<Group Id="grpL34" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=33"/>
+			<Group Id="grpL35" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=34"/>
+			<Group Id="grpL36" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=35"/>
+			<Group Id="grpL37" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=36"/>
+			<Group Id="grpL38" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=37"/>
+			<Group Id="grpL39" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=38"/>
+			<Group Id="grpL30" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=39"/>
+		</Group>
+	</Layer>
+	
+</Screen>

@@ -32,6 +32,7 @@ namespace Lunohod.Objects
 		public override void UpdateProgress(UpdateParameters p)
 		{
             actionCallers.ForEach(a => a.Call());
+			this.repeatsDone++;
 		}		
 		
 		public override void ReplaceParameter(string par, string val)

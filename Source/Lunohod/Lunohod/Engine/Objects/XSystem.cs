@@ -22,7 +22,7 @@ namespace Lunohod.Objects
 			this.game = p.Game;
 		}
 		
-		public string GetLevelName(string si)
+		public string GetLevelId(string si)
 		{
 			int i = int.Parse(si);
 			
@@ -31,7 +31,7 @@ namespace Lunohod.Objects
 			
 			var level = game.GameObject.Levels[i];
 			
-			return level.Name;
+			return level.Id;
 		}
 		
 		public void StartLevel(string si)
@@ -41,7 +41,12 @@ namespace Lunohod.Objects
 			if (i >= game.GameObject.Levels.Length)
 				return;
 
-			game.LoadLevel(game.GameObject.Levels[i].File);
+			game.LoadLevel(game.GameObject.Levels[i].Id);
+		}
+		
+		public void StartScreen(string id)
+		{
+			game.LoadScreen(id);
 		}
 		
 		public void CloseCurrentScreen()

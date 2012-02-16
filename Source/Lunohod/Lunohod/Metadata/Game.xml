@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Game Bounds="0,0,480,320" StartScreen="ScreenMain.xml" ShowFPS="true">
+<Game Bounds="0,0,480,320" StartScreen="ScreenMain" ShowFPS="true">
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
@@ -10,96 +10,44 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Screens>
-		<Screen Name="ScreenMain" File="ScreenMain.xml" />
+		<Screen Id="ScreenMain" File="ScreenMain.xml" />
+		<Screen Id="ScreenTests" File="ScreenTests.xml" />
 	</Screens>
 	<Levels>
-		<Level Name="skeletonAlisa" File="skeletonAlisa.xml" />
-		<Level Name="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
-		<Level Name="skeletonChetyreKomnaty" File="skeletonChetyreKomnaty.xml" />
-		<Level Name="skeletonChelnok" File="skeletonChelnok.xml" />
-		<Level Name="skeletonTir" File="skeletonTir.xml" />
-		<Level Name="skeletonVKolce" File="skeletonVKolce.xml" />
-		<Level Name="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
-		<Level Name="skeletonLoshadka" File="skeletonLoshadka.xml" />
-		<Level Name="skeletonElochka" File="skeletonElochka.xml" />
-		<Level Name="skeletonKruchuVerchu" File="skeletonKruchuVerchu.xml" />
-		<Level Name="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
-		<Level Name="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
-		<Level Name="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
-		<Level Name="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
-		<Level Name="skeletonParavozik" File="skeletonParavozik.xml" />
-		<Level Name="skeletonLabirinth" File="skeletonLabirinth.xml" />
-		<Level Name="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
+		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
+		<Level Id="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
+		<Level Id="skeletonChetyreKomnaty" File="skeletonChetyreKomnaty.xml" />
+		<Level Id="skeletonChelnok" File="skeletonChelnok.xml" />
+		<Level Id="skeletonTir" File="skeletonTir.xml" />
+		<Level Id="skeletonVKolce" File="skeletonVKolce.xml" />
+		<Level Id="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
+		<Level Id="skeletonLoshadka" File="skeletonLoshadka.xml" />
+		<Level Id="skeletonElochka" File="skeletonElochka.xml" />
+		<Level Id="skeletonKruchuVerchu" File="skeletonKruchuVerchu.xml" />
+		<Level Id="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
+		<Level Id="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
+		<Level Id="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
+		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
+		<Level Id="skeletonParavozik" File="skeletonParavozik.xml" />
+		<Level Id="skeletonLabirinth" File="skeletonLabirinth.xml" />
+		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
 		
-		<Level Name="AnimationSamples" File="AnimationSamples.xml" />
-		<Level Name="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
-		<Level Name="TestExplosion" File="TestExplosion.xml" />
-<!--		<Level Name="robocat_demo" File="robocat_demo.xml" />
+		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
+		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
+		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
+		
+		<!-- Test screens start here -->
+		
+		<Level Id="AnimationSamples" File="AnimationSamples.xml" />
+		<Level Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
+		<Level Id="TestExplosion" File="TestExplosion.xml" />
+		<Level Id="robocat_demo" File="robocat_demo.xml" />
 
-		<Level Name="TestTeleport" File="TestTeleport.xml" />		
-		<Level Name="TestFood" File="TestFood.xml" />
-		<Level Name="TestActionsAndEnabled" File="TestActionsAndEnabled.xml" />
-		<Level Name="TestClasses" File="TestClasses.xml" />
-		<Level Name="TestLevel1" File="TestLevel1.xml" />
-		<Level Name="TestLevel2" File="TestLevel2.xml" /> -->
+		<Level Id="TestTeleport" File="TestTeleport.xml" />		
+		<Level Id="TestFood" File="TestFood.xml" />
+		<Level Id="TestActionsAndEnabled" File="TestActionsAndEnabled.xml" />
+		<Level Id="TestClasses" File="TestClasses.xml" />
+		<Level Id="TestLevel1" File="TestLevel1.xml" />
+		<Level Id="TestLevel2" File="TestLevel2.xml" />
 	</Levels>
 </Game>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
