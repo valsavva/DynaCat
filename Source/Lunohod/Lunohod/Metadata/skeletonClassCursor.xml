@@ -93,28 +93,6 @@
 
 
 	<!-- =========================================================================================  -->
-	<!-- clsFoodDisabled -->
-	<!-- copy of clsFood, but Enabled="false" -->
-	<!-- =========================================================================================  -->
-
-	<Class Id="clsFoodDisabled">
-		<Food Enabled="false">
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start" StayTriggered="true" Group="foodStates">
-				<Image TextureId="cursor_50x50_blue">
-					<SequenceSet InProgress="true">
-						<NumAnimation Id="this_anmEated" Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" />
-						<Do Action="this.Disable" />
-					</SequenceSet>
-				</Image>
-			</IntersectionTrigger>
-			
-			<BoolTrigger Id="this_default" Group="foodStates">
-				<Image TextureId="cursor_50x50_green" />
-			</BoolTrigger>	
-		</Food>	
-	</Class>
-
-	<!-- =========================================================================================  -->
 	<!-- clsExit -->
 	<!-- =========================================================================================  -->
 
