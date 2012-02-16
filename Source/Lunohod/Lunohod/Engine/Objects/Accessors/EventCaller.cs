@@ -12,18 +12,18 @@ namespace Lunohod.Objects
 {
 	public class EventCaller : ActionCallerBase
 	{
-		private XObject target;
+		private ObjectProxy target;
 		private string evnt;
 
 		public EventCaller(XObject target, string evnt)
 		{
-			this.target = target;
+			this.target = new ObjectProxy(target);
 			this.evnt = evnt;
 		}
 		
 		public override object Call()
 		{
-			target.GetSignalContainer("events").Signal(evnt);
+			target.Object.GetSignalContainer("events").Signal(evnt);
 			
 			return null;
 		}

@@ -10,42 +10,29 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     [XmlType("Do")]
-    public class XDo : XObject, IRunnable
+    public class XDo : XRunnableBase
     {
         private List<ActionCallerBase> actionCallers;
-
+		
         [XmlAttribute]
         public string Action;
-
+		
+		public XDo()
+		{
+			this.RepeatCount = 1;
+		}
+		
         public override void Initialize(InitializeParameters p)
         {
             base.Initialize(p);
 
             actionCallers = this.Action.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
         }
-
-        public bool InProgress
-        {
-            get { return false; }
-            set { /* noop */ }
-        }
-
-        public void Start()
-        {
+		
+		public override void UpdateProgress(UpdateParameters p)
+		{
             actionCallers.ForEach(a => a.Call());
-        }
-
-        public void Stop()
-        {
-        }
-
-        public void Pause()
-        {
-        }
-
-        public void Resume()
-        {
-        }
+		}		
 		
 		public override void ReplaceParameter(string par, string val)
 		{

@@ -71,6 +71,9 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Enemy", Type = typeof(XEnemy))]
         [XmlElement(ElementName = "Food", Type = typeof(XFood))]
 
+		// Iterator
+        [XmlElement(ElementName = "Iterator", Type = typeof(XIterator))]
+
 		// Sets
         [XmlElement(ElementName = "SequenceSet", Type = typeof(XSequenceSet))]
         [XmlElement(ElementName = "RandomSet", Type = typeof(XRandomSet))]
@@ -277,6 +280,9 @@ namespace Lunohod.Objects
 		
 		public void GetTargetFromDescriptor(string descriptor, out XObject target, out string targetMember)
 		{
+			if (descriptor.StartsWith(".") || descriptor.StartsWith(":"))
+			    descriptor = descriptor.Substring(1);
+			
 			if (descriptor.Contains(".") || descriptor.Contains(":"))
 			{
 				var parts = descriptor.Split('.', ':');

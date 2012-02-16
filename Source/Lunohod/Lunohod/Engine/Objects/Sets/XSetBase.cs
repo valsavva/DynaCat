@@ -28,10 +28,5 @@ namespace Lunohod.Objects
 			if (this.inProgress)
 				this.Start();
 		}
-		
-		public override int CalculateRepeatsDone()
-		{
-			return this.repeatsDone;
-		}
 	}
 }

@@ -65,8 +65,12 @@ namespace Lunohod.Objects
 			base.Update(p);
 		}
 		
-		public abstract int CalculateRepeatsDone();
-        public abstract void UpdateProgress(UpdateParameters p);
+		public virtual int CalculateRepeatsDone()
+		{
+			return this.repeatsDone;
+		}
+
+		public abstract void UpdateProgress(UpdateParameters p);
 		
 		public virtual void UpdateTime(UpdateParameters p)
 		{

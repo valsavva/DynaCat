@@ -24,6 +24,7 @@
     <ConsolePause>false</ConsolePause>
     <MtouchI18n />
     <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchProfiling>true</MtouchProfiling>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -155,6 +156,8 @@
     <Compile Include="Engine\Objects\Accessors\NumValueReader.cs" />
     <Compile Include="Engine\Objects\Accessors\PropertyAccessor.cs" />
     <Compile Include="Engine\Objects\Accessors\StrValueReader.cs" />
+    <Compile Include="Engine\Objects\XIterator.cs" />
+    <Compile Include="Engine\Objects\Accessors\ObjectProxy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -968,6 +971,9 @@
     </Content>
     <Content Include="Default%402x.png" />
     <Content Include="Default.png" />
+    <Content Include="Metadata\TestExplosion.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">

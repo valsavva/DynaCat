@@ -12,8 +12,8 @@ namespace Lunohod.Objects
     [XmlType("DistanceTrigger")]
 	public class XDistanceTrigger : XNumTriggerBase
 	{
-		private XElement object1;
-		private XElement object2;
+		private ObjectProxy object1;
+		private ObjectProxy object2;
 		private Vector2 c1;
 		private Vector2 c2;
 		
@@ -33,13 +33,13 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			object1 = FindObject(ObjectId1);
-			object2 = FindObject(ObjectId2);
+			object1 = new ObjectProxy(FindObject(ObjectId1));
+			object2 = new ObjectProxy(FindObject(ObjectId2));
 		}
 		
-		private XElement FindObject(string id)
+		private XObject FindObject(string id)
 		{
-			var o = (XElement)this.GetRoot().FindDescendant(id);
+			var o = (XObject)this.GetRoot().FindDescendant(id);
 			if (o == null)
 				throw new InvalidOperationException("DistanceTrigger could not find obect id: " + id);
 			return o;
@@ -47,8 +47,8 @@ namespace Lunohod.Objects
 		
 		public override float GetValue1()
 		{
-			c1 = object1.GetScreenBounds().Center();
-			c2 = object2.GetScreenBounds().Center();
+			c1 = object1.Element.GetScreenBounds().Center();
+			c2 = object2.Element.GetScreenBounds().Center();
 			
 			return c1.SquaredDistanceTo(c2);
 		}

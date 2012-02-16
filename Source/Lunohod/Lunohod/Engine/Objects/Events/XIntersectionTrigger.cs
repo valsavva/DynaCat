@@ -12,8 +12,8 @@ namespace Lunohod.Objects
     [XmlType("IntersectionTrigger")]
     public class XIntersectionTrigger : XNumTriggerBase
     {
-        private XElement object1;
-        private XElement object2;
+        private ObjectProxy object1;
+        private ObjectProxy object2;
         private System.Drawing.RectangleF rect1;
         private System.Drawing.RectangleF rect2;
         private System.Drawing.RectangleF rectInt;
@@ -32,13 +32,13 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            object1 = FindObject(ObjectId1);
-            object2 = FindObject(ObjectId2);
+            object1 = new ObjectProxy(FindObject(ObjectId1));
+            object2 = new ObjectProxy(FindObject(ObjectId2));
         }
 
-        private XElement FindObject(string id)
+        private XObject FindObject(string id)
         {
-            var o = (XElement)this.GetRoot().FindDescendant(id);
+            var o = (XObject)this.GetRoot().FindDescendant(id);
             if (o == null)
                 throw new InvalidOperationException("IntersectionTrigger could not find obect id: " + id);
             return o;
@@ -46,8 +46,8 @@ namespace Lunohod.Objects
 
         public override float GetValue1()
         {
-            rect1 = object1.GetScreenBounds();
-            rect2 = object2.GetScreenBounds();
+            rect1 = object1.Element.GetScreenBounds();
+            rect2 = object2.Element.GetScreenBounds();
 
             Utility.Intersect(ref rect1, ref rect2, out rectInt);
 

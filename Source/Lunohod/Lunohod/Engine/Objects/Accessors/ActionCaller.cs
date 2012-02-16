@@ -7,6 +7,7 @@ using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace Lunohod.Objects
 {
@@ -17,25 +18,52 @@ namespace Lunohod.Objects
 	
 	public class ActionCaller : ActionCallerBase
 	{
-		private XObject target;
+		private ObjectProxy target;
+		private Func<object[], object> method;
 		private MethodInfo methodInfo;
 		private List<StrValueReader> parameters;
 		private object[] parameterValues;
 
 		public ActionCaller(XObject target, string action)
 		{
-            this.target = target;
+            this.target = new ObjectProxy(target);
 			
 			ParseParameters(ref action);
 			
-			Type type = this.target.GetType();
-			this.methodInfo = type.GetMethod(action);
+			method = ResolveMethod(action);
 			
-			if (this.methodInfo == null)
+			if (method == null)
+			{
+				this.methodInfo = this.target.ObjectType.GetMethod(action);
+				if (this.methodInfo != null)
+					this.method = this.ActionInvokeMehodInfo;
+			}
+			
+			if (method == null && methodInfo == null)
 				throw new InvalidOperationException(
 					string.Format("Could not find action [{0}] on object [{1}] of type [{2}]",
-						action, this.target.Id, this.GetType().FullName)
+						action, this.target.ObjectId, this.target.ObjectType.FullName)
 				);
+		}
+
+		public Func<object[], object> ResolveMethod(string action)
+		{
+			switch(action)
+			{
+				case "Start" : return this.ActionStart;
+				case "Stop" : return this.ActionStop;
+				case "Pause" : return this.ActionPause;
+				case "Resume" : return this.ActionResume;
+				case "GetLevelName" : return this.ActionGetLevelName;
+				case "StartLevel" : return this.ActionStartLevel;
+				case "CloseCurrentScreen" : return this.ActionCloseCurrentScreen;
+				case "EndCurrentLevel" : return this.ActionEndCurrentLevel;
+				default:
+				{
+					Debug.WriteLine("Using reflection to access method: " + action);
+					return null;
+				}
+			}
 		}
 
 		public void ParseParameters(ref string action)
@@ -55,19 +83,19 @@ namespace Lunohod.Objects
 			if (rpIndex == lpIndex + 1)
 				return;
 			
-			parameters = paramsString.Split(',').Select(s => new StrValueReader(this.target, s)).ToList();
+			parameters = paramsString.Split(',').Select(s => new StrValueReader(this.target.Object, s)).ToList();
 			parameterValues = new object[parameters.Count];
 		}
 		
 		public override object Call()
 		{
 			if (parameters == null || parameters.Count == 0)
-				return methodInfo.Invoke(target, null);
+				return method(null);
 			else
 			{
 				for(int i = 0; i < parameters.Count; i++)
 					parameterValues[i] = parameters[i].Value;
-				return methodInfo.Invoke(target, parameterValues);
+				return method(parameterValues);
 			}
 		}
 		
@@ -85,6 +113,56 @@ namespace Lunohod.Objects
 			else
 				return new ActionCaller(target, actoin);
 		}
+		
+		
+		#region Well known actions
+		
+		public object ActionInvokeMehodInfo(object[] ps)
+		{
+			return methodInfo.Invoke(this.target.Object, ps);
+		}
+			
+		public object ActionStart(object[] ps)
+		{
+			((IRunnable)this.target.Object).Start();
+			return null;
+		}
+		public object ActionStop(object[] ps)
+		{
+			((IRunnable)this.target.Object).Stop();
+			return null;
+		}
+		public object ActionResume(object[] ps)
+		{
+			((IRunnable)this.target.Object).Resume();
+			return null;
+		}
+		public object ActionPause(object[] ps)
+		{
+			((IRunnable)this.target.Object).Pause();
+			return null;
+		}
+		public object ActionGetLevelName(object[] ps)
+		{
+			return ((XSystem)this.target.Object).GetLevelName((string)ps[0]);
+		}
+		public object ActionStartLevel(object[] ps)
+		{
+			((XSystem)this.target.Object).StartLevel((string)ps[0]);
+			return null;
+		}
+		public object ActionCloseCurrentScreen(object[] ps)
+		{
+			((XSystem)this.target.Object).CloseCurrentScreen();
+			return null;
+		}
+		public object ActionEndCurrentLevel(object[] ps)
+		{
+			((XSystem)this.target.Object).EndCurrentLevel();
+			return null;
+		}
+		
+		#endregion
 	}
 }
 
