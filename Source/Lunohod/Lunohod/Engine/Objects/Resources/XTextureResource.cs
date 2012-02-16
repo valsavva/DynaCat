@@ -33,7 +33,7 @@ namespace Lunohod.Objects
 		
 		public override void Dispose()
 		{
-			image.Dispose();
+			//image.Dispose();
 
 			base.Dispose();
 		}
