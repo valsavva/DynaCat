@@ -9,6 +9,9 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
+    /// <summary>
+    /// Represents a base class for all graphical elements in XGAME
+    /// </summary>
     [XmlInclude(typeof(XImage))]
     public class XElement : XObject
     {
