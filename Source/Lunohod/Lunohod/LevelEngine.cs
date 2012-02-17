@@ -141,6 +141,14 @@ namespace Lunohod
 
 #endregion
 
+		public override bool EventAllowed(GameEvent e)
+		{
+			if (this.levelObject.DefaultSettings.BombCount == -1)
+				return true;
+			
+			return this.bombCounter < this.levelObject.DefaultSettings.BombCount;
+		}
+		
 		public override void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
 			bool signalReachedHero = true;

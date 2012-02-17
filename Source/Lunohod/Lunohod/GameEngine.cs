@@ -256,6 +256,9 @@ namespace Lunohod
 
 		public void EnqueueEvent(GameEvent e)
 		{
+			if (!this.ScreenEngine.EventAllowed(e))
+				return;
+			
 			this.eventQueue.Enqueue(e);
 		}
 		

@@ -13,9 +13,9 @@ namespace Lunohod.Objects
 	public class XLevelSettings : XObject
 	{
 		[XmlAttribute]
-		public int Dificulty;
+		public int Dificulty = -1;
 		[XmlAttribute]
-		public int BombCount;
+		public int BombCount = -1;
 		[XmlAttribute]
 		public string ExplosionClass;
 		

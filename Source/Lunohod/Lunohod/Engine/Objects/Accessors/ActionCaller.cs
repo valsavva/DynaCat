@@ -64,6 +64,8 @@ namespace Lunohod.Objects
 				case "StartTransaction" : return this.ActionStartTransaction;
 				case "EndTransaction" : return this.ActionEndTransaction;
 				case "SetDirection" : return this.ActionSetDirection;
+
+				case "Explode" : return this.ActionExplode;
 				default:
 				{
 					Debug.WriteLine("Using reflection to access method: " + action);
@@ -191,6 +193,11 @@ namespace Lunohod.Objects
 		public object ActionSetDirection(object[] ps)
 		{
 			((XHero)this.target.Object).SetDirection((string)ps[0],(string)ps[1]);
+			return null;
+		}
+		public object ActionExplode(object[] ps)
+		{
+			((XExplosion)this.target.Object).Explode();
 			return null;
 		}
 		#endregion

@@ -87,6 +87,8 @@ namespace Lunohod.Objects
 		
 		[XmlIgnore]
 		public XElement ParentElement { get; set; }
+		[XmlAttribute]
+		public bool IsExploding;
 		
 		public void UpdateTransforms()
 		{
@@ -245,6 +247,12 @@ namespace Lunohod.Objects
 		{
 			set { this.Location = value.ToVector2(); }
 			get { return this.Location.ToStr(); }
+		}
+		[XmlAttribute("Center")]
+		public string zCenter
+		{
+			set { this.Center = value.ToVector2(); }
+			get { return this.Center.ToStr(); }
 		}
 		
 		public override void Initialize(InitializeParameters p)

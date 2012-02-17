@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Level Name="AnimationSamples.xml" Bounds="0,0,480,320">
+	<!--
+		Use Difficulty to match the setting against the currently choosen level of Difficulty (or not specify or use "-1");
+		Use BombCount to a number, or not specify or use "-1" to allow for no limit;
+	-->
 	<LevelSettings
-			Dificulty="1"
-			BombCount="10"
+			Dificulty="-1"
+			BombCount="3"
 			ExplosionClass="clsExplosion"
 	/>
 
@@ -10,13 +14,17 @@
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
 		<Texture Id="chargers" Source="ch"/>
-		<Texture Id="circle" Source="wave0200" />
+		<Texture Id="circle100" Source="wave0100" />
+		<Texture Id="circle200" Source="wave0200" />
+		<Texture Id="circle300" Source="wave0300" />
+		<Texture Id="circle400" Source="wave0400" />
 		<Texture Id="txrExplosion" Source="explosion"/>
 	</Resources>
 
 	<Include File="Textures.xml" />
 	<Include File="ClassCursor.xml" />
 
+	<!-- This class is used to plant "bombs" -->	
 	<Class Id="clsExplosion">
 		<Explosion Bounds="0,0,84,84" Ranges="boomVeryClose=50,boomClose=100,boomFar=150,boomVeryFar=200">
 			<Image Id="this_imgBomb" Bounds="32,32,20,20" TextureId="cursor_solid_10x10_black_red" Opacity="0" />
@@ -27,22 +35,42 @@
 				<Do Action="this_imgBomb.Disable()"/>
 				<Do Action="this_sprExplosion.Enable()"/>
 				<NumAnimation From="0" To="11" Duration="0.5" Autoreverse="false" Target="this_sprExplosion.CurrentFrame" RepeatCount="1"/>
+				<Do Action="this.Explode()"/>
 				<Do Action="this.Disable()"/>
 			</SequenceSet>
 		</Explosion>
 	</Class>
 	
+	<!-- This wall will get blown up by the bomb -->
 	<Class Id="clsWall">
-		<Block Edges="Stick">
-			<BoolTrigger Condition="this:intersectExplosion" StayTriggered="true" Group="wallStates">
+		<Block IsExploding="true" Edges="Stick">
+			<!-- Changing color based on the current explosion proximity -->
+			<!-- Yellow for Very Close -->
+			<BoolTrigger Condition="this:boomVeryClose" StayTriggered="true" Group="wallColors">
+				<Image TextureId="blank" BackColor="#FFAA00"/>
+			</BoolTrigger>
+			<!-- Blue for Close -->
+			<BoolTrigger Condition="this:boomClose" StayTriggered="true" Group="wallColors">
+				<Image TextureId="blank" BackColor="#0000FF"/>
+			</BoolTrigger>
+			<!-- Green for Far -->
+			<BoolTrigger Condition="this:boomFar" StayTriggered="true" Group="wallColors">
+				<Image TextureId="blank" BackColor="#00FF00"/>
+			</BoolTrigger>
+			<!-- Red for Very Far -->
+			<BoolTrigger Condition="this:boomVeryFar" StayTriggered="true" Group="wallColors">
 				<Image TextureId="blank" BackColor="#FF0000"/>
+			</BoolTrigger>
+			
+			<!-- Animation for all explosions -->
+			<BoolTrigger Condition="this:boomVeryFar" StayTriggered="true" Group="wallStates">
 				<SequenceSet Id="this_setDestroyWall" InProgress="true">
 					<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.1" Autoreverse="true" RepeatCount="10"/>
 					<Do Action="this.Disable()"/>
 				</SequenceSet>
 			</BoolTrigger>
 			<BoolTrigger Id="default" Group="wallStates">
-				<Image TextureId="blank" BackColor="#000000"/>
+				<Image TextureId="blank" BackColor="#AAAAAA"/>
 			</BoolTrigger>
 		</Block>
 	</Class>
@@ -54,40 +82,20 @@
 
 	<Layer Id="action" BackColor="#FFFFFFFF">
 		<Tower Bounds="0,0,35,35" SignalSpeed="800"/>	
-		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor" />
+		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor">
+			<Image TextureId="circle100" Location="-25,-25"/>
+			<Image TextureId="circle200" Location="-75,-75"/>
+			<Image TextureId="circle300" Location="-125,-125"/>
+			<Image TextureId="circle400" Location="-175,-175"/>
+		</Hero>
 		
 		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
 		<Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
 		<Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
 		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
-		
-		<!-- This is the "mine" -->
-		<Image Id="imgMine" TextureId="cursor_solid_50x50_red" Bounds="250,150,50,50"/>
-		<!-- This represents the explosion radius -->
-		<Image Id="imgExplosion" TextureId="circle" Bounds="175,75,200,200" Enabled="false"/>
 
 		<!-- A wall -->		
 		<Block Id="blkWall001" Bounds="350,50,50,200" Class="clsWall"/>
-		
-		<!-- This will trigger the whole explosion once the hero steps on the "mine" -->
-		<!-- EnterAction - Start the iterator; enable the explosion image -->
-		<IntersectionTrigger Id="trgMine" ObjectId1="imgMine" ObjectId2="hero"
-			EnterAction="imgExplosion.Enable();setExplosion.Start()">
-			
-			<SequenceSet Id="setExplosion">
-				<!-- We iterate through all Elements to find which ones were affected by the explosion -->
-				<Iterator Id="itr" TypeFilter="Element">
-					<!-- We want normal objects to "explode" by measuring the distance between the mine and the object -->
-					<DistanceTrigger ObjectId1="imgMine" ObjectId2="itr" Value="75" Action="itr:distanceExplosion" />
-					<!-- But for walls we want to use intersection (center of a long wall can be too far from the mine) -->
-					<!-- TODO: We need an intersectin trigger between circles and rectangles -->
-					<IntersectionTrigger ObjectId1="imgExplosion" ObjectId2="itr" Action="itr:intersectExplosion" />
-				</Iterator>
-				<!-- Disable the trigger (we won't need it anymore) -->
-				<Do Action="trgMine.Disable()"/>
-			</SequenceSet>
-		</IntersectionTrigger>
-
 	</Layer>
 
 	<Include File="Dashboard.xml" />	

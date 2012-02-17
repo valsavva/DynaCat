@@ -42,6 +42,11 @@ namespace Lunohod
 		{
 			
 		}
+
+		public virtual bool EventAllowed(GameEvent e)
+		{
+			return true;
+		}
 		
 		public virtual void Initialize()
 		{
