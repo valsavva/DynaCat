@@ -193,6 +193,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\XEnemy.cs" />
+    <Compile Include="Engine\Objects\XExplosion.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Engine\Objects\XFood.cs" />
     <Compile Include="Engine\Objects\XGame.cs">
       <SubType>Code</SubType>
@@ -211,6 +214,9 @@
     </Compile>
     <Compile Include="Engine\Objects\XLevel.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Objects\XLevelSettings.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Engine\Objects\XObject.cs">
       <SubType>Code</SubType>
@@ -264,6 +270,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\dash_demo_3_size52.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\explosion.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\wave0050.png">
