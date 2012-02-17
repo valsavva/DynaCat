@@ -59,15 +59,18 @@ namespace Lunohod.Objects
 			this.CloseCurrentScreen();
 		}
 		
+		public float RndX(string startStr, string endStr)
+		{
+			return this.Rnd(startStr, endStr) * this.game.Scale.X;
+		}
+		public float RndY(string startStr, string endStr)
+		{
+			return this.Rnd(startStr, endStr) * this.game.Scale.Y;
+		}
 		public float Rnd(string startStr, string endStr)
 		{
-			if (this.game.Scale.X != this.game.Scale.Y)
-				// Uneven scale, we need to change the engine to ensure that numbers scale properly on both axes.
-				throw new InvalidCastException("Scewed scale. Cannot automatically transform the input number according to scale.");
-				
-				
-			float start = float.Parse(startStr, CultureInfo.InvariantCulture) * this.game.Scale.X;
-			float end = float.Parse(endStr, CultureInfo.InvariantCulture) * this.game.Scale.X;
+			float start = float.Parse(startStr, CultureInfo.InvariantCulture);
+			float end = float.Parse(endStr, CultureInfo.InvariantCulture);
 			
 			return start + (float)random.NextDouble() * (start - end);
 		}

@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Level Name="AnimationSamples.xml" Bounds="0,0,480,320">
-	<Include File="Textures.xml" />
-	<Include File="ClassCursor.xml" />
+	<LevelSettings
+			Dificulty="1"
+			BombCount="10"
+			ExplosionClass="clsExplosion"
+	/>
+
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
 		<Texture Id="chargers" Source="ch"/>
-	</Resources>
-	<Resources RootFolder="Global">
 		<Texture Id="circle" Source="wave0200" />
+		<Texture Id="txrExplosion" Source="explosion"/>
 	</Resources>
 
+	<Include File="Textures.xml" />
+	<Include File="ClassCursor.xml" />
+
+	<Class Id="clsExplosion">
+		<Explosion Bounds="0,0,84,84" Ranges="boomVeryClose=50,boomClose=100,boomFar=150,boomVeryFar=200">
+			<Image Id="this_imgBomb" Bounds="32,32,20,20" TextureId="cursor_solid_10x10_black_red" Opacity="0" />
+			<Sprite Id="this_sprExplosion" TextureId="txrExplosion" FrameBounds="0,0,84,84" FrameCount="12" Enabled="false"/>
+
+			<SequenceSet InProgress="true">
+				<NumAnimation Target="this_imgBomb.Opacity" From="1" To="0" Duration="0.3" Autoreverse="true" RepeatCount="2"/>
+				<Do Action="this_imgBomb.Disable()"/>
+				<Do Action="this_sprExplosion.Enable()"/>
+				<NumAnimation From="0" To="11" Duration="0.5" Autoreverse="false" Target="this_sprExplosion.CurrentFrame" RepeatCount="1"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+		</Explosion>
+	</Class>
+	
 	<Class Id="clsWall">
 		<Block Edges="Stick">
 			<BoolTrigger Condition="this:intersectExplosion" StayTriggered="true" Group="wallStates">

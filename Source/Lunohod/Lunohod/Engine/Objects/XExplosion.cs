@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using Lunohod;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Lunohod;
 
 namespace Lunohod.Objects
 {
-    [XmlType("Level")]
-    public class XLevel : XScreen
-    {
-		[XmlIgnore]
-		public XLevelSettings DefaultSettings { get; private set; }
+	
+    [XmlType("Explosion")]
+	public class XExplosion : XElement
+	{
+		[XmlAttribute]
+		public string Ranges;
 		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-			
-			this.DefaultSettings = this.GetComponents<XLevelSettings>().FirstOrNew();
 		}
-    }
+	}
 }
+

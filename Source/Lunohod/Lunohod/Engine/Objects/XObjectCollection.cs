@@ -54,6 +54,12 @@ namespace Lunohod.Objects
 				o.Parent = this.Parent;
 		}
 		
+		public void InsertBefore(XObject item, XObject newItem)
+		{
+			int index = this.IndexOf(item);
+			this.Insert(index, newItem);
+		}
+		
 	    new public bool Remove(XObject item)
 		{
 			item.Parent = null;

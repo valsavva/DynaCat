@@ -52,8 +52,11 @@ namespace Lunohod.Objects
 		
         // Dashboard
         [XmlElement(ElementName = "Viewport", Type = typeof(XViewport))]
-
-        // Level
+		
+		// LevelSettings
+        [XmlElement(ElementName = "LevelSettings", Type = typeof(XLevelSettings))]
+		
+        // Layer
         [XmlElement(ElementName = "Layer", Type = typeof(XLayer))]
 		
 		// Triggers
@@ -70,6 +73,7 @@ namespace Lunohod.Objects
         [XmlElement(ElementName = "Hero", Type = typeof(XHero))]
         [XmlElement(ElementName = "Enemy", Type = typeof(XEnemy))]
         [XmlElement(ElementName = "Food", Type = typeof(XFood))]
+        [XmlElement(ElementName = "Explosion", Type = typeof(XExplosion))]
 
 		// Iterator
         [XmlElement(ElementName = "Iterator", Type = typeof(XIterator))]
@@ -157,7 +161,7 @@ namespace Lunohod.Objects
 				}
 		}
 
-		private void InitiazeFromClass()
+		public XObject InitiazeFromClass()
 		{
 			XClass cls = (XClass)this.GetRoot().FindDescendant(this.Class);
 			
@@ -166,6 +170,8 @@ namespace Lunohod.Objects
 			
 			var instance = cls.CreateInstance(this);
 			instance.InitHierarchy();
+			
+			return instance;
 		}
 		
 		public virtual void Update(UpdateParameters p)
@@ -227,17 +233,7 @@ namespace Lunohod.Objects
 			if (this.componentDict == null)
 			{
 				this.componentDict = new Dictionary<string, XObject>();
-				this.TraveseTree(o => {
-					if (!string.IsNullOrEmpty(o.Id))
-					{
-						if (!this.componentDict.ContainsKey(o.Id))
-							this.componentDict.Add(o.Id, o);
-		#if DEBUG
-						else
-							Console.WriteLine("*** Component with id '{0}' already exists! ***", o.Id);
-		#endif
-					}
-				});
+				this.AddSubtreeToComponentDict(this);
 			}
 			
 			XObject result = null;
@@ -245,6 +241,24 @@ namespace Lunohod.Objects
 			this.componentDict.TryGetValue(id, out result);
 			
 			return result;
+		}
+
+		public void AddSubtreeToComponentDict(XObject subtreeRoot)
+		{
+			if (this.componentDict == null)
+				return;
+			
+			subtreeRoot.TraveseTree(o => {
+						if (!string.IsNullOrEmpty(o.Id))
+						{
+							if (!this.componentDict.ContainsKey(o.Id))
+								this.componentDict.Add(o.Id, o);
+			#if DEBUG
+							else
+								Console.WriteLine("*** Component with id '{0}' already exists! ***", o.Id);
+			#endif
+						}
+					});
 		}
 		
 		public void TraveseTree(Action<XObject> action)
@@ -254,6 +268,17 @@ namespace Lunohod.Objects
 			if (this.Subcomponents != null)
 				for(int i = 0; i < this.Subcomponents.Count; i++)
 					this.Subcomponents[i].TraveseTree(action);
+		}
+		
+		public void TraveseAncestors(Action<XObject> action)
+		{
+			XObject ancestor = this.Parent;
+			
+			while(ancestor != null)
+			{
+				action(ancestor);
+				ancestor = ancestor.Parent;
+			}
 		}
 		
 		public XObject FindAncestor(Predicate<XObject> p)

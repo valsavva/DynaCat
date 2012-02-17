@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Xml.Serialization;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace Lunohod
 {
@@ -16,6 +17,9 @@ namespace Lunohod
 	{
 		public XHero hero;
 		public XTower tower;
+		private XLevel levelObject;
+		private XClass explosionClass;
+		private int bombCounter = 0;
 		
 		private Dictionary<GameEvent, RadioWave> waves;
 
@@ -31,6 +35,15 @@ namespace Lunohod
 			base.Initialize();
 			
 			this.waves = new Dictionary<GameEvent, RadioWave>();
+
+			this.levelObject = (XLevel)this.RootComponent;
+			
+			if (!string.IsNullOrEmpty(this.levelObject.DefaultSettings.ExplosionClass))
+			{
+				this.explosionClass = this.levelObject.FindDescendant(this.levelObject.DefaultSettings.ExplosionClass) as XClass;
+				if (this.explosionClass == null)
+					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.levelObject.DefaultSettings.ExplosionClass));
+			}
 		}
 		
 		public override void Update(GameTime gameTime)
@@ -127,7 +140,7 @@ namespace Lunohod
 		}
 
 #endregion
-		
+
 		public override void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
 			bool signalReachedHero = true;
@@ -154,11 +167,44 @@ namespace Lunohod
 					case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
 	                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
 	                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
+	                case GameEventType.Explosion: PlantBomb(); break;
 					default: e.IsHandled = false; break;
 				}
 			}
 
 			base.ProcessEvent(gameTime, e);
+		}
+
+		private void PlantBomb()
+		{
+			if (this.explosionClass == null)
+			{
+				Debug.WriteLine("No explosion class defined.");
+				return;
+			}
+			
+			var heroParent = this.hero.Parent;
+			
+			// create a placeholder object for our bomb
+			var explosionPlaceholder = new XExplosion {
+				Id = "internal_bomb_" + bombCounter.ToString(CultureInfo.InvariantCulture),
+				Class = this.explosionClass.Id,
+				Bounds = ((XExplosion)this.explosionClass.TemplateObject).Bounds
+			};
+			// insert it right before hero
+			heroParent.Subcomponents.InsertBefore(this.hero, explosionPlaceholder);
+			// center it to hero's coordinates
+			explosionPlaceholder.Center = this.hero.Center;
+			// create instance in place of the placeholder
+			var instance = explosionPlaceholder.InitiazeFromClass();
+			// make sure that the new instance and all the new subtree is added to the dictionaries
+			instance.TraveseAncestors(a => {
+				a.AddSubtreeToComponentDict(instance);
+			});
+			// initialize the new instance and its subcomponents
+			instance.Initialize(new InitializeParameters() { Game = this.game, ScreenEngine = this.game.ScreenEngine });
+			
+			this.bombCounter++;
 		}
 	}
 }	

@@ -10,23 +10,24 @@ namespace Lunohod.Objects
     [XmlType("Class")]
     public class XClass : XElement
     {
-		private XObject templateObject;
+		[XmlIgnore]
+		public XObject TemplateObject { get; private set; }
 		
 		public override void InitHierarchy()
 		{
-			this.templateObject = this.Subcomponents.Find(o => !(o is XResourceBundle));
-			this.Subcomponents.Remove(templateObject);
+			this.TemplateObject = this.Subcomponents.Find(o => !(o is XResourceBundle));
+			this.Subcomponents.Remove(TemplateObject);
 			
 			base.InitHierarchy();
 		}
 		
 		public XObject CreateInstance(XObject placeholder)
 		{
-			var instance = templateObject.Copy();
+			var instance = TemplateObject.Copy();
 			CopyAttributes(placeholder, instance);
 			
 			// move subcomponents from the placeholder to the new instance
-			while(placeholder.Subcomponents.Count > 0)
+			while(placeholder.Subcomponents != null && placeholder.Subcomponents.Count > 0)
 			{
 				var subcomponent = placeholder.Subcomponents[0];
 				placeholder.Subcomponents.RemoveAt(0);

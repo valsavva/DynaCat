@@ -22,7 +22,7 @@
 		<TapArea Bounds="423,233,57,52" Event="system:down" />
 		
 		<TapArea Bounds="158,258,60,60" Event="system:stop" /> <!-- pause -->
-		<TapArea Bounds="270,258,60,60" Event="system:stop" /> <!-- bomb -->
+		<TapArea Bounds="270,258,60,60" Event="system:explosion" /> <!-- bomb -->
 		
 		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
 		<TapArea Bounds="430,00,60,60" Action="system.EndCurrentLevel()" />

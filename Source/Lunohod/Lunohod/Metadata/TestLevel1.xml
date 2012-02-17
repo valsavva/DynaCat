@@ -101,8 +101,8 @@
 		</Image>
 
 		<Sprite Id="ship" TextureId="shipAnimation" Bounds="0,250, 115, 69" FrameBounds="0,0,115,69" FrameCount="8">
-			<NumAnimation From="0" To="7" Duration="00:00:00.3" Target="CurrentFrame"/>
-			<NumAnimation From="-115" To="480" Duration="00:00:15" Autoreverse="false" Target="X"/>
+			<NumAnimation From="0" To="7" Duration="00:00:00.3" Target="CurrentFrame" InProgress="true"/>
+			<NumAnimation From="-115" To="480" Duration="00:00:15" Autoreverse="false" Target="X" InProgress="true"/>
 		</Sprite>
 
 		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="200,250,134,134" FrameBounds="0,0,134,134" FrameCount="12">

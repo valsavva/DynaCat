@@ -10,6 +10,7 @@ namespace Lunohod
 		Left,
 		Right,
         Stop,
+        Explosion,
 		CloseCurrentScreen,
 		EndCurrentLevel
 	}

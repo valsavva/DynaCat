@@ -52,6 +52,12 @@ namespace Lunohod.Objects
 			get { this.Bounds.ToVector2(ref tmpVector1); return tmpVector1; }
 			set { this.Bounds.X = value.X; this.Bounds.Y = value.Y; }
 		}
+		[XmlIgnore]
+        public Vector2 Center
+		{
+			get { this.Bounds.Center(ref tmpVector1); return tmpVector1; }
+			set { this.Bounds.X = value.X - this.Bounds.Width / 2; this.Bounds.Y = value.Y - this.Bounds.Height / 2; }
+		}
         [XmlIgnore]
         public Color BackColor
 		{

@@ -15,6 +15,7 @@ namespace Lunohod
 			{ "system:left", GameEventType.Left },
 			{ "system:right", GameEventType.Right },
 			{ "system:stop", GameEventType.Stop },
+			{ "system:explosion", GameEventType.Explosion }
 		};
 		
 		private GameEvent(GameTime gameTime)

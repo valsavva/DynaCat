@@ -200,5 +200,18 @@ namespace Lunohod
 		{
 			return rectF.Width == 0 && rectF.Height == 0 && rectF.X == 0 && rectF.Y == 0;
 		}
+		
+		public static TSource FirstOrNew<TSource>(this IEnumerable<TSource> source, Action<TSource> touchup = null)
+			where TSource : new()
+		{
+			var result = source.FirstOrDefault();
+			if (result == null)
+			{
+				result = new TSource();
+				if (touchup != null)
+					touchup(result);
+			}
+			return result;
+		}
     }
 }
