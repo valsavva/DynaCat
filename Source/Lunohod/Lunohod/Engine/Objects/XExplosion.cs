@@ -14,20 +14,24 @@ namespace Lunohod.Objects
     [XmlType("Explosion")]
 	public class XExplosion : XElement
 	{
-		private List<XElement> eplodingElements = new List<XElement>();
-		private List<string> rangeNames = new List<string>();
-		private List<float> rangeValuesSquared = new List<float>();
+		private List<XElement> eplodingElements;
+		private List<string> rangeNames;
+		private List<float> rangeValuesSquared;
 		
 		[XmlAttribute]
 		public string Ranges;
-		
-		
 		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
 			
-			this.Ranges.Split(',').ForEach(s => {
+			var pairs = this.Ranges.Split(',');
+			
+			eplodingElements = new List<XElement>(pairs.Length);
+			rangeNames = new List<string>(pairs.Length);
+			rangeValuesSquared = new List<float>(pairs.Length);
+	
+			pairs.ForEach(s => {
 				var parts = s.Split('=');
 				rangeNames.Add(parts[0]);
 				var rangeValue = float.Parse(parts[1], CultureInfo.InvariantCulture);
@@ -43,25 +47,27 @@ namespace Lunohod.Objects
 			
 			this.PropState.ScreenBounds.Value.Center(ref this.tmpVector1);
 			
-			this.GetRoot().TraveseTree(o => {
-				XElement e = o as XElement;
+			XLevel level = this.GetRoot() as XLevel;
+			
+			for(int i = 0; i < level.Exploding.Count; i++)
+			{
+				XElement e = level.Exploding[i];
 				
-				if (e == null || !e.IsExploding)
-					return;
+				if (!e.Enabled)
+					continue;
 				
-				if (!e.PropState.ScreenBounds.HasValue)
-					return;
+				e.GetScreenBounds();
 				
 				e.PropState.ScreenBounds.Value.Center(ref this.tmpVector2);
 				
 				var distanceSquared = this.tmpVector1.SquaredDistanceTo(this.tmpVector2);
 				
-				for(int i = 0; i < rangeNames.Count; i++)
+				for(int j = 0; j < rangeNames.Count; j++)
 				{
-					if (distanceSquared <= rangeValuesSquared[i])
-						e.GetSignalContainer("events").Signal(rangeNames[i]);
+					if (distanceSquared <= rangeValuesSquared[j])
+						e.GetSignalContainer("events").Signal(rangeNames[j]);
 				}
-			});
+			}
 		}
 	}
 }

@@ -7,10 +7,11 @@ namespace Lunohod.Objects
 {
 	abstract public class XObject : IDisposable
 	{
-		protected bool isDisposed = false;
-		private Dictionary<string, SignalContainer> signalContainers = null;
-		private XObjectCollection subcomponents = null;
+		protected bool isDisposed;
+		private Dictionary<string, SignalContainer> signalContainers;
+		private XObjectCollection subcomponents;
 		private Dictionary<string, XObject> componentDict;
+		protected int updateCycle;
 		
 		[XmlAttribute]
 		public string Id { get; set;}
@@ -176,6 +177,8 @@ namespace Lunohod.Objects
 		
 		public virtual void Update(UpdateParameters p)
 		{
+			this.updateCycle = p.Game.CycleNumber;
+			
 			if (this.Subcomponents != null)
 				for(int i = 0; i < this.Subcomponents.Count; i++)
 				{
@@ -391,6 +394,11 @@ namespace Lunohod.Objects
 				{
 					subcomponents[i].ReplaceParameters(pars, vals);
 				}
+		}
+		
+		public override string ToString()
+		{
+			return string.Format("[{0}: Id={1}]", this.GetType().Name, Id);
 		}
 		
 		#region IDisposable implementation

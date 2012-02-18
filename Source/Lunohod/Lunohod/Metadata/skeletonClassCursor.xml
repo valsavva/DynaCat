@@ -1,4 +1,4 @@
-<Include>	
+Include>	
            	
 	<!-- =========================================================================================  -->
 	<!-- clsTower -->
@@ -151,12 +151,6 @@
 				<NumAnimation Target="this.X" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="true"/>
 			</SequenceSet>
 
-<!-- history -->
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" StayTriggered="false" Group="foodPackStates">
-				<Image TextureId="cursor_solid_50x50_green" />
-			</IntersectionTrigger>
-<!-- history -->
-			
 			<BoolTrigger Id="this_default" Group="foodPackStates">
 				<Image TextureId="cursor_solid_50x50_green" />
 			</BoolTrigger>	

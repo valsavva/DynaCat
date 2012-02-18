@@ -92,13 +92,13 @@ namespace Lunohod.Objects
 		
 		public void UpdateTransforms()
 		{
-			if (TransState.TransformCycle == GameEngine.Instance.CycleNumber)
+			if (TransState.TransformCycle == this.updateCycle)
 				return;
 			
 			// Initialize state
 			if (this.ParentElement == null)
 			{
-				TransState.TransformCycle = GameEngine.Instance.CycleNumber;
+				TransState.TransformCycle = this.updateCycle;
 				TransState.LocationTransform = Matrix.Identity;
 				TransState.ScaleTransform = Matrix.Identity;
 			}
@@ -127,12 +127,12 @@ namespace Lunohod.Objects
 
 		void UpdateProps()
 		{
-			if (PropState.PropCycle == GameEngine.Instance.CycleNumber)
+			if (PropState.PropCycle == this.updateCycle)
 				return;
 			
 			if  (this.ParentElement == null)
 			{
-				PropState.PropCycle = GameEngine.Instance.CycleNumber;
+				PropState.PropCycle = this.updateCycle;
 				PropState.Opacity = 1.0f;
 				PropState.Rotation = 0;
 				PropState.Scale = Vector2.One;
@@ -260,6 +260,10 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 			
 			this.ParentElement = this.FindAncestor(o => o is XElement) as XElement;
+			if (this.IsExploding)
+			{
+				((XLevel)this.GetRoot()).Exploding.Add(this);
+			}
 		}
 		
 		public bool Intersects(XElement e)
