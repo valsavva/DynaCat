@@ -62,4 +62,6 @@
 		</Group>
 	</Layer>
 	
+	<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
+	<TapArea Bounds="430,00,60,60" Action="system.CloseCurrentScreen()" />
 </Screen>
