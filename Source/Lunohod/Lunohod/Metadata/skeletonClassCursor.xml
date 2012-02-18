@@ -1,0 +1,250 @@
+<Include>	
+           	
+	<!-- =========================================================================================  -->
+	<!-- clsTower -->
+	<!-- =========================================================================================  -->
+	
+	<Class Id="clsTower">
+		<Tower SignalSpeed="256"/>
+	</Class>
+
+	<!-- =========================================================================================  -->
+	<!-- clsHero -->
+	<!-- =========================================================================================  -->
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="cursor_50x50_light_blue" Source="cursor_50x50_light_blue" />
+        <Texture Id="cursor_50x50_gray" Source="cursor_50x50_gray" />
+    </Resources>
+	
+	<Class Id="clsHero">
+		<Hero Speed="84" Direction="0,0">
+			<BoolTrigger Condition="this:death" EnterAction="this_anmDeath.Start" StayTriggered="true" Group="heroStates">
+				<Image TextureId="cursor_50x50_light_blue">
+					<NumAnimation Id="this_anmDeath" Duration="0.1" Target="Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+				</Image>
+			</BoolTrigger>
+			<BoolTrigger Id="default" Group="heroStates">
+				<Image TextureId="cursor_50x50_blue" />
+			</BoolTrigger>
+		</Hero>
+	</Class>
+
+	<!-- =========================================================================================  -->
+	<!-- clsHeroTir -->
+	<!-- =========================================================================================  -->
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="cursor_50x50_light_blue" Source="cursor_50x50_light_blue" />
+    </Resources>
+	
+	<Class Id="clsHeroTir">
+		<Hero Speed="1680" Direction="0,0">
+			<BoolTrigger Condition="this:death" EnterAction="this_anmDeath.Start" StayTriggered="false" Group="heroStates">
+				<Image TextureId="cursor_50x50_light_blue">
+					<NumAnimation Id="this_anmDeath" Duration="0.1" Target="Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+				</Image>
+			</BoolTrigger>
+			<BoolTrigger Id="this_default" Group="heroStates">
+				<Image TextureId="cursor_50x50_blue" />
+			</BoolTrigger>
+		</Hero>
+	</Class>
+
+	<!-- =========================================================================================  -->
+	<!-- clsEnemy -->
+	<!-- =========================================================================================  -->
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="cursor_50x50_red" Source="cursor_50x50_red" />
+    </Resources>
+         
+	<Class Id="clsEnemy">
+		<Enemy IsExploding="true">
+			
+			<BoolTrigger Condition="this:boomClose" EnterAction="this_setDestroyEnemy.Start()" StayTriggered="false" Group="grpEnemyBoomStates">
+				<Image TextureId="cursor_50x50_purple"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setDestroyEnemy" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+			
+   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" Action="hero:death" StayTriggered="true" Group="enemyStates">
+				<Image Id="skin" TextureId="cursor_50x50_red"/>
+			</IntersectionTrigger>
+			<BoolTrigger Id="this_default" Group="enemyStates">
+				<Image Id="skin2" TextureId="cursor_50x50_purple" />
+			</BoolTrigger>
+		</Enemy>
+	</Class>
+
+	<!-- =========================================================================================  -->
+	<!-- clsFood -->
+	<!-- =========================================================================================  -->
+
+	<Class Id="clsFood">
+		<Food IsExploding="true">
+
+			<BoolTrigger Condition="this:boomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="true" Group="foodStates">
+				<Image TextureId="cursor_50x50_green"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setDestroy1" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+			<BoolTrigger Condition="this:boomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="foodStates">
+				<Image TextureId="cursor_50x50_green"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+				<NumAnimation Target="this.X" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="true"/>
+			</SequenceSet>
+
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start" StayTriggered="true" Group="foodStates">
+				<Image TextureId="cursor_50x50_blue">
+					<SequenceSet InProgress="true">
+						<NumAnimation Id="this_anmEated" Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" />
+						<Do Action="this.Disable" />
+					</SequenceSet>
+				</Image>
+			</IntersectionTrigger>
+			
+			<BoolTrigger Id="this_default" Group="foodStates">
+				<Image TextureId="cursor_50x50_green" />
+			</BoolTrigger>	
+		</Food>	
+	</Class>
+
+	<!-- =========================================================================================  -->
+	<!-- clsFoodPack -->
+	<!-- =========================================================================================  -->
+
+    <Resources RootFolder="Textures">
+        <Texture Id="cursor_solid_50x50_red" Source="cursor_solid_50x50_red" />
+        <Texture Id="cursor_solid_50x50_green" Source="cursor_solid_50x50_green" />
+    </Resources>
+
+	<Class Id="clsFoodPack">
+		<Food IsExploding="true">
+
+			<BoolTrigger Condition="this:boomVeryClose" EnterAction="this_setDestroy1.Start()" StayTriggered="true" Group="foodPackStates">
+				<Image TextureId="cursor_solid_50x50_red"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setDestroy1" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.1" Autoreverse="false" RepeatCount="6"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+			<BoolTrigger Condition="this:boomClose" EnterAction="this_setDestroy2.Start()" StayTriggered="true" Group="foodPackStates">
+				<Image TextureId="cursor_solid_50x50_green"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setDestroy2" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+			<BoolTrigger Condition="this:boomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="foodPackStates">
+				<Image TextureId="cursor_solid_50x50_green"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+				<NumAnimation Target="this.X" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="true"/>
+			</SequenceSet>
+
+<!-- history -->
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" StayTriggered="false" Group="foodPackStates">
+				<Image TextureId="cursor_solid_50x50_green" />
+			</IntersectionTrigger>
+<!-- history -->
+			
+			<BoolTrigger Id="this_default" Group="foodPackStates">
+				<Image TextureId="cursor_solid_50x50_green" />
+			</BoolTrigger>	
+		</Food>	
+	</Class>
+
+
+	<!-- =========================================================================================  -->
+	<!-- clsWoodenBox -->
+	<!-- =========================================================================================  -->
+
+	<Class Id="clsWoodenBox">
+		<Block IsExploding="true" Edges="Stick">
+
+			<BoolTrigger Condition="this:boomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="false" Group="grpBoxBoomStates">
+				<Image TextureId="cursor_50x50_brown"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setDestroy1" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+			<BoolTrigger Condition="this:boomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="grpBoxBoomStates">
+				<Image TextureId="cursor_50x50_brown"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+				<NumAnimation Target="this.X" From="-1" To="1" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="true"/>
+			</SequenceSet>
+
+			<BoolTrigger Condition="this:boomVeryFar" EnterAction="this_setQuake2.Start()" StayTriggered="false" Group="grpBoxBoomStates">
+				<Image TextureId="cursor_50x50_brown"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setQuake2" InProgress="false">
+				<NumAnimation Target="this.X" From="-1" To="1" Duration="0.15" Autoreverse="false" RepeatCount="2" IsDelta="true"/>
+			</SequenceSet>
+
+			<BoolTrigger Condition="this:boomVeryVeryFar" EnterAction="this_setQuake3.Start()" StayTriggered="false" Group="grpBoxBoomStates">
+				<Image TextureId="cursor_50x50_brown"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setQuake3" InProgress="false">
+				<NumAnimation Target="this.X" From="-1" To="1" Duration="0.15" Autoreverse="false" RepeatCount="1" IsDelta="true"/>
+			</SequenceSet>
+			
+			<BoolTrigger Id="this_default" Group="grpBoxStates">
+				<Image TextureId="cursor_50x50_brown"/>
+			</BoolTrigger>
+		</Block>	
+	</Class>
+
+	<!-- =========================================================================================  -->
+	<!-- clsExplosion --> <!-- This class is used to plant "bombs" -->	
+	<!-- =========================================================================================  -->
+	<Resources RootFolder="Textures">
+        <Texture Id="cursor_solid_10x10_black_red" Source="cursor_solid_10x10_black_red" />
+        <Texture Id="cursor_R200_by_50_gray" Source="cursor_R200_by_50_gray" />
+	</Resources>
+    
+	<Class Id="clsExplosion">
+		<Explosion Bounds="0,0,400,400" Ranges="boomVeryClose=50,boomClose=85,boomFar=170,boomVeryFar=210,boomVeryVeryFar=250">
+			<Image Id="this_imgBomb" Bounds="190,190,20,20" TextureId="cursor_solid_10x10_black_red" Opacity="0" />
+			<Image Id="this_imgExplosion" Bounds="0,0,400,400" TextureId="cursor_R200_by_50_gray" Enabled="false"/>
+
+			<SequenceSet InProgress="true">
+				<NumAnimation Target="this_imgBomb.Opacity" From="1" To="0" Duration="0.3" Autoreverse="true" RepeatCount="2"/>
+				<Do Action="this_imgBomb.Disable()"/>
+				<Do Action="this_imgExplosion.Enable()"/>
+				<NumAnimation From="1" To="0" Duration="0.2" Autoreverse="false" Target="this_imgExplosion.Opacity" RepeatCount="5"/>
+				<Do Action="this.Explode()"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+		</Explosion>
+	</Class>
+								
+	<!-- =========================================================================================  -->
+	<!-- clsExit -->
+	<!-- =========================================================================================  -->
+
+	<Class Id="clsExit">
+		<Block>
+			<SequenceSet Id="this_setExit" InProgress="false" >
+				<Do Action="hero.StartTransaction()"/>
+				<Do Action="hero.SetDirection(0,0)"/>
+				<NumAnimation Target="this.Opacity" Duration="0.2" Autoreverse="false" From="1" To="0" InProgress="true" RepeatCount="10" />
+				<Do Action="hero.EndTransaction()"/>
+				<Do Action="system.EndCurrentLevel()" />
+			</SequenceSet>
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start()" />
+		</Block>	
+	</Class>
+
+</Include>

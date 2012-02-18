@@ -1,0 +1,320 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml.Serialization;
+using System.Globalization;
+using Microsoft.Xna.Framework;
+using Lunohod;
+
+namespace Lunohod.Objects
+{
+    /// <summary>
+    /// Represents a base class for all graphical elements in XGAME
+    /// </summary>
+    [XmlInclude(typeof(XImage))]
+    public class XElement : XObject
+    {
+		public struct ElementState
+		{
+			public int TransformCycle;
+			public Matrix LocationTransform;
+			public Matrix ScaleTransform;
+		}
+		
+		public struct PropertiesState
+		{
+			public int PropCycle;
+			public Vector2 Size;
+			public float Rotation;
+			public float Opacity;
+			public Vector2 Scale;
+			public Color BackColor;
+			public System.Drawing.RectangleF? ScreenBounds;
+		}
+		
+		private Vector2 rotationCenter;
+		private Color? backColor = null;
+		private System.Drawing.RectangleF tmpBounds;
+		protected Vector2 tmpVector1;
+		protected Vector2 tmpVector2;
+		
+		[XmlIgnore]
+		public ElementState TransState;
+		[XmlIgnore]
+		public PropertiesState PropState;
+		
+		[XmlIgnore]
+        public System.Drawing.RectangleF Bounds;
+		[XmlIgnore]
+        public Vector2 Location
+		{
+			get { this.Bounds.ToVector2(ref tmpVector1); return tmpVector1; }
+			set { this.Bounds.X = value.X; this.Bounds.Y = value.Y; }
+		}
+		[XmlIgnore]
+        public Vector2 Center
+		{
+			get { this.Bounds.Center(ref tmpVector1); return tmpVector1; }
+			set { this.Bounds.X = value.X - this.Bounds.Width / 2; this.Bounds.Y = value.Y - this.Bounds.Height / 2; }
+		}
+        [XmlIgnore]
+        public Color BackColor
+		{
+			get { return this.backColor ?? this.ParentElement.BackColor; }
+			set { this.backColor = value; }
+		}
+        [XmlAttribute]
+        public float Opacity = 1.0f;
+        [XmlAttribute]
+        public float Rotation;
+		[XmlIgnore]
+		public Vector2 Origin;
+		[XmlIgnore]
+		public Vector2 RotationCenter
+		{
+			get { return this.rotationCenter; }
+			set { this.rotationCenter = this.Origin = value; }
+		}
+		[XmlIgnore]
+		public Vector2 ScaleVector = Vector2.One;
+		[XmlIgnore]
+		public float Scale
+		{
+			get { return this.ScaleVector.X; }
+			set { this.ScaleVector.X = this.ScaleVector.Y = value; }
+		}
+		
+		[XmlIgnore]
+		public XElement ParentElement { get; set; }
+		[XmlAttribute]
+		public bool IsExploding;
+		
+		public void UpdateTransforms()
+		{
+			if (TransState.TransformCycle == GameEngine.Instance.CycleNumber)
+				return;
+			
+			// Initialize state
+			if (this.ParentElement == null)
+			{
+				TransState.TransformCycle = GameEngine.Instance.CycleNumber;
+				TransState.LocationTransform = Matrix.Identity;
+				TransState.ScaleTransform = Matrix.Identity;
+			}
+			else
+			{
+				this.ParentElement.UpdateTransforms();
+				TransState = this.ParentElement.TransState;
+			}			
+			
+			// Location transform
+			if (this.Origin != Vector2.Zero)
+				TransState.LocationTransform *= Matrix.CreateTranslation(-this.Origin.X, -this.Origin.Y, 0);
+			
+			if (this.Rotation != 0)
+				TransState.LocationTransform *= Matrix.CreateRotationZ(MathHelper.ToRadians(this.Rotation));
+			// Scale transform
+			if (this.ScaleVector != Vector2.Zero)
+			{
+				TransState.LocationTransform *= Matrix.CreateScale(this.ScaleVector.X, this.ScaleVector.Y, 1.0f);
+				TransState.ScaleTransform *= Matrix.CreateScale(this.ScaleVector.X, this.ScaleVector.Y, 1.0f);
+			}
+			if (this.Bounds.X != 0 || this.Bounds.Y != 0 || this.RotationCenter != Vector2.Zero)
+				TransState.LocationTransform *= Matrix.CreateTranslation(this.Bounds.X + this.RotationCenter.X, this.Bounds.Y + this.RotationCenter.Y, 0);
+			
+		}
+
+		void UpdateProps()
+		{
+			if (PropState.PropCycle == GameEngine.Instance.CycleNumber)
+				return;
+			
+			if  (this.ParentElement == null)
+			{
+				PropState.PropCycle = GameEngine.Instance.CycleNumber;
+				PropState.Opacity = 1.0f;
+				PropState.Rotation = 0;
+				PropState.Scale = Vector2.One;
+				PropState.BackColor = Color.White;
+			}
+			else
+			{
+				this.ParentElement.UpdateProps();
+				PropState = this.ParentElement.PropState;
+			}
+			
+			PropState.ScreenBounds = null;
+			//---
+			PropState.Rotation += this.Rotation;
+			PropState.Scale *= this.Scale;
+			
+			if (!this.Bounds.IsEmpty)
+			{
+				PropState.Size.X = this.Bounds.Width;
+				PropState.Size.Y = this.Bounds.Height;
+			}
+			
+			if (this.backColor.HasValue)
+				PropState.BackColor = this.backColor.Value;
+			
+			PropState.Opacity *= this.Opacity;
+		}
+		
+		public System.Drawing.RectangleF GetScreenBounds()
+		{
+			if (this.ParentElement != null)
+			{
+				this.ParentElement.UpdateTransforms();
+				
+				this.UpdateProps();
+			
+				if (!PropState.ScreenBounds.HasValue)
+				{
+					tmpBounds = this.Bounds;
+					
+					if (this.ParentElement.TransState.LocationTransform != Matrix.Identity)
+					{
+						tmpVector1.X = this.Bounds.X + this.rotationCenter.X;
+						tmpVector1.Y = this.Bounds.Y + this.rotationCenter.Y;
+						Vector2.Transform(ref tmpVector1, ref this.ParentElement.TransState.LocationTransform, out tmpVector2);
+						tmpBounds.X = tmpVector2.X;
+						tmpBounds.Y = tmpVector2.Y;
+					}
+
+					if (this.ParentElement.TransState.ScaleTransform != Matrix.Identity)
+					{
+						Vector2.Transform(ref PropState.Size, ref this.ParentElement.TransState.ScaleTransform, out tmpVector2);
+						tmpBounds.Width = tmpVector2.X;
+						tmpBounds.Height = tmpVector2.Y;
+					}
+					else
+					{
+						tmpBounds.Width = PropState.Size.X;
+						tmpBounds.Height = PropState.Size.Y;
+					}
+	
+					PropState.ScreenBounds = tmpBounds;
+				}
+			}
+			else
+			{
+				PropState.ScreenBounds = this.Bounds;
+			}
+			
+			return PropState.ScreenBounds.Value;
+		}
+
+		[XmlAttribute("Bounds")]
+		public string zBounds
+		{
+			set { this.Bounds = value.ToRectF(); }
+			get { return this.Bounds.ToStr(); }
+		}
+        [XmlAttribute("BackColor")]
+        public string zBackColor
+		{
+			set { this.BackColor = value.ToColor(); }
+			get { return this.BackColor.ToStr(); }
+		}
+		[XmlAttribute("Origin")]
+		public string zOrigin
+		{
+			set { this.Origin = value.ToVector2(); }
+			get { return this.Origin.ToStr(); }
+		}
+		[XmlAttribute("RotationCenter")]
+		public string zRotationCenter
+		{
+			set { this.RotationCenter = value.ToVector2(); }
+			get { return this.RotationCenter.ToStr(); }
+		}
+		[XmlAttribute("Scale")]
+		public string zScale
+		{
+			set { 
+				float v;
+				
+				if (float.TryParse(value, out v))
+					this.Scale = v;
+				else
+					this.ScaleVector = value.ToVector2();
+			}
+			get { return this.ScaleVector.ToStr(); }
+		}
+		[XmlAttribute("Location")]
+		public string zLocation
+		{
+			set { this.Location = value.ToVector2(); }
+			get { return this.Location.ToStr(); }
+		}
+		[XmlAttribute("Center")]
+		public string zCenter
+		{
+			set { this.Center = value.ToVector2(); }
+			get { return this.Center.ToStr(); }
+		}
+		
+		public override void Initialize(InitializeParameters p)
+		{
+			base.Initialize(p);
+			
+			this.ParentElement = this.FindAncestor(o => o is XElement) as XElement;
+		}
+		
+		public bool Intersects(XElement e)
+		{
+			return this.GetScreenBounds().IntersectsWith(e.GetScreenBounds());
+		}
+		
+		public System.Drawing.RectangleF Intersect(XElement e)
+		{
+			return System.Drawing.RectangleF.Intersect(this.GetScreenBounds(), e.GetScreenBounds());
+		}
+		
+        public virtual bool ProcessCollision(LevelEngine level, System.Drawing.RectangleF intersect)
+        {
+			return false;
+        }
+		
+		public override void Draw(DrawParameters p)
+		{
+			base.Draw(p);
+
+            if (p.Game.GameObject.ShowDebugInfo && p.Game.DrawDebugInfo)
+            {
+                DrawDebug(p);
+            }
+        }
+		
+		public void DrawDebug(DrawParameters p)
+		{
+			if (!(this is XImage) && !(this is XBlock))
+				return;
+			
+			tmpBounds =  this.GetScreenBounds();
+		
+#if WINDOWS
+			tmpVector1 = MouseProcessor.LastPosition;
+#else
+			tmpVector1 = TouchPanelProcessor.LastPosition;
+#endif
+			
+			if (!tmpBounds.Contains((int)tmpVector1.X, (int)tmpVector1.Y))
+				return;
+			
+			Color c = Color.Red * 0.3f;
+			
+			
+			p.SpriteBatch.Draw(p.Game.BlankTexture, tmpBounds, c);
+			
+			if (!string.IsNullOrEmpty(this.Id))
+			{
+				tmpVector1.X = tmpBounds.X;
+				tmpVector1.Y = tmpBounds.Y;
+				
+				p.SpriteBatch.DrawString(p.Game.SystemFont, this.Id, tmpVector1, Color.Yellow);
+			}
+		}
+    }
+}
