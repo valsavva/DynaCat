@@ -989,10 +989,10 @@
     <Content Include="Content\Textures\skeletonTrenazher_TLPs.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\my_test_expl.xml">
+    <Content Include="Content\Textures\cursor_R200_by_50_gray.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_R200_by_50_gray.png">
+    <Content Include="Metadata\skeletonTroynoyZaslon.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -212,13 +212,17 @@
 		<Explosion Bounds="0,0,400,400" Ranges="boomVeryClose=50,boomClose=85,boomFar=170,boomVeryFar=210,boomVeryVeryFar=250">
 			<Image Id="this_imgBomb" Bounds="190,190,20,20" TextureId="cursor_solid_10x10_black_red" Opacity="0" />
 			<Image Id="this_imgExplosion" Bounds="0,0,400,400" TextureId="cursor_R200_by_50_gray" Enabled="false"/>
-
 			<SequenceSet InProgress="true">
-				<NumAnimation Target="this_imgBomb.Opacity" From="1" To="0" Duration="0.3" Autoreverse="true" RepeatCount="2"/>
+				<NumAnimation Target="this_imgBomb.Opacity" From="1" To="0" Duration="0.1" Autoreverse="true" RepeatCount="4"/>
 				<Do Action="this_imgBomb.Disable()"/>
 				<Do Action="this_imgExplosion.Enable()"/>
-				<NumAnimation From="1" To="0" Duration="0.2" Autoreverse="false" Target="this_imgExplosion.Opacity" RepeatCount="5"/>
-				<Do Action="this.Explode()"/>
+				<ParallelSet InProgress="true">
+					<SequenceSet InProgress="true">
+						<Delay Duration="0.4" />
+						<Do Action="this.Explode()"/>
+					</SequenceSet>
+					<NumAnimation From="1" To="0" Duration="0.2" Autoreverse="false" Target="this_imgExplosion.Opacity" RepeatCount="5"/>
+				</ParallelSet>
 				<Do Action="this.Disable()"/>
 			</SequenceSet>
 		</Explosion>
