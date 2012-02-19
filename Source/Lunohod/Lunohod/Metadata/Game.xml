@@ -14,28 +14,26 @@
 		<Screen Id="ScreenTests" File="ScreenTests.xml" />
 	</Screens>
 	<Levels>
-		<Level Id="skeletonTroynoyZaslon" File="skeletonTroynoyZaslon.xml" />
-		<Level Id="skeletonTrenazher" File="skeletonTrenazher.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
-		<Level Id="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
-		<Level Id="skeletonChetyreKomnaty" File="skeletonChetyreKomnaty.xml" />
+		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
 		<Level Id="skeletonChelnok" File="skeletonChelnok.xml" />
-		<Level Id="skeletonTir" File="skeletonTir.xml" />
-		<Level Id="skeletonVKolce" File="skeletonVKolce.xml" />
-		<Level Id="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
-		<Level Id="skeletonLoshadka" File="skeletonLoshadka.xml" />
+		<Level Id="skeletonChetyreKomnaty" File="skeletonChetyreKomnaty.xml" />
+		<Level Id="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
 		<Level Id="skeletonElochka" File="skeletonElochka.xml" />
 		<Level Id="skeletonKruchuVerchu" File="skeletonKruchuVerchu.xml" />
-		<Level Id="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
-		<Level Id="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
-		<Level Id="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
-		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
-		<Level Id="skeletonParavozik" File="skeletonParavozik.xml" />
 		<Level Id="skeletonLabirinth" File="skeletonLabirinth.xml" />
+		<Level Id="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
+		<Level Id="skeletonLoshadka" File="skeletonLoshadka.xml" />
+		<Level Id="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
 		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
-		
-		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
-		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
+		<Level Id="skeletonParavozik" File="skeletonParavozik.xml" />
+		<Level Id="skeletonTir" File="skeletonTir.xml" />
+		<Level Id="skeletonTrenazher" File="skeletonTrenazher.xml" />
+		<Level Id="skeletonTroynoyZaslon" File="skeletonTroynoyZaslon.xml" />
+		<Level Id="skeletonVKolce" File="skeletonVKolce.xml" />
+		<Level Id="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
+		<Level Id="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
+		<Level Id="---" File="skeletonAlisa.xml" />
 		
 		<!-- Test screens start here -->
 		

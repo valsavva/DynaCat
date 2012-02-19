@@ -34,9 +34,6 @@
         </Block>
         
         <Group Id="grpTeleport2" Bounds="240, 130, 40, 60" TraceId="image3010"/>
-        <Block Id="blk_image3034" Bounds="215, 270, 50, 50" Edges="Stick" TraceId="image3034">
-            <Image Id="image3034" TextureId="_E_" Opacity="1" />
-        </Block>
         
         <Block Id="blk5" Bounds="200, -10, 80, 140" Edges="Stick" TraceId="image3023">
             <Image Id="image3023" TextureId="cursor_wall_50x50_stick" Opacity="1" />
@@ -47,9 +44,36 @@
         <Group Id="grpTeleport1" Bounds="200, 130, 40, 60" TraceId="image3033"/>
         
 <!-- >>> HANDEDIT >>> -->
-        
+		<!--<NumTrigger Property="enm1.Y" Compare="E" Value="grpTeleport1.Y" EnterAction="electric_sparking.Start()"/>
+		<NumTrigger Property="enm2.Y" Compare="E" Value="grpTeleport1.Y" EnterAction="electric_sparking.Start()"/>-->		
+		<SequenceSet InProgress="true" RepeatCount="0" >
+	        <RandomSet Id="electric_sparking" INProgress="true">
+				<Delay Duration="0.1" />
+				<Delay Duration="0.2" />
+				<Delay Duration="0.3" />
+				<Delay Duration="0.5" />
+				<Delay Duration="0.7" />
+				<Delay Duration="1" />
+				<Delay Duration="1.4" />
+				<Delay Duration="2" />
+				<Delay Duration="2.5" />
+				<Delay Duration="4" />																																
+			</RandomSet>		
+	        <RandomSet Id="electric_sparking" INProgress="true">
+				<Sound FileId="skeletonFX_electric_spark_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true" />
+				<Sound FileId="skeletonFX_electric_spark_2" Volume="0.5" Pitch="0" Pan="0" InProfress="true" />
+				<Sound FileId="skeletonFX_electric_spark_3" Volume="0.5" Pitch="0" Pan="0" InProfress="true" />
+				<Sound FileId="skeletonFX_electric_spark_4" Volume="0.5" Pitch="0" Pan="0" InProfress="true" />
+			</RandomSet>
+		</SequenceSet>
+
+		<Sound Id="sndPortIn" FileId="skeletonFX_port_in" Volume="0.5" Pitch="0" Pan="0" />
+		<Sound Id="sndPortOut" FileId="skeletonFX_port_out" Volume="0.5" Pitch="0" Pan="0" />
+
+				
 		<SequenceSet Id="setTeleport1">
 			<Do Action="hero.StartTransaction()"/>
+			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.X,hero.Y" From="281,135" To="280,135" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
@@ -61,6 +85,7 @@
 
 		<SequenceSet Id="setTeleport2">
 			<Do Action="hero.StartTransaction()"/>
+			<Do Action="sndPortOut.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.X,hero.Y" From="159,135" To="150,135" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
@@ -570,7 +595,13 @@
             <Delay Duration="94" />
             <Do Action="fdimage3053-7-75.Enable()" />
         </SequenceSet>
-    </Layer>
+
+        <Block Class="clsExit" Id="blk_image3034" Bounds="215, 270, 50, 50" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+
+    
+	</Layer>
     <Include File="Dashboard.xml" />
 </Level>
 

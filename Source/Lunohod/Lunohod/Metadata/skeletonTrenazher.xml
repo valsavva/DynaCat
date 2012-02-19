@@ -95,10 +95,14 @@ Name="D:\Lunohod\Levels\_skeleton\skeletonTrenazher\skeletonTrenazher.svg" Bound
         <Block Id="blk6" Bounds="0, 160, 480, 160" Edges="Stick" TraceId="image3023">
             <Image Id="image3023" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
+
+		<Sound Id="sndPortIn" FileId="skeletonFX_port_in" Volume="0.5" Pitch="0" Pan="0" />
+		<Sound Id="sndPortOut" FileId="skeletonFX_plick2" Volume="0.5" Pitch="0" Pan="0" />				
         
         <Group Id="grpTlpPort1" Bounds="400, 60, 80, 100" TraceId="Port1"/>
 		<SequenceSet Id="setPort1">
 			<Do Action="hero.StartTransaction()"/>
+			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<NumAnimation Id="heroMove" Target="hero.X,hero.Y" From="-7777777,-7777777" To="-7777777,-7777777" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmPort1.Enable()" />
@@ -119,6 +123,7 @@ Name="D:\Lunohod\Levels\_skeleton\skeletonTrenazher\skeletonTrenazher.svg" Bound
 			    </SequenceSet>
 			</ParallelSet>
 			<NumAnimation Id="heroMove" Target="hero.X,hero.Y" From="16,120" To="16,120" Duration="0.001" RepeatCount="1" Fill="End"/>
+			<Do Action="sndPortOut.Start()"/>
 			<Do Action="imgAnmPort1.Disable()" />
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="hero.SetDirection(0,0)"/>

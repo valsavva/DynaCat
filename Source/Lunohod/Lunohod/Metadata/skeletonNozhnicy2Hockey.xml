@@ -24,9 +24,6 @@
         <Block Id="blk_image3072" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
         <Block Id="blk_image3074" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
         <Block Id="blk_image3076" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
-        <Block Id="blk_image3034" Bounds="400, 136, 50, 50" Edges="Stick" TraceId="image3034">
-            <Image Id="image3034" TextureId="_E_" Opacity="1" />
-        </Block>
         <Block Id="blk_image3048-1" Bounds="400, 98, 50, 8" Edges="Stick" TraceId="image3048-1">
             <Image Id="image3048-1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
@@ -68,6 +65,9 @@
         	<KeyFrame Time="5" Value="0,0" Smoothing="Smooth" />
         	<KeyFrame Time="6" Value="0,0" Smoothing="Smooth" />
         </NumAnimation>
+        <Block Class="clsExit" Id="blk_image3034" Bounds="400, 136, 50, 50" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
 <!-- <<< HANDEDIT <<< -->
 	
 	</Layer>
