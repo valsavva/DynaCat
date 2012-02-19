@@ -31,7 +31,7 @@
         <Block Id="blk5" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
         <Block Id="blk6" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
         <Group Id="grp_g3394">
-            <Block Id="blk_image3034" Bounds="7147, 140, 50, 50" Edges="Stick" TraceId="image3034">
+            <Block Class="clsExit" Id="blk_image3034" Bounds="7147, 140, 50, 50" Edges="Stick" TraceId="image3034">
                 <Image Id="image3034" TextureId="_E_" Opacity="1" />
             </Block>
             <Food Id="fd1" Points="1" Bounds="610, 178, 24, 12" Class="clsFood" TraceId="image3037"/>

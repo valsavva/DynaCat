@@ -54,15 +54,20 @@
 		<Block Id="blk6" Bounds="0, 155, 480, 10" Edges="Bounce" TraceId="image3027">
             <Image Id="image3027" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
         </Block>	                
+
+		<Sound Id="sndPortIn" FileId="skeletonFX_port_in" Volume="0.5" Pitch="0" Pan="0" />
+		<Sound Id="sndPortOut" FileId="skeletonFX_port_out" Volume="0.5" Pitch="0" Pan="0" />				
 	
         <Group Id="grpTeleport1" Bounds="222, 4, 10, 50" TraceId="In1"/>
         <Group Id="grpTeleport1" Bounds="248, 168, 10, 50" TraceId="Out1"/>
 		<SequenceSet Id="setTeleport1" RepeatCount="1">
 			<Do Action="hero.StartTransaction()"/>
+			<Do Action="sndPortIn.Start()"/>
 			<Do Action="imgAnmTlp1.Enable()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<!--<Delay Duration="1" />-->
 			<NumAnimation From="6" To="167" Target="imgAnmTlp1.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3112" Fill="End" />
+			<Do Action="sndPortOut.Start()"/>
 			<NumAnimation Target="hero.X,hero.Y" From="252,172" To="252,172" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp1.Disable()"/>
@@ -75,10 +80,12 @@
         <Group Id="grpTeleport2" Bounds="466, 4, 10, 50" TraceId="Out2"/>
 		<SequenceSet Id="setTeleport2">
 			<Do Action="hero.StartTransaction()"/>
+			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<!--<Delay Duration="1" />-->
 			<Do Action="imgAnmTlp2.Enable()"/>
 			<NumAnimation Id="anm4" From="184" To="17" Target="imgAnmTlp2.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3101" Fill="End" />
+			<Do Action="sndPortOut.Start()"/>
 			<NumAnimation Target="hero.X,hero.Y" From="420,6" To="420,6" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp2.Disable()"/>
@@ -91,11 +98,13 @@
         <Group Id="grpTeleport3" Bounds="4, 168, 50, 10" TraceId="Out3"/>
 		<SequenceSet Id="setTeleport3">
 			<Do Action="hero.StartTransaction()"/>
+			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp3.Enable()"/>
 			<!--<Delay Duration="2" />-->
 			<NumAnimation From="239,-6" To="-14,-16" Target="imgAnmTlp3.X,imgAnmTlp3.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3123" Fill="End" />
 	        <NumAnimation From="-14,-16" To="-14,168" Target="imgAnmTlp3.X,imgAnmTlp3.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3142" Fill="End" />
+			<Do Action="sndPortOut.Start()"/>
 			<NumAnimation Target="hero.X,hero.Y" From="6,172" To="6,172" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp3.Disable()"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
@@ -108,12 +117,13 @@
         <Group Id="grpTeleport4" Bounds="222, 102, 10, 50" TraceId="Out4"/>
 		<SequenceSet Id="setTeleport4">
 			<Do Action="hero.StartTransaction()"/>
+			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp4.Enable()"/>
 			<!--<Delay Duration="2" />-->
 			<NumAnimation Id="anm5" From="3,297" To="215,297" Target="imgAnmTlp4.X,imgAnmTlp4.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3090" Fill="End"  />
 			<NumAnimation Id="anm6" From="215,297" To="215,114" Target="imgAnmTlp4.X,imgAnmTlp4.Y" Duration="1" IsDelta="false" Autoreverse="false" RepeatCount="1" TraceId="image3158" Fill="End"   />
-         
+			<Do Action="sndPortOut.Start()"/>         
 			<NumAnimation Target="hero.X,hero.Y" From="178,102" To="178,102" Duration="0.001" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp4.Disable()"/>
 			<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>

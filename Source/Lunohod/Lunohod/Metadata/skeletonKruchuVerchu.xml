@@ -24,12 +24,7 @@
         <Block Id="blk2" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
         <Block Id="blk3" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
         <Block Id="blk4" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
-        
-        <!-- Выход -->
-        <Block Id="blkExit" Bounds="400, 256, 50, 50" Edges="Stick" TraceId="image3034" Enabled="false" Opacity="0">
-            <Image Id="image3034" TextureId="_E_" Opacity="1" />
-        </Block>
-        
+                
 		<!-- бордюры -->
         <Block Id="blk5" Bounds="490, 100, 110, 20" Edges="Stick" TraceId="image3095">
             <Image Id="image3095" TextureId="cursor_wall_50x50_stick" Opacity="1" />
@@ -129,6 +124,10 @@
     	</IntersectionTrigger>
    	 	
         
+        <!-- Выход -->
+        <Block  Class="clsExit" Id="blkExit" Bounds="400, 256, 50, 50" Edges="Stick" TraceId="image3034" Enabled="false" Opacity="0">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
 
     </Layer>
     <Include File="Dashboard.xml" />

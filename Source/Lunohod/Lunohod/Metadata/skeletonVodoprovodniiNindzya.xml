@@ -25,18 +25,20 @@
  
  <!-- >>> HAND EDIT >>> -->
  
-        <Block Id="Exit" Bounds="10, 200, 50, 50" Edges="Stick" TraceId="image3034">
-            <Image Id="image3034" TextureId="_E_" Opacity="1" />
-        </Block>
  
          <Class Id="clsTlp">
         	<Group>
+        		<Sound Id="sndPortIn" FileId="skeletonFX_port_in" Volume="0.5" Pitch="0" Pan="0" />
+        		<Sound Id="sndPortOut" FileId="skeletonFX_port_out" Volume="0.5" Pitch="0" Pan="0" />
 				<SequenceSet Id="this_set">
-					<Do Action="hero.StartTransaction()"/>
+					<Do Action="hero.StartTransaction()"/>	
+					<NumAnimation Target="hero.X,hero.Y" From="-7777777,-7777777" To="-7777777,-7777777" Duration="0.01" RepeatCount="1" Fill="End" />
+					<Do Action="sndPortIn.Start()"/>				
 					<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 					<Do Action="imgAnmTlp.Enable()" />
 					<NumAnimation Id="grpTeleport1in_anm" From="@taFX,@toHY" To="@taTX,@toHY" Target="imgAnmTlp.X,imgAnmTlp.Y" Duration="@duration" IsDelta="false" Autoreverse="false" RepeatCount="1" Fill="End" TraceId="image4056" />
 					<NumAnimation Target="hero.X,hero.Y" From="@toHX,@toHY" To="@toHX,@toHY" Duration="0.01" RepeatCount="1" Fill="End" />
+					<Do Action="sndPortOut.Start()"/>
 					<Do Action="imgAnmTlp.Disable()" />
 					<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>
 					<Do Action="hero.SetDirection(0,0)"/>
@@ -106,6 +108,9 @@
             <Enemy Id="enm5" Bounds="360, 196, 50, 40" Class="clsEnemy" TraceId="image3127"/>
             <NumAnimation Id="anm13" From="0" To="-200" Target="X" Duration="3.5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image4297"/>
         </Group>
+        <Block Id="Exit" Bounds="10, 210, 50, 50" Class="clsExit" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
     </Layer>
     <Include File="Dashboard.xml" />
 </Level>

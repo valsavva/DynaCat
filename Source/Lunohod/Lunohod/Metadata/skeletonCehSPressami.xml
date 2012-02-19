@@ -42,9 +42,6 @@
         <Block Id="blk_image3072" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
         <Block Id="blk_image3074" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
         <Block Id="blk_image3076" Bounds="0, 320, 187, 10" Edges="Bounce" TraceId="image3076"/>
-        <Block Id="blk_image3034" Bounds="430, 270, 50, 50" Edges="Stick" TraceId="image3034">
-            <Image Id="image3034" TextureId="_E_" Opacity="1" />
-        </Block>
         <Food Id="fd_image3037-1" Points="1" Bounds="134, 290, 24, 12" Class="clsFood" TraceId="image3037-1"/>
         <Food Id="fd_image3037-7" Points="1" Bounds="134, 84, 24, 12" Class="clsFood" TraceId="image3037-7"/>
         <Block Id="blk_image3059-9" Bounds="0, 0, 115, 269" Edges="Bounce" TraceId="image3059-9">
@@ -80,6 +77,11 @@
         <Food Id="fd_image3037-1-7-6" Points="1" Bounds="282, 239, 24, 12" Class="clsFood" TraceId="image3037-1-7-6"/>
         <Food Id="fd_image3037-1-4-1" Points="1" Bounds="282, 187, 24, 12" Class="clsFood" TraceId="image3037-1-4-1"/>
         <Food Id="fd_image3037-1-0-4" Points="1" Bounds="282, 136, 24, 12" Class="clsFood" TraceId="image3037-1-0-4"/>
+
+        <Block Id="blk_image3034" Class="clsExit" Bounds="430, 270, 50, 50" Edges="Stick" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+
     </Layer>
     <Include File="Dashboard.xml" />
 </Level>

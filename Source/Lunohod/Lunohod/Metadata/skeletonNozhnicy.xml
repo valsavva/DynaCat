@@ -37,9 +37,6 @@
                 <Block Id="blk_image3072" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
                 <Block Id="blk_image3074" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
                 <Block Id="blk_image3076" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
-                <Block Id="blk_image3034" Bounds="2, 126, 50, 50" Edges="Stick" TraceId="image3034">
-                    <Image Id="image3034" TextureId="_E_" Opacity="1" />
-                </Block>
                 <Group Id="grp_g3160">
                     <Enemy Id="enm_1" Bounds="120, 0, 50, 40" Class="clsEnemy" TraceId="image3026-48"/>
                     <NumAnimation Id="anm_image3116" Target="enm_1.Y" Duration="3" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3116" >
@@ -68,6 +65,9 @@
                     	<KeyFrame Time="3" Value="-280" Smoothing="Flat" />
                     </NumAnimation>
                 </Group>
+                <Block Class="clsExit" Id="blk_image3034" Bounds="2, 126, 50, 50" Edges="Stick" TraceId="image3034">
+                    <Image Id="image3034" TextureId="_E_" Opacity="1" />
+                </Block>
             </Layer>
             <Include File="Dashboard.xml" />
         </Level>

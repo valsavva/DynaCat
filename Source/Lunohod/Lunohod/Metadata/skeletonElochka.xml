@@ -24,14 +24,14 @@
                 <Block Id="blk_image3076" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
                 <Enemy Id="enm_image3026-1" Bounds="310, 22, 50, 40" Class="clsEnemy" TraceId="image3026-1"/>
                 <Enemy Id="enm_image3026-7" Bounds="88, 130, 50, 40" Class="clsEnemy" TraceId="image3026-7"/>
-                <Block Id="blk_image3033" Bounds="377, 216, 50, 50" Edges="Stick" TraceId="image3033">
-                    <Image Id="image3033" TextureId="_E_" Opacity="1" />
-                </Block>
                 <Enemy Id="fd_image3037-4" Bounds="100, 33, 24, 12" Class="clsFood" TraceId="image3037-4"/>
                 <Enemy Id="fd_image3037-0" Bounds="217, 143, 24, 12" Class="clsFood" TraceId="image3037-0"/>
                 <Enemy Id="enm_image3026-9" Bounds="413, 125, 50, 40" Class="clsEnemy" TraceId="image3026-9"/>
                 <Enemy Id="fd_image3037-48" Bounds="324, 235, 24, 12" Class="clsFood" TraceId="image3037-48"/>
                 <Enemy Id="enm_image3026-7-8" Bounds="203, 220, 50, 40" Class="clsEnemy" TraceId="image3026-7-8"/>
+                <Block  Class="clsExit" Id="blk_image3033" Bounds="377, 216, 50, 50" Edges="Stick" TraceId="image3033">
+                    <Image Id="image3033" TextureId="_E_" Opacity="1" />
+                </Block>
             </Layer>
             <Include File="Dashboard.xml" />
         </Level>

@@ -34,9 +34,6 @@
         </Block>
         <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
         <Hero Id="hero" Bounds="20, 20, 50, 40" Class="clsHero" TraceId="image3015"/>
-        <Block Id="Exit" Class="clsExit" Bounds="401, 247, 50, 50" Edges="None" TraceId="image3034">
-            <Image Id="image3034" TextureId="_E_" Opacity="1" />
-        </Block>
         <Block Id="blk6" Bounds="180, 195, 220, 5" Edges="Stick" TraceId="image3116">
             <Image Id="image3116" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
@@ -103,10 +100,14 @@
 
 <!-- >>> HANDEDIT >>> -->
 
+		<Sound Id="sndPortIn" FileId="skeletonFX_port_in" Volume="0.5" Pitch="-1" Pan="0" />
+		<Sound Id="sndPortOut" FileId="skeletonFX_port_out" Volume="0.5" Pitch="-1" Pan="0" />				
+
 		<Group Id="tlpDimmer" Bounds="395, 40, 5, 50" TraceId="image3439"/>
 		<SequenceSet Id="setDimmer">
 			<Do Action="hero.StartTransaction()"/>
 			<ParallelSet InProgress="true" RepeatCount="1" >
+				<Do Action="sndPortIn.Start()"/>
 				<NumAnimation Target="hero.Width,hero.Height" From="50,40" To="20,16" Duration="3" RepeatCount="1" Fill="End"/>
 				<NumAnimation Target="hero.Y" From="40" To="57" Duration="3" IsDelta="false" RepeatCount="1" Fill="End" />
 			</ParallelSet>
@@ -120,6 +121,7 @@
 		<SequenceSet Id="setCresser">
 			<Do Action="hero.StartTransaction()"/>
 			<ParallelSet InProgress="true" RepeatCount="1" >
+				<Do Action="sndPortOut.Start()"/>
 				<NumAnimation Target="hero.X,hero.Y" From="130,186" To="130,202" Duration="3" IsDelta="false" RepeatCount="1" Fill="End" />
 				<NumAnimation Target="hero.Width,hero.Height" From="20,16" To="75,60" Duration="3" RepeatCount="1" Fill="End"/>
 			</ParallelSet>
@@ -127,7 +129,10 @@
 			<Do Action="hero.EndTransaction()"/>
 		</SequenceSet>
 		<IntersectionTrigger ObjectId1="hero" ObjectId2="tlpCresser" EnterAction="setCresser.Start()"/>			
-
+        <Block Id="Exit" Class="clsExit" Bounds="401, 247, 50, 50" Edges="None" TraceId="image3034">
+            <Image Id="image3034" TextureId="_E_" Opacity="1" />
+        </Block>
+        
 <!-- <<< HANDEDIT <<< -->		
 <!-- <<< HANDEDIT <<< -->
     </Layer>
