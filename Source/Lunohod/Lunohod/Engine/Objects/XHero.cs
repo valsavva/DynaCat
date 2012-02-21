@@ -41,7 +41,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 
-			p.LevelEngine.hero = this;
+			p.LevelEngine.Hero = this;
 			
 			distanceToTower = double.MaxValue;
 		}
@@ -59,7 +59,7 @@ namespace Lunohod.Objects
 			}
 			
 			// calculate distance to the tower
-            p.LevelEngine.tower.Bounds.Center(ref towerCenter);
+            p.LevelEngine.Tower.Bounds.Center(ref towerCenter);
 			this.Bounds.Center(ref heroCenter);
 			distanceToTower = (towerCenter - heroCenter).Length();
 		}

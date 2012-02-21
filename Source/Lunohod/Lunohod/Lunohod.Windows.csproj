@@ -167,6 +167,7 @@
     <Compile Include="Engine\Objects\Events\XNumTrigger.cs" />
     <Compile Include="Engine\Objects\Events\XNumTriggerBase.cs" />
     <Compile Include="Engine\Objects\Events\XTriggerBase.cs" />
+    <Compile Include="Engine\Objects\IExploding.cs" />
     <Compile Include="Engine\Objects\IRunnable.cs" />
     <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
     <Compile Include="Engine\Objects\Media\XMusic.cs" />
@@ -1158,7 +1159,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <PropertyGroup>
     <PostBuildEvent>del c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar
-powershell start-process -WindowStyle Hidden $(ProjectDir)\pack.bat  $(TargetDir)
+powershell start-process -WindowStyle Hidden $(ProjectDir)\pack.bat $(TargetDir)
 rem start /B "C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
   <!--

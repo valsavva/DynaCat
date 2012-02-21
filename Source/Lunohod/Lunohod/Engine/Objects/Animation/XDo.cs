@@ -10,7 +10,7 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     /// <summary>
-    /// Represents a "runnalbe" component that invokes actions on other components.
+    /// A "runnalbe" component that invokes actions on other components.
     /// </summary>
     [XmlType("Do")]
     public class XDo : XRunnableBase

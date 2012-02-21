@@ -10,7 +10,7 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     /// <summary>
-    /// A helper base class for components that expose the <see cref="IRunnable"/> interface.
+    /// A base class for "runnable" components that utilize Duration, RepeatCount and RepeatTime.
     /// </summary>
 	public abstract class XRunnableBase : XObject, IRunnable
 	{
@@ -50,19 +50,26 @@ namespace Lunohod.Objects
 		{
 			get { return this.isPaused; }
 		}
-
+        /// <summary>
+        /// Specifies the amount of time the current animation should be executing. When not specified or zero,
+        /// the animation is considered to be infinite. Cannot be specified along with <see cref="RepeatCount"/>.
+        /// </summary>
         [XmlIgnore]
         public TimeSpan RepeatTime { get; set; }
+        /// <summary>
+        /// Specifies the number of times the current animation should execute. When not specified or zero,
+        /// the animation is considered to be infinite. Cannot be specified along with <see cref="RepeatTime"/>.
+        /// </summary>
         [XmlAttribute]
         public float RepeatCount { get; set; }
-
+        /// <explude />
         [XmlAttribute("RepeatTime")]
         public string zRunTime
         {
             get { return this.RepeatTime.ToString(); }
             set { this.RepeatTime = value.ToDuration(); }
         }
-
+        /// <inheritdoc />
         public override void Update(UpdateParameters p)
         {
 			if (!this.inProgress || this.isPaused)
@@ -75,13 +82,13 @@ namespace Lunohod.Objects
 		
 			UpdateProgress(p);
         }
-		
-		internal void UpdateChildren(UpdateParameters p)
+
+        internal void UpdateChildren(UpdateParameters p)
 		{
 			base.Update(p);
 		}
-		
-		internal virtual int CalculateRepeatsDone()
+
+        internal virtual int CalculateRepeatsDone()
 		{
 			return this.repeatsDone;
 		}
@@ -106,9 +113,7 @@ namespace Lunohod.Objects
 			} 
 		}
 
-        /// <summary>
-        /// Puts the component into the running state. This results in the <see cref="InProgress"/> property to be set to true.
-        /// </summary>
+        /// <inheritdoc />
         public virtual void Start()
 		{
 			this.elapsedTime = TimeSpan.Zero;
@@ -116,34 +121,13 @@ namespace Lunohod.Objects
 			this.isPaused = false;
 			this.repeatsDone = 0;
 		}
-        /// <summary>
-        /// Pauses the component. This results in the <see cref="IsPaused"/> property to be set to true.
-        /// </summary>
+        /// <inheritdoc />
         public virtual void Pause()
 		{
 			if (this.inProgress)
 				this.isPaused = true;
 		}
-        /// <summary>
-        /// Resumes the component. Calling this method may result in three different behaviors:
-        /// <list type="bullet">
-        /// <item>
-        /// <description>
-        /// If the component is currently in the running state, it will continue to run.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// If the component is currently paused, it will resume running.
-        /// </description>
-        /// </item>
-        /// <item>
-        /// <description>
-        /// If the component is currently stopped, it will be put into the running state.
-        /// </description>
-        /// </item>
-        /// </list>
-        /// </summary>
+        /// <inheritdoc />
         public virtual void Resume()
 		{
 			if (!this.inProgress)
@@ -151,9 +135,7 @@ namespace Lunohod.Objects
 			else			
 				this.isPaused = false;
 		}
-        /// <summary>
-        /// Stops the component. This results in the <see cref="InProgress"/> property to be set to false.
-        /// </summary>
+        /// <inheritdoc />
         public virtual void Stop()
         {
 			this.inProgress = false;
@@ -161,4 +143,3 @@ namespace Lunohod.Objects
         }
 	}
 }
-

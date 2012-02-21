@@ -55,10 +55,7 @@ namespace Lunohod.Objects
         /// </list>
         /// </summary>
         void Resume();
-        /// <summary>
         /// <exclude />
-        /// </summary>
-        /// <param name="p"></param>
 		void Update(UpdateParameters p);
     }
 }

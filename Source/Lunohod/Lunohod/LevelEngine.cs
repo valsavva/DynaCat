@@ -15,8 +15,9 @@ namespace Lunohod
 {
 	public class LevelEngine : ScreenEngine
 	{
-		public XHero hero;
-		public XTower tower;
+        private XHero hero;
+        private XTower tower;
+
 		private XLevel levelObject;
 		private XClass explosionClass;
 		private int bombCounter = 0;
@@ -30,7 +31,18 @@ namespace Lunohod
 		{
 		}
 
-		public override Type RootComponentType { get { return typeof(XLevel); } }
+        public XHero Hero
+        {
+            get { return hero; }
+            set { hero = value; }
+        }
+        public XTower Tower
+        {
+            get { return tower; }
+            set { tower = value; }
+        }
+        
+        public override Type RootComponentType { get { return typeof(XLevel); } }
 		
 		public override void Initialize()
 		{

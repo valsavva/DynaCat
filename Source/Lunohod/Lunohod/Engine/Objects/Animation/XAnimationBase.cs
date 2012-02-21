@@ -10,7 +10,7 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     /// <summary>
-    /// Base class for animations
+    /// Represents a base class for all animations.
     /// </summary>
 	public abstract class XAnimationBase : XRunnableBase
 	{

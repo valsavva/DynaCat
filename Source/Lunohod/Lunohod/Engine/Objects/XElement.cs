@@ -84,8 +84,6 @@ namespace Lunohod.Objects
 		}
         [XmlIgnore]
         public XElement ParentElement;
-        [XmlAttribute]
-        public bool IsExploding;
 		
 		private void UpdateTransforms()
 		{
@@ -264,7 +262,9 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 			
 			this.ParentElement = this.FindAncestor(o => o is XElement) as XElement;
-			if (this.IsExploding)
+
+            var exploding = this as IExploding;
+			if (exploding != null &&  exploding.IsExploding)
 			{
 				((XLevel)this.GetRoot()).Exploding.Add(this);
 			}

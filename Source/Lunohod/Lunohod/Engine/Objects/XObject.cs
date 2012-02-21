@@ -5,6 +5,9 @@ using System.Xml.Serialization;
 
 namespace Lunohod.Objects
 {
+    /// <summary>
+    /// The base class for all components in the XGAME framework.
+    /// </summary>
 	abstract public class XObject : IDisposable
 	{
 		protected bool isDisposed;
@@ -13,35 +16,36 @@ namespace Lunohod.Objects
 		private Dictionary<string, XObject> componentDict;
 		protected int updateCycle;
 
+        /// <summary>
+        /// Specifies the object id. The object ids must be unique across loaded module, such as a game level.
+        /// </summary>
         [XmlAttribute]
         public string Id;
-
+        /// <summary>
+        /// Specifies the name of the class which defines the template of this object.
+        /// </summary>
         [XmlAttribute]
         public string Class;
-
+        /// <summary>
+        /// Specifies the list of class parameters. The list is a comma-delimited list of key/value pairs, such as
+        /// "@x=10,@y=20"
+        /// </summary>
         [XmlAttribute]
         public string ClassParams;
-
-        [XmlIgnore]
-        public XObject Parent;
-
+        /// <summary>
+        /// Specifies whether the current component is enabled. When disabled, the component does not get updated or drawn.
+        /// </summary>
         [XmlAttribute]
         public bool Enabled = true;
-		
-		public virtual XObject Copy()
-		{
-			var result = (XObject)this.MemberwiseClone();
-			result.Subcomponents = new XObjectCollection(this.Subcomponents.Count);
-			for(int i = 0; i < this.Subcomponents.Count; i++)
-			{
-				result.Subcomponents.Add(this.Subcomponents[i].Copy());
-			}
-			result.InitHierarchy();
-			
-			return result;
-		}
-		
-		// Game
+        /// <summary>
+        /// Gets parent component.
+        /// </summary>
+        [XmlIgnore]
+        public XObject Parent;
+        /// <summary>
+        /// Gets collection of subcomponents.
+        /// </summary>
+        // Game
         [XmlElement(ElementName = "Resources", Type = typeof(XResourceBundle))]
         [XmlElement(ElementName = "Dashboard", Type = typeof(XDashboard))]
         [XmlElement(ElementName = "TapArea", Type = typeof(XTapArea))]
@@ -114,7 +118,18 @@ namespace Lunohod.Objects
 					subcomponents.Parent = this;
 			}
 		}
-		
+
+        #region InitHierarchy, Initialize, Update, Draw
+        /// <summary>
+		/// This method represents the first stage of the four primary stages of the component lifecycle
+        /// (hierarchy building, component initialization, update and draw, dispose).
+        /// <remarks>
+        /// The <see cref="InitHierarchy"/> is called when the entire component graph just has been constructed,
+        /// usually as the result of deserialization from an XML file.
+        /// This method is used solely for the object hierarchy manipulation, such as substituting Include nodes
+        /// or building class instances. This method is not intended for any kind of component initialization.
+        /// </remarks>
+		/// </summary>
 		public virtual void InitHierarchy()
 		{
 			if (this.Subcomponents == null)
@@ -151,8 +166,16 @@ namespace Lunohod.Objects
 			// force to rebiuld subcomponent hash
 			this.componentDict = null;
 		}
-		
-		public virtual void Initialize(InitializeParameters p)
+        /// <summary>
+        /// This method represents the second stage of the four primary stages of the component lifecycle
+        /// (hierarchy building, component initialization, update and draw, dispose).
+        /// <remarks>
+        /// The <see cref="Initialize"/> method is called when after the object hierarchy is built and allows
+        /// for component-specific initialization of parameters. Examles include finding related objects in the hierarchy,
+        /// setting default values, pre-calculation of certain values.
+        /// </remarks>
+        /// </summary>
+        public virtual void Initialize(InitializeParameters p)
 		{
 			if (this.Subcomponents != null)
 				for(int i = 0; i < this.Subcomponents.Count; i++)
@@ -161,21 +184,18 @@ namespace Lunohod.Objects
 					subcomponent.Initialize(p);
 				}
 		}
-
-		public XObject InitiazeFromClass()
-		{
-			XClass cls = (XClass)this.GetRoot().FindDescendant(this.Class);
-			
-			if (cls == null)
-				throw new InvalidOperationException("Could not find class: " + this.Class);
-			
-			var instance = cls.CreateInstance(this);
-			instance.InitHierarchy();
-			
-			return instance;
-		}
-		
-		public virtual void Update(UpdateParameters p)
+        /// <summary>
+        /// This method represents the update stage of the four primary stages of the component lifecycle
+        /// (hierarchy building, component initialization, update and draw, dispose).
+        /// <remarks>
+        /// The <see cref="Update"/> method is the main counterpart of the <see cref="Draw"/> method.
+        /// While the <see cref="Draw"/> method
+        /// is responsible for drawing components on the screen, the <see cref="Update"/> method is responsible
+        /// for calculating where the things need to be drawn. Essentially, the <see cref="Update"/> takes
+        /// the "heavy" part out of equasions for when things need to be rendered.
+        /// </remarks>
+        /// </summary>
+        public virtual void Update(UpdateParameters p)
 		{
 			this.updateCycle = p.Game.CycleNumber;
 			
@@ -193,8 +213,15 @@ namespace Lunohod.Objects
 					item.Value.Clear();
 			}
 		}
-		
-		public virtual void Draw(DrawParameters p)
+        /// <summary>
+        /// This method represents the draw stage of the four primary stages of the component lifecycle
+        /// (hierarchy building, component initialization, update and draw, dispose).
+        /// <remarks>
+        /// The <see cref="Draw"/> method is responsible for rendering the component on the screen. This is where
+        /// the XGAME framework integrates with thatever the underlying graphics technolody is used.
+        /// </remarks>
+        /// </summary>
+        public virtual void Draw(DrawParameters p)
 		{
 			if (this.Subcomponents != null)
 				for(int i = 0; i < this.Subcomponents.Count; i++)
@@ -204,34 +231,79 @@ namespace Lunohod.Objects
                         subcomponent.Draw(p);
 				}
 		}
-		
+        /// <summary>
+        /// Creates a new instance from the class specified in the <see cref="Class"/> property.
+        /// </summary>
+        /// <returns>New instance of the class.</returns>
+        internal XObject InitiazeFromClass()
+        {
+            XClass cls = (XClass)this.GetRoot().FindDescendant(this.Class);
+
+            if (cls == null)
+                throw new InvalidOperationException("Could not find class: " + this.Class);
+
+            var instance = cls.CreateInstance(this);
+            instance.InitHierarchy();
+
+            return instance;
+        }
+        /// <summary>
+        /// Creates a semi-shallow copy of the current component.
+        /// <remarks>
+        /// The <see cref="System.Object.MemberwiseClone()"/> method is used to create a copy of the current component,
+        /// then a new subcomponents collection is created and populated from the original one by calling
+        /// the <see cref="Copy()"/> method on each one of the original subcomponents.
+        /// Because a copy of the subcomponent collection gets created, hence the "semi-" prefix describing this method.
+        /// </remarks>
+        /// </summary>
+        /// <returns>A semi-shallow copy of the current component.</returns>
+        internal virtual XObject Copy()
+        {
+            var result = (XObject)this.MemberwiseClone();
+            result.Subcomponents = new XObjectCollection(this.Subcomponents.Count);
+            for (int i = 0; i < this.Subcomponents.Count; i++)
+            {
+                result.Subcomponents.Add(this.Subcomponents[i].Copy());
+            }
+            result.InitHierarchy();
+
+            return result;
+        }
+        #endregion
+
+        #region Enable/Disable
+        /// <summary>
+        /// Enables the component by setting the Enabled property to true.
+        /// </summary>
         public void Enable()
         {
             this.Enabled = true;
         }
-
+        /// <summary>
+        /// Disables the component by setting the Enabled property to false.
+        /// </summary>
         public void Disable()
         {
             this.Enabled = false;
         }
+        #endregion
 
-		public T GetComponent<T>() where T : XObject
+        #region Hierarchy manipulation
+        internal T GetComponent<T>() where T : XObject
 		{
 			if (this.Subcomponents == null)
 				return null;
 			
 			return (T)this.Subcomponents.FirstOrDefault(c => c is T);
 		}
-		
-		public IEnumerable<T> GetComponents<T>() where T : XObject
+		internal IEnumerable<T> GetComponents<T>() where T : XObject
 		{
 			if (this.Subcomponents == null)
 				return null;
 			
 			return this.Subcomponents.Where(c => c is T).Cast<T>();
 		}
-		
-		public XObject FindDescendant(string id)
+		internal XObject FindDescendant(string id)
 		{
 			if (this.componentDict == null)
 			{
@@ -245,8 +317,7 @@ namespace Lunohod.Objects
 			
 			return result;
 		}
-
-		public void AddSubtreeToComponentDict(XObject subtreeRoot)
+		internal void AddSubtreeToComponentDict(XObject subtreeRoot)
 		{
 			if (this.componentDict == null)
 				return;
@@ -263,8 +334,7 @@ namespace Lunohod.Objects
 						}
 					});
 		}
-		
-		public void TraveseTree(Action<XObject> action)
+		internal void TraveseTree(Action<XObject> action)
 		{
 			action(this);
 
@@ -272,8 +342,7 @@ namespace Lunohod.Objects
 				for(int i = 0; i < this.Subcomponents.Count; i++)
 					this.Subcomponents[i].TraveseTree(action);
 		}
-		
-		public void TraveseAncestors(Action<XObject> action)
+		internal void TraveseAncestors(Action<XObject> action)
 		{
 			XObject ancestor = this.Parent;
 			
@@ -283,8 +352,7 @@ namespace Lunohod.Objects
 				ancestor = ancestor.Parent;
 			}
 		}
-		
-		public XObject FindAncestor(Predicate<XObject> p)
+		internal XObject FindAncestor(Predicate<XObject> p)
 		{
 			XObject result = this.Parent;
 			
@@ -295,8 +363,7 @@ namespace Lunohod.Objects
 			
 			return result;
 		}
-		
-		public XObject GetRoot()
+		internal XObject GetRoot()
 		{
 			XObject result = this;
 	
@@ -305,10 +372,9 @@ namespace Lunohod.Objects
 
 			return result;
 		}
-		
-		private static char[] delimiters = new char[] {'.', ':'};
-		
-		public void GetTargetFromDescriptor(string descriptor, out XObject target, out string targetMember)
+
+        private static char[] delimiters = new char[] {'.', ':'};
+		internal void GetTargetFromDescriptor(string descriptor, out XObject target, out string targetMember)
 		{
 			if (descriptor.StartsWith(".") || descriptor.StartsWith(":"))
 			    descriptor = descriptor.Substring(1);
@@ -332,8 +398,9 @@ namespace Lunohod.Objects
 				targetMember = descriptor;
 			}
 		}
-		
-		public SignalContainer GetSignalContainer(string containerName)
+        #endregion
+
+        internal SignalContainer GetSignalContainer(string containerName)
 		{
 			if (signalContainers == null)
 				signalContainers = new Dictionary<string, SignalContainer>();
@@ -348,35 +415,6 @@ namespace Lunohod.Objects
 			
 			return container;
 		}
-
-        public List<IRunnable> CollectRunnables(List<IRunnable> result = null)
-        {
-            if (result == null)
-                result = new List<IRunnable>();
-
-            if (this.Subcomponents != null)
-                for (int i = 0; i < this.Subcomponents.Count; i++)
-                {
-                    var subcomponent = this.Subcomponents[i];
-                    IRunnable runnable = subcomponent as IRunnable;
-                    if (runnable != null)
-                        result.Add(runnable);
-
-                    // we don't collect other sets' runnables
-                    if (!(subcomponent is XSetBase))
-                        subcomponent.CollectRunnables(result);
-                }
-
-            return result;
-        }
-        //public IEnumerable<T> TraverseChildren<T>() where T : class
-        //{
-        //    for (int i = 0; i < this.Subcomponents.Count; i++)
-        //    {
-        //        if (this.Subcomponents[i] is T)
-        //            yield return (this.Subcomponents[i] as T);
-        //    }
-        //}
 
 		internal virtual void ReplaceParameter(string par, string val)
 		{
@@ -396,12 +434,10 @@ namespace Lunohod.Objects
 				}
 		}
 		
-		public override string ToString()
-		{
-			return string.Format("[{0}: Id={1}]", this.GetType().Name, Id);
-		}
-		
-		#region IDisposable implementation
+        /// <summary>
+        /// Disposes of the current component and its subcomponents.
+        /// When ovveriden, base.Dispose() must be called to ensure subcomponents' diposal.
+        /// </summary>
 		public virtual void Dispose()
 		{
 			isDisposed = true;
@@ -413,7 +449,12 @@ namespace Lunohod.Objects
 					subcomponent.Dispose();
 				}
 		}
-		#endregion
-	}
+    
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return string.Format("[{0}: Id={1}]", this.GetType().Name, Id);
+        }
+    }
 }
 

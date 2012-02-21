@@ -10,7 +10,7 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     /// <summary>
-    /// This is a "noop" component, that just idles for the given duration and repeat count.
+    /// A "runnable" component, that idles for the given period of time.
     /// <XGAME />
     /// </summary>
     [XmlType("Delay")]
