@@ -51,7 +51,7 @@ namespace Lunohod.Objects
             }
         }
 		
-		public override void ReplaceParameter(string par, string val)
+		internal override void ReplaceParameter(string par, string val)
 		{
 			this.Value = this.Value.Replace(par, val);
 			

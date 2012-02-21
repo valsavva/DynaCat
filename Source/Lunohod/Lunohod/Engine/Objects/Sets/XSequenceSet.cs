@@ -15,7 +15,7 @@ namespace Lunohod.Objects
 		private IRunnable currentRunnable;
 		private int currentIndex = 0;
 		
-        public override void UpdateProgress(UpdateParameters p)
+        internal override void UpdateProgress(UpdateParameters p)
 		{
 			if (currentRunnable == null)
 			{	

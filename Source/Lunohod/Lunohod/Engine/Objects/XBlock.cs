@@ -11,15 +11,18 @@ namespace Lunohod.Objects
 {
 	
     [XmlType("Block")]
-    public class XBlock : XElement
+    public class XBlock : XElement, IExploding
     {
 		/// <summary>
 		/// The default edge.
 		/// </summary>
         [XmlAttribute]
         public XEdgeType Edges;
-		
-		public override void Initialize (InitializeParameters p)
+        /// <inheritdoc />
+        [XmlAttribute]
+        public bool IsExploding { get; set; }
+        
+        public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
 			
@@ -33,23 +36,23 @@ namespace Lunohod.Objects
 				case XEdgeType.None : break;
 				case XEdgeType.Bounce : {
 					// change hero's direction
-					level.hero.Direction = level.hero.Direction.Reverse();
+					level.Hero.Direction = level.Hero.Direction.Reverse();
 					
-					level.hero.Bounds.Offset(
-						intersect.Width * level.hero.Direction.X,
-						intersect.Height * level.hero.Direction.Y
+					level.Hero.Bounds.Offset(
+						intersect.Width * level.Hero.Direction.X,
+						intersect.Height * level.Hero.Direction.Y
 					);
 				}; break;
 				case XEdgeType.Stick : {
 					// don't change hero's direction, just keep him in place
-					var direction = level.hero.Direction.Reverse();
+					var direction = level.Hero.Direction.Reverse();
 					
-					level.hero.Bounds.Offset(
+					level.Hero.Bounds.Offset(
 						intersect.Width * direction.X,
 						intersect.Height * direction.Y
 					);
 				
-					level.hero.Direction = Direction.VectorStop;
+					level.Hero.Direction = Direction.VectorStop;
 				}; break;
 				case XEdgeType.Teleport : break;
 			}

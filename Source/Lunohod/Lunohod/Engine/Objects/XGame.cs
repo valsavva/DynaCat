@@ -10,7 +10,7 @@ using Lunohod;
 namespace Lunohod.Objects
 {
     /// <summary>
-    /// Represents a higher level object that describes the structure of a game.
+    /// Describes the structure of the game.
     /// It includes collection of screens and levels that participate in the game.
     /// </summary>
 	[XmlType("Game")]

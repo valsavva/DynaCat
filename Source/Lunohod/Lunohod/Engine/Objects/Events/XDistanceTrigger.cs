@@ -60,7 +60,7 @@ namespace Lunohod.Objects
 			return value2 * value2;
 		}
 		
-		public override void ReplaceParameter(string par, string val)
+		internal override void ReplaceParameter(string par, string val)
 		{
             this.ObjectId1 = this.ObjectId1.Replace(par, val);
             this.ObjectId2 = this.ObjectId2.Replace(par, val);

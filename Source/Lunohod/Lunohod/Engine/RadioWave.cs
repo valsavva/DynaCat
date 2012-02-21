@@ -30,7 +30,7 @@ namespace Lunohod
 		{
 			base.Update(p);
 
-			diameter = p.LevelEngine.tower.SignalSpeed * (p.GameTime.TotalGameTime - this.startTime).TotalSeconds * 2.0;
+			diameter = p.LevelEngine.Tower.SignalSpeed * (p.GameTime.TotalGameTime - this.startTime).TotalSeconds * 2.0;
 
 			if (diameter > GameEngine.MaxWaveRadius * 2)
 				return;
@@ -44,8 +44,8 @@ namespace Lunohod
 			}
 
             texture = p.Game.WaveTextures[(int)textureDiameter / GameEngine.WaveRadiusStep - 1];
-			bounds.X = (p.LevelEngine.tower.Bounds.X + p.LevelEngine.tower.Bounds.Width / 2 - (int)(diameter / 2));
-			bounds.Y = (p.LevelEngine.tower.Bounds.Y + p.LevelEngine.tower.Bounds.Height / 2 - (int)(diameter / 2));
+			bounds.X = (p.LevelEngine.Tower.Bounds.X + p.LevelEngine.Tower.Bounds.Width / 2 - (int)(diameter / 2));
+			bounds.Y = (p.LevelEngine.Tower.Bounds.Y + p.LevelEngine.Tower.Bounds.Height / 2 - (int)(diameter / 2));
 			
 			bounds.Width = bounds.Height = (int)(diameter);
 		}

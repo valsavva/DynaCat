@@ -16,7 +16,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			p.LevelEngine.tower = this;
+			p.LevelEngine.Tower = this;
 		}
 		
         public double ActionRadius(ActionInfo actionInfo)

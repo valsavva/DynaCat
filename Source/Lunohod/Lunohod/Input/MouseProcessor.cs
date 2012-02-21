@@ -33,11 +33,11 @@ namespace Lunohod
         {
             var levelEngine = game.ScreenEngine as LevelEngine;
 
-            if (levelEngine == null || levelEngine.hero == null)
+            if (levelEngine == null || levelEngine.Hero == null)
                 return;
 
-            levelEngine.hero.Bounds.X = x - levelEngine.hero.Bounds.Width / 2;
-            levelEngine.hero.Bounds.Y = y - levelEngine.hero.Bounds.Height / 2;
+            levelEngine.Hero.Bounds.X = x - levelEngine.Hero.Bounds.Width / 2;
+            levelEngine.Hero.Bounds.Y = y - levelEngine.Hero.Bounds.Height / 2;
         }
 	}
 }

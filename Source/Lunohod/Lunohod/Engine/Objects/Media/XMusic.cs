@@ -57,6 +57,12 @@ namespace Lunohod.Objects
                 // noop for now
             }
         }
+
+        public bool IsPaused
+        {
+            get { return MediaPlayer.State == MediaState.Paused; }
+        }
+
         public void Start()
         {
             // Due to the way the MediaPlayer plays music,

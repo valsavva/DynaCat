@@ -71,6 +71,12 @@ namespace Lunohod.Objects
                 // noop for now
             }
         }
+
+        public bool IsPaused
+        {
+            get { return this.soundEffectInstance.State == SoundState.Paused; }
+        }
+
         public void Start()
 		{
 			this.soundEffectInstance.Volume = this.Volume;

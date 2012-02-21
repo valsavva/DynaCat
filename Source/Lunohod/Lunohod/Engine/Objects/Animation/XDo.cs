@@ -9,14 +9,21 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
+    /// <summary>
+    /// A "runnalbe" component that invokes actions on other components.
+    /// </summary>
     [XmlType("Do")]
     public class XDo : XRunnableBase
     {
         private List<ActionCallerBase> actionCallers;
 		
+        /// <summary>
+        /// Action specification.
+        /// </summary>
         [XmlAttribute]
         public string Action;
 		
+        /// <exclude />
 		public XDo()
 		{
 			this.RepeatCount = 1;
@@ -28,14 +35,14 @@ namespace Lunohod.Objects
 
             actionCallers = this.Action.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
         }
-		
-		public override void UpdateProgress(UpdateParameters p)
+
+        internal override void UpdateProgress(UpdateParameters p)
 		{
             actionCallers.ForEach(a => a.Call());
 			this.repeatsDone++;
 		}		
 		
-		public override void ReplaceParameter(string par, string val)
+		internal override void ReplaceParameter(string par, string val)
 		{
 			if (this.Action != null)
 				this.Action = this.Action.Replace(par, val);

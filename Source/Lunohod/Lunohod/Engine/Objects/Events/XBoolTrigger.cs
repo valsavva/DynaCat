@@ -29,7 +29,7 @@ namespace Lunohod.Objects
 			return valueReader.Value;
 		}
 		
-		public override void ReplaceParameter(string par, string val)
+		internal override void ReplaceParameter(string par, string val)
 		{
 			if (this.Condition != null)
 				this.Condition = this.Condition.Replace(par, val);
