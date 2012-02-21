@@ -8,8 +8,11 @@ using Microsoft.Xna.Framework;
 namespace Lunohod.Objects
 {
     [XmlType("Enemy")]
-    public class XEnemy : XElement
+    public class XEnemy : XElement, IExploding
     {
-	}
+        /// <inheritdoc />
+        [XmlAttribute]
+        public bool IsExploding { get; set; }
+    }
 }
 

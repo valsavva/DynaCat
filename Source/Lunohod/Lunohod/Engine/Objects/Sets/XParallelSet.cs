@@ -9,7 +9,7 @@ namespace Lunohod.Objects
     [XmlType("ParallelSet")]
     public class XParallelSet : XSetBase
     {
-        public override void UpdateProgress(UpdateParameters p)
+        internal override void UpdateProgress(UpdateParameters p)
         {
             base.UpdateChildren(p);
 

@@ -10,10 +10,13 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Lunohod.Objects
 {
     [XmlType("Food")]
-	public class XFood : XElement
+	public class XFood : XElement, IExploding
 	{
 		[XmlAttribute]
 		public float Points;
-	}
+        /// <inheritdoc />
+        [XmlAttribute]
+        public bool IsExploding { get; set; }
+    }
 }
 

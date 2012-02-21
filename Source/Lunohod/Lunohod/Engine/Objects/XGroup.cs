@@ -11,11 +11,11 @@ namespace Lunohod.Objects
 {
 	
     [XmlType("Group")]
-	public class XGroup : XElement
+	public class XGroup : XElement, IExploding
 	{
-		public XGroup()
-		{
-		}
-	}
+        /// <inheritdoc />
+        [XmlAttribute]
+        public bool IsExploding { get; set; }
+    }
 }
 

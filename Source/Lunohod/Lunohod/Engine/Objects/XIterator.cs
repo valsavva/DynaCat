@@ -58,7 +58,7 @@ namespace Lunohod.Objects
             return o;
         }
 
-		public override void UpdateProgress(UpdateParameters p)
+		internal override void UpdateProgress(UpdateParameters p)
 		{
 			if (this.objects != null)
 			{

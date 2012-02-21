@@ -82,7 +82,7 @@ namespace Lunohod.Objects
 				base.Draw(p);
 		}
 		
-		public override void ReplaceParameter(string par, string val)
+		internal override void ReplaceParameter(string par, string val)
 		{
 			if (this.EnterAction != null)
 				this.EnterAction = this.EnterAction.Replace(par, val);

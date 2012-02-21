@@ -161,6 +161,7 @@
     <Compile Include="Engine\Objects\Accessors\ObjectProxy.cs" />
     <Compile Include="Engine\Objects\XExplosion.cs" />
     <Compile Include="Engine\Objects\XLevelSettings.cs" />
+    <Compile Include="Engine\Objects\IExploding.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -76,7 +76,7 @@ namespace Lunohod.Objects
 			base.Draw(p);
 		}
 		
-		public override void ReplaceParameter(string par, string val)
+		internal override void ReplaceParameter(string par, string val)
 		{
 			if (this.Text != null && this.Text.StartsWith("="))
 				this.Text = this.Text.Replace(par, val);

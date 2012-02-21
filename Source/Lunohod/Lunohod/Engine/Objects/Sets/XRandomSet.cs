@@ -64,7 +64,7 @@ namespace Lunohod.Objects
             }
         }
 
-        public override void UpdateProgress(UpdateParameters p)
+        internal override void UpdateProgress(UpdateParameters p)
         {
             if (currentRunnable == null)
             {

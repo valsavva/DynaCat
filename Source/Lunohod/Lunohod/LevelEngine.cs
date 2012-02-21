@@ -15,20 +15,34 @@ namespace Lunohod
 {
 	public class LevelEngine : ScreenEngine
 	{
-		public XHero hero;
-		public XTower tower;
+        private XHero hero;
+        private XTower tower;
+
 		private XLevel levelObject;
 		private XClass explosionClass;
 		private int bombCounter = 0;
 		
 		private Dictionary<GameEvent, RadioWave> waves;
 
-		public LevelEngine(GameEngine gameEngine, string name)
+        private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
+        
+        public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
 		{
 		}
 
-		public override Type RootComponentType { get { return typeof(XLevel); } }
+        public XHero Hero
+        {
+            get { return hero; }
+            set { hero = value; }
+        }
+        public XTower Tower
+        {
+            get { return tower; }
+            set { tower = value; }
+        }
+        
+        public override Type RootComponentType { get { return typeof(XLevel); } }
 		
 		public override void Initialize()
 		{
@@ -86,8 +100,6 @@ namespace Lunohod
 
 		#region Collisions
 
-		private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
-		
 		public void ProcessCollisions()
 		{
 			// if not moving - we don't process collisions
