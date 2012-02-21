@@ -9,6 +9,10 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
+    /// <summary>
+    /// This is a "noop" component, that just idles for the given duration and repeat count.
+    /// <XGAME />
+    /// </summary>
     [XmlType("Delay")]
 	public class XDelay : XObject, IRunnable
 	{
@@ -16,17 +20,21 @@ namespace Lunohod.Objects
 		private bool inProgress;
 		private bool isPaused;
 		
+        /// <summary>
+        /// Specifies the amount of time the componente will idle.
+        /// </summary>
 		[XmlIgnore]
 		public TimeSpan Duration;
 
+        /// <exclude />
 		[XmlAttribute("Duration")]
 		public string zDuration
 		{
 			get { return this.Duration.ToString(); }
             set { this.Duration = value.ToDuration(); }
 		}
-		
-		public override void Update(UpdateParameters p)
+
+        public override void Update(UpdateParameters p)
 		{
 			if (!this.inProgress || this.isPaused)
 				return;
@@ -39,6 +47,7 @@ namespace Lunohod.Objects
 			base.Update(p);
 		}
 		
+        /// <inheritdoc />
 		public void Start()
 		{
 			this.inProgress = true;
@@ -47,18 +56,21 @@ namespace Lunohod.Objects
 			this.elapsedTime = TimeSpan.Zero;
 		}
 
-		public void Stop()
+        /// <inheritdoc />
+        public void Stop()
 		{
 			this.inProgress = false;
 			this.isPaused = false;
 		}
 
-		public void Pause()
+        /// <inheritdoc />
+        public void Pause()
 		{
 			this.isPaused = true;
 		}
 
-		public void Resume()
+        /// <inheritdoc />
+        public void Resume()
 		{
 			if (!this.inProgress)
 				this.Start();
@@ -66,11 +78,18 @@ namespace Lunohod.Objects
 				this.isPaused = false;
 		}
 
-		public bool InProgress
+        /// <inheritdoc />
+        public bool InProgress
 		{
 			get { return this.inProgress;}
 			set { this.inProgress = value; }
 		}
+
+        /// <inheritdoc />
+        public bool IsPaused
+        {
+            get { return this.isPaused; }
+        }
 	}
 }
 

@@ -39,10 +39,8 @@ namespace Lunohod.Objects
 		protected Vector2 tmpVector1;
 		protected Vector2 tmpVector2;
 		
-		[XmlIgnore]
-		public ElementState TransState;
-		[XmlIgnore]
-		public PropertiesState PropState;
+		private ElementState TransState;
+		internal PropertiesState PropState;
 		
 		[XmlIgnore]
         public System.Drawing.RectangleF Bounds;
@@ -84,13 +82,12 @@ namespace Lunohod.Objects
 			get { return this.ScaleVector.X; }
 			set { this.ScaleVector.X = this.ScaleVector.Y = value; }
 		}
+        [XmlIgnore]
+        public XElement ParentElement;
+        [XmlAttribute]
+        public bool IsExploding;
 		
-		[XmlIgnore]
-		public XElement ParentElement { get; set; }
-		[XmlAttribute]
-		public bool IsExploding;
-		
-		public void UpdateTransforms()
+		private void UpdateTransforms()
 		{
 			if (TransState.TransformCycle == this.updateCycle)
 				return;
@@ -125,7 +122,7 @@ namespace Lunohod.Objects
 			
 		}
 
-		void UpdateProps()
+		private void UpdateProps()
 		{
 			if (PropState.PropCycle == this.updateCycle)
 				return;
@@ -161,7 +158,7 @@ namespace Lunohod.Objects
 			PropState.Opacity *= this.Opacity;
 		}
 		
-		public System.Drawing.RectangleF GetScreenBounds()
+		internal System.Drawing.RectangleF GetScreenBounds()
 		{
 			if (this.ParentElement != null)
 			{
@@ -205,31 +202,36 @@ namespace Lunohod.Objects
 			return PropState.ScreenBounds.Value;
 		}
 
+        /// <exclude />
 		[XmlAttribute("Bounds")]
 		public string zBounds
 		{
 			set { this.Bounds = value.ToRectF(); }
 			get { return this.Bounds.ToStr(); }
 		}
+        /// <exclude />
         [XmlAttribute("BackColor")]
         public string zBackColor
 		{
 			set { this.BackColor = value.ToColor(); }
 			get { return this.BackColor.ToStr(); }
 		}
-		[XmlAttribute("Origin")]
+        /// <exclude />
+        [XmlAttribute("Origin")]
 		public string zOrigin
 		{
 			set { this.Origin = value.ToVector2(); }
 			get { return this.Origin.ToStr(); }
 		}
-		[XmlAttribute("RotationCenter")]
+        /// <exclude />
+        [XmlAttribute("RotationCenter")]
 		public string zRotationCenter
 		{
 			set { this.RotationCenter = value.ToVector2(); }
 			get { return this.RotationCenter.ToStr(); }
 		}
-		[XmlAttribute("Scale")]
+        /// <exclude />
+        [XmlAttribute("Scale")]
 		public string zScale
 		{
 			set { 
@@ -242,13 +244,15 @@ namespace Lunohod.Objects
 			}
 			get { return this.ScaleVector.ToStr(); }
 		}
-		[XmlAttribute("Location")]
+        /// <exclude />
+        [XmlAttribute("Location")]
 		public string zLocation
 		{
 			set { this.Location = value.ToVector2(); }
 			get { return this.Location.ToStr(); }
 		}
-		[XmlAttribute("Center")]
+        /// <exclude />
+        [XmlAttribute("Center")]
 		public string zCenter
 		{
 			set { this.Center = value.ToVector2(); }
@@ -269,11 +273,6 @@ namespace Lunohod.Objects
 		public bool Intersects(XElement e)
 		{
 			return this.GetScreenBounds().IntersectsWith(e.GetScreenBounds());
-		}
-		
-		public System.Drawing.RectangleF Intersect(XElement e)
-		{
-			return System.Drawing.RectangleF.Intersect(this.GetScreenBounds(), e.GetScreenBounds());
 		}
 		
         public virtual bool ProcessCollision(LevelEngine level, System.Drawing.RectangleF intersect)

@@ -23,7 +23,9 @@ namespace Lunohod
 		
 		private Dictionary<GameEvent, RadioWave> waves;
 
-		public LevelEngine(GameEngine gameEngine, string name)
+        private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
+        
+        public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
 		{
 		}
@@ -86,8 +88,6 @@ namespace Lunohod
 
 		#region Collisions
 
-		private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
-		
 		public void ProcessCollisions()
 		{
 			// if not moving - we don't process collisions

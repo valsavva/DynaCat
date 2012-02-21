@@ -38,7 +38,7 @@ namespace Lunohod.Objects
 				actionCaller = Lunohod.Objects.ActionCaller.CreateActionCaller(this, this.Action);
 		}
 		
-		public override void ReplaceParameter(string par, string val)
+		internal override void ReplaceParameter(string par, string val)
 		{
 			if (this.Action != null)
 				this.Action = this.Action.Replace(par, val);

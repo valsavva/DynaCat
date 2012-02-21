@@ -9,6 +9,9 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
+    /// <summary>
+    /// A helper base class for components that expose the <see cref="IRunnable"/> interface.
+    /// </summary>
 	public abstract class XRunnableBase : XObject, IRunnable
 	{
         protected TimeSpan elapsedTime;
@@ -16,29 +19,42 @@ namespace Lunohod.Objects
 		protected bool isPaused = false;
 		protected int repeatsDone = 0;
 
+        /// <summary>
+        /// Gets the amount of time elapsed since the component was started.
+        /// </summary>
         public TimeSpan ElapsedTime
         {
             get { return elapsedTime; }
         }
+        /// <summary>
+        /// Gets the number of times component executed since it was started.
+        /// </summary>
 		public int RepeatsDone
 		{
 			get { return repeatsDone; }
 		}
-		[XmlAttribute]
+        /// <summary>
+        /// Specifies wheter the components is in the running state.
+        /// This attribute value is false when the component has never been run or the <see cref="Stop()"/> method was called.
+        /// </summary>
+        [XmlAttribute]
         public bool InProgress
 		{
 			get { return this.inProgress; }
 			set { this.inProgress = value; }
 		}
-		public bool IsPaused
+        /// <summary>
+        /// Gets value identifying whether the current component is in the paused state.
+        /// </summary>
+        public bool IsPaused
 		{
 			get { return this.isPaused; }
 		}
-		
+
         [XmlIgnore]
-        public TimeSpan RepeatTime;
+        public TimeSpan RepeatTime { get; set; }
         [XmlAttribute]
-        public float RepeatCount;
+        public float RepeatCount { get; set; }
 
         [XmlAttribute("RepeatTime")]
         public string zRunTime
@@ -60,19 +76,19 @@ namespace Lunohod.Objects
 			UpdateProgress(p);
         }
 		
-		public void UpdateChildren(UpdateParameters p)
+		internal void UpdateChildren(UpdateParameters p)
 		{
 			base.Update(p);
 		}
 		
-		public virtual int CalculateRepeatsDone()
+		internal virtual int CalculateRepeatsDone()
 		{
 			return this.repeatsDone;
 		}
 
-		public abstract void UpdateProgress(UpdateParameters p);
+		internal abstract void UpdateProgress(UpdateParameters p);
 		
-		public virtual void UpdateTime(UpdateParameters p)
+		internal virtual void UpdateTime(UpdateParameters p)
 		{
 			this.elapsedTime += p.GameTime.ElapsedGameTime;
         	
@@ -89,26 +105,55 @@ namespace Lunohod.Objects
 					Stop();
 			} 
 		}
-		
-		public virtual void Start()
+
+        /// <summary>
+        /// Puts the component into the running state. This results in the <see cref="InProgress"/> property to be set to true.
+        /// </summary>
+        public virtual void Start()
 		{
 			this.elapsedTime = TimeSpan.Zero;
 			this.inProgress = true;
 			this.isPaused = false;
 			this.repeatsDone = 0;
 		}
-		public virtual void Pause()
+        /// <summary>
+        /// Pauses the component. This results in the <see cref="IsPaused"/> property to be set to true.
+        /// </summary>
+        public virtual void Pause()
 		{
 			if (this.inProgress)
 				this.isPaused = true;
 		}
-		public virtual void Resume()
+        /// <summary>
+        /// Resumes the component. Calling this method may result in three different behaviors:
+        /// <list type="bullet">
+        /// <item>
+        /// <description>
+        /// If the component is currently in the running state, it will continue to run.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// If the component is currently paused, it will resume running.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// If the component is currently stopped, it will be put into the running state.
+        /// </description>
+        /// </item>
+        /// </list>
+        /// </summary>
+        public virtual void Resume()
 		{
 			if (!this.inProgress)
 				Start();
 			else			
 				this.isPaused = false;
 		}
+        /// <summary>
+        /// Stops the component. This results in the <see cref="InProgress"/> property to be set to false.
+        /// </summary>
         public virtual void Stop()
         {
 			this.inProgress = false;

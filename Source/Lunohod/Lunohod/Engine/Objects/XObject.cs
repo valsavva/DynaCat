@@ -12,18 +12,18 @@ namespace Lunohod.Objects
 		private XObjectCollection subcomponents;
 		private Dictionary<string, XObject> componentDict;
 		protected int updateCycle;
-		
-		[XmlAttribute]
-		public string Id { get; set;}
-		
-		[XmlAttribute]
-		public string Class { get; set; }
 
-		[XmlAttribute]
-		public string ClassParams { get; set; }
+        [XmlAttribute]
+        public string Id;
 
-		[XmlIgnore]
-		public XObject Parent { get; set; }
+        [XmlAttribute]
+        public string Class;
+
+        [XmlAttribute]
+        public string ClassParams;
+
+        [XmlIgnore]
+        public XObject Parent;
 
         [XmlAttribute]
         public bool Enabled = true;
@@ -378,13 +378,13 @@ namespace Lunohod.Objects
         //    }
         //}
 
-		public virtual void ReplaceParameter(string par, string val)
+		internal virtual void ReplaceParameter(string par, string val)
 		{
 			if (this.Id != null)
 				this.Id = this.Id.Replace(par, val);
 		}
 		
-		public void ReplaceParameters(List<string> pars, List<string> vals)
+		internal void ReplaceParameters(List<string> pars, List<string> vals)
 		{
 			for (int i = 0; i < pars.Count; i++)
 				this.ReplaceParameter(pars[i], vals[i]);
