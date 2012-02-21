@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- programme version: 1.3.2 -->
+    <!-- date: 21/02 2012 23:50 -->
+        <Level Name="D:\Lunohod\Levels\robocat_demo\style100500.svg" Bounds="0, 0, 480, 320">
+            <LevelSettings Dificulty="-1" BombCount="7777777" ExplosionClass="clsExplosion"/>
+            <Include File="skeletonClassCursor.xml"/>
+            <Resources RootFolder="Textures">
+                <Texture Id="bluebrick640x960copy" Source="bluebrick640x960copy"/>
+                <Texture Id="steel_list" Source="steel_list"/>
+                <Texture Id="bolbex-1" Source="bolbex-1"/>
+                <Texture Id="bolbex-2" Source="bolbex-2"/>
+                <Texture Id="box_old_2" Source="box_old_2"/>
+                <Texture Id="box_old_3" Source="box_old_3"/>
+                <Texture Id="box_old_1" Source="box_old_1"/>
+                <Texture Id="detal_me1" Source="detal_me1"/>
+                <Texture Id="teleport_pipe" Source="teleport_pipe"/>
+                <Texture Id="teleport_me1" Source="teleport_me1"/>
+                <Texture Id="teleport_me2" Source="teleport_me2"/>
+            </Resources>
+            <Layer Id="background" BackColor="#FFFFFFFF">
+                <Image Id="DefaultMask_image3372" TextureId="bluebrick640x960copy" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3372"/>
+            </Layer>
+            <Layer Id="action" BackColor="#FFFFFFFF">
+                <Block Id="blk1" Class="clsWoodenBox" Bounds="240, -6, 30, 30" Edges="Bounce" TraceId="image3332">
+                    <Image Id="image3332" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk2" Class="clsWoodenBox" Bounds="270, -6, 30, 30" Edges="Bounce" TraceId="image3336">
+                    <Image Id="image3336" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk3" Class="clsWoodenBox" Bounds="210, -6, 30, 30" Edges="Bounce" TraceId="image3340">
+                    <Image Id="image3340" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk4" Class="clsWoodenBox" Bounds="240, 24, 30, 30" Edges="Bounce" TraceId="image3318">
+                    <Image Id="image3318" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk5" Class="clsWoodenBox" Bounds="240, 54, 30, 30" Edges="Bounce" TraceId="image3320">
+                    <Image Id="image3320" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk6" Class="clsWoodenBox" Bounds="270, 24, 30, 30" Edges="Bounce" TraceId="image3322">
+                    <Image Id="image3322" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk7" Class="clsWoodenBox" Bounds="270, 54, 30, 30" Edges="Bounce" TraceId="image3324">
+                    <Image Id="image3324" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk8" Class="clsWoodenBox" Bounds="210, 24, 30, 30" Edges="Bounce" TraceId="image3326">
+                    <Image Id="image3326" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk9" Class="clsWoodenBox" Bounds="210, 54, 30, 30" Edges="Bounce" TraceId="image3328">
+                    <Image Id="image3328" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk10" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+                <Block Id="blk11" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+                <Block Id="blk12" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+                <Block Id="blk13" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+                <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+                <Hero Id="hero" Bounds="27, 204, 50, 49" Speed="84" Direction="0,0" TraceId="image3042">
+                      <NumTrigger Property="hero.Y" Compare="G" Value="160">
+                          <Image TextureId="bolbex-1"/>
+                      </NumTrigger>
+                      <NumTrigger Property="hero.Y" Compare="LE" Value="160">
+                          <Image TextureId="bolbex-2"/>
+                      </NumTrigger>
+                </Hero>
+                <Block Id="blk14" Class="clsWoodenBox" Bounds="101, 249, 30, 29" Edges="Stick" TraceId="image3053">
+                    <Image Id="image3053" TextureId="box_old_2" Opacity="1"/>
+                </Block>
+                <Block Id="blk15" Class="clsWoodenBox" Bounds="103, 282, 30, 30" Edges="Stick" TraceId="image3064">
+                    <Image Id="image3064" TextureId="box_old_3" Opacity="1"/>
+                </Block>
+                <Block Id="blk16" Class="clsWoodenBox" Bounds="102, 186, 30, 30" Edges="Stick" TraceId="image3075">
+                    <Image Id="image3075" TextureId="box_old_1" Opacity="1"/>
+                </Block>
+                <Block Id="blk17" Class="clsWoodenBox" Bounds="106, 218, 30, 30" Edges="Stick" TraceId="image3078">
+                    <Image Id="image3078" TextureId="box_old_1" Opacity="1"/>
+                </Block>
+                <Image Id="DefaultMask_image3088" TextureId="detal_me1" Bounds="0, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3088"/>
+                <Block Id="blk18" Class="clsWoodenBox" Bounds="63, 283, 30, 30" Edges="Stick" TraceId="image3091">
+                    <Image Id="image3091" TextureId="box_old_3" Opacity="1"/>
+                </Block>
+                <Block Id="blk19" Class="clsWoodenBox" Bounds="11, 161, 30, 30" Edges="Stick" TraceId="image3078-1">
+                    <Image Id="image3078-1" TextureId="box_old_1" Opacity="1"/>
+                </Block>
+                <Block Id="blk20" Class="clsWoodenBox" Bounds="80, 154, 30, 30" Edges="Stick" TraceId="image3113">
+                    <Image Id="image3113" TextureId="box_old_1" Opacity="1"/>
+                </Block>
+                <Block Id="blk21" Class="clsWoodenBox" Bounds="47, 162, 30, 30" Edges="Stick" TraceId="image3115">
+                    <Image Id="image3115" TextureId="box_old_3" Opacity="1"/>
+                </Block>
+                <Image Id="DefaultMask_image3143" TextureId="detal_me1" Bounds="30, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3143"/>
+                <Image Id="DefaultMask_image3145" TextureId="detal_me1" Bounds="60, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3145"/>
+                <Image Id="DefaultMask_image3147" TextureId="detal_me1" Bounds="90, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3147"/>
+                <Image Id="DefaultMask_image3149" TextureId="detal_me1" Bounds="120, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3149"/>
+                <Image Id="DefaultMask_image3151" TextureId="detal_me1" Bounds="150, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3151"/>
+                <Image Id="DefaultMask_image3153" TextureId="detal_me1" Bounds="180, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3153"/>
+                <Image Id="DefaultMask_image3155" TextureId="detal_me1" Bounds="210, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3155"/>
+                <Image Id="DefaultMask_image3157" TextureId="detal_me1" Bounds="240, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3157"/>
+                <Image Id="DefaultMask_image3159" TextureId="detal_me1" Bounds="270, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3159"/>
+                <Image Id="DefaultMask_image3161" TextureId="detal_me1" Bounds="300, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3161"/>
+                <Image Id="DefaultMask_image3163" TextureId="detal_me1" Bounds="330, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3163"/>
+                <Image Id="DefaultMask_image3165" TextureId="detal_me1" Bounds="360, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3165"/>
+                <Image Id="DefaultMask_image3167" TextureId="detal_me1" Bounds="390, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3167"/>
+                <Image Id="DefaultMask_image3169" TextureId="detal_me1" Bounds="420, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3169"/>
+                <Image Id="DefaultMask_image3171" TextureId="detal_me1" Bounds="450, 11, 30, 38" Stretch="true" Opacity="1" TraceId="image3171"/>
+                <Block Id="blk22" Class="clsWoodenBox" Bounds="115, 86, 30, 29" Edges="Stick" TraceId="image3053-7">
+                    <Image Id="image3053-7" TextureId="box_old_2" Opacity="1"/>
+                </Block>
+                <Block Id="blk23" Class="clsWoodenBox" Bounds="112, 56, 30, 30" Edges="Stick" TraceId="image3075-0">
+                    <Image Id="image3075-0" TextureId="box_old_1" Opacity="1"/>
+                </Block>
+                <Block Id="blk24" Class="clsWoodenBox" Bounds="113, 116, 30, 30" Edges="Stick" TraceId="image3078-9">
+                    <Image Id="image3078-9" TextureId="box_old_1" Opacity="1"/>
+                </Block>
+                <Block Id="blk25" Class="clsWoodenBox" Bounds="113, 147, 30, 30" Edges="Stick" TraceId="image3064-4">
+                    <Image Id="image3064-4" TextureId="box_old_3" Opacity="1"/>
+                </Block>
+                <Block Id="blk26" Class="clsWoodenBox" Bounds="240, 84, 30, 30" Edges="Bounce" TraceId="image3256">
+                    <Image Id="image3256" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk27" Class="clsWoodenBox" Bounds="240, 114, 30, 30" Edges="Bounce" TraceId="image3259">
+                    <Image Id="image3259" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk28" Class="clsWoodenBox" Bounds="240, 144, 30, 30" Edges="Bounce" TraceId="image3261">
+                    <Image Id="image3261" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk29" Class="clsWoodenBox" Bounds="240, 174, 30, 30" Edges="Bounce" TraceId="image3263">
+                    <Image Id="image3263" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk30" Class="clsWoodenBox" Bounds="240, 204, 30, 30" Edges="Bounce" TraceId="image3265">
+                    <Image Id="image3265" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk31" Class="clsWoodenBox" Bounds="240, 234, 30, 30" Edges="Bounce" TraceId="image3267">
+                    <Image Id="image3267" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk32" Class="clsWoodenBox" Bounds="240, 264, 30, 30" Edges="Bounce" TraceId="image3269">
+                    <Image Id="image3269" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk33" Class="clsWoodenBox" Bounds="240, 294, 30, 30" Edges="Bounce" TraceId="image3271">
+                    <Image Id="image3271" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk34" Class="clsWoodenBox" Bounds="270, 204, 30, 30" Edges="Bounce" TraceId="image3273">
+                    <Image Id="image3273" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk35" Class="clsWoodenBox" Bounds="270, 234, 30, 30" Edges="Bounce" TraceId="image3275">
+                    <Image Id="image3275" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk36" Class="clsWoodenBox" Bounds="270, 264, 30, 30" Edges="Bounce" TraceId="image3277">
+                    <Image Id="image3277" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk37" Class="clsWoodenBox" Bounds="270, 294, 30, 30" Edges="Bounce" TraceId="image3279">
+                    <Image Id="image3279" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk38" Class="clsWoodenBox" Bounds="270, 84, 30, 30" Edges="Bounce" TraceId="image3281">
+                    <Image Id="image3281" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk39" Class="clsWoodenBox" Bounds="270, 114, 30, 30" Edges="Bounce" TraceId="image3283">
+                    <Image Id="image3283" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk40" Class="clsWoodenBox" Bounds="270, 144, 30, 30" Edges="Bounce" TraceId="image3285">
+                    <Image Id="image3285" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk41" Class="clsWoodenBox" Bounds="270, 174, 30, 30" Edges="Bounce" TraceId="image3287">
+                    <Image Id="image3287" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk42" Class="clsWoodenBox" Bounds="210, 84, 30, 30" Edges="Bounce" TraceId="image3300">
+                    <Image Id="image3300" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk43" Class="clsWoodenBox" Bounds="210, 114, 30, 30" Edges="Bounce" TraceId="image3302">
+                    <Image Id="image3302" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk44" Class="clsWoodenBox" Bounds="210, 144, 30, 30" Edges="Bounce" TraceId="image3304">
+                    <Image Id="image3304" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk45" Class="clsWoodenBox" Bounds="210, 174, 30, 30" Edges="Bounce" TraceId="image3306">
+                    <Image Id="image3306" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk46" Class="clsWoodenBox" Bounds="210, 204, 30, 30" Edges="Bounce" TraceId="image3308">
+                    <Image Id="image3308" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk47" Class="clsWoodenBox" Bounds="210, 234, 30, 30" Edges="Bounce" TraceId="image3310">
+                    <Image Id="image3310" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk48" Class="clsWoodenBox" Bounds="210, 264, 30, 30" Edges="Bounce" TraceId="image3312">
+                    <Image Id="image3312" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Block Id="blk49" Class="clsWoodenBox" Bounds="210, 294, 30, 30" Edges="Bounce" TraceId="image3314">
+                    <Image Id="image3314" TextureId="steel_list" Opacity="1"/>
+                </Block>
+                <Image Id="DefaultMask_image3223" TextureId="teleport_pipe" Bounds="225, 183, 60, 51" Stretch="false" Opacity="1" TraceId="image3223"/>
+                <Image Id="DefaultMask_image3234" TextureId="teleport_me1" Bounds="283, 183, 60, 51" Stretch="false" Opacity="1" TraceId="image3234"/>
+                <Image Id="DefaultMask_image3245" TextureId="teleport_me2" Bounds="169, 183, 60, 51" Stretch="false" Opacity="1" TraceId="image3245"/>
+                <Group Id="grpTlpimage3297" Bounds="170, 184, 20, 48" TraceId="image3297"/>
+                <Group Id="grpTlpimage3316" Bounds="324, 184, 20, 48" TraceId="image3316"/>
+            </Layer>
+            <Include File="Dashboard.xml"/>
+        </Level>
+
+
+
+
+
+
+
+
+
+
+
