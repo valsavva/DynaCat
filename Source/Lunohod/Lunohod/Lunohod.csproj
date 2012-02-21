@@ -75,6 +75,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Metadata\TestIterators.xml" />
+    <None Include="Metadata\style100500.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utility.cs" />
@@ -1071,6 +1072,17 @@
     <Content Include="Content\Sound\skeletonFX_plick3.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\bluebrick640x960copy.png" />
+    <Content Include="Content\Textures\bolbex-1.png" />
+    <Content Include="Content\Textures\bolbex-2.png" />
+    <Content Include="Content\Textures\box_old_1.png" />
+    <Content Include="Content\Textures\box_old_2.png" />
+    <Content Include="Content\Textures\box_old_3.png" />
+    <Content Include="Content\Textures\detal_me1.png" />
+    <Content Include="Content\Textures\steel_list.png" />
+    <Content Include="Content\Textures\teleport_me1.png" />
+    <Content Include="Content\Textures\teleport_me2.png" />
+    <Content Include="Content\Textures\teleport_pipe.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
