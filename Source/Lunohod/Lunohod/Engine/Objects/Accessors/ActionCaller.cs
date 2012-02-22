@@ -50,6 +50,9 @@ namespace Lunohod.Objects
 		{
 			switch(action)
 			{
+				case "Enable" : return this.ActionEnable;
+				case "Disable" : return this.ActionDisable;
+
 				case "Start" : return this.ActionStart;
 				case "Stop" : return this.ActionStop;
 				case "Pause" : return this.ActionPause;
@@ -129,6 +132,18 @@ namespace Lunohod.Objects
 		public object ActionInvokeMehodInfo(object[] ps)
 		{
 			return methodInfo.Invoke(this.target.Object, ps);
+		}
+		
+		// Common
+		public object ActionEnable(object[] ps)
+		{
+			this.target.Object.Enable();
+			return null;
+		}
+		public object ActionDisable(object[] ps)
+		{
+			this.target.Object.Disable();
+			return null;
 		}
 		
 		// Runnables

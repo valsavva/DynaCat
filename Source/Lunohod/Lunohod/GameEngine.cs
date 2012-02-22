@@ -56,6 +56,11 @@ namespace Lunohod
 			}
 		}	
 		
+		public LevelEngine LevelEngine
+		{
+			get { return this.ScreenEngine as LevelEngine; }
+		}
+		
 		public Vector3 Scale { get; private set; }
 		
 		public bool DrawDebugInfo

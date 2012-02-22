@@ -17,6 +17,7 @@ namespace Lunohod.Objects
 		private XElement element;
 		private XSprite sprite;
 		private IHasVolume audio;
+		private XHero hero;
 		
 		private string property;
 		private PropertyInfo propertyInfo;
@@ -39,6 +40,7 @@ namespace Lunohod.Objects
 			this.element = target as XElement;
 			this.sprite = target as XSprite;
 			this.audio = target as IHasVolume;
+			this.hero = target as XHero;
 			
 			this.propertyType = typeof(float);
 			
@@ -53,6 +55,7 @@ namespace Lunohod.Objects
 				case "Opacity": floatGetter = GetOpacity; floatSetter = SetOpacity; break;
 				case "CurrentFrame": floatGetter = GetCurrentFrame; floatSetter = SetCurrentFrame; break;
 				case "Volume": floatGetter = GetVolume; floatSetter = SetVolume; break;
+				case "Health": floatGetter = GetHealth; floatSetter = SetHealth; break;
 				default :
 				{
 					if (this.propertyInfo == null)
@@ -193,6 +196,14 @@ namespace Lunohod.Objects
 		private void SetVolume(float v)
 		{
 			audio.Volume = v;
+		}
+		private float GetHealth()
+		{
+			return hero.Health;
+		}
+		private void SetHealth(float v)
+		{
+			// noop
 		}
 		#endregion
 	}

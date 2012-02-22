@@ -18,7 +18,6 @@ namespace Lunohod
         private XHero hero;
         private XTower tower;
 
-		private XLevel levelObject;
 		private XClass explosionClass;
 		private int bombCounter = 0;
 		
@@ -41,7 +40,9 @@ namespace Lunohod
             get { return tower; }
             set { tower = value; }
         }
-        
+
+		public XLevel LevelObject { get { return this.RootComponent as XLevel; } }
+		
         public override Type RootComponentType { get { return typeof(XLevel); } }
 		
 		public override void Initialize()
@@ -50,13 +51,11 @@ namespace Lunohod
 			
 			this.waves = new Dictionary<GameEvent, RadioWave>();
 
-			this.levelObject = (XLevel)this.RootComponent;
-			
-			if (!string.IsNullOrEmpty(this.levelObject.DefaultSettings.ExplosionClass))
+			if (!string.IsNullOrEmpty(this.LevelObject.DefaultSettings.ExplosionClass))
 			{
-				this.explosionClass = this.levelObject.FindDescendant(this.levelObject.DefaultSettings.ExplosionClass) as XClass;
+				this.explosionClass = this.LevelObject.FindDescendant(this.LevelObject.DefaultSettings.ExplosionClass) as XClass;
 				if (this.explosionClass == null)
-					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.levelObject.DefaultSettings.ExplosionClass));
+					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.LevelObject.DefaultSettings.ExplosionClass));
 			}
 		}
 		
@@ -155,10 +154,15 @@ namespace Lunohod
 
 		public override bool EventAllowed(GameEvent e)
 		{
-			if (this.levelObject.DefaultSettings.BombCount == -1)
-				return true;
+			if (e.EventType == GameEventType.Explosion)
+			{
+				if (this.LevelObject.DefaultSettings.BombCount == -1)
+					return true;
+				
+				return this.bombCounter < this.LevelObject.DefaultSettings.BombCount;
+			}
 			
-			return this.bombCounter < this.levelObject.DefaultSettings.BombCount;
+			return true;
 		}
 		
 		public override void ProcessEvent(GameTime gameTime, GameEvent e)
@@ -222,7 +226,7 @@ namespace Lunohod
 				a.AddSubtreeToComponentDict(instance);
 			});
 			// initialize the new instance and its subcomponents
-			instance.Initialize(new InitializeParameters() { Game = this.game, ScreenEngine = this.game.ScreenEngine });
+			instance.Initialize(new InitializeParameters() { Game = this.game, ScreenEngine = this });
 			
 			this.bombCounter++;
 		}

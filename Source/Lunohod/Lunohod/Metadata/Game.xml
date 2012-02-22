@@ -39,6 +39,7 @@
 		<!-- Test screens start here -->
 		
 		<Level Id="AnimationSamples" File="AnimationSamples.xml" />
+		<Level Id="TestDeath" File="TestDeath.xml" />
 		<Level Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
 		<Level Id="TestExplosion" File="TestExplosion.xml" />
 		<Level Id="robocat_demo" File="robocat_demo.xml" />

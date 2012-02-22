@@ -15,9 +15,14 @@ namespace Lunohod.Objects
 		private Vector2 heroCenter;
 		private double distanceToTower;
 		
+		/// <summary>
+		/// Specifies hero's speed.
+		/// </summary>
 		[XmlAttribute]
 		public float Speed;
-		
+		/// <summary>
+		/// Specifies hero's direction.
+		/// </summary>
 		[XmlIgnore]
 		public Vector2 Direction;
 
@@ -33,7 +38,25 @@ namespace Lunohod.Objects
 		{
 			get { return distanceToTower; }
 		}
-		
+		/// <summary>
+		/// Gets hero's current health level.
+		/// </summary>
+		[XmlIgnore]
+		public float Health { get; private set; }
+		/// <summary>
+		/// Gets a value indicating whether hero is dead.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> if hero is dead; otherwise, <c>false</c>.
+		/// </value>
+		[XmlIgnore]
+		public bool IsDead { get { return this.Health <= 0; } }
+		/// <summary>
+		/// Gets a value indicating whether this <see cref="Lunohod.Objects.XHero"/> is in transaction.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> if in transaction; otherwise, <c>false</c>.
+		/// </value>
         [XmlIgnore]
 		public bool InTransaction { get; private set; }
 		
@@ -42,6 +65,7 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 
 			p.LevelEngine.Hero = this;
+			this.Health = p.LevelEngine.LevelObject.DefaultSettings.HeroHealth;
 			
 			distanceToTower = double.MaxValue;
 		}
@@ -80,6 +104,11 @@ namespace Lunohod.Objects
 			int y = int.Parse(sy);
 			
 			this.Direction = new Vector2(x, y);
+		}
+
+		public void InflictDamage(float damage)
+		{
+			this.Health -= damage;
 		}
     }
 }
