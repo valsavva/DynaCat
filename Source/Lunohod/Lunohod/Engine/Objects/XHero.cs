@@ -7,6 +7,9 @@ using Microsoft.Xna.Framework;
 
 namespace Lunohod.Objects
 {
+    /// <summary>
+    /// Represents the main character in the game.
+    /// </summary>
     [XmlType("Hero")]
     public class XHero : XElement
     {
@@ -25,7 +28,7 @@ namespace Lunohod.Objects
 		/// </summary>
 		[XmlIgnore]
 		public Vector2 Direction;
-
+        /// <exclude />
         [XmlAttribute("Direction")]
         public string zDirection
 		{
@@ -33,11 +36,6 @@ namespace Lunohod.Objects
 			set { this.Direction = value.ToVector2(); }
 		}
 		
-		[XmlIgnore]
-		public double DistanceToTower
-		{
-			get { return distanceToTower; }
-		}
 		/// <summary>
 		/// Gets hero's current health level.
 		/// </summary>
@@ -59,6 +57,11 @@ namespace Lunohod.Objects
 		/// </value>
         [XmlIgnore]
 		public bool InTransaction { get; private set; }
+
+        internal double DistanceToTower
+        {
+            get { return distanceToTower; }
+        }
 		
 		public override void Initialize(InitializeParameters p)
 		{
@@ -87,17 +90,25 @@ namespace Lunohod.Objects
 			this.Bounds.Center(ref heroCenter);
 			distanceToTower = (towerCenter - heroCenter).Length();
 		}
-		
+        /// <summary>
+        /// Puts hero into the "transactional" state, when he does not respond to the player commands.
+        /// </summary>
 		public void StartTransaction()
 		{
 			this.InTransaction = true;
 		}
-
+        /// <summary>
+        /// Ends transactional state.
+        /// </summary>
 		public void EndTransaction()
 		{
 			this.InTransaction = false;
 		}
-		
+		/// <summary>
+		/// Sets hero's direction.
+		/// </summary>
+		/// <param name="sx"></param>
+		/// <param name="sy"></param>
 		public void SetDirection(string sx, string sy)
 		{
 			int x = int.Parse(sx);
@@ -105,7 +116,10 @@ namespace Lunohod.Objects
 			
 			this.Direction = new Vector2(x, y);
 		}
-
+        /// <summary>
+        /// Causes hero to lose the <c>damage</c> amount of health.
+        /// </summary>
+        /// <param name="damage">Amount of healt hero should lose.</param>
 		public void InflictDamage(float damage)
 		{
 			this.Health -= damage;
