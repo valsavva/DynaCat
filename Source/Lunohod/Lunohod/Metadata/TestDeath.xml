@@ -17,7 +17,7 @@
 
 	<!-- health meter -->	
 	<Class Id="clsLifeMeter">
-		<Group>
+		<Group Opacity="0.5">
 			<NumTrigger Property="hero.Health" Compare="GE" Value="5" Group="meterStates">
 				<Image TextureId="blank" Bounds="0,0,100,20" BackColor="#00FF00"/>
 			</NumTrigger> 
@@ -83,11 +83,11 @@
 
 		<Tower Bounds="0,0,35,35" SignalSpeed="400"/>
 
-		<Group Id="lifeMeter" Bounds="10,10,100,20" Class="clsLifeMeter"/>
-		
 		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHero"/>
 		
 		<Enemy Id="enemy" Bounds="250,150,50,50" Class="clsEnemy"/>
+
+		<Group Id="lifeMeter" Bounds="10,10,100,20" Class="clsLifeMeter"/>
 	</Layer>
 
 	<Include File="Dashboard.xml" />

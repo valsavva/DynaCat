@@ -11,10 +11,10 @@ namespace Lunohod.Objects
     public class XEnemy : XElement, IExploding
     {
 		/// <summary>
-		/// The damage the enemy will cause when attacking the hero.
+		/// The damage the enemy will cause when attacking the hero. Default value is 1.
 		/// </summary>
 		[XmlAttribute]
-		public float Damage;
+		public float Damage = 1;
         /// <inheritdoc />
         [XmlAttribute]
         public bool IsExploding { get; set; }
