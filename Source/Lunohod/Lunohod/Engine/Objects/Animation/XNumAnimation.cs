@@ -9,31 +9,54 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
+    /// <summary>
+    /// Animates a value <see cref="XNumAnimation.Target"/> starting
+    /// from the value <see cref="XNumAnimation.From"/> to <see cref="XNumAnimation.To"/>.
+    /// </summary>
     [XmlType("NumAnimation")]
     public class XNumAnimation : XAnimationBase
     {
         private List<TimeCurve> curves;
         private List<PropertyAccessor> targets;
         private List<XKeyFrame> keyFrames;
+        private List<float?> startValues;
 
+        /// <summary>
+        /// A property, or a comma-delimited list of properties that will be animated.
+        /// </summary>
         [XmlAttribute]
         public string Target;
+        /// <summary>
+        /// The starting value, or a comma-delimited list of corresponding starting values.
+        /// </summary>
         [XmlAttribute]
         public string From;
+        /// <summary>
+        /// The ending value, or a comma-delimited list of corresponding ending values.
+        /// </summary>
         [XmlAttribute]
         public string To;
+        /// <summary>
+        /// Specifies whether the <see cref="From"/> and the <see cref="To"/> values
+        /// are not absolute values, but rather offsets of the target value at the beginning of the animation.
+        /// I.e. the animation goes from <c>Target+From</c> to <c>Target+To</c>.
+        /// </summary>
 		[XmlAttribute]
 		public bool IsDelta;
-		
-		private List<float?> startValues;
+        /// <summary>
+        /// Specifies smoothing for the "short" form of animation
+        /// using "From/To" attributes instead of group of keyframes. Default is <see cref="CurveTangent.Linear"/>.
+        /// </summary>
+        [XmlAttribute]
+        public CurveTangent Smoothing = CurveTangent.Linear;
 		
         public override void Initialize(InitializeParameters p)
         {
             if (!string.IsNullOrEmpty(this.From))
             {
                 // Use the From/To properties
-                this.Subcomponents.Add(new XKeyFrame() { Time = TimeSpan.Zero, Value = this.From });
-                this.Subcomponents.Add(new XKeyFrame() { Time = this.Duration, Value = this.To });
+                this.Subcomponents.Add(new XKeyFrame() { Time = TimeSpan.Zero, Value = this.From, Smoothing = this.Smoothing });
+                this.Subcomponents.Add(new XKeyFrame() { Time = this.Duration, Value = this.To, Smoothing = this.Smoothing });
             }
 
             base.Initialize(p);
@@ -65,7 +88,7 @@ namespace Lunohod.Objects
                 curves.Add(curve);
             }
         }
-		
+		/// <inheritdoc />
 		public override void Start()
 		{
 			base.Start();

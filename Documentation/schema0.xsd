@@ -111,9 +111,17 @@
         <xs:attribute name="From" type="xs:string" />
         <xs:attribute name="To" type="xs:string" />
         <xs:attribute name="IsDelta" type="xs:boolean" use="required" />
+        <xs:attribute name="Smoothing" type="CurveTangent" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="CurveTangent">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flat" />
+      <xs:enumeration value="Linear" />
+      <xs:enumeration value="Smooth" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="Do">
     <xs:complexContent mixed="false">
       <xs:extension base="XRunnableBase">
@@ -385,13 +393,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="CurveTangent">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Flat" />
-      <xs:enumeration value="Linear" />
-      <xs:enumeration value="Smooth" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:complexType name="Group">
     <xs:complexContent mixed="false">
       <xs:extension base="XElement">
