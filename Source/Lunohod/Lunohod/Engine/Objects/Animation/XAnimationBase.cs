@@ -55,15 +55,15 @@ namespace Lunohod.Objects
 		}
 
         /// <exclude />
-        internal override int CalculateRepeatsDone()
+        internal override float CalculateRepeatsDone()
 		{
 			if (this.elapsedTime == TimeSpan.Zero || this.Duration == TimeSpan.Zero)
-				return 0;
+				return 0f;
 			
 			if (this.Autoreverse)
-				return (int)(this.elapsedTime.TotalMilliseconds / (this.Duration.TotalMilliseconds * 2.0f));
+				return (float)(this.elapsedTime.TotalMilliseconds / (this.Duration.TotalMilliseconds * 2.0));
 			else
-				return (int)(this.elapsedTime.TotalMilliseconds / this.Duration.TotalMilliseconds);
+				return (float)(this.elapsedTime.TotalMilliseconds / this.Duration.TotalMilliseconds);
 		}
 
         /// <exclude />

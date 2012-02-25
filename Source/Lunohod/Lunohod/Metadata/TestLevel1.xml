@@ -60,6 +60,13 @@
 			<NumAnimation From="100" To="400" Duration="4" Autoreverse="false" Smoothing="Smooth" Target="X" InProgress="true"/>
 		</Image>
 
+		<Image Id="imageCat" TextureId="cat" Bounds="20,20,40,37" Origin="20,20" Rotation="0" Opacity="1">
+			<NumAnimation From="100" To="400" Duration="4" Autoreverse="false" Smoothing="Smooth" Target="X" InProgress="true"/>
+		</Image>
+		<Image Id="imageCat11" TextureId="cat" Bounds="20,60,40,37" Origin="20,20" Rotation="0" Opacity="1">
+			<NumAnimation From="100" To="400" Duration="4" Autoreverse="true" Smoothing="Smooth" Target="X" RepeatCount="1.5" InProgress="true"/>
+		</Image>
+
 		<Image Id="imageCat1" TextureId="cat" Bounds="20,60,40,37">
 			<NumAnimation From="100,60" To="400,160" Duration="4" Autoreverse="true" Target="X,Y" InProgress="true"/>
 		</Image>

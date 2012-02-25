@@ -17,7 +17,7 @@ namespace Lunohod.Objects
         protected TimeSpan elapsedTime;
 		protected bool inProgress = false;
 		protected bool isPaused = false;
-		protected int repeatsDone = 0;
+		protected float repeatsDone = 0;
 
         /// <summary>
         /// Gets the amount of time elapsed since the component was started.
@@ -29,7 +29,7 @@ namespace Lunohod.Objects
         /// <summary>
         /// Gets the number of times component executed since it was started.
         /// </summary>
-		public int RepeatsDone
+		public float RepeatsDone
 		{
 			get { return repeatsDone; }
 		}
@@ -88,7 +88,7 @@ namespace Lunohod.Objects
 			base.Update(p);
 		}
 
-        internal virtual int CalculateRepeatsDone()
+        internal virtual float CalculateRepeatsDone()
 		{
 			return this.repeatsDone;
 		}
@@ -104,7 +104,7 @@ namespace Lunohod.Objects
 				if (this.elapsedTime > this.RepeatTime)
 					  Stop();
 			}
-			else if (this.RepeatCount != 0)
+			else if (this.RepeatCount != 0f)
 			{
 				repeatsDone = CalculateRepeatsDone();
 
