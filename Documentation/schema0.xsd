@@ -156,17 +156,17 @@
       <xs:extension base="XObject">
         <xs:sequence>
           <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element minOccurs="0" maxOccurs="1" name="SoundFile" type="SoundFile" />
-            <xs:element minOccurs="0" maxOccurs="1" name="Font" type="Font" />
             <xs:element minOccurs="0" maxOccurs="1" name="Texture" type="Texture" />
             <xs:element minOccurs="0" maxOccurs="1" name="MusicFile" type="MusicFile" />
+            <xs:element minOccurs="0" maxOccurs="1" name="Font" type="Font" />
+            <xs:element minOccurs="0" maxOccurs="1" name="SoundFile" type="SoundFile" />
           </xs:choice>
         </xs:sequence>
         <xs:attribute name="RootFolder" type="xs:string" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SoundFile">
+  <xs:complexType name="Texture">
     <xs:complexContent mixed="false">
       <xs:extension base="XResource" />
     </xs:complexContent>
@@ -178,17 +178,17 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MusicFile">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XResource" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Texture">
+  <xs:complexType name="SoundFile">
     <xs:complexContent mixed="false">
       <xs:extension base="XResource" />
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="Font">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicFile">
     <xs:complexContent mixed="false">
       <xs:extension base="XResource" />
     </xs:complexContent>
@@ -201,8 +201,8 @@
   <xs:complexType name="TapArea">
     <xs:complexContent mixed="false">
       <xs:extension base="XElement">
-        <xs:attribute name="Event" type="xs:string" />
         <xs:attribute name="Action" type="xs:string" />
+        <xs:attribute name="Event" type="xs:string" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

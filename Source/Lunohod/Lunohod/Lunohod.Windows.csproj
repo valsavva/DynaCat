@@ -160,7 +160,6 @@
     <Compile Include="Engine\Objects\Animation\XRunnableBase.cs" />
     <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
     <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\SignalContainer.cs" />
     <Compile Include="Engine\Objects\Events\XBoolTrigger.cs" />
     <Compile Include="Engine\Objects\Events\XDistanceTrigger.cs" />
     <Compile Include="Engine\Objects\Events\XEvent.cs" />
@@ -1245,6 +1244,9 @@
     <Content Include="Metadata\TestSets.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Metadata\TestSignals.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestTeleport.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
