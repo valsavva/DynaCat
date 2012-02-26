@@ -6,23 +6,36 @@
 		<Texture Id="blank" Source="blank"/>
 	</Resources>
 	
+	<Class Id="clsButton">
+		<Group>
+			<TapArea Action="this_setPress.Start()" />
+			<ParallelSet Id="this_setPress">
+				<Do Action="@action"/>
+				<SequenceSet>
+					<Do Action="this_img.Enable()"/>
+					<NumAnimation Target="this_img.Opacity" From="0" To="0.4" Duration="0.2" Smoothing="Flat" Autoreverse="true" RepeatCount="1"/>
+					<Do Action="this_img.Disable()"/>
+				</SequenceSet>
+			</ParallelSet>
+			<Image Id="this_img" TextureId="blank" BackColor="#FF0000" Opacity="0" Enabled="false"/>
+		</Group>
+	</Class>
+	
 	<Dashboard BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270" />
     	<Image TextureId="dashboard" Opacity="0.2"/>
 
-		<TapArea Bounds="0, 104, 72, 68" Event="system:up" />
-		<TapArea Bounds="408, 104, 72, 68" Event="system:up" />
+		<Group Id="grp01" Bounds="0, 104, 72, 68" Class="clsButton" ClassParams="@action=~system:up"/>
+		<Group Id="grp02" Bounds="408, 104, 72, 68" Class="clsButton" ClassParams="@action=~system:up"/>
 
+		<Group Id="grp03" Bounds="0, 174, 72, 60" Class="clsButton" ClassParams="@action=~system:left"/>
+		<Group Id="grp04" Bounds="408, 174, 72, 60" Class="clsButton" ClassParams="@action=~system:right"/>
 
-		<TapArea Bounds="0, 174, 72, 60" Event="system:left" />
-		<TapArea Bounds="408, 174, 72, 60" Event="system:right" />
-
-
-		<TapArea Bounds="0, 236, 72, 84" Event="system:down" />
-		<TapArea Bounds="408, 236, 72, 84" Event="system:down" />
+		<Group Id="grp05" Bounds="0, 236, 72, 84" Class="clsButton" ClassParams="@action=~system:down"/>
+		<Group Id="grp06" Bounds="408, 236, 72, 84" Class="clsButton" ClassParams="@action=~system:down"/>
 		
-		<TapArea Bounds="147, 248, 74, 72" Event="system:stop" />
-		<TapArea Bounds="259, 248, 74, 72" Event="system:explosion" />
+		<Group Id="grp07" Bounds="147, 248, 74, 72" Class="clsButton" ClassParams="@action=~system:stop"/>
+		<Group Id="grp08" Bounds="259, 248, 74, 72" Class="clsButton" ClassParams="@action=~system:explosion"/>
 		
 		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
 		<TapArea Bounds="430,00,60,60" Event="system:endLevel" />
