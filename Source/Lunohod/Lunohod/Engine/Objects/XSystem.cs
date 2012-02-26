@@ -51,7 +51,7 @@ namespace Lunohod.Objects
 		
 		public void CloseCurrentScreen()
 		{
-			game.EnqueueEvent(new GameEvent(GameEventType.CloseCurrentScreen, GameEngine.Instance.CurrentUpdateTime) { IsInstant = true });
+			this.EnqueueEvent(GameEventType.CloseCurrentScreen);
 		}
 		
 		public void EndCurrentLevel()

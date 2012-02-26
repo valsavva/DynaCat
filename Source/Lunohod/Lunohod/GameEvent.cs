@@ -8,15 +8,27 @@ namespace Lunohod
 {
 	public class GameEvent
 	{
-		public static readonly Dictionary<string, GameEventType> EventTypeDict = new Dictionary<string, GameEventType>(StringComparer.InvariantCultureIgnoreCase)
+		private static readonly Dictionary<string, GameEventType> eventNameTypeDict = new Dictionary<string, GameEventType>(StringComparer.InvariantCultureIgnoreCase)
 		{
 			{ "system:up", GameEventType.Up },
 			{ "system:down", GameEventType.Down },
 			{ "system:left", GameEventType.Left },
 			{ "system:right", GameEventType.Right },
 			{ "system:stop", GameEventType.Stop },
-			{ "system:explosion", GameEventType.Explosion }
+			{ "system:explosion", GameEventType.Explosion },
+			{ "system:closeScreen", GameEventType.CloseCurrentScreen },
+			{ "system:endLevel", GameEventType.EndCurrentLevel },
+			
+			{ "system:levelLoaded", GameEventType.LevelLoaded }
 		};
+		
+		private static readonly Dictionary<GameEventType, string> eventTypeNameDict = new Dictionary<GameEventType, string>();
+		
+		static GameEvent()
+		{
+			foreach(var item in eventNameTypeDict)
+				eventTypeNameDict.Add(item.Value, item.Key);
+		}
 		
 		private GameEvent(GameTime gameTime)
 		{
@@ -28,15 +40,15 @@ namespace Lunohod
 			: this(gameTime)
 		{
 			this.EventType = eventType;
+			this.Id = eventTypeNameDict[eventType];
 		}
 		public GameEvent(string id, GameTime gameTime)
 			: this(gameTime)
 		{
-			if (!EventTypeDict.TryGetValue(id, out this.EventType))
-			{
+			this.Id = id;
+
+			if (!eventNameTypeDict.TryGetValue(this.Id, out this.EventType))
 				this.EventType = GameEventType.Custom;
-				this.Id = id;
-			}
 		}
 		
 		public string Id;

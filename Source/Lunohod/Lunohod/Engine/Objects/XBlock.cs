@@ -42,6 +42,8 @@ namespace Lunohod.Objects
 						intersect.Width * level.Hero.Direction.X,
 						intersect.Height * level.Hero.Direction.Y
 					);
+				
+					this.EnqueueEvent(level.Hero.Id + ":bounce");
 				}; break;
 				case XEdgeType.Stick : {
 					// don't change hero's direction, just keep him in place
@@ -53,6 +55,8 @@ namespace Lunohod.Objects
 					);
 				
 					level.Hero.Direction = Direction.VectorStop;
+
+				this.EnqueueEvent(level.Hero.Id + ":stick");
 				}; break;
 				case XEdgeType.Teleport : break;
 			}

@@ -192,7 +192,6 @@ namespace Lunohod
 	                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
 	                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
 	                case GameEventType.Explosion: PlantBomb(); break;
-					default: e.IsHandled = false; break;
 				}
 			}
 

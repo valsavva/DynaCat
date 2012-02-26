@@ -65,7 +65,9 @@ namespace Lunohod.Objects
 				for(int j = 0; j < rangeNames.Count; j++)
 				{
 					if (distanceSquared <= rangeValuesSquared[j])
-						e.GetSignalContainer("events").Signal(rangeNames[j]);
+					{
+						this.EnqueueEvent(e.Id + ":" + rangeNames[j]);
+					}
 				}
 			}
 		}

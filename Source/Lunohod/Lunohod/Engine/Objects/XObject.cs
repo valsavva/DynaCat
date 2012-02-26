@@ -11,7 +11,7 @@ namespace Lunohod.Objects
 	abstract public class XObject : IDisposable
 	{
 		protected bool isDisposed;
-		private Dictionary<string, SignalContainer> signalContainers;
+		private Dictionary<string, int> triggerGroups;
 		private XObjectCollection subcomponents;
 		private Dictionary<string, XObject> componentDict;
 		protected int updateCycle;
@@ -206,12 +206,6 @@ namespace Lunohod.Objects
                     if (subcomponent.Enabled)
     					subcomponent.Update(p);
 				}
-
-			if (signalContainers != null)
-			{
-				foreach(var item in signalContainers)
-					item.Value.Clear();
-			}
 		}
         /// <summary>
         /// This method represents the draw stage of the four primary stages of the component lifecycle
@@ -400,22 +394,15 @@ namespace Lunohod.Objects
 		}
         #endregion
 
-        internal SignalContainer GetSignalContainer(string containerName)
-		{
-			if (signalContainers == null)
-				signalContainers = new Dictionary<string, SignalContainer>();
-			
-			SignalContainer container = null;
-			
-			if (!signalContainers.TryGetValue(containerName, out container))
-			{
-				container = new SignalContainer();
-				signalContainers.Add(containerName, container);
-			}
-			
-			return container;
-		}
 
+		public Dictionary<string, int> GetTriggerGroups()
+		{
+			if (this.triggerGroups == null)
+				this.triggerGroups = new Dictionary<string, int>();
+			
+			return this.triggerGroups;
+		}
+		
 		internal virtual void ReplaceParameter(string par, string val)
 		{
 			if (this.Id != null)
@@ -432,6 +419,19 @@ namespace Lunohod.Objects
 				{
 					subcomponents[i].ReplaceParameters(pars, vals);
 				}
+		}
+		
+		internal void EnqueueEvent(string name)
+		{
+			GameEngine.Instance.EnqueueEvent(
+				new GameEvent(name, GameEngine.Instance.CurrentUpdateTime) { IsInstant = true }
+			);
+		}
+		internal void EnqueueEvent(GameEventType type)
+		{
+			GameEngine.Instance.EnqueueEvent(
+				new GameEvent(type, GameEngine.Instance.CurrentUpdateTime) { IsInstant = true }
+			);
 		}
 		
         /// <summary>

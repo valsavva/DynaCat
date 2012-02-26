@@ -24,9 +24,13 @@ namespace Lunohod.Objects
 		private List<StrValueReader> parameters;
 		private object[] parameterValues;
 
-		public ActionCaller(XObject target, string action)
+		public ActionCaller(XObject caller, string memberDescriptor)
 		{
-            this.target = new ObjectProxy(target);
+			XObject target;
+			string action;
+			caller.GetTargetFromDescriptor(memberDescriptor, out target, out action);
+
+			this.target = new ObjectProxy(target);
 			
 			ParseParameters(ref action);
 			
@@ -110,19 +114,15 @@ namespace Lunohod.Objects
 			}
 		}
 		
-		public static ActionCallerBase CreateActionCaller(XObject trigger, string memberDescriptor)
+		public static ActionCallerBase CreateActionCaller(XObject caller, string memberDescriptor)
 		{
 			if (string.IsNullOrEmpty(memberDescriptor))
 				return null;
 			
-			XObject target;
-			string actoin;
-			trigger.GetTargetFromDescriptor(memberDescriptor, out target, out actoin);
-			
 			if (memberDescriptor.Contains(":"))
-				return new EventCaller(target, actoin);
+				return new EventCaller(caller, memberDescriptor);
 			else
-				return new ActionCaller(target, actoin);
+				return new ActionCaller(caller, memberDescriptor);
 		}
 		
 		

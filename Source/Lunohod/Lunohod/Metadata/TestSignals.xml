@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="AnimationSamples.xml" Bounds="0,0,480,320">
+	<!--
+		Use Difficulty to match the setting against the currently choosen level of Difficulty (or not specify or use "-1");
+		Use BombCount to a number, or not specify or use "-1" to allow for no limit;
+	-->
+	<LevelSettings
+			Dificulty="-1"
+			BombCount="3"
+	/>
+
+	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank" />
+		<Font Id="SystemFont" Source="SystemFont" />
+		<Texture Id="chargers" Source="ch"/>
+		<Texture Id="circle100" Source="wave0100" />
+		<Texture Id="circle200" Source="wave0200" />
+		<Texture Id="circle300" Source="wave0300" />
+		<Texture Id="circle400" Source="wave0400" />
+		<Texture Id="txrExplosion" Source="explosion"/>
+	</Resources>
+
+	<Include File="Textures.xml" />
+	<Include File="ClassCursor.xml" />
+
+
+	<Class Id="clsSwitch">
+		<Group>
+			<BoolTrigger Condition="this:on" Group="switchStates">
+				<Image TextureId="blank" BackColor="#00FF00"/>
+			</BoolTrigger>		
+			<BoolTrigger Group="switchStates">
+				<Image TextureId="blank" BackColor="#FF0000"/>
+			</BoolTrigger>
+			<!-- Flips the signal between "+" and "-" states -->
+			<!-- By intersectin trigger -->
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this:*on"/>
+			<!-- By tapping -->
+			<TapArea Action="this:*on" />
+			<Text Text="Switch" FontId="SystemFont" Location="5,20" Color="#000000" />
+		</Group>
+	</Class>
+	
+	<Class Id="clsBlinker">
+		<Group>
+			<BoolTrigger Condition="@condition" EnterAction="this_anmBlink.Start()"/>
+			<NumAnimation Id="this_anmBlink" Target="Opacity" From="1" To="0" Duration="0.125" Autoreverse="true" RepeatCount="4" InProgress="false"/>
+			<Text Text="@text" FontId="SystemFont" Color="#000000" />
+		</Group>
+	</Class>
+	
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
+        <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
+    </Layer>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Tower Bounds="0,0,35,35" SignalSpeed="800"/>	
+		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor" />
+		
+		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
+		<Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
+		<Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
+		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
+
+		<!-- Well-known signals demo -->
+		<Block Id="blkStick" Bounds="15,250,100,15" Edges="Stick">
+			<Image TextureId="blank" BackColor="#333333"/>
+		</Block>
+
+		<Group Id="grpDir1" Bounds="15,15,70,30" Class="clsBlinker" ClassParams="@condition=system:left,@text=left"/>
+		<Group Id="grpDir2" Bounds="15,45,70,30" Class="clsBlinker" ClassParams="@condition=system:right,@text=right"/>
+		<Group Id="grpDir3" Bounds="15,75,70,30" Class="clsBlinker" ClassParams="@condition=system:up,@text=up"/>
+		<Group Id="grpDir4" Bounds="15,105,70,30" Class="clsBlinker" ClassParams="@condition=system:down,@text=down"/>
+
+		<Group Id="grpCollision1" Bounds="75,15,70,30" Class="clsBlinker" ClassParams="@condition=hero:bounce,@text=bounce"/>
+		<Group Id="grpCollision2" Bounds="75,45,70,30" Class="clsBlinker" ClassParams="@condition=hero:stick,@text=stick"/>
+
+		<Group Id="grpLevelInfo1" Bounds="135,15,70,30" Class="clsBlinker" ClassParams="@condition=system:levelLoaded,@text=level loaded"/>
+
+		<!-- *** Switching demo -->
+		
+		<Group Id="switch01" Bounds="250,150,50,50" Class="clsSwitch"/>
+		
+		<Image TextureId="blank" Bounds="150,220,50,50" BackColor="#00FF00" Opacity="0.5">
+			<!-- Puts the "on" flag to the turned on state -->
+			<Text Text="On" FontId="SystemFont" Location="20,20" Color="#000000" />
+			<TapArea Action="switch01:+on" />
+		</Image>
+
+		<Image TextureId="blank" Bounds="350,220,50,50" BackColor="#FF0000" Opacity="0.5">
+			<!-- Removes the flag (aka "-") -->
+			<Text Text="Off" FontId="SystemFont" Location="20,20" Color="#000000"/>
+			<TapArea Action="switch01:-on" />
+		</Image>
+
+	</Layer>
+
+	<Include File="Dashboard.xml" />	
+
+</Level>
+

@@ -24,6 +24,8 @@ namespace Lunohod.Objects
 			this.Exploding = new List<XElement>();
 
 			base.Initialize(p);
+			
+			this.EnqueueEvent(GameEventType.LevelLoaded);
 		}
     }
 }

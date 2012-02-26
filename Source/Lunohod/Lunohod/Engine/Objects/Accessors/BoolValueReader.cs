@@ -12,10 +12,8 @@ namespace Lunohod.Objects
         private PropertyAccessor accessor;
 		private Func<bool> func;
 		private bool not = false;
-		
-		private XObject eventContainerObject;
 		private string eventName;
-
+		
         public BoolValueReader(XObject currentObject, string descriptor)
         {
 			if (descriptor != null && descriptor.StartsWith("!"))
@@ -30,7 +28,10 @@ namespace Lunohod.Objects
 			}
 			else if (descriptor.Contains(":"))
 			{
-				currentObject.GetTargetFromDescriptor(descriptor, out eventContainerObject, out eventName);
+				// verifying event object exists
+				currentObject.GetTargetFromDescriptor(descriptor, out currentObject, out eventName);
+				
+				eventName = descriptor;
 				func = this.ReturnEventSignaled;
 			}
 			else
@@ -42,7 +43,7 @@ namespace Lunohod.Objects
 		
 		private bool ReturnEventSignaled()
 		{
-			return this.eventContainerObject.GetSignalContainer("events").IsSignaled(this.eventName);
+			return GameEngine.Instance.ScreenEngine.CurrentEvents.ContainsKey(this.eventName);
 		}
 			
 		private bool ReturnAccessorValue()

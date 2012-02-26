@@ -12,18 +12,22 @@ namespace Lunohod.Objects
 {
 	public class EventCaller : ActionCallerBase
 	{
-		private ObjectProxy target;
 		private string evnt;
+		private XObject target;
 
-		public EventCaller(XObject target, string evnt)
+		public EventCaller(XObject caller, string memberDescriptor)
 		{
-			this.target = new ObjectProxy(target);
-			this.evnt = evnt;
+			// ensure that the event target exists
+			string action;
+			caller.GetTargetFromDescriptor(memberDescriptor, out target, out action);
+
+			this.evnt = memberDescriptor;
 		}
 		
 		public override object Call()
 		{
-			target.Object.GetSignalContainer("events").Signal(evnt);
+			if (target.Enabled)
+				target.EnqueueEvent(evnt);
 			
 			return null;
 		}

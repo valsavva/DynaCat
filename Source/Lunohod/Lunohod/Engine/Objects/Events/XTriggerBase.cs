@@ -50,7 +50,9 @@ namespace Lunohod.Objects
 				// once we're triggered, we stay triggered
 			}
 			// if we belong to a group of triggers and one of them has already signaled - get out
-			else if (this.Group != null && this.Parent.GetSignalContainer("triggerGroups").IsSignaled(this.Group))
+			else if (this.Group != null
+			         && this.Parent.GetTriggerGroups().ContainsKey(this.Group)
+			          && this.Parent.GetTriggerGroups()[this.Group] == p.Game.CycleNumber)
 			{
 				this.isTriggered = false;
 			}
@@ -62,7 +64,7 @@ namespace Lunohod.Objects
 			
 			// if triggered and belong to a group - need to signal it for others in the group
 			if (this.isTriggered && this.Group != null)
-				this.Parent.GetSignalContainer("triggerGroups").Signal(this.Group);
+				this.Parent.GetTriggerGroups()[this.Group] = p.Game.CycleNumber;
 			
 			// fire appropriate actions
 			if (this.isTriggered && !oldIsTriggered && enterActions != null)

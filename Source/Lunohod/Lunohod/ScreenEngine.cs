@@ -25,22 +25,57 @@ namespace Lunohod
 		private Vector2 fpsPos = new Vector2(5, 280);
 		private double fps = 0;
 		
+		private List<string> tempList = new List<string>();
+		
 		public List<XTapArea> tapAreas;
 		public List<XElement> obstacles;
+		
+		public virtual Type RootComponentType { get { return typeof(XScreen); } }
+		
+		public XObject RootComponent { get; protected set; }
+
+		public Dictionary<string, bool> CurrentEvents { get; private set; }
 		
 		public ScreenEngine(GameEngine game, string fileName)
 		{
 			this.game = game;
 			this.fileName = fileName;
+			this.CurrentEvents = new Dictionary<string, bool>();
 		}
-		
-		public virtual Type RootComponentType { get { return typeof(XScreen); } }
-		
-		public XObject RootComponent { get; protected set; }
 		
 		public virtual void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
+			if (!e.IsHandled)
+				return;
 			
+			int switchCharIndex = e.Id.IndexOf(':') + 1;
+			int switchChar = e.Id[switchCharIndex];
+			
+			if (switchChar == '+')
+			{
+				// turning on the event permanently
+				string eventId = e.Id.Remove(switchCharIndex, 1);
+				this.CurrentEvents[eventId] = true;
+			}
+			else if (switchChar == '*')
+			{
+				// switching the event on/off
+				string eventId = e.Id.Remove(switchCharIndex, 1);
+				bool currValue = false;
+				this.CurrentEvents.TryGetValue(eventId, out currValue);
+				this.CurrentEvents[eventId] = currValue ^ true;
+			}
+			else if (switchChar == '-')
+			{
+				// removing the event
+				string eventId = e.Id.Remove(switchCharIndex, 1);
+				this.CurrentEvents.Remove(eventId);
+			}
+			else
+			{
+				// turning on the event for one update
+				this.CurrentEvents[e.Id] = false;
+			}
 		}
 
 		public virtual bool EventAllowed(GameEvent e)
@@ -68,6 +103,17 @@ namespace Lunohod
 		{
 			updateParameters.GameTime = gameTime;
 			this.RootComponent.Update(updateParameters);
+
+			if (this.CurrentEvents.Count > 0)
+			{
+				this.tempList.AddRange(this.CurrentEvents.Keys);
+				for(int i = 0; i < tempList.Count; i++)
+				{
+					if (!this.CurrentEvents[tempList[i]])
+						this.CurrentEvents.Remove(tempList[i]);
+				}
+				this.tempList.Clear();
+			}
 		}
 		
 		protected void PreDraw(GameTime gameTime)

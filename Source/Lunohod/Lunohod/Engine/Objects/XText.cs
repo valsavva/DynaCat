@@ -19,7 +19,7 @@ namespace Lunohod.Objects
 		private StrValueReader strValueReader;
 
         [XmlIgnore]
-        public Color ForeColor;
+        public Color Color;
 		[XmlAttribute]
 		public string Text;
 		[XmlAttribute]
@@ -28,13 +28,13 @@ namespace Lunohod.Objects
         [XmlAttribute("Color")]
         public string zColor
 		{
-			set { this.ForeColor = value.ToColor(); }
-			get { return this.ForeColor.ToStr(); }
+			set { this.Color = value.ToColor(); }
+			get { return this.Color.ToStr(); }
 		}
 		
 		public XText()
 		{
-			this.ForeColor = Color.White;
+			this.Color = Color.White;
 		}
 		
 		public override void Initialize(InitializeParameters p)
@@ -51,12 +51,14 @@ namespace Lunohod.Objects
 		}
 		
         private float screenRotation;
+		private Color actualColor;
 
         public override void Update(UpdateParameters p)
         {
             base.Update(p);
 
             this.GetScreenBounds();
+            actualColor = this.Color * this.PropState.Opacity;
 			screenRotation = MathHelper.ToRadians(this.PropState.Rotation);
         }
 
@@ -68,9 +70,9 @@ namespace Lunohod.Objects
 				this.location.Y = this.PropState.ScreenBounds.Value.Y;
 				
 				if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
-					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
+					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, actualColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
 				else
-					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, this.ForeColor);
+					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, actualColor);
 			}
 			
 			base.Draw(p);
@@ -78,7 +80,7 @@ namespace Lunohod.Objects
 		
 		internal override void ReplaceParameter(string par, string val)
 		{
-			if (this.Text != null && this.Text.StartsWith("="))
+			if (this.Text != null)
 				this.Text = this.Text.Replace(par, val);
 			
 			base.ReplaceParameter(par, val);

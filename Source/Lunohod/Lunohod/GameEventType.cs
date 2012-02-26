@@ -12,7 +12,8 @@ namespace Lunohod
         Stop,
         Explosion,
 		CloseCurrentScreen,
-		EndCurrentLevel
+		EndCurrentLevel,
+		LevelLoaded
 	}
 }
 

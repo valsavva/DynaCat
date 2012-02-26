@@ -21,6 +21,11 @@ namespace Lunohod
 		{
 			return queue.Dequeue();
 		}
+
+		public void Clear()
+		{
+			queue.Clear();
+		}
 		
 		public int Count
 		{
