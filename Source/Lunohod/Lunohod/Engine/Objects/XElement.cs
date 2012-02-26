@@ -34,7 +34,7 @@ namespace Lunohod.Objects
 		}
 		
 		private Vector2 rotationCenter;
-		private Color? backColor = null;
+		internal Color? backColor = null;
 		private System.Drawing.RectangleF tmpBounds;
 		protected Vector2 tmpVector1;
 		protected Vector2 tmpVector2;

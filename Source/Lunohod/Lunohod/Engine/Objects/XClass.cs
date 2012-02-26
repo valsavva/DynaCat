@@ -54,9 +54,15 @@ namespace Lunohod.Objects
 			
 			dest.Enabled = src.Enabled;
 			
-			if (src is XElement)
+			var srcElement = src as XElement;
+			if (srcElement != null)
 			{
-				((XElement)dest).Bounds = ((XElement)src).Bounds;
+				var destElement = (XElement)dest;
+				
+				destElement.Bounds = srcElement.Bounds;
+				
+				if (srcElement.backColor.HasValue)
+					destElement.BackColor = srcElement.BackColor;
 			}
 		}
 

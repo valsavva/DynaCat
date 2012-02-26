@@ -21,12 +21,22 @@ namespace Lunohod.Objects
 		}
 		
 		[XmlAttribute]
-		public string Event;
+		public string Event
+		{
+			get { return this.Action.Replace("~", ""); }
+			set {
+				if (value.StartsWith("~"))
+					this.Action = value;
+				else
+					this.Action = "~" + value;
+			}
+		}
 		
 		[XmlAttribute]
 		public string Action;
 		
-		public ActionCallerBase ActionCaller { get { return actionCaller; } }
+		[XmlIgnore]
+		public bool IsTapped;
 		
 		public override void Initialize(InitializeParameters p)
 		{
@@ -34,14 +44,24 @@ namespace Lunohod.Objects
 			
 			p.Game.ScreenEngine.tapAreas.Add(this);
 			
-			if (this.Action != null)
-				actionCaller = Lunohod.Objects.ActionCaller.CreateActionCaller(this, this.Action);
+			actionCaller = Lunohod.Objects.ActionCaller.CreateActionCaller(this, this.Action);
+		}
+		
+		public override void Update(UpdateParameters p)
+		{
+			base.Update(p);
+			
+			if (this.IsTapped)
+			{
+				actionCaller.Call();
+				this.IsTapped = false;
+			}
+			
 		}
 		
 		internal override void ReplaceParameter(string par, string val)
 		{
-			if (this.Action != null)
-				this.Action = this.Action.Replace(par, val);
+			this.Action = this.Action.Replace(par, val);
 			
 			base.ReplaceParameter(par, val);
 		}

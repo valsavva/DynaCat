@@ -322,11 +322,7 @@ namespace Lunohod
 				
 				if (tapArea.GetScreenBounds().Contains(x, y))
 				{
-					if (tapArea.ActionCaller != null)
-						tapArea.ActionCaller.Call();
-					else
-		            	this.EnqueueEvent(new GameEvent(tapArea.Event, gameTime));
-					
+					tapArea.IsTapped = true;
 					return true;
 				}
 			}

@@ -41,6 +41,15 @@
 		</Group>
 	</Class>
 	
+	<Class Id="clsButton">
+		<Group>
+			<Image TextureId="blank" Opacity="0.5">
+				<Text Text="@text" FontId="SystemFont" Location="20,20" Color="#000000" />
+				<TapArea Action="@action" />
+			</Image>
+		</Group>
+	</Class>
+	
 	<Class Id="clsBlinker">
 		<Group>
 			<BoolTrigger Condition="@condition" EnterAction="this_anmBlink.Start()"/>
@@ -55,7 +64,7 @@
     </Layer>
 
 	<Layer Id="action" BackColor="#FFFFFFFF">
-		<Tower Bounds="0,0,35,35" SignalSpeed="800"/>	
+		<Tower Bounds="0,0,35,35" SignalSpeed="300"/>	
 		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor" />
 		
 		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
@@ -82,17 +91,21 @@
 		
 		<Group Id="switch01" Bounds="250,150,50,50" Class="clsSwitch"/>
 		
-		<Image TextureId="blank" Bounds="150,220,50,50" BackColor="#00FF00" Opacity="0.5">
-			<!-- Puts the "on" flag to the turned on state -->
-			<Text Text="On" FontId="SystemFont" Location="20,20" Color="#000000" />
-			<TapArea Action="switch01:+on" />
-		</Image>
+		<!-- Puts the "on" flag to the turned on state -->
+		<Group Id="grpOnButton" Bounds="150,200,50,50" BackColor="#00FF00"
+			Class="clsButton" ClassParams="@text=On,@action=switch01:+on" />
 
-		<Image TextureId="blank" Bounds="350,220,50,50" BackColor="#FF0000" Opacity="0.5">
-			<!-- Removes the flag (aka "-") -->
-			<Text Text="Off" FontId="SystemFont" Location="20,20" Color="#000000"/>
-			<TapArea Action="switch01:-on" />
-		</Image>
+		<!-- Removes the flag -->
+		<Group Id="grpOnButton" Bounds="350,200,50,50" BackColor="#FF0000"
+			Class="clsButton" ClassParams="@text=Off,@action=switch01:-on" />
+		
+		<!-- Puts the "on" flag to the turned on state DELAYED -->
+		<Group Id="grpOnButton" Bounds="150,270,50,50" BackColor="#00FF00"
+			Class="clsButton" ClassParams="@text=~On,@action=~switch01:+on" />
+
+		<!-- Removes the flag DELAYED -->
+		<Group Id="grpOnButton" Bounds="350,270,50,50" BackColor="#FF0000"
+			Class="clsButton" ClassParams="@text=~Off,@action=~switch01:-on" />
 
 	</Layer>
 

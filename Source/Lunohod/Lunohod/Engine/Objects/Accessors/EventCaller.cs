@@ -14,20 +14,29 @@ namespace Lunohod.Objects
 	{
 		private string evnt;
 		private XObject target;
+		private bool isInstant;
 
 		public EventCaller(XObject caller, string memberDescriptor)
 		{
+			if (memberDescriptor.StartsWith("~"))
+			{
+				isInstant = false;
+				memberDescriptor = memberDescriptor.Substring(1);
+			}
+			else
+				isInstant = true;
+			
 			// ensure that the event target exists
 			string action;
 			caller.GetTargetFromDescriptor(memberDescriptor, out target, out action);
-
+			
 			this.evnt = memberDescriptor;
 		}
 		
 		public override object Call()
 		{
 			if (target.Enabled)
-				target.EnqueueEvent(evnt);
+				target.EnqueueEvent(evnt, isInstant);
 			
 			return null;
 		}

@@ -421,16 +421,16 @@ namespace Lunohod.Objects
 				}
 		}
 		
-		internal void EnqueueEvent(string name)
+		internal void EnqueueEvent(string name, bool isInstant = true)
 		{
 			GameEngine.Instance.EnqueueEvent(
-				new GameEvent(name, GameEngine.Instance.CurrentUpdateTime) { IsInstant = true }
+				new GameEvent(name, GameEngine.Instance.CurrentUpdateTime) { IsInstant = isInstant }
 			);
 		}
-		internal void EnqueueEvent(GameEventType type)
+		internal void EnqueueEvent(GameEventType type, bool isInstant = true)
 		{
 			GameEngine.Instance.EnqueueEvent(
-				new GameEvent(type, GameEngine.Instance.CurrentUpdateTime) { IsInstant = true }
+				new GameEvent(type, GameEngine.Instance.CurrentUpdateTime) { IsInstant = isInstant }
 			);
 		}
 		
