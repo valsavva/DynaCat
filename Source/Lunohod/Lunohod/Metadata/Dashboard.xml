@@ -6,7 +6,7 @@
 		<Texture Id="blank" Source="blank"/>
 	</Resources>
 	
-	<Class Id="clsButton">
+	<Class Id="clsDashboardButton">
 		<Group>
 			<TapArea Action="this_setPress.Start()" />
 			<ParallelSet Id="this_setPress">
