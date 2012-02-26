@@ -14,6 +14,7 @@
 		<Screen Id="ScreenTests" File="ScreenTests.xml" />
 	</Screens>
 	<Levels>
+		<Level Id="style100500opt" File="style100500opt.xml" />
 		<Level Id="style100500" File="style100500.xml" />
 		<Level Id="style100500DashXLSize57" File="style100500DashXLSize57.xml" />
 		<Level Id="style100500NewControl" File="style100500NewControl.xml" />
