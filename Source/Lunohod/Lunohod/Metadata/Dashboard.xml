@@ -25,17 +25,17 @@
 		<Viewport Bounds="50,50,380,270" />
     	<Image TextureId="dashboard" Opacity="0.2"/>
 
-		<Group Id="grp01" Bounds="0, 104, 72, 68" Class="clsButton" ClassParams="@action=~system:up"/>
-		<Group Id="grp02" Bounds="408, 104, 72, 68" Class="clsButton" ClassParams="@action=~system:up"/>
+		<Group Id="grp01" Bounds="0, 104, 72, 68" Class="clsDashboardButton" ClassParams="@action=~system:up"/>
+		<Group Id="grp02" Bounds="408, 104, 72, 68" Class="clsDashboardButton" ClassParams="@action=~system:up"/>
 
-		<Group Id="grp03" Bounds="0, 174, 72, 60" Class="clsButton" ClassParams="@action=~system:left"/>
-		<Group Id="grp04" Bounds="408, 174, 72, 60" Class="clsButton" ClassParams="@action=~system:right"/>
+		<Group Id="grp03" Bounds="0, 174, 72, 60" Class="clsDashboardButton" ClassParams="@action=~system:left"/>
+		<Group Id="grp04" Bounds="408, 174, 72, 60" Class="clsDashboardButton" ClassParams="@action=~system:right"/>
 
-		<Group Id="grp05" Bounds="0, 236, 72, 84" Class="clsButton" ClassParams="@action=~system:down"/>
-		<Group Id="grp06" Bounds="408, 236, 72, 84" Class="clsButton" ClassParams="@action=~system:down"/>
+		<Group Id="grp05" Bounds="0, 236, 72, 84" Class="clsDashboardButton" ClassParams="@action=~system:down"/>
+		<Group Id="grp06" Bounds="408, 236, 72, 84" Class="clsDashboardButton" ClassParams="@action=~system:down"/>
 		
-		<Group Id="grp07" Bounds="147, 248, 74, 72" Class="clsButton" ClassParams="@action=~system:stop"/>
-		<Group Id="grp08" Bounds="259, 248, 74, 72" Class="clsButton" ClassParams="@action=~system:explosion"/>
+		<Group Id="grp07" Bounds="147, 248, 74, 72" Class="clsDashboardButton" ClassParams="@action=~system:stop"/>
+		<Group Id="grp08" Bounds="259, 248, 74, 72" Class="clsDashboardButton" ClassParams="@action=~system:explosion"/>
 		
 		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
 		<TapArea Bounds="430,00,60,60" Event="system:endLevel" />
