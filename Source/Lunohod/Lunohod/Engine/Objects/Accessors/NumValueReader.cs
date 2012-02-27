@@ -18,7 +18,7 @@ namespace Lunohod.Objects
 
         public NumValueReader(XObject currentObject, string descriptor)
         {
-            if (float.TryParse(descriptor, NumberStyles.Number, CultureInfo.InvariantCulture, out stringValue))
+            if (descriptor == null || float.TryParse(descriptor, NumberStyles.Number, CultureInfo.InvariantCulture, out stringValue))
 			{
 				func = this.ReturnFloatValue;
 			}
