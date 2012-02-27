@@ -80,7 +80,9 @@ namespace Lunohod.Objects
 
 			p.LevelEngine.Hero = this;
 			this.Health = p.LevelEngine.LevelObject.DefaultSettings.HeroHealth;
-            this.DefaultSpeed = this.Speed;
+
+            if (this.DefaultSpeed == 0)
+                this.DefaultSpeed = this.Speed;
 			
 			distanceToTower = double.MaxValue;
 		}
