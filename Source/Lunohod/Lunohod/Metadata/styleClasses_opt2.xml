@@ -52,7 +52,10 @@
     </Resources>
 	
 	<Class Id="clsHero">
-		<Hero Speed="84" Direction="0,0">
+		<Hero Speed="84" Direction="0,0" Deceleration="0">
+			
+			<Include File="includeSkeletonHeroMotions.xml" />
+			
 			<BoolTrigger Condition="this.IsDead" EnterAction="this_setDying.Start()" StayTriggered="true" Group="heroStates">
 				<Image Id="this_img1" TextureId="cursor_50x50_light_blue"/>
 				<SequenceSet Id="this_setDying">

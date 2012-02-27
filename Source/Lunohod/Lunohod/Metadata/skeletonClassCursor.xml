@@ -53,7 +53,10 @@
     </Resources>
 	
 	<Class Id="clsHero">
-		<Hero Speed="84" Direction="0,0">
+		<Hero Speed="84" Direction="0,0" Deceleration="0">
+			
+			<Include File="includeSkeletonHeroMotions.xml" />
+			
 			<BoolTrigger Condition="this:death" EnterAction="this_anmDeath.Start();fx_thisDeath.Start()" StayTriggered="true" Group="heroStates">
 				<Sound Id="fx_thisDeath" FileId="skeletonFX_crash_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 				<Image TextureId="cursor_50x50_light_blue">

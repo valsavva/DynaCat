@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Include>
+
+
+<!-- New Size: L-56 -->
+
+	
+
 	<!-- Resources -->	
+	<Resources RootFolder="Global">
+        <Texture Id="arrow52Down" Source="arrow52Down"/>
+        <Texture Id="arrow52Left" Source="arrow52Left"/>
+        <Texture Id="arrow52Pause" Source="arrow52Pause"/>
+        <Texture Id="arrow52Right" Source="arrow52Right"/>
+        <Texture Id="arrow52Up" Source="arrow52Up"/>
+        <Texture Id="arrow52Bomb" Source="arrow52Bomb"/>
+		<Texture Id="blank" Source="blank"/>
+	</Resources>
+	
+	<Class Id="clsDashboardButton">
+		<Group>
+			<TapArea Action="this_setPress.Start()"/>
+			<ParallelSet Id="this_setPress">
+				<Do Action="@action"/>
+				<SequenceSet>
+					<Do Action="this_img.Enable()"/>
+					<NumAnimation Target="this_img.Opacity" From="0" To="0.4" Duration="0.2" Smoothing="Flat" Autoreverse="true" RepeatCount="1"/>
+					<Do Action="this_img.Disable()"/>
+				</SequenceSet>
+			</ParallelSet>
+			<Image Id="this_img" TextureId="blank" BackColor="#FF0000" Opacity="0" Enabled="false"/>
+		</Group>
+	</Class>
+	
+	<Dashboard BackColor="#FFFFFFFF">
+		<Viewport Bounds="50,50,380,270"/>
+        <Image Id="DefaultMask_dwn-l" TextureId="arrow52Down" Bounds="9, 238, 56, 56" Stretch="true" Opacity="0.2" TraceId="dwn-l"/>
+        <Image Id="DefaultMask_left-l" TextureId="arrow52Left" Bounds="9, 174, 56, 56" Stretch="true" Opacity="0.2" TraceId="left-l"/>
+        <Image Id="DefaultMask_image3220" TextureId="arrow52Pause" Bounds="154, 256, 56, 56" Stretch="true" Opacity="0.2" TraceId="image3220"/>
+        <Image Id="DefaultMask_right-r" TextureId="arrow52Right" Bounds="415, 174, 56, 56" Stretch="true" Opacity="0.2" TraceId="right-r"/>
+        <Image Id="DefaultMask_up-l" TextureId="arrow52Up" Bounds="9, 110, 56, 56" Stretch="true" Opacity="0.2" TraceId="up-l"/>
+        <Image Id="DefaultMask_bomb" TextureId="arrow52Bomb" Bounds="270, 256, 56, 56" Stretch="true" Opacity="0.2" TraceId="bomb"/>
+        <Image Id="DefaultMask_up-r" TextureId="arrow52Up" Bounds="415, 110, 56, 56" Stretch="true" Opacity="0.2" TraceId="up-r"/>
+        <Image Id="DefaultMask_dwn-r" TextureId="arrow52Down" Bounds="415, 238, 56, 56" Stretch="true" Opacity="0.2" TraceId="dwn-r"/>
+
+		<Group Id="grp01" Bounds="0, 70, 100, 100" Class="clsDashboardButton" ClassParams="@action=~system:up"/>
+		<Group Id="grp02" Bounds="380, 70, 100, 100" Class="clsDashboardButton" ClassParams="@action=~system:up"/>
+
+		<Group Id="grp03" Bounds="0, 170, 100, 64" Class="clsDashboardButton" ClassParams="@action=~system:left"/>
+		<Group Id="grp04" Bounds="380, 170, 100, 64" Class="clsDashboardButton" ClassParams="@action=~system:right"/>
+
+		<Group Id="grp05" Bounds="0, 234, 100, 86" Class="clsDashboardButton" ClassParams="@action=~system:down"/>
+		<Group Id="grp06" Bounds="380, 234, 100, 86" Class="clsDashboardButton" ClassParams="@action=~system:down"/>
+		
+		<Group Id="grp07" Bounds="132, 234, 100, 86" Class="clsDashboardButton" ClassParams="@action=~system:stop"/>
+		<Group Id="grp08" Bounds="248, 234, 100, 86" Class="clsDashboardButton" ClassParams="@action=~system:explosion"/>
+		
+		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
+		<TapArea Bounds="430,00,60,60" Event="system:endLevel"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	<!-- Old size M-52 -->
+	
+	<!-- Resources -->	
+	
+<!--	
 	<Resources RootFolder="Global">
 		<Texture Id="dashboard" Source="dash_demo_3_size52" />
 		<Texture Id="blank" Source="blank"/>
@@ -40,7 +124,8 @@
 		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
 		<TapArea Bounds="430,00,60,60" Event="system:endLevel" />
 		
-		
+-->
+	
 <!--	(copy)
 	
 		<TapArea Bounds="0,118,57,52" Event="system:up" />
@@ -59,7 +144,7 @@
 		
 		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
 		<TapArea Bounds="430,00,60,60" Action="system.EndCurrentLevel()" />	
-					
--->		
+-->					
+		
 	</Dashboard>
 </Include>
