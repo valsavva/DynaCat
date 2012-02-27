@@ -12,7 +12,7 @@
                 <Texture Id="fish" Source="fish"/>
                 <Texture Id="steel_texture" Source="steel_texture_40x40"/>
                 <Texture Id="steel_texture_blue" Source="steel_texture_blue_40x40"/>
-                <Texture Id="enemy_1" Source="enemy_1"/>
+                <Texture Id="enemy_1" Source="enemy_1_40x29"/>
                 <Texture Id="detal_me1" Source="detal_me1_20x26"/>
                 <Texture Id="detal_2" Source="detal_2_40x40"/>
                 <Texture Id="teleport1_me_hor_in" Source="teleport1_me_hor_in"/>
@@ -262,7 +262,7 @@
                 </Block>
                 <Hero Id="hero" Bounds="80, 217, 33, 25" Class="clsHero" TraceId="image3042"/>
             </Layer>
-            <Include File="Dashboard.xml"/>
+            <Include File="Dashboard_opt2.xml"/>
         </Level>
         
 
