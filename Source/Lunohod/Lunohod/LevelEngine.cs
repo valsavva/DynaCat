@@ -186,11 +186,11 @@ namespace Lunohod
 				
 				switch (e.EventType)
 				{
-					case GameEventType.Up : this.hero.Direction = Direction.VectorUp; break;
-					case GameEventType.Down : this.hero.Direction = Direction.VectorDown; break;
-					case GameEventType.Left : this.hero.Direction = Direction.VectorLeft; break;
-	                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; break;
-	                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; break;
+                    case GameEventType.Up: this.hero.Direction = Direction.VectorUp; this.hero.Speed = this.hero.DefaultSpeed; break;
+                    case GameEventType.Down: this.hero.Direction = Direction.VectorDown; this.hero.Speed = this.hero.DefaultSpeed; break;
+                    case GameEventType.Left: this.hero.Direction = Direction.VectorLeft; this.hero.Speed = this.hero.DefaultSpeed; break;
+                    case GameEventType.Right: this.hero.Direction = Direction.VectorRight; this.hero.Speed = this.hero.DefaultSpeed; break;
+                    case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; this.hero.Speed = this.hero.DefaultSpeed; break;
 	                case GameEventType.Explosion: PlantBomb(); break;
 				}
 			}

@@ -17,13 +17,24 @@ namespace Lunohod.Objects
 		private Vector2 towerCenter;
 		private Vector2 heroCenter;
 		private double distanceToTower;
-		
-		/// <summary>
-		/// Specifies hero's speed.
-		/// </summary>
-		[XmlAttribute]
-		public float Speed;
-		/// <summary>
+
+
+        /// <summary>
+        /// Specifies hero's default speed.
+        /// </summary>
+        [XmlAttribute]
+        public float DefaultSpeed { get; set; }
+        /// <summary>
+        /// Specifies hero's current speed.
+        /// </summary>
+        [XmlAttribute]
+        public float Speed { get; set; }
+        /// <summary>
+        /// Specifies hero's deceleration.
+        /// </summary>
+        [XmlAttribute]
+        public float Deceleration { get; set; }
+        /// <summary>
 		/// Specifies hero's direction.
 		/// </summary>
 		[XmlIgnore]
@@ -69,6 +80,7 @@ namespace Lunohod.Objects
 
 			p.LevelEngine.Hero = this;
 			this.Health = p.LevelEngine.LevelObject.DefaultSettings.HeroHealth;
+            this.DefaultSpeed = this.Speed;
 			
 			distanceToTower = double.MaxValue;
 		}
@@ -80,6 +92,9 @@ namespace Lunohod.Objects
 			// calculate the new location of the hero
 			if (!this.InTransaction)
 			{
+                if (this.Direction != Lunohod.Direction.VectorStop)
+                    this.Speed = this.Speed * (1.0f - this.Deceleration * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
+
 				offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
 	
 	            this.Bounds.Offset(offset.X, offset.Y);
