@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <Level Name="" Bounds="0, 0, 480, 320">
+            <LevelSettings Dificulty="-1" BombCount="7777777" ExplosionClass="clsExplosion" HeroHealth="5"/>
+            <Include File="styleClasses.xml"/>
+            <Resources RootFolder="Textures">
+                <Texture Id="phon_blue" Source="phon_blue"/>
+                <Texture Id="box_old_2" Source="box_old_2"/>
+                <Texture Id="box_old_3" Source="box_old_3"/>
+                <Texture Id="box_old_1" Source="box_old_1"/>
+                <Texture Id="fish" Source="fish"/>
+                <Texture Id="steel_texture" Source="steel_texture"/>
+                <Texture Id="steel_texture_blue" Source="steel_texture_blue"/>
+                <Texture Id="enemy_1" Source="enemy_1"/>
+                <Texture Id="detal_me1" Source="detal_me1"/>
+                <Texture Id="detal_2" Source="detal_2"/>
+                <Texture Id="teleport1_me_hor_in" Source="teleport1_me_hor_in"/>
+                <Texture Id="teleport1_me_hor_out" Source="teleport1_me_hor_out"/>
+                <Texture Id="teleport1_me_hor_pipe" Source="teleport1_me_hor_pipe"/>
+                <Texture Id="teleport1_me_vert_in" Source="teleport1_me_vert_in"/>
+                <Texture Id="teleport1_me_vert_out" Source="teleport1_me_vert_out"/>
+                <Texture Id="teleport1_me_vert_pipe" Source="teleport1_me_vert_pipe"/>
+                <Texture Id="bolbex-1" Source="bolbex-1"/>
+            </Resources>
+            <Layer Id="background" BackColor="#FFFFFFFF">
+                <Image Id="DefaultMask_image3245-4" TextureId="phon_blue" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3245-4"/>
+            </Layer>
+            <Layer Id="action" BackColor="#FFFFFFFF">
+                <Block Id="blk1" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
+                <Block Id="blk2" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
+                <Block Id="blk3" Bounds="-10, 0, 10, 320" Edges="Bounce" TraceId="image3070"/>
+                <Block Id="blk4" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
+                <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3004"/>
+
+				<Group>
+                    <NumAnimation Id="anm1" From="system.RndX(0,480)" To="system.RndX(0,480)" Target="X" Duration="system.Rnd(0,10)" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3412"/>
+                    <Enemy Id="enm1" Bounds="407, 258, 40, 29" Class="clsEnemy" TraceId="image3096"/>
+                </Group>
+                <Hero Id="hero" Bounds="80, 217, 33, 25" Class="clsHero" TraceId="image3042"/>
+            </Layer>
+            <Include File="Dashboard.xml"/>
+        </Level>
+        
+
