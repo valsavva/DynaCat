@@ -1,0 +1,23 @@
+<Include xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Prototype/Docs/schema0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()"/>
+    <BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"/>
+    <BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"/>
+    <BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"/>
+    <NumAnimation Id="anmDeceleration" Target="hero.Speed" Duration="6" IsDelta="false" RepeatCount="1" Fill="End">
+        <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
+        <KeyFrame Time="0.3" Value="120" Smoothing="Smooth"/>
+        <KeyFrame Time="0.6" Value="84" Smoothing="Smooth"/>
+        <KeyFrame Time="6" Value="0" Smoothing="Smooth"/>
+    </NumAnimation>
+
+</Include>
+
+
+
+
+
+
+
+
+

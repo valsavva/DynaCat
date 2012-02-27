@@ -1,37 +1,41 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Name="Main" Bounds="0,0,480,320">
 	<Class Id="clsLevelButton">
 		<Group>
-			<TapArea Action="system.StartLevel(@levelNum)" />
-			<Text Id="this_text" FontId="SystemFont" Origin="50,10" Location="50,10" Text="=system.GetLevelId(@levelNum)" Color="#000000" />
+			<TapArea Action="this_setPress.Start()"/>
+            <SequenceSet Id="this_setPress">
+                <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
+                <Do Action="system.StartLevel(@levelNum)"/>
+            </SequenceSet>
+			<Text Id="this_text" FontId="SystemFont" Origin="50,10" Location="50,10" Text="=system.GetLevelId(@levelNum)" Color="#000000"/>
 			<RandomSet RepeatCount="0" InProgress="true">
 				<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
-					<KeyFrame Time="0" Value="0" />
-					<KeyFrame Time="0.01" Value="-3" />
-					<KeyFrame Time="0.05" Value="3" />
+					<KeyFrame Time="0" Value="0"/>
+					<KeyFrame Time="0.01" Value="-3"/>
+					<KeyFrame Time="0.05" Value="3"/>
 				</NumAnimation>
-				<Delay Duration="3" />
+				<Delay Duration="3"/>
 			</RandomSet>
 			<RandomSet RepeatCount="0" InProgress="true">
 				<NumAnimation Target="this.X" Autoreverse="true" RepeatCount="1" Duration="1" IsDelta="true" Fill="Reset">
-					<KeyFrame Time="0" Value="0" Smoothness="Smooth" />
-					<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth" />
-					<KeyFrame Time="0.6" Value="6" Smoothness="Smooth" />
-					<KeyFrame Time="1" Value="0" Smoothness="Smooth" />
+					<KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
+					<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth"/>
+					<KeyFrame Time="0.6" Value="6" Smoothness="Smooth"/>
+					<KeyFrame Time="1" Value="0" Smoothness="Smooth"/>
 				</NumAnimation>
-				<Delay Duration="3" />
+				<Delay Duration="3"/>
 			</RandomSet>
 		</Group>
 	</Class>
 
 	
 	<Resources RootFolder="Global">
-		<Texture Id="blank" Source="blank" />
-		<Font Id="SystemFont" Source="SystemFont" />
+		<Texture Id="blank" Source="blank"/>
+		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
 	
-	<Include File="Textures.xml" />
+	<Include File="Textures.xml"/>
     <Layer Id="background" BackColor="#FFFFFFFF">
     </Layer>
 	
@@ -61,9 +65,10 @@
 			<Group Id="grpL20" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=19"/>
 		</Group>
 		<Group Bounds="5,100,35,100">
-			<TapArea Action="system.StartScreen('ScreenTests')" />
-			<Text FontId="SystemFont" Text="Tests" Color="#FF0000" Location="0,100" Rotation="-90" />
+			<TapArea Action="system.StartScreen('ScreenTests')"/>
+			<Text FontId="SystemFont" Text="Tests" Color="#CC0000" Location="0,100" Rotation="-90"/>
 		</Group>
 	</Layer>
 	
 </Screen>
+

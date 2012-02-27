@@ -47,8 +47,9 @@
 	<!-- =========================================================================================  -->
 	
     <Resources RootFolder="Textures">
-        <Texture Id="cursor_50x50_light_blue" Source="bolbex-1"/>
-        <Texture Id="cursor_50x50_blue" Source="bolbex-1"/>
+        <Texture Id="cursor_50x50_light_blue" Source="bolbex-1_me"/>
+        <Texture Id="cursor_50x50_blue" Source="bolbex-1_me"/>
+        <Texture Id="bolbex-1_me_wait_expl2" Source="bolbex-1_me_wait_expl2"/>
     </Resources>
 	
 	<Class Id="clsHero">
@@ -68,6 +69,7 @@
 			</BoolTrigger>
 			
 			<BoolTrigger Condition="this:eating" EnterAction="fx_thisEating.Start()" StayTriggered="false">
+                <Do Action="hero.SetDirection(1,0)"/>
 				<RandomSet Id="fx_thisEating">
 					<Sound FileId="skeletonFX_hero_eating_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 					<Sound FileId="skeletonFX_hero_eating_2" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
@@ -76,10 +78,13 @@
 				</RandomSet>
 			</BoolTrigger>
 			
+			<BoolTrigger Condition="this:wait_expl" Group="heroStates">
+				<Image TextureId="bolbex-1_me_wait_expl2" Bounds="-3, -14, 40, 39"/>      <!-- 33, 25-->
+			</BoolTrigger>
+			
 			<BoolTrigger Id="default" Group="heroStates">
 				<Image TextureId="cursor_50x50_blue" Bounds="-3, -14, 40, 39"/>      <!-- 33, 25-->
-			</BoolTrigger>
-		</Hero>
+			</BoolTrigger>		</Hero>
 	</Class>
 
 	<!-- =========================================================================================  -->
@@ -274,7 +279,7 @@
 			<Sound Id="this_sndExplosion" FileId="skeletonFX_explosion" Volume="0.5" Pitch="0" Pan="0"/>
 			<Sound Id="this_sndAlarm" FileId="skeletonFX_alarm_1" Volume="0.5" Pitch="0" Pan="0"/>
 			<SequenceSet InProgress="true">
-				<Do Action="this_sndAlarm.Start()"/>
+				<Do Action="this_sndAlarm.Start();hero:+wait_expl"/>
 				<NumAnimation Target="this_imgBomb.Opacity" From="1" To="0" Duration="0.1" Autoreverse="true" RepeatCount="4"/>
 				<Do Action="this_imgBomb.Disable()"/>
 				<Do Action="this_sndExplosion.Start();this_imgExplosion.Enable()"/>
@@ -286,6 +291,7 @@
 					<NumAnimation From="1" To="0" Smoothing="Flat" Duration="0.2" Autoreverse="false" Target="this_imgExplosion.Opacity" RepeatCount="2"/>
 					<Delay Duration="0.6"/>
 				</ParallelSet>
+				<Do Action="hero:-wait_expl"/>
 				<Do Action="this.Disable()"/>
 			</SequenceSet>
 		</Explosion>
@@ -319,6 +325,8 @@
 	</Class>
 
 </Include>
+
+
 
 
 

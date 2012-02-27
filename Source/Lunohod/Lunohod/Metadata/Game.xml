@@ -15,12 +15,7 @@
 	</Screens>
 	<Levels>
 		<Level Id="style100500" File="style100500.xml" />
-		<Level Id="style100500opt" File="style100500opt.xml" />
-		<Level Id="style100500opt2" File="style100500opt2.xml" />
-		<Level Id="style100500opt3dash" File="style100500opt3dash.xml" />
 		<Level Id="style100500DashLsize56" File="style100500DashLsize56.xml" />
-		<Level Id="style100500DashXLSize57" File="style100500DashXLSize57.xml" />
-		<Level Id="style100500NewControl" File="style100500NewControl.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
 		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
 		<Level Id="skeletonChelnok" File="skeletonChelnok.xml" />
@@ -43,6 +38,11 @@
 		<Level Id="---" File="skeletonAlisa.xml" />
 		
 		<!-- Test screens start here -->
+		<Level Id="style100500opt" File="style100500opt.xml" />
+		<Level Id="style100500opt2" File="style100500opt2.xml" />
+		<Level Id="style100500opt3dash" File="style100500opt3dash.xml" />
+		<Level Id="style100500DashXLSize57" File="style100500DashXLSize57.xml" />
+		<Level Id="style100500NewControl" File="style100500NewControl.xml" />
 		
 		<Level Id="AnimationSamples" File="AnimationSamples.xml" />
 		<Level Id="TestDeath" File="TestDeath.xml" />

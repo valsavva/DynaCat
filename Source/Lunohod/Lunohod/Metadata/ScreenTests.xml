@@ -3,8 +3,12 @@
 <Screen Name="Tests" Bounds="0,0,480,320">
 	<Class Id="clsLevelButton">
 		<Group>
-			<TapArea Action="system.StartLevel(@levelNum)" />
-			<Text Id="this_text" FontId="SystemFont" Origin="50,10" Location="50,10" Text="=system.GetLevelId(@levelNum)" Color="#FF0000" />
+			<TapArea Action="this_setPress.Start()"/>
+            <SequenceSet Id="this_setPress">
+                <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
+                <Do Action="system.StartLevel(@levelNum)"/>
+            </SequenceSet>
+			<Text Id="this_text" FontId="SystemFont" Origin="50,10" Location="50,10" Text="=system.GetLevelId(@levelNum)" Color="#CC0000" />
 			<RandomSet RepeatCount="0" InProgress="true">
 				<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
 					<KeyFrame Time="0" Value="0" />
