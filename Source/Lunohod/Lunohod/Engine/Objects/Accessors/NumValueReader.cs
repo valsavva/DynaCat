@@ -13,24 +13,35 @@ namespace Lunohod.Objects
     {
         private float stringValue;
         private PropertyAccessor accessor;
+        private ActionCaller actionCaller;
 		private Func<float> func;
 
         public NumValueReader(XObject currentObject, string descriptor)
         {
-            if (!string.IsNullOrEmpty(descriptor) && !float.TryParse(descriptor, NumberStyles.Number, CultureInfo.InvariantCulture, out stringValue))
+            if (descriptor == null || float.TryParse(descriptor, NumberStyles.Number, CultureInfo.InvariantCulture, out stringValue))
 			{
-                this.accessor = new PropertyAccessor(currentObject, descriptor);
-				func = this.ReturnAccessorValue;
+				func = this.ReturnFloatValue;
+			}
+			else if (descriptor.Contains("("))
+			{
+				actionCaller = new ActionCaller(currentObject, descriptor);
+				func = this.ReturnActionValue;
 			}
 			else
 			{
-				func = this.ReturnFloatValue;
+                this.accessor = new PropertyAccessor(currentObject, descriptor);
+				func = this.ReturnAccessorValue;
 			}
         }
 		
 		private float ReturnAccessorValue()
 		{
 			return accessor.FloatPropertyValue;
+		}
+		
+		private float ReturnActionValue()
+		{
+			return (float)actionCaller.Call();
 		}
 		
 		private float ReturnFloatValue()

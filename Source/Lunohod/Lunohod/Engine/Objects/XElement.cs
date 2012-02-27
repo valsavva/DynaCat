@@ -110,7 +110,7 @@ namespace Lunohod.Objects
 			if (this.Rotation != 0)
 				TransState.LocationTransform *= Matrix.CreateRotationZ(MathHelper.ToRadians(this.Rotation));
 			// Scale transform
-			if (this.ScaleVector != Vector2.Zero)
+			if (this.ScaleVector != Vector2.One)
 			{
 				TransState.LocationTransform *= Matrix.CreateScale(this.ScaleVector.X, this.ScaleVector.Y, 1.0f);
 				TransState.ScaleTransform *= Matrix.CreateScale(this.ScaleVector.X, this.ScaleVector.Y, 1.0f);
