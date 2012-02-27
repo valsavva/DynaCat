@@ -56,6 +56,9 @@ namespace Lunohod.Objects
 				case "CurrentFrame": floatGetter = GetCurrentFrame; floatSetter = SetCurrentFrame; break;
 				case "Volume": floatGetter = GetVolume; floatSetter = SetVolume; break;
 				case "Health": floatGetter = GetHealth; floatSetter = SetHealth; break;
+				case "Speed": floatGetter = GetSpeed; floatSetter = SetSpeed; break;
+				case "DefaultSpeed": floatGetter = GetDefaultSpeed; floatSetter = SetDefaultSpeed; break;
+				case "Deceleration": floatGetter = GetDeceleration; floatSetter = SetDeceleration; break;
 				default :
 				{
 					if (this.propertyInfo == null)
@@ -197,15 +200,39 @@ namespace Lunohod.Objects
 		{
 			audio.Volume = v;
 		}
-		private float GetHealth()
-		{
-			return hero.Health;
-		}
-		private void SetHealth(float v)
-		{
-			// noop
-		}
-		#endregion
+        private float GetHealth()
+        {
+            return hero.Health;
+        }
+        private void SetHealth(float v)
+        {
+            // noop
+        }
+        private float GetSpeed()
+        {
+            return hero.Speed;
+        }
+        private void SetSpeed(float v)
+        {
+            hero.Speed = v;
+        }
+        private float GetDefaultSpeed()
+        {
+            return hero.DefaultSpeed;
+        }
+        private void SetDefaultSpeed(float v)
+        {
+            hero.DefaultSpeed = v;
+        }
+        private float GetDeceleration()
+        {
+            return hero.Deceleration;
+        }
+        private void SetDeceleration(float v)
+        {
+            hero.Deceleration = v;
+        }
+        #endregion
 	}
 }
 
