@@ -14,8 +14,8 @@
 		<Screen Id="ScreenTests" File="ScreenTests.xml" />
 	</Screens>
 	<Levels>
+		<Level Id="test_c_boloto" File="test_c_boloto.xml" />
 		<Level Id="style100500" File="style100500.xml" />
-		<Level Id="style100500DashLsize56" File="style100500DashLsize56.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
 		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
 		<Level Id="skeletonChelnok" File="skeletonChelnok.xml" />
