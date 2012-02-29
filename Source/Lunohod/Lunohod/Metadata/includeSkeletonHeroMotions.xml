@@ -15,12 +15,14 @@
 	<!-- this should not belong to any group -->
 	<BoolTrigger Condition="this:InBoloto" EnterAction="letInBoloto.Start()" ExitAction="letOutBoloto.Start()"/>
 
+	<BoolTrigger Condition="this:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />
+	
 	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
+	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
+	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
+	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 
-    <!-- hero speed animation -->
+	<!-- hero speed animation -->
 	<NumAnimation Id="anmDeceleration" Target="hero.Speed" Duration="6" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="value1.X" Smoothing="Smooth"/>
         <KeyFrame Time="0.3" Value="value2.X" Smoothing="Smooth"/>

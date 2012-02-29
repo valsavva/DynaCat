@@ -24,8 +24,9 @@
         <Block Id="blk5" Bounds="8, 10, 279, 115" Edges="Bounce" Class="clsBoloto" TraceId="image3059"/>
         <Block Id="blk6" Bounds="182, 132, 8, 66" Edges="Bounce" Class="clsBoloto" TraceId="image3075"/>
         <Block Id="blk7" Bounds="273, 131, 8, 66" Edges="Bounce" Class="clsBoloto" TraceId="image3077"/>
-        <Block Id="blk8" Bounds="0, 266, 471, 45" Edges="Bounce" Class="clsBoloto" TraceId="image3065"/>
-    </Layer>
+		<Block Id="blk8" Bounds="0, 266, 471, 45" Edges="Bounce" Class="clsBoloto" TraceId="image3065"/>
+        <Block Id="blk10" Bounds="80, 210, 300, 45" Edges="Bounce" Class="clsIce" TraceId="image4000"/>
+	</Layer>
     <Include File="Dashboard.xml"/>
 </Level>
 

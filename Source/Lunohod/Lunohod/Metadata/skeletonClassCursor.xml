@@ -314,17 +314,22 @@
 	</Class>
 
 
-    <Class Id="clsBoloto">
-        <Block>
-            <Image TextureId="blank" BackColor="#0000AA" Opacity="0.3"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="hero" EnterAction="hero:+InBoloto" ExitAction="hero:-InBoloto"/>
-        </Block>
-    </Class>
+	<Class Id="clsBoloto">
+		<Block>
+			<Image TextureId="blank" BackColor="#0000AA" Opacity="0.3"/>
+			<!-- 
+			<IntersectionTrigger ObjectId1="this" ObjectId2="hero" EnterAction="hero:+InBoloto" ExitAction="hero:-InBoloto"/>
 
+			*** Talk to me about this change! ***
+			 -->
+			<IntersectionTrigger ObjectId1="this" ObjectId2="hero" Action="hero:InBoloto"/>
+		</Block>
+	</Class>
 
+	<Class Id="clsIce">
+		<Block>
+			<Image TextureId="blank" BackColor="#00AA00" Opacity="0.3"/>
+			<IntersectionTrigger ObjectId1="this" ObjectId2="hero" Action="hero:OnIce"/>
+		</Block>
+	</Class>
 </Include>
-
-
-
-
-

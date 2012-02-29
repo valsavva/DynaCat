@@ -1144,6 +1144,7 @@
     </Content>
     <Content Include="Metadata\includeSkeletonHeroMotions.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\memory_test.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
