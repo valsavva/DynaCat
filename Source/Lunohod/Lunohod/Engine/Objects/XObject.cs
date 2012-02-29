@@ -90,6 +90,7 @@ namespace Lunohod.Objects
 
         // Actions
         [XmlElement(ElementName = "Do", Type = typeof(XDo))]
+        [XmlElement(ElementName = "Let", Type = typeof(XLet))]
         [XmlElement(ElementName = "Delay", Type = typeof(XDelay))]
 
         // Animation
