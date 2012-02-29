@@ -11,34 +11,26 @@
     <Group Id="value1" Location="60,0"/>
     <Group Id="value2" Location="120,0"/>
     <Group Id="value3" Location="84,0"/>
-    
-    <BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
+
+	<!-- this should not belong to any group -->
+	<BoolTrigger Condition="this:InBoloto" EnterAction="letInBoloto.Start()" ExitAction="letOutBoloto.Start()"/>
+
+	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
     <BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
     <BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
     <BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
-    
-    <BoolTrigger Condition="this:InBoloto" EnterAction="anmInBoloto.Start()" Group="heroSpeedAnm"/>
 
     <!-- hero speed animation -->
-    <ParallelSet Id="anmDeceleration">
-        <NumAnimation Target="value1.X" Duration="0.001" From="60" To="60" IsDelta="false" RepeatCount="1" Fill="End"/>
-        <NumAnimation Target="value2.X" Duration="0.001" From="120" To="120" IsDelta="false" RepeatCount="1" Fill="End"/>
-        <NumAnimation Target="value3.X" Duration="0.001" From="84" To="84" IsDelta="false" RepeatCount="1" Fill="End"/>
-        <NumAnimation Target="hero.Speed" Duration="6" IsDelta="false" RepeatCount="1" Fill="End">
-            <KeyFrame Time="0" Value="value1.X" Smoothing="Smooth"/>
-            <KeyFrame Time="0.3" Value="value2.X" Smoothing="Smooth"/>
-            <KeyFrame Time="0.6" Value="value3.X" Smoothing="Smooth"/>
-            <KeyFrame Time="6" Value="0" Smoothing="Smooth"/>
-        </NumAnimation>
-   </ParallelSet>
-    
+	<NumAnimation Id="anmDeceleration" Target="hero.Speed" Duration="6" IsDelta="false" RepeatCount="1" Fill="End">
+        <KeyFrame Time="0" Value="value1.X" Smoothing="Smooth"/>
+        <KeyFrame Time="0.3" Value="value2.X" Smoothing="Smooth"/>
+        <KeyFrame Time="0.6" Value="value3.X" Smoothing="Smooth"/>
+        <KeyFrame Time="6" Value="0" Smoothing="Smooth"/>
+    </NumAnimation>
 
     <!-- when hero in boloto we divide speed animation KeyFrame Values -->
-    <SequenceSet Id="anmInBoloto">
-        <NumAnimation Target="value1.X" Duration="0.001" From="30" To="30" IsDelta="false" RepeatCount="1" Fill="End" InProgress="true"/>
-        <NumAnimation Target="value2.X" Duration="0.001" From="60" To="60" IsDelta="false" RepeatCount="1" Fill="End" InProgress="true"/>
-        <NumAnimation Target="value3.X" Duration="0.001" From="42" To="42" IsDelta="false" RepeatCount="1" Fill="End" InProgress="true"/>
-    </SequenceSet>
+	<Let Id="letInBoloto" Target="value1.X,value2.X,value3.X" Value="30,60,42"/>
+	<Let Id="letOutBoloto" Target="value1.X,value2.X,value3.X" Value="60,120,84"/>
 
 </Include>
 

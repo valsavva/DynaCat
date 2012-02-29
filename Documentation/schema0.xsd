@@ -32,8 +32,8 @@
   <xs:complexType name="XObject" abstract="true">
     <xs:sequence>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element minOccurs="0" maxOccurs="1" name="Sprite" type="Sprite" />
         <xs:element minOccurs="0" maxOccurs="1" name="Block" type="Block" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Sprite" type="Sprite" />
         <xs:element minOccurs="0" maxOccurs="1" name="Resources" type="Resources" />
         <xs:element minOccurs="0" maxOccurs="1" name="Dashboard" type="Dashboard" />
         <xs:element minOccurs="0" maxOccurs="1" name="TapArea" type="TapArea" />
@@ -58,6 +58,7 @@
         <xs:element minOccurs="0" maxOccurs="1" name="RandomSet" type="RandomSet" />
         <xs:element minOccurs="0" maxOccurs="1" name="ParallelSet" type="ParallelSet" />
         <xs:element minOccurs="0" maxOccurs="1" name="Do" type="Do" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Let" type="Let" />
         <xs:element minOccurs="0" maxOccurs="1" name="Delay" type="Delay" />
         <xs:element minOccurs="0" maxOccurs="1" name="NumAnimation" type="NumAnimation" />
         <xs:element minOccurs="0" maxOccurs="1" name="KeyFrame" type="KeyFrame" />
@@ -70,23 +71,6 @@
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="ClassParams" type="xs:string" />
     <xs:attribute name="Enabled" type="xs:boolean" use="required" />
-  </xs:complexType>
-  <xs:complexType name="Sprite">
-    <xs:complexContent mixed="false">
-      <xs:extension base="Image">
-        <xs:attribute name="FrameCount" type="xs:int" use="required" />
-        <xs:attribute name="CurrentFrame" type="xs:int" use="required" />
-        <xs:attribute name="FrameBounds" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Image">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XElement">
-        <xs:attribute name="TextureId" type="xs:string" />
-        <xs:attribute name="Stretch" type="xs:boolean" use="required" />
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="Block">
     <xs:complexContent mixed="false">
@@ -104,14 +88,31 @@
       <xs:enumeration value="Teleport" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="Sprite">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Image">
+        <xs:attribute name="FrameCount" type="xs:int" use="required" />
+        <xs:attribute name="CurrentFrame" type="xs:int" use="required" />
+        <xs:attribute name="FrameBounds" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Image">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XElement">
+        <xs:attribute name="TextureId" type="xs:string" />
+        <xs:attribute name="Stretch" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Resources">
     <xs:complexContent mixed="false">
       <xs:extension base="XObject">
         <xs:sequence>
           <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" maxOccurs="1" name="Texture" type="Texture" />
             <xs:element minOccurs="0" maxOccurs="1" name="SoundFile" type="SoundFile" />
             <xs:element minOccurs="0" maxOccurs="1" name="MusicFile" type="MusicFile" />
-            <xs:element minOccurs="0" maxOccurs="1" name="Texture" type="Texture" />
             <xs:element minOccurs="0" maxOccurs="1" name="Font" type="Font" />
           </xs:choice>
         </xs:sequence>
@@ -119,7 +120,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SoundFile">
+  <xs:complexType name="Texture">
     <xs:complexContent mixed="false">
       <xs:extension base="XResource" />
     </xs:complexContent>
@@ -136,12 +137,12 @@
       <xs:extension base="XResource" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="Texture">
+  <xs:complexType name="MusicFile">
     <xs:complexContent mixed="false">
       <xs:extension base="XResource" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MusicFile">
+  <xs:complexType name="SoundFile">
     <xs:complexContent mixed="false">
       <xs:extension base="XResource" />
     </xs:complexContent>
@@ -365,6 +366,14 @@
       <xs:enumeration value="Smooth" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="Let">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XRunnableBase">
+        <xs:attribute name="Target" type="xs:string" />
+        <xs:attribute name="Value" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Do">
     <xs:complexContent mixed="false">
       <xs:extension base="XRunnableBase">

@@ -156,16 +156,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
+    <Compile Include="Engine\Objects\Animation\XLet.cs" />
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Objects\Animation\XRunnableBase.cs" />
-    <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
-    <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\XBoolTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\XDistanceTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\XEvent.cs" />
-    <Compile Include="Engine\Objects\Events\XNumTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\XNumTriggerBase.cs" />
-    <Compile Include="Engine\Objects\Events\XTriggerBase.cs" />
+    <Compile Include="Engine\Objects\Triggers\XIntersectionTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XBoolTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XDistanceTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XNumTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XNumTriggerBase.cs" />
+    <Compile Include="Engine\Objects\Triggers\XTriggerBase.cs" />
     <Compile Include="Engine\Objects\IExploding.cs" />
     <Compile Include="Engine\Objects\IRunnable.cs" />
     <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
@@ -1143,6 +1142,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Metadata\includeSkeletonHeroMotions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\memory_test.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1172,6 +1174,7 @@
     </Content>
     <Content Include="Metadata\skeletonClassCursor.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\skeletonDiraVRyadahVragov.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1301,6 +1304,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\test_b-2_stick_and_bounce_objects.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\test_c_boloto.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\Textures.xml">
