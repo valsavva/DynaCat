@@ -17,5 +17,11 @@ namespace Lunohod.Xge
             this.TokenType = tokenType;
             this.Text = text;
         }
+
+        public override string ToString()
+        {
+            return string.Format("Type: {0} Value: '{1}'", this.TokenType, this.Text);
+        }
+
     }
 }

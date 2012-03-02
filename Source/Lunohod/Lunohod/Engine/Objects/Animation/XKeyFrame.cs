@@ -6,13 +6,14 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
     [XmlType("KeyFrame")]
     public class XKeyFrame : XObject
     {
-        private List<NumValueReader> valueReaders;
+        private List<INumExpression> valueReaders;
 
         [XmlIgnore]
         public TimeSpan Time;
@@ -37,7 +38,8 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            this.valueReaders = this.Value.Split(',').Select(s => new NumValueReader(this.Parent, s)).ToList();
+            Compiler compiler = new Compiler(this.Parent);
+            this.valueReaders = this.Value.Split(',').Select(s => compiler.CompileNumExpression(s)).ToList();
             this.CurveKeys = valueReaders.Select(r => new CurveKey((float)this.Time.TotalMilliseconds, r.Value)).ToList();
         }
 
