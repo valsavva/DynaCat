@@ -12,14 +12,36 @@ namespace Lunohod.Xge
         private Token currentToken;
         private XObject currentObject;
 
-        public Compiler(XObject currentObject)
+        private static Compiler instance = new Compiler();
+
+        public static Compiler Instance { get { return instance; } }
+
+        private Compiler()
         {
-            this.currentObject = currentObject;
+            this.scanner = new Scanner();
         }
 
-        public INumExpression CompileNumExpression(string input)
+        private void Initialize(XObject currentObject, string text)
         {
-            this.scanner = new Scanner(input);
+            this.currentObject = currentObject;
+            this.currentToken = null;
+            this.scanner.Initialize(text);
+        }
+
+        public static INumExpression CompileNumExpression(XObject currentObject, string text)
+        {
+            Instance.Initialize(currentObject, text);
+            return Instance.CompileNumExpression();
+        }
+
+        public IBoolExpression CompileBoolExpression(XObject currentObject, string text)
+        {
+            Instance.Initialize(currentObject, text);
+            return Instance.CompileBoolExpression();
+        }
+
+        public INumExpression CompileNumExpression()
+        {
             this.currentToken = scanner.NextToken();
 
             if (M(TokenType.Eof))
@@ -28,9 +50,8 @@ namespace Lunohod.Xge
             return TNumExpression();
         }
 
-        public IBoolExpression CompileBoolExpression(string input)
+        public IBoolExpression CompileBoolExpression()
         {
-            scanner = new Scanner(input);
             currentToken = scanner.NextToken();
 
             if (M(TokenType.Eof))

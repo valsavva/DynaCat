@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -20,7 +21,7 @@ namespace Lunohod.Objects
 	
 	public abstract class XNumTriggerBase : XTriggerBase
 	{
-		protected NumValueReader value2Reader;
+		protected INumExpression value2Reader;
 		protected Func<float, float, bool> compareFunc;
 		
 		private static readonly Dictionary<XValueComparison, Func<float, float, bool>> compareFuncs = new Dictionary<XValueComparison, Func<float, float, bool>>
@@ -37,11 +38,18 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public XValueComparison Compare = XValueComparison.E;
 		
+
+        public XNumTriggerBase()
+        {
+            this.Value = "0";
+        }
+
+
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
 			
-			value2Reader = new NumValueReader(this, this.Value);
+			value2Reader = Compiler.CompileNumExpression(this, this.Value);
 			compareFunc = compareFuncs[this.Compare];
 		}
 		

@@ -18,10 +18,5 @@ namespace Lunohod.Objects
 			
 			p.LevelEngine.Tower = this;
 		}
-		
-        public double ActionRadius(ActionInfo actionInfo)
-        {
-            return this.SignalSpeed * (DateTime.Now - actionInfo.StartTime).TotalSeconds;
-        }
     }
 }

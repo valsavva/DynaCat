@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -15,8 +16,8 @@ namespace Lunohod.Objects
     [XmlType("Let")]
     public class XLet : XRunnableBase
     {
-        private List<PropertyAccessor> accessors;
-        private List<NumValueReader> valueReaders;
+        private List<NumProperty> accessors;
+        private List<INumExpression> valueReaders;
 
         /// <summary>
         /// An attribute, or a list of attributes, that will be assigned a new value.
@@ -39,8 +40,8 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            accessors = this.Target.Split(',').Select(s => new PropertyAccessor(this, s)).ToList();
-            valueReaders = this.Value.Split(',').Select(s => new NumValueReader(this, s)).ToList();
+            accessors = this.Target.Split(',').Select(s => (NumProperty)Compiler.CompileNumExpression(this, s)).ToList();
+            valueReaders = this.Value.Split(',').Select(s => Compiler.CompileNumExpression(this, s)).ToList();
 
             if (accessors.Count != valueReaders.Count)
                 throw new InvalidOperationException("Number of values must match the number of properties.");
@@ -50,7 +51,7 @@ namespace Lunohod.Objects
         {
             for (int i = 0; i < accessors.Count; i++)
             {
-                accessors[i].FloatPropertyValue = valueReaders[i].Value;
+                accessors[i].SetValue(valueReaders[i].Value);
             }
             this.repeatsDone++;
         }

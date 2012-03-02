@@ -38,8 +38,7 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            Compiler compiler = new Compiler(this.Parent);
-            this.valueReaders = this.Value.Split(',').Select(s => compiler.CompileNumExpression(s)).ToList();
+            this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileNumExpression(this.Parent, s)).ToList();
             this.CurveKeys = valueReaders.Select(r => new CurveKey((float)this.Time.TotalMilliseconds, r.Value)).ToList();
         }
 

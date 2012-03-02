@@ -35,9 +35,14 @@ namespace Lunohod.Xge
         private string text;
         private int i;
 
-        public Scanner(string input)
+        public Scanner()
         {
-            this.text = input;
+        }
+
+        public void Initialize(string text)
+        {
+            this.text = text;
+            this.i = 0;
         }
 
         public Token NextToken()

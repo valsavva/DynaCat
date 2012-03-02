@@ -15,6 +15,11 @@ namespace Lunohod.Xge
         bool Value { get; }
     }
 
+    public interface IAssignable<T>
+    {
+        void SetValue(T v);
+    }
+
     public abstract class Expression
     {
         public abstract Type Type { get; }
