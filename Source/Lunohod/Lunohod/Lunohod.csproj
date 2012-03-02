@@ -97,8 +97,6 @@
     <Compile Include="Engine\Objects\XSprite.cs" />
     <Compile Include="OS\iOS\Main.cs" />
     <Compile Include="LevelEngine.cs" />
-    <Compile Include="Engine\Objects\Events\IHasEvents.cs" />
-    <Compile Include="Engine\Objects\Events\XEvent.cs" />
     <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
     <Compile Include="GameEvent.cs" />
@@ -126,14 +124,8 @@
     <Compile Include="Engine\UpateParameters.cs" />
     <Compile Include="Engine\RadioWave.cs" />
     <Compile Include="Engine\Objects\XEdgeType.cs" />
-    <Compile Include="Engine\Objects\Events\XDistanceTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\XNumTriggerBase.cs" />
-    <Compile Include="Engine\Objects\Events\XNumTrigger.cs" />
-    <Compile Include="Engine\Objects\Events\XTriggerBase.cs" />
-    <Compile Include="Engine\Objects\Events\XBoolTrigger.cs" />
     <Compile Include="Engine\Objects\XEnemy.cs" />
     <Compile Include="Engine\Objects\XClass.cs" />
-    <Compile Include="Engine\Objects\Events\XIntersectionTrigger.cs" />
     <Compile Include="Engine\Objects\XObjectCollection.cs" />
     <Compile Include="Engine\Objects\IRunnable.cs" />
     <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
@@ -161,6 +153,13 @@
     <Compile Include="Engine\Objects\XExplosion.cs" />
     <Compile Include="Engine\Objects\XLevelSettings.cs" />
     <Compile Include="Engine\Objects\IExploding.cs" />
+    <Compile Include="Engine\Objects\Triggers\XBoolTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XDistanceTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XIntersectionTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XNumTrigger.cs" />
+    <Compile Include="Engine\Objects\Triggers\XNumTriggerBase.cs" />
+    <Compile Include="Engine\Objects\Triggers\XTriggerBase.cs" />
+    <Compile Include="Engine\Objects\Animation\XLet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -169,7 +168,6 @@
     <Folder Include="Engine\" />
     <Folder Include="Engine\Objects\Animation\" />
     <Folder Include="OS\iOS\" />
-    <Folder Include="Engine\Objects\Events\" />
     <Folder Include="Engine\Objects\Resources\" />
     <Folder Include="Engine\Objects\Media\" />
     <Folder Include="Content\Textures\" />
