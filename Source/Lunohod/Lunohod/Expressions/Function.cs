@@ -2,26 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Lunohod.Objects;
 
-using NumExpression = Nomnom.XGameExpressions.Expression<float>;
-using BoolExpression = Nomnom.XGameExpressions.Expression<bool>;
-
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
     public abstract class Function<T> : Expression<T>
     {
         private string objectId;
         private string propertyId;
         private List<Expression> parameters;
+        private XObject targetObject;
 
-        public Function(string objectId, string propertyId, List<Expression> parameters)
+        public Function(XObject currentObject, string objectId, string propertyId, List<Expression> parameters)
         {
             this.objectId = objectId;
             this.propertyId = propertyId;
             this.parameters = parameters;
+            this.targetObject = currentObject;
         }
-
-        public override T Value { get { throw new NotImplementedException(); } }
 
         public override string ToString()
         {
@@ -29,20 +27,20 @@ namespace Nomnom.XGameExpressions
         }
     }
 
-    public class NumFunction : Function<float>
+    public class NumFunction : Function<float>, INumExpression
     {
-        public NumFunction(string objectId, string propertyId, List<Expression> parameters)
-            : base(objectId, propertyId, parameters)
+        public NumFunction(XObject currentObject, string objectId, string propertyId, List<Expression> parameters)
+            : base(currentObject, objectId, propertyId, parameters)
         {
 
         }
         public override float Value { get { return 0f; } }
     }
 
-    public class BoolFunction : Function<bool>
+    public class BoolFunction : Function<bool>, IBoolExpression
     {
-        public BoolFunction(string objectId, string propertyId, List<Expression> parameters)
-            : base(objectId, propertyId, parameters)
+        public BoolFunction(XObject currentObject, string objectId, string propertyId, List<Expression> parameters)
+            : base(currentObject, objectId, propertyId, parameters)
         {
 
         }

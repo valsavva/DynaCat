@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
     public enum TokenType
     {
@@ -30,6 +30,7 @@ namespace Nomnom.XGameExpressions
         Op_G,
         Op_GE,
         Op_L,
-        Op_LE
+        Op_LE,
+        Semi
     }
 }

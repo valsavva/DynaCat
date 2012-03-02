@@ -11,7 +11,8 @@
     <RootNamespace>Nomnom.XGameExpressions</RootNamespace>
     <AssemblyName>XGameExpressions</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -43,24 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NumBinaryOperator.cs" />
-    <Compile Include="BoolBinaryOperator.cs" />
-    <Compile Include="BoolConstant.cs" />
-    <Compile Include="BoolExpression.cs" />
-    <Compile Include="CompareOperator.cs" />
-    <Compile Include="Compiler.cs" />
-    <Compile Include="Expression.cs" />
-    <Compile Include="Function.cs" />
-    <Compile Include="NumConstant.cs" />
-    <Compile Include="NumExpression.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Property.cs" />
-    <Compile Include="Scanner.cs" />
-    <Compile Include="Token.cs" />
-    <Compile Include="TokenType.cs" />
-    <Compile Include="UnaryMinusOperator.cs" />
-    <Compile Include="UnaryNotOperator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lunohod\Lunohod\Lunohod.Windows.csproj">
+      <Project>{669A160E-877C-462B-ACBF-93FEF1899EAF}</Project>
+      <Name>Lunohod.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

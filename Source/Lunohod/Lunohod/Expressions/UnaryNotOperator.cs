@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using NumExpression = Nomnom.XGameExpressions.Expression<float>;
-using BoolExpression = Nomnom.XGameExpressions.Expression<bool>;
-
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
     class UnaryNotOperator : BoolExpression
     {
-        private BoolExpression expression;
+        private IBoolExpression expression;
 
-        public UnaryNotOperator(BoolExpression expression)
+        public UnaryNotOperator(IBoolExpression expression)
         {
             this.expression = expression;
         }

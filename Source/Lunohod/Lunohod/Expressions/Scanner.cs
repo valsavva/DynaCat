@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
     class Scanner
     {
@@ -22,6 +22,7 @@ namespace Nomnom.XGameExpressions
             { "&", TokenType.And},
             { "|", TokenType.Or},
             { "!", TokenType.Not},
+            { ":", TokenType.Semi},
 
             { "=",  TokenType.Op_E  },
             { "!=", TokenType.Op_NE },

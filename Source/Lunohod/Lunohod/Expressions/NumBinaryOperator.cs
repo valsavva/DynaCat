@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using NumExpression = Nomnom.XGameExpressions.Expression<float>;
-using BoolExpression = Nomnom.XGameExpressions.Expression<bool>;
-
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
     public class NumBinaryOperator : NumExpression
     {
         private TokenType tokenType;
-        private NumExpression expression1;
-        private NumExpression expression2;
+        private INumExpression expression1;
+        private INumExpression expression2;
 
-        private Func<NumExpression, NumExpression, float> func;
+        private Func<INumExpression, INumExpression, float> func;
 
-        public NumBinaryOperator(TokenType tokenType, NumExpression expression1, NumExpression expression2)
+        public NumBinaryOperator(TokenType tokenType, INumExpression expression1, INumExpression expression2)
         {
             this.tokenType = tokenType;
             this.expression1 = expression1;

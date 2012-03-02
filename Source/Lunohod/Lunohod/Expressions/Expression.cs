@@ -3,8 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
+    public interface INumExpression
+    {
+        float Value { get; }
+    }
+
+    public interface IBoolExpression
+    {
+        bool Value { get; }
+    }
+
     public abstract class Expression
     {
         public abstract Type Type { get; }

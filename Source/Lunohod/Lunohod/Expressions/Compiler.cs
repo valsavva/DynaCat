@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Lunohod.Objects;
 
-using NumExpression = Nomnom.XGameExpressions.Expression<float>;
-using BoolExpression = Nomnom.XGameExpressions.Expression<bool>;
-
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
     public class Compiler
     {
         private Scanner scanner;
         private Token currentToken;
+        private XObject currentObject;
 
-        public NumExpression CompileNumExpression(string input)
+        public Compiler(XObject currentObject)
         {
-            scanner = new Scanner(input);
-            currentToken = scanner.NextToken();
+            this.currentObject = currentObject;
+        }
+
+        public INumExpression CompileNumExpression(string input)
+        {
+            this.scanner = new Scanner(input);
+            this.currentToken = scanner.NextToken();
 
             if (M(TokenType.Eof))
                 return null;
@@ -24,7 +28,7 @@ namespace Nomnom.XGameExpressions
             return TNumExpression();
         }
 
-        public BoolExpression CompileBoolExpression(string input)
+        public IBoolExpression CompileBoolExpression(string input)
         {
             scanner = new Scanner(input);
             currentToken = scanner.NextToken();
@@ -35,7 +39,7 @@ namespace Nomnom.XGameExpressions
             return TBoolExpression();
         }
 
-        private BoolExpression TBoolExpression()
+        private IBoolExpression TBoolExpression()
         {
             var expression1 = TBoolMultiplication();
 
@@ -52,7 +56,7 @@ namespace Nomnom.XGameExpressions
             return expression1;
         }
 
-        private BoolExpression TBoolMultiplication()
+        private IBoolExpression TBoolMultiplication()
         {
             var expression1 = TPredicate();
 
@@ -69,7 +73,7 @@ namespace Nomnom.XGameExpressions
             return expression1;
         }
 
-        private BoolExpression TPredicate()
+        private IBoolExpression TPredicate()
         {
             switch (T())
             {
@@ -86,11 +90,11 @@ namespace Nomnom.XGameExpressions
                             return new BoolConstant(false);
                         }
 
-                        return (BoolExpression)TPropertyOrFunction<bool>();
+                        return (IBoolExpression)TBoolFlagOrPropertyOrFunction(Consume().Text);
                     }
                 case TokenType.At:
                     {
-                        return TVariable<bool>();
+                        return (IBoolExpression)TVariable<bool>();
                     }
                 case TokenType.LeftPar:
                     {
@@ -121,7 +125,18 @@ namespace Nomnom.XGameExpressions
             }
         }
 
-        private BoolExpression TUnaryNotOperator()
+        private Expression TBoolFlagOrPropertyOrFunction(string id)
+        {
+            if (M(TokenType.Semi))
+            {
+                Consume();
+                return new BoolFlag(currentObject, id, Consume(TokenType.Id).Text);
+            }
+
+            return TPropertyOrFunction<bool>(id);
+        }
+
+        private IBoolExpression TUnaryNotOperator()
         {
             var operatorToken = Consume();
 
@@ -130,7 +145,7 @@ namespace Nomnom.XGameExpressions
             return new UnaryNotOperator(expression);
         }
 
-        private NumExpression TNumExpression()
+        private INumExpression TNumExpression()
         {
             var expression1 = TNumMultiplication();
 
@@ -147,7 +162,7 @@ namespace Nomnom.XGameExpressions
             return expression1;
         }
 
-        private NumExpression TNumMultiplication()
+        private INumExpression TNumMultiplication()
         {
             var expression1 = TFactor();
 
@@ -165,7 +180,7 @@ namespace Nomnom.XGameExpressions
         }
 
 
-        private NumExpression TFactor()
+        private INumExpression TFactor()
         {
             switch (T())
             {
@@ -175,11 +190,11 @@ namespace Nomnom.XGameExpressions
                     }
                 case TokenType.Id:
                     {
-                        return (NumExpression)TPropertyOrFunction<float>();
+                        return (INumExpression)TPropertyOrFunction<float>(Consume().Text);
                     }
                 case TokenType.At:
                     {
-                        return TVariable<float>();
+                        return (INumExpression)TVariable<float>();
                     }
                 case TokenType.LeftPar:
                     {
@@ -197,7 +212,7 @@ namespace Nomnom.XGameExpressions
             }
         }
 
-        private NumExpression TUnaryOperator()
+        private INumExpression TUnaryOperator()
         {
             var operatorToken = Consume();
 
@@ -209,19 +224,19 @@ namespace Nomnom.XGameExpressions
                 return new UnaryMinusOperator(expression);
         }
 
-        private Expression<T> TVariable<T>()
+        private Expression TVariable<T>()
         {
             throw new NotImplementedException();
         }
 
-        private NumExpression TNumConstant()
+        private INumExpression TNumConstant()
         {
             return new NumConstant(float.Parse(Consume().Text));
         }
 
-        private Expression TPropertyOrFunction<T>()
+        private Expression TPropertyOrFunction<T>(string id)
         {
-            string propertyId = Consume().Text;
+            string propertyId = id;
             string objectId  = null;
 
             if (M(TokenType.Dot))
@@ -240,13 +255,16 @@ namespace Nomnom.XGameExpressions
 
                 Consume(TokenType.RightPar);
                 if (typeof(T) == typeof(float))
-                    return new NumFunction(objectId, propertyId, parameters);
+                    return new NumFunction(this.currentObject, objectId, propertyId, parameters);
                 else
-                    return new BoolFunction(objectId, propertyId, parameters);
+                    return new BoolFunction(this.currentObject, objectId, propertyId, parameters);
             }
             else
             {
-                return new Property<T>(objectId, propertyId);
+                if (typeof(T) == typeof(float))
+                    return new NumProperty(this.currentObject, objectId, propertyId);
+                else
+                    return new BoolProperty(this.currentObject, objectId, propertyId);
             }
         }
 
@@ -261,7 +279,7 @@ namespace Nomnom.XGameExpressions
                 if (result == null)
                     result = new List<Expression>();
 
-                result.Add(parameter);
+                result.Add((Expression)parameter);
 
                 if (!M(TokenType.RightPar))
                     Consume(TokenType.Comma);

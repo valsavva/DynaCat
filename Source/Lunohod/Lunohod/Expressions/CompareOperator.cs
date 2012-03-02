@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using NumExpression = Nomnom.XGameExpressions.Expression<float>;
-using BoolExpression = Nomnom.XGameExpressions.Expression<bool>;
-
-namespace Nomnom.XGameExpressions
+namespace Lunohod.Xge
 {
     class CompareOperator : BoolExpression
     {
         private TokenType tokenType;
-        private NumExpression expression1;
-        private NumExpression expression2;
+        private INumExpression expression1;
+        private INumExpression expression2;
 
-        private Func<NumExpression, NumExpression, bool> func;
+        private Func<INumExpression, INumExpression, bool> func;
 
-        public CompareOperator(TokenType tokenType, NumExpression expression1, NumExpression expression2)
+        public CompareOperator(TokenType tokenType, INumExpression expression1, INumExpression expression2)
         {
             // TODO: Complete member initialization
             this.tokenType = tokenType;
