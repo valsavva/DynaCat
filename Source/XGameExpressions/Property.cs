@@ -23,4 +23,24 @@ namespace Nomnom.XGameExpressions
             return (string.IsNullOrEmpty(objectId) ? "" : objectId + ".") + propertyId;
         }
     }
+
+    public class NumProperty : Property<float>
+    {
+        public NumProperty(string objectId, string propertyId)
+            : base(objectId, propertyId)
+        {
+
+        }
+        public override float Value { get { return 0f; } }
+    }
+
+    public class BoolProperty : Property<bool>
+    {
+        public BoolProperty(string objectId, string propertyId)
+            : base(objectId, propertyId)
+        {
+
+        }
+        public override bool Value { get { return false; } }
+    }
 }

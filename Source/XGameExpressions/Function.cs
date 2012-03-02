@@ -8,7 +8,7 @@ using BoolExpression = Nomnom.XGameExpressions.Expression<bool>;
 
 namespace Nomnom.XGameExpressions
 {
-    public class Function<T> : Expression<T>
+    public abstract class Function<T> : Expression<T>
     {
         private string objectId;
         private string propertyId;
@@ -27,5 +27,25 @@ namespace Nomnom.XGameExpressions
         {
             return (string.IsNullOrEmpty(objectId) ? "" : objectId + ".") + propertyId + "(" + (parameters == null ? "" : string.Join(",", parameters)) + ")";
         }
+    }
+
+    public class NumFunction : Function<float>
+    {
+        public NumFunction(string objectId, string propertyId, List<Expression> parameters)
+            : base(objectId, propertyId, parameters)
+        {
+
+        }
+        public override float Value { get { return 0f; } }
+    }
+
+    public class BoolFunction : Function<bool>
+    {
+        public BoolFunction(string objectId, string propertyId, List<Expression> parameters)
+            : base(objectId, propertyId, parameters)
+        {
+
+        }
+        public override bool Value { get { return false; } }
     }
 }

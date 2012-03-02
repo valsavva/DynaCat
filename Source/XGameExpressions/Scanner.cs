@@ -19,8 +19,8 @@ namespace Nomnom.XGameExpressions
             { "%", TokenType.Modulo },
             { ".", TokenType.Dot },
             { ",", TokenType.Comma },
-            { "&", TokenType.Or},
-            { "|", TokenType.And},
+            { "&", TokenType.And},
+            { "|", TokenType.Or},
             { "!", TokenType.Not},
 
             { "=",  TokenType.Op_E  },

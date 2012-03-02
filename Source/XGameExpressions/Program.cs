@@ -10,7 +10,13 @@ namespace XGameExpressions
     {
         static void Main(string[] args)
         {
-            CompilerBool("true & (5 > 3)");
+            CompilerBool("true & true");
+            CompilerBool("true & false");
+            CompilerBool("false & false");
+            CompilerBool("true | true");
+            CompilerBool("true | false");
+            CompilerBool("false | false");
+            CompilerBool("true & (5 > 3) & Yeah()");
             Compiler("2*40.5 + 50*2)");
         }
 

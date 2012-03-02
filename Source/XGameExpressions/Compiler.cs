@@ -86,7 +86,7 @@ namespace Nomnom.XGameExpressions
                             return new BoolConstant(false);
                         }
 
-                        return TPropertyOrFunction<bool>();
+                        return (BoolExpression)TPropertyOrFunction<bool>();
                     }
                 case TokenType.At:
                     {
@@ -175,7 +175,7 @@ namespace Nomnom.XGameExpressions
                     }
                 case TokenType.Id:
                     {
-                        return TPropertyOrFunction<float>();
+                        return (NumExpression)TPropertyOrFunction<float>();
                     }
                 case TokenType.At:
                     {
@@ -219,7 +219,7 @@ namespace Nomnom.XGameExpressions
             return new NumConstant(float.Parse(Consume().Text));
         }
 
-        private Expression<T> TPropertyOrFunction<T>()
+        private Expression TPropertyOrFunction<T>()
         {
             string propertyId = Consume().Text;
             string objectId  = null;
@@ -239,7 +239,10 @@ namespace Nomnom.XGameExpressions
                 List<Expression> parameters = TFuncParameters();
 
                 Consume(TokenType.RightPar);
-                return new Function<T>(objectId, propertyId, parameters);
+                if (typeof(T) == typeof(float))
+                    return new NumFunction(objectId, propertyId, parameters);
+                else
+                    return new BoolFunction(objectId, propertyId, parameters);
             }
             else
             {
