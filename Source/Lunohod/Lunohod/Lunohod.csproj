@@ -76,6 +76,7 @@
     <None Include="Info.plist" />
     <None Include="Metadata\TestIterators.xml" />
     <None Include="Content\Textures\output_TXR.txt" />
+    <None Include="Performance.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utility.cs" />
