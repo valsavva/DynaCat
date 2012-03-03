@@ -11,7 +11,8 @@
 	</Resources>
 	<Screens>
 		<Screen Id="ScreenMain" File="ScreenMain.xml" />
-		<Screen Id="ScreenTests" File="ScreenTests.xml" />
+		<Screen Id="ScreenTests01" File="ScreenTests01.xml" />
+		<Screen Id="ScreenTests02" File="ScreenTests02.xml" />
 	</Screens>
 	<Levels>
 		<Level Id="test_c_boloto" File="test_c_boloto.xml" />
@@ -58,5 +59,6 @@
 		<Level Id="TestLevel2" File="TestLevel2.xml" />
 		<Level Id="TestSignals" File="TestSignals.xml" />
 		<Level Id="TestRnd" File="TestRnd.xml" />
+		<Level Id="FPSTest" File="FPSTest.xml" />
 	</Levels>
 </Game>

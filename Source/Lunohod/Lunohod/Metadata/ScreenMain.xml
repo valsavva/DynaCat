@@ -64,9 +64,13 @@
 			<Group Id="grpL19" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=18"/>
 			<Group Id="grpL20" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=19"/>
 		</Group>
-		<Group Bounds="5,100,35,100">
-			<TapArea Action="system.StartScreen('ScreenTests')"/>
-			<Text FontId="SystemFont" Text="Tests" Color="#CC0000" Location="0,100" Rotation="-90"/>
+		<Group Bounds="5,25,35,100">
+			<TapArea Action="system.StartScreen('ScreenTests01')"/>
+			<Text FontId="SystemFont" Text="Tests01" Color="#CC0000" Location="0,100" Rotation="-90"/>
+		</Group>
+		<Group Bounds="5,125,35,100">
+			<TapArea Action="system.StartScreen('ScreenTests02')"/>
+			<Text FontId="SystemFont" Text="Tests02" Color="#CC0000" Location="0,100" Rotation="-90"/>
 		</Group>
 	</Layer>
 	
