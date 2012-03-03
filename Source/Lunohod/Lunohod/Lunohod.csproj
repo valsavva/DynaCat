@@ -75,6 +75,8 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Metadata\TestIterators.xml" />
+    <None Include="Content\Textures\output_TXR.txt" />
+    <None Include="Performance.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utility.cs" />
@@ -975,9 +977,6 @@
     <Content Include="Metadata\TestExplosion.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\ScreenTests.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Global\explosion.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1242,6 +1241,18 @@
     <Content Include="Metadata\test_c_boloto.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\FPSTest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTestLoad100.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTestLoad1000.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTestLoad10000.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\FPSTestImage1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1482,16 +1493,10 @@
     <Content Include="Content\Textures\FPSTestImage80.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\FPSTest.xml">
+    <Content Include="Metadata\ScreenTests01.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\FPSTestLoad1000.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Metadata\FPSTestLoad10000.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Metadata\FPSTestLoad100.xml">
+    <Content Include="Metadata\ScreenTests02.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
