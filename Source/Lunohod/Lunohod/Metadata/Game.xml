@@ -16,6 +16,7 @@
 	</Screens>
 	<Levels>
 
+
 		<Level Id="style100500" File="style100500.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
 		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
@@ -59,6 +60,7 @@
 		<Level Id="TestLevel2" File="TestLevel2.xml" />
 		<Level Id="TestSignals" File="TestSignals.xml" />
 		<Level Id="TestRnd" File="TestRnd.xml" />
+		<Level Id="test_c_boloto" File="test_c_boloto.xml" />
 		<Level Id="FPSTest" File="FPSTest.xml" />
 		<Level Id="FPSTest_dry_I-100" File="FPSTest_dry_I-100.xml" />
 		<Level Id="FPSTest_dry_I-1000" File="FPSTest_dry_I-1000.xml" />
