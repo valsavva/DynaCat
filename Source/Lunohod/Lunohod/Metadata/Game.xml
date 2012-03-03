@@ -14,6 +14,7 @@
 		<Screen Id="ScreenTests" File="ScreenTests.xml" />
 	</Screens>
 	<Levels>
+		<Level Id="FPSTest" File="FPSTest.xml" />
 		<Level Id="test_c_boloto" File="test_c_boloto.xml" />
 		<Level Id="style100500" File="style100500.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
