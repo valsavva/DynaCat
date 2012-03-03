@@ -75,7 +75,6 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Metadata\TestIterators.xml" />
-    <None Include="Content\Textures\output_TXR.txt" />
     <None Include="Performance.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -1497,6 +1496,24 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ScreenTests02.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTest_dry_I-100.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTest_dry_IA-100.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTest_dry_IBA-100.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTest_dry_I-1000.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTest_dry_IA-1000.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\FPSTest_dry_IBA-1000.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

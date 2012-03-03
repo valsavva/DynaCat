@@ -15,8 +15,7 @@
 		<Screen Id="ScreenTests02" File="ScreenTests02.xml" />
 	</Screens>
 	<Levels>
-		<Level Id="FPSTest" File="FPSTest.xml" />
-		<Level Id="test_c_boloto" File="test_c_boloto.xml" />
+
 		<Level Id="style100500" File="style100500.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
 		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
@@ -61,5 +60,11 @@
 		<Level Id="TestSignals" File="TestSignals.xml" />
 		<Level Id="TestRnd" File="TestRnd.xml" />
 		<Level Id="FPSTest" File="FPSTest.xml" />
+		<Level Id="FPSTest_dry_I-100" File="FPSTest_dry_I-100.xml" />
+		<Level Id="FPSTest_dry_I-1000" File="FPSTest_dry_I-1000.xml" />
+		<Level Id="FPSTest_dry_IA-100" File="FPSTest_dry_IA-100.xml" />
+		<Level Id="FPSTest_dry_IA-1000" File="FPSTest_dry_IA-1000.xml" />
+		<Level Id="FPSTest_dry_IBA-100" File="FPSTest_dry_IBA-100.xml" />
+		<Level Id="FPSTest_dry_IBA-1000" File="FPSTest_dry_IBA-1000.xml" />
 	</Levels>
 </Game>

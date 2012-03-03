@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="FPSTest80" Bounds="0,0,480,320">
+	<LevelSettings
+			Dificulty="-1"
+			BombCount="7777777"
+			HeroHealth="7777777"
+	/>
+
+	<Resources RootFolder="Global">
+		<Texture Id="circle100" Source="wave0100"/>
+		<Texture Id="circle200" Source="wave0200"/>
+		<Texture Id="circle300" Source="wave0300"/>
+		<Texture Id="circle400" Source="wave0400"/>
+	</Resources>
+    <Resources RootFolder="Textures">
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue"/>
+    </Resources>
+	<Resources RootFolder="Textures">
+		<Texture Id="FPSTestImage1" Source="FPSTestImage1"/>
+		<Texture Id="FPSTestImage10" Source="FPSTestImage10"/>
+		<Texture Id="FPSTestImage11" Source="FPSTestImage11"/>
+		<Texture Id="FPSTestImage12" Source="FPSTestImage12"/>
+		<Texture Id="FPSTestImage13" Source="FPSTestImage13"/>
+		<Texture Id="FPSTestImage14" Source="FPSTestImage14"/>
+		<Texture Id="FPSTestImage15" Source="FPSTestImage15"/>
+		<Texture Id="FPSTestImage16" Source="FPSTestImage16"/>
+		<Texture Id="FPSTestImage17" Source="FPSTestImage17"/>
+		<Texture Id="FPSTestImage18" Source="FPSTestImage18"/>
+		<Texture Id="FPSTestImage19" Source="FPSTestImage19"/>
+		<Texture Id="FPSTestImage2" Source="FPSTestImage2"/>
+		<Texture Id="FPSTestImage20" Source="FPSTestImage20"/>
+		<Texture Id="FPSTestImage21" Source="FPSTestImage21"/>
+		<Texture Id="FPSTestImage22" Source="FPSTestImage22"/>
+		<Texture Id="FPSTestImage23" Source="FPSTestImage23"/>
+		<Texture Id="FPSTestImage24" Source="FPSTestImage24"/>
+		<Texture Id="FPSTestImage25" Source="FPSTestImage25"/>
+		<Texture Id="FPSTestImage26" Source="FPSTestImage26"/>
+		<Texture Id="FPSTestImage27" Source="FPSTestImage27"/>
+		<Texture Id="FPSTestImage28" Source="FPSTestImage28"/>
+		<Texture Id="FPSTestImage29" Source="FPSTestImage29"/>
+		<Texture Id="FPSTestImage3" Source="FPSTestImage3"/>
+		<Texture Id="FPSTestImage30" Source="FPSTestImage30"/>
+		<Texture Id="FPSTestImage31" Source="FPSTestImage31"/>
+		<Texture Id="FPSTestImage32" Source="FPSTestImage32"/>
+		<Texture Id="FPSTestImage33" Source="FPSTestImage33"/>
+		<Texture Id="FPSTestImage34" Source="FPSTestImage34"/>
+		<Texture Id="FPSTestImage35" Source="FPSTestImage35"/>
+		<Texture Id="FPSTestImage36" Source="FPSTestImage36"/>
+		<Texture Id="FPSTestImage37" Source="FPSTestImage37"/>
+		<Texture Id="FPSTestImage38" Source="FPSTestImage38"/>
+		<Texture Id="FPSTestImage39" Source="FPSTestImage39"/>
+		<Texture Id="FPSTestImage4" Source="FPSTestImage4"/>
+		<Texture Id="FPSTestImage40" Source="FPSTestImage40"/>
+		<Texture Id="FPSTestImage41" Source="FPSTestImage41"/>
+		<Texture Id="FPSTestImage42" Source="FPSTestImage42"/>
+		<Texture Id="FPSTestImage43" Source="FPSTestImage43"/>
+		<Texture Id="FPSTestImage44" Source="FPSTestImage44"/>
+		<Texture Id="FPSTestImage45" Source="FPSTestImage45"/>
+		<Texture Id="FPSTestImage46" Source="FPSTestImage46"/>
+		<Texture Id="FPSTestImage47" Source="FPSTestImage47"/>
+		<Texture Id="FPSTestImage48" Source="FPSTestImage48"/>
+		<Texture Id="FPSTestImage49" Source="FPSTestImage49"/>
+		<Texture Id="FPSTestImage5" Source="FPSTestImage5"/>
+		<Texture Id="FPSTestImage50" Source="FPSTestImage50"/>
+		<Texture Id="FPSTestImage51" Source="FPSTestImage51"/>
+		<Texture Id="FPSTestImage52" Source="FPSTestImage52"/>
+		<Texture Id="FPSTestImage53" Source="FPSTestImage53"/>
+		<Texture Id="FPSTestImage54" Source="FPSTestImage54"/>
+		<Texture Id="FPSTestImage55" Source="FPSTestImage55"/>
+		<Texture Id="FPSTestImage56" Source="FPSTestImage56"/>
+		<Texture Id="FPSTestImage57" Source="FPSTestImage57"/>
+		<Texture Id="FPSTestImage58" Source="FPSTestImage58"/>
+		<Texture Id="FPSTestImage59" Source="FPSTestImage59"/>
+		<Texture Id="FPSTestImage6" Source="FPSTestImage6"/>
+		<Texture Id="FPSTestImage60" Source="FPSTestImage60"/>
+		<Texture Id="FPSTestImage61" Source="FPSTestImage61"/>
+		<Texture Id="FPSTestImage62" Source="FPSTestImage62"/>
+		<Texture Id="FPSTestImage63" Source="FPSTestImage63"/>
+		<Texture Id="FPSTestImage64" Source="FPSTestImage64"/>
+		<Texture Id="FPSTestImage65" Source="FPSTestImage65"/>
+		<Texture Id="FPSTestImage66" Source="FPSTestImage66"/>
+		<Texture Id="FPSTestImage67" Source="FPSTestImage67"/>
+		<Texture Id="FPSTestImage68" Source="FPSTestImage68"/>
+		<Texture Id="FPSTestImage69" Source="FPSTestImage69"/>
+		<Texture Id="FPSTestImage7" Source="FPSTestImage7"/>
+		<Texture Id="FPSTestImage70" Source="FPSTestImage70"/>
+		<Texture Id="FPSTestImage71" Source="FPSTestImage71"/>
+		<Texture Id="FPSTestImage72" Source="FPSTestImage72"/>
+		<Texture Id="FPSTestImage73" Source="FPSTestImage73"/>
+		<Texture Id="FPSTestImage74" Source="FPSTestImage74"/>
+		<Texture Id="FPSTestImage75" Source="FPSTestImage75"/>
+		<Texture Id="FPSTestImage76" Source="FPSTestImage76"/>
+		<Texture Id="FPSTestImage77" Source="FPSTestImage77"/>
+		<Texture Id="FPSTestImage78" Source="FPSTestImage78"/>
+		<Texture Id="FPSTestImage79" Source="FPSTestImage79"/>
+		<Texture Id="FPSTestImage8" Source="FPSTestImage8"/>
+		<Texture Id="FPSTestImage80" Source="FPSTestImage80"/>
+		<Texture Id="FPSTestImage9" Source="FPSTestImage9"/>
+    </Resources>
+
+		
+    <Layer Id="background" BackColor="#FFFFFFFF">
+    </Layer>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+<!-- IA >> -->
+
+                <Image Id="sprIA101" TextureId="FPSTestImage9" Bounds="340,57,100,100">
+                    <NumAnimation From="12" To="-79" Duration="2.96" Autoreverse="true" Target="sprIA101.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA102" TextureId="FPSTestImage16" Bounds="68,236,100,100">
+                    <NumAnimation From="25" To="-53" Duration="7.3" Autoreverse="true" Target="sprIA102.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA103" TextureId="FPSTestImage35" Bounds="388,23,100,100">
+                    <NumAnimation From="79" To="-35" Duration="3.57" Autoreverse="true" Target="sprIA103.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA104" TextureId="FPSTestImage51" Bounds="298,112,100,100">
+                    <NumAnimation From="0.1" To="0.4" Duration="3.53" Autoreverse="true" Target="sprIA104.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA105" TextureId="FPSTestImage53" Bounds="109,148,100,100">
+                    <NumAnimation From="46" To="63" Duration="7.97" Autoreverse="true" Target="sprIA105.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA106" TextureId="FPSTestImage8" Bounds="222,221,100,100">
+                    <NumAnimation From="0.9" To="0.7" Duration="2.99" Autoreverse="true" Target="sprIA106.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA107" TextureId="FPSTestImage5" Bounds="261,207,100,100">
+                    <NumAnimation From="-27" To="-24" Duration="3.2" Autoreverse="true" Target="sprIA107.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA108" TextureId="FPSTestImage53" Bounds="214,113,100,100">
+                    <NumAnimation From="4" To="-48" Duration="7.09" Autoreverse="true" Target="sprIA108.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA109" TextureId="FPSTestImage69" Bounds="249,163,100,100">
+                    <NumAnimation From="4" To="70" Duration="6.32" Autoreverse="true" Target="sprIA109.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA110" TextureId="FPSTestImage43" Bounds="266,75,100,100">
+                    <NumAnimation From="-27" To="44" Duration="9.96" Autoreverse="true" Target="sprIA110.X" IsDelta="true" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA111" TextureId="FPSTestImage28" Bounds="55,73,100,100">
+                    <NumAnimation From="-32" To="1" Duration="3.05" Autoreverse="true" Target="sprIA111.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA112" TextureId="FPSTestImage38" Bounds="172,219,100,100">
+                    <NumAnimation From="0.9" To="0.8" Duration="9.59" Autoreverse="true" Target="sprIA112.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA113" TextureId="FPSTestImage22" Bounds="252,87,100,100">
+                    <NumAnimation From="0.3" To="0.4" Duration="9.87" Autoreverse="true" Target="sprIA113.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA114" TextureId="FPSTestImage67" Bounds="421,150,100,100">
+                    <NumAnimation From="47" To="-32" Duration="1.63" Autoreverse="true" Target="sprIA114.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA115" TextureId="FPSTestImage20" Bounds="442,185,100,100">
+                    <NumAnimation From="-66" To="81" Duration="2.27" Autoreverse="true" Target="sprIA115.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA116" TextureId="FPSTestImage45" Bounds="73,192,100,100">
+                    <NumAnimation From="48" To="-38" Duration="3.89" Autoreverse="true" Target="sprIA116.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA117" TextureId="FPSTestImage27" Bounds="308,228,100,100">
+                    <NumAnimation From="42" To="-71" Duration="5.09" Autoreverse="true" Target="sprIA117.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA118" TextureId="FPSTestImage1" Bounds="314,212,100,100">
+                    <NumAnimation From="73" To="93" Duration="9.42" Autoreverse="true" Target="sprIA118.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA119" TextureId="FPSTestImage55" Bounds="56,143,100,100">
+                    <NumAnimation From="0.8" To="0.2" Duration="7.1" Autoreverse="true" Target="sprIA119.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA120" TextureId="FPSTestImage21" Bounds="334,296,100,100">
+                    <NumAnimation From="-90" To="-17" Duration="5.44" Autoreverse="true" Target="sprIA120.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA121" TextureId="FPSTestImage49" Bounds="43,233,100,100">
+                    <NumAnimation From="0.2" To="0.3" Duration="9.32" Autoreverse="true" Target="sprIA121.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA122" TextureId="FPSTestImage79" Bounds="443,61,100,100">
+                    <NumAnimation From="52" To="37" Duration="6.92" Autoreverse="true" Target="sprIA122.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA123" TextureId="FPSTestImage61" Bounds="82,85,100,100">
+                    <NumAnimation From="97" To="63" Duration="7.5" Autoreverse="true" Target="sprIA123.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA124" TextureId="FPSTestImage2" Bounds="67,171,100,100">
+                    <NumAnimation From="0.9" To="0.9" Duration="2.85" Autoreverse="true" Target="sprIA124.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA125" TextureId="FPSTestImage64" Bounds="141,118,100,100">
+                    <NumAnimation From="11" To="60" Duration="5.35" Autoreverse="true" Target="sprIA125.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA126" TextureId="FPSTestImage1" Bounds="321,112,100,100">
+                    <NumAnimation From="0.3" To="0.3" Duration="9.6" Autoreverse="true" Target="sprIA126.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA127" TextureId="FPSTestImage49" Bounds="189,204,100,100">
+                    <NumAnimation From="0.7" To="0.2" Duration="5.72" Autoreverse="true" Target="sprIA127.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA128" TextureId="FPSTestImage80" Bounds="44,21,100,100">
+                    <NumAnimation From="-9" To="-41" Duration="2.13" Autoreverse="true" Target="sprIA128.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA129" TextureId="FPSTestImage56" Bounds="254,96,100,100">
+                    <NumAnimation From="51" To="53" Duration="6.15" Autoreverse="true" Target="sprIA129.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA130" TextureId="FPSTestImage17" Bounds="255,172,100,100">
+                    <NumAnimation From="0.4" To="0.3" Duration="8.62" Autoreverse="true" Target="sprIA130.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA131" TextureId="FPSTestImage1" Bounds="248,147,100,100">
+                    <NumAnimation From="-24" To="39" Duration="9.25" Autoreverse="true" Target="sprIA131.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA132" TextureId="FPSTestImage1" Bounds="402,45,100,100">
+                    <NumAnimation From="77" To="-96" Duration="2.54" Autoreverse="true" Target="sprIA132.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA133" TextureId="FPSTestImage56" Bounds="357,134,100,100">
+                    <NumAnimation From="0.9" To="0.7" Duration="4.3" Autoreverse="true" Target="sprIA133.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA134" TextureId="FPSTestImage36" Bounds="30,275,100,100">
+                    <NumAnimation From="0.1" To="0.4" Duration="1.47" Autoreverse="true" Target="sprIA134.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA135" TextureId="FPSTestImage29" Bounds="403,130,100,100">
+                    <NumAnimation From="0.6" To="0.8" Duration="1.73" Autoreverse="true" Target="sprIA135.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA136" TextureId="FPSTestImage76" Bounds="343,127,100,100">
+                    <NumAnimation From="-42" To="71" Duration="4.3" Autoreverse="true" Target="sprIA136.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA137" TextureId="FPSTestImage38" Bounds="305,226,100,100">
+                    <NumAnimation From="-43" To="93" Duration="1.21" Autoreverse="true" Target="sprIA137.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA138" TextureId="FPSTestImage5" Bounds="151,53,100,100">
+                    <NumAnimation From="-61" To="23" Duration="0.83" Autoreverse="true" Target="sprIA138.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA139" TextureId="FPSTestImage69" Bounds="124,19,100,100">
+                    <NumAnimation From="-100" To="86" Duration="2.55" Autoreverse="true" Target="sprIA139.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA140" TextureId="FPSTestImage55" Bounds="333,188,100,100">
+                    <NumAnimation From="-5" To="27" Duration="9.6" Autoreverse="true" Target="sprIA140.X" IsDelta="true" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA141" TextureId="FPSTestImage17" Bounds="242,300,100,100">
+                    <NumAnimation From="0.5" To="0.2" Duration="4.99" Autoreverse="true" Target="sprIA141.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA142" TextureId="FPSTestImage48" Bounds="132,129,100,100">
+                    <NumAnimation From="0.4" To="0.2" Duration="1.36" Autoreverse="true" Target="sprIA142.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA143" TextureId="FPSTestImage12" Bounds="316,3,100,100">
+                    <NumAnimation From="0.9" To="0.3" Duration="5.82" Autoreverse="true" Target="sprIA143.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA144" TextureId="FPSTestImage34" Bounds="281,290,100,100">
+                    <NumAnimation From="0.9" To="0.7" Duration="9.91" Autoreverse="true" Target="sprIA144.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA145" TextureId="FPSTestImage23" Bounds="164,229,100,100">
+                    <NumAnimation From="-11" To="-71" Duration="2.56" Autoreverse="true" Target="sprIA145.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA146" TextureId="FPSTestImage78" Bounds="439,297,100,100">
+                    <NumAnimation From="15" To="23" Duration="0.65" Autoreverse="true" Target="sprIA146.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA147" TextureId="FPSTestImage33" Bounds="161,59,100,100">
+                    <NumAnimation From="0.2" To="1" Duration="6.94" Autoreverse="true" Target="sprIA147.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA148" TextureId="FPSTestImage53" Bounds="308,61,100,100">
+                    <NumAnimation From="82" To="-33" Duration="3.25" Autoreverse="true" Target="sprIA148.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA149" TextureId="FPSTestImage57" Bounds="215,101,100,100">
+                    <NumAnimation From="5" To="17" Duration="0.75" Autoreverse="true" Target="sprIA149.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA150" TextureId="FPSTestImage26" Bounds="286,91,100,100">
+                    <NumAnimation From="0.8" To="0.9" Duration="9.92" Autoreverse="true" Target="sprIA150.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA151" TextureId="FPSTestImage16" Bounds="7,32,100,100">
+                    <NumAnimation From="-22" To="56" Duration="9.44" Autoreverse="true" Target="sprIA151.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA152" TextureId="FPSTestImage72" Bounds="327,288,100,100">
+                    <NumAnimation From="61" To="-36" Duration="4.45" Autoreverse="true" Target="sprIA152.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA153" TextureId="FPSTestImage45" Bounds="399,241,100,100">
+                    <NumAnimation From="17" To="-73" Duration="6.63" Autoreverse="true" Target="sprIA153.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA154" TextureId="FPSTestImage12" Bounds="139,289,100,100">
+                    <NumAnimation From="-96" To="-80" Duration="4.53" Autoreverse="true" Target="sprIA154.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA155" TextureId="FPSTestImage29" Bounds="35,278,100,100">
+                    <NumAnimation From="-53" To="-20" Duration="0.58" Autoreverse="true" Target="sprIA155.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA156" TextureId="FPSTestImage5" Bounds="320,159,100,100">
+                    <NumAnimation From="0.9" To="0.1" Duration="8.07" Autoreverse="true" Target="sprIA156.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA157" TextureId="FPSTestImage61" Bounds="109,129,100,100">
+                    <NumAnimation From="0.4" To="0.5" Duration="5.57" Autoreverse="true" Target="sprIA157.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA158" TextureId="FPSTestImage9" Bounds="102,2,100,100">
+                    <NumAnimation From="79" To="14" Duration="9.33" Autoreverse="true" Target="sprIA158.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA159" TextureId="FPSTestImage15" Bounds="50,93,100,100">
+                    <NumAnimation From="0.5" To="0.6" Duration="2.46" Autoreverse="true" Target="sprIA159.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA160" TextureId="FPSTestImage45" Bounds="195,201,100,100">
+                    <NumAnimation From="9" To="57" Duration="2.92" Autoreverse="true" Target="sprIA160.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA161" TextureId="FPSTestImage35" Bounds="220,11,100,100">
+                    <NumAnimation From="26" To="-100" Duration="2.02" Autoreverse="true" Target="sprIA161.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA162" TextureId="FPSTestImage29" Bounds="182,5,100,100">
+                    <NumAnimation From="22" To="56" Duration="4.91" Autoreverse="true" Target="sprIA162.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA163" TextureId="FPSTestImage8" Bounds="222,226,100,100">
+                    <NumAnimation From="0.5" To="0.6" Duration="1.87" Autoreverse="true" Target="sprIA163.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA164" TextureId="FPSTestImage36" Bounds="295,35,100,100">
+                    <NumAnimation From="48" To="52" Duration="7.65" Autoreverse="true" Target="sprIA164.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA165" TextureId="FPSTestImage12" Bounds="143,268,100,100">
+                    <NumAnimation From="1" To="0.4" Duration="1.74" Autoreverse="true" Target="sprIA165.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA166" TextureId="FPSTestImage32" Bounds="133,228,100,100">
+                    <NumAnimation From="71" To="-73" Duration="3.3" Autoreverse="true" Target="sprIA166.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA167" TextureId="FPSTestImage18" Bounds="87,127,100,100">
+                    <NumAnimation From="4" To="-26" Duration="7.25" Autoreverse="true" Target="sprIA167.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA168" TextureId="FPSTestImage20" Bounds="260,162,100,100">
+                    <NumAnimation From="-57" To="98" Duration="6.42" Autoreverse="true" Target="sprIA168.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA169" TextureId="FPSTestImage61" Bounds="205,41,100,100">
+                    <NumAnimation From="-32" To="-93" Duration="9.73" Autoreverse="true" Target="sprIA169.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA170" TextureId="FPSTestImage75" Bounds="243,287,100,100">
+                    <NumAnimation From="-93" To="-65" Duration="1" Autoreverse="true" Target="sprIA170.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA171" TextureId="FPSTestImage55" Bounds="38,210,100,100">
+                    <NumAnimation From="21" To="-38" Duration="6.94" Autoreverse="true" Target="sprIA171.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA172" TextureId="FPSTestImage73" Bounds="287,194,100,100">
+                    <NumAnimation From="0.9" To="0.8" Duration="9.7" Autoreverse="true" Target="sprIA172.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA173" TextureId="FPSTestImage57" Bounds="460,30,100,100">
+                    <NumAnimation From="65" To="54" Duration="9.61" Autoreverse="true" Target="sprIA173.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA174" TextureId="FPSTestImage63" Bounds="337,176,100,100">
+                    <NumAnimation From="-29" To="62" Duration="2.2" Autoreverse="true" Target="sprIA174.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA175" TextureId="FPSTestImage15" Bounds="138,42,100,100">
+                    <NumAnimation From="84" To="-87" Duration="6.84" Autoreverse="true" Target="sprIA175.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA176" TextureId="FPSTestImage37" Bounds="360,166,100,100">
+                    <NumAnimation From="0.3" To="0.1" Duration="4.84" Autoreverse="true" Target="sprIA176.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA177" TextureId="FPSTestImage24" Bounds="450,48,100,100">
+                    <NumAnimation From="87" To="-71" Duration="5.42" Autoreverse="true" Target="sprIA177.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA178" TextureId="FPSTestImage30" Bounds="185,96,100,100">
+                    <NumAnimation From="21" To="-72" Duration="6.06" Autoreverse="true" Target="sprIA178.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA179" TextureId="FPSTestImage78" Bounds="321,118,100,100">
+                    <NumAnimation From="0.8" To="0.6" Duration="2.33" Autoreverse="true" Target="sprIA179.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA180" TextureId="FPSTestImage65" Bounds="277,267,100,100">
+                    <NumAnimation From="79" To="-74" Duration="5.35" Autoreverse="true" Target="sprIA180.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA181" TextureId="FPSTestImage37" Bounds="62,252,100,100">
+                    <NumAnimation From="-77" To="-72" Duration="5.32" Autoreverse="true" Target="sprIA181.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA182" TextureId="FPSTestImage25" Bounds="265,129,100,100">
+                    <NumAnimation From="1" To="0.9" Duration="9.96" Autoreverse="true" Target="sprIA182.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA183" TextureId="FPSTestImage79" Bounds="222,117,100,100">
+                    <NumAnimation From="69" To="-4" Duration="2.98" Autoreverse="true" Target="sprIA183.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA184" TextureId="FPSTestImage15" Bounds="407,90,100,100">
+                    <NumAnimation From="30" To="27" Duration="1.33" Autoreverse="true" Target="sprIA184.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA185" TextureId="FPSTestImage67" Bounds="170,140,100,100">
+                    <NumAnimation From="-59" To="1" Duration="3" Autoreverse="true" Target="sprIA185.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA186" TextureId="FPSTestImage78" Bounds="123,261,100,100">
+                    <NumAnimation From="0.2" To="0.9" Duration="2.75" Autoreverse="true" Target="sprIA186.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA187" TextureId="FPSTestImage40" Bounds="253,67,100,100">
+                    <NumAnimation From="-89" To="-76" Duration="8.76" Autoreverse="true" Target="sprIA187.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA188" TextureId="FPSTestImage32" Bounds="317,16,100,100">
+                    <NumAnimation From="0.6" To="0.7" Duration="9.62" Autoreverse="true" Target="sprIA188.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA189" TextureId="FPSTestImage25" Bounds="165,23,100,100">
+                    <NumAnimation From="-22" To="-88" Duration="8.68" Autoreverse="true" Target="sprIA189.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA190" TextureId="FPSTestImage37" Bounds="426,282,100,100">
+                    <NumAnimation From="45" To="-57" Duration="0.53" Autoreverse="true" Target="sprIA190.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+
+                <Image Id="sprIA191" TextureId="FPSTestImage7" Bounds="352,30,100,100">
+                    <NumAnimation From="86" To="-85" Duration="2.54" Autoreverse="true" Target="sprIA191.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA192" TextureId="FPSTestImage79" Bounds="57,226,100,100">
+                    <NumAnimation From="38" To="61" Duration="5.84" Autoreverse="true" Target="sprIA192.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA193" TextureId="FPSTestImage34" Bounds="197,145,100,100">
+                    <NumAnimation From="-74" To="-85" Duration="1.66" Autoreverse="true" Target="sprIA193.X" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA194" TextureId="FPSTestImage10" Bounds="197,294,100,100">
+                    <NumAnimation From="-24" To="89" Duration="1.94" Autoreverse="true" Target="sprIA194.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA195" TextureId="FPSTestImage12" Bounds="32,221,100,100">
+                    <NumAnimation From="69" To="-67" Duration="9.56" Autoreverse="true" Target="sprIA195.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA196" TextureId="FPSTestImage60" Bounds="247,165,100,100">
+                    <NumAnimation From="0.3" To="0.3" Duration="3.66" Autoreverse="true" Target="sprIA196.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA197" TextureId="FPSTestImage71" Bounds="116,142,100,100">
+                    <NumAnimation From="-79" To="28" Duration="8.55" Autoreverse="true" Target="sprIA197.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA198" TextureId="FPSTestImage79" Bounds="417,84,100,100">
+                    <NumAnimation From="-11" To="-8" Duration="4.18" Autoreverse="true" Target="sprIA198.Rotation" IsDelta="true" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA199" TextureId="FPSTestImage57" Bounds="162,223,100,100">
+                    <NumAnimation From="0.9" To="0.6" Duration="8.03" Autoreverse="true" Target="sprIA199.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+                <Image Id="sprIA200" TextureId="FPSTestImage54" Bounds="137,296,100,100">
+                    <NumAnimation From="1" To="0.3" Duration="0.68" Autoreverse="true" Target="sprIA200.Opacity" IsDelta="false" InProgress="true"/>
+                </Image>
+<!-- << IA -->
+		<Tower Bounds="0,0,35,35" SignalSpeed="300"/>
+		<Hero Id="hero" Bounds="400,50,50,50" Speed="84" Deceleration="0" Direction="0,0">
+        		<Image TextureId="cursor_50x50_blue"/>
+	    </Hero>
+	</Layer>
+
+	<Include File="Dashboard.xml"/>	
+
+</Level>
+
+
+
+
+
+
+
+
+
+
+
+

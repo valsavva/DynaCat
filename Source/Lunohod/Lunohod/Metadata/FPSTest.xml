@@ -141,10 +141,10 @@
 
 <!-- Buttons -->
 		<Group Id="btn1" Bounds="5,15,50,33" BackColor="#00FF00"
- 	           Class="clsButton" ClassParams="@btnText=SN,@tap=btn1:*on,@btnOnAction=grpSAll.Enable(),@btnOffAction=grpSAll.Disable()" />
+ 	           Class="clsButton" ClassParams="@btnText=S,@tap=btn1:*on,@btnOnAction=grpSAll.Enable(),@btnOffAction=grpSAll.Disable()" />
 
 		<Group Id="btn2" Bounds="65,15,50,33" BackColor="#00FF00"
- 	           Class="clsButton" ClassParams="@btnText=SNA,@tap=btn2:*on,@btnOnAction=grpSAAll.Enable(),@btnOffAction=grpSAAll.Disable()" />
+ 	           Class="clsButton" ClassParams="@btnText=SA,@tap=btn2:*on,@btnOnAction=grpSAAll.Enable(),@btnOffAction=grpSAAll.Disable()" />
 
 		<Group Id="btn3" Bounds="125,15,50,33" BackColor="#00FF00"
  	           Class="clsButton" ClassParams="@btnText=SBA,@tap=btn3:*on,@btnOnAction=grpSBAAll.Enable(),@btnOffAction=grpSBAAll.Disable()" />
@@ -164,7 +164,7 @@
 
         <Group Id="ObjNumMin" Location="0,0"/>
         <Group Id="ObjNumMax" Location="10000,0"/>
-        <Group Id="ObjNum" Location="0,0"/>
+        <Group Id="ObjNum" Location="100,0"/>
 
         <NumAnimation Id="anmPlus" From="0" To="10" Duration="0.2" IsDelta="true" Autoreverse="false" Target="ObjNum.X" RepeatCount="1" Fill="End"/>
         <NumAnimation Id="anmMinus" From="0" To="-10" Duration="0.2" IsDelta="true" Autoreverse="false" Target="ObjNum.X" RepeatCount="1" Fill="End"/>

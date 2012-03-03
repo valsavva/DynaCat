@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="FPSTest80" Bounds="0,0,480,320">
+	<LevelSettings
+			Dificulty="-1"
+			BombCount="7777777"
+			HeroHealth="7777777"
+	/>
+
+	<Resources RootFolder="Global">
+		<Texture Id="circle100" Source="wave0100"/>
+		<Texture Id="circle200" Source="wave0200"/>
+		<Texture Id="circle300" Source="wave0300"/>
+		<Texture Id="circle400" Source="wave0400"/>
+	</Resources>
+    <Resources RootFolder="Textures">
+        <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue"/>
+    </Resources>
+	<Resources RootFolder="Textures">
+		<Texture Id="FPSTestImage1" Source="FPSTestImage1"/>
+		<Texture Id="FPSTestImage10" Source="FPSTestImage10"/>
+		<Texture Id="FPSTestImage11" Source="FPSTestImage11"/>
+		<Texture Id="FPSTestImage12" Source="FPSTestImage12"/>
+		<Texture Id="FPSTestImage13" Source="FPSTestImage13"/>
+		<Texture Id="FPSTestImage14" Source="FPSTestImage14"/>
+		<Texture Id="FPSTestImage15" Source="FPSTestImage15"/>
+		<Texture Id="FPSTestImage16" Source="FPSTestImage16"/>
+		<Texture Id="FPSTestImage17" Source="FPSTestImage17"/>
+		<Texture Id="FPSTestImage18" Source="FPSTestImage18"/>
+		<Texture Id="FPSTestImage19" Source="FPSTestImage19"/>
+		<Texture Id="FPSTestImage2" Source="FPSTestImage2"/>
+		<Texture Id="FPSTestImage20" Source="FPSTestImage20"/>
+		<Texture Id="FPSTestImage21" Source="FPSTestImage21"/>
+		<Texture Id="FPSTestImage22" Source="FPSTestImage22"/>
+		<Texture Id="FPSTestImage23" Source="FPSTestImage23"/>
+		<Texture Id="FPSTestImage24" Source="FPSTestImage24"/>
+		<Texture Id="FPSTestImage25" Source="FPSTestImage25"/>
+		<Texture Id="FPSTestImage26" Source="FPSTestImage26"/>
+		<Texture Id="FPSTestImage27" Source="FPSTestImage27"/>
+		<Texture Id="FPSTestImage28" Source="FPSTestImage28"/>
+		<Texture Id="FPSTestImage29" Source="FPSTestImage29"/>
+		<Texture Id="FPSTestImage3" Source="FPSTestImage3"/>
+		<Texture Id="FPSTestImage30" Source="FPSTestImage30"/>
+		<Texture Id="FPSTestImage31" Source="FPSTestImage31"/>
+		<Texture Id="FPSTestImage32" Source="FPSTestImage32"/>
+		<Texture Id="FPSTestImage33" Source="FPSTestImage33"/>
+		<Texture Id="FPSTestImage34" Source="FPSTestImage34"/>
+		<Texture Id="FPSTestImage35" Source="FPSTestImage35"/>
+		<Texture Id="FPSTestImage36" Source="FPSTestImage36"/>
+		<Texture Id="FPSTestImage37" Source="FPSTestImage37"/>
+		<Texture Id="FPSTestImage38" Source="FPSTestImage38"/>
+		<Texture Id="FPSTestImage39" Source="FPSTestImage39"/>
+		<Texture Id="FPSTestImage4" Source="FPSTestImage4"/>
+		<Texture Id="FPSTestImage40" Source="FPSTestImage40"/>
+		<Texture Id="FPSTestImage41" Source="FPSTestImage41"/>
+		<Texture Id="FPSTestImage42" Source="FPSTestImage42"/>
+		<Texture Id="FPSTestImage43" Source="FPSTestImage43"/>
+		<Texture Id="FPSTestImage44" Source="FPSTestImage44"/>
+		<Texture Id="FPSTestImage45" Source="FPSTestImage45"/>
+		<Texture Id="FPSTestImage46" Source="FPSTestImage46"/>
+		<Texture Id="FPSTestImage47" Source="FPSTestImage47"/>
+		<Texture Id="FPSTestImage48" Source="FPSTestImage48"/>
+		<Texture Id="FPSTestImage49" Source="FPSTestImage49"/>
+		<Texture Id="FPSTestImage5" Source="FPSTestImage5"/>
+		<Texture Id="FPSTestImage50" Source="FPSTestImage50"/>
+		<Texture Id="FPSTestImage51" Source="FPSTestImage51"/>
+		<Texture Id="FPSTestImage52" Source="FPSTestImage52"/>
+		<Texture Id="FPSTestImage53" Source="FPSTestImage53"/>
+		<Texture Id="FPSTestImage54" Source="FPSTestImage54"/>
+		<Texture Id="FPSTestImage55" Source="FPSTestImage55"/>
+		<Texture Id="FPSTestImage56" Source="FPSTestImage56"/>
+		<Texture Id="FPSTestImage57" Source="FPSTestImage57"/>
+		<Texture Id="FPSTestImage58" Source="FPSTestImage58"/>
+		<Texture Id="FPSTestImage59" Source="FPSTestImage59"/>
+		<Texture Id="FPSTestImage6" Source="FPSTestImage6"/>
+		<Texture Id="FPSTestImage60" Source="FPSTestImage60"/>
+		<Texture Id="FPSTestImage61" Source="FPSTestImage61"/>
+		<Texture Id="FPSTestImage62" Source="FPSTestImage62"/>
+		<Texture Id="FPSTestImage63" Source="FPSTestImage63"/>
+		<Texture Id="FPSTestImage64" Source="FPSTestImage64"/>
+		<Texture Id="FPSTestImage65" Source="FPSTestImage65"/>
+		<Texture Id="FPSTestImage66" Source="FPSTestImage66"/>
+		<Texture Id="FPSTestImage67" Source="FPSTestImage67"/>
+		<Texture Id="FPSTestImage68" Source="FPSTestImage68"/>
+		<Texture Id="FPSTestImage69" Source="FPSTestImage69"/>
+		<Texture Id="FPSTestImage7" Source="FPSTestImage7"/>
+		<Texture Id="FPSTestImage70" Source="FPSTestImage70"/>
+		<Texture Id="FPSTestImage71" Source="FPSTestImage71"/>
+		<Texture Id="FPSTestImage72" Source="FPSTestImage72"/>
+		<Texture Id="FPSTestImage73" Source="FPSTestImage73"/>
+		<Texture Id="FPSTestImage74" Source="FPSTestImage74"/>
+		<Texture Id="FPSTestImage75" Source="FPSTestImage75"/>
+		<Texture Id="FPSTestImage76" Source="FPSTestImage76"/>
+		<Texture Id="FPSTestImage77" Source="FPSTestImage77"/>
+		<Texture Id="FPSTestImage78" Source="FPSTestImage78"/>
+		<Texture Id="FPSTestImage79" Source="FPSTestImage79"/>
+		<Texture Id="FPSTestImage8" Source="FPSTestImage8"/>
+		<Texture Id="FPSTestImage80" Source="FPSTestImage80"/>
+		<Texture Id="FPSTestImage9" Source="FPSTestImage9"/>
+    </Resources>
+
+		
+    <Layer Id="background" BackColor="#FFFFFFFF">
+    </Layer>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+<!-- IBA >> -->
+
+                <Block Id="blkIBA201" Bounds="167,26,100,100" Edges="Bounce">
+                    <Image Id="sprIBA201" TextureId="FPSTestImage34">
+                        <NumAnimation From="-83" To="-37" Duration="8.63" Autoreverse="true" Target="sprIBA201.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA202" Bounds="307,91,100,100" Edges="Stick">
+                    <Image Id="sprIBA202" TextureId="FPSTestImage58">
+                        <NumAnimation From="-98" To="2" Duration="6.78" Autoreverse="true" Target="sprIBA202.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA203" Bounds="124,122,100,100" Edges="Stick">
+                    <Image Id="sprIBA203" TextureId="FPSTestImage4">
+                        <NumAnimation From="47" To="-25" Duration="9.56" Autoreverse="true" Target="sprIBA203.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA204" Bounds="121,206,100,100" Edges="Stick">
+                    <Image Id="sprIBA204" TextureId="FPSTestImage10">
+                        <NumAnimation From="1" To="0.5" Duration="7.04" Autoreverse="true" Target="sprIBA204.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA205" Bounds="139,167,100,100" Edges="Bounce">
+                    <Image Id="sprIBA205" TextureId="FPSTestImage12">
+                        <NumAnimation From="-10" To="29" Duration="4.67" Autoreverse="true" Target="sprIBA205.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA206" Bounds="460,229,100,100" Edges="Stick">
+                    <Image Id="sprIBA206" TextureId="FPSTestImage17">
+                        <NumAnimation From="97" To="-9" Duration="6.23" Autoreverse="true" Target="sprIBA206.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA207" Bounds="123,235,100,100" Edges="Bounce">
+                    <Image Id="sprIBA207" TextureId="FPSTestImage9">
+                        <NumAnimation From="-77" To="-10" Duration="2.55" Autoreverse="true" Target="sprIBA207.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA208" Bounds="213,102,100,100" Edges="Stick">
+                    <Image Id="sprIBA208" TextureId="FPSTestImage17">
+                        <NumAnimation From="-55" To="75" Duration="8.79" Autoreverse="true" Target="sprIBA208.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA209" Bounds="268,9,100,100" Edges="Stick">
+                    <Image Id="sprIBA209" TextureId="FPSTestImage56">
+                        <NumAnimation From="50" To="-92" Duration="0.94" Autoreverse="true" Target="sprIBA209.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA210" Bounds="244,199,100,100" Edges="Bounce">
+                    <Image Id="sprIBA210" TextureId="FPSTestImage55">
+                        <NumAnimation From="-52" To="72" Duration="2.22" Autoreverse="true" Target="sprIBA210.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA211" Bounds="387,204,100,100" Edges="Stick">
+                    <Image Id="sprIBA211" TextureId="FPSTestImage47">
+                        <NumAnimation From="92" To="91" Duration="0.67" Autoreverse="true" Target="sprIBA211.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA212" Bounds="11,40,100,100" Edges="Stick">
+                    <Image Id="sprIBA212" TextureId="FPSTestImage8">
+                        <NumAnimation From="48" To="-36" Duration="4.82" Autoreverse="true" Target="sprIBA212.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA213" Bounds="303,236,100,100" Edges="Bounce">
+                    <Image Id="sprIBA213" TextureId="FPSTestImage57">
+                        <NumAnimation From="-74" To="78" Duration="2.94" Autoreverse="true" Target="sprIBA213.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA214" Bounds="231,199,100,100" Edges="Bounce">
+                    <Image Id="sprIBA214" TextureId="FPSTestImage45">
+                        <NumAnimation From="96" To="100" Duration="4.1" Autoreverse="true" Target="sprIBA214.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA215" Bounds="210,54,100,100" Edges="Stick">
+                    <Image Id="sprIBA215" TextureId="FPSTestImage24">
+                        <NumAnimation From="0.5" To="0.8" Duration="4.11" Autoreverse="true" Target="sprIBA215.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA216" Bounds="85,230,100,100" Edges="Bounce">
+                    <Image Id="sprIBA216" TextureId="FPSTestImage66">
+                        <NumAnimation From="74" To="-8" Duration="4.84" Autoreverse="true" Target="sprIBA216.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA217" Bounds="170,171,100,100" Edges="Bounce">
+                    <Image Id="sprIBA217" TextureId="FPSTestImage3">
+                        <NumAnimation From="88" To="40" Duration="3.87" Autoreverse="true" Target="sprIBA217.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA218" Bounds="184,238,100,100" Edges="Bounce">
+                    <Image Id="sprIBA218" TextureId="FPSTestImage78">
+                        <NumAnimation From="0.8" To="0.5" Duration="9.55" Autoreverse="true" Target="sprIBA218.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA219" Bounds="117,101,100,100" Edges="Stick">
+                    <Image Id="sprIBA219" TextureId="FPSTestImage63">
+                        <NumAnimation From="59" To="52" Duration="0.85" Autoreverse="true" Target="sprIBA219.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA220" Bounds="44,128,100,100" Edges="Stick">
+                    <Image Id="sprIBA220" TextureId="FPSTestImage31">
+                        <NumAnimation From="0.2" To="0.1" Duration="5.46" Autoreverse="true" Target="sprIBA220.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA221" Bounds="329,5,100,100" Edges="Stick">
+                    <Image Id="sprIBA221" TextureId="FPSTestImage57">
+                        <NumAnimation From="0.3" To="0.4" Duration="9.5" Autoreverse="true" Target="sprIBA221.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA222" Bounds="387,106,100,100" Edges="Bounce">
+                    <Image Id="sprIBA222" TextureId="FPSTestImage4">
+                        <NumAnimation From="44" To="36" Duration="7.4" Autoreverse="true" Target="sprIBA222.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA223" Bounds="339,97,100,100" Edges="Stick">
+                    <Image Id="sprIBA223" TextureId="FPSTestImage44">
+                        <NumAnimation From="-95" To="-5" Duration="9.54" Autoreverse="true" Target="sprIBA223.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA224" Bounds="99,198,100,100" Edges="Stick">
+                    <Image Id="sprIBA224" TextureId="FPSTestImage45">
+                        <NumAnimation From="-91" To="-59" Duration="8.04" Autoreverse="true" Target="sprIBA224.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA225" Bounds="29,111,100,100" Edges="Bounce">
+                    <Image Id="sprIBA225" TextureId="FPSTestImage59">
+                        <NumAnimation From="7" To="84" Duration="1.85" Autoreverse="true" Target="sprIBA225.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA226" Bounds="452,223,100,100" Edges="Bounce">
+                    <Image Id="sprIBA226" TextureId="FPSTestImage53">
+                        <NumAnimation From="46" To="64" Duration="8.32" Autoreverse="true" Target="sprIBA226.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA227" Bounds="49,72,100,100" Edges="Stick">
+                    <Image Id="sprIBA227" TextureId="FPSTestImage63">
+                        <NumAnimation From="0.5" To="0.7" Duration="7.85" Autoreverse="true" Target="sprIBA227.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA228" Bounds="415,260,100,100" Edges="Stick">
+                    <Image Id="sprIBA228" TextureId="FPSTestImage23">
+                        <NumAnimation From="60" To="-11" Duration="9.91" Autoreverse="true" Target="sprIBA228.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA229" Bounds="211,157,100,100" Edges="Stick">
+                    <Image Id="sprIBA229" TextureId="FPSTestImage17">
+                        <NumAnimation From="-69" To="2" Duration="0.81" Autoreverse="true" Target="sprIBA229.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA230" Bounds="84,26,100,100" Edges="Bounce">
+                    <Image Id="sprIBA230" TextureId="FPSTestImage10">
+                        <NumAnimation From="85" To="6" Duration="4.23" Autoreverse="true" Target="sprIBA230.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA231" Bounds="113,20,100,100" Edges="Stick">
+                    <Image Id="sprIBA231" TextureId="FPSTestImage52">
+                        <NumAnimation From="0.8" To="0.9" Duration="2.15" Autoreverse="true" Target="sprIBA231.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA232" Bounds="158,253,100,100" Edges="Stick">
+                    <Image Id="sprIBA232" TextureId="FPSTestImage11">
+                        <NumAnimation From="53" To="48" Duration="9.05" Autoreverse="true" Target="sprIBA232.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA233" Bounds="423,244,100,100" Edges="Bounce">
+                    <Image Id="sprIBA233" TextureId="FPSTestImage58">
+                        <NumAnimation From="37" To="-47" Duration="4.57" Autoreverse="true" Target="sprIBA233.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA234" Bounds="364,171,100,100" Edges="Stick">
+                    <Image Id="sprIBA234" TextureId="FPSTestImage22">
+                        <NumAnimation From="81" To="-22" Duration="9.84" Autoreverse="true" Target="sprIBA234.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA235" Bounds="434,280,100,100" Edges="Stick">
+                    <Image Id="sprIBA235" TextureId="FPSTestImage23">
+                        <NumAnimation From="-5" To="-93" Duration="1.46" Autoreverse="true" Target="sprIBA235.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA236" Bounds="389,279,100,100" Edges="Stick">
+                    <Image Id="sprIBA236" TextureId="FPSTestImage10">
+                        <NumAnimation From="0.5" To="0.9" Duration="6.11" Autoreverse="true" Target="sprIBA236.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA237" Bounds="397,152,100,100" Edges="Stick">
+                    <Image Id="sprIBA237" TextureId="FPSTestImage62">
+                        <NumAnimation From="-82" To="18" Duration="1.79" Autoreverse="true" Target="sprIBA237.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA238" Bounds="448,253,100,100" Edges="Stick">
+                    <Image Id="sprIBA238" TextureId="FPSTestImage63">
+                        <NumAnimation From="0.8" To="0.7" Duration="6.94" Autoreverse="true" Target="sprIBA238.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA239" Bounds="327,204,100,100" Edges="Bounce">
+                    <Image Id="sprIBA239" TextureId="FPSTestImage35">
+                        <NumAnimation From="45" To="66" Duration="9.35" Autoreverse="true" Target="sprIBA239.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA240" Bounds="331,279,100,100" Edges="Stick">
+                    <Image Id="sprIBA240" TextureId="FPSTestImage36">
+                        <NumAnimation From="9" To="24" Duration="5.11" Autoreverse="true" Target="sprIBA240.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA241" Bounds="335,205,100,100" Edges="Bounce">
+                    <Image Id="sprIBA241" TextureId="FPSTestImage26">
+                        <NumAnimation From="0.6" To="0.4" Duration="2.03" Autoreverse="true" Target="sprIBA241.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA242" Bounds="451,239,100,100" Edges="Stick">
+                    <Image Id="sprIBA242" TextureId="FPSTestImage9">
+                        <NumAnimation From="0.8" To="0.9" Duration="4.63" Autoreverse="true" Target="sprIBA242.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA243" Bounds="361,123,100,100" Edges="Stick">
+                    <Image Id="sprIBA243" TextureId="FPSTestImage37">
+                        <NumAnimation From="0.6" To="0.9" Duration="6.67" Autoreverse="true" Target="sprIBA243.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA244" Bounds="279,232,100,100" Edges="Bounce">
+                    <Image Id="sprIBA244" TextureId="FPSTestImage70">
+                        <NumAnimation From="47" To="-86" Duration="2.99" Autoreverse="true" Target="sprIBA244.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA245" Bounds="244,24,100,100" Edges="Stick">
+                    <Image Id="sprIBA245" TextureId="FPSTestImage76">
+                        <NumAnimation From="79" To="-31" Duration="7.96" Autoreverse="true" Target="sprIBA245.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA246" Bounds="251,164,100,100" Edges="Stick">
+                    <Image Id="sprIBA246" TextureId="FPSTestImage64">
+                        <NumAnimation From="0.2" To="0.6" Duration="6.92" Autoreverse="true" Target="sprIBA246.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA247" Bounds="10,275,100,100" Edges="Bounce">
+                    <Image Id="sprIBA247" TextureId="FPSTestImage65">
+                        <NumAnimation From="0.9" To="0.3" Duration="5.36" Autoreverse="true" Target="sprIBA247.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA248" Bounds="151,108,100,100" Edges="Bounce">
+                    <Image Id="sprIBA248" TextureId="FPSTestImage17">
+                        <NumAnimation From="98" To="88" Duration="4.83" Autoreverse="true" Target="sprIBA248.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA249" Bounds="215,36,100,100" Edges="Bounce">
+                    <Image Id="sprIBA249" TextureId="FPSTestImage5">
+                        <NumAnimation From="-11" To="-85" Duration="6.66" Autoreverse="true" Target="sprIBA249.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA250" Bounds="447,153,100,100" Edges="Stick">
+                    <Image Id="sprIBA250" TextureId="FPSTestImage80">
+                        <NumAnimation From="35" To="-12" Duration="8.4" Autoreverse="true" Target="sprIBA250.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA251" Bounds="376,116,100,100" Edges="Bounce">
+                    <Image Id="sprIBA251" TextureId="FPSTestImage28">
+                        <NumAnimation From="-68" To="-64" Duration="4.66" Autoreverse="true" Target="sprIBA251.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA252" Bounds="364,93,100,100" Edges="Stick">
+                    <Image Id="sprIBA252" TextureId="FPSTestImage72">
+                        <NumAnimation From="0.7" To="0.9" Duration="2.78" Autoreverse="true" Target="sprIBA252.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA253" Bounds="25,142,100,100" Edges="Bounce">
+                    <Image Id="sprIBA253" TextureId="FPSTestImage38">
+                        <NumAnimation From="-51" To="-63" Duration="8.76" Autoreverse="true" Target="sprIBA253.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA254" Bounds="84,55,100,100" Edges="Bounce">
+                    <Image Id="sprIBA254" TextureId="FPSTestImage28">
+                        <NumAnimation From="0.7" To="1" Duration="8.44" Autoreverse="true" Target="sprIBA254.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA255" Bounds="432,281,100,100" Edges="Stick">
+                    <Image Id="sprIBA255" TextureId="FPSTestImage18">
+                        <NumAnimation From="-96" To="-65" Duration="3.16" Autoreverse="true" Target="sprIBA255.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA256" Bounds="201,281,100,100" Edges="Bounce">
+                    <Image Id="sprIBA256" TextureId="FPSTestImage35">
+                        <NumAnimation From="0.5" To="0.1" Duration="9.31" Autoreverse="true" Target="sprIBA256.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA257" Bounds="236,110,100,100" Edges="Bounce">
+                    <Image Id="sprIBA257" TextureId="FPSTestImage39">
+                        <NumAnimation From="-45" To="75" Duration="7.12" Autoreverse="true" Target="sprIBA257.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA258" Bounds="387,52,100,100" Edges="Stick">
+                    <Image Id="sprIBA258" TextureId="FPSTestImage34">
+                        <NumAnimation From="10" To="46" Duration="6.84" Autoreverse="true" Target="sprIBA258.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA259" Bounds="233,72,100,100" Edges="Stick">
+                    <Image Id="sprIBA259" TextureId="FPSTestImage39">
+                        <NumAnimation From="100" To="11" Duration="3.06" Autoreverse="true" Target="sprIBA259.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA260" Bounds="52,15,100,100" Edges="Stick">
+                    <Image Id="sprIBA260" TextureId="FPSTestImage35">
+                        <NumAnimation From="-38" To="-73" Duration="2.75" Autoreverse="true" Target="sprIBA260.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA261" Bounds="242,35,100,100" Edges="Bounce">
+                    <Image Id="sprIBA261" TextureId="FPSTestImage42">
+                        <NumAnimation From="98" To="-23" Duration="6.36" Autoreverse="true" Target="sprIBA261.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA262" Bounds="75,294,100,100" Edges="Bounce">
+                    <Image Id="sprIBA262" TextureId="FPSTestImage70">
+                        <NumAnimation From="0.5" To="0.4" Duration="4.78" Autoreverse="true" Target="sprIBA262.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA263" Bounds="385,167,100,100" Edges="Bounce">
+                    <Image Id="sprIBA263" TextureId="FPSTestImage3">
+                        <NumAnimation From="-88" To="12" Duration="5.62" Autoreverse="true" Target="sprIBA263.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA264" Bounds="315,117,100,100" Edges="Stick">
+                    <Image Id="sprIBA264" TextureId="FPSTestImage46">
+                        <NumAnimation From="-54" To="36" Duration="9.59" Autoreverse="true" Target="sprIBA264.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA265" Bounds="122,90,100,100" Edges="Bounce">
+                    <Image Id="sprIBA265" TextureId="FPSTestImage8">
+                        <NumAnimation From="-59" To="-81" Duration="4.54" Autoreverse="true" Target="sprIBA265.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA266" Bounds="143,169,100,100" Edges="Bounce">
+                    <Image Id="sprIBA266" TextureId="FPSTestImage2">
+                        <NumAnimation From="20" To="35" Duration="6.09" Autoreverse="true" Target="sprIBA266.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA267" Bounds="226,270,100,100" Edges="Bounce">
+                    <Image Id="sprIBA267" TextureId="FPSTestImage23">
+                        <NumAnimation From="-28" To="-91" Duration="8.67" Autoreverse="true" Target="sprIBA267.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA268" Bounds="74,223,100,100" Edges="Stick">
+                    <Image Id="sprIBA268" TextureId="FPSTestImage26">
+                        <NumAnimation From="5" To="-98" Duration="8.66" Autoreverse="true" Target="sprIBA268.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA269" Bounds="6,111,100,100" Edges="Bounce">
+                    <Image Id="sprIBA269" TextureId="FPSTestImage50">
+                        <NumAnimation From="0.2" To="0.3" Duration="3.73" Autoreverse="true" Target="sprIBA269.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA270" Bounds="82,138,100,100" Edges="Stick">
+                    <Image Id="sprIBA270" TextureId="FPSTestImage55">
+                        <NumAnimation From="-75" To="42" Duration="4.51" Autoreverse="true" Target="sprIBA270.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA271" Bounds="60,222,100,100" Edges="Stick">
+                    <Image Id="sprIBA271" TextureId="FPSTestImage78">
+                        <NumAnimation From="43" To="-9" Duration="4.72" Autoreverse="true" Target="sprIBA271.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA272" Bounds="311,157,100,100" Edges="Stick">
+                    <Image Id="sprIBA272" TextureId="FPSTestImage25">
+                        <NumAnimation From="-8" To="-68" Duration="2.7" Autoreverse="true" Target="sprIBA272.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA273" Bounds="111,112,100,100" Edges="Bounce">
+                    <Image Id="sprIBA273" TextureId="FPSTestImage78">
+                        <NumAnimation From="-65" To="65" Duration="6.65" Autoreverse="true" Target="sprIBA273.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA274" Bounds="177,90,100,100" Edges="Stick">
+                    <Image Id="sprIBA274" TextureId="FPSTestImage66">
+                        <NumAnimation From="0.1" To="1" Duration="6.1" Autoreverse="true" Target="sprIBA274.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA275" Bounds="286,293,100,100" Edges="Bounce">
+                    <Image Id="sprIBA275" TextureId="FPSTestImage54">
+                        <NumAnimation From="0.2" To="0.8" Duration="2.63" Autoreverse="true" Target="sprIBA275.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA276" Bounds="241,225,100,100" Edges="Bounce">
+                    <Image Id="sprIBA276" TextureId="FPSTestImage78">
+                        <NumAnimation From="-49" To="1" Duration="0.54" Autoreverse="true" Target="sprIBA276.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA277" Bounds="79,200,100,100" Edges="Bounce">
+                    <Image Id="sprIBA277" TextureId="FPSTestImage63">
+                        <NumAnimation From="-4" To="69" Duration="0.65" Autoreverse="true" Target="sprIBA277.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA278" Bounds="41,259,100,100" Edges="Stick">
+                    <Image Id="sprIBA278" TextureId="FPSTestImage79">
+                        <NumAnimation From="-100" To="-60" Duration="1.21" Autoreverse="true" Target="sprIBA278.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA279" Bounds="144,145,100,100" Edges="Bounce">
+                    <Image Id="sprIBA279" TextureId="FPSTestImage35">
+                        <NumAnimation From="-86" To="50" Duration="7.43" Autoreverse="true" Target="sprIBA279.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA280" Bounds="392,288,100,100" Edges="Bounce">
+                    <Image Id="sprIBA280" TextureId="FPSTestImage20">
+                        <NumAnimation From="-15" To="82" Duration="2.12" Autoreverse="true" Target="sprIBA280.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA281" Bounds="366,68,100,100" Edges="Bounce">
+                    <Image Id="sprIBA281" TextureId="FPSTestImage51">
+                        <NumAnimation From="-45" To="82" Duration="2.45" Autoreverse="true" Target="sprIBA281.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA282" Bounds="235,167,100,100" Edges="Stick">
+                    <Image Id="sprIBA282" TextureId="FPSTestImage20">
+                        <NumAnimation From="0.8" To="0.9" Duration="5.01" Autoreverse="true" Target="sprIBA282.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA283" Bounds="38,295,100,100" Edges="Bounce">
+                    <Image Id="sprIBA283" TextureId="FPSTestImage45">
+                        <NumAnimation From="-54" To="59" Duration="8.69" Autoreverse="true" Target="sprIBA283.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA284" Bounds="132,201,100,100" Edges="Stick">
+                    <Image Id="sprIBA284" TextureId="FPSTestImage17">
+                        <NumAnimation From="-36" To="-34" Duration="3.09" Autoreverse="true" Target="sprIBA284.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA285" Bounds="213,213,100,100" Edges="Stick">
+                    <Image Id="sprIBA285" TextureId="FPSTestImage59">
+                        <NumAnimation From="41" To="-86" Duration="5.76" Autoreverse="true" Target="sprIBA285.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA286" Bounds="221,141,100,100" Edges="Stick">
+                    <Image Id="sprIBA286" TextureId="FPSTestImage44">
+                        <NumAnimation From="70" To="-84" Duration="1.01" Autoreverse="true" Target="sprIBA286.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA287" Bounds="384,299,100,100" Edges="Stick">
+                    <Image Id="sprIBA287" TextureId="FPSTestImage14">
+                        <NumAnimation From="0.3" To="1" Duration="8.57" Autoreverse="true" Target="sprIBA287.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA288" Bounds="292,238,100,100" Edges="Stick">
+                    <Image Id="sprIBA288" TextureId="FPSTestImage59">
+                        <NumAnimation From="30" To="-29" Duration="2.73" Autoreverse="true" Target="sprIBA288.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA289" Bounds="347,148,100,100" Edges="Bounce">
+                    <Image Id="sprIBA289" TextureId="FPSTestImage75">
+                        <NumAnimation From="0.7" To="0.6" Duration="3.67" Autoreverse="true" Target="sprIBA289.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA290" Bounds="408,90,100,100" Edges="Stick">
+                    <Image Id="sprIBA290" TextureId="FPSTestImage71">
+                        <NumAnimation From="-26" To="-61" Duration="1.26" Autoreverse="true" Target="sprIBA290.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+
+                <Block Id="blkIBA291" Bounds="78,246,100,100" Edges="Bounce">
+                    <Image Id="sprIBA291" TextureId="FPSTestImage7">
+                        <NumAnimation From="0.5" To="0.8" Duration="7.95" Autoreverse="true" Target="sprIBA291.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA292" Bounds="191,40,100,100" Edges="Stick">
+                    <Image Id="sprIBA292" TextureId="FPSTestImage66">
+                        <NumAnimation From="-46" To="-18" Duration="1.44" Autoreverse="true" Target="sprIBA292.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA293" Bounds="460,285,100,100" Edges="Bounce">
+                    <Image Id="sprIBA293" TextureId="FPSTestImage76">
+                        <NumAnimation From="-20" To="94" Duration="6.35" Autoreverse="true" Target="sprIBA293.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA294" Bounds="353,30,100,100" Edges="Bounce">
+                    <Image Id="sprIBA294" TextureId="FPSTestImage20">
+                        <NumAnimation From="20" To="67" Duration="8.15" Autoreverse="true" Target="sprIBA294.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA295" Bounds="275,50,100,100" Edges="Stick">
+                    <Image Id="sprIBA295" TextureId="FPSTestImage15">
+                        <NumAnimation From="0.7" To="1" Duration="5.87" Autoreverse="true" Target="sprIBA295.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA296" Bounds="420,52,100,100" Edges="Bounce">
+                    <Image Id="sprIBA296" TextureId="FPSTestImage46">
+                        <NumAnimation From="0" To="2" Duration="5.38" Autoreverse="true" Target="sprIBA296.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA297" Bounds="144,228,100,100" Edges="Bounce">
+                    <Image Id="sprIBA297" TextureId="FPSTestImage36">
+                        <NumAnimation From="-64" To="-85" Duration="9.24" Autoreverse="true" Target="sprIBA297.X" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA298" Bounds="43,262,100,100" Edges="Bounce">
+                    <Image Id="sprIBA298" TextureId="FPSTestImage26">
+                        <NumAnimation From="60" To="-85" Duration="5.85" Autoreverse="true" Target="sprIBA298.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA299" Bounds="58,31,100,100" Edges="Bounce">
+                    <Image Id="sprIBA299" TextureId="FPSTestImage32">
+                        <NumAnimation From="0.8" To="0.4" Duration="6.27" Autoreverse="true" Target="sprIBA299.Opacity" IsDelta="false" InProgress="true"/>
+                    </Image>
+                </Block>
+                <Block Id="blkIBA300" Bounds="382,43,100,100" Edges="Bounce">
+                    <Image Id="sprIBA300" TextureId="FPSTestImage45">
+                        <NumAnimation From="27" To="84" Duration="2.44" Autoreverse="true" Target="sprIBA300.Rotation" IsDelta="true" InProgress="true"/>
+                    </Image>
+                </Block>
+<!-- << IBA -->
+
+		<Tower Bounds="0,0,35,35" SignalSpeed="300"/>
+		<Hero Id="hero" Bounds="400,50,50,50" Speed="84" Deceleration="0" Direction="0,0">
+        		<Image TextureId="cursor_50x50_blue"/>
+	    </Hero>
+	</Layer>
+
+	<Include File="Dashboard.xml"/>	
+
+</Level>
+
+
+
+
+
+
+
+
+
+
+
+
