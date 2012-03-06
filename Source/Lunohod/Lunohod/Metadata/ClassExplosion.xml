@@ -2,7 +2,7 @@
 
 	<Resources RootFolder="Sound">
 		<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
-		<SoundFile Id="sndBombHiss" Source="BombHiss"/>
+		<SoundFile Id="sndBombHiss" Source="bombHiss"/>
 	</Resources>
 
 	<Resources RootFolder="ReleaseTextures">
