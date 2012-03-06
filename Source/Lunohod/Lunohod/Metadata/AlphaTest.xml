@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- program version: 1.4.01 -->
+<!-- date: 06/03 2012 05:03 -->
+<!-- source: D:\Lunohod\ReleaseLevels\AlphaTest\AlphaTest.svg -->
+<Level Name="AlphaTest" Bounds="0, 0, 480, 320">
+    <LevelSettings Dificulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
+    <Include File="ClassFood.xml"/>
+    <Include File="ClassEnemyRat1.xml"/>
+    <Include File="ClassWoodenBox.xml"/>
+    <Include File="ClassHero.xml"/>
+    <Include File="ClassTower.xml"/>
+    <Include File="ClassExit.xml"/>
+    <Include File="ClassFoodPack.xml"/>
+    <Include File="ClassExplosion.xml"/>
+    <Resources RootFolder="ReleaseTextures">
+        <Texture Id="brickBlue" Source="brickBlue"/>
+        <Texture Id="second_phon_tank" Source="second_phon_tank"/>
+        <Texture Id="second_phon_communications" Source="second_phon_communications"/>
+        <Texture Id="second_phon_communications2" Source="second_phon_communications2"/>
+        <Texture Id="fish_6_me" Source="fish_6_me"/>
+        <Texture Id="fish_4_me" Source="fish_4_me"/>
+        <Texture Id="fish_3_me" Source="fish_3_me"/>
+        <Texture Id="fish_5_me" Source="fish_5_me"/>
+        <Texture Id="detal_me2" Source="detal_me2"/>
+        <Texture Id="box_old_2" Source="box_old_2"/>
+        <Texture Id="box_old_3" Source="box_old_3"/>
+        <Texture Id="box_old_1" Source="box_old_1"/>
+        <Texture Id="detal_me1" Source="detal_me1"/>
+        <Texture Id="detal_2" Source="detal_2"/>
+        <Texture Id="package_1" Source="package_1"/>
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="defMask_image3115" TextureId="brickBlue" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image3115"/>
+        <Image Id="defMask_image3137" TextureId="second_phon_tank" Bounds="12, 251, 44, 54" Stretch="false" Opacity="1" TraceId="image3137"/>
+        <Image Id="defMask_image3148" TextureId="second_phon_tank" Bounds="64, 251, 44, 54" Stretch="false" Opacity="1" TraceId="image3148"/>
+        <Image Id="defMask_image3150" TextureId="second_phon_tank" Bounds="113, 260, 44, 54" Stretch="false" Opacity="1" TraceId="image3150"/>
+        <Image Id="defMask_image3182" TextureId="second_phon_communications" Bounds="326, 5, 154, 117" Stretch="false" Opacity="1" TraceId="image3182"/>
+        <Image Id="defMask_image3204" TextureId="second_phon_communications2" Bounds="415, 129, 65, 103" Stretch="false" Opacity="1" TraceId="image3204"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Food Id="fd1" Class="clsFood" Points="1" Bounds="86, 218, 28, 17" TraceId="image3081">
+            <Image TextureId="fish_6_me"/>
+        </Food>
+        <Food Id="fd2" Class="clsFood" Points="1" Bounds="101, 236, 30, 15" TraceId="image3092">
+            <Image TextureId="fish_4_me"/>
+        </Food>
+        <Food Id="fd3" Class="clsFood" Points="1" Bounds="122, 215, 27, 15" TraceId="image3103">
+            <Image TextureId="fish_3_me"/>
+        </Food>
+        <Food Id="fd4" Class="clsFood" Points="1" Bounds="152, 229, 26, 17" TraceId="image3114">
+            <Image TextureId="fish_5_me"/>
+        </Food>
+        <Block Id="blk1" Bounds="207, 260, 26, 20" Edges="Bounce" TraceId="image3138">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Block Id="blk2" Bounds="207, 280, 26, 20" Edges="Bounce" TraceId="image3140">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="406, 10, 28, 25" TraceId="image3259"/>
+        <Block Id="blk3" Class="clsWoodenBox" Bounds="117, 184, 30, 30" Edges="Stick" TraceId="image3051">
+            <Image TextureId="box_old_2"/>
+        </Block>
+        <Block Id="blk4" Class="clsWoodenBox" Bounds="373, 66, 30, 30" Edges="Stick" TraceId="image3283">
+            <Image TextureId="box_old_2"/>
+        </Block>
+        <Block Id="blk5" Class="clsWoodenBox" Bounds="157, 185, 30, 30" Edges="Stick" TraceId="image3053">
+            <Image TextureId="box_old_2"/>
+        </Block>
+        <Block Id="blk6" Class="clsWoodenBox" Bounds="12, 182, 30, 30" Edges="Stick" TraceId="image3033">
+            <Image TextureId="box_old_3"/>
+        </Block>
+        <Block Id="blk7" Class="clsWoodenBox" Bounds="45, 181, 30, 30" Edges="Stick" TraceId="image3047">
+            <Image TextureId="box_old_1"/>
+        </Block>
+        <Block Id="blk8" Class="clsWoodenBox" Bounds="80, 185, 30, 30" Edges="Stick" TraceId="image3049">
+            <Image TextureId="box_old_1"/>
+        </Block>
+        <Block Id="blk9" Bounds="207, 300, 26, 20" Edges="Bounce" TraceId="image3142">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Group Id="grp_g3169">
+            <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="244, 197, 28, 25" TraceId="image3057"/>
+            <NumAnimation Id="anm1" From="0" To="-43" Target="Y" Duration="3" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3067"/>
+        </Group>
+        <Block Id="blk10" Bounds="40, -13, 20, 26" Edges="Bounce" TraceId="image3093">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk11" Bounds="0, -20, 40, 40" Edges="Bounce" TraceId="image3082">
+            <Image TextureId="detal_2"/>
+        </Block>
+        <Block Id="blk12" Bounds="60, -13, 20, 26" Edges="Bounce" TraceId="image3096">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk13" Bounds="80, -13, 20, 26" Edges="Bounce" TraceId="image3098">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk14" Bounds="100, -13, 20, 26" Edges="Bounce" TraceId="image3100">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk15" Bounds="120, -13, 20, 26" Edges="Bounce" TraceId="image3102">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk16" Bounds="140, -13, 20, 26" Edges="Bounce" TraceId="image3104">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk17" Bounds="160, -13, 20, 26" Edges="Bounce" TraceId="image3106">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk18" Bounds="180, -13, 20, 26" Edges="Bounce" TraceId="image3108">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk19" Bounds="207, 20, 26, 20" Edges="Bounce" TraceId="image3120">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Block Id="blk20" Bounds="200, -20, 40, 40" Edges="Bounce" TraceId="image3110">
+            <Image TextureId="detal_2"/>
+        </Block>
+        <Block Id="blk21" Bounds="207, 40, 26, 20" Edges="Bounce" TraceId="image3123">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Block Id="blk22" Bounds="207, 60, 26, 20" Edges="Bounce" TraceId="image3125">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Block Id="blk23" Bounds="207, 80, 26, 20" Edges="Bounce" TraceId="image3127">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Block Id="blk24" Bounds="207, 100, 26, 20" Edges="Bounce" TraceId="image3129">
+            <Image TextureId="detal_me2"/>
+        </Block>
+        <Block Id="blk25" Bounds="200, 120, 40, 40" Edges="Bounce" TraceId="image3133">
+            <Image TextureId="detal_2"/>
+        </Block>
+        <Hero Id="hero" Class="clsHero" Bounds="55, 76, 33, 24" TraceId="image3248"/>
+        <Tower Bounds="-5, -5, 10, 10" Class="clsTower" TraceId="image3026"/>
+        <Group Id="exit" Class="clsExit" Bounds="414, 248, 37, 54" TraceId="image3270"/>
+        <Block Id="blk26" Bounds="200, 220, 40, 40" Edges="Bounce" TraceId="image3135">
+            <Image TextureId="detal_2"/>
+        </Block>
+        <Block Id="blk27" Bounds="200, 300, 40, 40" Edges="Bounce" TraceId="image3146">
+            <Image TextureId="detal_2"/>
+        </Block>
+        <Block Id="blk28" Bounds="40, 307, 20, 26" Edges="Bounce" TraceId="image3149">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk29" Bounds="0, 300, 40, 40" Edges="Bounce" TraceId="image3151">
+            <Image TextureId="detal_2"/>
+        </Block>
+        <Block Id="blk30" Bounds="60, 307, 20, 26" Edges="Bounce" TraceId="image3153">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk31" Bounds="80, 307, 20, 26" Edges="Bounce" TraceId="image3155">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk32" Bounds="100, 307, 20, 26" Edges="Bounce" TraceId="image3157">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk33" Bounds="120, 307, 20, 26" Edges="Bounce" TraceId="image3159">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk34" Bounds="140, 307, 20, 26" Edges="Bounce" TraceId="image3161">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk35" Bounds="160, 307, 20, 26" Edges="Bounce" TraceId="image3163">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Block Id="blk36" Bounds="180, 307, 20, 26" Edges="Bounce" TraceId="image3165">
+            <Image TextureId="detal_me1"/>
+        </Block>
+        <Food Id="fd5" Class="clsFood" Points="1" Bounds="355, 279, 28, 17" TraceId="image3081-7">
+            <Image TextureId="fish_6_me"/>
+        </Food>
+        <Food Id="fd6" Class="clsFood" Points="1" Bounds="431, 44, 28, 17" TraceId="image3081-4">
+            <Image TextureId="fish_6_me"/>
+        </Food>
+        <Food Id="fd7" Class="clsFood" Points="1" Bounds="388, 48, 28, 17" TraceId="image3081-0">
+            <Image TextureId="fish_6_me"/>
+        </Food>
+        <Food Id="fdPack1" Class="clsFoodPack" Points="1" Bounds="11, 244, 40, 33" TraceId="image3270-9">
+            <Image TextureId="package_1"/>
+        </Food>
+        <Block Id="blk37" Class="clsWoodenBox" Bounds="342, 61, 30, 30" Edges="Stick" TraceId="image3277">
+            <Image TextureId="box_old_1"/>
+        </Block>
+        <Block Id="blk38" Class="clsWoodenBox" Bounds="407, 64, 30, 30" Edges="Stick" TraceId="image3279">
+            <Image TextureId="box_old_1"/>
+        </Block>
+        <Block Id="blk39" Class="clsWoodenBox" Bounds="443, 63, 30, 30" Edges="Stick" TraceId="image3273">
+            <Image TextureId="box_old_1"/>
+        </Block>
+        <Block Id="blk40" Class="clsWoodenBox" Bounds="117, 184, 30, 30" Edges="Stick" TraceId="image3281">
+            <Image TextureId="box_old_2"/>
+        </Block>
+        <Block Id="blk41" Class="clsWoodenBox" Bounds="328, 227, 30, 30" Edges="Stick" TraceId="image3305">
+            <Image TextureId="box_old_1"/>
+        </Block>
+        <Block Id="blk42" Class="clsWoodenBox" Bounds="366, 248, 30, 30" Edges="Stick" TraceId="image3307">
+            <Image TextureId="box_old_1"/>
+        </Block>
+        <Enemy Id="enm3" Class="clsEnemyRat1" Bounds="11, 220, 28, 25" TraceId="image3259-8"/>
+        <Food Id="fdPack2" Class="clsFoodPack" Points="1" Bounds="434, 97, 40, 33" TraceId="image3327">
+            <Image TextureId="package_1"/>
+        </Food>
+    </Layer>
+    <Layer Id="action2" BackColor="#FFFFFFFF">
+        <Block Id="blk43" Bounds="0, -100, 480, 100" Edges="Bounce" TraceId="image3045"/>
+        <Block Id="blk44" Bounds="0, 320, 480, 100" Edges="Bounce" TraceId="image3048"/>
+        <Block Id="blk45" Bounds="-100, -100, 100, 520" Edges="Stick" TraceId="image3058"/>
+        <Block Id="blk46" Bounds="480, -100, 100, 520" Edges="Stick" TraceId="image3061"/>
+    </Layer>
+    <Include File="Dashboard.xml"/>
+</Level>
+

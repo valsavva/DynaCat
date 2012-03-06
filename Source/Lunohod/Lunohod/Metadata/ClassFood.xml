@@ -1,0 +1,49 @@
+<Include>	
+
+	<Class Id="clsFood">
+		<Food IsExploding="true">
+
+<!-- States -->
+
+            <!-- explosion  -->
+            <!-- destroy -->
+			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="true" Group="this_foodStates"/>
+			<SequenceSet Id="this_setDestroy1">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+            <!-- quake -->
+			<BoolTrigger Condition="this:BoomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="this_foodStates"/>
+			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+				<NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="false"/>
+			</SequenceSet>
+
+            <!-- eated -->
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();hero:Eating" StayTriggered="true" Group="this_foodStates">
+                <SequenceSet Id="this_anmEated">
+                    <ParallelSet>
+                        <NumAnimation Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" InProgress="true"/>
+                        <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1" InProgress="true"/>
+                	</ParallelSet>
+                	<Do Action="this.Disable"/>
+                </SequenceSet>
+			</IntersectionTrigger>
+			
+			<BoolTrigger Id="this_default" Group="this_foodStates"/>
+		</Food>	
+	</Class>
+
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+

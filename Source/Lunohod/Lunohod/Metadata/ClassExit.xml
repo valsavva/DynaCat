@@ -1,0 +1,59 @@
+<Include>	
+	
+	<Resources RootFolder="Sound">
+		<SoundFile Id="sndExitFlight" Source="skeletonFX_roket_start"/>
+	</Resources>
+	
+	<Resources RootFolder="ReleaseTextures">
+        <Texture Id="txrExitStatic" Source="refrigerator"/>
+        <Texture Id="txrExitFlight" Source="refrigerator_wings"/>
+        <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
+	</Resources>
+	
+	
+	<Class Id="clsExit">
+		<Group>
+            <Image Id="this_imgExitStatic" TextureId="txrExitStatic"/>
+			<Image Id="this_imgExitFlight" TextureId="txrExitFlight" Bounds="-12,0,62,54" Enabled="false"/>
+			<Sound Id="this_sndExitFlight" FileId="sndExitFlight" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+			<Sprite Id="sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="10,56,16,34" FrameBounds="0,0,16,34" Enabled="false">
+			    <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
+			</Sprite>
+			<SequenceSet Id="this_setExit" InProgress="false">
+				<Do Action="this_sndExitFlight.Start()"/>
+				<Do Action="hero.StartTransaction()"/>
+                <Do Action="hero.SetDirection(0,0)"/>
+                <ParallelSet>
+    				<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="1" Autoreverse="false" IsDelta="false" InProgress="true" RepeatCount="1" Fill="End"/>
+                    <NumAnimation Target="this.Opacity" Duration="0.2" Autoreverse="false" From="1" To="0" InProgress="true" RepeatCount="10"/>
+                </ParallelSet>
+                <Do Action="this_imgExitStatic.Disable();this_imgExitFlight.Enable()"/>
+				<ParallelSet>
+                    <Do Action="sprExitFlightFire.Enable()"/>
+    				<NumAnimation Target="this.X,this.Y,this.Rotation" Duration="2.5" Autoreverse="false" IsDelta="true" InProgress="true" RepeatCount="1" Fill="End">
+    					<KeyFrame Time="0" Value="0,0,0" Smoothing="Smooth"/>
+    					<KeyFrame Time="1" Value="0,-30,0" Smoothing="Smooth"/>
+    					<KeyFrame Time="1.5" Value="0,-100,0" Smoothing="Smooth"/>
+    					<KeyFrame Time="2.5" Value="-100,-400,-25" Smoothing="Smooth"/>
+    				</NumAnimation>
+				</ParallelSet>
+				<Do Action="hero.EndTransaction()"/>
+				<Do Action="system.EndCurrentLevel()"/>
+			</SequenceSet>
+			
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start()"/>
+		</Group>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+

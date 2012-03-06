@@ -1,0 +1,47 @@
+<Include>	
+	
+	<Resources RootFolder="Sound">
+		<SoundFile Id="sndGoodBoom" Source="skeletonFX_laughting_1"/>
+	</Resources>
+
+	<Class Id="clsFoodPack">
+		<Food IsExploding="true">
+
+            <!-- explosion -->
+            <!-- good boom (near the center) -->
+			<BoolTrigger Condition="this:BoomVeryClose" EnterAction="this_setDestroy1.Start();this_GoodBoom.Start()" StayTriggered="true" Group="this_foodPackStates">
+				<Sound Id="this_GoodBoom" FileId="sndGoodBoom" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+			</BoolTrigger>
+			<SequenceSet Id="this_setDestroy1" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.1" Autoreverse="false" RepeatCount="6"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+            <!-- just destroy -->
+			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDestroy2.Start()" StayTriggered="true" Group="this_foodPackStates"/>
+			<SequenceSet Id="this_setDestroy2" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+            <!-- quake -->
+			<BoolTrigger Condition="this:BoomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="this_foodPackStates"/>
+			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+				<NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="false"/>
+			</SequenceSet>
+
+		</Food>	
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+

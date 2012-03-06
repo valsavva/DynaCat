@@ -1,0 +1,126 @@
+<Include xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Docs/schema0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<Resources RootFolder="Sound">
+		<SoundFile Id="sndHeroDying" Source="skeletonFX_crash_1"/>
+		<SoundFile Id="sndHeroEating1" Source="skeletonFX_hero_eating_1"/>
+		<SoundFile Id="sndHeroEating2" Source="skeletonFX_hero_eating_2"/>
+		<SoundFile Id="sndHeroEating3" Source="skeletonFX_hero_eating_3"/>
+		<SoundFile Id="sndHeroEating4" Source="skeletonFX_hero_eating_4"/>
+		<SoundFile Id="sndHeroBounce1" Source="skeletonFX_hero_metal_wall_1"/>
+		<SoundFile Id="sndHeroBounce2" Source="skeletonFX_hero_metal_wall_2"/>
+	</Resources>
+	
+    <Resources RootFolder="ReleaseTextures">
+        <Texture Id="txrHeroDefault" Source="bolbex-1_me"/>
+        <Texture Id="txrHeroDying" Source="bolbex-1_me"/>
+        <Texture Id="txrHeroWaitingExplosion" Source="bolbex-1_me_wait_expl2"/>
+    </Resources>
+
+
+	<Class Id="clsHero">
+		<Hero Speed="84" Direction="0,0" Deceleration="0">
+
+<!-- Moving -->
+
+            <!-- values for hero speed animation -->
+            <Group Id="value1" Location="60,0"/>
+            <Group Id="value2" Location="120,0"/>
+            <Group Id="value3" Location="90,0"/>
+
+        	<!-- this should not belong to any group -->
+        	<BoolTrigger Condition="this:OnSand" EnterAction="letHeroSpeedDown.Start()" ExitAction="letHeroSpeedNorm.Start()"/>
+
+        	<BoolTrigger Condition="this:OnIce" EnterAction="anmHeroDeceleration.Pause()" ExitAction="anmHeroDeceleration.Resume()"/>
+
+        	<BoolTrigger Condition="system:left" EnterAction="anmHeroDeceleration.Start()" Group="this_sttSpeedAnimation"/>
+        	<BoolTrigger Condition="system:right" EnterAction="anmHeroDeceleration.Start()"  Group="this_sttSpeedAnimation"/>
+        	<BoolTrigger Condition="system:up" EnterAction="anmHeroDeceleration.Start()"  Group="this_sttSpeedAnimation"/>
+        	<BoolTrigger Condition="system:down" EnterAction="anmHeroDeceleration.Start()"  Group="this_sttSpeedAnimation"/>
+
+        	<!-- hero speed animation -->
+        	<NumAnimation Id="anmHeroDeceleration" Target="hero.Speed" Duration="4.5" IsDelta="false" RepeatCount="1" Fill="End">
+                <KeyFrame Time="0" Value="value1.X" Smoothing="Smooth"/>
+                <KeyFrame Time="0.3" Value="value2.X" Smoothing="Smooth"/>
+                <KeyFrame Time="0.6" Value="value3.X" Smoothing="Smooth"/>
+                <KeyFrame Time="4.5" Value="0" Smoothing="Smooth"/>
+            </NumAnimation>
+
+            <!-- when hero in boloto we divide speed animation KeyFrame Values -->
+        	<Let Id="letHeroSpeedDown" Target="value1.X,value2.X,value3.X" Value="30,60,45"/>
+        	<Let Id="letHeroSpeedNorm" Target="value1.X,value2.X,value3.X" Value="60,120,90"/>
+
+<!-- States -->
+
+            <!-- dying -->
+			<BoolTrigger Condition="this.IsDead" EnterAction="setHeroDying.Start()" StayTriggered="true" Group="sttHeroStates">
+				<Image Id="imgHeroDying" TextureId="txrHeroDying"/>
+				<SequenceSet Id="setHeroDying">
+					<Do Action="this.StartTransaction()"/>
+					<ParallelSet>
+						<Sound FileId="sndHeroDying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+						<NumAnimation Duration="0.1" Target="imgHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+					</ParallelSet>
+					<Do Action="this.EndTransaction()"/>
+					<Do Action="system.EndCurrentLevel()"/>
+				</SequenceSet>
+			</BoolTrigger>
+
+            <!-- eating -->
+			<BoolTrigger Condition="this:Eating" EnterAction="setHeroEating.Start()" StayTriggered="false">
+				<RandomSet Id="setHeroEating">
+					<Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
+					<Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
+					<Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
+					<Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0"/>
+					<Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0.3"/>
+					<Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0.3"/>
+					<Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0.3"/>
+					<Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0.3"/>
+				</RandomSet>
+			</BoolTrigger>
+
+            <!-- explosion -->
+			<BoolTrigger Condition="this:WaitingExplosion" Group="sttHeroStates">
+				<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>
+			</BoolTrigger>
+
+            <!-- default -->
+			<BoolTrigger Group="sttHeroStates">
+				<Image TextureId="txrHeroDefault" Bounds="-3, -14, 40, 38"/>
+                <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
+			</BoolTrigger>
+
+<!-- foley -->
+
+            <BoolTrigger Condition="hero:bounce" EnterAction="this_setHeroBounce.Start()"/>
+            <RandomSet Id="this_setHeroBounce">
+				<Sound FileId="sndHeroBounce1" Volume="0.5" Pitch="0"/>
+				<Sound FileId="sndHeroBounce2" Volume="0.5" Pitch="0"/>
+				<Sound FileId="sndHeroBounce1" Volume="0.5" Pitch="-0.3"/>
+				<Sound FileId="sndHeroBounce2" Volume="0.5" Pitch="-0.3"/>
+			</RandomSet>
+
+		</Hero>
+		
+	</Class>
+
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
