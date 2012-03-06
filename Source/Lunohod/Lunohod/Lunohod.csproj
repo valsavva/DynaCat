@@ -171,10 +171,10 @@
     <Folder Include="OS\iOS\" />
     <Folder Include="Engine\Objects\Resources\" />
     <Folder Include="Engine\Objects\Media\" />
-    <Folder Include="Content\Textures\" />
+    <Folder Include="Content\TestTextures\" />
     <Folder Include="Engine\Objects\Sets\" />
     <Folder Include="Engine\Objects\Accessors\" />
-    <Folder Include="Content\ReleaseTextures\" />
+    <Folder Include="Content\Textures\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Global\dash 2a.png">
@@ -756,70 +756,70 @@
     <Content Include="Metadata\Textures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_blue.png">
+    <Content Include="Content\TestTextures\cursor_50x50_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_brown.png">
+    <Content Include="Content\TestTextures\cursor_50x50_brown.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_gray.png">
+    <Content Include="Content\TestTextures\cursor_50x50_gray.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_green.png">
+    <Content Include="Content\TestTextures\cursor_50x50_green.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_light_blue.png">
+    <Content Include="Content\TestTextures\cursor_50x50_light_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_purple.png">
+    <Content Include="Content\TestTextures\cursor_50x50_purple.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_red.png">
+    <Content Include="Content\TestTextures\cursor_50x50_red.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_50x50_yellow.png">
+    <Content Include="Content\TestTextures\cursor_50x50_yellow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\grid_480x320.png">
+    <Content Include="Content\TestTextures\grid_480x320.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\white_clear.png">
+    <Content Include="Content\TestTextures\white_clear.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_solid_10x10_black_blue.png">
+    <Content Include="Content\TestTextures\cursor_solid_10x10_black_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_solid_10x10_black_green.png">
+    <Content Include="Content\TestTextures\cursor_solid_10x10_black_green.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_solid_10x10_black_red.png">
+    <Content Include="Content\TestTextures\cursor_solid_10x10_black_red.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_solid_10x10_black_yellow.png">
+    <Content Include="Content\TestTextures\cursor_solid_10x10_black_yellow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_solid_50x50_blue.png">
+    <Content Include="Content\TestTextures\cursor_solid_50x50_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_solid_50x50_green.png">
+    <Content Include="Content\TestTextures\cursor_solid_50x50_green.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_solid_50x50_red.png">
+    <Content Include="Content\TestTextures\cursor_solid_50x50_red.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonClassCursor.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_wall_50x50_bounce.png">
+    <Content Include="Content\TestTextures\cursor_wall_50x50_bounce.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_wall_50x50_stick.png">
+    <Content Include="Content\TestTextures\cursor_wall_50x50_stick.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonLabirinth.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\_E_.png">
+    <Content Include="Content\TestTextures\_E_.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonElochka.xml">
@@ -834,7 +834,7 @@
     <Content Include="Metadata\skeletonCehSPressami.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\blank.png">
+    <Content Include="Content\TestTextures\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestTextAndDelay.xml">
@@ -864,49 +864,49 @@
     <Content Include="Metadata\ScreenMain.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\antenna_1_demo.png">
+    <Content Include="Content\TestTextures\antenna_1_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\barrel_1_demo.png">
+    <Content Include="Content\TestTextures\barrel_1_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\car_1_demo.png">
+    <Content Include="Content\TestTextures\car_1_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\construction_1_demo.png">
+    <Content Include="Content\TestTextures\construction_1_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\construction_3hor1_demo.png">
+    <Content Include="Content\TestTextures\construction_3hor1_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\construction_3hor2_demo.png">
+    <Content Include="Content\TestTextures\construction_3hor2_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\hero_40_catsocket_demo_no_antenna.png">
+    <Content Include="Content\TestTextures\hero_40_catsocket_demo_no_antenna.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\lathe_1_demo.png">
+    <Content Include="Content\TestTextures\lathe_1_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\lathe_2_demo.png">
+    <Content Include="Content\TestTextures\lathe_2_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\lathe_3_demo.png">
+    <Content Include="Content\TestTextures\lathe_3_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\lathe_4_demo.png">
+    <Content Include="Content\TestTextures\lathe_4_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\lathe_5_demo.png">
+    <Content Include="Content\TestTextures\lathe_5_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\Phon_Demo_480x320.png">
+    <Content Include="Content\TestTextures\Phon_Demo_480x320.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\robocat_demo.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\color_test.png">
+    <Content Include="Content\TestTextures\color_test.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonLoshadka.xml">
@@ -918,19 +918,19 @@
     <Content Include="Metadata\TestTeleport.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\skeletonChetyreKomnaty_teleports_demo.png">
+    <Content Include="Content\TestTextures\skeletonChetyreKomnaty_teleports_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\tlp1_demo_anm.png">
+    <Content Include="Content\TestTextures\tlp1_demo_anm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\tlp2_demo_anm.png">
+    <Content Include="Content\TestTextures\tlp2_demo_anm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\tlp3_demo_anm.png">
+    <Content Include="Content\TestTextures\tlp3_demo_anm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\tlp4_demo_anm.png">
+    <Content Include="Content\TestTextures\tlp4_demo_anm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonChelnok.xml">
@@ -945,7 +945,7 @@
     <Content Include="Metadata\skeletonVodoprovodniiNindzya.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\skeletonVodoprovodniiNindzya_TLPs.png">
+    <Content Include="Content\TestTextures\skeletonVodoprovodniiNindzya_TLPs.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonAlisa.xml">
@@ -977,10 +977,10 @@
     <Content Include="Metadata\skeletonTrenazher.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\skeletonTrenazher_TLPs.png">
+    <Content Include="Content\TestTextures\skeletonTrenazher_TLPs.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cursor_R200_by_50_gray.png">
+    <Content Include="Content\TestTextures\cursor_R200_by_50_gray.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\skeletonTroynoyZaslon.xml">
@@ -1061,37 +1061,37 @@
     <Content Include="Content\Sound\skeletonFX_plick3.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\bluebrick640x960copy.png">
+    <Content Include="Content\TestTextures\bluebrick640x960copy.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\bolbex-1.png">
+    <Content Include="Content\TestTextures\bolbex-1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\bolbex-2.png">
+    <Content Include="Content\TestTextures\bolbex-2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\box_old_1.png">
+    <Content Include="Content\TestTextures\box_old_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\box_old_2.png">
+    <Content Include="Content\TestTextures\box_old_2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\box_old_3.png">
+    <Content Include="Content\TestTextures\box_old_3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\detal_me1.png">
+    <Content Include="Content\TestTextures\detal_me1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\steel_list.png">
+    <Content Include="Content\TestTextures\steel_list.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport_me1.png">
+    <Content Include="Content\TestTextures\teleport_me1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport_me2.png">
+    <Content Include="Content\TestTextures\teleport_me2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport_pipe.png">
+    <Content Include="Content\TestTextures\teleport_pipe.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\style100500.xml">
@@ -1100,40 +1100,40 @@
     <Content Include="Metadata\TestDeath.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\detal_2.png">
+    <Content Include="Content\TestTextures\detal_2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\enemy_1.png">
+    <Content Include="Content\TestTextures\enemy_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\fish.png">
+    <Content Include="Content\TestTextures\fish.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\phon_blue.png">
+    <Content Include="Content\TestTextures\phon_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\steel_texture_blue.png">
+    <Content Include="Content\TestTextures\steel_texture_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\steel_texture.png">
+    <Content Include="Content\TestTextures\steel_texture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport1_me_hor_in.png">
+    <Content Include="Content\TestTextures\teleport1_me_hor_in.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport1_me_hor_out.png">
+    <Content Include="Content\TestTextures\teleport1_me_hor_out.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport1_me_hor_pipe.png">
+    <Content Include="Content\TestTextures\teleport1_me_hor_pipe.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport1_me_vert_in.png">
+    <Content Include="Content\TestTextures\teleport1_me_vert_in.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport1_me_vert_out.png">
+    <Content Include="Content\TestTextures\teleport1_me_vert_out.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\teleport1_me_vert_pipe.png">
+    <Content Include="Content\TestTextures\teleport1_me_vert_pipe.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\styleClasses.xml">
@@ -1175,13 +1175,13 @@
     <Content Include="Content\Global\arrow52Up.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\boom_new.png">
+    <Content Include="Content\TestTextures\boom_new.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestSignals.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\style100500opt_OptBckg.png">
+    <Content Include="Content\TestTextures\style100500opt_OptBckg.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\style100500opt.xml">
@@ -1196,16 +1196,16 @@
     <Content Include="Metadata\TestRnd.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\detal_2_40x40.png">
+    <Content Include="Content\TestTextures\detal_2_40x40.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\detal_me1_20x26.png">
+    <Content Include="Content\TestTextures\detal_me1_20x26.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\steel_texture_40x40.png">
+    <Content Include="Content\TestTextures\steel_texture_40x40.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\steel_texture_blue_40x40.png">
+    <Content Include="Content\TestTextures\steel_texture_blue_40x40.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\style100500opt2.xml">
@@ -1214,7 +1214,7 @@
     <Content Include="Metadata\style100500opt3dash.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\enemy_1_40x29.png">
+    <Content Include="Content\TestTextures\enemy_1_40x29.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\styleClasses_opt2.xml">
@@ -1223,10 +1223,10 @@
     <Content Include="Metadata\Dashboard_opt2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\bolbex-1_me_wait_expl2.png">
+    <Content Include="Content\TestTextures\bolbex-1_me_wait_expl2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\bolbex-1_me.png">
+    <Content Include="Content\TestTextures\bolbex-1_me.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\includeSkeletonHeroMotions.xml">
@@ -1244,244 +1244,244 @@
     <Content Include="Metadata\FPSTestLoad1000.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage1.png">
+    <Content Include="Content\TestTextures\FPSTestImage1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage2.png">
+    <Content Include="Content\TestTextures\FPSTestImage2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage3.png">
+    <Content Include="Content\TestTextures\FPSTestImage3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage4.png">
+    <Content Include="Content\TestTextures\FPSTestImage4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage5.png">
+    <Content Include="Content\TestTextures\FPSTestImage5.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage6.png">
+    <Content Include="Content\TestTextures\FPSTestImage6.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage7.png">
+    <Content Include="Content\TestTextures\FPSTestImage7.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage8.png">
+    <Content Include="Content\TestTextures\FPSTestImage8.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage9.png">
+    <Content Include="Content\TestTextures\FPSTestImage9.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage10.png">
+    <Content Include="Content\TestTextures\FPSTestImage10.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage11.png">
+    <Content Include="Content\TestTextures\FPSTestImage11.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage12.png">
+    <Content Include="Content\TestTextures\FPSTestImage12.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage13.png">
+    <Content Include="Content\TestTextures\FPSTestImage13.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage14.png">
+    <Content Include="Content\TestTextures\FPSTestImage14.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage15.png">
+    <Content Include="Content\TestTextures\FPSTestImage15.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage16.png">
+    <Content Include="Content\TestTextures\FPSTestImage16.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage17.png">
+    <Content Include="Content\TestTextures\FPSTestImage17.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage18.png">
+    <Content Include="Content\TestTextures\FPSTestImage18.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage19.png">
+    <Content Include="Content\TestTextures\FPSTestImage19.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage20.png">
+    <Content Include="Content\TestTextures\FPSTestImage20.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage21.png">
+    <Content Include="Content\TestTextures\FPSTestImage21.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage22.png">
+    <Content Include="Content\TestTextures\FPSTestImage22.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage23.png">
+    <Content Include="Content\TestTextures\FPSTestImage23.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage24.png">
+    <Content Include="Content\TestTextures\FPSTestImage24.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage25.png">
+    <Content Include="Content\TestTextures\FPSTestImage25.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage26.png">
+    <Content Include="Content\TestTextures\FPSTestImage26.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage27.png">
+    <Content Include="Content\TestTextures\FPSTestImage27.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage28.png">
+    <Content Include="Content\TestTextures\FPSTestImage28.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage29.png">
+    <Content Include="Content\TestTextures\FPSTestImage29.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage30.png">
+    <Content Include="Content\TestTextures\FPSTestImage30.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage31.png">
+    <Content Include="Content\TestTextures\FPSTestImage31.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage32.png">
+    <Content Include="Content\TestTextures\FPSTestImage32.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage33.png">
+    <Content Include="Content\TestTextures\FPSTestImage33.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage34.png">
+    <Content Include="Content\TestTextures\FPSTestImage34.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage35.png">
+    <Content Include="Content\TestTextures\FPSTestImage35.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage36.png">
+    <Content Include="Content\TestTextures\FPSTestImage36.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage37.png">
+    <Content Include="Content\TestTextures\FPSTestImage37.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage38.png">
+    <Content Include="Content\TestTextures\FPSTestImage38.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage39.png">
+    <Content Include="Content\TestTextures\FPSTestImage39.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage40.png">
+    <Content Include="Content\TestTextures\FPSTestImage40.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage41.png">
+    <Content Include="Content\TestTextures\FPSTestImage41.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage42.png">
+    <Content Include="Content\TestTextures\FPSTestImage42.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage43.png">
+    <Content Include="Content\TestTextures\FPSTestImage43.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage44.png">
+    <Content Include="Content\TestTextures\FPSTestImage44.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage45.png">
+    <Content Include="Content\TestTextures\FPSTestImage45.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage46.png">
+    <Content Include="Content\TestTextures\FPSTestImage46.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage47.png">
+    <Content Include="Content\TestTextures\FPSTestImage47.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage48.png">
+    <Content Include="Content\TestTextures\FPSTestImage48.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage49.png">
+    <Content Include="Content\TestTextures\FPSTestImage49.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage50.png">
+    <Content Include="Content\TestTextures\FPSTestImage50.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage51.png">
+    <Content Include="Content\TestTextures\FPSTestImage51.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage52.png">
+    <Content Include="Content\TestTextures\FPSTestImage52.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage53.png">
+    <Content Include="Content\TestTextures\FPSTestImage53.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage54.png">
+    <Content Include="Content\TestTextures\FPSTestImage54.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage55.png">
+    <Content Include="Content\TestTextures\FPSTestImage55.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage56.png">
+    <Content Include="Content\TestTextures\FPSTestImage56.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage57.png">
+    <Content Include="Content\TestTextures\FPSTestImage57.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage58.png">
+    <Content Include="Content\TestTextures\FPSTestImage58.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage59.png">
+    <Content Include="Content\TestTextures\FPSTestImage59.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage60.png">
+    <Content Include="Content\TestTextures\FPSTestImage60.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage61.png">
+    <Content Include="Content\TestTextures\FPSTestImage61.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage62.png">
+    <Content Include="Content\TestTextures\FPSTestImage62.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage63.png">
+    <Content Include="Content\TestTextures\FPSTestImage63.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage64.png">
+    <Content Include="Content\TestTextures\FPSTestImage64.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage65.png">
+    <Content Include="Content\TestTextures\FPSTestImage65.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage66.png">
+    <Content Include="Content\TestTextures\FPSTestImage66.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage67.png">
+    <Content Include="Content\TestTextures\FPSTestImage67.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage68.png">
+    <Content Include="Content\TestTextures\FPSTestImage68.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage69.png">
+    <Content Include="Content\TestTextures\FPSTestImage69.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage70.png">
+    <Content Include="Content\TestTextures\FPSTestImage70.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage71.png">
+    <Content Include="Content\TestTextures\FPSTestImage71.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage72.png">
+    <Content Include="Content\TestTextures\FPSTestImage72.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage73.png">
+    <Content Include="Content\TestTextures\FPSTestImage73.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage74.png">
+    <Content Include="Content\TestTextures\FPSTestImage74.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage75.png">
+    <Content Include="Content\TestTextures\FPSTestImage75.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage76.png">
+    <Content Include="Content\TestTextures\FPSTestImage76.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage77.png">
+    <Content Include="Content\TestTextures\FPSTestImage77.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage78.png">
+    <Content Include="Content\TestTextures\FPSTestImage78.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage79.png">
+    <Content Include="Content\TestTextures\FPSTestImage79.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\FPSTestImage80.png">
+    <Content Include="Content\TestTextures\FPSTestImage80.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ScreenTests01.xml">
@@ -1514,73 +1514,73 @@
     <Content Include="Metadata\DebugClassRat.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\bolbex-1_me_wait_expl2.png">
+    <Content Include="Content\Textures\bolbex-1_me_wait_expl2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\bolbex-1_me.png">
+    <Content Include="Content\Textures\bolbex-1_me.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\bomb.png">
+    <Content Include="Content\Textures\bomb.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\boom_new.png">
+    <Content Include="Content\Textures\boom_new.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\box_old_1.png">
+    <Content Include="Content\Textures\box_old_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\box_old_2.png">
+    <Content Include="Content\Textures\box_old_2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\box_old_3.png">
+    <Content Include="Content\Textures\box_old_3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\brickBlue.png">
+    <Content Include="Content\Textures\brickBlue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\detal_2.png">
+    <Content Include="Content\Textures\detal_2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\detal_me1.png">
+    <Content Include="Content\Textures\detal_me1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\detal_me2.png">
+    <Content Include="Content\Textures\detal_me2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\enemy_1.png">
+    <Content Include="Content\Textures\enemy_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\exit_demo_fire_sprite_16x34x4.png">
+    <Content Include="Content\Textures\exit_demo_fire_sprite_16x34x4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\fish_3_me.png">
+    <Content Include="Content\Textures\fish_3_me.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\fish_4_me.png">
+    <Content Include="Content\Textures\fish_4_me.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\fish_5_me.png">
+    <Content Include="Content\Textures\fish_5_me.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\fish_6_me.png">
+    <Content Include="Content\Textures\fish_6_me.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\package_1.png">
+    <Content Include="Content\Textures\package_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\refrigerator_wings.png">
+    <Content Include="Content\Textures\refrigerator_wings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\refrigerator.png">
+    <Content Include="Content\Textures\refrigerator.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\second_phon_communications.png">
+    <Content Include="Content\Textures\second_phon_communications.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\second_phon_communications2.png">
+    <Content Include="Content\Textures\second_phon_communications2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\ReleaseTextures\second_phon_tank.png">
+    <Content Include="Content\Textures\second_phon_tank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\AlphaTest.xml">
