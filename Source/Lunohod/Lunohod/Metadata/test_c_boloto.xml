@@ -5,7 +5,7 @@
 <Level Name="test_c_boloto" Bounds="0, 0, 480, 320">
     <LevelSettings Dificulty="-1" BombCount="7777777" HeroHealth="5" ExplosionClass="clsExplosion"/>
     <Include File="skeletonClassCursor.xml"/>
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="white_clear" Source="white_clear"/>
         <Texture Id="grid_480x320" Source="grid_480x320"/>
         <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue"/>

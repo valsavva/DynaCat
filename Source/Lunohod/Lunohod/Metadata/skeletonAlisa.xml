@@ -3,7 +3,7 @@
 <!-- date: 13/02 2012 00:22 -->
 <Level Name="D:\Lunohod\Levels\_skeleton\skeletonAlisa\skeletonAlisa.svg" Bounds="0, 0, 480, 320">
     <Include File="skeletonClassCursor.xml" />
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="white_clear" Source="white_clear" />
         <Texture Id="grid_480x320" Source="grid_480x320" />
         <Texture Id="cursor_wall_50x50_stick" Source="cursor_wall_50x50_stick" />

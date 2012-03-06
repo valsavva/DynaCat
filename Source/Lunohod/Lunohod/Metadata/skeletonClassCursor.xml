@@ -46,7 +46,7 @@
 	<!-- clsHero -->
 	<!-- =========================================================================================  -->
 	
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="cursor_50x50_light_blue" Source="cursor_50x50_light_blue"/>
         <Texture Id="cursor_50x50_gray" Source="cursor_50x50_gray"/>
         <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue"/>
@@ -84,7 +84,7 @@
 	<!-- clsHeroTir -->
 	<!-- =========================================================================================  -->
 	
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="cursor_50x50_light_blue" Source="cursor_50x50_light_blue"/>
     </Resources>
 	
@@ -105,7 +105,7 @@
 	<!-- clsEnemy -->
 	<!-- =========================================================================================  -->
 	
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="cursor_50x50_red" Source="cursor_50x50_red"/>
     </Resources>
          
@@ -172,7 +172,7 @@
 	<!-- clsFoodPack -->
 	<!-- =========================================================================================  -->
 
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="cursor_solid_50x50_red" Source="cursor_solid_50x50_red"/>
         <Texture Id="cursor_solid_50x50_green" Source="cursor_solid_50x50_green"/>
     </Resources>
@@ -215,7 +215,7 @@
 	<!-- clsWoodenBox -->
 	<!-- =========================================================================================  -->
 
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="cursor_50x50_brown" Source="cursor_50x50_brown"/>
     </Resources>
 	<Class Id="clsWoodenBox">
@@ -259,7 +259,7 @@
 	<!-- =========================================================================================  -->
 	<!-- clsExplosion --> <!-- This class is used to plant "bombs" -->	
 	<!-- =========================================================================================  -->
-	<Resources RootFolder="Textures">
+	<Resources RootFolder="TestTextures">
         <Texture Id="cursor_solid_10x10_black_red" Source="cursor_solid_10x10_black_red"/>
         <Texture Id="cursor_R200_by_50_gray" Source="cursor_R200_by_50_gray"/>
 	</Resources>

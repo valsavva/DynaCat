@@ -10,7 +10,7 @@
 		<SoundFile Id="sndHeroBounce2" Source="skeletonFX_hero_metal_wall_2"/>
 	</Resources>
 	
-    <Resources RootFolder="ReleaseTextures">
+    <Resources RootFolder="Textures">
         <Texture Id="txrHeroDefault" Source="bolbex-1_me"/>
         <Texture Id="txrHeroDying" Source="bolbex-1_me"/>
         <Texture Id="txrHeroWaitingExplosion" Source="bolbex-1_me_wait_expl2"/>

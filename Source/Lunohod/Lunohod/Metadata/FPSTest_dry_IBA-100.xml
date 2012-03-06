@@ -12,10 +12,10 @@
 		<Texture Id="circle300" Source="wave0300"/>
 		<Texture Id="circle400" Source="wave0400"/>
 	</Resources>
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue"/>
     </Resources>
-	<Resources RootFolder="Textures">
+	<Resources RootFolder="TestTextures">
 		<Texture Id="FPSTestImage1" Source="FPSTestImage1"/>
 		<Texture Id="FPSTestImage10" Source="FPSTestImage10"/>
 		<Texture Id="FPSTestImage11" Source="FPSTestImage11"/>

@@ -11,7 +11,7 @@
     <Include File="ClassHero.xml"/>
     <Include File="ClassTower.xml"/>
     <Include File="ClassExit.xml"/>
-    <Resources RootFolder="ReleaseTextures">
+    <Resources RootFolder="Textures">
         <Texture Id="brickBlue" Source="brickBlue"/>
         <Texture Id="second_phon_tank" Source="second_phon_tank"/>
         <Texture Id="second_phon_communications" Source="second_phon_communications"/>

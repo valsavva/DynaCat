@@ -5,7 +5,7 @@
 		<SoundFile Id="sndBombHiss" Source="bombHiss"/>
 	</Resources>
 
-	<Resources RootFolder="ReleaseTextures">
+	<Resources RootFolder="Textures">
         <Texture Id="txrExplosion" Source="boom_new"/>
         <Texture Id="txrBomb" Source="bomb"/>
 	</Resources>

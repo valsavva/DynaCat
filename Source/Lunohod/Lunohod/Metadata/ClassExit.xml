@@ -4,7 +4,7 @@
 		<SoundFile Id="sndExitFlight" Source="skeletonFX_roket_start"/>
 	</Resources>
 	
-	<Resources RootFolder="ReleaseTextures">
+	<Resources RootFolder="Textures">
         <Texture Id="txrExitStatic" Source="refrigerator"/>
         <Texture Id="txrExitFlight" Source="refrigerator_wings"/>
         <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>

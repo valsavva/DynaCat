@@ -4,7 +4,7 @@
 		<SoundFile Id="sndEnemyRat1Dying" Source="skeletonFX_enemy_dead_scream_1"/>
 	</Resources>
 	
-    <Resources RootFolder="ReleaseTextures">
+    <Resources RootFolder="Textures">
         <Texture Id="txrEnemyRat1Default" Source="enemy_1"/>
         <Texture Id="txrEnemyRat1Attack" Source="enemy_1"/>
         <Texture Id="txrEnemyRat1Dying" Source="enemy_1"/>

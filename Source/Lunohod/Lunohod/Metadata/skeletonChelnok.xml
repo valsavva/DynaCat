@@ -4,7 +4,7 @@
 <Level Name="D:\Lunohod\Levels\_skeleton\skeletonChelnok\skeletonChelnok.svg" Bounds="0, 0, 480, 320">
 	<Byaka />
     <Include File="skeletonClassCursor.xml" />
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="white_clear" Source="white_clear" />
         <Texture Id="grid_480x320" Source="grid_480x320" />
         <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />

@@ -5,7 +5,7 @@
 <Level Name="style100500opt" Bounds="0, 0, 480, 320">
     <LevelSettings Dificulty="-1" BombCount="7777777" HeroHealth="5" ExplosionClass="clsExplosion"/>
     <Include File="styleClasses.xml"/>
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="style100500opt_OptBckg" Source="style100500opt_OptBckg"/>
         <Texture Id="box_old_2" Source="box_old_2"/>
         <Texture Id="box_old_3" Source="box_old_3"/>

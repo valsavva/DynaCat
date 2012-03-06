@@ -5,7 +5,7 @@
             <LevelSettings Dificulty="-1" BombCount="7777777" ExplosionClass="clsExplosion" HeroHealth="5"/>
             <Include File="DashboardNewControl.xml"/>
 			<Include File="styleClassesNewControl.xml"/>
-            <Resources RootFolder="Textures">
+            <Resources RootFolder="TestTextures">
                 <Texture Id="phon_blue" Source="phon_blue"/>
                 <Texture Id="box_old_2" Source="box_old_2"/>
                 <Texture Id="box_old_3" Source="box_old_3"/>

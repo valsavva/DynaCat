@@ -3,7 +3,7 @@
 <!-- date: 05/02 2012 05:03 -->
 <Level Name="D:\Lunohod\Levels\_skeleton\skeletonHockey\skeletonHockey.svg" Bounds="0, 0, 480, 320">
     <Include File="skeletonClassCursor.xml" />
-    <Resources RootFolder="Textures">
+    <Resources RootFolder="TestTextures">
         <Texture Id="white_clear" Source="white_clear" />
         <Texture Id="grid_480x320" Source="grid_480x320" />
         <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />

@@ -7,7 +7,7 @@
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
 	</Resources>
-   <Resources RootFolder="Textures">
+   <Resources RootFolder="TestTextures">
         <Texture Id="white_clear" Source="white_clear" />
         <Texture Id="grid_480x320" Source="grid_480x320" />
         <Texture Id="cursor_50x50_blue" Source="cursor_50x50_blue" />
