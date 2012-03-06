@@ -375,7 +375,7 @@ namespace Lunohod.Xge
         private void Ensure(params TokenType[] tokenTypes)
         {
             if (tokenTypes.Length > 0 && !M(tokenTypes))
-                Error(string.Format("Unexpected token. Type: '{0}' Value: '{1}'", P(), T()));
+                Error(string.Format("Unexpected token. Type: '{0}' Value: '{1}'. Expected: '{2}'", P(), T(), string.Join("' or '", tokenTypes.Select(t => t.ToString()))));
         }
 
         private bool M(params TokenType[] tokenTypes)

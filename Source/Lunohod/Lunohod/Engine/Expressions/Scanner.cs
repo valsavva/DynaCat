@@ -109,7 +109,7 @@ namespace Lunohod.Xge
                 {
                     tokenType = TokenType.Id;
 
-                    for (; i < text.Length && (char.IsLetterOrDigit(text[i]) || text[i] == '_'); i++) { }
+                    for (; i < text.Length && (char.IsLetterOrDigit(text[i]) || text[i] == '_' || text[i] == '-'); i++) { }
                 }
                 else
                 {
