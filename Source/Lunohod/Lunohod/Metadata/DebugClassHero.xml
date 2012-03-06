@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Include>
+	<Class Id="classHero">
+		<Hero Speed="150" Direction="0,0">
+			<BoolTrigger Condition="system:left" Action="aniDeceleration.Start()" />
+			<NumAnimation Id="aniDeceleration" Target="Speed" From="DefaultSpeed" To="0" Duration="1" RepeatCount="1" Fill="End" />
+			<BoolTrigger Condition="this:closeEnemy" Group="heroStates">
+				<Image Id="abc" TextureId="cat" Bounds="20,20,40,37" Origin="20,20">
+					<NumAnimation Target="Rotation" From="0" To="360" Duration="1" Autoreverse="true" InProgress="true" />
+				</Image>
+			</BoolTrigger>
+			<BoolTrigger Id="default" Group="heroStates">
+				<Image TextureId="cat" />
+			</BoolTrigger>
+		</Hero>	
+	</Class>
+</Include>

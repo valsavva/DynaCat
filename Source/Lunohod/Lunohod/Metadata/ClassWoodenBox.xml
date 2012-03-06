@@ -1,0 +1,62 @@
+<Include>	
+	
+	<Resources RootFolder="Sound">
+		<SoundFile Id="sndHeroStick1" Source="skeletonFX_hero_wooden_wall_1"/>
+		<SoundFile Id="sndHeroStick2" Source="skeletonFX_hero_wooden_wall_2"/>
+	</Resources>
+
+
+	<Class Id="clsWoodenBox">
+	
+		<Block IsExploding="true" Edges="Stick">
+
+
+            <BoolTrigger Condition="hero:stick" EnterAction="this_setHeroStick.Start()"/>
+            <RandomSet Id="this_setHeroStick">
+				<Sound FileId="sndHeroStick1" Volume="0.5" Pitch="0"/>
+				<Sound FileId="sndHeroStick2" Volume="0.5" Pitch="0"/>
+				<Sound FileId="sndHeroStick1" Volume="0.5" Pitch="0.3"/>
+				<Sound FileId="sndHeroStick2" Volume="0.5" Pitch="0.3"/>
+			</RandomSet>
+<!-- States -->
+            <!-- explosion -->
+            <!-- destroy -->
+			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="false" Group="this_BoxBoomStates"/>
+			<SequenceSet Id="this_setDestroy1" InProgress="false">
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+
+            <!-- quake far -->
+			<BoolTrigger Condition="this:BoomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="this_BoxBoomStates"/>
+			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+				<NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3.5" IsDelta="false"/>
+			</SequenceSet>
+
+            <!-- quake very far-->
+			<BoolTrigger Condition="this:BoomVeryFar" EnterAction="this_setQuake2.Start()" StayTriggered="false" Group="this_BoxBoomStates"/>
+			<SequenceSet Id="this_setQuake2" InProgress="false">
+				<NumAnimation Target="this.Rotation" From="-1" To="1" Duration="0.15" Autoreverse="false" RepeatCount="2.5" IsDelta="false"/>
+			</SequenceSet>
+
+            <!-- quake very very far-->
+			<BoolTrigger Condition="this:boomVeryVeryFar" EnterAction="this_setQuake3.Start()" StayTriggered="false" Group="this_BoxBoomStates"/>
+			<SequenceSet Id="this_setQuake3" InProgress="false">
+				<NumAnimation Target="this.Rotation" From="-1" To="1" Duration="0.25" Autoreverse="false" RepeatCount="1.5" IsDelta="false"/>
+			</SequenceSet>
+			
+		</Block>
+        	
+	</Class>
+	
+</Include>
+
+
+
+
+
+
+
+
+
+

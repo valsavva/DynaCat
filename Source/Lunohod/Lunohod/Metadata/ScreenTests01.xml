@@ -35,7 +35,6 @@
 		<Font Id="SystemFont" Source="SystemFont" />
 	</Resources>
 	
-	<Include File="Textures.xml" />
     <Layer Id="background" BackColor="#FFFFFFFF">
     </Layer>
 	

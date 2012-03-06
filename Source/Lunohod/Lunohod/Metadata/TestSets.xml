@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level Name="testLevel1" Bounds="0,0,480,320">
 
-	<Include File="ClassHero.xml" />
-	<Include File="ClassRat.xml" />
+	<Include File="DebugClassHero.xml" />
+	<Include File="DebugClassRat.xml" />
 
 	<!-- resources -->
 	<Resources RootFolder="TestLevel1">
