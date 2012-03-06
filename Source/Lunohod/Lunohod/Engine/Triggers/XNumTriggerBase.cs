@@ -57,7 +57,7 @@ namespace Lunohod.Objects
 
 		public virtual float GetValue2()
 		{
-			return value2Reader.Value;
+			return value2Reader.GetValue();
 		}
 
 		public override bool IsTriggered()

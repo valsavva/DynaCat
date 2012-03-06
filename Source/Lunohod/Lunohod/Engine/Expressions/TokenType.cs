@@ -14,13 +14,18 @@ namespace Lunohod.Xge
         LeftPar,
         RightPar,
         At,
+        Dot,
+        Comma,
+        Colon,
+        SemiColon,
+        Squiggle,
+
         Plus,
         Minus,
         Multiply,
         Divide,
         Modulo,
-        Dot,
-        Comma,
+
         Or,
         And,
         Not,
@@ -31,6 +36,5 @@ namespace Lunohod.Xge
         Op_GE,
         Op_L,
         Op_LE,
-        Semi
     }
 }

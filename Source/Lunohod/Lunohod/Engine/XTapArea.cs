@@ -7,6 +7,7 @@ using Lunohod;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -14,7 +15,7 @@ namespace Lunohod.Objects
     [XmlType("TapArea")]
 	public class XTapArea : XElement
 	{
-		private ActionCallerBase actionCaller;
+		private List<IAction> actions;
 		
 		public XTapArea()
 		{
@@ -44,7 +45,7 @@ namespace Lunohod.Objects
 			
 			p.Game.ScreenEngine.tapAreas.Add(this);
 			
-			actionCaller = Lunohod.Objects.ActionCaller.CreateActionCaller(this, this.Action);
+			actions = Compiler.CompileStatementList(this, this.Action);
 		}
 		
 		public override void Update(UpdateParameters p)
@@ -53,7 +54,7 @@ namespace Lunohod.Objects
 			
 			if (this.IsTapped)
 			{
-				actionCaller.Call();
+                actions.ForEach(a => a.Call());
 				this.IsTapped = false;
 			}
 			

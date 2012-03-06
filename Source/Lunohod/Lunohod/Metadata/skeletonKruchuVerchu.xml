@@ -42,7 +42,7 @@
         <Group Id="nap1">
             <Enemy Id="enmNap1" Bounds="-95, 145, 30, 30" Class="clsEnemy" TraceId="image3026"/>
             <Block Id="blkNap1" Bounds="-105, 135, 50, 50" Edges="None" TraceId="image4047">
-            	<DistanceTrigger ObjectId1="blkNap1" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap1.Disable" />
+            	<DistanceTrigger ObjectId1="blkNap1" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap1.Disable()" />
                 <Image Id="image4047" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
             </Block>
         </Group>            
@@ -51,7 +51,7 @@
         <Group Id="nap2">
             <Enemy Id="enmNap2" Bounds="545, 145, 30, 30" Class="clsEnemy" TraceId="image3026-5"/>
             <Block Id="blkNap2" Bounds="535, 135, 50, 50" Edges="None" TraceId="image4047-1">
-            	<DistanceTrigger ObjectId1="blkNap2" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap2.Disable" />
+            	<DistanceTrigger ObjectId1="blkNap2" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap2.Disable()" />
                 <Image Id="image4047-1" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
             </Block>
         </Group>
@@ -60,7 +60,7 @@
         <Group Id="nap3">
             <Food Id="fdNap3" Points="23" Bounds="225, 395, 30, 30" Class="clsFood" TraceId="image3037"/>
             <Block Id="blkNap3" Bounds="215, 385, 50, 50" Edges="None" TraceId="image4045">
-            	<DistanceTrigger ObjectId1="blkNap3" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap3.Disable" />
+            	<DistanceTrigger ObjectId1="blkNap3" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap3.Disable()" />
                 <Image Id="image4045" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
             </Block>
         </Group>
@@ -114,7 +114,7 @@
 		        	<NumAnimation Id="anm11" From="0" To="120" Target="blk5.X" Duration="0.25" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4090"/>
 		        	<NumAnimation Id="anm12" From="0" To="-110" Target="blk6.Y" Duration="0.25" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image4101"/>                		                   
 		        	
-		        	<Do Action="blkExit.Enable" />
+		        	<Do Action="blkExit.Enable()" />
 		        	<NumAnimation Duration="3" Target="blkExit.Opacity" From="0" To="1" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End"/>
 		        	
 			    </SequenceSet>

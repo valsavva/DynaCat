@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -13,9 +14,9 @@ namespace Lunohod.Objects
 	{
 		private bool isTriggered;
 			
-		private List<ActionCallerBase> actions;
-		private List<ActionCallerBase> enterActions;
-		private List<ActionCallerBase> exitActions;
+		private List<IAction> actions;
+        private List<IAction> enterActions;
+        private List<IAction> exitActions;
 		
 		[XmlAttribute]
 		public string EnterAction;
@@ -32,11 +33,11 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			if (this.Action != null)
-				this.actions = this.Action.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
+				this.actions = Compiler.CompileStatementList(this, this.Action);
 			if (this.EnterAction != null)
-				this.enterActions = this.EnterAction.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
+                this.enterActions = Compiler.CompileStatementList(this, this.EnterAction);
 			if (this.ExitAction != null)
-				this.exitActions = this.ExitAction.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
+                this.exitActions = Compiler.CompileStatementList(this, this.ExitAction);
 		}
 		
 		public abstract bool IsTriggered();

@@ -19,6 +19,10 @@
       <xs:extension base="XObject">
         <xs:attribute name="Opacity" type="xs:float" use="required" />
         <xs:attribute name="Rotation" type="xs:float" use="required" />
+        <xs:attribute name="X" type="xs:float" use="required" />
+        <xs:attribute name="Y" type="xs:float" use="required" />
+        <xs:attribute name="Width" type="xs:float" use="required" />
+        <xs:attribute name="Height" type="xs:float" use="required" />
         <xs:attribute name="Bounds" type="xs:string" />
         <xs:attribute name="BackColor" type="xs:string" />
         <xs:attribute name="Origin" type="xs:string" />
@@ -32,7 +36,18 @@
   <xs:complexType name="XObject" abstract="true">
     <xs:sequence>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element minOccurs="0" maxOccurs="1" name="Explosion" type="Explosion" />
+        <xs:element minOccurs="0" maxOccurs="1" name="RandomSet" type="RandomSet" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Delay" type="Delay" />
+        <xs:element minOccurs="0" maxOccurs="1" name="NumAnimation" type="NumAnimation" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ParallelSet" type="ParallelSet" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Resources" type="Resources" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Dashboard" type="Dashboard" />
+        <xs:element minOccurs="0" maxOccurs="1" name="TapArea" type="TapArea" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Include" type="Include" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Let" type="Let" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Do" type="Do" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Sprite" type="Sprite" />
+        <xs:element minOccurs="0" maxOccurs="1" name="LevelSettings" type="LevelSettings" />
         <xs:element minOccurs="0" maxOccurs="1" name="Layer" type="Layer" />
         <xs:element minOccurs="0" maxOccurs="1" name="IntersectionTrigger" type="IntersectionTrigger" />
         <xs:element minOccurs="0" maxOccurs="1" name="DistanceTrigger" type="DistanceTrigger" />
@@ -43,28 +58,17 @@
         <xs:element minOccurs="0" maxOccurs="1" name="Hero" type="Hero" />
         <xs:element minOccurs="0" maxOccurs="1" name="Enemy" type="Enemy" />
         <xs:element minOccurs="0" maxOccurs="1" name="Food" type="Food" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Resources" type="Resources" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Explosion" type="Explosion" />
         <xs:element minOccurs="0" maxOccurs="1" name="Iterator" type="Iterator" />
-        <xs:element minOccurs="0" maxOccurs="1" name="LevelSettings" type="LevelSettings" />
-        <xs:element minOccurs="0" maxOccurs="1" name="RandomSet" type="RandomSet" />
-        <xs:element minOccurs="0" maxOccurs="1" name="ParallelSet" type="ParallelSet" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Do" type="Do" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Let" type="Let" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Delay" type="Delay" />
-        <xs:element minOccurs="0" maxOccurs="1" name="NumAnimation" type="NumAnimation" />
+        <xs:element minOccurs="0" maxOccurs="1" name="SequenceSet" type="SequenceSet" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Viewport" type="Viewport" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Sound" type="Sound" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Music" type="Music" />
         <xs:element minOccurs="0" maxOccurs="1" name="KeyFrame" type="KeyFrame" />
         <xs:element minOccurs="0" maxOccurs="1" name="Group" type="Group" />
         <xs:element minOccurs="0" maxOccurs="1" name="Image" type="Image" />
         <xs:element minOccurs="0" maxOccurs="1" name="Text" type="Text" />
         <xs:element minOccurs="0" maxOccurs="1" name="Block" type="Block" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Sprite" type="Sprite" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Dashboard" type="Dashboard" />
-        <xs:element minOccurs="0" maxOccurs="1" name="SequenceSet" type="SequenceSet" />
-        <xs:element minOccurs="0" maxOccurs="1" name="TapArea" type="TapArea" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Include" type="Include" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Music" type="Music" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Sound" type="Sound" />
-        <xs:element minOccurs="0" maxOccurs="1" name="Viewport" type="Viewport" />
       </xs:choice>
     </xs:sequence>
     <xs:attribute name="Id" type="xs:string" />
@@ -72,10 +76,190 @@
     <xs:attribute name="ClassParams" type="xs:string" />
     <xs:attribute name="Enabled" type="xs:boolean" use="required" />
   </xs:complexType>
-  <xs:complexType name="Explosion">
+  <xs:complexType name="RandomSet">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XSetBase">
+        <xs:attribute name="Probabilities" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="XSetBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XRunnableBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="XRunnableBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XObject">
+        <xs:attribute name="InProgress" type="xs:boolean" use="required" />
+        <xs:attribute name="RepeatCount" type="xs:float" use="required" />
+        <xs:attribute name="RepeatTime" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Iterator">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XRunnableBase">
+        <xs:attribute name="TypeFilter" type="xs:string" />
+        <xs:attribute name="ObjectIds" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Do">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XRunnableBase">
+        <xs:attribute name="Action" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Let">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XRunnableBase">
+        <xs:attribute name="Target" type="xs:string" />
+        <xs:attribute name="Value" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="XAnimationBase" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XRunnableBase">
+        <xs:attribute name="Autoreverse" type="xs:boolean" use="required" />
+        <xs:attribute name="Fill" type="XAnimationFillBehavior" use="required" />
+        <xs:attribute name="Duration" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="XAnimationFillBehavior">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hold" />
+      <xs:enumeration value="Reset" />
+      <xs:enumeration value="End" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NumAnimation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XAnimationBase">
+        <xs:attribute name="Target" type="xs:string" />
+        <xs:attribute name="From" type="xs:string" />
+        <xs:attribute name="To" type="xs:string" />
+        <xs:attribute name="IsDelta" type="xs:boolean" use="required" />
+        <xs:attribute name="Smoothing" type="CurveTangent" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CurveTangent">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flat" />
+      <xs:enumeration value="Linear" />
+      <xs:enumeration value="Smooth" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SequenceSet">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XSetBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ParallelSet">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XSetBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Delay">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XObject">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="InProgress" type="xs:boolean" />
+        </xs:sequence>
+        <xs:attribute name="Duration" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Resources">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XObject">
+        <xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" maxOccurs="1" name="Font" type="Font" />
+            <xs:element minOccurs="0" maxOccurs="1" name="Texture" type="Texture" />
+            <xs:element minOccurs="0" maxOccurs="1" name="SoundFile" type="SoundFile" />
+            <xs:element minOccurs="0" maxOccurs="1" name="MusicFile" type="MusicFile" />
+          </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="RootFolder" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Font">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="XResource" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XObject">
+        <xs:attribute name="Source" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicFile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SoundFile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Texture">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Dashboard">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XElement" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TapArea">
     <xs:complexContent mixed="false">
       <xs:extension base="XElement">
-        <xs:attribute name="Ranges" type="xs:string" />
+        <xs:attribute name="Action" type="xs:string" />
+        <xs:attribute name="Event" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Include">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XElement">
+        <xs:attribute name="File" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Sprite">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Image">
+        <xs:attribute name="FrameCount" type="xs:int" use="required" />
+        <xs:attribute name="CurrentFrame" type="xs:int" use="required" />
+        <xs:attribute name="FrameBounds" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Image">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XElement">
+        <xs:attribute name="TextureId" type="xs:string" />
+        <xs:attribute name="Stretch" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LevelSettings">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XObject">
+        <xs:attribute name="Difficulty" type="xs:int" use="required" />
+        <xs:attribute name="BombCount" type="xs:int" use="required" />
+        <xs:attribute name="HeroHealth" type="xs:float" use="required" />
+        <xs:attribute name="ExplosionClass" type="xs:string" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -180,153 +364,40 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="Resources">
+  <xs:complexType name="Explosion">
     <xs:complexContent mixed="false">
-      <xs:extension base="XObject">
-        <xs:sequence>
-          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element minOccurs="0" maxOccurs="1" name="MusicFile" type="MusicFile" />
-            <xs:element minOccurs="0" maxOccurs="1" name="SoundFile" type="SoundFile" />
-            <xs:element minOccurs="0" maxOccurs="1" name="Texture" type="Texture" />
-            <xs:element minOccurs="0" maxOccurs="1" name="Font" type="Font" />
-          </xs:choice>
-        </xs:sequence>
-        <xs:attribute name="RootFolder" type="xs:string" />
+      <xs:extension base="XElement">
+        <xs:attribute name="Ranges" type="xs:string" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MusicFile">
+  <xs:complexType name="Viewport">
     <xs:complexContent mixed="false">
-      <xs:extension base="XResource" />
+      <xs:extension base="XElement" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="XResource" abstract="true">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XObject">
-        <xs:attribute name="Source" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Font">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XResource" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Texture">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XResource" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SoundFile">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XResource" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Iterator">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XRunnableBase">
-        <xs:attribute name="TypeFilter" type="xs:string" />
-        <xs:attribute name="ObjectIds" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="XRunnableBase" abstract="true">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XObject">
-        <xs:attribute name="InProgress" type="xs:boolean" use="required" />
-        <xs:attribute name="RepeatCount" type="xs:float" use="required" />
-        <xs:attribute name="RepeatTime" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="XAnimationBase" abstract="true">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XRunnableBase">
-        <xs:attribute name="Autoreverse" type="xs:boolean" use="required" />
-        <xs:attribute name="Fill" type="XAnimationFillBehavior" use="required" />
-        <xs:attribute name="Duration" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="XAnimationFillBehavior">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Hold" />
-      <xs:enumeration value="Reset" />
-      <xs:enumeration value="End" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="NumAnimation">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XAnimationBase">
-        <xs:attribute name="Target" type="xs:string" />
-        <xs:attribute name="From" type="xs:string" />
-        <xs:attribute name="To" type="xs:string" />
-        <xs:attribute name="IsDelta" type="xs:boolean" use="required" />
-        <xs:attribute name="Smoothing" type="CurveTangent" use="required" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="CurveTangent">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Flat" />
-      <xs:enumeration value="Linear" />
-      <xs:enumeration value="Smooth" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="Let">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XRunnableBase">
-        <xs:attribute name="Target" type="xs:string" />
-        <xs:attribute name="Value" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Do">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XRunnableBase">
-        <xs:attribute name="Action" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="XSetBase" abstract="true">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XRunnableBase" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SequenceSet">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XSetBase" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ParallelSet">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XSetBase" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RandomSet">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XSetBase">
-        <xs:attribute name="Probabilities" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="LevelSettings">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XObject">
-        <xs:attribute name="Difficulty" type="xs:int" use="required" />
-        <xs:attribute name="BombCount" type="xs:int" use="required" />
-        <xs:attribute name="HeroHealth" type="xs:float" use="required" />
-        <xs:attribute name="ExplosionClass" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Delay">
+  <xs:complexType name="Sound">
     <xs:complexContent mixed="false">
       <xs:extension base="XObject">
         <xs:sequence>
           <xs:element minOccurs="1" maxOccurs="1" name="InProgress" type="xs:boolean" />
         </xs:sequence>
-        <xs:attribute name="Duration" type="xs:string" />
+        <xs:attribute name="FileId" type="xs:string" />
+        <xs:attribute name="Pitch" type="xs:float" use="required" />
+        <xs:attribute name="Pan" type="xs:float" use="required" />
+        <xs:attribute name="IsLooped" type="xs:boolean" use="required" />
+        <xs:attribute name="Volume" type="xs:float" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Music">
+    <xs:complexContent mixed="false">
+      <xs:extension base="XObject">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="InProgress" type="xs:boolean" />
+        </xs:sequence>
+        <xs:attribute name="FileId" type="xs:string" />
+        <xs:attribute name="Volume" type="xs:float" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -343,23 +414,6 @@
     <xs:complexContent mixed="false">
       <xs:extension base="XElement">
         <xs:attribute name="IsExploding" type="xs:boolean" use="required" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Image">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XElement">
-        <xs:attribute name="TextureId" type="xs:string" />
-        <xs:attribute name="Stretch" type="xs:boolean" use="required" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Sprite">
-    <xs:complexContent mixed="false">
-      <xs:extension base="Image">
-        <xs:attribute name="FrameCount" type="xs:int" use="required" />
-        <xs:attribute name="CurrentFrame" type="xs:int" use="required" />
-        <xs:attribute name="FrameBounds" type="xs:string" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -388,54 +442,4 @@
       <xs:enumeration value="Teleport" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="Dashboard">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XElement" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="TapArea">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XElement">
-        <xs:attribute name="Action" type="xs:string" />
-        <xs:attribute name="Event" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Include">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XElement">
-        <xs:attribute name="File" type="xs:string" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Music">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XObject">
-        <xs:sequence>
-          <xs:element minOccurs="1" maxOccurs="1" name="InProgress" type="xs:boolean" />
-        </xs:sequence>
-        <xs:attribute name="FileId" type="xs:string" />
-        <xs:attribute name="Volume" type="xs:float" use="required" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Sound">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XObject">
-        <xs:sequence>
-          <xs:element minOccurs="1" maxOccurs="1" name="InProgress" type="xs:boolean" />
-        </xs:sequence>
-        <xs:attribute name="FileId" type="xs:string" />
-        <xs:attribute name="Pitch" type="xs:float" use="required" />
-        <xs:attribute name="Pan" type="xs:float" use="required" />
-        <xs:attribute name="IsLooped" type="xs:boolean" use="required" />
-        <xs:attribute name="Volume" type="xs:float" use="required" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Viewport">
-    <xs:complexContent mixed="false">
-      <xs:extension base="XElement" />
-    </xs:complexContent>
-  </xs:complexType>
 </xs:schema>

@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -17,7 +18,7 @@ namespace Lunohod.Objects
     public class XNumAnimation : XAnimationBase
     {
         private List<TimeCurve> curves;
-        private List<PropertyAccessor> targets;
+        private List<NumProperty> targets;
         private List<XKeyFrame> keyFrames;
         private List<float?> startValues;
 
@@ -62,7 +63,7 @@ namespace Lunohod.Objects
             base.Initialize(p);
 
             // get targets
-            targets = this.Target.Split(',').Select(s => new PropertyAccessor(this, s)).ToList();
+            targets = this.Target.Split(',').Select(s => (NumProperty)Compiler.CompileNumExpression(this, s)).ToList();
 			startValues = new List<float?>(new float?[targets.Count]);
 
             // collect keyFrames and check for consistency
@@ -111,12 +112,12 @@ namespace Lunohod.Objects
                 if (this.IsDelta)
                 {
                     if (!startValues[i].HasValue)
-                        startValues[i] = targets[i].FloatPropertyValue;
+                        startValues[i] = targets[i].GetValue();
 
                     newPropertyValue += startValues[i].Value;
                 }
 
-                targets[i].FloatPropertyValue = newPropertyValue;
+                targets[i].SetValue(newPropertyValue);
             }
         }
 		internal override void ReplaceParameter(string par, string val)

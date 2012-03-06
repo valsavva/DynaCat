@@ -64,35 +64,35 @@ namespace Lunohod.Xge
         #region known numeric Getters/Setters
         private float GetX()
         {
-            return element.Bounds.X;
+            return element.X;
         }
         private void SetX(float v)
         {
-            element.Bounds.X = (int)Math.Round(v);
+            element.X = v;
         }
         private float GetY()
         {
-            return element.Bounds.Y;
+            return element.Y;
         }
         private void SetY(float v)
         {
-            element.Bounds.Y = (int)Math.Round(v);
+            element.Y = v;
         }
         private float GetWidth()
         {
-            return element.Bounds.Width;
+            return element.Width;
         }
         private void SetWidth(float v)
         {
-            element.Bounds.Width = (int)Math.Round(v);
+            element.Width = v;
         }
         private float GetHeight()
         {
-            return element.Bounds.Height;
+            return element.Height;
         }
         private void SetHeight(float v)
         {
-            element.Bounds.Height = (int)Math.Round(v);
+            element.Height = v;
         }
         private float GetRotation()
         {

@@ -5,14 +5,25 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    public interface INumExpression
+    public interface IExpression
     {
-        float Value { get; }
+        object GetObjValue();
+        Type Type { get; }
     }
 
-    public interface IBoolExpression
+    public interface INumExpression : IExpression
     {
-        bool Value { get; }
+        float GetValue();
+    }
+
+    public interface IBoolExpression : IExpression
+    {
+        bool GetValue();
+    }
+
+    public interface IStrExpression : IExpression
+    {
+        string GetValue();
     }
 
     public interface IAssignable<T>
@@ -20,17 +31,22 @@ namespace Lunohod.Xge
         void SetValue(T v);
     }
 
-    public abstract class Expression
+    public interface IAction
+    {
+        void Call();
+    }
+
+    public abstract class Expression : IExpression
     {
         public abstract Type Type { get; }
-        public abstract object ObjValue { get; }
+        public abstract object GetObjValue();
     }
 
     public abstract class Expression<T> : Expression
     {
-        public abstract T Value { get; }
+        public abstract T GetValue();
 
         public override Type Type { get { return typeof(T); } }
-        public override object ObjValue { get { return this.Value; } }
+        public override object GetObjValue() { return this.GetValue(); }
     }
 }

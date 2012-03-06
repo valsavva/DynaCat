@@ -18,9 +18,9 @@ namespace Lunohod.Xge
 				throw new InvalidOperationException(string.Format("Could not find object with id [{0}]", objectId));
         }
 
-        public override bool Value
+        public override bool GetValue()
         {
-            get { return GameEngine.Instance.ScreenEngine.CurrentEvents.ContainsKey(this.eventName); }
+            return GameEngine.Instance.ScreenEngine.CurrentEvents.ContainsKey(this.eventName);
         }
     }
 }

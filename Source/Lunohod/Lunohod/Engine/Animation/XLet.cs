@@ -51,7 +51,7 @@ namespace Lunohod.Objects
         {
             for (int i = 0; i < accessors.Count; i++)
             {
-                accessors[i].SetValue(valueReaders[i].Value);
+                accessors[i].SetValue(valueReaders[i].GetValue());
             }
             this.repeatsDone++;
         }

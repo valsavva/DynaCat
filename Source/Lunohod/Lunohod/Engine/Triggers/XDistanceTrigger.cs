@@ -55,7 +55,7 @@ namespace Lunohod.Objects
 		
 		public override float GetValue2()
 		{
-			var value2 = value2Reader.Value;
+			var value2 = value2Reader.GetValue();
 			
 			return value2 * value2;
 		}

@@ -5,22 +5,22 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    class BoolBinaryOperator : BoolExpression
+    class BoolOperator : BoolExpression
     {
         private TokenType tokenType;
         private IBoolExpression expression1;
         private IBoolExpression expression2;
 
-        public BoolBinaryOperator(TokenType tokenType, IBoolExpression expression1, IBoolExpression expression2)
+        public BoolOperator(TokenType tokenType, IBoolExpression expression1, IBoolExpression expression2)
         {
             this.tokenType = tokenType;
             this.expression1 = expression1;
             this.expression2 = expression2;
         }
 
-        public override bool Value
+        public override bool GetValue()
         {
-            get { return tokenType == TokenType.And ? expression1.Value && expression2.Value : expression1.Value || expression2.Value; }
+            return tokenType == TokenType.And ? expression1.GetValue() && expression2.GetValue() : expression1.GetValue() || expression2.GetValue();
         }
 
         public override string ToString()

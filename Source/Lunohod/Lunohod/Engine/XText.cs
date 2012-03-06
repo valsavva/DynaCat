@@ -8,6 +8,7 @@ using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -16,7 +17,7 @@ namespace Lunohod.Objects
 	{
 		private XFontResource font;
 		private Vector2 location;
-		private StrValueReader strValueReader;
+		private IStrExpression strValueReader;
 
         [XmlIgnore]
         public Color Color;
@@ -42,7 +43,11 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 			
 			this.font = (XFontResource)p.ScreenEngine.RootComponent.FindDescendant(this.FontId);
-			this.strValueReader = new StrValueReader(this, this.Text);
+
+            if (this.Text != null && this.Text.StartsWith("="))
+            {
+                this.strValueReader = Compiler.CompileStrExpression(this, "system.Str(" + this.Text.Substring(1) + ")");
+            }
 			
 			if (this.font == null)
 				throw new InvalidOperationException(string.Format(
@@ -62,6 +67,11 @@ namespace Lunohod.Objects
 			screenRotation = MathHelper.ToRadians(this.PropState.Rotation);
         }
 
+        private string GetText()
+        {
+            return this.strValueReader == null ? this.Text : this.strValueReader.GetValue();
+        }
+
 		public override void Draw(DrawParameters p)
 		{
 			if (this.PropState.ScreenBounds.HasValue)
@@ -70,9 +80,9 @@ namespace Lunohod.Objects
 				this.location.Y = this.PropState.ScreenBounds.Value.Y;
 				
 				if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
-					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, actualColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
+					p.SpriteBatch.DrawString(this.font.Font, GetText(), this.location, actualColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
 				else
-					p.SpriteBatch.DrawString(this.font.Font, this.strValueReader.Value, this.location, actualColor);
+                    p.SpriteBatch.DrawString(this.font.Font, GetText(), this.location, actualColor);
 			}
 			
 			base.Draw(p);

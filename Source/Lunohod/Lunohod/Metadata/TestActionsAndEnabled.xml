@@ -34,13 +34,13 @@
 				<!-- Этот выберет цвет для убегания.-->
 				<SequenceSet Id="setPickColor">
 					<!-- Гасим все имиджи -->
-					<Do Action="aa1.Disable;aa2.Disable;aa3.Disable;aa4.Disable" />
+					<Do Action="aa1.Disable();aa2.Disable();aa3.Disable();aa4.Disable()" />
 					<!-- Выбираем случайный -->
 					<RandomSet>
-						<Do Action="aa1.Enable" />
-						<Do Action="aa2.Enable" />
-						<Do Action="aa3.Enable" />
-						<Do Action="aa4.Enable" />
+						<Do Action="aa1.Enable()" />
+						<Do Action="aa2.Enable()" />
+						<Do Action="aa3.Enable()" />
+						<Do Action="aa4.Enable()" />
 					</RandomSet>
 				</SequenceSet>
 

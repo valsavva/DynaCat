@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -15,7 +16,7 @@ namespace Lunohod.Objects
     [XmlType("Do")]
     public class XDo : XRunnableBase
     {
-        private List<ActionCallerBase> actionCallers;
+        private List<IAction> actions;
 		
         /// <summary>
         /// Action specification.
@@ -33,12 +34,12 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            actionCallers = this.Action.Split(';').Select(s => ActionCaller.CreateActionCaller(this, s)).ToList();
+            actions = Compiler.CompileStatementList(this, this.Action);
         }
 
         internal override void UpdateProgress(UpdateParameters p)
 		{
-            actionCallers.ForEach(a => a.Call());
+            actions.ForEach(a => a.Call());
 			this.repeatsDone++;
 		}		
 		

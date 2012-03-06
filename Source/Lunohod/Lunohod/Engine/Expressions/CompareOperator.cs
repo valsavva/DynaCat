@@ -22,17 +22,17 @@ namespace Lunohod.Xge
 
             switch(tokenType)
             {
-                case (TokenType.Op_E) : func = (e1, e2) => e1.Value == e2.Value; break;
-                case (TokenType.Op_NE) : func = (e1, e2) => e1.Value != e2.Value; break;
-                case (TokenType.Op_G) : func = (e1, e2) => e1.Value > e2.Value; break;
-                case (TokenType.Op_GE) : func = (e1, e2) => e1.Value >= e2.Value; break;
-                case (TokenType.Op_L) : func = (e1, e2) => e1.Value < e2.Value; break;
-                case (TokenType.Op_LE): func = (e1, e2) => e1.Value <= e2.Value; break;
+                case (TokenType.Op_E) : func = (e1, e2) => e1.GetValue() == e2.GetValue(); break;
+                case (TokenType.Op_NE) : func = (e1, e2) => e1.GetValue() != e2.GetValue(); break;
+                case (TokenType.Op_G) : func = (e1, e2) => e1.GetValue() > e2.GetValue(); break;
+                case (TokenType.Op_GE) : func = (e1, e2) => e1.GetValue() >= e2.GetValue(); break;
+                case (TokenType.Op_L) : func = (e1, e2) => e1.GetValue() < e2.GetValue(); break;
+                case (TokenType.Op_LE): func = (e1, e2) => e1.GetValue() <= e2.GetValue(); break;
                 default: throw new InvalidOperationException("WTF?");
             }
         }
 
-        public override bool Value { get { return func(expression1, expression2); } }
+        public override bool GetValue() { return func(expression1, expression2); }
 
         public override string ToString()
         {

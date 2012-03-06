@@ -25,7 +25,7 @@ namespace Lunohod.Xge
             this.propertyId = propertyId;
 
             if (objectId == null)
-                target = currentObject;
+                target = currentObject.Parent;
             else
                 target = currentObject.GetRoot().FindDescendant(objectId);
 
@@ -50,9 +50,9 @@ namespace Lunohod.Xge
             setter = this.SetConvertedValue;
         }
 
-        public override T Value
+        public override T GetValue()
         {
-            get { return getter(); }
+            return getter();
         }
 
         public void SetValue(T v)
@@ -70,7 +70,6 @@ namespace Lunohod.Xge
             return (T)propertyInfo.GetValue(target, null);
         }
         
-
         public override string ToString()
         {
             return (string.IsNullOrEmpty(objectId) ? "" : objectId + ".") + propertyId;

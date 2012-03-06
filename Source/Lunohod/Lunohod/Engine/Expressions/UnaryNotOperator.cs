@@ -9,12 +9,12 @@ namespace Lunohod.Xge
     {
         private IBoolExpression expression;
 
-        public UnaryNotOperator(IBoolExpression expression)
+        public UnaryNotOperator(Expression expression)
         {
-            this.expression = expression;
+            this.expression = Validator.CheckType<IBoolExpression>(expression);
         }
 
-        public override bool Value { get { return !expression.Value; } }
+        public override bool GetValue() { return !expression.GetValue(); }
 
         public override string ToString()
         {

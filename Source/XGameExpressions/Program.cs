@@ -15,33 +15,35 @@ namespace XGameExpressions
         static void Main(string[] args)
         {
             l = new XLevel() { Id = "whatever" };
-            l.Subcomponents =new XObjectCollection() { new XBlock() { Id = "A", Bounds = new RectangleF(10,10,20,20) } };
+            l.Subcomponents =new XObjectCollection() {
+                new XSystem { Id="system" },
+                new XBlock() { Id = "A", Bounds = new RectangleF(10,10,20,20) }
+            };
 
-            CompilerBool("true & true");
-            CompilerBool("true & false");
-            CompilerBool("false & false");
-            CompilerBool("true | true");
-            CompilerBool("true | false");
-            CompilerBool("false | false");
-            CompilerBool("true & (5 > 3) & Yeah()");
-            Compiler("A.X*2");
-            Compiler("A.X*2*40.5 + 50*2)");
+            CB("true & true");
+            CB("true & false");
+            CB("false & false");
+            CB("true | true");
+            CB("true | false");
+            CB("false | false");
+
+            CN("system.Rnd(0,5)");
+            CN("A.X*2");
+            CN("A.X*2*40.5 + 50*2)");
         }
 
-        private static void Compiler(string p)
+        private static void CN(string p)
         {
-            Compiler compiler = new Compiler(l);
-            var nexp = compiler.CompileNumExpression(p);
+            var nexp = Compiler.CompileNumExpression(l, p);
 
-            Console.WriteLine(nexp.ToString() + " = " + nexp.Value);
+            Console.WriteLine(nexp.ToString() + " = " + nexp.GetValue());
         }
 
-        private static void CompilerBool(string p)
+        private static void CB(string p)
         {
-            Compiler compiler = new Compiler(l);
-            var nexp = compiler.CompileBoolExpression(p);
+            var nexp = Compiler.CompileBoolExpression(l, p);
 
-            Console.WriteLine(nexp.ToString() + " = " + nexp.Value);
+            Console.WriteLine(nexp.ToString() + " = " + nexp.GetValue());
         }
 
     }

@@ -126,11 +126,8 @@ namespace Lunohod.Objects
 		/// </summary>
 		/// <param name="sx"></param>
 		/// <param name="sy"></param>
-		public void SetDirection(string sx, string sy)
+		public void SetDirection(float x, float y)
 		{
-			int x = int.Parse(sx);
-			int y = int.Parse(sy);
-			
 			this.Direction = new Vector2(x, y);
 		}
         /// <summary>

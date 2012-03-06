@@ -22,10 +22,8 @@ namespace Lunohod.Objects
 			this.game = p.Game;
 		}
 		
-		public string GetLevelId(string si)
+		public string GetLevelId(int i)
 		{
-			int i = int.Parse(si);
-			
 			if (i >= game.GameObject.Levels.Length)
 				return "";
 			
@@ -34,10 +32,8 @@ namespace Lunohod.Objects
 			return level.Id;
 		}
 		
-		public void StartLevel(string si)
+		public void StartLevel(int i)
 		{
-			int i = int.Parse(si);
-			
 			if (i >= game.GameObject.Levels.Length)
 				return;
 
@@ -56,24 +52,25 @@ namespace Lunohod.Objects
 		
 		public void EndCurrentLevel()
 		{
-			this.CloseCurrentScreen();
+            this.EnqueueEvent(GameEventType.EndCurrentLevel);
 		}
-		
-		public float RndX(string startStr, string endStr)
+
+        public float RndX(float start, float end)
 		{
-			return this.Rnd(startStr, endStr) * this.game.Scale.X;
+			return this.Rnd(start, end) * this.game.Scale.X;
 		}
-		public float RndY(string startStr, string endStr)
+		public float RndY(float start, float end)
 		{
-			return this.Rnd(startStr, endStr) * this.game.Scale.Y;
+			return this.Rnd(start, end) * this.game.Scale.Y;
 		}
-		public float Rnd(string startStr, string endStr)
+		public float Rnd(float start, float end)
 		{
-			float start = float.Parse(startStr, CultureInfo.InvariantCulture);
-			float end = float.Parse(endStr, CultureInfo.InvariantCulture);
-			
-			return start + (float)random.NextDouble() * (start - end);
+			return start + (float)random.NextDouble() * (end - start);
 		}
+        public string Str(object o)
+        {
+            return o.ToString();
+        }
 	}
 }
 

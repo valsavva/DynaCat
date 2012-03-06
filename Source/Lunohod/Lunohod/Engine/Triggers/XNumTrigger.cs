@@ -27,7 +27,7 @@ namespace Lunohod.Objects
 
 		public override float GetValue1()
 		{
-			return value1Reader.Value;
+			return value1Reader.GetValue();
 		}
 		
 		internal override void ReplaceParameter(string par, string val)

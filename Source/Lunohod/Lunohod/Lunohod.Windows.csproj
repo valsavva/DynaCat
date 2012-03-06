@@ -136,16 +136,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Direction.cs" />
+    <Compile Include="Engine\Accessors\ObjectProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Expressions\BoolFlagAction.cs" />
+    <Compile Include="Engine\Expressions\BoolMethod.cs" />
     <Compile Include="Engine\Expressions\BoolProperty.cs" />
+    <Compile Include="Engine\Expressions\MethodFactory.cs" />
+    <Compile Include="Engine\Expressions\NumMethod.cs" />
     <Compile Include="Engine\Expressions\NumProperty.cs" />
+    <Compile Include="Engine\Expressions\OperatorFactory.cs" />
+    <Compile Include="Engine\Expressions\PropertyFactory.cs" />
+    <Compile Include="Engine\Expressions\StrConcatOperator.cs" />
+    <Compile Include="Engine\Expressions\StrConstant.cs" />
+    <Compile Include="Engine\Expressions\StrExpression.cs" />
+    <Compile Include="Engine\Expressions\StrMethod.cs" />
+    <Compile Include="Engine\Expressions\Validator.cs" />
+    <Compile Include="Engine\Expressions\VoidMethod.cs" />
     <Compile Include="Engine\Updates\DrawParameters.cs" />
     <Compile Include="Engine\Updates\InitializeParameters.cs" />
-    <Compile Include="Engine\Accessors\ActionCaller.cs" />
-    <Compile Include="Engine\Accessors\BoolValueReader.cs" />
-    <Compile Include="Engine\Accessors\EventCaller.cs" />
-    <Compile Include="Engine\Accessors\ObjectProxy.cs" />
-    <Compile Include="Engine\Accessors\PropertyAccessor.cs" />
-    <Compile Include="Engine\Accessors\StrValueReader.cs" />
     <Compile Include="Engine\Animation\TimeCurve.cs" />
     <Compile Include="Engine\Animation\XDelay.cs" />
     <Compile Include="Engine\Animation\XDo.cs" />
@@ -157,15 +166,15 @@
     <Compile Include="Engine\Animation\XLet.cs" />
     <Compile Include="Engine\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Animation\XRunnableBase.cs" />
-    <Compile Include="Engine\Expressions\BoolBinaryOperator.cs" />
+    <Compile Include="Engine\Expressions\BoolOperator.cs" />
     <Compile Include="Engine\Expressions\BoolConstant.cs" />
     <Compile Include="Engine\Expressions\BoolExpression.cs" />
     <Compile Include="Engine\Expressions\BoolFlag.cs" />
     <Compile Include="Engine\Expressions\CompareOperator.cs" />
     <Compile Include="Engine\Expressions\Compiler.cs" />
     <Compile Include="Engine\Expressions\Expression.cs" />
-    <Compile Include="Engine\Expressions\Function.cs" />
-    <Compile Include="Engine\Expressions\NumBinaryOperator.cs" />
+    <Compile Include="Engine\Expressions\Mehod.cs" />
+    <Compile Include="Engine\Expressions\NumOperator.cs" />
     <Compile Include="Engine\Expressions\NumConstant.cs" />
     <Compile Include="Engine\Expressions\NumExpression.cs" />
     <Compile Include="Engine\Expressions\Property.cs" />
@@ -1179,6 +1188,7 @@
     </Content>
     <Content Include="Metadata\ScreenMain.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ScreenTests.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1346,6 +1356,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <PropertyGroup>

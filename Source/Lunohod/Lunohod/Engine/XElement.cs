@@ -44,7 +44,16 @@ namespace Lunohod.Objects
 		
 		[XmlIgnore]
         public System.Drawing.RectangleF Bounds;
-		[XmlIgnore]
+        [XmlAttribute]
+        public float X { get { return this.Bounds.X; } set { this.Bounds.X = value; } }
+        [XmlAttribute]
+        public float Y { get { return this.Bounds.Y; } set { this.Bounds.Y = value; } }
+        [XmlAttribute]
+        public float Width { get { return this.Bounds.Width; } set { this.Bounds.Width = value; } }
+        [XmlAttribute]
+        public float Height { get { return this.Bounds.Height; } set { this.Bounds.Height = value; } }
+
+        [XmlIgnore]
         public Vector2 Location
 		{
 			get { this.Bounds.ToVector2(ref tmpVector1); return tmpVector1; }

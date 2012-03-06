@@ -347,7 +347,7 @@
                             <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1" InProgress="true"/>
                             
 						</ParallelSet>
-						<Do Action="this.Disable"/>
+						<Do Action="this.Disable()"/>
 					</SequenceSet>
 				</Image>
 			</IntersectionTrigger>

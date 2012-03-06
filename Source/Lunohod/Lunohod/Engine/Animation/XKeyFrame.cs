@@ -39,7 +39,7 @@ namespace Lunohod.Objects
             base.Initialize(p);
 
             this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileNumExpression(this.Parent, s)).ToList();
-            this.CurveKeys = valueReaders.Select(r => new CurveKey((float)this.Time.TotalMilliseconds, r.Value)).ToList();
+            this.CurveKeys = valueReaders.Select(r => new CurveKey((float)this.Time.TotalMilliseconds, r.GetValue())).ToList();
         }
 
         public override void Update(UpdateParameters p)
@@ -48,7 +48,7 @@ namespace Lunohod.Objects
 
             for (int i = 0; i < this.valueReaders.Count; i++)
             {
-                this.CurveKeys[i].Value = this.valueReaders[i].Value;
+                this.CurveKeys[i].Value = this.valueReaders[i].GetValue();
             }
         }
 		

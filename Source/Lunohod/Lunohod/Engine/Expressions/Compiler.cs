@@ -31,45 +31,61 @@ namespace Lunohod.Xge
         public static INumExpression CompileNumExpression(XObject currentObject, string text)
         {
             Instance.Initialize(currentObject, text);
-            return Instance.CompileNumExpression();
+            return Instance.CompileExpression<INumExpression>();
         }
 
-        public IBoolExpression CompileBoolExpression(XObject currentObject, string text)
+        public static IBoolExpression CompileBoolExpression(XObject currentObject, string text)
         {
             Instance.Initialize(currentObject, text);
-            return Instance.CompileBoolExpression();
+            return Instance.CompileExpression<IBoolExpression>();
         }
 
-        public INumExpression CompileNumExpression()
+        public static IStrExpression CompileStrExpression(XObject currentObject, string text)
         {
-            this.currentToken = scanner.NextToken();
-
-            if (M(TokenType.Eof))
-                return null;
-
-            return TNumExpression();
+            Instance.Initialize(currentObject, text);
+            return Instance.CompileExpression<IStrExpression>();
         }
 
-        public IBoolExpression CompileBoolExpression()
+        public static List<IAction> CompileStatementList(XObject currentObject, string text)
+        {
+            Instance.Initialize(currentObject, text);
+            return Instance.CompileStatementList();
+        }
+
+        public T CompileExpression<T>()
+            where T : class, IExpression
         {
             currentToken = scanner.NextToken();
 
             if (M(TokenType.Eof))
                 return null;
 
-            return TBoolExpression();
+            Expression e = TExpression();
+
+            T result = e as T;
+
+            if (result == null)
+                throw new InvalidOperationException(string.Format("Exprected expression of type '{0}', got '{1}' instead.",
+                    typeof(T).GetMethod("GetValue").ReturnType.Name,
+                    e.Type.Name
+                ));
+
+            return result;
         }
 
-        private IBoolExpression TBoolExpression()
+        private Expression TExpression()
         {
-            var expression1 = TBoolMultiplication();
+            Expression expression1 = TMultiplication();
 
-            while (M(TokenType.Or))
+            while (M(TokenType.Plus, TokenType.Minus, TokenType.Or))
             {
-                var opType = Consume().TokenType;
-                var expression2 = TBoolMultiplication();
+                var opType = P();
 
-                var op = new BoolBinaryOperator(opType, expression1, expression2);
+                Consume();
+
+                Expression expression2 = TMultiplication();
+
+                Expression op = OperatorFactory.CreateOperator(opType, expression1, expression2);
 
                 expression1 = op;
             }
@@ -77,16 +93,20 @@ namespace Lunohod.Xge
             return expression1;
         }
 
-        private IBoolExpression TBoolMultiplication()
+        private Expression TMultiplication()
         {
-            var expression1 = TPredicate();
+            Expression expression1 = TFactor();
 
-            while (M(TokenType.And))
+            while (M(TokenType.Multiply, TokenType.Divide, TokenType.Modulo, TokenType.And,
+                TokenType.Op_E, TokenType.Op_G, TokenType.Op_GE, TokenType.Op_L, TokenType.Op_LE, TokenType.Op_NE))
             {
-                var opType = Consume().TokenType;
-                var expression2 = TPredicate();
+                var opType = P();
 
-                var op = new BoolBinaryOperator(opType, expression1, expression2);
+                Consume();
+
+                Expression expression2 = TFactor();
+
+                var op = OperatorFactory.CreateOperator(opType, expression1, expression2);
 
                 expression1 = op;
             }
@@ -94,33 +114,60 @@ namespace Lunohod.Xge
             return expression1;
         }
 
-        private IBoolExpression TPredicate()
+        private Expression TFactor()
         {
-            switch (T())
+            switch (P())
             {
+                case TokenType.NumConst:
+                    {
+                        return TNumConstant();
+                    }
+                case TokenType.StrConst:
+                    {
+                        return TStrConstant();
+                    }
                 case TokenType.Id:
                     {
-                        if (this.currentToken.Text == "true")
-                        {
-                            Consume();
+                        string id = T();
+
+                        Consume();
+
+                        if (id == "true")
                             return new BoolConstant(true);
-                        }
-                        else if (this.currentToken.Text == "false")
-                        {
-                            Consume();
+                        else if (id == "false")
                             return new BoolConstant(false);
+
+                        if (M(TokenType.Colon))
+                        {
+                            return TBoolFlag(id);
                         }
 
-                        return (IBoolExpression)TBoolFlagOrPropertyOrFunction(Consume().Text);
+                        string objectId = null;
+
+                        if (M(TokenType.Dot))
+                        {
+                            Consume();
+
+                            objectId = id;
+                            id = T();
+
+                            Consume(TokenType.Id);
+                        }
+
+
+                        if (M(TokenType.LeftPar))
+                            return TMethod(objectId, id);
+                        else
+                            return TProperty(objectId, id);
                     }
                 case TokenType.At:
                     {
-                        return (IBoolExpression)TVariable<bool>();
+                        return TVariable();
                     }
                 case TokenType.LeftPar:
                     {
                         Consume();
-                        var e = TBoolExpression();
+                        var e = TExpression();
                         Consume(TokenType.RightPar);
                         return e;
                     }
@@ -128,102 +175,6 @@ namespace Lunohod.Xge
                     {
                         return TUnaryNotOperator();
                     };
-
-                default:
-                    {
-                        var expression1 = TNumExpression();
-                        var op = Consume(
-                            TokenType.Op_E,
-                            TokenType.Op_NE,
-                            TokenType.Op_G,
-                            TokenType.Op_GE,
-                            TokenType.Op_L,
-                            TokenType.Op_LE
-                        );
-                        var expression2 = TNumExpression();
-                        return new CompareOperator(op.TokenType, expression1, expression2);
-                    }
-            }
-        }
-
-        private Expression TBoolFlagOrPropertyOrFunction(string id)
-        {
-            if (M(TokenType.Semi))
-            {
-                Consume();
-                return new BoolFlag(currentObject, id, Consume(TokenType.Id).Text);
-            }
-
-            return TPropertyOrFunction<bool>(id);
-        }
-
-        private IBoolExpression TUnaryNotOperator()
-        {
-            var operatorToken = Consume();
-
-            var expression = TPredicate();
-
-            return new UnaryNotOperator(expression);
-        }
-
-        private INumExpression TNumExpression()
-        {
-            var expression1 = TNumMultiplication();
-
-            while (M(TokenType.Plus, TokenType.Minus))
-            {
-                var opType = Consume().TokenType;
-                var expression2 = TNumMultiplication();
-
-                var op = new NumBinaryOperator(opType, expression1, expression2);
-
-                expression1 = op;
-            }
-
-            return expression1;
-        }
-
-        private INumExpression TNumMultiplication()
-        {
-            var expression1 = TFactor();
-
-            while (M(TokenType.Multiply, TokenType.Divide, TokenType.Modulo))
-            {
-                var opType = Consume().TokenType;
-                var expression2 = TFactor();
-
-                var op = new NumBinaryOperator(opType, expression1, expression2);
-
-                expression1 = op;
-            }
-
-            return expression1;
-        }
-
-
-        private INumExpression TFactor()
-        {
-            switch (T())
-            {
-                case TokenType.NumConst:
-                    {
-                        return TNumConstant();
-                    }
-                case TokenType.Id:
-                    {
-                        return (INumExpression)TPropertyOrFunction<float>(Consume().Text);
-                    }
-                case TokenType.At:
-                    {
-                        return (INumExpression)TVariable<float>();
-                    }
-                case TokenType.LeftPar:
-                    {
-                        Consume();
-                        var e = TNumExpression();
-                        Consume(TokenType.RightPar);
-                        return e;
-                    }
                 case TokenType.Plus: goto case TokenType.Minus;
                 case TokenType.Minus:
                     {
@@ -233,60 +184,155 @@ namespace Lunohod.Xge
             }
         }
 
-        private INumExpression TUnaryOperator()
+        private List<IAction> CompileStatementList()
         {
-            var operatorToken = Consume();
+            currentToken = scanner.NextToken();
+
+            if (M(TokenType.Eof))
+                return null;
+
+            return TStatementList();
+        }
+
+        private List<IAction> TStatementList()
+        {
+            List<IAction> result = new List<IAction>();
+
+            while(true)
+            {
+                if (P() == TokenType.Squiggle)
+                {
+                    Consume();
+
+                    var isInstant = false;
+                    var objectId = T();
+                    Consume(TokenType.Id);
+
+                    result.Add((IAction)TFlagAction(objectId, isInstant));
+                }
+                else
+                {
+                    Ensure(TokenType.Id);
+
+                    var objectId = T();
+
+                    Consume();
+
+                    switch (P())
+                    {
+                        case TokenType.Dot:
+                            {
+                                Consume();
+
+                                var actionId = T();
+
+                                Consume();
+
+                                result.Add((IAction)TMethod(objectId, actionId));
+                            } break;
+                        case TokenType.Colon:
+                            {
+                                result.Add((IAction)TFlagAction(objectId, true));
+                            } break;
+                    }
+                }
+
+                if (M(TokenType.SemiColon))
+                    Consume();
+                else
+                    break;
+            }
+
+            return result;
+        }
+
+        private IAction TFlagAction(string objectId, bool isInstant)
+        {
+            Consume(TokenType.Colon);
+
+            string flagId = T();
+
+            if (M(TokenType.Multiply, TokenType.Plus, TokenType.Minus))
+            {
+                Consume();
+                flagId += T();
+            }
+
+            Consume(TokenType.Id);
+
+            return new BoolFlagAction(currentObject, objectId, flagId, isInstant);
+        }
+
+        private Expression TStrConstant()
+        {
+            var str = T();
+            Consume();
+            return new StrConstant(str.Substring(1, str.Length - 2));
+        }
+
+        private Expression TUnaryNotOperator()
+        {
+            Consume();
 
             var expression = TFactor();
 
-            if (operatorToken.TokenType == TokenType.Plus)
+            return new UnaryNotOperator(expression);
+        }
+
+
+        private Expression TUnaryOperator()
+        {
+            var tokenType = P();
+                
+            Consume();
+
+            var expression = TFactor();
+
+            if (tokenType == TokenType.Plus)
                 return expression;
             else
                 return new UnaryMinusOperator(expression);
         }
 
-        private Expression TVariable<T>()
+        private Expression TVariable()
         {
             throw new NotImplementedException();
         }
 
-        private INumExpression TNumConstant()
+        private Expression TNumConstant()
         {
-            return new NumConstant(float.Parse(Consume().Text));
+            string strNum = T();
+            Consume();
+            return new NumConstant(float.Parse(strNum));
         }
 
-        private Expression TPropertyOrFunction<T>(string id)
+        private Expression TProperty(string objectId, string propertyId)
         {
-            string propertyId = id;
-            string objectId  = null;
+            // Property
 
-            if (M(TokenType.Dot))
-            {
-                Consume();
+            return PropertyFactory.CreateProperty(this.currentObject, objectId, propertyId);
+        }
 
-                objectId = propertyId;
-                propertyId = Consume(TokenType.Id).Text;
-            }
+        private Expression TMethod(string objectId, string actionId)
+        {
+            Consume(TokenType.LeftPar);
 
-            if (M(TokenType.LeftPar))
-            {
-                Consume();
+            List<Expression> parameters = TFuncParameters();
 
-                List<Expression> parameters = TFuncParameters();
+            Consume(TokenType.RightPar);
 
-                Consume(TokenType.RightPar);
-                if (typeof(T) == typeof(float))
-                    return new NumFunction(this.currentObject, objectId, propertyId, parameters);
-                else
-                    return new BoolFunction(this.currentObject, objectId, propertyId, parameters);
-            }
-            else
-            {
-                if (typeof(T) == typeof(float))
-                    return new NumProperty(this.currentObject, objectId, propertyId);
-                else
-                    return new BoolProperty(this.currentObject, objectId, propertyId);
-            }
+            return MethodFactory.CreateMethod(this.currentObject, objectId, actionId, parameters);
+        }
+
+        private Expression TBoolFlag(string objectId)
+        {
+            Consume();
+
+            var flagId = T();
+
+            Consume(TokenType.Id);
+
+            return new BoolFlag(this.currentObject, objectId, flagId);
         }
 
         private List<Expression> TFuncParameters()
@@ -295,7 +341,7 @@ namespace Lunohod.Xge
 
             while (!M(TokenType.RightPar))
             {
-                var parameter = TNumExpression();
+                Expression parameter = TExpression();
                 
                 if (result == null)
                     result = new List<Expression>();
@@ -309,19 +355,27 @@ namespace Lunohod.Xge
             return result;
         }
 
-        private TokenType T()
+        private TokenType P()
         {
             return currentToken.TokenType;
         }
 
-        private Token Consume(params TokenType[] tokenTypes)
+        private string T()
+        {
+            return currentToken.Text;
+        }
+
+        private void Consume(params TokenType[] tokenTypes)
+        {
+            Ensure(tokenTypes);
+
+            currentToken = scanner.NextToken();
+        }
+
+        private void Ensure(params TokenType[] tokenTypes)
         {
             if (tokenTypes.Length > 0 && !M(tokenTypes))
-                Error("Unexpected token: " + currentToken.Text);
-
-            var oldToken = currentToken;
-            currentToken = scanner.NextToken();
-            return oldToken;
+                Error(string.Format("Unexpected token. Type: '{0}' Value: '{1}'", P(), T()));
         }
 
         private bool M(params TokenType[] tokenTypes)

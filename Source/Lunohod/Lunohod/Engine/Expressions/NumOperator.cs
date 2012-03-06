@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    public class NumBinaryOperator : NumExpression
+    public class NumOperator : NumExpression
     {
         private TokenType tokenType;
         private INumExpression expression1;
@@ -13,7 +13,7 @@ namespace Lunohod.Xge
 
         private Func<INumExpression, INumExpression, float> func;
 
-        public NumBinaryOperator(TokenType tokenType, INumExpression expression1, INumExpression expression2)
+        public NumOperator(TokenType tokenType, INumExpression expression1, INumExpression expression2)
         {
             this.tokenType = tokenType;
             this.expression1 = expression1;
@@ -21,16 +21,16 @@ namespace Lunohod.Xge
 
             switch (this.tokenType)
             {
-                case TokenType.Plus: func = (e1, e2) => e1.Value + e2.Value; break;
-                case TokenType.Minus: func = (e1, e2) => e1.Value - e2.Value; break;
-                case TokenType.Multiply: func = (e1, e2) => e1.Value * e2.Value; break;
-                case TokenType.Divide: func = (e1, e2) => e1.Value / e2.Value; break;
-                case TokenType.Modulo: func = (e1, e2) => e1.Value % e2.Value; break;
+                case TokenType.Plus: func = (e1, e2) => e1.GetValue() + e2.GetValue(); break;
+                case TokenType.Minus: func = (e1, e2) => e1.GetValue() - e2.GetValue(); break;
+                case TokenType.Multiply: func = (e1, e2) => e1.GetValue() * e2.GetValue(); break;
+                case TokenType.Divide: func = (e1, e2) => e1.GetValue() / e2.GetValue(); break;
+                case TokenType.Modulo: func = (e1, e2) => e1.GetValue() % e2.GetValue(); break;
                 default: throw new InvalidOperationException("WTF?");
             }
         }
 
-        public override float Value { get { return func(expression1, expression2); } }
+        public override float GetValue() { return func(expression1, expression2); }
 
         public override string ToString()
         {

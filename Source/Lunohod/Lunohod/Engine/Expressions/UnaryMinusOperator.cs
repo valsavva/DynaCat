@@ -9,12 +9,12 @@ namespace Lunohod.Xge
     {
         private INumExpression expression;
 
-        public UnaryMinusOperator(INumExpression expression)
+        public UnaryMinusOperator(Expression expression)
         {
-            this.expression = expression;
+            this.expression = Validator.CheckType<INumExpression>(expression);
         }
 
-        public override float Value { get { return -this.expression.Value; } }
+        public override float GetValue() { return -this.expression.GetValue(); }
 
         public override string ToString()
         {

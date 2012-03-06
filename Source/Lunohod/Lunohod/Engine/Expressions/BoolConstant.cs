@@ -15,7 +15,7 @@ namespace Lunohod.Xge
             this.boolean = boolean;
         }
 
-        public override bool Value { get { return boolean; } }
+        public override bool GetValue() { return boolean; }
 
         public override string ToString()
         {

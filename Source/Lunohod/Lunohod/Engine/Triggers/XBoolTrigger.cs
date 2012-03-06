@@ -6,13 +6,14 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
 	[XmlType("BoolTrigger")]
 	public class XBoolTrigger : XTriggerBase
 	{
-		private BoolValueReader valueReader;
+		private IBoolExpression valueReader;
 		
 		[XmlAttribute]
 		public string Condition;
@@ -21,12 +22,12 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			valueReader = new BoolValueReader(this, this.Condition);
+			valueReader = Compiler.CompileBoolExpression(this, this.Condition ?? "true");
 		}
 		
 		public override bool IsTriggered()
 		{
-			return valueReader.Value;
+			return valueReader.GetValue();
 		}
 		
 		internal override void ReplaceParameter(string par, string val)

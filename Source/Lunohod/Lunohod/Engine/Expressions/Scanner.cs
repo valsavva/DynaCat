@@ -19,10 +19,12 @@ namespace Lunohod.Xge
             { "%", TokenType.Modulo },
             { ".", TokenType.Dot },
             { ",", TokenType.Comma },
-            { "&", TokenType.And},
-            { "|", TokenType.Or},
-            { "!", TokenType.Not},
-            { ":", TokenType.Semi},
+            { "&", TokenType.And },
+            { "|", TokenType.Or },
+            { "!", TokenType.Not },
+            { ":", TokenType.Colon },
+            { ";", TokenType.SemiColon },
+            { "~", TokenType.Squiggle },
 
             { "=",  TokenType.Op_E  },
             { "!=", TokenType.Op_NE },
@@ -77,29 +79,37 @@ namespace Lunohod.Xge
                         for (; i < text.Length && char.IsDigit(text[i]); i++) { }
                     }
 
-                    tokenText = text.Substring(start, i - start);
                 }
                 // str const
                 else if (ch == '\'')
                 {
+                    i++;
+
                     tokenType = TokenType.StrConst;
 
                     // TODO need escaping support
-                    for (; i < text.Length && (text[i] != '\''); i++) { }
+                    while (true)
+                    {
+                        for (; i < text.Length && (text[i] != '\''); i++) { }
+                        if (i + 1 < text.Length && (text[i + 1] == '\''))
+                            i += 2;
+                        else
+                            break;
+                    }
+
 
                     if (i >= text.Length)
                         Error("Invalid string constant");
 
-                    tokenText = text.Substring(start, i - start);
+                    i++;
+
                 }
                 // id
                 else if (char.IsLetter(ch))
                 {
                     tokenType = TokenType.Id;
 
-                    for (; i < text.Length && char.IsLetterOrDigit(text[i]); i++) { }
-
-                    tokenText = text.Substring(start, i - start);
+                    for (; i < text.Length && (char.IsLetterOrDigit(text[i]) || text[i] == '_'); i++) { }
                 }
                 else
                 {
@@ -118,6 +128,8 @@ namespace Lunohod.Xge
                         i++;
                     }
                 }
+
+                tokenText = text.Substring(start, i - start);
 
                 return new Token(tokenType, tokenText);
             }
