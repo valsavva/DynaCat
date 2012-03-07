@@ -20,7 +20,7 @@
 			<SequenceSet InProgress="true">
 				<Do Action="this_sndBombHiss.Start();hero:+WaitingExplosion"/>
 				<NumAnimation Target="this_imgBomb.Opacity" From="1" To="0" Duration="0.1" Autoreverse="true" RepeatCount="4"/>
-				<Do Action="this_imgBomb.Disable()"/>
+				<Do Action="this_ißmgBomb.Disable()"/>
 				<Do Action="this_sndExplosion.Start();this_imgExplosion.Enable();this_sndBombHiss.Stop()"/>
 				<ParallelSet InProgress="true">
 					<SequenceSet InProgress="true">
