@@ -16,17 +16,17 @@
             <Image Id="this_imgExitStatic" TextureId="txrExitStatic"/>
 			<Image Id="this_imgExitFlight" TextureId="txrExitFlight" Bounds="-12,0,62,54" Enabled="false"/>
 			<Sound Id="this_sndExitFlight" FileId="sndExitFlight" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-			<Sprite Id="sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="10,56,16,34" FrameBounds="0,0,16,34" Enabled="false">
+			<Sprite Id="sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="12,56,16,34" FrameBounds="0,0,16,34" Enabled="false">
 			    <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
 			</Sprite>
 			<SequenceSet Id="this_setExit" InProgress="false">
+                <Let Target="vleHeroPoint.X,vleHeroPoint.Y,vleHeroDestPoint.X,vleHeroDestPoint.Y" Value="hero.X,hero.Y,exit.X,exit.Y"/>
+                <NumAnimation Target="vleHeroPoint.X,vleHeroPoint.Y,vleHeroDestPoint.X,vleHeroDestPoint.Y" From="0,0,0,0" To="3,0,2,20" Duration="0.01" IsDelta="true" Fill="End" RepeatCount="1"/>
+                <Do Action="hero:+Enter"/>
 				<Do Action="this_sndExitFlight.Start()"/>
-				<Do Action="hero.StartTransaction()"/>
-                <Do Action="hero.SetDirection(0,0)"/>
-                <ParallelSet>
-    				<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="1" Autoreverse="false" IsDelta="false" InProgress="true" RepeatCount="1" Fill="End"/>
-                    <NumAnimation Target="this.Opacity" Duration="0.2" Autoreverse="false" From="1" To="0" InProgress="true" RepeatCount="10"/>
-                </ParallelSet>
+    <!--<Do Action="hero.StartTransaction()"/>
+                <Do Action="hero.SetDirection(0,0)"/>-->
+                <Delay Duration="2"/>
                 <Do Action="this_imgExitStatic.Disable();this_imgExitFlight.Enable()"/>
 				<ParallelSet>
                     <Do Action="sprExitFlightFire.Enable()"/>
@@ -37,7 +37,7 @@
     					<KeyFrame Time="2.5" Value="-100,-400,-25" Smoothing="Smooth"/>
     				</NumAnimation>
 				</ParallelSet>
-				<Do Action="hero.EndTransaction()"/>
+                <!--<Do Action="hero.EndTransaction()"/>-->
 				<Do Action="system.EndCurrentLevel()"/>
 			</SequenceSet>
 			
@@ -46,6 +46,8 @@
 	</Class>
 
 </Include>
+
+
 
 
 
