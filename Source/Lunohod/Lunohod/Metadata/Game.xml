@@ -16,7 +16,8 @@
 	</Screens>
 	<Levels>
 
-
+		<Level Id="---" File="S01L01.xml" />
+		<Level Id="S01L01" File="S01L01.xml" />
 		<Level Id="AlphaTest" File="AlphaTest.xml" />
 		<Level Id="style100500" File="style100500.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />

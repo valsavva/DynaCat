@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.4.05 -->
+<!-- source: D:\Lunohod\ReleaseLevels\S01L01\S01L01.svg -->
+<Level Name="S01L01" Bounds="0, 0, 480, 320">
+    <LevelSettings Dificulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
+    <Include File="ClassHero.xml"/>
+    <Include File="ClassExit.xml"/>
+    <Include File="ClassTower.xml"/>
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_brickBlue" Source="brickBlue"/>
+        <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean"/>
+        <Texture Id="txr_texture_brick_5" Source="texture_brick_5"/>
+        <Texture Id="txr_texture_brick_6" Source="texture_brick_6"/>
+        <Texture Id="txr_texture_brick_1" Source="texture_brick_1"/>
+        <Texture Id="txr_texture_brick_2" Source="texture_brick_2"/>
+        <Texture Id="txr_tap_this_button_arrow" Source="tap_this_button_arrow"/>
+        <Texture Id="txr_tap_this_button_text" Source="tap_this_button_text"/>
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image4782"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="-50, -24, 590, 50" Edges="Stick" TraceId="image3420"/>
+        <Block Id="blk2" Bounds="-50, 296, 590, 50" Edges="Stick" TraceId="image3423"/>
+        <Block Id="blk3" Bounds="-120, 0, 120, 347" Edges="Stick" TraceId="image3425"/>
+        <Block Id="blk4" Bounds="458, 0, 120, 347" Edges="Stick" TraceId="image3427"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_texture_brick_clean" Bounds="18, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3498"/>
+        <Image Id="dfltMask3" TextureId="txr_texture_brick_clean" Bounds="58, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3523"/>
+        <Image Id="dfltMask4" TextureId="txr_texture_brick_clean" Bounds="258, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3529"/>
+        <Image Id="dfltMask5" TextureId="txr_texture_brick_5" Bounds="138, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3539"/>
+        <Image Id="dfltMask6" TextureId="txr_texture_brick_6" Bounds="298, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3605"/>
+        <Image Id="dfltMask7" TextureId="txr_texture_brick_clean" Bounds="98, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3630"/>
+        <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="178, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3632"/>
+        <Image Id="dfltMask9" TextureId="txr_texture_brick_clean" Bounds="378, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3634"/>
+        <Image Id="dfltMask10" TextureId="txr_texture_brick_clean" Bounds="418, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3636"/>
+        <Image Id="dfltMask11" TextureId="txr_texture_brick_clean" Bounds="458, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3638"/>
+        <Image Id="dfltMask12" TextureId="txr_texture_brick_clean" Bounds="458, 26, 40, 30" Stretch="false" Opacity="1" TraceId="image3640"/>
+        <Image Id="dfltMask13" TextureId="txr_texture_brick_clean" Bounds="458, 86, 40, 30" Stretch="false" Opacity="1" TraceId="image3644"/>
+        <Image Id="dfltMask14" TextureId="txr_texture_brick_clean" Bounds="458, 116, 40, 30" Stretch="false" Opacity="1" TraceId="image3646"/>
+        <Image Id="dfltMask15" TextureId="txr_texture_brick_clean" Bounds="458, 146, 40, 30" Stretch="false" Opacity="1" TraceId="image3648"/>
+        <Image Id="dfltMask16" TextureId="txr_texture_brick_5" Bounds="458, 176, 40, 30" Stretch="false" Opacity="1" TraceId="image3650"/>
+        <Image Id="dfltMask17" TextureId="txr_texture_brick_clean" Bounds="458, 206, 40, 30" Stretch="false" Opacity="1" TraceId="image3652"/>
+        <Image Id="dfltMask18" TextureId="txr_texture_brick_clean" Bounds="458, 236, 40, 30" Stretch="false" Opacity="1" TraceId="image3654"/>
+        <Image Id="dfltMask19" TextureId="txr_texture_brick_clean" Bounds="458, 266, 40, 30" Stretch="false" Opacity="1" TraceId="image3656"/>
+        <Image Id="dfltMask20" TextureId="txr_texture_brick_5" Bounds="458, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3658"/>
+        <Image Id="dfltMask21" TextureId="txr_texture_brick_clean" Bounds="418, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3660"/>
+        <Image Id="dfltMask22" TextureId="txr_texture_brick_clean" Bounds="378, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3662"/>
+        <Image Id="dfltMask23" TextureId="txr_texture_brick_clean" Bounds="338, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3664"/>
+        <Image Id="dfltMask24" TextureId="txr_texture_brick_1" Bounds="298, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3666"/>
+        <Image Id="dfltMask25" TextureId="txr_texture_brick_clean" Bounds="258, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3668"/>
+        <Image Id="dfltMask26" TextureId="txr_texture_brick_clean" Bounds="218, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3670"/>
+        <Image Id="dfltMask27" TextureId="txr_texture_brick_5" Bounds="178, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3672"/>
+        <Image Id="dfltMask28" TextureId="txr_texture_brick_2" Bounds="138, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3674"/>
+        <Image Id="dfltMask29" TextureId="txr_texture_brick_clean" Bounds="98, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3676"/>
+        <Image Id="dfltMask30" TextureId="txr_texture_brick_clean" Bounds="58, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3678"/>
+        <Image Id="dfltMask31" TextureId="txr_texture_brick_clean" Bounds="18, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3680"/>
+        <Image Id="dfltMask32" TextureId="txr_texture_brick_clean" Bounds="218, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3682"/>
+        <Image Id="dfltMask33" TextureId="txr_texture_brick_clean" Bounds="338, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3684"/>
+        <Image Id="dfltMask34" TextureId="txr_texture_brick_clean" Bounds="458, 56, 40, 30" Stretch="false" Opacity="1" TraceId="image3686"/>
+        <Image Id="dfltMask35" TextureId="txr_texture_brick_clean" Bounds="-22, -4, 40, 30" Stretch="false" Opacity="1" TraceId="image3688"/>
+        <Image Id="dfltMask36" TextureId="txr_texture_brick_clean" Bounds="-22, 296, 40, 30" Stretch="false" Opacity="1" TraceId="image3690"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Hero Id="hero" Class="clsHero" Bounds="320, 168, 33, 24" TraceId="image3173"/>
+        <Group Id="exit" Class="clsExit" Bounds="120, 150, 37, 54" TraceId="image3175"/>
+<!-- HAND EDIT >>> -->
+        <Image Id="dfltMask37" TextureId="txr_tap_this_button_arrow" Bounds="60, 200, 92, 66" Stretch="false" Opacity="1" Enabled="false" TraceId="image3745"/>
+
+        <Image Id="dfltMask38" TextureId="txr_tap_this_button_text" Bounds="150, -366, 154, 36" Stretch="false" Opacity="1" TraceId="image3734"/>
+        <SequenceSet Id="anm1a" InProgress="true">
+            <Delay Duration="3"/>
+            <NumAnimation From="0" To="600" Target="dfltMask38.Y" Duration="1.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3711"/>
+            <NumAnimation From="0" To="-20" Target="dfltMask38.Y" Duration="0.2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3711"/>
+            <NumAnimation From="0" To="-5" Target="dfltMask38.Y" Duration="0.2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" Fill="End" TraceId="image3711"/>
+            <Do Action="dfltMask37.Enable()"/>
+        </SequenceSet>
+
+<!-- <<< HAND EDIT -->
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3094"/>
+    </Layer>
+    <Include File="ClassExplosion.xml"/>
+    <Include File="Dashboard.xml"/>
+</Level>
+<!-- Food=0 Enemy=0 Block=4 DesignImage=38 Animation=1 Teleport=0 FoodPack=0 -->
+
