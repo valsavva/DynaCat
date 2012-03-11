@@ -11,22 +11,28 @@ namespace Lunohod.Xge
         Type Type { get; }
     }
 
-    public interface INumExpression : IExpression
+    public interface IExpression<T> : IExpression
     {
-        float GetValue();
+        T GetValue();
     }
 
-    public interface IBoolExpression : IExpression
+    public interface INumExpression : IExpression<float>
     {
-        bool GetValue();
     }
 
-    public interface IStrExpression : IExpression
+    public interface IBoolExpression : IExpression<bool>
     {
-        string GetValue();
     }
 
-    public interface IAssignable<T>
+    public interface IStrExpression : IExpression<string>
+    {
+    }
+
+    public interface IAssignable
+    {
+    }
+
+    public interface IAssignable<T> : IAssignable
     {
         void SetValue(T v);
     }

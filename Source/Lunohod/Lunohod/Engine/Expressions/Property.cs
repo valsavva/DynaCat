@@ -8,7 +8,12 @@ using System.Diagnostics;
 
 namespace Lunohod.Xge
 {
-    public abstract class Property<T> : Expression<T>, IAssignable<T>
+    public interface IProperty
+    {
+        string Id { get; }
+    }
+
+    public abstract class Property<T> : Expression<T>, IProperty, IAssignable<T>
     {
         protected string objectId;
         protected string propertyId;
@@ -23,6 +28,8 @@ namespace Lunohod.Xge
         {
             this.objectId = objectId;
             this.propertyId = propertyId;
+
+            this.Id = propertyId;
 
             if (objectId == null)
                 target = currentObject.Parent;
@@ -50,6 +57,8 @@ namespace Lunohod.Xge
             setter = this.SetConvertedValue;
         }
 
+        public string Id { get; private set; }
+
         public override T GetValue()
         {
             return getter();
@@ -72,7 +81,7 @@ namespace Lunohod.Xge
         
         public override string ToString()
         {
-            return (string.IsNullOrEmpty(objectId) ? "" : objectId + ".") + propertyId;
+            return string.IsNullOrEmpty(objectId) ? propertyId : objectId + "." + propertyId;
         }
     }
 }

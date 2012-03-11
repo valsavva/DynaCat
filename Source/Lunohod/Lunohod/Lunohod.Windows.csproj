@@ -139,6 +139,7 @@
     <Compile Include="Engine\Accessors\ObjectProxy.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\Expressions\AssignStatement.cs" />
     <Compile Include="Engine\Expressions\BoolFlagAction.cs" />
     <Compile Include="Engine\Expressions\BoolMethod.cs" />
     <Compile Include="Engine\Expressions\BoolProperty.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Engine\Expressions\StrExpression.cs" />
     <Compile Include="Engine\Expressions\StrMethod.cs" />
     <Compile Include="Engine\Expressions\Validator.cs" />
+    <Compile Include="Engine\Expressions\Variable.cs" />
     <Compile Include="Engine\Expressions\VoidMethod.cs" />
     <Compile Include="Engine\Updates\DrawParameters.cs" />
     <Compile Include="Engine\Updates\InitializeParameters.cs" />
@@ -1475,6 +1477,7 @@
     </Content>
     <Content Include="Metadata\ClassExplosion.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassFood.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

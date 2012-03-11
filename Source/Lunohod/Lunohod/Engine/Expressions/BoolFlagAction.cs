@@ -28,5 +28,10 @@ namespace Lunohod.Xge
             if (target.Enabled)
                 target.EnqueueEvent(evnt, isInstant);
         }
+
+        public override string ToString()
+        {
+            return isInstant ? evnt : "~" + evnt;
+        }
     }
 }

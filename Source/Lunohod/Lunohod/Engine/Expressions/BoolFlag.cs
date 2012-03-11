@@ -22,5 +22,10 @@ namespace Lunohod.Xge
         {
             return GameEngine.Instance.ScreenEngine.CurrentEvents.ContainsKey(this.eventName);
         }
+
+        public override string ToString()
+        {
+            return eventName;
+        }
     }
 }

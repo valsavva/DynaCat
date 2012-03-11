@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Lunohod.Objects;
+using System.Globalization;
+using Lunohod.Windows.Engine.Expressions;
 
 namespace Lunohod.Xge
 {
@@ -142,23 +144,7 @@ namespace Lunohod.Xge
                             return TBoolFlag(id);
                         }
 
-                        string objectId = null;
-
-                        if (M(TokenType.Dot))
-                        {
-                            Consume();
-
-                            objectId = id;
-                            id = T();
-
-                            Consume(TokenType.Id);
-                        }
-
-
-                        if (M(TokenType.LeftPar))
-                            return TMethod(objectId, id);
-                        else
-                            return TProperty(objectId, id);
+                        return TMethodOrProperty(id);
                     }
                 case TokenType.At:
                     {
@@ -184,6 +170,27 @@ namespace Lunohod.Xge
             }
         }
 
+        private Expression TMethodOrProperty(string id)
+        {
+            string objectId = null;
+
+            if (M(TokenType.Dot))
+            {
+                Consume();
+
+                objectId = id;
+                id = T();
+
+                Consume(TokenType.Id);
+            }
+
+
+            if (M(TokenType.LeftPar))
+                return TMethod(objectId, id);
+            else
+                return TProperty(objectId, id);
+        }
+
         private List<IAction> CompileStatementList()
         {
             currentToken = scanner.NextToken();
@@ -200,7 +207,11 @@ namespace Lunohod.Xge
 
             while(true)
             {
-                if (P() == TokenType.Squiggle)
+                if (P() == TokenType.At)
+                {
+                    result.Add(TVariableAssignStatement());
+                }
+                else if (P() == TokenType.Squiggle)
                 {
                     Consume();
 
@@ -208,13 +219,13 @@ namespace Lunohod.Xge
                     var objectId = T();
                     Consume(TokenType.Id);
 
-                    result.Add((IAction)TFlagAction(objectId, isInstant));
+                    result.Add(TFlagAction(objectId, isInstant));
                 }
                 else
                 {
                     Ensure(TokenType.Id);
 
-                    var objectId = T();
+                    var id = T();
 
                     Consume();
 
@@ -222,17 +233,17 @@ namespace Lunohod.Xge
                     {
                         case TokenType.Dot:
                             {
-                                Consume();
+                                var methodOrProperty = TMethodOrProperty(id);
 
-                                var actionId = T();
+                                if (methodOrProperty is IProperty)
+                                    result.Add(TAssignStatement((IAssignable)methodOrProperty));
+                                else
+                                    result.Add((IAction)methodOrProperty);
 
-                                Consume();
-
-                                result.Add((IAction)TMethod(objectId, actionId));
                             } break;
                         case TokenType.Colon:
                             {
-                                result.Add((IAction)TFlagAction(objectId, true));
+                                result.Add((IAction)TFlagAction(id, true));
                             } break;
                     }
                 }
@@ -244,6 +255,22 @@ namespace Lunohod.Xge
             }
 
             return result;
+        }
+
+        private IAction TAssignStatement(IAssignable lExpression)
+        {
+            Consume(TokenType.Op_E);
+
+            var rExpression = TExpression();
+
+            return new AssignStatement(lExpression, rExpression);
+        }
+
+        private IAction TVariableAssignStatement()
+        {
+            var variable = TVariable();
+
+            return TAssignStatement((IAssignable)variable);
         }
 
         private IAction TFlagAction(string objectId, bool isInstant)
@@ -303,7 +330,7 @@ namespace Lunohod.Xge
         {
             string strNum = T();
             Consume();
-            return new NumConstant(float.Parse(strNum));
+            return new NumConstant(float.Parse(strNum, CultureInfo.InvariantCulture));
         }
 
         private Expression TProperty(string objectId, string propertyId)
