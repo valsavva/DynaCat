@@ -37,6 +37,12 @@ namespace Lunohod.Tests
             Assert.AreEqual(5, Compiler.CompileExpression<float>(level, "1 + 2 * 2").GetValue());
             Assert.AreEqual(5, Compiler.CompileExpression<float>(level, "10 % 3 + 2 * 2 + (10 - 2 * 5)").GetValue());
 
+            Assert.IsTrue(Compiler.CompileExpression<bool>(level, "6 > 5").GetValue());
+            Assert.IsTrue(Compiler.CompileExpression<bool>(level, "6 >= 6").GetValue());
+            Assert.IsTrue(Compiler.CompileExpression<bool>(level, "6 == 6").GetValue());
+            Assert.IsTrue(Compiler.CompileExpression<bool>(level, "6 <= 6").GetValue());
+            Assert.IsTrue(Compiler.CompileExpression<bool>(level, "6 < 7").GetValue());
+
             Assert.AreEqual("abc123", Compiler.CompileExpression<string>(level, "'abc' + '123'").GetValue());
         }
 

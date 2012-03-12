@@ -36,5 +36,6 @@ namespace Lunohod.Xge
         Op_GE,
         Op_L,
         Op_LE,
+        Assign,
     }
 }

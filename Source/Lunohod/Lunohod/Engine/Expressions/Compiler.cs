@@ -253,7 +253,7 @@ namespace Lunohod.Xge
 
         private IAction TAssignStatement(IAssignable lExpression)
         {
-            Consume(TokenType.Op_E);
+            Consume(TokenType.Assign);
 
             var rExpression = TExpression();
 

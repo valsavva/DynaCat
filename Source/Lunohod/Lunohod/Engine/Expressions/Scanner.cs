@@ -25,8 +25,9 @@ namespace Lunohod.Xge
             { ":", TokenType.Colon },
             { ";", TokenType.SemiColon },
             { "~", TokenType.Squiggle },
+            { "=", TokenType.Assign },
 
-            { "=",  TokenType.Op_E  },
+            { "==",  TokenType.Op_E  },
             { "!=", TokenType.Op_NE },
             { ">",  TokenType.Op_G  },
             { ">=", TokenType.Op_GE },
@@ -119,7 +120,9 @@ namespace Lunohod.Xge
 
                     if (i < text.Length && text[i] == '=')
                     {
-                        if (tokenType == TokenType.Not)
+                        if (tokenType == TokenType.Assign)
+                            tokenType = TokenType.Op_E;
+                        else if (tokenType == TokenType.Not)
                             tokenType = TokenType.Op_NE;
                         else if (tokenType == TokenType.Op_G)
                             tokenType = TokenType.Op_GE;
