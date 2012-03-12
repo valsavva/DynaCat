@@ -33,11 +33,11 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			if (this.Action != null)
-				this.actions = Compiler.CompileStatementList(this, this.Action);
+				this.actions = Compiler.CompileStatements(this, this.Action);
 			if (this.EnterAction != null)
-                this.enterActions = Compiler.CompileStatementList(this, this.EnterAction);
+                this.enterActions = Compiler.CompileStatements(this, this.EnterAction);
 			if (this.ExitAction != null)
-                this.exitActions = Compiler.CompileStatementList(this, this.ExitAction);
+                this.exitActions = Compiler.CompileStatements(this, this.ExitAction);
 		}
 		
 		public abstract bool IsTriggered();

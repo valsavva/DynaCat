@@ -14,14 +14,20 @@ namespace Lunohod.Xge
         private Token currentToken;
         private XObject currentObject;
 
-        private static Compiler instance = new Compiler();
-
-        public static Compiler Instance { get { return instance; } }
+        static Compiler()
+        {
+            Instance = new Compiler();
+        }
 
         private Compiler()
         {
             this.scanner = new Scanner();
+            this.VariableStorage = new Dictionary<string, Variable>();
         }
+
+        public static Compiler Instance { get; private set; }
+
+        public Dictionary<string, Variable> VariableStorage { get; private set; }
 
         private void Initialize(XObject currentObject, string text)
         {
@@ -30,32 +36,19 @@ namespace Lunohod.Xge
             this.scanner.Initialize(text);
         }
 
-        public static INumExpression CompileNumExpression(XObject currentObject, string text)
+        public static IExpression<T> CompileExpression<T>(XObject currentObject, string text)
         {
             Instance.Initialize(currentObject, text);
-            return Instance.CompileExpression<INumExpression>();
+            return Instance.CompileExpression<T>();
         }
 
-        public static IBoolExpression CompileBoolExpression(XObject currentObject, string text)
+        public static List<IAction> CompileStatements(XObject currentObject, string text)
         {
             Instance.Initialize(currentObject, text);
-            return Instance.CompileExpression<IBoolExpression>();
+            return Instance.CompileStatements();
         }
 
-        public static IStrExpression CompileStrExpression(XObject currentObject, string text)
-        {
-            Instance.Initialize(currentObject, text);
-            return Instance.CompileExpression<IStrExpression>();
-        }
-
-        public static List<IAction> CompileStatementList(XObject currentObject, string text)
-        {
-            Instance.Initialize(currentObject, text);
-            return Instance.CompileStatementList();
-        }
-
-        public T CompileExpression<T>()
-            where T : class, IExpression
+        public IExpression<T> CompileExpression<T>()
         {
             currentToken = scanner.NextToken();
 
@@ -64,7 +57,7 @@ namespace Lunohod.Xge
 
             Expression e = TExpression();
 
-            T result = e as T;
+            var result = e as IExpression<T>;
 
             if (result == null)
                 throw new InvalidOperationException(string.Format("Exprected expression of type '{0}', got '{1}' instead.",
@@ -191,7 +184,7 @@ namespace Lunohod.Xge
                 return TProperty(objectId, id);
         }
 
-        private List<IAction> CompileStatementList()
+        private List<IAction> CompileStatements()
         {
             currentToken = scanner.NextToken();
 
@@ -248,9 +241,10 @@ namespace Lunohod.Xge
                     }
                 }
 
-                if (M(TokenType.SemiColon))
+                while (M(TokenType.SemiColon))
                     Consume();
-                else
+
+                if (M(TokenType.Eof))
                     break;
             }
 
@@ -323,7 +317,11 @@ namespace Lunohod.Xge
 
         private Expression TVariable()
         {
-            throw new NotImplementedException();
+            Consume(TokenType.At);
+            var id = currentToken.Text;
+            Consume(TokenType.Id);
+
+            return Variable.GetOrCreateVariable(this.VariableStorage, id);
         }
 
         private Expression TNumConstant()

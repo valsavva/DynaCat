@@ -21,7 +21,7 @@ namespace Lunohod.Objects
 	
 	public abstract class XNumTriggerBase : XTriggerBase
 	{
-		protected INumExpression value2Reader;
+		protected IExpression<float> value2Reader;
 		protected Func<float, float, bool> compareFunc;
 		
 		private static readonly Dictionary<XValueComparison, Func<float, float, bool>> compareFuncs = new Dictionary<XValueComparison, Func<float, float, bool>>
@@ -49,7 +49,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			value2Reader = Compiler.CompileNumExpression(this, this.Value);
+			value2Reader = Compiler.CompileExpression<float>(this, this.Value);
 			compareFunc = compareFuncs[this.Compare];
 		}
 		

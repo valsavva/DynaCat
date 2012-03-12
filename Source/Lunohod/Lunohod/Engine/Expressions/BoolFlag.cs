@@ -6,7 +6,7 @@ using Lunohod.Objects;
 
 namespace Lunohod.Xge
 {
-    class BoolFlag : BoolExpression
+    class BoolFlag : Expression<bool>
     {
         private string eventName;
 

@@ -45,7 +45,7 @@ namespace Lunohod.Objects
 			
 			p.Game.ScreenEngine.tapAreas.Add(this);
 			
-			actions = Compiler.CompileStatementList(this, this.Action);
+			actions = Compiler.CompileStatements(this, this.Action);
 		}
 		
 		public override void Update(UpdateParameters p)

@@ -1,0 +1,79 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NUnit.Framework;
+using Lunohod.Objects;
+using System.Drawing;
+using Lunohod.Xge;
+
+namespace Lunohod.Tests
+{
+    [TestFixture]
+    public class XgeTests
+    {
+        private XLevel level;
+        private XBlock block;
+        private XSystem system;
+
+        [SetUp]
+        public void Init()
+        {
+            Compiler.Instance.VariableStorage.Clear();
+
+            level = new XLevel() { Id = "lvlTest" };
+            system = new XSystem { Id="system" };
+            block = new XBlock() { Id = "blkBlock01", Bounds = new RectangleF(10, 10, 20, 20) };
+
+
+            level.Subcomponents = new XObjectCollection() {
+                system, block
+            };
+        }
+
+        [Test]
+        public void SimpleExpressions()
+        {
+            Assert.AreEqual(5, Compiler.CompileExpression<float>(level, "1 + 2 * 2").GetValue());
+            Assert.AreEqual(5, Compiler.CompileExpression<float>(level, "10 % 3 + 2 * 2 + (10 - 2 * 5)").GetValue());
+
+            Assert.AreEqual("abc123", Compiler.CompileExpression<string>(level, "'abc' + '123'").GetValue());
+        }
+
+        [Test]
+        public void Variables()
+        {
+            Compiler.CompileStatements(level, "@a=10").ForEach(a => a.Call());
+            Assert.IsTrue(Compiler.Instance.VariableStorage.ContainsKey("a"));
+            Assert.AreEqual(10, Compiler.CompileExpression<float>(level, "@a").GetValue());
+
+            Compiler.CompileStatements(level, "@b='abc'").ForEach(a => a.Call());
+            Assert.IsTrue(Compiler.Instance.VariableStorage.ContainsKey("b"));
+            Assert.AreEqual("abc", Compiler.CompileExpression<string>(level, "@b").GetValue());
+
+            Compiler.CompileStatements(level, "@c=true").ForEach(a => a.Call());
+            Assert.IsTrue(Compiler.Instance.VariableStorage.ContainsKey("c"));
+            Assert.AreEqual(true, Compiler.CompileExpression<bool>(level, "@c").GetValue());
+        }
+
+        [Test]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void VariableTypeChecking()
+        {
+            Compiler.CompileStatements(level, "@a=10").ForEach(a => a.Call());
+            Compiler.CompileStatements(level, "@a='abc'").ForEach(a => a.Call());
+            Compiler.CompileExpression<float>(level, "@a").GetValue();
+        }
+
+        [Test]
+        public void AssignStatements()
+        {
+            Compiler.CompileStatements(level, "@a=10;@b='123' + system.Str(456);@c=@a>3;" + block.Id + ".X = 777;").ForEach(a => a.Call());
+
+            Assert.AreEqual(10, Compiler.CompileExpression<float>(level, "@a").GetValue());
+            Assert.AreEqual("123456", Compiler.CompileExpression<string>(level, "@b").GetValue());
+            Assert.IsTrue(Compiler.CompileExpression<bool>(level, "@c").GetValue());
+            Assert.AreEqual(777, block.X);
+        }
+    }
+}

@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    class BoolOperator : BoolExpression
+    class BoolOperator : Expression<bool>
     {
         private TokenType tokenType;
-        private IBoolExpression expression1;
-        private IBoolExpression expression2;
+        private IExpression<bool> expression1;
+        private IExpression<bool> expression2;
 
-        public BoolOperator(TokenType tokenType, IBoolExpression expression1, IBoolExpression expression2)
+        public BoolOperator(TokenType tokenType, IExpression<bool> expression1, IExpression<bool> expression2)
         {
             this.tokenType = tokenType;
             this.expression1 = expression1;

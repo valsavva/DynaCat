@@ -6,7 +6,7 @@ using Lunohod.Objects;
 
 namespace Lunohod.Xge
 {
-    public class StrMethod : Method<string>, IStrExpression
+    public class StrMethod : Method<string>, IExpression<string>
     {
         public StrMethod(XObject currentObject, string objectId, string actionId, List<Expression> parameters)
             : base(currentObject, objectId, actionId, parameters)
@@ -30,7 +30,7 @@ namespace Lunohod.Xge
         // System
         public string ActionGetLevelId()
         {
-            return system.GetLevelId((int)((INumExpression)parameters[0]).GetValue());
+            return system.GetLevelId((int)((IExpression<float>)parameters[0]).GetValue());
         }
         public string ActionStr()
         {

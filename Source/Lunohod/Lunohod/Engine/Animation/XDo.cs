@@ -34,7 +34,7 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            actions = Compiler.CompileStatementList(this, this.Action);
+            actions = Compiler.CompileStatements(this, this.Action);
         }
 
         internal override void UpdateProgress(UpdateParameters p)

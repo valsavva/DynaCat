@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    public class UnaryMinusOperator : NumExpression
+    public class UnaryMinusOperator : Expression<float>
     {
-        private INumExpression expression;
+        private IExpression<float> expression;
 
         public UnaryMinusOperator(Expression expression)
         {
-            this.expression = Validator.CheckType<INumExpression>(expression);
+            this.expression = Validator.CheckType<IExpression<float>>(expression);
         }
 
         public override float GetValue() { return -this.expression.GetValue(); }

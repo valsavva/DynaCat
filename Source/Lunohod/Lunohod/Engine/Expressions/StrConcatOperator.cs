@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    class StrConcatOperator : StrExpression
+    class StrConcatOperator : Expression<string>
     {
-        private IStrExpression expression1;
-        private IStrExpression expression2;
+        private IExpression<string> expression1;
+        private IExpression<string> expression2;
 
-        public StrConcatOperator(IStrExpression expression1, IStrExpression expression2)
+        public StrConcatOperator(IExpression<string> expression1, IExpression<string> expression2)
         {
             this.expression1 = expression1;
             this.expression2 = expression2;
@@ -23,7 +23,7 @@ namespace Lunohod.Xge
 
         public override string ToString()
         {
-            return string.Format("({0} + {2})", expression1, expression2);
+            return string.Format("({0} + {1})", expression1, expression2);
         }
     }
 }

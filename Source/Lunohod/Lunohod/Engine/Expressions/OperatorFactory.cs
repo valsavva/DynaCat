@@ -40,20 +40,20 @@ namespace Lunohod.Xge
 
         public static Expression NewNumOperator(TokenType tokenType, Expression expression1, Expression expression2)
         {
-            if (tokenType == TokenType.Plus && expression1 is IStrExpression)
-                return new StrConcatOperator(Validator.CheckType<IStrExpression>(expression1), Validator.CheckType<IStrExpression>(expression2));
+            if (tokenType == TokenType.Plus && expression1 is IExpression<string>)
+                return new StrConcatOperator(Validator.CheckType<IExpression<string>>(expression1), Validator.CheckType<IExpression<string>>(expression2));
             else
-                return new NumOperator(tokenType, Validator.CheckType<INumExpression>(expression1), Validator.CheckType<INumExpression>(expression2));
+                return new NumOperator(tokenType, Validator.CheckType<IExpression<float>>(expression1), Validator.CheckType<IExpression<float>>(expression2));
         }
 
         public static Expression NewBoolOperator(TokenType tokenType, Expression expression1, Expression expression2)
         {
-            return new BoolOperator(tokenType, Validator.CheckType<IBoolExpression>(expression1), Validator.CheckType<IBoolExpression>(expression2));
+            return new BoolOperator(tokenType, Validator.CheckType<IExpression<bool>>(expression1), Validator.CheckType<IExpression<bool>>(expression2));
         }
 
         public static Expression NewCompareOperator(TokenType tokenType, Expression expression1, Expression expression2)
         {
-            return new CompareOperator(tokenType, Validator.CheckType<INumExpression>(expression1), Validator.CheckType<INumExpression>(expression2));
+            return new CompareOperator(tokenType, Validator.CheckType<IExpression<float>>(expression1), Validator.CheckType<IExpression<float>>(expression2));
         }
     }
 }

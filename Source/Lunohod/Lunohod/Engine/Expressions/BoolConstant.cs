@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Lunohod.Xge
 {
-    class BoolConstant : BoolExpression
+    class BoolConstant : Expression<bool>
     {
         private bool boolean;
 
@@ -20,5 +20,6 @@ namespace Lunohod.Xge
         public override string ToString()
         {
             return boolean.ToString(CultureInfo.InvariantCulture);
-        }    }
+        }
+    }
 }

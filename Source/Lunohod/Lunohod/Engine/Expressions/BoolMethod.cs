@@ -6,7 +6,7 @@ using Lunohod.Objects;
 
 namespace Lunohod.Xge
 {
-    public class BoolMethod : Method<bool>, IBoolExpression
+    public class BoolMethod : Method<bool>, IExpression<bool>
     {
         public BoolMethod(XObject currentObject, string objectId, string actionId, List<Expression> parameters)
             : base(currentObject, objectId, actionId, parameters)

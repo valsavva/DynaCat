@@ -13,7 +13,7 @@ namespace Lunohod.Objects
 	[XmlType("BoolTrigger")]
 	public class XBoolTrigger : XTriggerBase
 	{
-		private IBoolExpression valueReader;
+		private IExpression<bool> valueReader;
 		
 		[XmlAttribute]
 		public string Condition;
@@ -22,7 +22,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			valueReader = Compiler.CompileBoolExpression(this, this.Condition ?? "true");
+			valueReader = Compiler.CompileExpression<bool>(this, this.Condition ?? "true");
 		}
 		
 		public override bool IsTriggered()

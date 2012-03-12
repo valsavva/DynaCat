@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Lunohod.Xge
 {
-    public class NumProperty : Property<float>, INumExpression
+    public class NumProperty : Property<float>, IExpression<float>
     {
         private XElement element;
         private XSprite sprite;

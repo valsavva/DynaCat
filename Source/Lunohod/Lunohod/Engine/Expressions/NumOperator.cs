@@ -5,15 +5,15 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    public class NumOperator : NumExpression
+    public class NumOperator : Expression<float>
     {
         private TokenType tokenType;
-        private INumExpression expression1;
-        private INumExpression expression2;
+        private IExpression<float> expression1;
+        private IExpression<float> expression2;
 
-        private Func<INumExpression, INumExpression, float> func;
+        private Func<IExpression<float>, IExpression<float>, float> func;
 
-        public NumOperator(TokenType tokenType, INumExpression expression1, INumExpression expression2)
+        public NumOperator(TokenType tokenType, IExpression<float> expression1, IExpression<float> expression2)
         {
             this.tokenType = tokenType;
             this.expression1 = expression1;

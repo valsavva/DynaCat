@@ -11,7 +11,7 @@ namespace Lunohod.Windows.Engine.Expressions
         string Id { get; }
     }
 
-    public class Variable : Expression, IVariable, INumExpression, IBoolExpression, IStrExpression,
+    public class Variable : Expression, IVariable, IExpression<float>, IExpression<bool>, IExpression<string>,
         IAssignable<float>, IAssignable<bool>, IAssignable<string>
     {
         private Type type;
@@ -20,6 +20,24 @@ namespace Lunohod.Windows.Engine.Expressions
         private string strValue;
         private object objValue;
 
+        private Variable(string id)
+        {
+            this.Id = id;
+        }
+
+        public static Variable GetOrCreateVariable(Dictionary<string, Variable> variableStorage, string id)
+        {
+            Variable result = null;
+
+            if (!variableStorage.TryGetValue(id, out result))
+            {
+                result = new Variable(id);
+                variableStorage.Add(id, result);
+            }
+
+
+            return result;
+        }
 
         public string Id { get; private set; }
 
@@ -61,12 +79,14 @@ namespace Lunohod.Windows.Engine.Expressions
         {
             type = typeof(float);
             objValue = floatValue = v;
+            strValue = null;
         }
 
         public void SetValue(bool v)
         {
             type = typeof(bool);
             objValue = boolValue = v;
+            strValue = null;
         }
 
         public void SetValue(string v)

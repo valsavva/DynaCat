@@ -6,7 +6,7 @@ using Lunohod.Objects;
 
 namespace Lunohod.Xge
 {
-    public class NumMethod : Method<float>, INumExpression
+    public class NumMethod : Method<float>, IExpression<float>
     {
         public NumMethod(XObject currentObject, string objectId, string propertyId, List<Expression> parameters)
             : base(currentObject, objectId, propertyId, parameters)
@@ -28,15 +28,15 @@ namespace Lunohod.Xge
         }
         private float ActionRnd()
         {
-            return system.Rnd(((INumExpression)parameters[0]).GetValue(), ((INumExpression)parameters[1]).GetValue());
+            return system.Rnd(((IExpression<float>)parameters[0]).GetValue(), ((IExpression<float>)parameters[1]).GetValue());
         }
         private float ActionRndX()
         {
-            return system.RndX(((INumExpression)parameters[0]).GetValue(), ((INumExpression)parameters[1]).GetValue());
+            return system.RndX(((IExpression<float>)parameters[0]).GetValue(), ((IExpression<float>)parameters[1]).GetValue());
         }
         private float ActionRndY()
         {
-            return system.RndY(((INumExpression)parameters[0]).GetValue(), ((INumExpression)parameters[1]).GetValue());
+            return system.RndY(((IExpression<float>)parameters[0]).GetValue(), ((IExpression<float>)parameters[1]).GetValue());
         }
     }
 }

@@ -63,7 +63,7 @@ namespace Lunohod.Objects
             base.Initialize(p);
 
             // get targets
-            targets = this.Target.Split(',').Select(s => (NumProperty)Compiler.CompileNumExpression(this, s)).ToList();
+            targets = this.Target.Split(',').Select(s => (NumProperty)Compiler.CompileExpression<float>(this, s)).ToList();
 			startValues = new List<float?>(new float?[targets.Count]);
 
             // collect keyFrames and check for consistency

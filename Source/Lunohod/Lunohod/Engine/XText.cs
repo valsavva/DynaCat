@@ -17,7 +17,7 @@ namespace Lunohod.Objects
 	{
 		private XFontResource font;
 		private Vector2 location;
-		private IStrExpression strValueReader;
+		private IExpression<string> strValueReader;
 
         [XmlIgnore]
         public Color Color;
@@ -46,7 +46,7 @@ namespace Lunohod.Objects
 
             if (this.Text != null && this.Text.StartsWith("="))
             {
-                this.strValueReader = Compiler.CompileStrExpression(this, "system.Str(" + this.Text.Substring(1) + ")");
+                this.strValueReader = Compiler.CompileExpression<string>(this, "system.Str(" + this.Text.Substring(1) + ")");
             }
 			
 			if (this.font == null)

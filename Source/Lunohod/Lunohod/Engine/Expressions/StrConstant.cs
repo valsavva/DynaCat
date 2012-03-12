@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Lunohod.Xge
 {
-    class StrConstant : StrExpression
+    class StrConstant : Expression<string>
     {
         private string str;
 

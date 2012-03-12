@@ -17,7 +17,7 @@ namespace Lunohod.Objects
     public class XLet : XRunnableBase
     {
         private List<NumProperty> accessors;
-        private List<INumExpression> valueReaders;
+        private List<IExpression<float>> valueReaders;
 
         /// <summary>
         /// An attribute, or a list of attributes, that will be assigned a new value.
@@ -40,8 +40,8 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            accessors = this.Target.Split(',').Select(s => (NumProperty)Compiler.CompileNumExpression(this, s)).ToList();
-            valueReaders = this.Value.Split(',').Select(s => Compiler.CompileNumExpression(this, s)).ToList();
+            accessors = this.Target.Split(',').Select(s => (NumProperty)Compiler.CompileExpression<float>(this, s)).ToList();
+            valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<float>(this, s)).ToList();
 
             if (accessors.Count != valueReaders.Count)
                 throw new InvalidOperationException("Number of values must match the number of properties.");

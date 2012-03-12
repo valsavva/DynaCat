@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    class UnaryNotOperator : BoolExpression
+    class UnaryNotOperator : Expression<bool>
     {
-        private IBoolExpression expression;
+        private IExpression<bool> expression;
 
         public UnaryNotOperator(Expression expression)
         {
-            this.expression = Validator.CheckType<IBoolExpression>(expression);
+            this.expression = Validator.CheckType<IExpression<bool>>(expression);
         }
 
         public override bool GetValue() { return !expression.GetValue(); }

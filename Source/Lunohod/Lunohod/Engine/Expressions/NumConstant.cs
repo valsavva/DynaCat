@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Lunohod.Xge
 {
-    public class NumConstant : NumExpression
+    public class NumConstant : Expression<float>
     {
         private float number;
 

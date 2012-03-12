@@ -16,18 +16,6 @@ namespace Lunohod.Xge
         T GetValue();
     }
 
-    public interface INumExpression : IExpression<float>
-    {
-    }
-
-    public interface IBoolExpression : IExpression<bool>
-    {
-    }
-
-    public interface IStrExpression : IExpression<string>
-    {
-    }
-
     public interface IAssignable
     {
     }
@@ -48,7 +36,7 @@ namespace Lunohod.Xge
         public abstract object GetObjValue();
     }
 
-    public abstract class Expression<T> : Expression
+    public abstract class Expression<T> : Expression, IExpression<T>
     {
         public abstract T GetValue();
 

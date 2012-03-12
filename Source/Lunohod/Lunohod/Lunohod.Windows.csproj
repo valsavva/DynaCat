@@ -150,7 +150,6 @@
     <Compile Include="Engine\Expressions\PropertyFactory.cs" />
     <Compile Include="Engine\Expressions\StrConcatOperator.cs" />
     <Compile Include="Engine\Expressions\StrConstant.cs" />
-    <Compile Include="Engine\Expressions\StrExpression.cs" />
     <Compile Include="Engine\Expressions\StrMethod.cs" />
     <Compile Include="Engine\Expressions\Validator.cs" />
     <Compile Include="Engine\Expressions\Variable.cs" />
@@ -170,7 +169,6 @@
     <Compile Include="Engine\Animation\XRunnableBase.cs" />
     <Compile Include="Engine\Expressions\BoolOperator.cs" />
     <Compile Include="Engine\Expressions\BoolConstant.cs" />
-    <Compile Include="Engine\Expressions\BoolExpression.cs" />
     <Compile Include="Engine\Expressions\BoolFlag.cs" />
     <Compile Include="Engine\Expressions\CompareOperator.cs" />
     <Compile Include="Engine\Expressions\Compiler.cs" />
@@ -178,7 +176,6 @@
     <Compile Include="Engine\Expressions\Mehod.cs" />
     <Compile Include="Engine\Expressions\NumOperator.cs" />
     <Compile Include="Engine\Expressions\NumConstant.cs" />
-    <Compile Include="Engine\Expressions\NumExpression.cs" />
     <Compile Include="Engine\Expressions\Property.cs" />
     <Compile Include="Engine\Expressions\Scanner.cs" />
     <Compile Include="Engine\Expressions\Token.cs" />

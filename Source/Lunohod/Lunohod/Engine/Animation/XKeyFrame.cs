@@ -13,7 +13,7 @@ namespace Lunohod.Objects
     [XmlType("KeyFrame")]
     public class XKeyFrame : XObject
     {
-        private List<INumExpression> valueReaders;
+        private List<IExpression<float>> valueReaders;
 
         [XmlIgnore]
         public TimeSpan Time;
@@ -38,7 +38,7 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileNumExpression(this.Parent, s)).ToList();
+            this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<float>(this.Parent, s)).ToList();
             this.CurveKeys = valueReaders.Select(r => new CurveKey((float)this.Time.TotalMilliseconds, r.GetValue())).ToList();
         }
 

@@ -5,15 +5,15 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    class CompareOperator : BoolExpression
+    class CompareOperator : Expression<bool>
     {
         private TokenType tokenType;
-        private INumExpression expression1;
-        private INumExpression expression2;
+        private IExpression<float> expression1;
+        private IExpression<float> expression2;
 
-        private Func<INumExpression, INumExpression, bool> func;
+        private Func<IExpression<float>, IExpression<float>, bool> func;
 
-        public CompareOperator(TokenType tokenType, INumExpression expression1, INumExpression expression2)
+        public CompareOperator(TokenType tokenType, IExpression<float> expression1, IExpression<float> expression2)
         {
             // TODO: Complete member initialization
             this.tokenType = tokenType;

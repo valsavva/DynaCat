@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace Lunohod.Xge
 {
-    public class BoolProperty : Property<bool>, IBoolExpression
+    public class BoolProperty : Property<bool>, IExpression<bool>
     {
         private IRunnable runnable;
         private XHero hero;
