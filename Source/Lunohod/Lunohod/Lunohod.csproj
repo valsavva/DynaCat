@@ -80,26 +80,25 @@
   <ItemGroup>
     <Compile Include="Utility.cs" />
     <Compile Include="GameEngine.cs" />
-    <Compile Include="Engine\ActionInfo.cs" />
-    <Compile Include="Engine\Objects\XBlock.cs" />
-    <Compile Include="Engine\Objects\XElement.cs" />
-    <Compile Include="Engine\Objects\XHero.cs" />
-    <Compile Include="Engine\Objects\XImage.cs" />
-    <Compile Include="Engine\Objects\XLayer.cs" />
-    <Compile Include="Engine\Objects\XLevel.cs" />
-    <Compile Include="Engine\Objects\XTower.cs" />
+    <Compile Include="Engine\XBlock.cs" />
+    <Compile Include="Engine\XElement.cs" />
+    <Compile Include="Engine\XHero.cs" />
+    <Compile Include="Engine\XImage.cs" />
+    <Compile Include="Engine\XLayer.cs" />
+    <Compile Include="Engine\XLevel.cs" />
+    <Compile Include="Engine\XTower.cs" />
     <Compile Include="ScreenEngine.cs" />
-    <Compile Include="Engine\Objects\XGame.cs" />
-    <Compile Include="Engine\Objects\XViewport.cs" />
-    <Compile Include="Engine\Objects\XDashboard.cs" />
-    <Compile Include="Engine\Objects\XTapArea.cs" />
-    <Compile Include="Engine\Objects\Animation\XAnimationBase.cs" />
-    <Compile Include="Engine\Objects\XObject.cs" />
-    <Compile Include="Engine\Objects\XSprite.cs" />
+    <Compile Include="Engine\XGame.cs" />
+    <Compile Include="Engine\XViewport.cs" />
+    <Compile Include="Engine\XDashboard.cs" />
+    <Compile Include="Engine\XTapArea.cs" />
+    <Compile Include="Engine\Animation\XAnimationBase.cs" />
+    <Compile Include="Engine\XObject.cs" />
+    <Compile Include="Engine\XSprite.cs" />
     <Compile Include="OS\iOS\Main.cs" />
     <Compile Include="LevelEngine.cs" />
-    <Compile Include="Engine\Objects\Animation\XNumAnimation.cs" />
-    <Compile Include="Engine\Objects\Animation\XAnimationFillBehavior.cs" />
+    <Compile Include="Engine\Animation\XNumAnimation.cs" />
+    <Compile Include="Engine\Animation\XAnimationFillBehavior.cs" />
     <Compile Include="GameEvent.cs" />
     <Compile Include="GameEventQueue.cs" />
     <Compile Include="GameEventType.cs" />
@@ -107,73 +106,98 @@
     <Compile Include="Input\InputProcessorBase.cs" />
     <Compile Include="Input\TouchPanelProcessor.cs" />
     <Compile Include="Input\MouseProcessor.cs" />
-    <Compile Include="Engine\Objects\XInclude.cs" />
+    <Compile Include="Engine\XInclude.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="Engine\Objects\Resources\XResourceBundle.cs" />
-    <Compile Include="Engine\Objects\Resources\XTextureResource.cs" />
-    <Compile Include="Engine\Objects\Resources\XFontResource.cs" />
-    <Compile Include="Engine\Objects\Resources\XResource.cs" />
-    <Compile Include="Engine\Objects\Resources\XSoundResource.cs" />
-    <Compile Include="Engine\Objects\Resources\XMusicResource.cs" />
-    <Compile Include="Engine\Objects\XGroup.cs" />
-    <Compile Include="Engine\Objects\Media\XMusic.cs" />
-    <Compile Include="Engine\Objects\Media\XSound.cs" />
-    <Compile Include="Engine\Objects\Media\IHasVolume.cs" />
-    <Compile Include="Engine\DrawParameters.cs" />
-    <Compile Include="Engine\InitializeParameters.cs" />
-    <Compile Include="Engine\ParamentersBase.cs" />
-    <Compile Include="Engine\UpateParameters.cs" />
-    <Compile Include="Engine\RadioWave.cs" />
-    <Compile Include="Engine\Objects\XEdgeType.cs" />
-    <Compile Include="Engine\Objects\XEnemy.cs" />
-    <Compile Include="Engine\Objects\XClass.cs" />
-    <Compile Include="Engine\Objects\XObjectCollection.cs" />
-    <Compile Include="Engine\Objects\IRunnable.cs" />
-    <Compile Include="Engine\Objects\Animation\TimeCurve.cs" />
-    <Compile Include="Engine\Objects\Animation\XKeyFrame.cs" />
+    <Compile Include="Engine\Resources\XResourceBundle.cs" />
+    <Compile Include="Engine\Resources\XTextureResource.cs" />
+    <Compile Include="Engine\Resources\XFontResource.cs" />
+    <Compile Include="Engine\Resources\XResource.cs" />
+    <Compile Include="Engine\Resources\XSoundResource.cs" />
+    <Compile Include="Engine\Resources\XMusicResource.cs" />
+    <Compile Include="Engine\XGroup.cs" />
+    <Compile Include="Engine\Media\XMusic.cs" />
+    <Compile Include="Engine\Media\XSound.cs" />
+    <Compile Include="Engine\Media\IHasVolume.cs" />
+    <Compile Include="Engine\XEdgeType.cs" />
+    <Compile Include="Engine\XEnemy.cs" />
+    <Compile Include="Engine\XClass.cs" />
+    <Compile Include="Engine\XObjectCollection.cs" />
+    <Compile Include="Engine\IRunnable.cs" />
+    <Compile Include="Engine\Animation\TimeCurve.cs" />
+    <Compile Include="Engine\Animation\XKeyFrame.cs" />
     <Compile Include="SpriteBatchWithFloats.cs" />
-    <Compile Include="Engine\Objects\Sets\XParallelSet.cs" />
-    <Compile Include="Engine\Objects\Sets\XRandomSet.cs" />
-    <Compile Include="Engine\Objects\Sets\XSequenceSet.cs" />
-    <Compile Include="Engine\Objects\Sets\XSetBase.cs" />
-    <Compile Include="Engine\Objects\Animation\XDo.cs" />
-    <Compile Include="Engine\Objects\Animation\XRunnableBase.cs" />
-    <Compile Include="Engine\Objects\XText.cs" />
-    <Compile Include="Engine\Objects\Animation\XDelay.cs" />
-    <Compile Include="Engine\Objects\XFood.cs" />
-    <Compile Include="Engine\Objects\XSystem.cs" />
-    <Compile Include="Engine\Objects\XScreen.cs" />
-    <Compile Include="Engine\Objects\Accessors\ActionCaller.cs" />
-    <Compile Include="Engine\Objects\Accessors\BoolValueReader.cs" />
-    <Compile Include="Engine\Objects\Accessors\EventCaller.cs" />
-    <Compile Include="Engine\Objects\Accessors\NumValueReader.cs" />
-    <Compile Include="Engine\Objects\Accessors\PropertyAccessor.cs" />
-    <Compile Include="Engine\Objects\Accessors\StrValueReader.cs" />
-    <Compile Include="Engine\Objects\XIterator.cs" />
-    <Compile Include="Engine\Objects\Accessors\ObjectProxy.cs" />
-    <Compile Include="Engine\Objects\XExplosion.cs" />
-    <Compile Include="Engine\Objects\XLevelSettings.cs" />
-    <Compile Include="Engine\Objects\IExploding.cs" />
-    <Compile Include="Engine\Objects\Triggers\XBoolTrigger.cs" />
-    <Compile Include="Engine\Objects\Triggers\XDistanceTrigger.cs" />
-    <Compile Include="Engine\Objects\Triggers\XIntersectionTrigger.cs" />
-    <Compile Include="Engine\Objects\Triggers\XNumTrigger.cs" />
-    <Compile Include="Engine\Objects\Triggers\XNumTriggerBase.cs" />
-    <Compile Include="Engine\Objects\Triggers\XTriggerBase.cs" />
-    <Compile Include="Engine\Objects\Animation\XLet.cs" />
+    <Compile Include="Engine\Sets\XParallelSet.cs" />
+    <Compile Include="Engine\Sets\XRandomSet.cs" />
+    <Compile Include="Engine\Sets\XSequenceSet.cs" />
+    <Compile Include="Engine\Sets\XSetBase.cs" />
+    <Compile Include="Engine\Animation\XDo.cs" />
+    <Compile Include="Engine\Animation\XRunnableBase.cs" />
+    <Compile Include="Engine\XText.cs" />
+    <Compile Include="Engine\Animation\XDelay.cs" />
+    <Compile Include="Engine\XFood.cs" />
+    <Compile Include="Engine\XSystem.cs" />
+    <Compile Include="Engine\XScreen.cs" />
+    <Compile Include="Engine\XIterator.cs" />
+    <Compile Include="Engine\Accessors\ObjectProxy.cs" />
+    <Compile Include="Engine\XExplosion.cs" />
+    <Compile Include="Engine\XLevelSettings.cs" />
+    <Compile Include="Engine\IExploding.cs" />
+    <Compile Include="Engine\Triggers\XBoolTrigger.cs" />
+    <Compile Include="Engine\Triggers\XDistanceTrigger.cs" />
+    <Compile Include="Engine\Triggers\XIntersectionTrigger.cs" />
+    <Compile Include="Engine\Triggers\XNumTrigger.cs" />
+    <Compile Include="Engine\Triggers\XNumTriggerBase.cs" />
+    <Compile Include="Engine\Triggers\XTriggerBase.cs" />
+    <Compile Include="Engine\Animation\XLet.cs" />
+    <Compile Include="Engine\Updates\DrawParameters.cs" />
+    <Compile Include="Engine\Updates\InitializeParameters.cs" />
+    <Compile Include="Engine\Updates\ParamentersBase.cs" />
+    <Compile Include="Engine\Updates\RadioWave.cs" />
+    <Compile Include="Engine\Updates\UpateParameters.cs" />
+    <Compile Include="Engine\Expressions\BoolConstant.cs" />
+    <Compile Include="Engine\Expressions\BoolExpression.cs" />
+    <Compile Include="Engine\Expressions\BoolFlag.cs" />
+    <Compile Include="Engine\Expressions\BoolFlagAction.cs" />
+    <Compile Include="Engine\Expressions\BoolMethod.cs" />
+    <Compile Include="Engine\Expressions\BoolOperator.cs" />
+    <Compile Include="Engine\Expressions\BoolProperty.cs" />
+    <Compile Include="Engine\Expressions\CompareOperator.cs" />
+    <Compile Include="Engine\Expressions\Compiler.cs" />
+    <Compile Include="Engine\Expressions\Expression.cs" />
+    <Compile Include="Engine\Expressions\Mehod.cs" />
+    <Compile Include="Engine\Expressions\MethodFactory.cs" />
+    <Compile Include="Engine\Expressions\NumConstant.cs" />
+    <Compile Include="Engine\Expressions\NumExpression.cs" />
+    <Compile Include="Engine\Expressions\NumMethod.cs" />
+    <Compile Include="Engine\Expressions\NumOperator.cs" />
+    <Compile Include="Engine\Expressions\NumProperty.cs" />
+    <Compile Include="Engine\Expressions\OperatorFactory.cs" />
+    <Compile Include="Engine\Expressions\Property.cs" />
+    <Compile Include="Engine\Expressions\PropertyFactory.cs" />
+    <Compile Include="Engine\Expressions\Scanner.cs" />
+    <Compile Include="Engine\Expressions\StrConcatOperator.cs" />
+    <Compile Include="Engine\Expressions\StrConstant.cs" />
+    <Compile Include="Engine\Expressions\StrExpression.cs" />
+    <Compile Include="Engine\Expressions\StrMethod.cs" />
+    <Compile Include="Engine\Expressions\Token.cs" />
+    <Compile Include="Engine\Expressions\TokenType.cs" />
+    <Compile Include="Engine\Expressions\UnaryMinusOperator.cs" />
+    <Compile Include="Engine\Expressions\UnaryNotOperator.cs" />
+    <Compile Include="Engine\Expressions\Validator.cs" />
+    <Compile Include="Engine\Expressions\VoidMethod.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Content\Global\" />
     <Folder Include="Engine\" />
-    <Folder Include="Engine\Objects\Animation\" />
+    <Folder Include="Engine\Animation\" />
     <Folder Include="OS\iOS\" />
-    <Folder Include="Engine\Objects\Resources\" />
-    <Folder Include="Engine\Objects\Media\" />
+    <Folder Include="Engine\Resources\" />
+    <Folder Include="Engine\Media\" />
     <Folder Include="Content\TestTextures\" />
-    <Folder Include="Engine\Objects\Sets\" />
-    <Folder Include="Engine\Objects\Accessors\" />
+    <Folder Include="Engine\Sets\" />
+    <Folder Include="Engine\Accessors\" />
     <Folder Include="Content\Textures\" />
   </ItemGroup>
   <ItemGroup>
@@ -1568,12 +1592,6 @@
     <Content Include="Content\Textures\package_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\refrigerator_wings.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\refrigerator.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Textures\second_phon_communications.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1617,6 +1635,69 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sound\skeletonFX_hero_metal_wall_2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\S01L01.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\tap_this_button_arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\tap_this_button_text.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\texture_brick_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\texture_brick_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\texture_brick_5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\texture_brick_6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\texture_brick_clean.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassEnemyRat2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassEnemyRat3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\EnemyRat2_enemy_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\EnemyRat3_enemy_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\tower_transmitter_off.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\tower_transmitter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\transmitter-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\btnBomb.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\btnDown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\btnLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\btnPause.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\btnRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Global\btnUp.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

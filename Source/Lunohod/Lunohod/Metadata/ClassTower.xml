@@ -1,10 +1,30 @@
 <Include>	
 
+    <Resources RootFolder="Textures">
+        <Texture Id="tower_on" Source="transmitter-2"/>
+        <Texture Id="tower_off" Source="transmitter-2"/>
+    </Resources>
+
 	<Class Id="clsTower">
-		<Tower SignalSpeed="256"/>
+		<Tower SignalSpeed="256" Bounds="0, 0, 1, 1">
+		
+            <BooleanTrigger Condition="tower:On" Group="sttTower">
+                <Image TextureId="tower_on" Bounds="0, 0, 15, 26"/>
+            </BooleanTrigger>
+
+            <BooleanTrigger Group="sttTower">
+                <Image TextureId="tower_off" Bounds="0, 0, 30, 30"/>
+            </BooleanTrigger>
+            
+            <Image TextureId="tower_off" Bounds="0, 0, 30, 30"/>
+        </Tower>
 	</Class>
 
 </Include>
+
+
+
+
 
 
 
