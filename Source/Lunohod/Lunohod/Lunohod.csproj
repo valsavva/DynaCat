@@ -63,8 +63,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <IpaPackageName />
     <MtouchI18n />
-    <MtouchArch>ARMv6_ARMv7</MtouchArch>
+    <MtouchArch>ARMv7</MtouchArch>
     <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -155,7 +156,6 @@
     <Compile Include="Engine\Updates\RadioWave.cs" />
     <Compile Include="Engine\Updates\UpateParameters.cs" />
     <Compile Include="Engine\Expressions\BoolConstant.cs" />
-    <Compile Include="Engine\Expressions\BoolExpression.cs" />
     <Compile Include="Engine\Expressions\BoolFlag.cs" />
     <Compile Include="Engine\Expressions\BoolFlagAction.cs" />
     <Compile Include="Engine\Expressions\BoolMethod.cs" />
@@ -167,7 +167,6 @@
     <Compile Include="Engine\Expressions\Mehod.cs" />
     <Compile Include="Engine\Expressions\MethodFactory.cs" />
     <Compile Include="Engine\Expressions\NumConstant.cs" />
-    <Compile Include="Engine\Expressions\NumExpression.cs" />
     <Compile Include="Engine\Expressions\NumMethod.cs" />
     <Compile Include="Engine\Expressions\NumOperator.cs" />
     <Compile Include="Engine\Expressions\NumProperty.cs" />
@@ -177,7 +176,6 @@
     <Compile Include="Engine\Expressions\Scanner.cs" />
     <Compile Include="Engine\Expressions\StrConcatOperator.cs" />
     <Compile Include="Engine\Expressions\StrConstant.cs" />
-    <Compile Include="Engine\Expressions\StrExpression.cs" />
     <Compile Include="Engine\Expressions\StrMethod.cs" />
     <Compile Include="Engine\Expressions\Token.cs" />
     <Compile Include="Engine\Expressions\TokenType.cs" />
@@ -185,6 +183,8 @@
     <Compile Include="Engine\Expressions\UnaryNotOperator.cs" />
     <Compile Include="Engine\Expressions\Validator.cs" />
     <Compile Include="Engine\Expressions\VoidMethod.cs" />
+    <Compile Include="Engine\Expressions\AssignStatement.cs" />
+    <Compile Include="Engine\Expressions\Variable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
