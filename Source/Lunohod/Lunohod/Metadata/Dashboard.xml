@@ -17,75 +17,60 @@
 		<TapArea Bounds="0, 70, 100, 100" Action="tap1_setPress.Start()"/>
 		<Image Id="imgBtnUpL" TextureId="txrBtnUp" Bounds="9, 110, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap1_setPress">
-			<Do Action="~system:up;tower:+On"/>
+			<Do Action="~system:up"/>
             <NumAnimation Target="imgBtnUpL.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
 		<TapArea Bounds="380, 70, 100, 100" Action="tap2_setPress.Start()"/>
 		<Image Id="imgBtnUpR" TextureId="txrBtnUp" Bounds="415, 110, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap2_setPress">
-			<Do Action="~system:up;tower:+On"/>
+			<Do Action="~system:up"/>
             <NumAnimation Target="imgBtnUpR.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
 		<TapArea Bounds="0, 170, 100, 64" Action="tap3_setPress.Start()"/>
 		<Image Id="imgBtnLeftL" TextureId="txrBtnLeft" Bounds="9, 174, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap3_setPress">
-			<Do Action="~system:left;tower:+On"/>
+			<Do Action="~system:left"/>
             <NumAnimation Target="imgBtnLeftL.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
  		<TapArea Bounds="380, 170, 100, 64" Action="tap4_setPress.Start()"/>
 		<Image Id="imgBtnRightR" TextureId="txrBtnRight" Bounds="415, 174, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap4_setPress">
-			<Do Action="~system:right;tower:+On"/>
+			<Do Action="~system:right"/>
             <NumAnimation Target="imgBtnRightR.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
  		<TapArea Bounds="0, 234, 100, 86" Action="tap5_setPress.Start()"/>
 		<Image Id="imgBtnDownL" TextureId="txrBtnDown" Bounds="9, 238, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap5_setPress">
-			<Do Action="~system:down;tower:+On"/>
+			<Do Action="~system:down"/>
             <NumAnimation Target="imgBtnDownL.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
  		<TapArea Bounds="380, 234, 100, 86" Action="tap6_setPress.Start()"/>
 		<Image Id="imgBtnDownR" TextureId="txrBtnDown" Bounds="415, 238, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap6_setPress">
-			<Do Action="~system:down;tower:+On"/>
+			<Do Action="~system:down"/>
             <NumAnimation Target="imgBtnDownR.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
  		<TapArea Bounds="132, 234, 100, 86" Action="tap7_setPress.Start()"/>
 		<Image Id="imgBtnPause" TextureId="txrBtnPause" Bounds="154, 256, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap7_setPress">
-			<Do Action="~system:stop;tower:+On"/>
+			<Do Action="~system:stop"/>
             <NumAnimation Target="imgBtnPause.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
  		<TapArea Bounds="248, 234, 100, 86" Action="tap8_setPress.Start()"/>
 		<Image Id="imgBtnBomb" TextureId="txrBtnBomb" Bounds="270, 256, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap8_setPress">
-			<Do Action="~system:explosion;tower:+On"/>
+			<Do Action="~system:explosion"/>
             <NumAnimation Target="imgBtnBomb.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-            <Do Action="tower:-On"/>
 		</SequenceSet>
 
 		<TapArea Bounds="430,00,60,60" Event="system:endLevel"/>
 
 	</Dashboard>
 </Include>
-
-
-
-
-
-
-
