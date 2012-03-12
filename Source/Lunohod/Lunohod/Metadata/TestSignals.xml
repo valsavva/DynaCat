@@ -64,7 +64,7 @@
     </Layer>
 
 	<Layer Id="action" BackColor="#FFFFFFFF">
-		<Tower Bounds="0,0,35,35" SignalSpeed="300"/>	
+		<Tower Id="tower" Bounds="0,0,35,35" SignalSpeed="300"/>	
 		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor" />
 		
 		<Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />

@@ -6,6 +6,7 @@ using NUnit.Framework;
 using Lunohod.Objects;
 using System.Drawing;
 using Lunohod.Xge;
+using Microsoft.Xna.Framework;
 
 namespace Lunohod.Tests
 {
@@ -80,6 +81,21 @@ namespace Lunohod.Tests
             Assert.AreEqual("123456", Compiler.CompileExpression<string>(level, "@b").GetValue());
             Assert.IsTrue(Compiler.CompileExpression<bool>(level, "@c").GetValue());
             Assert.AreEqual(777, block.X);
+        }
+
+        [Test]
+        public void Flags()
+        {
+            GameEngine game = new GameEngine();
+            game.CurrentUpdateTime = new GameTime(TimeSpan.Zero, TimeSpan.Zero);
+            game.ScreenEngines.Add(new ScreenEngine(game, ""));
+
+            Compiler.CompileStatements(level, block.Id + ":broke").ForEach(a => a.Call());
+            Assert.AreEqual(1, game.EventQueue.Count);
+
+            game.ProcessQueue(new GameTime(TimeSpan.Zero, TimeSpan.Zero));
+
+            Assert.AreEqual(1, game.ScreenEngine.CurrentEvents.Count);
         }
     }
 }

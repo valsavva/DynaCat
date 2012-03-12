@@ -45,7 +45,7 @@ namespace Lunohod
 		
 		public virtual void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
-			if (!e.IsHandled)
+			if (e.IsHandled)
 				return;
 			
 			int switchCharIndex = e.Id.IndexOf(':') + 1;

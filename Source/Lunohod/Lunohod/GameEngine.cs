@@ -18,10 +18,10 @@ namespace Lunohod
         public const string ContentRootDirectory = "Content";
 
 		private GraphicsDeviceManager graphics;
-		private List<ScreenEngine> screenEngines;
-		
-		private GameEventQueue eventQueue;
-		
+        private List<ScreenEngine> screenEngines;
+
+        private GameEventQueue eventQueue;
+
 		private XGame gameObject;
         private InputProcessorBase[] inputProcessors;
 		
@@ -38,9 +38,13 @@ namespace Lunohod
 
 		public int CycleNumber { get; private set; }
 		
-		public GameTime CurrentUpdateTime { get; private set; }
-		
-		public XGame GameObject
+		public GameTime CurrentUpdateTime { get; set; }
+
+        public List<ScreenEngine> ScreenEngines { get { return screenEngines; } }
+
+        public GameEventQueue EventQueue { get { return eventQueue; } }
+        
+        public XGame GameObject
 		{
 			get { return this.gameObject; }
 		}		
@@ -279,7 +283,7 @@ namespace Lunohod
 			this.eventQueue.Enqueue(e);
 		}
 		
-		private void ProcessQueue(GameTime gameTime)
+		public void ProcessQueue(GameTime gameTime)
 		{
 			for (int i = 0; i < this.eventQueue.Count; i++)
 			{
