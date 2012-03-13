@@ -27,9 +27,9 @@ namespace Lunohod.Tests
             block = new XBlock() { Id = "blkBlock01", Bounds = new RectangleF(10, 10, 20, 20) };
 
 
-            level.Subcomponents = new XObjectCollection() {
-                system, block
-            };
+            level.Subcomponents = new XObjectCollection();
+            level.Subcomponents.Add(system);
+            level.Subcomponents.Add(block);
         }
 
         [Test]
@@ -50,6 +50,8 @@ namespace Lunohod.Tests
         [Test]
         public void Variables()
         {
+            Compiler.CompileStatements(block, "@X1 = 60; @X2 = 120; X = 84;").ForEach(a => a.Call());
+
             Compiler.CompileStatements(level, "@a=10").ForEach(a => a.Call());
             Assert.IsTrue(Compiler.Instance.VariableStorage.ContainsKey("a"));
             Assert.AreEqual(10, Compiler.CompileExpression<float>(level, "@a").GetValue());

@@ -238,6 +238,11 @@ namespace Lunohod.Xge
                             {
                                 result.Add((IAction)TFlagAction(id, true));
                             } break;
+                        default:
+                            {
+                                var property = TProperty(null, id);
+                                TAssignStatement((IAssignable)property);
+                            } break;
                     }
                 }
 
