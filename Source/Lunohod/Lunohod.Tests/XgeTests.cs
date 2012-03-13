@@ -16,18 +16,22 @@ namespace Lunohod.Tests
         private XLevel level;
         private XBlock block;
         private XSystem system;
+        private XNumAnimation numAnimation;
+        private XBoolTrigger boolTrigger;
 
         [SetUp]
         public void Init()
         {
             Compiler.Instance.VariableStorage.Clear();
 
-            level = new XLevel() { Id = "lvlTest" };
+            level = new XLevel() { Id = "lvlTest", Subcomponents = new XObjectCollection() };
             system = new XSystem { Id="system" };
             block = new XBlock() { Id = "blkBlock01", Bounds = new RectangleF(10, 10, 20, 20) };
+            numAnimation = new XNumAnimation() { Id = "aniNum01", Subcomponents = new XObjectCollection() };
+            boolTrigger = new XBoolTrigger();
 
+            numAnimation.Subcomponents.Add(boolTrigger);
 
-            level.Subcomponents = new XObjectCollection();
             level.Subcomponents.Add(system);
             level.Subcomponents.Add(block);
         }
@@ -50,6 +54,8 @@ namespace Lunohod.Tests
         [Test]
         public void Variables()
         {
+            Compiler.CompileStatements(boolTrigger, "Start()");
+
             Compiler.CompileStatements(block, "@X1 = 60; @X2 = 120; X = 84;").ForEach(a => a.Call());
 
             Compiler.CompileStatements(level, "@a=10").ForEach(a => a.Call());
@@ -77,6 +83,7 @@ namespace Lunohod.Tests
         [Test]
         public void AssignStatements()
         {
+            Compiler.CompileStatements(level, block.Id + ".X = 777;");
             Compiler.CompileStatements(level, "@a=10;@b='123' + system.Str(456);@c=@a>3;" + block.Id + ".X = 777;").ForEach(a => a.Call());
 
             Assert.AreEqual(10, Compiler.CompileExpression<float>(level, "@a").GetValue());

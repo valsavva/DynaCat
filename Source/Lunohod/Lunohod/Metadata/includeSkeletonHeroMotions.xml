@@ -23,7 +23,7 @@
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 
 	<!-- hero speed animation -->
-	<NumAnimation Id="anmDeceleration" Target="hero.Speed" Duration="6" IsDelta="false" RepeatCount="1" Fill="End">
+	<NumAnimation Id="anmDeceleration" Target="hero.Speed" Duration="0.6" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="value1.X" Smoothing="Smooth"/>
         <KeyFrame Time="0.3" Value="value2.X" Smoothing="Smooth"/>
         <KeyFrame Time="0.6" Value="value3.X" Smoothing="Smooth"/>

@@ -222,27 +222,18 @@ namespace Lunohod.Xge
 
                     Consume();
 
-                    switch (P())
+                    if (P() == TokenType.Colon)
                     {
-                        case TokenType.Dot:
-                            {
-                                var methodOrProperty = TMethodOrProperty(id);
+                        result.Add((IAction)TFlagAction(id, true));
+                    }
+                    else
+                    {
+                        var methodOrProperty = TMethodOrProperty(id);
 
-                                if (methodOrProperty is IProperty)
-                                    result.Add(TAssignStatement((IAssignable)methodOrProperty));
-                                else
-                                    result.Add((IAction)methodOrProperty);
-
-                            } break;
-                        case TokenType.Colon:
-                            {
-                                result.Add((IAction)TFlagAction(id, true));
-                            } break;
-                        default:
-                            {
-                                var property = TProperty(null, id);
-                                TAssignStatement((IAssignable)property);
-                            } break;
+                        if (methodOrProperty is IProperty)
+                            result.Add(TAssignStatement((IAssignable)methodOrProperty));
+                        else
+                            result.Add((IAction)methodOrProperty);
                     }
                 }
 
