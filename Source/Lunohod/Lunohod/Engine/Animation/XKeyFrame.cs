@@ -14,6 +14,7 @@ namespace Lunohod.Objects
     public class XKeyFrame : XObject
     {
         private List<IExpression<float>> valueReaders;
+        private XAnimationBase animation;
 
         [XmlIgnore]
         public TimeSpan Time;
@@ -38,6 +39,8 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
+            animation = (XAnimationBase)this.FindAncestor(a => a is XAnimationBase);
+
             this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<float>(this.Parent, s)).ToList();
             this.CurveKeys = valueReaders.Select(r => new CurveKey((float)this.Time.TotalMilliseconds, r.GetValue())).ToList();
         }
@@ -45,6 +48,9 @@ namespace Lunohod.Objects
         public override void Update(UpdateParameters p)
         {
             base.Update(p);
+
+            if (!animation.InProgress || animation.IsPaused)
+                return;
 
             for (int i = 0; i < this.valueReaders.Count; i++)
             {
