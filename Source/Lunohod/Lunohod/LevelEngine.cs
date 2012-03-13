@@ -174,29 +174,29 @@ namespace Lunohod
 				double signalTraveledDistance = this.tower.SignalSpeed * (gameTime.TotalGameTime - e.Time).TotalSeconds;
 				signalReachedHero = signalTraveledDistance >= this.hero.DistanceToTower;
 
-				if (signalReachedHero)
-					waves.Remove(e);
-				else if (!waves.ContainsKey(e))
-					waves.Add(e, new RadioWave(e.Time));
+                if (signalReachedHero)
+                    waves.Remove(e);
+                else
+                {
+                    if (!waves.ContainsKey(e))
+                        waves.Add(e, new RadioWave(e.Time));
+                    return;
+                }
 			}
 			
-			if (signalReachedHero)
-			{
-				e.IsHandled = true;
+			e.IsHandled = true;
 				
-				switch (e.EventType)
-				{
-                    case GameEventType.Up: this.hero.Direction = Direction.VectorUp; this.hero.Speed = this.hero.DefaultSpeed; break;
-                    case GameEventType.Down: this.hero.Direction = Direction.VectorDown; this.hero.Speed = this.hero.DefaultSpeed; break;
-                    case GameEventType.Left: this.hero.Direction = Direction.VectorLeft; this.hero.Speed = this.hero.DefaultSpeed; break;
-                    case GameEventType.Right: this.hero.Direction = Direction.VectorRight; this.hero.Speed = this.hero.DefaultSpeed; break;
-                    case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; this.hero.Speed = this.hero.DefaultSpeed; break;
-	                case GameEventType.Explosion: PlantBomb(); break;
-                    default: e.IsHandled = false; break;
-				}
+			switch (e.EventType)
+			{
+                case GameEventType.Up: this.hero.Direction = Direction.VectorUp; this.hero.Speed = this.hero.DefaultSpeed; break;
+                case GameEventType.Down: this.hero.Direction = Direction.VectorDown; this.hero.Speed = this.hero.DefaultSpeed; break;
+                case GameEventType.Left: this.hero.Direction = Direction.VectorLeft; this.hero.Speed = this.hero.DefaultSpeed; break;
+                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; this.hero.Speed = this.hero.DefaultSpeed; break;
+                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; this.hero.Speed = this.hero.DefaultSpeed; break;
+	            case GameEventType.Explosion: PlantBomb(); break;
 			}
 
-			base.ProcessEvent(gameTime, e);
+            base.ProcessEvent(gameTime, e);
 		}
 
 		private void PlantBomb()

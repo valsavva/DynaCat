@@ -28,13 +28,13 @@
 		
 		<Image Id="z" TextureId="chargers" Bounds="0,0,35,35">
 			<NumAnimation From="0" To="10" Target="z.X" Duration="1" RepeatCount="1" IsDelta="true" Autoreverse="false" InProgress="true" Fill="Hold">
-				<BoolTrigger Property="!InProgress" EnterAction="Start" />
+				<BoolTrigger Property="!InProgress" EnterAction="Start()" />
 			</NumAnimation>
 		</Image>
 		
 		<Image Id="image1" TextureId="chargers" Bounds="50,150,50,50" Rotation="0" Opacity="1"/>
 		<SequenceSet>
-			<IntersectionTrigger ObjectId1="image1" ObjectId2="hero" EnterAction="Resume"/>
+			<IntersectionTrigger ObjectId1="image1" ObjectId2="hero" EnterAction="Resume()"/>
 			<NumAnimation Target="image1.X" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			<Sound FileId="laserFire" Volume="0.5"/>
 			<NumAnimation Target="image1.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
@@ -43,7 +43,7 @@
 
 		<Image Id="image2" TextureId="chargers" Bounds="240,250,50,50" Rotation="0" Opacity="1"/>
 		<RandomSet Probabilities="2,1,2,1,8">
-			<IntersectionTrigger ObjectId1="image2" ObjectId2="hero" Action="Resume"/>
+			<IntersectionTrigger ObjectId1="image2" ObjectId2="hero" Action="Resume()"/>
 			<NumAnimation Id="X1" Target="image2.X" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			<Sound FileId="laserFire" Volume="0.5"/>
 			<NumAnimation Id="X2" Target="image2.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
@@ -56,7 +56,7 @@
 
 		<Image Id="image3" TextureId="chargers" Bounds="350,150,50,50" Rotation="0" Opacity="1"/>
 		<ParallelSet>
-			<IntersectionTrigger ObjectId1="image3" ObjectId2="hero" EnterAction="Resume"/>
+			<IntersectionTrigger ObjectId1="image3" ObjectId2="hero" EnterAction="Resume()"/>
 			<NumAnimation Target="image3.X" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
 			<Sound FileId="laserFire" Volume="0.5"/>
 			<NumAnimation Target="image3.Y" From="0" To="50" Duration="0.3" RepeatCount="1" IsDelta="true" Autoreverse="true"/>
