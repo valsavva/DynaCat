@@ -16,9 +16,10 @@
 	</Screens>
 	<Levels>
 
-		<Level Id="___" File="S01L01.xml" />
-		<Level Id="S01L01" File="S01L01.xml" />
 		<Level Id="AlphaTest" File="AlphaTest.xml" />
+		<Level Id="AlphaTest2(all in one)" File="AlphaTest2.xml" />
+		<Level Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
+		<Level Id="S01L01" File="S01L01.xml" />
 		<Level Id="style100500" File="style100500.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
 		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
