@@ -19,10 +19,10 @@
                 <Texture Id="teleport1_me_vert_in" Source="teleport1_me_vert_in"/>
                 <Texture Id="teleport1_me_vert_out" Source="teleport1_me_vert_out"/>
                 <Texture Id="teleport1_me_vert_pipe" Source="teleport1_me_vert_pipe"/>
-                <Texture Id="bolbex-1" Source="bolbex-1"/>
+                <Texture Id="bolbex_1" Source="bolbex-1"/>
             </Resources>
             <Layer Id="background" BackColor="#FFFFFFFF">
-                <Image Id="DefaultMask_image3245-4" TextureId="phon_blue" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3245-4"/>
+                <Image Id="DefaultMask_image3245_4" TextureId="phon_blue" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" TraceId="image3245-4"/>
             </Layer>
             <Layer Id="action" BackColor="#FFFFFFFF">
                 <Block Id="blk1" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>

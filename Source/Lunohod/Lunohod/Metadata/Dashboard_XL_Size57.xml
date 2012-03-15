@@ -14,14 +14,14 @@
 	<Dashboard BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270"/>
 		
-        <Image Id="DefaultMask_down-L" TextureId="arrow52Down" Bounds="10, 245, 57, 57" Stretch="true" Opacity="0.2" TraceId="down-L"/>
-        <Image Id="DefaultMask_left-L" TextureId="arrow52Left" Bounds="10, 169, 57, 57" Stretch="true" Opacity="0.2" TraceId="left-L"/>
+        <Image Id="DefaultMask_down_L" TextureId="arrow52Down" Bounds="10, 245, 57, 57" Stretch="true" Opacity="0.2" TraceId="down-L"/>
+        <Image Id="DefaultMask_left_L" TextureId="arrow52Left" Bounds="10, 169, 57, 57" Stretch="true" Opacity="0.2" TraceId="left-L"/>
         <Image Id="DefaultMask_pause57" TextureId="arrow52Pause" Bounds="153, 245, 57, 57" Stretch="true" Opacity="0.2" TraceId="pause57"/>
-        <Image Id="DefaultMask_right-R" TextureId="arrow52Right" Bounds="413, 169, 57, 57" Stretch="true" Opacity="0.2" TraceId="right-R"/>
-        <Image Id="DefaultMask_up-L" TextureId="arrow52Up" Bounds="10, 93, 57, 57" Stretch="true" Opacity="0.2" TraceId="up-L"/>
+        <Image Id="DefaultMask_right_R" TextureId="arrow52Right" Bounds="413, 169, 57, 57" Stretch="true" Opacity="0.2" TraceId="right-R"/>
+        <Image Id="DefaultMask_up_L" TextureId="arrow52Up" Bounds="10, 93, 57, 57" Stretch="true" Opacity="0.2" TraceId="up-L"/>
         <Image Id="DefaultMask_bomb57" TextureId="arrow52Bomb" Bounds="270, 245, 57, 57" Stretch="true" Opacity="0.2" TraceId="bomb57"/>
-        <Image Id="DefaultMask_up-R" TextureId="arrow52Up" Bounds="413, 93, 57, 57" Stretch="true" Opacity="0.2" TraceId="up-R"/>
-        <Image Id="DefaultMask_down-R" TextureId="arrow52Down" Bounds="413, 245, 57, 57" Stretch="true" Opacity="0.2" TraceId="down-R"/>
+        <Image Id="DefaultMask_up_R" TextureId="arrow52Up" Bounds="413, 93, 57, 57" Stretch="true" Opacity="0.2" TraceId="up-R"/>
+        <Image Id="DefaultMask_down_R" TextureId="arrow52Down" Bounds="413, 245, 57, 57" Stretch="true" Opacity="0.2" TraceId="down-R"/>
 
 		<TapArea Bounds="0, 66, 96, 92" Event="system:up"/>
 		<TapArea Bounds="384, 66, 96, 92" Event="system:up"/>

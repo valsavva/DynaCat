@@ -24,14 +24,14 @@
         <Block Id="blk_image3072" Bounds="480, 0, 10, 320" Edges="Bounce" TraceId="image3072"/>
         <Block Id="blk_image3074" Bounds="0, -10, 480, 10" Edges="Bounce" TraceId="image3074"/>
         <Block Id="blk_image3076" Bounds="0, 320, 480, 10" Edges="Bounce" TraceId="image3076"/>
-        <Block Id="blk_image3048-1" Bounds="400, 98, 50, 8" Edges="Stick" TraceId="image3048-1">
-            <Image Id="image3048-1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        <Block Id="blk_image3048_1" Bounds="400, 98, 50, 8" Edges="Stick" TraceId="image3048-1">
+            <Image Id="image3048_1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
         <Block Id="blk_image3023" Bounds="400, 215, 50, 8" Edges="Stick" TraceId="image3023">
             <Image Id="image3023" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
-        <Block Id="blk_image3048-7" Bounds="456, 109, 8, 102" Edges="Stick" TraceId="image3048-7">
-            <Image Id="image3048-7" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+        <Block Id="blk_image3048_7" Bounds="456, 109, 8, 102" Edges="Stick" TraceId="image3048-7">
+            <Image Id="image3048_7" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
         <Block Id="blk_image3078" Bounds="30, 98, 50, 8" Edges="Stick" TraceId="image3078">
             <Image Id="image3078" TextureId="cursor_wall_50x50_stick" Opacity="1" />
@@ -43,11 +43,11 @@
             <Image Id="image3082" TextureId="cursor_wall_50x50_stick" Opacity="1" />
         </Block>
 
-        <Food Id="fd_image3037-9" Points="1" Bounds="228, 154, 24, 12" Class="clsFood" TraceId="image3037-9"/>
+        <Food Id="fd_image3037_9" Points="1" Bounds="228, 154, 24, 12" Class="clsFood" TraceId="image3037-9"/>
 
 <!-- >>> HANDEDIT >>> -->
         <Enemy Id="enm1" Bounds="346, 64, 50, 40" Class="clsEnemy" TraceId="image3026-4"/>
-        <NumAnimation Id="anm_image3056-4-9" Target="enm1.X,enm1.Y" Duration="5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3056-4-9">
+        <NumAnimation Id="anm_image3056_4_9" Target="enm1.X,enm1.Y" Duration="5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3056-4-9">
         	<KeyFrame Time="0" Value="0,0" Smoothing="Smooth" />
         	<KeyFrame Time="0.7" Value="0,0" Smoothing="Smooth" />
         	<KeyFrame Time="2" Value="-18,80" Smoothing="Smooth" />
@@ -56,7 +56,7 @@
         </NumAnimation>
         
         <Enemy Id="enm2" Bounds="65, 23, 50, 40" Class="clsEnemy" TraceId="image3026-48"/>
-        <NumAnimation Id="anm_image3023-1-8" Target="enm2.X,enm2.Y" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3023-1-8">
+        <NumAnimation Id="anm_image3023_1_8" Target="enm2.X,enm2.Y" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="7777777" TraceId="image3023-1-8">
         	<KeyFrame Time="0" Value="0,0" Smoothing="Smooth" />
         	<KeyFrame Time="1" Value="0,0" Smoothing="Smooth" />
         	<KeyFrame Time="2" Value="300,220" Smoothing="Smooth" />

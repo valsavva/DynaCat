@@ -24,8 +24,8 @@
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Block Id="image3101" Bounds="406, 235, 31, 41" DefaultEdge="Stick" />
         <Block Id="image3087" Bounds="71, 276, 19, 17" DefaultEdge="Stick" />
-        <Block Id="image3071-1" Bounds="30, 209, 50, 12" DefaultEdge="Bounce" />
-        <Block Id="image3071-1-7" Bounds="444, 40, 19, 12" DefaultEdge="Bounce" />
+        <Block Id="image3071_1" Bounds="30, 209, 50, 12" DefaultEdge="Bounce" />
+        <Block Id="image3071_1_7" Bounds="444, 40, 19, 12" DefaultEdge="Bounce" />
         <Tower Bounds="0, 0, 30, 30" SignalSpeed="200" SvgId="#id" />
         <Block Id="image3207_block" Bounds="127, 39, 20, 20" DefaultEdge="Bounce">
             <Image Id="image3207" TextureId="box_2d" Opacity="1" />

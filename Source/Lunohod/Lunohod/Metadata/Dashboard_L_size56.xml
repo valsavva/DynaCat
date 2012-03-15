@@ -28,14 +28,14 @@
 	
 	<Dashboard BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270"/>
-        <Image Id="DefaultMask_dwn-l" TextureId="arrow52Down" Bounds="9, 238, 56, 56" Stretch="true" Opacity="0.2" TraceId="dwn-l"/>
-        <Image Id="DefaultMask_left-l" TextureId="arrow52Left" Bounds="9, 174, 56, 56" Stretch="true" Opacity="0.2" TraceId="left-l"/>
+        <Image Id="DefaultMask_dwn_l" TextureId="arrow52Down" Bounds="9, 238, 56, 56" Stretch="true" Opacity="0.2" TraceId="dwn-l"/>
+        <Image Id="DefaultMask_left_l" TextureId="arrow52Left" Bounds="9, 174, 56, 56" Stretch="true" Opacity="0.2" TraceId="left-l"/>
         <Image Id="DefaultMask_image3220" TextureId="arrow52Pause" Bounds="154, 256, 56, 56" Stretch="true" Opacity="0.2" TraceId="image3220"/>
-        <Image Id="DefaultMask_right-r" TextureId="arrow52Right" Bounds="415, 174, 56, 56" Stretch="true" Opacity="0.2" TraceId="right-r"/>
-        <Image Id="DefaultMask_up-l" TextureId="arrow52Up" Bounds="9, 110, 56, 56" Stretch="true" Opacity="0.2" TraceId="up-l"/>
+        <Image Id="DefaultMask_right_r" TextureId="arrow52Right" Bounds="415, 174, 56, 56" Stretch="true" Opacity="0.2" TraceId="right-r"/>
+        <Image Id="DefaultMask_up_l" TextureId="arrow52Up" Bounds="9, 110, 56, 56" Stretch="true" Opacity="0.2" TraceId="up-l"/>
         <Image Id="DefaultMask_bomb" TextureId="arrow52Bomb" Bounds="270, 256, 56, 56" Stretch="true" Opacity="0.2" TraceId="bomb"/>
-        <Image Id="DefaultMask_up-r" TextureId="arrow52Up" Bounds="415, 110, 56, 56" Stretch="true" Opacity="0.2" TraceId="up-r"/>
-        <Image Id="DefaultMask_dwn-r" TextureId="arrow52Down" Bounds="415, 238, 56, 56" Stretch="true" Opacity="0.2" TraceId="dwn-r"/>
+        <Image Id="DefaultMask_up_r" TextureId="arrow52Up" Bounds="415, 110, 56, 56" Stretch="true" Opacity="0.2" TraceId="up-r"/>
+        <Image Id="DefaultMask_dwn_r" TextureId="arrow52Down" Bounds="415, 238, 56, 56" Stretch="true" Opacity="0.2" TraceId="dwn-r"/>
 
 		<Group Id="grp01" Bounds="0, 70, 100, 100" Class="clsDashboardButton" ClassParams="@action=~system:up"/>
 		<Group Id="grp02" Bounds="380, 70, 100, 100" Class="clsDashboardButton" ClassParams="@action=~system:up"/>

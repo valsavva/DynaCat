@@ -52,7 +52,7 @@
             <Enemy Id="enmNap2" Bounds="545, 145, 30, 30" Class="clsEnemy" TraceId="image3026-5"/>
             <Block Id="blkNap2" Bounds="535, 135, 50, 50" Edges="None" TraceId="image4047-1">
             	<DistanceTrigger ObjectId1="blkNap2" ObjectId2="hero" Compare="L" Value="60" EnterAction="blkNap2.Disable()" />
-                <Image Id="image4047-1" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
+                <Image Id="image4047_1" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
             </Block>
         </Group>
         

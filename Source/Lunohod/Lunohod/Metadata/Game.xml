@@ -16,7 +16,7 @@
 	</Screens>
 	<Levels>
 
-		<Level Id="---" File="S01L01.xml" />
+		<Level Id="___" File="S01L01.xml" />
 		<Level Id="S01L01" File="S01L01.xml" />
 		<Level Id="AlphaTest" File="AlphaTest.xml" />
 		<Level Id="style100500" File="style100500.xml" />
@@ -39,7 +39,7 @@
 		<Level Id="skeletonVKolce" File="skeletonVKolce.xml" />
 		<Level Id="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
 		<Level Id="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
-		<Level Id="---" File="skeletonAlisa.xml" />
+		<Level Id="___" File="skeletonAlisa.xml" />
 		
 		<!-- Test screens start here -->
 		<Level Id="style100500opt" File="style100500opt.xml" />
@@ -64,11 +64,11 @@
 		<Level Id="TestRnd" File="TestRnd.xml" />
 		<Level Id="test_c_boloto" File="test_c_boloto.xml" />
 		<Level Id="FPSTest" File="FPSTest.xml" />
-		<Level Id="FPSTest_dry_I-100" File="FPSTest_dry_I-100.xml" />
-		<Level Id="FPSTest_dry_I-1000" File="FPSTest_dry_I-1000.xml" />
-		<Level Id="FPSTest_dry_IA-100" File="FPSTest_dry_IA-100.xml" />
-		<Level Id="FPSTest_dry_IA-1000" File="FPSTest_dry_IA-1000.xml" />
-		<Level Id="FPSTest_dry_IBA-100" File="FPSTest_dry_IBA-100.xml" />
-		<Level Id="FPSTest_dry_IBA-1000" File="FPSTest_dry_IBA-1000.xml" />
+		<Level Id="FPSTest_dry_I_100" File="FPSTest_dry_I-100.xml" />
+		<Level Id="FPSTest_dry_I_1000" File="FPSTest_dry_I-1000.xml" />
+		<Level Id="FPSTest_dry_IA_100" File="FPSTest_dry_IA-100.xml" />
+		<Level Id="FPSTest_dry_IA_1000" File="FPSTest_dry_IA-1000.xml" />
+		<Level Id="FPSTest_dry_IBA_100" File="FPSTest_dry_IBA-100.xml" />
+		<Level Id="FPSTest_dry_IBA_1000" File="FPSTest_dry_IBA-1000.xml" />
 	</Levels>
 </Game>

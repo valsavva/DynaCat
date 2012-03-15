@@ -34,31 +34,31 @@
                 <Food Id="fd2" Points="1" Bounds="172, 234, 24, 12" Class="clsFood" TraceId="image3037-2"/>
                 <Food Id="fd3" Points="1" Bounds="417, 215, 24, 12" Class="clsFood" TraceId="image3037-45"/>
                 <Block Id="blk5" Class="clsWoodenBox" Bounds="284, 187, 30, 30" Edges="Stick" TraceId="image3109-1">
-                    <Image Id="image3109-1" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_1" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk6" Class="clsWoodenBox" Bounds="280, 218, 30, 30" Edges="Stick" TraceId="image3109-7">
-                    <Image Id="image3109-7" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_7" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk7" Class="clsWoodenBox" Bounds="280, 249, 30, 30" Edges="Stick" TraceId="image3109-11">
-                    <Image Id="image3109-11" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_11" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk8" Class="clsWoodenBox" Bounds="286, 283, 30, 30" Edges="Stick" TraceId="image3109-52">
-                    <Image Id="image3109-52" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_52" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk9" Class="clsWoodenBox" Bounds="384, 85, 30, 30" Edges="Stick" TraceId="image3109-76">
-                    <Image Id="image3109-76" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_76" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk10" Class="clsWoodenBox" Bounds="422, 85, 30, 30" Edges="Stick" TraceId="image3109-14">
-                    <Image Id="image3109-14" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_14" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk11" Class="clsWoodenBox" Bounds="352, 113, 30, 30" Edges="Stick" TraceId="image3109-2">
-                    <Image Id="image3109-2" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_2" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk12" Class="clsWoodenBox" Bounds="316, 154, 30, 30" Edges="Stick" TraceId="image3109-3">
-                    <Image Id="image3109-3" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3109_3" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="Exit" Class="clsExit" Bounds="427, 262, 50, 50" Edges="None" TraceId="image3034-2">
-                    <Image Id="image3034-2" TextureId="_E_" Opacity="1" />
+                    <Image Id="image3034_2" TextureId="_E_" Opacity="1" />
                 </Block>
                 <Block Id="blk13" Class="clsWoodenBox" Bounds="11, 175, 30, 30" Edges="Stick" TraceId="image3252">
                     <Image Id="image3252" TextureId="cursor_50x50_brown" Opacity="1" />
@@ -92,34 +92,34 @@
                     <NumAnimation Id="anm2" From="0" To="-300" Target="X" Duration="3.57" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3052"/>
                 </Group>
                 <Block Id="blk21" Class="clsWoodenBox" Bounds="2, 70, 30, 30" Edges="Stick" TraceId="image3252-4-0">
-                    <Image Id="image3252-4-0" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_0" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk22" Class="clsWoodenBox" Bounds="36, 70, 30, 30" Edges="Stick" TraceId="image3252-4-9">
-                    <Image Id="image3252-4-9" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_9" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk23" Class="clsWoodenBox" Bounds="69, 69, 30, 30" Edges="Stick" TraceId="image3252-4">
-                    <Image Id="image3252-4" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk24" Class="clsWoodenBox" Bounds="103, 72, 30, 30" Edges="Stick" TraceId="image3252-4-4">
-                    <Image Id="image3252-4-4" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_4" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk25" Class="clsWoodenBox" Bounds="135, 64, 30, 30" Edges="Stick" TraceId="image3252-4-8">
-                    <Image Id="image3252-4-8" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_8" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk26" Class="clsWoodenBox" Bounds="172, 70, 30, 30" Edges="Stick" TraceId="image3252-4-82">
-                    <Image Id="image3252-4-82" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_82" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk27" Class="clsWoodenBox" Bounds="217, 68, 30, 30" Edges="Stick" TraceId="image3252-4-45">
-                    <Image Id="image3252-4-45" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_45" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk28" Class="clsWoodenBox" Bounds="258, 64, 30, 30" Edges="Stick" TraceId="image3252-4-5">
-                    <Image Id="image3252-4-5" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_5" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk29" Class="clsWoodenBox" Bounds="292, 64, 30, 30" Edges="Stick" TraceId="image3252-4-1">
-                    <Image Id="image3252-4-1" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_1" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Block Id="blk30" Class="clsWoodenBox" Bounds="331, 63, 30, 30" Edges="Stick" TraceId="image3252-4-7">
-                    <Image Id="image3252-4-7" TextureId="cursor_50x50_brown" Opacity="1" />
+                    <Image Id="image3252_4_7" TextureId="cursor_50x50_brown" Opacity="1" />
                 </Block>
                 <Hero Id="hero" Bounds="30, 24, 50, 40" Class="clsHero" TraceId="image3015"/>
                 <Group Id="grp_g3273">
