@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Lunohod.Xge;
 
-namespace Lunohod.Windows.Engine.Expressions
+namespace Lunohod.Xge
 {
     public interface IVariable : IExpression
     {

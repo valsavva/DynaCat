@@ -93,7 +93,6 @@
     <Compile Include="Engine\XViewport.cs" />
     <Compile Include="Engine\XDashboard.cs" />
     <Compile Include="Engine\XTapArea.cs" />
-    <Compile Include="Engine\Animation\XAnimationBase.cs" />
     <Compile Include="Engine\XObject.cs" />
     <Compile Include="Engine\XSprite.cs" />
     <Compile Include="OS\iOS\Main.cs" />
