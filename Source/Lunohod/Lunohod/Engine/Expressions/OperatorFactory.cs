@@ -40,7 +40,7 @@ namespace Lunohod.Xge
 
         public static Expression NewNumOperator(TokenType tokenType, Expression expression1, Expression expression2)
         {
-            if (tokenType == TokenType.Plus && expression1 is IExpression<string>)
+            if (tokenType == TokenType.Plus && !(expression1 is IExpression<float> && expression2 is IExpression<float>))
                 return new StrConcatOperator(Validator.CheckType<IExpression<string>>(expression1), Validator.CheckType<IExpression<string>>(expression2));
             else
                 return new NumOperator(tokenType, Validator.CheckType<IExpression<float>>(expression1), Validator.CheckType<IExpression<float>>(expression2));

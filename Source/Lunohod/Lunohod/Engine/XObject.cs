@@ -10,17 +10,19 @@ namespace Lunohod.Objects
     /// </summary>
 	abstract public class XObject : IDisposable
 	{
+		private string id;
 		protected bool isDisposed;
 		private Dictionary<string, int> triggerGroups;
 		private XObjectCollection subcomponents;
 		private Dictionary<string, XObject> componentDict;
 		protected int updateCycle;
+		
 
         /// <summary>
         /// Specifies the object id. The object ids must be unique across loaded module, such as a game level.
         /// </summary>
         [XmlAttribute]
-        public string Id;
+        public string Id { get { return this.id; } set { this.id = value == null ? null : value.Replace("-", ""); } }
         /// <summary>
         /// Specifies the name of the class which defines the template of this object.
         /// </summary>

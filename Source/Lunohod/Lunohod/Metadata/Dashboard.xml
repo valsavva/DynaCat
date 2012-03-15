@@ -72,5 +72,19 @@
 
 		<TapArea Bounds="430,00,60,60" Event="system:endLevel"/>
 
+		<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
+		<TapArea Bounds="5,5,60,60" Action="system:heroReduceSpeed;system:heroSpeedRecalculate;">
+			<Text Text="-" FontId="SystemFont" Location="2,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="70,5,60,60" Action="system:heroIncreaseSpeed;system:heroSpeedRecalculate;">
+			<Text Text="+" FontId="SystemFont" Location="2,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="135,5,60,60" Action="system:heroReduceTime;system:heroSpeedRecalculate;">
+			<Text Text="-" FontId="SystemFont" Location="2,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="200,5,60,60" Action="system:heroIncreaseTime;system:heroSpeedRecalculate;">
+			<Text Text="+" FontId="SystemFont" Location="2,2" Color="#FCD116"/>
+		</TapArea>
+
 	</Dashboard>
 </Include>

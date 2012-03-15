@@ -4,8 +4,7 @@
 		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
 	
-    <Text Id="txtCurrentSpeed" FontId="SystemFont" Location="55,5" Text="=hero.Speed" Color="#000000"/>
-    <Text Id="txtValue1" FontId="SystemFont" Location="5,20"  Text="=@heroSpeed1" Color="#000000" />
+    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime3) + ') ' + system.Str(hero.Speed)" Color="#000000" />
     
 	<!-- Global variables. Will be moved out here. -->
 	<Do Action="@heroBaseSpeed=60;@heroBaseTime=6;" InProgress="true"/>
@@ -30,12 +29,24 @@
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 
 	<!-- hero speed animation -->
-	<NumAnimation Id="anmDeceleration" Target="hero.Speed" IsDelta="false" RepeatCount="1" Fill="End">
+	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="@heroSpeed1" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime1" Value="@heroSpeed2" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime2" Value="@heroSpeed3" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime3" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
+	
+	
+	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
+	<BoolTrigger Condition="system:heroSpeedRecalculate">
+		<BoolTrigger Condition="system:heroReduceSpeed" Action="@heroBaseSpeed=@heroBaseSpeed-5"/>
+		<BoolTrigger Condition="system:heroIncreaseSpeed" Action="@heroBaseSpeed=@heroBaseSpeed+5"/>
+		<BoolTrigger Condition="system:heroReduceTime" Action="@heroBaseTime=@heroBaseTime-1"/>
+		<BoolTrigger Condition="system:heroIncreaseTime" Action="@heroBaseTime=@heroBaseTime+1"/>
+		<BoolTrigger Condition="this:InBoloto" Action="doBolotoSpeed.Start()"/>
+		<BoolTrigger Condition="!this:InBoloto" Action="doNormalSpeed.Start()"/>
+	</BoolTrigger>
+	
 </Include>
 
 

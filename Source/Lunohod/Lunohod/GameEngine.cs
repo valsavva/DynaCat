@@ -285,7 +285,9 @@ namespace Lunohod
 		
 		public void ProcessQueue(GameTime gameTime)
 		{
-			for (int i = 0; i < this.eventQueue.Count; i++)
+			int numOfEvents = this.eventQueue.Count;
+
+			for (int i = 0; i < numOfEvents; i++)
 			{
 				var e = this.eventQueue.Dequeue();
 				
