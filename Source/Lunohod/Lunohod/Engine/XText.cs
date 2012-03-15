@@ -41,6 +41,10 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
+
+			
+			if (string.IsNullOrEmpty(this.FontId))
+				throw new InvalidOperationException("Font is not specified for text field");
 			
 			this.font = (XFontResource)p.ScreenEngine.RootComponent.FindDescendant(this.FontId);
 

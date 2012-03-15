@@ -10,7 +10,7 @@ namespace Lunohod.Objects
     public class XTower : XElement
     {
         [XmlAttribute]
-        public double SignalSpeed;
+        public float SignalSpeed { get; set; }
 		
 		public override void Initialize(InitializeParameters p)
 		{

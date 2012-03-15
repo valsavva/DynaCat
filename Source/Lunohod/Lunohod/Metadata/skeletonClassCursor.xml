@@ -39,7 +39,12 @@
 	<!-- =========================================================================================  -->
 	
 	<Class Id="clsTower">
-		<Tower SignalSpeed="256"/>
+		<Tower SignalSpeed="256">
+			<!-- We'll need to remove this -->
+			<Text Text="=SignalSpeed" FontId="SystemFont" Location="10,10" Color="#000000"/>
+			<BoolTrigger Condition="system:towerIncreaseSpeed" Action="SignalSpeed=SignalSpeed+10"/>
+			<BoolTrigger Condition="system:towerReduceSpeed" Action="SignalSpeed=SignalSpeed-10"/>
+		</Tower>
 	</Class>
 
 	<!-- =========================================================================================  -->

@@ -7,16 +7,22 @@
 
 	<Class Id="clsTower">
 		<Tower SignalSpeed="256" Bounds="0, 0, 1, 1">
-		
-            <BooleanTrigger Condition="tower:On" Group="sttTower">
+			
+            <BoolTrigger Condition="tower:On" Group="sttTower">
                 <Image TextureId="tower_on" Bounds="0, 0, 15, 26"/>
-            </BooleanTrigger>
+            </BoolTrigger>
 
-            <BooleanTrigger Group="sttTower">
+            <BoolTrigger Group="sttTower">
                 <Image TextureId="tower_off" Bounds="0, 0, 30, 30"/>
-            </BooleanTrigger>
+            </BoolTrigger>
             
             <Image TextureId="tower_off" Bounds="0, 0, 30, 30"/>
+			
+			<!-- We'll need to remove this -->
+			<Text Text="=SignalSpeed" FontId="SystemFont" Location="10,10" Color="#000000"/>
+			<BoolTrigger Condition="system:towerIncreaseSpeed" Action="SignalSpeed=SignalSpeed+10"/>
+			<BoolTrigger Condition="system:towerReduceSpeed" Action="SignalSpeed=SignalSpeed-10"/>
+			
         </Tower>
 	</Class>
 
