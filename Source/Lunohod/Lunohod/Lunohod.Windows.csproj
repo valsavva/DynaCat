@@ -252,6 +252,7 @@
     <Compile Include="Engine\XTapArea.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\XTapType.cs" />
     <Compile Include="Engine\XText.cs" />
     <Compile Include="Engine\XTower.cs">
       <SubType>Code</SubType>
@@ -1778,8 +1779,6 @@
     <Content Include="Metadata\Textures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <Content Include="Content\Global\SystemFont.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -316,7 +316,7 @@ namespace Lunohod
             }
 		}			
 		
-		public bool ProcessTouch(GameTime gameTime, int x, int y)
+		public bool ProcessTouch(GameTime gameTime, XTapType tapType, int x, int y)
 		{
 			var tapAreas = this.ScreenEngine.tapAreas;
 			
@@ -324,9 +324,13 @@ namespace Lunohod
 			{
 				var tapArea = tapAreas[j];
 				
-				if (tapArea.GetScreenBounds().Contains(x, y))
+                var screenBounds = tapArea.GetScreenBounds();
+
+				if (screenBounds.Contains(x, y))
 				{
-					tapArea.IsTapped = true;
+					tapArea.TapType = tapType;
+                    tapArea.TapX = x - screenBounds.X;
+                    tapArea.TapY = y - screenBounds.Y;
 					return true;
 				}
 			}

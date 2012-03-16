@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input.Touch;
+using Lunohod.Objects;
 
 namespace Lunohod
 {
 	public class MouseProcessor : InputProcessorBase
 	{
+        private bool pressed;
+
 		public MouseProcessor(GameEngine game)
 			: base(game)
 		{
@@ -23,8 +26,25 @@ namespace Lunohod
 			LastPosition.X = mouseState.X;
 			LastPosition.Y = mouseState.Y;
 
-			if (mouseState.LeftButton == ButtonState.Pressed)
-				game.ProcessTouch(gameTime, (int)mouseState.X, (int)mouseState.Y);
+            int x = (int)mouseState.X;
+            int y = (int)mouseState.Y;
+
+            if (mouseState.LeftButton == ButtonState.Pressed)
+            {
+                if (this.pressed)
+                    game.ProcessTouch(gameTime, XTapType.Move, x, y);
+                else
+                {
+                    this.pressed = true;
+                    game.ProcessTouch(gameTime, XTapType.Press, x, y);
+                }
+            }
+            else if (this.pressed)
+            {
+                this.pressed = false;
+                game.ProcessTouch(gameTime, XTapType.Release, x, y);
+            }
+
             if (mouseState.RightButton == ButtonState.Pressed)
                 MoveHero((int)mouseState.X, (int)mouseState.Y);
 		}

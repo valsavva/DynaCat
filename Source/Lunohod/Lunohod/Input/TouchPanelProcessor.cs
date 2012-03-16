@@ -5,17 +5,17 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input.Touch;
 using System.Diagnostics;
+using Lunohod.Objects;
 
 namespace Lunohod
 {
 	public class TouchPanelProcessor : InputProcessorBase
 	{
-		private bool released;
+		private bool pressed;
 		
 		public TouchPanelProcessor(GameEngine game)
 			: base(game)
 		{
-			this.released = true;
 		}
 		
 		public static Vector2 LastPosition;
@@ -31,29 +31,36 @@ namespace Lunohod
 #if DEBUG
 				Debug.WriteLine("Touch: {0},{1} State: {2}", touch.Position.X, touch.Position.Y, touch.State);
 #endif
+
+                if (touch.State == TouchLocationState.Invalid)
+                    continue;
+                
+                LastPosition = touch.Position;
 				
-				LastPosition = touch.Position;
-				
+                int x = (int)(touch.Position.X / game.Scale.X);
+                int y = (int)(touch.Position.Y / game.Scale.Y);
+
 				if (touch.State == TouchLocationState.Released)
 				{
-					this.released = true;
+                    this.pressed = false;
+                    game.ProcessTouch(gameTime, XTapType.Release, x, y);
 					continue;
 				}
 				
-				if (touch.State == TouchLocationState.Invalid)
-					continue;
-				
-				if (touch.State == TouchLocationState.Moved && !this.released)
-					continue;
-				else
-				{
-					Debug.WriteLine("** Issuing a touch! **");
-				}
-				
-				this.released = false;
-				
-				game.ProcessTouch(gameTime, (int)(touch.Position.X / game.Scale.X), (int)(touch.Position.Y / game.Scale.Y));
-			}
+				if (touch.State == TouchLocationState.Moved)
+                {
+                     if (this.pressed)
+                     {
+                         game.ProcessTouch(gameTime, XTapType.Move, x, y);
+                         continue;
+                     }
+                     else
+                         Debug.WriteLine("** Issuing a touch! **");
+                }
+
+                this.pressed = true;
+                game.ProcessTouch(gameTime, XTapType.Press, x, y);
+            }
 		}
 	}
 }
