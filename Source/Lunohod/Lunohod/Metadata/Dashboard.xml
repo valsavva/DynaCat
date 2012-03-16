@@ -2,7 +2,9 @@
 <Include>
 
 	<!-- Resources -->	
+	
 	<Resources RootFolder="Global">
+		<Font Id="SystemFont" Source="SystemFont" />
         <Texture Id="txrBtnDown" Source="btnDown"/>
         <Texture Id="txrBtnLeft" Source="btnLeft"/>
         <Texture Id="txrBtnPause" Source="btnPause"/>
@@ -72,5 +74,24 @@
 
 		<TapArea Bounds="430,00,60,60" Event="system:endLevel"/>
 
+		<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
+		<TapArea Bounds="0,0,50,60" Action="system:heroReduceSpeed;system:heroSpeedRecalculate;">
+			<Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="50,0,50,60" Action="system:heroIncreaseSpeed;system:heroSpeedRecalculate;">
+			<Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="100,0,50,60" Action="system:heroReduceTime;system:heroSpeedRecalculate;">
+			<Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="150,0,50,60" Action="system:heroIncreaseTime;system:heroSpeedRecalculate;">
+			<Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="200,0,50,60" Action="system:towerReduceSpeed;">
+			<Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
+		</TapArea>
+		<TapArea Bounds="250,0,50,60" Action="system:towerIncreaseSpeed;">
+			<Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
+		</TapArea>
 	</Dashboard>
 </Include>

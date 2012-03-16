@@ -37,19 +37,19 @@
                 <Block Id="blk_image3022" Bounds="80, 144, 224, 16" Edges="Bounce" TraceId="image3022">
                     <Image Id="image3022" TextureId="cursor_wall_50x50_bounce" Opacity="1" />
                 </Block>
-                <Enemy Id="fd_image3037-1-7-4" Bounds="295, 195, 24, 12" Class="clsFood" TraceId="image3037-1-7-4"/>
-                <Enemy Id="fd_image3037-17" Bounds="427, 25, 24, 12" Class="clsFood" TraceId="image3037-17"/>
-                <Enemy Id="fd_image3037-4" Bounds="428, 285, 24, 12" Class="clsFood" TraceId="image3037-4"/>
-                <Enemy Id="fd_image3037-0" Bounds="26, 284, 24, 12" Class="clsFood" TraceId="image3037-0"/>
-                <Enemy Id="fd_image3037-9" Bounds="22, 105, 24, 12" Class="clsFood" TraceId="image3037-9"/>
-                <Enemy Id="fd_image3037-1-7-4-2" Bounds="149, 191, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2"/>
-                <Enemy Id="fd_image3037-1-7-4-2-7" Bounds="172, 177, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-7"/>
-                <Enemy Id="fd_image3037-1-7-4-2-6" Bounds="192, 197, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-6"/>
-                <Enemy Id="fd_image3037-1-7-4-2-1" Bounds="220, 174, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-1"/>
-                <Enemy Id="fd_image3037-1-7-4-2-4" Bounds="240, 198, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-4"/>
-                <Enemy Id="fd_image3037-1-7-4-2-2" Bounds="270, 180, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-2"/>
-                <Block Class="clsExit" Id="blk_image3072-8" Bounds="96, 174, 50, 50" Edges="Stick" TraceId="image3072-8">
-                    <Image Id="image3072-8" TextureId="_E_" Opacity="1" />
+                <Enemy Id="fd_image3037_1_7_4" Bounds="295, 195, 24, 12" Class="clsFood" TraceId="image3037-1-7-4"/>
+                <Enemy Id="fd_image3037_17" Bounds="427, 25, 24, 12" Class="clsFood" TraceId="image3037-17"/>
+                <Enemy Id="fd_image3037_4" Bounds="428, 285, 24, 12" Class="clsFood" TraceId="image3037-4"/>
+                <Enemy Id="fd_image3037_0" Bounds="26, 284, 24, 12" Class="clsFood" TraceId="image3037-0"/>
+                <Enemy Id="fd_image3037_9" Bounds="22, 105, 24, 12" Class="clsFood" TraceId="image3037-9"/>
+                <Enemy Id="fd_image3037_1_7_4_2" Bounds="149, 191, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2"/>
+                <Enemy Id="fd_image3037_1_7_4_2_7" Bounds="172, 177, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-7"/>
+                <Enemy Id="fd_image3037_1_7_4_2_6" Bounds="192, 197, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-6"/>
+                <Enemy Id="fd_image3037_1_7_4_2_1" Bounds="220, 174, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-1"/>
+                <Enemy Id="fd_image3037_1_7_4_2_4" Bounds="240, 198, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-4"/>
+                <Enemy Id="fd_image3037_1_7_4_2_2" Bounds="270, 180, 24, 12" Class="clsFood" TraceId="image3037-1-7-4-2-2"/>
+                <Block Class="clsExit" Id="blk_image3072_8" Bounds="96, 174, 50, 50" Edges="Stick" TraceId="image3072-8">
+                    <Image Id="image3072_8" TextureId="_E_" Opacity="1" />
                 </Block>
             </Layer>
             <Include File="Dashboard.xml" />

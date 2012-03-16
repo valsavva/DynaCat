@@ -1,0 +1,52 @@
+<Include>
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="txrElectricitySparks" Source="sprite_current"/>
+    </Resources>
+	<Resources RootFolder="Sound">
+		<SoundFile Id="electric_spark_1" Source="skeletonFX_electric_spark_1"/>
+		<SoundFile Id="electric_spark_2" Source="skeletonFX_electric_spark_2"/>
+		<SoundFile Id="electric_spark_3" Source="skeletonFX_electric_spark_3"/>
+		<SoundFile Id="electric_spark_4" Source="skeletonFX_electric_spark_4"/>
+	</Resources>
+         
+	<Class Id="clsEnemyElectricity1">
+		<Enemy IsExploding="false" Damage="20">
+		
+			<!-- attack -->
+   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this_anmAttack.Start()" StayTriggered="false" Group="this_sttStates"/>
+   			
+   			<ParallelSet Id="this_anmAttack">
+    			<NumAnimation Duration="0.1" Target="hero.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+    			<RandomSet Id="electric_sparking" INProgress="true">
+    				<Sound FileId="electric_spark_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    				<Sound FileId="electric_spark_2" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    				<Sound FileId="electric_spark_3" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    				<Sound FileId="electric_spark_4" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    			</RandomSet>
+            </ParallelSet>
+            <!-- default -->
+            <Sprite TextureId="txrElectricitySparks" FrameBounds="0,0,11,15">
+                <NumAnimation From="0" To="3" Duration="0.2" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
+            </Sprite>
+			
+		</Enemy>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,35 +21,7 @@
 		<Hero Speed="84" Direction="0,0" Deceleration="0">
 
 <!-- Moving -->
-
-            <!-- deceleration -->
-            <!-- values for hero speed animation -->
-            <Group Id="value1" Location="60,0"/>
-            <Group Id="value2" Location="120,0"/>
-            <Group Id="value3" Location="84,0"/>
-
-        	<!-- this should not belong to any group -->
-        	<BoolTrigger Condition="this:OnSand" EnterAction="letHeroSpeedDown.Start()" ExitAction="letHeroSpeedNorm.Start()"/>
-
-        	<BoolTrigger Condition="this:OnIce" EnterAction="anmHeroDeceleration.Pause()" ExitAction="anmHeroDeceleration.Resume()"/>
-
-        	<BoolTrigger Condition="system:left" EnterAction="anmHeroDeceleration.Start()" Group="this_sttSpeedAnimation"/>
-        	<BoolTrigger Condition="system:right" EnterAction="anmHeroDeceleration.Start()"  Group="this_sttSpeedAnimation"/>
-        	<BoolTrigger Condition="system:up" EnterAction="anmHeroDeceleration.Start()"  Group="this_sttSpeedAnimation"/>
-        	<BoolTrigger Condition="system:down" EnterAction="anmHeroDeceleration.Start()"  Group="this_sttSpeedAnimation"/>
-
-        	<!-- hero speed animation -->
-        	<NumAnimation Id="anmHeroDeceleration" Target="hero.Speed" Duration="6" IsDelta="false" RepeatCount="1" Fill="End">
-                <KeyFrame Time="0" Value="value1.X" Smoothing="Smooth"/>
-                <KeyFrame Time="0.3" Value="value2.X" Smoothing="Smooth"/>
-                <KeyFrame Time="0.6" Value="value3.X" Smoothing="Smooth"/>
-                <KeyFrame Time="6" Value="0" Smoothing="Smooth"/>
-            </NumAnimation>
-
-            <!-- when hero in boloto we divide speed animation KeyFrame Values -->
-        	<Let Id="letHeroSpeedDown" Target="value1.X,value2.X,value3.X" Value="30,60,42"/>
-        	<Let Id="letHeroSpeedNorm" Target="value1.X,value2.X,value3.X" Value="60,120,84"/>
-        	
+        <Include File="includeSkeletonHeroMotions.xml"/>
         	<!-- enter -->
             <Group Id="vleHeroPoint" Location="0,0"/>
             <Group Id="vleHeroDestPoint" Location="0,0"/>
@@ -122,6 +94,8 @@
 
 
 </Include>
+
+
 
 
 

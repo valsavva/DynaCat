@@ -15,6 +15,7 @@ namespace Lunohod.Objects
 		private XObjectCollection subcomponents;
 		private Dictionary<string, XObject> componentDict;
 		protected int updateCycle;
+		
 
         /// <summary>
         /// Specifies the object id. The object ids must be unique across loaded module, such as a game level.

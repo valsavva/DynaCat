@@ -2,7 +2,7 @@
 
 	<Resources RootFolder="Sound">
 		<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
-		<SoundFile Id="sndBombHiss" Source="bombHiss"/>
+		<SoundFile Id="sndBombHiss" Source="BombHiss"/>
 	</Resources>
 
 	<Resources RootFolder="Textures">
@@ -25,7 +25,7 @@
 				<ParallelSet InProgress="true">
 					<SequenceSet InProgress="true">
 						<Delay Duration="0.4"/>
-						<Do Action="this.Explode()"/><!-- ;anmScreenQuake.Start() -->
+						<Do Action="this.Explode()"/>
 					</SequenceSet>
 					<NumAnimation From="1" To="0" Smoothing="Flat" Duration="0.2" Autoreverse="false" Target="this_imgExplosion.Opacity" RepeatCount="2"/>
 					<Delay Duration="0.6"/>
@@ -36,9 +36,11 @@
 		</Explosion>
 	</Class>
 	
-<!--    <NumAnimation Id="anmScreenQuake" Target="X" From="-1" To="1" Duration="0.1" Autoreverse="true" RepeatCount="2.5" Fill="End" IsDelta="false"/>
--->
+    <NumAnimation Id="anmScreenQuake" Target="X" From="-1" To="1" Duration="0.1" Autoreverse="true" RepeatCount="2" Fill="Reset" IsDelta="false"/>
+
 </Include>
+
+
 
 
 

@@ -12,7 +12,7 @@
         <Texture Id="box_old_1" Source="box_old_1"/>
         <Texture Id="fish" Source="fish"/>
         <Texture Id="enemy_1" Source="enemy_1"/>
-        <Texture Id="bolbex-1" Source="bolbex-1"/>
+        <Texture Id="bolbex_1" Source="bolbex-1"/>
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="DefaultMask_image3525" TextureId="style100500opt_OptBckg" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image3525"/>
@@ -40,16 +40,16 @@
             <Image Id="image3115" TextureId="box_old_3" Opacity="1"/>
         </Block>
         <Block Id="blk8" Class="clsWoodenBox" Bounds="115, 86, 30, 29" Edges="Stick" TraceId="image3053-7">
-            <Image Id="image3053-7" TextureId="box_old_2" Opacity="1"/>
+            <Image Id="image3053_7" TextureId="box_old_2" Opacity="1"/>
         </Block>
         <Block Id="blk9" Class="clsWoodenBox" Bounds="112, 56, 30, 30" Edges="Stick" TraceId="image3075-0">
-            <Image Id="image3075-0" TextureId="box_old_1" Opacity="1"/>
+            <Image Id="image3075_0" TextureId="box_old_1" Opacity="1"/>
         </Block>
         <Block Id="blk10" Class="clsWoodenBox" Bounds="113, 116, 30, 30" Edges="Stick" TraceId="image3078-9">
-            <Image Id="image3078-9" TextureId="box_old_1" Opacity="1"/>
+            <Image Id="image3078_9" TextureId="box_old_1" Opacity="1"/>
         </Block>
         <Block Id="blk11" Class="clsWoodenBox" Bounds="113, 147, 30, 30" Edges="Stick" TraceId="image3064-4">
-            <Image Id="image3064-4" TextureId="box_old_3" Opacity="1"/>
+            <Image Id="image3064_4" TextureId="box_old_3" Opacity="1"/>
         </Block>
         <Food Id="fd1" Points="1" Bounds="52, 75, 30, 16" Class="clsFood" TraceId="image3107"/>
         <Group Id="grp_g3415">

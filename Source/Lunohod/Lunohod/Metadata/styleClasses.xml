@@ -39,7 +39,12 @@
 	<!-- =========================================================================================  -->
 	
 	<Class Id="clsTower">
-		<Tower SignalSpeed="256"/>
+		<Tower SignalSpeed="256">
+			<!-- We'll need to remove this -->
+			<Text Text="=SignalSpeed" FontId="SystemFont" Location="10,10" Color="#000000"/>
+			<BoolTrigger Condition="system:towerIncreaseSpeed" Action="SignalSpeed=SignalSpeed+10"/>
+			<BoolTrigger Condition="system:towerReduceSpeed" Action="SignalSpeed=SignalSpeed-10"/>
+		</Tower>
 	</Class>
 
 	<!-- =========================================================================================  -->
@@ -49,7 +54,7 @@
     <Resources RootFolder="TestTextures">
         <Texture Id="cursor_50x50_light_blue" Source="bolbex-1_me"/>
         <Texture Id="cursor_50x50_blue" Source="bolbex-1_me"/>
-        <Texture Id="bolbex-1_me_wait_expl2" Source="bolbex-1_me_wait_expl2"/>
+        <Texture Id="bolbex_1_me_wait_expl2" Source="bolbex-1_me_wait_expl2"/>
     </Resources>
 	
 	<Class Id="clsHero">
@@ -82,7 +87,7 @@
 			</BoolTrigger>
 			
 			<BoolTrigger Condition="this:wait_expl" Group="heroStates">
-				<Image TextureId="bolbex-1_me_wait_expl2" Bounds="-3, -14, 40, 39"/>      <!-- 33, 25-->
+				<Image TextureId="bolbex_1_me_wait_expl2" Bounds="-3, -14, 40, 39"/>      <!-- 33, 25-->
 			</BoolTrigger>
 			
 			<BoolTrigger Id="default" Group="heroStates">

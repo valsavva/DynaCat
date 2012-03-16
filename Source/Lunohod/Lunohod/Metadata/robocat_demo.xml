@@ -49,11 +49,11 @@
         <Block Id="blk18" Bounds="433, -21, 30, 97" Edges="Bounce" TraceId="image3914">
             <Image Id="image3914" TextureId="construction_3hor2_demo" Opacity="1" />
         </Block>
-        <Image Id="DefaultMask_image3037-17" TextureId="lathe_5_demo" Bounds="80, 160, 50, 54" Stretch="false" Opacity="1" TraceId="image3037-17"/>
+        <Image Id="DefaultMask_image3037_17" TextureId="lathe_5_demo" Bounds="80, 160, 50, 54" Stretch="false" Opacity="1" TraceId="image3037-17"/>
         <Image Id="DefaultMask_image3935" TextureId="barrel_1_demo" Bounds="82, 208, 30, 34" Stretch="false" Opacity="1" TraceId="image3935"/>
         <Image Id="DefaultMask_image3946" TextureId="lathe_1_demo" Bounds="190, 196, 50, 60" Stretch="false" Opacity="1" TraceId="image3946"/>
-        <Image Id="DefaultMask_image3935-4" TextureId="barrel_1_demo" Bounds="122, 203, 30, 34" Stretch="false" Opacity="1" TraceId="image3935-4"/>
-        <Image Id="DefaultMask_image3935-9" TextureId="barrel_1_demo" Bounds="102, 218, 30, 34" Stretch="false" Opacity="1" TraceId="image3935-9"/>
+        <Image Id="DefaultMask_image3935_4" TextureId="barrel_1_demo" Bounds="122, 203, 30, 34" Stretch="false" Opacity="1" TraceId="image3935-4"/>
+        <Image Id="DefaultMask_image3935_9" TextureId="barrel_1_demo" Bounds="102, 218, 30, 34" Stretch="false" Opacity="1" TraceId="image3935-9"/>
         <Image Id="l4" TextureId="lathe_4_demo" Bounds="430, 256, 50, 45" Stretch="false" Opacity="1" TraceId="image3070-4">
 			<IntersectionTrigger ObjectId2="l4" ObjectId1="hero" >
 				<NumAnimation Id="dds" From="0" To="3200" Duration="50" Target="ccc.Y" IsDelta="true" Autoreverse="false" RepeatCount="77777" InProgress="true" />

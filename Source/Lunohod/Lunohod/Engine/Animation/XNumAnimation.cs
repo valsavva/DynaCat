@@ -15,12 +15,13 @@ namespace Lunohod.Objects
     /// from the value <see cref="XNumAnimation.From"/> to <see cref="XNumAnimation.To"/>.
     /// </summary>
     [XmlType("NumAnimation")]
-    public class XNumAnimation : XAnimationBase
+    public class XNumAnimation : XRunnableBase
     {
-        private List<TimeCurve> curves;
-        private List<NumProperty> targets;
+        internal List<TimeCurve> curves;
+        internal List<NumProperty> targets;
         private List<XKeyFrame> keyFrames;
         private List<float?> startValues;
+		private XKeyFrame lastFrame;
 
         /// <summary>
         /// A property, or a comma-delimited list of properties that will be animated.
@@ -50,14 +51,42 @@ namespace Lunohod.Objects
         /// </summary>
         [XmlAttribute]
         public CurveTangent Smoothing = CurveTangent.Linear;
+        /// <summary>
+        /// Specifies the animation duration. This is the amount of time between the start of the first keyframe and
+        /// the end of the last one.
+        /// </summary>
+		[XmlAttribute]
+		public string Duration;
+        /// <summary>
+        /// Specifies whether the animation should automatically re-play in reverse upon completion of the last keyframe.
+        /// When set to True, it essentially doubles the duration of one animation repeat.
+        /// </summary>
+		[XmlAttribute]
+		public bool Autoreverse;
+        /// <summary>
+        /// Specifies the behavior of the animation upon its completion. See <see cref="XAnimationFillBehavior"/> for details.
+        /// </summary>
+		[XmlAttribute]
+		public XAnimationFillBehavior Fill;
+		
+		private float InternalDuration
+		{
+			get { return lastFrame.CurrentTime; }
+		}
 		
         public override void Initialize(InitializeParameters p)
         {
             if (!string.IsNullOrEmpty(this.From))
             {
                 // Use the From/To properties
-                this.Subcomponents.Add(new XKeyFrame() { Time = TimeSpan.Zero, Value = this.From, Smoothing = this.Smoothing });
-                this.Subcomponents.Add(new XKeyFrame() { Time = this.Duration, Value = this.To, Smoothing = this.Smoothing });
+                this.Subcomponents.Add(new XKeyFrame() { Time = "0", Value = this.From, Smoothing = this.Smoothing });
+                this.Subcomponents.Add(new XKeyFrame() {
+					Time = (!string.IsNullOrEmpty(this.Duration) && this.Duration.Contains(":")) ?
+						this.Duration.ToDuration().TotalSeconds.ToString(CultureInfo.InvariantCulture)
+						: this.Duration,
+					Value = this.To,
+					Smoothing = this.Smoothing }
+				);
             }
 
             base.Initialize(p);
@@ -72,7 +101,8 @@ namespace Lunohod.Objects
                 throw new InvalidOperationException("Number of values in key frames must match number of targets.");
             if (keyFrames.Count < 2)
                 throw new InvalidOperationException("Number of key frames must be 2 or more.");
-
+			lastFrame = keyFrames[keyFrames.Count - 1];
+			
             // create curves
             curves = new List<TimeCurve>(targets.Count);
             for (int i = 0; i < targets.Count; i++)
@@ -97,17 +127,45 @@ namespace Lunohod.Objects
             for (int i = 0; i < startValues.Count; i++)
                 startValues[i] = null;
 		}
-		
-		protected override void UpdateAnimation()
+
+		/// <inheritdoc />
+        public override void Stop()
         {
-            for (int i = 0; i < targets.Count; i++)
+			if (this.inProgress)
+			{
+				if (this.Fill == XAnimationFillBehavior.Reset)
+					this.elapsedTime = TimeSpan.Zero;
+				else if (this.Fill == XAnimationFillBehavior.End)
+					this.elapsedTime = TimeSpan.FromSeconds(this.Autoreverse ? this.InternalDuration * 2f : this.InternalDuration);
+
+				UpdateAnimation();
+			}
+
+			base.Stop();
+        }
+
+		/// <exclude />
+        internal override float CalculateRepeatsDone()
+		{
+			if (this.elapsedTime == TimeSpan.Zero || this.InternalDuration == 0f)
+				return 0f;
+			
+			if (this.Autoreverse)
+				return (float)(this.elapsedTime.TotalSeconds / (this.InternalDuration * 2.0));
+			else
+				return (float)(this.elapsedTime.TotalSeconds / this.InternalDuration);
+		}
+		
+		private void UpdateAnimation()
+		{
+			for (int i = 0; i < targets.Count; i++)
             {
                 for (int j = 0; j < curves[i].Keys.Count; j++)
                 {
                     curves[i].ComputeT(j, keyFrames[j].Smoothing);
                 }
 
-                var newPropertyValue = (float)curves[i].Evaluate((float)this.elapsedTime.TotalMilliseconds);
+                var newPropertyValue = (float)curves[i].Evaluate((float)this.elapsedTime.TotalSeconds);
 
                 if (this.IsDelta)
                 {
@@ -119,9 +177,20 @@ namespace Lunohod.Objects
 
                 targets[i].SetValue(newPropertyValue);
             }
+		}
+
+        /// <exclude />
+        internal override void UpdateProgress(UpdateParameters p)
+		{
+			// update keyframes first
+			this.UpdateChildren(p);
+
+			this.UpdateAnimation();
         }
 		internal override void ReplaceParameter(string par, string val)
 		{
+			if (this.Duration != null)
+				this.Duration = this.Duration.Replace(par, val);
 	        if (this.Target != null)
 			    this.Target = this.Target.Replace(par, val);
 			if (this.From != null)

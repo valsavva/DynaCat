@@ -61,13 +61,13 @@
                     <Image Id="image5817" TextureId="cursor_wall_50x50_stick" Opacity="1" />
                 </Block>
                 <Block Id="blk13" Bounds="170, 284, 50, 16" Edges="Stick" TraceId="image3038-1">
-                    <Image Id="image3038-1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                    <Image Id="image3038_1" TextureId="cursor_wall_50x50_stick" Opacity="1" />
                 </Block>
                 <Block Id="blk14" Bounds="240, 284, 50, 16" Edges="Stick" TraceId="image3038-1-2">
-                    <Image Id="image3038-1-2" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                    <Image Id="image3038_1_2" TextureId="cursor_wall_50x50_stick" Opacity="1" />
                 </Block>
                 <Block Id="blk15" Bounds="410, 284, 80, 16" Edges="Stick" TraceId="image3038-3">
-                    <Image Id="image3038-3" TextureId="cursor_wall_50x50_stick" Opacity="1" />
+                    <Image Id="image3038_3" TextureId="cursor_wall_50x50_stick" Opacity="1" />
                 </Block>
                 <Food Id="fd9" Points="1" Bounds="35, 248, 24, 12" Class="clsFood" TraceId="image3037-1-2"/>
                 <Block Id="Exit" Class="clsExit" Bounds="350, 256, 50, 50" Edges="None" TraceId="image3034">

@@ -14,10 +14,11 @@ namespace Lunohod.Objects
     public class XKeyFrame : XObject
     {
         private List<IExpression<float>> valueReaders;
-        private XAnimationBase animation;
+        private IExpression<float> timeReader;
+        private XNumAnimation animation;
 
-        [XmlIgnore]
-        public TimeSpan Time;
+        [XmlAttribute]
+        public string Time;
 
         [XmlAttribute]
         public string Value;
@@ -28,21 +29,22 @@ namespace Lunohod.Objects
         [XmlIgnore]
         public List<CurveKey> CurveKeys { get; private set; }
 
-        [XmlAttribute("Time")]
-        public string zTime
-        {
-            get { return this.Time.ToString(); }
-            set { this.Time = value.ToDuration(); }
-        }
-
+		[XmlIgnore]
+		public float CurrentTime { get; private set; }
+		
         public override void Initialize(InitializeParameters p)
         {
             base.Initialize(p);
 
-            animation = (XAnimationBase)this.FindAncestor(a => a is XAnimationBase);
+            animation = (XNumAnimation)this.Parent;
 
             this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<float>(this.Parent, s)).ToList();
-            this.CurveKeys = valueReaders.Select(r => new CurveKey((float)this.Time.TotalMilliseconds, r.GetValue())).ToList();
+            this.timeReader = Compiler.CompileExpression<float>(this.Parent, this.Time);
+			this.CurrentTime = timeReader is IVariable ? 0f : timeReader.GetValue();
+            this.CurveKeys = valueReaders.Select(r => new CurveKey(
+				this.CurrentTime,
+				r is IVariable ? 0f : r.GetValue())
+             ).ToList();
         }
 
         public override void Update(UpdateParameters p)
@@ -51,11 +53,27 @@ namespace Lunohod.Objects
 
             if (!animation.InProgress || animation.IsPaused)
                 return;
-
-            for (int i = 0; i < this.valueReaders.Count; i++)
-            {
-                this.CurveKeys[i].Value = this.valueReaders[i].GetValue();
-            }
+			
+			float newTime = timeReader.GetValue();
+			
+			if (this.CurrentTime != newTime)
+			{
+				this.CurrentTime = newTime;
+				
+				for(int i = 0; i < animation.curves.Count; i++)
+				{
+					animation.curves[i].Keys.Remove(this.CurveKeys[i]);
+					this.CurveKeys[i] = new CurveKey(this.CurrentTime, this.valueReaders[i].GetValue());
+					animation.curves[i].Keys.Add(this.CurveKeys[i]);
+				}
+			} 
+			else
+			{
+		        for (int i = 0; i < this.valueReaders.Count; i++)
+		        {
+		            this.CurveKeys[i].Value = this.valueReaders[i].GetValue();
+		        }
+			}
         }
 		
 		internal override void ReplaceParameter(string par, string val)
