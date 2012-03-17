@@ -63,9 +63,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <IpaPackageName />
     <MtouchI18n />
-    <MtouchArch>ARMv7</MtouchArch>
-    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchArch>ARMv6_ARMv7</MtouchArch>
     <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchUseSGen>true</MtouchUseSGen>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
