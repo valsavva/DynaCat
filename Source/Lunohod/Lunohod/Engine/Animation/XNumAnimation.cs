@@ -80,13 +80,7 @@ namespace Lunohod.Objects
             {
                 // Use the From/To properties
                 this.Subcomponents.Add(new XKeyFrame() { Time = "0", Value = this.From, Smoothing = this.Smoothing });
-                this.Subcomponents.Add(new XKeyFrame() {
-					Time = (!string.IsNullOrEmpty(this.Duration) && this.Duration.Contains(":")) ?
-						this.Duration.ToDuration().TotalSeconds.ToString(CultureInfo.InvariantCulture)
-						: this.Duration,
-					Value = this.To,
-					Smoothing = this.Smoothing }
-				);
+                this.Subcomponents.Add(new XKeyFrame() { Time = this.Duration, Value = this.To, Smoothing = this.Smoothing });
             }
 
             base.Initialize(p);
