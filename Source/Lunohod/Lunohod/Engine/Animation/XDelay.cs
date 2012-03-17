@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -20,20 +21,21 @@ namespace Lunohod.Objects
 		private bool inProgress;
 		private bool isPaused;
 		
+		private IExpression<float> durationReader;
+		
         /// <summary>
         /// Specifies the amount of time the componente will idle.
         /// </summary>
-		[XmlIgnore]
-		public TimeSpan Duration;
-
-        /// <exclude />
-		[XmlAttribute("Duration")]
-		public string zDuration
+		[XmlAttribute]
+		public string Duration;
+		
+		public override void Initialize(InitializeParameters p)
 		{
-			get { return this.Duration.ToString(); }
-            set { this.Duration = value.ToDuration(); }
+			base.Initialize(p);
+			
+			durationReader = Compiler.CompileExpression<float>(this, this.Duration);
 		}
-
+		
         public override void Update(UpdateParameters p)
 		{
 			if (!this.inProgress || this.isPaused)
@@ -41,7 +43,7 @@ namespace Lunohod.Objects
 
 			this.elapsedTime += p.GameTime.ElapsedGameTime;
 			
-			if (this.elapsedTime > this.Duration)
+			if (this.elapsedTime.TotalSeconds > this.durationReader.GetValue())
 				this.Stop();
 			
 			base.Update(p);
