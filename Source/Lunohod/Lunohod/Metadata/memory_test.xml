@@ -143,313 +143,313 @@
 		<Image Id="img_i300_10" TextureId="i300_10" Bounds="100, 100, 100, 100" Opacity="0.5" />
 
 		<Image Id="img_real_big_1" TextureId="real big 1" Bounds="0, 0, 100, 100" Opacity="0.5" >
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img_real_big_2" TextureId="real big 2" Bounds="100, 100, 100, 100" Opacity="0.5" >
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		
 		
 		
 		<Image Id="img1" TextureId="txtr_1" Bounds="384, 21, 34, 34" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img2" TextureId="txtr_2" Bounds="1, 142, 31, 31" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img3" TextureId="txtr_3" Bounds="179, 447, 57, 57" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img4" TextureId="txtr_4" Bounds="204, 35, 22, 22" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img5" TextureId="txtr_5" Bounds="1, 396, 29, 29" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img6" TextureId="txtr_6" Bounds="357, 331, 49, 49" Opacity="0.3">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img7" TextureId="txtr_7" Bounds="271, 442, 36, 36" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img8" TextureId="txtr_8" Bounds="209, 190, 23, 23" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img9" TextureId="txtr_9" Bounds="282, 59, 36, 36" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img10" TextureId="txtr_10" Bounds="110, 312, 55, 55" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img11" TextureId="txtr_11" Bounds="368, 296, 32, 32" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img12" TextureId="txtr_12" Bounds="39, 265, 36, 36" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img13" TextureId="txtr_13" Bounds="90, 264, 45, 45" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:6" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="6" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img14" TextureId="txtr_14" Bounds="401, 73, 39, 39" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img15" TextureId="txtr_15" Bounds="413, 284, 38, 38" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img16" TextureId="txtr_16" Bounds="166, 188, 17, 17" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img17" TextureId="txtr_17" Bounds="347, 334, 26, 26" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:6" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="6" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img18" TextureId="txtr_18" Bounds="239, 122, 28, 28" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img19" TextureId="txtr_19" Bounds="363, 144, 55, 55" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img20" TextureId="txtr_20" Bounds="17, 298, 57, 57" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img21" TextureId="txtr_21" Bounds="302, 255, 46, 46" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img22" TextureId="txtr_22" Bounds="89, 196, 19, 19" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img23" TextureId="txtr_23" Bounds="116, 5, 48, 48" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img24" TextureId="txtr_24" Bounds="303, 262, 55, 55" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img25" TextureId="txtr_25" Bounds="356, 391, 51, 51" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img26" TextureId="txtr_26" Bounds="424, 41, 10, 10" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img27" TextureId="txtr_27" Bounds="284, 10, 49, 49" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img28" TextureId="txtr_28" Bounds="382, 376, 45, 45" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img29" TextureId="txtr_29" Bounds="304, 138, 15, 15" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img30" TextureId="txtr_30" Bounds="387, 120, 25, 25" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img31" TextureId="txtr_31" Bounds="186, 27, 57, 57" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img32" TextureId="txtr_32" Bounds="132, 42, 33, 33" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img33" TextureId="txtr_33" Bounds="32, 154, 43, 43" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img34" TextureId="txtr_34" Bounds="386, 281, 28, 28" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img35" TextureId="txtr_35" Bounds="463, 287, 11, 11" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img36" TextureId="txtr_36" Bounds="122, 15, 24, 24" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img37" TextureId="txtr_37" Bounds="93, 458, 44, 44" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img38" TextureId="txtr_38" Bounds="145, 446, 18, 18" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img39" TextureId="txtr_39" Bounds="205, 235, 17, 17" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img40" TextureId="txtr_40" Bounds="179, 35, 57, 57" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img41" TextureId="txtr_41" Bounds="238, 255, 14, 14" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img42" TextureId="txtr_42" Bounds="384, 467, 48, 48" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img43" TextureId="txtr_43" Bounds="245, 17, 17, 17" Opacity="0.3">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img44" TextureId="txtr_44" Bounds="283, 435, 21, 21" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img45" TextureId="txtr_45" Bounds="179, 427, 50, 50" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img46" TextureId="txtr_46" Bounds="166, 109, 21, 21" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img47" TextureId="txtr_47" Bounds="288, 305, 58, 58" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img48" TextureId="txtr_48" Bounds="81, 125, 39, 39" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img49" TextureId="txtr_49" Bounds="16, 229, 30, 30" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img50" TextureId="txtr_50" Bounds="441, 72, 43, 43" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img51" TextureId="txtr_51" Bounds="448, 4, 18, 18" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img52" TextureId="txtr_52" Bounds="437, 225, 18, 18" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img53" TextureId="txtr_53" Bounds="186, 126, 30, 30" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img54" TextureId="txtr_54" Bounds="134, 251, 14, 14" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img55" TextureId="txtr_55" Bounds="419, 25, 13, 13" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:6" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="6" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img56" TextureId="txtr_56" Bounds="161, 390, 30, 30" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:6" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="6" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img57" TextureId="txtr_57" Bounds="371, 204, 31, 31" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img58" TextureId="txtr_58" Bounds="161, 288, 41, 41" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img59" TextureId="txtr_59" Bounds="27, 169, 14, 14" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img60" TextureId="txtr_60" Bounds="99, 267, 60, 60" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img61" TextureId="txtr_61" Bounds="154, 463, 41, 41" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img62" TextureId="txtr_62" Bounds="286, 459, 37, 37" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img63" TextureId="txtr_63" Bounds="421, 414, 57, 57" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img64" TextureId="txtr_64" Bounds="480, 46, 13, 13" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img65" TextureId="txtr_65" Bounds="10, 93, 28, 28" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img66" TextureId="txtr_66" Bounds="6, 468, 46, 46" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img67" TextureId="txtr_67" Bounds="59, 46, 43, 43" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img68" TextureId="txtr_68" Bounds="243, 475, 23, 23" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img69" TextureId="txtr_69" Bounds="254, 389, 22, 22" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img70" TextureId="txtr_70" Bounds="441, 474, 31, 31" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img71" TextureId="txtr_71" Bounds="62, 199, 23, 23" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img72" TextureId="txtr_72" Bounds="330, 229, 13, 13" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img73" TextureId="txtr_73" Bounds="398, 77, 45, 45" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img74" TextureId="txtr_74" Bounds="411, 405, 25, 25" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img75" TextureId="txtr_75" Bounds="126, 309, 23, 23" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img76" TextureId="txtr_76" Bounds="383, 119, 14, 14" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img77" TextureId="txtr_77" Bounds="6, 442, 11, 11" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img78" TextureId="txtr_78" Bounds="258, 167, 57, 57" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img79" TextureId="txtr_79" Bounds="374, 210, 52, 52" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img80" TextureId="txtr_80" Bounds="475, 300, 13, 13" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:3" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="3" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img81" TextureId="txtr_81" Bounds="387, 404, 11, 11" Opacity="0.8">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img82" TextureId="txtr_82" Bounds="98, 323, 49, 49" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img83" TextureId="txtr_83" Bounds="375, 154, 39, 39" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img84" TextureId="txtr_84" Bounds="330, 57, 11, 11" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:7" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="7" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img85" TextureId="txtr_85" Bounds="302, 397, 59, 59" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img86" TextureId="txtr_86" Bounds="473, 218, 59, 59" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img87" TextureId="txtr_87" Bounds="48, 345, 10, 10" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img88" TextureId="txtr_88" Bounds="30, 167, 14, 14" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:1" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="1" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img89" TextureId="txtr_89" Bounds="72, 95, 38, 38" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img90" TextureId="txtr_90" Bounds="170, 55, 33, 33" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img91" TextureId="txtr_91" Bounds="59, 138, 52, 52" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img92" TextureId="txtr_92" Bounds="87, 76, 56, 56" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img93" TextureId="txtr_93" Bounds="7, 172, 52, 52" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:6" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="6" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img94" TextureId="txtr_94" Bounds="339, 480, 26, 26" Opacity="0.7">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img95" TextureId="txtr_95" Bounds="439, 276, 36, 36" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:9" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="9" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img96" TextureId="txtr_96" Bounds="157, 54, 60, 60" Opacity="1">
-			<NumAnimation From="0" To="360" Duration="00:00:8" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="8" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img97" TextureId="txtr_97" Bounds="183, 188, 18, 18" Opacity="0.6">
-			<NumAnimation From="0" To="360" Duration="00:00:4" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="4" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img98" TextureId="txtr_98" Bounds="1, 137, 25, 25" Opacity="0.5">
-			<NumAnimation From="0" To="360" Duration="00:00:2" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="2" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img99" TextureId="txtr_99" Bounds="212, 442, 55, 55" Opacity="0.4">
-			<NumAnimation From="0" To="360" Duration="00:00:10" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="10" Autoreverse="false" Target="Rotation"/>
 		</Image>
 		<Image Id="img100" TextureId="txtr_100" Bounds="376, 99, 25, 25" Opacity="0.9">
-			<NumAnimation From="0" To="360" Duration="00:00:5" Autoreverse="false" Target="Rotation"/>
+			<NumAnimation From="0" To="360" Duration="5" Autoreverse="false" Target="Rotation"/>
 		</Image>
 	</Layer>
 	<Include File="Dashboard.xml" />
