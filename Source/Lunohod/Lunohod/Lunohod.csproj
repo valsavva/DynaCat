@@ -184,6 +184,7 @@
     <Compile Include="Engine\Expressions\VoidMethod.cs" />
     <Compile Include="Engine\Expressions\AssignStatement.cs" />
     <Compile Include="Engine\Expressions\Variable.cs" />
+    <Compile Include="Engine\XTapType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -977,18 +978,6 @@
     <Content Include="Metadata\TestOriginAndRotationCenterAndScale.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Stationary\launch_iphone_320x480.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Stationary\launch_iphone_640x960.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Stationary\icon_iphone_114x114.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Stationary\icon_iphone_57x57.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Default%402x.png" />
     <Content Include="Default.png" />
     <Content Include="Metadata\TestExplosion.xml">
@@ -1774,6 +1763,10 @@
     <Content Include="Content\Textures\transmitter-2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Graphics\icon_iphone_114x114.png" />
+    <Content Include="Graphics\icon_iphone_57x57.png" />
+    <Content Include="Graphics\launch_iphone_320x480.png" />
+    <Content Include="Graphics\launch_iphone_640x960.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
