@@ -8,7 +8,7 @@
         <Texture Id="txrBtnPause" Source="btnPause"/>
         <Texture Id="txrBtnRight" Source="btnRight"/>
         <Texture Id="txrBtnUp" Source="btnUp"/>
-        <Texture Id="txrBtnBomb" Source="btnBomb"/>
+        <!--<Texture Id="txrBtnBomb" Source="btnBomb"/>-->
 	</Resources>
 	
 	<Dashboard Id="dashboard" BackColor="#FFFFFFFF">
@@ -63,35 +63,16 @@
             <NumAnimation Target="imgBtnPause.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
 		</SequenceSet>
 
- 		<TapArea Bounds="248, 234, 100, 86" Action="tap8_setPress.Start()"/>
+<!-- 		<TapArea Bounds="248, 234, 100, 86" Action="tap8_setPress.Start()"/>
 		<Image Id="imgBtnBomb" TextureId="txrBtnBomb" Bounds="270, 256, 56, 56" Stretch="false" Opacity="0.2"/>
 		<SequenceSet Id="tap8_setPress">
 			<Do Action="~system:explosion;dashboard:AnyKeyPressed"/>
             <NumAnimation Target="imgBtnBomb.Opacity" From="1" To="0.2" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
 		</SequenceSet>
-
+-->
 		<TapArea Bounds="430,00,60,60" Event="system:endLevel"/>
-        <!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
-        <TapArea Bounds="0,0,50,60" Action="system:heroReduceSpeed;system:heroSpeedRecalculate;">
-            <Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
-        </TapArea>
-        <TapArea Bounds="50,0,50,60" Action="system:heroIncreaseSpeed;system:heroSpeedRecalculate;">
-            <Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
-        </TapArea>
-        <TapArea Bounds="100,0,50,60" Action="system:heroReduceTime;system:heroSpeedRecalculate;">
-            <Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
-        </TapArea>
-        <TapArea Bounds="150,0,50,60" Action="system:heroIncreaseTime;system:heroSpeedRecalculate;">
-            <Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
-        </TapArea>
-        <TapArea Bounds="200,0,50,60" Action="system:towerReduceSpeed;">
-            <Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
-        </TapArea>
-        <TapArea Bounds="250,0,50,60" Action="system:towerIncreaseSpeed;">
-            <Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
-        </TapArea>
 
-    </Dashboard>
+	</Dashboard>
 </Include>
 
 

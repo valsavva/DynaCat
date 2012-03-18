@@ -16,23 +16,24 @@
         <Texture Id="txrHeroWaitingExplosion" Source="bolbex-1_me_wait_expl2"/>
     </Resources>
 
-
 	<Class Id="clsHero">
 		<Hero Speed="84" Direction="0,0" Deceleration="0">
+		
+<!-- Init Vars -->
 
+         	<Do InProgress="true" Action="@heroDepartPointX=0;                 @heroDepartPointY=0;                 @heroDestPointX=0;                 @heroDestPointY=0"/>
+                
 <!-- Moving -->
-        <Include File="includeSkeletonHeroMotions.xml"/>
+
+            <Include File="includeSkeletonHeroMotions.xml"/>
+        
         	<!-- enter -->
-            <Group Id="vleHeroPoint" Location="0,0"/>
-            <Group Id="vleHeroDestPoint" Location="0,0"/>
             <BoolTrigger Condition="this:Enter" EnterAction="setHeroEnter.Start()">
                 <SequenceSet Id="setHeroEnter">
                     <Do Action="hero.StartTransaction()"/>
-                    <NumAnimation Target="hero.X,hero.Y" From="vleHeroPoint.X,vleHeroPoint.Y" To="vleHeroDestPoint.X,vleHeroDestPoint.Y" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
-                    <NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.1" Autoreverse="false" IsDelta="false" InProgress="true" RepeatCount="1" Fill="End"/>
+                    <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
                     <Delay Duration="1.5"/>
-                    <Do Action="hero.EndTransaction()"/>
-                    <Do Action="this:-Enter"/>
+                    <Do Action="hero.EndTransaction();this:-Enter"/>
                 </SequenceSet>
             </BoolTrigger>
           
@@ -94,6 +95,7 @@
 
 
 </Include>
+
 
 
 
