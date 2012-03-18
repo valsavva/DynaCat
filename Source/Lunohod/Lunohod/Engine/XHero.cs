@@ -48,10 +48,34 @@ namespace Lunohod.Objects
 		}
 		
 		/// <summary>
+		/// Gets the default health.
+		/// </summary>
+		/// <value>
+		/// The default health.
+		/// </value>
+		[XmlIgnore]
+		public float DefaultHealth { get; private set; }
+		/// <summary>
 		/// Gets hero's current health level.
 		/// </summary>
 		[XmlIgnore]
 		public float Health { get; private set; }
+		/// <summary>
+		/// Gets the default bomb count.
+		/// </summary>
+		/// <value>
+		/// The default bomb count.
+		/// </value>
+		[XmlIgnore]
+		public float DefaultBombCount { get; private set; }
+		/// <summary>
+		/// Gets or sets the current bomb count.
+		/// </summary>
+		/// <value>
+		/// The bomb count.
+		/// </value>
+		[XmlIgnore]
+		public float BombCount { get; set; }
 		/// <summary>
 		/// Gets a value indicating whether hero is dead.
 		/// </summary>
@@ -79,7 +103,12 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 
 			p.LevelEngine.Hero = this;
-			this.Health = p.LevelEngine.LevelObject.DefaultSettings.HeroHealth;
+			
+			this.DefaultHealth = p.LevelEngine.LevelObject.DefaultSettings.HeroHealth;
+			this.Health = this.DefaultHealth;
+			
+			this.DefaultBombCount = p.LevelEngine.LevelObject.DefaultSettings.BombCount;
+			this.BombCount = this.DefaultBombCount;
 
             if (this.DefaultSpeed == 0)
                 this.DefaultSpeed = this.Speed;
