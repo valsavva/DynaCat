@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
 
-	<!-- Resources -->	
-	<Resources RootFolder="Global">
+	<!-- Resources -->
+    <Resources RootFolder="Global">
+        <Texture Id="blank" Source="blank" />
+        <Font Id="SystemFont" Source="SystemFont" />
+	</Resources>
+        <Resources RootFolder="Global">
         <Texture Id="txrBtnDown" Source="btnDown"/>
         <Texture Id="txrBtnLeft" Source="btnLeft"/>
         <Texture Id="txrBtnPause" Source="btnPause"/>

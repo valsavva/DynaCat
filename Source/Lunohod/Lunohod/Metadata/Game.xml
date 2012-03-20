@@ -15,12 +15,13 @@
 		<Screen Id="ScreenTests02" File="ScreenTests02.xml" />
 	</Screens>
 	<Levels>
-		<Level Id="zzz" File="zzz.xml" />
 		<Level Id="S01L01" File="S01L01.xml" />
-		<Level Id="AlphaTest" File="AlphaTest.xml" />
-		<Level Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
-		<Level Id="AlphaTest2" File="AlphaTest2.xml" />
-
+        <Level Id="S01L02" File="S01L02.xml" />
+        <Level Id="S01L03" File="S01L03.xml" />
+        <Level Id="S01L04" File="S01L04.xml" />
+        <Level Id="S02LXX_Labirint (demo)" File="S02LXX_Labirint.xml" />
+        <Level Id="AlphaTest (demo)" File="AlphaTest.xml" />
+        <Level Id="AlphaTest2 (demo)" File="AlphaTest2.xml" />
 		<Level Id="---" File="S01L01.xml" />
 		<Level Id="style100500" File="style100500.xml" />
 		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
@@ -75,6 +76,16 @@
 		<Level Id="FPSTest_dry_IBA-1000" File="FPSTest_dry_IBA-1000.xml" />
 	</Levels>
 </Game>
+
+
+
+
+
+
+
+
+
+
 
 
 
