@@ -3,6 +3,7 @@
 
 	<!-- Resources -->	
 	<Resources RootFolder="Global">
+		<Font Id="SystemFont" Source="SystemFont" />
         <Texture Id="txrBtnDown" Source="btnDown"/>
         <Texture Id="txrBtnLeft" Source="btnLeft"/>
         <Texture Id="txrBtnPause" Source="btnPause"/>
