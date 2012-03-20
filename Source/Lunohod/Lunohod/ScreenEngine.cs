@@ -82,6 +82,8 @@ namespace Lunohod
 		
 		public virtual void Initialize()
 		{
+			PerfMon.Start("ScreenInitialize");
+
 			this.tapAreas = new List<XTapArea>();
 			this.obstacles = new List<XElement>();
 
@@ -91,9 +93,20 @@ namespace Lunohod
 			updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
 			drawParameters = new DrawParameters() { Game = game, ScreenEngine = this, SpriteBatch = spriteBatch };
 			
+			PerfMon.Start("LoadXml");
 			this.RootComponent = GameEngine.LoadXml(this.fileName, this.RootComponentType);
+			PerfMon.Stop("LoadXml");
+
+			PerfMon.Start("InitHierarchy");
 			this.RootComponent.InitHierarchy();
+			PerfMon.Stop("InitHierarchy");
+
+			PerfMon.Start("Initialize");
 			this.RootComponent.Initialize(initializeParameters);
+			PerfMon.Stop("Initialize");
+
+			PerfMon.Stop("ScreenInitialize");
+			Console.WriteLine(PerfMon.Dump());
 		}
 		
 		public virtual void Update(GameTime gameTime)
