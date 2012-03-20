@@ -1,0 +1,21 @@
+<Food Id="fdPack
+###@counter7
+" Class="clsFoodPack" Points="
+###@Points
+" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" TraceId="
+###id
+">
+###@CRLF
+<Image TextureId="txr_
+###@filename
+" />
+###@CRLF
+</Food>

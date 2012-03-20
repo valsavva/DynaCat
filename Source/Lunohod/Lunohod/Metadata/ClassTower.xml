@@ -1,26 +1,34 @@
 <Include>	
 
     <Resources RootFolder="Textures">
-        <Texture Id="tower_on" Source="transmitter-2"/>
-        <Texture Id="tower_off" Source="transmitter-2"/>
+        <Texture Id="towerLedOn" Source="transmitter_2_on"/>
+        <Texture Id="towerLedOff" Source="transmitter_2_off"/>
     </Resources>
 
 	<Class Id="clsTower">
 		<Tower SignalSpeed="256" Bounds="0, 0, 1, 1">
 		
-            <BooleanTrigger Condition="tower:On" Group="sttTower">
-                <Image TextureId="tower_on" Bounds="0, 0, 15, 26"/>
-            </BooleanTrigger>
-
-            <BooleanTrigger Group="sttTower">
-                <Image TextureId="tower_off" Bounds="0, 0, 30, 30"/>
-            </BooleanTrigger>
+            <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="tower:+LedOn;this_anmSignal.Start()"/>
             
-            <Image TextureId="tower_off" Bounds="0, 0, 30, 30"/>
+            <SequenceSet Id="this_anmSignal">
+                <Delay Duration="0.4"/>
+                <Do Action="tower:-LedOn"/>
+            </SequenceSet>
+            
+            <BoolTrigger Condition="tower:LedOn" Group="sttTower">
+                <Image TextureId="towerLedOn" Bounds="0, 0, 30, 30"/>
+            </BoolTrigger>
+
+            <BoolTrigger Group="sttTower">
+                <Image TextureId="towerLedOff" Bounds="0, 0, 30, 30"/>
+            </BoolTrigger>
+            
         </Tower>
 	</Class>
 
 </Include>
+
+
 
 
 

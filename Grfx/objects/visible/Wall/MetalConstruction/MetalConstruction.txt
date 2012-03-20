@@ -1,0 +1,19 @@
+<Block Id="blk
+###@counter3
+" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" Edges="Bounce" TraceId="
+###id
+">
+###@CRLF
+<Image TextureId="txr_
+###@filename
+" />
+###@CRLF
+</Block>

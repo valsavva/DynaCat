@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="S01L01.svg" inkscape:export-filename="C:\Documents and Settings\Vlad\Рабочий стол\zzz.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
+    <defs id="defs4">
+        <filter id="filter3291" inkscape:label="Drop shadow" width="1.5" height="1.5" x="-0.25" y="-0.25" color-interpolation-filters="sRGB">
+            <feGaussianBlur id="feGaussianBlur3293" in="SourceAlpha" stdDeviation="2" result="blur" />
+            <feColorMatrix id="feColorMatrix3295" result="bluralpha" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 " />
+            <feOffset id="feOffset3297" in="bluralpha" dx="4" dy="4" result="offsetBlur" />
+            <feMerge id="feMerge3299">
+                <feMergeNode id="feMergeNode3301" in="offsetBlur" />
+                <feMergeNode id="feMergeNode3303" in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.2836102" inkscape:cx="277.71482" inkscape:cy="139.45316" inkscape:document-units="px" inkscape:current-layer="layer7" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+        <sodipodi:guide orientation="0,1" position="139.5,256" id="guide3018" />
+        <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
+        <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
+        <sodipodi:guide orientation="1,0" position="80,128" id="guide3024" />
+        <sodipodi:guide orientation="0,1" position="240,160" id="guide3005" />
+        <sodipodi:guide orientation="1,0" position="240,160" id="guide3007" />
+        <sodipodi:guide orientation="1,0" position="0,160" id="guide3072" />
+        <sodipodi:guide orientation="0,1" position="240,320" id="guide3076" />
+        <sodipodi:guide orientation="0,1" position="240,0" id="guide3078" />
+        <inkscape:grid type="xygrid" id="grid3023" />
+        <sodipodi:guide orientation="0,1" position="0,294" id="guide3340" />
+        <sodipodi:guide orientation="1,0" position="458,222" id="guide3342" />
+    </sodipodi:namedview>
+    <metadata id="metadata7">
+        <rdf:RDF>
+            <cc:Work rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                <dc:title />
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g style="display:inline" inkscape:label="background" id="g4780" inkscape:groupmode="layer" sodipodi:insensitive="true">
+        <image width="480" height="320" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/backgrounds/brickBlue.png" id="image4782" x="0" y="0" />
+    </g>
+    <g inkscape:groupmode="layer" id="layer7" inkscape:label="secondground" />
+    <g inkscape:groupmode="layer" id="layer6" inkscape:label="helptext" style="display:inline" sodipodi:insensitive="true">
+        <image style="display:inline" y="234.96542" x="141.08405" id="image3271" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/txt_tap_this_button.png" height="24" width="132" />
+        <image style="display:inline" y="210.99539" x="65.533379" id="image3282" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/arr_Curve1.png" height="35" width="63" />
+        <image y="25.258139" x="24.753443" id="image3315" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/arr_Straight1.png" height="40" width="49" />
+        <image y="63.541542" x="36.324852" id="image3326" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/txt_signals_transmitter.png" height="25" width="169" />
+        <image y="113.75581" x="197.06676" id="image3348" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/txt_exit.png" height="16" width="31" />
+        <image y="97.055359" x="271.52066" id="image3359" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/txt_hero.png" height="18" width="40" />
+        <image y="118.06918" x="300.72571" id="image3414" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/arr_Straight4.png" height="40" width="49" />
+        <image y="133.00005" x="161.73959" id="image3491" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/HelpText/arr_Straight3.png" height="40" width="49" />
+    </g>
+    <g inkscape:groupmode="layer" id="layer4" inkscape:label="dash" style="opacity:0.20138891;display:none" sodipodi:insensitive="true">
+        <image y="0" x="0" id="image3260" xlink:href="file:///D:/Lunohod/Art/dashboard/screenTapAreas_dash_M_btnSize52.png" height="320" width="480" />
+    </g>
+    <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline" sodipodi:insensitive="true">
+        <image y="-30" x="-50" id="image3420" xlink:href="file:///D:/Lunohod/ReleaseGrfx/obj/unvisible/BlockStick/BlockStick.png" height="50" width="590" />
+        <image width="590" height="50" xlink:href="file:///D:/Lunohod/ReleaseGrfx/obj/unvisible/BlockStick/BlockStick.png" id="image3423" x="-50" y="300" />
+        <image y="-1.7497115e-013" x="-104" id="image3425" xlink:href="file:///D:/Lunohod/ReleaseGrfx/obj/unvisible/BlockStick/BlockStick.png" height="347" width="120" />
+        <image width="120" height="347" xlink:href="file:///D:/Lunohod/ReleaseGrfx/obj/unvisible/BlockStick/BlockStick.png" id="image3427" x="464" y="-4.4408921e-015" />
+    </g>
+    <g inkscape:groupmode="layer" id="layer1" inkscape:label="brickImages" style="display:inline" sodipodi:insensitive="true">
+        <image y="290" x="464" id="image3228" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3170" x="464" y="10" />
+        <image y="30" x="464" id="image3172" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3174" x="464" y="50" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3176" x="464" y="70" />
+        <image y="90" x="464" id="image3178" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3180" x="464" y="110" />
+        <image y="130" x="464" id="image3182" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="150" x="464" id="image3184" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3186" x="464" y="170" />
+        <image y="190" x="464" id="image3188" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3190" x="464" y="210" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3192" x="464" y="230" />
+        <image y="250" x="464" id="image3194" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3196" x="464" y="270" />
+        <image y="0" x="458" id="image3093" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3096" x="432" y="0" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3098" x="406" y="0" />
+        <image y="0" x="380" id="image3100" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3102" x="354" y="0" />
+        <image y="0" x="328" id="image3104" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="0" x="302" id="image3106" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3108" x="276" y="0" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3110" x="250" y="0" />
+        <image y="0" x="224" id="image3112" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="0" x="198" id="image3114" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3116" x="172" y="0" />
+        <image y="0" x="146" id="image3118" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3120" x="120" y="0" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3122" x="94" y="0" />
+        <image y="0" x="68" id="image3124" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="0" x="42" id="image3126" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="0" x="16" id="image3128" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3130" x="-10" y="0" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3132" x="458" y="300" />
+        <image y="300" x="432" id="image3134" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="300" x="406" id="image3136" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3138" x="380" y="300" />
+        <image y="300" x="354" id="image3140" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3142" x="328" y="300" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3144" x="302" y="300" />
+        <image y="300" x="276" id="image3146" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="300" x="250" id="image3148" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3150" x="224" y="300" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3152" x="198" y="300" />
+        <image y="300" x="172" id="image3154" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3156" x="146" y="300" />
+        <image y="300" x="120" id="image3158" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="300" x="94" id="image3160" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3162" x="68" y="300" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3164" x="42" y="300" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3166" x="16" y="300" />
+        <image y="300" x="-10" id="image3168" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="20" x="-10" id="image3200" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3202" x="-10" y="40" />
+        <image y="60" x="-10" id="image3204" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="80" x="-10" id="image3206" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3208" x="-10" y="100" />
+        <image y="120" x="-10" id="image3210" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3212" x="-10" y="140" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3214" x="-10" y="160" />
+        <image y="180" x="-10" id="image3216" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3218" x="-10" y="200" />
+        <image y="220" x="-10" id="image3220" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image y="240" x="-10" id="image3222" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+        <image width="26" height="20" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" id="image3224" x="-10" y="260" />
+        <image y="280" x="-10" id="image3226" xlink:href="file:///D:/Lunohod/ReleaseGrfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
+    </g>
+    <g style="display:inline" inkscape:label="actionTHE" id="g3161" inkscape:groupmode="layer" sodipodi:insensitive="true">
+        <image width="40" height="38" xlink:href="file:///D:/Lunohod/ReleaseGrfx/obj/visible/Hero/bolbex-1_me.png" id="image3173" x="363.09677" y="170.30876" />
+        <image width="37" height="54" xlink:href="file:///D:/Lunohod/ReleaseGrfx/obj/visible/Exit/refrigerator.png" id="image3175" x="120" y="150" />
+        <image y="0" x="0" id="image3094" xlink:href="file:///D:/Lunohod/ReleaseGrfx/obj/visible/Tower/transmitter-2.png" height="30" width="30" />
+    </g>
+    <g inkscape:groupmode="layer" id="layer3" inkscape:label="foreground" style="display:none" sodipodi:insensitive="true" />
+    <g inkscape:groupmode="layer" id="layer5" inkscape:label="UpMask" style="display:none" sodipodi:insensitive="true">
+        <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3220" width="942.38275" height="288.21332" x="-179.05968" y="-288.21332" />
+        <rect y="320" x="-215.92491" height="228.52675" width="954.67114" id="rect3222" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+        <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3224" width="334.98422" height="715.66583" x="480" y="-203.63649" />
+        <rect y="-211.33974" x="-334.98422" height="668.2677" width="334.98422" id="rect3226" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </g>
+</svg>

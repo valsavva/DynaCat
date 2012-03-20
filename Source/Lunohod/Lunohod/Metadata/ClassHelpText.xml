@@ -1,0 +1,80 @@
+<Include>
+         
+	<Class Id="clsHelpText">
+		<Group>
+
+            <BoolTrigger Condition="system:levelLoaded" EnterAction="this_anmEntry.Start()"/>
+            <BoolTrigger Condition="@blink" EnterAction="this_blink.Start()"/>
+            <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="this_anmRemove.Start()"/>
+
+
+            <!-- onstart falling -->
+            <SequenceSet Id="this_anmEntry" InProgress="false" RepeatCount="1">
+            
+                <!-- <Delay Duration="system.Rnd(1,1.5)" /> -->
+                <RandomSet RepeatCount="1">
+                    <Delay Duration="1.0"/>
+                    <Delay Duration="1.1"/>
+                    <Delay Duration="1.2"/>
+                    <Delay Duration="1.3"/>
+                    <Delay Duration="1.4"/>
+                    <Delay Duration="1.5"/>
+                </RandomSet>
+
+                <!--<Let Target="this.Y" Value="-600" />-->
+                <NumAnimation Target="this.Y" From="0" To="-600" Duration="0.001" Autoreverse="false" IsDelta="true" RepeatCount="1" Fill="End"/>
+                <NumAnimation Target="this_img.Opacity" From="0" To="1" Duration="0.001" Autoreverse="false" RepeatCount="1" Fill="End"/>
+
+                <NumAnimation Duration="1.6" Target="this.Y" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End">
+                    <KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
+                    <KeyFrame Time="1" Value="600" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.2" Value="580" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.4" Value="600" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.5" Value="595" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.6" Value="600" Smoothness="Smooth"/>
+                </NumAnimation>
+
+            </SequenceSet>
+            
+            
+            
+            <!-- blinking -->
+            <SequenceSet Id="this_blink">
+                <Delay Duration="12"/>
+                <SequenceSet RepeatCount="30">
+                    <NumAnimation Target="this_img.Opacity" InProgress="false" From="1" To="0" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
+                    <NumAnimation Target="this_img.Opacity" InProgress="false" From="0" To="1" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
+                    <Delay Duration="0.6"/>
+                </SequenceSet>
+            </SequenceSet>
+
+
+
+            <!-- help text removing -->
+            <SequenceSet Id="this_anmRemove" InProgress="false" RepeatCount="1">
+                <NumAnimation Target="this_img.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <Do Action="this.Disable()"/>
+            </SequenceSet>
+
+            
+		</Group>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
