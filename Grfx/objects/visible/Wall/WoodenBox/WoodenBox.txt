@@ -1,0 +1,19 @@
+<Block Id="blk
+###@counter3
+" Class="clsWoodenBox" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" Edges="Stick" TraceId="
+###id
+">
+###@CRLF
+<Image TextureId="txr_
+###@filename
+" />
+###@CRLF
+</Block>

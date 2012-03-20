@@ -1,0 +1,21 @@
+<Group Id="hlpTxt
+###id
+" Class="clsHelpText" ClassParams="@blink=false" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" TraceId="
+###id
+">
+###@CRLF
+<Image Id="hlpTxt
+###id
+_img" TextureId="txr_
+###@filename
+" Opacity="0"/>
+###@CRLF
+</Group>

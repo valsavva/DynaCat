@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.4.05 -->
 <!-- source: D:\Lunohod\ReleaseLevels\S01L01\S01L01.svg -->
 <Level Name="S01L01" Bounds="0, 0, 480, 320">
-    <LevelSettings Dificulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
+    <LevelSettings Dificulty="-1" BombCount="0" HeroHealth="100" ExplosionClass="clsExplosion"/>
     <Include File="ClassHelpText.xml"/>
     <Include File="ClassHero.xml"/>
     <Include File="ClassExit.xml"/>
@@ -129,7 +129,7 @@
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3094"/>
     </Layer>
     <Include File="ClassExplosion.xml"/>
-    <Include File="DashboardNoBomb.xml"/>
+    <Include File="Dashboard.xml"/>
 </Level>
 <!-- Food=0 Enemy=0 Block=4 DesignImage=68 Animation=0 Teleport=0 FoodPack=0 -->
 
