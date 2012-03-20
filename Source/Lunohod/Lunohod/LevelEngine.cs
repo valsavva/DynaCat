@@ -19,11 +19,12 @@ namespace Lunohod
         private XTower tower;
 
 		private XClass explosionClass;
-		private int bombCounter = 0;
 		
 		private Dictionary<GameEvent, RadioWave> waves;
 
         private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
+		
+		private int bombCounter;
         
         public LevelEngine(GameEngine gameEngine, string name)
 			: base(gameEngine, name)
@@ -156,10 +157,7 @@ namespace Lunohod
 		{
 			if (e.EventType == GameEventType.Explosion)
 			{
-				if (this.LevelObject.DefaultSettings.BombCount == -1)
-					return true;
-				
-				return this.bombCounter < this.LevelObject.DefaultSettings.BombCount;
+				return this.Hero.BombCount == -1 || this.Hero.BombCount > 0;
 			}
 			
 			return true;
@@ -228,7 +226,10 @@ namespace Lunohod
 			// initialize the new instance and its subcomponents
 			instance.Initialize(new InitializeParameters() { Game = this.game, ScreenEngine = this });
 			
-			this.bombCounter++;
+			if (this.Hero.BombCount > 0)
+				this.Hero.BombCount--;
+			
+			bombCounter++;
 		}
 	}
 }	

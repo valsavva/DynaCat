@@ -91,6 +91,8 @@ namespace Lunohod.Objects
             {
                 releaseActions.ForEach(a => a.Call());
             }
+			
+			this.TapType = XTapType.None;
 		}
 		
 		internal override void ReplaceParameter(string par, string val)

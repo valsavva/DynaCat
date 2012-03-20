@@ -39,8 +39,11 @@ namespace Lunohod.Xge
                 case "CurrentFrame": getter = GetCurrentFrame; setter = SetCurrentFrame; break;
                 case "Volume": getter = GetVolume; setter = SetVolume; break;
                 case "Health": getter = GetHealth; setter = SetHealth; break;
+                case "DefaultHealth": getter = GetDefaultHealth; setter = SetDefaultHealth; break;
                 case "Speed": getter = GetSpeed; setter = SetSpeed; break;
                 case "DefaultSpeed": getter = GetDefaultSpeed; setter = SetDefaultSpeed; break;
+                case "BombCount": getter = GetBombCount; setter = SetBombCount; break;
+                case "DefaultBombCount": getter = GetDefaultBombCount; setter = SetDefaultBombCount; break;
                 case "Deceleration": getter = GetDeceleration; setter = SetDeceleration; break;
                 default:
                 {
@@ -142,6 +145,14 @@ namespace Lunohod.Xge
         {
             // noop
         }
+        private float GetDefaultHealth()
+        {
+            return hero.DefaultHealth;
+        }
+        private void SetDefaultHealth(float v)
+        {
+            // noop
+        }
         private float GetSpeed()
         {
             return hero.Speed;
@@ -157,6 +168,22 @@ namespace Lunohod.Xge
         private void SetDefaultSpeed(float v)
         {
             hero.DefaultSpeed = v;
+        }
+        private float GetBombCount()
+        {
+            return hero.BombCount;
+        }
+        private void SetBombCount(float v)
+        {
+            hero.BombCount = v;
+        }
+        private float GetDefaultBombCount()
+        {
+            return hero.DefaultBombCount;
+        }
+        private void SetDefaultBombCount(float v)
+        {
+            // noop
         }
         private float GetDeceleration()
         {

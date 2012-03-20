@@ -174,6 +174,8 @@ namespace Lunohod
 
 		public void LoadScreen(string id)
 		{
+			PerfMon.Start("LoadScreen");
+			
             var newScreenEngine = new ScreenEngine(this, this.gameObject.Screens.First(s => s.Id == id).File);
 
 			lock(this.screenEngines)
@@ -184,11 +186,15 @@ namespace Lunohod
 			newScreenEngine.Initialize();
 
 			GC.Collect();
+
+			PerfMon.Stop("LoadScreen");
 		}
 
 		public void LoadLevel(string id)
 		{
-            var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.First(l => l.Id == id).File);
+			PerfMon.Start("LoadLevel");
+
+			var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.First(l => l.Id == id).File);
 
 			lock(this.screenEngines)
 			{
@@ -198,6 +204,8 @@ namespace Lunohod
 			newScreenEngine.Initialize();
 
 			GC.Collect();
+
+			PerfMon.Stop("LoadLevel");
 		}
 		
 		protected void LoadGameElement()
@@ -221,8 +229,6 @@ namespace Lunohod
 			}
 			
 			screenEngine.Unload();
-			
-			this.eventQueue.Clear();
 			
 			GC.Collect();
 		}
@@ -287,7 +293,7 @@ namespace Lunohod
 		{
 			int numOfEvents = this.eventQueue.Count;
 
-			for (int i = 0; i < numOfEvents; i++)
+			for (int i = 0; i < numOfEvents && i < this.eventQueue.Count; i++)
 			{
 				var e = this.eventQueue.Dequeue();
 				
@@ -297,7 +303,13 @@ namespace Lunohod
 					case GameEventType.CloseCurrentScreen :{
 						this.CloseCurrentScreen();
 						e.IsHandled = true;
-					}; break;
+					
+						// break out of the loop
+						this.eventQueue.Clear();
+						numOfEvents = 0;
+						continue;
+						//
+					};
 				}
 				
 				if (!e.IsHandled)
