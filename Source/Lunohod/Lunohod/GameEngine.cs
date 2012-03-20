@@ -174,6 +174,8 @@ namespace Lunohod
 
 		public void LoadScreen(string id)
 		{
+			PerfMon.Start("LoadScreen");
+			
             var newScreenEngine = new ScreenEngine(this, this.gameObject.Screens.First(s => s.Id == id).File);
 
 			lock(this.screenEngines)
@@ -184,11 +186,15 @@ namespace Lunohod
 			newScreenEngine.Initialize();
 
 			GC.Collect();
+
+			PerfMon.Stop("LoadScreen");
 		}
 
 		public void LoadLevel(string id)
 		{
-            var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.First(l => l.Id == id).File);
+			PerfMon.Start("LoadLevel");
+
+			var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.First(l => l.Id == id).File);
 
 			lock(this.screenEngines)
 			{
@@ -198,6 +204,8 @@ namespace Lunohod
 			newScreenEngine.Initialize();
 
 			GC.Collect();
+
+			PerfMon.Stop("LoadLevel");
 		}
 		
 		protected void LoadGameElement()

@@ -185,6 +185,7 @@
     <Compile Include="Engine\Expressions\AssignStatement.cs" />
     <Compile Include="Engine\Expressions\Variable.cs" />
     <Compile Include="Engine\XTapType.cs" />
+    <Compile Include="PerfMon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
