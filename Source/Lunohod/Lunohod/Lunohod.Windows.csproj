@@ -272,6 +272,7 @@
     <Compile Include="OS\Windows\ContendBuilder.cs" />
     <Compile Include="OS\Windows\ErrorLogger.cs" />
     <Compile Include="OS\Windows\Program.cs" />
+    <Compile Include="PerfMon.cs" />
     <Compile Include="ScreenEngine.cs" />
     <Compile Include="SpriteBatchWithFloats.cs" />
     <Compile Include="Utility.cs" />
@@ -1793,6 +1794,7 @@
     </Content>
     <Content Include="Metadata\TestRnd.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\TestSets.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
