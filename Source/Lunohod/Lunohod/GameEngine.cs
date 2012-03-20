@@ -222,8 +222,6 @@ namespace Lunohod
 			
 			screenEngine.Unload();
 			
-			this.eventQueue.Clear();
-			
 			GC.Collect();
 		}
 		
@@ -287,7 +285,7 @@ namespace Lunohod
 		{
 			int numOfEvents = this.eventQueue.Count;
 
-			for (int i = 0; i < numOfEvents; i++)
+			for (int i = 0; i < numOfEvents && i < this.eventQueue.Count; i++)
 			{
 				var e = this.eventQueue.Dequeue();
 				
@@ -297,7 +295,13 @@ namespace Lunohod
 					case GameEventType.CloseCurrentScreen :{
 						this.CloseCurrentScreen();
 						e.IsHandled = true;
-					}; break;
+					
+						// break out of the loop
+						this.eventQueue.Clear();
+						numOfEvents = 0;
+						continue;
+						//
+					};
 				}
 				
 				if (!e.IsHandled)
