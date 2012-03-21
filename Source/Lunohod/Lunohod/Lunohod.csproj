@@ -148,7 +148,6 @@
     <Compile Include="Engine\Triggers\XNumTrigger.cs" />
     <Compile Include="Engine\Triggers\XNumTriggerBase.cs" />
     <Compile Include="Engine\Triggers\XTriggerBase.cs" />
-    <Compile Include="Engine\Animation\XLet.cs" />
     <Compile Include="Engine\Updates\DrawParameters.cs" />
     <Compile Include="Engine\Updates\InitializeParameters.cs" />
     <Compile Include="Engine\Updates\ParamentersBase.cs" />
@@ -186,6 +185,8 @@
     <Compile Include="Engine\Expressions\Variable.cs" />
     <Compile Include="Engine\XTapType.cs" />
     <Compile Include="PerfMon.cs" />
+    <Compile Include="Engine\Serialization\ClassFactory.cs" />
+    <Compile Include="Engine\Serialization\XmlReaderEx.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

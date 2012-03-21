@@ -124,9 +124,13 @@ namespace Lunohod.Objects
 
         public override void ReadXml(System.Xml.XmlReader reader)
         {
-            this.Action = reader["Action"];
-            this.MoveAction = reader["MoveAction"];
-            this.ReleaseAction = reader["ReleaseAction"];
+			reader.ReadAttrAsString("Action", ref this.Action);
+			reader.ReadAttrAsString("MoveAction", ref this.MoveAction);
+			reader.ReadAttrAsString("ReleaseAction", ref this.ReleaseAction);
+
+			var newEvent = reader["Event"];
+			if (newEvent != null)
+				this.Event = newEvent;
             
             base.ReadXml(reader);
         }
