@@ -17,6 +17,13 @@ namespace Lunohod.Objects
         /// <inheritdoc />
         [XmlAttribute]
         public bool IsExploding { get; set; }
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            reader.ReadAttrAsFloat("Points", ref this.Points);
+
+            base.ReadXml(reader);
+        }
     }
 }
 

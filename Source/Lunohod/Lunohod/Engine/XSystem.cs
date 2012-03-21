@@ -24,7 +24,7 @@ namespace Lunohod.Objects
 		
 		public string GetLevelId(int i)
 		{
-			if (i >= game.GameObject.Levels.Length)
+			if (i >= game.GameObject.Levels.Count)
 				return "";
 			
 			var level = game.GameObject.Levels[i];
@@ -34,7 +34,7 @@ namespace Lunohod.Objects
 		
 		public void StartLevel(int i)
 		{
-			if (i >= game.GameObject.Levels.Length)
+			if (i >= game.GameObject.Levels.Count)
 				return;
 
 			game.LoadLevel(game.GameObject.Levels[i].Id);

@@ -12,7 +12,8 @@ namespace Lunohod.Objects
     /// <summary>
     /// Represents a base class for all graphical elements in XGAME
     /// </summary>
-    [XmlInclude(typeof(XImage))]
+    [XmlRoot("Element")]
+    //[XmlType("Element")]
     public class XElement : XObject
     {
 		public struct ElementState
@@ -209,63 +210,6 @@ namespace Lunohod.Objects
 			return PropState.ScreenBounds.Value;
 		}
 
-        /// <exclude />
-		[XmlAttribute("Bounds")]
-		public string zBounds
-		{
-			set { this.Bounds = value.ToRectF(); }
-			get { return this.Bounds.ToStr(); }
-		}
-        /// <exclude />
-        [XmlAttribute("BackColor")]
-        public string zBackColor
-		{
-			set { this.BackColor = value.ToColor(); }
-			get { return this.BackColor.ToStr(); }
-		}
-        /// <exclude />
-        [XmlAttribute("Origin")]
-		public string zOrigin
-		{
-			set { this.Origin = value.ToVector2(); }
-			get { return this.Origin.ToStr(); }
-		}
-        /// <exclude />
-        [XmlAttribute("RotationCenter")]
-		public string zRotationCenter
-		{
-			set { this.RotationCenter = value.ToVector2(); }
-			get { return this.RotationCenter.ToStr(); }
-		}
-        /// <exclude />
-        [XmlAttribute("Scale")]
-		public string zScale
-		{
-			set { 
-				float v;
-				
-				if (float.TryParse(value, out v))
-					this.Scale = v;
-				else
-					this.ScaleVector = value.ToVector2();
-			}
-			get { return this.ScaleVector.ToStr(); }
-		}
-        /// <exclude />
-        [XmlAttribute("Location")]
-		public string zLocation
-		{
-			set { this.Location = value.ToVector2(); }
-			get { return this.Location.ToStr(); }
-		}
-        /// <exclude />
-        [XmlAttribute("Center")]
-		public string zCenter
-		{
-			set { this.Center = value.ToVector2(); }
-			get { return this.Center.ToStr(); }
-		}
-		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
@@ -328,5 +272,31 @@ namespace Lunohod.Objects
 				p.SpriteBatch.DrawString(p.Game.SystemFont, this.Id, tmpVector1, Color.Yellow);
 			}
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            Color color = Color.White;
+            float f = 0;
+
+            reader.ReadAttrAsFloat("Opacity", ref this.Opacity);
+            reader.ReadAttrAsFloat("Rotation", ref this.Rotation);
+            reader.ReadAttrAsVector2("ScaleVector", ref this.ScaleVector);
+
+            reader.ReadAttrAsRectF("Bounds", ref this.Bounds);
+            if (reader.ReadAttrAsColor("BackColor", ref color))
+                this.BackColor = color;
+            if (reader.ReadAttrAsVector2("Origin", ref tmpVector1))
+                this.Origin = tmpVector1;
+            if (reader.ReadAttrAsVector2("RotationCenter", ref tmpVector1))
+                this.RotationCenter = tmpVector1;
+            if (reader.ReadAttrAsFloat("Scale", ref f))
+                this.Scale = f;
+            if (reader.ReadAttrAsVector2("Location", ref tmpVector1))
+                this.Location = tmpVector1;
+            if (reader.ReadAttrAsVector2("Center", ref tmpVector1))
+                this.Center = tmpVector1;
+
+            base.ReadXml(reader);
+        }
     }
 }

@@ -154,6 +154,7 @@
     <Compile Include="Engine\Expressions\Validator.cs" />
     <Compile Include="Engine\Expressions\Variable.cs" />
     <Compile Include="Engine\Expressions\VoidMethod.cs" />
+    <Compile Include="Engine\Serialization\ClassFactory.cs" />
     <Compile Include="Engine\Updates\DrawParameters.cs" />
     <Compile Include="Engine\Updates\InitializeParameters.cs" />
     <Compile Include="Engine\Animation\TimeCurve.cs" />
@@ -161,7 +162,6 @@
     <Compile Include="Engine\Animation\XDo.cs" />
     <Compile Include="Engine\Animation\XKeyFrame.cs" />
     <Compile Include="Engine\Animation\XAnimationFillBehavior.cs" />
-    <Compile Include="Engine\Animation\XLet.cs" />
     <Compile Include="Engine\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Animation\XRunnableBase.cs" />
     <Compile Include="Engine\Expressions\BoolOperator.cs" />
@@ -212,9 +212,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\XEnemy.cs" />
-    <Compile Include="Engine\XExplosion.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="Engine\XExplosion.cs" />
     <Compile Include="Engine\XFood.cs" />
     <Compile Include="Engine\XGame.cs">
       <SubType>Code</SubType>
@@ -234,9 +232,7 @@
     <Compile Include="Engine\XLevel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\XLevelSettings.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="Engine\XLevelSettings.cs" />
     <Compile Include="Engine\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -276,6 +272,7 @@
     <Compile Include="ScreenEngine.cs" />
     <Compile Include="SpriteBatchWithFloats.cs" />
     <Compile Include="Utility.cs" />
+    <Compile Include="Engine\Serialization\XmlReaderEx.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Global\arrow52Bomb.png">

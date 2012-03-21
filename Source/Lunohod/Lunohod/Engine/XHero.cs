@@ -23,29 +23,22 @@ namespace Lunohod.Objects
         /// Specifies hero's default speed.
         /// </summary>
         [XmlAttribute]
-        public float DefaultSpeed { get; set; }
+        public float DefaultSpeed;
         /// <summary>
         /// Specifies hero's current speed.
         /// </summary>
         [XmlAttribute]
-        public float Speed { get; set; }
+        public float Speed;
         /// <summary>
         /// Specifies hero's deceleration.
         /// </summary>
         [XmlAttribute]
-        public float Deceleration { get; set; }
+        public float Deceleration;
         /// <summary>
 		/// Specifies hero's direction.
 		/// </summary>
 		[XmlIgnore]
 		public Vector2 Direction;
-        /// <exclude />
-        [XmlAttribute("Direction")]
-        public string zDirection
-		{
-			get { return this.Direction.ToStr(); }
-			set { this.Direction = value.ToVector2(); }
-		}
 		
 		/// <summary>
 		/// Gets the default health.
@@ -167,5 +160,15 @@ namespace Lunohod.Objects
 		{
 			this.Health -= damage;
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            reader.ReadAttrAsFloat("DefaultSpeed", ref this.DefaultSpeed);
+            reader.ReadAttrAsFloat("Speed", ref this.Speed);
+            reader.ReadAttrAsFloat("Deceleration", ref this.Deceleration);
+            reader.ReadAttrAsVector2("Direction", ref this.Direction);
+
+            base.ReadXml(reader);
+        }
     }
 }

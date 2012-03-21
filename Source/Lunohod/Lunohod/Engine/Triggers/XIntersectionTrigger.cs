@@ -61,5 +61,13 @@ namespace Lunohod.Objects
 
 			base.ReplaceParameter(par, val);
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.ObjectId1 = reader["ObjectId1"];
+            this.ObjectId2 = reader["ObjectId2"];
+            
+            base.ReadXml(reader);
+        }
 	}
 }

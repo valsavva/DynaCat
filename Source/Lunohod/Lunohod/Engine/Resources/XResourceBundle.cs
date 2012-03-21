@@ -19,11 +19,12 @@ namespace Lunohod.Objects
 		[XmlAttribute("RootFolder")]
 		public string RootFolder;
 		
-        [XmlElement(ElementName = "Font", Type = typeof(XFontResource))]
-        [XmlElement(ElementName = "Texture", Type = typeof(XTextureResource))]
-        [XmlElement(ElementName = "MusicFile", Type = typeof(XMusicResource))]
-        [XmlElement(ElementName = "SoundFile", Type = typeof(XSoundResource))]
-        public XObjectCollection ResourceSubcomponents { get { return this.Subcomponents; } set { this.Subcomponents = value; } }
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.RootFolder = reader["RootFolder"];
+            
+            base.ReadXml(reader);
+        }
 	}
 }
 

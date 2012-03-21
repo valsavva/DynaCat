@@ -52,6 +52,13 @@ namespace Lunohod.Objects
 
             return content.Load<T>(fileName);
         }
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Source = reader["Source"];
+
+            base.ReadXml(reader);
+        }
 	}
 }
 

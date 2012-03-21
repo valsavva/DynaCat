@@ -90,6 +90,14 @@ namespace Lunohod.Objects
 		{
 			MediaPlayer.Stop();
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.FileId = reader["FileId"];
+            this.Volume = reader.ReadAttrAsFloat("Volume");
+
+            base.ReadXml(reader);
+        }
 	}
 }
 

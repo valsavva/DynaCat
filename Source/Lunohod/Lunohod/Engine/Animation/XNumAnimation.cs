@@ -79,6 +79,7 @@ namespace Lunohod.Objects
             if (!string.IsNullOrEmpty(this.From))
             {
                 // Use the From/To properties
+                this.CreateSubcomponents();
                 this.Subcomponents.Add(new XKeyFrame() { Time = "0", Value = this.From, Smoothing = this.Smoothing });
                 this.Subcomponents.Add(new XKeyFrame() { Time = this.Duration, Value = this.To, Smoothing = this.Smoothing });
             }
@@ -113,6 +114,7 @@ namespace Lunohod.Objects
                 curves.Add(curve);
             }
         }
+
 		/// <inheritdoc />
 		public override void Start()
 		{
@@ -194,6 +196,19 @@ namespace Lunohod.Objects
 			
 			base.ReplaceParameter(par, val);
 		}
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Target = reader["Target"];
+            this.From = reader["From"];
+            this.To = reader["To"];
+            this.Duration = reader["Duration"];
+            this.IsDelta = reader.ReadAttrAsBoolean("IsDelta");
+            reader.ReadAttrAsEnum<CurveTangent>("Smoothing", ref this.Smoothing);
+            this.Autoreverse = reader.ReadAttrAsBoolean("Autoreverse");
+            reader.ReadAttrAsEnum<XAnimationFillBehavior>("Fill", ref this.Fill);
+
+            base.ReadXml(reader);
+        }
     }
 }
 

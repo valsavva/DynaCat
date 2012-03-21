@@ -37,5 +37,12 @@ namespace Lunohod.Objects
 
 			base.ReplaceParameter(par, val);
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Condition = reader["Condition"];
+
+            base.ReadXml(reader);
+        }
 	}
 }

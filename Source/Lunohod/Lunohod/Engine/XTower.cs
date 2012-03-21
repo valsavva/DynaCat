@@ -18,5 +18,12 @@ namespace Lunohod.Objects
 			
 			p.LevelEngine.Tower = this;
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.SignalSpeed = reader.ReadAttrAsFloat("SignalSpeed");
+
+            base.ReadXml(reader);
+        }
     }
 }

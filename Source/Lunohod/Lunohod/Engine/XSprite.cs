@@ -17,21 +17,23 @@ namespace Lunohod.Objects
 		public Rectangle FrameBounds;
 		[XmlAttribute]
 		public int FrameCount;
-		[XmlAttribute]
-		public int CurrentFrame { get; set; }
-		
-		[XmlAttribute("FrameBounds")]
-		public string zFrameBounds
-		{
-			set { this.FrameBounds = value.ToRect(); }
-			get { return this.FrameBounds.ToStr(); }
-		}
+        [XmlAttribute]
+        public int CurrentFrame;
 		
 		public override void Draw(DrawParameters p)
 		{
 			this.SourceRectangle = new Rectangle(this.CurrentFrame * this.FrameBounds.Width, this.FrameBounds.Top, this.FrameBounds.Width, FrameBounds.Height);
 			base.Draw(p);
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            reader.ReadAttrAsRect("FrameBounds", ref this.FrameBounds);
+            reader.ReadAttrAsInt("FrameCount", ref this.FrameCount);
+            reader.ReadAttrAsInt("CurrentFrame", ref this.CurrentFrame);
+
+            base.ReadXml(reader);
+        }
 	}
 }
 

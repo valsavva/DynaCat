@@ -20,10 +20,6 @@ namespace Lunohod.Objects
 		
 		private float volume;
 		
-		public XSound()
-		{
-		}
-
 		[XmlAttribute]
         public string FileId;
 		
@@ -96,6 +92,17 @@ namespace Lunohod.Objects
 		{
 			this.soundEffectInstance.Resume();
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.FileId = reader["FileId"];
+            this.Volume = reader.ReadAttrAsFloat("Volume");
+            reader.ReadAttrAsFloat("Pitch", ref this.Pitch);
+            reader.ReadAttrAsFloat("Pan", ref this.Pan);
+            this.IsLooped = reader.ReadAttrAsBoolean("IsLooped");
+            
+            base.ReadXml(reader);
+        }
 	}
 }
 

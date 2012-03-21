@@ -35,21 +35,34 @@ namespace Lunohod.Objects
 			}
 		}
 		
+        /// <summary>
+        /// Specifies action to execute when the area is tapped.
+        /// </summary>
 		[XmlAttribute]
 		public string Action;
-
+        /// <summary>
+        /// Specifies action to execute when the area is tapped.
+        /// </summary>
         [XmlAttribute]
         public string MoveAction;
-
+        /// <summary>
+        /// Specifies action to execute when the area is tapped.
+        /// </summary>
         [XmlAttribute]
         public string ReleaseAction;
-
-		[XmlIgnore]
+        /// <summary>
+        /// Gets/sets tap type.
+        /// </summary>
+        [XmlIgnore]
 		public XTapType TapType;
-
+        /// <summary>
+        /// The X coordinate of the tap.
+        /// </summary>
         [XmlIgnore]
         public float TapX;
-
+        /// <summary>
+        /// The Y coordinate of the tap.
+        /// </summary>
         [XmlIgnore]
         public float TapY;
 
@@ -108,6 +121,15 @@ namespace Lunohod.Objects
 
             base.ReplaceParameter(par, val);
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Action = reader["Action"];
+            this.MoveAction = reader["MoveAction"];
+            this.ReleaseAction = reader["ReleaseAction"];
+            
+            base.ReadXml(reader);
+        }
 	}
 }
 

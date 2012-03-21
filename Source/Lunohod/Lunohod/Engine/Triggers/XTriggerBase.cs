@@ -96,6 +96,16 @@ namespace Lunohod.Objects
 			
 			base.ReplaceParameter(par, val);
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.EnterAction = reader["EnterAction"];
+            this.ExitAction = reader["ExitAction"];
+            this.Action = reader["Action"];
+            this.Group = reader["Group"];
+            this.StayTriggered = reader.ReadAttrAsBoolean("StayTriggered");
+
+            base.ReadXml(reader);
+        }
 	}
 }
-

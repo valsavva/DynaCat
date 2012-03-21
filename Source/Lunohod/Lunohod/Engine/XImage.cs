@@ -24,7 +24,7 @@ namespace Lunohod.Objects
         public string TextureId;
 		
 		[XmlAttribute]
-		public bool Stretch = true;
+		public bool Stretch;
 		
 		protected Rectangle? SourceRectangle;
 		
@@ -77,5 +77,13 @@ namespace Lunohod.Objects
 			}
 			base.Draw(p);
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.TextureId = reader["TextureId"];
+            this.Stretch = reader.ReadAttrAsBoolean("Stretch", true);
+
+            base.ReadXml(reader);
+        }
     }
 }

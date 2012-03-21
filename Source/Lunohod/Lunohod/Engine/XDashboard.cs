@@ -10,7 +10,7 @@ using System.Xml.Schema;
 
 namespace Lunohod.Objects
 {
-	[XmlType("Dashboard")]
+    [XmlRoot("Dashboard")]
 	public class XDashboard : XElement
 	{
 	}

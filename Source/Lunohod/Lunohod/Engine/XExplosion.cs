@@ -71,6 +71,13 @@ namespace Lunohod.Objects
 				}
 			}
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Ranges = reader["Ranges"];
+
+            base.ReadXml(reader);
+        }
 	}
 }
 

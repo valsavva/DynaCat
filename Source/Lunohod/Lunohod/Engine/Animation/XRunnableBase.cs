@@ -20,20 +20,6 @@ namespace Lunohod.Objects
 		protected float repeatsDone = 0;
 
         /// <summary>
-        /// Gets the amount of time elapsed since the component was started.
-        /// </summary>
-        public TimeSpan ElapsedTime
-        {
-            get { return elapsedTime; }
-        }
-        /// <summary>
-        /// Gets the number of times component executed since it was started.
-        /// </summary>
-		public float RepeatsDone
-		{
-			get { return repeatsDone; }
-		}
-        /// <summary>
         /// Specifies wheter the components is in the running state.
         /// This attribute value is false when the component has never been run or the <see cref="Stop()"/> method was called.
         /// </summary>
@@ -44,30 +30,37 @@ namespace Lunohod.Objects
 			set { this.inProgress = value; }
 		}
         /// <summary>
-        /// Gets value identifying whether the current component is in the paused state.
-        /// </summary>
-        public bool IsPaused
-		{
-			get { return this.isPaused; }
-		}
-        /// <summary>
         /// Specifies the amount of time the current animation should be executing. When not specified or zero,
         /// the animation is considered to be infinite. Cannot be specified along with <see cref="RepeatCount"/>.
         /// </summary>
         [XmlIgnore]
-        public TimeSpan RepeatTime { get; set; }
+        public float RepeatTime;
         /// <summary>
         /// Specifies the number of times the current animation should execute. When not specified or zero,
         /// the animation is considered to be infinite. Cannot be specified along with <see cref="RepeatTime"/>.
         /// </summary>
         [XmlAttribute]
-        public float RepeatCount { get; set; }
-        /// <explude />
-        [XmlAttribute("RepeatTime")]
-        public string zRunTime
+        public float RepeatCount;
+        /// <summary>
+        /// Gets the amount of time elapsed since the component was started.
+        /// </summary>
+        public TimeSpan ElapsedTime
         {
-            get { return this.RepeatTime.ToString(); }
-            set { this.RepeatTime = value.ToDuration(); }
+            get { return elapsedTime; }
+        }
+        /// <summary>
+        /// Gets the number of times component executed since it was started.
+        /// </summary>
+        public float RepeatsDone
+        {
+            get { return repeatsDone; }
+        }
+        /// <summary>
+        /// Gets value identifying whether the current component is in the paused state.
+        /// </summary>
+        public bool IsPaused
+        {
+            get { return this.isPaused; }
         }
         /// <inheritdoc />
         public override void Update(UpdateParameters p)
@@ -99,9 +92,9 @@ namespace Lunohod.Objects
 		{
 			this.elapsedTime += p.GameTime.ElapsedGameTime;
         	
-    		if (this.RepeatTime != TimeSpan.Zero)
+    		if (this.RepeatTime != 0f)
 			{
-				if (this.elapsedTime > this.RepeatTime)
+				if (this.elapsedTime.TotalSeconds > this.RepeatTime)
 					  Stop();
 			}
 			else if (this.RepeatCount != 0f)
@@ -140,6 +133,15 @@ namespace Lunohod.Objects
         {
 			this.inProgress = false;
 			this.isPaused = false;
+        }
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.InProgress = reader.ReadAttrAsBoolean("InProgress");
+            reader.ReadAttrAsFloat("RepeatTime", ref this.RepeatTime);
+            reader.ReadAttrAsFloat("RepeatCount", ref this.RepeatCount);
+
+            base.ReadXml(reader);
         }
 	}
 }

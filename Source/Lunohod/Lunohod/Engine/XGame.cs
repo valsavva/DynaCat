@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Lunohod;
+using System.Xml;
 
 namespace Lunohod.Objects
 {
@@ -13,42 +14,53 @@ namespace Lunohod.Objects
     /// Describes the structure of the game.
     /// It includes collection of screens and levels that participate in the game.
     /// </summary>
-	[XmlType("Game")]
+    [XmlRoot("Game")]
 	public class XGame : XElement
 	{
-		public XGame()
-		{
-		}
-		
         /// <summary>
         /// Specifies the name of the XML file that contains the first screen that user sees after the game is loaded into the memory.
         /// </summary>
-		[XmlAttribute]
-		public string StartScreen;
-
+        [XmlAttribute]
+        public string StartScreen;
+        /// <summary>
+        /// Specifies whether to display Frames Per Second counter.
+        /// </summary>
+        [XmlAttribute]
+        public bool ShowFPS;
+        /// <summary>
+        /// Specifies whether On Screen Debug Information will be accessible.
+        /// </summary>
+        [XmlAttribute]
+        public bool ShowDebugInfo;
         /// <summary>
         /// Collection of <see cref="XLevel"/> objects that will participate in the game./>
         /// </summary>
 		[XmlArray]
-		public XLevel[] Levels;
-
+		public List<XLevel> Levels;
         /// <summary>
         /// Collection of <see cref="XScreen"/> objects that will participate in the game./>
         /// </summary>
         [XmlArray]
-		public XScreen[] Screens;
-		
-        /// <summary>
-        /// Specifies whether to display Frames Per Second counter.
-        /// </summary>
-		[XmlAttribute]
-		public bool ShowFPS;
-		
-        /// <summary>
-        /// Specifies whether On Screen Debug Information will be accessible.
-        /// </summary>
-		[XmlAttribute]
-		public bool ShowDebugInfo;
+		public List<XScreen> Screens;
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.StartScreen = reader["StartScreen"];
+            this.ShowFPS = reader.ReadAttrAsBoolean("ShowFPS");
+            this.ShowDebugInfo = reader.ReadAttrAsBoolean("ShowDebugInfo");
+
+            base.ReadXml(reader);
+        }
+
+        public override void AddSubcomponent(string name, XObject sub)
+        {
+            if (name == "Levels")
+                this.Levels = sub.Subcomponents.Cast<XLevel>().ToList();
+            else if (name == "Screens")
+                this.Screens = sub.Subcomponents.Cast<XScreen>().ToList();
+            else
+                base.AddSubcomponent(name, sub);
+        }
 	}
 }
 

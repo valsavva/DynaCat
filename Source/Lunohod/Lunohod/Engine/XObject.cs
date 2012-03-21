@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
+using System.Xml;
 
 namespace Lunohod.Objects
 {
     /// <summary>
     /// The base class for all components in the XGAME framework.
     /// </summary>
-	abstract public class XObject : IDisposable
+	abstract public class XObject : IDisposable, IXmlSerializable
 	{
 		protected bool isDisposed;
 		private Dictionary<string, int> triggerGroups;
@@ -91,7 +92,6 @@ namespace Lunohod.Objects
 
         // Actions
         [XmlElement(ElementName = "Do", Type = typeof(XDo))]
-        [XmlElement(ElementName = "Let", Type = typeof(XLet))]
         [XmlElement(ElementName = "Delay", Type = typeof(XDelay))]
 
         // Animation
@@ -134,7 +134,14 @@ namespace Lunohod.Objects
 		/// </summary>
 		public virtual void InitHierarchy()
 		{
-			if (this.Subcomponents == null)
+            // classes
+            if (!string.IsNullOrEmpty(this.Class))
+            {
+                InitiazeFromClass();
+                return;
+            }
+            
+            if (this.Subcomponents == null)
 				return;
 			
 			// replace includes with their children
@@ -149,23 +156,14 @@ namespace Lunohod.Objects
 				index = this.Subcomponents.FindIndex(c => c is XInclude);
 			}
 			
-			// classes
-			if (!string.IsNullOrEmpty(this.Class))
-			{
-				InitiazeFromClass();
-				return;
-			}
-			else
-			{
-				if (this.Subcomponents != null)
-					for(int i = 0; i < this.Subcomponents.Count; i++)
-					{
-						var subcomponent = this.Subcomponents[i];
-						subcomponent.InitHierarchy();
-					}
-			}
-			
-			// force to rebiuld subcomponent hash
+			if (this.Subcomponents != null)
+				for(int i = 0; i < this.Subcomponents.Count; i++)
+				{
+					var subcomponent = this.Subcomponents[i];
+					subcomponent.InitHierarchy();
+				}
+
+            // force to rebiuld subcomponent hash
 			this.componentDict = null;
 		}
         /// <summary>
@@ -256,14 +254,23 @@ namespace Lunohod.Objects
         internal virtual XObject Copy()
         {
             var result = (XObject)this.MemberwiseClone();
-            result.Subcomponents = new XObjectCollection(this.Subcomponents.Count);
-            for (int i = 0; i < this.Subcomponents.Count; i++)
+
+            if (result.subcomponents != null)
             {
-                result.Subcomponents.Add(this.Subcomponents[i].Copy());
+                result.Subcomponents = new XObjectCollection(this.Subcomponents.Count);
+                for (int i = 0; i < this.Subcomponents.Count; i++)
+                {
+                    result.Subcomponents.Add(this.Subcomponents[i].Copy());
+                }
+                result.InitHierarchy();
             }
-            result.InitHierarchy();
 
             return result;
+        }
+        internal void CreateSubcomponents()
+        {
+            if (this.subcomponents == null)
+                this.subcomponents = new XObjectCollection() { Parent = this };
         }
         #endregion
 
@@ -456,6 +463,55 @@ namespace Lunohod.Objects
         public override string ToString()
         {
             return string.Format("[{0}: Id={1}]", this.GetType().Name, Id);
+        }
+
+        public System.Xml.Schema.XmlSchema GetSchema()
+        {
+            return null;
+        }
+
+        public virtual void ReadXml(XmlReader reader)
+        {
+            this.Id = reader["Id"];
+            this.Class = reader["Class"];
+            this.ClassParams = reader["ClassParams"];
+            reader.ReadAttrAsBoolean("Enabled", ref this.Enabled);
+
+            if (this is IExploding)
+                ((IExploding)this).IsExploding = reader.ReadAttrAsBoolean("IsExploding");
+
+            ReadSubcomponents(reader);
+        }
+
+        public void ReadSubcomponents(XmlReader reader)
+        {
+            if (reader.IsEmptyElement)
+                return;
+
+            this.Subcomponents = new XObjectCollection();
+
+            while (true)
+            {
+                reader.Read();
+                
+                if (reader.MoveToContent() == XmlNodeType.EndElement)
+                    return;
+
+                XObject sub = ClassFactory.CreateObject(reader.LocalName);
+                sub.ReadXml(reader);
+
+                AddSubcomponent(reader.LocalName, sub);
+            }
+        }
+
+        public virtual void AddSubcomponent(string name, XObject sub)
+        {
+            this.Subcomponents.Add(sub);
+        }
+
+        public void WriteXml(System.Xml.XmlWriter writer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

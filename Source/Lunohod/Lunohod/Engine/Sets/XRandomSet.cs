@@ -118,5 +118,12 @@ namespace Lunohod.Objects
 			if (currentRunnable != null)
 	            currentRunnable.Stop();
         }
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Probabilities = reader["Probabilities"];
+
+            base.ReadXml(reader);
+        }
     }
 }

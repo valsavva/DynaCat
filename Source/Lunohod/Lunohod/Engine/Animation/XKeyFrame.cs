@@ -82,5 +82,13 @@ namespace Lunohod.Objects
 			
 			base.ReplaceParameter(par, val);
 		}
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Time = reader["Time"];
+            this.Value = reader["Value"];
+            reader.ReadAttrAsEnum<CurveTangent>("Smoothing", ref this.Smoothing);
+
+            base.ReadXml(reader);
+        }
     }
 }

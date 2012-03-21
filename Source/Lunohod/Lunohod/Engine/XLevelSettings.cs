@@ -37,6 +37,16 @@ namespace Lunohod.Objects
 		/// </summary>
 		[XmlAttribute]
 		public string ExplosionClass;
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            reader.ReadAttrAsInt("Difficulty", ref this.Difficulty);
+            reader.ReadAttrAsInt("BombCount", ref this.BombCount);
+            reader.ReadAttrAsFloat("HeroHealth", ref this.HeroHealth);
+            this.ExplosionClass = reader["ExplosionClass"];
+
+            base.ReadXml(reader);
+        }
 	}
 }
 

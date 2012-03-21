@@ -26,13 +26,6 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public string FontId;
 
-        [XmlAttribute("Color")]
-        public string zColor
-		{
-			set { this.Color = value.ToColor(); }
-			get { return this.Color.ToStr(); }
-		}
-		
 		public XText()
 		{
 			this.Color = Color.White;
@@ -99,6 +92,15 @@ namespace Lunohod.Objects
 			
 			base.ReplaceParameter(par, val);
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            reader.ReadAttrAsColor("Color", ref this.Color);
+            this.Text = reader["Text"];
+            this.FontId = reader["FontId"];
+
+            base.ReadXml(reader);
+        }
 	}
 }
 

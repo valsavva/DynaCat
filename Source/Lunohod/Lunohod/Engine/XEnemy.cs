@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
+using System.Xml;
 
 namespace Lunohod.Objects
 {
@@ -30,6 +31,13 @@ namespace Lunohod.Objects
 			var hero = GameEngine.Instance.LevelEngine.Hero;
 			hero.InflictDamage(this.Damage);
 		}
+
+        public override void ReadXml(XmlReader reader)
+        {
+            reader.ReadAttrAsFloat("Damage", ref this.Damage);
+
+            base.ReadXml(reader);
+        }
     }
 }
 

@@ -92,6 +92,13 @@ namespace Lunohod.Objects
         {
             get { return this.isPaused; }
         }
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            this.Duration = reader["Duration"];
+            
+            base.ReadXml(reader);
+        }
 	}
 }
 

@@ -9,7 +9,7 @@ using Lunohod;
 
 namespace Lunohod.Objects
 {
-    [XmlType("Level")]
+    [XmlRoot("Level")]
     public class XLevel : XScreen
     {
 		[XmlIgnore]

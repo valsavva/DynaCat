@@ -174,7 +174,7 @@ namespace Lunohod
 
 		public void LoadScreen(string id)
 		{
-            var newScreenEngine = new ScreenEngine(this, this.gameObject.Screens.First(s => s.Id == id).File);
+            var newScreenEngine = new ScreenEngine(this, this.gameObject.Screens.Cast<XScreen>().First(s => s.Id == id).File);
 
 			lock(this.screenEngines)
 			{
@@ -188,7 +188,7 @@ namespace Lunohod
 
 		public void LoadLevel(string id)
 		{
-			var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.First(l => l.Id == id).File);
+			var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.Cast<XLevel>().First(l => l.Id == id).File);
 
 			lock(this.screenEngines)
 			{

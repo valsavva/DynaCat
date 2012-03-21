@@ -38,12 +38,10 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public XValueComparison Compare = XValueComparison.E;
 		
-
         public XNumTriggerBase()
         {
             this.Value = "0";
         }
-
 
 		public override void Initialize(InitializeParameters p)
 		{
@@ -64,5 +62,13 @@ namespace Lunohod.Objects
 		{
 			return compareFunc(GetValue1(), GetValue2());
 		}
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            reader.ReadAttrAsString("Value", ref this.Value);
+            reader.ReadAttrAsEnum<XValueComparison>("Compare", ref this.Compare);
+
+            base.ReadXml(reader);
+        }
 	}
 }

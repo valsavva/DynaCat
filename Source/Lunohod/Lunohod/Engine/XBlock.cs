@@ -63,5 +63,12 @@ namespace Lunohod.Objects
 			
 			return true;
         }
+
+        public override void ReadXml(System.Xml.XmlReader reader)
+        {
+            reader.ReadAttrAsEnum<XEdgeType>("Edges", ref this.Edges);
+
+            base.ReadXml(reader);
+        }
     }
 }
