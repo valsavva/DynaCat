@@ -43,6 +43,8 @@
 			</Image>
 			<Text FontId="SystemFont" Location="15,105" Text="Text scales too!" Color="#000000"/>
 		</Group>
+
+		<Image TextureId="chargers" Origin ="0,50" Location="0,320" Scale="3" />
 	</Layer>
 
 	<Include File="Dashboard.xml" />	
