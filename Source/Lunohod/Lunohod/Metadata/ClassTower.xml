@@ -7,7 +7,7 @@
 
 	<Class Id="clsTower">
 		<Tower SignalSpeed="256" Bounds="0, 0, 1, 1">
-		
+                        
             <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="tower:+LedOn;this_anmSignal.Start()"/>
             
             <SequenceSet Id="this_anmSignal">
@@ -22,7 +22,12 @@
             <BoolTrigger Group="sttTower">
                 <Image TextureId="towerLedOff" Bounds="0, 0, 30, 30"/>
             </BoolTrigger>
-            
+
+            <!-- We'll need to remove this -->
+            <Text Text="=SignalSpeed" FontId="SystemFont" Location="10,10" Color="#000000"/>
+            <BoolTrigger Condition="system:towerIncreaseSpeed" Action="SignalSpeed=SignalSpeed+10"/>
+            <BoolTrigger Condition="system:towerReduceSpeed" Action="SignalSpeed=SignalSpeed-10"/>
+
         </Tower>
 	</Class>
 

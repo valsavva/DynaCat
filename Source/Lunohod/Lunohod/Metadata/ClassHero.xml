@@ -18,14 +18,18 @@
 
 	<Class Id="clsHero">
 		<Hero Speed="84" Direction="0,0" Deceleration="0">
+            <Include File="includeSkeletonHeroMotions.xml"/>
 		
 <!-- Init Vars -->
 
-         	<Do InProgress="true" Action="@heroDepartPointX=0;                 @heroDepartPointY=0;                 @heroDestPointX=0;                 @heroDestPointY=0"/>
+         	<Do InProgress="true" Action="
+                @heroDepartPointX=0;
+                @heroDepartPointY=0;
+                @heroDestPointX=0;
+                @heroDestPointY=0"/>
                 
 <!-- Moving -->
 
-            <Include File="includeSkeletonHeroMotions.xml"/>
         
         	<!-- enter -->
             <BoolTrigger Condition="this:Enter" EnterAction="setHeroEnter.Start()">
