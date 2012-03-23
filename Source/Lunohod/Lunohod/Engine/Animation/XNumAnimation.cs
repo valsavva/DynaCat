@@ -133,6 +133,17 @@ namespace Lunohod.Objects
 					this.elapsedTime = TimeSpan.Zero;
 				else if (this.Fill == XAnimationFillBehavior.End)
 					this.elapsedTime = TimeSpan.FromSeconds(this.Autoreverse ? this.InternalDuration * 2f : this.InternalDuration);
+				else
+				{
+					if (this.RepeatCount > 0)
+						this.elapsedTime = TimeSpan.FromSeconds(
+							Math.Min(this.elapsedTime.TotalSeconds, this.RepeatCount * (this.Autoreverse ? this.InternalDuration * 2f : this.InternalDuration))
+						);
+					else if (this.RepeatTime > 0f)
+						this.elapsedTime = TimeSpan.FromSeconds(
+							Math.Min(this.elapsedTime.TotalSeconds, this.RepeatTime)
+						);
+				}
 
 				UpdateAnimation();
 			}
