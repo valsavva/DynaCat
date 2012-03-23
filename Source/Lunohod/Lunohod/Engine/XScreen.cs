@@ -12,10 +12,6 @@ namespace Lunohod.Objects
     [XmlRoot("Screen")]
     public class XScreen : XElement
     {
-        private Dictionary<string, float> numVariables;
-        private Dictionary<string, bool> boolVariables;
-        private Dictionary<string, string> strVariables;
-
         [XmlAttribute]
         public string Name;
 		
