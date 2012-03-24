@@ -66,6 +66,11 @@
     <MtouchArch>ARMv6_ARMv7</MtouchArch>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchUseSGen>true</MtouchUseSGen>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="mono ${ProjectDir}/XmlWhiteSpaceRemover.exe ${TargetDir}/Metadata *.xml ${TargetDir}/Metadata" workingdir="" pauseExternalConsole="true" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
