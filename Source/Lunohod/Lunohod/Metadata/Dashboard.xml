@@ -11,7 +11,13 @@
         <Texture Id="txrBtnRight" Source="btnRight"/>
         <Texture Id="txrBtnUp" Source="btnUp"/>
         <Texture Id="txrBtnBomb" Source="btnBomb"/>
-	</Resources>
+        <Texture Id="txrHeroHealth000" Source="heroHealth000"/>
+        <Texture Id="txrHeroHealth020" Source="heroHealth020"/>
+        <Texture Id="txrHeroHealth040" Source="heroHealth040"/>
+        <Texture Id="txrHeroHealth060" Source="heroHealth060"/>
+        <Texture Id="txrHeroHealth080" Source="heroHealth080"/>
+        <Texture Id="txrHeroHealth100" Source="heroHealth100"/>
+    </Resources>
 	
 	<Dashboard Id="dashboard" BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270"/>
@@ -95,6 +101,25 @@
             <Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
         </TapArea>
 
+
+        <NumTrigger Property="hero.Health" Compare="GE" Value="100" Group="sttHeroHealthState">
+            <Image TextureId="txrHeroHealth100" Bounds="38, 2, 30, 16"/>
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="GE" Value="80" Group="sttHeroHealthState">
+            <Image TextureId="txrHeroHealth080" Bounds="38, 2, 30, 16"/>
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="GE" Value="60" Group="sttHeroHealthState">
+            <Image TextureId="txrHeroHealth060" Bounds="38, 2, 30, 16"/>
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="GE" Value="40" Group="sttHeroHealthState">
+            <Image TextureId="txrHeroHealth040" Bounds="38, 2, 30, 16"/>
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="GE" Value="20" Group="sttHeroHealthState">
+            <Image TextureId="txrHeroHealth020" Bounds="38, 2, 30, 16"/>
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="GE" Value="0" Group="sttHeroHealthState">
+            <Image TextureId="txrHeroHealth000" Bounds="38, 2, 30, 16"/>
+        </NumTrigger>
     </Dashboard>
 </Include>
 

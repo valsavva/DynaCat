@@ -48,7 +48,6 @@
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_battery-life" Source="battery-life" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image3072"/>
@@ -241,8 +240,7 @@
     <Layer Id="actionHTE" BackColor="#FFFFFFFF">
         <Hero Id="hero" Class="clsHero" Bounds="56, 36, 33, 24" TraceId="image3027"/>
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="407, 225, 37, 54" TraceId="image3049" />
-        <Image Id="dfltMask93" TextureId="txr_battery-life" Bounds="38, 2, 30, 16" Stretch="false" Opacity="1" TraceId="image3860"/>
+        <Group Id="exit" Class="clsExit" Bounds="407, 225, 37, 54" TraceId="image3049" />        
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
