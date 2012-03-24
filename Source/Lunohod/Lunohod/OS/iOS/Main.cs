@@ -4,6 +4,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Microsoft.Xna.Framework;
+using System.IO;
 
 namespace Lunohod
 {
@@ -35,7 +36,7 @@ namespace Lunohod
 
         static void LogError(Exception ex)
         {
-            //System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "lunohod_error.txt", ex.ToString());
+            File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "lunohod_error.txt"), ex.ToString());
             Console.WriteLine("**** Unhandled error!\n" + ex.ToString());
         }
     }    
