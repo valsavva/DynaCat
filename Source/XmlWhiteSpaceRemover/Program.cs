@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Xml;
+using System.Collections;
 
 namespace XmlWhiteSpaceRemover
 {
@@ -29,7 +30,12 @@ namespace XmlWhiteSpaceRemover
                     doc.Load(file);
                     var comments = doc.SelectNodes(@"//comment()");
 
+                    List<XmlNode> toDelete = new List<XmlNode>();
+
                     foreach (XmlNode c in comments)
+                        toDelete.Add(c);
+
+                    foreach (var c in toDelete)
                         c.ParentNode.RemoveChild(c);
 
                     using (XmlWriter w = XmlWriter.Create(Path.Combine(outPath, Path.GetFileName(file)), new XmlWriterSettings() { Indent = false, NewLineHandling = NewLineHandling.None }))
