@@ -2,10 +2,13 @@
 	
 	<Resources RootFolder="Sound">
 		<SoundFile Id="sndExitFlight" Source="skeletonFX_roket_start"/>
+        <SoundFile Id="sndExitDoorOpen" Source="skeletonFX_door_open"/>
+        <SoundFile Id="sndExitDoorClose" Source="skeletonFX_door_close"/>
 	</Resources>
 	
 	<Resources RootFolder="Textures">
         <Texture Id="txrExitStatic" Source="refrigerator"/>
+        <Texture Id="txrExitOpen" Source="refrigerator_open"/>
         <Texture Id="txrExitFlight" Source="refrigerator_wings"/>
         <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
 	</Resources>
@@ -14,16 +17,25 @@
 	<Class Id="clsExit">
 		<Group>
             <Image Id="this_imgExitStatic" TextureId="txrExitStatic"/>
+            <Image Id="this_imgExitOpen" TextureId="txrExitOpen"  Bounds="-1,-2,38,56" Enabled="false"/>
 			<Image Id="this_imgExitFlight" TextureId="txrExitFlight" Bounds="-12,0,62,54" Enabled="false"/>
 			<Sound Id="this_sndExitFlight" FileId="sndExitFlight" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+            <Sound Id="this_sndExitDoorOpen" FileId="sndExitDoorOpen" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+            <Sound Id="this_sndExitDoorClose" FileId="sndExitDoorClose" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 			<Sprite Id="sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="12,56,16,34" FrameBounds="0,0,16,34" Enabled="false">
                 <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="true" Target="sprExitFlightFire.CurrentFrame" InProgress="true"/>
 			</Sprite>
 			<SequenceSet Id="this_setExit" InProgress="false">
-                <!--<Let Target="vleHeroPoint.X,vleHeroPoint.Y,vleHeroDestPoint.X,vleHeroDestPoint.Y" Value="hero.X,hero.Y,exit.X,exit.Y+10"/>-->
-                <Do Action="@heroDepartPointX=hero.X;                             @heroDepartPointY=hero.Y;                             @heroDestPointX=exit.X;                             @heroDestPointY=exit.Y+10;                             hero:+Enter"/>
-				<Do Action="this_sndExitFlight.Start()"/>
-                <Delay Duration="2"/>
+                <Do Action="@heroDepartPointX=hero.X;
+                            @heroDepartPointY=hero.Y;                             
+                            @heroDestPointX=exit.X;                             
+                            @heroDestPointY=exit.Y+10;                             
+                            hero:+Enter"/>
+                <Do Action="this_imgExitStatic.Disable();this_imgExitOpen.Enable();this_sndExitDoorOpen.Start()"/>
+                <Do Action="this_sndExitFlight.Start()"/>
+                <Delay Duration="1"/>
+                <Do Action="this_imgExitOpen.Disable();this_imgExitStatic.Enable();this_sndExitDoorClose.Start()"/>
+                <Delay Duration="1"/>
                 <Do Action="this_imgExitStatic.Disable();this_imgExitFlight.Enable()"/>
 				<ParallelSet>
                     <Do Action="sprExitFlightFire.Enable()"/>
