@@ -17,7 +17,7 @@
         <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
         <Texture Id="txr_second_phon_communications2" Source="second_phon_communications2" />
         <Texture Id="txr_second_phon_communications" Source="second_phon_communications" />
-        <Texture Id="txr_second-phon_communications_2" Source="second-phon_communications_2" />
+        <Texture Id="txr_second_phon_communications_2" Source="second_phon_communications_2" />
         <Texture Id="txr_detal_me1" Source="detal_me1" />
         <Texture Id="txr_package_1" Source="package_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
@@ -38,7 +38,7 @@
         <Image Id="dfltMask4" TextureId="txr_second_phon_tank" Bounds="99, 279, 26, 32" Stretch="true" Opacity="1" TraceId="image3118"/>
         <Image Id="dfltMask5" TextureId="txr_second_phon_communications2" Bounds="413, 83, 65, 103" Stretch="false" Opacity="1" TraceId="image3128-7"/>
         <Image Id="dfltMask6" TextureId="txr_second_phon_communications" Bounds="353, 208, 154, 117" Stretch="false" Opacity="1" TraceId="image3139-4"/>
-        <Image Id="dfltMask7" TextureId="txr_second-phon_communications_2" Bounds="32, 32, 70, 118" Stretch="false" Opacity="1" TraceId="image3172-0"/>
+        <Image Id="dfltMask7" TextureId="txr_second_phon_communications_2" Bounds="32, 32, 70, 118" Stretch="false" Opacity="1" TraceId="image3172-0"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="207, 260, 25, 40" Edges="Bounce" TraceId="image3255"/>

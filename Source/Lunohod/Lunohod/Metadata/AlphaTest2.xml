@@ -16,8 +16,8 @@
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
-        <Texture Id="txr_second-phon_communications_2" Source="second-phon_communications_2" />
-        <Texture Id="txr_second-phon_ladder" Source="second-phon_ladder" />
+        <Texture Id="txr_second_phon_communications_2" Source="second_phon_communications_2" />
+        <Texture Id="txr_second_phon_ladder" Source="second_phon_ladder" />
         <Texture Id="txr_portHor" Source="portHor" />
         <Texture Id="txr_portDown" Source="portDown" />
         <Texture Id="txr_portVert" Source="portVert" />
@@ -52,8 +52,8 @@
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1" TraceId="image3072"/>
         <Image Id="dfltMask2" TextureId="txr_second_phon_tank" Bounds="36, 260, 22, 27" Stretch="true" Opacity="1" TraceId="image3992"/>
-        <Image Id="dfltMask3" TextureId="txr_second-phon_communications_2" Bounds="16, 190, 70, 118" Stretch="false" Opacity="1" TraceId="image4003"/>
-        <Image Id="dfltMask4" TextureId="txr_second-phon_ladder" Bounds="91, 225, 24, 64" Stretch="true" Opacity="1" TraceId="image4070"/>
+        <Image Id="dfltMask3" TextureId="txr_second_phon_communications_2" Bounds="16, 190, 70, 118" Stretch="false" Opacity="1" TraceId="image4003"/>
+        <Image Id="dfltMask4" TextureId="txr_second_phon_ladder" Bounds="91, 225, 24, 64" Stretch="true" Opacity="1" TraceId="image4070"/>
     </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="312, -11, 40, 51" Edges="Bounce" TraceId="image4121"/>
