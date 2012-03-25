@@ -42,37 +42,32 @@ namespace Lunohod.Objects
 		{
 			base.Start();
 			
-			repeatsDone = 0;
-			runnables.ForEach(a => a.Stop());
+			if (currentRunnable != null)
+				currentRunnable.Stop();
 
 			currentRunnable = null;
+			currentIndex = 0;
 		}
 		public override void Pause()
 		{
 			base.Pause();
 
-			if (currentRunnable == null)
-				return;
-			
-			currentRunnable.Pause();
+			if (currentRunnable != null)
+				currentRunnable.Pause();
 		}
 		public override void Resume()
 		{
 			base.Resume();
 
-			if (currentRunnable == null)
-				return;
-			
-			currentRunnable.Resume();
+			if (currentRunnable != null)
+				currentRunnable.Resume();
 		}
 		public override void Stop()
 		{
 			base.Stop();
 
-			if (currentRunnable == null)
-				return;
-			
-			runnables.ForEach(a => a.Stop());
+			if (currentRunnable != null)
+	            currentRunnable.Stop();
 		}
 	}
 }

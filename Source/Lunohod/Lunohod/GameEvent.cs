@@ -60,6 +60,11 @@ namespace Lunohod
 		public bool IsInstant;
 		
 		public bool IsHandled;
+		
+		public override string ToString()
+		{
+			return string.Format("[GameEvent Type:'{0}' Id:'{1}' IsInstant:{2}]", this.EventType, this.Id, this.IsInstant);
+		}
 	}
 }
 

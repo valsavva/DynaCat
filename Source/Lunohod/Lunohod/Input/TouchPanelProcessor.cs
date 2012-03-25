@@ -28,10 +28,6 @@ namespace Lunohod
 			{
 				var touch = touches[i];
 				
-#if DEBUG
-				Debug.WriteLine("Touch: {0},{1} State: {2}", touch.Position.X, touch.Position.Y, touch.State);
-#endif
-
                 if (touch.State == TouchLocationState.Invalid)
                     continue;
                 
@@ -54,8 +50,8 @@ namespace Lunohod
                          game.ProcessTouch(gameTime, XTapType.Move, x, y);
                          continue;
                      }
-                     else
-                         Debug.WriteLine("** Issuing a touch! **");
+//                     else
+//                         Debug.WriteLine("** Issuing a touch! **");
                 }
 
                 this.pressed = true;
