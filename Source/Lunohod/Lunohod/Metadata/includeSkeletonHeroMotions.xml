@@ -4,19 +4,19 @@
 		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
 	
-    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime3) + ') ' + system.Str(hero.Speed)" Color="#000000" />
+    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(hero.Speed)" Color="#000000" />
     
 	<!-- Global variables. Will be moved out here. -->
-	<Do Action="@heroBaseSpeed=60;@heroBaseTime=6;" InProgress="true"/>
+	<Do Action="@heroBaseSpeed=60;@heroBaseTime=4.2;" InProgress="true"/>
 	
 	<Do Id="doNormalSpeed" Action="
-			@heroTime1=@heroBaseTime/20;@heroTime2=@heroBaseTime/10;@heroTime3=@heroBaseTime;
-			@heroSpeed1=@heroBaseSpeed;@heroSpeed2=@heroBaseSpeed*2;@heroSpeed3=@heroBaseSpeed*1.4;"
+			@heroTime1=@heroBaseTime/20;@heroTime2=@heroBaseTime/10;@heroTime3=@heroBaseTime/2;@heroTime4=@heroBaseTime;
+			@heroSpeed1=@heroBaseSpeed;@heroSpeed2=@heroBaseSpeed*2.2;@heroSpeed3=@heroBaseSpeed*2;@heroSpeed4=@heroBaseSpeed*1;"
 			InProgress="true"
 	/>
 	<Do Id="doBolotoSpeed" Action="
-			@heroTime1=@heroBaseTime/40;@heroTime2=@heroBaseTime/20;@heroTime3=@heroBaseTime/2;
-			@heroSpeed1=@heroBaseSpeed/2;@heroSpeed2=@heroBaseSpeed;@heroSpeed3=@heroBaseSpeed*0.7;" />
+			@heroTime1=@heroBaseTime/40;@heroTime2=@heroBaseTime/20;@heroTime3=@heroBaseTime/4;@heroTime4=@heroBaseTime/2;
+			@heroSpeed1=@heroBaseSpeed*0.5;@heroSpeed2=@heroBaseSpeed*1.2;@heroSpeed3=@heroBaseSpeed*0.7;@heroSpeed4=@heroBaseSpeed*0.3;" />
 
 	<!-- this should not belong to any group -->
 	<BoolTrigger Condition="this:InBoloto" EnterAction="doBolotoSpeed.Start()" ExitAction="doNormalSpeed.Start()"/>
@@ -33,7 +33,8 @@
         <KeyFrame Time="0" Value="@heroSpeed1" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime1" Value="@heroSpeed2" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime2" Value="@heroSpeed3" Smoothing="Smooth"/>
-        <KeyFrame Time="@heroTime3" Value="0" Smoothing="Smooth"/>
+        <KeyFrame Time="@heroTime3" Value="@heroSpeed4" Smoothing="Smooth"/>
+        <KeyFrame Time="@heroTime4" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
 	
 	
