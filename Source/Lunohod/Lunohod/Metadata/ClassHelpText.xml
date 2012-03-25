@@ -12,14 +12,15 @@
             <SequenceSet Id="this_anmEntry" InProgress="false" RepeatCount="1">
             
                 <!-- <Delay Duration="system.Rnd(1,1.5)" /> -->
-                <RandomSet RepeatCount="1">
+                    <Delay Duration="0.4"/>
+                <!--<RandomSet RepeatCount="1">
                     <Delay Duration="1.0"/>
+                    <Delay Duration="1.02"/>
+                    <Delay Duration="1.04"/>
+                    <Delay Duration="1.06"/>
+                    <Delay Duration="1.08"/>
                     <Delay Duration="1.1"/>
-                    <Delay Duration="1.2"/>
-                    <Delay Duration="1.3"/>
-                    <Delay Duration="1.4"/>
-                    <Delay Duration="1.5"/>
-                </RandomSet>
+                </RandomSet>-->
 
                 <!--<Let Target="this.Y" Value="-600" />-->
                 <NumAnimation Target="this.Y" From="0" To="-600" Duration="0.001" Autoreverse="false" IsDelta="true" RepeatCount="1" Fill="End"/>
@@ -52,7 +53,7 @@
 
             <!-- help text removing -->
             <SequenceSet Id="this_anmRemove" InProgress="false" RepeatCount="1">
-                <NumAnimation Target="this_img.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <NumAnimation Target="this_img.Opacity" From="this_img.Opacity" To="0" Duration="0.3" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <Do Action="this.Disable()"/>
             </SequenceSet>
 
