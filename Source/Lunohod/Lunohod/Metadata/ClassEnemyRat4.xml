@@ -1,0 +1,65 @@
+<Include>	
+
+	<Resources RootFolder="Sound">
+		<SoundFile Id="sndEnemyRat4Dying" Source="skeletonFX_enemy_dead_scream_1"/>
+	</Resources>
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="txrEnemyRat4Default" Source="EnemyRat4_enemy_2"/>
+        <Texture Id="txrEnemyRat4Attack" Source="EnemyRat4_enemy_2"/>
+        <Texture Id="txrEnemyRat4Dying" Source="EnemyRat4_enemy_2"/>
+    </Resources>
+
+         
+	<Class Id="clsEnemyRat4">
+		<Enemy IsExploding="true" Damage="10">
+		
+<!-- States -->
+
+            <!-- explosion -->
+            <!-- dying -->
+			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDying.Start()">
+				<Image TextureId="txrEnemyRat4Dying"/>
+			</BoolTrigger>
+            <ParallelSet Id="this_setDying" InProgress="false">
+                <!--<Let Target="this.Damage" Value="0" />-->
+                <Sound FileId="sndEnemyRat4Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    			<SequenceSet>
+    				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+    				<Do Action="this.Disable()"/>
+    			</SequenceSet>
+			</ParallelSet>
+
+			<!-- attack -->
+   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this_anmAttack.Start()" StayTriggered="false" Group="this_sttStates">
+                <Image Id="this_txrEnemyRat4Attack" TextureId="txrEnemyRat4Attack" Bounds="-14, -3, 38, 25"/>
+   			</IntersectionTrigger>
+			<NumAnimation Id="this_anmAttack" Duration="0.1" Target="this_txrEnemyRat4Attack.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+			
+			<!-- default -->
+			<BoolTrigger Group="this_sttStates">
+				<Image Id="this_txrEnemyRat4Default" TextureId="txrEnemyRat4Default" Bounds="-14, -3, 38, 25"/>
+                <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
+			</BoolTrigger>
+			
+		</Enemy>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

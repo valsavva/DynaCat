@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.5.03 -->
+<!-- source: D:\Lunohod\Levels\AlphaTest\AlphaTest3.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest3" Bounds="0, 0, 480, 320">
+    <LevelSettings Difficulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
+    <Include File="ClassFood.xml" />
+    <Include File="ClassEnemyRat5.xml" />
+    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassWoodenBox.xml" />
+    <Include File="ClassHero.xml" />
+    <Include File="ClassTower.xml" />
+    <Include File="ClassExit.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_tailsBlue" Source="tailsBlue" />
+        <Texture Id="txr_second_phon_communications_2_hor_me" Source="second_phon_communications_2_hor_me" />
+        <Texture Id="txr_second_phon_communications_5_noVent_me" Source="second_phon_communications_5_noVent_me" />
+        <Texture Id="txr_second_phon_crack" Source="second_phon_crack" />
+        <Texture Id="txr_second_phon_grill_with_fan_2" Source="second_phon_grill_with_fan_2" />
+        <Texture Id="txr_second_phon_index2" Source="second_phon_index2" />
+        <Texture Id="txr_second_phon_index3" Source="second_phon_index3" />
+        <Texture Id="txr_second_phon_plate1" Source="second_phon_plate1" />
+        <Texture Id="txr_second_phon_plate2" Source="second_phon_plate2" />
+        <Texture Id="txr_second_phon_ventilation_grille" Source="second_phon_ventilation_grille" />
+        <Texture Id="txr_EnemyRat4_enemy_2" Source="EnemyRat4_enemy_2" />
+        <Texture Id="txr_EnemyRat5_enemy_3" Source="EnemyRat5_enemy_3" />
+        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
+        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
+        <Texture Id="txr_box_old_2" Source="box_old_2" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3013"/>
+    </Layer>
+    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_second_phon_communications_2_hor_me" Bounds="-209, 98, 118, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3325"/>
+        <Image Id="dfltMask3" TextureId="txr_second_phon_communications_5_noVent_me" Bounds="-177, 73, 91, 200" Rotation="0" Stretch="false" Opacity="1" TraceId="image3336"/>
+        <Image Id="dfltMask4" TextureId="txr_second_phon_crack" Bounds="-106, 325, 152, 125" Rotation="23.89" Stretch="true" Opacity="1" TraceId="image3347"/>
+        <Image Id="dfltMask5" TextureId="txr_second_phon_grill_with_fan_2" Bounds="403, 13, 50, 50" Rotation="0" Stretch="true" Opacity="1" TraceId="image3358"/>
+        <Image Id="dfltMask6" TextureId="txr_second_phon_index2" Bounds="51, 15, 62, 30" Rotation="22.25" Stretch="false" Opacity="1" TraceId="image3369"/>
+        <Image Id="dfltMask7" TextureId="txr_second_phon_index3" Bounds="301, 259, 54, 50" Rotation="0" Stretch="false" Opacity="1" TraceId="image3380"/>
+        <Image Id="dfltMask8" TextureId="txr_second_phon_plate1" Bounds="38, 13, 71, 50" Rotation="0" Stretch="false" Opacity="1" TraceId="image3391"/>
+        <Image Id="dfltMask9" TextureId="txr_second_phon_plate2" Bounds="36, 69, 75, 50" Rotation="0" Stretch="false" Opacity="1" TraceId="image3402"/>
+        <Image Id="dfltMask10" TextureId="txr_second_phon_ventilation_grille" Bounds="348, 15, 50, 50" Rotation="0" Stretch="true" Opacity="1" TraceId="image3413"/>
+        <Image Id="dfltMask11" TextureId="txr_EnemyRat4_enemy_2" Bounds="-100, 54, 38, 25" Rotation="0" Stretch="false" Opacity="1" TraceId="image3424"/>
+        <Image Id="dfltMask12" TextureId="txr_EnemyRat5_enemy_3" Bounds="-98, 106, 57, 35" Rotation="0" Stretch="false" Opacity="1" TraceId="image3435"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Food Id="fd1" Class="clsFood" Points="1" Bounds="231, 48, 30, 15" TraceId="image3438">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd2" Class="clsFood" Points="1" Bounds="245, 41, 30, 15" TraceId="image3440">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd3" Class="clsFood" Points="1" Bounds="252, 50, 30, 15" TraceId="image3442">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd4" Class="clsFood" Points="1" Bounds="258, 38, 30, 15" TraceId="image3444">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd5" Class="clsFood" Points="1" Bounds="235, 33, 30, 15" TraceId="image3446">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd6" Class="clsFood" Points="1" Bounds="253, 29, 30, 15" TraceId="image3448">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd7" Class="clsFood" Points="1" Bounds="245, 50, 30, 15" TraceId="image3450">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd8" Class="clsFood" Points="1" Bounds="230, 27, 30, 15" TraceId="image3452">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd9" Class="clsFood" Points="1" Bounds="245, 25, 30, 15" TraceId="image3454">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd10" Class="clsFood" Points="1" Bounds="225, 40, 30, 15" TraceId="image3456">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd11" Class="clsFood" Points="1" Bounds="249, 47, 30, 15" TraceId="image3458">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd12" Class="clsFood" Points="1" Bounds="231, 55, 30, 15" TraceId="image3460">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd13" Class="clsFood" Points="1" Bounds="257, 53, 30, 15" TraceId="image3462">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd14" Class="clsFood" Points="1" Bounds="265, 44, 30, 15" TraceId="image3464">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd15" Class="clsFood" Points="1" Bounds="241, 38, 30, 15" TraceId="image3128">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Enemy Id="enm1" Class="clsEnemyRat5" Bounds="149, 212, 27, 31" TraceId="image3024"/>
+        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="99, 130, 18, 21" TraceId="image3035"/>
+        <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="232, 32, 24, 25" TraceId="image3046"/>
+        <Enemy Id="enm4" Class="clsEnemyRat2" Bounds="349, 131, 22, 23" TraceId="image3057"/>
+        <Enemy Id="enm5" Class="clsEnemyRat1" Bounds="309, 221, 28, 25" TraceId="image3079"/>
+        <Food Id="fd16" Class="clsFood" Points="1" Bounds="349, 239, 30, 15" TraceId="image3090">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd17" Class="clsFood" Points="1" Bounds="66, 144, 27, 15" TraceId="image3101">
+            <Image TextureId="txr_fish_3_me" />
+        </Food>
+        <Food Id="fd18" Class="clsFood" Points="1" Bounds="115, 250, 27, 15" TraceId="image3124">
+            <Image TextureId="txr_fish_3_me" />
+        </Food>
+        <Food Id="fd19" Class="clsFood" Points="1" Bounds="154, 259, 27, 15" TraceId="image3126">
+            <Image TextureId="txr_fish_3_me" />
+        </Food>
+        <Food Id="fd20" Class="clsFood" Points="1" Bounds="147, 245, 27, 15" TraceId="image3122">
+            <Image TextureId="txr_fish_3_me" />
+        </Food>
+        <Block Id="blk1" Class="clsWoodenBox" Bounds="454, 174, 30, 30" Edges="Stick" TraceId="image3227">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
+        <Block Id="blk2" Class="clsWoodenBox" Bounds="446, 143, 30, 30" Edges="Stick" TraceId="image3147">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
+        <Block Id="blk3" Class="clsWoodenBox" Bounds="447, 206, 30, 30" Edges="Stick" TraceId="image3149">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
+        <Block Id="blk4" Class="clsWoodenBox" Bounds="394, 279, 30, 30" Edges="Stick" TraceId="image3151">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
+        <Block Id="blk5" Class="clsWoodenBox" Bounds="441, 282, 30, 30" Edges="Stick" TraceId="image3153">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
+        <Block Id="blk6" Class="clsWoodenBox" Bounds="459, 241, 30, 30" Edges="Stick" TraceId="image3138">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
+    </Layer>
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+        <Hero Id="hero" Class="clsHero" Bounds="230, 123, 33, 24" TraceId="image3027"/>
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Group Id="exit" Class="clsExit" Bounds="404, 216, 37, 54" TraceId="image3049" />
+    </Layer>
+    <Layer Id="upmask" BackColor="#FFFFFFFF">
+    </Layer>
+    <Include File="ClassExplosion.xml" />
+    <Include File="Dashboard.xml" />
+</Level>
+<!-- Food=20 Enemy=5 Block=6 DesignImage=12 Animation=0 Teleport=0 FoodPack=0 -->

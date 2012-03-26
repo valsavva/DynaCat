@@ -15,6 +15,7 @@
 		<Screen Id="ScreenTests02" File="ScreenTests02.xml" />
 	</Screens>
 	<Levels>
+		<Level Id="AlphaTest3" File="AlphaTest3.xml" />
 		<Level Id="S01L01" File="S01L01.xml" />
         <Level Id="S01L02" File="S01L02.xml" />
         <Level Id="S01L03" File="S01L03.xml" />
@@ -77,6 +78,7 @@
 		<Level Id="FPSTest_dry_IBA-1000" File="FPSTest_dry_IBA-1000.xml" />
 	</Levels>
 </Game>
+
 
 
 
