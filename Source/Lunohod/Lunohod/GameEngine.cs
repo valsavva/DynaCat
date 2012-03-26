@@ -285,7 +285,7 @@ namespace Lunohod
 		{
 			int numOfEvents = this.eventQueue.Count;
 
-			for (int i = 0; i < numOfEvents && i < this.eventQueue.Count; i++)
+			for (int i = 0; i < numOfEvents; i++)
 			{
 				var e = this.eventQueue.Dequeue();
 				

@@ -39,16 +39,14 @@
 	
 	
 	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
-	<!-- don't know why don't work this
     <BoolTrigger Condition="system:heroSpeedRecalculate">
-    -->
 		<BoolTrigger Condition="system:heroReduceSpeed" Action="@heroBaseSpeed=@heroBaseSpeed-5"/>
 		<BoolTrigger Condition="system:heroIncreaseSpeed" Action="@heroBaseSpeed=@heroBaseSpeed+5"/>
 		<BoolTrigger Condition="system:heroReduceTime" Action="@heroBaseTime=@heroBaseTime-0.5"/>
 		<BoolTrigger Condition="system:heroIncreaseTime" Action="@heroBaseTime=@heroBaseTime+0.5"/>
 		<BoolTrigger Condition="this:InBoloto" Action="doBolotoSpeed.Start()"/>
 		<BoolTrigger Condition="!this:InBoloto" Action="doNormalSpeed.Start()"/>
-	<!--</BoolTrigger>-->
+	</BoolTrigger>
 	
 </Include>
 
