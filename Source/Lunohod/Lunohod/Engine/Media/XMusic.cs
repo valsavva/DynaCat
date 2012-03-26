@@ -15,7 +15,7 @@ namespace Lunohod.Objects
 	public class XMusic : XObject, IHasVolume, IRunnable
 	{
 		private XMusicResource musicFile;
-		private float volume;
+		private double volume;
 		
 		public XMusic()
 		{
@@ -25,12 +25,12 @@ namespace Lunohod.Objects
         public string FileId;
 		
 		[XmlAttribute]
-		public float Volume
+		public double Volume
 		{
 			get { return this.volume; }
 			set { 
 				this.volume = value;
-				MediaPlayer.Volume = this.volume;
+				MediaPlayer.Volume = (float)this.volume;
 			}
 		}
 		
@@ -71,7 +71,7 @@ namespace Lunohod.Objects
             {
                 // Play the music
                 MediaPlayer.Play(this.musicFile.Song);
-				MediaPlayer.Volume = this.Volume;
+                MediaPlayer.Volume = (float)this.Volume;
 
                 // Loop the currently playing song
                 MediaPlayer.IsRepeating = true;

@@ -13,7 +13,7 @@ namespace Lunohod.Objects
 	public class XFood : XElement, IExploding
 	{
 		[XmlAttribute]
-		public float Points;
+		public double Points;
         /// <inheritdoc />
         [XmlAttribute]
         public bool IsExploding { get; set; }

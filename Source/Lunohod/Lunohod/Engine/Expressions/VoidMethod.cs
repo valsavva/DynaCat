@@ -93,7 +93,7 @@ namespace Lunohod.Xge
         // System
         public object ActionStartLevel()
         {
-            this.system.StartLevel((int)((IExpression<float>)parameters[0]).GetValue());
+            this.system.StartLevel((int)((IExpression<double>)parameters[0]).GetValue());
             return null;
         }
         public object ActionStartScreen()
@@ -125,7 +125,7 @@ namespace Lunohod.Xge
         }
         public object ActionSetDirection()
         {
-            this.hero.SetDirection(((IExpression<float>)parameters[0]).GetValue(), ((IExpression<float>)parameters[1]).GetValue());
+            this.hero.SetDirection(((IExpression<double>)parameters[0]).GetValue(), ((IExpression<double>)parameters[1]).GetValue());
             return null;
         }
 

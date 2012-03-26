@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Lunohod.Xge
 {
-    public class NumProperty : Property<float>, IExpression<float>
+    public class NumProperty : Property<double>, IExpression<double>
     {
         private XElement element;
         private XSprite sprite;
@@ -49,13 +49,13 @@ namespace Lunohod.Xge
                 {
                     InitializeGenericAccessor();
 
-                    if (propertyInfo.PropertyType != typeof(float)
-                        && propertyInfo.PropertyType != typeof(double)
+                    if (propertyInfo.PropertyType != typeof(double)
+                        && propertyInfo.PropertyType != typeof(float)
                         && propertyInfo.PropertyType != typeof(int)
                     )
                     {
                         throw new InvalidOperationException(
-                            string.Format("Property [{0}.{1}] has type [{2}] which is not numeric. Numeric types are float, double and int",
+                            string.Format("Property [{0}.{1}] has type [{2}] which is not numeric. Numeric types are double, double and int",
                                 target.GetType().FullName, propertyId, propertyInfo.PropertyType)
                         );
                     }
@@ -65,131 +65,131 @@ namespace Lunohod.Xge
         }
 
         #region known numeric Getters/Setters
-        private float GetX()
+        private double GetX()
         {
             return element.X;
         }
-        private void SetX(float v)
+        private void SetX(double v)
         {
-            element.X = v;
+            element.X = (float)v;
         }
-        private float GetY()
+        private double GetY()
         {
             return element.Y;
         }
-        private void SetY(float v)
+        private void SetY(double v)
         {
-            element.Y = v;
+            element.Y = (float)v;
         }
-        private float GetWidth()
+        private double GetWidth()
         {
             return element.Width;
         }
-        private void SetWidth(float v)
+        private void SetWidth(double v)
         {
-            element.Width = v;
+            element.Width = (float)v;
         }
-        private float GetHeight()
+        private double GetHeight()
         {
             return element.Height;
         }
-        private void SetHeight(float v)
+        private void SetHeight(double v)
         {
-            element.Height = v;
+            element.Height = (float)v;
         }
-        private float GetRotation()
+        private double GetRotation()
         {
             return element.Rotation;
         }
-        private void SetRotation(float v)
+        private void SetRotation(double v)
         {
             element.Rotation = v;
         }
-        private float GetCurrentFrame()
+        private double GetCurrentFrame()
         {
             return sprite.CurrentFrame;
         }
-        private void SetCurrentFrame(float v)
+        private void SetCurrentFrame(double v)
         {
             sprite.CurrentFrame = (int)Math.Round(v);
         }
-        private float GetOpacity()
+        private double GetOpacity()
         {
             return element.Opacity;
         }
-        private void SetOpacity(float v)
+        private void SetOpacity(double v)
         {
             element.Opacity = v;
         }
-        private float GetScale()
+        private double GetScale()
         {
             return element.Scale;
         }
-        private void SetScale(float v)
+        private void SetScale(double v)
         {
             element.Scale = v;
         }
-        private float GetVolume()
+        private double GetVolume()
         {
             return audio.Volume;
         }
-        private void SetVolume(float v)
+        private void SetVolume(double v)
         {
             audio.Volume = v;
         }
-        private float GetHealth()
+        private double GetHealth()
         {
             return hero.Health;
         }
-        private void SetHealth(float v)
+        private void SetHealth(double v)
         {
             // noop
         }
-        private float GetDefaultHealth()
+        private double GetDefaultHealth()
         {
             return hero.DefaultHealth;
         }
-        private void SetDefaultHealth(float v)
+        private void SetDefaultHealth(double v)
         {
             // noop
         }
-        private float GetSpeed()
+        private double GetSpeed()
         {
             return hero.Speed;
         }
-        private void SetSpeed(float v)
+        private void SetSpeed(double v)
         {
             hero.Speed = v;
         }
-        private float GetDefaultSpeed()
+        private double GetDefaultSpeed()
         {
             return hero.DefaultSpeed;
         }
-        private void SetDefaultSpeed(float v)
+        private void SetDefaultSpeed(double v)
         {
             hero.DefaultSpeed = v;
         }
-        private float GetBombCount()
+        private double GetBombCount()
         {
             return hero.BombCount;
         }
-        private void SetBombCount(float v)
+        private void SetBombCount(double v)
         {
             hero.BombCount = v;
         }
-        private float GetDefaultBombCount()
+        private double GetDefaultBombCount()
         {
             return hero.DefaultBombCount;
         }
-        private void SetDefaultBombCount(float v)
+        private void SetDefaultBombCount(double v)
         {
             // noop
         }
-        private float GetDeceleration()
+        private double GetDeceleration()
         {
             return hero.Deceleration;
         }
-        private void SetDeceleration(float v)
+        private void SetDeceleration(double v)
         {
             hero.Deceleration = v;
         }

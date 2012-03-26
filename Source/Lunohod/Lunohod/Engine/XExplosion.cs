@@ -16,7 +16,7 @@ namespace Lunohod.Objects
 	{
 		private List<XElement> eplodingElements;
 		private List<string> rangeNames;
-		private List<float> rangeValuesSquared;
+		private List<double> rangeValuesSquared;
 		
 		[XmlAttribute]
 		public string Ranges;
@@ -29,12 +29,12 @@ namespace Lunohod.Objects
 			
 			eplodingElements = new List<XElement>(pairs.Length);
 			rangeNames = new List<string>(pairs.Length);
-			rangeValuesSquared = new List<float>(pairs.Length);
+			rangeValuesSquared = new List<double>(pairs.Length);
 	
 			pairs.ForEach(s => {
 				var parts = s.Split('=');
 				rangeNames.Add(parts[0]);
-				var rangeValue = float.Parse(parts[1], CultureInfo.InvariantCulture);
+				var rangeValue = double.Parse(parts[1], CultureInfo.InvariantCulture);
 				rangeValuesSquared.Add(rangeValue * rangeValue);
 			});
 		}

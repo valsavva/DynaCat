@@ -18,27 +18,27 @@ namespace Lunohod.Objects
 		private XSoundResource soundFile;
 		private SoundEffectInstance soundEffectInstance;
 		
-		private float volume;
+		private double volume;
 		
 		[XmlAttribute]
         public string FileId;
 		
 		[XmlAttribute]
-		public float Volume
+		public double Volume
 		{
 			get { return this.volume; }
 			set { 
 				this.volume = value;
 				if (this.soundEffectInstance != null)
-					this.soundEffectInstance.Volume = this.volume;
+					this.soundEffectInstance.Volume = (float)this.volume;
 			}
 		}
 		
 		[XmlAttribute]
-		public float Pitch = 0;
+		public double Pitch = 0;
 		
 		[XmlAttribute]
-		public float Pan = 0;
+		public double Pan = 0;
 		
 		[XmlAttribute]
 		public bool IsLooped;
@@ -75,9 +75,9 @@ namespace Lunohod.Objects
 
         public void Start()
 		{
-			this.soundEffectInstance.Volume = this.Volume;
-			this.soundEffectInstance.Pitch = this.Pitch;
-			this.soundEffectInstance.Pan = this.Pan;
+            this.soundEffectInstance.Volume = (float)this.Volume;
+            this.soundEffectInstance.Pitch = (float)this.Pitch;
+            this.soundEffectInstance.Pan = (float)this.Pan;
 			this.soundEffectInstance.Play();
 		}
 		public void Stop()

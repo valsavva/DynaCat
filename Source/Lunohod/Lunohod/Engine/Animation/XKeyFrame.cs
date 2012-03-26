@@ -13,8 +13,8 @@ namespace Lunohod.Objects
     [XmlType("KeyFrame")]
     public class XKeyFrame : XObject
     {
-        private List<IExpression<float>> valueReaders;
-        private IExpression<float> timeReader;
+        private List<IExpression<double>> valueReaders;
+        private IExpression<double> timeReader;
         private XNumAnimation animation;
 
         [XmlAttribute]
@@ -30,7 +30,7 @@ namespace Lunohod.Objects
         public List<CurveKey> CurveKeys { get; private set; }
 
 		[XmlIgnore]
-		public float CurrentTime { get; private set; }
+		public double CurrentTime { get; private set; }
 		
         public override void Initialize(InitializeParameters p)
         {
@@ -38,12 +38,12 @@ namespace Lunohod.Objects
 
             animation = (XNumAnimation)this.Parent;
 
-            this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<float>(this.Parent, s)).ToList();
-            this.timeReader = Compiler.CompileExpression<float>(this.Parent, this.Time);
+            this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<double>(this.Parent, s)).ToList();
+            this.timeReader = Compiler.CompileExpression<double>(this.Parent, this.Time);
 			this.CurrentTime = timeReader is IVariable ? 0f : timeReader.GetValue();
             this.CurveKeys = valueReaders.Select(r => new CurveKey(
-				this.CurrentTime,
-				r is IVariable ? 0f : r.GetValue())
+				(float)this.CurrentTime,
+				r is IVariable ? 0f : (float)r.GetValue())
              ).ToList();
         }
 
@@ -54,7 +54,7 @@ namespace Lunohod.Objects
             if (!animation.InProgress || animation.IsPaused)
                 return;
 			
-			float newTime = timeReader.GetValue();
+			double newTime = timeReader.GetValue();
 			
 			if (this.CurrentTime != newTime)
 			{
@@ -63,7 +63,7 @@ namespace Lunohod.Objects
 				for(int i = 0; i < animation.curves.Count; i++)
 				{
 					animation.curves[i].Keys.Remove(this.CurveKeys[i]);
-					this.CurveKeys[i] = new CurveKey(this.CurrentTime, this.valueReaders[i].GetValue());
+                    this.CurveKeys[i] = new CurveKey((float)this.CurrentTime, (float)this.valueReaders[i].GetValue());
 					animation.curves[i].Keys.Add(this.CurveKeys[i]);
 				}
 			} 
@@ -71,7 +71,7 @@ namespace Lunohod.Objects
 			{
 		        for (int i = 0; i < this.valueReaders.Count; i++)
 		        {
-		            this.CurveKeys[i].Value = this.valueReaders[i].GetValue();
+		            this.CurveKeys[i].Value = (float)this.valueReaders[i].GetValue();
 		        }
 			}
         }

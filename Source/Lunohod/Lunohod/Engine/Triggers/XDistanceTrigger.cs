@@ -45,7 +45,7 @@ namespace Lunohod.Objects
 			return o;
 		}
 		
-		public override float GetValue1()
+		public override double GetValue1()
 		{
 			c1 = object1.Element.GetScreenBounds().Center();
 			c2 = object2.Element.GetScreenBounds().Center();
@@ -53,7 +53,7 @@ namespace Lunohod.Objects
 			return c1.SquaredDistanceTo(c2);
 		}
 		
-		public override float GetValue2()
+		public override double GetValue2()
 		{
 			var value2 = value2Reader.GetValue();
 			

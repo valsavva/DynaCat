@@ -40,7 +40,7 @@ namespace Lunohod.Objects
                 ));
 		}
 		
-        private float screenRotation;
+        private double screenRotation;
 		private Color actualBackColor;
 		
         public override void Update(UpdateParameters p)
@@ -48,8 +48,8 @@ namespace Lunohod.Objects
             base.Update(p);
 			
             this.GetScreenBounds();
-            actualBackColor = this.PropState.BackColor * this.PropState.Opacity;
-			screenRotation = MathHelper.ToRadians(this.PropState.Rotation);
+            actualBackColor = this.PropState.BackColor * (float)this.PropState.Opacity;
+			screenRotation = MathHelper.ToRadians((float)this.PropState.Rotation);
         }
 
 		public override void Draw(DrawParameters p)
@@ -63,7 +63,7 @@ namespace Lunohod.Objects
 					this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
 					
 					if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
-						p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
+						p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, (float)screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
 					else
 						p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor);
 				}

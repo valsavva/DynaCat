@@ -39,8 +39,9 @@ namespace Lunohod.Tests
         [Test]
         public void SimpleExpressions()
         {
-            Assert.AreEqual(5, Compiler.CompileExpression<float>(level, "1 + 2 * 2").GetValue());
-            Assert.AreEqual(5, Compiler.CompileExpression<float>(level, "10 % 3 + 2 * 2 + (10 - 2 * 5)").GetValue());
+            Assert.AreEqual(3.7f, Compiler.CompileExpression<double>(level, "4.2 - 0.5").GetValue());
+            Assert.AreEqual(5, Compiler.CompileExpression<double>(level, "1 + 2 * 2").GetValue());
+            Assert.AreEqual(5, Compiler.CompileExpression<double>(level, "10 % 3 + 2 * 2 + (10 - 2 * 5)").GetValue());
 
             Assert.IsTrue(Compiler.CompileExpression<bool>(level, "6 > 5").GetValue());
             Assert.IsTrue(Compiler.CompileExpression<bool>(level, "6 >= 6").GetValue());
@@ -60,7 +61,7 @@ namespace Lunohod.Tests
 
             Compiler.CompileStatements(level, "@a=10").ForEach(a => a.Call());
             Assert.IsTrue(Compiler.Instance.VariableStorage.ContainsKey("a"));
-            Assert.AreEqual(10, Compiler.CompileExpression<float>(level, "@a").GetValue());
+            Assert.AreEqual(10, Compiler.CompileExpression<double>(level, "@a").GetValue());
 
             Compiler.CompileStatements(level, "@b='abc'").ForEach(a => a.Call());
             Assert.IsTrue(Compiler.Instance.VariableStorage.ContainsKey("b"));
@@ -77,7 +78,7 @@ namespace Lunohod.Tests
         {
             Compiler.CompileStatements(level, "@a=10").ForEach(a => a.Call());
             Compiler.CompileStatements(level, "@a='abc'").ForEach(a => a.Call());
-            Compiler.CompileExpression<float>(level, "@a").GetValue();
+            Compiler.CompileExpression<double>(level, "@a").GetValue();
         }
 
         [Test]
@@ -86,7 +87,7 @@ namespace Lunohod.Tests
             Compiler.CompileStatements(level, block.Id + ".X = 777;");
             Compiler.CompileStatements(level, "@a=10;@b='123' + system.Str(456);@c=@a>3;" + block.Id + ".X = 777;").ForEach(a => a.Call());
 
-            Assert.AreEqual(10, Compiler.CompileExpression<float>(level, "@a").GetValue());
+            Assert.AreEqual(10, Compiler.CompileExpression<double>(level, "@a").GetValue());
             Assert.AreEqual("123456", Compiler.CompileExpression<string>(level, "@b").GetValue());
             Assert.IsTrue(Compiler.CompileExpression<bool>(level, "@c").GetValue());
             Assert.AreEqual(777, block.X);

@@ -5,15 +5,15 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    public class NumOperator : Expression<float>
+    public class NumOperator : Expression<double>
     {
         private TokenType tokenType;
-        private IExpression<float> expression1;
-        private IExpression<float> expression2;
+        private IExpression<double> expression1;
+        private IExpression<double> expression2;
 
-        private Func<IExpression<float>, IExpression<float>, float> func;
+        private Func<IExpression<double>, IExpression<double>, double> func;
 
-        public NumOperator(TokenType tokenType, IExpression<float> expression1, IExpression<float> expression2)
+        public NumOperator(TokenType tokenType, IExpression<double> expression1, IExpression<double> expression2)
         {
             this.tokenType = tokenType;
             this.expression1 = expression1;
@@ -21,16 +21,16 @@ namespace Lunohod.Xge
 
             switch (this.tokenType)
             {
-                case TokenType.Plus: func = (e1, e2) => e1.GetValue() + e2.GetValue(); break;
-                case TokenType.Minus: func = (e1, e2) => e1.GetValue() - e2.GetValue(); break;
-                case TokenType.Multiply: func = (e1, e2) => e1.GetValue() * e2.GetValue(); break;
-                case TokenType.Divide: func = (e1, e2) => e1.GetValue() / e2.GetValue(); break;
-                case TokenType.Modulo: func = (e1, e2) => e1.GetValue() % e2.GetValue(); break;
+                case TokenType.Plus: func = (e1, e2) => (e1.GetValue() + e2.GetValue()); break;
+                case TokenType.Minus: func = (e1, e2) => (e1.GetValue() - e2.GetValue()); break;
+                case TokenType.Multiply: func = (e1, e2) => (e1.GetValue() * e2.GetValue()); break;
+                case TokenType.Divide: func = (e1, e2) => (e1.GetValue() / e2.GetValue()); break;
+                case TokenType.Modulo: func = (e1, e2) => (e1.GetValue() % e2.GetValue()); break;
                 default: throw new InvalidOperationException("WTF?");
             }
         }
 
-        public override float GetValue() { return func(expression1, expression2); }
+        public override double GetValue() { return func(expression1, expression2); }
 
         public override string ToString()
         {

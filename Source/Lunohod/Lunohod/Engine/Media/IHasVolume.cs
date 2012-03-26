@@ -4,7 +4,7 @@ namespace Lunohod.Objects
 {
 	public interface IHasVolume
 	{
-		float Volume { get; set; }
+		double Volume { get; set; }
 	}
 }
 

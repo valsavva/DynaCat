@@ -55,17 +55,17 @@ namespace Lunohod.Objects
             this.EnqueueEvent(GameEventType.EndCurrentLevel);
 		}
 
-        public float RndX(float start, float end)
+        public double RndX(double start, double end)
 		{
 			return this.Rnd(start, end) * this.game.Scale.X;
 		}
-		public float RndY(float start, float end)
+		public double RndY(double start, double end)
 		{
 			return this.Rnd(start, end) * this.game.Scale.Y;
 		}
-		public float Rnd(float start, float end)
+		public double Rnd(double start, double end)
 		{
-			return start + (float)random.NextDouble() * (end - start);
+			return start + random.NextDouble() * (end - start);
 		}
         public string Str(object o)
         {

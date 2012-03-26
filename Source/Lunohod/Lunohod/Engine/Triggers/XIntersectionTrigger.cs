@@ -44,7 +44,7 @@ namespace Lunohod.Objects
             return o;
         }
 
-        public override float GetValue1()
+        public override double GetValue1()
         {
             rect1 = object1.Element.GetScreenBounds();
             rect2 = object2.Element.GetScreenBounds();

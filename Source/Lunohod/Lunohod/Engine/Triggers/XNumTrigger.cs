@@ -13,7 +13,7 @@ namespace Lunohod.Objects
     [XmlType("NumTrigger")]
 	public class XNumTrigger : XNumTriggerBase
 	{
-        private IExpression<float> value1Reader;
+        private IExpression<double> value1Reader;
 		
 		[XmlAttribute]
 		public string Property;
@@ -22,10 +22,10 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 
-            value1Reader = Compiler.CompileExpression<float>(this, this.Property);
+            value1Reader = Compiler.CompileExpression<double>(this, this.Property);
 		}
 
-		public override float GetValue1()
+		public override double GetValue1()
 		{
 			return value1Reader.GetValue();
 		}

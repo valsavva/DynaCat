@@ -23,17 +23,17 @@ namespace Lunohod.Objects
         /// Specifies hero's default speed.
         /// </summary>
         [XmlAttribute]
-        public float DefaultSpeed;
+        public double DefaultSpeed;
         /// <summary>
         /// Specifies hero's current speed.
         /// </summary>
         [XmlAttribute]
-        public float Speed;
+        public double Speed;
         /// <summary>
         /// Specifies hero's deceleration.
         /// </summary>
         [XmlAttribute]
-        public float Deceleration;
+        public double Deceleration;
         /// <summary>
 		/// Specifies hero's direction.
 		/// </summary>
@@ -47,12 +47,12 @@ namespace Lunohod.Objects
 		/// The default health.
 		/// </value>
 		[XmlIgnore]
-		public float DefaultHealth { get; private set; }
+		public double DefaultHealth { get; private set; }
 		/// <summary>
 		/// Gets hero's current health level.
 		/// </summary>
 		[XmlIgnore]
-		public float Health { get; private set; }
+		public double Health { get; private set; }
 		/// <summary>
 		/// Gets the default bomb count.
 		/// </summary>
@@ -60,7 +60,7 @@ namespace Lunohod.Objects
 		/// The default bomb count.
 		/// </value>
 		[XmlIgnore]
-		public float DefaultBombCount { get; private set; }
+		public double DefaultBombCount { get; private set; }
 		/// <summary>
 		/// Gets or sets the current bomb count.
 		/// </summary>
@@ -68,7 +68,7 @@ namespace Lunohod.Objects
 		/// The bomb count.
 		/// </value>
 		[XmlIgnore]
-		public float BombCount { get; set; }
+		public double BombCount { get; set; }
 		/// <summary>
 		/// Gets a value indicating whether hero is dead.
 		/// </summary>
@@ -117,9 +117,9 @@ namespace Lunohod.Objects
 			if (!this.InTransaction)
 			{
                 if (this.Direction != Lunohod.Direction.VectorStop)
-                    this.Speed = this.Speed * (1.0f - this.Deceleration * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
+                    this.Speed = this.Speed * (1.0f - this.Deceleration * p.GameTime.ElapsedGameTime.TotalSeconds);
 
-				offset = this.Direction * (this.Speed * (float)p.GameTime.ElapsedGameTime.TotalSeconds);
+                offset = this.Direction * (float)(this.Speed * p.GameTime.ElapsedGameTime.TotalSeconds);
 	
 	            this.Bounds.Offset(offset.X, offset.Y);
 			}
@@ -148,15 +148,15 @@ namespace Lunohod.Objects
 		/// </summary>
 		/// <param name="sx"></param>
 		/// <param name="sy"></param>
-		public void SetDirection(float x, float y)
+		public void SetDirection(double x, double y)
 		{
-			this.Direction = new Vector2(x, y);
+			this.Direction = new Vector2((float)x, (float)y);
 		}
         /// <summary>
         /// Causes hero to lose the <c>damage</c> amount of health.
         /// </summary>
         /// <param name="damage">Amount of healt hero should lose.</param>
-		public void InflictDamage(float damage)
+		public void InflictDamage(double damage)
 		{
 			this.Health -= damage;
 		}

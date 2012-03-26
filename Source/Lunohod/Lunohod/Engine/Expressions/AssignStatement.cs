@@ -21,8 +21,8 @@ namespace Lunohod.Xge
 
         public void Call()
         {
-            if (rExpression.Type == typeof(float))
-                DoAssign<float>();
+            if (rExpression.Type == typeof(double))
+                DoAssign<double>();
             else if (rExpression.Type == typeof(bool))
                 DoAssign<bool>();
             else if (rExpression.Type == typeof(string))

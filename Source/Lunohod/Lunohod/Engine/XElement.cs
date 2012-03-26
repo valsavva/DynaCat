@@ -27,8 +27,8 @@ namespace Lunohod.Objects
 		{
 			public int PropCycle;
 			public Vector2 Size;
-			public float Rotation;
-			public float Opacity;
+			public double Rotation;
+			public double Opacity;
 			public Vector2 Scale;
 			public Color BackColor;
 			public System.Drawing.RectangleF? ScreenBounds;
@@ -73,9 +73,9 @@ namespace Lunohod.Objects
 			set { this.backColor = value; }
 		}
         [XmlAttribute]
-        public float Opacity = 1.0f;
+        public double Opacity = 1.0f;
         [XmlAttribute]
-        public float Rotation;
+        public double Rotation;
 		[XmlIgnore]
 		public Vector2 Origin;
 		[XmlIgnore]
@@ -87,10 +87,10 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public Vector2 ScaleVector = Vector2.One;
 		[XmlIgnore]
-		public float Scale
+		public double Scale
 		{
 			get { return this.ScaleVector.X; }
-			set { this.ScaleVector.X = this.ScaleVector.Y = value; }
+			set { this.ScaleVector.X = this.ScaleVector.Y = (float)value; }
 		}
         [XmlIgnore]
         public XElement ParentElement;
@@ -118,7 +118,7 @@ namespace Lunohod.Objects
 				TransState.LocationTransform *= Matrix.CreateTranslation(-this.Origin.X, -this.Origin.Y, 0);
 			
 			if (this.Rotation != 0)
-				TransState.LocationTransform *= Matrix.CreateRotationZ(MathHelper.ToRadians(this.Rotation));
+                TransState.LocationTransform *= Matrix.CreateRotationZ(MathHelper.ToRadians((float)this.Rotation));
 			// Scale transform
 			if (this.ScaleVector != Vector2.One)
 			{
@@ -152,7 +152,7 @@ namespace Lunohod.Objects
 			PropState.ScreenBounds = null;
 			//---
 			PropState.Rotation += this.Rotation;
-			PropState.Scale *= this.Scale;
+			PropState.Scale *= (float)this.Scale;
 			
 			if (!this.Bounds.IsEmpty)
 			{
@@ -276,7 +276,7 @@ namespace Lunohod.Objects
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             Color color = Color.White;
-            float f = 0;
+            double f = 0;
 
             reader.ReadAttrAsFloat("Opacity", ref this.Opacity);
             reader.ReadAttrAsFloat("Rotation", ref this.Rotation);

@@ -22,7 +22,7 @@ namespace Lunohod
 		
 		private Dictionary<GameEvent, RadioWave> waves;
 
-        private List<Tuple<XElement, System.Drawing.RectangleF, float>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, float>>();
+        private List<Tuple<XElement, System.Drawing.RectangleF, double>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, double>>();
 		
 		private int bombCounter;
         

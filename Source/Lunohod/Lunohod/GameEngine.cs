@@ -117,9 +117,9 @@ namespace Lunohod
 		{
 			base.Initialize ();
 			
-			float singleScale = this.Window.ClientBounds.Height * 1.0f / 480.0f;
-			
-			this.Scale = new Vector3(singleScale, singleScale, 1.0f);
+			double singleScale = this.Window.ClientBounds.Height / 480.0;
+
+            this.Scale = new Vector3((float)singleScale, (float)singleScale, 1.0f);
 		}
 		
 		protected override void LoadContent()

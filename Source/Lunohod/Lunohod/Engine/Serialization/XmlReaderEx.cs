@@ -35,18 +35,18 @@ namespace Lunohod.Objects
             string v = reader[name];
             return v == null ? def : bool.Parse(v);
         }
-        public static float ReadAttrAsFloat(this XmlReader reader, string name, float def = 0)
+        public static double ReadAttrAsFloat(this XmlReader reader, string name, double def = 0)
         {
             string v = reader[name];
-            return v == null ? def : float.Parse(v, CultureInfo.InvariantCulture);
+            return v == null ? def : double.Parse(v, CultureInfo.InvariantCulture);
         }
-        public static bool ReadAttrAsFloat(this XmlReader reader, string name, ref float f)
+        public static bool ReadAttrAsFloat(this XmlReader reader, string name, ref double f)
         {
             string v = reader[name];
             if (v == null)
                 return false;
 
-            f = float.Parse(v, CultureInfo.InvariantCulture);
+            f = double.Parse(v, CultureInfo.InvariantCulture);
 
             return true;
         }

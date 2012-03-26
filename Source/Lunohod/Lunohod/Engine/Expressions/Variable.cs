@@ -11,11 +11,11 @@ namespace Lunohod.Xge
         string Id { get; }
     }
 
-    public class Variable : Expression, IVariable, IExpression<float>, IExpression<bool>, IExpression<string>,
-        IAssignable<float>, IAssignable<bool>, IAssignable<string>
+    public class Variable : Expression, IVariable, IExpression<double>, IExpression<bool>, IExpression<string>,
+        IAssignable<double>, IAssignable<bool>, IAssignable<string>
     {
         private Type type;
-        private float floatValue;
+        private double floatValue;
         private bool boolValue;
         private string strValue;
         private object objValue;
@@ -57,9 +57,9 @@ namespace Lunohod.Xge
         }
 
 
-        float IExpression<float>.GetValue()
+        double IExpression<double>.GetValue()
         {
-            CheckType<float>();
+            CheckType<double>();
             return floatValue;
         }
 
@@ -75,9 +75,9 @@ namespace Lunohod.Xge
             return strValue;
         }
 
-        public void SetValue(float v)
+        public void SetValue(double v)
         {
-            type = typeof(float);
+            type = typeof(double);
             objValue = floatValue = v;
             strValue = null;
         }

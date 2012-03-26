@@ -16,11 +16,11 @@ namespace Lunohod
         {
         }
 
-        internal void Draw(Texture2D texture2D, System.Drawing.RectangleF screenBounds, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, SpriteEffects spriteEffects, int layerDepth)
+        internal void Draw(Texture2D texture2D, System.Drawing.RectangleF screenBounds, Rectangle? sourceRectangle, Color color, double rotation, Vector2 origin, SpriteEffects spriteEffects, int layerDepth)
         {
             screenBounds.ToRectangle(ref tmpRect);
 
-            base.Draw(texture2D, tmpRect, sourceRectangle, color, rotation, origin, spriteEffects, layerDepth);
+            base.Draw(texture2D, tmpRect, sourceRectangle, color, (float)rotation, origin, spriteEffects, layerDepth);
         }
 
         internal void Draw(Texture2D texture2D, System.Drawing.RectangleF screenBounds, Rectangle? sourceRectangle, Color actualBackColor)

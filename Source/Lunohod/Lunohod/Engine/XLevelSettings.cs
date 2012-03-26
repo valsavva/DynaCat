@@ -31,7 +31,7 @@ namespace Lunohod.Objects
 		/// Specifies the starting level of hero's health. Default value is 1.
 		/// </summary>
 		[XmlAttribute]
-		public float HeroHealth = 1;
+		public double HeroHealth = 1;
 		/// <summary>
 		/// The explosion class id that will be used to generate explosions on this level.
 		/// </summary>

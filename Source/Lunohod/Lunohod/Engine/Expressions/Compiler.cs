@@ -324,7 +324,7 @@ namespace Lunohod.Xge
         {
             string strNum = T();
             Consume();
-            return new NumConstant(float.Parse(strNum, CultureInfo.InvariantCulture));
+            return new NumConstant(double.Parse(strNum, CultureInfo.InvariantCulture));
         }
 
         private Expression TProperty(string objectId, string propertyId)

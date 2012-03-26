@@ -8,12 +8,12 @@ namespace Lunohod.Xge
     class CompareOperator : Expression<bool>
     {
         private TokenType tokenType;
-        private IExpression<float> expression1;
-        private IExpression<float> expression2;
+        private IExpression<double> expression1;
+        private IExpression<double> expression2;
 
-        private Func<IExpression<float>, IExpression<float>, bool> func;
+        private Func<IExpression<double>, IExpression<double>, bool> func;
 
-        public CompareOperator(TokenType tokenType, IExpression<float> expression1, IExpression<float> expression2)
+        public CompareOperator(TokenType tokenType, IExpression<double> expression1, IExpression<double> expression2)
         {
             // TODO: Complete member initialization
             this.tokenType = tokenType;

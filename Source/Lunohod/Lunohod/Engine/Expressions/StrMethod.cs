@@ -30,7 +30,7 @@ namespace Lunohod.Xge
         // System
         public string ActionGetLevelId()
         {
-            return system.GetLevelId((int)((IExpression<float>)parameters[0]).GetValue());
+            return system.GetLevelId((int)((IExpression<double>)parameters[0]).GetValue());
         }
         public string ActionStr()
         {

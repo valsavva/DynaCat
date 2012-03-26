@@ -6,16 +6,16 @@ using System.Globalization;
 
 namespace Lunohod.Xge
 {
-    public class NumConstant : Expression<float>
+    public class NumConstant : Expression<double>
     {
-        private float number;
+        private double number;
 
-        public NumConstant(float number)
+        public NumConstant(double number)
         {
             this.number = number;
         }
 
-        public override float GetValue() { return number; }
+        public override double GetValue() { return number; }
 
         public override string ToString()
         {

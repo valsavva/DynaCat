@@ -146,24 +146,24 @@ namespace Lunohod
 			return new Point(r.X, r.Y);
 		}
 		
-		public static float DistanceTo(this Point p1, Point p2)
+		public static double DistanceTo(this Point p1, Point p2)
 		{
 			int dx = p1.X - p2.X;
 			int dy = p1.Y - p2.Y;
-			return (float)Math.Sqrt(dx * dx + dy * dy);
+			return Math.Sqrt(dx * dx + dy * dy);
 		}
 
-        public static float SquaredDistanceTo(this Point p1, Point p2)
+        public static double SquaredDistanceTo(this Point p1, Point p2)
         {
             int dx = p1.X - p2.X;
             int dy = p1.Y - p2.Y;
             return dx * dx + dy * dy;
         }
 
-        public static float SquaredDistanceTo(this Vector2 p1, Vector2 p2)
+        public static double SquaredDistanceTo(this Vector2 p1, Vector2 p2)
 		{
-			float dx = p1.X - p2.X;
-			float dy = p1.Y - p2.Y;
+			double dx = p1.X - p2.X;
+			double dy = p1.Y - p2.Y;
 			return dx * dx + dy * dy;
 		}
 
@@ -183,7 +183,7 @@ namespace Lunohod
 			rectInt = System.Drawing.RectangleF.Intersect(rect1, rect2);
         }
 
-        public static float Area(this System.Drawing.RectangleF rect)
+        public static double Area(this System.Drawing.RectangleF rect)
         {
             return rect.Width * rect.Height;
         }

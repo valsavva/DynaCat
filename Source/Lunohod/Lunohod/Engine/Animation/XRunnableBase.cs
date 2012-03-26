@@ -17,7 +17,7 @@ namespace Lunohod.Objects
         protected TimeSpan elapsedTime;
 		protected bool inProgress = false;
 		protected bool isPaused = false;
-		protected float repeatsDone = 0;
+		protected double repeatsDone = 0;
 
         /// <summary>
         /// Specifies wheter the components is in the running state.
@@ -34,13 +34,13 @@ namespace Lunohod.Objects
         /// the animation is considered to be infinite. Cannot be specified along with <see cref="RepeatCount"/>.
         /// </summary>
         [XmlIgnore]
-        public float RepeatTime;
+        public double RepeatTime;
         /// <summary>
         /// Specifies the number of times the current animation should execute. When not specified or zero,
         /// the animation is considered to be infinite. Cannot be specified along with <see cref="RepeatTime"/>.
         /// </summary>
         [XmlAttribute]
-        public float RepeatCount;
+        public double RepeatCount;
         /// <summary>
         /// Gets the amount of time elapsed since the component was started.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Lunohod.Objects
         /// <summary>
         /// Gets the number of times component executed since it was started.
         /// </summary>
-        public float RepeatsDone
+        public double RepeatsDone
         {
             get { return repeatsDone; }
         }
@@ -81,7 +81,7 @@ namespace Lunohod.Objects
 			base.Update(p);
 		}
 
-        internal virtual float CalculateRepeatsDone()
+        internal virtual double CalculateRepeatsDone()
 		{
 			return this.repeatsDone;
 		}

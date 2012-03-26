@@ -59,12 +59,12 @@ namespace Lunohod.Objects
         /// The X coordinate of the tap.
         /// </summary>
         [XmlIgnore]
-        public float TapX;
+        public double TapX;
         /// <summary>
         /// The Y coordinate of the tap.
         /// </summary>
         [XmlIgnore]
-        public float TapY;
+        public double TapY;
 
 		public override void Initialize(InitializeParameters p)
 		{

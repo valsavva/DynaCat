@@ -21,7 +21,7 @@ namespace Lunohod.Objects
 		private bool inProgress;
 		private bool isPaused;
 		
-		private IExpression<float> durationReader;
+		private IExpression<double> durationReader;
 		
         /// <summary>
         /// Specifies the amount of time the componente will idle.
@@ -33,7 +33,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			durationReader = Compiler.CompileExpression<float>(this, this.Duration);
+			durationReader = Compiler.CompileExpression<double>(this, this.Duration);
 		}
 		
         public override void Update(UpdateParameters p)
