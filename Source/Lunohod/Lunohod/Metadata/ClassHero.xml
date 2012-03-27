@@ -11,9 +11,9 @@
 	</Resources>
 	
     <Resources RootFolder="Textures">
-        <Texture Id="txrHeroDefault" Source="bolbex-1_me"/>
-        <Texture Id="txrHeroDying" Source="bolbex-1_me"/>
-        <Texture Id="txrHeroWaitingExplosion" Source="bolbex-1_me_wait_expl2"/>
+        <Texture Id="txrHeroDefault" Source="cat_new_test"/>
+        <Texture Id="txrHeroDying" Source="cat_new_test"/>
+        <Texture Id="txrHeroWaitingExplosion" Source="cat_new_test_bomb"/>
     </Resources>
 
 	<Class Id="clsHero">
@@ -74,12 +74,14 @@
 
             <!-- explosion -->
 			<BoolTrigger Condition="this:WaitingExplosion" Group="sttHeroStates">
-				<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>
+                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
+				<Image TextureId="txrHeroWaitingExplosion" Bounds="-4, -10, 42, 32"/>
 			</BoolTrigger>
 
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
-				<Image TextureId="txrHeroDefault" Bounds="-3, -14, 40, 38"/>
+                <Image TextureId="txrHeroDefault" Bounds="-4, -10, 42, 32"/>
+				<!--bolbex:<Image TextureId="txrHeroDefault" Bounds="-3, -14, 40, 38"/>-->
                 <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
 			</BoolTrigger>
 

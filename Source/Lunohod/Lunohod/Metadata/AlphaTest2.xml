@@ -10,9 +10,9 @@
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
-    <Include File="ClassHero.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
+    <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
@@ -231,9 +231,9 @@
         <Enemy Id="enm6" Class="clsEnemyElectricity1" Bounds="167, 86, 15, 11" TraceId="image3180"/>
     </Layer>
     <Layer Id="actionHTE" BackColor="#FFFFFFFF">
-        <Hero Id="hero" Class="clsHero" Bounds="56, 36, 33, 24" TraceId="image3027"/>
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="407, 225, 37, 54" TraceId="image3049" />
+        <Hero Id="hero" Class="clsHero" Bounds="52, 53, 34, 22" TraceId="image3150"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
