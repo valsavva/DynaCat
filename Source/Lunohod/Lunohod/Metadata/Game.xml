@@ -11,8 +11,6 @@
 	</Resources>
 	<Screens>
 		<Screen Id="ScreenMain" File="ScreenMain.xml" />
-		<Screen Id="ScreenTests01" File="ScreenTests01.xml" />
-		<Screen Id="ScreenTests02" File="ScreenTests02.xml" />
 	</Screens>
 	<Levels>
 		<Level Id="S01L01" File="S01L01.xml" />
