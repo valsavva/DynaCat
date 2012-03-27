@@ -1621,9 +1621,11 @@
     </Content>
     <Content Include="Metadata\ClassEnemyRat4.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassEnemyRat5.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassExit.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1705,6 +1707,15 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Textures\health_bar_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\health_bar_back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\health_and_score_text_demo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\AlphaTest3.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

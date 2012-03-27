@@ -32,13 +32,13 @@
 
 			<!-- attack -->
    			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this_anmAttack.Start()" StayTriggered="false" Group="this_sttStates">
-                <Image Id="this_txrEnemyRat5Attack" TextureId="txrEnemyRat5Attack" Bounds="-20, -2, 57, 35"/>
+                <Image Id="this_txrEnemyRat5Attack" TextureId="txrEnemyRat5Attack" Bounds="-17, -2, 52, 32"/>
    			</IntersectionTrigger>
 			<NumAnimation Id="this_anmAttack" Duration="0.1" Target="this_txrEnemyRat5Attack.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
 			
 			<!-- default -->
 			<BoolTrigger Group="this_sttStates">
-				<Image Id="this_txrEnemyRat5Default" TextureId="txrEnemyRat5Default" Bounds="-20, -2, 57, 35"/>
+				<Image Id="this_txrEnemyRat5Default" TextureId="txrEnemyRat5Default" Bounds="-17, -2, 52, 32"/>
                 <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
 			</BoolTrigger>
 			

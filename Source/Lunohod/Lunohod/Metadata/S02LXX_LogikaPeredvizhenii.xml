@@ -45,7 +45,7 @@
         <Block Id="blk9" Bounds="200, 280, 78, 40" Edges="Stick" TraceId="image3137"/>
         <Block Id="blk10" Bounds="226, 240, 26, 40" Edges="Stick" TraceId="image3141"/>
         <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="167, 35, 22, 23" TraceId="image3151"/>
-        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="228, 109, 28, 25" TraceId="image3164"/>
+        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="228, 109, 24, 25" TraceId="image3164"/>
         <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="404, 162, 24, 25" TraceId="image3175"/>
         <Enemy Id="enm4" Class="clsEnemyRat3" Bounds="165, 229, 24, 25" TraceId="image3186"/>
         <Enemy Id="enm5" Class="clsEnemyRat2" Bounds="343, 111, 22, 23" TraceId="image3222"/>
@@ -76,7 +76,7 @@
         <Food Id="fd9" Class="clsFood" Points="1" Bounds="370, 22, 28, 17" TraceId="image3307">
             <Image TextureId="txr_fish_6_me" />
         </Food>
-        <Enemy Id="enm6" Class="clsEnemyRat1" Bounds="82, 174, 28, 25" TraceId="image3309"/>
+        <Enemy Id="enm6" Class="clsEnemyRat1" Bounds="82, 174, 24, 25" TraceId="image3309"/>
     </Layer>
     <Layer Id="actionground" BackColor="#FFFFFFFF">
         <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="0, 300, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3487"/>
@@ -166,7 +166,7 @@
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="368, 250, 37, 54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="364, 246,  37,  54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="142, 136, 33, 24" TraceId="image3013"/>
     </Layer>
     <Layer Id="upmask" BackColor="#FFFFFFFF">
@@ -175,3 +175,4 @@
     <Include File="Dashboard.xml" />
 </Level>
 <!-- Food=9 Enemy=6 Block=10 DesignImage=91 Animation=0 Teleport=0 FoodPack=0 -->
+

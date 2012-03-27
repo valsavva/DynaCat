@@ -12,7 +12,7 @@
 
          
 	<Class Id="clsEnemyRat4">
-		<Enemy IsExploding="true" Damage="10">
+		<Enemy IsExploding="true" Damage="15">
 		
 <!-- States -->
 
@@ -32,13 +32,13 @@
 
 			<!-- attack -->
    			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this_anmAttack.Start()" StayTriggered="false" Group="this_sttStates">
-                <Image Id="this_txrEnemyRat4Attack" TextureId="txrEnemyRat4Attack" Bounds="-14, -3, 38, 25"/>
+                <Image Id="this_txrEnemyRat4Attack" TextureId="txrEnemyRat4Attack" Bounds="-16, -4, 44, 29"/>
    			</IntersectionTrigger>
 			<NumAnimation Id="this_anmAttack" Duration="0.1" Target="this_txrEnemyRat4Attack.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
 			
 			<!-- default -->
 			<BoolTrigger Group="this_sttStates">
-				<Image Id="this_txrEnemyRat4Default" TextureId="txrEnemyRat4Default" Bounds="-14, -3, 38, 25"/>
+				<Image Id="this_txrEnemyRat4Default" TextureId="txrEnemyRat4Default" Bounds="-16, -4, 44, 29"/>
                 <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
 			</BoolTrigger>
 			

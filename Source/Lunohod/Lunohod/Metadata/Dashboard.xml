@@ -18,8 +18,13 @@
         <Texture Id="txrHeroHealth080" Source="heroHealth080"/>
         <Texture Id="txrHeroHealth100" Source="heroHealth100"/>
     </Resources>
-	
-	<Dashboard Id="dashboard" BackColor="#FFFFFFFF">
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_health_and_score_text_demo" Source="health_and_score_text_demo" />
+        <Texture Id="txr_health_bar_back" Source="health_bar_back" />
+        <Texture Id="txr_health_bar_front" Source="health_bar_front" />
+    </Resources>
+    
+    <Dashboard Id="dashboard" BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270"/>
 		
 		<TapArea Bounds="0, 70, 100, 100" Action="tap1_setPress.Start()"/>
@@ -101,25 +106,22 @@
             <Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
         </TapArea>
 
+        
+        <!--hero health-->
 
-        <NumTrigger Property="hero.Health" Compare="GE" Value="100" Group="sttHeroHealthState">
-            <Image TextureId="txrHeroHealth100" Bounds="38, 2, 30, 16"/>
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="GE" Value="80" Group="sttHeroHealthState">
-            <Image TextureId="txrHeroHealth080" Bounds="38, 2, 30, 16"/>
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="GE" Value="60" Group="sttHeroHealthState">
-            <Image TextureId="txrHeroHealth060" Bounds="38, 2, 30, 16"/>
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="GE" Value="40" Group="sttHeroHealthState">
-            <Image TextureId="txrHeroHealth040" Bounds="38, 2, 30, 16"/>
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="GE" Value="20" Group="sttHeroHealthState">
-            <Image TextureId="txrHeroHealth020" Bounds="38, 2, 30, 16"/>
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="GE" Value="0" Group="sttHeroHealthState">
-            <Image TextureId="txrHeroHealth000" Bounds="38, 2, 30, 16"/>
-        </NumTrigger>
+        <Image TextureId="txr_health_and_score_text_demo" Bounds="265, 6, 188, 10" />
+        <Image TextureId="txr_health_bar_back" Bounds="300, 8, 100, 8"/>
+        <Group Id="grpHeroHealthBar" Bounds="300, 8, 100, 8" BackColor="#CC2A2A">
+            <NumTrigger Property="hero.Health" Compare="G" Value="0" Group="sttHeroHealthBar">
+                <NumAnimation Target="grpHeroHealthBar.Width" From="hero.Health" To="hero.Health" Duration="1" InProgress="true" />
+            </NumTrigger>
+            <NumTrigger Property="hero.Health" Compare="LE" Value="0" Group="sttHeroHealthBar">
+                <NumAnimation Target="grpHeroHealthBar.Width" From="1" To="1" Duration="1" InProgress="true" />
+            </NumTrigger>
+            <Image TextureId="blank" />
+        </Group>
+        <Image TextureId="txr_health_bar_front" Bounds="300, 8, 100, 8"/>
+
     </Dashboard>
 </Include>
 
