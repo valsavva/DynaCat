@@ -7,7 +7,7 @@
     <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(hero.Speed)" Color="#000000" />
     
 	<!-- Global variables. Will be moved out here. -->
-	<Do Action="@heroBaseSpeed=60;@heroBaseTime=4.2;" InProgress="true"/>
+	<Do Action="@heroBaseSpeed=60;@heroBaseTime=3.95;" InProgress="true"/>
 	
 	<Do Id="doNormalSpeed" Action="
 			@heroTime1=@heroBaseTime/20;@heroTime2=@heroBaseTime/10;@heroTime3=@heroBaseTime/2;@heroTime4=@heroBaseTime;

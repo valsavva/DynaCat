@@ -221,6 +221,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\S02LXX_Elochka.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\cat_new_test_bomb.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1945,6 +1948,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 
