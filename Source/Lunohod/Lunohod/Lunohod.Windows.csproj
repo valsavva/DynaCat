@@ -213,6 +213,7 @@
     </Compile>
     <Compile Include="Engine\XEnemy.cs" />
     <Compile Include="Engine\XExplosion.cs" />
+    <Compile Include="Engine\XFlipEffect.cs" />
     <Compile Include="Engine\XFood.cs" />
     <Compile Include="Engine\XGame.cs">
       <SubType>Code</SubType>
@@ -1783,12 +1784,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Metadata\ScreenTests01.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Metadata\ScreenTests02.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Metadata\skeletonAlisa.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1889,6 +1884,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\TestDeath.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\TestDepthAndFlipEffect.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\TestExplosion.xml">
