@@ -69,15 +69,27 @@ namespace Lunohod.Objects
             c = v.ToColor();
             return true;
         }
-        public static bool ReadAttrAsEnum<T>(this XmlReader reader, string name, ref T e) where T : struct
+        public static bool ReadAttrAsEnum<T>(this XmlReader reader, string name, ref T e)
+			where T : struct, IConvertible
         {
             string v = reader[name];
             if (v == null)
                 return false;
+			
+			int result = 0;
+			var membersStrings = v.Split('|');
 
-            if (!Enum.TryParse<T>(v, out e))
-                throw new ArgumentException(string.Format("{0} is not a member of enum {1}", v, typeof(T).Name));
+			for(int i = 0; i < membersStrings.Length; i++)
+			{
+				T member;
+				var memberString = membersStrings[i];
+	            if (!Enum.TryParse<T>(memberString, out member))
+	                throw new ArgumentException(string.Format("{0} is not a member of enum {1}", memberString, typeof(T).Name));
+				result |= ((IConvertible)member).ToInt32(CultureInfo.InvariantCulture);
+			}
 
+			e = (T)(object)result;
+			
             return true;
         }
         public static bool ReadAttrAsRect(this XmlReader reader, string name, ref Rectangle rect)
