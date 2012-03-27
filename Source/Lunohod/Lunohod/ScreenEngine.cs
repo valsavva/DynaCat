@@ -128,18 +128,18 @@ namespace Lunohod
 		
 		protected void PreDraw(GameTime gameTime)
 		{
-			drawParameters.GameTime = gameTime;
+			drawParameters.Initiazlize(gameTime);
 
 			if (this.game.Window.ClientBounds.Height > 900)
 			{
 				Matrix transform = Matrix.Identity *
 					Matrix.CreateScale(2.0f);
-				this.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
+				this.spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp,
 					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
 			}
 			else
 			{
-				this.spriteBatch.Begin();
+				this.spriteBatch.Begin(SpriteSortMode.BackToFront, null);
 			}
 		}
 		

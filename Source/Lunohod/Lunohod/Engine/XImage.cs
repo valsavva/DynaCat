@@ -22,9 +22,10 @@ namespace Lunohod.Objects
 
         [XmlAttribute]
         public string TextureId;
-		
 		[XmlAttribute]
 		public bool Stretch;
+		[XmlAttribute]
+		public XFlipEffects FlipEffects;
 		
 		protected Rectangle? SourceRectangle;
 		
@@ -62,17 +63,11 @@ namespace Lunohod.Objects
 					this.tmpVector1.X = this.PropState.ScreenBounds.Value.X;
 					this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
 					
-					if (screenRotation != 0 || this.Origin != Vector2.Zero || this.PropState.Scale != Vector2.One)
-						p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, (float)screenRotation, this.Origin, this.PropState.Scale, SpriteEffects.None, 0);
-					else
-						p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor);
+					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, (float)screenRotation, this.Origin, this.PropState.Scale, (SpriteEffects)this.FlipEffects, this.PropState.Depth + p.NextSystemImageDepth());
 				}
 				else
 				{
-					if (screenRotation != 0 || this.Origin != Vector2.Zero)
-						p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, SpriteEffects.None, 0);
-					else
-						p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor);
+					p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, (SpriteEffects)this.FlipEffects, this.PropState.Depth + p.NextSystemImageDepth());
 				}
 			}
 			base.Draw(p);
@@ -82,6 +77,7 @@ namespace Lunohod.Objects
         {
             this.TextureId = reader["TextureId"];
             this.Stretch = reader.ReadAttrAsBoolean("Stretch", true);
+			reader.ReadAttrAsEnum<XFlipEffects>("FlipEffects", ref this.FlipEffects);
 
             base.ReadXml(reader);
         }

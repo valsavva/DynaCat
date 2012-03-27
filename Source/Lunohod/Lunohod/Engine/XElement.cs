@@ -29,6 +29,7 @@ namespace Lunohod.Objects
 			public Vector2 Size;
 			public double Rotation;
 			public double Opacity;
+			public float Depth;
 			public Vector2 Scale;
 			public Color BackColor;
 			public System.Drawing.RectangleF? ScreenBounds;
@@ -36,6 +37,7 @@ namespace Lunohod.Objects
 		
 		private Vector2 rotationCenter;
 		internal Color? backColor = null;
+		private float? depth;
 		private System.Drawing.RectangleF tmpBounds;
 		protected Vector2 tmpVector1;
 		protected Vector2 tmpVector2;
@@ -76,6 +78,12 @@ namespace Lunohod.Objects
         public double Opacity = 1.0f;
         [XmlAttribute]
         public double Rotation;
+		[XmlAttribute]
+		public float Depth
+		{
+			get { return this.depth ?? ((this.ParentElement == null) ? 0f : this.ParentElement.Depth); }
+			set { this.depth = value; }
+		}
 		[XmlIgnore]
 		public Vector2 Origin;
 		[XmlIgnore]
@@ -138,8 +146,9 @@ namespace Lunohod.Objects
 			if  (this.ParentElement == null)
 			{
 				PropState.PropCycle = this.updateCycle;
-				PropState.Opacity = 1.0f;
+				PropState.Opacity = 1;
 				PropState.Rotation = 0;
+				PropState.Depth = 0;
 				PropState.Scale = Vector2.One;
 				PropState.BackColor = Color.White;
 			}
@@ -159,6 +168,9 @@ namespace Lunohod.Objects
 				PropState.Size.X = this.Bounds.Width;
 				PropState.Size.Y = this.Bounds.Height;
 			}
+			
+			if (this.depth.HasValue)
+				PropState.Depth = this.depth.Value;
 			
 			if (this.backColor.HasValue)
 				PropState.BackColor = this.backColor.Value;
@@ -291,6 +303,8 @@ namespace Lunohod.Objects
                 this.RotationCenter = tmpVector1;
             if (reader.ReadAttrAsFloat("Scale", ref f))
                 this.Scale = f;
+            if (reader.ReadAttrAsFloat("Depth", ref f))
+                this.Depth = (float)f;
             if (reader.ReadAttrAsVector2("Location", ref tmpVector1))
                 this.Location = tmpVector1;
             if (reader.ReadAttrAsVector2("Center", ref tmpVector1))
