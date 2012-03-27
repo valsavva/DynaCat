@@ -44,6 +44,18 @@ namespace Lunohod.Objects
         /// </summary>
         [XmlIgnore]
         public XObject Parent;
+		/// <summary>
+		/// Gets a value indicating whether this <see cref="Lunohod.Objects.XObject"/> participated in the current or the last update cycle.
+		/// If <c>false</c>, this indicates that the current component or one of its ancestors was disabled.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> if was updated; otherwise, <c>false</c>.
+		/// </value>
+		[XmlIgnore]
+		public bool WasUpdated
+		{
+			get { return Math.Abs(this.updateCycle - GameEngine.Instance.CycleNumber) <= 1; }
+		}
         /// <summary>
         /// Gets collection of subcomponents.
         /// </summary>

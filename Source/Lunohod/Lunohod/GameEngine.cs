@@ -330,6 +330,9 @@ namespace Lunohod
 			{
 				var tapArea = tapAreas[j];
 				
+				if (!tapArea.WasUpdated)
+					continue;
+				
                 var screenBounds = tapArea.GetScreenBounds();
 
 				if (screenBounds.Contains(x, y))
