@@ -5,6 +5,7 @@
 	</Resources>
 	
     <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(hero.Speed)" Color="#000000" />
+    <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(hero.X) + ')(' + system.Str(hero.Y) + ')'" Color="#000000" />
     
 	<!-- Global variables. Will be moved out here. -->
 	<Do Action="@heroBaseSpeed=60;@heroBaseTime=3.95;" InProgress="true"/>

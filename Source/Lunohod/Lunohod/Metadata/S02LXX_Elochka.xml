@@ -107,8 +107,8 @@
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="298, 51, 24, 25" TraceId="image3035"/>
-        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="122, 125, 24, 25" TraceId="image3039"/>
-        <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="203, 194, 24, 25" TraceId="image3049-1"/>
+        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="126, 125,   24,   25" TraceId="image3039"/>
+        <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="215, 196,     24,     25" TraceId="image3049-1"/>
         <Food Id="fd1" Class="clsFood" Points="1" Bounds="122, 56, 28, 17" TraceId="image3063">
             <Image TextureId="txr_fish_6_me" />
         </Food>
@@ -136,3 +136,9 @@
     <Include File="Dashboard.xml" />
 </Level>
 <!-- Food=3 Enemy=5 Block=6 DesignImage=78 Animation=0 Teleport=0 FoodPack=0 -->
+
+
+
+
+
+

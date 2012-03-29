@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.5.03 -->
+<!-- source: D:\Lunohod\Levels\S02LXX_Nozhnicy\S02LXX_Nozhnicy.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Nozhnicy" Bounds="0, 0, 480, 320">
+    <LevelSettings Difficulty="-1" BombCount="0" HeroHealth="100" ExplosionClass="clsExplosion"/>
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassFood.xml" />
+    <Include File="ClassHero.xml" />
+    <Include File="ClassTower.xml" />
+    <Include File="ClassExit.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_tailsBlue" Source="tailsBlue" />
+        <Texture Id="txr_second_phon_plate1" Source="second_phon_plate1" />
+        <Texture Id="txr_container_steel_2_big" Source="container_steel_2_big" />
+        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3083"/>
+    </Layer>
+    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_second_phon_plate1" Bounds="118, 48, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3399"/>
+        <Image Id="dfltMask3" TextureId="txr_second_phon_plate1" Bounds="238, 48, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3402"/>
+        <Image Id="dfltMask4" TextureId="txr_second_phon_plate1" Bounds="358, 48, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3404"/>
+        <Image Id="dfltMask5" TextureId="txr_second_phon_plate1" Bounds="358, 168, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3406"/>
+        <Image Id="dfltMask6" TextureId="txr_second_phon_plate1" Bounds="238, 168, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3408"/>
+        <Image Id="dfltMask7" TextureId="txr_second_phon_plate1" Bounds="118, 168, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3410"/>
+        <Image Id="dfltMask8" TextureId="txr_second_phon_plate1" Bounds="-2, 168, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3412"/>
+        <Image Id="dfltMask9" TextureId="txr_second_phon_plate1" Bounds="-2, 48, 100, 100" Rotation="0" Stretch="true" Opacity="1" TraceId="image3414"/>
+    </Layer>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="-24, -72, 560, 100" Edges="Bounce" TraceId="image3323"/>
+        <Block Id="blk2" Bounds="-29, 292, 560, 100" Edges="Bounce" TraceId="image3334"/>
+        <Block Id="blk3" Bounds="-163, -36, 189, 428" Edges="Bounce" TraceId="image3336"/>
+        <Block Id="blk4" Bounds="452, 0, 189, 428" Edges="Bounce" TraceId="image3338"/>
+    </Layer>
+    <Layer Id="design" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask10" TextureId="txr_container_steel_2_big" Bounds="0, -72, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3261"/>
+        <Image Id="dfltMask11" TextureId="txr_container_steel_2_big" Bounds="120, -72, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3264"/>
+        <Image Id="dfltMask12" TextureId="txr_container_steel_2_big" Bounds="240, -72, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3266"/>
+        <Image Id="dfltMask13" TextureId="txr_container_steel_2_big" Bounds="360, -72, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3268"/>
+        <Image Id="dfltMask14" TextureId="txr_container_steel_2_big" Bounds="452, 48, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3297"/>
+        <Image Id="dfltMask15" TextureId="txr_container_steel_2_big" Bounds="452, 168, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3299"/>
+        <Image Id="dfltMask16" TextureId="txr_container_steel_2_big" Bounds="360, 292, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3303"/>
+        <Image Id="dfltMask17" TextureId="txr_container_steel_2_big" Bounds="240, 292, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3305"/>
+        <Image Id="dfltMask18" TextureId="txr_container_steel_2_big" Bounds="120, 292, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3307"/>
+        <Image Id="dfltMask19" TextureId="txr_container_steel_2_big" Bounds="0, 292, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3309"/>
+        <Image Id="dfltMask20" TextureId="txr_container_steel_2_big" Bounds="-74, 168, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3311"/>
+        <Image Id="dfltMask21" TextureId="txr_container_steel_2_big" Bounds="-74, 48, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3313"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Group Id="grp_g3094">
+            <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="334, 35, 24, 25" TraceId="image3013"/>
+            <NumAnimation Smoothing="Flat" Id="anm1" From="0" To="200" Target="enm1.Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3030"/>
+        </Group>
+        <Group Id="grp_g3102">
+            <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="174, 35, 24, 25" TraceId="image3018"/>
+            <NumAnimation Smoothing="Flat" Id="anm2" From="0" To="200" Target="Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3033"/>
+        </Group>
+        <Group Id="grp_g3118">
+            <Enemy Id="enm3" Class="clsEnemyRat1" Bounds="174, 235, 24, 25" TraceId="image3020"/>
+            <NumAnimation Smoothing="Flat" Id="anm3" From="0" To="-200" Target="Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3043"/>
+        </Group>
+        <Group Id="grp_g3112">
+            <Enemy Id="enm4" Class="clsEnemyRat1" Bounds="334, 235, 24, 25" TraceId="image3016"/>
+            <NumAnimation Smoothing="Flat" Id="anm4" From="0" To="-200" Target="Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3046"/>
+        </Group>
+        <Food Id="fd1" Class="clsFood" Points="1" Bounds="97, 143, 26, 17" TraceId="image3072">
+            <Image TextureId="txr_fish_5_me" />
+        </Food>
+    </Layer>
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+        <Hero Id="hero" Class="clsHero" Bounds="384, 144, 34, 22" TraceId="image3027"/>
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Group Id="exit" Class="clsExit" Bounds="54, 126, 37, 54" TraceId="image3049" />
+    </Layer>
+    <Layer Id="upmask" BackColor="#FFFFFFFF">
+    </Layer>
+    <Include File="ClassExplosion.xml" />
+    <Include File="Dashboard.xml" />
+</Level>
+<!-- Food=1 Enemy=4 Block=4 DesignImage=21 Animation=4 Teleport=0 FoodPack=0 -->
