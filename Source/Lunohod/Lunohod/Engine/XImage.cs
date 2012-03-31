@@ -27,7 +27,7 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public XFlipEffects FlipEffects;
 		
-		protected Rectangle? SourceRectangle;
+		protected System.Drawing.RectangleF? SourceRectangle;
 		
 		public override void Initialize (InitializeParameters p)
 		{

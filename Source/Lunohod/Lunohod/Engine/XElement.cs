@@ -38,7 +38,7 @@ namespace Lunohod.Objects
 		private Vector2 rotationCenter;
 		internal Color? backColor = null;
 		private float? depth;
-		private System.Drawing.RectangleF tmpBounds;
+		protected System.Drawing.RectangleF tmpBounds;
 		protected Vector2 tmpVector1;
 		protected Vector2 tmpVector2;
 		
