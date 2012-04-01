@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.5.03 -->
 <!-- source: D:\Lunohod\Levels\S02LXX_Dyrka\S02LXX_Dyrka.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Dyrka" Bounds="0, 0, 480, 320">
-    <LevelSettings Difficulty="-1" BombCount="0" HeroHealth="100" ExplosionClass="clsExplosion"/>
+    <LevelSettings Difficulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
     <Include File="ClassFood.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassTower.xml" />
@@ -32,7 +32,7 @@
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3024"/>
     </Layer>
     <Layer Id="secondbckg" BackColor="#FFFFFFFF">
-        <Image FlipEffects="Horizontally" Id="dfltMask2" TextureId="txr_second_phon_index3" Bounds="167, 40, 33, 31" Rotation="0" Stretch="true" Opacity="1" TraceId="arrow_to_flip"/>
+        <Image Id="dfltMask2" TextureId="txr_second_phon_index3" Bounds="167, 40, 33, 31" Rotation="0" Stretch="true" Opacity="1" TraceId="arrow_to_flip"/>
         <Image Id="dfltMask3" TextureId="txr_second_phon_index3" Bounds="249, 241, 33, 31" Rotation="0" Stretch="true" Opacity="1" TraceId="image3640"/>
         <Image Id="dfltMask4" TextureId="txr_second_phon_crack" Bounds="411, 57, 52, 25" Rotation="0" Stretch="true" Opacity="1" TraceId="image3851"/>
     </Layer>
@@ -260,7 +260,7 @@
         <Food Id="fd2" Class="clsFood" Points="1" Bounds="203, 125, 28, 17" TraceId="image3060">
             <Image TextureId="txr_fish_6_me" />
         </Food>
-        <Enemy Id="enm1" Class="clsEnemyElectricity1" Bounds="257, 54, 15, 11" TraceId="image3287"/>
+        <Enemy Id="enm1" Class="clsEnemyElectricity1" Bounds="257, 54, 11, 11" TraceId="image3287"/>
         <Food Id="fd3" Class="clsFood" Points="1" Bounds="209, 151, 28, 17" TraceId="image3139">
             <Image TextureId="txr_fish_6_me" />
         </Food>
@@ -273,19 +273,19 @@
         <Food Id="fd6" Class="clsFood" Points="1" Bounds="215, 139, 28, 17" TraceId="image3145">
             <Image TextureId="txr_fish_6_me" />
         </Food>
-        <Enemy Id="enm2" Class="clsEnemyElectricity1" Bounds="277, 54, 15, 11" TraceId="image3147"/>
-        <Enemy Id="enm3" Class="clsEnemyElectricity1" Bounds="297, 54, 15, 11" TraceId="image3149"/>
-        <Enemy Id="enm4" Class="clsEnemyElectricity1" Bounds="317, 54, 15, 11" TraceId="image3151"/>
-        <Enemy Id="enm5" Class="clsEnemyElectricity1" Bounds="337, 54, 15, 11" TraceId="image3153"/>
-        <Enemy Id="enm6" Class="clsEnemyElectricity1" Bounds="98, 256, 15, 11" TraceId="image3560"/>
-        <Enemy Id="enm7" Class="clsEnemyElectricity1" Bounds="118, 256, 15, 11" TraceId="image3562"/>
-        <Enemy Id="enm8" Class="clsEnemyElectricity1" Bounds="138, 256, 15, 11" TraceId="image3564"/>
-        <Enemy Id="enm9" Class="clsEnemyElectricity1" Bounds="158, 256, 15, 11" TraceId="image3566"/>
-        <Enemy Id="enm10" Class="clsEnemyElectricity1" Bounds="178, 256, 15, 11" TraceId="image3568"/>
+        <Enemy Id="enm2" Class="clsEnemyElectricity1" Bounds="277, 54, 11, 11" TraceId="image3147"/>
+        <Enemy Id="enm3" Class="clsEnemyElectricity1" Bounds="297, 54, 11, 11" TraceId="image3149"/>
+        <Enemy Id="enm4" Class="clsEnemyElectricity1" Bounds="317, 54, 11, 11" TraceId="image3151"/>
+        <Enemy Id="enm5" Class="clsEnemyElectricity1" Bounds="337, 54, 11, 11" TraceId="image3153"/>
+        <Enemy Id="enm6" Class="clsEnemyElectricity1" Bounds="98, 256, 11, 11" TraceId="image3560"/>
+        <Enemy Id="enm7" Class="clsEnemyElectricity1" Bounds="118, 256, 11, 11" TraceId="image3562"/>
+        <Enemy Id="enm8" Class="clsEnemyElectricity1" Bounds="138, 256, 11, 11" TraceId="image3564"/>
+        <Enemy Id="enm9" Class="clsEnemyElectricity1" Bounds="158, 256, 11, 11" TraceId="image3566"/>
+        <Enemy Id="enm10" Class="clsEnemyElectricity1" Bounds="178, 256, 11, 11" TraceId="image3568"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Hero Id="hero" Class="clsHero" Bounds="96, 48, 34, 22" TraceId="image3013"/>
+        <Hero Id="hero" Class="clsHero" Bounds="96, 48, 33, 23" TraceId="image3013"/>
         <Group Id="exit" Class="clsExit" Bounds="366, 236, 37, 54" TraceId="image3049" />
     </Layer>
     <Layer Id="upmask" BackColor="#FFFFFFFF">

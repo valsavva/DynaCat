@@ -8,8 +8,8 @@
     <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
-    <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
+    <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_tailsBrown" Source="tailsBrown" />
         <Texture Id="txr_second_phon_communications_2" Source="second_phon_communications_2" />
@@ -166,13 +166,10 @@
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="364, 246,  37,  54" TraceId="image3049" />
-        <Hero Id="hero" Class="clsHero" Bounds="142, 136, 33, 24" TraceId="image3013"/>
-    </Layer>
-    <Layer Id="upmask" BackColor="#FFFFFFFF">
+        <Hero Id="hero" Class="clsHero" Bounds="142, 136, 33, 23" TraceId="image3013"/>
+        <Group Id="exit" Class="clsExit" Bounds="364, 246, 37, 54" TraceId="image3049" />
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
 <!-- Food=9 Enemy=6 Block=10 DesignImage=91 Animation=0 Teleport=0 FoodPack=0 -->
-
