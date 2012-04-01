@@ -246,8 +246,6 @@
         <Hero Id="hero" Class="clsHero" Bounds="47, 41, 33, 23" TraceId="image3015"/>
         <Group Id="exit" Class="clsExit" Bounds="291, 250, 37, 54" TraceId="image3049" />
     </Layer>
-    <Layer Id="upmask" BackColor="#FFFFFFFF">
-    </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>

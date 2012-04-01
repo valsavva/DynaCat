@@ -32,7 +32,7 @@
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3024"/>
     </Layer>
     <Layer Id="secondbckg" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_second_phon_index3" Bounds="167, 40, 33, 31" Rotation="0" Stretch="true" Opacity="1" TraceId="arrow_to_flip"/>
+        <Image Id="dfltMask2" TextureId="txr_second_phon_index3" Bounds="167, 40, 33, 31" Rotation="0" Stretch="true" Opacity="1" FlipEffects="Horizontally" TraceId="arrow_to_flip"/>
         <Image Id="dfltMask3" TextureId="txr_second_phon_index3" Bounds="249, 241, 33, 31" Rotation="0" Stretch="true" Opacity="1" TraceId="image3640"/>
         <Image Id="dfltMask4" TextureId="txr_second_phon_crack" Bounds="411, 57, 52, 25" Rotation="0" Stretch="true" Opacity="1" TraceId="image3851"/>
     </Layer>
