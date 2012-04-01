@@ -14,21 +14,41 @@ namespace Lunohod.Objects
 	public class XSprite : XImage
 	{
 		[XmlIgnore]
-		public Rectangle FrameBounds;
+		public System.Drawing.RectangleF FrameBounds;
 		[XmlAttribute]
 		public int FrameCount;
         [XmlAttribute]
         public int CurrentFrame;
 		
-		public override void Draw(DrawParameters p)
+		public override void Initialize(InitializeParameters p)
 		{
-			this.SourceRectangle = new Rectangle(this.CurrentFrame * this.FrameBounds.Width, this.FrameBounds.Top, this.FrameBounds.Width, FrameBounds.Height);
-			base.Draw(p);
+			base.Initialize(p);
 		}
-
+		
+		public override void Update(UpdateParameters p)
+		{
+			if (this.FrameCount == 0)
+			{
+				this.tmpBounds.X = this.FrameBounds.X + this.CurrentFrame * this.FrameBounds.Width;
+				this.tmpBounds.Y = this.FrameBounds.Y;
+			}
+			else
+			{
+				this.tmpBounds.X = this.FrameBounds.X + (this.CurrentFrame % this.FrameCount) * this.FrameBounds.Width;
+				this.tmpBounds.Y = this.FrameBounds.Y + (this.CurrentFrame / this.FrameCount) * this.FrameBounds.Height;
+			}
+			
+			this.tmpBounds.Width = this.FrameBounds.Width;
+			this.tmpBounds.Height = this.FrameBounds.Height;
+			
+			this.SourceRectangle = this.tmpBounds;
+			
+			base.Update(p);
+		}
+		
         public override void ReadXml(System.Xml.XmlReader reader)
         {
-            reader.ReadAttrAsRect("FrameBounds", ref this.FrameBounds);
+            reader.ReadAttrAsRectF("FrameBounds", ref this.FrameBounds);
             reader.ReadAttrAsInt("FrameCount", ref this.FrameCount);
             reader.ReadAttrAsInt("CurrentFrame", ref this.CurrentFrame);
 
