@@ -47,14 +47,14 @@ namespace Microsoft.Xna.Framework.Media
 {
     public class Song : IEquatable<Song>, IDisposable
     {
-		private Sound _sound;
+		private SoundEffectInstance _sound;
 		private string _name;
 		private int _playCount;
 		
 		internal Song(string fileName)
 		{			
 			_name = fileName;
-			_sound = new Sound(_name, 1.0f, true);
+			_sound = new SoundEffect(_name).CreateInstance();
 		}
 		
 		public void Dispose()
@@ -105,6 +105,14 @@ namespace Microsoft.Xna.Framework.Media
 				_playCount++;
 			}
         }
+
+		internal void Resume()
+		{
+			if ( _sound != null )
+			{
+				_sound.Resume();
+			}
+		}
 		
 		internal void Pause()
 		{			
@@ -128,7 +136,7 @@ namespace Microsoft.Xna.Framework.Media
 			{
 				if ( _sound != null )
 				{
-					return _sound.Looping;
+					return _sound.IsLooped;
 				}
 				else
 				{
@@ -139,9 +147,9 @@ namespace Microsoft.Xna.Framework.Media
 			{
 				if ( _sound != null )
 				{
-					if ( _sound.Looping != value )
+					if ( _sound.IsLooped != value )
 					{
-						_sound.Looping = value;
+						_sound.IsLooped = value;
 					}
 				}
 			}
@@ -179,12 +187,14 @@ namespace Microsoft.Xna.Framework.Media
             {
 				if ( _sound != null )
 				{
-					return new TimeSpan(0,0,(int)_sound.Duration);
+					//return new TimeSpan(0,0,(int)_sound.Duration);
+					return new TimeSpan(0);
 				}
 				else
 				{
 					return new TimeSpan(0);
 				}
+				
             }
         }
 		
@@ -194,7 +204,8 @@ namespace Microsoft.Xna.Framework.Media
             {
 				if ( _sound != null )
 				{
-					return new TimeSpan(0,0,(int)_sound.CurrentPosition);
+					//return new TimeSpan(0,0,(int)_sound.CurrentPosition);
+					return new TimeSpan(0);
 				}
 				else
 				{

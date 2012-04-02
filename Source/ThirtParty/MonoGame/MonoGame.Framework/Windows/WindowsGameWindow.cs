@@ -322,7 +322,7 @@ namespace Microsoft.Xna.Framework
                     return Input.Keys.NumLock;
                     
                 case OpenTK.Input.Key.Number0:
-                    return Input.Keys.D1;
+                    return Input.Keys.D0;
                     
                 case OpenTK.Input.Key.Number1:
                     return Input.Keys.D1;
@@ -386,6 +386,12 @@ namespace Microsoft.Xna.Framework
                     
                 case OpenTK.Input.Key.Right:
                     return Input.Keys.Right;
+
+                case OpenTK.Input.Key.RShift:
+                    return Input.Keys.RightShift;
+
+                case OpenTK.Input.Key.RWin:
+                    return Input.Keys.RightWindows;
                     
                 case OpenTK.Input.Key.S:
                     return Input.Keys.S;
@@ -397,7 +403,7 @@ namespace Microsoft.Xna.Framework
                     return Input.Keys.OemSemicolon;
                     
                 case OpenTK.Input.Key.Slash:
-                    return Input.Keys.None;
+                    return Input.Keys.OemQuestion;
                     
                 case OpenTK.Input.Key.Sleep:
                     return Input.Keys.Sleep;
@@ -474,12 +480,15 @@ namespace Microsoft.Xna.Framework
         {
             OpenTkGameWindow = new OpenTK.GameWindow();            
             OpenTkGameWindow.RenderFrame += OnRenderFrame;
-            OpenTkGameWindow.UpdateFrame += OnUpdateFrame;
             OpenTkGameWindow.Closing += new EventHandler<CancelEventArgs>(OpenTkGameWindow_Closing);
             OpenTkGameWindow.Resize += OnResize;
             OpenTkGameWindow.Keyboard.KeyDown += new EventHandler<OpenTK.Input.KeyboardKeyEventArgs>(Keyboard_KeyDown);
             OpenTkGameWindow.Keyboard.KeyUp += new EventHandler<OpenTK.Input.KeyboardKeyEventArgs>(Keyboard_KeyUp);
             clientBounds = new Rectangle(0, 0, OpenTkGameWindow.Width, OpenTkGameWindow.Height);
+			
+			// mouse
+			// TODO review this when opentk 1.1 is released
+			Mouse.UpdateMouseInfo(OpenTkGameWindow.Mouse);
 
             // Initialize GameTime
             _updateGameTime = new GameTime();
@@ -532,6 +541,10 @@ namespace Microsoft.Xna.Framework
                 OpenTkGameWindow.MakeCurrent();
 
             if (Game != null) {
+                _now = DateTime.Now;
+		_updateGameTime.Update(_now - _lastUpdate);
+            	Game.DoUpdate(_updateGameTime);
+
                 _drawGameTime.Update(_now - _lastUpdate);
                 _lastUpdate = _now;
                 Game.DoDraw(_drawGameTime);
@@ -540,23 +553,6 @@ namespace Microsoft.Xna.Framework
             OpenTkGameWindow.SwapBuffers();
         }
 
-        private void OnUpdateFrame(object sender, FrameEventArgs e)
-		{			
-			if (Game != null ) {
-			  
-                HandleInput();
-
-                _now = DateTime.Now;
-				_updateGameTime.Update(_now - _lastUpdate);
-            	Game.DoUpdate(_updateGameTime);
-			}
-		}
-
-        private void HandleInput()
-        {
-            Mouse.SetPosition(OpenTkGameWindow.Mouse.X, OpenTkGameWindow.Mouse.Y);                
-        }
-		
 		#endregion
 
         public override IntPtr Handle
@@ -602,22 +598,15 @@ namespace Microsoft.Xna.Framework
             }
         }
 
-        private DisplayOrientation _currentOrientation;
 		public override DisplayOrientation CurrentOrientation 
 		{
-            get
-            {
-                return _currentOrientation;
-            }
-            internal set
-            {
-                if (value != _currentOrientation)
-                {
-                    _currentOrientation = value;
-                    OnOrientationChanged();
-                }
-            }
+            get { return DisplayOrientation.LandscapeLeft; }
 		}
+
+        protected internal override void SetSupportedOrientations(DisplayOrientation orientations)
+        {
+            // Do nothing.  Desktop platforms don't do orientations.
+        }
 
         public override void BeginScreenDeviceChange(bool willBeFullScreen)
         {

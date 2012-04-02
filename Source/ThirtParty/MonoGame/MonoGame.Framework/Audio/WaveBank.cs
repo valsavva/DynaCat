@@ -29,9 +29,9 @@ using System;
 using System.IO;
 namespace Microsoft.Xna.Framework.Audio
 {
-    public class WaveBank
+    public class WaveBank : IDisposable
     {
-        internal Sound[] sounds;
+        internal SoundEffectInstance[] sounds;
         internal string BankName;
 
         struct Segment
@@ -82,8 +82,7 @@ namespace Microsoft.Xna.Framework.Audio
             //XWB PARSING
             //Adapted from MonoXNA
             //Originally adaped from Luigi Auriemma's unxwb
-            
-            audioEngine.Wavebanks.Add(this);
+			
             WaveBankHeader wavebankheader;
             WaveBankData wavebankdata;
             WaveBankEntry wavebankentry;
@@ -177,7 +176,7 @@ namespace Microsoft.Xna.Framework.Audio
                 entry_name[wavebankdata.EntryNameElementSize] = 0;
             }
 
-            sounds = new Sound[wavebankdata.EntryCount];
+            sounds = new SoundEffectInstance[wavebankdata.EntryCount];
 
             for (int current_entry = 0; current_entry < wavebankdata.EntryCount; current_entry++)
             {
@@ -330,7 +329,15 @@ namespace Microsoft.Xna.Framework.Audio
                     writer.Write((int)rate); //sample rate
                     writer.Write((int)rate*align); //byte rate
                     writer.Write((short)align);
-                    writer.Write((short)bits);
+
+					if (bits == 1) 
+					{
+                        writer.Write((short)16);
+                    } 
+					else 
+					{
+                        writer.Write((short)8); //not sure if this is right
+                    } 
                     
                     writer.Write("data".ToCharArray());
                     writer.Write((int)audiodata.Length);
@@ -339,7 +346,7 @@ namespace Microsoft.Xna.Framework.Audio
                     writer.Close();
                     mStream.Close();
 					
-                    sounds[current_entry] = new Sound(mStream.ToArray(), 1.0f, false);
+                    sounds[current_entry] = new SoundEffect(mStream.ToArray(), rate, AudioChannels.Mono).CreateInstance();
 					
                 } else if (codec == MiniForamtTag_WMA) { //WMA or xWMA (or XMA2)
                     byte[] wmaSig = {0x30, 0x26, 0xb2, 0x75, 0x8e, 0x66, 0xcf, 0x11, 0xa6, 0xd9, 0x0, 0xaa, 0x0, 0x62, 0xce, 0x6c};
@@ -352,17 +359,45 @@ namespace Microsoft.Xna.Framework.Audio
                         }
                     }
                     
-                    if (isWma) {
-                        //WMA data can be played directly
+                    //Let's support m4a data as well for convenience
+                    byte[][] m4aSigs = new byte[][] {
+                        new byte[] {0x00, 0x00, 0x00, 0x18, 0x66, 0x74, 0x79, 0x70, 0x4D, 0x34, 0x41, 0x20, 0x00, 0x00, 0x02, 0x00},
+                        new byte[] {0x00, 0x00, 0x00, 0x20, 0x66, 0x74, 0x79, 0x70, 0x4D, 0x34, 0x41, 0x20, 0x00, 0x00, 0x00, 0x00}
+                    };
+                    
+                    bool isM4a = false;
+                    for (int i=0; i<m4aSigs.Length; i++) {    
+                        byte[] sig = m4aSigs[i];
+                        bool matches = true;
+                        for (int j=0; j<sig.Length; j++) {
+                            if (sig[j] != audiodata[j]) {
+                                matches = false;
+                                break;
+                            }
+                        }
+                        if (matches) {
+                            isM4a = true;
+                            break;
+                        }
+                    }
+                    
+                    if (isWma || isM4a) {
+                        //WMA data can sometimes be played directly
                         
-                        //hack - NSSound can't play non-wav from data
-                        string wavFileName = Path.GetTempFileName().Replace(".tmp", ".wma");
-                        FileStream wmaFile = new FileStream(wavFileName, FileMode.Create, FileAccess.ReadWrite);
-                        wmaFile.Write(audiodata, 0, audiodata.Length);
-                        wmaFile.Close();
-						
-                        sounds[current_entry] = new Sound(wavFileName, 1.0f, false);
+                        //hack - NSSound can't play non-wav from data, we have to give a filename
+                        string filename = Path.GetTempFileName();
+                        if (isWma) {
+                            filename = filename.Replace(".tmp", ".wma");
+                        } else if (isM4a) {
+                            filename = filename.Replace(".tmp", ".m4a");
+                        }
+                        FileStream audioFile = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite);
+                        audioFile.Write(audiodata, 0, audiodata.Length);
+                        audioFile.Close();
+                        
+                        sounds[current_entry] = new SoundEffect(filename).CreateInstance();
                     } else {
+                        //An xWMA or XMA2 file. Can't be played atm :(
                         throw new NotImplementedException();
                     }
                 } else {
@@ -370,7 +405,16 @@ namespace Microsoft.Xna.Framework.Audio
                 }
                 
             }
+			
+			audioEngine.Wavebanks[BankName] = this;
         }
+
+		#region IDisposable implementation
+		public void Dispose ()
+		{
+			throw new NotImplementedException ();
+		}
+		#endregion
     }
 }
 

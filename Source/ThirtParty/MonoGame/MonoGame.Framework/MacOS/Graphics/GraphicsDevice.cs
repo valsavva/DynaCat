@@ -64,6 +64,9 @@ namespace Microsoft.Xna.Framework.Graphics
 		private VertexBuffer _vertexBuffer = null;
 		private IndexBuffer _indexBuffer = null;
 
+		private uint VboIdArray;
+		private uint VboIdElement;
+
 		public RasterizerState RasterizerState { get; set; }
 		
 		private RenderTargetBinding[] currentRenderTargets;
@@ -102,7 +105,7 @@ namespace Microsoft.Xna.Framework.Graphics
 		}
 
 		public GraphicsDevice ()
-			{	
+		{	
 			// Initialize the main viewport
 			_viewport = new Viewport ();
 			_viewport.X = 0;
@@ -141,12 +144,12 @@ namespace Microsoft.Xna.Framework.Graphics
 
 		public void Clear (Color color)
 		{
-			Clear (ClearOptions.Target, color.ToEAGLColor(), 0, 0);
+			Clear (ClearOptions.Target, color.ToVector4(), 0, 0);
 		}
 
 		public void Clear (ClearOptions options, Color color, float depth, int stencil)
 		{
-			Clear (options, color.ToEAGLColor (), depth, stencil);
+			Clear (options, color.ToVector4 (), depth, stencil);
 		}
 
 		public void Clear (ClearOptions options, Vector4 color, float depth, int stencil)
@@ -394,6 +397,11 @@ namespace Microsoft.Xna.Framework.Graphics
 
 					ClearOptions clearOptions = ClearOptions.Target | ClearOptions.DepthBuffer;
 
+					// create framebuffer
+					GL.GenFramebuffers(1, out frameBufferIDs[i]);
+					GL.BindFramebuffer(FramebufferTarget.DrawFramebuffer, frameBufferIDs[i]);
+
+					// attach stencil buffer
 					switch (target.DepthStencilFormat) {
 					case DepthFormat.Depth16:
 						GL.RenderbufferStorage(RenderbufferTarget.RenderbufferExt, RenderbufferStorage.DepthComponent16,
@@ -415,10 +423,6 @@ namespace Microsoft.Xna.Framework.Graphics
 							target.Width, target.Height);
 						break;
 					}
-					
-					// create framebuffer
-					GL.GenFramebuffers(1, out frameBufferIDs[i]);
-					GL.BindFramebuffer(FramebufferTarget.DrawFramebuffer, frameBufferIDs[i]);
 					
 					// attach the texture to FBO color attachment point
 					GL.FramebufferTexture2D(FramebufferTarget.FramebufferExt, FramebufferAttachment.ColorAttachment0,
@@ -461,6 +465,11 @@ namespace Microsoft.Xna.Framework.Graphics
 			}						
 		}
 
+		public RenderTargetBinding[] GetRenderTargets ()
+		{
+			return currentRenderTargets;
+		}
+		
 		public void ResolveBackBuffer (ResolveTexture2D resolveTexture)
 		{
 		}
@@ -484,85 +493,402 @@ namespace Microsoft.Xna.Framework.Graphics
 		public void SetVertexBuffer (VertexBuffer vertexBuffer)
 		{
 			_vertexBuffer = vertexBuffer;
-			GL.BindBuffer (BufferTarget.ArrayBuffer, vertexBuffer._bufferStore);
+			//GL.BindBuffer (BufferTarget.ArrayBuffer, vertexBuffer._bufferStore);
 		}
 
 		private void SetIndexBuffer (IndexBuffer indexBuffer)
 		{
 			_indexBuffer = indexBuffer;
-			GL.BindBuffer (BufferTarget.ElementArrayBuffer, indexBuffer._bufferStore);
+			//GL.BindBuffer (BufferTarget.ElementArrayBuffer, indexBuffer._bufferStore);
 		}
 
 		public IndexBuffer Indices { set { SetIndexBuffer (value); } }
+
+
+		internal void SetGraphicsStates ()
+		{
+			GL.PushMatrix();
+			// Set up our Rasterizer States
+			GLStateManager.SetRasterizerStates(RasterizerState);
+			GLStateManager.SetBlendStates(BlendState);
+		}
+
+		bool resetVertexStates = false;
+		internal void UnsetGraphicsStates ()
+		{
+			// Make sure we are not user any shaders
+			GL.UseProgram(0);
+
+			// if primitives were used then we need to reset them
+			if (resetVertexStates) {
+				GLStateManager.VertexArray(false);
+				GLStateManager.ColorArray(false);
+				GLStateManager.NormalArray(false);
+				GLStateManager.TextureCoordArray(false);
+				resetVertexStates = false;
+			}
+				GL.PopMatrix();
+
+		}
 
 		public void DrawIndexedPrimitives (PrimitiveType primitiveType, int baseVertex, int minVertexIndex, int numbVertices, int startIndex, int primitiveCount)
 		{
 			if (minVertexIndex > 0 || baseVertex > 0)
 				throw new NotImplementedException ("baseVertex > 0 and minVertexIndex > 0 are not supported");
 
-			var vd = VertexDeclaration.FromType (_vertexBuffer._type);
-			// Hmm, can the pointer here be changed with baseVertex?
-			VertexDeclaration.PrepareForUse (vd, IntPtr.Zero);
+			// we need to reset vertex states afterwards
+			resetVertexStates = true;
 
-			GL.DrawElements (PrimitiveTypeGL11 (primitiveType), _indexBuffer._count, DrawElementsType.UnsignedShort, new IntPtr (startIndex));
+			// Set up our Graphics States
+			SetGraphicsStates();
+
+            // Unbind the VBOs
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+
+            //Create VBO if not created already
+            if (VboIdArray == 0)
+                GL.GenBuffers(1, out VboIdArray);
+            if (VboIdElement == 0)
+                GL.GenBuffers(1, out VboIdElement);
+
+            // Bind the VBO
+            GL.BindBuffer(BufferTarget.ArrayBuffer, VboIdArray);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, VboIdElement);
+            ////Clear previous data
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+
+			//Get VertexDeclaration
+			var vd = _vertexBuffer.VertexDeclaration;
+			if (vd == null) {
+
+				vd = VertexDeclaration.FromType(_vertexBuffer._type);
+			}
+
+            //Pin data
+            var handle = GCHandle.Alloc(_vertexBuffer, GCHandleType.Pinned);
+            var handle2 = GCHandle.Alloc(_vertexBuffer, GCHandleType.Pinned);
+
+            //Buffer data to VBO; This should use stream when we move to ES2.0
+            GL.BufferData(BufferTarget.ArrayBuffer,
+				(IntPtr)(vd.VertexStride * GetElementCountArray(primitiveType, primitiveCount)),
+				_vertexBuffer._bufferPtr,
+				BufferUsageHint.DynamicDraw);
+
+            GL.BufferData(BufferTarget.ElementArrayBuffer,
+				(IntPtr)(sizeof(ushort) * GetElementCountArray(primitiveType, primitiveCount)),
+				_indexBuffer._bufferPtr,
+				BufferUsageHint.DynamicDraw);
+
+            //Setup VertexDeclaration
+            VertexDeclaration.PrepareForUse(vd);
+
+            //Draw
+            GL.DrawElements(PrimitiveTypeGL11(primitiveType),
+				GetElementCountArray(primitiveType, primitiveCount),
+				DrawElementsType.UnsignedShort,
+				(IntPtr)(startIndex * sizeof(ushort)));
+
+
+            // Free resources
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+            handle.Free();
+            handle2.Free();
+
+			UnsetGraphicsStates();
 		}
 
 		public void DrawUserPrimitives<T> (PrimitiveType primitiveType, T[] vertexData, int vertexOffset, int primitiveCount) where T : struct, IVertexType
 		{
-			// Unbind the VBOs
-			GL.BindBuffer (BufferTarget.ArrayBuffer, 0);
-			GL.BindBuffer (BufferTarget.ElementArrayBuffer, 0);
 
-			var vd = VertexDeclaration.FromType (typeof(T));
 
-			IntPtr arrayStart = GCHandle.Alloc (vertexData, GCHandleType.Pinned).AddrOfPinnedObject ();
+			// we need to reset vertex states afterwards
+			resetVertexStates = true;
 
-			if (vertexOffset > 0)
-				arrayStart = new IntPtr (arrayStart.ToInt32 () + (vertexOffset * vd.VertexStride));
+			// Set up our Graphics States
+			SetGraphicsStates();
 
-			VertexDeclaration.PrepareForUse (vd, arrayStart);
+           // Unbind the VBOs
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
 
-			GL.DrawArrays (PrimitiveTypeGL11 (primitiveType), vertexOffset, getElementCountArray (primitiveType, primitiveCount));
+            //Create VBO if not created already
+            if (VboIdArray == 0)
+                GL.GenBuffers(1, out VboIdArray);
+
+            // Bind the VBO
+            GL.BindBuffer(BufferTarget.ArrayBuffer, VboIdArray);
+            ////Clear previous data
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+
+            //Get VertexDeclaration
+            var vd = VertexDeclaration.FromType(typeof(T));
+
+            //Pin data
+            var handle = GCHandle.Alloc(vertexData, GCHandleType.Pinned);
+
+            //Buffer data to VBO; This should use stream when we move to ES2.0
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)(vd.VertexStride * GetElementCountArray(primitiveType, primitiveCount)), vertexData,BufferUsageHint.DynamicDraw);
+
+            //Setup VertexDeclaration
+            VertexDeclaration.PrepareForUse(vd);
+
+            //Draw
+            GL.DrawArrays(PrimitiveTypeGL11(primitiveType), vertexOffset, GetElementCountArray(primitiveType, primitiveCount));
+
+            // Free resources
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+            handle.Free();
+
+			// Unset our Graphics States
+			UnsetGraphicsStates();
+
+
+		}
+
+		public void DrawUserPrimitives<T> (PrimitiveType primitiveType, T[] vertexData, int vertexOffset, int primitiveCount, VertexDeclaration vertexDeclaration) where T : struct, IVertexType
+		{
+
+			// we need to reset vertex states afterwards
+			resetVertexStates = true;
+
+			// Set up our Graphics States
+			SetGraphicsStates();
+
+           // Unbind the VBOs
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+
+            //Create VBO if not created already
+            if (VboIdArray == 0)
+                GL.GenBuffers(1, out VboIdArray);
+
+            // Bind the VBO
+            GL.BindBuffer(BufferTarget.ArrayBuffer, VboIdArray);
+            ////Clear previous data
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+
+            //Get VertexDeclaration
+            //var vd = VertexDeclaration.FromType(typeof(T));
+
+            //Pin data
+            var handle = GCHandle.Alloc(vertexData, GCHandleType.Pinned);
+
+            //Buffer data to VBO; This should use stream when we move to ES2.0
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)(vertexDeclaration.VertexStride * GetElementCountArray(primitiveType, primitiveCount)), vertexData,BufferUsageHint.DynamicDraw);
+
+            //Setup VertexDeclaration
+            VertexDeclaration.PrepareForUse(vertexDeclaration);
+
+            //Draw
+            GL.DrawArrays(PrimitiveTypeGL11(primitiveType), vertexOffset, GetElementCountArray(primitiveType, primitiveCount));
+
+            // Free resources
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+            handle.Free();
+
+			// Unset our Graphics States
+			UnsetGraphicsStates();
 		}
 
 		public void DrawPrimitives (PrimitiveType primitiveType, int vertexStart, int primitiveCount)
 		{
-			var vd = VertexDeclaration.FromType (_vertexBuffer._type);
-			VertexDeclaration.PrepareForUse (vd, IntPtr.Zero);
 
-			GL.DrawArrays (PrimitiveTypeGL11 (primitiveType), vertexStart, getElementCountArray (primitiveType, primitiveCount));
+			// we need to reset vertex states afterwards
+			resetVertexStates = true;
+
+			// Set up our Graphics States
+			SetGraphicsStates();
+
+           // Unbind the VBOs
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+
+            //Create VBO if not created already
+            if (VboIdArray == 0)
+                GL.GenBuffers(1, out VboIdArray);
+
+            // Bind the VBO
+            GL.BindBuffer(BufferTarget.ArrayBuffer, VboIdArray);
+            ////Clear previous data
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+
+			//Get VertexDeclaration
+			var vd = _vertexBuffer.VertexDeclaration;
+			if (vd == null) {
+
+				vd = VertexDeclaration.FromType(_vertexBuffer._type);
+			}
+            //Pin data
+            var handle = GCHandle.Alloc(_vertexBuffer, GCHandleType.Pinned);
+
+            //Buffer data to VBO; This should use stream when we move to ES2.0
+            GL.BufferData(BufferTarget.ArrayBuffer,
+				(IntPtr)(vd.VertexStride * GetElementCountArray(primitiveType, primitiveCount)),
+				_vertexBuffer._bufferPtr,
+				BufferUsageHint.DynamicDraw);
+
+            //Setup VertexDeclaration
+            VertexDeclaration.PrepareForUse(vd);
+
+            //Draw
+            GL.DrawArrays(PrimitiveTypeGL11(primitiveType), vertexStart, GetElementCountArray(primitiveType, primitiveCount));
+
+            // Free resources
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+            handle.Free();
+
+			// Unset our Graphics States
+			UnsetGraphicsStates();
 		}
 
-		public void DrawUserIndexedPrimitives<T> (PrimitiveType primitiveType, T[] vertexData, int vertexOffset, int vertexCount, int[] indexData, int indexOffset, int primitiveCount) where T : IVertexType
-		{
-			// Unbind the VBOs
-			GL.BindBuffer (BufferTarget.ArrayBuffer, 0);
-			GL.BindBuffer (BufferTarget.ElementArrayBuffer, 0);
+        public void DrawUserIndexedPrimitives<T>(PrimitiveType primitiveType, T[] vertexData, int vertexOffset, int vertexCount, short[] indexData, int indexOffset, int primitiveCount) where T : struct, IVertexType
+        {
 
-			var vd = VertexDeclaration.FromType (typeof(T));
+			// we need to reset vertex states afterwards
+			resetVertexStates = true;
 
-			IntPtr arrayStart = GCHandle.Alloc (vertexData, GCHandleType.Pinned).AddrOfPinnedObject ();
+			// Set up our Graphics States
+			SetGraphicsStates();
 
-			if (vertexOffset > 0)
-				arrayStart = new IntPtr (arrayStart.ToInt32 () + (vertexOffset * vd.VertexStride));
+            // Unbind the VBOs
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
 
-			VertexDeclaration.PrepareForUse (vd, arrayStart);
+            //Create VBO if not created already
+            if (VboIdArray == 0)
+                GL.GenBuffers(1, out VboIdArray);
+            if (VboIdElement == 0)
+                GL.GenBuffers(1, out VboIdElement);
 
-			GL.DrawArrays (PrimitiveTypeGL11 (primitiveType), vertexOffset, getElementCountArray (primitiveType, primitiveCount));
-		}
+            // Bind the VBO
+            GL.BindBuffer(BufferTarget.ArrayBuffer, VboIdArray);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, VboIdElement);
+            ////Clear previous data
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
 
-		public int getElementCountArray (PrimitiveType primitiveType, int primitiveCount)
+            //Get VertexDeclaration
+            var vd = VertexDeclaration.FromType(typeof(T));
+
+            //Pin data
+            var handle = GCHandle.Alloc(vertexData, GCHandleType.Pinned);
+            var handle2 = GCHandle.Alloc(vertexData, GCHandleType.Pinned);
+
+            //Buffer data to VBO; This should use stream when we move to ES2.0
+//			int vds = vd.VertexStride;
+//			int ec = GetElementCountArray(primitiveType, primitiveCount);
+//			int sec = vd.VertexStride * GetElementCountArray(primitiveType, primitiveCount);
+//			IntPtr ip = (IntPtr)(vd.VertexStride * GetElementCountArray(primitiveType, primitiveCount));
+//			IntPtr ip2 = new IntPtr(handle.AddrOfPinnedObject().ToInt64() + (vertexOffset * vd.VertexStride));
+
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)(vd.VertexStride * GetElementCountArray(primitiveType, primitiveCount)),
+				new IntPtr(handle.AddrOfPinnedObject().ToInt64() + (vertexOffset * vd.VertexStride)), BufferUsageHint.DynamicDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, (IntPtr)(sizeof(ushort) * GetElementCountArray(primitiveType, primitiveCount)), indexData, BufferUsageHint.DynamicDraw);
+
+            //Setup VertexDeclaration
+            VertexDeclaration.PrepareForUse(vd);
+
+            //Draw
+            GL.DrawElements(PrimitiveTypeGL11(primitiveType), GetElementCountArray(primitiveType, primitiveCount),DrawElementsType.UnsignedShort, (IntPtr)(indexOffset * sizeof(ushort)));
+
+
+            // Free resources
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+            handle.Free();
+            handle2.Free();
+
+			// Unset our Graphics States
+			UnsetGraphicsStates();
+
+        }
+
+        public void DrawUserIndexedPrimitives<T>(PrimitiveType primitiveType, T[] vertexData, int vertexOffset, int vertexCount, int[] indexData, int indexOffset, int primitiveCount) where T : struct, IVertexType
+        {
+
+			// we need to reset vertex states afterwards
+			resetVertexStates = true;
+
+			// Set up our Graphics States
+			SetGraphicsStates();
+
+
+            // Unbind the VBOs
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+
+            //Create VBO if not created already
+            if (VboIdArray == 0)
+                GL.GenBuffers(1, out VboIdArray);
+            if (VboIdElement == 0)
+                GL.GenBuffers(1, out VboIdElement);
+
+            // Bind the VBO
+            GL.BindBuffer(BufferTarget.ArrayBuffer, VboIdArray);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, VboIdElement);
+            ////Clear previous data
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, (IntPtr)0, (IntPtr)null, BufferUsageHint.DynamicDraw);
+
+            //Get VertexDeclaration
+            var vd = VertexDeclaration.FromType(typeof(T));
+
+            //Pin data
+            var handle = GCHandle.Alloc(vertexData, GCHandleType.Pinned);
+            var handle2 = GCHandle.Alloc(vertexData, GCHandleType.Pinned);
+
+            //Buffer data to VBO; This should use stream when we move to ES2.0
+            GL.BufferData(BufferTarget.ArrayBuffer, (IntPtr)(vd.VertexStride * GetElementCountArray(primitiveType, primitiveCount)), new IntPtr(handle.AddrOfPinnedObject().ToInt64() + (vertexOffset * vd.VertexStride)), BufferUsageHint.DynamicDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, (IntPtr)(sizeof(uint) * GetElementCountArray(primitiveType, primitiveCount)), indexData, BufferUsageHint.DynamicDraw);
+
+            //Setup VertexDeclaration
+            VertexDeclaration.PrepareForUse(vd);
+
+            //Draw
+            GL.DrawElements(PrimitiveTypeGL11(primitiveType), GetElementCountArray(primitiveType, primitiveCount),DrawElementsType.UnsignedInt, (IntPtr)(indexOffset * sizeof(uint)));
+
+
+            // Free resources
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+            handle.Free();
+            handle2.Free();
+
+			// Unset our Graphics States
+			UnsetGraphicsStates();
+
+        }
+
+		public int GetElementCountArray (PrimitiveType primitiveType, int primitiveCount)
 		{
 			//TODO: Overview the calculation
+			// Please see comments made by kjpou1 below.  The samples would not work correctly so
+			//  modified the values below.  This is what got the samples working so if they
+			//  are not correct please modify but make sure samples are working.
+			//  TextureQuad and PrimitivesTest are the ones to check
 			switch (primitiveType) {
 			case PrimitiveType.LineList:
 				return primitiveCount * 2;
 			case PrimitiveType.LineStrip:
-				return 3 + (primitiveCount - 1); // ???
+				// Was causing extra lines
+				return primitiveCount + 1;//     3 + (primitiveCount - 1); // ???
 			case PrimitiveType.TriangleList:
-				return primitiveCount * 2;
+				// The primitiveCount * 2 was causing some lines not to show up
+				//  changing it to 3 activated those lines.  For a quad map only the first
+				//  triangle was showing instead of the full quad.
+				return primitiveCount * 3;  //primitiveCount * 2;
 			case PrimitiveType.TriangleStrip:
-				return 3 + (primitiveCount - 1); // ???
+				// This is a test --- changed by kjpou1 -- modified from what is below
+				// as I really did not understand it.
+				//   If the change does not work then please move back to what was below
+				//3 + (primitiveCount - 1); // ???
+				return primitiveCount + 2;
 			}
 
 			throw new NotSupportedException ();

@@ -45,6 +45,7 @@ using System.Runtime.InteropServices;
 using MonoMac.AppKit;
 using MonoMac.CoreGraphics;
 using MonoMac.Foundation;
+using MonoMac.ImageIO;
 
 using MonoMac.OpenGL;
 
@@ -83,15 +84,15 @@ namespace Microsoft.Xna.Framework.Graphics
 
 		public Rectangle SourceRect {
 			get {
-				return new Rectangle (0,0,_width, _height);
+				return new Rectangle (0, 0, _width, _height);
 			}
 		}
 
 		public Rectangle Bounds {
 			get {
-				return new Rectangle (0,0,_width, _height);
+				return new Rectangle (0, 0, _width, _height);
 			}
-		}		
+		}
 
 		internal Texture2D (ESImage theImage)
 		{
@@ -102,13 +103,13 @@ namespace Microsoft.Xna.Framework.Graphics
 			_textureId = (int)theImage.Name;
 		}
 
-		public Texture2D (GraphicsDevice graphicsDevice,int width,int height) : 
+		public Texture2D (GraphicsDevice graphicsDevice, int width, int height) : 
 			this (graphicsDevice, width, height, false, SurfaceFormat.Color)
 		{
 
 		}
 
-		public Texture2D (GraphicsDevice graphicsDevice,int width,int height, bool mipMap, SurfaceFormat format)
+		public Texture2D (GraphicsDevice graphicsDevice, int width, int height, bool mipMap, SurfaceFormat format)
 		{
 			this.graphicsDevice = graphicsDevice;
 			this._width = width;
@@ -124,27 +125,24 @@ namespace Microsoft.Xna.Framework.Graphics
 			// modeled after this
 			// http://steinsoft.net/index.php?site=Programming/Code%20Snippets/OpenGL/no9
 			
-			GL.GenTextures(1,out _textureId);
-			GL.BindTexture(TextureTarget.Texture2D, _textureId);
+			GL.GenTextures (1, out _textureId);
+			GL.BindTexture (TextureTarget.Texture2D, _textureId);
 			
-			if (_mipmap)
-			{
+			if (_mipmap) {
 				// Taken from http://www.flexicoder.com/blog/index.php/2009/11/iphone-mipmaps/
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.LinearMipmapNearest);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.GenerateMipmap, (int)All.True);
-			}
-			else
-			{
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.LinearMipmapNearest);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.GenerateMipmap, (int)All.True);
+			} else {
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
 			}
 			
 			byte[] textureData = new byte[(_width * _height) * 4];
 			
 			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, _width, _height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, textureData);			
 			
-			GL.BindTexture(TextureTarget.Texture2D, 0);
+			GL.BindTexture (TextureTarget.Texture2D, 0);
 
 			// The following is left here for testing purposes
 //			NSImage image = new NSImage (new SizeF (_width, _height));
@@ -227,15 +225,13 @@ namespace Microsoft.Xna.Framework.Graphics
 			return result;
 		}
 
-		public int Width 
-		{
+		public int Width {
 			get {
 				return _width;
 			}
 		}
 
-		public int Height 
-		{
+		public int Height {
 			get {
 				return _height;
 			}
@@ -294,22 +290,46 @@ namespace Microsoft.Xna.Framework.Graphics
 		{
 			return FromFile (graphicsDevice, filename, 0, 0);
 		}
+
+		// Not sure what this should do in Mac will leave it non implemented for now.
+		internal void Reload(Stream textureStream)
+		{
+		}
+
+		internal void Apply ()
+		{
+			if (texture == null)
+				return;
+
+			GL.BindTexture (TextureTarget.Texture2D, (uint)_textureId);
+			if (_mipmap) {
+				// Taken from http://www.flexicoder.com/blog/index.php/2009/11/iphone-mipmaps/
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.LinearMipmapNearest);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.GenerateMipmap, (int)All.True);
+			} else {
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+			}
+
+			GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureWrapS,
+                            (float)TextureWrapMode.Repeat);
+			GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureWrapT,
+                            (float)TextureWrapMode.Repeat);
+		}
 		
-		private void Apply(byte[] textureData) 
+		private void Apply (byte[] textureData)
 		{
 			
 			GL.BindTexture (TextureTarget.Texture2D, (uint)_textureId);			
-			if (_mipmap)
-			{
+			if (_mipmap) {
 				// Taken from http://www.flexicoder.com/blog/index.php/2009/11/iphone-mipmaps/
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.LinearMipmapNearest);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.GenerateMipmap, (int)All.True);
-			}
-			else
-			{
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.LinearMipmapNearest);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.GenerateMipmap, (int)All.True);
+			} else {
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
 			}			
 
 			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, _width, _height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, textureData);
@@ -334,7 +354,7 @@ namespace Microsoft.Xna.Framework.Graphics
 //			}
 		}
 
-		private void SetData (int index, byte red, byte green, byte blue, byte alpha, byte[] textureData) 
+		private void SetData (int index, byte red, byte green, byte blue, byte alpha, byte[] textureData)
 		{
 			switch (_format) {				
 			case SurfaceFormat.Color /*kTexture2DPixelFormat_RGBA8888*/:
@@ -360,7 +380,7 @@ namespace Microsoft.Xna.Framework.Graphics
 			}
 		}
 
-		private byte[] AllocColorData () 
+		private byte[] AllocColorData ()
 		{
 			switch (_format) {				
 			case SurfaceFormat.Color /*kTexture2DPixelFormat_RGBA8888*/:
@@ -430,31 +450,31 @@ namespace Microsoft.Xna.Framework.Graphics
 
 		public void SetData<T> (T[] data)
 		{
-			SetData(data, 0, data.Length, SetDataOptions.None);
+			SetData (data, 0, data.Length, SetDataOptions.None);
 		}
 		
 		public void SetData<T> (T[] data, int startIndex, int elementCount, SetDataOptions options)
 		{
 			if (data == null) {
-				throw new ArgumentNullException("Argument data can not be null.");
+				throw new ArgumentNullException ("Argument data can not be null.");
 			}
 			
 			if (startIndex < 0 || startIndex > data.Length - 1) {
-				throw new ArgumentNullException("Argument startIndex in invalid.");
+				throw new ArgumentNullException ("Argument startIndex in invalid.");
 			}			
 
 			if (elementCount < 0 || (startIndex + elementCount) > data.Length) {
-				throw new ArgumentNullException("Argument elementCount is invalid.");
+				throw new ArgumentNullException ("Argument elementCount is invalid.");
 			}			
 			
-			byte[] textureData = AllocColorData();
+			byte[] textureData = AllocColorData ();
 			// we now have a texture not based on an outside image source
 			// now we check what type was passed
 			if (typeof(T) == typeof(Color)) {
 
 				for (int x = startIndex; x < elementCount; x++) {
-					var color = (Color)(object)data[x];
-					SetData(x,color.R, color.G, color.B, color.A, textureData);
+					var color = (Color)(object)data [x];
+					SetData (x, color.R, color.G, color.B, color.A, textureData);
 					
 				}
 				
@@ -465,7 +485,7 @@ namespace Microsoft.Xna.Framework.Graphics
 			}
 			
 			// when we are all done we need apply the changes
-			Apply(textureData);
+			Apply (textureData);
 		}
 
 		public void SetData<T> (int level, Rectangle? rect, T[] data, int startIndex, int elementCount, SetDataOptions options)
@@ -486,25 +506,21 @@ namespace Microsoft.Xna.Framework.Graphics
 			}
 		}
 		
-		
-		private byte[] GetImageData(int level)
+		private byte[] GetImageData (int level)
 		{
 			
 			byte[] imageInfo;
 			int sz = 0;
 			
 			GL.BindTexture (TextureTarget.Texture2D, ID);
-			if (_mipmap)
-			{
+			if (_mipmap) {
 				// Taken from http://www.flexicoder.com/blog/index.php/2009/11/iphone-mipmaps/
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.LinearMipmapNearest);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.GenerateMipmap, (int)All.True);
-			}
-			else
-			{
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
-				GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.LinearMipmapNearest);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.GenerateMipmap, (int)All.True);
+			} else {
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
+				GL.TexParameter (TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)All.Linear);
 			}			
 
 			switch (_format) {
@@ -531,12 +547,16 @@ namespace Microsoft.Xna.Framework.Graphics
 				throw new NotSupportedException ("Texture format");
 			}
 			
-			GL.GetTexImage(TextureTarget.Texture2D, level, PixelFormat.Rgba, PixelType.UnsignedByte, imageInfo);
+			GL.GetTexImage (TextureTarget.Texture2D, level, PixelFormat.Rgba, PixelType.UnsignedByte, imageInfo);
+
+			// For RenderTextures we need to flip the data.
+			if (texture == null) {
+				flipImageData (imageInfo, _width, _height, 4);
+			}
 
 			return imageInfo;
 					
 		}
-		
 		
 		public void GetData<T> (T[] data)
 		{	
@@ -544,7 +564,7 @@ namespace Microsoft.Xna.Framework.Graphics
 				throw new ArgumentException ("data cannot be null");
 			}
 			
-			GetData(0, null, data, 0, data.Length);
+			GetData (0, null, data, 0, data.Length);
 
 		}
 
@@ -570,20 +590,32 @@ namespace Microsoft.Xna.Framework.Graphics
 				r = new Rectangle (0, 0, Width, Height);
 			}
 
-			byte[] imageInfo = GetImageData(0);
-			
-			// For RenderTextures we need to flip the data.
-			if (texture == null) {
-				flipImageData(imageInfo, _width, _height, 4);
-			}
-			
+			byte[] imageInfo = GetImageData (0);
+
 			// Get the Color values
-			if ((typeof(T) == typeof(Color))) {	
-				
-				
+			if (typeof(T) == typeof(uint))
+			{
+				Color[] colors = new Color[elementCount];
+				GetData<Color>(level, rect, colors, startIndex, elementCount);
+				uint[] final = data as uint[];
+				for (int i = 0; i < final.Length; i++)
+				{
+					final[i] = (uint)
+					(
+						colors[i].R << 24 |
+						colors[i].G << 16 |
+						colors[i].B << 8 |
+						colors[i].A
+					);
+				}
+			}
+			// Get the Color values
+			else if ((typeof(T) == typeof(Color))) {
+
+
 				// Left this here for documentation - Not sure what it does but the
 				// routine looks important
-				
+
 				//Convert "RRRRRRRRRGGGGGGGGBBBBBBBBAAAAAAAA" to "RRRRRGGGGGGBBBBB"
 				/*
 				if(pixelFormat == SurfaceFormat.Rgb32) {
@@ -606,18 +638,19 @@ namespace Microsoft.Xna.Framework.Graphics
 					imageData = tempData;			
 				}									
 				*/
-				
+
 				int rWidth = r.Width;
 				int rHeight = r.Height;
-				
+
+
 					// Loop through and extract the data but we need to load it 
-					int dataRowColOffset = 0;
-					int sz = 0;
-					int pixelOffset = 0;
-					for (int y = r.Top; y < rHeight; y++) {
-						for (int x = r.Left; x < rWidth; x++) {
-							var result = new Color (0, 0, 0, 0);						
-							dataRowColOffset = ((y * rWidth) + x);
+					var dataRowColOffset = 0;
+					var sz = 0;
+					var pixelOffset = 0;
+					for (int y = r.Top; y < r.Top + rHeight; y++) {
+						for (int x = r.Left; x < r.Left + rWidth; x++) {
+							var result = new Color (0, 0, 0, 0);
+							dataRowColOffset = ((y * _width) + x);
 							switch (_format) {
 							case SurfaceFormat.Color : //kTexture2DPixelFormat_RGBA8888
 							case SurfaceFormat.Dxt3 :
@@ -651,7 +684,7 @@ namespace Microsoft.Xna.Framework.Graphics
 //								pos = ((y * imageSize.Width) + x) * sz;
 //								pixelOffset = new IntPtr (imageData.ToInt64 () + pos);
 //								Marshal.Copy (pixelOffset, pixel, 0, 4);	
-//	
+//
 //								result.R = pixel [0];
 //								result.G = pixel [1];
 //								result.B = pixel [2];
@@ -661,13 +694,13 @@ namespace Microsoft.Xna.Framework.Graphics
 								result.R = imageInfo [pixelOffset];
 								result.G = imageInfo [pixelOffset + 1];
 								result.B = imageInfo [pixelOffset + 2];
-								result.A = imageInfo [pixelOffset + 3];							
+								result.A = imageInfo [pixelOffset + 3];
 								break;
-							case SurfaceFormat.Alpha8 :  // kTexture2DPixelFormat_A8 
+							case SurfaceFormat.Alpha8 :  // kTexture2DPixelFormat_A8
 //								sz = 1;
 //								pos = ((y * imageSize.Width) + x) * sz;
-//								pixelOffset = new IntPtr (imageData.ToInt64 () + pos);								
-//								Marshal.Copy (pixelOffset, pixel, 0, 4);	
+//								pixelOffset = new IntPtr (imageData.ToInt64 () + pos);
+//								Marshal.Copy (pixelOffset, pixel, 0, 4);
 //	
 //								result.A = pixel [0];
 								sz = 1;
@@ -677,14 +710,107 @@ namespace Microsoft.Xna.Framework.Graphics
 							default:
 								throw new NotSupportedException ("Texture format");
 							}
-							data [dataRowColOffset] = (T)(object)result;
+							data [((y - r.Top) * r.Width) + (x - r.Left)] = (T)(object)result;
 						}
 					}
-			}
-			else {
+			} else {
 				throw new NotImplementedException ("GetData not implemented for type.");
 			}
-			
+		}
+
+		private CGImage createRGBImageFromBufferData (int mByteWidth, int mWidth, int mHeight)
+		{
+
+			CGColorSpace cSpace = CGColorSpace.CreateDeviceRGB ();
+
+			CGImageAlphaInfo ai = (CGImageAlphaInfo)((int)CGImageAlphaInfo.NoneSkipFirst | (int)CGBitmapFlags.ByteOrder32Little) ;
+
+			CGBitmapContext bitmap;
+			byte[] mData = GetImageData(0);
+			try {
+				unsafe {
+
+					fixed (byte* ptr = mData) {
+						bitmap = new CGBitmapContext ((IntPtr)ptr,mWidth,mHeight,8,mByteWidth,cSpace, ai);
+					}
+				}
+			} catch {
+
+			}
+
+			CGImage image = bitmap.ToImage ();
+
+			return image;
+
+
+		}
+
+		public void SaveAsJpeg (Stream stream, int width, int height)
+		{
+			int mByteWidth = width * 4;         // Assume 4 bytes/pixel for now
+			mByteWidth = (mByteWidth + 3) & ~3;    // Align to 4 bytes
+
+			CGImage imageRef = createRGBImageFromBufferData (mByteWidth, width, height);
+	
+//			CGImageDestination dest = CGImageDestination.FromUrl (url, "public.tiff", 1, null);
+//			dest.AddImage (imageRef, null);
+//
+//			bool success = dest.Close ();
+			//                        if (success == false)
+			//                                Console.WriteLine("did not work");
+			//                        else
+			//                                Console.WriteLine("did work");
+
+			// *** NOTE ** CGImageDestination is not working for some reason
+			//  so we will write this out using .net
+
+			//  get an NSBitmapImageRep of the CGImage
+			NSBitmapImageRep rep = new NSBitmapImageRep (imageRef);
+			//  obtain the NSData as Tiff image format
+			NSData data = rep.RepresentationUsingTypeProperties (NSBitmapImageFileType.Jpeg, new NSDictionary ());
+			//  write the Tiff formatted data as a stream to the out file.
+			WriteImageToStream (data.AsStream (), stream);
+		}
+
+		public void SaveAsPng (Stream stream, int width, int height)
+		{
+			int mByteWidth = width * 4;         // Assume 4 bytes/pixel for now
+			mByteWidth = (mByteWidth + 3) & ~3;    // Align to 4 bytes
+
+			CGImage imageRef = createRGBImageFromBufferData (mByteWidth, width, height);
+	
+//			CGImageDestination dest = CGImageDestination.FromUrl (url, "public.tiff", 1, null);
+//			dest.AddImage (imageRef, null);
+//
+//			bool success = dest.Close ();
+			//                        if (success == false)
+			//                                Console.WriteLine("did not work");
+			//                        else
+			//                                Console.WriteLine("did work");
+
+			// *** NOTE ** CGImageDestination is not working for some reason
+			//  so we will write this out using .net
+
+			//  get an NSBitmapImageRep of the CGImage
+			NSBitmapImageRep rep = new NSBitmapImageRep (imageRef);
+			//  obtain the NSData as Tiff image format
+			NSData data = rep.RepresentationUsingTypeProperties (NSBitmapImageFileType.Png, new NSDictionary ());
+			//  write the Tiff formatted data as a stream to the out file.
+			WriteImageToStream (data.AsStream (), stream);
+		}
+
+		private void WriteImageToStream (Stream source, Stream target)
+		{
+			byte[] buffer = new byte[0x10000];
+			int bytes;
+			try {
+				while ((bytes = source.Read (buffer, 0, buffer.Length)) > 0) {
+					target.Write (buffer, 0, bytes);
+				}
+			} finally {
+				target.Close ();
+	
+			}
 		}
 	}
 }

@@ -2,7 +2,7 @@
 // /*
 // Microsoft Public License (Ms-PL)
 // XnaTouch - Copyright © 2009-2010 The XnaTouch Team
-// 
+//
 // All rights reserved.
 // 
 // This license governs use of the accompanying software. If you use the software, you accept this license. If you do not
@@ -63,7 +63,7 @@ namespace Microsoft.Xna.Framework.Input.Touch
 			TouchCollection result = new TouchCollection(Collection);		
 			Collection.Update();
 			return result;
-        }
+        }       
 		
 		public static void Reset()
 		{
@@ -79,7 +79,11 @@ namespace Microsoft.Xna.Framework.Input.Touch
         {
             get
             {
-				throw new NotImplementedException();
+#if ANDROID				
+				return (int)Game.Activity.Resources.DisplayMetrics.HeightPixels;
+#else
+                return Game.Instance.Window.ClientBounds.Height;
+#endif
             }
             set
             {
@@ -96,7 +100,11 @@ namespace Microsoft.Xna.Framework.Input.Touch
         {
             get
             {
-				throw new NotImplementedException();
+#if ANDROID				
+				return (int)Game.Activity.Resources.DisplayMetrics.WidthPixels;
+#else
+                return Game.Instance.Window.ClientBounds.Width;
+#endif				
             }
             set
             {

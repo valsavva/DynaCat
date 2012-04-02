@@ -84,7 +84,7 @@ namespace Microsoft.Xna.Framework.Graphics
             return vertexDeclaration;
         }
 
-        public static void PrepareForUse(VertexDeclaration vd, IntPtr arrayStart)
+        public static void PrepareForUse(VertexDeclaration vd, IntPtr ptr)
         {
             GLStateManager.VertexArray(true);
 
@@ -94,45 +94,45 @@ namespace Microsoft.Xna.Framework.Graphics
 			
             foreach (var ve in vd.GetVertexElements())
             {
-                    switch (ve.VertexElementUsage)
-                    {
-                        case VertexElementUsage.Position:
-                            GL11.VertexPointer(
-                                ve.VertexElementFormat.OpenGLNumberOfElements(),
-                                ve.VertexElementFormat.OpenGLValueType(),
-                                vd.VertexStride,
-                                new IntPtr(arrayStart.ToInt32() + ve.Offset)
-                                );
-                            break;
-                        case VertexElementUsage.Color:
-                            GL11.ColorPointer(
-                                ve.VertexElementFormat.OpenGLNumberOfElements(),
-                                ve.VertexElementFormat.OpenGLValueType(),
-                                vd.VertexStride,
-                                new IntPtr(arrayStart.ToInt32() + ve.Offset)
-                                );
+                switch (ve.VertexElementUsage)
+                {
+                    case VertexElementUsage.Position:
+                        GL11.VertexPointer(
+                            ve.VertexElementFormat.OpenGLNumberOfElements(),
+                            ve.VertexElementFormat.OpenGLValueType(),
+                            vd.VertexStride,
+                            (IntPtr)((uint)ptr + ve.Offset)
+                            );
+                        break;
+                    case VertexElementUsage.Color:
+                        GL11.ColorPointer(
+                            ve.VertexElementFormat.OpenGLNumberOfElements(),
+                            ve.VertexElementFormat.OpenGLValueType(),
+                            vd.VertexStride,
+                            (IntPtr)((uint)ptr + ve.Offset)
+                            );
                             color = true;
-                            break;
-                        case VertexElementUsage.Normal:
-                            GL11.NormalPointer(
-                                ve.VertexElementFormat.OpenGLValueType(),
-                                vd.VertexStride,
-                                new IntPtr(arrayStart.ToInt32() + ve.Offset)
-                                );
-                            normal = true;
-                            break;
-                        case VertexElementUsage.TextureCoordinate:
-                            GL11.TexCoordPointer(
-                                ve.VertexElementFormat.OpenGLNumberOfElements(),
-                                ve.VertexElementFormat.OpenGLValueType(),
-                                vd.VertexStride,
-                                new IntPtr(arrayStart.ToInt32() + ve.Offset)
-                                );
-                            texcoord = true;
-                            break;
-                        default:
-                            throw new NotImplementedException();
-                    }
+                        break;
+                    case VertexElementUsage.Normal:
+                        GL11.NormalPointer(
+                            ve.VertexElementFormat.OpenGLValueType(),
+                            vd.VertexStride,
+                            (IntPtr)((uint)ptr + ve.Offset)
+                            );
+                        normal = true;
+                        break;
+                    case VertexElementUsage.TextureCoordinate:
+                        GL11.TexCoordPointer(
+                            ve.VertexElementFormat.OpenGLNumberOfElements(),
+                            ve.VertexElementFormat.OpenGLValueType(),
+                            vd.VertexStride,
+                            (IntPtr)((uint)ptr + ve.Offset)
+                            );
+                        texcoord = true;
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
             }
 
             GLStateManager.TextureCoordArray(texcoord);

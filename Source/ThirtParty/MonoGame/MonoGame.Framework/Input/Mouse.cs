@@ -38,22 +38,19 @@ purpose and non-infringement.
 */
 #endregion License
 
+using System;
 
-﻿namespace Microsoft.Xna.Framework.Input
+namespace Microsoft.Xna.Framework.Input
 {
     public static class Mouse
     {
-		private static int _x, _y;
+		internal static MouseState State;
+
+        public static IntPtr WindowHandle { get; set; }
 		
         public static MouseState GetState()
         {
-            return new MouseState(_x,_y);
-        }
-		
-		public static void SetPosition(int x, int y)
-        {
-			_x = x;
-			_y = y;
+            return State;
         }
     }
 }

@@ -1,23 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Microsoft.Xna.Framework.Graphics
 {
     public struct VertexPositionColorTexture : IVertexType
     {
         public Vector3 Position;
-        public Color Color;
+        public VertexElementColor Color;
         public Vector2 TextureCoordinate;
         public static readonly VertexDeclaration VertexDeclaration;
         public VertexPositionColorTexture(Vector3 position, Color color, Vector2 textureCoordinate)
         {
             this.Position = position;
-            this.Color = color;
+            Color = color;
             this.TextureCoordinate = textureCoordinate;
         }
-
+		
         VertexDeclaration IVertexType.VertexDeclaration
         {
             get
@@ -33,7 +28,7 @@ namespace Microsoft.Xna.Framework.Graphics
 
         public override string ToString()
         {
-            return string.Format("{{Position:{0} Normal:{1} TextureCoordinate:{2}}}", new object[] { this.Position, this.Color, this.TextureCoordinate });
+            return string.Format("{{Position:{0} Color:{1} TextureCoordinate:{2}}}", new object[] { this.Position, this.Color, this.TextureCoordinate });
         }
 
         public static bool operator ==(VertexPositionColorTexture left, VertexPositionColorTexture right)

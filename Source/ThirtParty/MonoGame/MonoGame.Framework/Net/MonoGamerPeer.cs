@@ -11,6 +11,11 @@ using Lidgren.Network;
 
 namespace Microsoft.Xna.Framework.Net
 {
+    public class MonoGameNetworkConfiguration
+    {
+        public static IPAddress Broadcast = IPAddress.None;
+    }
+
 	internal class MonoGamerPeer
 	{
 		private BackgroundWorker MGServerWorker = new BackgroundWorker ();
@@ -27,7 +32,26 @@ namespace Microsoft.Xna.Framework.Net
 		private static IPEndPoint m_masterServer;
 		private static int masterserverport = 6000;
 		private static string masterServer = "monolive.servegame.com";
-		private static string applicationIdentifier = "monogame";
+		internal static string applicationIdentifier = "monogame";
+		
+		static MonoGamerPeer()
+		{
+#if !WINDOWS_PHONE
+			// This code looks up the Guid for the host app , this is used to identify the
+			// application on the network . We use the Guid as that is unique to that application.			
+			var assembly = System.Reflection.Assembly.GetAssembly(Game.Instance.GetType());
+			if (assembly != null)
+			{
+				object[] objects = assembly.GetCustomAttributes(typeof(System.Runtime.InteropServices.GuidAttribute), false);
+	  			if (objects.Length > 0)
+	 			{
+	   				applicationIdentifier = ((System.Runtime.InteropServices.GuidAttribute)objects[0]).Value;
+	 			} 			
+			}
+#else
+            
+#endif
+		}
 
 		public MonoGamerPeer (NetworkSession session,AvailableNetworkSession availableSession)
 			{            
@@ -55,7 +79,9 @@ namespace Microsoft.Xna.Framework.Net
 
 		void HandleSessionStateChanged (object sender, EventArgs e)
 		{
-			Console.WriteLine ("session state change");
+#if !WINDOWS_PHONE
+            Game.Instance.Log("session state change");
+#endif
 			SendSessionStateChange ();
 
 			if (session.SessionState == NetworkSessionState.Ended)
@@ -87,6 +113,14 @@ namespace Microsoft.Xna.Framework.Net
 
 			IPAddress adr = IPAddress.Parse (myLocalAddress);
 			myLocalEndPoint = new IPEndPoint (adr, port);
+
+            // force a little wait until we have a LocalGamer otherwise things
+            // break. This is the first item in the queue so it shouldnt take long before we
+            // can continue.
+            while (session.LocalGamers.Count <= 0)
+            {
+                Thread.Sleep(10);
+            }
 
 			if (availableSession != null) {
 				if (!this.online) {
@@ -134,7 +168,9 @@ namespace Microsoft.Xna.Framework.Net
 					case NetIncomingMessageType.UnconnectedData :
 						break;
 					case NetIncomingMessageType.NatIntroductionSuccess:
-						Console.WriteLine ("NAT punch through OK " + msg.SenderEndpoint);                            
+#if !WINDOWS_PHONE
+                        Game.Instance.Log("NAT punch through OK " + msg.SenderEndpoint);                            
+#endif
 						peer.Connect (msg.SenderEndpoint);                            
 						break;
 					case NetIncomingMessageType.DiscoveryRequest:
@@ -166,12 +202,16 @@ namespace Microsoft.Xna.Framework.Net
 						//
 						// Just print diagnostic messages to console
 						//
-						Console.WriteLine (msg.ReadString ());
+#if !WINDOWS_PHONE
+                        Game.Instance.Log(msg.ReadString());
+#endif
 						break;
 					case NetIncomingMessageType.StatusChanged:
 						NetConnectionStatus status = (NetConnectionStatus)msg.ReadByte ();
 						if (status == NetConnectionStatus.Disconnected) {
-							Console.WriteLine (NetUtility.ToHexString (msg.SenderConnection.RemoteUniqueIdentifier) + " disconnected! from " + msg.SenderEndpoint);
+#if !WINDOWS_PHONE
+                            Game.Instance.Log(NetUtility.ToHexString(msg.SenderConnection.RemoteUniqueIdentifier) + " disconnected! from " + msg.SenderEndpoint);
+#endif
 							CommandGamerLeft cgj = new CommandGamerLeft (msg.SenderConnection.RemoteUniqueIdentifier);
 							CommandEvent cmde = new CommandEvent (cgj);
 							session.commandQueue.Enqueue (cmde);					
@@ -181,11 +221,15 @@ namespace Microsoft.Xna.Framework.Net
 							// A new player just connected!
 							//
 							if (!pendingGamers.ContainsKey (msg.SenderConnection.RemoteUniqueIdentifier)) {
-								Console.WriteLine (NetUtility.ToHexString (msg.SenderConnection.RemoteUniqueIdentifier) + " connected! from " + msg.SenderEndpoint);
+#if !WINDOWS_PHONE
+                                Game.Instance.Log(NetUtility.ToHexString(msg.SenderConnection.RemoteUniqueIdentifier) + " connected! from " + msg.SenderEndpoint);
+#endif
 								pendingGamers.Add (msg.SenderConnection.RemoteUniqueIdentifier, msg.SenderConnection);
 								SendProfileRequest (msg.SenderConnection);
 							} else {
-								Console.WriteLine ("Already have a connection for that user, this is probably due to both NAT intro requests working");
+#if !WINDOWS_PHONE
+                                Game.Instance.Log("Already have a connection for that user, this is probably due to both NAT intro requests working");
+#endif
 							}
 						}
 
@@ -211,18 +255,23 @@ namespace Microsoft.Xna.Framework.Net
 
 								if (myLocalEndPoint.ToString () != endPoint.ToString () && !AlreadyConnected (endPoint)) {
 
-									Console.WriteLine ("Received Introduction for: " + introductionAddress + 
+#if !WINDOWS_PHONE
+                                    Game.Instance.Log("Received Introduction for: " + introductionAddress + 
 									" and I am: " + myLocalEndPoint + " from: " + msg.SenderEndpoint);
-
+#endif
 									peer.Connect (endPoint);
 								}
 							} catch (Exception exc) {
-								Console.WriteLine ("Error parsing Introduction: " + introductionAddress + " : " + exc.Message);
+#if !WINDOWS_PHONE
+                                Game.Instance.Log("Error parsing Introduction: " + introductionAddress + " : " + exc.Message);
+#endif
 							}
 
 							break;
 						case NetworkMessageType.GamerProfile:
-							//Console.WriteLine("Profile recieved from: " + NetUtility.ToHexString(msg.SenderConnection.RemoteUniqueIdentifier));
+#if !WINDOWS_PHONE
+                            Game.Instance.Log("Profile recieved from: " + NetUtility.ToHexString(msg.SenderConnection.RemoteUniqueIdentifier));
+#endif
 							if (pendingGamers.ContainsKey (msg.SenderConnection.RemoteUniqueIdentifier)) {
 								pendingGamers.Remove (msg.SenderConnection.RemoteUniqueIdentifier);
 								msg.ReadInt32 ();
@@ -237,17 +286,23 @@ namespace Microsoft.Xna.Framework.Net
 								CommandEvent cmde = new CommandEvent (cgj);
 								session.commandQueue.Enqueue (cmde);					
 							} else {
-								Console.WriteLine ("We received a profile for an existing gamer.  Need to update it.");
+#if !WINDOWS_PHONE
+                                Game.Instance.Log("We received a profile for an existing gamer.  Need to update it.");
+#endif
 							}
 							break;
 						case NetworkMessageType.RequestGamerProfile:
-							//Console.WriteLine("Profile Request recieved from: " + msg.SenderEndpoint);
+#if !WINDOWS_PHONE
+                            Game.Instance.Log("Profile Request recieved from: " + msg.SenderEndpoint);
+#endif
 							SendProfile (msg.SenderConnection);
 							break;	
 						case NetworkMessageType.GamerStateChange:
 							GamerStates gamerstate = (GamerStates)msg.ReadInt32 ();
 							gamerstate &= ~GamerStates.Local;
-							Console.WriteLine ("State Change from: " + msg.SenderEndpoint + " new State: " + gamerstate);
+#if !WINDOWS_PHONE
+                            Game.Instance.Log("State Change from: " + msg.SenderEndpoint + " new State: " + gamerstate);
+#endif
 							foreach (var gamer in session.RemoteGamers) {
 								if (gamer.RemoteUniqueIdentifier == msg.SenderConnection.RemoteUniqueIdentifier)
 									gamer.State = gamerstate;
@@ -258,8 +313,10 @@ namespace Microsoft.Xna.Framework.Net
 
 							foreach (var gamer in session.RemoteGamers) {
 								if (gamer.RemoteUniqueIdentifier == msg.SenderConnection.RemoteUniqueIdentifier) {
-									Console.WriteLine ("Session State change from: " + NetUtility.ToHexString (msg.SenderConnection.RemoteUniqueIdentifier) + 
+#if !WINDOWS_PHONE
+                                    Game.Instance.Log("Session State change from: " + NetUtility.ToHexString(msg.SenderConnection.RemoteUniqueIdentifier) + 
 										" session is now: " + sessionState);
+#endif
 									if (gamer.IsHost && sessionState == NetworkSessionState.Playing) {
 										session.StartGame ();
 									}
@@ -279,7 +336,9 @@ namespace Microsoft.Xna.Framework.Net
 				Thread.Sleep (1);
 
 				if (worker.CancellationPending) {
-					Console.WriteLine ("worker CancellationPending");
+#if !WINDOWS_PHONE
+                    Game.Instance.Log("worker CancellationPending");
+#endif
 					e.Cancel = true;
 					done = true;
 				}
@@ -300,12 +359,17 @@ namespace Microsoft.Xna.Framework.Net
 		private void MGServer_RunWorkerCompleted (object sender, RunWorkerCompletedEventArgs e)
 		{
 			if ((e.Cancelled == true)) {
-				Console.WriteLine ("Canceled");
-
+#if !WINDOWS_PHONE
+                Game.Instance.Log("Canceled");
+#endif
 			} else if (!(e.Error == null)) {
-				Console.WriteLine ("Error: " + e.Error.Message);
-			} 
-			Console.WriteLine ("worker Completed");
+#if !WINDOWS_PHONE
+                Game.Instance.Log("Error: " + e.Error.Message);
+#endif
+			}
+#if !WINDOWS_PHONE
+            Game.Instance.Log("worker Completed");
+#endif
 
 			if (online && this.availableSession == null) {
 				// inform the master server we have closed
@@ -327,8 +391,10 @@ namespace Microsoft.Xna.Framework.Net
 			om.Write (session.LocalGamers [0].Gamertag);
 			om.Write (session.PrivateGamerSlots);
 			om.Write (session.MaxGamers);
-			om.Write ((int)session.LocalGamers [0].State);			
-			Console.WriteLine ("Sent profile to: " + NetUtility.ToHexString (player.RemoteUniqueIdentifier));
+			om.Write ((int)session.LocalGamers[0].State);
+#if !WINDOWS_PHONE
+            Game.Instance.Log("Sent profile to: " + NetUtility.ToHexString(player.RemoteUniqueIdentifier));
+#endif
 			peer.SendMessage (om, player, NetDeliveryMethod.ReliableOrdered);			
 		}
 
@@ -336,7 +402,9 @@ namespace Microsoft.Xna.Framework.Net
 		{
 			NetOutgoingMessage om = peer.CreateMessage ();
 			om.Write ((byte)NetworkMessageType.RequestGamerProfile);
-			Console.WriteLine ("Sent profile request to: " + NetUtility.ToHexString (player.RemoteUniqueIdentifier));
+#if !WINDOWS_PHONE
+            Game.Instance.Log("Sent profile request to: " + NetUtility.ToHexString(player.RemoteUniqueIdentifier));
+#endif            
 			peer.SendMessage (om, player, NetDeliveryMethod.ReliableOrdered);			
 		}
 
@@ -356,8 +424,9 @@ namespace Microsoft.Xna.Framework.Net
 			}
 
 			foreach (NetConnection player in peer.Connections) {
-
-				Console.WriteLine ("Introduction sent to: " + player.RemoteEndpoint);
+#if !WINDOWS_PHONE
+                Game.Instance.Log("Introduction sent to: " + player.RemoteEndpoint);
+#endif
 				NetOutgoingMessage om = peer.CreateMessage ();
 				om.Write ((byte)NetworkMessageType.Introduction);
 				om.Write (playerConnection.RemoteEndpoint.ToString ()); 
@@ -368,7 +437,9 @@ namespace Microsoft.Xna.Framework.Net
 
 		internal void SendGamerStateChange (NetworkGamer gamer)
 		{
-
+#if !WINDOWS_PHONE
+            Game.Instance.Log("SendGamerStateChange " + gamer.RemoteUniqueIdentifier);
+#endif
 			NetOutgoingMessage om = peer.CreateMessage ();
 			om.Write ((byte)NetworkMessageType.GamerStateChange);
 			om.Write ((int)gamer.State);
@@ -378,7 +449,9 @@ namespace Microsoft.Xna.Framework.Net
 
 		internal void SendSessionStateChange ()
 		{
-
+#if !WINDOWS_PHONE
+            Game.Instance.Log("Send Session State Change");
+#endif
 			NetOutgoingMessage om = peer.CreateMessage ();
 			om.Write ((byte)NetworkMessageType.SessionStateChange);
 			om.Write ((int)session.SessionState);
@@ -404,9 +477,10 @@ namespace Microsoft.Xna.Framework.Net
 
 		internal static string GetMyLocalIpAddress ()
 		{
-
-			IPHostEntry host;
 			string localIP = "?";
+#if !WINDOWS_PHONE
+			IPHostEntry host;
+			
 			host = Dns.GetHostEntry (Dns.GetHostName ());
 			foreach (IPAddress ip in host.AddressList) {
 				// We only want those of type InterNetwork
@@ -416,6 +490,13 @@ namespace Microsoft.Xna.Framework.Net
 					break;
 				}
 			}
+#else            
+            FindMyIP.MyIPAddress ip = new FindMyIP.MyIPAddress();
+            var addr = ip.Find();
+            localIP = addr.ToString();
+
+ 
+#endif			
 			return localIP;
 		}
 
@@ -541,7 +622,7 @@ namespace Microsoft.Xna.Framework.Net
 		}		
 
 		static NetPeer netPeer;
-		static List<NetIncomingMessage> discoveryMsgs;
+		static List<NetIncomingMessage> discoveryMsgs;        
 
 		internal static void Find (NetworkSessionType sessionType)
 		{
@@ -552,6 +633,10 @@ namespace Microsoft.Xna.Framework.Net
 			} else {
 				config.EnableMessageType (NetIncomingMessageType.DiscoveryRequest);
 			}
+            if (MonoGameNetworkConfiguration.Broadcast != IPAddress.None)
+            {
+                config.BroadcastAddress = MonoGameNetworkConfiguration.Broadcast;
+            }
 			netPeer = new NetPeer (config);
 			netPeer.Start ();
 
@@ -591,7 +676,9 @@ namespace Microsoft.Xna.Framework.Net
 						//
 						// Just print diagnostic messages to console
 						//
+#if DEBUG
 						Console.WriteLine ("Find: " + msg.ReadString ());
+#endif
 						break;
 					}
 				}
@@ -714,7 +801,109 @@ namespace Microsoft.Xna.Framework.Net
 				peer.SendUnconnectedMessage (om, m_masterServer); // send message to peer
 			}
 		}
+
+        internal bool IsReady { get { return this.peer != null; } }
 	}
+
 
 }
 
+
+#if WINDOWS_PHONE
+namespace FindMyIP
+{
+    using System;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Text;
+
+    public class MyIPAddress
+    {
+        Action<IPAddress> FoundCallback;
+        UdpAnySourceMulticastClient MulticastSocket;
+        const int PortNumber = 50000;       // pick a number, any number
+        string MulticastMessage = "FIND-MY-IP-PLEASE" + new Random().Next().ToString();
+ 
+        public void Find(Action<IPAddress> callback)
+        {
+            FoundCallback = callback;
+ 
+            MulticastSocket = new UdpAnySourceMulticastClient(IPAddress.Parse("239.255.255.250"), PortNumber);
+            MulticastSocket.BeginJoinGroup((result) =>
+            {
+                try
+                {
+                    MulticastSocket.EndJoinGroup(result);
+                    GroupJoined(result);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("EndjoinGroup exception {0}", ex.Message);
+                    // This can happen eg when wifi is off
+                    FoundCallback(null);
+                }
+            },
+                null);
+        }
+ 
+        void callback_send(IAsyncResult result)
+        {
+        }
+ 
+        byte[] MulticastData;
+        bool keepsearching;
+ 
+        void GroupJoined(IAsyncResult result)
+        {
+            MulticastData = Encoding.UTF8.GetBytes(MulticastMessage);
+            keepsearching = true;
+            MulticastSocket.BeginSendToGroup(MulticastData, 0, MulticastData.Length, callback_send, null);
+ 
+            while (keepsearching)
+            {
+                try
+                {
+                    byte[] buffer = new byte[MulticastData.Length];
+                    MulticastSocket.BeginReceiveFromGroup(buffer, 0, buffer.Length, DoneReceiveFromGroup, buffer);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Stopped Group read due to " + ex.Message);
+                    keepsearching = false;
+                }
+            }
+        }
+ 
+        void DoneReceiveFromGroup(IAsyncResult result)
+        {
+            IPEndPoint where;
+            int responselength = MulticastSocket.EndReceiveFromGroup(result, out where);
+            byte[] buffer = result.AsyncState as byte[];
+            if (responselength == MulticastData.Length && buffer.SequenceEqual(MulticastData))
+            {
+                Debug.WriteLine("FOUND myself at " + where.Address.ToString());
+                keepsearching = false;
+                FoundCallback(where.Address);
+            }
+        }
+
+        static ManualResetEvent _clientDone = new ManualResetEvent(false);
+
+        public IPAddress Find()
+        {
+            var ip = IPAddress.None;
+            _clientDone.Reset();
+            Find((a) =>
+            {
+                ip = a;
+                _clientDone.Set();
+            });
+            
+            _clientDone.WaitOne(1000);
+            return ip;
+        }
+    }
+}
+#endif

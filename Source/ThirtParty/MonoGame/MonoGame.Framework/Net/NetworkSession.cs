@@ -42,7 +42,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if !WINDOWS_PHONE
 using System.Runtime.Remoting.Messaging;
+#endif
 using System.Threading;
 
 using Microsoft.Xna.Framework.GamerServices;
@@ -177,7 +179,11 @@ namespace Microsoft.Xna.Framework.Net
 		)
 		{
 			try {
+#if WINDOWS_PHONE
+                return Create(sessionType, maxLocalGamers, maxGamers, 0, null, 0, false);
+#else
 				return EndCreate(BeginCreate(sessionType,maxLocalGamers,maxGamers,null, null));
+#endif
 			} finally {
 				
 			}
@@ -192,7 +198,11 @@ namespace Microsoft.Xna.Framework.Net
 			NetworkSessionProperties sessionProperties)
 		{
 			try {
+#if WINDOWS_PHONE
+                return Create(sessionType, maxLocalGamers, maxGamers, privateGamerSlots, sessionProperties, 0, false);
+#else
 				return EndCreate(BeginCreate(sessionType,maxLocalGamers,maxGamers,privateGamerSlots,sessionProperties,null, null));
+#endif
 			} finally {
 				
 			}
@@ -232,7 +242,9 @@ namespace Microsoft.Xna.Framework.Net
 		
 		public void Dispose (bool disposing) 
 		{
+#if DEBUG
 			Console.WriteLine("Network Session Disposing");
+#endif
 			if (disposing) {
 				
 				foreach (Gamer gamer in _allGamers) {
@@ -286,7 +298,6 @@ namespace Microsoft.Xna.Framework.Net
 			Object asyncState)
 		{
 			return BeginCreate (sessionType, -1, maxLocalGamers, maxGamers, 0, null, callback, asyncState);
-
 		}
 
 		public static IAsyncResult BeginCreate (
@@ -437,16 +448,21 @@ namespace Microsoft.Xna.Framework.Net
 		{
 			NetworkSession returnValue = null;
 			try {
+#if WINDOWS_PHONE
+                return null;
+#else
 				// Retrieve the delegate.
 				AsyncResult asyncResult = (AsyncResult)result;
 
 				// Wait for the WaitHandle to become signaled.
 				result.AsyncWaitHandle.WaitOne ();
 
+
 				// Call EndInvoke to retrieve the results.
 				if (asyncResult.AsyncDelegate is NetworkSessionAsynchronousCreate) {
 					returnValue = ((NetworkSessionAsynchronousCreate)asyncResult.AsyncDelegate).EndInvoke (result);
 				}	
+#endif
 			} finally {
 				// Close the wait handle.
 				result.AsyncWaitHandle.Close ();	 
@@ -462,19 +478,25 @@ namespace Microsoft.Xna.Framework.Net
 			
 			try {
 				// Retrieve the delegate.
-				AsyncResult asyncResult = (AsyncResult)result;            	
+#if WINDOWS_PHONE
+                MonoGamerPeer.FindResults(networkSessions);
+#else
+                AsyncResult asyncResult = (AsyncResult)result;            	
 
+      
 				// Wait for the WaitHandle to become signaled.
 				result.AsyncWaitHandle.WaitOne ();
-				
+				               
 				
 				// Call EndInvoke to retrieve the results.
 				if (asyncResult.AsyncDelegate is NetworkSessionAsynchronousFind) {
 					returnValue = ((NetworkSessionAsynchronousFind)asyncResult.AsyncDelegate).EndInvoke (result);                    
-					
+				
 					MonoGamerPeer.FindResults(networkSessions);
-				}		            	            
-			} finally {
+                }
+#endif
+
+            } finally {
 				// Close the wait handle.
 				result.AsyncWaitHandle.Close ();
 			}
@@ -496,6 +518,8 @@ namespace Microsoft.Xna.Framework.Net
 		{
 			NetworkSession returnValue = null;
 			try {
+#if WINDOWS_PHONE
+#else
 				// Retrieve the delegate.
 				AsyncResult asyncResult = (AsyncResult)result;            	
 
@@ -506,6 +530,7 @@ namespace Microsoft.Xna.Framework.Net
 				if (asyncResult.AsyncDelegate is NetworkSessionAsynchronousJoin) {
 					returnValue = ((NetworkSessionAsynchronousJoin)asyncResult.AsyncDelegate).EndInvoke (result);
 				}		            	            
+#endif
 			} finally {
 				// Close the wait handle.
 				result.AsyncWaitHandle.Close ();
@@ -517,6 +542,8 @@ namespace Microsoft.Xna.Framework.Net
 		{
 			NetworkSession returnValue = null;
 			try {
+#if WINDOWS_PHONE
+#else
 				// Retrieve the delegate.
 				AsyncResult asyncResult = (AsyncResult)result;            	
 
@@ -527,6 +554,7 @@ namespace Microsoft.Xna.Framework.Net
 				if (asyncResult.AsyncDelegate is NetworkSessionAsynchronousJoinInvited) {
 					returnValue = ((NetworkSessionAsynchronousJoinInvited)asyncResult.AsyncDelegate).EndInvoke (result);
 				}		            	            
+#endif
 			} finally {
 				// Close the wait handle.
 				result.AsyncWaitHandle.Close ();
@@ -541,7 +569,11 @@ namespace Microsoft.Xna.Framework.Net
 		{
 			int hostGamer = -1;
 			hostGamer = GetHostingGamerIndex(localGamers);
+#if WINDOWS_PHONE
+            return Find(sessionType, hostGamer, 4, null);
+#else
 			return EndFind(BeginFind(sessionType, hostGamer, 4, searchProperties,null,null));
+#endif
 		}
 
 		public static AvailableNetworkSessionCollection Find (
@@ -584,7 +616,11 @@ namespace Microsoft.Xna.Framework.Net
 
 		public static NetworkSession Join (AvailableNetworkSession availableSession)
 		{
+#if WINDOWS_PHONE
+            return JoinSession(availableSession);
+#else
 			return EndJoin(BeginJoin(availableSession, null, null));
+#endif
 
 		}
 		
@@ -652,7 +688,7 @@ namespace Microsoft.Xna.Framework.Net
 		{
 			// Updates the state of the multiplayer session. 
 			try {
-				while (commandQueue.Count > 0) {
+				while (commandQueue.Count > 0 && networkPeer.IsReady) {
 					var command = (CommandEvent)commandQueue.Dequeue();
 					
 					// for some screwed up reason we are dequeueing something
@@ -665,7 +701,7 @@ namespace Microsoft.Xna.Framework.Net
 						continue;
 					}
 					
-					switch (command.Commnad) {
+					switch (command.Command) {
 					case CommandEventType.SendData:
 						ProcessSendData((CommandSendData)command.CommandObject);
 						break;						
@@ -689,7 +725,9 @@ namespace Microsoft.Xna.Framework.Net
 				}
 			} 
 			catch (Exception exc) {
+#if DEBUG				
 				Console.WriteLine("Error in NetworkSession Update: " + exc.Message);
+#endif	
 			}
 			finally {
 			}
