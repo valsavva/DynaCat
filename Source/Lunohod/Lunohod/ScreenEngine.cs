@@ -19,6 +19,7 @@ namespace Lunohod
 		protected DrawParameters drawParameters;
 		
 		protected SpriteBatchWithFloats spriteBatch;
+		private Matrix? scaleMatrix;
 		
 		// FPS plumbing
 		private Stopwatch fpsSw = new Stopwatch();
@@ -88,6 +89,9 @@ namespace Lunohod
 			this.obstacles = new List<XElement>();
 
 			spriteBatch = new SpriteBatchWithFloats(this.game.GraphicsDevice);
+			
+			if (this.game.Scale != Vector3.One)
+				scaleMatrix = Matrix.CreateScale(this.game.Scale);
 
 			initializeParameters = new InitializeParameters() { Game = game, ScreenEngine = this };
 			updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
@@ -130,12 +134,10 @@ namespace Lunohod
 		{
 			drawParameters.Initiazlize(gameTime);
 
-			if (this.game.Window.ClientBounds.Height > 900)
+			if (this.scaleMatrix.HasValue)
 			{
-				Matrix transform = Matrix.Identity *
-					Matrix.CreateScale(2.0f);
 				this.spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp,
-					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, transform );
+					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, this.scaleMatrix.Value);
 			}
 			else
 			{

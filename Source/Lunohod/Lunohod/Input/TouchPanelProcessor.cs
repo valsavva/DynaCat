@@ -35,7 +35,9 @@ namespace Lunohod
 				
                 int x = (int)(touch.Position.X / game.Scale.X);
                 int y = (int)(touch.Position.Y / game.Scale.Y);
-
+				
+				Debug.WriteLine("Touch: {0} {1}, {2}", touch.State, x, y);
+				
 				if (touch.State == TouchLocationState.Released)
 				{
                     this.pressed = false;

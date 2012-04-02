@@ -10,13 +10,15 @@ namespace Lunohod
 {
 	
     [Register("AppDelegate")]
-    class Program : MonoGameProgram
+    class Program : UIApplicationDelegate
     {
+		GameEngine game;
+		
         public override void FinishedLaunching(UIApplication app)
         {
             // Fun begins..
-            this.MonoGameGame = new GameEngine();
-            this.MonoGameGame.Run();
+            this.game = new GameEngine();
+            this.game.Run();
         }
 
         /// <summary>

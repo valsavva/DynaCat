@@ -76,10 +76,15 @@ namespace Lunohod.Objects
         public void Start()
 		{
             this.soundEffectInstance.Volume = (float)this.Volume;
+#if WINDOWS
             this.soundEffectInstance.Pitch = (float)this.Pitch;
+#else
+            this.soundEffectInstance.Pitch = 1;
+#endif
             this.soundEffectInstance.Pan = (float)this.Pan;
 			this.soundEffectInstance.Play();
 		}
+		
 		public void Stop()
 		{
 			this.soundEffectInstance.Stop();
@@ -103,6 +108,13 @@ namespace Lunohod.Objects
             
             base.ReadXml(reader);
         }
+		public override void Dispose()
+		{
+			this.soundEffectInstance.Stop();
+			this.soundEffectInstance.Dispose();
+			
+			base.Dispose();
+		}
 	}
 }
 

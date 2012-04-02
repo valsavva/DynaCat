@@ -104,7 +104,13 @@ namespace Lunohod
             graphics.PreferredBackBufferHeight = 320;
             graphics.PreferredBackBufferWidth = 480;
 #else
-            inputProcessors = new InputProcessorBase[] {
+			this.Scale = new Vector3(
+				(float)this.Window.ClientBounds.Width / 480f,
+				(float)this.Window.ClientBounds.Height / 320f,
+				1f
+			);
+ 
+			inputProcessors = new InputProcessorBase[] {
                 new TouchPanelProcessor(this)
             };
 #endif
@@ -116,10 +122,6 @@ namespace Lunohod
 		protected override void Initialize()
 		{
 			base.Initialize ();
-			
-			double singleScale = this.Window.ClientBounds.Height / 480.0;
-
-            this.Scale = new Vector3((float)singleScale, (float)singleScale, 1.0f);
 		}
 		
 		protected override void LoadContent()

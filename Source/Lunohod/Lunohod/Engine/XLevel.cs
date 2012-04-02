@@ -32,16 +32,9 @@ namespace Lunohod.Objects
 		{
 			if (p.Game.ScreenEngine.CurrentEvents.ContainsKey("system:levelLoaded"))
 				// removing the effect of level loading
-#if WINDOWS || XBOX
 				p.GameTime = new GameTime(
 					p.GameTime.TotalGameTime, TimeSpan.FromMilliseconds(3)
 				);
-#else
-				p.GameTime = new GameTime(
-					p.GameTime.TotalRealTime, p.GameTime.ElapsedRealTime,
-					p.GameTime.TotalGameTime, TimeSpan.FromMilliseconds(3)
-				);
-#endif
 			
 			base.Update(p);
 		}
