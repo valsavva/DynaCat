@@ -103,6 +103,8 @@ namespace Lunohod
             this.IsMouseVisible = true;
             graphics.PreferredBackBufferHeight = 320;
             graphics.PreferredBackBufferWidth = 480;
+
+            this.Scale = Vector3.One;
 #else
 			this.Scale = new Vector3(
 				(float)this.Window.ClientBounds.Width / 480f,

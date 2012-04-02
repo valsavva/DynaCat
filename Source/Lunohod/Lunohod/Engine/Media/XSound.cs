@@ -110,8 +110,11 @@ namespace Lunohod.Objects
         }
 		public override void Dispose()
 		{
-			this.soundEffectInstance.Stop();
-			this.soundEffectInstance.Dispose();
+            if (!this.soundEffectInstance.IsDisposed)
+            {
+                this.soundEffectInstance.Stop();
+                this.soundEffectInstance.Dispose();
+            }
 			
 			base.Dispose();
 		}
