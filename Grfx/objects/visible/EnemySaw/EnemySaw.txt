@@ -1,10 +1,13 @@
 <Enemy Id="enm
 ###@counter2
-" Class="clsEnemyElectricity1" Bounds="
+" Class="clsEnemySaw" Bounds="
 ###x
 , 
 ###y
-, 11, 11
+, 
+###width
+, 
+###height
 " TraceId="
 ###id
 "/>

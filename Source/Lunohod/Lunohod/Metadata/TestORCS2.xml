@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Name="AnimationSamples.xml" Bounds="0,0,480,320">
+
+	<Include File="Textures.xml" />
+	<Include File="ClassCursor.xml" />
+	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank" />
+		<Font Id="SystemFont" Source="SystemFont" />
+		<Texture Id="chargers" Source="ch"/>
+	</Resources>
+
+	<Class Id="clsRotationAnimation">
+		<NumAnimation Target="Rotation" From="0" To="360" Duration="@duration" InProgress="true" />
+	</Class>
+	
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
+        <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
+    </Layer>
+
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Tower Bounds="0,0,35,35" SignalSpeed="800"/>	
+		<Hero Id="hero" Bounds="50,150,50,50" Class="clsHeroCursor" />
+
+        <Image TextureId="chargers" Origin ="25,25" Bounds="100,100,100,100" Opacity="0.3"/>
+        <Image TextureId="chargers" Origin ="25,25" Bounds="100,100,100,100">
+            <NumAnimation Class="clsRotationAnimation" ClassParams="@duration=20"/>
+        </Image>
+        
+        <Image TextureId="chargers" Origin ="1000,0" RotationCenter="25,25" Bounds="200,200,100,100" Opacity="0.3"/>
+        <Image TextureId="chargers" Origin ="1000,0" RotationCenter="25,25" Bounds="200,200,100,100">
+            <NumAnimation Class="clsRotationAnimation" ClassParams="@duration=20"/>
+        </Image>
+    </Layer>
+
+	<Include File="Dashboard.xml" />	
+
+</Level>
+
