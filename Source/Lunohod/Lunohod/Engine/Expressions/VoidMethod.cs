@@ -58,7 +58,7 @@ namespace Lunohod.Xge
                 case "Explode": action = this.ActionExplode; break;
 
                 // XBlock
-                case "SetEdge": action = this.ActionSetEdges; break;
+                case "SetEdges": action = this.ActionSetEdges; break;
 
                 default:
                     throw new InvalidOperationException(
