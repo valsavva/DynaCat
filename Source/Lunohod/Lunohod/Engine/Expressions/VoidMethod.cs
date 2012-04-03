@@ -12,6 +12,7 @@ namespace Lunohod.Xge
         private XHero hero;
         private XExplosion explosion;
         private XEnemy enemy;
+        private XBlock block;
 
         public VoidMethod(XObject currentObject, string objectId, string propertyId, List<Expression> parameters)
             : base(currentObject, objectId, propertyId, parameters)
@@ -25,29 +26,40 @@ namespace Lunohod.Xge
             hero = this.target as XHero;
             explosion = this.target as XExplosion;
             enemy = this.target as XEnemy;
+            block = this.target as XBlock;
 
             switch (actionId)
             {
+                // XObject
                 case "Enable": action = this.ActionEnable; break;
                 case "Disable": action = this.ActionDisable; break;
 
+                // IRunnable
                 case "Start": action = this.ActionStart; break;
                 case "Stop": action = this.ActionStop; break;
                 case "Pause": action = this.ActionPause; break;
                 case "Resume": action = this.ActionResume; break;
 
+                // XSystem
                 case "StartLevel": action = this.ActionStartLevel; break;
                 case "StartScreen": action = this.ActionStartScreen; break;
                 case "CloseCurrentScreen": action = this.ActionCloseCurrentScreen; break;
                 case "EndCurrentLevel": action = this.ActionEndCurrentLevel; break;
 
+                // XHero
                 case "StartTransaction": action = this.ActionStartTransaction; break;
                 case "EndTransaction": action = this.ActionEndTransaction; break;
                 case "SetDirection": action = this.ActionSetDirection; break;
 
+                // XEnemy
                 case "Attack": action = this.ActionAttack; break;
 
+                // XExplosion
                 case "Explode": action = this.ActionExplode; break;
+
+                // XBlock
+                case "SetEdge": action = this.ActionSetEdges; break;
+
                 default:
                     throw new InvalidOperationException(
                         string.Format("Unknown method: {0}.{1}", this.target.GetType().FullName, this.actionId)
@@ -140,6 +152,15 @@ namespace Lunohod.Xge
         public object ActionExplode()
         {
             this.explosion.Explode();
+            return null;
+        }
+
+        // Block
+        public object ActionSetEdges()
+        {
+            XEdgeType edgeType = (XEdgeType)Enum.Parse(typeof(XEdgeType), ((IExpression<string>)parameters[0]).GetValue());
+            this.block.SetEdges(edgeType);
+
             return null;
         }
         #endregion

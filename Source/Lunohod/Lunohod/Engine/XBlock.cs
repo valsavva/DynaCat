@@ -29,6 +29,11 @@ namespace Lunohod.Objects
 			p.LevelEngine.obstacles.Add(this);
         }
 
+        public void SetEdges(XEdgeType edgeType)
+        {
+            this.Edges = edgeType;
+        }
+
         public override bool ProcessCollision(LevelEngine level, System.Drawing.RectangleF intersect)
         {
 			switch (this.Edges)
