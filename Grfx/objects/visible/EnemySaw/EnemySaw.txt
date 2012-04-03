@@ -76,7 +76,7 @@ _sndSawMid.Start()"/>
 ###@CRLF
 <SequenceSet InProgress="true" RepeatCount="0">
 ###@CRLF
-<NumAnimation From="0" To="40" Target="enm
+<NumAnimation From="0" To="30" Target="enm
 ###@cntrValue2
 .Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
 ###@CRLF
@@ -88,11 +88,11 @@ _sndSawMid.Start()"/>
 ###@CRLF
 <Delay Duration="0.5"/>
 ###@CRLF
-<NumAnimation From="0" To="-45" Target="enm
+<NumAnimation From="0" To="-35" Target="enm
 ###@cntrValue2
 .Y" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
 ###@CRLF
-<Delay Duration="0.5"/>
+<Delay Duration="0.85"/>
 ###@CRLF
 </SequenceSet>
 ###@CRLF
