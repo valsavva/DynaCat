@@ -193,6 +193,7 @@
     <Compile Include="Engine\Serialization\ClassFactory.cs" />
     <Compile Include="Engine\Serialization\XmlReaderEx.cs" />
     <Compile Include="Engine\XFlipEffect.cs" />
+    <Compile Include="Engine\XCachingElement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

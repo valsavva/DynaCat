@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 namespace Lunohod.Objects
 {
     [XmlType("Layer")]
-    public class XLayer : XElement
+    public class XLayer : XCachingElement
     {
 	}
 }

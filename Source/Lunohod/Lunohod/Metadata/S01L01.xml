@@ -66,7 +66,7 @@
         <Block Id="blk3" Bounds="-104, 0, 120, 347" Edges="Stick" TraceId="image3425"/>
         <Block Id="blk4" Bounds="464, 0, 120, 347" Edges="Stick" TraceId="image3427"/>
     </Layer>
-    <Layer Id="brickImages" BackColor="#FFFFFFFF">
+    <Layer Id="brickImages" BackColor="#FFFFFFFF" CacheContent="true">
         <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="464, 290, 26, 20" Stretch="false" Opacity="1" TraceId="image3228"/>
         <Image Id="dfltMask9" TextureId="txr_texture_brick_clean" Bounds="464, 10, 26, 20" Stretch="false" Opacity="1" TraceId="image3170"/>
         <Image Id="dfltMask10" TextureId="txr_texture_brick_clean" Bounds="464, 30, 26, 20" Stretch="false" Opacity="1" TraceId="image3172"/>

@@ -11,7 +11,7 @@ namespace Lunohod.Objects
 {
 	
     [XmlType("Group")]
-	public class XGroup : XElement, IExploding
+	public class XGroup : XCachingElement, IExploding
 	{
         /// <inheritdoc />
         [XmlAttribute]
