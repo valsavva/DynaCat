@@ -10,4 +10,90 @@
 ###height
 " TraceId="
 ###id
-"/>
+">
+###@CRLF
+<Image TextureId="txr_
+###@filename
+" RotationCenter="
+###@halfWidh
+,
+###@halfWidh
+">
+###@CRLF
+<NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
+###@CRLF
+</Image>
+###@CRLF
+<Block Id="blkDamageZone_
+###@counter3
+" Bounds="7,7,36,36" />
+###@CRLF
+<!-- 10,10,60,60 -->
+###@CRLF
+<IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_
+###@cntrValue3
+" EnterAction="setAttack_enm
+###@cntrValue2
+.Start();setSound_enm
+###@cntrValue2
+.Start()" ExitAction="setAttack_enm
+###@cntrValue2
+.Stop();setSound_enm
+###@cntrValue2
+.Stop();enm
+###@cntrValue2
+_sndSawMid.Stop();enm
+###@cntrValue2
+_sndSawEnd.Start()" />
+###@CRLF
+<SequenceSet Id="setAttack_enm
+###@cntrValue2
+" RepeatCount="0">
+###@CRLF
+<Do Action="enm
+###@cntrValue2
+.Attack()"/>
+###@CRLF
+<Delay Duration="0.2"/>
+###@CRLF
+</SequenceSet>
+###@CRLF
+<SequenceSet Id="setSound_enm
+###@cntrValue2
+" RepeatCount="1">
+###@CRLF
+<Do Action="enm
+###@cntrValue2
+_sndSawStart.Start()"/>
+###@CRLF
+<Delay Duration="0.2"/>
+###@CRLF
+<Do Action="enm
+###@cntrValue2
+_sndSawMid.Start()"/>
+###@CRLF
+</SequenceSet>
+###@CRLF
+<SequenceSet InProgress="true" RepeatCount="0">
+###@CRLF
+<NumAnimation From="0" To="30" Target="enm
+###@cntrValue2
+.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
+###@CRLF
+<Delay  Duration="0.5"/>
+###@CRLF
+<NumAnimation From="0" To="5" Target="enm
+###@cntrValue2
+.Y" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
+###@CRLF
+<Delay Duration="0.5"/>
+###@CRLF
+<NumAnimation From="0" To="-35" Target="enm
+###@cntrValue2
+.Y" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
+###@CRLF
+<Delay Duration="0.85"/>
+###@CRLF
+</SequenceSet>
+###@CRLF
+</Enemy>

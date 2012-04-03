@@ -170,15 +170,15 @@ namespace Microsoft.Xna.Framework {
 			//var version = Version.Parse (strVersion);
 
 			EAGLRenderingAPI eaglRenderingAPI;
-			try {
-				_graphicsContext = new GraphicsContext (null, null, 2, 0, GraphicsContextFlags.Embedded);
-				eaglRenderingAPI = EAGLRenderingAPI.OpenGLES2;
-				_glapi = new Gles20Api ();
-			} catch {
+			//try {
+			//	_graphicsContext = new GraphicsContext (null, null, 2, 0, GraphicsContextFlags.Embedded);
+			//	eaglRenderingAPI = EAGLRenderingAPI.OpenGLES2;
+			//	_glapi = new Gles20Api ();
+			//} catch {
 				_graphicsContext = new GraphicsContext (null, null, 1, 1, GraphicsContextFlags.Embedded);
 				eaglRenderingAPI = EAGLRenderingAPI.OpenGLES1;
 				_glapi = new Gles11Api ();
-			}
+			//}
 
 			_graphicsContext.MakeCurrent (null);
 			_graphicsContext.LoadAll ();
