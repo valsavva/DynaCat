@@ -13,9 +13,6 @@
 		<Screen Id="ScreenMain" File="ScreenMain.xml" />
 	</Screens>
 	<Levels>
-		<Level Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
-		<Level Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
-		<Level Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
         <Level Id="----- Series 1 -----" File="S01L01.xml" />
         <Level Id="S01L01" File="S01L01.xml" />
         <Level Id="S01L02" File="S01L02.xml" />
@@ -28,6 +25,10 @@
         <Level Id="S02LXX_Dyrka" File="S02LXX_Dyrka.xml" />
         <Level Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
         <Level Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" />
+        <Level Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
+        <Level Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
+        <Level Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
+        <Level Id="S02LXX_VKolce" File="S02LXX_VKolce.xml" />
         <Level Id="------" File="S01L01.xml" />
         <Level Id="AlphaTest" File="AlphaTest.xml" />
         <Level Id="AlphaTest2" File="AlphaTest2.xml" />
@@ -88,6 +89,19 @@
 		<Level Id="FPSTest_dry_IBA-1000_sheet" File="FPSTest_dry_IBA-1000_sheet.xml" />
 	</Levels>
 </Game>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
