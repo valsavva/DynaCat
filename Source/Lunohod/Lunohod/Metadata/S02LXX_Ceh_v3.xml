@@ -108,11 +108,11 @@
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
-        <Enemy Id="enm2" Class="clsEnemySaw" Bounds="190, 190, 50, 50" TraceId="MOVIER_right">
+        <Enemy Id="enm2" Class="clsEnemySaw" Bounds="190, 194, 50, 50" TraceId="MOVIER_right">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Block Id="blkDamageZone_17" Bounds="7,7,36,36" />
+            <Block Id="blkDamageZone_17" Bounds="7,7,36,36"/>
             <!-- 10,10,60,60 -->
             <IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_17" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm2" RepeatCount="0">
@@ -133,7 +133,9 @@
                 <Delay Duration="0.5"/>
                 <NumAnimation From="0" To="-30" Target="enm2.Y" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
                 <Delay Duration="3"/>
+                <Do Action="blkDamageZone_17.Disable()" />
                 <Do Action="enm2.X=enm2.X-140" />
+                <Do Action="blkDamageZone_17.Enable()" />
                 <!--<NumAnimation From="0" To="-140" Target="enm2.X" Duration="0.001" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />-->
             </SequenceSet>
             <!-- HANDEDIT 1 <<< -->
