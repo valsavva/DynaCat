@@ -4,17 +4,19 @@
 		<SoundFile Id="sndEnemySawDying" Source="skeletonFX_enemy_dead_scream_1"/>
 	</Resources>-->
 	
-    <Resources RootFolder="Textures">
+    <!--<Resources RootFolder="Textures">
         <Texture Id="txrEnemySawDefault" Source="circular_saw"/>
-    </Resources>
+        <Texture Id="txrMed" Source="circular_saw_50"/>
+        <Texture Id="txrBig" Source="circular_saw_80"/>
+    </Resources>-->
 
          
 	<Class Id="clsEnemySaw">
-		<Enemy IsExploding="true" Damage="20">
+		<Enemy IsExploding="false" Damage="40">
 
-            <Image TextureId="txrEnemySawDefault" RotationCenter="35, 35">
+            <!--<Image TextureId="txrMed" RotationCenter="@center,@center">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
-            </Image>
+            </Image>-->
 
 			<!-- attack -->
    			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack()" StayTriggered="false"/>

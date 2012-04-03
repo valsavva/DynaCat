@@ -10,4 +10,18 @@
 ###height
 " TraceId="
 ###id
-"/>
+">
+###@CRLF
+<Image TextureId="txr_
+###@filename
+" RotationCenter="
+###@halfWidh
+,
+###@halfWidh
+">
+###@CRLF
+<NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
+###@CRLF
+</Image>
+###@CRLF
+</Enemy>
