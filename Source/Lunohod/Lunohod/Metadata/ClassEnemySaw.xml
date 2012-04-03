@@ -1,25 +1,18 @@
-<Include>	
+<Include>
 
-	<!--<Resources RootFolder="Sound">
-		<SoundFile Id="sndEnemySawDying" Source="skeletonFX_enemy_dead_scream_1"/>
-	</Resources>-->
-	
-    <!--<Resources RootFolder="Textures">
-        <Texture Id="txrEnemySawDefault" Source="circular_saw"/>
-        <Texture Id="txrMed" Source="circular_saw_50"/>
-        <Texture Id="txrBig" Source="circular_saw_80"/>
-    </Resources>-->
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndSawStart" Source="demo_fx_saw_start"/>
+        <SoundFile Id="sndSawMid" Source="demo_fx_saw_mid"/>
+        <SoundFile Id="sndSawEnd" Source="demo_fx_saw_end"/>
+        <SoundFile Id="sndSawWork" Source="demo_fx_saw_work"/>
+    </Resources>
 
-         
-	<Class Id="clsEnemySaw">
-		<Enemy IsExploding="false" Damage="40">
-
-            <!--<Image TextureId="txrMed" RotationCenter="@center,@center">
-                <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
-            </Image>-->
-
-			<!-- attack -->
-   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack()" StayTriggered="false"/>
+    <Class Id="clsEnemySaw">
+		<Enemy Damage="11">
+            <Sound Id="this_sndSawStart" FileId="sndSawStart" Volume="0.5" Pitch="0" Pan="0"/>
+            <Sound Id="this_sndSawMid" FileId="sndSawMid" Volume="0.5" Pitch="0" Pan="0"/>
+            <Sound Id="this_sndSawEnd" FileId="sndSawEnd" Volume="0.5" Pitch="0" Pan="0"/>
+            <Sound Id="this_sndSawWork" FileId="sndSawWork" Volume="0.5" Pitch="0" Pan="0"/>
 		</Enemy>
 	</Class>
 

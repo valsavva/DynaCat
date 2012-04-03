@@ -532,6 +532,11 @@ Func GetAttr($str, $attr)
 		Return $IdCounter[$counterNumber]
 	EndIf
 
+	if StringInStr($attr, "@cntrValue") <> 0 then  
+		;MsgBox(0, "", GetSubAttr($str, "style", "opacity"))
+		$counterNumber = StringMid($attr, 11, 1)
+		Return $IdCounter[$counterNumber]
+	EndIf
 
 	if $attr = "@stretch" Then 
 		$size = GetImageSize(GetFullPath($str))
