@@ -203,6 +203,7 @@
     <Compile Include="Engine\XBlock.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Engine\XCachingElement.cs" />
     <Compile Include="Engine\XClass.cs" />
     <Compile Include="Engine\XDashboard.cs">
       <SubType>Code</SubType>
