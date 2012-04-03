@@ -21,9 +21,9 @@
         <Level Id="----- Series 2 -----" File="S01L01.xml" />
         <Level Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
         <Level Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
-        <Level Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
         <Level Id="S02LXX_Dyrka" File="S02LXX_Dyrka.xml" />
         <Level Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
+        <Level Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
         <Level Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" />
         <Level Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
         <Level Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
@@ -89,6 +89,7 @@
 		<Level Id="FPSTest_dry_IBA-1000_sheet" File="FPSTest_dry_IBA-1000_sheet.xml" />
 	</Levels>
 </Game>
+
 
 
 

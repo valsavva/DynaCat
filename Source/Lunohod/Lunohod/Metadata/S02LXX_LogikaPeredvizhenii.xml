@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.5.03 -->
+<!-- SVG to XGAME xml converter v1.5.04 -->
 <!-- source: D:\Lunohod\Levels\S02LXX_LogikaPeredvizhenii\S02LXX_LogikaPeredvizhenii.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_LogikaPeredvizhenii" Bounds="0, 0, 480, 320">
     <LevelSettings Difficulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
@@ -70,7 +70,7 @@
         <Food Id="fd7" Class="clsFood" Points="1" Bounds="338, 62, 27, 15" TraceId="image3291">
             <Image TextureId="txr_fish_3_me" />
         </Food>
-        <Food Id="fd8" Class="clsFood" Points="1" Bounds="254, 43, 27, 15" TraceId="image3294">
+        <Food Id="fd8" Class="clsFood" Points="1" Bounds="254, 39, 27, 15" TraceId="image3294">
             <Image TextureId="txr_fish_3_me" />
         </Food>
         <Food Id="fd9" Class="clsFood" Points="1" Bounds="370, 22, 28, 17" TraceId="image3307">
@@ -166,7 +166,7 @@
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Hero Id="hero" Class="clsHero" Bounds="142, 136, 33, 23" TraceId="image3013"/>
+        <Hero Id="hero" Class="clsHero" Bounds="142, 136, 33, 24" TraceId="image3013"/>
         <Group Id="exit" Class="clsExit" Bounds="364, 246, 37, 54" TraceId="image3049" />
     </Layer>
     <Include File="ClassExplosion.xml" />
