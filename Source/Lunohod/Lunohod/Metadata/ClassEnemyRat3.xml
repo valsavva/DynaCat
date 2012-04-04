@@ -2,7 +2,10 @@
 
 	<Resources RootFolder="Sound">
 		<SoundFile Id="sndEnemyRat3Dying" Source="skeletonFX_enemy_dead_scream_1"/>
-	</Resources>
+        <SoundFile Id="sndEnemyRat3Hit1" Source="rat_hit1_demo"/>
+        <SoundFile Id="sndEnemyRat3Hit2" Source="rat_hit2_demo"/>
+        <SoundFile Id="sndEnemyRat3Hit3" Source="rat_hit3_demo"/>
+    </Resources>
 	
     <Resources RootFolder="Textures">
         <Texture Id="txrEnemyRat3Default" Source="EnemyRat3_enemy_1"/>
@@ -12,7 +15,7 @@
 
          
 	<Class Id="clsEnemyRat3">
-		<Enemy IsExploding="true" Damage="20">
+		<Enemy IsExploding="true" Damage="6">
 		
 <!-- States -->
 
@@ -30,13 +33,30 @@
     			</SequenceSet>
 			</ParallelSet>
 
-			<!-- attack -->
-   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this_anmAttack.Start()" StayTriggered="false" Group="this_sttStates">
+            <!-- attack -->
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Group="this_sttStates">
                 <Image Id="this_txrEnemyRat3Attack" TextureId="txrEnemyRat3Attack" Bounds="-14, -3, 46, 30"/>
-   			</IntersectionTrigger>
-			<NumAnimation Id="this_anmAttack" Duration="0.1" Target="this_txrEnemyRat3Attack.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
-			
-			<!-- default -->
+            </IntersectionTrigger>
+
+            <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
+                <Do Action="this_anmAttack.Start()" />
+                <Delay Duration="system.Rnd(0.5,1)" />
+            </SequenceSet>
+
+            <ParallelSet Id="this_anmAttack" RepeatCount="1">
+                <Do Action="this.Attack()" />
+                <RandomSet>
+                    <Sound FileId="sndEnemyRat3Hit1" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndEnemyRat3Hit2" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndEnemyRat3Hit3" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndEnemyRat3Hit1" Volume="0.5" Pitch="-0.1" Pan="0"/>
+                    <Sound FileId="sndEnemyRat3Hit2" Volume="0.5" Pitch="-0.1" Pan="0"/>
+                    <Sound FileId="sndEnemyRat3Hit3" Volume="0.5" Pitch="-0.1" Pan="0"/>
+                </RandomSet>
+                <NumAnimation Duration="0.1" Target="this_txrEnemyRat3Attack.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+            </ParallelSet>
+
+            <!-- default -->
 			<BoolTrigger Group="this_sttStates">
 				<Image Id="this_txrEnemyRat3Default" TextureId="txrEnemyRat3Default" Bounds="-14, -3, 46, 30"/>
                 <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->

@@ -17,13 +17,14 @@
 	/>
 	<Do Id="doBolotoSpeed" Action="
 			@heroTime1=@heroBaseTime/40;@heroTime2=@heroBaseTime/20;@heroTime3=@heroBaseTime/4;@heroTime4=@heroBaseTime/2;
-			@heroSpeed1=@heroBaseSpeed*0.5;@heroSpeed2=@heroBaseSpeed*1.2;@heroSpeed3=@heroBaseSpeed*0.7;@heroSpeed4=@heroBaseSpeed*0.3;" />
+			@heroSpeed1=@heroBaseSpeed*0.5;@heroSpeed2=@heroBaseSpeed*1.1;@heroSpeed3=@heroBaseSpeed*1;@heroSpeed4=@heroBaseSpeed*0.5;" />
 
 	<!-- this should not belong to any group -->
 	<BoolTrigger Condition="this:InBoloto" EnterAction="doBolotoSpeed.Start()" ExitAction="doNormalSpeed.Start()"/>
 
 	<BoolTrigger Condition="this:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />
-	
+
+    <BoolTrigger Condition="hero:ElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
@@ -37,7 +38,13 @@
         <KeyFrame Time="@heroTime3" Value="@heroSpeed4" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime4" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
-	
+
+    <!-- hero speed electric shock animation -->
+    <NumAnimation Id="anmElectricShockSpeed" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
+        <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
+        <KeyFrame Time="0.5" Value="200" Smoothing="Smooth"/>
+        <KeyFrame Time="1" Value="0" Smoothing="Smooth"/>
+    </NumAnimation>
 	
 	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
     <BoolTrigger Condition="system:heroSpeedRecalculate">

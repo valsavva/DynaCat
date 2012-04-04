@@ -44,6 +44,15 @@
 
 <!-- States -->
 
+            <!-- electic shock -->
+            <BoolTrigger Condition="this:ElecticShock" EnterAction="anmElecticShock.Start()" ExitAction="anmElecticShockEnd.Start()"/>
+            <NumAnimation Id="anmElecticShock" From="-1" To="1" Target="this.Rotation" Duration="0.05" Autoreverse="true" RepeatCount="0" />
+            <SequenceSet Id="anmElecticShockEnd">
+                <Delay Duration="2" />
+                <Do Action="anmElecticShock.Stop()" />
+                <NumAnimation From="0" To="0" Target="this.Rotation" Duration="0.1" Autoreverse="true" RepeatCount="1" />
+            </SequenceSet>
+
             <!-- dying -->
 			<BoolTrigger Condition="this.IsDead" EnterAction="setHeroDying.Start()" StayTriggered="true" Group="sttHeroStates">
 				<Image Id="imgHeroDying" TextureId="txrHeroDying"/>
