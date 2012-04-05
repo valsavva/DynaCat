@@ -13,10 +13,9 @@
 		<Screen Id="ScreenMain" File="ScreenMain.xml" />
 	</Screens>
 	<Levels>
-		<Level Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
-		<Level Id="S01L02" File="S01L02.xml" />
         <Level Id="----- Series 1 -----" File="S01L01.xml" />
         <Level Id="S01L01" File="S01L01.xml" />
+		<Level Id="S01L02" File="S01L02.xml" />
         <Level Id="S01L03" File="S01L03.xml" />
         <Level Id="S01L04" File="S01L04.xml" />
         <Level Id="----- Series 2 -----" File="S01L01.xml" />
@@ -30,6 +29,7 @@
         <Level Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
         <Level Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
         <Level Id="S02LXX_VKolce" File="S02LXX_VKolce.xml" />
+		<Level Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
         <Level Id="------" File="S01L01.xml" />
         <Level Id="AlphaTest" File="AlphaTest.xml" />
         <Level Id="AlphaTest2" File="AlphaTest2.xml" />
