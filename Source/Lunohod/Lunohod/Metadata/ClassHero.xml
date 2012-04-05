@@ -12,7 +12,8 @@
 	
     <Resources RootFolder="Textures">
         <Texture Id="txrHeroDefault" Source="cat_var_2b"/>
-        <Texture Id="txrHeroEating" Source="cat_var_2a"/>
+        <Texture Id="txrHeroEating" Source="cat_var_eat_sprite_2x40x41"/>
+        <!--<Texture Id="txrHeroEating2" Source="cat_var_eat2"/>-->
         <Texture Id="txrHeroDying" Source="cat_var_2c"/>
         <Texture Id="txrHeroGottaDamage" Source="cat_var_2c"/>
         <Texture Id="txrHeroWaitingExplosion" Source="cat_var_1c"/>
@@ -53,6 +54,18 @@
                 <NumAnimation From="0" To="0" Target="this.Rotation" Duration="0.1" Autoreverse="true" RepeatCount="1" />
             </SequenceSet>
 
+            <!-- explosion : wait -->
+            <BoolTrigger Condition="this:WaitingExplosion" Group="sttHeroStates">
+                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
+                <Image TextureId="txrHeroWaitingExplosion" Bounds="-4, -10, 40, 33"/>
+            </BoolTrigger>
+
+            <!-- explosion : good one!-->
+            <BoolTrigger Condition="this:GoodExplosion" Group="sttHeroStates">
+                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
+                <Image TextureId="txrHeroExplode" Bounds="-4, -10, 40, 33"/>
+            </BoolTrigger>
+
             <!-- dying -->
 			<BoolTrigger Condition="this.IsDead" EnterAction="setHeroDying.Start()" StayTriggered="true" Group="sttHeroStates">
 				<Image Id="imgHeroDying" TextureId="txrHeroDying" Bounds="-4, -10, 40, 33"/>
@@ -76,32 +89,25 @@
                 <Delay Duration="1" />
             </SequenceSet>
 
-            <!-- explosion : wait -->
-            <BoolTrigger Condition="this:WaitingExplosion" Group="sttHeroStates">
-                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
-                <Image TextureId="txrHeroWaitingExplosion" Bounds="-4, -10, 40, 33"/>
-            </BoolTrigger>
-
-            <!-- explosion : good one!-->
-            <BoolTrigger Condition="this:GoodExplosion" Group="sttHeroStates">
-                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
-                <Image TextureId="txrHeroExplode" Bounds="-4, -10, 40, 33"/>
-            </BoolTrigger>
-
             <!-- eating -->
 			<BoolTrigger Condition="this:Eating" EnterAction="setHeroEating.Start()" StayTriggered="false" Group="sttHeroStates">
-                <Image TextureId="txrHeroEating" Bounds="-4, -10, 40, 33"/>
+                <!--<Image TextureId="txrHeroEating" Bounds="-4, -18, 40, 41"/>-->
+                <Sprite Id="sprHeroEating" TextureId="txrHeroEating" Bounds="-4, -18, 40, 41" FrameBounds="0,0,40,41" />
+                <!--<BoolTrigger Property="zzzsprHeroEating.InProgress" ExitAction="this:-Eating" />-->
                 <SequenceSet Id="setHeroEating">
-				    <RandomSet>
-					    <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
-					    <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
-					    <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
-					    <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0"/>
-					    <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0.3"/>
-					    <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0.3"/>
-					    <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0.3"/>
-					    <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0.3"/>
-				    </RandomSet>
+                    <ParallelSet>
+                        <NumAnimation From="0" To="1" Duration="0.2" Autoreverse="false" Target="sprHeroEating.CurrentFrame" RepeatCount="1.5" Fill="End"/>
+				        <RandomSet>
+					        <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
+					        <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
+					        <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
+					        <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0"/>
+					        <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0.3"/>
+					        <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0.3"/>
+					        <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0.3"/>
+					        <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0.3"/>
+				        </RandomSet>
+                    </ParallelSet>
                     <Do Action="this:-Eating" />
                 </SequenceSet>
 			</BoolTrigger>
