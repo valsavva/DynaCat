@@ -24,13 +24,13 @@
 ###@CRLF
 </Image>
 ###@CRLF
-<Block Id="blkDamageZone_
+<Group Id="grpDamageZone_
 ###@counter3
 " Bounds="7,7,36,36" />
 ###@CRLF
 <!-- 10,10,60,60 -->
 ###@CRLF
-<IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_
+<IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_
 ###@cntrValue3
 " EnterAction="setAttack_enm
 ###@cntrValue2
