@@ -24,7 +24,7 @@
 			</SequenceSet>
 
             <!-- eated -->
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();hero:Eating" StayTriggered="true" Group="this_foodStates">
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();hero:+Eating" StayTriggered="true" Group="this_foodStates">
                 <SequenceSet Id="this_anmEated">
                     <ParallelSet>
                         <NumAnimation Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" InProgress="true"/>
