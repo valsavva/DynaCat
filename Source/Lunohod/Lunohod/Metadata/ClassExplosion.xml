@@ -12,6 +12,7 @@
     
     
 	<Class Id="clsExplosion">
+        
 		<Explosion Bounds="0,0,400,400" Ranges="BoomVeryClose=50,BoomClose=85,BoomFar=170,BoomVeryFar=210,BoomVeryVeryFar=250">
 			<Image Id="this_imgBomb" Bounds="190,190,24,18" TextureId="txrBomb" Opacity="0"/>
 			<Image Id="this_imgExplosion" Bounds="75,96,250,208" TextureId="txrExplosion" Enabled="false"/>
