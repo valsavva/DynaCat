@@ -26,6 +26,7 @@
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
                 <!--<Let Target="this.Damage" Value="0" />-->
+                <Do Action="hero:+GoodExplosion"/>
                 <Sound FileId="sndEnemyRat2Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
     			<SequenceSet>
     				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>

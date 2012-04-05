@@ -270,6 +270,12 @@
     <Content Include="Content\Sound\demo_fx_saw_end.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+	<Content Include="Content\Sound\skeletonFX_hero_eating_chavk1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\skeletonFX_hero_eating_chavk2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sound\demo_fx_saw_mid.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

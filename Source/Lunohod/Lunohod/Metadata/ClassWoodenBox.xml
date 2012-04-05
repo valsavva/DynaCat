@@ -1,23 +1,9 @@
 <Include>	
-	
-	<Resources RootFolder="Sound">
-		<SoundFile Id="sndHeroStick1" Source="skeletonFX_hero_wooden_wall_1"/>
-		<SoundFile Id="sndHeroStick2" Source="skeletonFX_hero_wooden_wall_2"/>
-	</Resources>
 
-
-	<Class Id="clsWoodenBox">
+    <Class Id="clsWoodenBox">
 	
 		<Block IsExploding="true" Edges="Stick">
 
-
-            <BoolTrigger Condition="hero:stick" EnterAction="this_setHeroStick.Start()"/>
-            <RandomSet Id="this_setHeroStick">
-				<Sound FileId="sndHeroStick1" Volume="0.5" Pitch="0"/>
-				<Sound FileId="sndHeroStick2" Volume="0.5" Pitch="0"/>
-				<Sound FileId="sndHeroStick1" Volume="0.5" Pitch="0.3"/>
-				<Sound FileId="sndHeroStick2" Volume="0.5" Pitch="0.3"/>
-			</RandomSet>
 <!-- States -->
             <!-- explosion -->
             <!-- destroy -->

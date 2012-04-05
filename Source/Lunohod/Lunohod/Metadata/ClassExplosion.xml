@@ -22,7 +22,7 @@
 				<Do Action="this_sndBombHiss.Start();hero:+WaitingExplosion"/>
 				<NumAnimation Target="this_imgBomb.Opacity" From="1" To="0" Duration="0.1" Autoreverse="true" RepeatCount="4"/>
 				<Do Action="this_imgBomb.Disable()"/>
-				<Do Action="this_sndExplosion.Start();this_imgExplosion.Enable();this_sndBombHiss.Stop();hero:-WaitingExplosion;hero:+GoodExplosion"/>
+				<Do Action="this_sndExplosion.Start();this_imgExplosion.Enable();this_sndBombHiss.Stop()"/>
 				<ParallelSet InProgress="true">
 					<SequenceSet InProgress="true">
 						<Delay Duration="0.4"/>
@@ -31,7 +31,7 @@
 					<NumAnimation From="1" To="0" Smoothing="Flat" Duration="0.2" Autoreverse="false" Target="this_imgExplosion.Opacity" RepeatCount="2"/>
 					<Delay Duration="0.6"/>
 				</ParallelSet>
-				<Do Action="hero:-GoodExplosion"/>
+				<Do Action="hero:-WaitingExplosion"/>
 				<Do Action="this.Disable()"/>
 			</SequenceSet>
 		</Explosion>
