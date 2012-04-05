@@ -57,9 +57,9 @@
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Block Id="blkDamageZone_1" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_1" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_1" EnterAction="setAttack_enm1.Start();setSound_enm1.Start()" ExitAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_1" EnterAction="setAttack_enm1.Start();setSound_enm1.Start()" ExitAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm1" RepeatCount="0">
                 <Do Action="enm1.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -82,9 +82,9 @@
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Block Id="blkDamageZone_2" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_2" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_2" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_2" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm2" RepeatCount="0">
                 <Do Action="enm2.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -107,9 +107,9 @@
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Block Id="blkDamageZone_3" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_3" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_3" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_3" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm3" RepeatCount="0">
                 <Do Action="enm3.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -135,9 +135,9 @@
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Block Id="blkDamageZone_4" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_4" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_4" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_4" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm4" RepeatCount="0">
                 <Do Action="enm4.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -163,9 +163,9 @@
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Block Id="blkDamageZone_5" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_5" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blkDamageZone_5" EnterAction="setAttack_enm5.Start();setSound_enm5.Start()" ExitAction="setAttack_enm5.Stop();setSound_enm5.Stop();enm5_sndSawMid.Stop();enm5_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_5" EnterAction="setAttack_enm5.Start();setSound_enm5.Start()" ExitAction="setAttack_enm5.Stop();setSound_enm5.Stop();enm5_sndSawMid.Stop();enm5_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm5" RepeatCount="0">
                 <Do Action="enm5.Attack()"/>
                 <Delay Duration="0.2"/>

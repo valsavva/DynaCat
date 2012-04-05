@@ -8,7 +8,7 @@
     </Resources>
 
     <Class Id="clsEnemySaw">
-		<Enemy Damage="11">
+		<Enemy Damage="15">
             <Sound Id="this_sndSawStart" FileId="sndSawStart" Volume="0.5" Pitch="0" Pan="0"/>
             <Sound Id="this_sndSawMid" FileId="sndSawMid" Volume="0.5" Pitch="0" Pan="0"/>
             <Sound Id="this_sndSawEnd" FileId="sndSawEnd" Volume="0.5" Pitch="0" Pan="0"/>

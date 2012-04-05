@@ -11,7 +11,7 @@
 	</Resources>
          
 	<Class Id="clsEnemyElectricity1">
-		<Enemy IsExploding="false" Damage="1">
+		<Enemy IsExploding="false" Damage="9">
 		
 			<!-- attack -->
    			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start();hero:+ElecticShock" ExitAction="this_anmDamageDealing.Stop();hero:-ElecticShock" Group="this_sttStates"/>
