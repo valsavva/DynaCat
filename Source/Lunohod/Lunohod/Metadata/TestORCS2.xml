@@ -28,7 +28,7 @@
         </Image>
         
         <Image TextureId="chargers" Origin ="1000,0" RotationCenter="25,25" Bounds="200,200,100,100" Opacity="0.3"/>
-        <Image TextureId="chargers" Origin ="1000,0" RotationCenter="25,25" Bounds="200,200,100,100">
+        <Image TextureId="chargers" Origin ="1000,0" RotationCenter="25,25" Location="200,200" Scale="2">
             <NumAnimation Class="clsRotationAnimation" ClassParams="@duration=20"/>
         </Image>
     </Layer>
