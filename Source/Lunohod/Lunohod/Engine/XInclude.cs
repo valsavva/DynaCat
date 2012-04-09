@@ -25,11 +25,11 @@ namespace Lunohod.Objects
 
                 if (this.file == null)
                     return;
-
-				this.Subcomponents = new XObjectCollection
-				{
-					GameEngine.LoadXml<XInclude>(this.file)
-				};
+				
+				var include = GameEngine.LoadXml<XInclude>(this.file);
+				var subComponents = include.Subcomponents;
+				include.Subcomponents = null;
+				this.Subcomponents = subComponents;
 			}
 		}
 		

@@ -274,7 +274,6 @@ namespace Lunohod.Objects
                 {
                     result.Subcomponents.Add(this.Subcomponents[i].Copy());
                 }
-                result.InitHierarchy();
             }
 
             return result;
@@ -428,6 +427,9 @@ namespace Lunohod.Objects
 		{
 			if (this.Id != null)
 				this.Id = this.Id.Replace(par, val);
+			
+			if (this.ClassParams != null)
+				this.ClassParams = this.ClassParams.Replace(par, val);
 		}
 		
 		internal void ReplaceParameters(List<string> pars, List<string> vals)
