@@ -22,27 +22,51 @@ namespace Lunohod.Objects
 			this.game = p.Game;
 		}
 		
-		public string GetLevelId(int i)
+		public string GetLevelName(int levelIndex)
 		{
-			if (i >= game.GameObject.Levels.Count)
+			if (levelIndex >= game.GameObject.Levels.Count)
 				return "";
 			
-			var level = game.GameObject.Levels[i];
-			
-			return level.Id;
+			return game.GameObject.Levels[levelIndex].Name;
 		}
 		
-		public void StartLevel(int i)
+		public void StartLevel(int levelIndex)
 		{
-			if (i >= game.GameObject.Levels.Count)
+			if (levelIndex >= game.GameObject.Levels.Count)
 				return;
 
-			game.LoadLevel(game.GameObject.Levels[i].Id);
+			game.LoadLevel(game.GameObject.Levels[levelIndex].File);
 		}
 		
-		public void StartScreen(string id)
+		public string GetSeriesLevelName(int seriesIndex, int levelIndex)
 		{
-			game.LoadScreen(id);
+			if (seriesIndex >= game.GameObject.LevelSeries.Count)
+				return "";
+			
+			var series = game.GameObject.LevelSeries[seriesIndex];
+			
+			if (levelIndex >= series.Levels.Count)
+				return "";
+			
+			return series.Levels[levelIndex].Name;
+		}
+		
+		public void StartSeriesLevel(int seriesIndex, int levelIndex)
+		{
+			if (seriesIndex >= game.GameObject.LevelSeries.Count)
+				return;
+			
+			var series = game.GameObject.LevelSeries[seriesIndex];
+			
+			if (levelIndex >= series.Levels.Count)
+				return;
+			
+			game.LoadLevel(series.Levels[levelIndex].File);
+		}
+		
+		public void StartScreen(string fileName)
+		{
+			game.LoadScreen(fileName);
 		}
 		
 		public void CloseCurrentScreen()
@@ -55,7 +79,23 @@ namespace Lunohod.Objects
             this.EnqueueEvent(GameEventType.EndCurrentLevel);
 		}
 
-        public double RndX(double start, double end)
+		public string GetSeriesName(int i)
+		{
+			if (i >= game.GameObject.LevelSeries.Count)
+				return "";
+			
+			return game.GameObject.LevelSeries[i].Name;
+		}
+		
+		public void StartSeries(int i)
+		{
+			if (i >= game.GameObject.LevelSeries.Count)
+				return;
+			
+			game.LoadScreen(game.GameObject.LevelSeries[i].File);
+		}
+		
+		public double RndX(double start, double end)
 		{
 			return this.Rnd(start, end) * this.game.Scale.X;
 		}

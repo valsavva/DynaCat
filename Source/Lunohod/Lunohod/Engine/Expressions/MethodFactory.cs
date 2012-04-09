@@ -19,8 +19,13 @@ namespace Lunohod.Xge
 
             if (target == null)
                 throw new InvalidOperationException(string.Format("Could not find object with Id: [{0}]", objectId));
-
-            var returnType = target.GetType().GetMethod(actionId).ReturnType;
+			
+			var method = target.GetType().GetMethod(actionId);
+			
+			if (method == null)
+                throw new InvalidOperationException(string.Format("Could not find method [{0}] on object [{1}]", actionId, objectId));
+			
+            var returnType = method.ReturnType;
 
             if (returnType == typeof(string))
                 return new StrMethod(currentObject, objectId, actionId, parameters);

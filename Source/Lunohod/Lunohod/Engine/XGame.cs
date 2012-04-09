@@ -35,13 +35,13 @@ namespace Lunohod.Objects
         /// <summary>
         /// Collection of <see cref="XLevel"/> objects that will participate in the game./>
         /// </summary>
-		[XmlArray]
-		public List<XLevel> Levels;
+		[XmlArray("Levels")]
+		public List<XLevelSeries> LevelSeries;
         /// <summary>
         /// Collection of <see cref="XScreen"/> objects that will participate in the game./>
         /// </summary>
-        [XmlArray]
-		public List<XScreen> Screens;
+		[XmlIgnore]
+		public List<XLevelInfo> Levels;
 
         public override void ReadXml(System.Xml.XmlReader reader)
         {
@@ -55,9 +55,14 @@ namespace Lunohod.Objects
         public override void AddSubcomponent(string name, XObject sub)
         {
             if (name == "Levels")
-                this.Levels = sub.Subcomponents.Cast<XLevel>().ToList();
-            else if (name == "Screens")
-                this.Screens = sub.Subcomponents.Cast<XScreen>().ToList();
+			{
+                this.LevelSeries = sub.Subcomponents.Cast<XLevelSeries>().ToList();
+				this.Levels = (
+					from ls in this.LevelSeries
+					from l in ls.Levels
+					select l
+				).ToList();
+			}
             else
                 base.AddSubcomponent(name, sub);
         }

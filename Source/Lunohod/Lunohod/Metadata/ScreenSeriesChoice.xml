@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Screen Bounds="0,0,480,320">
+	<Class Id="clsSeriesButton">
+		<Group>
+			<TapArea Action="system.StartSeries(@seriesNum)" />
+			<Text Text="=system.GetSeriesName(@seriesNum)" FontId="fntSystem" />
+		</Group>
+	</Class>
+
+	<Resources RootFolder="Textures">
+		<Texture Id="txrBackground" Source="screenBackgroundBig" />
+	</Resources>
+	<Resources RootFolder="Global">
+		<Texture Id="txrBlank" Source="blank" />
+		<Font Id="fntSystem" Source="SystemFont" />
+	</Resources>
+	
+	<Layer Id="background">
+		<Image TextureId="txrBackground" />
+	</Layer>
+	<Layer>
+		<Group Bounds="50,50,500,500">
+			<Group Bounds="0,0,100,30" Class="clsSeriesButton" ClassParams="@seriesNum=0" />
+			<Group Bounds="0,30,100,30" Class="clsSeriesButton" ClassParams="@seriesNum=1" />
+			<Group Bounds="0,60,100,30" Class="clsSeriesButton" ClassParams="@seriesNum=2" />
+			<Group Bounds="0,90,100,30" Class="clsSeriesButton" ClassParams="@seriesNum=3" />
+		</Group>
+		
+		<Group Bounds="430,50,50,100">
+			<TapArea Action="system.CloseCurrentScreen()" />
+			<Text Text="back" FontId="fntSystem" Color="#FF0000" Rotation="90" Origin="0,20" />
+		</Group>
+	</Layer>
+</Screen>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Game Bounds="0,0,480,320" StartScreen="ScreenMain" ShowFPS="true">
+<Game Bounds="0,0,480,320" StartScreen="ScreenMain.xml" ShowFPS="true">
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
@@ -9,85 +9,85 @@
 		<Texture Id="wave0800" Source="wave0800" />
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
-	<Screens>
-		<Screen Id="ScreenMain" File="ScreenMain.xml" />
-	</Screens>
 	<Levels>
-        <Level Id="----- Series 1 -----" File="S01L01.xml" />
-        <Level Id="S01L01" File="S01L01.xml" />
-		<Level Id="S01L02" File="S01L02.xml" />
-        <Level Id="S01L03" File="S01L03.xml" />
-        <Level Id="S01L04" File="S01L04.xml" />
-        <Level Id="----- Series 2 -----" File="S01L01.xml" />
-        <Level Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
-        <Level Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
-        <Level Id="S02LXX_Dyrka" File="S02LXX_Dyrka.xml" />
-        <Level Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
-        <Level Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
-        <Level Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" />
-        <Level Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
-        <Level Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
-        <Level Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
-        <Level Id="S02LXX_VKolce" File="S02LXX_VKolce.xml" />
-		<Level Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
-        <Level Id="------" File="S01L01.xml" />
-        <Level Id="AlphaTest" File="AlphaTest.xml" />
-        <Level Id="AlphaTest2" File="AlphaTest2.xml" />
-        <Level Id="AlphaTest3" File="AlphaTest3.xml" />
-		<Level Id="style100500" File="style100500.xml" />
-		<Level Id="skeletonAlisa" File="skeletonAlisa.xml" />
-		<Level Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
-		<Level Id="skeletonChelnok" File="skeletonChelnok.xml" />
-		<Level Id="skeletonChetyreKomnaty" File="skeletonChetyreKomnaty.xml" />
-		<Level Id="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
-		<Level Id="skeletonElochka" File="skeletonElochka.xml" />
-		<Level Id="skeletonKruchuVerchu" File="skeletonKruchuVerchu.xml" />
-		<Level Id="skeletonLabirinth" File="skeletonLabirinth.xml" />
-		<Level Id="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
-		<Level Id="skeletonLoshadka" File="skeletonLoshadka.xml" />
-		<Level Id="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
-		<Level Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
-		<Level Id="skeletonParavozik" File="skeletonParavozik.xml" />
-		<Level Id="skeletonTir" File="skeletonTir.xml" />
-		<Level Id="skeletonTrenazher" File="skeletonTrenazher.xml" />
-		<Level Id="skeletonTroynoyZaslon" File="skeletonTroynoyZaslon.xml" />
-		<Level Id="skeletonVKolce" File="skeletonVKolce.xml" />
-		<Level Id="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
-		<Level Id="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
-		<Level Id="---" File="skeletonAlisa.xml" />
-		
-		<!-- Test screens start here -->
-		<Level Id="style100500opt" File="style100500opt.xml" />
-		<Level Id="style100500opt2" File="style100500opt2.xml" />
-		<Level Id="style100500opt3dash" File="style100500opt3dash.xml" />
-		<Level Id="style100500DashXLSize57" File="style100500DashXLSize57.xml" />
-		<Level Id="style100500NewControl" File="style100500NewControl.xml" />
-		
-		<Level Id="AnimationSamples" File="AnimationSamples.xml" />
-		<Level Id="TestDeath" File="TestDeath.xml" />
-		<Level Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
-        <Level Id="TestORCS2" File="TestORCS2.xml" />
-        <Level Id="TestExplosion" File="TestExplosion.xml" />
-		<Level Id="robocat_demo" File="robocat_demo.xml" />
-
-		<Level Id="TestTeleport" File="TestTeleport.xml" />		
-		<Level Id="TestFood" File="TestFood.xml" />
-		<Level Id="TestActionsAndEnabled" File="TestActionsAndEnabled.xml" />
-		<Level Id="TestClasses" File="TestClasses.xml" />
-		<Level Id="TestDepthAndFlipEffect" File="TestDepthAndFlipEffect.xml" />
-		<Level Id="TestLevel1" File="TestLevel1.xml" />
-		<Level Id="TestLevel2" File="TestLevel2.xml" />
-		<Level Id="TestSignals" File="TestSignals.xml" />
-		<Level Id="TestRnd" File="TestRnd.xml" />
-		<Level Id="test_c_boloto" File="test_c_boloto.xml" />
-		<Level Id="FPSTest" File="FPSTest.xml" />
-		<Level Id="FPSTest_dry_I-100" File="FPSTest_dry_I-100.xml" />
-		<Level Id="FPSTest_dry_I-1000" File="FPSTest_dry_I-1000.xml" />
-		<Level Id="FPSTest_dry_IA-100" File="FPSTest_dry_IA-100.xml" />
-		<Level Id="FPSTest_dry_IA-1000" File="FPSTest_dry_IA-1000.xml" />
-		<Level Id="FPSTest_dry_IBA-100" File="FPSTest_dry_IBA-100.xml" />
-		<Level Id="FPSTest_dry_IBA-1000" File="FPSTest_dry_IBA-1000.xml" />
-		<Level Id="FPSTest_dry_IBA-1000_sheet" File="FPSTest_dry_IBA-1000_sheet.xml" />
+        <LevelSeries Id="series1" Name="----- Series 1 -----" File="ScreenSeries1.xml">
+	        <LevelInfo Id="S01L01" File="S01L01.xml" />
+			<LevelInfo Id="S01L02" File="S01L02.xml" />
+	        <LevelInfo Id="S01L03" File="S01L03.xml" />
+	        <LevelInfo Id="S01L04" File="S01L04.xml" />
+		</LevelSeries>
+        <LevelSeries Id="series2" Name="----- Series 2 -----" File="ScreenSeries2.xml">
+	        <LevelInfo Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
+	        <LevelInfo Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
+	        <LevelInfo Id="S02LXX_Dyrka" File="S02LXX_Dyrka.xml" />
+	        <LevelInfo Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
+	        <LevelInfo Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
+	        <LevelInfo Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" />
+	        <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
+	        <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
+	        <LevelInfo Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
+	        <LevelInfo Id="S02LXX_VKolce" File="S02LXX_VKolce.xml" />
+			<LevelInfo Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
+		</LevelSeries>
+        <LevelSeries Id="series3" Name="----- Tests -----" File="ScreenTests.xml">
+	        <LevelInfo Id="AlphaTest" File="AlphaTest.xml" />
+	        <LevelInfo Id="AlphaTest2" File="AlphaTest2.xml" />
+	        <LevelInfo Id="AlphaTest3" File="AlphaTest3.xml" />
+			<LevelInfo Id="style100500" File="style100500.xml" />
+			<LevelInfo Id="skeletonAlisa" File="skeletonAlisa.xml" />
+			<LevelInfo Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
+			<LevelInfo Id="skeletonChelnok" File="skeletonChelnok.xml" />
+			<LevelInfo Id="skeletonChetyreKomnaty" File="skeletonChetyreKomnaty.xml" />
+			<LevelInfo Id="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
+			<LevelInfo Id="skeletonElochka" File="skeletonElochka.xml" />
+			<LevelInfo Id="skeletonKruchuVerchu" File="skeletonKruchuVerchu.xml" />
+			<LevelInfo Id="skeletonLabirinth" File="skeletonLabirinth.xml" />
+			<LevelInfo Id="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
+			<LevelInfo Id="skeletonLoshadka" File="skeletonLoshadka.xml" />
+			<LevelInfo Id="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
+			<LevelInfo Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
+			<LevelInfo Id="skeletonParavozik" File="skeletonParavozik.xml" />
+			<LevelInfo Id="skeletonTir" File="skeletonTir.xml" />
+			<LevelInfo Id="skeletonTrenazher" File="skeletonTrenazher.xml" />
+			<LevelInfo Id="skeletonTroynoyZaslon" File="skeletonTroynoyZaslon.xml" />
+			<LevelInfo Id="skeletonVKolce" File="skeletonVKolce.xml" />
+			<LevelInfo Id="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
+			<LevelInfo Id="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
+			<LevelInfo Id="---" File="skeletonAlisa.xml" />
+			
+			<!-- Test screens start here -->
+			<LevelInfo Id="style100500opt" File="style100500opt.xml" />
+			<LevelInfo Id="style100500opt2" File="style100500opt2.xml" />
+			<LevelInfo Id="style100500opt3dash" File="style100500opt3dash.xml" />
+			<LevelInfo Id="style100500DashXLSize57" File="style100500DashXLSize57.xml" />
+			<LevelInfo Id="style100500NewControl" File="style100500NewControl.xml" />
+			
+			<LevelInfo Id="AnimationSamples" File="AnimationSamples.xml" />
+			<LevelInfo Id="TestDeath" File="TestDeath.xml" />
+			<LevelInfo Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
+	        <LevelInfo Id="TestORCS2" File="TestORCS2.xml" />
+	        <LevelInfo Id="TestExplosion" File="TestExplosion.xml" />
+			<LevelInfo Id="robocat_demo" File="robocat_demo.xml" />
+	
+			<LevelInfo Id="TestTeleport" File="TestTeleport.xml" />		
+			<LevelInfo Id="TestFood" File="TestFood.xml" />
+			<LevelInfo Id="TestActionsAndEnabled" File="TestActionsAndEnabled.xml" />
+			<LevelInfo Id="TestClasses" File="TestClasses.xml" />
+			<LevelInfo Id="TestDepthAndFlipEffect" File="TestDepthAndFlipEffect.xml" />
+			<LevelInfo Id="TestLevel1" File="TestLevel1.xml" />
+			<LevelInfo Id="TestLevel2" File="TestLevel2.xml" />
+			<LevelInfo Id="TestSignals" File="TestSignals.xml" />
+			<LevelInfo Id="TestRnd" File="TestRnd.xml" />
+			<LevelInfo Id="test_c_boloto" File="test_c_boloto.xml" />
+			<LevelInfo Id="FPSTest" File="FPSTest.xml" />
+			<LevelInfo Id="FPSTest_dry_I-100" File="FPSTest_dry_I-100.xml" />
+			<LevelInfo Id="FPSTest_dry_I-1000" File="FPSTest_dry_I-1000.xml" />
+			<LevelInfo Id="FPSTest_dry_IA-100" File="FPSTest_dry_IA-100.xml" />
+			<LevelInfo Id="FPSTest_dry_IA-1000" File="FPSTest_dry_IA-1000.xml" />
+			<LevelInfo Id="FPSTest_dry_IBA-100" File="FPSTest_dry_IBA-100.xml" />
+			<LevelInfo Id="FPSTest_dry_IBA-1000" File="FPSTest_dry_IBA-1000.xml" />
+			<LevelInfo Id="FPSTest_dry_IBA-1000_sheet" File="FPSTest_dry_IBA-1000_sheet.xml" />
+		</LevelSeries>
 	</Levels>
 </Game>
 

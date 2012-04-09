@@ -73,9 +73,12 @@ namespace Lunohod.Objects
         { "Texture", typeof(XTextureResource) },
         { "MusicFile", typeof(XMusicResource) },
         { "SoundFile", typeof(XSoundResource) },
-
+		
+		// Screens and levels
         { "Screen", typeof(XScreen) },
         { "Level", typeof(XLevel) },
+        { "LevelInfo", typeof(XLevelInfo) },
+        { "LevelSeries", typeof(XLevelSeries) },
         { "Screens", typeof(XElement) },
         { "Levels", typeof(XElement) }
         };
