@@ -190,10 +190,12 @@ namespace Lunohod.Objects
 				{
 					tmpBounds = this.Bounds;
 					
+					tmpBounds.Offset(this.RotationCenter.X * this.ScaleVector.X, this.RotationCenter.Y * this.ScaleVector.Y);
+					
 					if (this.ParentElement.TransState.LocationTransform != Matrix.Identity)
 					{
-						tmpVector1.X = this.Bounds.X + this.rotationCenter.X;
-						tmpVector1.Y = this.Bounds.Y + this.rotationCenter.Y;
+						tmpVector1.X = tmpBounds.X;
+						tmpVector1.Y = tmpBounds.Y;
 						Vector2.Transform(ref tmpVector1, ref this.ParentElement.TransState.LocationTransform, out tmpVector2);
 						tmpBounds.X = tmpVector2.X;
 						tmpBounds.Y = tmpVector2.Y;

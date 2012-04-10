@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.AudioToolbox;
 using Microsoft.Xna.Framework;
 using System.IO;
 
@@ -16,6 +17,9 @@ namespace Lunohod
 		
         public override void FinishedLaunching(UIApplication app)
         {
+			AudioSession.Initialize();
+			AudioSession.Category = AudioSessionCategory.AmbientSound;
+			
             // Fun begins..
             this.game = new GameEngine();
             this.game.Run();

@@ -130,7 +130,6 @@ namespace Lunohod
 		{
             LoadGameElement();
 
-			//LoadLevel(gameObject.Levels[0].File);
 			LoadScreen(gameObject.StartScreen);
 
 			base.LoadContent();
@@ -176,9 +175,9 @@ namespace Lunohod
 		
 		#region Content management
 
-		public void LoadScreen(string id)
+		public void LoadScreen(string fileName)
 		{
-            var newScreenEngine = new ScreenEngine(this, this.gameObject.Screens.Cast<XScreen>().First(s => s.Id == id).File);
+            var newScreenEngine = new ScreenEngine(this, fileName);
 
 			lock(this.screenEngines)
 			{
@@ -190,9 +189,9 @@ namespace Lunohod
 			GC.Collect();
 		}
 
-		public void LoadLevel(string id)
+		public void LoadLevel(string fileName)
 		{
-			var newScreenEngine = new LevelEngine(this, this.gameObject.Levels.Cast<XLevel>().First(l => l.Id == id).File);
+			var newScreenEngine = new LevelEngine(this, fileName);
 
 			lock(this.screenEngines)
 			{
@@ -330,7 +329,7 @@ namespace Lunohod
 		{
 			var tapAreas = this.ScreenEngine.tapAreas;
 			
-			for(int j = 0; j < tapAreas.Count; j++)
+			for(int j = tapAreas.Count - 1; j >= 0; j--)
 			{
 				var tapArea = tapAreas[j];
 				
