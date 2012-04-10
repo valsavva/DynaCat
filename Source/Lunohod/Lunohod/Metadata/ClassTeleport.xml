@@ -1,0 +1,30 @@
+<Include>	
+
+	<Resources RootFolder="Sound">
+		<!--<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
+		<SoundFile Id="sndBombHiss" Source="bombHiss"/>-->
+	</Resources>
+
+	<Resources RootFolder="Textures">
+        <!--<Texture Id="txrTeleportTubeHorHero" Source="TeleportTubeHorHero"/>
+        <Texture Id="txrTeleportTubeVertHero" Source="TeleportTubeVertHero"/>-->
+	</Resources>
+    
+    <Class Id="clsTeleport">
+
+    </Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+

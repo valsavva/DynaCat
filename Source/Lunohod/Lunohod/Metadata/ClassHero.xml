@@ -46,7 +46,7 @@
                     <Delay Duration="0.3" />
                     <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
                     <Delay Duration="1.5"/>
-                    <Do Action="hero.EndTransaction();this:-Enter"/>
+                    <Do Action="this:-Enter"/>
                 </SequenceSet>
             </BoolTrigger>            
 

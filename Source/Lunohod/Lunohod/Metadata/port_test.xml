@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.5.05 -->
+<!-- source: D:\Lunohod\Grfx\design\teleport\port_test.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="port_test" Bounds="0, 0, 480, 320">
+    <LevelSettings Difficulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
+    <Include File="ClassTower.xml" />
+    <Include File="ClassHero.xml" />
+    <Include File="ClassExit.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_TeleportEntryDown" Source="TeleportEntryDown" />
+        <Texture Id="txr_TeleportEntryUp" Source="TeleportEntryUp" />
+        <Texture Id="txr_TeleportTubeVert" Source="TeleportTubeVert" />
+        <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
+        <Texture Id="txr_TeleportKoleno" Source="TeleportKoleno" />
+        <Texture Id="txr_TeleportEntryRight" Source="TeleportEntryRight" />
+        <Texture Id="txr_TeleportEntryLeft" Source="TeleportEntryLeft" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3074"/>
+    </Layer>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="-50, 0, 50, 320" Edges="Stick" TraceId="image3126"/>
+        <Block Id="blk2" Bounds="0, -50, 480, 50" Edges="Stick" TraceId="image3129"/>
+        <Block Id="blk3" Bounds="480, 0, 50, 320" Edges="Stick" TraceId="image3131"/>
+        <Block Id="blk4" Bounds="0, 320, 480, 50" Edges="Stick" TraceId="image3133"/>
+    </Layer>
+    <Layer Id="design" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_TeleportEntryDown" Bounds="380, 74, 56, 24" Rotation="0" Stretch="false" Opacity="1" TraceId="image3041"/>
+        <Image Id="dfltMask3" TextureId="txr_TeleportEntryUp" Bounds="380, 10, 56, 24" Rotation="0" Stretch="false" Opacity="1" TraceId="image3052"/>
+        <Image Id="dfltMask4" TextureId="txr_TeleportTubeVert" Bounds="380, 34, 56, 40" Rotation="0" Stretch="false" Opacity="1" TraceId="image3063"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask5" TextureId="txr_TeleportTubeHor" Bounds="94, 120, 40, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3797"/>
+        <Image Id="dfltMask6" TextureId="txr_TeleportTubeHor" Bounds="134, 120, 40, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3800"/>
+        <Image Id="dfltMask7" TextureId="txr_TeleportTubeVert" Bounds="158, 160, 56, 40" Rotation="0" Stretch="false" Opacity="1" TraceId="image3832"/>
+        <Image Id="dfltMask8" TextureId="txr_TeleportKoleno" Bounds="160, 120, 56, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3821"/>
+        <Image Id="dfltMask9" TextureId="txr_TeleportTubeVert" Bounds="158, 200, 56, 40" Rotation="0" Stretch="false" Opacity="1" TraceId="image3846"/>
+        <Image Id="dfltMask10" TextureId="txr_TeleportTubeHor" Bounds="204, 220, 40, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3848"/>
+        <Image Id="dfltMask11" TextureId="txr_TeleportTubeHor" Bounds="234, 220, 40, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3850"/>
+        <Image Id="dfltMask12" TextureId="txr_TeleportKoleno" Bounds="160, 224, 56, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3852"/>
+        <Image Id="dfltMask13" TextureId="txr_TeleportTubeHor" Bounds="274, 220, 40, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3854"/>
+        <Image Id="dfltMask14" TextureId="txr_TeleportTubeHor" Bounds="314, 220, 40, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3856"/>
+        <Image Id="dfltMask15" TextureId="txr_TeleportEntryRight" Bounds="354, 220, 24, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3866"/>
+        <Image Id="dfltMask16" TextureId="txr_TeleportEntryLeft" Bounds="70, 120, 24, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3843"/>
+        <Group Id="tlp1" Bounds="70, 120, 24, 56" TraceId="image3168">
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="tlp1">
+                <SequenceSet RepeatCount="1">
+                    <Do Action="@heroDepartPointX=hero.X;
+                            @heroDepartPointY=hero.Y;                             
+                            @heroDestPointX=70-5;                             
+                            @heroDestPointY=120+10;                             
+                            hero:+Enter"/>
+                    <Delay Duration="3" />
+                    <Do Action="hero.X=hero.X+50"/>
+                    
+                    <Do Action="hero.SetDirection(1,0)"/>
+                    <Do Action="hero.EndTransaction()"/>
+                </SequenceSet>
+            </IntersectionTrigger>
+        </Group>
+    </Layer>
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Hero Id="hero" Class="clsHero" Bounds="10, 140, 33, 24" TraceId="image3015"/>
+        <Group Id="exit" Class="clsExit" Bounds="353, 140, 37, 54" TraceId="image3049" />
+    </Layer>
+    <Include File="ClassExplosion.xml" />
+    <Include File="Dashboard.xml" />
+</Level>
+<!-- Food=0 Enemy=0 Block=4 DesignImage=16 Animation=0 Teleport=1 FoodPack=0 -->
