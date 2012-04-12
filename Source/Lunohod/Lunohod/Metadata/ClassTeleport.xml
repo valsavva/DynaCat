@@ -6,12 +6,20 @@
 	</Resources>
 
 	<Resources RootFolder="Textures">
-        <!--<Texture Id="txrTeleportTubeHorHero" Source="TeleportTubeHorHero"/>
-        <Texture Id="txrTeleportTubeVertHero" Source="TeleportTubeVertHero"/>-->
+        <Texture Id="txrTeleportTubeHorHero" Source="TeleportTubeHorHero"/>
+        <Texture Id="txrTeleportTubeVertHero" Source="TeleportTubeVertHero"/>
+        <Texture Id="txrTeleportKoleno" Source="TeleportKoleno"/>
 	</Resources>
     
     <Class Id="clsTeleport">
-
+        <Group Bounds="0,0,480,320">
+        <BoolTrigger Condition="@type==1" EnterAction="anmTeleportTubeHorHero.Start()" Group="sttTeleportStates">
+            <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" />
+        </BoolTrigger>
+        <SequenceSet Id="anmTeleportTubeHorHero">
+            <NumAnimation Target="imgTeleportTubeHorHero.X" From="24" To="54" IsDelta="true" Duration="2" Fill="End" RepeatCount="20" />
+        </SequenceSet>
+        </Group>
     </Class>
 
 </Include>

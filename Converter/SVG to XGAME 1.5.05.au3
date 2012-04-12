@@ -959,7 +959,7 @@ Local $includes = "", $cls, $xmlExist = False
 
 		FilesClose()
 		FormatFile($outFileName)
-		PutLevelToGameXml()
+		;PutLevelToGameXml()
 		
 		if Not $xmlExist Then
 			FileAddToCSProj(GetFileName($inFileName) & ".xml", $Metadata, 'Lunohod.csproj')
