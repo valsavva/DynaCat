@@ -73,11 +73,21 @@ namespace Lunohod.Objects
 		{
 			this.EnqueueEvent(GameEventType.CloseCurrentScreen);
 		}
-		
-		public void EndCurrentLevel()
-		{
-            this.EnqueueEvent(GameEventType.EndCurrentLevel);
-		}
+
+        public void RestartLevel()
+        {
+            this.EnqueueEvent(GameEventType.RestartLevel);
+        }
+
+        public void AbandonLevel()
+        {
+            this.EnqueueEvent(GameEventType.AbandonLevel);
+        }
+
+        public void EndLevel()
+        {
+            this.EnqueueEvent(GameEventType.EndLevel);
+        }
 
 		public string GetSeriesName(int i)
 		{

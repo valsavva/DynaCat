@@ -35,9 +35,11 @@ namespace Lunohod.Objects
 		
 		public override void Dispose()
 		{
+#if WINDOWS
+#else
 			this.soundEffect.Dispose();
-
-			base.Dispose();
+#endif
+            base.Dispose();
 		}
 	}
 }

@@ -96,7 +96,7 @@
 						<NumAnimation Duration="0.1" Target="imgHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
 					</ParallelSet>
 					<Do Action="this.EndTransaction()"/>
-					<Do Action="system.EndCurrentLevel()"/>
+					<Do Action="system.EndLevel()"/>
 				</SequenceSet>
 			</BoolTrigger>
 

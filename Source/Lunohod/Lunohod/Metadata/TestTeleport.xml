@@ -104,7 +104,7 @@
 
 		<!-- Exit! -->		
 		<Image Id="imgExit" TextureId="_E_" Bounds="215,135,50,50"/>
-		<IntersectionTrigger ObjectId1="hero" ObjectId2="imgExit" Value="400" EnterAction="system.EndCurrentLevel()" />
+		<IntersectionTrigger ObjectId1="hero" ObjectId2="imgExit" Value="400" EnterAction="system.EndLevel()" />
 	</Layer>
 
 	<Include File="Dashboard.xml" />
