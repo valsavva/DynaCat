@@ -42,11 +42,13 @@ namespace Lunohod.Xge
 
                 // XSystem
                 case "StartLevel": action = this.ActionStartLevel; break;
+                case "RestartLevel": action = this.ActionRestartLevel; break;
 				case "StartSeriesLevel": action = this.ActionStartSeriesLevel; break;
                 case "StartScreen": action = this.ActionStartScreen; break;
 				case "StartSeries": action = this.ActionStartSeries; break;
                 case "CloseCurrentScreen": action = this.ActionCloseCurrentScreen; break;
-                case "EndCurrentLevel": action = this.ActionEndCurrentLevel; break;
+                case "AbandonLevel": action = this.ActionAbandonLevel; break;
+                case "EndLevel": action = this.ActionEndLevel; break;
 
                 // XHero
                 case "StartTransaction": action = this.ActionStartTransaction; break;
@@ -110,6 +112,11 @@ namespace Lunohod.Xge
             this.system.StartLevel((int)((IExpression<double>)parameters[0]).GetValue());
             return null;
         }
+        public object ActionRestartLevel()
+        {
+            this.system.RestartLevel();
+            return null;
+        }
         public object ActionStartSeriesLevel()
         {
             this.system.StartSeriesLevel((int)((IExpression<double>)parameters[0]).GetValue(), (int)((IExpression<double>)parameters[1]).GetValue());
@@ -130,9 +137,14 @@ namespace Lunohod.Xge
             this.system.CloseCurrentScreen();
             return null;
         }
-        public object ActionEndCurrentLevel()
+        public object ActionAbandonLevel()
         {
-            this.system.EndCurrentLevel();
+            this.system.AbandonLevel();
+            return null;
+        }
+        public object ActionEndLevel()
+        {
+            this.system.EndLevel();
             return null;
         }
 

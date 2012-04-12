@@ -58,7 +58,7 @@
 		<TapArea Bounds="270,258,60,60" Event="system:explosion" />
 		
 		<Image TextureId="blank" Bounds="450,5,20,20" BackColor="#FF0000" Opacity="0.5"/>
-		<TapArea Bounds="430,00,60,60" Action="system.EndCurrentLevel()" />	
+		<TapArea Bounds="430,00,60,60" Action="system.EndLevel()" />	
 					
 -->		
 	</Dashboard>

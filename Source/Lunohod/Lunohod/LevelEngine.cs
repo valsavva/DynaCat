@@ -26,8 +26,8 @@ namespace Lunohod
 		
 		private int bombCounter;
         
-        public LevelEngine(GameEngine gameEngine, string name)
-			: base(gameEngine, name)
+        public LevelEngine(GameEngine gameEngine, string fileName)
+			: base(gameEngine, fileName)
 		{
 		}
 
@@ -190,7 +190,6 @@ namespace Lunohod
                 case GameEventType.Down: this.hero.Direction = Direction.VectorDown; this.hero.Speed = this.hero.DefaultSpeed; break;
                 case GameEventType.Left: this.hero.Direction = Direction.VectorLeft; this.hero.Speed = this.hero.DefaultSpeed; break;
                 case GameEventType.Right: this.hero.Direction = Direction.VectorRight; this.hero.Speed = this.hero.DefaultSpeed; break;
-                case GameEventType.Stop: this.hero.Direction = Direction.VectorStop; this.hero.Speed = this.hero.DefaultSpeed; break;
 	            case GameEventType.Explosion: PlantBomb(); break;
 			}
 

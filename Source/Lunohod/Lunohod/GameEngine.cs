@@ -157,11 +157,11 @@ namespace Lunohod
 		{
             GraphicsDevice.Clear(Color.CornflowerBlue);
 			
-			this.ScreenEngine.Draw(gameTime);
-			/*
-			for(int i = 0; i < screenEngines.Count; i++)
-				screenEngines[i].Draw(gameTime);
-				*/
+            for(int i = 0; i < screenEngines.Count; i++)
+            {
+                if (i == screenEngines.Count - 1 || screenEngines[i + 1].RootComponent.IsModal)
+                    screenEngines[i].Draw(gameTime);
+            }
 			
 			base.Draw(gameTime);
         }
@@ -291,21 +291,39 @@ namespace Lunohod
 			for (int i = 0; i < numOfEvents; i++)
 			{
 				var e = this.eventQueue.Dequeue();
-				
-				switch (e.EventType)
-				{
-					case GameEventType.EndCurrentLevel :
-					case GameEventType.CloseCurrentScreen :{
-						this.CloseCurrentScreen();
-						e.IsHandled = true;
-					
-						// break out of the loop
-						this.eventQueue.Clear();
-						numOfEvents = 0;
-						continue;
-						//
-					};
-				}
+
+                switch (e.EventType)
+                {
+                    case GameEventType.RestartLevel:
+                        {
+                            var fileName = this.LevelEngine.FileName;
+                            this.CloseCurrentScreen();
+                            this.LoadLevel(fileName);
+                            e.IsHandled = true;
+
+                            // break out of the loop
+                            this.eventQueue.Clear();
+                            numOfEvents = 0;
+                            continue;
+                        } break;
+                    case GameEventType.EndLevel:
+                    case GameEventType.AbandonLevel:
+                        {
+                            this.CloseCurrentScreen();
+                            e.IsHandled = true;
+
+                            // break out of the loop
+                            this.eventQueue.Clear();
+                            numOfEvents = 0;
+                            continue;
+                            //
+                        } break;
+                    case GameEventType.CloseCurrentScreen:
+                        {
+                            this.CloseCurrentScreen();
+                            e.IsHandled = true;
+                        } break;
+                }
 				
 				if (!e.IsHandled)
 				{

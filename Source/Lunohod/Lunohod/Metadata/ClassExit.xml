@@ -41,7 +41,7 @@
     					<KeyFrame Time="2.5" Value="-100,-400,-25" Smoothing="Smooth"/>
     				</NumAnimation>
 				</ParallelSet>
-				<Do Action="system.EndCurrentLevel()"/>
+				<Do Action="system.EndLevel()"/>
 			</SequenceSet>
 			
 			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start()"/>

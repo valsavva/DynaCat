@@ -11,7 +11,6 @@ namespace Lunohod
 	public class ScreenEngine
 	{
 		protected GameEngine game;
-		protected string fileName;
 		
 		// cycle parameters
 		protected InitializeParameters initializeParameters;
@@ -30,17 +29,19 @@ namespace Lunohod
 		
 		public List<XTapArea> tapAreas;
 		public List<XElement> obstacles;
+
+        public string FileName { get; private set; }
+        
+        public virtual Type RootComponentType { get { return typeof(XScreen); } }
 		
-		public virtual Type RootComponentType { get { return typeof(XScreen); } }
-		
-		public XObject RootComponent { get; protected set; }
+		public XScreen RootComponent { get; protected set; }
 
 		public Dictionary<string, bool> CurrentEvents { get; private set; }
 		
 		public ScreenEngine(GameEngine game, string fileName)
 		{
 			this.game = game;
-			this.fileName = fileName;
+			this.FileName = fileName;
 			this.CurrentEvents = new Dictionary<string, bool>();
 		}
 		
@@ -98,7 +99,7 @@ namespace Lunohod
 			drawParameters = new DrawParameters() { Game = game, ScreenEngine = this, SpriteBatch = spriteBatch };
 			
 			PerfMon.Start("LoadXml");
-			this.RootComponent = GameEngine.LoadXml(this.fileName, this.RootComponentType);
+			this.RootComponent = (XScreen)GameEngine.LoadXml(this.FileName, this.RootComponentType);
 			PerfMon.Stop("LoadXml");
 
 			PerfMon.Start("InitHierarchy");

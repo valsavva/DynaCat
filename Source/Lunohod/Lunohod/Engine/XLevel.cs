@@ -27,16 +27,5 @@ namespace Lunohod.Objects
 			
 			this.EnqueueEvent(GameEventType.LevelLoaded);
 		}
-		
-		public override void Update(UpdateParameters p)
-		{
-			if (p.Game.ScreenEngine.CurrentEvents.ContainsKey("system:levelLoaded"))
-				// removing the effect of level loading
-				p.GameTime = new GameTime(
-					p.GameTime.TotalGameTime, TimeSpan.FromMilliseconds(3)
-				);
-			
-			base.Update(p);
-		}
     }
 }
