@@ -9,9 +9,12 @@
 
 <!-- States -->
 
-            <!-- eated -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();hero:+Eating" StayTriggered="false" />
+            <!-- eaten -->
+			<BoolTrigger Condition="!this:eaten">
+				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
+			</BoolTrigger>
             <SequenceSet Id="this_anmEated">
+				<Do Action="this.IsExploding=false" />
                 <ParallelSet>
                     <NumAnimation Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" InProgress="true"/>
                     <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1" InProgress="true"/>
@@ -22,7 +25,6 @@
                         <Do Action="this_imgPoints10.Disable()" />
                     </SequenceSet>
                 </ParallelSet>
-                <Do Action="hero:-Eating" />
                 <Do Action="this.Disable()"/>
             </SequenceSet>
             <!-- explosion  -->

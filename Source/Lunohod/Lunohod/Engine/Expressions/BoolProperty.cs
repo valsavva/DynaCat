@@ -11,6 +11,7 @@ namespace Lunohod.Xge
     public class BoolProperty : Property<bool>, IExpression<bool>
     {
         private IRunnable runnable;
+        private IExploding exploding;
         private XHero hero;
 
         public BoolProperty(XObject currentObject, string objectId, string propertyId)
@@ -22,6 +23,7 @@ namespace Lunohod.Xge
         private void InitializeAccessor()
         {
             runnable = target as IRunnable;
+            exploding = target as IExploding;
             hero = target as XHero;
 
             switch (propertyId)
@@ -29,6 +31,7 @@ namespace Lunohod.Xge
                 case "Enabled": getter = GetEnabled; setter = SetEnabled; break;
                 case "InProgress": getter = GetInProgress; setter = SetInProgress; break;
                 case "IsPaused": getter = GetIsPaused; setter = SetIsPaused; break;
+                case "IsExploding": getter = GetIsExploding; setter = SetIsExploding; break;
                 case "IsDead": getter = GetIsDead; setter = SetIsDead; break;
                 default:
                 {
@@ -69,6 +72,14 @@ namespace Lunohod.Xge
         private void SetIsDead(bool v)
         {
             // noop
+        }
+        private bool GetIsExploding()
+        {
+            return exploding.IsExploding;
+        }
+        private void SetIsExploding(bool v)
+        {
+            exploding.IsExploding = v;
         }
         #endregion
     }

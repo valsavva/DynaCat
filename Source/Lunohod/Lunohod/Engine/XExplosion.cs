@@ -53,7 +53,7 @@ namespace Lunohod.Objects
 			{
 				XElement e = level.Exploding[i];
 				
-				if (!e.Enabled)
+				if (!e.Enabled || !((IExploding)e).IsExploding)
 					continue;
 				
 				e.GetScreenBounds();
