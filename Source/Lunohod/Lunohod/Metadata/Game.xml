@@ -10,7 +10,6 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Levels>
-		<Level Id="port_test" File="port_test.xml" />
         <LevelSeries Id="series1" Name="----- Series 1 -----" File="ScreenSeries1.xml">
 	        <LevelInfo Id="S01L01" File="S01L01.xml" />
 			<LevelInfo Id="S01L02" File="S01L02.xml" />
@@ -24,6 +23,7 @@
 	        <LevelInfo Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
 	        <LevelInfo Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
 	        <LevelInfo Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" />
+            <LevelInfo Id="S02LXX_Trenazher" File="S02LXX_Trenazher.xml" />
 	        <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
 	        <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
 	        <LevelInfo Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
@@ -31,6 +31,7 @@
 			<LevelInfo Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
 		</LevelSeries>
         <LevelSeries Id="series3" Name="----- Tests -----" File="ScreenTests.xml">
+            <!--<LevelInfo Id="AlphaTest" File="AlphaTest.xml" />-->
 	        <LevelInfo Id="AlphaTest" File="AlphaTest.xml" />
 	        <LevelInfo Id="AlphaTest2" File="AlphaTest2.xml" />
 	        <LevelInfo Id="AlphaTest3" File="AlphaTest3.xml" />

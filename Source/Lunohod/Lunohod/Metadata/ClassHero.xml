@@ -1,4 +1,5 @@
-<Include xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Docs/schema0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Trenazher" Bounds="0, 0, 480, 320">-->
+<Include>
 
 	<Resources RootFolder="Sound">
 		<SoundFile Id="sndHeroDying" Source="skeletonFX_crash_1"/>
@@ -12,6 +13,9 @@
 		<SoundFile Id="sndHeroBounce2" Source="skeletonFX_hero_metal_wall_2"/>
         <SoundFile Id="sndHeroStick1" Source="skeletonFX_hero_wooden_wall_1"/>
         <SoundFile Id="sndHeroStick2" Source="skeletonFX_hero_wooden_wall_2"/>
+        <SoundFile Id="sndTeleportIn" Source="demo_fx_port_in"/>
+        <SoundFile Id="sndTeleportOut" Source="demo_fx_port_out"/>
+        <SoundFile Id="sndTeleportCont" Source="demo_fx_port_cont"/>
     </Resources>
 	
     <Resources RootFolder="Textures">
@@ -45,7 +49,7 @@
                     <Do Action="hero.StartTransaction()" />
                     <Delay Duration="0.3" />
                     <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
-                    <Delay Duration="1.5" />
+                    <!--<Delay Duration="1.5" />-->
                     <Do Action="this:-Enter" />
                 </SequenceSet>
             </BoolTrigger>            
@@ -171,8 +175,27 @@
                 <Sound FileId="sndHeroEatingChavk1" Volume="0.5" Pitch="-0.1"/>
                 <Sound FileId="sndHeroEatingChavk2" Volume="0.5" Pitch="0.1"/>
             </RandomSet>
+            
+            <!-- Teleport -->
 
-		</Hero>
+            <BoolTrigger Condition="hero:PortIn" EnterAction="this_PortIn.Start()" ExitAction="this_PortIn.Stop()" Group="sttHeroPortFoley"/>
+            <SequenceSet Id="this_PortIn">
+                <Sound FileId="sndTeleportIn" Volume="0.5" Pitch="0"/>
+            </SequenceSet>
+
+            <BoolTrigger Condition="hero:PortCont" EnterAction="this_PortCont.Resume()" ExitAction="this_PortCont.Pause()" Group="sttHeroPortFoley"/>
+            <SequenceSet Id="this_PortCont">
+                <Sound FileId="sndTeleportCont" Volume="0.5" Pitch="0"/>
+            </SequenceSet>
+
+            <BoolTrigger Condition="hero:PortOut" EnterAction="this_PortOut.Start()" Group="sttHeroPortFoley"/>
+            <RandomSet Id="this_PortOut">
+                <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="-0.1"/>
+                <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0.1"/>
+            </RandomSet>
+
+        </Hero>
 		
 	</Class>
 

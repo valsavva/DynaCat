@@ -1,3 +1,4 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" >-->
 <Include>	
 
 	<Resources RootFolder="Sound">
@@ -12,15 +13,21 @@
 	</Resources>
     
     <Class Id="clsTeleport">
-        <Group Bounds="0,0,480,320">
-        <BoolTrigger Condition="@type==1" EnterAction="anmTeleportTubeHorHero.Start()" Group="sttTeleportStates">
-            <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" />
-        </BoolTrigger>
-        <SequenceSet Id="anmTeleportTubeHorHero">
-            <NumAnimation Target="imgTeleportTubeHorHero.X" From="24" To="54" IsDelta="true" Duration="2" Fill="End" RepeatCount="20" />
-        </SequenceSet>
+        <Group>
+            <IntersectionTrigger ObjectId1="this_entry" ObjectId2="hero" EnterAction="this_anm_entry.Start()" />
+            <SequenceSet Id="this_anm_entry">
+                <Do Action="hero.StartTransaction()"/>
+                <!--<Do Action="sndPortIn.Start()"/>-->
+                <Do Action="@heroDepartPointX=hero.X;
+                            @heroDepartPointY=hero.Y;                             
+                            @heroDestPointX=this_entry.X;                             
+                            @heroDestPointY=this_entry.Y+10;                             
+                            hero:+Enter"/>
+            </SequenceSet>
         </Group>
     </Class>
+    
+    <Class Id
 
 </Include>
 

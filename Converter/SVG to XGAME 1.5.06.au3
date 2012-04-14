@@ -1,6 +1,6 @@
 ;SVG to XGAME
 ;<Element Attribute="SubAttribute:1111;">Value</Element>
-Global $ProgVers = "1.5.05"
+Global $ProgVers = "1.5.06"
 
 #include "Array.au3"
 #include <Constants.au3>
@@ -40,7 +40,7 @@ $IdCounterNames[2] = "Enemy"
 $IdCounterNames[3] = "Block"
 $IdCounterNames[4] = "DesignImage"
 $IdCounterNames[5] = "Animation"
-$IdCounterNames[6] = "Teleport"
+$IdCounterNames[6] = "Teleport Animations"
 $IdCounterNames[7] = "FoodPack"
 
 ; win
@@ -309,7 +309,7 @@ Local $reqList = '/tower/|/cat/|inkscape:label="action"'
 			$ErrorList = $ErrorList & '###014### Error in SVG file: ' & GetElementName($str) & ' has been transformed (id=' & GetAttr($str, "id") & ', line #' & $i & ')' & @CRLF
 		EndIf
 		
-		;check teleports matching
+		;check s matching
 		$tpId = GetSubAttr($str, "inkscape:label", "TeleportId")
 
 		if $tpId <> "" Then
@@ -566,6 +566,44 @@ Func GetAttr($str, $attr)
 			Return $k*Round(GetAttr($str, "height"))
 		EndIf
 	EndIf
+	
+	if $attr = "@horX" Then
+		if GetAttr($str, "width") > GetAttr($str, "height") Then
+			if GetFileName(GetFullPath($str)) = "left" then 
+				Return GetAttr($str, "x") + GetAttr($str, "width")
+			Else
+				Return GetAttr($str, "x")
+			EndIf
+		Else
+			Return -7777777
+		EndIf
+	EndIf
+	if $attr = "@horY" Then
+		if GetAttr($str, "width") > GetAttr($str, "height") Then
+			Return GetAttr($str, "y")
+		Else
+			Return -7777777
+		EndIf
+	EndIf
+	if $attr = "@vertY" Then
+		if GetAttr($str, "height") > GetAttr($str, "width") Then
+			if GetFileName(GetFullPath($str)) = "up" then 
+				Return GetAttr($str, "y") + GetAttr($str, "height")
+			Else
+				Return GetAttr($str, "y")
+			EndIf
+		Else
+			Return -7777777
+		EndIf
+	EndIf
+	if $attr = "@vertX" Then
+		if GetAttr($str, "height") > GetAttr($str, "width") Then
+			Return GetAttr($str, "x")
+		Else
+			Return -7777777
+		EndIf
+	EndIf
+	
 	if $attr = "@Points" Then 
 		$ret = GetSubAttr($str, "inkscape:label", "Points")
 		if $ret = "" Then
@@ -581,6 +619,18 @@ Func GetAttr($str, $attr)
 			$len = GetAttr($str, "width")
 			if GetAttr($str, "height") > $len Then $len = GetAttr($str, "height")
 			$dur = Round($len/84, 2)
+			;MsgBox(0, "", 'Duration is not defined in the tag <' & GetElementName($str) &'> (id="' & GetAttr($str, "id") & '"). Duration set to hero speed (' & $dur & ')')
+			$ret = $dur
+		EndIf
+		Return $ret
+	EndIf
+		if $attr = "@TeleportDuration" Then 
+		$ret = GetSubAttr($str, "inkscape:label", "Duration")
+		if $ret = "" Then
+			;calc a Teleport Duration 
+			$len = GetAttr($str, "width")
+			if GetAttr($str, "height") > $len Then $len = GetAttr($str, "height")
+			$dur = Round($len/200, 2)
 			;MsgBox(0, "", 'Duration is not defined in the tag <' & GetElementName($str) &'> (id="' & GetAttr($str, "id") & '"). Duration set to hero speed (' & $dur & ')')
 			$ret = $dur
 		EndIf
