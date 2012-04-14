@@ -10,7 +10,6 @@
         <SequenceSet InProgress="true" RepeatCount="1">
             <Do Action="@d=@delay;hero:+PortCont" />
             <Delay Duration="@d" />
-            <Do Action="imgTeleportTubeHorHero.Enable();imgTeleportTubeVertHero.Enable()" />
             <Do Action="imgTeleportTubeHorHero.X=@horX;imgTeleportTubeHorHero.Y=@horY" />
             <Do Action="imgTeleportTubeVertHero.X=@vertX;imgTeleportTubeVertHero.Y=@vertY" />
             <NumAnimation Target="imgTeleportTubeHorHero.X,imgTeleportTubeVertHero.Y" From="0,0" To="@delta,@delta" IsDelta="true" Duration="@duration" RepeatCount="1" Autoreverse="false" Fill="End"/>

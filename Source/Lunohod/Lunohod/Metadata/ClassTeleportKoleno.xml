@@ -9,17 +9,17 @@
     <Class Id="clsTeleportKoleno">
         <SequenceSet InProgress="true" RepeatCount="1">
             <Do Action="imgTeleportKoleno.X=@X;imgTeleportKoleno.Y=@Y" />
-            <Do Action="imgTeleportKoleno.Enable();hero:bounce" />
+            <Do Action="hero:bounce" />
             <Do Action="@d=@delay" />
             <Delay Duration="@d" />
             <RandomSet RepeatCount="1">
-                <NumAnimation Target="imgTeleportKoleno.Rotation" From="-5" To="5" Duration="0.1" Autoreverse="true" RepeatCount="1" Fill="End"/>
-                <NumAnimation Target="imgTeleportKoleno.Rotation" From="5" To="-5" Duration="0.1" Autoreverse="true" RepeatCount="1" Fill="End"/>
-                <NumAnimation Target="imgTeleportKoleno.X" From="-2" To="2" IsDelta="true" Duration="0.1" RepeatCount="1" Autoreverse="true" Fill="End"/>
-                <NumAnimation Target="imgTeleportKoleno.Y" From="-2" To="2" IsDelta="true" Duration="0.1" RepeatCount="1" Autoreverse="true" Fill="End"/>
+                <NumAnimation Target="imgTeleportKoleno.Rotation" From="-5" To="5" IsDelta="true"  Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.Rotation" From="5" To="-5" IsDelta="true"  Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.X" From="-2" To="2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.Y" From="-2" To="2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
             </RandomSet>
-            <Do Action="imgTeleportKoleno.Disable()" />
-            <Do Action="imgTeleportKoleno.X=-100;imgTeleportKoleno.Y=-100" />
+<!--            <Do Action="imgTeleportKoleno.Disable()" />-->
+            <Do Action="imgTeleportKoleno.X=-7777777;imgTeleportKoleno.Y=-7777777" />
         </SequenceSet>
     </Class>
 

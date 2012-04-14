@@ -291,9 +291,9 @@
     <Layer Id="TeleportAction" BackColor="#FFFFFFFF">
         <Group Id="grpTlp1" TraceId="image3283" Bounds="374, 114, 24, 56"/>
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp1" EnterAction="setTlp1.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="false"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="false"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="false"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp1">
             <SequenceSet Id="setTlp1Entry" Class="clsTeleportEntry" ClassParams="@entryX=374,@entryY=114,@delay=0"/>
             <SequenceSet Id="setTlp2Koleno" Class="clsTeleportKoleno" ClassParams="@X=404,@Y=118,@delay=0"/>

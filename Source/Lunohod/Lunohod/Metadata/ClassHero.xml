@@ -178,17 +178,17 @@
             
             <!-- Teleport -->
 
-            <BoolTrigger Condition="hero:PortIn" EnterAction="this_PortIn.Start()" ExitAction="this_PortIn.Stop()" Group="sttHeroPortFoley"/>
+            <BoolTrigger Condition="hero:PortIn" EnterAction="this_PortIn.Start()" ExitAction="this_PortIn.Stop()"/>
             <SequenceSet Id="this_PortIn">
                 <Sound FileId="sndTeleportIn" Volume="0.5" Pitch="0"/>
             </SequenceSet>
 
-            <BoolTrigger Condition="hero:PortCont" EnterAction="this_PortCont.Resume()" ExitAction="this_PortCont.Pause()" Group="sttHeroPortFoley"/>
+            <BoolTrigger Condition="hero:PortCont" EnterAction="this_PortCont.Resume()" ExitAction="this_PortCont.Pause()"/>
             <SequenceSet Id="this_PortCont">
                 <Sound FileId="sndTeleportCont" Volume="0.5" Pitch="0"/>
             </SequenceSet>
 
-            <BoolTrigger Condition="hero:PortOut" EnterAction="this_PortOut.Start()" Group="sttHeroPortFoley"/>
+            <BoolTrigger Condition="hero:PortOut" EnterAction="this_PortOut.Start()"/>
             <RandomSet Id="this_PortOut">
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="-0.1"/>
