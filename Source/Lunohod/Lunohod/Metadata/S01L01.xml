@@ -7,6 +7,8 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassTower.xml" />
+	
+	<BoolTrigger Id="btLoadComics" Condition="system:levelLoaded" EnterAction="system.StartScreen('S01L01_Comics.xml');btLoadComics.Disable();" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
@@ -66,7 +68,7 @@
         <Block Id="blk3" Bounds="-104, 0, 120, 347" Edges="Stick" TraceId="image3425"/>
         <Block Id="blk4" Bounds="464, 0, 120, 347" Edges="Stick" TraceId="image3427"/>
     </Layer>
-    <Layer Id="brickImages" BackColor="#FFFFFFFF" CacheContent="true">
+    <Layer Id="brickImages" BackColor="#FFFFFFFF">
         <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="464, 290, 26, 20" Stretch="false" Opacity="1" TraceId="image3228"/>
         <Image Id="dfltMask9" TextureId="txr_texture_brick_clean" Bounds="464, 10, 26, 20" Stretch="false" Opacity="1" TraceId="image3170"/>
         <Image Id="dfltMask10" TextureId="txr_texture_brick_clean" Bounds="464, 30, 26, 20" Stretch="false" Opacity="1" TraceId="image3172"/>

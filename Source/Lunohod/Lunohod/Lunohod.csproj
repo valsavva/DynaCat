@@ -245,13 +245,13 @@
     <Content Include="Content\Textures\TeleportKoleno.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-     <Content Include="Metadata\ClassTeleportOut.xml">
+    <Content Include="Metadata\ClassTeleportOut.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassTeleportTube.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\TeleportTubeHor.png">
+    <Content Include="Content\Textures\TeleportTubeHor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\TeleportTubeVert.png">
@@ -269,7 +269,7 @@
     <Content Include="Content\Textures\TeleportEntryDown.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\ClassTeleportEntry.xml">
+    <Content Include="Metadata\ClassTeleportEntry.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\S02LXX_Labirint_v2.xml">
@@ -1273,7 +1273,7 @@
     <Content Include="Content\Sound\skeletonFX_laughting_1.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Sound\demo_fx_port_cont.wav">
+    <Content Include="Content\Sound\demo_fx_port_cont.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sound\demo_fx_port_in.wav">
@@ -2141,6 +2141,12 @@
     <Content Include="Metadata\ScreenLevelFailed.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\ScreenCredits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\S01L01_Comics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
@@ -2149,5 +2155,3 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
-
-

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Screen Bounds="0,0,480,320">
+	<Resources RootFolder="Textures">
+		<Texture Id="txrBackground" Source="screenBackgroundBig" />
+	</Resources>
+	<Resources RootFolder="Global">
+		<Font Id="fntSystem" Source="SystemFont"/>
+	</Resources>
+	
+	<Layer Id="background">
+		<Image TextureId="txrBackground" />
+	</Layer>
+	<Layer>
+		<Group Bounds="50,50,100,40">
+			<Text Location="0,0,100,50" Text="(c) NomNomApps LLC, 2011-2012" FontId="fntSystem" />
+			<Text Location="0,30,100,50" Text="Airat Davletshin - graphics design" FontId="fntSystem" />
+			<Text Location="0,60,100,50" Text="Vlad Savvateev - level design, original music, sound effects" FontId="fntSystem" />
+			<Text Location="0,90,100,50" Text="Val Savvateev - programming" FontId="fntSystem" />
+
+			<Group Bounds="430,50,50,100">
+				<TapArea Action="system.CloseCurrentScreen()" />
+				<Text Text="back" FontId="fntSystem" Color="#FF0000" Rotation="90" Origin="0,20" />
+			</Group>
+		</Group>
+	</Layer>
+</Screen>
