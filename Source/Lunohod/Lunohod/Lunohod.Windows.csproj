@@ -1824,8 +1824,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Metadata\S03LXX_VodoprovodniiNindzya.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\S03LXX_4_Komnati.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\S02LXX_Trenazher.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
