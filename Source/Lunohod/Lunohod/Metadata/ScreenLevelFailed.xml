@@ -11,19 +11,16 @@
 
 	<Layer Id="background">
 		<Image TextureId="txrBlank" BackColor="#040404" Opacity="0.6" />
-		<Image TextureId="txrBackground" Bounds="0,0,300,320" />
+		<Image TextureId="txrBackground" Bounds="80,0,300,320" />
 	</Layer>
 	<Layer>
-		<Group Bounds="0,0,300,320">
-			<Text Text="Paused" FontId="fntSystem" Location="50,50" />
+		<Group Bounds="80,0,300,320">
+			<Text Text="Failed! :-( :-(" FontId="fntSystem" Location="50,50" />
 			<Group Bounds="40,224,64,64">
 				<TapArea Action="system.CloseCurrentScreen();system.AbandonLevel()" />
 			</Group>
 			<Group Bounds="118,224,64,64">
 				<TapArea Action="system.CloseCurrentScreen();system.RestartLevel();" />
-			</Group>
-			<Group Bounds="196,224,64,64">
-				<TapArea Action="system.CloseCurrentScreen()" />
 			</Group>
 		</Group>
 	</Layer>

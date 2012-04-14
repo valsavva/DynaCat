@@ -189,9 +189,9 @@ namespace Lunohod
 			GC.Collect();
 		}
 
-		public void LoadLevel(string fileName)
+		public void LoadLevel(XLevelInfo levelInfo)
 		{
-			var newScreenEngine = new LevelEngine(this, fileName);
+			var newScreenEngine = new LevelEngine(this, levelInfo);
 
 			lock(this.screenEngines)
 			{
@@ -294,11 +294,32 @@ namespace Lunohod
 
                 switch (e.EventType)
                 {
+                    case GameEventType.StartNextLevel:
+                        {
+                            var levelInfo = this.LevelEngine.LevelInfo;
+                            this.CloseCurrentScreen();
+
+                            var series = this.GameObject.LevelSeries.Where(s => s.Levels.Contains(levelInfo)).First();
+
+                            var levelIndex = series.Levels.IndexOf(levelInfo);
+
+                            levelIndex++;
+
+                            if (levelIndex < series.Levels.Count)
+                                this.LoadLevel(series.Levels[levelIndex]);
+    
+                            e.IsHandled = true;
+
+                            // break out of the loop
+                            this.eventQueue.Clear();
+                            numOfEvents = 0;
+                            continue;
+                        } break;
                     case GameEventType.RestartLevel:
                         {
-                            var fileName = this.LevelEngine.FileName;
+                            var levelInfo = this.LevelEngine.LevelInfo;
                             this.CloseCurrentScreen();
-                            this.LoadLevel(fileName);
+                            this.LoadLevel(levelInfo);
                             e.IsHandled = true;
 
                             // break out of the loop

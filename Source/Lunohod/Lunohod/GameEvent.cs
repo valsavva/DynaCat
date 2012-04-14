@@ -19,6 +19,7 @@ namespace Lunohod
 			{ "system:closeScreen", GameEventType.CloseCurrentScreen },
 			{ "system:restartLevel", GameEventType.RestartLevel },
 			{ "system:abandonLevel", GameEventType.AbandonLevel },
+			{ "system:startNextLevel", GameEventType.StartNextLevel },
 			{ "system:endLevel", GameEventType.EndLevel },
 			
 			{ "system:levelLoaded", GameEventType.LevelLoaded }
