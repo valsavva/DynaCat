@@ -49,6 +49,7 @@ namespace Lunohod.Xge
                 case "CloseCurrentScreen": action = this.ActionCloseCurrentScreen; break;
                 case "AbandonLevel": action = this.ActionAbandonLevel; break;
                 case "EndLevel": action = this.ActionEndLevel; break;
+                case "StartNextLevel": action = this.ActionStartNextLevel; break;
 
                 // XHero
                 case "StartTransaction": action = this.ActionStartTransaction; break;
@@ -145,6 +146,11 @@ namespace Lunohod.Xge
         public object ActionEndLevel()
         {
             this.system.EndLevel();
+            return null;
+        }
+        public object ActionStartNextLevel()
+        {
+            this.system.StartNextLevel();
             return null;
         }
 

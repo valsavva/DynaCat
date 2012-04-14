@@ -26,9 +26,10 @@ namespace Lunohod
 		
 		private int bombCounter;
         
-        public LevelEngine(GameEngine gameEngine, string fileName)
-			: base(gameEngine, fileName)
+        public LevelEngine(GameEngine gameEngine, XLevelInfo levelInfo)
+			: base(gameEngine, levelInfo.File)
 		{
+            this.LevelInfo = levelInfo;
 		}
 
         public XHero Hero
@@ -45,6 +46,8 @@ namespace Lunohod
 		public XLevel LevelObject { get { return this.RootComponent as XLevel; } }
 		
         public override Type RootComponentType { get { return typeof(XLevel); } }
+
+        public XLevelInfo LevelInfo { get; private set; }
 		
 		public override void Initialize()
 		{

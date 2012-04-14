@@ -35,7 +35,7 @@ namespace Lunohod.Objects
 			if (levelIndex >= game.GameObject.Levels.Count)
 				return;
 
-			game.LoadLevel(game.GameObject.Levels[levelIndex].File);
+			game.LoadLevel(game.GameObject.Levels[levelIndex]);
 		}
 		
 		public string GetSeriesLevelName(int seriesIndex, int levelIndex)
@@ -61,9 +61,14 @@ namespace Lunohod.Objects
 			if (levelIndex >= series.Levels.Count)
 				return;
 			
-			game.LoadLevel(series.Levels[levelIndex].File);
+			game.LoadLevel(series.Levels[levelIndex]);
 		}
 		
+        public void StartNextLevel()
+        {
+            this.EnqueueEvent(GameEventType.StartNextLevel);
+        }
+
 		public void StartScreen(string fileName)
 		{
 			game.LoadScreen(fileName);
