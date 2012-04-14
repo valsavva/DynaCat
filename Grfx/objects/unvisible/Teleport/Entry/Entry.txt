@@ -18,11 +18,11 @@
 ###@cntrValue6
 .Start()"/>
 ###@CRLF
-<Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="false"/>
+<Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
 ###@CRLF
-<Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="false"/>
+<Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
 ###@CRLF
-<Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="false"/>
+<Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
 ###@CRLF
 <SequenceSet Id="setTlp
 ###@cntrValue6
