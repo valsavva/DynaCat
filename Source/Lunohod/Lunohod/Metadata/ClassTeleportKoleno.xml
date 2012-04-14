@@ -1,0 +1,41 @@
+ <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" >-->
+<Include>	
+
+	<Resources RootFolder="Sound">
+		<!--<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
+		<SoundFile Id="sndBombHiss" Source="bombHiss"/>-->
+	</Resources>
+   
+    <Class Id="clsTeleportKoleno">
+        <SequenceSet InProgress="true" RepeatCount="1">
+            <Do Action="imgTeleportKoleno.X=@X;imgTeleportKoleno.Y=@Y" />
+            <Do Action="hero:bounce" />
+            <Do Action="@d=@delay" />
+            <Delay Duration="@d" />
+            <RandomSet RepeatCount="1">
+                <NumAnimation Target="imgTeleportKoleno.X" From="2" To="-2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.Rotation" From="-5" To="5" IsDelta="true"  Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.Y" From="2" To="-2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.Rotation" From="5" To="-5" IsDelta="true"  Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.X" From="-2" To="2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.Y" From="-2" To="2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
+            </RandomSet>
+<!--            <Do Action="imgTeleportKoleno.Disable()" />-->
+            <Do Action="imgTeleportKoleno.X=-7777777;imgTeleportKoleno.Y=-7777777" />
+        </SequenceSet>
+    </Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+

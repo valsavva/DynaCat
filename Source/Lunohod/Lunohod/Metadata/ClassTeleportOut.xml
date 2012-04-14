@@ -1,0 +1,28 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" >-->
+<Include>
+
+    <Class Id="clsTeleportOut">
+        <SequenceSet InProgress="true" RepeatCount="1">
+            <Do Action="@d=@delay;hero:PortOut" />
+            <Delay Duration="@d" />
+            <Do Action="hero.X=@outX;hero.Y=@outY;hero.Opacity=1" />
+            <Do Action="system:@heroOutDirection"/>
+            <!--<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>-->
+            <Do Action="hero.EndTransaction()"/>
+        </SequenceSet>
+    </Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+

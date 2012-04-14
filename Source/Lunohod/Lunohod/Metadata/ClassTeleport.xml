@@ -1,3 +1,4 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" >-->
 <Include>	
 
 	<Resources RootFolder="Sound">
@@ -6,13 +7,27 @@
 	</Resources>
 
 	<Resources RootFolder="Textures">
-        <!--<Texture Id="txrTeleportTubeHorHero" Source="TeleportTubeHorHero"/>
-        <Texture Id="txrTeleportTubeVertHero" Source="TeleportTubeVertHero"/>-->
+        <Texture Id="txrTeleportTubeHorHero" Source="TeleportTubeHorHero"/>
+        <Texture Id="txrTeleportTubeVertHero" Source="TeleportTubeVertHero"/>
+        <Texture Id="txrTeleportKoleno" Source="TeleportKoleno"/>
 	</Resources>
     
     <Class Id="clsTeleport">
-
+        <Group>
+            <IntersectionTrigger ObjectId1="this_entry" ObjectId2="hero" EnterAction="this_anm_entry.Start()" />
+            <SequenceSet Id="this_anm_entry">
+                <Do Action="hero.StartTransaction()"/>
+                <!--<Do Action="sndPortIn.Start()"/>-->
+                <Do Action="@heroDepartPointX=hero.X;
+                            @heroDepartPointY=hero.Y;                             
+                            @heroDestPointX=this_entry.X;                             
+                            @heroDestPointY=this_entry.Y+10;                             
+                            hero:+Enter"/>
+            </SequenceSet>
+        </Group>
     </Class>
+    
+    <Class Id
 
 </Include>
 

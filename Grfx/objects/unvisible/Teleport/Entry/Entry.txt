@@ -1,7 +1,5 @@
-<Group Id="tlp
+<Group Id="grpTlp
 ###@counter6
-" Class="clsTeleport" TraceId="
-###id
 " Bounds="
 ###x
 , 
@@ -10,8 +8,30 @@
 ###width
 , 
 ###height
-" ClassParams="@entryX=
+" TraceId="
+###id
+" />
+###@CRLF
+<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp
+###@cntrValue6
+" EnterAction="setTlp
+###@cntrValue6
+.Start()"/>
+###@CRLF
+<Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+###@CRLF
+<Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+###@CRLF
+<Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
+###@CRLF
+<SequenceSet Id="setTlp
+###@cntrValue6
+">
+###@CRLF
+<SequenceSet Id="setTlp
+###@cntrValue6
+Entry" Class="clsTeleportEntry" ClassParams="@entryX=
 ###x
 ,@entryY=
 ###y
-" />
+,@delay=0"/>
