@@ -224,6 +224,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\S03LXX_4_Komnati.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\ClassTeleportKoleno.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2140,4 +2143,5 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 

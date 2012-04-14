@@ -1,7 +1,5 @@
 <Group Id="grpTlp
 ###@counter6
-" TraceId="
-###id
 " Bounds="
 ###x
 , 
@@ -10,7 +8,9 @@
 ###width
 , 
 ###height
-"/>
+" TraceId="
+###id
+" />
 ###@CRLF
 <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp
 ###@cntrValue6

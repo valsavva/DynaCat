@@ -17,6 +17,7 @@
             <Do Action="hero.StartTransaction()" />
             <Delay Duration="0.05" />
             <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,0.5" To="@heroDestPointX,@heroDestPointY,0" Duration="0.3" InProgress="true" RepeatCount="1" Fill="End"/>
+            <Do Action="hero.X=-7777777;hero.Y=-7777777" />
             <Do Action="@d=@delay;hero:-PortIn" />
             <Delay Duration="@d" />
         </SequenceSet>

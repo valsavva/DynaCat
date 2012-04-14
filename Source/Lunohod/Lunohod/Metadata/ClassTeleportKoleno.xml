@@ -13,7 +13,9 @@
             <Do Action="@d=@delay" />
             <Delay Duration="@d" />
             <RandomSet RepeatCount="1">
+                <NumAnimation Target="imgTeleportKoleno.X" From="2" To="-2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
                 <NumAnimation Target="imgTeleportKoleno.Rotation" From="-5" To="5" IsDelta="true"  Duration="0.05" RepeatCount="1"/>
+                <NumAnimation Target="imgTeleportKoleno.Y" From="2" To="-2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
                 <NumAnimation Target="imgTeleportKoleno.Rotation" From="5" To="-5" IsDelta="true"  Duration="0.05" RepeatCount="1"/>
                 <NumAnimation Target="imgTeleportKoleno.X" From="-2" To="2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
                 <NumAnimation Target="imgTeleportKoleno.Y" From="-2" To="2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
