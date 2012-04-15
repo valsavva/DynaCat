@@ -3,7 +3,7 @@
 	<Class Id="clsHelpText">
 		<Group>
 
-            <BoolTrigger Condition="system:levelLoaded" EnterAction="this_anmEntry.Start()"/>
+            <BoolTrigger Condition="system:comicsEnd" EnterAction="this_anmEntry.Start()"/>
             <BoolTrigger Condition="@blink" EnterAction="this_blink.Start()"/>
             <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="this_anmRemove.Start()"/>
 
