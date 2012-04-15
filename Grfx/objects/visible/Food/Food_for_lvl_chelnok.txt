@@ -1,0 +1,46 @@
+<Food Id="fd
+###id
+" Points="
+###@Points
+" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" Class="clsFood" Enabled="false" TraceId="
+###id
+">
+###@CRLF
+<Image TextureId="txr_
+###@filename
+" />
+###@CRLF
+</Food>
+###@CRLF
+<SequenceSet Id="setfd
+###id
+" InProgress="true" RepeatCount="1" >
+###@CRLF
+<Delay Duration="
+###@counter1
+" />
+###@CRLF
+<Do Action="fd
+###id
+.Enable()" />
+###@CRLF
+<Delay Duration="30" />
+###@CRLF
+<NumAnimation Target="fd
+###id
+.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
+###@CRLF
+<Do Action="fd
+###id
+.Disable()" />
+###@CRLF
+</SequenceSet>
+###@CRLF
