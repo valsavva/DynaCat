@@ -2,7 +2,6 @@
 <!-- SVG to XGAME xml converter v1.5.00 -->
 <!-- source: D:\Lunohod\Levels\S01L01\S01L01.svg -->
 <Level Name="S01L01" Bounds="0, 0, 480, 320">
-    <LevelSettings Dificulty="-1" BombCount="0" HeroHealth="100" ExplosionClass="clsExplosion"/>
     <Include File="ClassHelpText.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />

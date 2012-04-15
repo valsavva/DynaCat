@@ -10,24 +10,44 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Levels>
+		<!-- These are default setting
+		<LevelInfo
+			BombCount="-1"
+			HeroHealth="100"
+			ExplosionClass="clsExplosion"
+			StarScore1="0.01"
+			StarScore2 = "0.45"
+			StarScore3 = "0.90"
+			SpeedBonusThreshold = "10"
+			HealthBonusThreshold = "100"
+			SpeedBonus = "0.25"
+			HealthBonus = "0.25"
+		/>
+		-->
         <LevelSeries Id="series1" Name="----- Series 1 -----" File="ScreenSeries1.xml">
-	        <LevelInfo Id="S01L01" File="S01L01.xml" />
+	        <LevelInfo Id="S01L01" File="S01L01.xml" 
+				BombCount="0" />
 			<LevelInfo Id="S01L02" File="S01L02.xml" />
-	        <LevelInfo Id="S01L03" File="S01L03.xml" />
+	        <LevelInfo Id="S01L03" File="S01L03.xml"
+				BombCount="0" />
 	        <LevelInfo Id="S01L04" File="S01L04.xml" />
 		</LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2 -----" File="ScreenSeries2.xml">
 	        <LevelInfo Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
 	        <LevelInfo Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
 	        <LevelInfo Id="S02LXX_Dyrka" File="S02LXX_Dyrka.xml" />
-	        <LevelInfo Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
+	        <LevelInfo Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml"
+				BombCount="0" />
 	        <LevelInfo Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
-	        <LevelInfo Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" />
-            <LevelInfo Id="S02LXX_Trenazher" File="S02LXX_Trenazher.xml" />
+	        <LevelInfo Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml"
+				BombCount="0" />
+            <LevelInfo Id="S02LXX_Trenazher" File="S02LXX_Trenazher.xml"
+				BombCount="0" />
 	        <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
 	        <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
 	        <LevelInfo Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
-	        <LevelInfo Id="S02LXX_VKolce" File="S02LXX_VKolce.xml" />
+	        <LevelInfo Id="S02LXX_VKolce" File="S02LXX_VKolce.xml"
+				BombCount="0" />
 			<LevelInfo Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
             <LevelInfo Id="S03LXX_4_Komnati" File="S03LXX_4_Komnati.xml" />
             <LevelInfo Id="S03LXX_VodoprovodniiNindzya" File="S03LXX_VodoprovodniiNindzya.xml" />
@@ -37,7 +57,8 @@
 	        <LevelInfo Id="AlphaTest" File="AlphaTest.xml" />
 	        <LevelInfo Id="AlphaTest2" File="AlphaTest2.xml" />
 	        <LevelInfo Id="AlphaTest3" File="AlphaTest3.xml" />
-			<LevelInfo Id="style100500" File="style100500.xml" />
+			<LevelInfo Id="style100500" File="style100500.xml"
+				HeroHealth="5" />
 			<LevelInfo Id="skeletonAlisa" File="skeletonAlisa.xml" />
 			<LevelInfo Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
 			<LevelInfo Id="skeletonChelnok" File="skeletonChelnok.xml" />
@@ -60,17 +81,24 @@
 			<LevelInfo Id="---" File="skeletonAlisa.xml" />
 			
 			<!-- Test screens start here -->
-			<LevelInfo Id="style100500opt" File="style100500opt.xml" />
-			<LevelInfo Id="style100500opt2" File="style100500opt2.xml" />
-			<LevelInfo Id="style100500opt3dash" File="style100500opt3dash.xml" />
-			<LevelInfo Id="style100500DashXLSize57" File="style100500DashXLSize57.xml" />
-			<LevelInfo Id="style100500NewControl" File="style100500NewControl.xml" />
+			<LevelInfo Id="style100500opt" File="style100500opt.xml"
+				HeroHealth="5" />
+			<LevelInfo Id="style100500opt2" File="style100500opt2.xml"
+				HeroHealth="5" />
+			<LevelInfo Id="style100500opt3dash" File="style100500opt3dash.xml"
+				HeroHealth="5" />
+			<LevelInfo Id="style100500DashXLSize57" File="style100500DashXLSize57.xml"
+				HeroHealth="5" />
+			<LevelInfo Id="style100500NewControl" File="style100500NewControl.xml"
+				HeroHealth="5" />
 			
 			<LevelInfo Id="AnimationSamples" File="AnimationSamples.xml" />
-			<LevelInfo Id="TestDeath" File="TestDeath.xml" />
+			<LevelInfo Id="TestDeath" File="TestDeath.xml"
+				HeroHealth="5" />
 			<LevelInfo Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
 	        <LevelInfo Id="TestORCS2" File="TestORCS2.xml" />
-	        <LevelInfo Id="TestExplosion" File="TestExplosion.xml" />
+	        <LevelInfo Id="TestExplosion" File="TestExplosion.xml"
+				BombCount="3" />
 			<LevelInfo Id="robocat_demo" File="robocat_demo.xml" />
 	
 			<LevelInfo Id="TestTeleport" File="TestTeleport.xml" />		

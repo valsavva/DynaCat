@@ -23,9 +23,6 @@ namespace Lunohod.Objects
         // Dashboard
         { "Viewport", typeof(XViewport) },
 		
-		// LevelSettings
-        { "LevelSettings", typeof(XLevelSettings) },
-		
         // Layer
         { "Layer", typeof(XLayer) },
 		

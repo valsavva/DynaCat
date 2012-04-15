@@ -55,11 +55,11 @@ namespace Lunohod
 			
 			this.waves = new Dictionary<GameEvent, RadioWave>();
 
-			if (!string.IsNullOrEmpty(this.LevelObject.DefaultSettings.ExplosionClass))
+			if (!string.IsNullOrEmpty(this.LevelInfo.ExplosionClass))
 			{
-				this.explosionClass = this.LevelObject.FindDescendant(this.LevelObject.DefaultSettings.ExplosionClass) as XClass;
+				this.explosionClass = this.LevelObject.FindDescendant(this.LevelInfo.ExplosionClass) as XClass;
 				if (this.explosionClass == null)
-					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.LevelObject.DefaultSettings.ExplosionClass));
+					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.LevelInfo.ExplosionClass));
 			}
 		}
 		

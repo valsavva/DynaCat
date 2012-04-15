@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
         <Level Name="" Bounds="0, 0, 480, 320">
-            <LevelSettings Dificulty="-1" BombCount="7777777" ExplosionClass="clsExplosion" HeroHealth="5"/>
             <Include File="styleClasses.xml"/>
             <Resources RootFolder="TestTextures">
                 <Texture Id="phon_blue" Source="phon_blue"/>

@@ -2,7 +2,6 @@
 <!-- SVG to XGAME xml converter v1.5.03 -->
 <!-- source: D:\Lunohod\Levels\S02LXX_Labirint\S02LXX_Labirint.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Labirint" Bounds="0, 0, 480, 320">
-    <LevelSettings Difficulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
     <Include File="ClassFood.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassHero.xml" />

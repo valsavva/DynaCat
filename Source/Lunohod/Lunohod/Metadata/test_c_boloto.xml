@@ -3,7 +3,6 @@
 <!-- date: 29/02 2012 03:36 -->
 <!-- source: D:\Lunohod\Levels\test_c\test_c_boloto.svg -->
 <Level Name="test_c_boloto" Bounds="0, 0, 480, 320">
-    <LevelSettings Dificulty="-1" BombCount="7777777" HeroHealth="5" ExplosionClass="clsExplosion"/>
     <Include File="skeletonClassCursor.xml"/>
     <Resources RootFolder="TestTextures">
         <Texture Id="white_clear" Source="white_clear"/>

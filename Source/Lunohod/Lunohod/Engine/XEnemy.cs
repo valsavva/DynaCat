@@ -15,6 +15,8 @@ namespace Lunohod.Objects
     [XmlType("Enemy")]
     public class XEnemy : XElement, IExploding
     {
+		[XmlAttribute]
+		public double Points;
 		/// <summary>
 		/// The damage the enemy will cause when attacking the hero. Default value is 1.
 		/// </summary>
@@ -34,6 +36,7 @@ namespace Lunohod.Objects
 
         public override void ReadXml(XmlReader reader)
         {
+            reader.ReadAttrAsFloat("Point", ref this.Points);
             reader.ReadAttrAsFloat("Damage", ref this.Damage);
 
             base.ReadXml(reader);

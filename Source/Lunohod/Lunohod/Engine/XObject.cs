@@ -72,9 +72,6 @@ namespace Lunohod.Objects
         // Dashboard
         [XmlElement(ElementName = "Viewport", Type = typeof(XViewport))]
 		
-		// LevelSettings
-        [XmlElement(ElementName = "LevelSettings", Type = typeof(XLevelSettings))]
-		
         // Layer
         [XmlElement(ElementName = "Layer", Type = typeof(XLayer))]
 		

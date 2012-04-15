@@ -97,10 +97,10 @@ namespace Lunohod.Objects
 
 			p.LevelEngine.Hero = this;
 			
-			this.DefaultHealth = p.LevelEngine.LevelObject.DefaultSettings.HeroHealth;
+			this.DefaultHealth = p.LevelEngine.LevelInfo.HeroHealth;
 			this.Health = this.DefaultHealth;
 			
-			this.DefaultBombCount = p.LevelEngine.LevelObject.DefaultSettings.BombCount;
+			this.DefaultBombCount = p.LevelEngine.LevelInfo.BombCount;
 			this.BombCount = this.DefaultBombCount;
 
             if (this.DefaultSpeed == 0)

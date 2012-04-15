@@ -3,7 +3,6 @@
 <!-- date: 27/02 2012 01:03 -->
 <!-- source: D:\Lunohod\Levels\robocat_demo\style100500opt.svg -->
 <Level Name="style100500opt" Bounds="0, 0, 480, 320">
-    <LevelSettings Dificulty="-1" BombCount="7777777" HeroHealth="5" ExplosionClass="clsExplosion"/>
     <Include File="styleClasses.xml"/>
     <Resources RootFolder="TestTextures">
         <Texture Id="style100500opt_OptBckg" Source="style100500opt_OptBckg"/>

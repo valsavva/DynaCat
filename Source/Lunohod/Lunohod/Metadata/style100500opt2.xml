@@ -2,7 +2,6 @@
 <!-- programme version: 1.3.2 -->
     <!-- date: 24/02 2012 03:13 -->
         <Level Name="D:\Lunohod\Levels\robocat_demo\style100500.svg" Bounds="0, 0, 480, 320">
-            <LevelSettings Dificulty="-1" BombCount="7777777" ExplosionClass="clsExplosion" HeroHealth="5"/>
             <Include File="styleClasses.xml"/>
             <Resources RootFolder="TestTextures">
                 <Texture Id="phon_blue" Source="phon_blue"/>

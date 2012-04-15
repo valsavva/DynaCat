@@ -2,7 +2,6 @@
 <!-- SVG to XGAME xml converter v1.5.05 -->
 <!-- source: D:\Lunohod\Grfx\design\teleport\port_test.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="port_test" Bounds="0, 0, 480, 320">
-    <LevelSettings Difficulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
     <Include File="ClassTeleport.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />

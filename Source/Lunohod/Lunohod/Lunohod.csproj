@@ -145,7 +145,6 @@
     <Compile Include="Engine\XIterator.cs" />
     <Compile Include="Engine\Accessors\ObjectProxy.cs" />
     <Compile Include="Engine\XExplosion.cs" />
-    <Compile Include="Engine\XLevelSettings.cs" />
     <Compile Include="Engine\IExploding.cs" />
     <Compile Include="Engine\Triggers\XBoolTrigger.cs" />
     <Compile Include="Engine\Triggers\XDistanceTrigger.cs" />

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Level Name="TextText" Bounds="0,0,480,320">
-	<LevelSettings
-			Dificulty="-1"
-			BombCount="0"
-			HeroHealth="5"
-	/>
-
 	<Resources RootFolder="Sound">
 		<SoundFile Id="skeletonFX_crash_1" Source="skeletonFX_crash_1"/>
 	</Resources>

@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Level Name="AnimationSamples.xml" Bounds="0,0,480,320">
-	<!--
-		Use Difficulty to match the setting against the currently choosen level of Difficulty (or not specify or use "-1");
-		Use BombCount to a number, or not specify or use "-1" to allow for no limit;
-	-->
-	<LevelSettings
-			Dificulty="-1"
-			BombCount="3"
-			ExplosionClass="clsExplosion"
-	/>
 
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank" />
