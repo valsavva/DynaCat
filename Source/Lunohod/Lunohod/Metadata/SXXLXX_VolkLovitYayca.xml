@@ -147,9 +147,9 @@
         <Image Id="dfltMask9" TextureId="txr_wire_currentLR" Bounds="235, -4, 45, 8" Rotation="111.99" Stretch="false" Opacity="1" TraceId="image3543"/>
         <Image Id="dfltMask10" TextureId="txr_wire_currentLR" Bounds="99, -17, 45, 8" Rotation="60" Stretch="false" Opacity="1" TraceId="image3540"/>
 
-        <Enemy Id="enm1" Class="clsEnemyElectricity1" Bounds="110, 17, 11, 11"/>
-        <Enemy Id="enm2" Class="clsEnemyElectricity1" Bounds="209, 26, 11, 11"/>
-        <Enemy Id="enm3" Class="clsEnemyElectricity1" Bounds="313, 28, 11, 11"/>
+        <Enemy Id="enmEl1" Class="clsEnemyElectricity1" Bounds="110, 17, 11, 11"/>
+        <Enemy Id="enmEl2" Class="clsEnemyElectricity1" Bounds="209, 26, 11, 11"/>
+        <Enemy Id="enmEl3" Class="clsEnemyElectricity1" Bounds="313, 28, 11, 11"/>
 
         <Image Id="dfltMask11" TextureId="txr_container_steel_1" Bounds="-21, 288, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3070"/>
         <Image Id="dfltMask12" TextureId="txr_container_steel_1" Bounds="-21, 258, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3073"/>
