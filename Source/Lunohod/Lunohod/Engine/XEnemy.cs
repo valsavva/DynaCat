@@ -5,6 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using System.Xml;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -41,6 +42,16 @@ namespace Lunohod.Objects
 
             base.ReadXml(reader);
         }
+
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+				case "Attack": method = (ps) => Attack(); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
     }
 }
 

@@ -314,5 +314,21 @@ namespace Lunohod.Objects
 
             base.ReadXml(reader);
         }
+		
+		public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+		{
+			switch (propertyName)
+			{
+                case "X": getter = () => X; setter = (v) => X = (float)v; break;
+                case "Y": getter = () => Y; setter = (v) => Y = (float)v; break;
+                case "Height": getter = () => Height; setter = (v) => Height = (float)v; break;
+                case "Width": getter = () => Width; setter = (v) => Width = (float)v; break;
+                case "Rotation": getter = () => Rotation; setter = (v) => Rotation = v; break;
+                case "Scale": getter = () => Scale; setter = (v) => Scale = v; break;
+                case "Opacity": getter = () => Opacity; setter = (v) => Opacity = v; break;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
     }
 }

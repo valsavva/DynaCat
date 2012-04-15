@@ -15,7 +15,10 @@ namespace Lunohod.Xge
             XObject target;
 
             if (objectId == null)
+			{
                 target = currentObject.Parent;
+				objectId = target.Id;
+			}
             else
                 target = currentObject.GetRoot().FindDescendant(objectId);
 
@@ -43,9 +46,19 @@ namespace Lunohod.Xge
             if (returnType == typeof(string))
                 throw new InvalidOperationException("No String properties");
             else if (returnType == typeof(bool))
-                return new BoolProperty(currentObject, objectId, propertyId);
+			{
+				Func<bool> getter;
+				Action<bool> setter;
+				target.GetProperty(propertyId, out getter, out setter);
+				return new Property<bool>(target, objectId, propertyId, getter, setter);
+			}
             else
-                return new NumProperty(currentObject, objectId, propertyId);
+			{
+				Func<double> getter;
+				Action<double> setter;
+				target.GetProperty(propertyId, out getter, out setter);
+				return new Property<double>(target, objectId, propertyId, getter, setter);
+			}
         }
     }
 }

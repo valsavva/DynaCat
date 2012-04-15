@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -85,7 +86,14 @@ namespace Lunohod.Objects
 		/// </value>
         [XmlIgnore]
 		public bool InTransaction { get; private set; }
-
+		
+		
+		public double LevelScore;
+		public double LevelTime;
+		public double LevelRecordScore;
+		public double LevelRecordTime;
+		public double LevelRecordHealth;
+		
         internal double DistanceToTower
         {
             get { return distanceToTower; }
@@ -112,6 +120,8 @@ namespace Lunohod.Objects
 		public override void Update(UpdateParameters p)
 		{
 			base.Update(p);
+			
+			this.LevelTime += p.GameTime.ElapsedGameTime.TotalSeconds;
 			
 			// calculate the new location of the hero
 			if (!this.InTransaction)
@@ -160,7 +170,10 @@ namespace Lunohod.Objects
 		{
 			this.Health -= damage;
 		}
-
+		public void AddScore(double score)
+		{
+			this.LevelScore += score;
+		}
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             reader.ReadAttrAsFloat("DefaultSpeed", ref this.DefaultSpeed);
@@ -170,5 +183,45 @@ namespace Lunohod.Objects
 
             base.ReadXml(reader);
         }
-    }
+		
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+                case "StartTransaction": method = (ps) => StartTransaction(); break;
+                case "EndTransaction": method = (ps) => EndTransaction(); break;
+                case "SetDirection": method = (ps) => SetDirection(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
+				case "AddScore": method = (ps) => AddScore(ps[0].GetNumValue()); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
+		
+		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
+		{
+			switch (propertyName)
+			{
+                case ("IsDead"): getter = () => IsDead; setter = null; break;
+				case ("Enabled") : getter = () => this.Enabled; setter = (v) => this.Enabled = v; break;
+				default:
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
+
+		public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+		{
+			switch (propertyName)
+			{
+                case "Health": getter = () => Health; setter = (v) => Health = v; break;
+                case "DefaultHealth": getter = () => DefaultHealth; setter = (v) => DefaultHealth = v; break;
+                case "Speed": getter = () => Speed; setter = (v) => Speed = v; break;
+                case "DefaultSpeed": getter = () => DefaultSpeed; setter = (v) => DefaultSpeed = v; break;
+                case "BombCount": getter = () => BombCount; setter = (v) => BombCount = v; break;
+                case "DefaultBombCount": getter = () => DefaultBombCount; setter = (v) => DefaultBombCount = v; break;
+                case "Deceleration": getter = () => Deceleration; setter = (v) => Deceleration = v; break;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
+	}
 }

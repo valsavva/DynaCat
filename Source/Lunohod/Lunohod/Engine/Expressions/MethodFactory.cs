@@ -13,8 +13,11 @@ namespace Lunohod.Xge
             XObject target;
 
             if (objectId == null)
+			{
                 target = currentObject.Parent;
-            else
+				objectId = target.Id;
+			}
+			else
                 target = currentObject.GetRoot().FindDescendant(objectId);
 
             if (target == null)
@@ -28,13 +31,29 @@ namespace Lunohod.Xge
             var returnType = method.ReturnType;
 
             if (returnType == typeof(string))
-                return new StrMethod(currentObject, objectId, actionId, parameters);
+			{
+				Func<List<Expression>, string> func;
+				target.GetMethod(actionId, out func);
+                return new Method<string>(currentObject, objectId, actionId, func, parameters);
+			}
             else if (returnType == typeof(bool))
-                return new BoolMethod(currentObject, objectId, actionId, parameters);
+			{
+				Func<List<Expression>, bool> func;
+				target.GetMethod(actionId, out func);
+                return new Method<bool>(currentObject, objectId, actionId, func, parameters);
+			}
             else if (returnType == typeof(void))
-                return new VoidMethod(currentObject, objectId, actionId, parameters);
+			{
+				Action<List<Expression>> func;
+				target.GetMethod(actionId, out func);
+                return new Method<object>(currentObject, objectId, actionId, (ps) => { func(ps); return null; }, parameters);
+			}
             else
-                return new NumMethod(currentObject, objectId, actionId, parameters);
+			{
+				Func<List<Expression>, double> func;
+				target.GetMethod(actionId, out func);
+                return new Method<double>(currentObject, objectId, actionId, func, parameters);
+			}
         }
     }
 }

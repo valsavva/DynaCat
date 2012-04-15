@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -126,6 +127,49 @@ namespace Lunohod.Objects
         {
             return o.ToString();
         }
+
+		public override void GetMethod(string methodName, out Func<List<Lunohod.Xge.Expression>, double> method)
+		{
+            switch (methodName)
+            {
+                case "Rnd": method = (ps) => Rnd(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
+                case "RndX": method = (ps) => RndX(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
+                case "RndY": method = (ps) => RndY(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
+		
+		public override void GetMethod(string methodName, out Func<List<Expression>, string> method)
+		{
+            switch (methodName)
+            {
+                case "Str": method = (ps) => Str(ps[0].GetObjValue()); break;
+                case "GetLevelName": method = (ps) => GetLevelName(ps[0].GetIntValue()); break;
+                case "GetSeriesLevelName": method = (ps) => GetSeriesLevelName(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
+                case "GetSeriesName": method = (ps) => GetSeriesName(ps[0].GetIntValue()); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
+		
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+                case "StartLevel": method = (ps) => StartLevel(ps[0].GetIntValue()); break;
+                case "RestartLevel": method = (ps) => RestartLevel(); break;
+				case "StartSeriesLevel": method = (ps) => StartSeriesLevel(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
+                case "StartScreen": method = (ps) => StartScreen(ps[0].GetStrValue()); break;
+				case "StartSeries": method = (ps) => this.StartSeries(ps[0].GetIntValue()); break;
+                case "CloseCurrentScreen": method = (ps) => CloseCurrentScreen(); break;
+                case "AbandonLevel": method = (ps) => AbandonLevel(); break;
+                case "EndLevel": method = (ps) => EndLevel(); break;
+                case "StartNextLevel": method = (ps) => StartNextLevel(); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
 	}
 }
 

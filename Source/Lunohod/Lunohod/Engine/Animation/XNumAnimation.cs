@@ -18,7 +18,7 @@ namespace Lunohod.Objects
     public class XNumAnimation : XRunnableBase
     {
         internal List<TimeCurve> curves;
-        internal List<NumProperty> targets;
+        internal List<Property<double>> targets;
         private List<XKeyFrame> keyFrames;
         private List<double?> startValues;
 		private XKeyFrame lastFrame;
@@ -87,7 +87,7 @@ namespace Lunohod.Objects
             base.Initialize(p);
 
             // get targets
-            targets = this.Target.Split(',').Select(s => (NumProperty)Compiler.CompileExpression<double>(this, s)).ToList();
+            targets = this.Target.Split(',').Select(s => (Property<double>)Compiler.CompileExpression<double>(this, s)).ToList();
 			startValues = new List<double?>(new double?[targets.Count]);
 
             // collect keyFrames and check for consistency

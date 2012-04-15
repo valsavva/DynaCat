@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 using System.Xml;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -524,6 +525,96 @@ namespace Lunohod.Objects
         {
             throw new NotImplementedException();
         }
-    }
+		
+		public virtual void GetMethod(string methodName, out Func<List<Expression>, double> method)
+		{
+			throw new InvalidOperationException("Unknown method '" + methodName + "'");
+		}
+		public virtual void GetMethod(string methodName, out Func<List<Expression>, bool> method)
+		{
+			throw new InvalidOperationException("Unknown method '" + methodName + "'");
+		}
+		public virtual void GetMethod(string methodName, out Func<List<Expression>, string> method)
+		{
+			throw new InvalidOperationException("Unknown method '" + methodName + "'");
+		}
+		public virtual void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+			method = null;
+			
+            switch (methodName)
+            {
+                case "Enable": method = (ps) => Enable(); break;
+                case "Disable": method = (ps) => Disable(); break;
+				default: {
+					if (this is IRunnable)
+					{
+						IRunnable runnable = (IRunnable)this;
+			            switch (methodName)
+			            {
+			                case "Start": method = (ps) => runnable.Start(); break;
+			                case "Stop": method = (ps) => runnable.Stop(); break;
+			                case "Pause": method = (ps) => runnable.Pause(); break;
+			                case "Resume": method = (ps) => runnable.Resume(); break;
+						}
+					}
+				}; break;
+			}
+
+			if (method == null)
+				throw new InvalidOperationException("Unknown method '" + methodName + "'");
+		}
+		
+		public virtual void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+		{
+			getter = null; setter = null;
+
+			if (getter == null && setter == null && this is IHasVolume)
+			{
+				IHasVolume audio = (IHasVolume)this;
+				switch (propertyName)
+				{
+	                case "Volume": getter = () => audio.Volume; setter = (v) => audio.Volume = v; break;
+				}
+			}
+
+			throw new InvalidOperationException("Unknown property '" + propertyName + "'");
+		}
+		public virtual void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
+		{
+			getter = null; setter = null;
+			
+			switch (propertyName)
+			{
+				case ("Enabled") : getter = () => this.Enabled; setter = (v) => this.Enabled = v; break;
+			}
+			
+			if (getter == null && setter == null && this is IRunnable)
+			{
+				IRunnable runnable = (IRunnable)this;
+				switch (propertyName)
+				{
+	                case "InProgress": getter = () => runnable.InProgress; setter = (v) => runnable.InProgress = v; break;
+	                case "IsPaused": getter = () => runnable.IsPaused; setter = null; break;
+				}
+			}
+			
+			if (getter == null && setter == null && this is IExploding)
+			{
+				IExploding exploding = (IExploding)this;
+				switch (propertyName)
+				{
+	                case "IsExploding": getter = () => exploding.IsExploding; setter = (v) => exploding.IsExploding = v; break;
+				}
+			}
+			
+			if (getter == null && setter == null)
+				throw new InvalidOperationException("Unknown property '" + propertyName + "'");
+		}
+		public virtual void GetProperty(string propertyName, out Func<string> getter, out Action<string> setter)
+		{
+			throw new InvalidOperationException("Unknown property '" + propertyName + "'");
+		}
+	}
 }
 

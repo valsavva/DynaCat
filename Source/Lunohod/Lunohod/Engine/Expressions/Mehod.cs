@@ -6,32 +6,21 @@ using Lunohod.Objects;
 
 namespace Lunohod.Xge
 {
-    public abstract class Method<T> : Expression<T>, IAction
+    public class Method<T> : Expression<T>, IAction
     {
         protected string objectId;
         protected string actionId;
         protected List<Expression> parameters;
         protected XObject target;
 
-        protected XSystem system;
+        protected Func<List<Expression>, T> action;
 
-        protected Func<T> action;
-
-        public Method(XObject currentObject, string objectId, string actionId, List<Expression> parameters)
+        public Method(XObject currentObject, string objectId, string actionId, Func<List<Expression>, T> func, List<Expression> parameters)
         {
             this.objectId = objectId;
             this.actionId = actionId;
             this.parameters = parameters;
-
-            if (objectId == null)
-                target = currentObject.Parent;
-            else
-                target = currentObject.GetRoot().FindDescendant(objectId);
-
-            if (target == null)
-                throw new InvalidOperationException(string.Format("Could not find object with Id: [{0}]", objectId));
-
-            system = this.target as XSystem;
+			this.action = func;
         }
 
         public void Call()
@@ -39,7 +28,7 @@ namespace Lunohod.Xge
             this.GetValue();
         }
 
-        public override T GetValue() { return action(); }
+        public override T GetValue() { return action(parameters); }
 
         public override string ToString()
         {

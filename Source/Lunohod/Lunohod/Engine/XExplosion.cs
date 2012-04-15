@@ -7,6 +7,7 @@ using Lunohod;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Globalization;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -78,6 +79,16 @@ namespace Lunohod.Objects
 
             base.ReadXml(reader);
         }
+
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+				case "Explode": method = (ps) => Explode(); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
 	}
 }
 

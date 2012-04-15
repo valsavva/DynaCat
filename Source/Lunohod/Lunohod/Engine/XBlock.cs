@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using Lunohod;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -75,5 +76,15 @@ namespace Lunohod.Objects
 
             base.ReadXml(reader);
         }
-    }
+
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+				case "SetEdges": method = (ps) => SetEdges((XEdgeType)Enum.Parse(typeof(XEdgeType), ps[0].GetStrValue())); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
+	}
 }

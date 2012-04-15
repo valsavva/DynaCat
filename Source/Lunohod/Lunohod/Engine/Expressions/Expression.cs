@@ -11,6 +11,22 @@ namespace Lunohod.Xge
         Type Type { get; }
     }
 
+	public static class ExpressionEx
+	{
+		public static double GetNumValue(this IExpression e)
+		{
+			return ((IExpression<double>)e).GetValue();
+		}
+		public static int GetIntValue(this IExpression e)
+		{
+			return (int)((IExpression<double>)e).GetValue();
+		}
+		public static string GetStrValue(this IExpression e)
+		{
+			return ((IExpression<string>)e).GetValue();
+		}
+	}
+	
     public interface IExpression<T> : IExpression
     {
         T GetValue();

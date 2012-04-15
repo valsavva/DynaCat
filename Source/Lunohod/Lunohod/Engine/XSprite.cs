@@ -54,6 +54,16 @@ namespace Lunohod.Objects
 
             base.ReadXml(reader);
         }
+		
+		public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+		{
+			switch (propertyName)
+			{
+                case "CurrentFrame": getter = () => CurrentFrame; setter = (v) => CurrentFrame = (int)Math.Round(v); break;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
 	}
 }
 

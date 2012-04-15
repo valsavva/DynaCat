@@ -13,7 +13,7 @@ namespace Lunohod.Xge
         string Id { get; }
     }
 
-    public abstract class Property<T> : Expression<T>, IProperty, IAssignable<T>
+    public class Property<T> : Expression<T>, IProperty, IAssignable<T>
     {
         protected string objectId;
         protected string propertyId;
@@ -24,20 +24,13 @@ namespace Lunohod.Xge
         protected Func<T> getter;
         protected Action<T> setter;
 
-        public Property(XObject currentObject, string objectId, string propertyId)
+        public Property(XObject currentObject, string objectId, string propertyId, Func<T> getter, Action<T> setter)
         {
             this.objectId = objectId;
             this.propertyId = propertyId;
-
             this.Id = propertyId;
-
-            if (objectId == null)
-                target = currentObject.Parent;
-            else
-                target = currentObject.GetRoot().FindDescendant(objectId);
-
-            if (target == null)
-                throw new InvalidOperationException(string.Format("Could not find object with Id: [{0}]", objectId));
+			this.getter = getter;
+			this.setter = setter;
         }
 
         protected void InitializeGenericAccessor()
@@ -66,7 +59,8 @@ namespace Lunohod.Xge
 
         public void SetValue(T v)
         {
-            setter(v);
+			if (setter != null)
+	            setter(v);
         }
 
         private void SetConvertedValue(T v)
