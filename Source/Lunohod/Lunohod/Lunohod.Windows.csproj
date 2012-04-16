@@ -1725,6 +1725,7 @@
     </Content>
     <Content Include="Metadata\ClassFoodPack.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassHelpText.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
