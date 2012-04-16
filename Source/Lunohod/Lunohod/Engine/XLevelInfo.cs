@@ -47,7 +47,7 @@ namespace Lunohod.Objects
             this.File = reader["File"];
             reader.ReadAttrAsInt("BombCount", ref this.BombCount);
             reader.ReadAttrAsFloat("HeroHealth", ref this.HeroHealth);
-            this.ExplosionClass = reader["ExplosionClass"];
+            reader.ReadAttrAsString("ExplosionClass", ref this.ExplosionClass);
 
             base.ReadXml(reader);
 			

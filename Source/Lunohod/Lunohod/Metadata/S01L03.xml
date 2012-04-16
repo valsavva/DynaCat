@@ -39,7 +39,8 @@
         <Image Id="dfltMask5" TextureId="txr_second_phon_communications_2a" Bounds="221, 3, 116, 69" Stretch="true" Opacity="1" TraceId="image3928"/>
     </Layer>
     <Layer Id="helptext" BackColor="#FFFFFFFF">
-        <Group Id="hlpTxtimage3517" Class="clsHelpText" ClassParams="@blink=true" Bounds="617, 158, 63, 35" TraceId="image3517">
+		<BoolTrigger Id="trgHelpTextStarter" Condition="system:levelLoaded" EnterAction="system:startHelpText;trgHelpTextStarter.Disable();" />
+		<Group Id="hlpTxtimage3517" Class="clsHelpText" ClassParams="@blink=true" Bounds="617, 158, 63, 35" TraceId="image3517">
             <Image Id="hlpTxtimage3517_img" TextureId="txr_arr_Curve3" Opacity="0"/>
         </Group>
         <Group Id="hlpTxtimage3528" Class="clsHelpText" ClassParams="@blink=true" Bounds="616, 78, 49, 40" TraceId="image3528">

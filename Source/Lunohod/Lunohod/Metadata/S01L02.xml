@@ -82,7 +82,8 @@
             <Image TextureId="txr_box_old_2" />
         </Block>
     </Layer>
-    <Layer Id="helptext" BackColor="#FFFFFFFF">
+	<Layer Id="helptext" BackColor="#FFFFFFFF">
+		<BoolTrigger Id="trgHelpTextStarter" Condition="system:levelLoaded" EnterAction="system:startHelpText;trgHelpTextStarter.Disable();" />
         <Group Id="hlpTxtimage3462" Class="clsHelpText" ClassParams="@blink=false" Bounds="157, 182, 96, 18" TraceId="image3462">
             <Image Id="hlpTxtimage3462_img" TextureId="txr_txt_collect_this" Opacity="0"/>
         </Group>

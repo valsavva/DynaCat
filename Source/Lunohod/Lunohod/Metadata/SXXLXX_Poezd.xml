@@ -2,7 +2,6 @@
 <!-- SVG to XGAME xml converter v1.5.07 -->
 <!-- source: D:\Lunohod\Levels\SXXLXX_AmerikanskieGorki\SXXLXX_AmerikanskieGorki.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="SXXLXX_AmerikanskieGorki" Bounds="0, 0, 480, 320">
-    <LevelSettings Difficulty="-1" BombCount="7777777" HeroHealth="100" ExplosionClass="clsExplosion"/>
     <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassFoodPack.xml" />

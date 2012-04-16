@@ -141,19 +141,13 @@
     </Compile>
     <Compile Include="Engine\Expressions\AssignStatement.cs" />
     <Compile Include="Engine\Expressions\BoolFlagAction.cs" />
-    <Compile Include="Engine\Expressions\BoolMethod.cs" />
-    <Compile Include="Engine\Expressions\BoolProperty.cs" />
     <Compile Include="Engine\Expressions\MethodFactory.cs" />
-    <Compile Include="Engine\Expressions\NumMethod.cs" />
-    <Compile Include="Engine\Expressions\NumProperty.cs" />
     <Compile Include="Engine\Expressions\OperatorFactory.cs" />
     <Compile Include="Engine\Expressions\PropertyFactory.cs" />
     <Compile Include="Engine\Expressions\StrConcatOperator.cs" />
     <Compile Include="Engine\Expressions\StrConstant.cs" />
-    <Compile Include="Engine\Expressions\StrMethod.cs" />
     <Compile Include="Engine\Expressions\Validator.cs" />
     <Compile Include="Engine\Expressions\Variable.cs" />
-    <Compile Include="Engine\Expressions\VoidMethod.cs" />
     <Compile Include="Engine\Serialization\ClassFactory.cs" />
     <Compile Include="Engine\Updates\DrawParameters.cs" />
     <Compile Include="Engine\Updates\InitializeParameters.cs" />
@@ -236,7 +230,6 @@
     </Compile>
     <Compile Include="Engine\XLevelInfo.cs" />
     <Compile Include="Engine\XLevelSeries.cs" />
-    <Compile Include="Engine\XLevelSettings.cs" />
     <Compile Include="Engine\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1761,6 +1754,12 @@
     <Content Include="Metadata\ClassWoodenBox.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Metadata\S01L01_Comics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ScreenCredits.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ScreenLevelComplete.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

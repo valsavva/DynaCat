@@ -48,8 +48,9 @@
 	        <LevelInfo Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
             <LevelInfo Id="S03LXX_VodoprovodniiNindzya" File="S03LXX_VodoprovodniiNindzya.xml" />
             <LevelInfo Id="S03LXX_4_Komnati" File="S03LXX_4_Komnati.xml" />
-            <LevelInfo Id="S03LXX_Chelnok" File="S03LXX_Chelnok.xml" />
-            <LevelInfo Id="SXXLXX_VolkLovitYayca" File="SXXLXX_VolkLovitYayca.xml" />
+            <LevelInfo Id="S03LXX_Chelnok" File="S03LXX_Chelnok.xml"
+				BombCount="0" />
+			<LevelInfo Id="SXXLXX_VolkLovitYayca" File="SXXLXX_VolkLovitYayca.xml" />
             <LevelInfo Id="SXXLXX_Poezd" File="SXXLXX_Poezd.xml" />
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Tests -----" File="ScreenTests.xml">

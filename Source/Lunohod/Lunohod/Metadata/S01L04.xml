@@ -33,7 +33,8 @@
         <Image Id="dfltMask5" TextureId="txr_second_phon_communications_2a" Bounds="309, 18, 116, 69" Rotation="0" Stretch="true" Opacity="1" TraceId="image3928"/>
     </Layer>
     <Layer Id="helptext" BackColor="#FFFFFFFF">
-        <Group Id="hlpTxtimage3153" Class="clsHelpText" ClassParams="@blink=false" Bounds="110, 189, 171, 24" TraceId="image3153">
+		<BoolTrigger Id="trgHelpTextStarter" Condition="system:levelLoaded" EnterAction="system:startHelpText;trgHelpTextStarter.Disable();" />
+		<Group Id="hlpTxtimage3153" Class="clsHelpText" ClassParams="@blink=false" Bounds="110, 189, 171, 24" TraceId="image3153">
             <Image Id="hlpTxtimage3153_img" TextureId="txr_txt_try_the_bombs" Opacity="0"/>
         </Group>
         <Group Id="hlpTxtimage31750" Class="clsHelpText" ClassParams="@blink=false" Bounds="225, 212, 49, 40" TraceId="image31750">

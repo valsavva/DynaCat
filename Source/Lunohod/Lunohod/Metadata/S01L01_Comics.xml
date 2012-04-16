@@ -12,7 +12,7 @@
 		<Image TextureId="txrBackground" />
 	</Layer>
 	<Layer>
-		<TapArea Action="system.CloseCurrentScreen();system:comicsEnd" />
+		<TapArea Action="system.CloseCurrentScreen();system:startHelpText" />
 		<Group Bounds="50,50,100,40">
 			<Text Location="0,0,100,50" Text="Comics screen. We can scroll this." FontId="fntSystem" />
 		</Group>
