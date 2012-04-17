@@ -26,7 +26,7 @@
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
                 <!--<Let Target="this.Damage" Value="0" />-->
-                <Do Action="hero:+GoodExplosion"/>
+                <Do Action="this:+Destroyed;hero:+GoodExplosion"/>
                 <Sound FileId="sndEnemyRat1Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
     			<SequenceSet>
     				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
@@ -35,9 +35,11 @@
 			</ParallelSet>
 
 			<!-- attack -->
-   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
-                <Image Id="this_txrEnemyRat1Attack" TextureId="txrEnemyRat1Attack" Bounds="-6, -2, 40, 29"/>
-   			</IntersectionTrigger>
+            <BoolTrigger Condition="!this:Destroyed">
+                <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
+                    <Image Id="this_txrEnemyRat1Attack" TextureId="txrEnemyRat1Attack" Bounds="-6, -2, 40, 29"/>
+                </IntersectionTrigger>
+            </BoolTrigger>
 
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
                 <Do Action="this_anmAttack.Start()" />

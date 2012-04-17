@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.5.07 -->
-<!-- source: D:\Lunohod\Levels\SXXLXX_AmerikanskieGorki\SXXLXX_AmerikanskieGorki.svg -->
-<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="SXXLXX_AmerikanskieGorki" Bounds="0, 0, 480, 320">
+<!-- SVG to XGAME xml converter v1.5.08 -->
+<!-- source: D:\Lunohod\Levels\SXXLXX_Poezd\SXXLXX_Poezd.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="SXXLXX_Poezd" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassEnemyRat2.xml" />
-    <Include File="ClassFoodPack.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_bckg_demo_SXXLXX_AmerikanskieGorki" Source="bckg_demo_SXXLXX_AmerikanskieGorki" />
-        <Texture Id="txr_package_1" Source="package_1" />
         <Texture Id="txr_fish_4_me" Source="fish_4_me" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
@@ -20,21 +18,9 @@
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="130, 63, 22, 23" TraceId="image4606"/>
         <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="340, 170, 22, 23" TraceId="image4608"/>
-        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="178, 266, 22, 23" TraceId="image4603"/>
+        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="168, 262, 22, 23" TraceId="image4603"/>
         <Enemy Id="enm4" Class="clsEnemyRat2" Bounds="428, 97, 22, 23" TraceId="image4621"/>
         <Enemy Id="enm5" Class="clsEnemyRat2" Bounds="128, 167, 22, 23" TraceId="image3386"/>
-        <Food Id="fdPack1" Class="clsFoodPack" Points="1" Bounds="360, 237, 40, 33" TraceId="image4639">
-            <Image TextureId="txr_package_1" />
-        </Food>
-        <Food Id="fdPack2" Class="clsFoodPack" Points="1" Bounds="340, 74, 40, 33" TraceId="image4642">
-            <Image TextureId="txr_package_1" />
-        </Food>
-        <Food Id="fdPack3" Class="clsFoodPack" Points="1" Bounds="191, 164, 40, 33" TraceId="image3325">
-            <Image TextureId="txr_package_1" />
-        </Food>
-        <Food Id="fdPack4" Class="clsFoodPack" Points="1" Bounds="252, 91, 40, 33" TraceId="image4644">
-            <Image TextureId="txr_package_1" />
-        </Food>
         <Food Id="fd1" Class="clsFood" Points="1" Bounds="430, 134, 30, 15" TraceId="image3313">
             <Image TextureId="txr_fish_4_me" />
         </Food>
@@ -47,10 +33,10 @@
         <Food Id="fd4" Class="clsFood" Points="1" Bounds="152, 106, 30, 15" TraceId="image3315">
             <Image TextureId="txr_fish_4_me" />
         </Food>
-        <Food Id="fd5" Class="clsFood" Points="1" Bounds="156, 98,  30,  15" TraceId="image3317">
+        <Food Id="fd5" Class="clsFood" Points="1" Bounds="156, 98, 30, 15" TraceId="image3317">
             <Image TextureId="txr_fish_4_me" />
         </Food>
-        <Food Id="fd6" Class="clsFood" Points="1" Bounds="164, 89,  30,  15" TraceId="image4659">
+        <Food Id="fd6" Class="clsFood" Points="1" Bounds="164, 89, 30, 15" TraceId="image4659">
             <Image TextureId="txr_fish_4_me" />
         </Food>
         <Food Id="fd7" Class="clsFood" Points="1" Bounds="223, 208, 30, 15" TraceId="image4661">
@@ -74,6 +60,7 @@
         </Group>
     </Layer>
     <Layer Id="way" BackColor="#FFFFFFFF">
+        <!-- HAND EDIT -->
         <SequenceSet InProgress="true">
             <Do Action="dashboard:NoArrows" />
             <Do Action="hero.StartTransaction()" />
@@ -99,5 +86,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=11 Enemy=6 Block=0 DesignImage=1 Animation=12 Teleport Animations=0 FoodPack=4 -->
-
+<!-- Food=11 Enemy=6 Block=0 DesignImage=1 Animation=12 Teleport Animations=0 FoodPack=0 -->

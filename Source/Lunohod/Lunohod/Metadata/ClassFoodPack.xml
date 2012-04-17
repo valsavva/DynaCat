@@ -1,20 +1,54 @@
-<Include>	
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd">-->
+    <Include>	
 	
 	<Resources RootFolder="Sound">
 		<SoundFile Id="sndGoodBoom" Source="skeletonFX_laughting_1"/>
 	</Resources>
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_package_1" Source="package_1" />
+        <Texture Id="txr_cloud1" Source="cloud1" />
+        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
+        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
+        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
+        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+    </Resources>
 
-	<Class Id="clsFoodPack">
+        <Class Id="clsOneFishFromPack">
+            <Food Class="clsFood" Points="1" Bounds="0, 0, 30, 15">
+                <Image TextureId="txr_fish_6_me" Bounds="0, 0, 30, 15"/>
+                <SequenceSet InProgress="true">
+                    <!--<Do Action="this:+eaten" />-->
+                    <NumAnimation Target="this.X,this.Y" RepeatCount="1" Autoreverse="false" IsDelta="true">
+                        <KeyFrame Time="0" Value="0,0" Smoothing="Smooth"/>
+                        <KeyFrame Time="0.3" Value="15,-40" Smoothing="Smooth"/>
+                        <KeyFrame Time="0.5" Value="45,-20" Smoothing="Smooth"/>
+                    </NumAnimation>
+                </SequenceSet>
+            </Food>
+        </Class>
+        
+        <Class Id="clsFoodPack">
 		<Food IsExploding="true">
-
+            <Image Id="this_imgPack" TextureId="txr_package_1" Bounds="0, 0, 40, 33" />
             <!-- explosion -->
             <!-- good boom (near the center) -->
 			<BoolTrigger Condition="this:BoomVeryClose" EnterAction="this_setDestroy1.Start();this_GoodBoom.Start()" StayTriggered="true" Group="this_foodPackStates">
+                <Food Id="this_f1" Class="clsOneFishFromPack"/>
+                <Food Id="this_f2" Class="clsOneFishFromPack"/>
+                <Food Id="this_f3" Class="clsOneFishFromPack"/>
+                <Image Id="this_cloud" TextureId="txr_cloud1" Bounds="4, 5, 32, 23" Opacity="1" RotationCenter="16,12"/>
 				<Sound Id="this_GoodBoom" FileId="sndGoodBoom" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 			</BoolTrigger>
+            
 			<SequenceSet Id="this_setDestroy1" InProgress="false">
-				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.1" Autoreverse="false" RepeatCount="6"/>
-				<Do Action="this.Disable()"/>
+                <Do Action="this_imgPack.Disable()"/>
+                <ParallelSet>
+                    <NumAnimation Target="this_cloud.Opacity" From="1" To="0" Duration="1.3" Autoreverse="false" RepeatCount="1"/>
+                    <NumAnimation Target="this_cloud.Rotation" From="-10" To="10" Duration="1" Autoreverse="false" RepeatCount="1"/>
+                    <NumAnimation Target="this_cloud.Width,this_cloud.Height" From="32,23" To="1,1" Duration="1.5" Autoreverse="false" Fill="End" RepeatCount="1"/>
+                </ParallelSet>
+                <Delay Duration="10" />
+                <Do Action="this.Disable()"/>
 			</SequenceSet>
 
             <!-- just destroy -->
