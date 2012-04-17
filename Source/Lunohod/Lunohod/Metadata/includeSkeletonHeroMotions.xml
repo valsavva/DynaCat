@@ -4,9 +4,11 @@
 		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
 	
-<!--    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(hero.Speed)" Color="#000000" />
+	<!--
+	<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(hero.Speed)" Color="#000000" />
     <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(hero.X) + ')(' + system.Str(hero.Y) + ')'" Color="#000000" />
     -->
+	
 	<!-- Global variables. Will be moved out here. -->
 	<Do Action="@heroBaseSpeed=60;@heroBaseTime=3.95;" InProgress="true"/>
 	
@@ -29,6 +31,7 @@
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
+	<BoolTrigger Condition="this:stick" EnterAction="anmDeceleration.Stop()" />
 
 	<!-- hero speed animation -->
 	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
@@ -39,7 +42,8 @@
         <KeyFrame Time="@heroTime4" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
 
-    <!-- hero speed electric shock animation -->
+
+	<!-- hero speed electric shock animation -->
     <NumAnimation Id="anmElectricShockSpeed" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
         <KeyFrame Time="0.5" Value="200" Smoothing="Smooth"/>

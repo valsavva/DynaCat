@@ -40,7 +40,16 @@ namespace Lunohod.Objects
 		/// </summary>
 		[XmlIgnore]
 		public Vector2 Direction;
-		
+        /// <summary>
+        /// Gets or sets the X component of Direction
+        /// </summary>
+        [XmlIgnore]
+        public float DirectionX {get { return this.Direction.X; } set { this.Direction.X = value; } }
+        /// <summary>
+        /// Gets or sets the Y component of Direction
+        /// </summary>
+        [XmlIgnore]
+        public float DirectionY {get { return this.Direction.Y; } set { this.Direction.Y = value; } }
 		/// <summary>
 		/// Gets the default health.
 		/// </summary>
@@ -219,6 +228,8 @@ namespace Lunohod.Objects
                 case "BombCount": getter = () => BombCount; setter = (v) => BombCount = v; break;
                 case "DefaultBombCount": getter = () => DefaultBombCount; setter = (v) => DefaultBombCount = v; break;
                 case "Deceleration": getter = () => Deceleration; setter = (v) => Deceleration = v; break;
+                case "DirectionX": getter = () => DirectionX; setter = (v) => DirectionX = (float)v; break;
+                case "DirectionY": getter = () => DirectionY; setter = (v) => DirectionY = (float)v; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}

@@ -33,11 +33,16 @@ namespace Lunohod.Objects
 		{
 			base.Initialize (p);
 
+            if (string.IsNullOrEmpty(this.TextureId))
+                throw new InvalidOperationException(string.Format(
+                    "TextureId must be specified. Image: '{0}'", this.Id
+                ));
+
 			this.texture = (XTextureResource)p.ScreenEngine.RootComponent.FindDescendant(this.TextureId);
 			
 			if (this.texture == null)
 				throw new InvalidOperationException(string.Format(
-					"Texture was not found. ImageID:{0} TextureId:{1}", this.Id, this.TextureId
+					"Texture was not found. Image: '{0}' TextureId: '{1}'", this.Id, this.TextureId
                 ));
 		}
 		
