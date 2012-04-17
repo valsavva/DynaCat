@@ -5,6 +5,8 @@
     <Resources RootFolder="Global">
         <Texture Id="blank" Source="blank" />
 		<Font Id="SystemFont" Source="SystemFont" />
+        <!--<Font Id="Splash14Font" Source="Splash14Font" />
+        <Font Id="Splash16Font" Source="Splash16Font" />-->
         <Texture Id="txrBtnDown" Source="btnDown"/>
         <Texture Id="txrBtnLeft" Source="btnLeft"/>
         <Texture Id="txrBtnPause" Source="btnPause"/>
@@ -26,6 +28,14 @@
     
     <Dashboard Id="dashboard" BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270"/>
+
+        <!--<Text Text="HELP TEXT" FontId="Splash16Font" Location="201,201" Color="#000000"/>
+        <Text Text="HELP TEXT" FontId="Splash16Font" Location="200,200" Color="#FFFFFF"/>
+        <Text Text="+10 +20 65375" FontId="Splash14Font" Location="101,101" Color="#000000"/>
+        <Text Text="+10 +20 65375" FontId="Splash14Font" Location="100,100" Color="#FFFFFF"/>
+        
+        <Text Text="health:" FontId="Splash14Font" Location="201,-2" Color="#000000"/>
+        <Text Text="health:" FontId="Splash14Font" Location="200,-3" Color="#FFFFFF"/>-->
 
         <BoolTrigger Condition="!dashboard:NoArrows" >
             <TapArea Bounds="0, 70, 100, 100" Action="tap1_setPress.Start()"/>
