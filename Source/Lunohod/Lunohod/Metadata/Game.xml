@@ -96,7 +96,8 @@
 			<LevelInfo Id="AnimationSamples" File="AnimationSamples.xml" />
 			<LevelInfo Id="TestDeath" File="TestDeath.xml"
 				HeroHealth="5" />
-			<LevelInfo Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
+			<LevelInfo Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml"
+				ExplosionClass=""/>
 	        <LevelInfo Id="TestORCS2" File="TestORCS2.xml" />
 	        <LevelInfo Id="TestExplosion" File="TestExplosion.xml"
 				BombCount="3" />

@@ -12,8 +12,15 @@
 	<Class Id="clsRotationAnimation">
 		<NumAnimation Target="Rotation" From="0" To="360" Duration="@duration" InProgress="true" />
 	</Class>
-	
-    <Layer Id="background" BackColor="#FFFFFFFF">
+
+	<Class Id="clsScalingGroup">
+		<Group>
+			<Image Id="this_zzz" TextureId="chargers" />
+			<NumAnimation Target="this.Scale" From="1" To="2" Duration="1" InProgress="true" Autoreverse="true" RepeatCount="0" />
+		</Group>
+	</Class>
+
+	<Layer Id="background" BackColor="#FFFFFFFF">
         <Image TextureId="white_clear" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
         <Image TextureId="grid_480x320" Bounds="0, 0, 480, 320" Stretch="false" Opacity="1"/>
     </Layer>
@@ -47,6 +54,7 @@
 			<NumAnimation Target="X" From="0" To="50" Duration="0.5" RepeatCount="1" InProgress="true" />
 		</Image>
 		<Image TextureId="chargers" Origin ="0,50" Location="0,320" Scale="3" />
+		<Group Id="imgScaleAnimationTest" Bounds="100,0,50,50" Class="clsScalingGroup" />
 	</Layer>
 
 	<Include File="Dashboard.xml" />	

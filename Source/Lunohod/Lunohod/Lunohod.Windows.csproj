@@ -1728,6 +1728,7 @@
     </Content>
     <Content Include="Metadata\ClassHelpText.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassHero.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2161,6 +2162,7 @@
     </Content>
     <Content Include="Metadata\TestOriginAndRotationCenterAndScale.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\TestRnd.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
