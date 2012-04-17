@@ -20,7 +20,7 @@
 	
     <Resources RootFolder="Textures">
         <Texture Id="txrHeroDefault" Source="cat_var_2b"/>
-        <Texture Id="txrHeroEating" Source="cat_var_eat_sprite_2x40x41"/>
+        <Texture Id="txrHeroEating" Source="cat_var_eat"/> <!--_sprite_2x40x41"/>-->
         <!--<Texture Id="txrHeroEating2" Source="cat_var_eat2"/>-->
         <Texture Id="txrHeroDying" Source="cat_var_2c"/>
         <Texture Id="txrHeroGottaDamage" Source="cat_var_2c"/>
@@ -58,6 +58,7 @@
             <BoolTrigger Condition="this:ElecticShock" EnterAction="anmElecticShock.Start();this:+GottaDamage" ExitAction="anmElecticShockEnd.Start()" />
             <NumAnimation Id="anmElecticShock" From="-1" To="1" Target="this.Rotation" Duration="0.05" Autoreverse="true" RepeatCount="0" />
             <SequenceSet Id="anmElecticShockEnd">
+                <Do Action="this:-Eating" />
                 <Delay Duration="2" />
                 <Do Action="anmElecticShock.Stop();this:-GottaDamage" />
                 <NumAnimation From="0" To="0" Target="this.Rotation" Duration="0.1" Autoreverse="true" RepeatCount="1" />
@@ -75,6 +76,7 @@
                 <Image TextureId="txrHeroGoodExplosion" Bounds="-4, -10, 40, 33"/>
             </BoolTrigger>
             <SequenceSet Id="anmGoodExplosion">
+                <Do Action="this:-Eating" />
                 <Delay Duration="1" />
                 <Do Action="this:-GoodExplosion" />
             </SequenceSet>
@@ -85,6 +87,7 @@
                 <Image TextureId="txrHeroBadExplosion" Bounds="-4, -10, 40, 33"/>
             </BoolTrigger>
             <SequenceSet Id="anmBadExplosion">
+                <Do Action="this:-Eating" />
                 <Delay Duration="1" />
                 <Do Action="this:-BadExplosion" />
             </SequenceSet>
@@ -109,6 +112,7 @@
                 <Image Id="imgHeroGottaDamage" TextureId="txrHeroGottaDamage" Bounds="-4, -10, 40, 33"/>
             </BoolTrigger>
             <SequenceSet Id="setHeroGottaDamage">
+                <Do Action="this:-Eating" />
                 <NumAnimation Target="imgHeroGottaDamage.Height" From="0" To="-1" Duration="0.2" IsDelta="true" Autoreverse="true" Fill="Reset" RepeatCount="5" />
                 <Delay Duration="1" />
             </SequenceSet>
@@ -116,21 +120,12 @@
             <!-- eating -->
 			<BoolTrigger Condition="this:Eating" EnterAction="setHeroEating.Start()" StayTriggered="false" Group="sttHeroStates">
                 <!--<Image TextureId="txrHeroEating" Bounds="-4, -18, 40, 41"/>-->
-                <Sprite Id="sprHeroEating" TextureId="txrHeroEating" Bounds="-4, -18, 40, 41" FrameBounds="0,0,40,41" />
+                <Image Id="sprHeroEating" TextureId="txrHeroEating" Bounds="-4, -18, 40, 41" /><!--FrameBounds="0,0,40,41"--> 
                 <!--<BoolTrigger Property="zzzsprHeroEating.InProgress" ExitAction="this:-Eating" />-->
                 <SequenceSet Id="setHeroEating">
                     <ParallelSet>
-                        <NumAnimation From="0" To="1" Duration="0.2" Autoreverse="false" Target="sprHeroEating.CurrentFrame" RepeatCount="1.5" Fill="End"/>
-				        <RandomSet>
-					        <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
-					        <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
-					        <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
-					        <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0"/>
-					        <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0.3"/>
-					        <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0.3"/>
-					        <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0.3"/>
-					        <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0.3"/>
-				        </RandomSet>
+                        <Do Action="this_setHeroFoleyEating.Start()" />
+                        <Delay Duration="0.15" />
                     </ParallelSet>
                     <RandomSet>
                         <Do Action="hero:Chavk" />
@@ -165,6 +160,18 @@
                 <Sound FileId="sndHeroStick2" Volume="0.2" Pitch="0"/>
                 <Sound FileId="sndHeroStick1" Volume="0.2" Pitch="0.1"/>
                 <Sound FileId="sndHeroStick2" Volume="0.2" Pitch="0.1"/>
+            </RandomSet>
+            
+            <!-- Eating -->
+            <RandomSet Id="this_setHeroFoleyEating">
+                <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0.3"/>
+                <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0.3"/>
+                <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0.3"/>
+                <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0.3"/>
             </RandomSet>
 
             <!-- Chavk -->
