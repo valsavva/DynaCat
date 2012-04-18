@@ -189,12 +189,13 @@ namespace Microsoft.Xna.Framework
             BeginObservingUIApplication();
 
             _viewController.View.BecomeFirstResponder();
-            //_runTimer = NSTimer.CreateRepeatingScheduledTimer(Game.TargetElapsedTime, Tick);
-			_caDisplayLink = CADisplayLink.Create( delegate {
-				Tick ();
-			});
-			_caDisplayLink.FrameInterval = 1;
-			_caDisplayLink.AddToRunLoop(NSRunLoop.Current, NSRunLoop.NSDefaultRunLoopMode);        }
+            _runTimer = NSTimer.CreateRepeatingScheduledTimer(Game.TargetElapsedTime, Tick);
+//			_caDisplayLink = CADisplayLink.Create( delegate {
+//				Tick ();
+//			});
+//			_caDisplayLink.FrameInterval = 1;
+//			_caDisplayLink.AddToRunLoop(NSRunLoop.Current, NSRunLoop.NSDefaultRunLoopMode);
+		}
 
         private void Tick()
         {
