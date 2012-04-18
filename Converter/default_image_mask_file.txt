@@ -10,12 +10,8 @@
 ###width
 , 
 ###height
-" Rotation="
-###@rotation
-" Stretch="
-###@stretch
-" Opacity="
-###@opacity
-" TraceId="
+" 
+###@imageParams
+TraceId="
 ###id
 "/>

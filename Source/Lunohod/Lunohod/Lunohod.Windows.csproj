@@ -1931,6 +1931,7 @@
     </Content>
     <Content Include="Metadata\S02LXX_Dyrka.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\S02LXX_Elochka.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
