@@ -127,6 +127,10 @@ namespace Lunohod.Objects
         {
             return o.ToString();
         }
+		public double Round(double num, int digits)
+		{
+			return Math.Round(num, digits);
+		}
 
 		public override void GetMethod(string methodName, out Func<List<Lunohod.Xge.Expression>, double> method)
 		{
@@ -135,6 +139,7 @@ namespace Lunohod.Objects
                 case "Rnd": method = (ps) => Rnd(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "RndX": method = (ps) => RndX(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "RndY": method = (ps) => RndY(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
+                case "Round": method = (ps) => Round(ps[0].GetNumValue(), ps.Count < 2 ? 0 : ps[1].GetIntValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

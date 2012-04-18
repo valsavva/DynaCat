@@ -326,6 +326,7 @@ namespace Lunohod.Objects
                 case "Rotation": getter = () => Rotation; setter = (v) => Rotation = v; break;
                 case "Scale": getter = () => Scale; setter = (v) => Scale = v; break;
                 case "Opacity": getter = () => Opacity; setter = (v) => Opacity = v; break;
+				case "Depth": getter = () => Depth; setter = (v) => Depth = (float)v; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}
