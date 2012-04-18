@@ -43,14 +43,16 @@
 			<LevelInfo Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
             <LevelInfo Id="S02LXX_Trenazher" File="S02LXX_Trenazher.xml" />
 	        <LevelInfo Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
+        </LevelSeries>
+        <LevelSeries Id="series3" Name="----- Series 3 -----" File="ScreenSeries3.xml">
             <LevelInfo Id="S03LXX_VodoprovodniiNindzya" File="S03LXX_VodoprovodniiNindzya.xml" />
-            <LevelInfo Id="S03LXX_4_Komnati" File="S03LXX_4_Komnati.xml" />
+            <LevelInfo Id="S03LXX_4_Komnati" File="S03LXX_4_Komnati.xml" BombCount="0" />
             <LevelInfo Id="S03LXX_Chelnok" File="S03LXX_Chelnok.xml" BombCount="0" />
-			<LevelInfo Id="SXXLXX_VolkLovitYayca" File="SXXLXX_VolkLovitYayca.xml" />
+            <LevelInfo Id="SXXLXX_VolkLovitYayca" File="SXXLXX_VolkLovitYayca.xml" />
             <LevelInfo Id="SXXLXX_Poezd_v2" File="SXXLXX_Poezd_v2.xml" />
             <LevelInfo Id="SXXLXX_Poezd" File="SXXLXX_Poezd.xml" />
         </LevelSeries>
-        <LevelSeries Id="series3" Name="----- Tests -----" File="ScreenTests.xml">
+        <LevelSeries Id="Tests" Name="----- Tests -----" File="ScreenTests.xml">
             <!--<LevelInfo Id="AlphaTest" File="AlphaTest.xml" />-->
 	        <LevelInfo Id="AlphaTest" File="AlphaTest.xml" />
 	        <LevelInfo Id="AlphaTest2" File="AlphaTest2.xml" />
