@@ -119,7 +119,7 @@
                 <Do Action="enm3_sndSawMid.Start()"/>
             </SequenceSet>
             <!-- HANDEDIT >>> -->
-            <NumTrigger Property="hero.Y" Compare="G" Value="150" EnterAction="setSawRoll.Start()" />
+            <NumTrigger Property="hero.Y" Compare="G" Value="150" EnterAction="setSawRoll.Start()" StayTriggered="true" />
             <SequenceSet Id="setSawRoll" InProgress="false" RepeatCount="0">
                 <NumAnimation From="0" To="30" Target="enm3.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
                 <Delay Duration="0.5"/>
