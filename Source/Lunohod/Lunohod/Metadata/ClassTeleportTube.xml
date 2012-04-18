@@ -8,14 +8,12 @@
 
     <Class Id="clsTeleportTube">
         <SequenceSet InProgress="true" RepeatCount="1">
-            <Do Action="@d=@delay;hero:+PortCont" />
-            <Delay Duration="@d" />
-            <Do Action="imgTeleportTubeHorHero.X=@horX;imgTeleportTubeHorHero.Y=@horY" />
-            <Do Action="imgTeleportTubeVertHero.X=@vertX;imgTeleportTubeVertHero.Y=@vertY" />
+            <Do Action="hero:+PortCont" />
+            <Delay Duration="@delay" />
+            <Do Action="imgTeleportTubeHorHero.X=@horX;imgTeleportTubeHorHero.Y=@horY;imgTeleportTubeVertHero.X=@vertX;imgTeleportTubeVertHero.Y=@vertY" />
             <NumAnimation Target="imgTeleportTubeHorHero.X,imgTeleportTubeVertHero.Y" From="0,0" To="@delta,@delta" IsDelta="true" Duration="@duration" RepeatCount="1" Autoreverse="false" Fill="End"/>
             <!--<Do Action="imgTeleportTubeHorHero.Disable();imgTeleportTubeVertHero.Disable()" />-->
-            <Do Action="imgTeleportTubeHorHero.X=-7777777;imgTeleportTubeHorHero.Y=-7777777" />
-            <Do Action="imgTeleportTubeVertHero.X=-7777777;imgTeleportTubeVertHero.Y=-7777777" />
+            <Do Action="imgTeleportTubeHorHero.X=-7777777;imgTeleportTubeHorHero.Y=-7777777;imgTeleportTubeVertHero.X=-7777777;imgTeleportTubeVertHero.Y=-7777777" />
             <Do Action="hero:-PortCont" />
         </SequenceSet>
     </Class>

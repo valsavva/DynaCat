@@ -8,10 +8,8 @@
    
     <Class Id="clsTeleportKoleno">
         <SequenceSet InProgress="true" RepeatCount="1">
-            <Do Action="imgTeleportKoleno.X=@X;imgTeleportKoleno.Y=@Y" />
-            <Do Action="hero:bounce" />
-            <Do Action="@d=@delay" />
-            <Delay Duration="@d" />
+            <Do Action="imgTeleportKoleno.X=@X;imgTeleportKoleno.Y=@Y;hero:bounce" />
+            <Delay Duration="@delay" />
             <RandomSet RepeatCount="1">
                 <NumAnimation Target="imgTeleportKoleno.X" From="2" To="-2" IsDelta="true" Duration="0.05" RepeatCount="1"/>
                 <NumAnimation Target="imgTeleportKoleno.Rotation" From="-5" To="5" IsDelta="true"  Duration="0.05" RepeatCount="1"/>
