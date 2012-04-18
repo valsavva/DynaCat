@@ -57,7 +57,7 @@
 		<BoolTrigger Condition="system:heroReduceTime" Action="@heroBaseTime=@heroBaseTime-0.5"/>
 		<BoolTrigger Condition="system:heroIncreaseTime" Action="@heroBaseTime=@heroBaseTime+0.5"/>
 		<BoolTrigger Condition="this:InBoloto" Action="doBolotoSpeed.Start()"/>
-		<BoolTrigger Condition="!this:InBoloto" Action="doNormalSpeed.Start()"/>
+		<BoolTrigger Condition="not this:InBoloto" Action="doNormalSpeed.Start()"/>
 	</BoolTrigger>
 	
 </Include>

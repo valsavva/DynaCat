@@ -1740,6 +1740,7 @@
     </Content>
     <Content Include="Metadata\IncludePointsAnm.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassTeleportEntry.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

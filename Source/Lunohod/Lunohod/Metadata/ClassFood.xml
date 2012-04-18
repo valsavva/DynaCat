@@ -5,7 +5,7 @@
 <!-- States -->
 
             <!-- eaten -->
-			<BoolTrigger Condition="!this:eaten">
+			<BoolTrigger Condition="not this:eaten">
 				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
 			</BoolTrigger>
             <SequenceSet Id="this_anmEated">

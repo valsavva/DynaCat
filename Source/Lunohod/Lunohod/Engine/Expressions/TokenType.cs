@@ -37,5 +37,9 @@ namespace Lunohod.Xge
         Op_L,
         Op_LE,
         Assign,
+
+        True,
+        False,
+        Exclamation,
     }
 }

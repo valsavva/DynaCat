@@ -37,7 +37,7 @@
         <Text Text="health:" FontId="Splash14Font" Location="201,-2" Color="#000000"/>
         <Text Text="health:" FontId="Splash14Font" Location="200,-3" Color="#FFFFFF"/>-->
 
-        <BoolTrigger Condition="!dashboard:NoArrows">
+        <BoolTrigger Condition="not dashboard:NoArrows">
             <TapArea Bounds="0, 70, 100, 100" Action="tap1_setPress.Start()"/>
             <Image Id="imgBtnUpL" TextureId="txrBtnUp" Bounds="9, 110, 56, 56" Stretch="false" Opacity="0.5"/>
             <SequenceSet Id="tap1_setPress">
