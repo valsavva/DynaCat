@@ -165,6 +165,7 @@
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3094"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
+    <Include File="IncludePointsAnm.xml" />
     <Include File="Dashboard.xml" />
 </Level>
 <!-- Food=2 Enemy=1 Block=15 DesignImage=72 Animation=1 Teleport=0 FoodPack=0 -->

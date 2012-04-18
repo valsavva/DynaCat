@@ -1,11 +1,6 @@
 <Include>
-    <Resources RootFolder="Textures">
-        <Texture Id="txrPoints10" Source="points10" />
-    </Resources>
-
-        <Class Id="clsFood">
+    <Class Id="clsFood">
 		<Food IsExploding="true">
-            <Image Id="this_imgPoints10" TextureId="txrPoints10" Bounds="0, -20, 28, 14" Stretch="false" Opacity="1" Enabled="false"/>
 
 <!-- States -->
 
@@ -18,12 +13,7 @@
                 <ParallelSet>
                     <NumAnimation Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" InProgress="true"/>
                     <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1" InProgress="true"/>
-                    <SequenceSet>
-                        <Do Action="this_imgPoints10.Enable()" />
-                        <NumAnimation Duration="3" Target="this_imgPoints10.Y" Autoreverse="false" From="0" To="-80" Fill="End" IsDelta="true" RepeatCount="1" InProgress="true"/>
-                        <NumAnimation Duration="3" Target="this_imgPoints10.Opacity" Autoreverse="false" From="1" To="0" Fill="End" IsDelta="true" RepeatCount="1" InProgress="true"/>
-                        <Do Action="this_imgPoints10.Disable()" />
-                    </SequenceSet>
+                    <Do Action="@pointsX=this.X;@pointsY=this.Y;@pointsText=100;hero:GotPoints" />
                 </ParallelSet>
                 <Do Action="this.Disable()"/>
             </SequenceSet>
@@ -45,7 +35,6 @@
 			<BoolTrigger Id="this_default" Group="this_foodStates"/>
 		</Food>	
 	</Class>
-
 
 </Include>
 

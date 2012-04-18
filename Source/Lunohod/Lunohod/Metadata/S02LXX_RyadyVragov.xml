@@ -246,6 +246,7 @@
         <Group Id="exit" Class="clsExit" Bounds="291, 250, 37, 54" TraceId="image3049" />
     </Layer>
     <Include File="ClassExplosion.xml" />
+    <Include File="IncludePointsAnm.xml" />
     <Include File="Dashboard.xml" />
 </Level>
 <!-- Food=8 Enemy=40 Block=20 DesignImage=129 Animation=1 Teleport=0 FoodPack=0 -->

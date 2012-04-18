@@ -1,0 +1,59 @@
+<Include>
+    <Resources RootFolder="Global">
+        <Font Id="Splash14Font" Source="Splash14Font" />
+    </Resources>
+
+    <Layer Id="lyrPointsAnm"  BackColor="#FFFFFFFF">   
+
+        <Class Id="clsPointsAnm">
+            <Group>
+                <BoolTrigger Condition="hero:this_Flag" EnterAction="this_Set.Start()" >
+                    <Text Id="this_Text" FontId="Splash14Font" Text="='+' + system.Str(@pointsText)" BackColor="#FFFFFF" Location="-7777777,-7777777" />
+                </BoolTrigger>
+
+                <SequenceSet Id="this_Set" RepeatCount="1">
+                    <Do Action="this_Text.X=@pointsX;this_Text.Y=@pointsY" />
+                    <ParallelSet RepeatCount="1">
+                        <NumAnimation Target="this_Text.Opacity" From="1" To="0.5" RepeatCount="1" Duration="1" Fill="Hold" />
+                        <NumAnimation Target="this_Text.Y" From="-20" To="-80" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                        <RandomSet RepeatCount="1" >
+                            <NumAnimation Target="this_Text.X" From="-4" To="4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                            <NumAnimation Target="this_Text.X" From="4" To="-4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                        </RandomSet>
+                    </ParallelSet>
+                    <Do Action="this_Text.X=-7777777;this_Text.Y=-7777777" />
+                    <Do Action="hero:-this_Flag" />
+                </SequenceSet>
+            </Group>
+        </Class>
+        
+        <Group Id="grpPoints1" Class="clsPointsAnm" />
+        <Group Id="grpPoints2" Class="clsPointsAnm" />
+        <Group Id="grpPoints3" Class="clsPointsAnm" />
+        <Group Id="grpPoints4" Class="clsPointsAnm" />
+        <Group Id="grpPoints5" Class="clsPointsAnm" />
+
+        
+        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints1_Set.InProgress" EnterAction="hero:+grpPoints1_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints2_Set.InProgress" EnterAction="hero:+grpPoints2_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints3_Set.InProgress" EnterAction="hero:+grpPoints3_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints4_Set.InProgress" EnterAction="hero:+grpPoints4_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints5_Set.InProgress" EnterAction="hero:+grpPoints5_Flag" Group="sttPoints" />
+
+        <BoolTrigger Condition="hero:GotPoints &amp; grpPoints1_Set.InProgress" EnterAction="hero:+grpPoints1_Flag;grpPoints1_Set.Start()"  Group="sttPoints"/>
+        
+    </Layer>
+    
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
