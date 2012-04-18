@@ -15,7 +15,12 @@
                     <Do Action="this_Text.X=@pointsX;this_Text.Y=@pointsY" />
                     <ParallelSet RepeatCount="1">
                         <NumAnimation Target="this_Text.Opacity" From="1" To="0.5" RepeatCount="1" Duration="1" Fill="Hold" />
-                        <NumAnimation Target="this_Text.Y" From="-20" To="-80" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+						<RandomSet RepeatCount="1" >
+                        	<NumAnimation Target="this_Text.Y" From="-20" To="-80" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                        	<NumAnimation Target="this_Text.Y" From="-30" To="-80" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                        	<NumAnimation Target="this_Text.Y" From="-20" To="-90" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                        	<NumAnimation Target="this_Text.Y" From="-30" To="-90" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+						</RandomSet>
                         <RandomSet RepeatCount="1" >
                             <NumAnimation Target="this_Text.X" From="-4" To="4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
                             <NumAnimation Target="this_Text.X" From="4" To="-4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />

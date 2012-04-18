@@ -13,6 +13,7 @@
         <Texture Id="txr_fish_4_me" Source="fish_4_me" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
+		<Do Action="dashboard:+NoArrows" InProgress="true"/>
         <Image Id="dfltMask1" TextureId="txr_bckg_demo_SXXLXX_AmerikanskieGorki" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image7250"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
@@ -62,7 +63,6 @@
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT -->
         <SequenceSet InProgress="true">
-            <Do Action="dashboard:NoArrows" />
             <Do Action="hero.StartTransaction()" />
             <Delay Duration="3" />
             <NumAnimation Id="anm2" From="0" To="368" Target="hero.X" Duration="4.38" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3336"/>
