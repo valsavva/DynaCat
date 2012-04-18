@@ -92,7 +92,15 @@ namespace Lunohod.Objects
         {
             get { return this.isPaused; }
         }
-
+		
+		internal override void ReplaceParameter(string par, string val)
+		{
+			if (this.Duration != null)
+				this.Duration = this.Duration.Replace(par, val);
+			
+			base.ReplaceParameter(par, val);
+		}
+		
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             this.Duration = reader["Duration"];
