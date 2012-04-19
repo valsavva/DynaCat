@@ -60,6 +60,7 @@ namespace Lunohod.Objects
 			switch (propertyName)
 			{
                 case "CurrentFrame": getter = () => CurrentFrame; setter = (v) => CurrentFrame = (int)Math.Round(v); break;
+                case "FrameCount": getter = () => FrameCount; setter = (v) => FrameCount = (int)Math.Round(v); break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}

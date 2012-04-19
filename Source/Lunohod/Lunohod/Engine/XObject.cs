@@ -586,25 +586,25 @@ namespace Lunohod.Objects
 			
 			switch (propertyName)
 			{
-				case ("Enabled") : getter = () => this.Enabled; setter = (v) => this.Enabled = v; break;
+				case ("Enabled") : getter = () => this.Enabled; setter = (v) => this.Enabled = v; return;
 			}
 			
-			if (getter == null && setter == null && this is IRunnable)
+			if (this is IRunnable)
 			{
 				IRunnable runnable = (IRunnable)this;
 				switch (propertyName)
 				{
-	                case "InProgress": getter = () => runnable.InProgress; setter = (v) => runnable.InProgress = v; break;
-	                case "IsPaused": getter = () => runnable.IsPaused; setter = null; break;
+                    case "InProgress": getter = () => runnable.InProgress; setter = (v) => runnable.InProgress = v; return;
+                    case "IsPaused": getter = () => runnable.IsPaused; setter = null; return;
 				}
 			}
 			
-			if (getter == null && setter == null && this is IExploding)
+			if (this is IExploding)
 			{
 				IExploding exploding = (IExploding)this;
 				switch (propertyName)
 				{
-	                case "IsExploding": getter = () => exploding.IsExploding; setter = (v) => exploding.IsExploding = v; break;
+	                case "IsExploding": getter = () => exploding.IsExploding; setter = (v) => exploding.IsExploding = v; return;
 				}
 			}
 			

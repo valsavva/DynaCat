@@ -134,6 +134,17 @@ namespace Lunohod.Objects
             
             base.ReadXml(reader);
         }
-	}
+        
+        public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+        {
+            switch (propertyName)
+            {
+                case "TapX": getter = () => TapX; setter = (v) => TapX = v; break;
+                case "TapY": getter = () => TapY; setter = (v) => TapY = v; break;
+                default:
+                    base.GetProperty(propertyName, out getter, out setter); break;
+            }
+        }
+    }
 }
 

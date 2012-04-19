@@ -52,6 +52,16 @@ namespace Lunohod.Objects
 					base.GetMethod(methodName, out method); break;
             }
 		}
+        public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+        {
+            switch (propertyName)
+            {
+                case "Points": getter = () => Points; setter = (v) => Points = v; break;
+                case "Damage": getter = () => Damage; setter = (v) => Damage = v; break;
+                default:
+                    base.GetProperty(propertyName, out getter, out setter); break;
+            }
+        }
     }
 }
 
