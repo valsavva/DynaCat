@@ -16,6 +16,8 @@ namespace Lunohod.Objects
     //[XmlType("Element")]
     public class XElement : XObject
     {
+        private const float DefaultDepth = 0.5f;
+
 		public struct ElementState
 		{
 			public int TransformCycle;
@@ -83,7 +85,7 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public float Depth
 		{
-			get { return this.depth ?? ((this.IsRoot || this.ParentElement == null) ? 0f : this.ParentElement.Depth); }
+            get { return this.depth ?? ((this.IsRoot || this.ParentElement == null) ? DefaultDepth : this.ParentElement.Depth); }
 			set { this.depth = value; }
 		}
 		[XmlIgnore]
@@ -150,7 +152,7 @@ namespace Lunohod.Objects
 				PropState.PropCycle = this.updateCycle;
 				PropState.Opacity = 1;
 				PropState.Rotation = 0;
-				PropState.Depth = 0;
+                PropState.Depth = DefaultDepth;
 				PropState.Scale = Vector2.One;
 				PropState.BackColor = Color.White;
 			}

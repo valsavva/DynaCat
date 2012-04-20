@@ -9,7 +9,7 @@ namespace Lunohod
 		public void Initiazlize(GameTime gameTime)
 		{
 			this.GameTime = gameTime;
-			this.SystemImageDepth = 0f;
+			this.SystemImageDepth = 0.0001f;
 		}
 		
 		public GameTime GameTime;
@@ -18,7 +18,7 @@ namespace Lunohod
 		
 		public float NextSystemImageDepth()
 		{
-			return this.SystemImageDepth += 0.0000001f;
+			return this.SystemImageDepth -= 0.0000001f;
 		}
 	}
 }

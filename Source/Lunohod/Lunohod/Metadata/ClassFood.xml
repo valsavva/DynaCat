@@ -3,7 +3,7 @@
 		<Food IsExploding="true">
 
 <!-- States -->
-            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" Depth="0.8" IsRoot="true" Enabled="false">
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
                 <Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y-10" InProgress="true" />
                 <Text FontId="SystemFont" Text="=system.Str(this.Points)" Location="0,0" Color="#00FF00">
                     <NumAnimation Target="Opacity" From="1" To="0" Autorevers="true" Duration="0.15" RepeatCount="0" InProgress="true" />
