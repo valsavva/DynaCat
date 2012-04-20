@@ -137,12 +137,12 @@ namespace Lunohod
 
 			if (this.scaleMatrix.HasValue)
 			{
-				this.spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp,
+				this.spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearClamp,
 					DepthStencilState.None, RasterizerState.CullCounterClockwise, null, this.scaleMatrix.Value);
 			}
 			else
 			{
-				this.spriteBatch.Begin(SpriteSortMode.BackToFront, null);
+				this.spriteBatch.Begin(SpriteSortMode.FrontToBack, null);
 			}
 		}
 		
