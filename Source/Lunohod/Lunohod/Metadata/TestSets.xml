@@ -28,7 +28,7 @@
 		
 		<Image Id="z" TextureId="chargers" Bounds="0,0,35,35">
 			<NumAnimation From="0" To="10" Target="z.X" Duration="1" RepeatCount="1" IsDelta="true" Autoreverse="false" InProgress="true" Fill="Hold">
-				<BoolTrigger Property="!InProgress" EnterAction="Start()" />
+				<BoolTrigger Property="not InProgress" EnterAction="Start()" />
 			</NumAnimation>
 		</Image>
 		

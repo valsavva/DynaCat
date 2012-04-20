@@ -54,6 +54,7 @@ namespace Lunohod.Objects
 			
 			dest.Enabled = src.Enabled;
 			
+			// Element
 			var srcElement = src as XElement;
 			if (srcElement != null)
 			{
@@ -63,6 +64,13 @@ namespace Lunohod.Objects
 				
 				if (srcElement.backColor.HasValue)
 					destElement.BackColor = srcElement.BackColor;
+			}
+			
+			// IHasPoints
+			var srcHasPoints = src as IHasPoints;
+			if (srcHasPoints != null && srcHasPoints.Points != 0)
+			{
+				((IHasPoints)dest).Points = srcHasPoints.Points;
 			}
 		}
 

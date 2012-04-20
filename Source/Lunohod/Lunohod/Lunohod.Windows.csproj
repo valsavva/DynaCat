@@ -148,6 +148,7 @@
     <Compile Include="Engine\Expressions\StrConstant.cs" />
     <Compile Include="Engine\Expressions\Validator.cs" />
     <Compile Include="Engine\Expressions\Variable.cs" />
+    <Compile Include="Engine\IHasPoints.cs" />
     <Compile Include="Engine\Serialization\ClassFactory.cs" />
     <Compile Include="Engine\Updates\DrawParameters.cs" />
     <Compile Include="Engine\Updates\InitializeParameters.cs" />
@@ -229,11 +230,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\XLevelInfo.cs" />
+    <Compile Include="Engine\XLevelScore.cs" />
     <Compile Include="Engine\XLevelSeries.cs" />
     <Compile Include="Engine\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\XObjectCollection.cs" />
+    <Compile Include="Engine\XSaveFile.cs" />
     <Compile Include="Engine\XScreen.cs" />
     <Compile Include="Engine\XSprite.cs">
       <SubType>Code</SubType>
@@ -1740,6 +1743,7 @@
     </Content>
     <Content Include="Metadata\IncludePointsAnm.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassTeleportEntry.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

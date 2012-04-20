@@ -15,7 +15,7 @@
 
          
 	<Class Id="clsEnemyRat2">
-		<Enemy IsExploding="true" Damage="3">
+		<Enemy IsExploding="true" Damage="3" Points="3">
 		
 <!-- States -->
 
@@ -30,12 +30,12 @@
                 <Sound FileId="sndEnemyRat2Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
     			<SequenceSet>
     				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
-    				<Do Action="this.Disable()"/>
+    				<Do Action="hero.AddScore(this.Points);this.Disable()"/>
     			</SequenceSet>
 			</ParallelSet>
 
             <!-- attack -->
-            <BoolTrigger Condition="!this:Destroyed">
+            <BoolTrigger Condition="not this:Destroyed">
                 <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
                     <Image Id="this_txrEnemyRat2Attack" TextureId="txrEnemyRat2Attack" Bounds="-15, -4, 43, 29"/>
                 </IntersectionTrigger>

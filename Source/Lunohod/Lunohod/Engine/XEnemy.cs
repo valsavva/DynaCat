@@ -14,10 +14,10 @@ namespace Lunohod.Objects
     /// when it attacks him.
     /// </summary>
     [XmlType("Enemy")]
-    public class XEnemy : XElement, IExploding
+    public class XEnemy : XElement, IExploding, IHasPoints
     {
 		[XmlAttribute]
-		public double Points;
+		public double Points { get; set; }
 		/// <summary>
 		/// The damage the enemy will cause when attacking the hero. Default value is 1.
 		/// </summary>
@@ -37,7 +37,7 @@ namespace Lunohod.Objects
 
         public override void ReadXml(XmlReader reader)
         {
-            reader.ReadAttrAsFloat("Point", ref this.Points);
+			this.Points = reader.ReadAttrAsFloat("Points", 0);
             reader.ReadAttrAsFloat("Damage", ref this.Damage);
 
             base.ReadXml(reader);
@@ -52,6 +52,15 @@ namespace Lunohod.Objects
 					base.GetMethod(methodName, out method); break;
             }
 		}
+        public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+        {
+            switch (propertyName)
+            {
+                case "Damage": getter = () => Damage; setter = (v) => Damage = v; break;
+                default:
+                    base.GetProperty(propertyName, out getter, out setter); break;
+            }
+        }
     }
 }
 

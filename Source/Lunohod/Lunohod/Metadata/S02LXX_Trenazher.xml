@@ -456,7 +456,7 @@
             <Image Id="dfltMask268" TextureId="txr_container_steel_2_big" Bounds="280, -16, 100, 100" Rotation="0" Stretch="false" Opacity="1" TraceId="image3366"/>
         </Group>
         <!-- >> HANDEDIT >> -->
-        <BoolTrigger Condition="!anmProcess.InProgress">
+        <BoolTrigger Condition="not anmProcess.InProgress">
             <NumTrigger Property="grp_grpFdNEn.Y" Compare="GE" Value="800" EnterAction="exit.Y=exit.Y+800;imgKvaziExit.Disable()" />
         </BoolTrigger>
         <!--<Do Action="anmProcess.Start()" />-->

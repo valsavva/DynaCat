@@ -12,11 +12,6 @@ namespace Lunohod.Objects
     [XmlRoot("Level")]
     public class XLevel : XScreen
     {
-		public XLevel()
-		{
-			this.Id = "level";
-		}
-		
 		[XmlIgnore]
 		public List<XElement> Exploding { get; private set; }
 		

@@ -57,6 +57,8 @@ namespace Lunohod.Xge
 
             Expression e = TExpression();
 
+            Ensure(TokenType.Eof);
+
             var result = e as IExpression<T>;
 
             if (result == null)
@@ -121,16 +123,16 @@ namespace Lunohod.Xge
                     {
                         return TStrConstant();
                     }
+                case TokenType.True:
+                case TokenType.False:
+                    {
+                        return TBoolConstant();
+                    }
                 case TokenType.Id:
                     {
                         string id = T();
 
                         Consume();
-
-                        if (id == "true")
-                            return new BoolConstant(true);
-                        else if (id == "false")
-                            return new BoolConstant(false);
 
                         if (M(TokenType.Colon))
                         {
@@ -163,6 +165,13 @@ namespace Lunohod.Xge
             }
         }
 
+        private Expression TBoolConstant()
+        {
+            var result = new BoolConstant(M(TokenType.True));
+            Consume();
+            return result;
+        }
+
         private Expression TMethodOrProperty(string id)
         {
             string objectId = null;
@@ -191,7 +200,11 @@ namespace Lunohod.Xge
             if (M(TokenType.Eof))
                 return null;
 
-            return TStatementList();
+            var result = TStatementList();
+
+            Ensure(TokenType.Eof);
+
+            return result;
         }
 
         private List<IAction> TStatementList()
@@ -292,6 +305,9 @@ namespace Lunohod.Xge
             Consume();
 
             var expression = TFactor();
+
+            if (expression.Type != typeof(bool))
+                Error("Unary operator 'not' cannot be applied to opearand of type '{0}'", expression.Type.Name);
 
             return new UnaryNotOperator(expression);
         }
@@ -396,7 +412,7 @@ namespace Lunohod.Xge
         private void Ensure(params TokenType[] tokenTypes)
         {
             if (tokenTypes.Length > 0 && !M(tokenTypes))
-                Error(string.Format("Unexpected token. Type: '{0}' Value: '{1}'. Expected: '{2}'", P(), T(), string.Join("' or '", tokenTypes.Select(t => t.ToString()))));
+                Error("Unexpected token. Type: '{0}' Value: '{1}'. Expected: '{2}'", P(), T(), string.Join("' or '", tokenTypes.Select(t => t.ToString())));
         }
 
         private bool M(params TokenType[] tokenTypes)
@@ -404,9 +420,9 @@ namespace Lunohod.Xge
             return Array.IndexOf(tokenTypes, currentToken.TokenType) >= 0;
         }
 
-        private void Error(string p)
+        private void Error(string p, params object[] ps)
         {
-            throw new InvalidOperationException(p);
+            throw new InvalidOperationException(string.Format(p, ps));
         }
 
     }

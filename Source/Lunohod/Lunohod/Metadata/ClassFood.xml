@@ -3,19 +3,25 @@
 		<Food IsExploding="true">
 
 <!-- States -->
-
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Enabled="false">
+                <Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y-10" InProgress="true" />
+                <Text FontId="SystemFont" Text="=system.Str(this.Points)" Location="0,0" Color="#00FF00">
+                    <NumAnimation Target="Opacity" From="1" To="0" Autorevers="true" Duration="0.15" RepeatCount="0" InProgress="true" />
+                </Text>
+            </Group>
+            
             <!-- eaten -->
-			<BoolTrigger Condition="!this:eaten">
+			<BoolTrigger Condition="not this:eaten">
 				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
 			</BoolTrigger>
             <SequenceSet Id="this_anmEated">
-				<Do Action="this.IsExploding=false" />
+				<Do Action="this.IsExploding=false;this_grpShowPoints.Enable();" />
                 <ParallelSet>
                     <NumAnimation Duration="0.2" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="5" InProgress="true"/>
                     <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1" InProgress="true"/>
-                    <Do Action="@pointsX=this.X;@pointsY=this.Y;@pointsText=100;hero:GotPoints" />
+                    <Do Action="@pointsX=this.X;@pointsY=this.Y;@pointsText=this.Points;hero:GotPoints" />
                 </ParallelSet>
-                <Do Action="this.Disable()"/>
+				<Do Action="hero.AddScore(this.Points);this.Disable()"/>
             </SequenceSet>
             <!-- explosion  -->
             <!-- destroy -->

@@ -71,17 +71,19 @@ namespace Lunohod.Objects
         [XmlIgnore]
         public Color BackColor
 		{
-			get { return this.backColor ?? this.ParentElement.BackColor; }
+            get { return this.backColor ?? ((this.IsRoot || this.ParentElement == null) ? Color.White : this.ParentElement.BackColor); }
 			set { this.backColor = value; }
 		}
         [XmlAttribute]
         public double Opacity = 1.0f;
         [XmlAttribute]
         public double Rotation;
+        [XmlAttribute]
+        public bool IsRoot;
 		[XmlAttribute]
 		public float Depth
 		{
-			get { return this.depth ?? ((this.ParentElement == null) ? 0f : this.ParentElement.Depth); }
+			get { return this.depth ?? ((this.IsRoot || this.ParentElement == null) ? 0f : this.ParentElement.Depth); }
 			set { this.depth = value; }
 		}
 		[XmlIgnore]
@@ -109,7 +111,7 @@ namespace Lunohod.Objects
 				return;
 			
 			// Initialize state
-			if (this.ParentElement == null)
+			if (this.IsRoot || this.ParentElement == null)
 			{
 				TransState.TransformCycle = this.updateCycle;
 				TransState.LocationTransform = Matrix.Identity;
@@ -143,7 +145,7 @@ namespace Lunohod.Objects
 			if (PropState.PropCycle == this.updateCycle)
 				return;
 			
-			if  (this.ParentElement == null)
+			if  (this.IsRoot || this.ParentElement == null)
 			{
 				PropState.PropCycle = this.updateCycle;
 				PropState.Opacity = 1;
@@ -180,46 +182,46 @@ namespace Lunohod.Objects
 		
 		internal System.Drawing.RectangleF GetScreenBounds()
 		{
-			if (this.ParentElement != null)
+			if (this.IsRoot || this.ParentElement == null)
 			{
-				this.ParentElement.UpdateTransforms();
-				
-				this.UpdateProps();
-			
-				if (!PropState.ScreenBounds.HasValue)
-				{
-					tmpBounds = this.Bounds;
-					
-					tmpBounds.Offset(this.RotationCenter.X * this.ScaleVector.X, this.RotationCenter.Y * this.ScaleVector.Y);
-					
-					if (this.ParentElement.TransState.LocationTransform != Matrix.Identity)
-					{
-						tmpVector1.X = tmpBounds.X;
-						tmpVector1.Y = tmpBounds.Y;
-						Vector2.Transform(ref tmpVector1, ref this.ParentElement.TransState.LocationTransform, out tmpVector2);
-						tmpBounds.X = tmpVector2.X;
-						tmpBounds.Y = tmpVector2.Y;
-					}
-
-					if (this.ParentElement.TransState.ScaleTransform != Matrix.Identity)
-					{
-						Vector2.Transform(ref PropState.Size, ref this.ParentElement.TransState.ScaleTransform, out tmpVector2);
-						tmpBounds.Width = tmpVector2.X;
-						tmpBounds.Height = tmpVector2.Y;
-					}
-					else
-					{
-						tmpBounds.Width = PropState.Size.X;
-						tmpBounds.Height = PropState.Size.Y;
-					}
-	
-					PropState.ScreenBounds = tmpBounds;
-				}
+                PropState.ScreenBounds = this.Bounds;
 			}
 			else
 			{
-				PropState.ScreenBounds = this.Bounds;
-			}
+                this.ParentElement.UpdateTransforms();
+
+                this.UpdateProps();
+
+                if (!PropState.ScreenBounds.HasValue)
+                {
+                    tmpBounds = this.Bounds;
+
+                    tmpBounds.Offset(this.RotationCenter.X * this.ScaleVector.X, this.RotationCenter.Y * this.ScaleVector.Y);
+
+                    if (this.ParentElement.TransState.LocationTransform != Matrix.Identity)
+                    {
+                        tmpVector1.X = tmpBounds.X;
+                        tmpVector1.Y = tmpBounds.Y;
+                        Vector2.Transform(ref tmpVector1, ref this.ParentElement.TransState.LocationTransform, out tmpVector2);
+                        tmpBounds.X = tmpVector2.X;
+                        tmpBounds.Y = tmpVector2.Y;
+                    }
+
+                    if (this.ParentElement.TransState.ScaleTransform != Matrix.Identity)
+                    {
+                        Vector2.Transform(ref PropState.Size, ref this.ParentElement.TransState.ScaleTransform, out tmpVector2);
+                        tmpBounds.Width = tmpVector2.X;
+                        tmpBounds.Height = tmpVector2.Y;
+                    }
+                    else
+                    {
+                        tmpBounds.Width = PropState.Size.X;
+                        tmpBounds.Height = PropState.Size.Y;
+                    }
+
+                    PropState.ScreenBounds = tmpBounds;
+                }
+            }
 			
 			return PropState.ScreenBounds.Value;
 		}
@@ -292,6 +294,7 @@ namespace Lunohod.Objects
             Color color = Color.White;
             double f = 0;
 
+            reader.ReadAttrAsBoolean("IsRoot", ref this.IsRoot);
             reader.ReadAttrAsFloat("Opacity", ref this.Opacity);
             reader.ReadAttrAsFloat("Rotation", ref this.Rotation);
             reader.ReadAttrAsVector2("ScaleVector", ref this.ScaleVector);

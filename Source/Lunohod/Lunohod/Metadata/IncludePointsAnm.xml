@@ -39,13 +39,13 @@
         <Group Id="grpPoints5" Class="clsPointsAnm" />
 
         
-        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints1_Set.InProgress" EnterAction="hero:+grpPoints1_Flag" Group="sttPoints" />
-        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints2_Set.InProgress" EnterAction="hero:+grpPoints2_Flag" Group="sttPoints" />
-        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints3_Set.InProgress" EnterAction="hero:+grpPoints3_Flag" Group="sttPoints" />
-        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints4_Set.InProgress" EnterAction="hero:+grpPoints4_Flag" Group="sttPoints" />
-        <BoolTrigger Condition="hero:GotPoints &amp; ! grpPoints5_Set.InProgress" EnterAction="hero:+grpPoints5_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints and not grpPoints1_Set.InProgress" EnterAction="hero:+grpPoints1_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints and not grpPoints2_Set.InProgress" EnterAction="hero:+grpPoints2_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints and not grpPoints3_Set.InProgress" EnterAction="hero:+grpPoints3_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints and not grpPoints4_Set.InProgress" EnterAction="hero:+grpPoints4_Flag" Group="sttPoints" />
+        <BoolTrigger Condition="hero:GotPoints and not grpPoints5_Set.InProgress" EnterAction="hero:+grpPoints5_Flag" Group="sttPoints" />
 
-        <BoolTrigger Condition="hero:GotPoints &amp; grpPoints1_Set.InProgress" EnterAction="hero:+grpPoints1_Flag;grpPoints1_Set.Start()"  Group="sttPoints"/>
+        <BoolTrigger Condition="hero:GotPoints and grpPoints1_Set.InProgress" EnterAction="hero:+grpPoints1_Flag;grpPoints1_Set.Start()"  Group="sttPoints"/>
         
     </Layer>
     

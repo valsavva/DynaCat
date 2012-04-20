@@ -500,8 +500,6 @@ namespace Lunohod.Objects
             if (reader.IsEmptyElement)
                 return;
 
-            this.Subcomponents = new XObjectCollection();
-
             while (true)
             {
                 reader.Read();
@@ -518,12 +516,15 @@ namespace Lunohod.Objects
 
         public virtual void AddSubcomponent(string name, XObject sub)
         {
+            if (this.Subcomponents == null)
+                this.Subcomponents = new XObjectCollection();
+
             this.Subcomponents.Add(sub);
         }
 
-        public void WriteXml(System.Xml.XmlWriter writer)
+        public virtual void WriteXml(System.Xml.XmlWriter writer)
         {
-            throw new NotImplementedException();
+            writer.WriteAttributeString("Id", this.Id);
         }
 		
 		public virtual void GetMethod(string methodName, out Func<List<Expression>, double> method)
@@ -569,15 +570,24 @@ namespace Lunohod.Objects
 		{
 			getter = null; setter = null;
 
-			if (getter == null && setter == null && this is IHasVolume)
+			if (this is IHasVolume)
 			{
 				IHasVolume audio = (IHasVolume)this;
 				switch (propertyName)
 				{
-	                case "Volume": getter = () => audio.Volume; setter = (v) => audio.Volume = v; break;
+	                case "Volume": getter = () => audio.Volume; setter = (v) => audio.Volume = v; return;
 				}
 			}
-
+			
+			if (this is IHasPoints)
+			{
+				IHasPoints hasPoints = (IHasPoints)this;
+				switch (propertyName)
+				{
+	                case "Points": getter = () => hasPoints.Points; setter = (v) => hasPoints.Points = v; return;
+				}
+			}
+			
 			throw new InvalidOperationException("Unknown property '" + propertyName + "'");
 		}
 		public virtual void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
@@ -586,25 +596,25 @@ namespace Lunohod.Objects
 			
 			switch (propertyName)
 			{
-				case ("Enabled") : getter = () => this.Enabled; setter = (v) => this.Enabled = v; break;
+				case ("Enabled") : getter = () => this.Enabled; setter = (v) => this.Enabled = v; return;
 			}
 			
-			if (getter == null && setter == null && this is IRunnable)
+			if (this is IRunnable)
 			{
 				IRunnable runnable = (IRunnable)this;
 				switch (propertyName)
 				{
-	                case "InProgress": getter = () => runnable.InProgress; setter = (v) => runnable.InProgress = v; break;
-	                case "IsPaused": getter = () => runnable.IsPaused; setter = null; break;
+                    case "InProgress": getter = () => runnable.InProgress; setter = (v) => runnable.InProgress = v; return;
+                    case "IsPaused": getter = () => runnable.IsPaused; setter = null; return;
 				}
 			}
 			
-			if (getter == null && setter == null && this is IExploding)
+			if (this is IExploding)
 			{
 				IExploding exploding = (IExploding)this;
 				switch (propertyName)
 				{
-	                case "IsExploding": getter = () => exploding.IsExploding; setter = (v) => exploding.IsExploding = v; break;
+	                case "IsExploding": getter = () => exploding.IsExploding; setter = (v) => exploding.IsExploding = v; return;
 				}
 			}
 			

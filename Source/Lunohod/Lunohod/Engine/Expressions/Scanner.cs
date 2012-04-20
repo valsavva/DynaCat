@@ -7,7 +7,7 @@ namespace Lunohod.Xge
 {
     class Scanner
     {
-        public static readonly Dictionary<string, TokenType> CharTokenMapping = new Dictionary<string, TokenType>
+        public static readonly Dictionary<string, TokenType> CharTokenMapping = new Dictionary<string, TokenType>(StringComparer.OrdinalIgnoreCase)
         {
             { "(", TokenType.LeftPar },
             { ")", TokenType.RightPar },
@@ -19,13 +19,16 @@ namespace Lunohod.Xge
             { "%", TokenType.Modulo },
             { ".", TokenType.Dot },
             { ",", TokenType.Comma },
-            { "&", TokenType.And },
-            { "|", TokenType.Or },
-            { "!", TokenType.Not },
+            { "and", TokenType.And },
+            { "or", TokenType.Or },
+            { "not", TokenType.Not },
+            { "!", TokenType.Exclamation },
             { ":", TokenType.Colon },
             { ";", TokenType.SemiColon },
             { "~", TokenType.Squiggle },
             { "=", TokenType.Assign },
+            { "true", TokenType.True },
+            { "false", TokenType.False },
 
             { "==",  TokenType.Op_E  },
             { "!=", TokenType.Op_NE },
@@ -108,9 +111,10 @@ namespace Lunohod.Xge
                 // id
                 else if (char.IsLetter(ch))
                 {
-                    tokenType = TokenType.Id;
-
                     for (; i < text.Length && (char.IsLetterOrDigit(text[i]) || text[i] == '_'); i++) { }
+
+                    if (!CharTokenMapping.TryGetValue(text.Substring(start, i - start), out tokenType))
+                        tokenType = TokenType.Id;
                 }
                 else
                 {
@@ -122,7 +126,7 @@ namespace Lunohod.Xge
                     {
                         if (tokenType == TokenType.Assign)
                             tokenType = TokenType.Op_E;
-                        else if (tokenType == TokenType.Not)
+                        else if (tokenType == TokenType.Exclamation)
                             tokenType = TokenType.Op_NE;
                         else if (tokenType == TokenType.Op_G)
                             tokenType = TokenType.Op_GE;

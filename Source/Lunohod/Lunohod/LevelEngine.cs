@@ -26,10 +26,11 @@ namespace Lunohod
 		
 		private int bombCounter;
         
-        public LevelEngine(GameEngine gameEngine, XLevelInfo levelInfo)
+        public LevelEngine(GameEngine gameEngine, XLevelInfo levelInfo, XLevelScore levelScore)
 			: base(gameEngine, levelInfo.File)
 		{
             this.LevelInfo = levelInfo;
+			this.LevelScore = levelScore;
 		}
 
         public XHero Hero
@@ -49,18 +50,34 @@ namespace Lunohod
 
         public XLevelInfo LevelInfo { get; private set; }
 		
+		public XLevelScore LevelScore { get; private set; }
+		
 		public override void Initialize()
 		{
 			base.Initialize();
 			
-			this.waves = new Dictionary<GameEvent, RadioWave>();
-
+			// Make sure explosion class exists
 			if (!string.IsNullOrEmpty(this.LevelInfo.ExplosionClass))
 			{
 				this.explosionClass = this.LevelObject.FindDescendant(this.LevelInfo.ExplosionClass) as XClass;
 				if (this.explosionClass == null)
 					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.LevelInfo.ExplosionClass));
 			}
+			
+			// Init waves
+			this.waves = new Dictionary<GameEvent, RadioWave>();
+			
+			// Calculate points available on this level
+			CountLevelPoints();
+		}
+
+		private void CountLevelPoints()
+		{
+			this.LevelScore.AvaliablePoints = 0;
+			this.LevelObject.TraveseTree(o => {
+				if (o is IHasPoints)
+					this.LevelScore.AvaliablePoints += ((IHasPoints)o).Points;
+			});
 		}
 		
 		public override void Update(GameTime gameTime)
