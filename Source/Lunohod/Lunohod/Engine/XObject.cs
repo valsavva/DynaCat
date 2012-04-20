@@ -521,9 +521,9 @@ namespace Lunohod.Objects
             this.Subcomponents.Add(sub);
         }
 
-        public void WriteXml(System.Xml.XmlWriter writer)
+        public virtual void WriteXml(System.Xml.XmlWriter writer)
         {
-            throw new NotImplementedException();
+            writer.WriteAttributeString("Id", this.Id);
         }
 		
 		public virtual void GetMethod(string methodName, out Func<List<Expression>, double> method)

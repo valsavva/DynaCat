@@ -191,6 +191,7 @@
     <Compile Include="Engine\XLevelSeries.cs" />
     <Compile Include="Engine\XLevelScore.cs" />
     <Compile Include="Engine\IHasPoints.cs" />
+    <Compile Include="Engine\XSaveFile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -17,13 +17,15 @@ namespace Lunohod
 	{
         public const string MetadataRootDirectory = "Metadata";
         public const string ContentRootDirectory = "Content";
-
+		private const string SaveFileName = "records.xml";
+		
+		private StorageDevice storageDevice;
+		
 		private GraphicsDeviceManager graphics;
         private List<ScreenEngine> screenEngines;
 
         private GameEventQueue eventQueue;
 
-		private XGame gameObject;
         private InputProcessorBase[] inputProcessors;
 		
 		public Texture2D BlankTexture { get; private set; }
@@ -36,7 +38,10 @@ namespace Lunohod
 		//public Stopwatch gameWatch = new Stopwatch();
 		
 		public static GameEngine Instance { get; private set; }
-
+		
+		public XGame GameObject { get; private set; }
+		public XSaveFile SaveFile { get; private set; }
+		
 		public int CycleNumber { get; private set; }
 		
 		public GameTime CurrentUpdateTime { get; set; }
@@ -45,11 +50,6 @@ namespace Lunohod
 
         public GameEventQueue EventQueue { get { return eventQueue; } }
         
-        public XGame GameObject
-		{
-			get { return this.gameObject; }
-		}		
-		
 		public ScreenEngine ScreenEngine
 		{
 			get
@@ -119,32 +119,89 @@ namespace Lunohod
 #endif
         }
 
-        /// <summary>
-        /// Synchronously opens storage container
-        /// </summary>
-        private static StorageContainer OpenContainer()
+#region Loading/Saving score
+        private void LoadScore()
         {
-            var r = StorageDevice.BeginShowSelector(null, null);
-
-            r.AsyncWaitHandle.WaitOne();
-
-            var storageDevice = StorageDevice.EndShowSelector(r);
-
-            r.AsyncWaitHandle.Close();
-
-            IAsyncResult result =
-                storageDevice.BeginOpenContainer("DynaCat", null, null);
-
-            // Wait for the WaitHandle to become signaled.
+			// get device
+            IAsyncResult result = StorageDevice.BeginShowSelector(null, null);
             result.AsyncWaitHandle.WaitOne();
 
-            StorageContainer container = storageDevice.EndOpenContainer(result);
+            this.storageDevice = StorageDevice.EndShowSelector(result);
 
-            // Close the wait handle.
             result.AsyncWaitHandle.Close();
+			
+			// get file
+            result = storageDevice.BeginOpenContainer("DynaCat", null, null);
+            result.AsyncWaitHandle.WaitOne();
 
-            return container;
+            using (StorageContainer container = storageDevice.EndOpenContainer(result))
+			{
+	            result.AsyncWaitHandle.Close();
+				
+				if (container.FileExists(SaveFileName))
+				{
+					LoadScoreFromContainer(container);
+				}
+				else
+				{
+					CreateSaveFile(container);
+				}
+				
+			}
         }
+
+		private void LoadScoreFromContainer(StorageContainer container)
+		{
+			try
+        	{
+        		var serializer = new System.Xml.Serialization.XmlSerializer(typeof(XSaveFile));
+        		
+        		using (var stream = container.OpenFile(SaveFileName, FileMode.Open, FileAccess.Read))
+        		{
+        			this.SaveFile = (XSaveFile)serializer.Deserialize(stream);
+        		}
+        	}
+        	catch (Exception ex)
+        	{
+        		System.Diagnostics.Debug.WriteLine(ex.ToString());
+        		
+        		throw;
+        	}
+		}
+		
+		private void CreateSaveFile(StorageContainer container)
+		{
+			this.SaveFile = new XSaveFile();
+			this.SaveFile.LevelScores = this.GameObject.Levels.Select(l => 
+				new XLevelScore
+				{
+					Id = l.Id
+				}
+			).ToList();
+			
+			SaveScore(container);
+		}
+		
+		private void SaveScore(StorageContainer container)
+		{
+			try
+        	{
+        		var serializer = new System.Xml.Serialization.XmlSerializer(typeof(XSaveFile));
+        		
+        		using (var stream = container.OpenFile(SaveFileName, FileMode.Create, FileAccess.Write))
+        		{
+        			serializer.Serialize(stream, this.SaveFile);
+        		}
+        	}
+        	catch (Exception ex)
+        	{
+        		System.Diagnostics.Debug.WriteLine(ex.ToString());
+        		
+        		throw;
+        	}
+		}
+		
+#endregion
 		
 		#region Standard method overrides
 		
@@ -157,7 +214,9 @@ namespace Lunohod
 		{
             LoadGameElement();
 
-			LoadScreen(gameObject.StartScreen);
+			LoadScore();
+
+			LoadScreen(GameObject.StartScreen);
 
 			base.LoadContent();
 		}
@@ -232,10 +291,10 @@ namespace Lunohod
 		
 		protected void LoadGameElement()
 		{
-			this.gameObject = LoadXml<XGame>("Game.xml");
+			this.GameObject = LoadXml<XGame>("Game.xml");
 			
-			gameObject.InitHierarchy();
-			gameObject.Initialize(new InitializeParameters() { Game = this });
+			GameObject.InitHierarchy();
+			GameObject.Initialize(new InitializeParameters() { Game = this });
 
 			PrepareGlobals();
 		}
@@ -257,14 +316,14 @@ namespace Lunohod
 		
 		void PrepareGlobals()
 		{
-			this.BlankTexture = ((XTextureResource)this.gameObject.FindDescendant("blank")).Image;
-			this.SystemFont = ((XFontResource)this.gameObject.FindDescendant("SystemFont")).Font;
+			this.BlankTexture = ((XTextureResource)this.GameObject.FindDescendant("blank")).Image;
+			this.SystemFont = ((XFontResource)this.GameObject.FindDescendant("SystemFont")).Font;
 			
 			this.WaveTextures = new List<Texture2D>();
 			for (int i = MinWaveRadius; i <= MaxWaveRadius; i += WaveRadiusStep)
 			{
 				string textureId = "wave" + i.ToString("0000");
-				this.WaveTextures.Add(((XTextureResource)this.gameObject.FindDescendant(textureId)).Image);
+				this.WaveTextures.Add(((XTextureResource)this.GameObject.FindDescendant(textureId)).Image);
 			}
 		}
 		

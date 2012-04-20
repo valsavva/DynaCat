@@ -77,7 +77,11 @@ namespace Lunohod.Objects
         { "LevelInfo", typeof(XLevelInfo) },
         { "LevelSeries", typeof(XLevelSeries) },
         { "Screens", typeof(XElement) },
-        { "Levels", typeof(XElement) }
+        { "Levels", typeof(XElement) },
+		
+		// Save score
+		{ "LevelScore", typeof(XLevelScore) },
+		{ "SaveFile", typeof(XSaveFile) }
         };
         #endregion
 
