@@ -44,7 +44,7 @@
         <Block Id="blk6" Bounds="0, 180, 480, 50" Edges="Stick" TraceId="image3321"/>
     </Layer>
     <Layer Id="trenAct" BackColor="#FFFFFFFF">
-        <Group Id="grp_grpFdNEn">
+        <Group Id="grp_grpFdNEn" IsRoot="true" >
             <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="304, 113, 24, 25" TraceId="image3344"/>
             <Food Id="fd1" Class="clsFood" Points="1" Bounds="170, 141, 27, 15" TraceId="image3355">
                 <Image TextureId="txr_fish_3_me" />
@@ -475,7 +475,6 @@
         <Group Id="exit" Class="clsExit" Bounds="337, -686, 37, 54" TraceId="image3049" />
     </Layer>
     <Include File="ClassExplosion.xml" />
-    <Include File="IncludePointsAnm.xml" />
     <Include File="Dashboard.xml" />
 </Level>
 <!-- Food=26 Enemy=18 Block=11 DesignImage=268 Animation=0 Teleport Animations=8 FoodPack=0 -->
