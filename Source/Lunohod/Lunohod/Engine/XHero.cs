@@ -59,11 +59,6 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public double DefaultHealth { get; private set; }
 		/// <summary>
-		/// Gets hero's current health level.
-		/// </summary>
-		[XmlIgnore]
-		public double Health { get; private set; }
-		/// <summary>
 		/// Gets the default bomb count.
 		/// </summary>
 		/// <value>
@@ -71,14 +66,6 @@ namespace Lunohod.Objects
 		/// </value>
 		[XmlIgnore]
 		public double DefaultBombCount { get; private set; }
-		/// <summary>
-		/// Gets or sets the current bomb count.
-		/// </summary>
-		/// <value>
-		/// The bomb count.
-		/// </value>
-		[XmlIgnore]
-		public double BombCount { get; set; }
 		/// <summary>
 		/// Gets a value indicating whether hero is dead.
 		/// </summary>
@@ -95,13 +82,23 @@ namespace Lunohod.Objects
 		/// </value>
         [XmlIgnore]
 		public bool InTransaction { get; private set; }
-		
-		
-		public double LevelScore;
-		public double LevelTime;
-		public double LevelRecordScore;
-		public double LevelRecordTime;
-		public double LevelRecordHealth;
+		/// <summary>
+		/// Gets or sets the current bomb count.
+		/// </summary>
+		/// <value>
+		/// The bomb count.
+		/// </value>
+		[XmlIgnore]
+		public double BombCount;
+		/// <summary>
+		/// Gets hero's current health level.
+		/// </summary>
+		[XmlIgnore]
+		public double Health;
+		[XmlIgnore]
+		public double Score;
+		[XmlIgnore]
+		public double Time;
 		
         internal double DistanceToTower
         {
@@ -130,7 +127,7 @@ namespace Lunohod.Objects
 		{
 			base.Update(p);
 			
-			this.LevelTime += p.GameTime.ElapsedGameTime.TotalSeconds;
+			this.Time += p.GameTime.ElapsedGameTime.TotalSeconds;
 			
 			// calculate the new location of the hero
 			if (!this.InTransaction)
@@ -179,9 +176,9 @@ namespace Lunohod.Objects
 		{
 			this.Health -= damage;
 		}
-		public void AddScore(double score)
+		public void AddScore(double points)
 		{
-			this.LevelScore += score;
+			this.Score += points;
 		}
         public override void ReadXml(System.Xml.XmlReader reader)
         {
@@ -222,6 +219,8 @@ namespace Lunohod.Objects
 			switch (propertyName)
 			{
                 case "Health": getter = () => Health; setter = (v) => Health = v; break;
+                case "Score": getter = () => Score; setter = (v) => Score = v; break;
+                case "Time": getter = () => Time; setter = (v) => Time = v; break;
                 case "DefaultHealth": getter = () => DefaultHealth; setter = (v) => DefaultHealth = v; break;
                 case "Speed": getter = () => Speed; setter = (v) => Speed = v; break;
                 case "DefaultSpeed": getter = () => DefaultSpeed; setter = (v) => DefaultSpeed = v; break;

@@ -15,7 +15,7 @@
 
          
 	<Class Id="clsEnemyRat5">
-		<Enemy IsExploding="true" Damage="15">
+		<Enemy IsExploding="true" Damage="15" Points="15">
 		
 <!-- States -->
 
@@ -30,7 +30,7 @@
                 <Sound FileId="sndEnemyRat5Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
     			<SequenceSet>
     				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
-    				<Do Action="this.Disable()"/>
+    				<Do Action="hero.AddScore(this.Points);this.Disable()"/>
     			</SequenceSet>
 			</ParallelSet>
 

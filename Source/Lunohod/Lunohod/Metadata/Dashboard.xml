@@ -124,7 +124,8 @@
         
         <!--hero health-->
 
-        <Image TextureId="txr_health_and_score_text_demo" Bounds="265, 6, 188, 10" />
+        <Image TextureId="txr_health_and_score_text_demo" Bounds="265, 6, 170, 10" />
+		<Text Text="=hero.Score" FontId="SystemFont" Location="438, 6" />
         <Image TextureId="txr_health_bar_back" Bounds="300, 8, 100, 8"/>
         <Group Id="grpHeroHealthBar" Bounds="300, 8, 100, 8" BackColor="#CC2A2A">
             <NumTrigger Property="hero.Health" Compare="G" Value="0" Group="sttHeroHealthBar">

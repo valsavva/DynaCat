@@ -218,7 +218,7 @@ namespace Lunohod
 
 		public void LoadLevel(XLevelInfo levelInfo)
 		{
-			var newScreenEngine = new LevelEngine(this, levelInfo);
+			var newScreenEngine = new LevelEngine(this, levelInfo, new XLevelScore());
 
 			lock(this.screenEngines)
 			{

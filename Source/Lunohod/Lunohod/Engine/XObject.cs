@@ -569,15 +569,24 @@ namespace Lunohod.Objects
 		{
 			getter = null; setter = null;
 
-			if (getter == null && setter == null && this is IHasVolume)
+			if (this is IHasVolume)
 			{
 				IHasVolume audio = (IHasVolume)this;
 				switch (propertyName)
 				{
-	                case "Volume": getter = () => audio.Volume; setter = (v) => audio.Volume = v; break;
+	                case "Volume": getter = () => audio.Volume; setter = (v) => audio.Volume = v; return;
 				}
 			}
-
+			
+			if (this is IHasPoints)
+			{
+				IHasPoints hasPoints = (IHasPoints)this;
+				switch (propertyName)
+				{
+	                case "Points": getter = () => hasPoints.Points; setter = (v) => hasPoints.Points = v; return;
+				}
+			}
+			
 			throw new InvalidOperationException("Unknown property '" + propertyName + "'");
 		}
 		public virtual void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)

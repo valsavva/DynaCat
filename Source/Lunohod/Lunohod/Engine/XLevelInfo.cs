@@ -33,7 +33,7 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public double StarScore3 = 0.90;
 		[XmlAttribute]
-		public double SpeedBonusThreshold = 10;
+		public double TimeBonusThreshold = 10;
 		[XmlAttribute]
 		public double HealthBonusThreshold = 100;
 		[XmlAttribute]
