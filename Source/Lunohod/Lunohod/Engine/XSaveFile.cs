@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Lunohod.Objects
 {
-    [XmlType("SaveFile")]
+    [XmlRoot("SaveFile")]
 	public class XSaveFile : XObject
 	{
 		[XmlArray("LevelScores")]

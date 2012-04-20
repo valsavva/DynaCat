@@ -500,8 +500,6 @@ namespace Lunohod.Objects
             if (reader.IsEmptyElement)
                 return;
 
-            this.Subcomponents = new XObjectCollection();
-
             while (true)
             {
                 reader.Read();
@@ -518,6 +516,9 @@ namespace Lunohod.Objects
 
         public virtual void AddSubcomponent(string name, XObject sub)
         {
+            if (this.Subcomponents == null)
+                this.Subcomponents = new XObjectCollection();
+
             this.Subcomponents.Add(sub);
         }
 
