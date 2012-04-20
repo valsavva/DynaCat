@@ -9,6 +9,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
+using Microsoft.Xna.Framework.Storage;
 
 namespace Lunohod
 {
@@ -117,7 +118,33 @@ namespace Lunohod
             };
 #endif
         }
-		
+
+        /// <summary>
+        /// Synchronously opens storage container
+        /// </summary>
+        private static StorageContainer OpenContainer()
+        {
+            var r = StorageDevice.BeginShowSelector(null, null);
+
+            r.AsyncWaitHandle.WaitOne();
+
+            var storageDevice = StorageDevice.EndShowSelector(r);
+
+            r.AsyncWaitHandle.Close();
+
+            IAsyncResult result =
+                storageDevice.BeginOpenContainer("DynaCat", null, null);
+
+            // Wait for the WaitHandle to become signaled.
+            result.AsyncWaitHandle.WaitOne();
+
+            StorageContainer container = storageDevice.EndOpenContainer(result);
+
+            // Close the wait handle.
+            result.AsyncWaitHandle.Close();
+
+            return container;
+        }
 		
 		#region Standard method overrides
 		
