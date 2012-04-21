@@ -220,6 +220,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\S02LXX_Labirint_v4_Office.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\S02LXX_Labirint_v3_Box.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2196,6 +2199,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 

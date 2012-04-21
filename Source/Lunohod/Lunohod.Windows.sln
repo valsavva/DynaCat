@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod", "Lunohod\Lunohod.Windows.csproj", "{669A160E-877C-462B-ACBF-93FEF1899EAF}"
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod.Windows", "Lunohod\Lunohod.Windows.csproj", "{669A160E-877C-462B-ACBF-93FEF1899EAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod.Tests", "Lunohod.Tests\Lunohod.Tests.Windows.csproj", "{A55414B0-1397-4215-B425-79E0E2FD5848}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lunohod.Tests.Windows", "Lunohod.Tests\Lunohod.Tests.Windows.csproj", "{A55414B0-1397-4215-B425-79E0E2FD5848}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
