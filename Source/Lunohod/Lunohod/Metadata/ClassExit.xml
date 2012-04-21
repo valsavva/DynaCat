@@ -34,7 +34,7 @@
                 <Delay Duration="1"/>
 				<ParallelSet>
                     <Do Action="sprExitFlightFire.Enable()"/>
-    				<NumAnimation Target="this.X,this.Y,this.Rotation" Duration="2.5" Autoreverse="false" IsDelta="true" InProgress="true" RepeatCount="1" Fill="End">
+    				<NumAnimation Target="this.X,this.Y,this.Rotation" Duration="2.5" Autoreverse="false" IsDelta="true" RepeatCount="1" Fill="End">
     					<KeyFrame Time="0" Value="0,0,0" Smoothing="Smooth"/>
     					<KeyFrame Time="1" Value="0,-30,0" Smoothing="Smooth"/>
     					<KeyFrame Time="1.5" Value="0,-100,0" Smoothing="Smooth"/>

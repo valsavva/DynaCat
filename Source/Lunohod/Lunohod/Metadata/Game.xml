@@ -33,22 +33,23 @@
         <LevelSeries Id="series2" Name="----- Series 2 -----" File="ScreenSeries2.xml">
 	        <LevelInfo Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
 	        <LevelInfo Id="S02LXX_LogikaPeredv_Tropinka" File="S02LXX_LogikaPeredv_Tropinka.xml" BombCount="0" />
-	        <LevelInfo Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
-	        <LevelInfo Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
+            <LevelInfo Id="S02LXX_Labirint_v4_Office" File="S02LXX_Labirint_v4_Office.xml" BombCount="0" />
+            <LevelInfo Id="S02LXX_Nozhnicy" File="S02LXX_Nozhnicy.xml" />
 	        <LevelInfo Id="S02LXX_Dyrka" File="S02LXX_Dyrka.xml" />
 	        <LevelInfo Id="S02LXX_Labirint_v3_Box" File="S02LXX_Labirint_v3_Box.xml" BombCount="0" />
 	        <LevelInfo Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" BombCount="0" />
-	        <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
-	        <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
+            <LevelInfo Id="S02LXX_Labirint_v5_Vorishka" File="S02LXX_Labirint_v5_Vorishka.xml" />
+            <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
+            <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
 	        <LevelInfo Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
-	        <LevelInfo Id="S02LXX_Labirint_v4_Office" File="S02LXX_Labirint_v4_Office.xml" BombCount="0" />
+            <LevelInfo Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
             <LevelInfo Id="S02LXX_VKolce" File="S02LXX_VKolce.xml" BombCount="0" />
-			<LevelInfo Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
+            <LevelInfo Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
             <LevelInfo Id="S02LXX_Trenazher" File="S02LXX_Trenazher.xml" BombCount="0" />
-	        <LevelInfo Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Series 3 -----" File="ScreenSeries3.xml">
             <LevelInfo Id="S03LXX_VodoprovodniiNindzya" File="S03LXX_VodoprovodniiNindzya.xml" />
+            <LevelInfo Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
             <LevelInfo Id="S03LXX_4_Komnati" File="S03LXX_4_Komnati.xml" BombCount="0" />
             <LevelInfo Id="S03LXX_Chelnok" File="S03LXX_Chelnok.xml" BombCount="0" />
             <LevelInfo Id="SXXLXX_VolkLovitYayca" File="SXXLXX_VolkLovitYayca.xml" />
