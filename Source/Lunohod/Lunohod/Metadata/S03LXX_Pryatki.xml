@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.6.02 -->
+<!-- source: D:\Lunohod\Levels\S03LXX_Pryatki\S03LXX_Pryatki.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S03LXX_Pryatki" Bounds="0, 0, 480, 320">
+    <Include File="ClassTeleportEntry.xml" />
+    <Include File="ClassTeleportTube.xml" />
+    <Include File="ClassTeleportKoleno.xml" />
+    <Include File="ClassTeleportOut.xml" />
+    <Include File="ClassFood.xml" />
+    <Include File="ClassEnemyRat5.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassTower.xml" />
+    <Include File="ClassHero.xml" />
+    <Include File="ClassExit.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_second_phon_communications" Source="second_phon_communications" />
+        <Texture Id="txr_second_phon_ladder" Source="second_phon_ladder" />
+        <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
+        <Texture Id="txr_second_phon_grill_with_fan_2" Source="second_phon_grill_with_fan_2" />
+        <Texture Id="txr_second_phon_crack" Source="second_phon_crack" />
+        <Texture Id="txr_second_phon_communications_2a" Source="second_phon_communications_2a" />
+        <Texture Id="txr_second_phon_communications_5_noVent_me" Source="second_phon_communications_5_noVent_me" />
+        <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
+        <Texture Id="txr_TeleportEntryRight" Source="TeleportEntryRight" />
+        <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
+        <Texture Id="txr_TeleportEntryLeft" Source="TeleportEntryLeft" />
+        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
+        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+    </Resources>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3240"/>
+    </Layer>
+    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_second_phon_communications" Bounds="226, 17, 154, 117" TraceId="image3555"/>
+        <Image Id="dfltMask3" TextureId="txr_second_phon_ladder" Bounds="187, 159, 30, 131" Stretch="true" TraceId="image3566"/>
+        <Image Id="dfltMask4" TextureId="txr_second_phon_tank" Bounds="148, 253, 32, 39" Stretch="true" TraceId="image3577"/>
+        <Image Id="dfltMask5" TextureId="txr_second_phon_tank" Bounds="117, 243, 29, 35" Stretch="true" TraceId="image3580"/>
+        <Image Id="dfltMask6" TextureId="txr_second_phon_tank" Bounds="78, 254, 36, 44" Stretch="true" TraceId="image3582"/>
+        <Image Id="dfltMask7" TextureId="txr_second_phon_grill_with_fan_2" Bounds="416, 24, 41, 40" Stretch="true" TraceId="image3592"/>
+        <Image Id="dfltMask8" TextureId="txr_second_phon_crack" Bounds="345, 283, 92, 51" Stretch="true" TraceId="image3603"/>
+        <Image Id="dfltMask9" TextureId="txr_second_phon_communications_2a" Bounds="69, 134, 186, 110" Stretch="true" TraceId="image3296"/>
+        <Image Id="dfltMask10" TextureId="txr_second_phon_communications_5_noVent_me" Bounds="72, 52, 38, 82" Stretch="true" TraceId="image3318"/>
+        <Image Id="dfltMask11" TextureId="txr_second_phon_communications_5_noVent_me" Bounds="72, -30, 38, 82" Stretch="true" TraceId="image3321"/>
+    </Layer>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="0, -30, 480, 50" Edges="Stick" TraceId="image3904"/>
+        <Block Id="blk2" Bounds="0, 300, 480, 50" Edges="Stick" TraceId="image3909"/>
+        <Block Id="blk3" Bounds="-82, 0, 100, 350" Edges="Stick" TraceId="image3911"/>
+        <Block Id="blk4" Bounds="460, 0, 100, 350" Edges="Stick" TraceId="image3913"/>
+    </Layer>
+    <Layer Id="design" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask12" TextureId="txr_texture_brick_clean" Bounds="-8, 0, 26, 20" TraceId="image3069"/>
+        <Image Id="dfltMask13" TextureId="txr_texture_brick_clean" Bounds="18, 0, 26, 20" TraceId="image3072"/>
+        <Image Id="dfltMask14" TextureId="txr_texture_brick_clean" Bounds="44, 0, 26, 20" TraceId="image3074"/>
+        <Image Id="dfltMask15" TextureId="txr_texture_brick_clean" Bounds="70, 0, 26, 20" TraceId="image3076"/>
+        <Image Id="dfltMask16" TextureId="txr_texture_brick_clean" Bounds="96, 0, 26, 20" TraceId="image3078"/>
+        <Image Id="dfltMask17" TextureId="txr_texture_brick_clean" Bounds="122, 0, 26, 20" TraceId="image3080"/>
+        <Image Id="dfltMask18" TextureId="txr_texture_brick_clean" Bounds="148, 0, 26, 20" TraceId="image3082"/>
+        <Image Id="dfltMask19" TextureId="txr_texture_brick_clean" Bounds="174, 0, 26, 20" TraceId="image3084"/>
+        <Image Id="dfltMask20" TextureId="txr_texture_brick_clean" Bounds="200, 0, 26, 20" TraceId="image3086"/>
+        <Image Id="dfltMask21" TextureId="txr_texture_brick_clean" Bounds="226, 0, 26, 20" TraceId="image3088"/>
+        <Image Id="dfltMask22" TextureId="txr_texture_brick_clean" Bounds="252, 0, 26, 20" TraceId="image3090"/>
+        <Image Id="dfltMask23" TextureId="txr_texture_brick_clean" Bounds="278, 0, 26, 20" TraceId="image3092"/>
+        <Image Id="dfltMask24" TextureId="txr_texture_brick_clean" Bounds="304, 0, 26, 20" TraceId="image3094"/>
+        <Image Id="dfltMask25" TextureId="txr_texture_brick_clean" Bounds="330, 0, 26, 20" TraceId="image3096"/>
+        <Image Id="dfltMask26" TextureId="txr_texture_brick_clean" Bounds="356, 0, 26, 20" TraceId="image3098"/>
+        <Image Id="dfltMask27" TextureId="txr_texture_brick_clean" Bounds="382, 0, 26, 20" TraceId="image3100"/>
+        <Image Id="dfltMask28" TextureId="txr_texture_brick_clean" Bounds="408, 0, 26, 20" TraceId="image3102"/>
+        <Image Id="dfltMask29" TextureId="txr_texture_brick_clean" Bounds="434, 0, 26, 20" TraceId="image3104"/>
+        <Image Id="dfltMask30" TextureId="txr_texture_brick_clean" Bounds="460, 0, 26, 20" TraceId="image3106"/>
+        <Image Id="dfltMask31" TextureId="txr_texture_brick_clean" Bounds="-8, 300, 26, 20" TraceId="image3110"/>
+        <Image Id="dfltMask32" TextureId="txr_texture_brick_clean" Bounds="18, 300, 26, 20" TraceId="image3112"/>
+        <Image Id="dfltMask33" TextureId="txr_texture_brick_clean" Bounds="44, 300, 26, 20" TraceId="image3114"/>
+        <Image Id="dfltMask34" TextureId="txr_texture_brick_clean" Bounds="70, 300, 26, 20" TraceId="image3116"/>
+        <Image Id="dfltMask35" TextureId="txr_texture_brick_clean" Bounds="96, 300, 26, 20" TraceId="image3118"/>
+        <Image Id="dfltMask36" TextureId="txr_texture_brick_clean" Bounds="122, 300, 26, 20" TraceId="image3120"/>
+        <Image Id="dfltMask37" TextureId="txr_texture_brick_clean" Bounds="148, 300, 26, 20" TraceId="image3122"/>
+        <Image Id="dfltMask38" TextureId="txr_texture_brick_clean" Bounds="174, 300, 26, 20" TraceId="image3124"/>
+        <Image Id="dfltMask39" TextureId="txr_texture_brick_clean" Bounds="200, 300, 26, 20" TraceId="image3126"/>
+        <Image Id="dfltMask40" TextureId="txr_texture_brick_clean" Bounds="226, 300, 26, 20" TraceId="image3128"/>
+        <Image Id="dfltMask41" TextureId="txr_texture_brick_clean" Bounds="252, 300, 26, 20" TraceId="image3130"/>
+        <Image Id="dfltMask42" TextureId="txr_texture_brick_clean" Bounds="278, 300, 26, 20" TraceId="image3132"/>
+        <Image Id="dfltMask43" TextureId="txr_texture_brick_clean" Bounds="304, 300, 26, 20" TraceId="image3134"/>
+        <Image Id="dfltMask44" TextureId="txr_texture_brick_clean" Bounds="330, 300, 26, 20" TraceId="image3136"/>
+        <Image Id="dfltMask45" TextureId="txr_texture_brick_clean" Bounds="356, 300, 26, 20" TraceId="image3138"/>
+        <Image Id="dfltMask46" TextureId="txr_texture_brick_clean" Bounds="382, 300, 26, 20" TraceId="image3140"/>
+        <Image Id="dfltMask47" TextureId="txr_texture_brick_clean" Bounds="408, 300, 26, 20" TraceId="image3142"/>
+        <Image Id="dfltMask48" TextureId="txr_texture_brick_clean" Bounds="434, 300, 26, 20" TraceId="image3144"/>
+        <Image Id="dfltMask49" TextureId="txr_texture_brick_clean" Bounds="460, 300, 26, 20" TraceId="image3146"/>
+        <Image Id="dfltMask50" TextureId="txr_texture_brick_clean" Bounds="-8, 280, 26, 20" TraceId="image3148"/>
+        <Image Id="dfltMask51" TextureId="txr_texture_brick_clean" Bounds="-8, 260, 26, 20" TraceId="image3150"/>
+        <Image Id="dfltMask52" TextureId="txr_texture_brick_clean" Bounds="-8, 240, 26, 20" TraceId="image3152"/>
+        <Image Id="dfltMask53" TextureId="txr_texture_brick_clean" Bounds="-8, 220, 26, 20" TraceId="image3154"/>
+        <Image Id="dfltMask54" TextureId="txr_texture_brick_clean" Bounds="-8, 200, 26, 20" TraceId="image3156"/>
+        <Image Id="dfltMask55" TextureId="txr_texture_brick_clean" Bounds="-8, 180, 26, 20" TraceId="image3158"/>
+        <Image Id="dfltMask56" TextureId="txr_texture_brick_clean" Bounds="-8, 160, 26, 20" TraceId="image3160"/>
+        <Image Id="dfltMask57" TextureId="txr_texture_brick_clean" Bounds="-8, 140, 26, 20" TraceId="image3162"/>
+        <Image Id="dfltMask58" TextureId="txr_texture_brick_clean" Bounds="-8, 120, 26, 20" TraceId="image3164"/>
+        <Image Id="dfltMask59" TextureId="txr_texture_brick_clean" Bounds="-8, 100, 26, 20" TraceId="image3166"/>
+        <Image Id="dfltMask60" TextureId="txr_texture_brick_clean" Bounds="-8, 80, 26, 20" TraceId="image3168"/>
+        <Image Id="dfltMask61" TextureId="txr_texture_brick_clean" Bounds="-8, 60, 26, 20" TraceId="image3170"/>
+        <Image Id="dfltMask62" TextureId="txr_texture_brick_clean" Bounds="-8, 40, 26, 20" TraceId="image3172"/>
+        <Image Id="dfltMask63" TextureId="txr_texture_brick_clean" Bounds="-8, 20, 26, 20" TraceId="image3174"/>
+        <Image Id="dfltMask64" TextureId="txr_texture_brick_clean" Bounds="460, 280, 26, 20" TraceId="image3176"/>
+        <Image Id="dfltMask65" TextureId="txr_texture_brick_clean" Bounds="460, 260, 26, 20" TraceId="image3178"/>
+        <Image Id="dfltMask66" TextureId="txr_texture_brick_clean" Bounds="460, 240, 26, 20" TraceId="image3180"/>
+        <Image Id="dfltMask67" TextureId="txr_texture_brick_clean" Bounds="460, 220, 26, 20" TraceId="image3182"/>
+        <Image Id="dfltMask68" TextureId="txr_texture_brick_clean" Bounds="460, 200, 26, 20" TraceId="image3184"/>
+        <Image Id="dfltMask69" TextureId="txr_texture_brick_clean" Bounds="460, 180, 26, 20" TraceId="image3186"/>
+        <Image Id="dfltMask70" TextureId="txr_texture_brick_clean" Bounds="460, 160, 26, 20" TraceId="image3188"/>
+        <Image Id="dfltMask71" TextureId="txr_texture_brick_clean" Bounds="460, 140, 26, 20" TraceId="image3190"/>
+        <Image Id="dfltMask72" TextureId="txr_texture_brick_clean" Bounds="460, 120, 26, 20" TraceId="image3192"/>
+        <Image Id="dfltMask73" TextureId="txr_texture_brick_clean" Bounds="460, 100, 26, 20" TraceId="image3194"/>
+        <Image Id="dfltMask74" TextureId="txr_texture_brick_clean" Bounds="460, 80, 26, 20" TraceId="image3196"/>
+        <Image Id="dfltMask75" TextureId="txr_texture_brick_clean" Bounds="460, 60, 26, 20" TraceId="image3198"/>
+        <Image Id="dfltMask76" TextureId="txr_texture_brick_clean" Bounds="460, 40, 26, 20" TraceId="image3200"/>
+        <Image Id="dfltMask77" TextureId="txr_texture_brick_clean" Bounds="460, 20, 26, 20" TraceId="image3202"/>
+    </Layer>
+    <Layer Id="portDesign" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask78" TextureId="txr_TeleportEntryRight" Bounds="8, 66, 24, 56" TraceId="image3017"/>
+        <Image Id="dfltMask79" TextureId="txr_TeleportTubeHor" Bounds="466, 66, 40, 56" TraceId="image3028"/>
+        <Image Id="dfltMask80" TextureId="txr_TeleportEntryLeft" Bounds="446, 66, 24, 56" TraceId="image3039"/>
+        <Image Id="dfltMask81" TextureId="txr_TeleportTubeHor" Bounds="-32, 66, 40, 56" TraceId="image3048"/>
+    </Layer>
+    <Layer Id="portAnm" BackColor="#FFFFFFFF">
+        <Group Id="grpTlp1" Bounds="450, 66, 18, 56" TraceId="image3790" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp1" EnterAction="setTlp1.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
+        <SequenceSet Id="setTlp1">
+            <SequenceSet Id="setTlp1Entry" Class="clsTeleportEntry" ClassParams="@entryX=450,@entryY=66,@delay=0"/>
+            <SequenceSet Id="setTlp2Tube" Class="clsTeleportTube" ClassParams="@horX=584,@horY=85,@vertX=-7777777,@vertY=-7777777,@delay=0,@duration=1.59,@delta=200"/>
+            <SequenceSet Id="setTlp3Koleno" Class="clsTeleportKoleno" ClassParams="@X=798,@Y=90,@delay=0" TraceId="image3801" />
+            <SequenceSet Id="setTlp4Out" Class="clsTeleportOut" ClassParams="@outX=30,@outY=83,@delay=0,@heroOutDirection=right" TraceId="image3847" />
+        </SequenceSet>
+    </Layer>
+    <Layer Id="portAnm vv" BackColor="#FFFFFFFF">
+        <Group Id="grpTlp5" Bounds="10, 66, 18, 56" TraceId="image3864" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp5" EnterAction="setTlp5.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
+        <SequenceSet Id="setTlp5">
+            <SequenceSet Id="setTlp5Entry" Class="clsTeleportEntry" ClassParams="@entryX=10,@entryY=66,@delay=0"/>
+            <SequenceSet Id="setTlp6Tube" Class="clsTeleportTube" ClassParams="@horX=-129,@horY=111,@vertX=-7777777,@vertY=-7777777,@delay=0,@duration=1.59,@delta=-200"/>
+            <SequenceSet Id="setTlp7Koleno" Class="clsTeleportKoleno" ClassParams="@X=-284,@Y=159,@delay=0" TraceId="image3868" />
+            <SequenceSet Id="setTlp8Out" Class="clsTeleportOut" ClassParams="@outX=415,@outY=83,@delay=0,@heroOutDirection=left" TraceId="image3836" />
+        </SequenceSet>
+    </Layer>
+    <Layer Id="fish" BackColor="#FFFFFFFF">
+        <Food Id="fd1" Class="clsFood" Points="1" Bounds="44, 23, 30, 15" TraceId="image3343">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd2" Class="clsFood" Points="1" Bounds="102, 79, 30, 15" TraceId="image3345">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd3" Class="clsFood" Points="1" Bounds="238, 40, 30, 15" TraceId="image3347">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd4" Class="clsFood" Points="1" Bounds="340, 54, 30, 15" TraceId="image3349">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd5" Class="clsFood" Points="1" Bounds="345, 98, 30, 15" TraceId="image3351">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd6" Class="clsFood" Points="1" Bounds="280, 137, 30, 15" TraceId="image3353">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd7" Class="clsFood" Points="1" Bounds="143, 110, 30, 15" TraceId="image3355">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd8" Class="clsFood" Points="1" Bounds="106, 163, 30, 15" TraceId="image3357">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd9" Class="clsFood" Points="1" Bounds="213, 168, 30, 15" TraceId="image3359">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd10" Class="clsFood" Points="1" Bounds="281, 197, 30, 15" TraceId="image3361">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd11" Class="clsFood" Points="1" Bounds="215, 227, 30, 15" TraceId="image3363">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd12" Class="clsFood" Points="1" Bounds="19, 216, 30, 15" TraceId="image3384">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd13" Class="clsFood" Points="1" Bounds="16, 205, 30, 15" TraceId="image3365">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd14" Class="clsFood" Points="1" Bounds="112, 283, 30, 15" TraceId="image3270">
+            <Image TextureId="txr_fish_4_me" />
+        </Food>
+        <Food Id="fd15" Class="clsFood" Points="1" Bounds="216, 273, 26, 17" TraceId="image3382">
+            <Image TextureId="txr_fish_5_me" />
+        </Food>
+        <Food Id="fd16" Class="clsFood" Points="1" Bounds="237, 282, 26, 17" TraceId="image3380">
+            <Image TextureId="txr_fish_5_me" />
+        </Food>
+    </Layer>
+<!-- HAND EDIT >>> -->
+    <Resources RootFolder="Sound">
+        <SoundFile Id="whistle" Source="whistle"/>
+        <SoundFile Id="whistle_ready" Source="whistle_ready"/>
+    </Resources>
+    <Layer Id="banda" BackColor="#FFFFFFFF">
+        <Sound Id="sndWhistle" FileId="whistle" Volume="0.5" Pitch="0"/>
+        <Sound Id="sndWhistleReady" FileId="whistle_ready" Volume="0.5" Pitch="0"/>
+
+
+        <BoolTrigger Condition="hero:EnemiesRun" EnterAction="setRunToTheLeft.Start()" />
+        <BoolTrigger Condition="not hero:EnemiesRun" EnterAction="setRunToTheRight.Start()" />
+        
+        <SequenceSet Id="setRunToTheRight">
+            <Do Action="@time2=system.Round(system.Rnd(4.2,5)*10)/10;@dx2=387;
+                        @time3=system.Round(system.Rnd(4.1,4.9)*10)/10;@dx3=380;
+                        @time4=system.Round(system.Rnd(4.2,5)*10)/10;@dx4=389;
+                        @time5=system.Round(system.Rnd(4.2,5)*10)/10;@dx5=392;
+                        @time6=system.Round(system.Rnd(4.2,5)*10)/10;@dx6=373;
+                        @time7=system.Round(system.Rnd(3.4,5.2)*10)/10;@dx7=316;
+                        @time8=system.Round(system.Rnd(3.1,3.9)*10)/10;@dx8=294;
+                        @time9=system.Round(system.Rnd(4,4.8)*10)/10;@dx9=368" />
+            <Do Action="setRunOnce.Start()" />
+        </SequenceSet>
+        
+        <SequenceSet  Id="setRunToTheLeft" >
+            <Do Action="setRunOnce.Start()" />
+            <Do Action="@time2=system.Round(system.Rnd(4.2,5)*10)/10;@dx2=-387;
+                        @time3=system.Round(system.Rnd(4.1,4.9)*10)/10;@dx3=-380;
+                        @time4=system.Round(system.Rnd(4.2,5)*10)/10;@dx4=-389;
+                        @time5=system.Round(system.Rnd(4.2,5)*10)/10;@dx5=-392;
+                        @time6=system.Round(system.Rnd(4.2,5)*10)/10;@dx6=-373;
+                        @time7=system.Round(system.Rnd(3.4,5.2)*10)/10;@dx7=-316;
+                        @time8=system.Round(system.Rnd(3.1,3.9)*10)/10;@dx8=-294;
+                        @time9=system.Round(system.Rnd(4,4.8)*10)/10;@dx9=-368" />
+            <Do Action="setRunOnce.Start()" />
+
+        </SequenceSet>
+        
+        <SequenceSet Id="setRunOnce" RepeatCount="1">
+            <Delay Duration="1" />
+            <ParallelSet RepeatCount="1" >
+                <Do Action="sndWhistleReady.Start()" />
+                <NumAnimation From="0" To="-7" Target="enm1.Y" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1" Fill="End"/>
+            </ParallelSet>
+            <Delay Duration="2" />
+            
+            <ParallelSet RepeatCount="1" >
+                <Do Action="sndWhistle.Start()" />
+                <SequenceSet RepeatCount="1" >
+                    <NumAnimation From="0" To="-10" Target="enm1.Y" Duration="0.1" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                    <NumAnimation From="-1" To="1" Target="enm1.X" Duration="0.05" IsDelta="true" Autoreverse="true" RepeatCount="5" Fill="End"/>
+                    <NumAnimation From="0" To="10" Target="enm1.Y" Duration="0.1" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+            </ParallelSet>
+
+            <ParallelSet RepeatCount="1">
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx2" Target="enm2.X" Duration="@time2" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx3" Target="enm3.X" Duration="@time3" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx4" Target="enm4.X" Duration="@time4" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx5" Target="enm5.X" Duration="@time5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx6" Target="enm6.X" Duration="@time6" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx7" Target="enm7.X" Duration="@time7" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx8" Target="enm8.X" Duration="@time8" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="system.Rnd(0.2,0.4)" />
+                    <NumAnimation From="0" To="@dx9" Target="enm9.X" Duration="@time9" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+
+            </ParallelSet>
+            <Delay Duration="6" />
+            <Do Action="hero:*EnemiesRun" />
+        </SequenceSet>
+
+        
+        <Enemy Id="enm1" Class="clsEnemyRat5" Bounds="350, 261, 26, 28" TraceId="Boss"/>
+        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="41, 35, 24, 25" TraceId="image3750"/>
+        <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="26, 68, 22, 23" TraceId="image3739"/>
+        <Enemy Id="enm4" Class="clsEnemyRat3" Bounds="38, 93, 24, 25" TraceId="image3728"/>
+        <Enemy Id="enm5" Class="clsEnemyRat1" Bounds="28, 181, 24, 25" TraceId="image3775"/>
+        <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="59, 207, 22, 23" TraceId="image3761"/>
+        <Enemy Id="enm7" Class="clsEnemyRat1" Bounds="48, 234, 24, 25" TraceId="image3777"/>
+        <Enemy Id="enm8" Class="clsEnemyRat3" Bounds="26, 269, 24, 25" TraceId="image3779"/>
+        <Enemy Id="enm9" Class="clsEnemyRat2" Bounds="40, 136, 22, 23" TraceId="image3325"/>
+    </Layer>
+<!-- HAND EDIT <<< -->
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Hero Id="hero" Class="clsHero" Bounds="247, 84, 33, 24" TraceId="image3015"/>
+        <Group Id="exit" Class="clsExit" Bounds="388, 246, 37, 54" TraceId="image3049" />
+    </Layer>
+    <Include File="ClassExplosion.xml" />
+    <Include File="Dashboard.xml" />
+</Level>
+<!-- Food=16 Enemy=9 Block=4 DesignImage=81 Animation=8 Teleport Animations=8 FoodPack=0 -->

@@ -7,7 +7,7 @@
 		<Food IsExploding="true" >
 
 <!-- Points Animation -->
-            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Enabled="false">
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
                 <Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y" InProgress="true" />
                 <Text FontId="Splash14Font" Text="='+' + system.Str(this.Points)" Location="6,-12" Color="#FFFFFF">
                     <SequenceSet RepeatCount="1" InProgress="true">
@@ -31,7 +31,7 @@
             
             <!-- eaten -->
 			<BoolTrigger Condition="not this:eaten">
-				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
+				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Points=100;hero.AddScore(this.Points);this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
 			</BoolTrigger>
             <SequenceSet Id="this_anmEated">
 				<Do Action="this.IsExploding=false;this_grpShowPoints.Enable()" />
@@ -40,6 +40,7 @@
                     <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1"/>
                 </ParallelSet>
             </SequenceSet>
+            
             <!-- explosion  -->
             <!-- destroy -->
 			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="true" Group="this_foodStates"/>

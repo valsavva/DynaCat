@@ -1030,7 +1030,6 @@ Local $includes = "", $cls, $xmlExist = False
 		Until $EOinF
 		Write('', False)
 		Write('<Include File="ClassExplosion.xml" />', False)		
-		Write('<Include File="IncludePointsAnm.xml" />', False)		
 		Write('<Include File="Dashboard.xml" />', False)		
 		Write('</Level>', False)
 		
