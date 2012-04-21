@@ -253,7 +253,7 @@
                 <Do Action="sndWhistle.Start()" />
                 <SequenceSet RepeatCount="1" >
                     <NumAnimation From="0" To="-10" Target="enm1.Y" Duration="0.1" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                    <NumAnimation From="-1" To="1" Target="enm1.X" Duration="0.05" IsDelta="true" Autoreverse="true" RepeatCount="5" Fill="End"/>
+                    <NumAnimation From="-1" To="1" Target="enm1.X" Duration="0.05" IsDelta="true" Autoreverse="true" RepeatCount="4.5" Fill="End"/>
                     <NumAnimation From="0" To="10" Target="enm1.Y" Duration="0.1" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 </SequenceSet>
             </ParallelSet>
