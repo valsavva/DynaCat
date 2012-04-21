@@ -220,7 +220,7 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\S03LXX_Pryatki.xml">
+    <Content Include="Metadata\S03LXX_Sport.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\SXXLXX_Poezd_v2.xml">
@@ -2193,4 +2193,5 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
