@@ -15,7 +15,7 @@
 	
 	
 	<Class Id="clsExit">
-		<Group>
+        <Group Depth="0.1">
             <Image Id="this_imgExitStatic" TextureId="txrExitStatic"/>
 			<Image Id="this_imgExitFlight" TextureId="txrExitFlight" Bounds="-12,0,62,54" Enabled="false"/>
 			<Sound Id="this_sndExitFlight" FileId="sndExitFlight" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>

@@ -197,8 +197,8 @@
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Hero Id="hero" Class="clsHero" Bounds="48, 81, 33, 24" TraceId="image3015"/>
         <Group Id="exit" Class="clsExit" Bounds="157, 68, 37, 54" TraceId="image3049" />
+        <Hero Id="hero" Class="clsHero" Bounds="48, 81, 33, 24" TraceId="image3015"/>
     </Layer>
     <Layer Id="upmask" BackColor="#FFFFFFFF">
     </Layer>
