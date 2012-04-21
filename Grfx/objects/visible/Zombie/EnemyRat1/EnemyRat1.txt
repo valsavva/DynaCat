@@ -19,9 +19,19 @@
 ###@cntrValue2
 .X)/10,(hero.Y-enm
 ###@cntrValue2
-.Y)/10" IsDelta="true" Duration="1" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-###@CRLF
-<Delay Duration="7" />
+.Y)/10" IsDelta="true" Duration="(hero.X-enm
+###@cntrValue2
+.X)*(hero.X-enm
+###@cntrValue2
+.X)/(hero.X-enm
+###@cntrValue2
+.X)/40+(hero.Y-enm
+###@cntrValue2
+.Y)*(hero.Y-enm
+###@cntrValue2
+.Y)/(hero.Y-enm
+###@cntrValue2
+.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
 ###@CRLF
 </SequenceSet>
 ###@CRLF

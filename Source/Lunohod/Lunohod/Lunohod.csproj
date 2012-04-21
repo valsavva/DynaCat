@@ -220,6 +220,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\S03LXX_VKolce_v2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\S02LXX_Labirint_v5_Vorishka.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2205,6 +2208,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 

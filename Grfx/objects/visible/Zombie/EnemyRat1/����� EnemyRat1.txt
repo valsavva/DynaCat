@@ -1,6 +1,6 @@
 <Enemy Id="enm
 ###@counter2
-" Class="clsEnemyRat3" Bounds="
+" Class="clsEnemyRat1" Bounds="
 ###x
 , 
 ###y
@@ -20,6 +20,8 @@
 .X)/10,(hero.Y-enm
 ###@cntrValue2
 .Y)/10" IsDelta="true" Duration="1" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+###@CRLF
+<Delay Duration="7" />
 ###@CRLF
 </SequenceSet>
 ###@CRLF
