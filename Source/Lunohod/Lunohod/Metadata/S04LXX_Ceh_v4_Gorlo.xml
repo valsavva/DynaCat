@@ -69,85 +69,25 @@
         <Food Id="fd7" Class="clsFood" Points="100" Bounds="153, 191, 26, 17" TraceId="image3549">
             <Image TextureId="txr_fish_5_me" />
         </Food>
+        
+<!-- HAND EDIT >>> -->        
         <Enemy Id="enm1" Class="clsEnemySaw" Bounds="209, 66, 50, 50" TraceId="Left1">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_18" Bounds="7,7,36,36" />
-            <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_18" EnterAction="setAttack_enm1.Start();setSound_enm1.Start()" ExitAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
-            <SequenceSet Id="setAttack_enm1" RepeatCount="0">
-                <Do Action="enm1.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm1" RepeatCount="1">
-                <Do Action="enm1_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm1_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <NumAnimation From="0" To="30" Target="enm1.X" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="2"/>
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="5" Target="enm1.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-35" Target="enm1.X" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
         </Enemy>
         <Enemy Id="enm2" Class="clsEnemySaw" Bounds="311, 88, 50, 50" TraceId="Right1">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_19" Bounds="7,7,36,36" />
-            <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_19" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
-            <SequenceSet Id="setAttack_enm2" RepeatCount="0">
-                <Do Action="enm2.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm2" RepeatCount="1">
-                <Do Action="enm2_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm2_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <Delay Duration="0.3"/>
-                <NumAnimation From="0" To="-30" Target="enm2.X" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="1.7"/>
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-5" Target="enm2.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="35" Target="enm2.X" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
         </Enemy>
         <Enemy Id="enm3" Class="clsEnemySaw" Bounds="209, 112, 50, 50" TraceId="Left2">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_20" Bounds="7,7,36,36" />
-            <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_20" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
-            <SequenceSet Id="setAttack_enm3" RepeatCount="0">
-                <Do Action="enm3.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm3" RepeatCount="1">
-                <Do Action="enm3_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm3_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <Delay Duration="0.6"/>
-                <NumAnimation From="0" To="30" Target="enm3.X" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="1.4"/>
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="5" Target="enm3.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-35" Target="enm3.X" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
         </Enemy>
         <Enemy Id="enm4" Class="clsEnemySaw" Bounds="311, 134, 50, 50" TraceId="Right2">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
@@ -155,80 +95,18 @@
             </Image>
             <Group Id="grpDamageZone_21" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_21" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
-            <SequenceSet Id="setAttack_enm4" RepeatCount="0">
-                <Do Action="enm4.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm4" RepeatCount="1">
-                <Do Action="enm4_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm4_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <Delay Duration="0.9"/>
-                <NumAnimation From="0" To="-30" Target="enm4.X" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="1.1"/>
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-5" Target="enm4.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="35" Target="enm4.X" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
         </Enemy>
         <Enemy Id="enm5" Class="clsEnemySaw" Bounds="209, 158, 50, 50" TraceId="Left3">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_22" Bounds="7,7,36,36" />
-            <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_22" EnterAction="setAttack_enm5.Start();setSound_enm5.Start()" ExitAction="setAttack_enm5.Stop();setSound_enm5.Stop();enm5_sndSawMid.Stop();enm5_sndSawEnd.Start()" />
-            <SequenceSet Id="setAttack_enm5" RepeatCount="0">
-                <Do Action="enm5.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm5" RepeatCount="1">
-                <Do Action="enm5_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm5_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <Delay Duration="1.2"/>
-                <NumAnimation From="0" To="30" Target="enm5.X" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.8"/>
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="5" Target="enm5.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-35" Target="enm5.X" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
         </Enemy>
         <Enemy Id="enm6" Class="clsEnemySaw" Bounds="311, 180, 50, 50" TraceId="Right3">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_23" Bounds="7,7,36,36" />
-            <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_23" EnterAction="setAttack_enm6.Start();setSound_enm6.Start()" ExitAction="setAttack_enm6.Stop();setSound_enm6.Stop();enm6_sndSawMid.Stop();enm6_sndSawEnd.Start()" />
-            <SequenceSet Id="setAttack_enm6" RepeatCount="0">
-                <Do Action="enm6.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm6" RepeatCount="1">
-                <Do Action="enm6_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm6_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <Delay Duration="1.5"/>
-                <NumAnimation From="0" To="-30" Target="enm6.X" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-5" Target="enm6.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="35" Target="enm6.X" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
         </Enemy>
         <Enemy Id="enm7" Class="clsEnemySaw" Bounds="209, 204, 50, 50" TraceId="Left4">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
@@ -236,27 +114,139 @@
             </Image>
             <Group Id="grpDamageZone_24" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_24" EnterAction="setAttack_enm7.Start();setSound_enm7.Start()" ExitAction="setAttack_enm7.Stop();setSound_enm7.Stop();enm7_sndSawMid.Stop();enm7_sndSawEnd.Start()" />
-            <SequenceSet Id="setAttack_enm7" RepeatCount="0">
-                <Do Action="enm7.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm7" RepeatCount="1">
-                <Do Action="enm7_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm7_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <Delay Duration="1.8"/>
-                <NumAnimation From="0" To="30" Target="enm7.X" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.2"/>
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="5" Target="enm7.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-35" Target="enm7.X" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
         </Enemy>
+
+        
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_18" EnterAction="setAttack_enm1.Start();setSound_enm1.Start()" ExitAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_19" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_20" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_21" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_22" EnterAction="setAttack_enm5.Start();setSound_enm5.Start()" ExitAction="setAttack_enm5.Stop();setSound_enm5.Stop();enm5_sndSawMid.Stop();enm5_sndSawEnd.Start()" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_23" EnterAction="setAttack_enm6.Start();setSound_enm6.Start()" ExitAction="setAttack_enm6.Stop();setSound_enm6.Stop();enm6_sndSawMid.Stop();enm6_sndSawEnd.Start()" />
+        <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_24" EnterAction="setAttack_enm7.Start();setSound_enm7.Start()" ExitAction="setAttack_enm7.Stop();setSound_enm7.Stop();enm7_sndSawMid.Stop();enm7_sndSawEnd.Start()" />
+
+
+        <SequenceSet Id="setAttack_enm1" RepeatCount="0">
+            <Do Action="enm1.Attack()"/>
+            <Delay Duration="0.2"/>
+        </SequenceSet>
+        <SequenceSet Id="setSound_enm1" RepeatCount="1">
+            <Do Action="enm1_sndSawStart.Start()"/>
+            <Delay Duration="0.2"/>
+            <Do Action="enm1_sndSawMid.Start()"/>
+        </SequenceSet>
+        <SequenceSet Id="setAttack_enm2" RepeatCount="0">
+            <Do Action="enm2.Attack()"/>
+            <Delay Duration="0.2"/>
+        </SequenceSet>
+        <SequenceSet Id="setSound_enm2" RepeatCount="1">
+            <Do Action="enm2_sndSawStart.Start()"/>
+            <Delay Duration="0.2"/>
+            <Do Action="enm2_sndSawMid.Start()"/>
+        </SequenceSet>
+        <SequenceSet Id="setAttack_enm3" RepeatCount="0">
+            <Do Action="enm3.Attack()"/>
+            <Delay Duration="0.2"/>
+        </SequenceSet>
+        <SequenceSet Id="setSound_enm3" RepeatCount="1">
+            <Do Action="enm3_sndSawStart.Start()"/>
+            <Delay Duration="0.2"/>
+            <Do Action="enm3_sndSawMid.Start()"/>
+        </SequenceSet>
+        <SequenceSet Id="setAttack_enm4" RepeatCount="0">
+            <Do Action="enm4.Attack()"/>
+            <Delay Duration="0.2"/>
+        </SequenceSet>
+        <SequenceSet Id="setSound_enm4" RepeatCount="1">
+            <Do Action="enm4_sndSawStart.Start()"/>
+            <Delay Duration="0.2"/>
+            <Do Action="enm4_sndSawMid.Start()"/>
+        </SequenceSet>
+        <SequenceSet Id="setAttack_enm5" RepeatCount="0">
+            <Do Action="enm5.Attack()"/>
+            <Delay Duration="0.2"/>
+        </SequenceSet>
+        <SequenceSet Id="setSound_enm5" RepeatCount="1">
+            <Do Action="enm5_sndSawStart.Start()"/>
+            <Delay Duration="0.2"/>
+            <Do Action="enm5_sndSawMid.Start()"/>
+        </SequenceSet>
+        <SequenceSet Id="setAttack_enm6" RepeatCount="0">
+            <Do Action="enm6.Attack()"/>
+            <Delay Duration="0.2"/>
+        </SequenceSet>
+        <SequenceSet Id="setSound_enm6" RepeatCount="1">
+            <Do Action="enm6_sndSawStart.Start()"/>
+            <Delay Duration="0.2"/>
+            <Do Action="enm6_sndSawMid.Start()"/>
+        </SequenceSet>
+        <SequenceSet Id="setAttack_enm7" RepeatCount="0">
+            <Do Action="enm7.Attack()"/>
+            <Delay Duration="0.2"/>
+        </SequenceSet>
+        <SequenceSet Id="setSound_enm7" RepeatCount="1">
+            <Do Action="enm7_sndSawStart.Start()"/>
+            <Delay Duration="0.2"/>
+            <Do Action="enm7_sndSawMid.Start()"/>
+        </SequenceSet>
+
+        
+        <!-- moving -->
+        <SequenceSet InProgress="true" RepeatCount="0">
+            <ParallelSet > 
+                <SequenceSet>
+                    <Delay Duration="0.3"/>
+                    <NumAnimation From="0" To="30" Target="enm1.X" Duration="0.5" IsDelta="true"  RepeatCount="1" Autoreverse="false" Fill="End" />
+                </SequenceSet>
+                <SequenceSet>
+                    <Delay Duration="0.6"/>
+                    <NumAnimation From="0" To="-30" Target="enm2.X" Duration="0.5" IsDelta="true"  RepeatCount="1" Autoreverse="false" Fill="End" />
+                </SequenceSet>
+                <SequenceSet>
+                    <Delay Duration="0.9"/>
+                    <NumAnimation From="0" To="30" Target="enm3.X" Duration="0.5" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                </SequenceSet>
+                <SequenceSet>
+                    <Delay Duration="1.2"/>
+                    <NumAnimation From="0" To="-30" Target="enm4.X" Duration="0.5" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                </SequenceSet>
+                <SequenceSet>
+                    <Delay Duration="1.5"/>
+                    <NumAnimation From="0" To="30" Target="enm5.X" Duration="0.5" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                </SequenceSet>
+                <SequenceSet>
+                    <Delay Duration="1.8"/>
+                    <NumAnimation From="0" To="-30" Target="enm6.X" Duration="0.5" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                </SequenceSet>
+                <SequenceSet>
+                    <Delay Duration="2.1"/>
+                    <NumAnimation From="0" To="30" Target="enm7.X" Duration="0.5" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                </SequenceSet>
+            </ParallelSet>
+            <Delay Duration="0.5"/>
+            <ParallelSet>
+                <NumAnimation From="0" To="5" Target="enm1.X" Duration="0.1" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="-5" Target="enm2.X" Duration="0.1" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="5" Target="enm3.X" Duration="0.1" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="-5" Target="enm4.X" Duration="0.1" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="5" Target="enm5.X" Duration="0.1" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="-5" Target="enm6.X" Duration="0.1" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="5" Target="enm7.X" Duration="0.1" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+            </ParallelSet>
+            <Delay Duration="0.5"/>
+            <ParallelSet>
+                <NumAnimation From="0" To="-35" Target="enm1.X" Duration="1.6" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="35" Target="enm2.X" Duration="1.6" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="-35" Target="enm3.X" Duration="1.6" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="35" Target="enm4.X" Duration="1.6" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="-35" Target="enm5.X" Duration="1.6" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="35" Target="enm6.X" Duration="1.6" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+                <NumAnimation From="0" To="-35" Target="enm7.X" Duration="1.6" IsDelta="true" RepeatCount="1" Autoreverse="false" Fill="End" />
+            </ParallelSet>
+            <Delay Duration="0.55"/>
+        </SequenceSet>
+<!-- HAND EDIT <<< -->
+
         <Enemy Id="enm8" Class="clsEnemySaw" Bounds="85, 70, 50, 50" TraceId="Vert1">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
