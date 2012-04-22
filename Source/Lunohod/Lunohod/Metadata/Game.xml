@@ -24,13 +24,13 @@
 			HealthBonus = "0.25"
 		/>
 		-->
-        <LevelSeries Id="series1" Name="----- Series 1 -----" File="ScreenSeries1.xml">
+        <LevelSeries Id="series1" Name="----- Series 1 Tutorial -----" File="ScreenSeries1.xml">
 	        <LevelInfo Id="S01L01" File="S01L01.xml" BombCount="0" />
 			<LevelInfo Id="S01L02" File="S01L02.xml" />
 	        <LevelInfo Id="S01L03" File="S01L03.xml" BombCount="0" />
 	        <LevelInfo Id="S01L04" File="S01L04.xml" />
 		</LevelSeries>
-        <LevelSeries Id="series2" Name="----- Series 2 -----" File="ScreenSeries2.xml">
+        <LevelSeries Id="series2" Name="----- Series 2 Main -----" File="ScreenSeries2.xml">
 	        <LevelInfo Id="S02LXX_Labirint" File="S02LXX_Labirint.xml" />
 	        <LevelInfo Id="S02LXX_LogikaPeredv_Tropinka" File="S02LXX_LogikaPeredv_Tropinka.xml" BombCount="0" />
             <LevelInfo Id="S02LXX_Labirint_v4_Office" File="S02LXX_Labirint_v4_Office.xml" BombCount="0" />
@@ -39,26 +39,30 @@
 	        <LevelInfo Id="S02LXX_Labirint_v3_Box" File="S02LXX_Labirint_v3_Box.xml" BombCount="0" />
 	        <LevelInfo Id="S02LXX_RyadyVragov" File="S02LXX_RyadyVragov.xml" BombCount="0" />
             <LevelInfo Id="S02LXX_Labirint_v5_Vorishka" File="S02LXX_Labirint_v5_Vorishka.xml" />
-            <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
-            <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
-	        <LevelInfo Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
             <LevelInfo Id="S02LXX_LogikaPeredvizhenii" File="S02LXX_LogikaPeredvizhenii.xml" />
             <LevelInfo Id="S02LXX_VKolce" File="S02LXX_VKolce.xml" BombCount="0" />
+            <!--<LevelInfo Id="S03LXX_VKolce_v2" File="S03LXX_VKolce_v2.xml" />-->
             <LevelInfo Id="S02LXX_Labirint_v2" File="S02LXX_Labirint_v2.xml" />
             <LevelInfo Id="S02LXX_Trenazher" File="S02LXX_Trenazher.xml" BombCount="0" />
-        </LevelSeries>
-        <LevelSeries Id="series3" Name="----- Series 3 -----" File="ScreenSeries3.xml">
-            <LevelInfo Id="S03LXX_VodoprovodniiNindzya" File="S03LXX_VodoprovodniiNindzya.xml" />
             <LevelInfo Id="S02LXX_Elochka" File="S02LXX_Elochka.xml" />
+            <LevelInfo Id="SXXLXX_VolkLovitYayca" File="SXXLXX_VolkLovitYayca.xml" />
+        </LevelSeries>
+        <LevelSeries Id="series3" Name="----- Series 3 Teleports -----" File="ScreenSeries3.xml">
+            <LevelInfo Id="S03LXX_VodoprovodniiNindzya" File="S03LXX_VodoprovodniiNindzya.xml" />
             <LevelInfo Id="S03LXX_4_Komnati" File="S03LXX_4_Komnati.xml" BombCount="0" />
             <LevelInfo Id="S03LXX_Chelnok" File="S03LXX_Chelnok.xml" BombCount="0" />
-            <LevelInfo Id="SXXLXX_VolkLovitYayca" File="SXXLXX_VolkLovitYayca.xml" />
             <LevelInfo Id="S03LXX_Sport" File="S03LXX_Sport.xml" BombCount="0" HeroHealth="100"/>
-            <!--<LevelInfo Id="S03LXX_VKolce_v2" File="S03LXX_VKolce_v2.xml" />-->
+        </LevelSeries>
+        <LevelSeries Id="series4" Name="----- Series 4 Ceh -----" File="ScreenSeries4.xml">
+            <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
+            <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
+            <LevelInfo Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
+        </LevelSeries>
+        <LevelSeries Id="series5" Name="----- Series 5 Poezd -----" File="ScreenSeries5.xml">
             <LevelInfo Id="SXXLXX_Poezd_v2" File="SXXLXX_Poezd_v2.xml" />
             <LevelInfo Id="SXXLXX_Poezd" File="SXXLXX_Poezd.xml" />
         </LevelSeries>
-        <LevelSeries Id="series4" Name="----- Tests -----" File="ScreenTests.xml">
+        <LevelSeries Id="series6" Name="----- Tests -----" File="ScreenTests.xml">
             <!--<LevelInfo Id="AlphaTest" File="AlphaTest.xml" />-->
 	        <LevelInfo Id="AlphaTest" File="AlphaTest.xml" />
 	        <LevelInfo Id="AlphaTest2" File="AlphaTest2.xml" />

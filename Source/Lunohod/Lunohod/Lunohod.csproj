@@ -2182,6 +2182,15 @@
     <Content Include="Metadata\ScreenSeries2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\ScreenSeries3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+      <Content Include="Metadata\ScreenSeries4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ScreenSeries5.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\ScreenPause.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2197,10 +2206,7 @@
     <Content Include="Metadata\S01L01_Comics.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\ScreenSeries3.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
       <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
