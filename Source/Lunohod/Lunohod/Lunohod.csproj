@@ -220,6 +220,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\S04LXX_Ceh_v4_Gorlo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\S03LXX_VKolce_v2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2214,6 +2217,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 
