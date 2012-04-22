@@ -54,13 +54,13 @@
             <LevelInfo Id="S03LXX_Sport" File="S03LXX_Sport.xml" BombCount="0" HeroHealth="100"/>
         </LevelSeries>
         <LevelSeries Id="series4" Name="----- Series 4 Ceh -----" File="ScreenSeries4.xml">
-            <LevelInfo Id="S02LXX_Ceh_v1" File="S02LXX_Ceh_v1.xml" />
-            <LevelInfo Id="S02LXX_Ceh_v2" File="S02LXX_Ceh_v2.xml" />
-            <LevelInfo Id="S02LXX_Ceh_v3" File="S02LXX_Ceh_v3.xml" />
+            <LevelInfo Id="S04LXX_Ceh_v1" File="S04LXX_Ceh_v1.xml" />
+            <LevelInfo Id="S04LXX_Ceh_v2" File="S04LXX_Ceh_v2.xml" />
+            <LevelInfo Id="S04LXX_Ceh_v3" File="S04LXX_Ceh_v3.xml" />
         </LevelSeries>
         <LevelSeries Id="series5" Name="----- Series 5 Poezd -----" File="ScreenSeries5.xml">
-            <LevelInfo Id="SXXLXX_Poezd_v2" File="SXXLXX_Poezd_v2.xml" />
-            <LevelInfo Id="SXXLXX_Poezd" File="SXXLXX_Poezd.xml" />
+            <LevelInfo Id="S05LXX_Poezd_v2" File="S05LXX_Poezd_v2.xml" />
+            <LevelInfo Id="S05LXX_Poezd" File="S05LXX_Poezd.xml" />
         </LevelSeries>
         <LevelSeries Id="series6" Name="----- Tests -----" File="ScreenTests.xml">
             <!--<LevelInfo Id="AlphaTest" File="AlphaTest.xml" />-->
