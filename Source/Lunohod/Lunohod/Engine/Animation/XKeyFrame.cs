@@ -40,10 +40,9 @@ namespace Lunohod.Objects
 
             this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<double>(this.Parent, s)).ToList();
             this.timeReader = Compiler.CompileExpression<double>(this.Parent, this.Time);
-			this.CurrentTime = timeReader is IVariable ? 0f : timeReader.GetValue();
-            this.CurveKeys = valueReaders.Select(r => new CurveKey(
-				(float)this.CurrentTime,
-				r is IVariable ? 0f : (float)r.GetValue())
+			this.CurrentTime = 0f;
+            this.CurveKeys = valueReaders.Select(
+				r => new CurveKey(0f, 0f)
              ).ToList();
         }
 
