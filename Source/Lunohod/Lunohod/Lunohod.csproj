@@ -220,6 +220,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\S05LXX_Poezd_v4_Perekrestok.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\S05LXX_Poezd_v3_Spiral.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2259,6 +2262,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 

@@ -62,7 +62,7 @@
     </Layer>
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT -->
-        <SequenceSet InProgress="true">
+        <SequenceSet Id="setWay" InProgress="true">
             <Do Action="hero.StartTransaction()" />
             <Delay Duration="3" />
             <NumAnimation Id="anm2" From="0" To="368" Target="hero.X" Duration="4.38" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3336"/>
@@ -77,6 +77,7 @@
             <NumAnimation Id="anm11" From="0" To="-156" Target="hero.Y" Duration="1.86" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3382"/>
             <NumAnimation Id="anm12" From="0" To="-399" Target="hero.X" Duration="5.88" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3384"/>
         </SequenceSet>
+        <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
