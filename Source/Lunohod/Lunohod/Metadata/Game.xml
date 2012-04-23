@@ -15,18 +15,18 @@
 			BombCount="-1"
 			HeroHealth="100"
 			ExplosionClass="clsExplosion"
-			StarScore1="0.01"
-			StarScore2 = "0.45"
-			StarScore3 = "0.90"
-			SpeedBonusThreshold = "10"
+			StarScoreRatio1="0.01"
+			StarScoreRatio2 = "0.45"
+			StarScoreRatio3 = "0.90"
+			TimeBonusThreshold = "20"
 			HealthBonusThreshold = "100"
-			SpeedBonus = "0.25"
+			TimeBonus = "0.25"
 			HealthBonus = "0.25"
 		/>
 		-->
         <LevelSeries Id="series1" Name="----- Series 1 Tutorial -----" File="ScreenSeries1.xml">
 	        <LevelInfo Id="S01L01" File="S01L01.xml" BombCount="0" />
-			<LevelInfo Id="S01L02" File="S01L02.xml" />
+			<LevelInfo Id="S01L02" File="S01L02.xml" BombCount="0" />
 	        <LevelInfo Id="S01L03" File="S01L03.xml" BombCount="0" />
 	        <LevelInfo Id="S01L04" File="S01L04.xml" />
 		</LevelSeries>

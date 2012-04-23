@@ -15,8 +15,9 @@ namespace Lunohod.Xge
 
         protected Func<List<Expression>, T> action;
 
-        public Method(XObject currentObject, string objectId, string actionId, Func<List<Expression>, T> func, List<Expression> parameters)
+        public Method(XObject target, string objectId, string actionId, Func<List<Expression>, T> func, List<Expression> parameters)
         {
+			this.target = target;
             this.objectId = objectId;
             this.actionId = actionId;
             this.parameters = parameters;

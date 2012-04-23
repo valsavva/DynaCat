@@ -38,7 +38,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			this.musicFile = (XMusicResource)p.ScreenEngine.RootComponent.FindDescendant(this.FileId);
+			this.musicFile = (XMusicResource)this.FindGlobal(this.FileId);
 		}
 		
 		public override void Update(UpdateParameters p)

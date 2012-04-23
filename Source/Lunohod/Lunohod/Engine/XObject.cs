@@ -173,9 +173,15 @@ namespace Lunohod.Objects
 					subcomponent.InitHierarchy();
 				}
 
-            // force to rebiuld subcomponent hash
+			ResetComponentDictionary();
+		}
+
+		internal void ResetComponentDictionary()
+		{
+			// force to rebiuld subcomponent hash
 			this.componentDict = null;
 		}
+		
         /// <summary>
         /// This method represents the second stage of the four primary stages of the component lifecycle
         /// (hierarchy building, component initialization, update and draw, dispose).
@@ -315,7 +321,11 @@ namespace Lunohod.Objects
 			
 			return this.Subcomponents.Where(c => c is T).Cast<T>();
 		}
-		internal XObject FindDescendant(string id)
+		internal XObject FindLocal(string id)
+		{
+			return this.GetRoot().FindDescendant(id);
+		}
+		private XObject FindDescendant(string id)
 		{
 			if (this.componentDict == null)
 			{
@@ -324,8 +334,21 @@ namespace Lunohod.Objects
 			}
 			
 			XObject result = null;
-			
 			this.componentDict.TryGetValue(id, out result);
+			return result;
+		}
+		internal XObject FindGlobal(string id)
+		{
+			var root = this.GetRoot();
+			var result = root.FindDescendant(id);
+			
+			if (result == null)
+			{
+				if (root.ScreenEngine.Owner == null)
+					return GameEngine.Instance.GameObject.FindLocal(id);
+				else
+					return root.ScreenEngine.Owner.RootComponent.FindGlobal(id);
+			}
 			
 			return result;
 		}
@@ -375,40 +398,14 @@ namespace Lunohod.Objects
 			
 			return result;
 		}
-		internal XObject GetRoot()
+		internal XScreen GetRoot()
 		{
 			XObject result = this;
 	
 			while (result.Parent != null)
 				result = result.Parent;
 
-			return result;
-		}
-
-        private static char[] delimiters = new char[] {'.', ':'};
-		internal void GetTargetFromDescriptor(string descriptor, out XObject target, out string targetMember)
-		{
-			if (descriptor.StartsWith(".") || descriptor.StartsWith(":"))
-			    descriptor = descriptor.Substring(1);
-			
-			if (descriptor.Contains(".") || descriptor.Contains(":"))
-			{
-				int index = descriptor.IndexOfAny(delimiters);
-				
-				var targetId = descriptor.Substring(0, index);
-				
-				target = this.GetRoot().FindDescendant(targetId);
-				
-				if (target == null)
-					throw new InvalidOperationException(string.Format("Could not find object with id [{0}]", targetId));
-				
-				targetMember = descriptor.Substring(index + 1);
-			}
-			else
-			{
-				target = this.Parent;
-				targetMember = descriptor;
-			}
+			return (XScreen)result;
 		}
         #endregion
 

@@ -25,6 +25,10 @@ namespace Lunohod.Xge
 		{
 			return ((IExpression<string>)e).GetValue();
 		}
+		public static bool GetBoolValue(this IExpression e)
+		{
+			return ((IExpression<bool>)e).GetValue();
+		}
 	}
 	
     public interface IExpression<T> : IExpression

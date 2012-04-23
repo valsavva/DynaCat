@@ -15,7 +15,7 @@ namespace Lunohod.Xge
         public BoolFlagAction(Objects.XObject currentObject, string objectId, string flagId, bool isInstant)
         {
             this.isInstant = isInstant;
-            target = currentObject.GetRoot().FindDescendant(objectId);
+            target = currentObject.FindGlobal(objectId);
 
             if (target == null)
                 throw new InvalidOperationException(string.Format("Could not find object with Id: [{0}]", objectId));

@@ -14,8 +14,45 @@
 		<Image TextureId="txrBackground" Bounds="80,0,300,320" />
 	</Layer>
 	<Layer>
+		<Do Action="@scoreRatio=hero.Score/system.IIf(levelScore.AvaliablePoints!=0,levelScore.AvaliablePoints,1);" InProgress="true"/>
+		
+		
 		<Group Bounds="80,0,300,320">
 			<Text Text="Level complete! :-) :-)" FontId="fntSystem" Location="50,50" />
+
+			<!-- Stars -->
+			<BoolTrigger Condition="@scoreRatio>=levelInfo.StarScoreRatio1">
+				<Text Text="*" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
+			</BoolTrigger>
+			<BoolTrigger Condition="@scoreRatio&lt;levelInfo.StarScoreRatio1">
+				<Text Text="-" FontId="fntSystem" Location="50,100" />
+			</BoolTrigger>
+			<BoolTrigger Condition="@scoreRatio>=levelInfo.StarScoreRatio2">
+				<Text Text="*" FontId="fntSystem" Location="80,100" Color="#FFFF00" />
+			</BoolTrigger>
+			<BoolTrigger Condition="@scoreRatio&lt;levelInfo.StarScoreRatio2">
+				<Text Text="-" FontId="fntSystem" Location="80,100" />
+			</BoolTrigger>
+			<BoolTrigger Condition="@scoreRatio>=levelInfo.StarScoreRatio3">
+				<Text Text="*" FontId="fntSystem" Location="110,100" Color="#FFFF00" />
+			</BoolTrigger>
+			<BoolTrigger Condition="@scoreRatio&lt;levelInfo.StarScoreRatio3">
+				<Text Text="-" FontId="fntSystem" Location="110,100" />
+			</BoolTrigger>
+			
+			<BoolTrigger Condition="@scoreRatio>=levelInfo.StarScoreRatio1">
+				<!-- Time bonus -->
+				<BoolTrigger Condition="hero.Time&lt;=levelInfo.TimeBonusThreshold">
+					<Text Text="Time Bonus!!" FontId="fntSystem" Location="50,130" Color="#FFFF00" />
+				</BoolTrigger>
+				
+				<!-- Health bonus -->
+				<BoolTrigger Condition="hero.Health>=levelInfo.HealthBonusThreshold">
+					<Text Text="Health Bonus!!" FontId="fntSystem" Location="50,160" Color="#FFFF00" />
+				</BoolTrigger>
+			</BoolTrigger>
+			
+			<!-- Buttons -->
 			<Group Bounds="40,224,64,64">
 				<TapArea Action="system.CloseCurrentScreen();system.AbandonLevel()" />
 			</Group>

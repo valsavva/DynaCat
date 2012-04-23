@@ -18,7 +18,7 @@ namespace Lunohod.Xge
 				objectId = target.Id;
 			}
 			else
-                target = currentObject.GetRoot().FindDescendant(objectId);
+                target = currentObject.FindGlobal(objectId);
 
             if (target == null)
                 throw new InvalidOperationException(string.Format("Could not find object with Id: [{0}]", objectId));

@@ -40,7 +40,7 @@ namespace Lunohod
 		public static GameEngine Instance { get; private set; }
 		
 		public XGame GameObject { get; private set; }
-		public XSaveFile SaveFile { get; private set; }
+		public XSaveFile Score { get; private set; }
 		
 		public int CycleNumber { get; private set; }
 		
@@ -56,7 +56,7 @@ namespace Lunohod
 			{ 
 				lock(this.screenEngines)
 				{
-					return this.screenEngines[this.screenEngines.Count - 1];
+					return this.screenEngines.Count == 0 ? null : this.screenEngines[this.screenEngines.Count - 1];
 				}
 			}
 		}	
@@ -158,7 +158,7 @@ namespace Lunohod
         		
         		using (var stream = container.OpenFile(SaveFileName, FileMode.Open, FileAccess.Read))
         		{
-        			this.SaveFile = (XSaveFile)serializer.Deserialize(stream);
+        			this.Score = (XSaveFile)serializer.Deserialize(stream);
         		}
         	}
         	catch (Exception ex)
@@ -171,8 +171,8 @@ namespace Lunohod
 		
 		private void CreateSaveFile(StorageContainer container)
 		{
-			this.SaveFile = new XSaveFile();
-			this.SaveFile.LevelScores = this.GameObject.Levels.Select(l => 
+			this.Score = new XSaveFile();
+			this.Score.LevelScores = this.GameObject.Levels.Select(l => 
 				new XLevelScore
 				{
 					Id = l.Id
@@ -190,7 +190,7 @@ namespace Lunohod
         		
         		using (var stream = container.OpenFile(SaveFileName, FileMode.Create, FileAccess.Write))
         		{
-        			serializer.Serialize(stream, this.SaveFile);
+        			serializer.Serialize(stream, this.Score);
         		}
         	}
         	catch (Exception ex)
@@ -263,7 +263,7 @@ namespace Lunohod
 
 		public void LoadScreen(string fileName)
 		{
-            var newScreenEngine = new ScreenEngine(this, fileName);
+            var newScreenEngine = new ScreenEngine(this, fileName, this.ScreenEngine);
 
 			lock(this.screenEngines)
 			{
@@ -277,7 +277,7 @@ namespace Lunohod
 
 		public void LoadLevel(XLevelInfo levelInfo)
 		{
-			var newScreenEngine = new LevelEngine(this, levelInfo, new XLevelScore());
+			var newScreenEngine = new LevelEngine(this, this.ScreenEngine, levelInfo, new XLevelScore());
 
 			lock(this.screenEngines)
 			{
@@ -316,14 +316,14 @@ namespace Lunohod
 		
 		void PrepareGlobals()
 		{
-			this.BlankTexture = ((XTextureResource)this.GameObject.FindDescendant("blank")).Image;
-			this.SystemFont = ((XFontResource)this.GameObject.FindDescendant("SystemFont")).Font;
+			this.BlankTexture = ((XTextureResource)this.GameObject.FindLocal("blank")).Image;
+			this.SystemFont = ((XFontResource)this.GameObject.FindLocal("SystemFont")).Font;
 			
 			this.WaveTextures = new List<Texture2D>();
 			for (int i = MinWaveRadius; i <= MaxWaveRadius; i += WaveRadiusStep)
 			{
 				string textureId = "wave" + i.ToString("0000");
-				this.WaveTextures.Add(((XTextureResource)this.GameObject.FindDescendant(textureId)).Image);
+				this.WaveTextures.Add(((XTextureResource)this.GameObject.FindLocal(textureId)).Image);
 			}
 		}
 		
@@ -344,8 +344,6 @@ namespace Lunohod
 				using (FileStream stream = new FileStream(gameXmlFile, FileMode.Open, FileAccess.Read))
 				{
 					var result = (XObject)serializer.Deserialize(stream);
-					if (result is XScreen)
-						result.Subcomponents.Insert(0, new XSystem());
 					
 					return result;
 				}

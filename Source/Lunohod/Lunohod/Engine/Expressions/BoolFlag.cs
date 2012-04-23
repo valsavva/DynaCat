@@ -14,7 +14,7 @@ namespace Lunohod.Xge
         {
             this.eventName = objectId + ":" + flag;
 
-            if (currentObject.GetRoot().FindDescendant(objectId) == null)
+            if (currentObject.FindGlobal(objectId) == null)
 				throw new InvalidOperationException(string.Format("Could not find object with id [{0}]", objectId));
         }
 

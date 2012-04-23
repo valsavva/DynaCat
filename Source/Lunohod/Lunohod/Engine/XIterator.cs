@@ -52,7 +52,7 @@ namespace Lunohod.Objects
 		
         private XObject FindObject(string id, XObject root)
         {
-            var o = root.FindDescendant(id);
+            var o = root.FindLocal(id);
             if (o == null)
                 throw new InvalidOperationException(string.Format("Iterator '{0}' could not find obect id: '{1}'", this.Id, id));
             return o;

@@ -26,8 +26,8 @@ namespace Lunohod
 		
 		private int bombCounter;
         
-        public LevelEngine(GameEngine gameEngine, XLevelInfo levelInfo, XLevelScore levelScore)
-			: base(gameEngine, levelInfo.File)
+        public LevelEngine(GameEngine gameEngine, ScreenEngine owner, XLevelInfo levelInfo, XLevelScore levelScore)
+			: base(gameEngine, levelInfo.File, owner)
 		{
             this.LevelInfo = levelInfo;
 			this.LevelScore = levelScore;
@@ -56,10 +56,19 @@ namespace Lunohod
 		{
 			base.Initialize();
 			
+			var li = LevelInfo.Copy();
+			li.Id = "levelInfo";
+			var ls = LevelScore.Copy();
+			ls.Id = "levelScore";
+			
+			this.RootComponent.Subcomponents.Insert(0, li);
+			this.RootComponent.Subcomponents.Insert(0, ls);
+			this.RootComponent.ResetComponentDictionary();
+			
 			// Make sure explosion class exists
 			if (!string.IsNullOrEmpty(this.LevelInfo.ExplosionClass))
 			{
-				this.explosionClass = this.LevelObject.FindDescendant(this.LevelInfo.ExplosionClass) as XClass;
+				this.explosionClass = this.LevelObject.FindLocal(this.LevelInfo.ExplosionClass) as XClass;
 				if (this.explosionClass == null)
 					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.LevelInfo.ExplosionClass));
 			}

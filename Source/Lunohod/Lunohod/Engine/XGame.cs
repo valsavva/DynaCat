@@ -15,7 +15,7 @@ namespace Lunohod.Objects
     /// It includes collection of screens and levels that participate in the game.
     /// </summary>
     [XmlRoot("Game")]
-	public class XGame : XElement
+	public class XGame : XScreen
 	{
         /// <summary>
         /// Specifies the name of the XML file that contains the first screen that user sees after the game is loaded into the memory.

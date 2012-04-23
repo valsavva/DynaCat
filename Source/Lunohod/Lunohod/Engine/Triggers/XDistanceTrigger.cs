@@ -39,7 +39,7 @@ namespace Lunohod.Objects
 		
 		private XObject FindObject(string id)
 		{
-			var o = (XObject)this.GetRoot().FindDescendant(id);
+			var o = (XObject)this.GetRoot().FindLocal(id);
 			if (o == null)
 				throw new InvalidOperationException("DistanceTrigger could not find obect id: " + id);
 			return o;

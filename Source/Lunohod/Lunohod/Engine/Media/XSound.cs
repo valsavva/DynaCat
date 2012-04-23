@@ -47,7 +47,7 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
-			this.soundFile = (XSoundResource)p.ScreenEngine.RootComponent.FindDescendant(this.FileId);
+			this.soundFile = (XSoundResource)this.FindGlobal(this.FileId);
 			this.soundEffectInstance = this.soundFile.SoundEffect.CreateInstance();
 
             // this can be set only once

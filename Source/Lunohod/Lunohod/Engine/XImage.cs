@@ -38,7 +38,7 @@ namespace Lunohod.Objects
                     "TextureId must be specified. Image: '{0}'", this.Id
                 ));
 
-			this.texture = (XTextureResource)p.ScreenEngine.RootComponent.FindDescendant(this.TextureId);
+			this.texture = (XTextureResource)this.FindGlobal(this.TextureId);
 			
 			if (this.texture == null)
 				throw new InvalidOperationException(string.Format(

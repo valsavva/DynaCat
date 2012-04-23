@@ -41,7 +41,7 @@ namespace Lunohod.Objects
 			if (string.IsNullOrEmpty(this.FontId))
 				throw new InvalidOperationException("Font is not specified for text field");
 			
-			this.font = (XFontResource)p.ScreenEngine.RootComponent.FindDescendant(this.FontId);
+			this.font = (XFontResource)this.FindGlobal(this.FontId);
 
             if (this.Text != null && this.Text.StartsWith("="))
             {

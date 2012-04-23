@@ -14,6 +14,8 @@ namespace Lunohod.Objects
     {
         [XmlAttribute]
         public bool IsModal;
+		[XmlIgnore]
+		public ScreenEngine ScreenEngine;
 
         public override void Update(UpdateParameters p)
         {

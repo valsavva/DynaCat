@@ -11,6 +11,8 @@ namespace Lunohod
 	public class ScreenEngine
 	{
 		protected GameEngine game;
+		// Loading screen
+		public ScreenEngine Owner;
 		
 		// cycle parameters
 		protected InitializeParameters initializeParameters;
@@ -25,22 +27,25 @@ namespace Lunohod
 		private Vector2 fpsPos = new Vector2(5, 280);
 		private double fps = 0;
 		
+		// temp
 		private List<string> tempList = new List<string>();
 		
+		// taps and obstacles
 		public List<XTapArea> tapAreas;
 		public List<XElement> obstacles;
-
-        public string FileName { get; private set; }
-        
-        public virtual Type RootComponentType { get { return typeof(XScreen); } }
 		
+		// loading business
+        public string FileName { get; private set; }
+        public virtual Type RootComponentType { get { return typeof(XScreen); } }
 		public XScreen RootComponent { get; protected set; }
-
+		
+		// events
 		public Dictionary<string, bool> CurrentEvents { get; private set; }
 		
-		public ScreenEngine(GameEngine game, string fileName)
+		public ScreenEngine(GameEngine game, string fileName, ScreenEngine owner)
 		{
 			this.game = game;
+			this.Owner = owner;
 			this.FileName = fileName;
 			this.CurrentEvents = new Dictionary<string, bool>();
 		}
@@ -100,8 +105,11 @@ namespace Lunohod
 			
 			PerfMon.Start("LoadXml");
 			this.RootComponent = (XScreen)GameEngine.LoadXml(this.FileName, this.RootComponentType);
+			this.RootComponent.ScreenEngine = this;
+			this.RootComponent.Subcomponents.Insert(0, new XSystem() { Id = "system" });
 			PerfMon.Stop("LoadXml");
 
+			
 			PerfMon.Start("InitHierarchy");
 			this.RootComponent.InitHierarchy();
 			PerfMon.Stop("InitHierarchy");

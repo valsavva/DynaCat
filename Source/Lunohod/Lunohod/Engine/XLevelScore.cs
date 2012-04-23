@@ -39,6 +39,19 @@ namespace Lunohod.Objects
 			
 			writer.WriteEndElement();
 		}
+		
+		public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+		{
+			switch (propertyName)
+			{
+                case "AvaliablePoints": getter = () => AvaliablePoints; setter = (v) => AvaliablePoints = v; break;
+                case "Score": getter = () => Score; setter = (v) => Score = v; break;
+                case "Time": getter = () => Time; setter = (v) => Time = v; break;
+                case "Health": getter = () => Health; setter = (v) => Health = v; break;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
 	}
 }
 

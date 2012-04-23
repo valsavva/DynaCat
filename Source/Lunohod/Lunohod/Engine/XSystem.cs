@@ -11,11 +11,6 @@ namespace Lunohod.Objects
 		private GameEngine game;
 		private static Random random = new Random();
 		
-		public XSystem()
-		{
-			this.Id = "system";
-		}
-		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
@@ -131,7 +126,15 @@ namespace Lunohod.Objects
 		{
 			return Math.Round(num, digits);
 		}
-
+		public double IIf(bool condition, double trueValue, double falseValue)
+		{
+			return condition ? trueValue : falseValue;
+		}
+		public string IIfStr(bool condition, string trueValue, string falseValue)
+		{
+			return condition ? trueValue : falseValue;
+		}
+		
 		public override void GetMethod(string methodName, out Func<List<Lunohod.Xge.Expression>, double> method)
 		{
             switch (methodName)
@@ -140,6 +143,7 @@ namespace Lunohod.Objects
                 case "RndX": method = (ps) => RndX(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "RndY": method = (ps) => RndY(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "Round": method = (ps) => Round(ps[0].GetNumValue(), ps.Count < 2 ? 0 : ps[1].GetIntValue()); break;
+				case "IIf": method = (ps) => IIf(ps[0].GetBoolValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }
@@ -153,6 +157,7 @@ namespace Lunohod.Objects
                 case "GetLevelName": method = (ps) => GetLevelName(ps[0].GetIntValue()); break;
                 case "GetSeriesLevelName": method = (ps) => GetSeriesLevelName(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
                 case "GetSeriesName": method = (ps) => GetSeriesName(ps[0].GetIntValue()); break;
+				case "IIfStr": method = (ps) => IIfStr(ps[0].GetBoolValue(), ps[1].GetStrValue(), ps[2].GetStrValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }
