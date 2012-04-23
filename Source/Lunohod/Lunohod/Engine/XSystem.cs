@@ -134,6 +134,10 @@ namespace Lunohod.Objects
 		{
 			return condition ? trueValue : falseValue;
 		}
+		public void WriteLine(string message, params object[] pars)
+		{
+			System.Diagnostics.Debug.WriteLine(message, pars);
+		}
 		
 		public override void GetMethod(string methodName, out Func<List<Lunohod.Xge.Expression>, double> method)
 		{
@@ -176,6 +180,7 @@ namespace Lunohod.Objects
                 case "AbandonLevel": method = (ps) => AbandonLevel(); break;
                 case "EndLevel": method = (ps) => EndLevel(); break;
                 case "StartNextLevel": method = (ps) => StartNextLevel(); break;
+                case "WriteLine": method = (ps) => WriteLine(ps[0].GetStrValue(), ps.GetRange(1, ps.Count - 1).Select(p => p.GetObjValue()).ToArray()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

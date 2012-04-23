@@ -56,6 +56,9 @@ namespace Lunohod
 		{
 			base.Initialize();
 			
+			// Calculate points available on this level
+			CountLevelPoints();
+
 			var li = LevelInfo.Copy();
 			li.Id = "levelInfo";
 			var ls = LevelScore.Copy();
@@ -75,9 +78,6 @@ namespace Lunohod
 			
 			// Init waves
 			this.waves = new Dictionary<GameEvent, RadioWave>();
-			
-			// Calculate points available on this level
-			CountLevelPoints();
 		}
 
 		private void CountLevelPoints()

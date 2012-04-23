@@ -31,7 +31,7 @@
             
             <!-- eaten -->
 			<BoolTrigger Condition="not this:eaten">
-				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Points=100;hero.AddScore(this.Points);this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
+				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
 			</BoolTrigger>
             <SequenceSet Id="this_anmEated">
 				<Do Action="this.IsExploding=false;this_grpShowPoints.Enable()" />

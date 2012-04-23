@@ -15,7 +15,7 @@
 	</Layer>
 	<Layer>
 		<Do Action="@scoreRatio=hero.Score/system.IIf(levelScore.AvaliablePoints!=0,levelScore.AvaliablePoints,1);" InProgress="true"/>
-		
+		<Do Action="system.WriteLine('Score Ratio: {0}', @scoreRatio)" InProgress="true" />
 		
 		<Group Bounds="80,0,300,320">
 			<Text Text="Level complete! :-) :-)" FontId="fntSystem" Location="50,50" />
@@ -40,7 +40,7 @@
 				<Text Text="-" FontId="fntSystem" Location="110,100" />
 			</BoolTrigger>
 			
-			<BoolTrigger Condition="@scoreRatio>=levelInfo.StarScoreRatio1">
+			<BoolTrigger Condition="@scoreRatio>=levelInfo.StarScoreRatio3">
 				<!-- Time bonus -->
 				<BoolTrigger Condition="hero.Time&lt;=levelInfo.TimeBonusThreshold">
 					<Text Text="Time Bonus!!" FontId="fntSystem" Location="50,130" Color="#FFFF00" />
