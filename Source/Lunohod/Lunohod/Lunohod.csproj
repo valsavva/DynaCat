@@ -220,6 +220,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\S05LXX_Poezd_v6_Logika_Zatorov.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\S05LXX_Poezd_v5_Paravozik.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2265,6 +2268,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 
