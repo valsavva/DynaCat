@@ -1,5 +1,7 @@
 using System;
 using System.Xml.Serialization;
+using System.Globalization;
+using System.Xml;
 
 namespace Lunohod.Objects
 {
@@ -37,11 +39,38 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public double HealthBonusThreshold = 100;
 		[XmlAttribute]
-		public double TimeBonus = 0.25;
+		public double TimeBonusRatio = 0.25;
 		[XmlAttribute]
-		public double HealthBonus = 0.25;
+		public double HealthBonusRatio = 0.25;
 
-        public override void ReadXml(System.Xml.XmlReader reader)
+		
+		public XLevelInfo()
+		{
+		}
+		
+		public XLevelInfo(XLevelInfo info)
+		{
+			CopyInfoFrom(info);
+		}
+
+		public void CopyInfoFrom(XLevelInfo info)
+		{
+			this.Id = info.Id;
+			this.Name = info.Name;
+			this.File = info.File;
+			this.BombCount = info.BombCount;
+			this.HeroHealth = info.HeroHealth;
+			this.ExplosionClass = info.ExplosionClass;
+			this.StarScoreRatio1 = info.StarScoreRatio1;
+			this.StarScoreRatio2 = info.StarScoreRatio2;
+			this.StarScoreRatio3 = info.StarScoreRatio3;
+			this.TimeBonusThreshold = info.TimeBonusThreshold;
+			this.HealthBonusThreshold = info.HealthBonusThreshold;
+			this.TimeBonusRatio = info.TimeBonusRatio;
+			this.HealthBonusRatio = info.HealthBonusRatio;
+		}
+		
+        public override void ReadXml(XmlReader reader)
         {
             reader.ReadAttrAsString("Name", ref this.Name);
             reader.ReadAttrAsString("File", ref this.File);
@@ -54,8 +83,8 @@ namespace Lunohod.Objects
 			reader.ReadAttrAsFloat("StarScoreRatio3", ref this.StarScoreRatio3);
 			reader.ReadAttrAsFloat("TimeBonusThreshold", ref this.TimeBonusThreshold);
 			reader.ReadAttrAsFloat("HealthBonusThreshold", ref this.HealthBonusThreshold);
-			reader.ReadAttrAsFloat("TimeBonus", ref this.TimeBonus);
-			reader.ReadAttrAsFloat("HealthBonus", ref this.HealthBonus);
+			reader.ReadAttrAsFloat("TimeBonusRatio", ref this.TimeBonusRatio);
+			reader.ReadAttrAsFloat("HealthBonusRatio", ref this.HealthBonusRatio);
 			
             base.ReadXml(reader);
 			
@@ -63,6 +92,24 @@ namespace Lunohod.Objects
 				this.Name = this.Id;
         }
 
+		public override void WriteXml(XmlWriter writer)
+		{
+			base.WriteXml(writer);
+            writer.WriteAttributeString("Name", this.Name);
+            writer.WriteAttributeString("File", this.File);
+            writer.WriteAttributeString("BombCount", this.BombCount.ToString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("HeroHealth", this.HeroHealth.ToString(CultureInfo.InvariantCulture));
+            writer.WriteAttributeString("ExplosionClass", this.ExplosionClass);
+            
+			writer.WriteAttributeString("StarScoreRatio1", this.StarScoreRatio1.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("StarScoreRatio2", this.StarScoreRatio2.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("StarScoreRatio3", this.StarScoreRatio3.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("TimeBonusThreshold", this.TimeBonusThreshold.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("HealthBonusThreshold", this.HealthBonusThreshold.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("TimeBonusRatio", this.TimeBonusRatio.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("HealthBonusRatio", this.HealthBonusRatio.ToString(CultureInfo.InvariantCulture));
+		}
+		
 		public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
 		{
 			switch (propertyName)
@@ -74,8 +121,8 @@ namespace Lunohod.Objects
                 case "StarScoreRatio3": getter = () => StarScoreRatio3; setter = (v) => StarScoreRatio3 = v; break;
                 case "TimeBonusThreshold": getter = () => TimeBonusThreshold; setter = (v) => TimeBonusThreshold = v; break;
                 case "HealthBonusThreshold": getter = () => HealthBonusThreshold; setter = (v) => HealthBonusThreshold = v; break;
-                case "TimeBonus": getter = () => TimeBonus; setter = (v) => TimeBonus = v; break;
-                case "HealthBonus": getter = () => HealthBonus; setter = (v) => HealthBonus = v; break;
+                case "TimeBonusRatio": getter = () => TimeBonusRatio; setter = (v) => TimeBonusRatio = v; break;
+                case "HealthBonusRatio": getter = () => HealthBonusRatio; setter = (v) => HealthBonusRatio = v; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}

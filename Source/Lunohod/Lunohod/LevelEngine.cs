@@ -59,9 +59,11 @@ namespace Lunohod
 			// Calculate points available on this level
 			CountLevelPoints();
 
-			var li = LevelInfo.Copy();
+			var li = (XLevelInfo)LevelInfo.Copy();
+			var ls = (XLevelScore)LevelScore.Copy();
+			ls.CopyInfoFrom(li);
+			
 			li.Id = "levelInfo";
-			var ls = LevelScore.Copy();
 			ls.Id = "levelScore";
 			
 			this.RootComponent.Subcomponents.Insert(0, li);
