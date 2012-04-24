@@ -173,16 +173,27 @@ namespace Lunohod
 		{
 			this.Score = new XSaveFile();
 			this.Score.LevelScores = this.GameObject.Levels.Select(l => 
-				new XLevelScore
-				{
-					Id = l.Id
-				}
+				new XLevelScore(l)
 			).ToList();
 			
-			SaveScore(container);
+			SaveScoreToContainer(container);
 		}
 		
-		private void SaveScore(StorageContainer container)
+		private void SaveScore()
+		{
+			// get file
+            var result = storageDevice.BeginOpenContainer("DynaCat", null, null);
+            result.AsyncWaitHandle.WaitOne();
+
+            using (StorageContainer container = storageDevice.EndOpenContainer(result))
+			{
+	            result.AsyncWaitHandle.Close();
+				
+				SaveScoreToContainer(container);
+			}
+		}
+		
+		private void SaveScoreToContainer(StorageContainer container)
 		{
 			try
         	{
@@ -412,6 +423,9 @@ namespace Lunohod
                             continue;
                         } break;
                     case GameEventType.EndLevel:
+						{
+							goto case GameEventType.AbandonLevel;
+						}
                     case GameEventType.AbandonLevel:
                         {
                             this.CloseCurrentScreen();
