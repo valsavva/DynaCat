@@ -15,18 +15,17 @@
 
          
 	<Class Id="clsEnemyRat4">
-		<Enemy IsExploding="true" Damage="3" Points="150">
+		<Enemy IsExploding="true" Damage="5" Points="150">
 		
 <!-- States -->
 
             <!-- explosion -->
             <!-- dying -->
-			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDying.Start()">
-				<Image TextureId="txrEnemyRat4Dying"/>
+			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
+				<Image TextureId="txrEnemyRat4Dying" Bounds="-16, -4, 44, 29"/>
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
-                <!--<Let Target="this.Damage" Value="0" />-->
-                <Do Action="this:+Destroyed;hero:+GoodExplosion"/>
+                <Do Action="hero:+GoodExplosion"/>
                 <Sound FileId="sndEnemyRat4Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
     			<SequenceSet>
     				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
@@ -35,11 +34,10 @@
 			</ParallelSet>
 
             <!-- attack -->
-            <BoolTrigger Condition="not this:Destroyed">
-                <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
-                    <Image Id="this_txrEnemyRat4Attack" TextureId="txrEnemyRat4Attack" Bounds="-16, -4, 44, 29"/>
-                </IntersectionTrigger>
-            </BoolTrigger>
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
+                <Image Id="this_txrEnemyRat4Attack" TextureId="txrEnemyRat4Attack" Bounds="-16, -4, 44, 29"/>
+            </IntersectionTrigger>
+
 
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
                 <Do Action="this_anmAttack.Start()" />
