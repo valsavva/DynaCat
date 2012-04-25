@@ -22,6 +22,7 @@
         <Texture Id="txr_box_old_2" Source="box_old_2" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
+		<Do Action="dashboard:+NoArrows" InProgress="true"/>
         <Image Id="dfltMask1" TextureId="txr_backg_demo" Bounds="0, 0, 480, 320" TraceId="image3444"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
