@@ -86,7 +86,7 @@ namespace Lunohod
 		{
 			this.LevelScore.AvaliablePoints = 0;
 			this.LevelObject.TraveseTree(o => {
-				if (o is IHasPoints)
+				if (o is IHasPoints && !(this.LevelInfo.BombCount == 0 && o is XEnemy))
 					this.LevelScore.AvaliablePoints += ((IHasPoints)o).Points;
 			});
 		}
