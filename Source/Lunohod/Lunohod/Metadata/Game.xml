@@ -20,8 +20,8 @@
 			StarScoreRatio3="0.90"
 			TimeBonusThreshold="20"
 			HealthBonusThreshold="100"
-			TimeBonus="0.25"
-			HealthBonus="0.25"
+			TimeBonusRatio="0.25"
+			HealthBonusRatio="0.25"
 		/>
 		-->
         <LevelSeries Id="series1" Name="----- Series 1 Tutorial -----" File="ScreenSeries1.xml">
