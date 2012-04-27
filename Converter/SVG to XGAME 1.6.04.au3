@@ -1116,7 +1116,7 @@ Local $includes = "", $cls, $xmlExist = False
 			$stat = $stat & '<!-- minPointsEnemy = ' & $minPointsEnemy & ' (' & Round($minPointsEnemy*100/($PointsEnemy),1) & '%) -->' & @CRLF
 		EndIf
 	
-		if ($PointsFood+$PointsEnemy) > 0 Then
+		if ($PointsEnemy > 0) and ($PointsFood > 0) Then
 			$stat = $stat & '<!-- -->' & @CRLF		
 			$stat = $stat & '<!-- Food + Enemy Points = ' & ($PointsFood+$PointsEnemy) & ' -->' & @CRLF
 			$stat = $stat & '<!-- 1% = ' & ($PointsFood+$PointsEnemy)*0.01 & ';   45% = ' & ($PointsFood+$PointsEnemy)*0.45 & ';   90% = ' & ($PointsFood+$PointsEnemy)*0.90 & ' -->' & @CRLF
