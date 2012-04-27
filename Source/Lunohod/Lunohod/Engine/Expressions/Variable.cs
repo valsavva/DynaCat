@@ -51,6 +51,11 @@ namespace Lunohod.Xge
             }
         }
 
+		internal void SetType(Type type)
+		{
+			this.type = type;
+		}
+		
         public override object GetObjValue()
         {
             return objValue;
@@ -111,7 +116,7 @@ namespace Lunohod.Xge
 
         public override string ToString()
         {
-            return this.Id;
+            return "@" + this.Id;
         }
     }
 }

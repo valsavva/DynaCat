@@ -81,7 +81,7 @@ namespace Lunohod.Objects
 		
 		// Save score
 		{ "LevelScore", typeof(XLevelScore) },
-		{ "SaveFile", typeof(XSaveFile) }
+		{ "ScoreFile", typeof(XScoreFile) }
         };
         #endregion
 

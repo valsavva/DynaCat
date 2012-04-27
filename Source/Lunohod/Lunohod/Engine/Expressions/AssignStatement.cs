@@ -6,34 +6,24 @@ using Lunohod.Xge;
 
 namespace Lunohod.Xge
 {
-    public class AssignStatement : IAction
+    public class AssignStatement<T> : IAction
     {
-        private IAssignable lExpression;
-        private Expression rExpression;
+        private IAssignable<T> lExpression;
+        private IExpression<T> rExpression;
 
-        public AssignStatement(IAssignable lExpression, Expression rExpression)
+        public AssignStatement(IAssignable<T> lExpression, IExpression<T> rExpression)
         {
-            // TODO: Complete member initialization
             this.lExpression = lExpression;
             this.rExpression = rExpression;
+			
+			if (this.lExpression is Variable)
+				((Variable)this.lExpression).SetType(rExpression.Type);
         }
         
 
         public void Call()
         {
-            if (rExpression.Type == typeof(double))
-                DoAssign<double>();
-            else if (rExpression.Type == typeof(bool))
-                DoAssign<bool>();
-            else if (rExpression.Type == typeof(string))
-                DoAssign<string>();
-            else
-                throw new InvalidOperationException(string.Format("Expression '{0}' has unknown type '{1}'", rExpression, rExpression.Type.Name));
-        }
-
-        private void DoAssign<T>()
-        {
-            ((IAssignable<T>)lExpression).SetValue(((IExpression<T>)rExpression).GetValue());
+			lExpression.SetValue(rExpression.GetValue());
         }
 
         public override string ToString()

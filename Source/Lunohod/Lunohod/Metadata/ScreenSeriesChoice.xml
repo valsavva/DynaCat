@@ -21,12 +21,12 @@
 	</Layer>
 	<Layer>
 		<Group Bounds="30,30,500,500">
-			<Group Bounds="0,0,100,40" Class="clsSeriesButton" ClassParams="@seriesNum=0" />
-			<Group Bounds="0,40,100,40" Class="clsSeriesButton" ClassParams="@seriesNum=1" />
-			<Group Bounds="0,80,100,40" Class="clsSeriesButton" ClassParams="@seriesNum=2" />
-			<Group Bounds="0,120,100,40" Class="clsSeriesButton" ClassParams="@seriesNum=3" />
-            <Group Bounds="0,160,100,40" Class="clsSeriesButton" ClassParams="@seriesNum=4" />
-            <Group Bounds="0,200,100,40" Class="clsSeriesButton" ClassParams="@seriesNum=5" />
+			<Group Bounds="0,0,180,40" Class="clsSeriesButton" ClassParams="@seriesNum=0" />
+			<Group Bounds="0,40,180,40" Class="clsSeriesButton" ClassParams="@seriesNum=1" />
+			<Group Bounds="0,80,180,40" Class="clsSeriesButton" ClassParams="@seriesNum=2" />
+			<Group Bounds="0,120,180,40" Class="clsSeriesButton" ClassParams="@seriesNum=3" />
+            <Group Bounds="0,160,180,40" Class="clsSeriesButton" ClassParams="@seriesNum=4" />
+            <Group Bounds="0,200,180,40" Class="clsSeriesButton" ClassParams="@seriesNum=5" />
         </Group>
 		
 		<Group Bounds="430,50,50,100">

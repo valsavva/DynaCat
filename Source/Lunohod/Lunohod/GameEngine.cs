@@ -17,7 +17,8 @@ namespace Lunohod
 	{
         public const string MetadataRootDirectory = "Metadata";
         public const string ContentRootDirectory = "Content";
-		private const string SaveFileName = "records.xml";
+		private const string SaveFileName = "scores.xml";
+		private const string SettingsFileName = "settings.xml";
 		
 		private StorageDevice storageDevice;
 		
@@ -40,7 +41,8 @@ namespace Lunohod
 		public static GameEngine Instance { get; private set; }
 		
 		public XGame GameObject { get; private set; }
-		public XSaveFile Score { get; private set; }
+		public XScoreFile ScoreFile { get; private set; }
+		public XSettingsFile SettingsFile { get; private set; }
 		
 		public int CycleNumber { get; private set; }
 		
@@ -120,45 +122,85 @@ namespace Lunohod
         }
 
 #region Loading/Saving score
-        private void LoadScore()
-        {
+		
+		private void LoadSettings()
+		{
+			this.SettingsFile = LoadFromContainerOrCreateNew(SettingsFileName, () => new XSettingsFile());
+		}
+		
+		private void SaveSettings()
+		{
+			SaveToContainer(SettingsFileName, this.SettingsFile);
+		}
+		
+		private void LoadScore()
+		{
+			this.ScoreFile = LoadFromContainerOrCreateNew(SaveFileName, () =>
+				new XScoreFile() { 
+					LevelScores = this.GameObject.Levels.Select(l => 
+						new XLevelScore(l)
+					).ToList()
+				}
+			);
+			
+			var scoresDict = this.ScoreFile.LevelScores.ToDictionary(ls => ls.Id);
+			
+			this.ScoreFile.LevelScores = this.GameObject.Levels.Select(l => {
+				var score = new XLevelScore(l);
+				XLevelScore scoreFromFile;
+				if (scoresDict.TryGetValue(score.Id, out scoreFromFile))
+					scoreFromFile.CopyTo(score);
+				return score;
+			}).ToList();
+		}
+		
+		public void SaveScore()
+		{
+			SaveToContainer(SaveFileName, this.ScoreFile);
+		}
+		
+		private void ChooseStorageDevice()
+		{
 			// get device
-            IAsyncResult result = StorageDevice.BeginShowSelector(null, null);
+            var result = StorageDevice.BeginShowSelector(null, null);
             result.AsyncWaitHandle.WaitOne();
 
             this.storageDevice = StorageDevice.EndShowSelector(result);
 
             result.AsyncWaitHandle.Close();
-			
+		}
+		
+        private T LoadFromContainerOrCreateNew<T>(string fileName, Func<T> createNew)
+        {
 			// get file
-            result = storageDevice.BeginOpenContainer("DynaCat", null, null);
-            result.AsyncWaitHandle.WaitOne();
+            var async = storageDevice.BeginOpenContainer("DynaCat", null, null);
+            async.AsyncWaitHandle.WaitOne();
 
-            using (StorageContainer container = storageDevice.EndOpenContainer(result))
+            using (StorageContainer container = storageDevice.EndOpenContainer(async))
 			{
-	            result.AsyncWaitHandle.Close();
+	            async.AsyncWaitHandle.Close();
 				
-				if (container.FileExists(SaveFileName))
-				{
-					LoadScoreFromContainer(container);
-				}
-				else
-				{
-					CreateSaveFile(container);
-				}
-				
+				if (container.FileExists(fileName))
+					return LoadFromContainer<T>(container, fileName);
 			}
-        }
 
-		private void LoadScoreFromContainer(StorageContainer container)
+			T result = createNew();
+			SaveToContainer(fileName, result);
+			
+			return result;
+		}
+
+		private T LoadFromContainer<T>(StorageContainer container, string fileName)
 		{
 			try
         	{
-        		var serializer = new System.Xml.Serialization.XmlSerializer(typeof(XSaveFile));
+        		var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
         		
-        		using (var stream = container.OpenFile(SaveFileName, FileMode.Open, FileAccess.Read))
+        		using (var stream = container.OpenFile(fileName, FileMode.Open, FileAccess.Read))
         		{
-        			this.Score = (XSaveFile)serializer.Deserialize(stream);
+        			var result = (T)serializer.Deserialize(stream);
+					
+					return result;
         		}
         	}
         	catch (Exception ex)
@@ -169,47 +211,32 @@ namespace Lunohod
         	}
 		}
 		
-		private void CreateSaveFile(StorageContainer container)
-		{
-			this.Score = new XSaveFile();
-			this.Score.LevelScores = this.GameObject.Levels.Select(l => 
-				new XLevelScore(l)
-			).ToList();
-			
-			SaveScoreToContainer(container);
-		}
-		
-		private void SaveScore()
+		private void SaveToContainer<T>(string fileName, T o)
 		{
 			// get file
-            var result = storageDevice.BeginOpenContainer("DynaCat", null, null);
-            result.AsyncWaitHandle.WaitOne();
+            var async = storageDevice.BeginOpenContainer("DynaCat", null, null);
+            async.AsyncWaitHandle.WaitOne();
 
-            using (StorageContainer container = storageDevice.EndOpenContainer(result))
+            using (StorageContainer container = storageDevice.EndOpenContainer(async))
 			{
-	            result.AsyncWaitHandle.Close();
+	            async.AsyncWaitHandle.Close();
 				
-				SaveScoreToContainer(container);
+				try
+	        	{
+	        		var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
+	        		
+	        		using (var stream = container.OpenFile(fileName, FileMode.Create, FileAccess.Write))
+	        		{
+	        			serializer.Serialize(stream, o);
+	        		}
+	        	}
+	        	catch (Exception ex)
+	        	{
+	        		System.Diagnostics.Debug.WriteLine(ex.ToString());
+	        		
+	        		throw;
+	        	}
 			}
-		}
-		
-		private void SaveScoreToContainer(StorageContainer container)
-		{
-			try
-        	{
-        		var serializer = new System.Xml.Serialization.XmlSerializer(typeof(XSaveFile));
-        		
-        		using (var stream = container.OpenFile(SaveFileName, FileMode.Create, FileAccess.Write))
-        		{
-        			serializer.Serialize(stream, this.Score);
-        		}
-        	}
-        	catch (Exception ex)
-        	{
-        		System.Diagnostics.Debug.WriteLine(ex.ToString());
-        		
-        		throw;
-        	}
 		}
 		
 #endregion
@@ -225,8 +252,14 @@ namespace Lunohod
 		{
             LoadGameElement();
 
+			ChooseStorageDevice();
+			
+			Microsoft.Xna.Framework.Media.MediaPlayer.IsMuted = true;
+			
+			LoadSettings();
+			
 			LoadScore();
-
+			
 			LoadScreen(GameObject.StartScreen);
 
 			base.LoadContent();
@@ -288,7 +321,7 @@ namespace Lunohod
 
 		public void LoadLevel(XLevelInfo levelInfo)
 		{
-			var newScreenEngine = new LevelEngine(this, this.ScreenEngine, levelInfo, new XLevelScore());
+			var newScreenEngine = new LevelEngine(this, this.ScreenEngine, levelInfo, this.ScoreFile.LevelScores.First(ls => ls.Id == levelInfo.Id));
 
 			lock(this.screenEngines)
 			{

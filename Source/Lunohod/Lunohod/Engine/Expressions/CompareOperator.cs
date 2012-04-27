@@ -5,15 +5,16 @@ using System.Text;
 
 namespace Lunohod.Xge
 {
-    class CompareOperator : Expression<bool>
+    class CompareOperator<T> : Expression<bool>
+		where T: IComparable<T>
     {
         private TokenType tokenType;
-        private IExpression<double> expression1;
-        private IExpression<double> expression2;
+        private IExpression<T> expression1;
+        private IExpression<T> expression2;
 
-        private Func<IExpression<double>, IExpression<double>, bool> func;
+        private Func<IExpression<T>, IExpression<T>, bool> func;
 
-        public CompareOperator(TokenType tokenType, IExpression<double> expression1, IExpression<double> expression2)
+        public CompareOperator(TokenType tokenType, IExpression<T> expression1, IExpression<T> expression2)
         {
             // TODO: Complete member initialization
             this.tokenType = tokenType;
@@ -22,12 +23,12 @@ namespace Lunohod.Xge
 
             switch(tokenType)
             {
-                case (TokenType.Op_E) : func = (e1, e2) => e1.GetValue() == e2.GetValue(); break;
-                case (TokenType.Op_NE) : func = (e1, e2) => e1.GetValue() != e2.GetValue(); break;
-                case (TokenType.Op_G) : func = (e1, e2) => e1.GetValue() > e2.GetValue(); break;
-                case (TokenType.Op_GE) : func = (e1, e2) => e1.GetValue() >= e2.GetValue(); break;
-                case (TokenType.Op_L) : func = (e1, e2) => e1.GetValue() < e2.GetValue(); break;
-                case (TokenType.Op_LE): func = (e1, e2) => e1.GetValue() <= e2.GetValue(); break;
+                case (TokenType.Op_E) : func = (e1, e2) => e1.GetValue().CompareTo(e2.GetValue()) == 0; break;
+                case (TokenType.Op_NE) : func = (e1, e2) => e1.GetValue().CompareTo(e2.GetValue()) != 0; break;
+                case (TokenType.Op_G) : func = (e1, e2) => e1.GetValue().CompareTo(e2.GetValue()) > 0; break;
+                case (TokenType.Op_GE) : func = (e1, e2) => e1.GetValue().CompareTo(e2.GetValue()) >= 0; break;
+                case (TokenType.Op_L) : func = (e1, e2) => e1.GetValue().CompareTo(e2.GetValue()) < 0; break;
+                case (TokenType.Op_LE): func = (e1, e2) => e1.GetValue().CompareTo(e2.GetValue()) <= 0; break;
                 default: throw new InvalidOperationException("WTF?");
             }
         }

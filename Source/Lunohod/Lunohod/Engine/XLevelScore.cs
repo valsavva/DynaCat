@@ -2,6 +2,8 @@ using System;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Globalization;
+using System.Collections.Generic;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -22,19 +24,53 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public double Health { get { return health; } set { health = value; Recalculate(); } }
 		
+		[XmlIgnore]
 		public double ScoreRatio;
+		[XmlIgnore]
 		public double TimeBonus;
+		[XmlIgnore]
 		public double HealthBonus;
+		[XmlIgnore]
 		public double TotalScore;
+		[XmlIgnore]
+		public double NumberOfStars
+		{
+			get
+			{
+				if (ScoreRatio >= StarScoreRatio3)
+					return 3;
+				else if (ScoreRatio >= StarScoreRatio2)
+					return 2;
+				else if (ScoreRatio >= StarScoreRatio1)
+					return 1;
+				else
+					return 0;
+			}
+		}
+		[XmlIgnore]
+		public bool HasBadge
+		{
+			get { return TimeBonus > 0 && HealthBonus > 0; }
+		}
 		
 		public XLevelScore()
 		{
-			Recalculate();
 		}
+		
 		public XLevelScore(XLevelInfo info)
 			: base(info)
 		{
 			Recalculate();
+		}
+		
+		public void CopyTo(XLevelScore other)
+		{
+			other.availablePoints = this.availablePoints;
+			other.score = this.score;
+			other.time = this.time;
+			other.health = this.health;
+			
+			other.Recalculate();
 		}
 		
 		private void Recalculate()
@@ -45,10 +81,15 @@ namespace Lunohod.Objects
 			TotalScore = Score + TimeBonus + HealthBonus;
 		}
 		
+		public void Save()
+		{
+			var levelEngine = (LevelEngine)this.GetRoot().ScreenEngine;
+			levelEngine.SaveNewScore(this);
+		}
+		
 		public override void ReadXml(XmlReader reader)
 		{
-			base.ReadXml(reader);
-
+			this.Id = reader["Id"];
 			this.AvaliablePoints = reader.ReadAttrAsFloat("AvailablePoints");
 			this.Score = reader.ReadAttrAsFloat("Score");
 			this.Time = reader.ReadAttrAsFloat("Time");
@@ -58,8 +99,8 @@ namespace Lunohod.Objects
 		public override void WriteXml(XmlWriter writer)
 		{
 			writer.WriteStartElement("LevelScore");
-
-			base.WriteXml(writer);
+			
+			writer.WriteAttributeString("Id", this.Id);
 			writer.WriteAttributeString("AvailablePoints", this.AvaliablePoints.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("Score", this.Score.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("Time", this.Time.ToString(CultureInfo.InvariantCulture));
@@ -80,9 +121,30 @@ namespace Lunohod.Objects
                 case "TimeBonus": getter = () => TimeBonus; setter = (v) => TimeBonus = v; break;
                 case "HealthBonus": getter = () => HealthBonus; setter = (v) => HealthBonus = v; break;
                 case "TotalScore": getter = () => TotalScore; setter = (v) => TotalScore = v; break;
+                case "NumberOfStars": getter = () => NumberOfStars; setter = null; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}
+		}
+		
+		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
+		{
+			switch (propertyName)
+			{
+                case "HasBadge": getter = () => HasBadge; setter = null; break;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
+		
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+                case "Save": method = (ps) => Save(); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
 		}
 	}
 }

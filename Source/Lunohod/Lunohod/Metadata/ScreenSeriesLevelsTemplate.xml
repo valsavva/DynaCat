@@ -7,29 +7,41 @@
 
 	<Class Id="clsLevelButton">
 		<Group>
-			<TapArea Action="this_setPress.Start()"/>
-            <SequenceSet Id="this_setPress">
-                <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
-                <Do Action="system.StartSeriesLevel(@buttonSeriesNum,@levelNum)"/>
-            </SequenceSet>
-			<Text Id="this_text" FontId="fntSystem" Origin="50,10" Location="50,10" Text="=system.GetSeriesLevelName(@buttonSeriesNum,@levelNum)" Color="#000000"/>
-			<RandomSet RepeatCount="0" InProgress="true">
-				<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
-					<KeyFrame Time="0" Value="0"/>
-					<KeyFrame Time="0.01" Value="-3"/>
-					<KeyFrame Time="0.05" Value="3"/>
-				</NumAnimation>
-				<Delay Duration="3"/>
-			</RandomSet>
-			<RandomSet RepeatCount="0" InProgress="true">
-				<NumAnimation Target="this.X" Autoreverse="true" RepeatCount="1" Duration="1" IsDelta="true" Fill="Reset">
-					<KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
-					<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth"/>
-					<KeyFrame Time="0.6" Value="6" Smoothness="Smooth"/>
-					<KeyFrame Time="1" Value="0" Smoothness="Smooth"/>
-				</NumAnimation>
-				<Delay Duration="3"/>
-			</RandomSet>
+			<Do Action="
+				@this_numberOfStars=system.GetSeriesLevelStars(@buttonSeriesNum,@levelNum);
+				@this_starsStr=system.IIfStr(@this_numberOfStars==3,'***',system.IIfStr(@this_numberOfStars==2,'**-',system.IIfStr(@this_numberOfStars==1,'*--','---')));
+				@this_starsStr=@this_starsStr + system.IIfStr(system.GetSeriesLevelHasBadge(@buttonSeriesNum,@levelNum), '# ', '  ');
+				@this_levelName=system.GetSeriesLevelName(@buttonSeriesNum,@levelNum);
+				@this_levelExists=@this_levelName!='';
+				@this_levelName=@this_starsStr + @this_levelName;"
+				InProgress="true"
+				RepeatCount="0"
+			/>
+			<BoolTrigger Condition="@this_levelExists">
+				<TapArea Action="this_setPress.Start()"/>
+	            <SequenceSet Id="this_setPress">
+	                <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
+	                <Do Action="system.StartSeriesLevel(@buttonSeriesNum,@levelNum)"/>
+	            </SequenceSet>
+				<Text Id="this_text" FontId="fntSystem" Origin="50,10" Location="50,10" Text="=@this_levelName" Color="#000000"/>
+				<RandomSet RepeatCount="0" InProgress="true">
+					<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
+						<KeyFrame Time="0" Value="0"/>
+						<KeyFrame Time="0.01" Value="-3"/>
+						<KeyFrame Time="0.05" Value="3"/>
+					</NumAnimation>
+					<Delay Duration="3"/>
+				</RandomSet>
+				<RandomSet RepeatCount="0" InProgress="true">
+					<NumAnimation Target="this.X" Autoreverse="true" RepeatCount="1" Duration="1" IsDelta="true" Fill="Reset">
+						<KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
+						<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth"/>
+						<KeyFrame Time="0.6" Value="6" Smoothness="Smooth"/>
+						<KeyFrame Time="1" Value="0" Smoothness="Smooth"/>
+					</NumAnimation>
+					<Delay Duration="3"/>
+				</RandomSet>
+			</BoolTrigger>
 		</Group>
 	</Class>
 

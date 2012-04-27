@@ -50,24 +50,24 @@ namespace Lunohod.Objects
 		
 		public XLevelInfo(XLevelInfo info)
 		{
-			CopyInfoFrom(info);
+			info.CopyTo(this);
 		}
 
-		public void CopyInfoFrom(XLevelInfo info)
+		public void CopyTo(XLevelInfo other)
 		{
-			this.Id = info.Id;
-			this.Name = info.Name;
-			this.File = info.File;
-			this.BombCount = info.BombCount;
-			this.HeroHealth = info.HeroHealth;
-			this.ExplosionClass = info.ExplosionClass;
-			this.StarScoreRatio1 = info.StarScoreRatio1;
-			this.StarScoreRatio2 = info.StarScoreRatio2;
-			this.StarScoreRatio3 = info.StarScoreRatio3;
-			this.TimeBonusThreshold = info.TimeBonusThreshold;
-			this.HealthBonusThreshold = info.HealthBonusThreshold;
-			this.TimeBonusRatio = info.TimeBonusRatio;
-			this.HealthBonusRatio = info.HealthBonusRatio;
+			other.Id = this.Id;
+			other.Name = this.Name;
+			other.File = this.File;
+			other.BombCount = this.BombCount;
+			other.HeroHealth = this.HeroHealth;
+			other.ExplosionClass = this.ExplosionClass;
+			other.StarScoreRatio1 = this.StarScoreRatio1;
+			other.StarScoreRatio2 = this.StarScoreRatio2;
+			other.StarScoreRatio3 = this.StarScoreRatio3;
+			other.TimeBonusThreshold = this.TimeBonusThreshold;
+			other.HealthBonusThreshold = this.HealthBonusThreshold;
+			other.TimeBonusRatio = this.TimeBonusRatio;
+			other.HealthBonusRatio = this.HealthBonusRatio;
 		}
 		
         public override void ReadXml(XmlReader reader)

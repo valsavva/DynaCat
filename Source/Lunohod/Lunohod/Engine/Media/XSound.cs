@@ -40,18 +40,12 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public double Pan = 0;
 		
-		[XmlAttribute]
-		public bool IsLooped;
-		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
 			
 			this.soundFile = (XSoundResource)this.FindGlobal(this.FileId);
 			this.soundEffectInstance = this.soundFile.SoundEffect.CreateInstance();
-
-            // this can be set only once
-            this.soundEffectInstance.IsLooped = this.IsLooped;
         }
 		
 		public override void Update(UpdateParameters p)
@@ -104,7 +98,6 @@ namespace Lunohod.Objects
             this.Volume = reader.ReadAttrAsFloat("Volume");
             reader.ReadAttrAsFloat("Pitch", ref this.Pitch);
             reader.ReadAttrAsFloat("Pan", ref this.Pan);
-            this.IsLooped = reader.ReadAttrAsBoolean("IsLooped");
             
             base.ReadXml(reader);
         }

@@ -14,33 +14,27 @@
 		<Image TextureId="txrBackground" Bounds="80,0,300,320" />
 	</Layer>
 	<Layer>
-		<Do Action="levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time" InProgress="true" />
+		<Do Action="levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time; levelScore.Save();" InProgress="true" />
 		<Do Action="system.WriteLine('Score Ratio: {0}', levelScore.ScoreRatio)" InProgress="true" />
 		
 		<Group Bounds="80,0,300,320">
 			<Text Text="='Level complete! :-) :-) Score:' + system.Str(levelScore.Score)" FontId="fntSystem" Location="50,50" />
 
 			<!-- Stars -->
-			<BoolTrigger Condition="levelScore.ScoreRatio>=levelScore.StarScoreRatio1">
-				<Text Text="*" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
+			<BoolTrigger Condition="levelScore.NumberOfStars==3">
+				<Text Text="***" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
 			</BoolTrigger>
-			<BoolTrigger Condition="levelScore.ScoreRatio&lt;levelScore.StarScoreRatio1">
-				<Text Text="-" FontId="fntSystem" Location="50,100" />
+			<BoolTrigger Condition="levelScore.NumberOfStars==2">
+				<Text Text="**-" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
 			</BoolTrigger>
-			<BoolTrigger Condition="levelScore.ScoreRatio>=levelScore.StarScoreRatio2">
-				<Text Text="*" FontId="fntSystem" Location="80,100" Color="#FFFF00" />
+			<BoolTrigger Condition="levelScore.NumberOfStars==1">
+				<Text Text="*--" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
 			</BoolTrigger>
-			<BoolTrigger Condition="levelScore.ScoreRatio&lt;levelScore.StarScoreRatio2">
-				<Text Text="-" FontId="fntSystem" Location="80,100" />
+						<BoolTrigger Condition="levelScore.NumberOfStars==3">
+				<Text Text="---" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
 			</BoolTrigger>
-			<BoolTrigger Condition="levelScore.ScoreRatio>=levelScore.StarScoreRatio3">
-				<Text Text="*" FontId="fntSystem" Location="110,100" Color="#FFFF00" />
-			</BoolTrigger>
-			<BoolTrigger Condition="levelScore.ScoreRatio&lt;levelScore.StarScoreRatio3">
-				<Text Text="-" FontId="fntSystem" Location="110,100" />
-			</BoolTrigger>
-			
-			<BoolTrigger Condition="levelScore.ScoreRatio>=levelScore.StarScoreRatio3">
+
+			<BoolTrigger Condition="levelScore.NumberOfStars==3">
 				<!-- Time bonus -->
 				<BoolTrigger Condition="levelScore.TimeBonus>0">
 					<Text Text="='Time Bonus!!  ' + system.Str(levelScore.TimeBonus)" FontId="fntSystem" Location="50,130" Color="#FFFF00" />
@@ -48,8 +42,14 @@
 				
 				<!-- Health bonus -->
 				<BoolTrigger Condition="levelScore.HealthBonus>0">
-					<Text Text="='Health Bonus!!  ' + system.Str(levelScore.HealthBonus)" FontId="fntSystem" Location="50,160" Color="#FFFF00" />
+					<Text Text="='Health Bonus!!  ' + system.Str(levelScore.HealthBonus)" FontId="fntSystem" Location="50,150" Color="#FFFF00" />
 				</BoolTrigger>
+				
+				<!-- Badge -->
+				<BoolTrigger Condition="levelScore.HasBadge">
+					<Text Text="='BADGE!!!'" FontId="fntSystem" Location="50,170" Color="#FF00FF" />
+				</BoolTrigger>
+				
 			</BoolTrigger>
 	
 			<Text Text="='Total Score:  ' + system.Str(levelScore.TotalScore)" FontId="fntSystem" Location="50,190" Color="#FFFF00" />

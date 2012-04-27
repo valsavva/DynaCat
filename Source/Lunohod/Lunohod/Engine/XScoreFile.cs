@@ -6,8 +6,8 @@ using System.Linq;
 
 namespace Lunohod.Objects
 {
-    [XmlRoot("SaveFile")]
-	public class XSaveFile : XObject
+    [XmlRoot("ScoreFile")]
+	public class XScoreFile : XObject
 	{
 		[XmlArray("LevelScores")]
 		public List<XLevelScore> LevelScores;

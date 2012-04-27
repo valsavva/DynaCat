@@ -34,30 +34,58 @@ namespace Lunohod.Objects
 			game.LoadLevel(game.GameObject.Levels[levelIndex]);
 		}
 		
-		public string GetSeriesLevelName(int seriesIndex, int levelIndex)
+		private XLevelInfo GetSeriesLevelInfo(int seriesIndex, int levelIndex)
 		{
 			if (seriesIndex >= game.GameObject.LevelSeries.Count)
-				return "";
+				return null;
 			
 			var series = game.GameObject.LevelSeries[seriesIndex];
 			
 			if (levelIndex >= series.Levels.Count)
-				return "";
+				return null;
 			
-			return series.Levels[levelIndex].Name;
+			return series.Levels[levelIndex];
+		}
+		
+		public string GetSeriesLevelName(int seriesIndex, int levelIndex)
+		{
+			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
+			
+			return levelInfo != null ? levelInfo.Name : "";
+		}
+		
+		public double GetSeriesLevelStars(int seriesIndex, int levelIndex)
+		{
+			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
+
+			if (levelInfo == null)
+				return 0;
+			
+			var score = game.ScoreFile.LevelScores.Find(ls => ls.Id == levelInfo.Id);
+			
+			return score.NumberOfStars;
+		}
+		
+		public bool GetSeriesLevelHasBadge(int seriesIndex, int levelIndex)
+		{
+			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
+
+			if (levelInfo == null)
+				return false;
+			
+			var score = game.ScoreFile.LevelScores.Find(ls => ls.Id == levelInfo.Id);
+			
+			return score.HasBadge;
 		}
 		
 		public void StartSeriesLevel(int seriesIndex, int levelIndex)
 		{
-			if (seriesIndex >= game.GameObject.LevelSeries.Count)
+			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
+
+			if (levelInfo == null)
 				return;
 			
-			var series = game.GameObject.LevelSeries[seriesIndex];
-			
-			if (levelIndex >= series.Levels.Count)
-				return;
-			
-			game.LoadLevel(series.Levels[levelIndex]);
+			game.LoadLevel(levelInfo);
 		}
 		
         public void StartNextLevel()
@@ -139,6 +167,16 @@ namespace Lunohod.Objects
 			System.Diagnostics.Debug.WriteLine(message, pars);
 		}
 		
+		public override void GetMethod(string methodName, out Func<List<Expression>, bool> method)
+		{
+            switch (methodName)
+            {
+				case "GetSeriesLevelHasBadge": method = (ps) => GetSeriesLevelHasBadge(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
+		
 		public override void GetMethod(string methodName, out Func<List<Lunohod.Xge.Expression>, double> method)
 		{
             switch (methodName)
@@ -148,6 +186,7 @@ namespace Lunohod.Objects
                 case "RndY": method = (ps) => RndY(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "Round": method = (ps) => Round(ps[0].GetNumValue(), ps.Count < 2 ? 0 : ps[1].GetIntValue()); break;
 				case "IIf": method = (ps) => IIf(ps[0].GetBoolValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
+				case "GetSeriesLevelStars": method = (ps) => GetSeriesLevelStars(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

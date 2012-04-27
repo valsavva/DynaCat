@@ -61,7 +61,6 @@ namespace Lunohod
 
 			var li = (XLevelInfo)LevelInfo.Copy();
 			var ls = (XLevelScore)LevelScore.Copy();
-			ls.CopyInfoFrom(li);
 			
 			li.Id = "levelInfo";
 			ls.Id = "levelScore";
@@ -89,6 +88,16 @@ namespace Lunohod
 				if (o is IHasPoints && !(this.LevelInfo.BombCount == 0 && o is XEnemy))
 					this.LevelScore.AvaliablePoints += ((IHasPoints)o).Points;
 			});
+		}
+		
+		public void SaveNewScore(XLevelScore newScore)
+		{
+			if (newScore.TotalScore < this.LevelScore.TotalScore)
+				return;
+			
+			newScore.CopyTo(this.LevelScore);
+			
+			game.SaveScore();
 		}
 		
 		public override void Update(GameTime gameTime)

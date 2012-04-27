@@ -265,8 +265,13 @@ namespace Lunohod.Xge
             Consume(TokenType.Assign);
 
             var rExpression = TExpression();
-
-            return new AssignStatement(lExpression, rExpression);
+			
+			if (rExpression.Type == typeof(double))
+	            return new AssignStatement<double>((IAssignable<double>)lExpression, (IExpression<double>)rExpression);
+			else if (rExpression.Type == typeof(string))
+	            return new AssignStatement<string>((IAssignable<string>)lExpression, (IExpression<string>)rExpression);
+			else // if (rExpression.Type == typeof(bool))
+	            return new AssignStatement<bool>((IAssignable<bool>)lExpression, (IExpression<bool>)rExpression);
         }
 
         private IAction TVariableAssignStatement()
