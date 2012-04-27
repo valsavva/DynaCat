@@ -232,11 +232,13 @@
     <Compile Include="Engine\XLevelInfo.cs" />
     <Compile Include="Engine\XLevelScore.cs" />
     <Compile Include="Engine\XLevelSeries.cs" />
+	<Compile Include="Engine\XScoreFile.cs" />
+    <Compile Include="Engine\SettingsFile.cs" />
     <Compile Include="Engine\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\XObjectCollection.cs" />
-    <Compile Include="Engine\XSaveFile.cs" />
+
     <Compile Include="Engine\XScreen.cs" />
     <Compile Include="Engine\XSprite.cs">
       <SubType>Code</SubType>
