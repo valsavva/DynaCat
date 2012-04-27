@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.03 -->
+<!-- SVG to XGAME xml converter v1.6.04 -->
 <!-- source: D:\Lunohod\Levels\S05LXX_Poezd_v9_Logika_Zatorov_v2\S05LXX_Poezd_v9_Logika_Zatorov_v2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S05LXX_Poezd_v9_Logika_Zatorov_v2" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
@@ -51,7 +51,7 @@
         <Image Id="dfltMask25" TextureId="txr_railwayHor1" Bounds="280, 284, 40, 40" TraceId="image3094"/>
         <Image Id="dfltMask26" TextureId="txr_railwayHor1" Bounds="320, 284, 40, 40" TraceId="image3096"/>
         <Image Id="dfltMask27" TextureId="txr_railwayHor1" Bounds="360, 284, 40, 40" TraceId="image3098"/>
-        <Image Id="dfltMask28" TextureId="txr_railwayTurn90a" Bounds="80, 324, 80, 80" Rotation="180" TraceId="image3100"/>
+        <Image Id="dfltMask28" TextureId="txr_railwayTurn90a" Bounds="80, 324, 80, 80" Rotation="180" Stretch="true" TraceId="image3100"/>
         <Image Id="dfltMask29" TextureId="txr_railwayHor1" Bounds="40, 124, 40, 40" Rotation="90" TraceId="image3104"/>
         <Image Id="dfltMask30" TextureId="txr_railwayHor1" Bounds="40, 164, 40, 40" Rotation="90" TraceId="image3106"/>
         <Image Id="dfltMask31" TextureId="txr_railwayHor1" Bounds="40, 204, 40, 40" Rotation="90" TraceId="image3108"/>
@@ -71,7 +71,7 @@
         <Image Id="dfltMask45" TextureId="txr_railwayHor1" Bounds="240, 244, 40, 40" TraceId="image3140"/>
         <Image Id="dfltMask46" TextureId="txr_railwayHor1" Bounds="280, 244, 40, 40" TraceId="image3142"/>
         <Image Id="dfltMask47" TextureId="txr_railwayHor1" Bounds="320, 244, 40, 40" TraceId="image3144"/>
-        <Image Id="dfltMask48" TextureId="txr_railwayTurn90a" Bounds="120, 284, 80, 80" Rotation="180" TraceId="image3148"/>
+        <Image Id="dfltMask48" TextureId="txr_railwayTurn90a" Bounds="120, 284, 80, 80" Rotation="180" Stretch="true" TraceId="image3148"/>
         <Image Id="dfltMask49" TextureId="txr_railwayTurn90b" Bounds="40, 84, 80, 80" TraceId="image3154"/>
         <Image Id="dfltMask50" TextureId="txr_railwayHor1" Bounds="80, 164, 40, 40" Rotation="90" TraceId="image3178"/>
         <Image Id="dfltMask51" TextureId="txr_railwayTurn90a" Bounds="180, 84, 80, 80" TraceId="image3180"/>
@@ -167,3 +167,16 @@
     <Include File="Dashboard.xml" />
 </Level>
 <!-- Food=6 Enemy=4 Block=4 DesignImage=53 Animation=10 Teleport Animations=0 FoodPack=0 -->
+<!-- -->
+<!-- Food Points = 570 -->
+<!-- 1% = 5.7; 45% = 256.5; 90% = 513 -->
+<!-- minPointsFood = 90 (15.8%) -->
+<!-- -->
+<!-- Enemy Points = 250 -->
+<!-- 1% = 2.5; 45% = 112.5; 90% = 225 -->
+<!-- minPointsEnemy = 50 (20%) -->
+<!-- -->
+<!-- Food + Enemy Points = 820 -->
+<!-- 1% = 8.2; 45% = 369; 90% = 738 -->
+<!-- minPointsFood = 90 (11%) -->
+<!-- minPointsEnemy = 50 (6.1%) -->

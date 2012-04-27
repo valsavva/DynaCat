@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{669A160E-877C-462B-ACBF-93FEF1899EAF}</ProjectGuid>
@@ -232,13 +232,12 @@
     <Compile Include="Engine\XLevelInfo.cs" />
     <Compile Include="Engine\XLevelScore.cs" />
     <Compile Include="Engine\XLevelSeries.cs" />
-	<Compile Include="Engine\XScoreFile.cs" />
+    <Compile Include="Engine\XScoreFile.cs" />
     <Compile Include="Engine\SettingsFile.cs" />
     <Compile Include="Engine\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Engine\XObjectCollection.cs" />
-
     <Compile Include="Engine\XScreen.cs" />
     <Compile Include="Engine\XSprite.cs">
       <SubType>Code</SubType>
@@ -1841,6 +1840,7 @@
     </Content>
     <Content Include="Metadata\S05LXX_Poezd_v9_Logika_Zatorov_v2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\S05LXX_Poezd_v8_Zmeyka.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2417,4 +2417,3 @@ rem start /B "C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\Lunoho
       </Target>
     -->
 </Project>
-
