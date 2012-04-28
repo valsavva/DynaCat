@@ -424,6 +424,9 @@ namespace Lunohod
                 {
                     case GameEventType.StartNextLevel:
                         {
+                            this.eventQueue.Clear();
+							i = -1;
+
                             var levelInfo = this.LevelEngine.LevelInfo;
                             this.CloseCurrentScreen();
 
@@ -439,20 +442,21 @@ namespace Lunohod
                             e.IsHandled = true;
 
                             // break out of the loop
-                            this.eventQueue.Clear();
-                            numOfEvents = 0;
+                            numOfEvents = this.eventQueue.Count;
                             continue;
                         } break;
                     case GameEventType.RestartLevel:
                         {
-                            var levelInfo = this.LevelEngine.LevelInfo;
+                            this.eventQueue.Clear();
+							i = -1;
+
+							var levelInfo = this.LevelEngine.LevelInfo;
                             this.CloseCurrentScreen();
                             this.LoadLevel(levelInfo);
                             e.IsHandled = true;
 
                             // break out of the loop
-                            this.eventQueue.Clear();
-                            numOfEvents = 0;
+                            numOfEvents = this.eventQueue.Count;
                             continue;
                         } break;
                     case GameEventType.EndLevel:
@@ -461,12 +465,14 @@ namespace Lunohod
 						}
                     case GameEventType.AbandonLevel:
                         {
+                            this.eventQueue.Clear();
+							i = -1;
+
                             this.CloseCurrentScreen();
                             e.IsHandled = true;
 
                             // break out of the loop
-                            this.eventQueue.Clear();
-                            numOfEvents = 0;
+                            numOfEvents = this.eventQueue.Count;
                             continue;
                             //
                         } break;
