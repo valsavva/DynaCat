@@ -233,7 +233,7 @@
     <Compile Include="Engine\XLevelScore.cs" />
     <Compile Include="Engine\XLevelSeries.cs" />
     <Compile Include="Engine\XScoreFile.cs" />
-    <Compile Include="Engine\SettingsFile.cs" />
+    <Compile Include="Engine\XSettingsFile.cs" />
     <Compile Include="Engine\XObject.cs">
       <SubType>Code</SubType>
     </Compile>
