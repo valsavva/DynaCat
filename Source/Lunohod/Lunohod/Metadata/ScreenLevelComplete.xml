@@ -18,7 +18,8 @@
 		<Do Action="system.WriteLine('Score Ratio: {0}', levelScore.ScoreRatio)" InProgress="true" />
 		
 		<Group Bounds="80,0,300,320">
-			<Text Text="='Level complete! :-) :-) Score:' + system.Str(levelScore.Score)" FontId="fntSystem" Location="50,50" />
+			<Text Text="Level complete! :-) :-)" FontId="fntSystem" Location="50,50" />
+			<Text Text="='Score:' + system.Str(levelScore.Score) + '  Time:' + system.Str(system.Round(levelScore.Time, 2)) + '  Health:' + system.Str(levelScore.Health)" FontId="fntSystem" Location="50,80" />
 
 			<!-- Stars -->
 			<BoolTrigger Condition="levelScore.NumberOfStars==3">
@@ -30,7 +31,7 @@
 			<BoolTrigger Condition="levelScore.NumberOfStars==1">
 				<Text Text="*--" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
 			</BoolTrigger>
-						<BoolTrigger Condition="levelScore.NumberOfStars==3">
+			<BoolTrigger Condition="levelScore.NumberOfStars==0">
 				<Text Text="---" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
 			</BoolTrigger>
 
