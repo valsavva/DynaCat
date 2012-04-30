@@ -25,12 +25,16 @@ namespace Lunohod
         private List<Tuple<XElement, System.Drawing.RectangleF, double>> colliders = new List<Tuple<XElement, System.Drawing.RectangleF, double>>();
 		
 		private int bombCounter;
+		
+		private EventRateCounter cps; 
+
         
         public LevelEngine(GameEngine gameEngine, ScreenEngine owner, XLevelInfo levelInfo, XLevelScore levelScore)
 			: base(gameEngine, levelInfo.File, owner)
 		{
             this.LevelInfo = levelInfo;
 			this.LevelScore = levelScore;
+			this.cps = new EventRateCounter(TimeSpan.FromSeconds(game.GameObject.CpsTimeSpan));
 		}
 
         public XHero Hero
@@ -49,8 +53,9 @@ namespace Lunohod
         public override Type RootComponentType { get { return typeof(XLevel); } }
 
         public XLevelInfo LevelInfo { get; private set; }
-		
 		public XLevelScore LevelScore { get; private set; }
+		
+		public double CommandsPerSecond { get { return cps.EventsPerSecond; } }
 		
 		public override void Initialize()
 		{
@@ -102,6 +107,8 @@ namespace Lunohod
 		
 		public override void Update(GameTime gameTime)
 		{
+			cps.Update(gameTime);
+
 			base.Update(gameTime);
 			
 			foreach(var wave in waves.Values)
@@ -209,6 +216,21 @@ namespace Lunohod
 			
 			if (!e.IsInstant)
 			{
+				bool firstProcess = !waves.ContainsKey(e);
+				
+				if (firstProcess)
+				{
+					cps.RecordEvent();
+					
+					if (cps.EventsPerSecond > game.GameObject.CpsLimit)
+					{
+						game.EnqueueEvent(new GameEvent(GameEventType.CpsLimitExceeded, gameTime, true));
+
+						e.IsHandled = true;
+						return;
+					}
+				}
+				
 				double signalTraveledDistance = this.tower.SignalSpeed * (gameTime.TotalGameTime - e.Time).TotalSeconds;
 				signalReachedHero = signalTraveledDistance >= this.hero.DistanceToTower;
 
@@ -216,7 +238,7 @@ namespace Lunohod
                     waves.Remove(e);
                 else
                 {
-                    if (!waves.ContainsKey(e))
+                    if (firstProcess)
                         waves.Add(e, new RadioWave(e.Time));
                     return;
                 }

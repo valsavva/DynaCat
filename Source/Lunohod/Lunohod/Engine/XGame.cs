@@ -42,12 +42,18 @@ namespace Lunohod.Objects
         /// </summary>
 		[XmlIgnore]
 		public List<XLevelInfo> Levels;
+		[XmlAttribute]
+		public double CpsLimit;
+		[XmlAttribute]
+		public double CpsTimeSpan;
 
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             this.StartScreen = reader["StartScreen"];
-            this.ShowFPS = reader.ReadAttrAsBoolean("ShowFPS");
-            this.ShowDebugInfo = reader.ReadAttrAsBoolean("ShowDebugInfo");
+            reader.ReadAttrAsBoolean("ShowFPS", ref this.ShowFPS);
+            reader.ReadAttrAsBoolean("ShowDebugInfo");
+			reader.ReadAttrAsFloat("CpsLimit", ref this.CpsLimit);
+			reader.ReadAttrAsFloat("CpsTimeSpan", ref this.CpsTimeSpan);
 
             base.ReadXml(reader);
         }

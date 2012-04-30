@@ -139,6 +139,10 @@
         <Text Text="=hero.Health" FontId="SystemFont" Location="305,6" Color="#FFFFFF"/>
         <Image TextureId="txr_health_bar_front" Bounds="300, 8, 100, 8"/>
 
+		<!-- CPS -->
+		<Text Text="=system.Round(system.GetCommandsPerSecond(), 2)"  FontId="SystemFont" Location="25, 280" Color="#FF00FF"/>
+					
+		
     </Dashboard>
 </Include>
 

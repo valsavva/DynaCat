@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using Lunohod.Xge;
+using System.Text;
 
 namespace Lunohod.Objects
 {
@@ -134,6 +135,11 @@ namespace Lunohod.Objects
 			game.LoadScreen(game.GameObject.LevelSeries[i].File);
 		}
 		
+		public double GetCommandsPerSecond()
+		{
+			return ((LevelEngine)this.GetRoot().ScreenEngine).CommandsPerSecond;
+		}
+		
 		public double RndX(double start, double end)
 		{
 			return this.Rnd(start, end) * this.game.Scale.X;
@@ -187,6 +193,7 @@ namespace Lunohod.Objects
                 case "Round": method = (ps) => Round(ps[0].GetNumValue(), ps.Count < 2 ? 0 : ps[1].GetIntValue()); break;
 				case "IIf": method = (ps) => IIf(ps[0].GetBoolValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
 				case "GetSeriesLevelStars": method = (ps) => GetSeriesLevelStars(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
+				case "GetCommandsPerSecond": method = (ps) => GetCommandsPerSecond(); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

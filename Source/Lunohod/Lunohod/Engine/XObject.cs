@@ -442,13 +442,13 @@ namespace Lunohod.Objects
 		internal void EnqueueEvent(string name, bool isInstant = true)
 		{
 			GameEngine.Instance.EnqueueEvent(
-				new GameEvent(name, GameEngine.Instance.CurrentUpdateTime) { IsInstant = isInstant }
+				new GameEvent(name, GameEngine.Instance.CurrentUpdateTime, isInstant)
 			);
 		}
 		internal void EnqueueEvent(GameEventType type, bool isInstant = true)
 		{
 			GameEngine.Instance.EnqueueEvent(
-				new GameEvent(type, GameEngine.Instance.CurrentUpdateTime) { IsInstant = isInstant }
+				new GameEvent(type, GameEngine.Instance.CurrentUpdateTime, isInstant)
 			);
 		}
 		

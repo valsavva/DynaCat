@@ -16,7 +16,8 @@ namespace Lunohod
         AbandonLevel,
         EndLevel,
         LevelLoaded,
-        StartNextLevel
+        StartNextLevel,
+		CpsLimitExceeded
     }
 }
 

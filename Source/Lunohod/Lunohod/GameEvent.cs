@@ -21,6 +21,7 @@ namespace Lunohod
 			{ "system:abandonLevel", GameEventType.AbandonLevel },
 			{ "system:startNextLevel", GameEventType.StartNextLevel },
 			{ "system:endLevel", GameEventType.EndLevel },
+			{ "system:cpsLimitExceeded", GameEventType.CpsLimitExceeded },
 			
 			{ "system:levelLoaded", GameEventType.LevelLoaded }
 		};
@@ -33,20 +34,20 @@ namespace Lunohod
 				eventTypeNameDict.Add(item.Value, item.Key);
 		}
 		
-		private GameEvent(GameTime gameTime)
+		private GameEvent(GameTime gameTime, bool isInstant)
 		{
 			this.Time = gameTime.TotalGameTime;
-			this.IsHandled = false;
+			this.IsInstant = isInstant;
 		}
 		
-		public GameEvent(GameEventType eventType, GameTime gameTime)
-			: this(gameTime)
+		public GameEvent(GameEventType eventType, GameTime gameTime, bool isInstant)
+			: this(gameTime, isInstant)
 		{
 			this.EventType = eventType;
 			this.Id = eventTypeNameDict[eventType];
 		}
-		public GameEvent(string id, GameTime gameTime)
-			: this(gameTime)
+		public GameEvent(string id, GameTime gameTime, bool isInstant)
+			: this(gameTime, isInstant)
 		{
 			this.Id = id;
 

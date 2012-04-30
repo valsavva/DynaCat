@@ -54,11 +54,11 @@ namespace Lunohod
 
 			switch (key)
 			{
-				case Keys.Up : e = new GameEvent(GameEventType.Up, gameTime); break;
-                case Keys.Down: e = new GameEvent(GameEventType.Down, gameTime); break;
-                case Keys.Left: e = new GameEvent(GameEventType.Left, gameTime); break;
-                case Keys.Right: e = new GameEvent(GameEventType.Right, gameTime); break;
-                case Keys.Space: e = new GameEvent(GameEventType.Stop, gameTime); break;
+				case Keys.Up : e = new GameEvent(GameEventType.Up, gameTime, false); break;
+                case Keys.Down: e = new GameEvent(GameEventType.Down, gameTime, false); break;
+                case Keys.Left: e = new GameEvent(GameEventType.Left, gameTime, false); break;
+                case Keys.Right: e = new GameEvent(GameEventType.Right, gameTime, false); break;
+                case Keys.Space: e = new GameEvent(GameEventType.Stop, gameTime, true); break;
 			}
 
             if (e != null)

@@ -193,6 +193,7 @@
     <Compile Include="Engine\IHasPoints.cs" />
     <Compile Include="Engine\XScoreFile.cs" />
     <Compile Include="Engine\XSettingsFile.cs" />
+    <Compile Include="EventRateCounter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
