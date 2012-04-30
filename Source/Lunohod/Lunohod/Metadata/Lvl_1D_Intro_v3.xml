@@ -14,18 +14,18 @@
         <Texture Id="txr_fish_4_me" Source="fish_4_me" />
         <Texture Id="txr_fish_5_me" Source="fish_5_me" />
     </Resources>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="442, 0, 50, 320" Edges="Stick" TraceId="image4798"/>
+        <Block Id="blk2" Bounds="322, 50, 80, 320" Edges="Stick" TraceId="image4801"/>
+        <Block Id="blk3" Bounds="-8, 0, 50, 320" Edges="Stick" TraceId="image4803"/>
+        <Block Id="blk4" Bounds="202, 20, 80, 240" Edges="Stick" TraceId="image4805"/>
+        <Block Id="blk5" Bounds="0, -30, 480, 50" Edges="Stick" TraceId="image4815"/>
+        <Block Id="blk6" Bounds="82, 50, 80, 320" Edges="Stick" TraceId="image4818"/>
+        <Block Id="blk7" Bounds="120, 290, 239, 50" Edges="Stick" TraceId="image4820"/>
+        <Block Id="blk8" Bounds="0, 320, 480, 50" Edges="Stick" TraceId="image4822"/>
+    </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>
-    </Layer>
-    <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="440, 0, 50, 320" Edges="Stick" TraceId="image4798"/>
-        <Block Id="blk2" Bounds="320, 48, 84, 320" Edges="Stick" TraceId="image4801"/>
-        <Block Id="blk3" Bounds="-6, 0, 50, 320" Edges="Stick" TraceId="image4803"/>
-        <Block Id="blk4" Bounds="200, -58, 84, 320" Edges="Stick" TraceId="image4805"/>
-        <Block Id="blk5" Bounds="0, -28, 480, 50" Edges="Stick" TraceId="image4815"/>
-        <Block Id="blk6" Bounds="80, 48, 84, 320" Edges="Stick" TraceId="image4818"/>
-        <Block Id="blk7" Bounds="120, 288, 239, 50" Edges="Stick" TraceId="image4820"/>
-        <Block Id="blk8" Bounds="0, 320, 480, 50" Edges="Stick" TraceId="image4822"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_hor" Bounds="322, 20, 40, 30" TraceId="image4495"/>
@@ -70,8 +70,8 @@
         <Image Id="dfltMask41" TextureId="txr_laz_vert" Bounds="42, 80, 40, 30" TraceId="image4754"/>
         <Image Id="dfltMask42" TextureId="txr_laz_vert" Bounds="42, 110, 40, 30" TraceId="image4756"/>
         <Image Id="dfltMask43" TextureId="txr_laz_turn1" Bounds="162, 20, 40, 30" TraceId="image4758"/>
-        <Image Id="dfltMask44" TextureId="txr_laz_turn1" Bounds="202, 290, 40, 30" Rotation="180" Stretch="true" TraceId="image4760"/>
-        <Image Id="dfltMask45" TextureId="txr_laz_turn1" Bounds="322, 50, 40, 30" Rotation="180" Stretch="true" FlipEffects="Vertically" TraceId="image4764"/>
+        <Image Id="dfltMask44" TextureId="txr_laz_turn1" Bounds="202, 290, 40, 30" Rotation="180" TraceId="image4760"/>
+        <Image Id="dfltMask45" TextureId="txr_laz_turn1" Bounds="322, 50, 40, 30" Rotation="180" FlipEffects="Vertically" TraceId="image4764"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" Points="70" Bounds="164, 82, 30, 15" TraceId="image4774">

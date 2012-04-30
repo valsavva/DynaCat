@@ -18,12 +18,12 @@
         <Texture Id="txr_box_old_3" Source="box_old_3" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="338, 0, 50, 320" Edges="Stick" TraceId="image4798"/>
-        <Block Id="blk2" Bounds="92, 0, 50, 322" Edges="Stick" TraceId="image4803"/>
-        <Block Id="blk3" Bounds="0, -28, 480, 50" Edges="Stick" TraceId="image4815"/>
-        <Block Id="blk4" Bounds="0, 320, 480, 72" Edges="Stick" TraceId="image4822"/>
-        <Block Id="blk5" Bounds="178, 48, 44, 322" Edges="Stick" TraceId="image5043"/>
-        <Block Id="blk6" Bounds="258, 48, 44, 322" Edges="Stick" TraceId="image5045"/>
+        <Block Id="blk1" Bounds="340, 0, 50, 320" Edges="Stick" TraceId="image4798"/>
+        <Block Id="blk2" Bounds="90, 0, 50, 322" Edges="Stick" TraceId="image4803"/>
+        <Block Id="blk3" Bounds="140, -30, 200, 50" Edges="Stick" TraceId="image4815"/>
+        <Block Id="blk4" Bounds="0, 320, 260, 72" Edges="Stick" TraceId="image4822"/>
+        <Block Id="blk5" Bounds="180, 50, 40, 322" Edges="Stick" TraceId="image5043"/>
+        <Block Id="blk6" Bounds="260, 50, 40, 322" Edges="Stick" TraceId="image5045"/>
         <Block Id="blk7" Bounds="280, 308, 240, 72" Edges="Stick" TraceId="image5064"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">

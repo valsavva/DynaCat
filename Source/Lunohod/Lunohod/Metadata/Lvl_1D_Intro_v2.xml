@@ -18,13 +18,13 @@
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-50, 0, 50, 160" Edges="Stick" TraceId="image4576"/>
-        <Block Id="blk2" Bounds="0, -14, 480, 50" Edges="Stick" TraceId="image4579"/>
-        <Block Id="blk3" Bounds="-38, 62, 400, 74" Edges="Stick" TraceId="image4583"/>
-        <Block Id="blk4" Bounds="438, 0, 50, 294" Edges="Stick" TraceId="image4587"/>
-        <Block Id="blk5" Bounds="-57, 272, 537, 50" Edges="Stick" TraceId="image4589"/>
-        <Block Id="blk6" Bounds="252, 62, 150, 184" Edges="Stick" TraceId="image4591"/>
-        <Block Id="blk7" Bounds="-8, 104, 50, 176" Edges="Stick" TraceId="image4690"/>
-        <Block Id="blk8" Bounds="78, 162, 284, 84" Edges="Stick" TraceId="image4692"/>
+        <Block Id="blk2" Bounds="0, -16, 480, 50" Edges="Stick" TraceId="image4579"/>
+        <Block Id="blk3" Bounds="-38, 64, 278, 70" Edges="Stick" TraceId="image4583"/>
+        <Block Id="blk4" Bounds="440, 0, 50, 294" Edges="Stick" TraceId="image4587"/>
+        <Block Id="blk5" Bounds="-57, 274, 537, 50" Edges="Stick" TraceId="image4589"/>
+        <Block Id="blk6" Bounds="240, 64, 160, 180" Edges="Stick" TraceId="image4591"/>
+        <Block Id="blk7" Bounds="-10, 134, 50, 140" Edges="Stick" TraceId="image4690"/>
+        <Block Id="blk8" Bounds="80, 164, 160, 80" Edges="Stick" TraceId="image4692"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>

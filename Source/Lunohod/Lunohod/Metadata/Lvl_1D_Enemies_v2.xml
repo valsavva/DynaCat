@@ -2,10 +2,10 @@
 <!-- SVG to XGAME xml converter v1.6.04 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Enemies_v2\Lvl_1D_Enemies_v2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Enemies_v2" Bounds="0, 0, 480, 320">
+    <Include File="ClassWoodenBox.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassEnemyRat4.xml" />
-    <Include File="ClassWoodenBox.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -14,21 +14,11 @@
         <Texture Id="txr_laz_vert" Source="laz_vert" />
         <Texture Id="txr_laz_turn1" Source="laz_turn1" />
         <Texture Id="txr_laz_hor" Source="laz_hor" />
+        <Texture Id="txr_box_old_2" Source="box_old_2" />
+        <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_fish_6_me" Source="fish_6_me" />
         <Texture Id="txr_fish_5_me" Source="fish_5_me" />
-        <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_box_old_2" Source="box_old_2" />
     </Resources>
-    <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="0, -32, 480, 50" Edges="Stick" TraceId="image4815"/>
-        <Block Id="blk2" Bounds="0, 290, 480, 72" Edges="Stick" TraceId="image4822"/>
-        <Block Id="blk3" Bounds="262, -2, 220, 142" Edges="Stick" TraceId="image3217"/>
-        <Block Id="blk4" Bounds="262, 170, 118, 152" Edges="Stick" TraceId="image3222"/>
-        <Block Id="blk5" Bounds="-2, -2, 224, 142" Edges="Stick" TraceId="image3224"/>
-        <Block Id="blk6" Bounds="-2, 170, 224, 128" Edges="Stick" TraceId="image3226"/>
-        <Block Id="blk7" Bounds="420, 0, 80, 357" Edges="Stick" TraceId="image3228"/>
-        <Block Id="blk8" Bounds="-16, 0, 38, 357" Edges="Stick" TraceId="image3230"/>
-    </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>
     </Layer>
@@ -62,6 +52,15 @@
         <Image Id="dfltMask28" TextureId="txr_laz_vert" Bounds="222, 260, 40, 30" TraceId="image3088"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Class="clsWoodenBox" Bounds="226, 170, 30, 30" Edges="Stick" TraceId="image3143">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
+        <Block Id="blk2" Class="clsWoodenBox" Bounds="228, 50, 30, 30" Edges="Stick" TraceId="image3152">
+            <Image TextureId="txr_box_old_1" />
+        </Block>
+        <Block Id="blk3" Class="clsWoodenBox" Bounds="348, 140, 30, 30" Edges="Stick" TraceId="image3126">
+            <Image TextureId="txr_box_old_1" />
+        </Block>
         <Food Id="fd1" Class="clsFood" Points="90" Bounds="386, 265, 28, 17" TraceId="image3154">
             <Image TextureId="txr_fish_6_me" />
         </Food>
@@ -87,20 +86,21 @@
             <Enemy Id="enm4" Class="clsEnemyRat2" Bounds="387, 238, 22, 23" TraceId="image3240"/>
             <NumAnimation Id="anm3" From="0" To="-93" Target="Y" Duration="4" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3096"/>
         </Group>
-        <Block Id="blk9" Class="clsWoodenBox" Bounds="348, 140, 30, 30" Edges="Stick" TraceId="image3126">
-            <Image TextureId="txr_box_old_1" />
-        </Block>
-        <Block Id="blk10" Class="clsWoodenBox" Bounds="226, 168, 30, 30" Edges="Stick" TraceId="image3143">
-            <Image TextureId="txr_box_old_2" />
-        </Block>
-        <Block Id="blk11" Class="clsWoodenBox" Bounds="228, 50, 30, 30" Edges="Stick" TraceId="image3152">
-            <Image TextureId="txr_box_old_1" />
-        </Block>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="3, 124, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="225, 143, 33, 24" TraceId="image3606"/>
+    </Layer>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk4" Bounds="0, -32, 480, 50" Edges="Stick" TraceId="image4815"/>
+        <Block Id="blk5" Bounds="0, 290, 480, 72" Edges="Stick" TraceId="image4822"/>
+        <Block Id="blk6" Bounds="262, -2, 220, 142" Edges="Stick" TraceId="image3217"/>
+        <Block Id="blk7" Bounds="262, 170, 118, 152" Edges="Stick" TraceId="image3222"/>
+        <Block Id="blk8" Bounds="-2, -2, 224, 142" Edges="Stick" TraceId="image3224"/>
+        <Block Id="blk9" Bounds="-2, 170, 224, 128" Edges="Stick" TraceId="image3226"/>
+        <Block Id="blk10" Bounds="420, 0, 80, 357" Edges="Stick" TraceId="image3228"/>
+        <Block Id="blk11" Bounds="-16, 0, 38, 357" Edges="Stick" TraceId="image3230"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />

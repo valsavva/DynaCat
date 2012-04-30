@@ -17,12 +17,12 @@
         <Texture Id="txr_fish_5_me" Source="fish_5_me" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="438, 0, 50, 320" Edges="Stick" TraceId="image4798"/>
-        <Block Id="blk2" Bounds="-8, 68, 50, 256" Edges="Stick" TraceId="image4803"/>
-        <Block Id="blk3" Bounds="0, -8, 480, 50" Edges="Stick" TraceId="image4815"/>
-        <Block Id="blk4" Bounds="0, 248, 480, 72" Edges="Stick" TraceId="image4822"/>
-        <Block Id="blk5" Bounds="78, 158, 361, 64" Edges="Stick" TraceId="image4929"/>
-        <Block Id="blk6" Bounds="40, 68, 361, 64" Edges="Stick" TraceId="image4931"/>
+        <Block Id="blk1" Bounds="440, 0, 50, 320" Edges="Stick" TraceId="image4798"/>
+        <Block Id="blk2" Bounds="-10, 70, 50, 256" Edges="Stick" TraceId="image4803"/>
+        <Block Id="blk3" Bounds="0, -10, 480, 50" Edges="Stick" TraceId="image4815"/>
+        <Block Id="blk4" Bounds="0, 250, 480, 72" Edges="Stick" TraceId="image4822"/>
+        <Block Id="blk5" Bounds="80, 160, 364, 60" Edges="Stick" TraceId="image4929"/>
+        <Block Id="blk6" Bounds="38, 70, 361, 60" Edges="Stick" TraceId="image4931"/>
         <Block Id="blk7" Bounds="-50, 0, 50, 256" Edges="Stick" TraceId="image4933"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
