@@ -32,6 +32,7 @@
 		</LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
             <LevelInfo Id="Lvl_1D_Intro" File="Lvl_1D_Intro.xml" BombCount="0" />
+            <LevelInfo Id="Lvl_1D_Intro_v2" File="Lvl_1D_Intro_v2.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Series 3 Poezd -----" File="ScreenSeries3.xml">
             <LevelInfo Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" />
