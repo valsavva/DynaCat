@@ -20,14 +20,14 @@
         <Texture Id="txr_box_old_1" Source="box_old_1" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="0, -28, 480, 50" Edges="Stick" TraceId="image4815"/>
-        <Block Id="blk2" Bounds="0, 288, 480, 72" Edges="Stick" TraceId="image4822"/>
-        <Block Id="blk3" Bounds="260, 48, 122, 94" Edges="Stick" TraceId="image3217"/>
-        <Block Id="blk4" Bounds="260, 168, 122, 94" Edges="Stick" TraceId="image3222"/>
-        <Block Id="blk5" Bounds="100, 0, 124, 142" Edges="Stick" TraceId="image3224"/>
-        <Block Id="blk6" Bounds="0, 168, 224, 128" Edges="Stick" TraceId="image3226"/>
-        <Block Id="blk7" Bounds="418, 0, 80, 357" Edges="Stick" TraceId="image3228"/>
-        <Block Id="blk8" Bounds="-16, 0, 80, 357" Edges="Stick" TraceId="image3230"/>
+        <Block Id="blk1" Bounds="0, -30, 480, 50" Edges="Stick" TraceId="image4815"/>
+        <Block Id="blk2" Bounds="0, 290, 480, 72" Edges="Stick" TraceId="image4822"/>
+        <Block Id="blk3" Bounds="262, 50, 118, 90" Edges="Stick" TraceId="image3217"/>
+        <Block Id="blk4" Bounds="262, 170, 118, 90" Edges="Stick" TraceId="image3222"/>
+        <Block Id="blk5" Bounds="102, 20, 120, 120" Edges="Stick" TraceId="image3224"/>
+        <Block Id="blk6" Bounds="-2, 170, 224, 128" Edges="Stick" TraceId="image3226"/>
+        <Block Id="blk7" Bounds="420, 0, 80, 357" Edges="Stick" TraceId="image3228"/>
+        <Block Id="blk8" Bounds="-18, 0, 80, 357" Edges="Stick" TraceId="image3230"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>
@@ -57,7 +57,7 @@
         <Image Id="dfltMask23" TextureId="txr_laz_hor" Bounds="260, 260, 40, 30" TraceId="image5076"/>
         <Image Id="dfltMask24" TextureId="txr_laz_hor" Bounds="302, 140, 40, 30" TraceId="image5094"/>
         <Image Id="dfltMask25" TextureId="txr_laz_hor" Bounds="342, 140, 40, 30" TraceId="image5096"/>
-        <Image Id="dfltMask26" TextureId="txr_laz_turn1" Bounds="262, 290, 40, 30" Rotation="180" TraceId="image5106"/>
+        <Image Id="dfltMask26" TextureId="txr_laz_turn1" Bounds="262, 290, 40, 30" Rotation="180" Stretch="true" TraceId="image5106"/>
         <Image Id="dfltMask27" TextureId="txr_laz_hor" Bounds="300, 260, 40, 30" TraceId="image5109"/>
         <Image Id="dfltMask28" TextureId="txr_laz_hor" Bounds="340, 260, 40, 30" TraceId="image5111"/>
         <Image Id="dfltMask29" TextureId="txr_laz_turn1" Bounds="380, 260, 40, 30" FlipEffects="Vertically" TraceId="image5123"/>

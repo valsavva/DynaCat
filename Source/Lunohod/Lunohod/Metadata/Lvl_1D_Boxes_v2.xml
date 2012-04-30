@@ -19,11 +19,11 @@
         <Texture Id="txr_box_old_3" Source="box_old_3" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="398, 0, 50, 320" Edges="Stick" TraceId="image4798"/>
-        <Block Id="blk2" Bounds="92, 68, 50, 256" Edges="Stick" TraceId="image4803"/>
-        <Block Id="blk3" Bounds="0, -8, 480, 50" Edges="Stick" TraceId="image4815"/>
-        <Block Id="blk4" Bounds="0, 248, 480, 72" Edges="Stick" TraceId="image4822"/>
-        <Block Id="blk5" Bounds="-49, 68, 411, 154" Edges="Stick" TraceId="image4931"/>
+        <Block Id="blk1" Bounds="400, 0, 80, 320" Edges="Stick" TraceId="image4798"/>
+        <Block Id="blk2" Bounds="80, 220, 62, 36" Edges="Stick" TraceId="image4803"/>
+        <Block Id="blk3" Bounds="0, -10, 400, 50" Edges="Stick" TraceId="image4815"/>
+        <Block Id="blk4" Bounds="80, 250, 320, 72" Edges="Stick" TraceId="image4822"/>
+        <Block Id="blk5" Bounds="0, 70, 360, 150" Edges="Stick" TraceId="image4931"/>
         <Block Id="blk6" Bounds="-50, 0, 50, 256" Edges="Stick" TraceId="image4933"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">

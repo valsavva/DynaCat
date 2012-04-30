@@ -13,17 +13,17 @@
         <Texture Id="txr_laz_turn1" Source="laz_turn1" />
         <Texture Id="txr_fish_4_me" Source="fish_4_me" />
     </Resources>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="-50, 0, 50, 64" Edges="Stick" TraceId="image4576"/>
+        <Block Id="blk2" Bounds="0, -16, 480, 50" Edges="Stick" TraceId="image4579"/>
+        <Block Id="blk3" Bounds="0, 64, 240, 98" Edges="Stick" TraceId="image4583"/>
+        <Block Id="blk4" Bounds="150, 160, 50, 82" Edges="Stick" TraceId="image4585"/>
+        <Block Id="blk5" Bounds="400, 0, 50, 294" Edges="Stick" TraceId="image4587"/>
+        <Block Id="blk6" Bounds="80, 244, 400, 50" Edges="Stick" TraceId="image4589"/>
+        <Block Id="blk7" Bounds="240, 64, 120, 150" Edges="Stick" TraceId="image4591"/>
+    </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>
-    </Layer>
-    <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="-50, 0, 50, 160" Edges="Stick" TraceId="image4576"/>
-        <Block Id="blk2" Bounds="0, -14, 480, 50" Edges="Stick" TraceId="image4579"/>
-        <Block Id="blk3" Bounds="-38, 62, 400, 50" Edges="Stick" TraceId="image4583"/>
-        <Block Id="blk4" Bounds="152, 64, 50, 230" Edges="Stick" TraceId="image4585"/>
-        <Block Id="blk5" Bounds="398, 0, 50, 294" Edges="Stick" TraceId="image4587"/>
-        <Block Id="blk6" Bounds="80, 242, 400, 50" Edges="Stick" TraceId="image4589"/>
-        <Block Id="blk7" Bounds="238, 64, 124, 152" Edges="Stick" TraceId="image4591"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_hor" Bounds="40, 34, 40, 30" TraceId="image4454"/>
@@ -44,14 +44,13 @@
         <Image Id="dfltMask17" TextureId="txr_laz_turn1" Bounds="400, 244, 40, 30" Rotation="180" FlipEffects="Horizontally" TraceId="image4522"/>
         <Image Id="dfltMask18" TextureId="txr_laz_hor" Bounds="240, 214, 40, 30" TraceId="image4524"/>
         <Image Id="dfltMask19" TextureId="txr_laz_hor" Bounds="280, 214, 40, 30" TraceId="image4528"/>
-        <Image Id="dfltMask20" TextureId="txr_laz_turn1" Bounds="240, 244, 40, 30" Rotation="180" TraceId="image4530"/>
-        <Image Id="dfltMask21" TextureId="txr_laz_vert" Bounds="200, 154, 40, 30" TraceId="image4532"/>
-        <Image Id="dfltMask22" TextureId="txr_laz_vert" Bounds="200, 184, 40, 30" TraceId="image4534"/>
-        <Image Id="dfltMask23" TextureId="txr_laz_hor" Bounds="320, 214, 40, 30" TraceId="image4536"/>
-        <Image Id="dfltMask24" TextureId="txr_laz_vert" Bounds="200, 134, 40, 30" TraceId="image4538"/>
+        <Image Id="dfltMask20" TextureId="txr_laz_turn1" Bounds="240, 244, 40, 30" Rotation="180" Stretch="true" TraceId="image4530"/>
+        <Image Id="dfltMask21" TextureId="txr_laz_vert" Bounds="200, 184, 40, 30" TraceId="image4534"/>
+        <Image Id="dfltMask22" TextureId="txr_laz_hor" Bounds="320, 214, 40, 30" TraceId="image4536"/>
+        <Image Id="dfltMask23" TextureId="txr_laz_vert" Bounds="200, 170, 40, 30" TraceId="image3042"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="70" Bounds="204, 144, 30, 15" TraceId="image4564">
+        <Food Id="fd1" Class="clsFood" Points="70" Bounds="204, 192, 30, 15" TraceId="image4564">
             <Image TextureId="txr_fish_4_me" />
         </Food>
         <Food Id="fd2" Class="clsFood" Points="70" Bounds="335, 41, 30, 15" TraceId="image4566">
@@ -63,13 +62,13 @@
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="201, 84, 37, 54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="201, 138, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="39, 37, 33, 24" TraceId="image3606"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=3 Enemy=0 Block=7 DesignImage=24 Animation=0 Teleport Animations=0 FoodPack=0 -->
+<!-- Food=3 Enemy=0 Block=7 DesignImage=23 Animation=0 Teleport Animations=0 FoodPack=0 -->
 <!-- -->
 <!-- Food Points = 210 -->
 <!-- 1% = 2.1; 45% = 94.5; 90% = 189 -->
