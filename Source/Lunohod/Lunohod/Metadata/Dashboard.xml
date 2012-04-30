@@ -140,9 +140,12 @@
         <Image TextureId="txr_health_bar_front" Bounds="300, 8, 100, 8"/>
 
 		<!-- CPS -->
-		<Text Text="=system.Round(system.GetCommandsPerSecond(), 2)"  FontId="SystemFont" Location="25, 280" Color="#FF00FF"/>
-					
-		
+        <BoolTrigger Condition="system:cpsLimitExceeded" >
+            <Text Text="*"  FontId="SystemFont" Location="25, 280" Color="#FF00FF"/>
+        </BoolTrigger>
+        <Text Text="=system.Round(system.GetCommandsPerSecond(), 2)"  FontId="SystemFont" Location="35, 280" Color="#FF00FF"/>
+
+
     </Dashboard>
 </Include>
 

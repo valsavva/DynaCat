@@ -19,14 +19,8 @@ namespace Lunohod
 		}
 		
 		public TimeSpan TimeSpan { get; private set; }
-		
-		public double EventsPerSecond
-		{
-			get
-			{
-				return 1.0 * eventTimes.Count / this.TimeSpan.TotalSeconds;
-			}
-		}
+
+        public double EventsPerSecond { get; private set; }
 		
 		public void RecordEvent()
 		{
@@ -46,6 +40,8 @@ namespace Lunohod
 		{
 			while (eventTimes.Count > 0 && (currentTime - eventTimes.Peek() > this.TimeSpan.TotalMilliseconds))
 				eventTimes.Dequeue();
+
+            this.EventsPerSecond = 1.0 * eventTimes.Count / this.TimeSpan.TotalSeconds;
 		}
 	}
 }
