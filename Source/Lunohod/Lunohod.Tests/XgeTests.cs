@@ -127,7 +127,7 @@ namespace Lunohod.Tests
         {
             GameEngine game = new GameEngine();
             game.CurrentUpdateTime = new GameTime(TimeSpan.Zero, TimeSpan.Zero);
-            game.ScreenEngines.Add(new ScreenEngine(game, ""));
+            game.ScreenEngines.Add(new ScreenEngine(game, "", null));
 
             Compiler.CompileStatements(level, block.Id + ":broke").ForEach(a => a.Call());
             Assert.AreEqual(1, game.EventQueue.Count);
