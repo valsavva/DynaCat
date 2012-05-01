@@ -78,8 +78,7 @@ namespace Lunohod
 			if (!string.IsNullOrEmpty(this.LevelInfo.ExplosionClass))
 			{
 				this.explosionClass = this.LevelObject.FindLocal(this.LevelInfo.ExplosionClass) as XClass;
-				if (this.explosionClass == null)
-					throw new InvalidOperationException(string.Format("Explosion class could not be found: '{0}'", this.LevelInfo.ExplosionClass));
+				Debug.WriteLine("*** Explosion class could not be found: '{0}'", this.LevelInfo.ExplosionClass);
 			}
 			
 			// Init waves
