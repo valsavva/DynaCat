@@ -127,7 +127,7 @@
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
         <SequenceSet Id="setWay" InProgress="true">
-            <Do Action="hero.SetTransaction()" />
+            <Do Action="hero.SetTransaction(false, true, true)" />
             <Delay Duration="3" />
             <NumAnimation Id="anm1" From="0" To="235" Target="hero.X" Duration="2.8" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3508"/>
             <NumAnimation Id="anm2" From="0" To="119" Target="hero.Y" Duration="1.42" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3486"/>

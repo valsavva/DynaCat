@@ -6,9 +6,9 @@
             <Do Action="hero:PortOut" />
             <Delay Duration="@delay" />
             <Do Action="hero.X=@outX;hero.Y=@outY;hero.Opacity=1" />
-            <Do Action="system:@heroOutDirection"/>
             <!--<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>-->
-            <Do Action="hero.EndTransaction()"/>
+            <Do Action="hero.SetTransaction(true, true, true)"/>
+            <Do Action="system:@heroOutDirection"/>
         </SequenceSet>
     </Class>
 

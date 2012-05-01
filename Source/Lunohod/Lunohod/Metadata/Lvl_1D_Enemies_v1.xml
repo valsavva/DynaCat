@@ -72,7 +72,7 @@
         <Image Id="dfltMask38" TextureId="txr_laz_vert" Bounds="222, 48, 40, 30" TraceId="image5157"/>
         <Image Id="dfltMask39" TextureId="txr_laz_turn1" Bounds="62, 20, 40, 30" FlipEffects="Horizontally" TraceId="image5169"/>
         <Image Id="dfltMask40" TextureId="txr_laz_turn1" Bounds="222, 20, 40, 30" FlipEffects="Horizontally" TraceId="image3082"/>
-        <Image Id="dfltMask41" TextureId="txr_laz_turn1" Bounds="102, 170, 40, 30" Rotation="180" TraceId="image3192"/>
+        <Image Id="dfltMask41" TextureId="txr_laz_turn1" Bounds="102, 170, 40, 30" Rotation="180" Stretch="true" TraceId="image3192"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="234, 53, 22, 23" TraceId="image3129"/>
@@ -95,13 +95,13 @@
             <Image TextureId="txr_fish_5_me" />
         </Food>
         <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="351, 24, 22, 23" TraceId="image3240"/>
-        <Block Id="blk9" Class="clsWoodenBox" Bounds="226, 112, 30, 30" Edges="Stick" TraceId="image3298">
+        <Block Id="blk9" Class="clsWoodenBox" Bounds="226, 110, 30, 30" Edges="Stick" TraceId="image3298">
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Block Id="blk10" Class="clsWoodenBox" Bounds="385, 22, 30, 30" Edges="Stick" TraceId="image3296">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk11" Class="clsWoodenBox" Bounds="194, 140, 30, 30" Edges="Stick" TraceId="image3293">
+        <Block Id="blk11" Class="clsWoodenBox" Bounds="192, 140, 30, 30" Edges="Stick" TraceId="image3293">
             <Image TextureId="txr_box_old_1" />
         </Block>
     </Layer>

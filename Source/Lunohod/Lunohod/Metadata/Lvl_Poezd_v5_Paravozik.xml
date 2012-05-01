@@ -183,7 +183,7 @@
         <BoolTrigger Condition="not blk1.Enabled" EnterAction="heroSet.Resume()" />
 
         <SequenceSet InProgress="true">
-            <Do Action="hero.SetTransaction()" />
+            <Do Action="hero.SetTransaction(false, true, true)" />
             <Delay Duration="3" />
             <Do Action="heroSet.Start()" />
             <ParallelSet>

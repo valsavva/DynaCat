@@ -21,6 +21,7 @@
         <Texture Id="txr_fish_5_me" Source="fish_5_me" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
+        <Do Action="dashboard:+NoArrows" InProgress="true"/>
         <Image Id="dfltMask1" TextureId="txr_backg_demo" Bounds="0, 0, 480, 320" TraceId="image3241"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
@@ -115,7 +116,7 @@
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
         <SequenceSet Id="setWay" InProgress="true">
-            <Do Action="hero.SetTransaction()" />
+            <Do Action="hero.SetTransaction(false, true, true)" />
             <Delay Duration="3" />
             <NumAnimation Id="anm1" From="0" To="-264" Target="hero.Y" Duration="3.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3275"/>
             <NumAnimation Id="anm2" From="0" To="60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3264"/>

@@ -22,7 +22,7 @@
             </SequenceSet>
             
    			<ParallelSet Id="this_anmAttack" RepeatCount="1">
-                <Do Action="hero.SetTransaction()"/>
+                <Do Action="hero.SetTransaction(false, true, true)"/>
                 <Do Action="this.Attack()" />
                 <RandomSet>
                     <Do Action="system:left"/>
