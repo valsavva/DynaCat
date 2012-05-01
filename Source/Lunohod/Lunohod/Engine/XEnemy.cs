@@ -26,19 +26,27 @@ namespace Lunohod.Objects
         /// <inheritdoc />
         [XmlAttribute]
         public bool IsExploding { get; set; }
+		
+		internal bool DamageSpecified;
+		
+		public override void Initialize(InitializeParameters p)
+		{
+			base.Initialize(p);
+		}
+		
         /// <summary>
         /// Makes the enemy attack hero. This will depleat hero's health by the amount specified in the <see cref="Damage"/> attribute.
         /// </summary>
 		public void Attack()
 		{
-			var hero = GameEngine.Instance.LevelEngine.Hero;
+			var hero = ((LevelEngine)GetRoot().ScreenEngine).Hero;
 			hero.InflictDamage(this.Damage);
 		}
 
         public override void ReadXml(XmlReader reader)
         {
 			this.Points = reader.ReadAttrAsFloat("Points", 0);
-            reader.ReadAttrAsFloat("Damage", ref this.Damage);
+            this.DamageSpecified = reader.ReadAttrAsFloat("Damage", ref this.Damage);
 
             base.ReadXml(reader);
         }

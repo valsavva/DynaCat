@@ -72,6 +72,12 @@ namespace Lunohod.Objects
 			{
 				((IHasPoints)dest).Points = srcHasPoints.Points;
 			}
+			
+			var srcEnemy = src as XEnemy;
+			if (srcEnemy != null && srcEnemy.DamageSpecified)
+			{
+				((XEnemy)dest).Damage = srcEnemy.Damage;
+			}
 		}
 
 		public void ReplaceParameters(XObject instance, string classParams)
