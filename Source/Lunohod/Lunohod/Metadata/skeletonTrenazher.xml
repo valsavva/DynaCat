@@ -101,7 +101,7 @@ Name="D:\Lunohod\Levels\_skeleton\skeletonTrenazher\skeletonTrenazher.svg" Bound
         
         <Group Id="grpTlpPort1" Bounds="400, 60, 80, 100" TraceId="Port1"/>
 		<SequenceSet Id="setPort1">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<NumAnimation Id="heroMove" Target="hero.X,hero.Y" From="-7777777,-7777777" To="-7777777,-7777777" Duration="0.001" RepeatCount="1" Fill="End"/>

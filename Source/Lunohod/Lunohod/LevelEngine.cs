@@ -166,9 +166,9 @@ namespace Lunohod
 
 		public void ProcessCollisions()
 		{
-			// if not moving - we don't process collisions
-            //if (this.hero.Direction == Direction.VectorStop)
-            //    return;
+			// if here is in transactional state - get out
+			if (!hero.CanCollide)
+				return;
 			
 			// find objects we collided with
 			FindCollisions();
@@ -260,14 +260,18 @@ namespace Lunohod
 			}
 			
 			e.IsHandled = true;
-				
-			switch (e.EventType)
+			
+			
+			if (hero.CanReceiveSignals)
 			{
-                case GameEventType.Up: this.hero.Direction = Direction.VectorUp; this.hero.Speed = this.hero.DefaultSpeed; break;
-                case GameEventType.Down: this.hero.Direction = Direction.VectorDown; this.hero.Speed = this.hero.DefaultSpeed; break;
-                case GameEventType.Left: this.hero.Direction = Direction.VectorLeft; this.hero.Speed = this.hero.DefaultSpeed; break;
-                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; this.hero.Speed = this.hero.DefaultSpeed; break;
-	            case GameEventType.Explosion: PlantBomb(); break;
+				switch (e.EventType)
+				{
+	                case GameEventType.Up: this.hero.Direction = Direction.VectorUp; this.hero.Speed = this.hero.DefaultSpeed; break;
+	                case GameEventType.Down: this.hero.Direction = Direction.VectorDown; this.hero.Speed = this.hero.DefaultSpeed; break;
+	                case GameEventType.Left: this.hero.Direction = Direction.VectorLeft; this.hero.Speed = this.hero.DefaultSpeed; break;
+	                case GameEventType.Right: this.hero.Direction = Direction.VectorRight; this.hero.Speed = this.hero.DefaultSpeed; break;
+		            case GameEventType.Explosion: PlantBomb(); break;
+				}
 			}
 
             base.ProcessEvent(gameTime, e);

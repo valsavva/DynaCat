@@ -31,7 +31,7 @@
         		<Sound Id="sndPortIn" FileId="skeletonFX_port_in" Volume="0.5" Pitch="0" Pan="0" />
         		<Sound Id="sndPortOut" FileId="skeletonFX_port_out" Volume="0.5" Pitch="0" Pan="0" />
 				<SequenceSet Id="this_set">
-					<Do Action="hero.StartTransaction()"/>	
+					<Do Action="hero.SetTransaction()"/>	
 					<NumAnimation Target="hero.X,hero.Y" From="-7777777,-7777777" To="-7777777,-7777777" Duration="0.01" RepeatCount="1" Fill="End" />
 					<Do Action="sndPortIn.Start()"/>				
 					<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>

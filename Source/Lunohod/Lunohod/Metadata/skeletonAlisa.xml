@@ -105,7 +105,7 @@
 
 		<Group Id="tlpDimmer" Bounds="395, 40, 5, 50" TraceId="image3439"/>
 		<SequenceSet Id="setDimmer">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<ParallelSet InProgress="true" RepeatCount="1" >
 				<Do Action="sndPortIn.Start()"/>
 				<NumAnimation Target="hero.Width,hero.Height" From="50,40" To="20,16" Duration="3" RepeatCount="1" Fill="End"/>
@@ -119,7 +119,7 @@
 		
 		<Group Id="tlpCresser" Bounds="130, 180, 20, 5" TraceId="image3543"/>
 		<SequenceSet Id="setCresser">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<ParallelSet InProgress="true" RepeatCount="1" >
 				<Do Action="sndPortOut.Start()"/>
 				<NumAnimation Target="hero.X,hero.Y" From="130,186" To="130,202" Duration="3" IsDelta="false" RepeatCount="1" Fill="End" />

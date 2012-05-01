@@ -46,7 +46,7 @@
             <BoolTrigger Condition="this:Enter" EnterAction="setHeroEnter.Start()" Group="sttHeroStates">
                 <Image TextureId="txrHeroExit" Bounds="-4, -10, 40, 33"/>
                 <SequenceSet Id="setHeroEnter">
-                    <Do Action="hero.StartTransaction();this:-Eating" />
+                    <Do Action="hero.SetTransaction();this:-Eating" />
                     <Delay Duration="0.3" />
                     <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
                     <!--<Delay Duration="1.5" />-->
@@ -97,7 +97,7 @@
 			<BoolTrigger Condition="this.IsDead" EnterAction="setHeroDying.Start()" StayTriggered="true" Group="sttHeroStates">
 				<Image Id="imgHeroDying" TextureId="txrHeroDying" Bounds="-4, -10, 40, 33"/>
 				<SequenceSet Id="setHeroDying">
-					<Do Action="this.StartTransaction()"/>
+					<Do Action="this.SetTransaction()"/>
 					<ParallelSet>
 						<Sound FileId="sndHeroDying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 						<NumAnimation Duration="0.1" Target="imgHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>

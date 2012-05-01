@@ -301,7 +301,7 @@
 			<Sound Id="this_RoketStart" FileId="skeletonFX_roket_start" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 			<SequenceSet Id="this_setExit" InProgress="false">
 				<Do Action="this_RoketStart.Start()"/>
-				<Do Action="hero.StartTransaction()"/>
+				<Do Action="hero.SetTransaction()"/>
 				<Do Action="hero.SetDirection(0,0)"/>
 				<NumAnimation Target="this.Opacity" Duration="0.2" Autoreverse="false" From="1" To="0" InProgress="true" RepeatCount="10"/>
 				<NumAnimation Target="this.Opacity" Duration="0.2" Autoreverse="false" From="1" To="1" InProgress="true" RepeatCount="1"/>

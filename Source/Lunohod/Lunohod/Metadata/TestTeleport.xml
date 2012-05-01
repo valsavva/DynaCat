@@ -35,7 +35,7 @@
 		<!-- По умолчанию сэты не запущены - это будет сделано тригером. -->
 		<SequenceSet Id="setTeleportClassic">
 			<!-- У нас есть транзакции теперь. Когда транзакция начинается, система перестает двигать героя. -->
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<!-- Герой исчезает -->
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="2" RepeatCount="1" Fill="End"/>
 			<!-- Герой перемещается -->
@@ -61,7 +61,7 @@
 			<!-- По умолчанию сэты не запущены - это будет сделано тригером. -->
 			<SequenceSet>
 				<!-- У нас есть транзакции теперь. Когда транзакция начинается, система перестает двигать героя. -->
-				<Do Action="hero.StartTransaction()"/>
+				<Do Action="hero.SetTransaction()"/>
 				<!-- Герой бледнеет -->
 				<NumAnimation Target="hero.Opacity" From="1" To="0.3" Duration="0.7" RepeatCount="1" Fill="End"/>
 				<!-- Герой перемещается вращаясь как бешеный -->

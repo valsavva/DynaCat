@@ -61,7 +61,7 @@
         <Group Id="grpTeleport1" Bounds="222, 4, 10, 50" TraceId="In1"/>
         <Group Id="grpTeleport1" Bounds="248, 168, 10, 50" TraceId="Out1"/>
 		<SequenceSet Id="setTeleport1" RepeatCount="1">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<Do Action="sndPortIn.Start()"/>
 			<Do Action="imgAnmTlp1.Enable()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
@@ -79,7 +79,7 @@
         <Group Id="grpTeleport2" Bounds="466, 168, 10, 50" TraceId="In2"/>
         <Group Id="grpTeleport2" Bounds="466, 4, 10, 50" TraceId="Out2"/>
 		<SequenceSet Id="setTeleport2">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<!--<Delay Duration="1" />-->
@@ -97,7 +97,7 @@
         <Group Id="grpTeleport3" Bounds="254, 4, 10, 50" TraceId="In3"/>
         <Group Id="grpTeleport3" Bounds="4, 168, 50, 10" TraceId="Out3"/>
 		<SequenceSet Id="setTeleport3">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp3.Enable()"/>
@@ -116,7 +116,7 @@
         <Group Id="grpTeleport4" Bounds="4, 306, 50, 10" TraceId="In4"/>
         <Group Id="grpTeleport4" Bounds="222, 102, 10, 50" TraceId="Out4"/>
 		<SequenceSet Id="setTeleport4">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<Do Action="imgAnmTlp4.Enable()"/>

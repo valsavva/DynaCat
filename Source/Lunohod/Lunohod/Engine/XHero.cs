@@ -75,14 +75,6 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public bool IsDead { get { return this.Health <= 0; } }
 		/// <summary>
-		/// Gets a value indicating whether this <see cref="Lunohod.Objects.XHero"/> is in transaction.
-		/// </summary>
-		/// <value>
-		/// <c>true</c> if in transaction; otherwise, <c>false</c>.
-		/// </value>
-        [XmlIgnore]
-		public bool InTransaction { get; private set; }
-		/// <summary>
 		/// Gets or sets the current bomb count.
 		/// </summary>
 		/// <value>
@@ -100,10 +92,25 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public double Time;
 		
+		[XmlAttribute]
+		public bool CanMove;
+		[XmlAttribute]
+		public bool CanCollide;
+		[XmlAttribute]
+		public bool CanReceiveSignals;
+		
+		
         internal double DistanceToTower
         {
             get { return distanceToTower; }
         }
+		
+		public XHero()
+		{
+			this.CanMove = true;
+			this.CanCollide = true;
+			this.CanReceiveSignals = true;
+		}
 		
 		public override void Initialize(InitializeParameters p)
 		{
@@ -130,7 +137,7 @@ namespace Lunohod.Objects
 			this.Time += p.GameTime.ElapsedGameTime.TotalSeconds;
 			
 			// calculate the new location of the hero
-			if (!this.InTransaction)
+			if (this.CanMove)
 			{
                 if (this.Direction != Lunohod.Direction.VectorStop)
                     this.Speed = this.Speed * (1.0f - this.Deceleration * p.GameTime.ElapsedGameTime.TotalSeconds);
@@ -148,16 +155,20 @@ namespace Lunohod.Objects
         /// <summary>
         /// Puts hero into the "transactional" state, when he does not respond to the player commands.
         /// </summary>
-		public void StartTransaction()
+		public void SetTransaction(bool canMove = false, bool canCollide = true, bool canReceiveSignals = true)
 		{
-			this.InTransaction = true;
+			this.CanMove = canMove;
+			this.CanCollide = canCollide;
+			this.CanReceiveSignals = canReceiveSignals;
 		}
         /// <summary>
         /// Ends transactional state.
         /// </summary>
 		public void EndTransaction()
 		{
-			this.InTransaction = false;
+			this.CanMove = true;
+			this.CanCollide = true;
+			this.CanReceiveSignals = true;
 		}
 		/// <summary>
 		/// Sets hero's direction.
@@ -194,7 +205,12 @@ namespace Lunohod.Objects
 		{
             switch (methodName)
             {
-                case "StartTransaction": method = (ps) => StartTransaction(); break;
+                case "SetTransaction": method = (ps) => {
+					if (ps == null)
+						SetTransaction();
+					else
+						SetTransaction(ps.Count > 0 ? ps[0].GetBoolValue() : false, ps.Count > 1 ? ps[1].GetBoolValue() : true, ps.Count > 2 ? ps[2].GetBoolValue() : true); 
+				}; break;
                 case "EndTransaction": method = (ps) => EndTransaction(); break;
                 case "SetDirection": method = (ps) => SetDirection(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
 				case "AddScore": method = (ps) => AddScore(ps[0].GetNumValue()); break;
@@ -208,7 +224,10 @@ namespace Lunohod.Objects
 			switch (propertyName)
 			{
                 case ("IsDead"): getter = () => IsDead; setter = null; break;
-				case ("Enabled") : getter = () => this.Enabled; setter = (v) => this.Enabled = v; break;
+				case ("Enabled") : getter = () => Enabled; setter = (v) => Enabled = v; break;
+				case ("CanMove") : getter = () => CanMove; setter = (v) => CanMove = v; break;
+				case ("CanCollide") : getter = () => CanCollide; setter = (v) => CanCollide = v; break;
+				case ("CanReceiveSignals") : getter = () => CanReceiveSignals; setter = (v) => CanReceiveSignals = v; break;
 				default:
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}

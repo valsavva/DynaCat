@@ -40,7 +40,7 @@
 			<BoolTrigger Condition="this.IsDead" EnterAction="this_setDying.Start()" StayTriggered="true" Group="heroStates">
 				<Image Id="this_img1" TextureId="cursor_50x50_light_blue"/>
 				<SequenceSet Id="this_setDying">
-					<Do Action="hero.StartTransaction()"/>
+					<Do Action="hero.SetTransaction()"/>
 					<ParallelSet>
 						<Sound FileId="skeletonFX_crash_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 						<NumAnimation Duration="0.1" Target="this_img1.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>

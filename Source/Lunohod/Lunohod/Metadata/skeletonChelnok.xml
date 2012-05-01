@@ -72,7 +72,7 @@
 
 				
 		<SequenceSet Id="setTeleport1">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<Do Action="sndPortIn.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.X,hero.Y" From="281,135" To="280,135" Duration="0.001" RepeatCount="1" Fill="End"/>
@@ -84,7 +84,7 @@
 		<IntersectionTrigger ObjectId1="hero" ObjectId2="grpTeleport1" EnterAction="setTeleport1.Start()"/>		
 
 		<SequenceSet Id="setTeleport2">
-			<Do Action="hero.StartTransaction()"/>
+			<Do Action="hero.SetTransaction()"/>
 			<Do Action="sndPortOut.Start()"/>
 			<NumAnimation Target="hero.Opacity" From="1" To="0" Duration="0.2" RepeatCount="1" Fill="End"/>
 			<NumAnimation Target="hero.X,hero.Y" From="159,135" To="150,135" Duration="0.001" RepeatCount="1" Fill="End"/>
