@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_1D_Zamanuha.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Zamanuha\Lvl_1D_Zamanuha.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1" inkscape:cx="313.1998" inkscape:cy="176.0512" inkscape:document-units="px" inkscape:current-layer="layer2" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4522042" inkscape:cx="243.74863" inkscape:cy="173.49319" inkscape:document-units="px" inkscape:current-layer="layer4" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="true" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="240,160" id="guide3024" />
@@ -18,15 +18,17 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
     <g inkscape:groupmode="layer" id="layer4" inkscape:label="blocks" style="display:inline" sodipodi:insensitive="true">
         <image y="0" x="-50" id="image4576" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" height="160" width="50" />
-        <image width="440" height="50" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" id="image4579" x="0" y="30" />
-        <image y="1.208406e-014" x="440" id="image4587" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" height="160" width="50" />
-        <image y="110" x="-3.5527137e-015" id="image4589" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" height="50" width="440" />
+        <image width="200" height="50" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" id="image4579" x="0" y="10" />
+        <image y="1.208406e-014" x="360" id="image4587" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" height="160" width="50" />
+        <image y="90" x="0" id="image3034" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" height="166" width="200" />
+        <image width="200" height="166" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" id="image3036" x="200" y="160" />
+        <image y="-126" x="200" id="image3039" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" height="166" width="200" />
     </g>
     <g inkscape:groupmode="layer" id="layer1" inkscape:label="background" style="display:inline" sodipodi:insensitive="true">
         <image y="0" x="0" id="image4550" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/brickWall.png" height="320" width="480" />
@@ -56,7 +58,7 @@
         <image width="40" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_hor.png" id="image3103" x="0" y="60" />
         <image width="40" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_hor.png" id="image3109" x="160" y="60" />
     </g>
-    <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline">
+    <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline" sodipodi:insensitive="true">
         <image y="136" x="314.94482" id="image3111" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_5_me.png" height="17" width="26" />
         <image width="26" height="17" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_5_me.png" id="image3065" x="332.94482" y="120" />
     </g>
@@ -65,7 +67,7 @@
         <image y="104" x="203" id="image3049" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Exit/refrigerator.png" height="54" width="37" />
         <image y="63" x="19" id="image3606" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="24" width="33" />
     </g>
-    <g inkscape:groupmode="layer" id="layer9" inkscape:label="dash" style="opacity:0.29861109;display:inline" sodipodi:insensitive="true">
+    <g inkscape:groupmode="layer" id="layer9" inkscape:label="dash" style="opacity:0.29861109;display:none" sodipodi:insensitive="true">
         <image y="0" x="0" id="image3016" xlink:href="file:///D:/Lunohod/Art/dashboard/screenTapAreas_dash_M_btnSize52.png" height="320" width="480" />
     </g>
     <g inkscape:groupmode="layer" id="layer6" inkscape:label="upmask" sodipodi:insensitive="true" style="display:none">
