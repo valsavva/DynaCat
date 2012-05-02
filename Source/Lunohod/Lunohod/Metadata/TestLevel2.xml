@@ -24,7 +24,12 @@
         <Image Id="image3042" TextureId="phon" Bounds="0, 0, 480, 320" Stretch="true" Opacity="1" />
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Tower Bounds="0, 0, 30, 30" SignalSpeed="200" SvgId="#id" />
+		<Hero Id="hero" 
+			  Bounds="50,250,40,37" Speed="50" Direction="0,0">
+			<Image Id="imageHero" TextureId="cat" />
+		</Hero>
+
+		<Tower Bounds="0, 0, 30, 30" SignalSpeed="200" SvgId="#id" />
         <Hero Bounds="15, 20, 40, 37" Speed="60" Move="None" SvgId="image3053">
             <Image Id="imageHero" TextureId="cat" />
         </Hero>
@@ -71,12 +76,6 @@
         <Block Id="image3030" Bounds="480, 0, 20, 320" Edges="Bounce" />
         <Block Id="image3033" Bounds="-20, 0, 20, 320" Edges="Bounce" />
         <Block Id="image3035" Bounds="-20, 320, 520, 20" Edges="Bounce" />
-        <Block Id="image3047" Bounds="411, 78, 40, 10" Edges="Bounce">
-            <Teleport Align="Bottom" Id="port1" />
-        </Block>
-        <Block Id="image3073" Bounds="88, 184, 40, 10" Edges="Bounce">
-            <Teleport Align="Top" Id="port1" />
-        </Block>
         <Image Id="image3097" TextureId="crack" Bounds="292, 270, 71, 17" Stretch="true" Opacity="1" />
         <Image Id="image3863" TextureId="demo2" Bounds="413, 38, 65, 50" Stretch="true" Opacity="1" />
         <Image Id="image3874" TextureId="demo1" Bounds="56, 183, 70, 43" Stretch="true" Opacity="1" />

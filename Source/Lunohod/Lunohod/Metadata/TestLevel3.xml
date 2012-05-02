@@ -17,31 +17,15 @@
 			<Image Id="imageHero" TextureId="cat" />
 		</Hero>
 	
-		<Sprite Id="explosionSpriteInstance" TextureId="explosionSprite" Bounds="0,250,67,67" FrameBounds="0,0,67,67" FrameCount="12">
-			<NumAnimation From="0" To="11" Duration="3" Autoreverse="false" Target="CurrentFrame" />
-		</Sprite>
-		
-		<Group Id="boxImage1" Bounds="125,75,50,50" Edges="None">
-			<Image TextureId="blank"/>
-		</Group>
+		<Image Id="imageCat" TextureId="cat" Bounds="20,20,40,37" Origin="20,20" Rotation="0" Opacity="1">
+			<NumAnimation From="100" To="400" Duration="4" Autoreverse="false" Smoothing="Smooth" Target="X" InProgress="true"/>
+		</Image>
 
-		<Block Id="boxImage2" Bounds="225,75,50,50" Edges="Bounce">
-			<Image TextureId="chargers"/>
-		</Block>
+		<Image Id="imageCat" TextureId="cat" Bounds="20,60,40,37" Origin="20,20" Rotation="0" Opacity="1">
+			<NumAnimation From="140" To="440" Duration="4" Autoreverse="false" Smoothing="Smooth" Target="X" InProgress="true"/>
+		</Image>
 
-		<Block Id="boxImage3" Bounds="355,75,50,50" Edges="Stick">
-			<Image TextureId="chargers"/>
-		</Block>
-
-		<Group Id="imageB" Bounds="250,250,50,50" Edges="None">
-			<Image TextureId="chargers" Bounds="25,25,50,50" Origin="25,25" Rotation="0" Opacity="1">
-				<NumAnimation Target="Rotation" From="0" To="360" Duration="2" InProgress="false">
-					<DistanceTrigger ObjectId1="imageB" ObjectId2="hero" Compare="L" Value="100" EnterAction="Resume()" ExitAction="Pause()"/>
-				</NumAnimation>
-			</Image>
-		</Group>
+		<!--<Include File="Dashboard.xml" />-->
 	</Layer>
-
-	<Include File="Dashboard.xml" />	
 
 </Level>
