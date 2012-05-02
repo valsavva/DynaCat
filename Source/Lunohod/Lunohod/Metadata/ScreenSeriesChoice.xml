@@ -4,7 +4,7 @@
 	<Class Id="clsSeriesButton">
 		<Group>
 			<TapArea Action="system.StartSeries(@seriesNum)" />
-			<Text Text="=system.GetSeriesName(@seriesNum)" FontId="fntSystem" />
+			<Text Text="=system.GetSeriesName(@seriesNum)" Color="#333333" FontId="fntSystem" />
 		</Group>
 	</Class>
 

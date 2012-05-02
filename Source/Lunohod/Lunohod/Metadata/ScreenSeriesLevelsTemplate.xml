@@ -23,7 +23,7 @@
 	                <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
 	                <Do Action="system.StartSeriesLevel(@buttonSeriesNum,@levelNum)"/>
 	            </SequenceSet>
-				<Text Id="this_text" FontId="fntSystem" Origin="50,10" Location="50,10" Text="=@this_levelName" Color="#000000"/>
+				<Text Id="this_text" FontId="fntSystem" Color="#003366" Origin="50,10" Location="50,10" Text="=@this_levelName" />
 				<RandomSet RepeatCount="0" InProgress="true">
 					<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
 						<KeyFrame Time="0" Value="0"/>
