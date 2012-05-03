@@ -69,6 +69,9 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public XAnimationFillBehavior Fill;
 		
+		public bool EnableTrace;
+		private List<Tuple<double, double>> trace;
+		
 		private double InternalDuration
 		{
 			get { return lastFrame.CurrentTime; }
@@ -76,6 +79,9 @@ namespace Lunohod.Objects
 		
         public override void Initialize(InitializeParameters p)
         {
+			if (EnableTrace)
+				this.trace = new List<Tuple<double, double>>(2048);
+			
             if (!string.IsNullOrEmpty(this.From))
             {
                 // Use the From/To properties
@@ -147,7 +153,7 @@ namespace Lunohod.Objects
 
 				UpdateAnimation();
 			}
-
+			
 			base.Stop();
         }
 
@@ -193,6 +199,9 @@ namespace Lunohod.Objects
 			this.UpdateChildren(p);
 
 			this.UpdateAnimation();
+			
+			if (this.EnableTrace && this.trace.Count < this.trace.Capacity)
+				this.trace.Add(new Tuple<double, double>(p.GameTime.ElapsedGameTime.TotalMilliseconds,targets[0].GetValue()));
         }
 		internal override void ReplaceParameter(string par, string val)
 		{
@@ -207,7 +216,8 @@ namespace Lunohod.Objects
 			
 			base.ReplaceParameter(par, val);
 		}
-        public override void ReadXml(System.Xml.XmlReader reader)
+
+		public override void ReadXml(System.Xml.XmlReader reader)
         {
             this.Target = reader["Target"];
             this.From = reader["From"];
@@ -217,9 +227,30 @@ namespace Lunohod.Objects
             reader.ReadAttrAsEnum<CurveTangent>("Smoothing", ref this.Smoothing);
             this.Autoreverse = reader.ReadAttrAsBoolean("Autoreverse");
             reader.ReadAttrAsEnum<XAnimationFillBehavior>("Fill", ref this.Fill);
-
+            reader.ReadAttrAsBoolean("EnableTrace", ref this.EnableTrace);
+			
             base.ReadXml(reader);
         }
+		
+		public void PrintTrace()
+		{
+			double lastValue = 0;
+			foreach(var item in this.trace)
+			{
+				Console.WriteLine("time: {0, 6} value: {1, 6} delta: {2, 6}", item.Item1, item.Item2, item.Item2 - lastValue);
+				lastValue = item.Item2;
+			}
+		}
+		
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+				case "PrintTrace": method = (ps) => PrintTrace(); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
     }
 }
 
