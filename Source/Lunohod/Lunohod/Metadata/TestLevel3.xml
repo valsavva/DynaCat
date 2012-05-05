@@ -18,7 +18,8 @@
 		</Hero>
 	
 		<Image Id="imageCat" TextureId="cat" Bounds="20,20,40,37" Origin="20,20" Rotation="0" Opacity="1">
-			<NumAnimation From="100" To="400" Duration="4" Autoreverse="false" Smoothing="Smooth" Target="X" InProgress="true"/>
+			<NumAnimation Id="anm1" From="100" To="400" Duration="4" RepeatCount="1" Autoreverse="false" Smoothing="Smooth" Target="X" InProgress="true" EnableTrace="true" />
+			<BoolTrigger Condition="anm1.InProgress" ExitAction="anm1.PrintTrace();anm1.Disable();" />
 		</Image>
 
 		<Image Id="imageCat" TextureId="cat" Bounds="20,60,40,37" Origin="20,20" Rotation="0" Opacity="1">
