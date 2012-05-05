@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.6.04 -->
+<!-- source: D:\Lunohod\Levels\Lvl_1D_Intro_v7\Lvl_1D_Intro_v7.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Intro_v7" Bounds="0, 0, 480, 320">
+    <Include File="ClassWoodenBox.xml" />
+    <Include File="ClassFood.xml" />
+    <Include File="ClassTower.xml" />
+    <Include File="ClassExit.xml" />
+    <Include File="ClassHero.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_brickWall" Source="brickWall" />
+        <Texture Id="txr_laz_hor" Source="laz_hor" />
+        <Texture Id="txr_box_old_3" Source="box_old_3" />
+        <Texture Id="txr_box_old_1" Source="box_old_1" />
+        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
+        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
+    </Resources>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="-50, 0, 50, 160" Edges="Stick" TraceId="image4576"/>
+        <Block Id="blk2" Bounds="0, 30, 440, 50" Edges="Stick" TraceId="image4579"/>
+        <Block Id="blk3" Bounds="440, 0, 50, 160" Edges="Stick" TraceId="image4587"/>
+        <Block Id="blk4" Bounds="0, 110, 440, 50" Edges="Stick" TraceId="image4589"/>
+    </Layer>
+    <Layer Id="background" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>
+    </Layer>
+    <Layer Id="laz" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_laz_hor" Bounds="40, 80, 40, 30" TraceId="image4454"/>
+        <Image Id="dfltMask3" TextureId="txr_laz_hor" Bounds="0, 80, 40, 30" TraceId="image4479"/>
+        <Image Id="dfltMask4" TextureId="txr_laz_hor" Bounds="120, 80, 40, 30" TraceId="image4481"/>
+        <Image Id="dfltMask5" TextureId="txr_laz_hor" Bounds="80, 80, 40, 30" TraceId="image4483"/>
+        <Image Id="dfltMask6" TextureId="txr_laz_hor" Bounds="200, 80, 40, 30" TraceId="image4485"/>
+        <Image Id="dfltMask7" TextureId="txr_laz_hor" Bounds="160, 80, 40, 30" TraceId="image4487"/>
+        <Image Id="dfltMask8" TextureId="txr_laz_hor" Bounds="280, 80, 40, 30" TraceId="image4489"/>
+        <Image Id="dfltMask9" TextureId="txr_laz_hor" Bounds="240, 80, 40, 30" TraceId="image4491"/>
+        <Image Id="dfltMask10" TextureId="txr_laz_hor" Bounds="320, 80, 40, 30" TraceId="image4495"/>
+        <Image Id="dfltMask11" TextureId="txr_laz_hor" Bounds="360, 80, 40, 30" TraceId="image3040"/>
+        <Image Id="dfltMask12" TextureId="txr_laz_hor" Bounds="400, 80, 40, 30" TraceId="image3042"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Block Id="blk5" Class="clsWoodenBox" Bounds="289, 79, 30, 30" Edges="Stick" TraceId="image3102">
+            <Image TextureId="txr_box_old_3" />
+        </Block>
+        <Block Id="blk6" Class="clsWoodenBox" Bounds="257, 79, 30, 30" Edges="Stick" TraceId="image3024">
+            <Image TextureId="txr_box_old_1" />
+        </Block>
+        <Block Id="blk7" Class="clsWoodenBox" Bounds="64, 80, 30, 30" Edges="Stick" TraceId="image3026">
+            <Image TextureId="txr_box_old_1" />
+        </Block>
+        <Block Id="blk8" Class="clsWoodenBox" Bounds="96, 80, 30, 30" Edges="Stick" TraceId="image3028">
+            <Image TextureId="txr_box_old_3" />
+        </Block>
+        <Food Id="fd1" Class="clsFood" Points="80" Bounds="166, 87, 27, 15" TraceId="image3040-1">
+            <Image TextureId="txr_fish_3_me" />
+        </Food>
+        <Food Id="fd2" Class="clsFood" Points="90" Bounds="347, 86, 28, 17" TraceId="image3051">
+            <Image TextureId="txr_fish_6_me" />
+        </Food>
+    </Layer>
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Group Id="exit" Class="clsExit" Bounds="421, 60, 37, 54" TraceId="image3049" />
+        <Hero Id="hero" Class="clsHero" Bounds="19, 83, 33, 24" TraceId="image3606"/>
+    </Layer>
+    <Include File="ClassExplosion.xml" />
+    <Include File="Dashboard.xml" />
+</Level>
+<!-- Food=2 Enemy=0 Block=8 DesignImage=12 Animation=0 Teleport Animations=0 FoodPack=0 -->
+<!-- -->
+<!-- Food Points = 170 -->
+<!-- 1% = 1.7; 45% = 76.5; 90% = 153 -->
+<!-- minPointsFood = 80 (47.1%) -->

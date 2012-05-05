@@ -31,27 +31,39 @@
 	        <LevelInfo Id="Lvl_Tutorial_04" File="Lvl_Tutorial_04.xml" />
 		</LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
+            <LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v4.xml" BombCount="0" TimeBonusThreshold="20"/>
+            <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" BombCount="0" TimeBonusThreshold="11"/>
+            <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="16"/>
+            <LevelInfo Id="Lvl_1D_Intro_v7" File="Lvl_1D_Intro_v7.xml" TimeBonusThreshold="18"/>
+            <LevelInfo Id="Lvl_1D_Intro_v8" File="Lvl_1D_Intro_v8.xml" TimeBonusThreshold="16"/>
             <LevelInfo Id="Lvl_1D_Intro" File="Lvl_1D_Intro.xml" BombCount="0" TimeBonusThreshold="25"/>
             <LevelInfo Id="Lvl_1D_Intro_v2" File="Lvl_1D_Intro_v2.xml" BombCount="0" TimeBonusThreshold="23"/>
             <LevelInfo Id="Lvl_1D_Intro_v3" File="Lvl_1D_Intro_v3.xml" BombCount="0" TimeBonusThreshold="26.5"/>
             <LevelInfo Id="Lvl_1D_Boxes_v2" File="Lvl_1D_Boxes_v2.xml" TimeBonusThreshold="30"/>
             <LevelInfo Id="Lvl_1D_Boxes" File="Lvl_1D_Boxes.xml" TimeBonusThreshold="33"/>
             <LevelInfo Id="Lvl_1D_Boxes_v3_behindTheWall" File="Lvl_1D_Boxes_v3_behindTheWall.xml" TimeBonusThreshold="36"/>
+            <LevelInfo Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" TimeBonusThreshold="40"/>
+            <LevelInfo Id="Lvl_1D_Middle_v2" File="Lvl_1D_Middle_v2.xml" TimeBonusThreshold="40"/>
+            <LevelInfo Id="Lvl_1D_Middle_v3" File="Lvl_1D_Middle_v3.xml" TimeBonusThreshold="40"/>
             <LevelInfo Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" TimeBonusThreshold="38"/>
             <LevelInfo Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" TimeBonusThreshold="38"/>
             <LevelInfo Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" TimeBonusThreshold="32"/>
+            <LevelInfo Id="Lvl_1D_Zamanuha" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
+            <LevelInfo Id="Lvl_1D_Zamanuha_v2" File="Lvl_1D_Zamanuha_v2.xml" TimeBonusThreshold="18"/>
+            <LevelInfo Id="Lvl_1D_Zamanuha_v3" File="Lvl_1D_Zamanuha_v3.xml" TimeBonusThreshold="15"/>
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Series 3 Poezd -----" File="ScreenSeries3.xml">
-            <LevelInfo Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" TimeBonusThreshold="32.7"/>
-            <LevelInfo Id="Lvl_Poezd_v4_Perekrestok" File="Lvl_Poezd_v4_Perekrestok.xml" TimeBonusThreshold="24.4"/>
-            <LevelInfo Id="Lvl_Poezd_v3_Spiral" File="Lvl_Poezd_v3_Spiral.xml" TimeBonusThreshold="31"/>
-            <LevelInfo Id="Lvl_Poezd_v10_Gorki" File="Lvl_Poezd_v10_Gorki.xml" TimeBonusThreshold="34"/>
-            <LevelInfo Id="Lvl_Poezd_v6_Logika_Zatorov" File="Lvl_Poezd_v6_Logika_Zatorov.xml" TimeBonusThreshold="31.4"/>
-            <LevelInfo Id="Lvl_Poezd" File="Lvl_Poezd.xml" TimeBonusThreshold="37.3"/>
-            <LevelInfo Id="Lvl_Poezd_v9_Logika_Zatorov_v2" File="Lvl_Poezd_v9_Logika_Zatorov_v2.xml" TimeBonusThreshold="40.2"/>
-            <LevelInfo Id="Lvl_Poezd_v5_Paravozik" File="Lvl_Poezd_v5_Paravozik.xml" TimeBonusThreshold="34.2"/>
-            <LevelInfo Id="Lvl_Poezd_v7_Razvyazka" File="Lvl_Poezd_v7_Razvyazka.xml" TimeBonusThreshold="39.3"/>
-            <LevelInfo Id="Lvl_Poezd_v8_Zmeyka" File="Lvl_Poezd_v8_Zmeyka.xml" TimeBonusThreshold="39.6"/>
+            <LevelInfo Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" TimeBonusThreshold="33.7"/>
+            <LevelInfo Id="Lvl_Poezd_v4_Perekrestok" File="Lvl_Poezd_v4_Perekrestok.xml" TimeBonusThreshold="25.4"/>
+            <LevelInfo Id="Lvl_Poezd_v3_Spiral" File="Lvl_Poezd_v3_Spiral.xml" TimeBonusThreshold="32"/>
+            <LevelInfo Id="Lvl_Poezd_v10_Gorki" File="Lvl_Poezd_v10_Gorki.xml" TimeBonusThreshold="35"/>
+            <LevelInfo Id="Lvl_Poezd_v6_Logika_Zatorov" File="Lvl_Poezd_v6_Logika_Zatorov.xml" TimeBonusThreshold="32.4"/>
+            <LevelInfo Id="Lvl_Poezd" File="Lvl_Poezd.xml" TimeBonusThreshold="38.3"/>
+            <LevelInfo Id="Lvl_Poezd_v11_Gorki_v2" File="Lvl_Poezd_v11_Gorki_v2.xml" TimeBonusThreshold="33"/>
+            <LevelInfo Id="Lvl_Poezd_v9_Logika_Zatorov_v2" File="Lvl_Poezd_v9_Logika_Zatorov_v2.xml" TimeBonusThreshold="41.2"/>
+            <LevelInfo Id="Lvl_Poezd_v5_Paravozik" File="Lvl_Poezd_v5_Paravozik.xml" TimeBonusThreshold="35.2"/>
+            <LevelInfo Id="Lvl_Poezd_v7_Razvyazka" File="Lvl_Poezd_v7_Razvyazka.xml" TimeBonusThreshold="40.3"/>
+            <LevelInfo Id="Lvl_Poezd_v8_Zmeyka" File="Lvl_Poezd_v8_Zmeyka.xml" TimeBonusThreshold="40.6"/>
         </LevelSeries>
         <LevelSeries Id="series4" Name="----- Series 4: Ceh -----" File="ScreenSeries4.xml">
             <LevelInfo Id="Lvl_Ceh_v1" File="Lvl_Ceh_v1.xml" BombCount="0" />
