@@ -121,10 +121,19 @@ namespace Lunohod
 			PerfMon.Stop("ScreenInitialize");
 			Console.WriteLine(PerfMon.Dump());
 		}
+
+		//DateTime gt = DateTime.UtcNow;
+		//DateTime t = DateTime.UtcNow;
 		
 		public virtual void Update(GameTime gameTime)
 		{
+			//TimeSpan etg = DateTime.UtcNow - gt;
+			//TimeSpan et = DateTime.UtcNow - t;
+			//t = DateTime.UtcNow;
+			//updateParameters.GameTime = new GameTime(etg, et, gameTime.IsRunningSlowly);
+			
 			updateParameters.GameTime = gameTime;
+			
 			this.RootComponent.Update(updateParameters);
 
 			if (this.CurrentEvents.Count > 0)
