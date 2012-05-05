@@ -237,7 +237,7 @@ namespace Lunohod.Objects
 			double lastValue = 0;
 			foreach(var item in this.trace)
 			{
-				Console.WriteLine("time: {0, 6} value: {1, 6} delta: {2, 6}", item.Item1, item.Item2, item.Item2 - lastValue);
+				Console.WriteLine("time: {0, 6} value: {1, 6} rndValue: {2, 6} delta: {3, 6}", item.Item1, item.Item2, Math.Round(item.Item2), item.Item2 - lastValue);
 				lastValue = item.Item2;
 			}
 		}
