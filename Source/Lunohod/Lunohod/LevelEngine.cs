@@ -229,38 +229,77 @@ namespace Lunohod
 		
 		public override void ProcessEvent(GameTime gameTime, GameEvent e)
 		{
-			bool signalReachedHero = true;
-			
 			if (!e.IsInstant)
 			{
-				bool firstProcess = !waves.ContainsKey(e);
-				
-				if (firstProcess)
+				RadioWave wave = null;
+
+				if (!waves.TryGetValue(e, out wave))
 				{
+					// this signal is new
 					cps.RecordEvent();
 
                     if (cps.EventsPerSecond > game.GameObject.CpsLimit)
                     {
+						// if its excess - cut if off
                         e.IsHandled = true;
                         return;
                     }
+					
+					// create a new wave
+					wave = new RadioWave();
+                    waves.Add(e, wave);
 				}
 				
-                double signalTraveledDistance = this.tower.SignalSpeed * (gameTime.TotalGameTime - e.Time).TotalSeconds;
-				signalReachedHero = signalTraveledDistance >= this.hero.DistanceToTower;
+                double signalTraveledDistance = wave.Radius;
 
-                if (signalReachedHero)
-                    waves.Remove(e);
-                else
-                {
-                    if (firstProcess)
-                        waves.Add(e, new RadioWave(e.Time));
-                    return;
-                }
+				if (wave.IsDeadSignal)
+				{
+					Console.WriteLine("A");
+					// if dead signal
+					if (signalTraveledDistance >= GameEngine.MaxWaveTravelDistance)
+					{
+						// if reached max, remove signal, report processed
+						e.IsHandled = true;
+                    	waves.Remove(e);
+					}
+					else
+						// not reached max yet
+						e.IsHandled = false;
+					return;
+				}
+				else
+				{
+					Console.WriteLine("B");
+					// if reached hero
+	                if (signalTraveledDistance >= this.hero.DistanceToTower)
+					{
+						Console.WriteLine("1");
+						if (!this.hero.CanReceiveSignals)
+						{
+							Console.WriteLine("2");
+							// hero can't receive signals - mark the signal dead - return
+							wave.IsDeadSignal = true;
+							e.IsHandled = false;
+							return;
+						}
+						else
+						{
+							Console.WriteLine("3");
+							// hero is receiving the signal
+	                    	waves.Remove(e);
+						}
+					}
+					else
+					{
+						Console.WriteLine("4 - " + hero.DistanceToTower + " - " + wave.Radius);
+						// didn't receive the signal yet
+						e.IsHandled = false;
+						return;
+					}
+				}
 			}
 			
 			e.IsHandled = true;
-			
 			
 			if (hero.CanReceiveSignals)
 			{

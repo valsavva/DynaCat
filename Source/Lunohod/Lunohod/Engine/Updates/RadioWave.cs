@@ -8,53 +8,52 @@ namespace Lunohod
 {
 	public class RadioWave : XObject
 	{
-		private TimeSpan startTime;
+		private TimeSpan time;
 		
-		private double diameter;
 		private double textureDiameter;
 		private Texture2D texture;
 		private System.Drawing.RectangleF bounds;
 
-		public RadioWave(TimeSpan startTime)
+		public RadioWave()
 		{
-			this.startTime = startTime;
 		}
-
-		public override void Initialize(InitializeParameters p)
-		{
-			base.Initialize(p);
-			
-		}
+		
+		public double Diameter;
+		public double Radius;
+		public bool IsDeadSignal;
 		
 		public override void Update(UpdateParameters p)
 		{
 			base.Update(p);
+			
+			time += p.GameTime.ElapsedGameTime;
+			
+			Radius = p.LevelEngine.Tower.SignalSpeed * time.TotalSeconds;
+			Diameter = Radius * 2.0;
 
-			diameter = p.LevelEngine.Tower.SignalSpeed * (p.GameTime.TotalGameTime - this.startTime).TotalSeconds * 2.0;
-
-			if (diameter > GameEngine.MaxWaveRadius * 2)
+			if (Radius > GameEngine.MaxWaveTravelDistance)
 				return;
 
-            if (diameter <= GameEngine.MinWaveRadius)
-                textureDiameter = GameEngine.MinWaveRadius;
-            else if (diameter >= GameEngine.MaxWaveRadius)
-                textureDiameter = GameEngine.MaxWaveRadius;
+            if (Diameter <= GameEngine.MinWaveTextureDiameter)
+                textureDiameter = GameEngine.MinWaveTextureDiameter;
+            else if (Diameter >= GameEngine.MaxWaveTextureDiameter)
+                textureDiameter = GameEngine.MaxWaveTextureDiameter;
 			else {
-                textureDiameter = diameter - diameter % GameEngine.WaveRadiusStep;
+                textureDiameter = Diameter - Diameter % GameEngine.WaveTextureDiameterStep;
 			}
 
-            texture = p.Game.WaveTextures[(int)textureDiameter / GameEngine.WaveRadiusStep - 1];
-			bounds.X = (p.LevelEngine.Tower.Bounds.X + p.LevelEngine.Tower.Bounds.Width / 2 - (int)(diameter / 2));
-			bounds.Y = (p.LevelEngine.Tower.Bounds.Y + p.LevelEngine.Tower.Bounds.Height / 2 - (int)(diameter / 2));
+            texture = p.Game.WaveTextures[(int)textureDiameter / GameEngine.WaveTextureDiameterStep - 1];
+			bounds.X = (p.LevelEngine.Tower.Bounds.X + p.LevelEngine.Tower.Bounds.Width / 2 - (int)(Diameter / 2));
+			bounds.Y = (p.LevelEngine.Tower.Bounds.Y + p.LevelEngine.Tower.Bounds.Height / 2 - (int)(Diameter / 2));
 			
-			bounds.Width = bounds.Height = (int)(diameter);
+			bounds.Width = bounds.Height = (int)(Diameter);
 		}
 		
 		public override void Draw(DrawParameters p)
 		{
 			base.Draw(p);
 
-            if (diameter > GameEngine.MaxWaveRadius * 2)
+            if (Diameter > GameEngine.MaxWaveTextureDiameter * 2)
 				return;
 			
 			p.SpriteBatch.Draw(texture, bounds, Color.White);

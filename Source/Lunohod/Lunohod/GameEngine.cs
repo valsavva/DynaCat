@@ -32,9 +32,11 @@ namespace Lunohod
 		public Texture2D BlankTexture { get; private set; }
 		public SpriteFont SystemFont { get; private set; }
 		public List<Texture2D> WaveTextures { get; private set; }
-        public const int MinWaveRadius = 200;
-        public const int MaxWaveRadius = 1100;
-        public const int WaveRadiusStep = 200;
+        
+		public const int MinWaveTextureDiameter = 200;
+        public const int MaxWaveTextureDiameter = 1100;
+        public const int WaveTextureDiameterStep = 200;
+		public const int MaxWaveTravelDistance = 577;
 		
 		//public Stopwatch gameWatch = new Stopwatch();
 		
@@ -68,6 +70,7 @@ namespace Lunohod
 			get { return this.ScreenEngine as LevelEngine; }
 		}
 		
+		public Vector2 Scale2D { get; private set; }
 		public Vector3 Scale { get; private set; }
 		
 		public bool DrawDebugInfo
@@ -104,14 +107,19 @@ namespace Lunohod
             };
 
             this.IsMouseVisible = true;
-            graphics.PreferredBackBufferHeight = 320;
             graphics.PreferredBackBufferWidth = 480;
+            graphics.PreferredBackBufferHeight = 320;
 
+			this.Scale2D = Vector2.One;
             this.Scale = Vector3.One;
 #else
-			this.Scale = new Vector3(
+			this.Scale2D = new Vector2(
 				(float)this.Window.ClientBounds.Width / 480f,
-				(float)this.Window.ClientBounds.Height / 320f,
+				(float)this.Window.ClientBounds.Height / 320f
+			);
+			this.Scale = new Vector3(
+				this.Scale2D.X,
+				this.Scale2D.Y,
 				1f
 			);
  
@@ -364,7 +372,7 @@ namespace Lunohod
 			this.SystemFont = ((XFontResource)this.GameObject.FindLocal("SystemFont")).Font;
 			
 			this.WaveTextures = new List<Texture2D>();
-			for (int i = MinWaveRadius; i <= MaxWaveRadius; i += WaveRadiusStep)
+			for (int i = MinWaveTextureDiameter; i <= MaxWaveTextureDiameter; i += WaveTextureDiameterStep)
 			{
 				string textureId = "wave" + i.ToString("0000");
 				this.WaveTextures.Add(((XTextureResource)this.GameObject.FindLocal(textureId)).Image);
