@@ -9,7 +9,7 @@
     
     <Class Id="clsTeleportEntry">
         <SequenceSet InProgress="true" RepeatCount="1">
-            <Do Action="hero.SetTransaction(false, false, false);hero:+PortIn"/>
+            <Do Action="hero.SetTransaction(false, false, false);hero.SetDirection(0,0);hero:+PortIn"/>
             <Do Action="@heroDepartPointX=hero.X;
                         @heroDepartPointY=hero.Y;                             
                         @heroDestPointX=@entryX;                             
