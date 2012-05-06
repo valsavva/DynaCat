@@ -101,9 +101,8 @@
 
 
         <TapArea Bounds="430,00,60,60" Event="system:endLevel"/>
-        <!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
-	    <Text Id="txtValue3" FontId="SystemFont" Location="100,0"  Text="='time=' + system.Str(system.Round(hero.Time))" Color="#0000FF" />
 
+		<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
         <TapArea Bounds="0,0,50,60" Action="system:heroReduceSpeed;system:heroSpeedRecalculate;">
             <Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
         </TapArea>
@@ -125,21 +124,24 @@
 
         
         <!--hero health-->
-
         <Image TextureId="txr_health_and_score_text_demo" Bounds="265, 6, 170, 10" />
-		<Text Text="=hero.Score" FontId="SystemFont" Location="438, 6" />
-        <Image TextureId="txr_health_bar_back" Bounds="300, 8, 100, 8"/>
+        <Image Id="txrHealthBar" TextureId="txr_health_bar_back" Bounds="300, 8, 100, 8"/>
         <Group Id="grpHeroHealthBar" Bounds="300, 8, 100, 8" BackColor="#CC2A2A">
-            <NumTrigger Property="hero.Health" Compare="G" Value="0" Group="sttHeroHealthBar">
-                <NumAnimation Target="grpHeroHealthBar.Width" From="hero.Health" To="hero.Health" Duration="1" InProgress="true" />
-            </NumTrigger>
-            <NumTrigger Property="hero.Health" Compare="LE" Value="0" Group="sttHeroHealthBar">
-                <NumAnimation Target="grpHeroHealthBar.Width" From="1" To="1" Duration="1" InProgress="true" />
-            </NumTrigger>
+			<Do Action="grpHeroHealthBar.Width=txrHealthBar.Width*(hero.Health/hero.DefaultHealth)" InProgress="true" RepeatCount="0" />
             <Image TextureId="blank" />
         </Group>
-        <Text Text="=hero.Health" FontId="SystemFont" Location="305,6" Color="#FFFFFF"/>
         <Image TextureId="txr_health_bar_front" Bounds="300, 8, 100, 8"/>
+        <Text Text="=hero.Health" FontId="SystemFont" Location="305,6" Color="#FFFFFF"/>
+		<Text Text="=hero.Score" FontId="SystemFont" Location="438, 6" />
+
+        <!--time bonus-->
+        <Image Id="txrHealthBar" TextureId="txr_health_bar_back" Bounds="150, 8, 100, 8"/>
+        <Group Id="grpHeroTimeBar" Bounds="150, 8, 100, 8" BackColor="#CC2A2A">
+			<Do Action="grpHeroTimeBar.Width=txrHealthBar.Width*(1.0 - system.Min(hero.Time/levelInfo.TimeBonusThreshold, 0.99))" InProgress="true" RepeatCount="0" />
+            <Image TextureId="blank" />
+        </Group>
+        <Image TextureId="txr_health_bar_front" Bounds="150, 8, 100, 8"/>
+		<Text Text="=system.Round(hero.Time)" FontId="SystemFont" Location="155, 6" />
 
 		<!-- CPS -->
         <BoolTrigger Condition="system:cpsLimitExceeded" >

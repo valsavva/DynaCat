@@ -106,7 +106,7 @@ namespace Lunohod
 			PerfMon.Start("LoadXml");
 			this.RootComponent = (XScreen)GameEngine.LoadXml(this.FileName, this.RootComponentType);
 			this.RootComponent.ScreenEngine = this;
-			this.RootComponent.Subcomponents.Insert(0, new XSystem() { Id = "system" });
+			this.InsertSystemSubcomponents();
 			PerfMon.Stop("LoadXml");
 
 			
@@ -120,6 +120,11 @@ namespace Lunohod
 
 			PerfMon.Stop("ScreenInitialize");
 			Console.WriteLine(PerfMon.Dump());
+		}
+		
+		protected virtual void InsertSystemSubcomponents()
+		{
+			this.RootComponent.Subcomponents.Insert(0, new XSystem() { Id = "system" });
 		}
 
 		//DateTime gt = DateTime.UtcNow;

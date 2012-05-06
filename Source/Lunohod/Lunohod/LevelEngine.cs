@@ -59,21 +59,12 @@ namespace Lunohod
 		
 		public override void Initialize()
 		{
+			// Initialize subcomponents
 			base.Initialize();
-			
+
 			// Calculate points available on this level
 			CountLevelPoints();
 
-			var li = (XLevelInfo)LevelInfo.Copy();
-			var ls = (XLevelScore)LevelScore.Copy();
-			
-			li.Id = "levelInfo";
-			ls.Id = "levelScore";
-			
-			this.RootComponent.Subcomponents.Insert(0, li);
-			this.RootComponent.Subcomponents.Insert(0, ls);
-			this.RootComponent.ResetComponentDictionary();
-			
 			// Make sure explosion class exists
 			if (!string.IsNullOrEmpty(this.LevelInfo.ExplosionClass))
 			{
@@ -85,6 +76,22 @@ namespace Lunohod
 			this.waves = new Dictionary<GameEvent, RadioWave>();
 		}
 
+		protected override void InsertSystemSubcomponents()
+		{
+			base.InsertSystemSubcomponents();
+
+			// Insert lelelInfo and scoreInfo
+			var li = (XLevelInfo)LevelInfo.Copy();
+			var ls = (XLevelScore)LevelScore.Copy();
+			
+			li.Id = "levelInfo";
+			ls.Id = "levelScore";
+			
+			this.RootComponent.Subcomponents.Insert(0, li);
+			this.RootComponent.Subcomponents.Insert(0, ls);
+			this.RootComponent.ResetComponentDictionary();
+		}
+		
 		private void CountLevelPoints()
 		{
 			this.LevelScore.AvaliablePoints = 0;

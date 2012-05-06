@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Lunohod.Xge;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace Lunohod.Objects
 {
@@ -160,6 +161,23 @@ namespace Lunohod.Objects
 		{
 			return Math.Round(num, digits);
 		}
+		public double Clamp (double value, double min, double max)
+		{
+			if (value < min)
+				return min;
+			else if (value > max)
+				return max;
+			
+			return value;
+		}
+		public double Max(double value, double max)
+		{
+			return Math.Max(value, max);
+		}
+		public double Min(double value, double min)
+		{
+			return Math.Min(value, min);
+		}
 		public double IIf(bool condition, double trueValue, double falseValue)
 		{
 			return condition ? trueValue : falseValue;
@@ -191,6 +209,9 @@ namespace Lunohod.Objects
                 case "RndX": method = (ps) => RndX(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "RndY": method = (ps) => RndY(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "Round": method = (ps) => Round(ps[0].GetNumValue(), ps.Count < 2 ? 0 : ps[1].GetIntValue()); break;
+                case "Clamp": method = (ps) => Clamp(ps[0].GetNumValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
+                case "Min": method = (ps) => Min(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
+                case "Max": method = (ps) => Max(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
 				case "IIf": method = (ps) => IIf(ps[0].GetBoolValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
 				case "GetSeriesLevelStars": method = (ps) => GetSeriesLevelStars(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
 				case "GetCommandsPerSecond": method = (ps) => GetCommandsPerSecond(); break;
