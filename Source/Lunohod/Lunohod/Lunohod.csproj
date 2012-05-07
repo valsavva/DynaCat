@@ -222,6 +222,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\Lvl_Ceh_v5_dva_ugla.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\Lvl_1D_Zamanuha_v3.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2357,6 +2360,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 
