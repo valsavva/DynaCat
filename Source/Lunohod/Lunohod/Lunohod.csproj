@@ -222,6 +222,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\Lvl_Ceh_v7_nasos.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\Lvl_Ceh_v6_proizvodstvo.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2363,6 +2366,7 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 
 
 
