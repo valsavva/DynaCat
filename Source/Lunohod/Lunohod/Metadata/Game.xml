@@ -25,10 +25,7 @@
 		/>
 		-->
         <LevelSeries Id="series1" Name="----- Series 1: Tutorial -----" File="ScreenSeries1.xml">
-	        <LevelInfo Id="Lvl_Tutorial_01" File="Lvl_Tutorial_01.xml" BombCount="0" />
-			<LevelInfo Id="Lvl_Tutorial_02" File="Lvl_Tutorial_02.xml" BombCount="0" />
-	        <LevelInfo Id="Lvl_Tutorial_03" File="Lvl_Tutorial_03.xml" BombCount="0" />
-	        <LevelInfo Id="Lvl_Tutorial_04" File="Lvl_Tutorial_04.xml" />
+	        <LevelInfo Id="[EMPTY]" File="Lvl_Tutorial_01.xml" BombCount="0" />
 		</LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
             <LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v4.xml" BombCount="0" TimeBonusThreshold="20"/>
