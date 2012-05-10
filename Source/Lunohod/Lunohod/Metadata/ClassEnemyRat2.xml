@@ -13,23 +13,48 @@
         <Texture Id="txrEnemyRat2Dying" Source="EnemyRat2_enemy_4"/>
     </Resources>
 
+    <Resources RootFolder="Global">
+        <Font Id="Splash14Font" Source="Splash14Font" />
+    </Resources>
          
 	<Class Id="clsEnemyRat2">
 		<Enemy IsExploding="true" Damage="5" Points="50">
-		
+
+<!-- Points Animation -->
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
+                <Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y" InProgress="true" />
+                <Text FontId="Splash14Font" Text="='+' + system.Str(this.Points)" Location="6,-12" Color="#FFFFFF">
+                    <SequenceSet RepeatCount="1" InProgress="true">
+                        <ParallelSet RepeatCount="1">
+                            <NumAnimation Target="this_grpShowPoints.Opacity" From="1" To="0.5" RepeatCount="1" Duration="1" Fill="Hold" />
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-50" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                            </RandomSet>
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.X" From="-4" To="4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.X" From="4" To="-4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                            </RandomSet>
+                        </ParallelSet>
+                        <Do Action="this.Disable()"/>
+                    </SequenceSet>
+                </Text>
+            </Group>
+
+
 <!-- States -->
 
             <!-- explosion -->
             <!-- dying -->
-			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
+			<BoolTrigger Condition="this:BoomClose" EnterAction="hero.AddScore(this.Points);this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
 				<Image TextureId="txrEnemyRat2Dying" Bounds="-15, -4, 43, 29"/>
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
-                <Do Action="hero:+GoodExplosion"/>
+                <Do Action="hero:+GoodExplosion;this_grpShowPoints.Enable()"/>
                 <Sound FileId="sndEnemyRat2Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
     			<SequenceSet>
     				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
-    				<Do Action="hero.AddScore(this.Points);this.Disable()"/>
+    				<Do Action="this.Disable()"/>
     			</SequenceSet>
 			</ParallelSet>
 
