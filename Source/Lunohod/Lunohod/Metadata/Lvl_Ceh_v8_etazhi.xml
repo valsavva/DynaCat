@@ -14,7 +14,6 @@
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_fish_3_me" Source="fish_3_me" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
-        <Texture Id="txr_container_steel_1" Source="container_steel_1" />
         <Texture Id="txr_texture_brick_4" Source="texture_brick_4" />
         <Texture Id="txr_detal_3" Source="detal_3" />
     </Resources>
@@ -23,24 +22,24 @@
     </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="24, 280, 434, 40" Edges="Stick" TraceId="image3819"/>
-        <Block Id="blk2" Bounds="142, 104, 78, 36" Edges="Bounce" TraceId="image3352-1"/>
+        <Block Id="blk2" Bounds="64, 104, 78, 36" Edges="Bounce" TraceId="image3352-1"/>
         <Block Id="blk3" Bounds="262, 204, 78, 36" Edges="Bounce" TraceId="image3362"/>
         <Block Id="blk4" Bounds="-16, 40, 40, 280" Edges="Stick" TraceId="image3792"/>
         <Block Id="blk5" Bounds="458, 40, 40, 280" Edges="Stick" TraceId="image3794"/>
         <Block Id="blk6" Bounds="0, 0, 480, 40" Edges="Stick" TraceId="image3796"/>
-        <Block Id="blk7" Bounds="262, 104, 78, 36" Edges="Bounce" TraceId="image3798"/>
+        <Block Id="blk7" Bounds="340, 104, 78, 36" Edges="Bounce" TraceId="image3798"/>
         <Block Id="blk8" Bounds="142, 204, 78, 36" Edges="Bounce" TraceId="image3800"/>
-        <Block Id="blk9" Bounds="340, 102, 78, 38" Edges="Stick" TraceId="image3802"/>
+        <Block Id="blk9" Bounds="262, 102, 78, 38" Edges="Stick" TraceId="image3802"/>
         <Block Id="blk10" Bounds="262, 80, 156, 22" Edges="Stick" TraceId="image3804"/>
         <Block Id="blk11" Bounds="64, 80, 156, 22" Edges="Stick" TraceId="image3806"/>
         <Block Id="blk12" Bounds="64, 180, 156, 22" Edges="Stick" TraceId="image3808"/>
         <Block Id="blk13" Bounds="262, 180, 156, 22" Edges="Stick" TraceId="image3810"/>
-        <Block Id="blk14" Bounds="64, 102, 78, 38" Edges="Stick" TraceId="image3812"/>
+        <Block Id="blk14" Bounds="142, 102, 78, 38" Edges="Stick" TraceId="image3812"/>
         <Block Id="blk15" Bounds="64, 202, 78, 38" Edges="Stick" TraceId="image3814"/>
         <Block Id="blk16" Bounds="340, 202, 78, 38" Edges="Stick" TraceId="image3816"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemySaw" Bounds="156, 90, 50, 50" TraceId="image3338">
+        <Enemy Id="enm1" Class="clsEnemySaw" Bounds="78, 90, 50, 50" TraceId="image3338">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
@@ -71,43 +70,37 @@
         <Block Id="blk19" Class="clsWoodenBox" Bounds="64, 246, 30, 30" Edges="Stick" TraceId="image3724">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk20" Class="clsWoodenBox" Bounds="64, 146, 30, 30" Edges="Stick" TraceId="image3726">
+        <Block Id="blk20" Class="clsWoodenBox" Bounds="64, 46, 30, 30" Edges="Stick" TraceId="image3728">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk21" Class="clsWoodenBox" Bounds="64, 46, 30, 30" Edges="Stick" TraceId="image3728">
+        <Block Id="blk21" Class="clsWoodenBox" Bounds="388, 46, 30, 30" Edges="Stick" TraceId="image3734">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk22" Class="clsWoodenBox" Bounds="388, 46, 30, 30" Edges="Stick" TraceId="image3734">
+        <Block Id="blk22" Class="clsWoodenBox" Bounds="226, 210, 30, 30" Edges="Stick" TraceId="image3730">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk23" Class="clsWoodenBox" Bounds="226, 210, 30, 30" Edges="Stick" TraceId="image3730">
+        <Block Id="blk23" Class="clsWoodenBox" Bounds="30, 110, 30, 30" Edges="Stick" TraceId="image3750">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk24" Class="clsWoodenBox" Bounds="388, 146, 30, 30" Edges="Stick" TraceId="image3448-1">
+        <Block Id="blk24" Class="clsWoodenBox" Bounds="30, 180, 30, 30" Edges="Stick" TraceId="image3752">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk25" Class="clsWoodenBox" Bounds="30, 108, 30, 30" Edges="Stick" TraceId="image3750">
+        <Block Id="blk25" Class="clsWoodenBox" Bounds="424, 110, 30, 30" Edges="Stick" TraceId="image3754">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk26" Class="clsWoodenBox" Bounds="30, 180, 30, 30" Edges="Stick" TraceId="image3752">
+        <Block Id="blk26" Class="clsWoodenBox" Bounds="424, 180, 30, 30" Edges="Stick" TraceId="image3756">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk27" Class="clsWoodenBox" Bounds="424, 110, 30, 30" Edges="Stick" TraceId="image3754">
+        <Block Id="blk27" Class="clsWoodenBox" Bounds="226, 46, 30, 30" Edges="Stick" TraceId="image3758">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk28" Class="clsWoodenBox" Bounds="424, 180, 30, 30" Edges="Stick" TraceId="image3756">
-            <Image TextureId="txr_box_old_1" />
-        </Block>
-        <Block Id="blk29" Class="clsWoodenBox" Bounds="226, 46, 30, 30" Edges="Stick" TraceId="image3758">
-            <Image TextureId="txr_box_old_1" />
-        </Block>
-        <Enemy Id="enm2" Class="clsEnemySaw" Bounds="276, 90, 50, 50" TraceId="image3786">
+        <Enemy Id="enm2" Class="clsEnemySaw" Bounds="354, 90, 50, 50" TraceId="image3786">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Group Id="grpDamageZone_30" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_28" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_30" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_28" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm2" RepeatCount="0">
                 <Do Action="enm2.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -130,9 +123,9 @@
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Group Id="grpDamageZone_31" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_29" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_31" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_29" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm3" RepeatCount="0">
                 <Do Action="enm3.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -155,9 +148,9 @@
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
-            <Group Id="grpDamageZone_32" Bounds="7,7,36,36" />
+            <Group Id="grpDamageZone_30" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_32" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_30" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
             <SequenceSet Id="setAttack_enm4" RepeatCount="0">
                 <Do Action="enm4.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -176,22 +169,22 @@
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
-        <Food Id="fd1" Class="clsFood" Points="80" Bounds="124, 53,  27,  15" TraceId="image3828">
+        <Food Id="fd1" Class="clsFood" Points="80" Bounds="130, 53, 27, 15" TraceId="image3828">
             <Image TextureId="txr_fish_3_me" />
         </Food>
-        <Food Id="fd2" Class="clsFood" Points="80" Bounds="124, 153,  27,  15" TraceId="image3831">
+        <Food Id="fd2" Class="clsFood" Points="80" Bounds="156, 153, 27, 15" TraceId="image3831">
             <Image TextureId="txr_fish_3_me" />
         </Food>
-        <Food Id="fd3" Class="clsFood" Points="80" Bounds="124, 253,  27,  15" TraceId="image3833">
+        <Food Id="fd3" Class="clsFood" Points="80" Bounds="130, 253, 27, 15" TraceId="image3833">
             <Image TextureId="txr_fish_3_me" />
         </Food>
-        <Food Id="fd4" Class="clsFood" Points="80" Bounds="331, 53,  27,  15" TraceId="image3835">
+        <Food Id="fd4" Class="clsFood" Points="80" Bounds="325, 53, 27, 15" TraceId="image3835">
             <Image TextureId="txr_fish_3_me" />
         </Food>
-        <Food Id="fd5" Class="clsFood" Points="80" Bounds="331, 153,  27,  15" TraceId="image3837">
+        <Food Id="fd5" Class="clsFood" Points="80" Bounds="299, 153, 27, 15" TraceId="image3837">
             <Image TextureId="txr_fish_3_me" />
         </Food>
-        <Food Id="fd6" Class="clsFood" Points="80" Bounds="331, 253,  27,  15" TraceId="image3840">
+        <Food Id="fd6" Class="clsFood" Points="80" Bounds="325, 253, 27, 15" TraceId="image3840">
             <Image TextureId="txr_fish_3_me" />
         </Food>
     </Layer>
@@ -269,118 +262,115 @@
         <Image Id="dfltMask72" TextureId="txr_texture_brick_clean" Bounds="102, 0, 26, 20" TraceId="image3375"/>
         <Image Id="dfltMask73" TextureId="txr_texture_brick_clean" Bounds="336, 300, 26, 20" TraceId="image3377"/>
         <Image Id="dfltMask74" TextureId="txr_texture_brick_clean" Bounds="366, 180, 26, 20" TraceId="image3472"/>
-        <Image Id="dfltMask75" TextureId="txr_container_steel_1" Bounds="521, -47, 30, 30" TraceId="image3426"/>
-        <Image Id="dfltMask76" TextureId="txr_container_steel_1" Bounds="562, -10, 30, 30" TraceId="image3428"/>
-        <Image Id="dfltMask77" TextureId="txr_container_steel_1" Bounds="546, 61, 30, 30" TraceId="image3430"/>
-        <Image Id="dfltMask78" TextureId="txr_texture_brick_clean" Bounds="116, 100, 26, 20" TraceId="image3296"/>
-        <Image Id="dfltMask79" TextureId="txr_texture_brick_clean" Bounds="142, 100, 26, 20" TraceId="image3298"/>
-        <Image Id="dfltMask80" TextureId="txr_texture_brick_clean" Bounds="168, 100, 26, 20" TraceId="image3300"/>
-        <Image Id="dfltMask81" TextureId="txr_texture_brick_clean" Bounds="262, 100, 26, 20" TraceId="image3337"/>
-        <Image Id="dfltMask82" TextureId="txr_texture_brick_clean" Bounds="288, 100, 26, 20" TraceId="image3342"/>
-        <Image Id="dfltMask83" TextureId="txr_texture_brick_clean" Bounds="116, 80, 26, 20" TraceId="image3344"/>
-        <Image Id="dfltMask84" TextureId="txr_texture_brick_clean" Bounds="142, 80, 26, 20" TraceId="image3346"/>
-        <Image Id="dfltMask85" TextureId="txr_texture_brick_clean" Bounds="168, 80, 26, 20" TraceId="image3348"/>
-        <Image Id="dfltMask86" TextureId="txr_texture_brick_clean" Bounds="262, 80, 26, 20" TraceId="image3358"/>
-        <Image Id="dfltMask87" TextureId="txr_texture_brick_clean" Bounds="288, 80, 26, 20" TraceId="image3360"/>
-        <Image Id="dfltMask88" TextureId="txr_texture_brick_clean" Bounds="116, 180, 26, 20" TraceId="image3364"/>
-        <Image Id="dfltMask89" TextureId="txr_texture_brick_clean" Bounds="142, 180, 26, 20" TraceId="image3366"/>
-        <Image Id="dfltMask90" TextureId="txr_texture_brick_clean" Bounds="168, 180, 26, 20" TraceId="image3368"/>
-        <Image Id="dfltMask91" TextureId="txr_texture_brick_clean" Bounds="262, 180, 26, 20" TraceId="image3376"/>
-        <Image Id="dfltMask92" TextureId="txr_texture_brick_clean" Bounds="288, 180, 26, 20" TraceId="image3378"/>
-        <Image Id="dfltMask93" TextureId="txr_texture_brick_clean" Bounds="116, 120, 26, 20" TraceId="image3380"/>
-        <Image Id="dfltMask94" TextureId="txr_texture_brick_clean" Bounds="142, 120, 26, 20" TraceId="image3382"/>
-        <Image Id="dfltMask95" TextureId="txr_texture_brick_clean" Bounds="168, 120, 26, 20" TraceId="image3385"/>
-        <Image Id="dfltMask96" TextureId="txr_texture_brick_clean" Bounds="262, 120, 26, 20" TraceId="image3393"/>
-        <Image Id="dfltMask97" TextureId="txr_texture_brick_clean" Bounds="288, 120, 26, 20" TraceId="image3395"/>
-        <Image Id="dfltMask98" TextureId="txr_texture_brick_clean" Bounds="116, 200, 26, 20" TraceId="image3412"/>
-        <Image Id="dfltMask99" TextureId="txr_texture_brick_clean" Bounds="142, 200, 26, 20" TraceId="image3414"/>
-        <Image Id="dfltMask100" TextureId="txr_texture_brick_clean" Bounds="168, 200, 26, 20" TraceId="image3416"/>
-        <Image Id="dfltMask101" TextureId="txr_texture_brick_clean" Bounds="262, 200, 26, 20" TraceId="image3422"/>
-        <Image Id="dfltMask102" TextureId="txr_texture_brick_clean" Bounds="288, 200, 26, 20" TraceId="image3424"/>
-        <Image Id="dfltMask103" TextureId="txr_texture_brick_clean" Bounds="116, 220, 26, 20" TraceId="image3493"/>
-        <Image Id="dfltMask104" TextureId="txr_texture_brick_clean" Bounds="142, 220, 26, 20" TraceId="image3495"/>
-        <Image Id="dfltMask105" TextureId="txr_texture_brick_clean" Bounds="168, 220, 26, 20" TraceId="image3497"/>
-        <Image Id="dfltMask106" TextureId="txr_texture_brick_clean" Bounds="262, 220, 26, 20" TraceId="image3503"/>
-        <Image Id="dfltMask107" TextureId="txr_texture_brick_clean" Bounds="288, 220, 26, 20" TraceId="image3505"/>
-        <Image Id="dfltMask108" TextureId="txr_texture_brick_clean" Bounds="90, 80, 26, 20" TraceId="image3539"/>
-        <Image Id="dfltMask109" TextureId="txr_texture_brick_clean" Bounds="-2, 60, 26, 20" TraceId="image3543"/>
-        <Image Id="dfltMask110" TextureId="txr_texture_brick_clean" Bounds="64, 80, 26, 20" TraceId="image3545"/>
-        <Image Id="dfltMask111" TextureId="txr_texture_brick_clean" Bounds="90, 100, 26, 20" TraceId="image3549"/>
-        <Image Id="dfltMask112" TextureId="txr_texture_brick_clean" Bounds="-2, 80, 26, 20" TraceId="image3553"/>
-        <Image Id="dfltMask113" TextureId="txr_texture_brick_clean" Bounds="64, 100, 26, 20" TraceId="image3555"/>
-        <Image Id="dfltMask114" TextureId="txr_texture_brick_clean" Bounds="-2, 20, 26, 20" TraceId="image3580"/>
-        <Image Id="dfltMask115" TextureId="txr_texture_brick_clean" Bounds="-2, 40, 26, 20" TraceId="image3582"/>
-        <Image Id="dfltMask116" TextureId="txr_texture_brick_clean" Bounds="-2, 100, 26, 20" TraceId="image3584"/>
-        <Image Id="dfltMask117" TextureId="txr_texture_brick_clean" Bounds="-2, 120, 26, 20" TraceId="image3586"/>
-        <Image Id="dfltMask118" TextureId="txr_texture_brick_clean" Bounds="-2, 180, 26, 20" TraceId="image3588"/>
-        <Image Id="dfltMask119" TextureId="txr_texture_brick_clean" Bounds="-2, 200, 26, 20" TraceId="image3590"/>
-        <Image Id="dfltMask120" TextureId="txr_texture_brick_clean" Bounds="-2, 260, 26, 20" TraceId="image3592"/>
-        <Image Id="dfltMask121" TextureId="txr_texture_brick_clean" Bounds="-2, 280, 26, 20" TraceId="image3594"/>
-        <Image Id="dfltMask122" TextureId="txr_texture_brick_clean" Bounds="458, 260, 26, 20" TraceId="image3598"/>
-        <Image Id="dfltMask123" TextureId="txr_texture_brick_clean" Bounds="310, 20, 26, 20" TraceId="image3614"/>
-        <Image Id="dfltMask124" TextureId="txr_texture_brick_clean" Bounds="336, 20, 26, 20" TraceId="image3616"/>
-        <Image Id="dfltMask125" TextureId="txr_texture_brick_clean" Bounds="362, 20, 26, 20" TraceId="image3618"/>
-        <Image Id="dfltMask126" TextureId="txr_texture_brick_clean" Bounds="388, 20, 26, 20" TraceId="image3620"/>
-        <Image Id="dfltMask127" TextureId="txr_texture_brick_clean" Bounds="414, 20, 26, 20" TraceId="image3622"/>
-        <Image Id="dfltMask128" TextureId="txr_texture_brick_clean" Bounds="440, 20, 26, 20" TraceId="image3624"/>
-        <Image Id="dfltMask129" TextureId="txr_texture_brick_clean" Bounds="128, 20, 26, 20" TraceId="image3626"/>
-        <Image Id="dfltMask130" TextureId="txr_texture_brick_clean" Bounds="154, 20, 26, 20" TraceId="image3628"/>
-        <Image Id="dfltMask131" TextureId="txr_texture_brick_clean" Bounds="180, 20, 26, 20" TraceId="image3630"/>
-        <Image Id="dfltMask132" TextureId="txr_texture_brick_clean" Bounds="258, 20, 26, 20" TraceId="image3632"/>
-        <Image Id="dfltMask133" TextureId="txr_texture_brick_clean" Bounds="284, 20, 26, 20" TraceId="image3634"/>
-        <Image Id="dfltMask134" TextureId="txr_texture_brick_clean" Bounds="102, 20, 26, 20" TraceId="image3636"/>
-        <Image Id="dfltMask135" TextureId="txr_texture_brick_clean" Bounds="24, 20, 26, 20" TraceId="image3638"/>
-        <Image Id="dfltMask136" TextureId="txr_texture_brick_clean" Bounds="76, 20, 26, 20" TraceId="image3640"/>
-        <Image Id="dfltMask137" TextureId="txr_texture_brick_clean" Bounds="50, 20, 26, 20" TraceId="image3642"/>
-        <Image Id="dfltMask138" TextureId="txr_texture_brick_clean" Bounds="232, 20, 26, 20" TraceId="image3648"/>
-        <Image Id="dfltMask139" TextureId="txr_texture_brick_clean" Bounds="206, 20, 26, 20" TraceId="image3650"/>
-        <Image Id="dfltMask140" TextureId="txr_texture_brick_clean" Bounds="458, 180, 26, 20" TraceId="image3652"/>
-        <Image Id="dfltMask141" TextureId="txr_texture_brick_clean" Bounds="458, 200, 26, 20" TraceId="image3654"/>
-        <Image Id="dfltMask142" TextureId="txr_texture_brick_clean" Bounds="458, 220, 26, 20" TraceId="image3656"/>
-        <Image Id="dfltMask143" TextureId="txr_texture_brick_clean" Bounds="458, 100, 26, 20" TraceId="image3658"/>
-        <Image Id="dfltMask144" TextureId="txr_texture_brick_clean" Bounds="458, 80, 26, 20" TraceId="image3660"/>
-        <Image Id="dfltMask145" TextureId="txr_texture_brick_clean" Bounds="458, 120, 26, 20" TraceId="image3662"/>
-        <Image Id="dfltMask146" TextureId="txr_texture_brick_clean" Bounds="466, 20, 26, 20" TraceId="image3664"/>
-        <Image Id="dfltMask147" TextureId="txr_texture_brick_clean" Bounds="458, 240, 26, 20" TraceId="image3666"/>
-        <Image Id="dfltMask148" TextureId="txr_texture_brick_clean" Bounds="180, 280, 26, 20" TraceId="image3668"/>
-        <Image Id="dfltMask149" TextureId="txr_texture_brick_clean" Bounds="232, 280, 26, 20" TraceId="image3670"/>
-        <Image Id="dfltMask150" TextureId="txr_texture_brick_clean" Bounds="206, 280, 26, 20" TraceId="image3672"/>
-        <Image Id="dfltMask151" TextureId="txr_texture_brick_clean" Bounds="154, 280, 26, 20" TraceId="image3674"/>
-        <Image Id="dfltMask152" TextureId="txr_texture_brick_clean" Bounds="128, 280, 26, 20" TraceId="image3676"/>
-        <Image Id="dfltMask153" TextureId="txr_texture_brick_clean" Bounds="102, 280, 26, 20" TraceId="image3678"/>
-        <Image Id="dfltMask154" TextureId="txr_texture_brick_clean" Bounds="258, 280, 26, 20" TraceId="image3680"/>
-        <Image Id="dfltMask155" TextureId="txr_texture_brick_clean" Bounds="388, 280, 26, 20" TraceId="image3682"/>
-        <Image Id="dfltMask156" TextureId="txr_texture_brick_clean" Bounds="362, 280, 26, 20" TraceId="image3684"/>
-        <Image Id="dfltMask157" TextureId="txr_texture_brick_clean" Bounds="310, 280, 26, 20" TraceId="image3686"/>
-        <Image Id="dfltMask158" TextureId="txr_texture_brick_clean" Bounds="284, 280, 26, 20" TraceId="image3688"/>
-        <Image Id="dfltMask159" TextureId="txr_texture_brick_clean" Bounds="24, 280, 26, 20" TraceId="image3690"/>
-        <Image Id="dfltMask160" TextureId="txr_texture_brick_clean" Bounds="50, 280, 26, 20" TraceId="image3692"/>
-        <Image Id="dfltMask161" TextureId="txr_texture_brick_4" Bounds="76, 280, 26, 20" TraceId="image3694"/>
-        <Image Id="dfltMask162" TextureId="txr_texture_brick_clean" Bounds="440, 280, 26, 20" TraceId="image3696"/>
-        <Image Id="dfltMask163" TextureId="txr_texture_brick_clean" Bounds="414, 280, 26, 20" TraceId="image3698"/>
-        <Image Id="dfltMask164" TextureId="txr_texture_brick_clean" Bounds="336, 280, 26, 20" TraceId="image3700"/>
-        <Image Id="dfltMask165" TextureId="txr_texture_brick_clean" Bounds="466, 280, 26, 20" TraceId="image3702"/>
-        <Image Id="dfltMask166" TextureId="txr_texture_brick_clean" Bounds="458, 160, 26, 20" TraceId="image3704"/>
-        <Image Id="dfltMask167" TextureId="txr_texture_brick_clean" Bounds="458, 140, 26, 20" TraceId="image3706"/>
-        <Image Id="dfltMask168" TextureId="txr_texture_brick_clean" Bounds="458, 60, 26, 20" TraceId="image3708"/>
-        <Image Id="dfltMask169" TextureId="txr_texture_brick_clean" Bounds="458, 40, 26, 20" TraceId="image3710"/>
-        <Image Id="dfltMask170" TextureId="txr_texture_brick_clean" Bounds="194, 100, 26, 20" TraceId="image3738"/>
-        <Image Id="dfltMask171" TextureId="txr_texture_brick_clean" Bounds="194, 80, 26, 20" TraceId="image3740"/>
-        <Image Id="dfltMask172" TextureId="txr_texture_brick_clean" Bounds="194, 180, 26, 20" TraceId="image3742"/>
-        <Image Id="dfltMask173" TextureId="txr_texture_brick_clean" Bounds="194, 120, 26, 20" TraceId="image3744"/>
-        <Image Id="dfltMask174" TextureId="txr_texture_brick_clean" Bounds="194, 200, 26, 20" TraceId="image3746"/>
-        <Image Id="dfltMask175" TextureId="txr_texture_brick_clean" Bounds="194, 220, 26, 20" TraceId="image3748"/>
-        <Image Id="dfltMask176" TextureId="txr_texture_brick_clean" Bounds="76, 300, 26, 20" TraceId="image3818"/>
+        <Image Id="dfltMask75" TextureId="txr_texture_brick_clean" Bounds="116, 100, 26, 20" TraceId="image3296"/>
+        <Image Id="dfltMask76" TextureId="txr_texture_brick_clean" Bounds="142, 100, 26, 20" TraceId="image3298"/>
+        <Image Id="dfltMask77" TextureId="txr_texture_brick_clean" Bounds="168, 100, 26, 20" TraceId="image3300"/>
+        <Image Id="dfltMask78" TextureId="txr_texture_brick_clean" Bounds="262, 100, 26, 20" TraceId="image3337"/>
+        <Image Id="dfltMask79" TextureId="txr_texture_brick_clean" Bounds="288, 100, 26, 20" TraceId="image3342"/>
+        <Image Id="dfltMask80" TextureId="txr_texture_brick_clean" Bounds="116, 80, 26, 20" TraceId="image3344"/>
+        <Image Id="dfltMask81" TextureId="txr_texture_brick_clean" Bounds="142, 80, 26, 20" TraceId="image3346"/>
+        <Image Id="dfltMask82" TextureId="txr_texture_brick_clean" Bounds="168, 80, 26, 20" TraceId="image3348"/>
+        <Image Id="dfltMask83" TextureId="txr_texture_brick_clean" Bounds="262, 80, 26, 20" TraceId="image3358"/>
+        <Image Id="dfltMask84" TextureId="txr_texture_brick_clean" Bounds="288, 80, 26, 20" TraceId="image3360"/>
+        <Image Id="dfltMask85" TextureId="txr_texture_brick_clean" Bounds="116, 180, 26, 20" TraceId="image3364"/>
+        <Image Id="dfltMask86" TextureId="txr_texture_brick_clean" Bounds="142, 180, 26, 20" TraceId="image3366"/>
+        <Image Id="dfltMask87" TextureId="txr_texture_brick_clean" Bounds="168, 180, 26, 20" TraceId="image3368"/>
+        <Image Id="dfltMask88" TextureId="txr_texture_brick_clean" Bounds="262, 180, 26, 20" TraceId="image3376"/>
+        <Image Id="dfltMask89" TextureId="txr_texture_brick_clean" Bounds="288, 180, 26, 20" TraceId="image3378"/>
+        <Image Id="dfltMask90" TextureId="txr_texture_brick_clean" Bounds="116, 120, 26, 20" TraceId="image3380"/>
+        <Image Id="dfltMask91" TextureId="txr_texture_brick_clean" Bounds="142, 120, 26, 20" TraceId="image3382"/>
+        <Image Id="dfltMask92" TextureId="txr_texture_brick_clean" Bounds="168, 120, 26, 20" TraceId="image3385"/>
+        <Image Id="dfltMask93" TextureId="txr_texture_brick_clean" Bounds="262, 120, 26, 20" TraceId="image3393"/>
+        <Image Id="dfltMask94" TextureId="txr_texture_brick_clean" Bounds="288, 120, 26, 20" TraceId="image3395"/>
+        <Image Id="dfltMask95" TextureId="txr_texture_brick_clean" Bounds="116, 200, 26, 20" TraceId="image3412"/>
+        <Image Id="dfltMask96" TextureId="txr_texture_brick_clean" Bounds="142, 200, 26, 20" TraceId="image3414"/>
+        <Image Id="dfltMask97" TextureId="txr_texture_brick_clean" Bounds="168, 200, 26, 20" TraceId="image3416"/>
+        <Image Id="dfltMask98" TextureId="txr_texture_brick_clean" Bounds="262, 200, 26, 20" TraceId="image3422"/>
+        <Image Id="dfltMask99" TextureId="txr_texture_brick_clean" Bounds="288, 200, 26, 20" TraceId="image3424"/>
+        <Image Id="dfltMask100" TextureId="txr_texture_brick_clean" Bounds="116, 220, 26, 20" TraceId="image3493"/>
+        <Image Id="dfltMask101" TextureId="txr_texture_brick_clean" Bounds="142, 220, 26, 20" TraceId="image3495"/>
+        <Image Id="dfltMask102" TextureId="txr_texture_brick_clean" Bounds="168, 220, 26, 20" TraceId="image3497"/>
+        <Image Id="dfltMask103" TextureId="txr_texture_brick_clean" Bounds="262, 220, 26, 20" TraceId="image3503"/>
+        <Image Id="dfltMask104" TextureId="txr_texture_brick_clean" Bounds="288, 220, 26, 20" TraceId="image3505"/>
+        <Image Id="dfltMask105" TextureId="txr_texture_brick_clean" Bounds="90, 80, 26, 20" TraceId="image3539"/>
+        <Image Id="dfltMask106" TextureId="txr_texture_brick_clean" Bounds="-2, 60, 26, 20" TraceId="image3543"/>
+        <Image Id="dfltMask107" TextureId="txr_texture_brick_clean" Bounds="64, 80, 26, 20" TraceId="image3545"/>
+        <Image Id="dfltMask108" TextureId="txr_texture_brick_clean" Bounds="90, 100, 26, 20" TraceId="image3549"/>
+        <Image Id="dfltMask109" TextureId="txr_texture_brick_clean" Bounds="-2, 80, 26, 20" TraceId="image3553"/>
+        <Image Id="dfltMask110" TextureId="txr_texture_brick_clean" Bounds="64, 100, 26, 20" TraceId="image3555"/>
+        <Image Id="dfltMask111" TextureId="txr_texture_brick_clean" Bounds="-2, 20, 26, 20" TraceId="image3580"/>
+        <Image Id="dfltMask112" TextureId="txr_texture_brick_clean" Bounds="-2, 40, 26, 20" TraceId="image3582"/>
+        <Image Id="dfltMask113" TextureId="txr_texture_brick_clean" Bounds="-2, 100, 26, 20" TraceId="image3584"/>
+        <Image Id="dfltMask114" TextureId="txr_texture_brick_clean" Bounds="-2, 120, 26, 20" TraceId="image3586"/>
+        <Image Id="dfltMask115" TextureId="txr_texture_brick_clean" Bounds="-2, 180, 26, 20" TraceId="image3588"/>
+        <Image Id="dfltMask116" TextureId="txr_texture_brick_clean" Bounds="-2, 200, 26, 20" TraceId="image3590"/>
+        <Image Id="dfltMask117" TextureId="txr_texture_brick_clean" Bounds="-2, 260, 26, 20" TraceId="image3592"/>
+        <Image Id="dfltMask118" TextureId="txr_texture_brick_clean" Bounds="-2, 280, 26, 20" TraceId="image3594"/>
+        <Image Id="dfltMask119" TextureId="txr_texture_brick_clean" Bounds="458, 260, 26, 20" TraceId="image3598"/>
+        <Image Id="dfltMask120" TextureId="txr_texture_brick_clean" Bounds="310, 20, 26, 20" TraceId="image3614"/>
+        <Image Id="dfltMask121" TextureId="txr_texture_brick_clean" Bounds="336, 20, 26, 20" TraceId="image3616"/>
+        <Image Id="dfltMask122" TextureId="txr_texture_brick_clean" Bounds="362, 20, 26, 20" TraceId="image3618"/>
+        <Image Id="dfltMask123" TextureId="txr_texture_brick_clean" Bounds="388, 20, 26, 20" TraceId="image3620"/>
+        <Image Id="dfltMask124" TextureId="txr_texture_brick_clean" Bounds="414, 20, 26, 20" TraceId="image3622"/>
+        <Image Id="dfltMask125" TextureId="txr_texture_brick_clean" Bounds="440, 20, 26, 20" TraceId="image3624"/>
+        <Image Id="dfltMask126" TextureId="txr_texture_brick_clean" Bounds="128, 20, 26, 20" TraceId="image3626"/>
+        <Image Id="dfltMask127" TextureId="txr_texture_brick_clean" Bounds="154, 20, 26, 20" TraceId="image3628"/>
+        <Image Id="dfltMask128" TextureId="txr_texture_brick_clean" Bounds="180, 20, 26, 20" TraceId="image3630"/>
+        <Image Id="dfltMask129" TextureId="txr_texture_brick_clean" Bounds="258, 20, 26, 20" TraceId="image3632"/>
+        <Image Id="dfltMask130" TextureId="txr_texture_brick_clean" Bounds="284, 20, 26, 20" TraceId="image3634"/>
+        <Image Id="dfltMask131" TextureId="txr_texture_brick_clean" Bounds="102, 20, 26, 20" TraceId="image3636"/>
+        <Image Id="dfltMask132" TextureId="txr_texture_brick_clean" Bounds="24, 20, 26, 20" TraceId="image3638"/>
+        <Image Id="dfltMask133" TextureId="txr_texture_brick_clean" Bounds="76, 20, 26, 20" TraceId="image3640"/>
+        <Image Id="dfltMask134" TextureId="txr_texture_brick_clean" Bounds="50, 20, 26, 20" TraceId="image3642"/>
+        <Image Id="dfltMask135" TextureId="txr_texture_brick_clean" Bounds="232, 20, 26, 20" TraceId="image3648"/>
+        <Image Id="dfltMask136" TextureId="txr_texture_brick_clean" Bounds="206, 20, 26, 20" TraceId="image3650"/>
+        <Image Id="dfltMask137" TextureId="txr_texture_brick_clean" Bounds="458, 180, 26, 20" TraceId="image3652"/>
+        <Image Id="dfltMask138" TextureId="txr_texture_brick_clean" Bounds="458, 200, 26, 20" TraceId="image3654"/>
+        <Image Id="dfltMask139" TextureId="txr_texture_brick_clean" Bounds="458, 220, 26, 20" TraceId="image3656"/>
+        <Image Id="dfltMask140" TextureId="txr_texture_brick_clean" Bounds="458, 100, 26, 20" TraceId="image3658"/>
+        <Image Id="dfltMask141" TextureId="txr_texture_brick_clean" Bounds="458, 80, 26, 20" TraceId="image3660"/>
+        <Image Id="dfltMask142" TextureId="txr_texture_brick_clean" Bounds="458, 120, 26, 20" TraceId="image3662"/>
+        <Image Id="dfltMask143" TextureId="txr_texture_brick_clean" Bounds="466, 20, 26, 20" TraceId="image3664"/>
+        <Image Id="dfltMask144" TextureId="txr_texture_brick_clean" Bounds="458, 240, 26, 20" TraceId="image3666"/>
+        <Image Id="dfltMask145" TextureId="txr_texture_brick_clean" Bounds="180, 280, 26, 20" TraceId="image3668"/>
+        <Image Id="dfltMask146" TextureId="txr_texture_brick_clean" Bounds="232, 280, 26, 20" TraceId="image3670"/>
+        <Image Id="dfltMask147" TextureId="txr_texture_brick_clean" Bounds="206, 280, 26, 20" TraceId="image3672"/>
+        <Image Id="dfltMask148" TextureId="txr_texture_brick_clean" Bounds="154, 280, 26, 20" TraceId="image3674"/>
+        <Image Id="dfltMask149" TextureId="txr_texture_brick_clean" Bounds="128, 280, 26, 20" TraceId="image3676"/>
+        <Image Id="dfltMask150" TextureId="txr_texture_brick_clean" Bounds="102, 280, 26, 20" TraceId="image3678"/>
+        <Image Id="dfltMask151" TextureId="txr_texture_brick_clean" Bounds="258, 280, 26, 20" TraceId="image3680"/>
+        <Image Id="dfltMask152" TextureId="txr_texture_brick_clean" Bounds="388, 280, 26, 20" TraceId="image3682"/>
+        <Image Id="dfltMask153" TextureId="txr_texture_brick_clean" Bounds="362, 280, 26, 20" TraceId="image3684"/>
+        <Image Id="dfltMask154" TextureId="txr_texture_brick_clean" Bounds="310, 280, 26, 20" TraceId="image3686"/>
+        <Image Id="dfltMask155" TextureId="txr_texture_brick_clean" Bounds="284, 280, 26, 20" TraceId="image3688"/>
+        <Image Id="dfltMask156" TextureId="txr_texture_brick_clean" Bounds="24, 280, 26, 20" TraceId="image3690"/>
+        <Image Id="dfltMask157" TextureId="txr_texture_brick_clean" Bounds="50, 280, 26, 20" TraceId="image3692"/>
+        <Image Id="dfltMask158" TextureId="txr_texture_brick_4" Bounds="76, 280, 26, 20" TraceId="image3694"/>
+        <Image Id="dfltMask159" TextureId="txr_texture_brick_clean" Bounds="440, 280, 26, 20" TraceId="image3696"/>
+        <Image Id="dfltMask160" TextureId="txr_texture_brick_clean" Bounds="414, 280, 26, 20" TraceId="image3698"/>
+        <Image Id="dfltMask161" TextureId="txr_texture_brick_clean" Bounds="336, 280, 26, 20" TraceId="image3700"/>
+        <Image Id="dfltMask162" TextureId="txr_texture_brick_clean" Bounds="466, 280, 26, 20" TraceId="image3702"/>
+        <Image Id="dfltMask163" TextureId="txr_texture_brick_clean" Bounds="458, 160, 26, 20" TraceId="image3704"/>
+        <Image Id="dfltMask164" TextureId="txr_texture_brick_clean" Bounds="458, 140, 26, 20" TraceId="image3706"/>
+        <Image Id="dfltMask165" TextureId="txr_texture_brick_clean" Bounds="458, 60, 26, 20" TraceId="image3708"/>
+        <Image Id="dfltMask166" TextureId="txr_texture_brick_clean" Bounds="458, 40, 26, 20" TraceId="image3710"/>
+        <Image Id="dfltMask167" TextureId="txr_texture_brick_clean" Bounds="194, 100, 26, 20" TraceId="image3738"/>
+        <Image Id="dfltMask168" TextureId="txr_texture_brick_clean" Bounds="194, 80, 26, 20" TraceId="image3740"/>
+        <Image Id="dfltMask169" TextureId="txr_texture_brick_clean" Bounds="194, 180, 26, 20" TraceId="image3742"/>
+        <Image Id="dfltMask170" TextureId="txr_texture_brick_clean" Bounds="194, 120, 26, 20" TraceId="image3744"/>
+        <Image Id="dfltMask171" TextureId="txr_texture_brick_clean" Bounds="194, 200, 26, 20" TraceId="image3746"/>
+        <Image Id="dfltMask172" TextureId="txr_texture_brick_clean" Bounds="194, 220, 26, 20" TraceId="image3748"/>
+        <Image Id="dfltMask173" TextureId="txr_texture_brick_clean" Bounds="76, 300, 26, 20" TraceId="image3818"/>
     </Layer>
     <Layer Id="design2" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask177" TextureId="txr_detal_3" Bounds="300, 102, 40, 40" TraceId="image3559"/>
-        <Image Id="dfltMask178" TextureId="txr_detal_3" Bounds="262, 102, 40, 40" TraceId="image3561"/>
-        <Image Id="dfltMask179" TextureId="txr_detal_3" Bounds="300, 202, 40, 40" TraceId="image3563"/>
-        <Image Id="dfltMask180" TextureId="txr_detal_3" Bounds="262, 202, 40, 40" TraceId="image3565"/>
-        <Image Id="dfltMask181" TextureId="txr_detal_3" Bounds="180, 202, 40, 40" TraceId="image3567"/>
-        <Image Id="dfltMask182" TextureId="txr_detal_3" Bounds="142, 202, 40, 40" TraceId="image3569"/>
-        <Image Id="dfltMask183" TextureId="txr_detal_3" Bounds="180, 102, 40, 40" TraceId="image3571"/>
-        <Image Id="dfltMask184" TextureId="txr_detal_3" Bounds="142, 102, 40, 40" TraceId="image3573"/>
+        <Image Id="dfltMask174" TextureId="txr_detal_3" Bounds="378, 102, 40, 40" TraceId="image3559"/>
+        <Image Id="dfltMask175" TextureId="txr_detal_3" Bounds="340, 102, 40, 40" TraceId="image3561"/>
+        <Image Id="dfltMask176" TextureId="txr_detal_3" Bounds="300, 202, 40, 40" TraceId="image3563"/>
+        <Image Id="dfltMask177" TextureId="txr_detal_3" Bounds="262, 202, 40, 40" TraceId="image3565"/>
+        <Image Id="dfltMask178" TextureId="txr_detal_3" Bounds="180, 202, 40, 40" TraceId="image3567"/>
+        <Image Id="dfltMask179" TextureId="txr_detal_3" Bounds="142, 202, 40, 40" TraceId="image3569"/>
+        <Image Id="dfltMask180" TextureId="txr_detal_3" Bounds="102, 102, 40, 40" TraceId="image3571"/>
+        <Image Id="dfltMask181" TextureId="txr_detal_3" Bounds="64, 102, 40, 40" TraceId="image3573"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -390,9 +380,8 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=6 Enemy=4 Block=32 DesignImage=184 Animation=0 Teleport Animations=0 FoodPack=0 -->
+<!-- Food=6 Enemy=4 Block=30 DesignImage=181 Animation=0 Teleport Animations=0 FoodPack=0 -->
 <!-- -->
 <!-- Food Points = 480 -->
 <!-- 1% = 4.8; 45% = 216; 90% = 432 -->
 <!-- minPointsFood = 80 (16.7%) -->
-

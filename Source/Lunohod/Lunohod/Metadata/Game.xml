@@ -25,20 +25,17 @@
 		/>
 		-->
         <LevelSeries Id="series1" Name="----- Series 1: Tutorial -----" File="ScreenSeries1.xml">
-	        <LevelInfo Id="Lvl_Tutorial_01" File="Lvl_Tutorial_01.xml" BombCount="0" />
-			<LevelInfo Id="Lvl_Tutorial_02" File="Lvl_Tutorial_02.xml" BombCount="0" />
-	        <LevelInfo Id="Lvl_Tutorial_03" File="Lvl_Tutorial_03.xml" BombCount="0" />
-	        <LevelInfo Id="Lvl_Tutorial_04" File="Lvl_Tutorial_04.xml" />
+	        <LevelInfo Id="[EMPTY]" File="Lvl_Tutorial_01.xml" BombCount="0" />
 		</LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
             <LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v4.xml" BombCount="0" TimeBonusThreshold="20"/>
             <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" BombCount="0" TimeBonusThreshold="11"/>
-            <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="16"/>
+            <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="17"/>
             <LevelInfo Id="Lvl_1D_Intro_v7" File="Lvl_1D_Intro_v7.xml" TimeBonusThreshold="18"/>
-            <LevelInfo Id="Lvl_1D_Intro_v8" File="Lvl_1D_Intro_v8.xml" TimeBonusThreshold="16"/>
+            <LevelInfo Id="Lvl_1D_Intro_v8" File="Lvl_1D_Intro_v8.xml" TimeBonusThreshold="18"/>
             <LevelInfo Id="Lvl_1D_Intro" File="Lvl_1D_Intro.xml" BombCount="0" TimeBonusThreshold="25"/>
-            <LevelInfo Id="Lvl_1D_Intro_v2" File="Lvl_1D_Intro_v2.xml" BombCount="0" TimeBonusThreshold="23"/>
-            <LevelInfo Id="Lvl_1D_Intro_v3" File="Lvl_1D_Intro_v3.xml" BombCount="0" TimeBonusThreshold="26.5"/>
+            <LevelInfo Id="Lvl_1D_Intro_v2" File="Lvl_1D_Intro_v2.xml" BombCount="0" TimeBonusThreshold="24"/>
+            <LevelInfo Id="Lvl_1D_Intro_v3" File="Lvl_1D_Intro_v3.xml" BombCount="0" TimeBonusThreshold="28"/>
             <LevelInfo Id="Lvl_1D_Boxes_v2" File="Lvl_1D_Boxes_v2.xml" TimeBonusThreshold="30"/>
             <LevelInfo Id="Lvl_1D_Boxes" File="Lvl_1D_Boxes.xml" TimeBonusThreshold="33"/>
             <LevelInfo Id="Lvl_1D_Boxes_v3_behindTheWall" File="Lvl_1D_Boxes_v3_behindTheWall.xml" TimeBonusThreshold="36"/>
@@ -72,6 +69,7 @@
             <LevelInfo Id="Lvl_Ceh_v8_etazhi" File="Lvl_Ceh_v8_etazhi.xml" TimeBonusThreshold="60" />
             <LevelInfo Id="Lvl_Ceh_v4_Gorlo" File="Lvl_Ceh_v4_Gorlo.xml" BombCount="0" TimeBonusThreshold="40"/>
             <LevelInfo Id="Lvl_Ceh_v5_dva_ugla" File="Lvl_Ceh_v5_dva_ugla.xml" TimeBonusThreshold="30"/>
+            <LevelInfo Id="Lvl_Ceh_v9_chetire_ugla" File="Lvl_Ceh_v9_chetire_ugla.xml" TimeBonusThreshold="30"/>
             <LevelInfo Id="Lvl_Ceh_v6_proizvodstvo" File="Lvl_Ceh_v6_proizvodstvo.xml" BombCount="0" TimeBonusThreshold="130"/>
             <LevelInfo Id="Lvl_Ceh_v7_nasos" File="Lvl_Ceh_v7_nasos.xml" BombCount="0" TimeBonusThreshold="34"/>
         </LevelSeries>
