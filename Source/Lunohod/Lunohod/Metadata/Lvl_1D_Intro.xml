@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.04 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Intro\Lvl_1D_Intro.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Intro" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish1.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -11,7 +11,7 @@
         <Texture Id="txr_laz_hor" Source="laz_hor" />
         <Texture Id="txr_laz_vert" Source="laz_vert" />
         <Texture Id="txr_laz_turn1" Source="laz_turn1" />
-        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
+
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-50, 0, 50, 64" Edges="Stick" TraceId="image4576"/>
@@ -50,15 +50,9 @@
         <Image Id="dfltMask23" TextureId="txr_laz_vert" Bounds="200, 170, 40, 30" TraceId="image3042"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="70" Bounds="204, 192, 30, 15" TraceId="image4564">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="70" Bounds="335, 41, 30, 15" TraceId="image4566">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="70" Bounds="293, 221, 30, 15" TraceId="image4561">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish1"  Bounds="204, 192, 30, 15" TraceId="image4564"/>
+        <Food Id="fd2" Class="clsFoodFish1"  Bounds="335, 41, 30, 15" TraceId="image4566"/>
+        <Food Id="fd3" Class="clsFoodFish1"  Bounds="293, 221, 30, 15" TraceId="image4561"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

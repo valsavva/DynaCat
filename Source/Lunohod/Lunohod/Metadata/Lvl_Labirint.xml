@@ -2,7 +2,10 @@
 <!-- SVG to XGAME xml converter v1.6.03 -->
 <!-- source: D:\Lunohod\Levels\S02LXX_Labirint\S02LXX_Labirint.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Labirint" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish4.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish1.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassTower.xml" />
@@ -21,10 +24,10 @@
         <Texture Id="txr_texture_brick_3" Source="texture_brick_3" />
         <Texture Id="txr_texture_brick_4" Source="texture_brick_4" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
+
+
+
+
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_tailsBrown" Bounds="0, 0, 480, 320" TraceId="image3159"/>
@@ -162,33 +165,15 @@
         <Image Id="dfltMask118" TextureId="txr_texture_brick_clean" Bounds="28, 60, 26, 20" TraceId="image3460"/>
         <Image Id="dfltMask119" TextureId="txr_texture_brick_clean" Bounds="54, 60, 26, 20" TraceId="image3462"/>
         <Image Id="dfltMask120" TextureId="txr_texture_brick_clean" Bounds="26, 60, 26, 20" TraceId="image3464"/>
-        <Food Id="fd1" Class="clsFood" Points="100" Bounds="44, 271, 26, 17" TraceId="image3520">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="100" Bounds="231, 204, 26, 17" TraceId="image3474">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="90" Bounds="408, 268, 28, 17" TraceId="image3485">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="80" Bounds="407, 34, 27, 15" TraceId="image3516">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="80" Bounds="193, 197, 27, 15" TraceId="image3518">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="80" Bounds="259, 190, 27, 15" TraceId="image3496">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="70" Bounds="43, 99, 30, 15" TraceId="image3510">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd8" Class="clsFood" Points="70" Bounds="167, 187, 30, 15" TraceId="image3512">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd9" Class="clsFood" Points="70" Bounds="223, 182, 30, 15" TraceId="image3514">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish4"  Bounds="44, 271, 26, 17" TraceId="image3520"/>
+        <Food Id="fd2" Class="clsFoodFish4"  Bounds="231, 204, 26, 17" TraceId="image3474"/>
+        <Food Id="fd3" Class="clsFoodFish3"  Bounds="408, 268, 28, 17" TraceId="image3485"/>
+        <Food Id="fd4" Class="clsFoodFish2"  Bounds="407, 34, 27, 15" TraceId="image3516"/>
+        <Food Id="fd5" Class="clsFoodFish2"  Bounds="193, 197, 27, 15" TraceId="image3518"/>
+        <Food Id="fd6" Class="clsFoodFish2"  Bounds="259, 190, 27, 15" TraceId="image3496"/>
+        <Food Id="fd7" Class="clsFoodFish1"  Bounds="43, 99, 30, 15" TraceId="image3510"/>
+        <Food Id="fd8" Class="clsFoodFish1"  Bounds="167, 187, 30, 15" TraceId="image3512"/>
+        <Food Id="fd9" Class="clsFoodFish1"  Bounds="223, 182, 30, 15" TraceId="image3514"/>
         <Enemy Id="enm1" Class="clsEnemyElectricity1" Bounds="437, 286, 11, 11" TraceId="image3645"/>
         <Enemy Id="enm2" Class="clsEnemyElectricity1" Bounds="34, 83, 11, 11" TraceId="image3645-1"/>
     </Layer>

@@ -2,7 +2,10 @@
 <!-- SVG to XGAME xml converter v1.6.04 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Intro_v2\Lvl_1D_Intro_v2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Intro_v2" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish1.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -11,10 +14,10 @@
         <Texture Id="txr_laz_hor" Source="laz_hor" />
         <Texture Id="txr_laz_vert" Source="laz_vert" />
         <Texture Id="txr_laz_turn1" Source="laz_turn1" />
-        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
+
+
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-50, 0, 50, 160" Edges="Stick" TraceId="image4576"/>
@@ -67,36 +70,16 @@
         <Image Id="dfltMask36" TextureId="txr_laz_hor" Bounds="200, 134, 40, 30" TraceId="image4617"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="70" Bounds="117, 46, 30, 15" TraceId="image4668">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="70" Bounds="174, 37, 30, 15" TraceId="image4670">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="70" Bounds="238, 46, 30, 15" TraceId="image4672">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="70" Bounds="290, 35, 30, 15" TraceId="image4688">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="90" Bounds="264, 250, 28, 17" TraceId="image4684">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="90" Bounds="207, 250, 28, 17" TraceId="image4660">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="80" Bounds="400, 103, 27, 15" TraceId="image4674">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd8" Class="clsFood" Points="80" Bounds="410, 156, 27, 15" TraceId="image4676">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd9" Class="clsFood" Points="80" Bounds="400, 213, 27, 15" TraceId="image4678">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd10" Class="clsFood" Points="100" Bounds="182, 140, 26, 17" TraceId="image4686">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish1"  Bounds="117, 46, 30, 15" TraceId="image4668"/>
+        <Food Id="fd2" Class="clsFoodFish1"  Bounds="174, 37, 30, 15" TraceId="image4670"/>
+        <Food Id="fd3" Class="clsFoodFish1"  Bounds="238, 46, 30, 15" TraceId="image4672"/>
+        <Food Id="fd4" Class="clsFoodFish1"  Bounds="290, 35, 30, 15" TraceId="image4688"/>
+        <Food Id="fd5" Class="clsFoodFish3"  Bounds="264, 250, 28, 17" TraceId="image4684"/>
+        <Food Id="fd6" Class="clsFoodFish3"  Bounds="207, 250, 28, 17" TraceId="image4660"/>
+        <Food Id="fd7" Class="clsFoodFish2"  Bounds="400, 103, 27, 15" TraceId="image4674"/>
+        <Food Id="fd8" Class="clsFoodFish2"  Bounds="410, 156, 27, 15" TraceId="image4676"/>
+        <Food Id="fd9" Class="clsFoodFish2"  Bounds="400, 213, 27, 15" TraceId="image4678"/>
+        <Food Id="fd10" Class="clsFoodFish4"  Bounds="182, 140, 26, 17" TraceId="image4686"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

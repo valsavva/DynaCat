@@ -4,7 +4,7 @@
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Ceh_v8_etazhi" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemySaw.xml" />
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -12,7 +12,7 @@
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_circular_saw_50" Source="circular_saw_50" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
+
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
         <Texture Id="txr_texture_brick_4" Source="texture_brick_4" />
         <Texture Id="txr_detal_3" Source="detal_3" />
@@ -169,24 +169,12 @@
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
-        <Food Id="fd1" Class="clsFood" Points="80" Bounds="130, 53, 27, 15" TraceId="image3828">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="80" Bounds="156, 153, 27, 15" TraceId="image3831">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="80" Bounds="130, 253, 27, 15" TraceId="image3833">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="80" Bounds="325, 53, 27, 15" TraceId="image3835">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="80" Bounds="299, 153, 27, 15" TraceId="image3837">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="80" Bounds="325, 253, 27, 15" TraceId="image3840">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish2"  Bounds="130, 53, 27, 15" TraceId="image3828"/>
+        <Food Id="fd2" Class="clsFoodFish2"  Bounds="156, 153, 27, 15" TraceId="image3831"/>
+        <Food Id="fd3" Class="clsFoodFish2"  Bounds="130, 253, 27, 15" TraceId="image3833"/>
+        <Food Id="fd4" Class="clsFoodFish2"  Bounds="325, 53, 27, 15" TraceId="image3835"/>
+        <Food Id="fd5" Class="clsFoodFish2"  Bounds="299, 153, 27, 15" TraceId="image3837"/>
+        <Food Id="fd6" Class="clsFoodFish2"  Bounds="325, 253, 27, 15" TraceId="image3840"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_texture_brick_clean" Bounds="180, 300, 26, 20" TraceId="image3125"/>

@@ -2,7 +2,8 @@
 <!-- SVG to XGAME xml converter v1.6.03 -->
 <!-- source: D:\Lunohod\Levels\S02LXX_Labirint_v3_Box\S02LXX_Labirint_v3_Box.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Labirint_v3_Box" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassEnemyRat1.xml" />
@@ -21,8 +22,8 @@
         <Texture Id="txr_texture_brick_3" Source="texture_brick_3" />
         <Texture Id="txr_texture_brick_6" Source="texture_brick_6" />
         <Texture Id="txr_texture_brick_4" Source="texture_brick_4" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image4137"/>
@@ -158,18 +159,10 @@
         <Image Id="dfltMask113" TextureId="txr_texture_brick_clean" Bounds="252, 300, 26, 20" TraceId="image4454"/>
     </Layer>
     <Layer Id="Food" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="80" Bounds="296, 37, 27, 15" TraceId="image3253">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="80" Bounds="408, 264, 27, 15" TraceId="image3256">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="80" Bounds="53, 160, 27, 15" TraceId="image3258">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="100" Bounds="299, 204, 26, 17" TraceId="image3268">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish2"  Bounds="296, 37, 27, 15" TraceId="image3253"/>
+        <Food Id="fd2" Class="clsFoodFish2"  Bounds="408, 264, 27, 15" TraceId="image3256"/>
+        <Food Id="fd3" Class="clsFoodFish2"  Bounds="53, 160, 27, 15" TraceId="image3258"/>
+        <Food Id="fd4" Class="clsFoodFish4"  Bounds="299, 204, 26, 17" TraceId="image3268"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->

@@ -2,7 +2,8 @@
 <!-- SVG to XGAME xml converter v1.6.03 -->
 <!-- source: D:\Lunohod\Levels\S05LXX_Poezd_v3_Spiral\S05LXX_Poezd_v3_Spiral.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S05LXX_Poezd_v3_Spiral" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassEnemyRat1.xml" />
@@ -19,8 +20,8 @@
         <Texture Id="txr_railwayHor8" Source="railwayHor8" />
         <Texture Id="txr_railwayHor2" Source="railwayHor2" />
         <Texture Id="txr_railwayHor4" Source="railwayHor4" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Do Action="dashboard:+NoArrows" InProgress="true"/>
@@ -84,64 +85,28 @@
         <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="80" Bounds="88, 39, 27, 15" TraceId="image3496">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="80" Bounds="102, 33, 27, 15" TraceId="image3498">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="80" Bounds="369, 41, 27, 15" TraceId="image3500">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="80" Bounds="382, 34, 27, 15" TraceId="image3502">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="80" Bounds="72, 279, 27, 15" TraceId="image3504">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="80" Bounds="134, 270, 27, 15" TraceId="image3506">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="80" Bounds="203, 280, 27, 15" TraceId="image3508">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd8" Class="clsFood" Points="80" Bounds="263, 267, 27, 15" TraceId="image3510">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd9" Class="clsFood" Points="80" Bounds="332, 279, 27, 15" TraceId="image3512">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd10" Class="clsFood" Points="80" Bounds="385, 265, 27, 15" TraceId="image3514">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd11" Class="clsFood" Points="80" Bounds="114, 102, 27, 15" TraceId="image3516">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd12" Class="clsFood" Points="80" Bounds="158, 83, 27, 15" TraceId="image3518">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd13" Class="clsFood" Points="80" Bounds="203, 101, 27, 15" TraceId="image3520">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd14" Class="clsFood" Points="80" Bounds="255, 83, 27, 15" TraceId="image3522">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd15" Class="clsFood" Points="80" Bounds="299, 102, 27, 15" TraceId="image3467">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish2"  Bounds="88, 39, 27, 15" TraceId="image3496"/>
+        <Food Id="fd2" Class="clsFoodFish2"  Bounds="102, 33, 27, 15" TraceId="image3498"/>
+        <Food Id="fd3" Class="clsFoodFish2"  Bounds="369, 41, 27, 15" TraceId="image3500"/>
+        <Food Id="fd4" Class="clsFoodFish2"  Bounds="382, 34, 27, 15" TraceId="image3502"/>
+        <Food Id="fd5" Class="clsFoodFish2"  Bounds="72, 279, 27, 15" TraceId="image3504"/>
+        <Food Id="fd6" Class="clsFoodFish2"  Bounds="134, 270, 27, 15" TraceId="image3506"/>
+        <Food Id="fd7" Class="clsFoodFish2"  Bounds="203, 280, 27, 15" TraceId="image3508"/>
+        <Food Id="fd8" Class="clsFoodFish2"  Bounds="263, 267, 27, 15" TraceId="image3510"/>
+        <Food Id="fd9" Class="clsFoodFish2"  Bounds="332, 279, 27, 15" TraceId="image3512"/>
+        <Food Id="fd10" Class="clsFoodFish2"  Bounds="385, 265, 27, 15" TraceId="image3514"/>
+        <Food Id="fd11" Class="clsFoodFish2"  Bounds="114, 102, 27, 15" TraceId="image3516"/>
+        <Food Id="fd12" Class="clsFoodFish2"  Bounds="158, 83, 27, 15" TraceId="image3518"/>
+        <Food Id="fd13" Class="clsFoodFish2"  Bounds="203, 101, 27, 15" TraceId="image3520"/>
+        <Food Id="fd14" Class="clsFoodFish2"  Bounds="255, 83, 27, 15" TraceId="image3522"/>
+        <Food Id="fd15" Class="clsFoodFish2"  Bounds="299, 102, 27, 15" TraceId="image3467"/>
         <Group Id="grp_g3492">
             <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="107, 59, 22, 23" TraceId="image3478"/>
             <NumAnimation Id="anm8" From="0" To="254" Target="X" Duration="7" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3489"/>
         </Group>
-        <Food Id="fd16" Class="clsFood" Points="100" Bounds="142, 183, 26, 17" TraceId="image3574">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd17" Class="clsFood" Points="100" Bounds="154, 202, 26, 17" TraceId="image3576">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd18" Class="clsFood" Points="100" Bounds="179, 183, 26, 17" TraceId="image3571">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd16" Class="clsFoodFish4"  Bounds="142, 183, 26, 17" TraceId="image3574"/>
+        <Food Id="fd17" Class="clsFoodFish4"  Bounds="154, 202, 26, 17" TraceId="image3576"/>
+        <Food Id="fd18" Class="clsFoodFish4"  Bounds="179, 183, 26, 17" TraceId="image3571"/>
         <Group Id="grp_g3591">
             <NumAnimation Id="anm9" From="0" To="97" Target="Y" Duration="1.15" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3556"/>
             <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="221, 137, 22, 23" TraceId="image3588"/>

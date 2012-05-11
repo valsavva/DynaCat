@@ -3,7 +3,8 @@
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Boxes_v2\Lvl_1D_Boxes_v2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Boxes_v2" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -13,8 +14,8 @@
         <Texture Id="txr_laz_vert" Source="laz_vert" />
         <Texture Id="txr_laz_turn1" Source="laz_turn1" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
     </Resources>
@@ -56,18 +57,10 @@
         <Block Id="blk7" Class="clsWoodenBox" Bounds="66, 40, 30, 30" Edges="Stick" TraceId="image4886">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Food Id="fd1" Class="clsFood" Points="90" Bounds="224, 48, 28, 17" TraceId="image4927">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="100" Bounds="179, 228, 26, 17" TraceId="image4951">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="100" Bounds="195, 221, 26, 17" TraceId="image4953">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="100" Bounds="205, 231, 26, 17" TraceId="image4955">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish3"  Bounds="224, 48, 28, 17" TraceId="image4927"/>
+        <Food Id="fd2" Class="clsFoodFish4"  Bounds="179, 228, 26, 17" TraceId="image4951"/>
+        <Food Id="fd3" Class="clsFoodFish4"  Bounds="195, 221, 26, 17" TraceId="image4953"/>
+        <Food Id="fd4" Class="clsFoodFish4"  Bounds="205, 231, 26, 17" TraceId="image4955"/>
         <Block Id="blk8" Class="clsWoodenBox" Bounds="366, 44, 30, 30" Edges="Stick" TraceId="image4941">
             <Image TextureId="txr_box_old_1" />
         </Block>

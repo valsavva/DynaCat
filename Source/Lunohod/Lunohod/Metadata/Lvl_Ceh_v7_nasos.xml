@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\Lvl_Ceh_v7_nasos\Lvl_Ceh_v7_nasos.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Ceh_v7_nasos" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemySaw.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -14,7 +14,7 @@
         <Texture Id="txr_detal_me2" Source="detal_me2" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
         <Texture Id="txr_detal_3" Source="detal_3" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-1, 280, 481, 100" Edges="Stick" TraceId="image3819"/>
@@ -424,15 +424,9 @@
         <Image Id="dfltMask254" TextureId="txr_detal_3" Bounds="98, 24, 40, 40" TraceId="image3504"/>
     </Layer>
     <Layer Id="food" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="100" Bounds="182, 245, 26, 17" TraceId="image3554">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="100" Bounds="182, 261, 26, 17" TraceId="image3556">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="100" Bounds="199, 249, 26, 17" TraceId="image4525">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish4"  Bounds="182, 245, 26, 17" TraceId="image3554"/>
+        <Food Id="fd2" Class="clsFoodFish4"  Bounds="182, 261, 26, 17" TraceId="image3556"/>
+        <Food Id="fd3" Class="clsFoodFish4"  Bounds="199, 249, 26, 17" TraceId="image4525"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

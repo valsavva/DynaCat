@@ -3,7 +3,8 @@
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Enemies_v2\Lvl_1D_Enemies_v2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Enemies_v2" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassTower.xml" />
@@ -16,8 +17,8 @@
         <Texture Id="txr_laz_hor" Source="laz_hor" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>
@@ -61,18 +62,10 @@
         <Block Id="blk3" Class="clsWoodenBox" Bounds="348, 140, 30, 30" Edges="Stick" TraceId="image3126">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Food Id="fd1" Class="clsFood" Points="90" Bounds="386, 265, 28, 17" TraceId="image3154">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="90" Bounds="230, 83, 28, 17" TraceId="image3190">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="100" Bounds="40, 153, 26, 17" TraceId="image3207">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="100" Bounds="53, 140, 26, 17" TraceId="image3205">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish3"  Bounds="386, 265, 28, 17" TraceId="image3154"/>
+        <Food Id="fd2" Class="clsFoodFish3"  Bounds="230, 83, 28, 17" TraceId="image3190"/>
+        <Food Id="fd3" Class="clsFoodFish4"  Bounds="40, 153, 26, 17" TraceId="image3207"/>
+        <Food Id="fd4" Class="clsFoodFish4"  Bounds="53, 140, 26, 17" TraceId="image3205"/>
         <Group Id="grp_g3111">
             <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="78, 144, 22, 23" TraceId="image3072"/>
             <NumAnimation Id="anm1" From="0" To="120" Target="X" Duration="8" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3071"/>

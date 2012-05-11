@@ -4,7 +4,7 @@
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Ceh_v9_chetire_ugla" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemySaw.xml" />
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -12,7 +12,7 @@
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_circular_saw_50" Source="circular_saw_50" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
         <Texture Id="txr_texture_brick_4" Source="texture_brick_4" />
         <Texture Id="txr_detal_3" Source="detal_3" />
@@ -125,18 +125,10 @@
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
-        <Food Id="fd1" Class="clsFood" Points="100" Bounds="32, 53, 26, 17" TraceId="image3475">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="100" Bounds="424, 51, 26, 17" TraceId="image3478">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="100" Bounds="424, 250, 26, 17" TraceId="image3480">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="100" Bounds="32, 250, 26, 17" TraceId="image3482">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish4"  Bounds="32, 53, 26, 17" TraceId="image3475"/>
+        <Food Id="fd2" Class="clsFoodFish4"  Bounds="424, 51, 26, 17" TraceId="image3478"/>
+        <Food Id="fd3" Class="clsFoodFish4"  Bounds="424, 250, 26, 17" TraceId="image3480"/>
+        <Food Id="fd4" Class="clsFoodFish4"  Bounds="32, 250, 26, 17" TraceId="image3482"/>
     </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk6" Bounds="24, 280, 434, 40" Edges="Stick" TraceId="image3819"/>

@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\S02LXX_Nozhnicy\S02LXX_Nozhnicy.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Nozhnicy" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat1.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -11,7 +11,7 @@
         <Texture Id="txr_tailsBlue" Source="tailsBlue" />
         <Texture Id="txr_second_phon_plate1" Source="second_phon_plate1" />
         <Texture Id="txr_container_steel_2_big" Source="container_steel_2_big" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3083"/>
@@ -63,9 +63,7 @@
             <Enemy Id="enm4" Class="clsEnemyRat1" Bounds="334, 235, 24, 25" TraceId="image3016"/>
             <NumAnimation Smoothing="Flat" Id="anm4" From="0" To="-200" Target="Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3046"/>
         </Group>
-        <Food Id="fd1" Class="clsFood" Points="1" Bounds="97, 143, 26, 17" TraceId="image3072">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish4"  Bounds="97, 143, 26, 17" TraceId="image3072"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Hero Id="hero" Class="clsHero" Bounds="384, 144, 34, 22" TraceId="image3027"/>
