@@ -53,7 +53,7 @@
             <!-- quake -->
 			<BoolTrigger Condition="this:BoomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="this_foodStates"/>
 			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
-				<NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="false"/>
+				<NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="2.5" IsDelta="false"/>
 			</SequenceSet>
 			
 			<BoolTrigger Id="this_default" Group="this_foodStates"/>

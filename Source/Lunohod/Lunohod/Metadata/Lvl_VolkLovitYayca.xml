@@ -5,7 +5,9 @@
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassEnemyRat3.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    
+    
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
@@ -48,90 +50,80 @@
     <!-- FIX FOR START AFTER LOAD LEVEL DECREASE 10 SEC. -->
     <Layer Id="Food" BackColor="#FFFFFFFF">
 
-        <Food Id="fd1" Points="1" Bounds="90, -98, 27, 15" Class="clsFood" >
+        <Food Id="fd1" Bounds="90, -98, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="1" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="5" />
                 <NumAnimation Id="anm1" From="0" To="500" Target="fd1.Y" Duration="7" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd2" Points="1" Bounds="112, -95, 27, 15" Class="clsFood" >
+        <Food Id="fd2" Bounds="112, -95, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="2" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="7" />
                 <NumAnimation Id="anm2" From="0" To="500" Target="fd2.Y" Duration="9" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd3" Points="1" Bounds="245, -95, 27, 15" Class="clsFood" >
+        <Food Id="fd3" Bounds="245, -95, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="3" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="10" />
                 <NumAnimation Id="anm3" From="0" To="500" Target="fd3.Y" Duration="7" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd4" Points="1" Bounds="360, -94, 27, 15" Class="clsFood" >
+        <Food Id="fd4" Bounds="360, -94, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="4" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="8.6" />
                 <NumAnimation Id="anm4" From="0" To="500" Target="fd4.Y" Duration="12" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd5" Points="1" Bounds="204, -94, 27, 15" Class="clsFood" >
+        <Food Id="fd5" Bounds="204, -94, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="5" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="13" />
                 <NumAnimation Id="anm5" From="0" To="500" Target="fd5.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd6" Points="1" Bounds="300, -94, 27, 15" Class="clsFood" >
+        <Food Id="fd6" Bounds="300, -94, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="6" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="14" />
                 <NumAnimation Id="anm6" From="0" To="500" Target="fd6.Y" Duration="10" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd7" Points="1" Bounds="350, -94, 27, 15" Class="clsFood" >
+        <Food Id="fd7" Bounds="350, -94, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="7" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="19" />
                 <NumAnimation Id="anm7" From="0" To="500" Target="fd7.Y" Duration="4" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd8" Points="1" Bounds="350, -94, 27, 15" Class="clsFood" >
+        <Food Id="fd8" Bounds="350, -94, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="8" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="18" />
                 <NumAnimation Id="anm8" From="0" To="500" Target="fd8.Y" Duration="19" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd9" Points="1" Bounds="90, -94, 27, 15" Class="clsFood" >
+        <Food Id="fd9" Bounds="90, -94, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="9" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="21" />
                 <NumAnimation Id="anm9" From="0" To="500" Target="fd9.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd10" Points="1" Bounds="90, -94, 27, 15" Class="clsFood" >
+        <Food Id="fd10" Bounds="90, -94, 27, 15" Class="clsFoodFish2" >
             <!--<Text FontId="SystemFont" Text="10" Location="24,12" Color="#000000" />-->
-            <Image TextureId="txr_fish_3_me" />
             <SequenceSet InProgress="true" RepeatCount="1">
                 <Delay Duration="28" />
                 <NumAnimation Id="anm10" From="0" To="500" Target="fd10.Y" Duration="10" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />

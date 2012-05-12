@@ -1,0 +1,86 @@
+<Include>
+    <Resources RootFolder="Global">
+        <Font Id="Splash14Font" Source="Splash14Font" />
+    </Resources>
+    <Resources RootFolder="Textures">
+        <Texture Id="txrFish2Default" Source="fish_3_me" />
+        <Texture Id="txrFishBones" Source="fish_skelet_demo" />
+    </Resources>
+
+    <Class Id="clsFoodFish2">
+        <Food IsExploding="true" Points="80">
+
+            <!-- Points Animation -->
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
+                <Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y" InProgress="true" />
+                <Text FontId="Splash14Font" Text="='+' + system.Str(this.Points)" Location="6,-12" Color="#FFFFFF">
+                    <SequenceSet RepeatCount="1" InProgress="true">
+                        <ParallelSet RepeatCount="1">
+                            <NumAnimation Target="this_grpShowPoints.Opacity" From="1" To="0.5" RepeatCount="1" Duration="1" Fill="Hold" />
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-50" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                            </RandomSet>
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.X" From="-4" To="4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.X" From="4" To="-4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                            </RandomSet>
+                        </ParallelSet>
+                        <Do Action="this.Disable()"/>
+                    </SequenceSet>
+                </Text>
+            </Group>
+
+            <!-- States -->
+
+            <!-- eaten -->
+            <BoolTrigger Condition="not this:Eaten and not this:Borned">
+                <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);hero:+Eating;this:+Eaten;this_anmEating.Start();this.IsExploding=false;this_grpShowPoints.Enable()"/>
+            </BoolTrigger>
+            <SequenceSet Id="this_anmEating">
+                <ParallelSet>
+                    <NumAnimation Duration="1" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="1"/>
+                    <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1"/>
+                </ParallelSet>
+            </SequenceSet>
+
+            <!-- explosion  -->
+            <!-- destroy -->
+            <BoolTrigger Id="this_borned" Condition="this:Borned" Group="this_foodStates">
+                <Image Id="this_imgFishBones" TextureId="txrFishBones" RotationCenter="15,6" Bounds="0,0,30,13"/>
+            </BoolTrigger>
+
+            <BoolTrigger Condition="this:BoomClose" EnterAction="this:+Borned;this_setDestroy1.Start();hero:+BadExplosion" StayTriggered="false" Group="this_foodStates" />
+            <SequenceSet Id="this_setDestroy1">
+                <ParallelSet>
+                    <NumAnimation Target="this.Y" From="0" To="-30" Duration="0.3" IsDelta="true" Autoreverse="true" RepeatCount="1" />
+                    <NumAnimation Target="this_imgFishBones.Rotation" From="0" To="360" Duration="0.3" Autoreverse="false" RepeatCount="2" />
+                </ParallelSet>
+                <NumAnimation Target="this.Y" From="0" To="-3" Duration="0.15" IsDelta="true" Autoreverse="true" RepeatCount="1" />
+            </SequenceSet>
+
+            <!-- quake -->
+            <BoolTrigger Condition="this:BoomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="this_foodStates"/>
+            <SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+                <NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="2.5" IsDelta="false"/>
+            </SequenceSet>
+
+            <BoolTrigger Id="this_default" Group="this_foodStates">
+                <Image Id="this_imgFish2Default" TextureId="txrFish2Default"/>
+            </BoolTrigger>
+        </Food>
+    </Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+

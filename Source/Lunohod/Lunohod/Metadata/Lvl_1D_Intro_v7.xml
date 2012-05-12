@@ -3,7 +3,8 @@
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Intro_v7\Lvl_1D_Intro_v7.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Intro_v7" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish3.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -12,8 +13,8 @@
         <Texture Id="txr_laz_hor" Source="laz_hor" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
+
+
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-50, 0, 50, 160" Edges="Stick" TraceId="image4576"/>
@@ -50,12 +51,8 @@
         <Block Id="blk8" Class="clsWoodenBox" Bounds="96, 80, 30, 30" Edges="Stick" TraceId="image3028">
             <Image TextureId="txr_box_old_3" />
         </Block>
-        <Food Id="fd1" Class="clsFood" Points="80" Bounds="166, 87, 27, 15" TraceId="image3040-1">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="90" Bounds="347, 86, 28, 17" TraceId="image3051">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish2"  Bounds="166, 87, 27, 15" TraceId="image3040-1"/>
+        <Food Id="fd2" Class="clsFoodFish3"  Bounds="347, 86, 28, 17" TraceId="image3051"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

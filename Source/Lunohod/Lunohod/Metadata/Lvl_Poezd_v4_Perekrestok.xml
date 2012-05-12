@@ -2,7 +2,8 @@
 <!-- SVG to XGAME xml converter v1.6.03 -->
 <!-- source: D:\Lunohod\Levels\S05LXX_Poezd_v4_Perekrestok\S05LXX_Poezd_v4_Perekrestok.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S05LXX_Poezd_v4_Perekrestok" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassEnemyRat1.xml" />
@@ -19,8 +20,8 @@
         <Texture Id="txr_railwayCross" Source="railwayCross" />
         <Texture Id="txr_railwayHor6" Source="railwayHor6" />
         <Texture Id="txr_railwayHor2" Source="railwayHor2" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Do Action="dashboard:+NoArrows" InProgress="true"/>
@@ -68,34 +69,16 @@
         <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="80" Bounds="132, 277, 27, 15" TraceId="image3496">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="80" Bounds="143, 38, 27, 15" TraceId="image3154">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="80" Bounds="167, 265, 27, 15" TraceId="image3156">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="80" Bounds="96, 266, 27, 15" TraceId="image3498">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish2"  Bounds="132, 277, 27, 15" TraceId="image3496"/>
+        <Food Id="fd2" Class="clsFoodFish2"  Bounds="143, 38, 27, 15" TraceId="image3154"/>
+        <Food Id="fd3" Class="clsFoodFish2"  Bounds="167, 265, 27, 15" TraceId="image3156"/>
+        <Food Id="fd4" Class="clsFoodFish2"  Bounds="96, 266, 27, 15" TraceId="image3498"/>
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="307, 156, 22, 23" TraceId="image3478"/>
-        <Food Id="fd5" Class="clsFood" Points="100" Bounds="232, 192, 26, 17" TraceId="image3144">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="100" Bounds="266, 192, 26, 17" TraceId="image3146">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="100" Bounds="303, 192, 26, 17" TraceId="image3148">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd8" Class="clsFood" Points="100" Bounds="269, 162, 26, 17" TraceId="image3150">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd9" Class="clsFood" Points="100" Bounds="267, 220, 26, 17" TraceId="image3571">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd5" Class="clsFoodFish4"  Bounds="232, 192, 26, 17" TraceId="image3144"/>
+        <Food Id="fd6" Class="clsFoodFish4"  Bounds="266, 192, 26, 17" TraceId="image3146"/>
+        <Food Id="fd7" Class="clsFoodFish4"  Bounds="303, 192, 26, 17" TraceId="image3148"/>
+        <Food Id="fd8" Class="clsFoodFish4"  Bounds="269, 162, 26, 17" TraceId="image3150"/>
+        <Food Id="fd9" Class="clsFoodFish4"  Bounds="267, 220, 26, 17" TraceId="image3571"/>
         <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="231, 223, 22, 23" TraceId="image3588"/>
         <Enemy Id="enm3" Class="clsEnemyRat1" Bounds="230, 154, 24, 25" TraceId="image3130"/>
         <Enemy Id="enm4" Class="clsEnemyRat5" Bounds="306, 225, 26, 28" TraceId="image3141"/>

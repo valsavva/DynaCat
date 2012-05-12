@@ -2,7 +2,8 @@
 <!-- SVG to XGAME xml converter v1.6.03 -->
 <!-- source: D:\Lunohod\Levels\S04LXX_Ceh_v4_Gorlo\S04LXX_Ceh_v4_Gorlo.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S04LXX_Ceh_v4_Gorlo" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemySaw.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassTower.xml" />
@@ -10,8 +11,8 @@
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
         <Texture Id="txr_circular_saw_50" Source="circular_saw_50" />
         <Texture Id="txr_wire_currentLR" Source="wire_currentLR" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
@@ -48,27 +49,13 @@
         <Block Id="blk17" Bounds="312, 60, 36, 200" Edges="Bounce" TraceId="image3672"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="90" Bounds="166, 38, 28, 17" TraceId="image3551">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="90" Bounds="182, 29, 28, 17" TraceId="image4759">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="90" Bounds="31, 266, 28, 17" TraceId="image4763">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="90" Bounds="409, 28, 28, 17" TraceId="image3543">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="90" Bounds="425, 38, 28, 17" TraceId="image4538">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="100" Bounds="139, 182, 26, 17" TraceId="image3547">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="100" Bounds="153, 191, 26, 17" TraceId="image3549">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish3"  Bounds="166, 38, 28, 17" TraceId="image3551"/>
+        <Food Id="fd2" Class="clsFoodFish3"  Bounds="182, 29, 28, 17" TraceId="image4759"/>
+        <Food Id="fd3" Class="clsFoodFish3"  Bounds="31, 266, 28, 17" TraceId="image4763"/>
+        <Food Id="fd4" Class="clsFoodFish3"  Bounds="409, 28, 28, 17" TraceId="image3543"/>
+        <Food Id="fd5" Class="clsFoodFish3"  Bounds="425, 38, 28, 17" TraceId="image4538"/>
+        <Food Id="fd6" Class="clsFoodFish4"  Bounds="139, 182, 26, 17" TraceId="image3547"/>
+        <Food Id="fd7" Class="clsFoodFish4"  Bounds="153, 191, 26, 17" TraceId="image3549"/>
         
 <!-- HAND EDIT >>> -->        
         <Enemy Id="enm1" Class="clsEnemySaw" Bounds="209, 66, 50, 50" TraceId="Left1">
@@ -297,9 +284,7 @@
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
-        <Food Id="fd8" Class="clsFood" Points="90" Bounds="48, 277, 28, 17" TraceId="image3545">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fd8" Class="clsFoodFish3"  Bounds="48, 277, 28, 17" TraceId="image3545"/>
         <Enemy Id="enm10" Class="clsEnemyElectricity1" Bounds="26, 129, 11, 11" TraceId="image3682"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">

@@ -4,7 +4,8 @@
 <Level Name="S01L03" Bounds="0, 0, 480, 320">
     <Include File="ClassHelpText.xml" />
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemyRat1.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassHero.xml" />
@@ -24,8 +25,8 @@
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
         <Texture Id="txr_wire_currentLR" Source="wire_currentLR" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
     </Resources>
@@ -79,18 +80,14 @@
         <Block Id="blk9" Class="clsWoodenBox" Bounds="210, 346, 30, 30" Edges="Stick" TraceId="image3127">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Food Id="fd1" Class="clsFood" Points="1" Bounds="203, 82, 28, 17" TraceId="image3401">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish3"  Bounds="203, 82, 28, 17" TraceId="image3401"/>
         <Block Id="blk10" Class="clsWoodenBox" Bounds="81, 346, 30, 30" Edges="Stick" TraceId="image3428">
             <Image TextureId="txr_box_old_3" />
         </Block>
         <Block Id="blk11" Class="clsWoodenBox" Bounds="31, 346, 30, 30" Edges="Stick" TraceId="image3430">
             <Image TextureId="txr_box_old_3" />
         </Block>
-        <Food Id="fd2" Class="clsFood" Points="1" Bounds="209, 173, 26, 17" TraceId="image3495">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd2" Class="clsFoodFish4"  Bounds="209, 173, 26, 17" TraceId="image3495"/>
         <Image Id="dfltMask6" TextureId="txr_wire_currentLR" Bounds="72, 176, 45, 8" Stretch="false" Opacity="1" TraceId="image4047"/>
         <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="333, 74, 28, 25" TraceId="image4007"/>
         <Enemy Id="enm2" Class="clsEnemyElectricity1" Bounds="108, 175, 15, 11" TraceId="image4094"/>

@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.04 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Boxes_v3_behindTheWall\Lvl_1D_Boxes_v3_behindTheWall.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Boxes_v3_behindTheWall" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -12,7 +12,7 @@
         <Texture Id="txr_laz_hor" Source="laz_hor" />
         <Texture Id="txr_laz_vert" Source="laz_vert" />
         <Texture Id="txr_laz_turn1" Source="laz_turn1" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
@@ -65,9 +65,7 @@
         <Image Id="dfltMask34" TextureId="txr_laz_vert" Bounds="140, 278, 40, 30" TraceId="image5062"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="100" Bounds="308, 291, 26, 17" TraceId="image4951">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish4"  Bounds="308, 291, 26, 17" TraceId="image4951"/>
         <Block Id="blk8" Class="clsWoodenBox" Bounds="304, 24, 30, 30" Edges="Stick" TraceId="image4941">
             <Image TextureId="txr_box_old_1" />
         </Block>

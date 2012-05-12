@@ -3,7 +3,8 @@
 <!-- source: D:\Lunohod\Levels\S01L04\S01L04.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S01L04" Bounds="0, 0, 480, 320">
     <Include File="ClassHelpText.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassEnemyRat1.xml" />
     <Include File="ClassHero.xml" />
@@ -16,8 +17,8 @@
         <Texture Id="txr_second_phon_communications_2a" Source="second_phon_communications_2a" />
         <Texture Id="txr_txt_try_the_bombs" Source="txt_try_the_bombs" />
         <Texture Id="txr_arr_Straight4" Source="arr_Straight4" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
@@ -46,12 +47,8 @@
         <Block Id="blk2" Bounds="-50, 300, 590, 50" Edges="Stick" TraceId="image3423"/>
         <Block Id="blk3" Bounds="-104, 0, 120, 347" Edges="Stick" TraceId="image3425"/>
         <Block Id="blk4" Bounds="464, 0, 120, 347" Edges="Stick" TraceId="image3427"/>
-        <Food Id="fd1" Class="clsFood" Points="100" Bounds="94, 215, 28, 17" TraceId="image3401">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="200" Bounds="105, 230, 26, 17" TraceId="image3495">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish3"  Bounds="94, 215, 28, 17" TraceId="image3401"/>
+        <Food Id="fd2" Class="clsFoodFish4" Bounds="105, 230, 26, 17" TraceId="image3495"/>
         <Block Id="blk5" Class="clsWoodenBox" Bounds="116, 144, 30, 30" Edges="Stick" TraceId="image3135">
             <Image TextureId="txr_box_old_1" />
         </Block>

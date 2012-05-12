@@ -6,7 +6,8 @@
     <Include File="ClassTeleportTube.xml" />
     <Include File="ClassTeleportKoleno.xml" />
     <Include File="ClassTeleportOut.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish1.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemyRat5.xml" />
     <Include File="ClassEnemyRat1.xml" />
     <Include File="ClassEnemyRat2.xml" />
@@ -28,8 +29,8 @@
         <Texture Id="txr_TeleportEntryRight" Source="TeleportEntryRight" />
         <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
         <Texture Id="txr_TeleportEntryLeft" Source="TeleportEntryLeft" />
-        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3240"/>
@@ -153,54 +154,22 @@
         </SequenceSet>
     </Layer>
     <Layer Id="fish" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="1" Bounds="44, 23, 30, 15" TraceId="image3343">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="1" Bounds="102, 79, 30, 15" TraceId="image3345">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="1" Bounds="238, 40, 30, 15" TraceId="image3347">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="1" Bounds="340, 54, 30, 15" TraceId="image3349">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="1" Bounds="345, 98, 30, 15" TraceId="image3351">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="1" Bounds="280, 137, 30, 15" TraceId="image3353">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="1" Bounds="143, 110, 30, 15" TraceId="image3355">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd8" Class="clsFood" Points="1" Bounds="106, 163, 30, 15" TraceId="image3357">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd9" Class="clsFood" Points="1" Bounds="213, 168, 30, 15" TraceId="image3359">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd10" Class="clsFood" Points="1" Bounds="281, 197, 30, 15" TraceId="image3361">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd11" Class="clsFood" Points="1" Bounds="215, 227, 30, 15" TraceId="image3363">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd12" Class="clsFood" Points="1" Bounds="19, 216, 30, 15" TraceId="image3384">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd13" Class="clsFood" Points="1" Bounds="16, 205, 30, 15" TraceId="image3365">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd14" Class="clsFood" Points="1" Bounds="112, 283, 30, 15" TraceId="image3270">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
-        <Food Id="fd15" Class="clsFood" Points="1" Bounds="216, 273, 26, 17" TraceId="image3382">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
-        <Food Id="fd16" Class="clsFood" Points="1" Bounds="237, 282, 26, 17" TraceId="image3380">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fd1" Class="clsFoodFish1"  Bounds="44, 23, 30, 15" TraceId="image3343"/>
+        <Food Id="fd2" Class="clsFoodFish1"  Bounds="102, 79, 30, 15" TraceId="image3345"/>
+        <Food Id="fd3" Class="clsFoodFish1"  Bounds="238, 40, 30, 15" TraceId="image3347"/>
+        <Food Id="fd4" Class="clsFoodFish1"  Bounds="340, 54, 30, 15" TraceId="image3349"/>
+        <Food Id="fd5" Class="clsFoodFish1"  Bounds="345, 98, 30, 15" TraceId="image3351"/>
+        <Food Id="fd6" Class="clsFoodFish1"  Bounds="280, 137, 30, 15" TraceId="image3353"/>
+        <Food Id="fd7" Class="clsFoodFish1"  Bounds="143, 110, 30, 15" TraceId="image3355"/>
+        <Food Id="fd8" Class="clsFoodFish1"  Bounds="106, 163, 30, 15" TraceId="image3357"/>
+        <Food Id="fd9" Class="clsFoodFish1"  Bounds="213, 168, 30, 15" TraceId="image3359"/>
+        <Food Id="fd10" Class="clsFoodFish1"  Bounds="281, 197, 30, 15" TraceId="image3361"/>
+        <Food Id="fd11" Class="clsFoodFish1"  Bounds="215, 227, 30, 15" TraceId="image3363"/>
+        <Food Id="fd12" Class="clsFoodFish1"  Bounds="19, 216, 30, 15" TraceId="image3384"/>
+        <Food Id="fd13" Class="clsFoodFish1"  Bounds="16, 205, 30, 15" TraceId="image3365"/>
+        <Food Id="fd14" Class="clsFoodFish1"  Bounds="112, 283, 30, 15" TraceId="image3270"/>
+        <Food Id="fd15" Class="clsFoodFish4"  Bounds="216, 273, 26, 17" TraceId="image3382"/>
+        <Food Id="fd16" Class="clsFoodFish4"  Bounds="237, 282, 26, 17" TraceId="image3380"/>
     </Layer>
 <!-- HAND EDIT >>> -->
     <Resources RootFolder="Sound">

@@ -3,7 +3,10 @@
 <!-- source: D:\Lunohod\Levels\S02LXX_Trenazher\S02LXX_Trenazher.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Trenazher" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat1.xml" />
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish4.xml" />
+    <Include File="ClassFoodFish1.xml" />
+    <Include File="ClassFoodFish3.xml" />
     <Include File="ClassEnemyRat5.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassTeleportEntry.xml" />
@@ -16,10 +19,10 @@
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_tailsBlue" Source="tailsBlue" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
-        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
+
+
+
+
         <Texture Id="txr_wire_current" Source="wire_current" />
         <Texture Id="txr_wire_currentLR" Source="wire_currentLR" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
@@ -46,98 +49,46 @@
     <Layer Id="trenAct" BackColor="#FFFFFFFF">
         <Group Id="grp_grpFdNEn" IsRoot="true" >
             <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="304, 113, 24, 25" TraceId="image3344"/>
-            <Food Id="fd1" Class="clsFood" Points="1" Bounds="170, 141, 27, 15" TraceId="image3355">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
+            <Food Id="fd1" Class="clsFoodFish2"  Bounds="170, 141, 27, 15" TraceId="image3355"/>
             <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="126, 11, 24, 25" TraceId="image3366-1"/>
-            <Food Id="fd2" Class="clsFood" Points="1" Bounds="304, 16, 27, 15" TraceId="image3377">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
+            <Food Id="fd2" Class="clsFoodFish2"  Bounds="304, 16, 27, 15" TraceId="image3377"/>
             <Enemy Id="enm3" Class="clsEnemyRat1" Bounds="220, -53, 24, 25" TraceId="image3388"/>
-            <Food Id="fd3" Class="clsFood" Points="1" Bounds="126, -43, 27, 15" TraceId="image3403">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
-            <Food Id="fd4" Class="clsFood" Points="1" Bounds="232, -98, 27, 15" TraceId="image3405">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
-            <Food Id="fd5" Class="clsFood" Points="1" Bounds="322, -45, 27, 15" TraceId="image3399">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
+            <Food Id="fd3" Class="clsFoodFish2"  Bounds="126, -43, 27, 15" TraceId="image3403"/>
+            <Food Id="fd4" Class="clsFoodFish2"  Bounds="232, -98, 27, 15" TraceId="image3405"/>
+            <Food Id="fd5" Class="clsFoodFish2"  Bounds="322, -45, 27, 15" TraceId="image3399"/>
             <Enemy Id="enm4" Class="clsEnemyRat1" Bounds="140, -195, 24, 25" TraceId="image3429"/>
             <Enemy Id="enm5" Class="clsEnemyRat1" Bounds="140, -145, 24, 25" TraceId="image3433"/>
-            <Food Id="fd6" Class="clsFood" Points="1" Bounds="140, -165, 27, 15" TraceId="image3443">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
+            <Food Id="fd6" Class="clsFoodFish2"  Bounds="140, -165, 27, 15" TraceId="image3443"/>
             <Enemy Id="enm6" Class="clsEnemyRat1" Bounds="342, -170, 24, 25" TraceId="image3447"/>
             <Enemy Id="enm7" Class="clsEnemyRat1" Bounds="112, -295, 24, 25" TraceId="image3457"/>
             <Enemy Id="enm8" Class="clsEnemyRat1" Bounds="216, -251, 24, 25" TraceId="image3461"/>
             <Enemy Id="enm9" Class="clsEnemyRat1" Bounds="332, -294, 24, 25" TraceId="image3463"/>
-            <Food Id="fd7" Class="clsFood" Points="1" Bounds="153, -245, 27, 15" TraceId="image3473">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
-            <Food Id="fd8" Class="clsFood" Points="1" Bounds="283, -245, 27, 15" TraceId="image3477">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
+            <Food Id="fd7" Class="clsFoodFish2"  Bounds="153, -245, 27, 15" TraceId="image3473"/>
+            <Food Id="fd8" Class="clsFoodFish2"  Bounds="283, -245, 27, 15" TraceId="image3477"/>
             <Enemy Id="enm10" Class="clsEnemyRat1" Bounds="94, -395, 24, 25" TraceId="image3487"/>
             <Enemy Id="enm11" Class="clsEnemyRat1" Bounds="236, -395, 24, 25" TraceId="image3491"/>
-            <Food Id="fd9" Class="clsFood" Points="1" Bounds="153, -390, 27, 15" TraceId="image3503">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
-            <Food Id="fd10" Class="clsFood" Points="1" Bounds="301, -390, 27, 15" TraceId="image3507">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
+            <Food Id="fd9" Class="clsFoodFish2"  Bounds="153, -390, 27, 15" TraceId="image3503"/>
+            <Food Id="fd10" Class="clsFoodFish2"  Bounds="301, -390, 27, 15" TraceId="image3507"/>
             <Enemy Id="enm12" Class="clsEnemyRat1" Bounds="94, -470, 24, 25" TraceId="image3517"/>
             <Enemy Id="enm13" Class="clsEnemyRat1" Bounds="304, -470, 24, 25" TraceId="image3521"/>
             <Enemy Id="enm14" Class="clsEnemyRat1" Bounds="264, -494, 24, 25" TraceId="image3523"/>
-            <Food Id="fd11" Class="clsFood" Points="1" Bounds="107, -495, 27, 15" TraceId="image3537">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
-            <Food Id="fd12" Class="clsFood" Points="1" Bounds="213, -445, 27, 15" TraceId="image3533">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
+            <Food Id="fd11" Class="clsFoodFish2"  Bounds="107, -495, 27, 15" TraceId="image3537"/>
+            <Food Id="fd12" Class="clsFoodFish2"  Bounds="213, -445, 27, 15" TraceId="image3533"/>
             <Enemy Id="enm15" Class="clsEnemyRat5" Bounds="219, -570, 26, 28" TraceId="image3558-4"/>
-            <Food Id="fd13" Class="clsFood" Points="1" Bounds="118, -595, 26, 17" TraceId="image3569">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd14" Class="clsFood" Points="1" Bounds="182, -591, 26, 17" TraceId="image3573">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd15" Class="clsFood" Points="1" Bounds="260, -595, 26, 17" TraceId="image3575">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd16" Class="clsFood" Points="1" Bounds="330, -591, 26, 17" TraceId="image3577">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd17" Class="clsFood" Points="1" Bounds="260, -541, 26, 17" TraceId="image3579">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd18" Class="clsFood" Points="1" Bounds="180, -545, 26, 17" TraceId="image3581">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd19" Class="clsFood" Points="1" Bounds="120, -539, 26, 17" TraceId="image3583">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd20" Class="clsFood" Points="1" Bounds="330, -543, 26, 17" TraceId="image3585">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd21" Class="clsFood" Points="1" Bounds="143, -663, 27, 15" TraceId="image3613">
-                <Image TextureId="txr_fish_3_me" />
-            </Food>
-            <Food Id="fd22" Class="clsFood" Points="1" Bounds="190, -672, 30, 15" TraceId="image3624">
-                <Image TextureId="txr_fish_4_me" />
-            </Food>
-            <Food Id="ENDFISH" Class="clsFood" Points="1" Bounds="214, -670, 26, 17" TraceId="ENDFISH">
-                <Image TextureId="txr_fish_5_me" />
-            </Food>
-            <Food Id="fd24" Class="clsFood" Points="1" Bounds="204, -658, 28, 17" TraceId="image3649">
-                <Image TextureId="txr_fish_6_me" />
-            </Food>
-            <Food Id="fd25" Class="clsFood" Points="1" Bounds="250, -669, 28, 17" TraceId="image3651">
-                <Image TextureId="txr_fish_6_me" />
-            </Food>
-            <Food Id="fd26" Class="clsFood" Points="1" Bounds="240, -656, 28, 17" TraceId="image3646-0">
-                <Image TextureId="txr_fish_6_me" />
-            </Food>
+            <Food Id="fd13" Class="clsFoodFish4"  Bounds="118, -595, 26, 17" TraceId="image3569"/>
+            <Food Id="fd14" Class="clsFoodFish4"  Bounds="182, -591, 26, 17" TraceId="image3573"/>
+            <Food Id="fd15" Class="clsFoodFish4"  Bounds="260, -595, 26, 17" TraceId="image3575"/>
+            <Food Id="fd16" Class="clsFoodFish4"  Bounds="330, -591, 26, 17" TraceId="image3577"/>
+            <Food Id="fd17" Class="clsFoodFish4"  Bounds="260, -541, 26, 17" TraceId="image3579"/>
+            <Food Id="fd18" Class="clsFoodFish4"  Bounds="180, -545, 26, 17" TraceId="image3581"/>
+            <Food Id="fd19" Class="clsFoodFish4"  Bounds="120, -539, 26, 17" TraceId="image3583"/>
+            <Food Id="fd20" Class="clsFoodFish4"  Bounds="330, -543, 26, 17" TraceId="image3585"/>
+            <Food Id="fd21" Class="clsFoodFish2"  Bounds="143, -663, 27, 15" TraceId="image3613"/>
+            <Food Id="fd22" Class="clsFoodFish1"  Bounds="190, -672, 30, 15" TraceId="image3624"/>
+            <Food Id="ENDFISH" Class="clsFoodFish4"  Bounds="214, -670, 26, 17" TraceId="ENDFISH"/>
+            <Food Id="fd24" Class="clsFoodFish3"  Bounds="204, -658, 28, 17" TraceId="image3649"/>
+            <Food Id="fd25" Class="clsFoodFish3"  Bounds="250, -669, 28, 17" TraceId="image3651"/>
+            <Food Id="fd26" Class="clsFoodFish3"  Bounds="240, -656, 28, 17" TraceId="image3646-0"/>
             <Enemy Id="enm16" Class="clsEnemyElectricity1" Bounds="184, -690, 11, 11" TraceId="image3699"/>
             <Enemy Id="enm17" Class="clsEnemyElectricity1" Bounds="163, -630, 11, 11" TraceId="image3705"/>
             <Enemy Id="enm18" Class="clsEnemyElectricity1" Bounds="190, -633, 11, 11" TraceId="image3707"/>

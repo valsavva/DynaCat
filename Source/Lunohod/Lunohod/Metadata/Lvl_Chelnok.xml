@@ -2,7 +2,10 @@
 <!-- SVG to XGAME xml converter v1.5.07 -->
 <!-- source: D:\Lunohod\Levels\S03LXX_Chelnok\S03LXX_Chelnok.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S03LXX_Chelnok" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish1.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassTeleportEntry.xml" />
     <Include File="ClassTeleportOut.xml" />
@@ -12,10 +15,10 @@
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
+
+
         <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
         <Texture Id="txr_TeleportEntryRight" Source="TeleportEntryRight" />
         <Texture Id="txr_TeleportEntryLeft" Source="TeleportEntryLeft" />
@@ -78,405 +81,325 @@
         <Image Id="dfltMask45" TextureId="txr_texture_brick_clean" Bounds="254, 110, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3452"/>
     </Layer>
     <Layer Id="Food" BackColor="#FFFFFFFF">
-        <Food Id="fdimage3467" Points="1" Bounds="17, 32, 27, 15" Class="clsFood" Enabled="false" TraceId="image3467">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3467"  Bounds="17, 32, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3467"/>
         <SequenceSet Id="setfdimage3467" InProgress="true" RepeatCount="1" >
             <Delay Duration="1" />
             <Do Action="fdimage3467.Enable()" />
             <Delay Duration="30" />
-            <NumAnimation Target="fdimage3467.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3467.Disable()" />
+            <NumAnimation Target="fdimage3467.Opacity" From="1" To="0" Duration="1" Autoreverse="false" Fill="End" RepeatCount="1" />
+            <Do Action="fdimage3467:+Borned;fdimage3467.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3469" Points="1" Bounds="421, 280, 27, 15" Class="clsFood" Enabled="false" TraceId="image3469">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3469"  Bounds="421, 280, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3469"/>
         <SequenceSet Id="setfdimage3469" InProgress="true" RepeatCount="1" >
             <Delay Duration="2" />
             <Do Action="fdimage3469.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3469.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3469.Disable()" />
+            <Do Action="fdimage3469:+Borned;fdimage3469.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3471" Points="1" Bounds="139, 286, 27, 15" Class="clsFood" Enabled="false" TraceId="image3471">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3471"  Bounds="139, 286, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3471"/>
         <SequenceSet Id="setfdimage3471" InProgress="true" RepeatCount="1" >
             <Delay Duration="3" />
             <Do Action="fdimage3471.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3471.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3471.Disable()" />
+            <Do Action="fdimage3471:+Borned;fdimage3471.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3473" Points="1" Bounds="416, 22, 27, 15" Class="clsFood" Enabled="false" TraceId="image3473">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3473"  Bounds="416, 22, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3473"/>
         <SequenceSet Id="setfdimage3473" InProgress="true" RepeatCount="1" >
             <Delay Duration="4" />
             <Do Action="fdimage3473.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3473.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3473.Disable()" />
+            <Do Action="fdimage3473:+Borned;fdimage3473.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3475" Points="1" Bounds="325, 104, 27, 15" Class="clsFood" Enabled="false" TraceId="image3475">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3475"  Bounds="325, 104, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3475"/>
         <SequenceSet Id="setfdimage3475" InProgress="true" RepeatCount="1" >
             <Delay Duration="5" />
             <Do Action="fdimage3475.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3475.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3475.Disable()" />
+            <Do Action="fdimage3475:+Borned;fdimage3475.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3477" Points="1" Bounds="40, 212, 27, 15" Class="clsFood" Enabled="false" TraceId="image3477">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3477"  Bounds="40, 212, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3477"/>
         <SequenceSet Id="setfdimage3477" InProgress="true" RepeatCount="1" >
             <Delay Duration="6" />
             <Do Action="fdimage3477.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3477.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3477.Disable()" />
+            <Do Action="fdimage3477:+Borned;fdimage3477.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3479" Points="1" Bounds="143, 66, 27, 15" Class="clsFood" Enabled="false" TraceId="image3479">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3479"  Bounds="143, 66, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3479"/>
         <SequenceSet Id="setfdimage3479" InProgress="true" RepeatCount="1" >
             <Delay Duration="7" />
             <Do Action="fdimage3479.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3479.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3479.Disable()" />
+            <Do Action="fdimage3479:+Borned;fdimage3479.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3481" Points="1" Bounds="308, 274, 27, 15" Class="clsFood" Enabled="false" TraceId="image3481">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3481"  Bounds="308, 274, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3481"/>
         <SequenceSet Id="setfdimage3481" InProgress="true" RepeatCount="1" >
             <Delay Duration="8" />
             <Do Action="fdimage3481.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3481.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3481.Disable()" />
+            <Do Action="fdimage3481:+Borned;fdimage3481.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3483" Points="1" Bounds="427, 155, 27, 15" Class="clsFood" Enabled="false" TraceId="image3483">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3483"  Bounds="427, 155, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3483"/>
         <SequenceSet Id="setfdimage3483" InProgress="true" RepeatCount="1" >
             <Delay Duration="9" />
             <Do Action="fdimage3483.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3483.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3483.Disable()" />
+            <Do Action="fdimage3483:+Borned;fdimage3483.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3464" Points="1" Bounds="40, 119, 27, 15" Class="clsFood" Enabled="false" TraceId="image3464">
-            <Image TextureId="txr_fish_3_me" />
-        </Food>
+        <Food Id="fdimage3464"  Bounds="40, 119, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3464"/>
         <SequenceSet Id="setfdimage3464" InProgress="true" RepeatCount="1" >
             <Delay Duration="10" />
             <Do Action="fdimage3464.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3464.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3464.Disable()" />
+            <Do Action="fdimage3464:+Borned;fdimage3464.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3496" Points="1" Bounds="84, 60, 30, 15" Class="clsFood" Enabled="false" TraceId="image3496">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3496"  Bounds="84, 60, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3496"/>
         <SequenceSet Id="setfdimage3496" InProgress="true" RepeatCount="1" >
             <Delay Duration="11" />
             <Do Action="fdimage3496.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3496.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3496.Disable()" />
+            <Do Action="fdimage3496:+Borned;fdimage3496.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3498" Points="1" Bounds="339, 194, 30, 15" Class="clsFood" Enabled="false" TraceId="image3498">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3498"  Bounds="339, 194, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3498"/>
         <SequenceSet Id="setfdimage3498" InProgress="true" RepeatCount="1" >
             <Delay Duration="12" />
             <Do Action="fdimage3498.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3498.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3498.Disable()" />
+            <Do Action="fdimage3498:+Borned;fdimage3498.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3500" Points="1" Bounds="330, 50, 30, 15" Class="clsFood" Enabled="false" TraceId="image3500">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3500"  Bounds="330, 50, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3500"/>
         <SequenceSet Id="setfdimage3500" InProgress="true" RepeatCount="1" >
             <Delay Duration="13" />
             <Do Action="fdimage3500.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3500.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3500.Disable()" />
+            <Do Action="fdimage3500:+Borned;fdimage3500.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3502" Points="1" Bounds="101, 205, 30, 15" Class="clsFood" Enabled="false" TraceId="image3502">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3502"  Bounds="101, 205, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3502"/>
         <SequenceSet Id="setfdimage3502" InProgress="true" RepeatCount="1" >
             <Delay Duration="14" />
             <Do Action="fdimage3502.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3502.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3502.Disable()" />
+            <Do Action="fdimage3502:+Borned;fdimage3502.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3504" Points="1" Bounds="69, 286, 30, 15" Class="clsFood" Enabled="false" TraceId="image3504">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3504"  Bounds="69, 286, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3504"/>
         <SequenceSet Id="setfdimage3504" InProgress="true" RepeatCount="1" >
             <Delay Duration="15" />
             <Do Action="fdimage3504.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3504.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3504.Disable()" />
+            <Do Action="fdimage3504:+Borned;fdimage3504.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3506" Points="1" Bounds="428, 222, 30, 15" Class="clsFood" Enabled="false" TraceId="image3506">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3506"  Bounds="428, 222, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3506"/>
         <SequenceSet Id="setfdimage3506" InProgress="true" RepeatCount="1" >
             <Delay Duration="16" />
             <Do Action="fdimage3506.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3506.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3506.Disable()" />
+            <Do Action="fdimage3506:+Borned;fdimage3506.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3508" Points="1" Bounds="115, 133, 30, 15" Class="clsFood" Enabled="false" TraceId="image3508">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3508"  Bounds="115, 133, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3508"/>
         <SequenceSet Id="setfdimage3508" InProgress="true" RepeatCount="1" >
             <Delay Duration="17" />
             <Do Action="fdimage3508.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3508.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3508.Disable()" />
+            <Do Action="fdimage3508:+Borned;fdimage3508.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3510" Points="1" Bounds="297, 8, 30, 15" Class="clsFood" Enabled="false" TraceId="image3510">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3510"  Bounds="297, 8, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3510"/>
         <SequenceSet Id="setfdimage3510" InProgress="true" RepeatCount="1" >
             <Delay Duration="18" />
             <Do Action="fdimage3510.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3510.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3510.Disable()" />
+            <Do Action="fdimage3510:+Borned;fdimage3510.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3512" Points="1" Bounds="155, 237, 30, 15" Class="clsFood" Enabled="false" TraceId="image3512">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3512"  Bounds="155, 237, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3512"/>
         <SequenceSet Id="setfdimage3512" InProgress="true" RepeatCount="1" >
             <Delay Duration="19" />
             <Do Action="fdimage3512.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3512.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3512.Disable()" />
+            <Do Action="fdimage3512:+Borned;fdimage3512.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3493" Points="1" Bounds="430, 86, 30, 15" Class="clsFood" Enabled="false" TraceId="image3493">
-            <Image TextureId="txr_fish_4_me" />
-        </Food>
+        <Food Id="fdimage3493"  Bounds="430, 86, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3493"/>
         <SequenceSet Id="setfdimage3493" InProgress="true" RepeatCount="1" >
             <Delay Duration="20" />
             <Do Action="fdimage3493.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3493.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3493.Disable()" />
+            <Do Action="fdimage3493:+Borned;fdimage3493.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3525" Points="1" Bounds="110, 22, 28, 17" Class="clsFood" Enabled="false" TraceId="image3525">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3525"  Bounds="110, 22, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3525"/>
         <SequenceSet Id="setfdimage3525" InProgress="true" RepeatCount="1" >
             <Delay Duration="21" />
             <Do Action="fdimage3525.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3525.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3525.Disable()" />
+            <Do Action="fdimage3525:+Borned;fdimage3525.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3527" Points="1" Bounds="101, 246, 28, 17" Class="clsFood" Enabled="false" TraceId="image3527">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3527"  Bounds="101, 246, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3527"/>
         <SequenceSet Id="setfdimage3527" InProgress="true" RepeatCount="1" >
             <Delay Duration="22" />
             <Do Action="fdimage3527.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3527.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3527.Disable()" />
+            <Do Action="fdimage3527:+Borned;fdimage3527.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3529" Points="1" Bounds="378, 99, 28, 17" Class="clsFood" Enabled="false" TraceId="image3529">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3529"  Bounds="378, 99, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3529"/>
         <SequenceSet Id="setfdimage3529" InProgress="true" RepeatCount="1" >
             <Delay Duration="23" />
             <Do Action="fdimage3529.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3529.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3529.Disable()" />
+            <Do Action="fdimage3529:+Borned;fdimage3529.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3531" Points="1" Bounds="20, 82, 28, 17" Class="clsFood" Enabled="false" TraceId="image3531">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3531"  Bounds="20, 82, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3531"/>
         <SequenceSet Id="setfdimage3531" InProgress="true" RepeatCount="1" >
             <Delay Duration="24" />
             <Do Action="fdimage3531.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3531.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3531.Disable()" />
+            <Do Action="fdimage3531:+Borned;fdimage3531.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3533" Points="1" Bounds="363, 240, 28, 17" Class="clsFood" Enabled="false" TraceId="image3533">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3533"  Bounds="363, 240, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3533"/>
         <SequenceSet Id="setfdimage3533" InProgress="true" RepeatCount="1" >
             <Delay Duration="25" />
             <Do Action="fdimage3533.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3533.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3533.Disable()" />
+            <Do Action="fdimage3533:+Borned;fdimage3533.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3535" Points="1" Bounds="31, 161, 28, 17" Class="clsFood" Enabled="false" TraceId="image3535">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3535"  Bounds="31, 161, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3535"/>
         <SequenceSet Id="setfdimage3535" InProgress="true" RepeatCount="1" >
             <Delay Duration="26" />
             <Do Action="fdimage3535.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3535.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3535.Disable()" />
+            <Do Action="fdimage3535:+Borned;fdimage3535.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3537" Points="1" Bounds="389, 50, 28, 17" Class="clsFood" Enabled="false" TraceId="image3537">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3537"  Bounds="389, 50, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3537"/>
         <SequenceSet Id="setfdimage3537" InProgress="true" RepeatCount="1" >
             <Delay Duration="27" />
             <Do Action="fdimage3537.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3537.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3537.Disable()" />
+            <Do Action="fdimage3537:+Borned;fdimage3537.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3539" Points="1" Bounds="147, 185, 28, 17" Class="clsFood" Enabled="false" TraceId="image3539">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3539"  Bounds="147, 185, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3539"/>
         <SequenceSet Id="setfdimage3539" InProgress="true" RepeatCount="1" >
             <Delay Duration="28" />
             <Do Action="fdimage3539.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3539.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3539.Disable()" />
+            <Do Action="fdimage3539:+Borned;fdimage3539.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3541" Points="1" Bounds="21, 252, 28, 17" Class="clsFood" Enabled="false" TraceId="image3541">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3541"  Bounds="21, 252, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3541"/>
         <SequenceSet Id="setfdimage3541" InProgress="true" RepeatCount="1" >
             <Delay Duration="29" />
             <Do Action="fdimage3541.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3541.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3541.Disable()" />
+            <Do Action="fdimage3541:+Borned;fdimage3541.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3522" Points="1" Bounds="367, 151, 28, 17" Class="clsFood" Enabled="false" TraceId="image3522">
-            <Image TextureId="txr_fish_6_me" />
-        </Food>
+        <Food Id="fdimage3522"  Bounds="367, 151, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3522"/>
         <SequenceSet Id="setfdimage3522" InProgress="true" RepeatCount="1" >
             <Delay Duration="30" />
             <Do Action="fdimage3522.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3522.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3522.Disable()" />
+            <Do Action="fdimage3522:+Borned;fdimage3522.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3554" Points="1" Bounds="60, 32, 26, 17" Class="clsFood" Enabled="false" TraceId="image3554">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3554"  Bounds="60, 32, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3554"/>
         <SequenceSet Id="setfdimage3554" InProgress="true" RepeatCount="1" >
             <Delay Duration="31" />
             <Do Action="fdimage3554.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3554.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3554.Disable()" />
+            <Do Action="fdimage3554:+Borned;fdimage3554.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3556" Points="1" Bounds="295, 212, 26, 17" Class="clsFood" Enabled="false" TraceId="image3556">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3556"  Bounds="295, 212, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3556"/>
         <SequenceSet Id="setfdimage3556" InProgress="true" RepeatCount="1" >
             <Delay Duration="32" />
             <Do Action="fdimage3556.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3556.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3556.Disable()" />
+            <Do Action="fdimage3556:+Borned;fdimage3556.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3558" Points="1" Bounds="85, 174, 26, 17" Class="clsFood" Enabled="false" TraceId="image3558">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3558"  Bounds="85, 174, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3558"/>
         <SequenceSet Id="setfdimage3558" InProgress="true" RepeatCount="1" >
             <Delay Duration="33" />
             <Do Action="fdimage3558.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3558.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3558.Disable()" />
+            <Do Action="fdimage3558:+Borned;fdimage3558.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3560" Points="1" Bounds="295, 73, 26, 17" Class="clsFood" Enabled="false" TraceId="image3560">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3560"  Bounds="295, 73, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3560"/>
         <SequenceSet Id="setfdimage3560" InProgress="true" RepeatCount="1" >
             <Delay Duration="34" />
             <Do Action="fdimage3560.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3560.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3560.Disable()" />
+            <Do Action="fdimage3560:+Borned;fdimage3560.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3562" Points="1" Bounds="88, 95, 26, 17" Class="clsFood" Enabled="false" TraceId="image3562">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3562"  Bounds="88, 95, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3562"/>
         <SequenceSet Id="setfdimage3562" InProgress="true" RepeatCount="1" >
             <Delay Duration="35" />
             <Do Action="fdimage3562.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3562.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3562.Disable()" />
+            <Do Action="fdimage3562:+Borned;fdimage3562.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3564" Points="1" Bounds="359, 279, 26, 17" Class="clsFood" Enabled="false" TraceId="image3564">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3564"  Bounds="359, 279, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3564"/>
         <SequenceSet Id="setfdimage3564" InProgress="true" RepeatCount="1" >
             <Delay Duration="36" />
             <Do Action="fdimage3564.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3564.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3564.Disable()" />
+            <Do Action="fdimage3564:+Borned;fdimage3564.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3566" Points="1" Bounds="373, 16, 26, 17" Class="clsFood" Enabled="false" TraceId="image3566">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3566"  Bounds="373, 16, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3566"/>
         <SequenceSet Id="setfdimage3566" InProgress="true" RepeatCount="1" >
             <Delay Duration="37" />
             <Do Action="fdimage3566.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3566.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3566.Disable()" />
+            <Do Action="fdimage3566:+Borned;fdimage3566.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3568" Points="1" Bounds="153, 103, 26, 17" Class="clsFood" Enabled="false" TraceId="image3568">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3568"  Bounds="153, 103, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3568"/>
         <SequenceSet Id="setfdimage3568" InProgress="true" RepeatCount="1" >
             <Delay Duration="38" />
             <Do Action="fdimage3568.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3568.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3568.Disable()" />
+            <Do Action="fdimage3568:+Borned;fdimage3568.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3570" Points="1" Bounds="30, 289, 26, 17" Class="clsFood" Enabled="false" TraceId="image3570">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3570"  Bounds="30, 289, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3570"/>
         <SequenceSet Id="setfdimage3570" InProgress="true" RepeatCount="1" >
             <Delay Duration="39" />
             <Do Action="fdimage3570.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3570.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3570.Disable()" />
+            <Do Action="fdimage3570:+Borned;fdimage3570.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3551" Points="1" Bounds="401, 192, 26, 17" Class="clsFood" Enabled="false" TraceId="image3551">
-            <Image TextureId="txr_fish_5_me" />
-        </Food>
+        <Food Id="fdimage3551"  Bounds="401, 192, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3551"/>
         <SequenceSet Id="setfdimage3551" InProgress="true" RepeatCount="1" >
             <Delay Duration="40" />
             <Do Action="fdimage3551.Enable()" />
             <Delay Duration="30" />
             <NumAnimation Target="fdimage3551.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
-            <Do Action="fdimage3551.Disable()" />
+            <Do Action="fdimage3551:+Borned;fdimage3551.Opacity=1" />
         </SequenceSet>
     </Layer>
     <Layer Id="PortDesign" BackColor="#FFFFFFFF">

@@ -2,17 +2,20 @@
 <!-- SVG to XGAME xml converter v1.6.04 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Ceh_v6_proizvodstvo\Lvl_Ceh_v6_proizvodstvo.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Ceh_v6_proizvodstvo" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
+    <Include File="ClassFoodFish1.xml" />
+    <Include File="ClassFoodFish3.xml" />
+    <Include File="ClassFoodFish2.xml" />
+    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassEnemySaw.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
-        <Texture Id="txr_fish_4_me" Source="fish_4_me" />
-        <Texture Id="txr_fish_6_me" Source="fish_6_me" />
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
-        <Texture Id="txr_fish_5_me" Source="fish_5_me" />
+
+
+
+
         <Texture Id="txr_detal_me1" Source="detal_me1" />
         <Texture Id="txr_detal_me2" Source="detal_me2" />
         <Texture Id="txr_circular_saw_50" Source="circular_saw_50" />
@@ -92,57 +95,31 @@
             <Do Action="anmEnm3.Stop()" />
             <NumAnimation From="0" To="360" Target="imgEnm3.Rotation" InProgress="true" Duration="5" Autoreverse="false" RepeatCount="0"/>
         </SequenceSet>
-        <Food Id="fd1" Class="clsFood" Points="70" Bounds="349, 94,  30,  15" Enabled="false" TraceId="image4511">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd1" EnterAction="fd1:BoomClose" />
-            <Image TextureId="txr_fish_4_me" />
+        <Food Id="fd1" Class="clsFood"  Bounds="349, 94,  30,  15" Enabled="false" TraceId="image4511">
         </Food>
-        <Food Id="fd2" Class="clsFood" Points="70" Bounds="246, 143,  30,  15" Enabled="false" TraceId="image4513">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd2" EnterAction="fd2:BoomClose" />
-            <Image TextureId="txr_fish_4_me" />
+        <Food Id="fd2" Class="clsFood"  Bounds="246, 143,  30,  15" Enabled="false" TraceId="image4513">
         </Food>
-        <!--<Food Id="fd3" Class="clsFood" Points="70" Bounds="240, 45,  30,  15" Enabled="false" TraceId="image4529">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd3" EnterAction="fd3:BoomClose" />
-            <Image TextureId="txr_fish_4_me" />
+        <!--<Food Id="fd3" Class="clsFood"  Bounds="240, 45,  30,  15" Enabled="false" TraceId="image4529">
         </Food>
-        <Food Id="fd4" Class="clsFood" Points="70" Bounds="291, 44,  30,  15" Enabled="false" TraceId="image4527">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd4" EnterAction="fd4:BoomClose" />
-            <Image TextureId="txr_fish_4_me" />
+        <Food Id="fd4" Class="clsFood"  Bounds="291, 44,  30,  15" Enabled="false" TraceId="image4527">
         </Food>-->
-        <Food Id="fd5" Class="clsFood" Points="90" Bounds="295, 57, 28, 17" Enabled="false" TraceId="image4519">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd5" EnterAction="fd5:BoomClose" />
-            <Image TextureId="txr_fish_6_me" />
+        <Food Id="fd5" Class="clsFood"  Bounds="295, 57, 28, 17" Enabled="false" TraceId="image4519">
         </Food>
-        <Food Id="fd6" Class="clsFood" Points="90" Bounds="270, 46, 28, 17" Enabled="false" TraceId="image4533">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd6" EnterAction="fd6:BoomClose" />
-            <Image TextureId="txr_fish_6_me" />
+        <Food Id="fd6" Class="clsFood"  Bounds="270, 46, 28, 17" Enabled="false" TraceId="image4533">
         </Food>
-        <!--<Food Id="fd7" Class="clsFood" Points="90" Bounds="271, 108,  28,  17" Enabled="false" TraceId="image4521">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd7" EnterAction="fd7:BoomClose" />
-            <Image TextureId="txr_fish_6_me" />
+        <!--<Food Id="fd7" Class="clsFood"  Bounds="271, 108,  28,  17" Enabled="false" TraceId="image4521">
         </Food>-->
-        <Food Id="fd8" Class="clsFood" Points="80" Bounds="220, 114,  27,  15" Enabled="false" TraceId="image4515">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd8" EnterAction="fd8:BoomClose" />
-            <Image TextureId="txr_fish_3_me" />
+        <Food Id="fd8" Class="clsFood"  Bounds="220, 114,  27,  15" Enabled="false" TraceId="image4515">
         </Food>
-        <!--<Food Id="fd9" Class="clsFood" Points="80" Bounds="201, 70,  27,  15" Enabled="false" TraceId="image4531">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd9" EnterAction="fd9:BoomClose" />
-            <Image TextureId="txr_fish_3_me" />
+        <!--<Food Id="fd9" Class="clsFood"  Bounds="201, 70,  27,  15" Enabled="false" TraceId="image4531">
         </Food>-->
-        <Food Id="fd10" Class="clsFood" Points="80" Bounds="179, 101, 27, 15" Enabled="false" TraceId="image4517">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd10" EnterAction="fd10:BoomClose" />
-            <Image TextureId="txr_fish_3_me" />
+        <Food Id="fd10" Class="clsFood"  Bounds="179, 101, 27, 15" Enabled="false" TraceId="image4517">
         </Food>
-        <Food Id="fd11" Class="clsFood" Points="100" Bounds="186, 89,  26,  17" Enabled="false" TraceId="image4498">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd11" EnterAction="fd11:BoomClose" />
-            <Image TextureId="txr_fish_5_me" />
+        <Food Id="fd11" Class="clsFood"  Bounds="186, 89,  26,  17" Enabled="false" TraceId="image4498">
         </Food>
-        <!--<Food Id="fd12" Class="clsFood" Points="100" Bounds="158, 123, 26, 17" Enabled="false" TraceId="image4525">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd12" EnterAction="fd12:BoomClose" />
-            <Image TextureId="txr_fish_5_me" />
+        <!--<Food Id="fd12" Class="clsFood"  Bounds="158, 123, 26, 17" Enabled="false" TraceId="image4525">
         </Food>-->
-        <Food Id="fd13" Class="clsFood" Points="100" Bounds="166, 55, 26, 17" Enabled="false" TraceId="image4523">
-            <IntersectionTrigger ObjectId1="grpSaws" ObjectId2="fd13" EnterAction="fd13:BoomClose" />
-            <Image TextureId="txr_fish_5_me" />
+        <Food Id="fd13" Class="clsFood"  Bounds="166, 55, 26, 17" Enabled="false" TraceId="image4523">
         </Food>
     </Layer>
     <Layer Id="saw" BackColor="#FFFFFFFF">
