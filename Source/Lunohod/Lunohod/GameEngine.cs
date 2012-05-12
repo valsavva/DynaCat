@@ -428,12 +428,14 @@ namespace Lunohod
 			{
 				var e = this.eventQueue.Dequeue();
 
-                switch (e.EventType)
+				e.IsHandled = true;
+
+				switch (e.EventType)
                 {
                     case GameEventType.StartNextLevel:
                         {
                             this.eventQueue.Clear();
-							i = -1;
+							numOfEvents = 0;
 
                             var levelInfo = this.LevelEngine.LevelInfo;
                             this.CloseCurrentScreen();
@@ -446,26 +448,15 @@ namespace Lunohod
 
                             if (levelIndex < series.Levels.Count)
                                 this.LoadLevel(series.Levels[levelIndex]);
-    
-                            e.IsHandled = true;
-
-                            // break out of the loop
-                            numOfEvents = this.eventQueue.Count;
-                            continue;
                         } break;
                     case GameEventType.RestartLevel:
                         {
                             this.eventQueue.Clear();
-							i = -1;
+							numOfEvents = 0;
 
 							var levelInfo = this.LevelEngine.LevelInfo;
                             this.CloseCurrentScreen();
                             this.LoadLevel(levelInfo);
-                            e.IsHandled = true;
-
-                            // break out of the loop
-                            numOfEvents = this.eventQueue.Count;
-                            continue;
                         } break;
                     case GameEventType.EndLevel:
 						{
@@ -477,18 +468,16 @@ namespace Lunohod
 							i = -1;
 
                             this.CloseCurrentScreen();
-                            e.IsHandled = true;
 
                             // break out of the loop
                             numOfEvents = this.eventQueue.Count;
-                            continue;
-                            //
                         } break;
                     case GameEventType.CloseCurrentScreen:
                         {
                             this.CloseCurrentScreen();
-                            e.IsHandled = true;
                         } break;
+				default: 
+					e.IsHandled = false; break;
                 }
 				
 				if (!e.IsHandled)
