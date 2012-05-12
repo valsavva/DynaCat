@@ -195,6 +195,7 @@
     <Compile Include="Engine\XScoreFile.cs" />
     <Compile Include="Engine\XSettingsFile.cs" />
     <Compile Include="EventRateCounter.cs" />
+    <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -1980,7 +1981,7 @@
     <Content Include="Metadata\ClassFood.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\ClassFoodFish1.xml">
+    <Content Include="Metadata\ClassFoodFish1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassFoodFish2.xml">
