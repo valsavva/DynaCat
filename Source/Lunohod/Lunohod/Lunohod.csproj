@@ -71,6 +71,7 @@
         <Command type="AfterBuild" command="mono ${ProjectDir}/XmlWhiteSpaceRemover.exe ${TargetDir}/Metadata *.xml ${TargetDir}/Metadata" workingdir="" pauseExternalConsole="true" />
       </CustomCommands>
     </CustomCommands>
+    <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -687,7 +688,7 @@
     <Content Include="Content\TestLevel2\rat_walk.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\fish_skelet_demo.png">
+    <Content Include="Content\Textures\fish_skelet_demo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\TestLevel2\sausage.png">
@@ -2375,30 +2376,3 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
