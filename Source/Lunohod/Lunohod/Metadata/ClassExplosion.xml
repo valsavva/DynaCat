@@ -21,13 +21,8 @@
 			<SequenceSet InProgress="true">
 				<Do Action="this_sndBombHiss.Start();hero:+WaitingExplosion"/>
                 <ParallelSet RepeatCount="1">
-                    <NumAnimation Target="this_imgBomb.Rotation" From="0" To="180" Duration="0.2" Autoreverse="false" RepeatCount="1"/>
-				    <NumAnimation Target="this_imgBomb.Y" From="0" To="-40" Duration="0.2" IsDelta="true" Autoreverse="false" RepeatCount="1"/>
-                </ParallelSet>
-                <Do Action="this_imgBomb.Depth=0.5"/>
-                <ParallelSet RepeatCount="1">
-                    <NumAnimation Target="this_imgBomb.Rotation" From="0" To="180" Duration="0.2" Autoreverse="false" RepeatCount="1"/>
-                    <NumAnimation Target="this_imgBomb.Y" From="0" To="40" Duration="0.2" IsDelta="true" Autoreverse="false" RepeatCount="1"/>
+                    <NumAnimation Target="this_imgBomb.Rotation" From="0" To="360" Duration="0.3" Autoreverse="false" RepeatCount="1"/>
+				    <NumAnimation Target="this_imgBomb.Y" From="0" To="-40" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1"/>
                 </ParallelSet>
 				<Do Action="this_imgBomb.Disable()"/>
 				<Do Action="this_sndExplosion.Start();this_imgExplosion.Enable();this_sndBombHiss.Stop();this.Explode()"/>

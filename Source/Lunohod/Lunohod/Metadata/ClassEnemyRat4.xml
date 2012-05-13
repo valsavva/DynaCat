@@ -11,6 +11,7 @@
         <Texture Id="txrEnemyRat4Default" Source="EnemyRat4_enemy_2"/>
         <Texture Id="txrEnemyRat4Attack" Source="EnemyRat4_enemy_2"/>
         <Texture Id="txrEnemyRat4Dying" Source="EnemyRat4_enemy_2"/>
+        <Texture Id="txrCloud1" Source="cloud1"/>
     </Resources>
 
     <Resources RootFolder="Global">
@@ -42,20 +43,22 @@
                 </Text>
             </Group>
 
+            <Image Id="this_imgCloud1" TextureId="txrCloud1" Bounds="-7, 1, 32, 23" Enabled="false"/>
 <!-- States -->
 
             <!-- explosion -->
             <!-- dying -->
 			<BoolTrigger Condition="this:BoomClose" EnterAction="hero.AddScore(this.Points);this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
-				<Image TextureId="txrEnemyRat4Dying" Bounds="-16, -4, 44, 29"/>
+				<Image Id="this_imgEnemyRat4Dying" TextureId="txrEnemyRat4Dying" Bounds="-16, -4, 44, 29"/>
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
                 <Do Action="hero:+GoodExplosion;this_grpShowPoints.Enable()"/>
                 <Sound FileId="sndEnemyRat4Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-    			<SequenceSet>
-    				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
-    				<Do Action="this.Disable()"/>
-    			</SequenceSet>
+    			<NumAnimation Target="this_imgEnemyRat4Dying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <SequenceSet>
+                    <Do Action="this_imgCloud1.Enable()" />
+                    <NumAnimation Target="this_imgCloud1.Opacity" From="1" To="0" Duration="0.5" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
 			</ParallelSet>
 
             <!-- attack -->

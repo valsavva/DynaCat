@@ -11,6 +11,7 @@
         <Texture Id="txrEnemyRat3Default" Source="EnemyRat3_enemy_1"/>
         <Texture Id="txrEnemyRat3Attack" Source="EnemyRat3_enemy_1"/>
         <Texture Id="txrEnemyRat3Dying" Source="EnemyRat3_enemy_1"/>
+        <Texture Id="txrCloud1" Source="cloud1"/>
     </Resources>
 
     <Resources RootFolder="Global">
@@ -42,21 +43,24 @@
                 </Text>
             </Group>
 
+            <Image Id="this_imgCloud1" TextureId="txrCloud1" Bounds="-7, 1, 32, 23" Enabled="false"/>
+
 <!-- States -->
 
             <!-- explosion -->
             <!-- dying -->
 			<BoolTrigger Condition="this:BoomClose" EnterAction="hero.AddScore(this.Points);this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
-				<Image TextureId="txrEnemyRat3Dying" Bounds="-14, -3, 46, 30"/>
+				<Image Id="this_imgEnemyRat3Dying" TextureId="txrEnemyRat3Dying" Bounds="-14, -3, 46, 30"/>
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
                 <Do Action="hero:+GoodExplosion;this_grpShowPoints.Enable()"/>
                 <Sound FileId="sndEnemyRat3Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-    			<SequenceSet>
-    				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
-    				<Do Action="this.Disable()"/>
-    			</SequenceSet>
-			</ParallelSet>
+                <NumAnimation Target="this_imgEnemyRat3Dying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <SequenceSet>
+                    <Do Action="this_imgCloud1.Enable()" />
+                    <NumAnimation Target="this_imgCloud1.Opacity" From="1" To="0" Duration="0.5" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+            </ParallelSet>
 
             <!-- attack -->
             <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">

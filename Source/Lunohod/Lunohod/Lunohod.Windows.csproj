@@ -1692,6 +1692,7 @@
     </Content>
     <Content Include="Metadata\AlphaTest.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\AlphaTest2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1709,12 +1710,14 @@
     </Content>
     <Content Include="Metadata\ClassEnemyRat1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassEnemyRat2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassEnemyRat3.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassEnemyRat4.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
