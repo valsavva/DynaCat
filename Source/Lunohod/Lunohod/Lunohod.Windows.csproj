@@ -1742,9 +1742,11 @@
     </Content>
     <Content Include="Metadata\ClassFoodFish1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassFoodFish2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassFoodFish3.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1902,6 +1904,7 @@
     </Content>
     <Content Include="Metadata\Lvl_1D_Intro_v5.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\Lvl_1D_Intro_v4.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2235,6 +2238,7 @@
     </Content>
     <Content Include="Metadata\Lvl_Tutorial_04.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\Lvl_Labirint.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

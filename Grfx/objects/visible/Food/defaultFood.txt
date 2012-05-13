@@ -1,7 +1,7 @@
 <Food Id="fd
 ###@counter1
-" Class="clsFood" Points="
-###@Points
+" Class="
+###@clsFoodFish
 " Bounds="
 ###x
 , 
@@ -12,10 +12,4 @@
 ###height
 " TraceId="
 ###id
-">
-###@CRLF
-<Image TextureId="txr_
-###@filename
-" />
-###@CRLF
-</Food>
+"/>
