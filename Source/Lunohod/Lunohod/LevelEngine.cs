@@ -261,7 +261,6 @@ namespace Lunohod
 
 				if (wave.IsDeadSignal)
 				{
-					Console.WriteLine("A");
 					// if dead signal
 					if (signalTraveledDistance >= GameEngine.MaxWaveTravelDistance)
 					{
@@ -276,14 +275,11 @@ namespace Lunohod
 				}
 				else
 				{
-					Console.WriteLine("B");
 					// if reached hero
 	                if (signalTraveledDistance >= this.hero.DistanceToTower)
 					{
-						Console.WriteLine("1");
 						if (!this.hero.CanReceiveSignals)
 						{
-							Console.WriteLine("2");
 							// hero can't receive signals - mark the signal dead - return
 							wave.IsDeadSignal = true;
 							e.IsHandled = false;
@@ -291,14 +287,12 @@ namespace Lunohod
 						}
 						else
 						{
-							Console.WriteLine("3");
 							// hero is receiving the signal
 	                    	waves.Remove(e);
 						}
 					}
 					else
 					{
-						Console.WriteLine("4 - " + hero.DistanceToTower + " - " + wave.Radius);
 						// didn't receive the signal yet
 						e.IsHandled = false;
 						return;
