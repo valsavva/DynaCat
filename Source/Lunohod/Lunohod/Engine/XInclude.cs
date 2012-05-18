@@ -8,13 +8,21 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Xml.Serialization;
+using System.Xml;
+using System.Xml.Schema;
 
 namespace Lunohod.Objects
 {
     [XmlRoot("Include")]
-	public class XInclude : XElement
+    [XmlSchemaProvider("MySchema")]
+    public class XInclude : XElement
 	{
-		private string file;
+        public static XmlQualifiedName MySchema(XmlSchemaSet xs)
+        {
+            return new XmlQualifiedName("blah", @"http://www.w3.org/2001/XMLSchema");
+        }
+        
+        private string file;
 		
 		[XmlAttribute]
 		public string File
