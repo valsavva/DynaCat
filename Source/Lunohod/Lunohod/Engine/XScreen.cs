@@ -6,12 +6,20 @@ using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Lunohod;
+using System.Xml;
+using System.Xml.Schema;
 
 namespace Lunohod.Objects
 {
     [XmlRoot("Screen")]
+    [XmlSchemaProvider("MySchema")]
     public class XScreen : XElement
     {
+        public static XmlQualifiedName MySchema(XmlSchemaSet xs)
+        {
+            return new XmlQualifiedName("blah", @"http://www.w3.org/2001/XMLSchema");
+        }
+
         [XmlAttribute]
         public bool IsModal;
 		[XmlIgnore]
