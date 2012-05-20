@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Include>	
+    <Resources RootFolder="Global">
+        <Font Id="Splash14Font" Source="Splash14Font" />
+    </Resources>
+
+	<Resources RootFolder="Sound">
+		<SoundFile Id="sndEnemyRat1Dying" Source="skeletonFX_enemy_dead_scream_1"/>
+        <SoundFile Id="sndEnemyRat1Hit1" Source="rat_hit1_demo"/>
+        <SoundFile Id="sndEnemyRat1Hit2" Source="rat_hit2_demo"/>
+        <SoundFile Id="sndEnemyRat1Hit3" Source="rat_hit3_demo"/>
+
+		<SoundFile Id="sndEnemyRat2Dying" Source="skeletonFX_enemy_dead_scream_1"/>
+        <SoundFile Id="sndEnemyRat2Hit1" Source="rat_hit1_demo"/>
+        <SoundFile Id="sndEnemyRat2Hit2" Source="rat_hit2_demo"/>
+        <SoundFile Id="sndEnemyRat2Hit3" Source="rat_hit3_demo"/>
+
+    	<SoundFile Id="sndEnemyRat3Dying" Source="skeletonFX_enemy_dead_scream_1"/>
+        <SoundFile Id="sndEnemyRat3Hit1" Source="rat_hit1_demo"/>
+        <SoundFile Id="sndEnemyRat3Hit2" Source="rat_hit2_demo"/>
+        <SoundFile Id="sndEnemyRat3Hit3" Source="rat_hit3_demo"/>
+
+		<SoundFile Id="sndEnemyRat4Dying" Source="skeletonFX_enemy_dead_scream_1"/>
+        <SoundFile Id="sndEnemyRat4Hit1" Source="rat_hit1_demo"/>
+        <SoundFile Id="sndEnemyRat4Hit2" Source="rat_hit2_demo"/>
+        <SoundFile Id="sndEnemyRat4Hit3" Source="rat_hit3_demo"/>
+
+		<SoundFile Id="sndEnemyRat5Dying" Source="skeletonFX_enemy_dead_scream_1"/>
+        <SoundFile Id="sndEnemyRat5Hit1" Source="rat_hit1_demo"/>
+        <SoundFile Id="sndEnemyRat5Hit2" Source="rat_hit2_demo"/>
+        <SoundFile Id="sndEnemyRat5Hit3" Source="rat_hit3_demo"/>	
+
+		<SoundFile Id="sndExitFlight" Source="skeletonFX_roket_start"/>
+        <SoundFile Id="sndExitDoorOpen" Source="skeletonFX_door_open"/>
+        <SoundFile Id="sndExitDoorClose" Source="skeletonFX_door_close"/>
+	</Resources>
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="txrEnemyRat1Default" Source="enemy_1"/>
+        <Texture Id="txrEnemyRat1Attack" Source="enemy_1"/>
+        <Texture Id="txrEnemyRat1Dying" Source="enemy_1"/>
+        <Texture Id="txrCloud1" Source="cloud1"/>
+
+        <Texture Id="txrEnemyRat2Default" Source="EnemyRat2_enemy_4"/>
+        <Texture Id="txrEnemyRat2Attack" Source="EnemyRat2_enemy_4"/>
+        <Texture Id="txrEnemyRat2Dying" Source="EnemyRat2_enemy_4"/>
+
+        <Texture Id="txrEnemyRat3Default" Source="EnemyRat3_enemy_1"/>
+        <Texture Id="txrEnemyRat3Attack" Source="EnemyRat3_enemy_1"/>
+        <Texture Id="txrEnemyRat3Dying" Source="EnemyRat3_enemy_1"/>
+
+        <Texture Id="txrEnemyRat4Default" Source="EnemyRat4_enemy_2"/>
+        <Texture Id="txrEnemyRat4Attack" Source="EnemyRat4_enemy_2"/>
+        <Texture Id="txrEnemyRat4Dying" Source="EnemyRat4_enemy_2"/>
+
+        <Texture Id="txrEnemyRat5Default" Source="EnemyRat5_enemy_3"/>
+        <Texture Id="txrEnemyRat5Attack" Source="EnemyRat5_enemy_3"/>
+        <Texture Id="txrEnemyRat5Dying" Source="EnemyRat5_enemy_3"/>
+
+        <Texture Id="txrExitStatic" Source="refrigerator"/>
+        <Texture Id="txrExitOpen" Source="refrigerator_open"/>
+        <Texture Id="txrExitFlight" Source="refrigerator_wings"/>
+        <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
+
+        <Texture Id="txrFish1Default" Source="fish_4_me" />
+        <Texture Id="txrFishBones" Source="fish_skelet_demo" />
+
+        <Texture Id="txrFish2Default" Source="fish_3_me" />
+        <Texture Id="txrFishBones" Source="fish_skelet_demo" />
+
+        <Texture Id="txrFish3Default" Source="fish_6_me" />
+        <Texture Id="txrFishBones" Source="fish_skelet_demo" />
+
+        <Texture Id="txrFish4Default" Source="fish_5_me" />
+        <Texture Id="txrFishBones" Source="fish_skelet_demo" />
+	</Resources>
+</Include>

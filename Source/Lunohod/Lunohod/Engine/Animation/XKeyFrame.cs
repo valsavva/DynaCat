@@ -36,6 +36,8 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
+			PerfMon.Start("Other-KeyFrame");
+			
             animation = (XNumAnimation)this.Parent;
 
             this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<double>(this.Parent, s)).ToList();
@@ -44,6 +46,8 @@ namespace Lunohod.Objects
             this.CurveKeys = valueReaders.Select(
 				r => new CurveKey(0f, 0f)
              ).ToList();
+		
+			PerfMon.Stop("Other-KeyFrame");
         }
 
         public override void Update(UpdateParameters p)

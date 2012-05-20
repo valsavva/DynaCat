@@ -38,14 +38,26 @@ namespace Lunohod.Xge
 
         public static IExpression<T> CompileExpression<T>(XObject currentObject, string text)
         {
+			PerfMon.Start("CompileExpression");
+
             Instance.Initialize(currentObject, text);
-            return Instance.CompileExpression<T>();
+            var result = Instance.CompileExpression<T>();
+
+			PerfMon.Stop("CompileExpression");
+
+			return result;
         }
 
         public static List<IAction> CompileStatements(XObject currentObject, string text)
         {
-            Instance.Initialize(currentObject, text);
-            return Instance.CompileStatements();
+			PerfMon.Start("CompileStatements");
+            
+			Instance.Initialize(currentObject, text);
+            var result = Instance.CompileStatements();
+		
+			PerfMon.Stop("CompileStatements");
+
+			return result;
         }
 
         public IExpression<T> CompileExpression<T>()
@@ -174,6 +186,8 @@ namespace Lunohod.Xge
 
         private Expression TMethodOrProperty(string id)
         {
+			PerfMon.Start("MethodOrProperty");
+
             string objectId = null;
 
             if (M(TokenType.Dot))
@@ -187,10 +201,15 @@ namespace Lunohod.Xge
             }
 
 
+			Expression result;
             if (M(TokenType.LeftPar))
-                return TMethod(objectId, id);
+                result = TMethod(objectId, id);
             else
-                return TProperty(objectId, id);
+                result = TProperty(objectId, id);
+		
+			PerfMon.Start("MethodOrProperty");
+
+			return result;
         }
 
         private List<IAction> CompileStatements()

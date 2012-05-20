@@ -34,7 +34,11 @@ namespace Lunohod.Objects
         {
             base.Initialize(p);
 
-            actions = Compiler.CompileStatements(this, this.Action);
+			PerfMon.Start("Other-Do");
+
+			actions = Compiler.CompileStatements(this, this.Action);
+
+			PerfMon.Stop("Other-Do");
         }
 
         internal override void UpdateProgress(UpdateParameters p)

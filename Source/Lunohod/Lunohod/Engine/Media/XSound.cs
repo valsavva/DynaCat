@@ -44,8 +44,12 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
+			PerfMon.Start("Other-Sfx");
+
 			this.soundFile = (XSoundResource)this.FindGlobal(this.FileId);
 			this.soundEffectInstance = this.soundFile.SoundEffect.CreateInstance();
+		
+			PerfMon.Stop("Other-Sfx");
         }
 		
 		public override void Update(UpdateParameters p)

@@ -49,8 +49,13 @@ namespace Lunohod.Objects
                 }
             }
 #endif
+			PerfMon.Start("LoadResource");
 
-            return content.Load<T>(fileName);
+			var result = content.Load<T>(fileName);
+
+			PerfMon.Stop("LoadResource");
+
+			return result;
         }
 
         public override void ReadXml(System.Xml.XmlReader reader)

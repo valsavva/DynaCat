@@ -22,12 +22,18 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 
-            runnables = new List<IRunnable>();
+			PerfMon.Start("Other-SetBase");
+
+			runnables = new List<IRunnable>();
             CollectRunnables(this, runnables);
-			runnables.ForEach(r => r.InProgress = false);
+
+			for(int i = 0; i < runnables.Count; i++)
+				runnables[i].InProgress = false;
 
 			if (this.inProgress)
 				this.Start();
+
+			PerfMon.Stop("Other-SetBase");
 		}
 
         private static List<IRunnable> CollectRunnables(XObject obj, List<IRunnable> result)

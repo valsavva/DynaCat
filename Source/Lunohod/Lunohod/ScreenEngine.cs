@@ -89,6 +89,8 @@ namespace Lunohod
 		
 		public virtual void Initialize()
 		{
+			PerfMon.Reset();
+
 			PerfMon.Start("ScreenInitialize");
 
 			this.tapAreas = new List<XTapArea>();
@@ -102,7 +104,7 @@ namespace Lunohod
 			initializeParameters = new InitializeParameters() { Game = game, ScreenEngine = this };
 			updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
 			drawParameters = new DrawParameters() { Game = game, ScreenEngine = this, SpriteBatch = spriteBatch };
-			
+
 			PerfMon.Start("LoadXml");
 			this.RootComponent = (XScreen)GameEngine.LoadXml(this.FileName, this.RootComponentType);
 			this.RootComponent.ScreenEngine = this;
@@ -119,7 +121,8 @@ namespace Lunohod
 			PerfMon.Stop("Initialize");
 
 			PerfMon.Stop("ScreenInitialize");
-			Console.WriteLine(PerfMon.Dump());
+
+			PerfMon.Dump();
 		}
 		
 		protected virtual void InsertSystemSubcomponents()

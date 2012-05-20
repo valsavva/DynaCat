@@ -92,7 +92,9 @@ namespace Lunohod.Objects
 
             base.Initialize(p);
 
-            // get targets
+			PerfMon.Start("Other-Ani");
+
+			// get targets
             targets = this.Target.Split(',').Select(s => (Property<double>)Compiler.CompileExpression<double>(this, s)).ToList();
 			startValues = new List<double?>(new double?[targets.Count]);
 
@@ -119,6 +121,7 @@ namespace Lunohod.Objects
 
                 curves.Add(curve);
             }
+			PerfMon.Stop("Other-Ani");
         }
 
 		/// <inheritdoc />
