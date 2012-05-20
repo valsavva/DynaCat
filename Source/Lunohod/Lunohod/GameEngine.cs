@@ -53,6 +53,8 @@ namespace Lunohod
         public List<ScreenEngine> ScreenEngines { get { return screenEngines; } }
 
         public GameEventQueue EventQueue { get { return eventQueue; } }
+
+		public bool InBackground { get; set; }
         
 		public ScreenEngine ScreenEngine
 		{
@@ -275,6 +277,9 @@ namespace Lunohod
 
 		protected override void Update(GameTime gameTime)
 		{
+			if (this.InBackground)
+				return;
+
 			this.CycleNumber++;
 			this.CurrentUpdateTime = gameTime;
 			

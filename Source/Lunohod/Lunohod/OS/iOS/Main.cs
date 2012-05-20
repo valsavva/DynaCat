@@ -48,7 +48,15 @@ namespace Lunohod
 
 		public override void DidEnterBackground(UIApplication application)
 		{
-			game.EnqueueEvent(new GameEvent(GameEventType.Pause, game.CurrentUpdateTime, true));
+			game.InBackground = true;
+
+			if (game.ScreenEngine is LevelEngine)
+				game.EnqueueEvent(new GameEvent(GameEventType.Pause, game.CurrentUpdateTime, true));
+		}
+
+		public override void WillEnterForeground(UIApplication application)
+		{
+			game.InBackground = false;
 		}
     }    
 /*	
