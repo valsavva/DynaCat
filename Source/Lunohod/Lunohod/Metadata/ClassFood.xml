@@ -1,8 +1,4 @@
 <Include>
-    <Resources RootFolder="Global">
-        <Font Id="Splash14Font" Source="Splash14Font" />
-    </Resources>
-    
     <Class Id="clsFood">
 		<Food IsExploding="true" >
 

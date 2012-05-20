@@ -1,24 +1,4 @@
 <Include>	
-
-	<Resources RootFolder="Sound">
-		<SoundFile Id="sndEnemyRat3Dying" Source="skeletonFX_enemy_dead_scream_1"/>
-        <SoundFile Id="sndEnemyRat3Hit1" Source="rat_hit1_demo"/>
-        <SoundFile Id="sndEnemyRat3Hit2" Source="rat_hit2_demo"/>
-        <SoundFile Id="sndEnemyRat3Hit3" Source="rat_hit3_demo"/>
-    </Resources>
-	
-    <Resources RootFolder="Textures">
-        <Texture Id="txrEnemyRat3Default" Source="EnemyRat3_enemy_1"/>
-        <Texture Id="txrEnemyRat3Attack" Source="EnemyRat3_enemy_1"/>
-        <Texture Id="txrEnemyRat3Dying" Source="EnemyRat3_enemy_1"/>
-        <Texture Id="txrCloud1" Source="cloud1"/>
-    </Resources>
-
-    <Resources RootFolder="Global">
-        <Font Id="Splash14Font" Source="Splash14Font" />
-    </Resources>
-
-         
 	<Class Id="clsEnemyRat3">
 		<Enemy IsExploding="true" Damage="9" Points="75">
 

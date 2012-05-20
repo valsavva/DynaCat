@@ -1,19 +1,4 @@
 <Include>	
-	
-	<Resources RootFolder="Sound">
-		<SoundFile Id="sndExitFlight" Source="skeletonFX_roket_start"/>
-        <SoundFile Id="sndExitDoorOpen" Source="skeletonFX_door_open"/>
-        <SoundFile Id="sndExitDoorClose" Source="skeletonFX_door_close"/>
-	</Resources>
-	
-	<Resources RootFolder="Textures">
-        <Texture Id="txrExitStatic" Source="refrigerator"/>
-        <Texture Id="txrExitOpen" Source="refrigerator_open"/>
-        <Texture Id="txrExitFlight" Source="refrigerator_wings"/>
-        <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
-	</Resources>
-	
-	
 	<Class Id="clsExit">
         <Group Depth="0.1">
             <Image Id="this_imgExitStatic" TextureId="txrExitStatic"/>
