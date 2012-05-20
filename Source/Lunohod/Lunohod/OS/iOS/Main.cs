@@ -45,6 +45,11 @@ namespace Lunohod
             File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "lunohod_error.txt"), ex.ToString());
             Console.WriteLine("**** Unhandled error!\n" + ex.ToString());
         }
+
+		public override void DidEnterBackground(UIApplication application)
+		{
+			game.EnqueueEvent(new GameEvent(GameEventType.Pause, game.CurrentUpdateTime, true));
+		}
     }    
 /*	
     [Register ("AppDelegate")]

@@ -14,6 +14,7 @@ namespace Lunohod
 			{ "system:down", GameEventType.Down },
 			{ "system:left", GameEventType.Left },
 			{ "system:right", GameEventType.Right },
+			{ "system:pause", GameEventType.Pause },
 			{ "system:stop", GameEventType.Stop },
 			{ "system:explosion", GameEventType.Explosion },
 			{ "system:closeScreen", GameEventType.CloseCurrentScreen },

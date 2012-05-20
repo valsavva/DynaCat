@@ -9,6 +9,7 @@ namespace Lunohod
         Down,
         Left,
         Right,
+		Pause,
         Stop,
         Explosion,
         CloseCurrentScreen,

@@ -23,6 +23,11 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public string StartScreen;
         /// <summary>
+        /// Specifies the name of the XML file that contains the pause screen.
+        /// </summary>
+        [XmlAttribute]
+        public string PauseScreen;
+        /// <summary>
         /// Specifies whether to display Frames Per Second counter.
         /// </summary>
         [XmlAttribute]
@@ -50,6 +55,7 @@ namespace Lunohod.Objects
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             this.StartScreen = reader["StartScreen"];
+			this.PauseScreen = reader["PauseScreen"];
             reader.ReadAttrAsBoolean("ShowFPS", ref this.ShowFPS);
             reader.ReadAttrAsBoolean("ShowDebugInfo");
 			reader.ReadAttrAsFloat("CpsLimit", ref this.CpsLimit);

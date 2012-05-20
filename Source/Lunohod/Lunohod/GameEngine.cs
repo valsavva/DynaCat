@@ -432,6 +432,13 @@ namespace Lunohod
 
 				switch (e.EventType)
                 {
+                    case GameEventType.Pause:
+						{
+                            this.eventQueue.Clear();
+							numOfEvents = 0;
+							
+							LoadScreen(this.GameObject.PauseScreen);
+						} break;
                     case GameEventType.StartNextLevel:
                         {
                             this.eventQueue.Clear();
