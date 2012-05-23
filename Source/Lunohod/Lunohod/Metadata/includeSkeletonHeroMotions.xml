@@ -1,13 +1,14 @@
-<Include xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Prototype/Docs/schema0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest4" Bounds="0, 0, 480, 320">-->
+<Include>
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank"/>
 		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
 	
-	<!--
+	
 	<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
     <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(system.Round(hero.X)) + ')(' + system.Str(system.Round(hero.Y)) + ')'" Color="#000000" />
-    -->
+    
 	
 	<!-- Global variables. Will be moved out here. -->
 	<Do Action="@heroBaseSpeed=60;@heroBaseTime=3.95;" InProgress="true"/>
@@ -22,18 +23,24 @@
 			@heroSpeed1=@heroBaseSpeed*0.5;@heroSpeed2=@heroBaseSpeed*1.1;@heroSpeed3=@heroBaseSpeed*1;@heroSpeed4=@heroBaseSpeed*0.5;" />
 
 	<!-- this should not belong to any group -->
-	<BoolTrigger Condition="this:InBoloto" EnterAction="doBolotoSpeed.Start()" ExitAction="doNormalSpeed.Start()"/>
+	<BoolTrigger Condition="hero:InBoloto" EnterAction="doBolotoSpeed.Start()" ExitAction="doNormalSpeed.Start()"/>
 
-	<BoolTrigger Condition="this:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />
+	<BoolTrigger Condition="hero:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />
+
+    <NumTrigger Property="hero.Speed" Compare="G" Value="0">
+        <BoolTrigger Condition="hero:OnOilMotion" EnterAction="anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="anmDeceleration.Resume();hero.EndTransaction()" />
+    </NumTrigger>
+    
+    <BoolTrigger Condition="hero:OnOilRest" Action="hero.EndTransaction()" />
 
     <BoolTrigger Condition="hero:ElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
-	<BoolTrigger Condition="this:stick" EnterAction="anmDeceleration.Stop()" />
-
-	<!-- hero speed animation -->
+    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop()" />
+    
+    <!-- hero speed animation -->    
 	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="@heroSpeed1" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime1" Value="@heroSpeed2" Smoothing="Smooth"/>

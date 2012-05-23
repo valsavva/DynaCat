@@ -1,0 +1,27 @@
+</Group>
+###@CRLF
+<Block Id="blkBarrel
+###@cntrValue8
+" Class="clsBarrel" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" Edges="Stick" TraceId="
+###id
+">
+###@CRLF
+<Image TextureId="txr_
+###@filename
+" />
+###@CRLF
+<BoolTrigger Condition="blkBarrel
+###@cntrValue8
+:Destroyed" EnterAction="grpOil
+###@cntrValue8
+.Enable()" />
+###@CRLF
+</Block>

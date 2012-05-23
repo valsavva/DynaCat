@@ -1,0 +1,25 @@
+<Include>	
+
+    <Class Id="clsBarrel">
+		<Block IsExploding="true" Edges="Stick">
+            <!-- destroy -->
+			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="false" Group="this_BoxBoomStates"/>
+			<SequenceSet Id="this_setDestroy1" InProgress="false">
+                <Do Action="this.SetEdges('None');this:Destroyed" />
+				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
+				<Do Action="this.Disable()"/>
+			</SequenceSet>
+		</Block>
+	</Class>
+	
+</Include>
+
+
+
+
+
+
+
+
+
+

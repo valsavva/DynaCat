@@ -27,11 +27,12 @@
         <Texture Id="txrHeroWaitingExplosion" Source="cat_var_1c"/>
         <Texture Id="txrHeroGoodExplosion" Source="cat_var_1a"/>
         <Texture Id="txrHeroBadExplosion" Source="cat_var_2c"/>
+        <Texture Id="txrHeroSurprised" Source="cat_var_2cSurprise.png"/>
         <Texture Id="txrHeroExit" Source="cat_var_1b"/>
     </Resources>
 
 	<Class Id="clsHero">
-		<Hero Speed="84" Direction="0,0" Deceleration="0">
+		<Hero Speed="0" Direction="0,0" Deceleration="0">
             <Include File="includeSkeletonHeroMotions.xml"/>
 		
 <!-- Init Vars -->
@@ -135,6 +136,12 @@
                 </SequenceSet>
 			</BoolTrigger>
 
+
+            <!-- on Oil -->
+            <BoolTrigger Condition="hero:OnOilMotion" Group="sttHeroStates" >
+                <Image TextureId="txrHeroSurprised" Bounds="-4, -10, 40, 33"/>
+            </BoolTrigger>
+            
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
                 <Image TextureId="txrHeroDefault" Bounds="-4, -10, 40, 33"/>

@@ -1,0 +1,26 @@
+<Include>
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_oil" Source="oil" />
+    </Resources>
+    <Class Id="clsOilSpot">
+        <Image TextureId="txr_oil" Opacity="0" Stretch="true" >
+            <NumAnimation Target="this.Opacity" From="0" To="1" Duration="@appearanceTime" RepeatCount="1" Fill="End" InProgress="true" />
+        </Image>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
