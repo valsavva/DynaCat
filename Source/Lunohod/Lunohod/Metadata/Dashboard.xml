@@ -149,6 +149,14 @@
         </BoolTrigger>
         <Text Text="=system.Round(system.GetCommandsPerSecond(), 2)"  FontId="SystemFont" Location="35, 280" Color="#FF00FF"/>
 
+        <TapArea Bounds="55,280,60,60" Action="system.IsMute=not system.IsMute;">
+        	<BoolTrigger Condition="system.IsMute">
+        		<Image Bounds="0,0,20,20" TextureId="blank" BackColor="#FF0000"/>
+        	</BoolTrigger>
+        	<BoolTrigger Condition="not system.IsMute">
+        		<Image Bounds="0,0,20,20" TextureId="blank" BackColor="#00FF00"/>
+        	</BoolTrigger>
+        </TapArea>
 
     </Dashboard>
 </Include>

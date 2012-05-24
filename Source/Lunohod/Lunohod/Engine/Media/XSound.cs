@@ -13,27 +13,14 @@ using Microsoft.Xna.Framework.Audio;
 namespace Lunohod.Objects
 {
     [XmlType("Sound")]
-	public class XSound : XObject, IHasVolume, IRunnable
+	public class XSound : XAudibleBase, IRunnable
 	{
 		private XSoundResource soundFile;
 		private SoundEffectInstance soundEffectInstance;
-		
-		private double volume;
-		
+
 		[XmlAttribute]
         public string FileId;
-		
-		[XmlAttribute]
-		public double Volume
-		{
-			get { return this.volume; }
-			set { 
-				this.volume = value;
-				if (this.soundEffectInstance != null)
-					this.soundEffectInstance.Volume = (float)this.volume;
-			}
-		}
-		
+
 		[XmlAttribute]
 		public double Pitch = 0;
 		
@@ -57,6 +44,12 @@ namespace Lunohod.Objects
 			base.Update(p);
 		}
 
+		protected override void AdjustVolumeImpl(double volume)
+		{
+			if (this.soundEffectInstance != null)
+				this.soundEffectInstance.Volume = (float)volume;
+		}
+
         public bool InProgress
         {
             get { return this.soundEffectInstance.State == SoundState.Playing; }
@@ -73,7 +66,7 @@ namespace Lunohod.Objects
 
         public void Start()
 		{
-            this.soundEffectInstance.Volume = (float)this.Volume;
+			AdjustVolume();
 #if WINDOWS
             this.soundEffectInstance.Pitch = (float)this.Pitch;
 #else
@@ -99,7 +92,6 @@ namespace Lunohod.Objects
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             this.FileId = reader["FileId"];
-            this.Volume = reader.ReadAttrAsFloat("Volume");
             reader.ReadAttrAsFloat("Pitch", ref this.Pitch);
             reader.ReadAttrAsFloat("Pan", ref this.Pan);
             

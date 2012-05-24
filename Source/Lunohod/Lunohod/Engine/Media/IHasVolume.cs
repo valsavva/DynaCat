@@ -7,4 +7,3 @@ namespace Lunohod.Objects
 		double Volume { get; set; }
 	}
 }
-

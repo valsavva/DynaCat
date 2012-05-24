@@ -54,8 +54,27 @@ namespace Lunohod
 
         public GameEventQueue EventQueue { get { return eventQueue; } }
 
-		public bool InBackground { get; set; }
+		public bool InBackground;
+
+		public bool IsMute
+		{
+			get { return this.SettingsFile.MuteSound; }
+			set
+			{
+				if (this.SettingsFile.MuteSound == value)
+					return;
+
+				this.SettingsFile.MuteSound = value;
+
+				if (MuteChanged != null)
+					MuteChanged(this, EventArgs.Empty);
+
+				SaveSettings();
+			}
+		}
         
+		public event EventHandler MuteChanged;
+
 		public ScreenEngine ScreenEngine
 		{
 			get
