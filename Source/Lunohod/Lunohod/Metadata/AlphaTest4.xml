@@ -61,7 +61,7 @@
         <Image Id="dfltMask23" TextureId="txr_laz_hor" Bounds="260, 260, 40, 30" TraceId="image5076"/>
         <Image Id="dfltMask24" TextureId="txr_laz_hor" Bounds="302, 140, 40, 30" TraceId="image5094"/>
         <Image Id="dfltMask25" TextureId="txr_laz_hor" Bounds="342, 140, 40, 30" TraceId="image5096"/>
-        <Image Id="dfltMask26" TextureId="txr_laz_turn1" Bounds="262, 290, 40, 30" Rotation="180" TraceId="image5106"/>
+        <Image Id="dfltMask26" TextureId="txr_laz_turn1" Bounds="262, 290, 40, 30" Rotation="180" Stretch="true" TraceId="image5106"/>
         <Image Id="dfltMask27" TextureId="txr_laz_hor" Bounds="300, 260, 40, 30" TraceId="image5109"/>
         <Image Id="dfltMask28" TextureId="txr_laz_hor" Bounds="340, 260, 40, 30" TraceId="image5111"/>
         <Image Id="dfltMask29" TextureId="txr_laz_turn1" Bounds="380, 260, 40, 30" FlipEffects="Vertically" TraceId="image5123"/>
@@ -76,7 +76,7 @@
         <Image Id="dfltMask38" TextureId="txr_laz_vert" Bounds="222, 48, 40, 30" TraceId="image5157"/>
         <Image Id="dfltMask39" TextureId="txr_laz_turn1" Bounds="62, 20, 40, 30" FlipEffects="Horizontally" TraceId="image5169"/>
         <Image Id="dfltMask40" TextureId="txr_laz_turn1" Bounds="222, 20, 40, 30" FlipEffects="Horizontally" TraceId="image3082"/>
-        <Image Id="dfltMask41" TextureId="txr_laz_turn1" Bounds="102, 170, 40, 30" Rotation="180" TraceId="image3192"/>
+        <Image Id="dfltMask41" TextureId="txr_laz_turn1" Bounds="102, 170, 40, 30" Rotation="180" Stretch="true" TraceId="image3192"/>
     </Layer>
     <Layer Id="oil" BackColor="#FFFFFFFF">
         <Group Id="grpOil1" Enabled="false">
