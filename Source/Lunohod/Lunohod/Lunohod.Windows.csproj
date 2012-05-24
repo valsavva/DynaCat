@@ -149,6 +149,7 @@
     <Compile Include="Engine\Expressions\Validator.cs" />
     <Compile Include="Engine\Expressions\Variable.cs" />
     <Compile Include="Engine\IHasPoints.cs" />
+    <Compile Include="Engine\Media\XAudibleBase.cs" />
     <Compile Include="Engine\Serialization\ClassFactory.cs" />
     <Compile Include="Engine\Updates\DrawParameters.cs" />
     <Compile Include="Engine\Updates\InitializeParameters.cs" />
