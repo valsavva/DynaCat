@@ -190,7 +190,23 @@ namespace Lunohod.Objects
 		{
 			System.Diagnostics.Debug.WriteLine(message, pars);
 		}
-		
+
+		public bool IsMute
+		{
+			get { return GameEngine.Instance.IsMute; }
+			set { GameEngine.Instance.IsMute = value; }
+		}
+
+		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
+		{
+			switch(propertyName)
+			{
+				case "IsMute" : getter = () => this.IsMute; setter = (v) => this.IsMute = v; break;
+				default:
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
+
 		public override void GetMethod(string methodName, out Func<List<Expression>, bool> method)
 		{
             switch (methodName)

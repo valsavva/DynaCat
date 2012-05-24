@@ -196,6 +196,7 @@
     <Compile Include="Engine\XSettingsFile.cs" />
     <Compile Include="EventRateCounter.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Engine\Media\XAudibleBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -518,7 +519,7 @@
     <Content Include="Content\Textures\cat_var_2c.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\cat_var_2cSurprise.png">
+    <Content Include="Content\Textures\cat_var_2cSurprise.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\cat_var_eat.png">
@@ -1990,7 +1991,7 @@
     <Content Include="Metadata\ClassExplosion.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\ClassBarrel.xml">
+    <Content Include="Metadata\ClassBarrel.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassFood.xml">
@@ -2014,10 +2015,10 @@
     <Content Include="Metadata\ClassHero.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\ClassOil.xml">
+    <Content Include="Metadata\ClassOil.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	    <Content Include="Metadata\ClassOilSpot.xml">
+    <Content Include="Metadata\ClassOilSpot.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassTower.xml">
@@ -2402,8 +2403,8 @@
     <Content Include="Metadata\Lvl_Tutorial_04.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cloud1.png" >
-		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\Textures\cloud1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\CommonTextures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2416,6 +2417,3 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
-
-
-
