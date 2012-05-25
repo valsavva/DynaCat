@@ -29,7 +29,9 @@
 		</LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
             <LevelInfo Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" TimeBonusThreshold="50"/>
-            <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
+            <LevelInfo Id="Lvl_1D_Dva_Prohoda" File="Lvl_1D_Dva_Prohoda.xml" TimeBonusThreshold="50"/>
+            <!--<LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
+            <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>-->
             <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="17"/>
             <LevelInfo Id="Lvl_1D_Intro_v7" File="Lvl_1D_Intro_v7.xml" TimeBonusThreshold="18"/>
             <LevelInfo Id="Lvl_1D_Intro_v8" File="Lvl_1D_Intro_v8.xml" TimeBonusThreshold="18"/>
