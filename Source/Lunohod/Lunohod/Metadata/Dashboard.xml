@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Include>
 
 	<!-- Resources -->
@@ -124,6 +124,7 @@
 
         
         <!--hero health-->
+        <!-- OLD
         <Image TextureId="txr_health_and_score_text_demo" Bounds="265, 6, 170, 10" />
         <Image Id="txrHealthBar" TextureId="txr_health_bar_back" Bounds="300, 8, 100, 8"/>
         <Group Id="grpHeroHealthBar" Bounds="300, 8, 100, 8" BackColor="#CC2A2A">
@@ -133,6 +134,31 @@
         <Image TextureId="txr_health_bar_front" Bounds="300, 8, 100, 8"/>
         <Text Text="=hero.Health" FontId="SystemFont" Location="305,6" Color="#FFFFFF"/>
 		<Text Text="=hero.Score" FontId="SystemFont" Location="438, 6" />
+        -->
+
+        <!--<Text Text="=hero.Health" FontId="SystemFont" Location="360,6" Color="#FFFFFF"/>-->
+        <NumTrigger Property="hero.Health" Compare="GE" Value="100" Group="sttHeroHealth">
+            <Image TextureId="txrHeroHealth100" Bounds="350, 2, 20, 16" />
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="G" Value="75" Group="sttHeroHealth">
+            <Image TextureId="txrHeroHealth080" Bounds="350, 2, 20, 16" />
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="G" Value="50" Group="sttHeroHealth">
+            <Image TextureId="txrHeroHealth060" Bounds="350, 2, 20, 16" />
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="G" Value="25" Group="sttHeroHealth">
+            <Image TextureId="txrHeroHealth040" Bounds="350, 2, 20, 16" />
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="G" Value="0" Group="sttHeroHealth">
+            <Image TextureId="txrHeroHealth020" Bounds="350, 2, 20, 16" />
+        </NumTrigger>
+        <NumTrigger Property="hero.Health" Compare="LE" Value="0" Group="sttHeroHealth">
+            <Image TextureId="txrHeroHealth000" Bounds="350, 2, 20, 16" />
+        </NumTrigger>
+        
+        <!-- score -->
+        <Text Text="Score" FontId="SystemFont" Location="390, 2" />
+        <Text Text="=hero.Score" FontId="SystemFont" Location="430, 2" />
 
         <!--time bonus-->
         <Image Id="txrHealthBar" TextureId="txr_health_bar_back" Bounds="150, 8, 100, 8"/>

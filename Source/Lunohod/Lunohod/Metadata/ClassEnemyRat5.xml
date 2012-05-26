@@ -1,6 +1,6 @@
 <Include>	
 	<Class Id="clsEnemyRat5">
-		<Enemy IsExploding="true" Damage="20" Points="110">
+		<Enemy IsExploding="true" Damage="50" Points="110"> <!-- Damage="20" -->
 
 <!-- Points Animation -->
             <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
