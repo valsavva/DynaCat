@@ -60,6 +60,11 @@ namespace Lunohod
                 game.ProcessTouch(gameTime, XTapType.Press, x, y);
             }
 		}
+
+		public override void ResetController()
+		{
+			TouchPanel.Reset();
+		}
 	}
 }
 

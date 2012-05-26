@@ -348,6 +348,8 @@ namespace Lunohod
 
 			newScreenEngine.Initialize();
 
+			ResetControllers();
+
 			GC.Collect();
 		}
 
@@ -362,6 +364,8 @@ namespace Lunohod
 			
 			newScreenEngine.Initialize();
 
+			ResetControllers();
+
 			GC.Collect();
 		}
 		
@@ -373,6 +377,11 @@ namespace Lunohod
 			GameObject.Initialize(new InitializeParameters() { Game = this });
 
 			PrepareGlobals();
+		}
+
+		void ResetControllers()
+		{
+			this.inputProcessors.ForEach(c => c.ResetController());
 		}
 
 		public void CloseCurrentScreen()

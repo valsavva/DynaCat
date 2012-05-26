@@ -70,6 +70,11 @@ namespace Lunohod
                 game.EnqueueEvent(e);
             }
 		}
+
+		public override void ResetController()
+		{
+			Keyboard.GetState();
+		}
 	}
 }
 

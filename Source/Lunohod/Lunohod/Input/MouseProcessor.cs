@@ -59,6 +59,11 @@ namespace Lunohod
             levelEngine.Hero.Bounds.X = x - levelEngine.Hero.Bounds.Width / 2;
             levelEngine.Hero.Bounds.Y = y - levelEngine.Hero.Bounds.Height / 2;
         }
+
+		public override void ResetController()
+		{
+			Mouse.GetState();
+		}
 	}
 }
 

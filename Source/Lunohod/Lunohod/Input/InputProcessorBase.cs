@@ -11,7 +11,9 @@ namespace Lunohod
 		{
 			this.game = game;
 		}
-		
+
+		public abstract void ResetController();
+
 		public abstract void Process(GameTime gameTime);
 	}
 }
