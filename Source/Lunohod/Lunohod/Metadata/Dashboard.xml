@@ -19,6 +19,7 @@
         <Texture Id="txrHeroHealth060" Source="heroHealth060"/>
         <Texture Id="txrHeroHealth080" Source="heroHealth080"/>
         <Texture Id="txrHeroHealth100" Source="heroHealth100"/>
+        <Texture Id="txrTimeBonusSprite" Source="TimeBonusSprite_16x16x24"/>
     </Resources>
     <Resources RootFolder="Textures">
         <Texture Id="txr_health_and_score_text_demo" Source="health_and_score_text_demo" />
@@ -137,38 +138,45 @@
         -->
 
         <!--<Text Text="=hero.Health" FontId="SystemFont" Location="360,6" Color="#FFFFFF"/>-->
-        <NumTrigger Property="hero.Health" Compare="GE" Value="100" Group="sttHeroHealth">
-            <Image TextureId="txrHeroHealth100" Bounds="350, 2, 20, 16" />
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="G" Value="75" Group="sttHeroHealth">
-            <Image TextureId="txrHeroHealth080" Bounds="350, 2, 20, 16" />
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="G" Value="50" Group="sttHeroHealth">
-            <Image TextureId="txrHeroHealth060" Bounds="350, 2, 20, 16" />
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="G" Value="25" Group="sttHeroHealth">
-            <Image TextureId="txrHeroHealth040" Bounds="350, 2, 20, 16" />
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="G" Value="0" Group="sttHeroHealth">
-            <Image TextureId="txrHeroHealth020" Bounds="350, 2, 20, 16" />
-        </NumTrigger>
-        <NumTrigger Property="hero.Health" Compare="LE" Value="0" Group="sttHeroHealth">
-            <Image TextureId="txrHeroHealth000" Bounds="350, 2, 20, 16" />
-        </NumTrigger>
+        <Group Id="grpHeroHealthImage" Bounds="320, 2, 20, 16" >
+            <NumTrigger Property="hero.Health" Compare="GE" Value="100" Group="sttHeroHealth">
+                <Image TextureId="txrHeroHealth100"/>
+            </NumTrigger>
+            <NumTrigger Property="hero.Health" Compare="G" Value="75" Group="sttHeroHealth">
+                <Image TextureId="txrHeroHealth080"/>
+            </NumTrigger>
+            <NumTrigger Property="hero.Health" Compare="G" Value="50" Group="sttHeroHealth">
+                <Image TextureId="txrHeroHealth060"/>
+            </NumTrigger>
+            <NumTrigger Property="hero.Health" Compare="G" Value="25" Group="sttHeroHealth">
+                <Image TextureId="txrHeroHealth040"/>
+            </NumTrigger>
+            <NumTrigger Property="hero.Health" Compare="G" Value="0" Group="sttHeroHealth">
+                <Image TextureId="txrHeroHealth020"/>
+            </NumTrigger>
+            <NumTrigger Property="hero.Health" Compare="LE" Value="0" Group="sttHeroHealth">
+                <Image TextureId="txrHeroHealth000"/>
+            </NumTrigger>
+        </Group>
         
         <!-- score -->
         <Text Text="Score" FontId="SystemFont" Location="390, 2" />
         <Text Text="=hero.Score" FontId="SystemFont" Location="430, 2" />
 
         <!--time bonus-->
+        <!-- OLD
         <Image Id="txrHealthBar" TextureId="txr_health_bar_back" Bounds="150, 8, 100, 8"/>
         <Group Id="grpHeroTimeBar" Bounds="150, 8, 100, 8" BackColor="#CC2A2A">
 			<Do Action="grpHeroTimeBar.Width=txrHealthBar.Width*(1.0 - system.Min(hero.Time/levelInfo.TimeBonusThreshold, 0.99))" InProgress="true" RepeatCount="0" />
             <Image TextureId="blank" />
         </Group>
         <Image TextureId="txr_health_bar_front" Bounds="150, 8, 100, 8"/>
-		<Text Text="=system.Round(hero.Time)" FontId="SystemFont" Location="155, 6" />
+		<Text Text="=system.Round(hero.Time)" FontId="SystemFont" Location="155, 6" />-->
 
+        <Sprite Id="sprTimeBonus" TextureId="txrTimeBonusSprite" Bounds="350,2,16,16" FrameBounds="0,0,16,16" FrameCount="24">
+            <NumAnimation From="0" To="23" Duration="levelInfo.TimeBonusThreshold" Target="CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
+        </Sprite>
+        
 		<!-- CPS -->
         <BoolTrigger Condition="system:cpsLimitExceeded" >
             <Text Text="*"  FontId="SystemFont" Location="25, 280" Color="#FF00FF"/>
