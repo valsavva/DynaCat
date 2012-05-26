@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Runtime.InteropServices;
+using MonoTouch.AudioToolbox;
 
 #if IPHONE
 using OpenTK.Audio.OpenAL;
@@ -30,6 +31,11 @@ namespace Microsoft.Xna.Framework.Audio
 
 		private OpenALSoundController ()
 		{
+#if IPHONE
+			AudioSession.Initialize();
+			AudioSession.Category = AudioSessionCategory.AmbientSound;
+#endif
+
 			alcMacOSXMixerOutputRate(PREFERRED_MIX_RATE);
 			_device = Alc.OpenDevice (string.Empty);
 			CheckALError ("Could not open AL device");
@@ -57,6 +63,20 @@ namespace Microsoft.Xna.Framework.Audio
 			for (int x=0; x < MAX_NUMBER_OF_SOURCES; x++) {
 				availableSourcesCollection.Add (allSourcesArray [x]);
 			}
+
+#if IPHONE
+			AudioSession.Interrupted += (sender, e) =>
+			{
+				Alc.MakeContextCurrent(ContextHandle.Zero);
+				Alc.SuspendContext(_context);
+			};
+
+			AudioSession.Resumed += (sender, e) =>
+			{
+				Alc.MakeContextCurrent(_context);
+				Alc.ProcessContext(_context);
+			};
+#endif
 		}
 
 		public static OpenALSoundController GetInstance {

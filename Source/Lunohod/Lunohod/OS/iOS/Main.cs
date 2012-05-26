@@ -17,10 +17,7 @@ namespace Lunohod
 		
         public override void FinishedLaunching(UIApplication app)
         {
-			AudioSession.Initialize();
-			AudioSession.Category = AudioSessionCategory.AmbientSound;
-			
-            // Fun begins..
+			// Fun begins..
             this.game = new GameEngine();
             this.game.Run();
         }
