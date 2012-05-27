@@ -63,7 +63,7 @@ namespace Lunohod
 
 		public override void ResetController()
 		{
-			TouchPanel.Reset();
+			//TouchPanel.Reset();
 		}
 	}
 }

@@ -1,0 +1,147 @@
+<Include>
+    <Resources RootFolder="Textures">
+        <Texture Id="txrSpider1" Source="spider1" />
+        <Texture Id="txrSpider1Dying" Source="spider1" />
+        <Texture Id="txrSpider1Attack" Source="spider1attack" />
+    </Resources>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndSpider1Dying" Source="spider_dying"/>
+        <SoundFile Id="sndSpider1Attack" Source="spider_shhh3"/>
+        <SoundFile Id="sndSpider1Wall" Source="spider_shhh1"/>
+    </Resources>
+    
+    <Class Id="clsEnemySpider1">
+		<Enemy IsExploding="true" Damage="10" Points="30"> 
+            <Do Action="@thisdX=5;@thisdY=0" RepeatCount="1" InProgress="true"/>
+            
+<!-- Points Animation -->
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
+                <Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y" InProgress="true" />
+                <Text FontId="Splash14Font" Text="='+' + system.Str(this.Points)" Location="6,-12" Color="#FFFFFF">
+                    <SequenceSet RepeatCount="1" InProgress="true">
+                        <ParallelSet RepeatCount="1">
+                            <NumAnimation Target="this_grpShowPoints.Opacity" From="1" To="0.5" RepeatCount="1" Duration="1" Fill="Hold" />
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-50" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                            </RandomSet>
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.X" From="-4" To="4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.X" From="4" To="-4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                            </RandomSet>
+                        </ParallelSet>
+                        <Do Action="this.Disable()"/>
+                    </SequenceSet>
+                </Text>
+            </Group>
+
+            <Image Id="this_imgCloud1" TextureId="txrCloud1" Bounds="-3, 1, 32, 23" Enabled="false"/>
+
+
+            
+
+            <!-- intersections -->
+            <BoolTrigger Condition="this:WallIntersection" EnterAction="this_setChangeDir.Start()" />
+            <SequenceSet Id="this_setChangeDir" RepeatCount="1" InProgress="false" >
+                <Do Action="@thisSBdX=(-1)*@thisdX;@thisSBdY=(-1)*@thisdY;" />
+                <Do Action="this_StepBack.Start()" />
+                <Do Action="@thisZ=@thisdX" />
+                <Do Action="@thisdX=(-1)*@thisdY" />
+                <Do Action="@thisdY=@thisZ" />
+            </SequenceSet>
+
+            <RandomSet Id="this_setRandomDir" RepeatCount="1" InProgress="false" >
+                    <Do Action="@thisdX=5;@thisdY=0" />
+                    <Do Action="@thisdX=-5;@thisdY=0" />
+                    <Do Action="@thisdX=0;@thisdY=5" />
+                    <Do Action="@thisdX=0;@thisdY=-5" />
+            </RandomSet>
+             <!-- running -->
+            <BoolTrigger Condition="not this:WallIntersection" >
+                <RandomSet Probabilities="6,2,1,32"  RepeatCount="0" InProgress="true">
+                    <Delay Duration="system.Rnd(0,0.4)" />
+                    <Delay Duration="system.Rnd(2,4)" />
+                    <Do Action="this_setRandomDir.Start()" />
+                    <SequenceSet Id="this_Step">
+                        <NumAnimation Target="this.X" From="0" To="@thisdX" Duration="0.08" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                        <NumAnimation Target="this.Y" From="0" To="@thisdY" Duration="0.08" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                    </SequenceSet>
+                </RandomSet>
+            </BoolTrigger>
+
+            <SequenceSet Id="this_StepBack" RepeatCount="1" InProgress="false" >
+                <!--<Delay Duration="0.4" />-->
+                <NumAnimation Target="this.X" From="0" To="@thisSBdX*2" Duration="0.16" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                <NumAnimation Target="this.Y" From="0" To="@thisSBdY*2" Duration="0.16" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+            </SequenceSet>
+            
+ <!-- States -->
+            <!-- explosion -->
+            <!-- dying -->
+            <BoolTrigger Condition="this:BoomClose" EnterAction="hero.AddScore(this.Points);this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
+                <Image Id="this_imgSpider1Dying" TextureId="txrSpider1Dying"/>
+            </BoolTrigger>
+            <ParallelSet Id="this_setDying" InProgress="false">
+                <Do Action="hero:+GoodExplosion;this_grpShowPoints.Enable()"/>
+                <Sound FileId="sndSpider1Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+                <NumAnimation Target="this_imgSpider1Dying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <SequenceSet>
+                    <Do Action="this_imgCloud1.Enable()" />
+                    <NumAnimation Target="this_imgCloud1.Opacity" From="1" To="0" Duration="0.5" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+            </ParallelSet>
+
+            <!-- attack -->
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
+                <Image Id="this_txrSpider1Attack" TextureId="txrSpider1Attack"/>
+            </IntersectionTrigger>
+
+            <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
+                <Do Action="this_anmAttack.Start()" />
+                <Delay Duration="system.Rnd(0.5,1)" />
+            </SequenceSet>
+
+            <ParallelSet Id="this_anmAttack" RepeatCount="1">
+                <Do Action="this.Attack()" />
+                <RandomSet>
+                    <Sound FileId="sndSpider1Attack" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndSpider1Attack" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndSpider1Attack" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndSpider1Attack" Volume="0.5" Pitch="0.1" Pan="0"/>
+                    <Sound FileId="sndSpider1Attack" Volume="0.5" Pitch="0.1" Pan="0"/>
+                    <Sound FileId="sndSpider1Attack" Volume="0.5" Pitch="0.1" Pan="0"/>
+                </RandomSet>
+                <ParallelSet>
+                    <SequenceSet>
+                        <NumAnimation Duration="0.2" Target="this.Y" Autoreverse="true" IsDelta="true" From="0" To="-10" RepeatCount="1"/>
+                        <NumAnimation Duration="0.1" Target="this.Y" Autoreverse="true" IsDelta="true" From="0" To="-5" RepeatCount="1"/>
+                    </SequenceSet>
+                    <NumAnimation Duration="0.1" Target="this_txrSpider1Attack.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+                </ParallelSet>
+            </ParallelSet>
+            
+            
+			<!-- default -->
+			<BoolTrigger Group="this_sttStates">
+				<Image Id="this_txrSpider1Default" TextureId="txrSpider1" />
+			</BoolTrigger>
+			
+		</Enemy>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
