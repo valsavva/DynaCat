@@ -10,59 +10,70 @@ namespace Lunohod.Objects
     [XmlType("LevelScore")]
 	public class XLevelScore : XLevelInfo
 	{
+		private bool calculated;
+
 		private double availablePoints;
 		private double score;
 		private double time;
 		private double health;
+
+
+		private double scoreRatio;
+		private double timeBonus;
+		private double healthBonus;
+		private double totalScore;
+		private double numberOfStars;
+		private bool hasBadge;
+
+		public XLevelScore()
+		{
+		}
+
+		public XLevelScore(XLevelInfo info)
+			: base(info)
+		{
+		}
 		
 		[XmlAttribute]
-		public double AvaliablePoints { get { return availablePoints; } set { availablePoints = value; Recalculate(); } }
+		public double AvaliablePoints { get { return availablePoints; } set { availablePoints = value; calculated = false; } }
 		[XmlAttribute]
-		public double Score { get { return score; } set { score = value; Recalculate(); } }
+		public double Score { get { return score; } set { score = value; calculated = false; } }
 		[XmlAttribute]
-		public double Time { get { return time; } set { time = value; Recalculate(); } }
+		public double Time { get { return time; } set { time = value; calculated = false; } }
 		[XmlAttribute]
-		public double Health { get { return health; } set { health = value; Recalculate(); } }
+		public double Health { get { return health; } set { health = value; calculated = false; } }
 		
 		[XmlIgnore]
-		public double ScoreRatio;
+		public double ScoreRatio
+		{
+			get { if (!calculated) Recalculate(); return scoreRatio; }
+		}
 		[XmlIgnore]
-		public double TimeBonus;
+		public double TimeBonus
+		{
+			get { if (!calculated) Recalculate(); return timeBonus; }
+		}
 		[XmlIgnore]
-		public double HealthBonus;
+		public double HealthBonus
+		{
+			get { if (!calculated) Recalculate(); return healthBonus; }
+		}
 		[XmlIgnore]
-		public double TotalScore;
+		public double TotalScore
+		{
+			get { if (!calculated) Recalculate(); return totalScore; }
+		}
 		[XmlIgnore]
 		public double NumberOfStars
 		{
-			get
-			{
-				if (ScoreRatio >= StarScoreRatio3)
-					return 3;
-				else if (ScoreRatio >= StarScoreRatio2)
-					return 2;
-				else if (ScoreRatio >= StarScoreRatio1)
-					return 1;
-				else
-					return 0;
-			}
+			get { if (!calculated) Recalculate(); return numberOfStars; }
 		}
 		[XmlIgnore]
 		public bool HasBadge
 		{
 			get { return TimeBonus > 0 && HealthBonus > 0; }
 		}
-		
-		public XLevelScore()
-		{
-		}
-		
-		public XLevelScore(XLevelInfo info)
-			: base(info)
-		{
-			Recalculate();
-		}
-		
+
 		public void CopyTo(XLevelScore other)
 		{
 			other.availablePoints = this.availablePoints;
@@ -70,15 +81,30 @@ namespace Lunohod.Objects
 			other.time = this.time;
 			other.health = this.health;
 			
-			other.Recalculate();
+			other.calculated = false;
 		}
 		
 		private void Recalculate()
 		{
-			ScoreRatio = Score / (AvaliablePoints != 0 ? AvaliablePoints : 1);
-			TimeBonus = ScoreRatio >= StarScoreRatio3 && Time <= TimeBonusThreshold ? Score * TimeBonusRatio : 0;
-			HealthBonus = ScoreRatio >= StarScoreRatio3 && Health >= HealthBonusThreshold ? (Score + TimeBonus) * HealthBonusRatio : 0;
-			TotalScore = Score + TimeBonus + HealthBonus;
+			if (calculated)
+				return;
+
+			scoreRatio = score / (availablePoints != 0 ? availablePoints : 1);
+
+			if (scoreRatio >= StarScoreRatio3)
+				numberOfStars = 3;
+			else if (scoreRatio >= StarScoreRatio2)
+				numberOfStars = 2;
+			else if (scoreRatio >= StarScoreRatio1)
+				numberOfStars = 1;
+			else
+				numberOfStars = 0;
+
+			timeBonus = numberOfStars == 3 && time <= TimeBonusThreshold ? score * (TimeBonusRatio + TimeExtraBonusRatio * (TimeBonusThreshold - time)) : 0;
+			healthBonus = numberOfStars == 3 && health >= HealthBonusThreshold ? (score + timeBonus) * HealthBonusRatio : 0;
+			totalScore = score + timeBonus + healthBonus;
+
+			calculated = true;
 		}
 		
 		public void Save()
@@ -90,10 +116,10 @@ namespace Lunohod.Objects
 		public override void ReadXml(XmlReader reader)
 		{
 			this.Id = reader["Id"];
-			this.AvaliablePoints = reader.ReadAttrAsFloat("AvailablePoints");
-			this.Score = reader.ReadAttrAsFloat("Score");
-			this.Time = reader.ReadAttrAsFloat("Time");
-			this.Health = reader.ReadAttrAsFloat("Health");
+			reader.ReadAttrAsFloat("AvailablePoints", ref availablePoints);
+			reader.ReadAttrAsFloat("Score", ref score);
+			reader.ReadAttrAsFloat("Time", ref time);
+			reader.ReadAttrAsFloat("Health", ref health);
 		}
 		
 		public override void WriteXml(XmlWriter writer)
@@ -117,10 +143,10 @@ namespace Lunohod.Objects
                 case "Score": getter = () => Score; setter = (v) => Score = v; break;
                 case "Time": getter = () => Time; setter = (v) => Time = v; break;
                 case "Health": getter = () => Health; setter = (v) => Health = v; break;
-                case "ScoreRatio": getter = () => ScoreRatio; setter = (v) => ScoreRatio = v; break;
-                case "TimeBonus": getter = () => TimeBonus; setter = (v) => TimeBonus = v; break;
-                case "HealthBonus": getter = () => HealthBonus; setter = (v) => HealthBonus = v; break;
-                case "TotalScore": getter = () => TotalScore; setter = (v) => TotalScore = v; break;
+                case "ScoreRatio": getter = () => ScoreRatio; setter = null; break;
+                case "TimeBonus": getter = () => TimeBonus; setter = null; break;
+                case "HealthBonus": getter = () => HealthBonus; setter = null; break;
+                case "TotalScore": getter = () => TotalScore; setter = null; break;
                 case "NumberOfStars": getter = () => NumberOfStars; setter = null; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
