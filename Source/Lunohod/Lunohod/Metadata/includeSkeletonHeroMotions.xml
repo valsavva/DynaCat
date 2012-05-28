@@ -27,11 +27,7 @@
 
 	<BoolTrigger Condition="hero:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />
 
-    <NumTrigger Property="hero.Speed" Compare="G" Value="0">
-        <BoolTrigger Condition="hero:OnOilMotion" EnterAction="anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="anmDeceleration.Resume();hero.EndTransaction()" />
-    </NumTrigger>
-    
-    <BoolTrigger Condition="hero:OnOilRest" Action="hero.EndTransaction()" />
+    <BoolTrigger Condition="hero:OnOilMotion" EnterAction="system.WriteLine('EnterOldMotion');anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="system.WriteLine('ExitOldMotion');anmDeceleration.Resume();hero.EndTransaction()" />
 
     <BoolTrigger Condition="hero:ElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>

@@ -2,9 +2,9 @@
     
 	<Class Id="clsOil">
         <Group>
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero:OnOilMotion" ExitAction="hero:-OnOilMotion">
-                <NumTrigger Property="hero.Speed" Compare="G" Value="0" Action="hero:+OnOilMotion"/>
-                <NumTrigger Property="hero.Speed" Compare="E" Value="0" Action="hero:-OnOilMotion;hero:OnOilRest"/>
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this">
+                <NumTrigger Property="hero.Speed" Compare="G" Value="0" Action="hero:OnOilMotion"/>
+                <NumTrigger Property="hero.Speed" Compare="E" Value="0" Action="hero:OnOilRest"/>
             </IntersectionTrigger>
 		</Group>
 	</Class>
