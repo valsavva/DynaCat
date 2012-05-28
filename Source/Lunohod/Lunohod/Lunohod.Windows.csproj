@@ -1831,6 +1831,7 @@
     </Content>
     <Content Include="Metadata\CommonTextures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\Lvl_1D_Chetyre_Kruga.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2465,6 +2466,7 @@
     </Content>
     <Content Include="Metadata\TestIterators.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\TestLevel1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
