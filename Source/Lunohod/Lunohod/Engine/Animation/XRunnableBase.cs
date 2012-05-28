@@ -123,10 +123,10 @@ namespace Lunohod.Objects
         /// <inheritdoc />
         public virtual void Resume()
 		{
-			if (!this.inProgress)
-				Start();
-			else			
-				this.isPaused = false;
+//			if (!this.inProgress)
+//				Start();
+//			else			
+			this.isPaused = false;
 		}
         /// <inheritdoc />
         public virtual void Stop()
