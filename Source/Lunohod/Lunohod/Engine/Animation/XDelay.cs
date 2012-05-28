@@ -71,13 +71,18 @@ namespace Lunohod.Objects
 			this.isPaused = true;
 		}
 
-        /// <inheritdoc />
-        public void Resume()
+		public void Play()
 		{
 			if (!this.inProgress)
 				this.Start();
-			else
-				this.isPaused = false;
+			else if (this.isPaused)
+				this.Resume();
+		}
+
+        /// <inheritdoc />
+        public void Resume()
+		{
+			this.isPaused = false;
 		}
 
         /// <inheritdoc />

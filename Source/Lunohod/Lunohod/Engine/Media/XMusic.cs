@@ -72,13 +72,22 @@ namespace Lunohod.Objects
             }
             catch { }
         }
+		public void Play()
+		{
+			if (MediaPlayer.State == MediaState.Stopped)
+				Start();
+			else if (MediaPlayer.State == MediaState.Paused)
+				Resume();
+		}
 		public void Pause()
 		{
-			MediaPlayer.Pause();
+			if (MediaPlayer.State == MediaState.Playing)
+				MediaPlayer.Pause();
 		}
 		public void Resume()
 		{
-			MediaPlayer.Resume();
+			if (MediaPlayer.State == MediaState.Paused)
+				MediaPlayer.Resume();
 		}
 		public void Stop()
 		{

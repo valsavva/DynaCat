@@ -75,18 +75,26 @@ namespace Lunohod.Objects
             this.soundEffectInstance.Pan = (float)this.Pan;
 			this.soundEffectInstance.Play();
 		}
-		
+		public void Play()
+		{
+			if (this.soundEffectInstance.State == SoundState.Stopped)
+				Start();
+			else if (this.soundEffectInstance.State == SoundState.Paused)
+				Resume();
+		}
 		public void Stop()
 		{
 			this.soundEffectInstance.Stop();
 		}
 		public void Pause()
 		{
-			this.soundEffectInstance.Pause();
+			if (this.soundEffectInstance.State == SoundState.Playing)
+				this.soundEffectInstance.Pause();
 		}
 		public void Resume()
 		{
-			this.soundEffectInstance.Resume();
+			if (this.soundEffectInstance.State == SoundState.Paused)
+				this.soundEffectInstance.Resume();
 		}
 
         public override void ReadXml(System.Xml.XmlReader reader)

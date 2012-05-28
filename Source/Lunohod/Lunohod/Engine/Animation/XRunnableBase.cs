@@ -121,11 +121,16 @@ namespace Lunohod.Objects
 				this.isPaused = true;
 		}
         /// <inheritdoc />
+		public virtual void Play()
+		{
+			if (!this.inProgress)
+				Start();
+			else if (this.isPaused)
+				Resume();
+		}
+        /// <inheritdoc />
         public virtual void Resume()
 		{
-//			if (!this.inProgress)
-//				Start();
-//			else			
 			this.isPaused = false;
 		}
         /// <inheritdoc />

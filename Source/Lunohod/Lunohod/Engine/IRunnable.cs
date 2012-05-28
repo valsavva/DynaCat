@@ -23,19 +23,11 @@ namespace Lunohod.Objects
         bool IsPaused { get; }
 
         /// <summary>
-        /// Puts the component into the running state. This results in the <see cref="InProgress"/> property to be set to true.
+        /// Makes the component to run from the beginning. This results in the <see cref="InProgress"/> property to be set to true.
         /// </summary>
         void Start();
         /// <summary>
-        /// Stops the component. This results in the <see cref="InProgress"/> property to be set to false.
-        /// </summary>
-        void Stop();
-        /// <summary>
-        /// Pauses the component. This results in the <see cref="IsPaused"/> property to be set to true.
-        /// </summary>
-        void Pause();
-        /// <summary>
-        /// Resumes the component. Calling this method may result in three different behaviors:
+        /// Makes sure that the component is in the running state.  Calling this method may result in three different behaviors:
         /// <list type="bullet">
         /// <item>
         /// <description>
@@ -53,6 +45,18 @@ namespace Lunohod.Objects
         /// </description>
         /// </item>
         /// </list>
+        /// </summary>
+		void Play();
+        /// <summary>
+        /// Stops the component. This results in the <see cref="InProgress"/> property to be set to false.
+        /// </summary>
+        void Stop();
+        /// <summary>
+        /// Pauses the component. This results in the <see cref="IsPaused"/> property to be set to true.
+        /// </summary>
+        void Pause();
+        /// <summary>
+        /// Resumes the component if paused.
         /// </summary>
         void Resume();
         /// <exclude />
