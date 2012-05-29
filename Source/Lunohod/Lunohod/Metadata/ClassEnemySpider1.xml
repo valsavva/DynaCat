@@ -39,25 +39,38 @@
 
 
             
-<!-- Intersections -->
-            <BoolTrigger Condition="not this:WallIntersection and not this_StepBack.InProgress"  >
-                <RandomSet Id="this_setRndStep" Probabilities="6,2,32" RepeatCount="0" InProgress="true">
+<!-- Moving -->
+            <RandomSet Id="this_setRndDir" InProgress="false" RepeatCount="1" >
+                <Do Action="@thisdX=4;@thisdY=0" />
+                <Do Action="@thisdX=-4;@thisdY=0" />
+                <Do Action="@thisdX=0;@thisdY=4" />
+                <Do Action="@thisdX=0;@thisdY=-4" />
+                
+            </RandomSet>
+            
+            <BoolTrigger Condition="not this:WallIntersection and not this_StepBack.InProgress">
+                <RandomSet Id="this_setStep" Probabilities="6,2,1, 32" RepeatCount="0" InProgress="true">
                     <Delay Duration="system.Rnd(0,0.4)" />
                     <Delay Duration="system.Rnd(2,4)" />
-                    <SequenceSet RepeatCount="1">
-                        <ParallelSet Id="this_Step">
-                            <NumAnimation Target="this.X" From="0" To="@thisdX" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
-                            <NumAnimation Target="this.Y" From="0" To="@thisdY" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
-                        </ParallelSet>
-                    </SequenceSet>
+                    <Do Action="this_setRndDir.Start()" />
+                    <ParallelSet RepeatCount="1">
+                        <!--<Do Action="system.WriteLine('Step')" />-->
+                        <NumAnimation Target="this.X" From="0" To="@thisdX" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                        <NumAnimation Target="this.Y" From="0" To="@thisdY" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                    </ParallelSet>
                 </RandomSet>
             </BoolTrigger>
-
-            <BoolTrigger Condition="this:WallIntersection" EnterAction="system.WriteLine('INTRSCT');this_StepBack.Start()" ExitAction="@thisZ=@thisdX;@thisdX=(-1)*@thisdY;@thisdY=@thisZ" />
+            
+            <BoolTrigger Condition="this:WallIntersection" EnterAction="this_setStep.Stop();this_StepBack.Start()"/>
             <SequenceSet Id="this_StepBack" RepeatCount="1" InProgress="false" >
-                <Delay Duration="0.5" />
-                <NumAnimation Target="this.X" From="@thisdX" To="0" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
-                <NumAnimation Target="this.Y" From="@thisdY" To="0" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                <!--<Do Action="system.WriteLine('this_StepBack')" />-->
+                <Delay Duration="system.Rnd(0.4,1)" />
+                <NumAnimation Target="this.X" From="0" To="(-1)*@thisdX" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                <NumAnimation Target="this.Y" From="0" To="(-1)*@thisdY" Duration="0.1" RepeatCount="1" Autoreverse="false" IsDelta="true" Fill="End" />
+                <Do Action="@thisZ=@thisdX;@thisdX=(-1)*@thisdY;@thisdY=@thisZ" />
+                <!--<Do Action="system.WriteLine('@thisdX=' + system.Str(@thisdX) + ', @thisdY=' + system.Str(@thisdY))" />-->
+                <Delay Duration="system.Rnd(1,2)" />
+                <Do Action="this_setStep.Start();this_StepBack.Stop()" />
             </SequenceSet>
             
  <!-- States -->
