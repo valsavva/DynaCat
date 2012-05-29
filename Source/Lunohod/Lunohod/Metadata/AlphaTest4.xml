@@ -137,73 +137,272 @@
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="62, 11, 37, 54" TraceId="image3049" />
-        <Hero Id="hero" Class="clsHero" Bounds="225, 143, 33, 24" TraceId="image3606"/>
+        <Hero Id="hero" Class="clsHero" Bounds="25, 243, 33, 24" TraceId="image3606"/>
     </Layer>
     <Layer Id="Spiders" BackColor="#FFFFFFFF">
         <Enemy Id="enm3" Class="clsEnemySpider1" Bounds="80, 113, 16, 14" TraceId="image3105">
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm3a" Class="clsEnemySpider1" Bounds="80, 113, 16, 14" TraceId="image3105">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
         </Enemy>
         <Enemy Id="enm4" Class="clsEnemySpider1" Bounds="316, 29, 16, 14" TraceId="image3107">
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm4a" Class="clsEnemySpider1" Bounds="316, 29, 16, 14" TraceId="image3107">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
         </Enemy>
         <Enemy Id="enm5" Class="clsEnemySpider1" Bounds="391, 273, 16, 14" TraceId="image3109">
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm5a" Class="clsEnemySpider1" Bounds="391, 273, 16, 14" TraceId="image3109">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
         </Enemy>
         <Enemy Id="enm6" Class="clsEnemySpider1" Bounds="258, 269, 16, 14" TraceId="image3111">
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm6a" Class="clsEnemySpider1" Bounds="258, 269, 16, 14" TraceId="image3111">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
         </Enemy>
         <Enemy Id="enm7" Class="clsEnemySpider1" Bounds="321, 150, 16, 14" TraceId="image3113">
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
-            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" EnterAction="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm7a" Class="clsEnemySpider1" Bounds="321, 150, 16, 14" TraceId="image3113">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+
+
+
+
+        <Enemy Id="enm3b" Class="clsEnemySpider1" Bounds="80, 113, 16, 14" TraceId="image3105">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm3ab" Class="clsEnemySpider1" Bounds="80, 113, 16, 14" TraceId="image3105">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm4b" Class="clsEnemySpider1" Bounds="316, 29, 16, 14" TraceId="image3107">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm4ab" Class="clsEnemySpider1" Bounds="316, 29, 16, 14" TraceId="image3107">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm5b" Class="clsEnemySpider1" Bounds="391, 273, 16, 14" TraceId="image3109">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm5ab" Class="clsEnemySpider1" Bounds="391, 273, 16, 14" TraceId="image3109">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm6b" Class="clsEnemySpider1" Bounds="258, 269, 16, 14" TraceId="image3111">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm6ab" Class="clsEnemySpider1" Bounds="258, 269, 16, 14" TraceId="image3111">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm7b" Class="clsEnemySpider1" Bounds="321, 150, 16, 14" TraceId="image3113">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+        </Enemy>
+        <Enemy Id="enm7ab" Class="clsEnemySpider1" Bounds="321, 150, 16, 14" TraceId="image3113">
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk2" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk3" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk4" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk5" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk6" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk7" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk8" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blk9" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel1" Action="this:WallIntersection" Group="this_sttIntersections"/>
+            <IntersectionTrigger ObjectId1="this" ObjectId2="blkBarrel2" Action="this:WallIntersection" Group="this_sttIntersections"/>
         </Enemy>
     </Layer>
     <Include File="ClassExplosion.xml" />
