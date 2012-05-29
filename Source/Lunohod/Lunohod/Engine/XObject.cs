@@ -552,7 +552,8 @@ namespace Lunohod.Objects
 			            {
 			                case "Start": method = (ps) => runnable.Start(); break;
 			                case "Stop": method = (ps) => runnable.Stop(); break;
-			                case "Pause": method = (ps) => runnable.Pause(); break;
+                            case "Play": method = (ps) => runnable.Play(); break;
+                            case "Pause": method = (ps) => runnable.Pause(); break;
 			                case "Resume": method = (ps) => runnable.Resume(); break;
 						}
 					}
