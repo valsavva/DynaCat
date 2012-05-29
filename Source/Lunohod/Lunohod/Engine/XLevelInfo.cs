@@ -41,6 +41,8 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public double TimeBonusRatio = 0.25;
 		[XmlAttribute]
+		public double TimeExtraBonusRatio = 0.03;
+		[XmlAttribute]
 		public double HealthBonusRatio = 0.25;
 
 		
@@ -67,6 +69,7 @@ namespace Lunohod.Objects
 			other.TimeBonusThreshold = this.TimeBonusThreshold;
 			other.HealthBonusThreshold = this.HealthBonusThreshold;
 			other.TimeBonusRatio = this.TimeBonusRatio;
+			other.TimeExtraBonusRatio = this.TimeExtraBonusRatio;
 			other.HealthBonusRatio = this.HealthBonusRatio;
 		}
 		
@@ -84,6 +87,7 @@ namespace Lunohod.Objects
 			reader.ReadAttrAsFloat("TimeBonusThreshold", ref this.TimeBonusThreshold);
 			reader.ReadAttrAsFloat("HealthBonusThreshold", ref this.HealthBonusThreshold);
 			reader.ReadAttrAsFloat("TimeBonusRatio", ref this.TimeBonusRatio);
+			reader.ReadAttrAsFloat("TimeExtraBonusRatio", ref this.TimeExtraBonusRatio);
 			reader.ReadAttrAsFloat("HealthBonusRatio", ref this.HealthBonusRatio);
 			
             base.ReadXml(reader);
@@ -107,6 +111,7 @@ namespace Lunohod.Objects
 			writer.WriteAttributeString("TimeBonusThreshold", this.TimeBonusThreshold.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("HealthBonusThreshold", this.HealthBonusThreshold.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("TimeBonusRatio", this.TimeBonusRatio.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("TimeExtraBonusRatio", this.TimeExtraBonusRatio.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("HealthBonusRatio", this.HealthBonusRatio.ToString(CultureInfo.InvariantCulture));
 		}
 		
@@ -122,6 +127,7 @@ namespace Lunohod.Objects
                 case "TimeBonusThreshold": getter = () => TimeBonusThreshold; setter = (v) => TimeBonusThreshold = v; break;
                 case "HealthBonusThreshold": getter = () => HealthBonusThreshold; setter = (v) => HealthBonusThreshold = v; break;
                 case "TimeBonusRatio": getter = () => TimeBonusRatio; setter = (v) => TimeBonusRatio = v; break;
+                case "TimeExtraBonusRatio": getter = () => TimeExtraBonusRatio; setter = (v) => TimeExtraBonusRatio = v; break;
                 case "HealthBonusRatio": getter = () => HealthBonusRatio; setter = (v) => HealthBonusRatio = v; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
