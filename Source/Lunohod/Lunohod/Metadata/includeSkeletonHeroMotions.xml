@@ -5,12 +5,12 @@
 		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
 	
-	
+	<!-- 
 	<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
     <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(system.Round(hero.X)) + ')(' + system.Str(system.Round(hero.Y)) + ')'" Color="#000000" />
-    
+    -->
 	
-	<!-- Global variables. Will be moved out here. -->
+	<!-- Global variables. Will be moved out here. 
 	<Do Action="@heroBaseSpeed=60;@heroBaseTime=3.95;" InProgress="true"/>
 	
 	<Do Id="doNormalSpeed" Action="
@@ -21,11 +21,12 @@
 	<Do Id="doBolotoSpeed" Action="
 			@heroTime1=@heroBaseTime/40;@heroTime2=@heroBaseTime/20;@heroTime3=@heroBaseTime/4;@heroTime4=@heroBaseTime/2;
 			@heroSpeed1=@heroBaseSpeed*0.5;@heroSpeed2=@heroBaseSpeed*1.1;@heroSpeed3=@heroBaseSpeed*1;@heroSpeed4=@heroBaseSpeed*0.5;" />
-
+	-->
+	
 	<!-- this should not belong to any group -->
-	<BoolTrigger Condition="hero:InBoloto" EnterAction="doBolotoSpeed.Start()" ExitAction="doNormalSpeed.Start()"/>
+<!--	<BoolTrigger Condition="hero:InBoloto" EnterAction="doBolotoSpeed.Start()" ExitAction="doNormalSpeed.Start()"/>
 
-	<BoolTrigger Condition="hero:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />
+	<BoolTrigger Condition="hero:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />-->
 
     <BoolTrigger Condition="hero:OnOilMotion" EnterAction="system.WriteLine('EnterOldMotion');anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="system.WriteLine('ExitOldMotion');anmDeceleration.Resume();hero.EndTransaction()" />
 
@@ -36,15 +37,23 @@
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
     <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop()" />
     
-    <!-- hero speed animation -->    
+    <!-- hero speed animation (old)    
 	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="@heroSpeed1" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime1" Value="@heroSpeed2" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime2" Value="@heroSpeed3" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime3" Value="@heroSpeed4" Smoothing="Smooth"/>
         <KeyFrame Time="@heroTime4" Value="0" Smoothing="Smooth"/>
-    </NumAnimation>
+    </NumAnimation>-->
 
+	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
+        <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
+        <KeyFrame Time="0.1975" Value="132" Smoothing="Smooth"/>
+        <KeyFrame Time="0.395" Value="120" Smoothing="Smooth"/>
+        <KeyFrame Time="1.975" Value="60" Smoothing="Smooth"/>
+        <KeyFrame Time="3.95" Value="0" Smoothing="Smooth"/>
+    </NumAnimation>	
+	
 
 	<!-- hero speed electric shock animation -->
     <NumAnimation Id="anmElectricShockSpeed" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
@@ -53,7 +62,7 @@
         <KeyFrame Time="1" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
 	
-	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
+	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** 
     <BoolTrigger Condition="system:heroSpeedRecalculate">
 		<BoolTrigger Condition="system:heroReduceSpeed" Action="@heroBaseSpeed=@heroBaseSpeed-5"/>
 		<BoolTrigger Condition="system:heroIncreaseSpeed" Action="@heroBaseSpeed=@heroBaseSpeed+5"/>
@@ -62,7 +71,7 @@
 		<BoolTrigger Condition="this:InBoloto" Action="doBolotoSpeed.Start()"/>
 		<BoolTrigger Condition="not this:InBoloto" Action="doNormalSpeed.Start()"/>
 	</BoolTrigger>
-	
+	-->
 </Include>
 
 
