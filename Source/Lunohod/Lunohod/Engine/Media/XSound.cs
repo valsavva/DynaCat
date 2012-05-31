@@ -34,7 +34,7 @@ namespace Lunohod.Objects
 			PerfMon.Start("Other-Sfx");
 
 			this.soundFile = (XSoundResource)this.FindGlobal(this.FileId);
-			this.soundEffectInstance = this.soundFile.SoundEffect.CreateInstance();
+			this.soundEffectInstance = this.soundFile.soundEffectInstance;
 		
 			PerfMon.Stop("Other-Sfx");
         }
@@ -105,16 +105,16 @@ namespace Lunohod.Objects
             
             base.ReadXml(reader);
         }
-		public override void Dispose()
-		{
-            if (!this.soundEffectInstance.IsDisposed)
-            {
-                this.soundEffectInstance.Stop();
-                this.soundEffectInstance.Dispose();
-            }
-			
-			base.Dispose();
-		}
+//		public override void Dispose()
+//		{
+//            if (!this.soundEffectInstance.IsDisposed)
+//            {
+//                this.soundEffectInstance.Stop();
+//                this.soundEffectInstance.Dispose();
+//            }
+//			
+//			base.Dispose();
+//		}
 	}
 }
 

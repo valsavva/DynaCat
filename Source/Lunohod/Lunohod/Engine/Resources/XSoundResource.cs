@@ -16,7 +16,8 @@ namespace Lunohod.Objects
 	public class XSoundResource : XResource
 	{
 		private SoundEffect soundEffect;
-		
+		internal SoundEffectInstance soundEffectInstance;
+
 		public XSoundResource()
 		{
 		}
@@ -31,6 +32,7 @@ namespace Lunohod.Objects
 			base.Initialize(p);
 
             this.soundEffect = LoadResource<SoundEffect>(p.Game.Content, "SoundEffectProcessor", "wav", "xnb");
+			this.soundEffectInstance = this.soundEffect.CreateInstance();
 		}
 		
 		public override void Dispose()
