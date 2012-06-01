@@ -161,11 +161,15 @@ namespace Lunohod.Objects
 			{
 				foreach(var item in this.instanceOwners)
 					item.Key.Dispose();
+
+				this.instanceOwners = null;
 			}
 			else
 			{
 				foreach(var item in this.ownerInstances)
 					item.Value.Dispose();
+
+				this.ownerInstances = null;
 			}
 
 			base.Dispose();
