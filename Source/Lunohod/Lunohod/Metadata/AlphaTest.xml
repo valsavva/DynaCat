@@ -11,6 +11,9 @@
     <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassTower.xml" />
+	<Resources RootFolder="Sound">
+		<SoundFile Id="sndZzzz" Source="skeletonFX_explosion" MaxStartAtOnce="-1" NumberOfInstances="3" />
+	</Resources>
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
@@ -31,7 +34,31 @@
         <Texture Id="txr_detal_me2" Source="detal_me2" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3115"/>
+		
+		<!-- SoundCheck -->
+		<Sound Id="zzz1" FileId="sndZzzz" Volume="0.4" Pitch="0"/>
+		<Sound Id="zzz2" FileId="sndZzzz" Volume="0.4" Pitch="0"/>
+		<Sound Id="zzz3" FileId="sndZzzz" Volume="0.4" Pitch="0"/>
+		<Sound Id="zzz4" FileId="sndZzzz" Volume="0.4" Pitch="0"/>	
+		<Sound Id="zzz5" FileId="sndZzzz" Volume="0.4" Pitch="0"/>	
+		<Sound Id="zzz6" FileId="sndZzzz" Volume="0.4" Pitch="0"/>	
+		
+        <SequenceSet InProgress="true" RepeatCount="1" >
+			<Delay Duration="1" />
+		    <Do Action="zzz1.Start()" />
+			<Delay Duration="0.2" />
+		    <Do Action="zzz2.Start()" />
+			<Delay Duration="0.2" />
+		    <Do Action="zzz3.Start()" />
+			<Delay Duration="0.2" />
+		    <Do Action="zzz4.Start()" />
+			<Delay Duration="0.2" />
+		    <Do Action="zzz5.Start()" />
+			<Delay Duration="0.2" />
+		    <Do Action="zzz6.Start()" />
+		</SequenceSet>
+        
+		<Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3115"/>
         <Image Id="dfltMask2" TextureId="txr_second_phon_tank" Bounds="43, 269, 26, 32" Rotation="0" Stretch="true" Opacity="1" TraceId="image3113-1"/>
         <Image Id="dfltMask3" TextureId="txr_second_phon_tank" Bounds="71, 266, 26, 32" Rotation="0" Stretch="true" Opacity="1" TraceId="image3116"/>
         <Image Id="dfltMask4" TextureId="txr_second_phon_tank" Bounds="99, 279, 26, 32" Rotation="0" Stretch="true" Opacity="1" TraceId="image3118"/>
