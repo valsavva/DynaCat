@@ -1,9 +1,35 @@
-<Include>	
-
+<Include>
+    
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndParachute_open" Source="parachute_open"/>
+    </Resources>
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_parachute" Source="parachute" />
+    </Resources>
     <Class Id="clsWoodenBox">
 	
 		<Block IsExploding="true" Edges="Stick">
+            
+<!-- Parachute animation-->
 
+            <BoolTrigger Condition="tower:LevelWithParachutes" EnterAction="this.Y=this.Y-60;this.Opacity=0">
+                <Image Id="this_imgParachute" TextureId="txr_parachute" Bounds="-10, -44, 50, 50"/>
+                <SequenceSet InProgress="true">
+                    <Delay Duration="system.Rnd(1,2)" />
+                    <Do Action="this.Opacity=1" />
+                    <ParallelSet>
+                        <Sound FileId="sndParachute_open" Volume="0.2" Pitch="0" Pan="0"/>
+                        <NumAnimation Target="this.Y" From="0" To="60" IsDelta="true" Autoreverse="false" RepeatCount="1" Duration="1.6" Fill="End" />
+                        <SequenceSet InProgress="true" RepeatCount="2" >
+                            <NumAnimation Target="this.Rotation" From="0" To="-2" Autoreverse="true" Duration="0.2" Fill="End" RepeatCount="1" Smoothing="Smooth"/>
+                            <NumAnimation Target="this.Rotation" From="0" To="2" Autoreverse="true" Duration="0.2" Fill="End" RepeatCount="1" Smoothing="Smooth"/>
+                        </SequenceSet>
+                    </ParallelSet>
+                    <NumAnimation Target="this_imgParachute.Opacity" From="1" To="0" IsDelta="false" Autoreverse="false" RepeatCount="1" Duration="0.4" Fill="End" />
+                    <Do Action="this_imgParachute.Disable()" />
+                </SequenceSet>
+            </BoolTrigger>
+            
 <!-- States -->
             <!-- explosion -->
             <!-- destroy -->

@@ -1,0 +1,42 @@
+<Include>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndAirplane" Source="airplane"/>
+    </Resources>
+    <Resources RootFolder="Textures">
+        <Texture Id="txrAirplane" Source="airplane"/>
+    </Resources>
+    
+	<Class Id="clsAirplane">
+        <Group>
+            
+            <Image TextureId="txrAirplane"/>
+
+            <BoolTrigger Condition="this:FlyThroughScreen" EnterAction="setFlyThroughScreen.Start()" />
+            <SequenceSet Id="setFlyThroughScreen" InProgress="false" RepeatCount="1">
+                <ParallelSet RepeatCount="1">
+                    <Sound FileId="sndAirplane" Volume="0.5" Pitch="0" Pan="0"/>
+                    <NumAnimation Target="this.X" From="540" To="-160" Duration="2" RepeatCount="1"/>
+                    <NumAnimation Target="this.Y" From="0" To="40" Autoreverse="true" Duration="1" Smoothing="Flat" RepeatCount="1"/>
+                    <NumAnimation Target="this.Rotation" From="-15" To="15" Duration="2" Smoothing="Flat" RepeatCount="1"/>
+                </ParallelSet>
+                <Do Action="this.X=600" />
+            </SequenceSet>
+		</Group>
+	</Class>
+    
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

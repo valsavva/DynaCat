@@ -23,7 +23,18 @@
                 </Text>
             </Group>
 
-            <!-- States -->
+<!-- Parachute animation-->
+
+            <BoolTrigger Condition="tower:LevelWithParachutes" EnterAction="this.Y=this.Y-120;this.Opacity=0">
+                <SequenceSet InProgress="true">
+                    <Delay Duration="system.Rnd(1,2)" />
+                    <Do Action="this.Opacity=1" />
+                    <NumAnimation Target="this.Y" From="0" To="120" IsDelta="true" Autoreverse="false" RepeatCount="1" Duration="0.6" Fill="End" />
+                    <NumAnimation Target="this.Y" From="0" To="-7" IsDelta="true" Autoreverse="true" RepeatCount="1" Duration="0.1" Fill="End" />
+                </SequenceSet>
+            </BoolTrigger>
+
+<!-- States -->
 
             <!-- eaten -->
             <BoolTrigger Condition="not this:Eaten and not this:Borned">
