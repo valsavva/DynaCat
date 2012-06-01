@@ -16,7 +16,7 @@ namespace Lunohod.Objects
 	public class XSound : XAudibleBase, IRunnable
 	{
 		private XSoundResource soundFile;
-		private SoundEffectInstance soundEffectInstance;
+		internal SoundEffectInstance soundEffectInstance;
 
 		[XmlAttribute]
         public string FileId;
@@ -34,25 +34,24 @@ namespace Lunohod.Objects
 			PerfMon.Start("Other-Sfx");
 
 			this.soundFile = (XSoundResource)this.FindGlobal(this.FileId);
-			this.soundEffectInstance = this.soundFile.soundEffectInstance;
+
+			if (this.soundFile == null)
+				throw new InvalidOperationException(string.Format("Sound effect resource with id '{0}' was not found", this.FileId));
+
+			this.soundFile.CheckOutInstance(this);
 		
 			PerfMon.Stop("Other-Sfx");
         }
 		
-		public override void Update(UpdateParameters p)
-		{
-			base.Update(p);
-		}
-
 		protected override void AdjustVolumeImpl(double volume)
 		{
-			if (this.soundEffectInstance != null)
+			if (this.soundFile != null && this.soundFile.VerifyInstance(this))
 				this.soundEffectInstance.Volume = (float)volume;
 		}
 
         public bool InProgress
         {
-            get { return this.soundEffectInstance.State == SoundState.Playing; }
+            get { return this.soundFile.VerifyInstance(this) && this.soundEffectInstance.State != SoundState.Stopped; }
             set
             {
                 // noop for now
@@ -61,11 +60,14 @@ namespace Lunohod.Objects
 
         public bool IsPaused
         {
-            get { return this.soundEffectInstance.State == SoundState.Paused; }
+            get { return this.soundFile.VerifyInstance(this) && this.soundEffectInstance.State == SoundState.Paused; }
         }
 
         public void Start()
 		{
+			if (!this.soundFile.CheckOutInstance(this))
+				return;
+
 			AdjustVolume();
 #if WINDOWS
             this.soundEffectInstance.Pitch = (float)this.Pitch;
@@ -77,6 +79,9 @@ namespace Lunohod.Objects
 		}
 		public void Play()
 		{
+			if (!this.soundFile.VerifyInstance(this))
+				return;
+
 			if (this.soundEffectInstance.State == SoundState.Stopped)
 				Start();
 			else if (this.soundEffectInstance.State == SoundState.Paused)
@@ -84,15 +89,24 @@ namespace Lunohod.Objects
 		}
 		public void Stop()
 		{
+			if (!this.soundFile.VerifyInstance(this))
+				return;
+
 			this.soundEffectInstance.Stop();
 		}
 		public void Pause()
 		{
+			if (!this.soundFile.VerifyInstance(this))
+				return;
+
 			if (this.soundEffectInstance.State == SoundState.Playing)
 				this.soundEffectInstance.Pause();
 		}
 		public void Resume()
 		{
+			if (!this.soundFile.VerifyInstance(this))
+				return;
+
 			if (this.soundEffectInstance.State == SoundState.Paused)
 				this.soundEffectInstance.Resume();
 		}
