@@ -117,6 +117,19 @@ namespace Lunohod.Objects
 				}
 
 				this.instanceCheckoutTimes[result] = currCheckoutTime;
+
+				Console.WriteLine("*** Id:" + this.Id + " Source:" + this.Source + " Result:" + result.GetHashCode() + " ***");
+				Console.WriteLine("*** chekout times *** ");
+				foreach(var item in this.instanceCheckoutTimes)
+				{
+					Console.WriteLine(item.Key.GetHashCode().ToString() + " - " + item.Value);
+				}
+				Console.WriteLine("*** owners *** ");
+				foreach(var item in this.instanceOwners)
+				{
+					Console.WriteLine(item.Key.GetHashCode().ToString() + " - " + item.Value);
+				}
+				Console.WriteLine("******");
 			}
 			else
 			{
@@ -138,10 +151,13 @@ namespace Lunohod.Objects
 			if (owner.soundEffectInstance == null)
 				return false;
 
-			if (this.instanceOwners[owner.soundEffectInstance] != owner.GetHashCode())
+			if (this.NumberOfInstances > 0)
 			{
-				owner.soundEffectInstance = null;
-				return false;
+				if (this.instanceOwners[owner.soundEffectInstance] != owner.GetHashCode())
+				{
+					owner.soundEffectInstance = null;
+					return false;
+				}
 			}
 
 			return true;

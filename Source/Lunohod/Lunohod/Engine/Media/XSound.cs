@@ -68,6 +68,9 @@ namespace Lunohod.Objects
 			if (!this.soundFile.CheckOutInstance(this))
 				return;
 
+			if (this.soundEffectInstance.State != SoundState.Stopped)
+				this.soundEffectInstance.Stop();
+
 			AdjustVolume();
 #if WINDOWS
             this.soundEffectInstance.Pitch = (float)this.Pitch;
