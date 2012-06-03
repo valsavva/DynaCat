@@ -103,7 +103,7 @@
 
         <TapArea Bounds="430,00,60,60" Event="system:endLevel"/>
 
-		<!-- ** Animation parameters adjustment. Need to remove this at some point. ** -->
+		<!-- ** Animation parameters adjustment. Need to remove this at some point. ** 
         <TapArea Bounds="0,0,50,60" Action="system:heroReduceSpeed;system:heroSpeedRecalculate;">
             <Text Text="-" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
         </TapArea>
@@ -122,7 +122,7 @@
         <TapArea Bounds="250,0,50,60" Action="system:towerIncreaseSpeed;">
             <Text Text="+" FontId="SystemFont" Location="20,2" Color="#FCD116"/>
         </TapArea>
-
+		-->
         
         <!--hero health-->
         <!-- OLD
@@ -177,7 +177,7 @@
             <NumAnimation From="0" To="23" Duration="levelInfo.TimeBonusThreshold" Target="CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
         </Sprite>
         
-		<!-- CPS -->
+		<!-- CPS 
         <BoolTrigger Condition="system:cpsLimitExceeded" >
             <Text Text="*"  FontId="SystemFont" Location="25, 280" Color="#FF00FF"/>
         </BoolTrigger>
@@ -191,6 +191,7 @@
         		<Image Bounds="0,0,20,20" TextureId="blank" BackColor="#00FF00"/>
         	</BoolTrigger>
         </TapArea>
+		-->
 
     </Dashboard>
 </Include>

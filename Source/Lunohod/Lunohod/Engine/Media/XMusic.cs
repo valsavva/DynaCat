@@ -45,7 +45,7 @@ namespace Lunohod.Objects
 
 		public bool InProgress
         {
-            get { return MediaPlayer.State == MediaState.Playing; }
+            get { return MediaPlayer.State != MediaState.Stopped; }
             set
             {
                 // noop for now

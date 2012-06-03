@@ -6,6 +6,9 @@
     </Resources>
 
 	<Resources RootFolder="Sound">
+		<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
+		<SoundFile Id="sndBombHiss" Source="bombHiss"/>
+
 		<SoundFile Id="sndEnemyRat1Dying" Source="skeletonFX_enemy_dead_scream_1"/>
         <SoundFile Id="sndEnemyRat1Hit1" Source="rat_hit1_demo"/>
         <SoundFile Id="sndEnemyRat1Hit2" Source="rat_hit2_demo"/>
@@ -37,6 +40,9 @@
 	</Resources>
 	
     <Resources RootFolder="Textures">
+        <Texture Id="txrExplosion" Source="boom_new"/>
+        <Texture Id="txrBomb" Source="bomb"/>
+
         <Texture Id="txrEnemyRat1Default" Source="enemy_1"/>
         <Texture Id="txrEnemyRat1Attack" Source="enemy_1"/>
         <Texture Id="txrEnemyRat1Dying" Source="enemy_1"/>

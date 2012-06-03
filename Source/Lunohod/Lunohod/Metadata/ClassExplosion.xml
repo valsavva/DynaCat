@@ -1,16 +1,4 @@
 <Include>	
-
-	<Resources RootFolder="Sound">
-		<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
-		<SoundFile Id="sndBombHiss" Source="bombHiss"/>
-	</Resources>
-
-	<Resources RootFolder="Textures">
-        <Texture Id="txrExplosion" Source="boom_new"/>
-        <Texture Id="txrBomb" Source="bomb"/>
-	</Resources>
-    
-    
 	<Class Id="clsExplosion">
         
 		<Explosion Bounds="0,0,400,400" Ranges="BoomVeryClose=50,BoomClose=85,BoomFar=170,BoomVeryFar=210,BoomVeryVeryFar=250">
@@ -35,7 +23,6 @@
 	</Class>
 	
     <NumAnimation Id="anmScreenQuake" Target="X" From="-1" To="1" Duration="0.1" Autoreverse="true" RepeatCount="2" Fill="Reset" IsDelta="false"/>
-
 </Include>
 
 
