@@ -6,7 +6,7 @@
     </Resources>
 
 	<Class Id="clsTower">
-		<Tower SignalSpeed="256" Bounds="0, 0, 1, 1">
+		<Tower SignalSpeed="256" Bounds="0, 0, 1, 1" Depth="0.3">
                         
             <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="tower:+LedOn;this_anmSignal.Start()"/>
             

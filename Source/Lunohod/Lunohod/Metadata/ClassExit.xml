@@ -1,6 +1,6 @@
 <Include>	
 	<Class Id="clsExit">
-        <Group Depth="0.1">
+        <Group>
 
 <!-- Parachute animation-->
 
@@ -30,6 +30,7 @@
                 <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="true" Target="sprExitFlightFire.CurrentFrame" InProgress="true"/>
 			</Sprite>
 			<SequenceSet Id="this_setExit" InProgress="false">
+                <Do Action="this.Depth=0.1" />
                 <Do Action="@heroDepartPointX=hero.X;
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             

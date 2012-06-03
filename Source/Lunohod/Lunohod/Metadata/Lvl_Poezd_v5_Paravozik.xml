@@ -25,12 +25,9 @@
         <Texture Id="txr_railwayCross" Source="railwayCross" />
         <Texture Id="txr_railwayHor7" Source="railwayHor7" />
         <Texture Id="txr_railwayHor8" Source="railwayHor8" />
-
-
         <Texture Id="txr_box_old_1" Source="box_old_1" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Do Action="dashboard:+NoArrows" InProgress="true"/>
         <Image Id="dfltMask1" TextureId="txr_backg_demo" Bounds="0, 0, 480, 320" TraceId="image3456"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
@@ -184,6 +181,11 @@
         </SequenceSet>
         
         <Group Id="exit" Class="clsExit" Bounds="193, 150, 37, 54" TraceId="image3049" />
+    </Layer>
+    <Layer Id="Semafor" BackColor="#FFFFFFFF">
+        <Include File="includeSemafor.xml" />
+        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="55, 13, 38, 60" TraceId="image3091" />
+        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="55, 13, 38, 60" Enabled="false" TraceId="image3091" />
     </Layer>
 <!-- HAND EDIT <<< -->
     <Include File="ClassExplosion.xml" />

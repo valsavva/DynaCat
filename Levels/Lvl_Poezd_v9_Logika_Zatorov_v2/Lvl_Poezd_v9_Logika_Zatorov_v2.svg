@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="S05LXX_Poezd_v9_Logika_Zatorov_v2.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\S05LXX_Poezd_v9_Logika_Zatorov_v2\S05LXX_Poezd_v9_Logika_Zatorov_v2.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_Poezd_v9_Logika_Zatorov_v2.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\S05LXX_Poezd_v9_Logika_Zatorov_v2\S05LXX_Poezd_v9_Logika_Zatorov_v2.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.331" inkscape:cx="225.01199" inkscape:cy="173.81688" inkscape:document-units="px" inkscape:current-layer="layer11" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.1" inkscape:cx="159.73745" inkscape:cy="182.49468" inkscape:document-units="px" inkscape:current-layer="layer12" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -21,7 +21,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -121,10 +121,13 @@
         <image y="13" x="26" id="image3015" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="23" width="33" />
         <image y="129" x="221.80681" id="image3049" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Exit/refrigerator.png" height="54" width="37" />
     </g>
+    <g inkscape:groupmode="layer" id="layer12" inkscape:label="Semafor">
+        <image y="-9" x="68" id="image3097" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Semafor/semafor_green.png" height="60" width="38" />
+    </g>
     <g inkscape:groupmode="layer" id="layer9" inkscape:label="dash" style="opacity:0.29861109;display:none" sodipodi:insensitive="true">
         <image y="0" x="0" id="image3016" xlink:href="file:///D:/Lunohod/Art/dashboard/screenTapAreas_dash_M_btnSize52.png" height="320" width="480" />
     </g>
-    <g inkscape:groupmode="layer" id="layer6" inkscape:label="upmask" sodipodi:insensitive="true" style="display:none">
+    <g inkscape:groupmode="layer" id="layer6" inkscape:label="upmask" sodipodi:insensitive="true" style="display:inline">
         <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3011" width="1499.1859" height="380.14673" x="-434.48303" y="-380.14673" />
         <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3013" width="644.82831" height="1098.9973" x="480" y="-256.73999" />
         <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3015" width="1018.1825" height="736.57312" x="-257.47144" y="320" />

@@ -1,9 +1,9 @@
-<Include>	
+<Include>
 	<Class Id="clsExplosion">
-        
-		<Explosion Bounds="0,0,400,400" Ranges="BoomVeryClose=50,BoomClose=85,BoomFar=170,BoomVeryFar=210,BoomVeryVeryFar=250">
+
+        <Explosion Bounds="0,0,400,400" Ranges="BoomVeryClose=50,BoomClose=85,BoomFar=170,BoomVeryFar=210,BoomVeryVeryFar=250">
 			<Image Id="this_imgBomb" Bounds="190,190,31,9" RotationCenter="15,5" TextureId="txrBomb" Opacity="1" Depth="0.09"/>
-			<Image Id="this_imgExplosion" Bounds="75,96,250,208" TextureId="txrExplosion" Enabled="false"/>
+			<Image Id="this_imgExplosion" Bounds="75,96,250,208" TextureId="txrExplosion" Enabled="false" Depth="0.4"/>
 			<Sound Id="this_sndExplosion" FileId="sndExplosion" Volume="0.5" Pitch="0" Pan="0"/>
 			<Sound Id="this_sndBombHiss" FileId="sndBombHiss" Volume="0.5" Pitch="0" Pan="0"/>
 			<SequenceSet InProgress="true">
@@ -15,25 +15,12 @@
 				<Do Action="this_imgBomb.Disable()"/>
 				<Do Action="this_sndExplosion.Start();this_imgExplosion.Enable();this_sndBombHiss.Stop();this.Explode()"/>
 				<NumAnimation From="1" To="0" Smoothing="Flat" Duration="0.2" Autoreverse="false" Target="this_imgExplosion.Opacity" RepeatCount="2"/>
-				<Delay Duration="0.6"/>
+				<!--<Delay Duration="0.6"/>-->
 				<Do Action="hero:-WaitingExplosion"/>
 				<Do Action="this.Disable()"/>
 			</SequenceSet>
 		</Explosion>
 	</Class>
-	
+
     <NumAnimation Id="anmScreenQuake" Target="X" From="-1" To="1" Duration="0.1" Autoreverse="true" RepeatCount="2" Fill="Reset" IsDelta="false"/>
 </Include>
-
-
-
-
-
-
-
-
-
-
-
-
-

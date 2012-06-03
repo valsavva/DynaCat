@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.03 -->
-<!-- source: D:\Lunohod\Levels\S05LXX_Poezd_v6_Logika_Zatorov\S05LXX_Poezd_v6_Logika_Zatorov.svg -->
-<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S05LXX_Poezd_v6_Logika_Zatorov" Bounds="0, 0, 480, 320">
+<!-- SVG to XGAME xml converter v1.6.07 -->
+<!-- source: D:\Lunohod\Levels\Lvl_Poezd_v6_Logika_Zatorov\Lvl_Poezd_v6_Logika_Zatorov.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_v6_Logika_Zatorov" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassFoodFish2.xml" />
     <Include File="ClassTower.xml" />
@@ -21,10 +21,9 @@
         <Texture Id="txr_railwayTurn180a" Source="railwayTurn180a" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
-
+        <Texture Id="txr_semafor_green" Source="semafor_green" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Do Action="dashboard:+NoArrows" InProgress="true"/>
         <Image Id="dfltMask1" TextureId="txr_backg_demo" Bounds="0, 0, 480, 320" TraceId="image3016-1"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
@@ -68,68 +67,72 @@
         <Block Id="blk1" Class="clsWoodenBox" Bounds="213, 89, 30, 30" Edges="Stick" TraceId="image3378">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk2" Class="clsWoodenBox" Bounds="110, 180,  30,  30" Edges="Stick" TraceId="image3274">
-            <Image TextureId="txr_box_old_1" />
-        </Block>
-        <Block Id="blk3" Class="clsWoodenBox" Bounds="372, 73, 30, 30" Edges="Stick" TraceId="image3285">
-            <Image TextureId="txr_box_old_2" />
-        </Block>
-        <Food Id="fd1" Class="clsFoodFish2"  Bounds="254, 119, 27, 15" TraceId="image3380"/>
-        <Food Id="fd2" Class="clsFoodFish2"  Bounds="308, 139,  27,  15" TraceId="image3372"/>
-        <Food Id="fd3" Class="clsFoodFish2"  Bounds="373, 137,  27,  15" TraceId="image3374"/>
-        <Food Id="fd4" Class="clsFoodFish2"  Bounds="416, 116, 27, 15" TraceId="image3376"/>
-        <Food Id="fd5" Class="clsFoodFish2"  Bounds="276, 19, 27, 15" TraceId="image3382"/>
-        <Food Id="fd6" Class="clsFoodFish2"  Bounds="289, 35, 27, 15" TraceId="image3384"/>
-        <Food Id="fd7" Class="clsFoodFish2"  Bounds="306, 20, 27, 15" TraceId="image3386"/>
-        <Food Id="fd8" Class="clsFoodFish2"  Bounds="59, 133,  27,  15" TraceId="image3388"/>
-        <Food Id="fd9" Class="clsFoodFish2"  Bounds="42, 149,  27,  15" TraceId="image3390"/>
-        <Food Id="fd10" Class="clsFoodFish2"  Bounds="40, 118,  27,  15" TraceId="image3392"/>
-        <Food Id="fd11" Class="clsFoodFish2"  Bounds="168, 240, 27, 15" TraceId="image3394"/>
-        <Food Id="fd12" Class="clsFoodFish2"  Bounds="181, 263, 27, 15" TraceId="image3396"/>
-        <Food Id="fd13" Class="clsFoodFish2"  Bounds="214, 269, 27, 15" TraceId="image3369"/>
-    </Layer>
-    <Layer Id="way" BackColor="#FFFFFFFF">
- <!-- HAND EDIT -->
-        <SequenceSet Id="setWay" InProgress="true">
-            <Do Action="hero.SetTransaction(false, true, true)" />
-            <Delay Duration="3" />
-            <NumAnimation Id="anm1" From="0" To="-270" Target="hero.X" Duration="3.21" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3458"/>
-            <NumAnimation Id="anm2" From="0" To="-239" Target="hero.Y" Duration="2.85" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3436"/>
-            <NumAnimation Id="anm3" From="0" To="250" Target="hero.X" Duration="2.98" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3469"/>
-            <NumAnimation Id="anm4" From="0" To="55" Target="hero.Y" Duration="0.65" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3447"/>
-            <NumAnimation Id="anm5" From="0" To="-369" Target="hero.X" Duration="4.39" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3472"/>
-            <NumAnimation Id="anm6" From="0" To="171" Target="hero.Y" Duration="2.04" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3474"/>
-            <NumAnimation Id="anm7" From="0" To="57" Target="hero.X" Duration="0.68" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3476"/>
-            <NumAnimation Id="anm8" From="0" To="-128" Target="hero.Y" Duration="1.52" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3478"/>
-            <NumAnimation Id="anm9" From="0" To="323" Target="hero.X" Duration="3.85" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3480"/>
-            <NumAnimation Id="anm10" From="0" To="84" Target="hero.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3482"/>
-        </SequenceSet>
-        <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
-        
         <BoolTrigger Id="bt1a" Condition="blk1.Enabled">
             <IntersectionTrigger ObjectId1="hero" ObjectId2="blk1" EnterAction="setWay.Pause()"/>
         </BoolTrigger>
         <BoolTrigger Id="bt1b" Condition="not blk1.Enabled" EnterAction="setWay.Resume();bt1a.Disable();bt1b.Disable()" />
-        
+        <Block Id="blk2" Class="clsWoodenBox" Bounds="110, 180, 30, 30" Edges="Stick" TraceId="image3274">
+            <Image TextureId="txr_box_old_1" />
+        </Block>
         <BoolTrigger Id="bt2a" Condition="blk2.Enabled">
             <IntersectionTrigger ObjectId1="hero" ObjectId2="blk2" EnterAction="setWay.Pause()"/>
         </BoolTrigger>
         <BoolTrigger Id="bt2b" Condition="not blk2.Enabled" EnterAction="setWay.Resume();bt2a.Disable();bt2b.Disable()" />
-
+        <Block Id="blk3" Class="clsWoodenBox" Bounds="372, 73, 30, 30" Edges="Stick" TraceId="image3285">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
         <BoolTrigger Id="bt3a" Condition="blk3.Enabled">
             <IntersectionTrigger ObjectId1="hero" ObjectId2="blk3" EnterAction="setWay.Pause()"/>
         </BoolTrigger>
         <BoolTrigger Id="bt3b" Condition="not blk3.Enabled" EnterAction="setWay.Resume();bt3a.Disable();bt3b.Disable()" />
-        <!-- HAND EDIT -->
-        
+        <Food Id="fd1" Class="clsFoodFish2" Bounds="254, 119, 27, 15" TraceId="image3380"/>
+        <Food Id="fd2" Class="clsFoodFish2" Bounds="308, 139, 27, 15" TraceId="image3372"/>
+        <Food Id="fd3" Class="clsFoodFish2" Bounds="373, 137, 27, 15" TraceId="image3374"/>
+        <Food Id="fd4" Class="clsFoodFish2" Bounds="416, 116, 27, 15" TraceId="image3376"/>
+        <Food Id="fd5" Class="clsFoodFish2" Bounds="276, 19, 27, 15" TraceId="image3382"/>
+        <Food Id="fd6" Class="clsFoodFish2" Bounds="289, 35, 27, 15" TraceId="image3384"/>
+        <Food Id="fd7" Class="clsFoodFish2" Bounds="306, 20, 27, 15" TraceId="image3386"/>
+        <Food Id="fd8" Class="clsFoodFish2" Bounds="59, 133, 27, 15" TraceId="image3388"/>
+        <Food Id="fd9" Class="clsFoodFish2" Bounds="42, 149, 27, 15" TraceId="image3390"/>
+        <Food Id="fd10" Class="clsFoodFish2" Bounds="40, 118, 27, 15" TraceId="image3392"/>
+        <Food Id="fd11" Class="clsFoodFish2" Bounds="168, 240, 27, 15" TraceId="image3394"/>
+        <Food Id="fd12" Class="clsFoodFish2" Bounds="181, 263, 27, 15" TraceId="image3396"/>
+        <Food Id="fd13" Class="clsFoodFish2" Bounds="214, 269, 27, 15" TraceId="image3369"/>
+    </Layer>
+    <Layer Id="way" BackColor="#FFFFFFFF">
+        <!-- HAND EDIT >>> -->
+        <SequenceSet Id="setWay" InProgress="true">
+            <Do Action="hero.SetTransaction(false, true, true)" />
+            <Delay Duration="3" />
+            <NumAnimation From="0" To="-270" Target="hero.X" Duration="3.21" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3458"/>
+            <NumAnimation From="0" To="-239" Target="hero.Y" Duration="2.85" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3436"/>
+            <NumAnimation From="0" To="250" Target="hero.X" Duration="2.98" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3469"/>
+            <NumAnimation From="0" To="55" Target="hero.Y" Duration="0.65" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3447"/>
+            <NumAnimation From="0" To="-369" Target="hero.X" Duration="4.39" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3472"/>
+            <NumAnimation From="0" To="171" Target="hero.Y" Duration="2.04" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3474"/>
+            <NumAnimation From="0" To="57" Target="hero.X" Duration="0.68" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3476"/>
+            <NumAnimation From="0" To="-128" Target="hero.Y" Duration="1.52" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3478"/>
+            <NumAnimation From="0" To="323" Target="hero.X" Duration="3.85" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3480"/>
+            <NumAnimation From="0" To="84" Target="hero.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3482"/>
+        </SequenceSet>
+        <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
+        <!-- HAND EDIT <<< -->
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="435, 264, 33, 24" TraceId="image3015"/>
         <Group Id="exit" Class="clsExit" Bounds="421, 177, 37, 54" TraceId="image3049" />
     </Layer>
+    <Layer Id="Semafor" BackColor="#FFFFFFFF">
+        <Include File="includeSemafor.xml" />
+        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="387, 245, 38, 60" TraceId="image3080" />
+        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="387, 245, 38, 60" Enabled="false" TraceId="image3080" />
+    </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=13 Enemy=0 Block=3 DesignImage=36 Animation=10 Teleport Animations=0 FoodPack=0 -->
-
+<!-- Food=13 Enemy=0 Block=3 DesignImage=36 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- -->
+<!-- Food Points = 1040 -->
+<!-- 1% = 10.4; 45% = 468; 90% = 936 -->
+<!-- minPointsFood = 80 (7.7%) -->

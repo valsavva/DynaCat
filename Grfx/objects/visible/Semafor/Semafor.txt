@@ -1,0 +1,25 @@
+<Include File="includeSemafor.xml" />
+###@CRLF
+<Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" TraceId="
+###id
+" />
+###@CRLF
+<Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="
+###x
+, 
+###y
+, 
+###width
+, 
+###height
+" Enabled="false" TraceId="
+###id
+" />

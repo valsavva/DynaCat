@@ -336,6 +336,8 @@
         <SequenceSet Id="setWay" InProgress="true">
             <Do Action="dashboard:+NoArrows;tower:+LevelWithParachutes" InProgress="true"/>
             <Do Action="hero.SetTransaction(false, true, true)" />
+            
+            <Do Action="sndTrainStart.Start()" />
 
             <Do Action="Action1.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -351,6 +353,8 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
+            <Do Action="sndTrainStart.Start()" />
+
             <Do Action="Action2.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
             <Delay Duration="5" />
@@ -364,6 +368,8 @@
             <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3385"/>
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
+
+            <Do Action="sndTrainStart.Start()" />
 
             <Do Action="Action3.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -379,6 +385,8 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
+            <Do Action="sndTrainStart.Start()" />
+
             <Do Action="Action4.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
             <Delay Duration="5" />
@@ -393,6 +401,8 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
+            <Do Action="sndTrainStart.Start()" />
+
             <Do Action="Action5.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
             <Delay Duration="5" />
@@ -406,6 +416,8 @@
             <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3385"/>
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
+
+            <Do Action="sndTrainStart.Start()" />
 
             <Do Action="Action_End.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -424,13 +436,26 @@
         </SequenceSet>
         <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
 
-        <!-- HAND EDIT <<< -->
+       
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="-60, 8, 33, 24" TraceId="image3016-1"/>
         <Group Id="grpAirplane" Class="clsAirplane" Bounds="502, 64, 100, 66" TraceId="image3412"/>
     </Layer>
+    <Layer Id="Semafor" BackColor="#FFFFFFFF">
+        <Resources RootFolder="Sound">
+            <SoundFile Id="sndTrain_bells" Source="train_bells"/>
+        </Resources>
+        <Resources RootFolder="Textures">
+            <Texture Id="txr_semafor_red" Source="semafor_red" />
+            <Texture Id="txr_semafor_green" Source="semafor_green" />
+        </Resources>
+        <Do Action="dashboard:+NoArrows" InProgress="true"/>
+        <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.5" Pitch="0"/>
+        
+    </Layer>
+    <!-- HAND EDIT <<< -->
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>

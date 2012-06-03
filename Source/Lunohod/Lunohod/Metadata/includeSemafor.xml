@@ -1,0 +1,20 @@
+<Include>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndTrain_bells" Source="train_bells"/>
+    </Resources>
+    
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_semafor_red" Source="semafor_red" />
+        <Texture Id="txr_semafor_green" Source="semafor_green" />
+    </Resources>
+    
+    <Do Action="dashboard:+NoArrows" InProgress="true"/>
+    
+    <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.5" Pitch="0"/>
+    
+    <SequenceSet InProgress="true" RepeatCount="1">
+        <Do Action="sndTrainStart.Start()" />
+        <Delay Duration="2" />
+        <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
+    </SequenceSet>
+</Include>
