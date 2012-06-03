@@ -38,47 +38,50 @@
         <Text Text="health:" FontId="Splash14Font" Location="201,-2" Color="#000000"/>
         <Text Text="health:" FontId="Splash14Font" Location="200,-3" Color="#FFFFFF"/>-->
 
-        <TapArea Bounds="0, 70, 100, 100" Action="tap1_setPress.Start()"/>
-        <Image Id="imgBtnUpL" TextureId="txrBtnUp" Bounds="9, 110, 56, 56" Stretch="false" Opacity="0.5"/>
-        <SequenceSet Id="tap1_setPress">
-            <Do Action="~system:up;dashboard:AnyKeyPressed"/>
-            <NumAnimation Target="imgBtnUpL.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-        </SequenceSet>
+        <!--<BoolTrigger Condition="not dashboard:NoArrows">
+            <TapArea Bounds="0, 70, 100, 100" Action="tap1_setPress.Start()"/>
+            <Image Id="imgBtnUpL" TextureId="txrBtnUp" Bounds="9, 110, 56, 56" Stretch="false" Opacity="0.5"/>
+            <SequenceSet Id="tap1_setPress">
+                <Do Action="~system:up;dashboard:AnyKeyPressed"/>
+                <NumAnimation Target="imgBtnUpL.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
 
-        <TapArea Bounds="380, 70, 100, 100" Action="tap2_setPress.Start()"/>
-        <Image Id="imgBtnUpR" TextureId="txrBtnUp" Bounds="415, 110, 56, 56" Stretch="false" Opacity="0.5"/>
-        <SequenceSet Id="tap2_setPress">
-            <Do Action="~system:up;dashboard:AnyKeyPressed"/>
-            <NumAnimation Target="imgBtnUpR.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-        </SequenceSet>
+            <TapArea Bounds="380, 70, 100, 100" Action="tap2_setPress.Start()"/>
+            <Image Id="imgBtnUpR" TextureId="txrBtnUp" Bounds="415, 110, 56, 56" Stretch="false" Opacity="0.5"/>
+            <SequenceSet Id="tap2_setPress">
+                <Do Action="~system:up;dashboard:AnyKeyPressed"/>
+                <NumAnimation Target="imgBtnUpR.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
 
-        <TapArea Bounds="0, 170, 100, 64" Action="tap3_setPress.Start()"/>
-        <Image Id="imgBtnLeftL" TextureId="txrBtnLeft" Bounds="9, 174, 56, 56" Stretch="false" Opacity="0.5"/>
-        <SequenceSet Id="tap3_setPress">
-            <Do Action="~system:left;dashboard:AnyKeyPressed"/>
-            <NumAnimation Target="imgBtnLeftL.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-        </SequenceSet>
+            <TapArea Bounds="0, 170, 100, 64" Action="tap3_setPress.Start()"/>
+            <Image Id="imgBtnLeftL" TextureId="txrBtnLeft" Bounds="9, 174, 56, 56" Stretch="false" Opacity="0.5"/>
+            <SequenceSet Id="tap3_setPress">
+                <Do Action="~system:left;dashboard:AnyKeyPressed"/>
+                <NumAnimation Target="imgBtnLeftL.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
 
-        <TapArea Bounds="380, 170, 100, 64" Action="tap4_setPress.Start()"/>
-        <Image Id="imgBtnRightR" TextureId="txrBtnRight" Bounds="415, 174, 56, 56" Stretch="false" Opacity="0.5"/>
-        <SequenceSet Id="tap4_setPress">
-            <Do Action="~system:right;dashboard:AnyKeyPressed"/>
-            <NumAnimation Target="imgBtnRightR.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-        </SequenceSet>
+            <TapArea Bounds="380, 170, 100, 64" Action="tap4_setPress.Start()"/>
+            <Image Id="imgBtnRightR" TextureId="txrBtnRight" Bounds="415, 174, 56, 56" Stretch="false" Opacity="0.5"/>
+            <SequenceSet Id="tap4_setPress">
+                <Do Action="~system:right;dashboard:AnyKeyPressed"/>
+                <NumAnimation Target="imgBtnRightR.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
 
-        <TapArea Bounds="0, 234, 100, 86" Action="tap5_setPress.Start()"/>
-        <Image Id="imgBtnDownL" TextureId="txrBtnDown" Bounds="9, 238, 56, 56" Stretch="false" Opacity="0.5"/>
-        <SequenceSet Id="tap5_setPress">
-            <Do Action="~system:down;dashboard:AnyKeyPressed"/>
-            <NumAnimation Target="imgBtnDownL.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-        </SequenceSet>
+            <TapArea Bounds="0, 234, 100, 86" Action="tap5_setPress.Start()"/>
+            <Image Id="imgBtnDownL" TextureId="txrBtnDown" Bounds="9, 238, 56, 56" Stretch="false" Opacity="0.5"/>
+            <SequenceSet Id="tap5_setPress">
+                <Do Action="~system:down;dashboard:AnyKeyPressed"/>
+                <NumAnimation Target="imgBtnDownL.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
 
-        <TapArea Bounds="380, 234, 100, 86" Action="tap6_setPress.Start()"/>
-        <Image Id="imgBtnDownR" TextureId="txrBtnDown" Bounds="415, 238, 56, 56" Stretch="false" Opacity="0.5"/>
-        <SequenceSet Id="tap6_setPress">
-            <Do Action="~system:down;dashboard:AnyKeyPressed"/>
-            <NumAnimation Target="imgBtnDownR.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
-        </SequenceSet>
+            <TapArea Bounds="380, 234, 100, 86" Action="tap6_setPress.Start()"/>
+            <Image Id="imgBtnDownR" TextureId="txrBtnDown" Bounds="415, 238, 56, 56" Stretch="false" Opacity="0.5"/>
+            <SequenceSet Id="tap6_setPress">
+                <Do Action="~system:down;dashboard:AnyKeyPressed"/>
+                <NumAnimation Target="imgBtnDownR.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
+
+        </BoolTrigger>-->
 
         
         <TapArea Bounds="132, 234, 100, 86" Action="tap7_setPress.Start()"/>
@@ -88,14 +91,14 @@
             <NumAnimation Target="imgBtnPause.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
         </SequenceSet>
 
-        <BoolTrigger Condition="hero.BombCount != 0">
+        <!--<BoolTrigger Condition="hero.BombCount != 0">-->
             <TapArea Bounds="248, 234, 100, 86" Action="tap8_setPress.Start()"/>
             <Image Id="imgBtnBomb" TextureId="txrBtnBomb" Bounds="270, 256, 56, 56" Stretch="false" Opacity="0.5"/>
             <SequenceSet Id="tap8_setPress">
                 <Do Action="~system:explosion;dashboard:AnyKeyPressed"/>
                 <NumAnimation Target="imgBtnBomb.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
             </SequenceSet>
-        </BoolTrigger>
+        <!--</BoolTrigger>-->
 
 
         <TapArea Bounds="430,00,60,60" Event="system:endLevel"/>

@@ -8,7 +8,7 @@
         <Texture Id="txr_semafor_green" Source="semafor_green" />
     </Resources>
     
-    <Do Action="dashboard:+NoArrows" InProgress="true"/>
+    <!--<Do Action="dashboard:+NoArrows" InProgress="true"/>-->
     
     <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.5" Pitch="0"/>
     
