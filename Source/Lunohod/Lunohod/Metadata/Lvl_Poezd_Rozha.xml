@@ -61,7 +61,7 @@
         <Image Id="dfltMask33" TextureId="txr_railwayHor1" Bounds="230, 140, 40, 40" Rotation="90" TraceId="image3188"/>
         <Image Id="dfltMask34" TextureId="txr_railwayHor1" Bounds="130, 20, 40, 40" TraceId="image3192"/>
     </Layer>
-    <Layer Id="enemies" BackColor="#FFFFFFFF" Enabled="false">
+    <Layer Id="enemies" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFoodFish3" Bounds="83, 79, 28, 17" TraceId="image3213"/>
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="392, 38, 22, 23" TraceId="image3244"/>
         <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="110, 125, 22, 23" TraceId="image3247"/>
@@ -85,7 +85,7 @@
         <Food Id="fd13" Class="clsFoodFish3" Bounds="375, 79, 28, 17" TraceId="image3323"/>
         <Food Id="fd14" Class="clsFoodFish3" Bounds="348, 66, 28, 17" TraceId="image3325"/>
     </Layer>
-    <Layer Id="blocks" BackColor="#FFFFFFFF" Enabled="false">
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Class="clsWoodenBox" Bounds="321, 15, 30, 30" Edges="Stick" TraceId="image3259">
             <Image TextureId="txr_box_old_1" />
         </Block>
@@ -158,7 +158,7 @@
         <Hero Id="hero" Class="clsHero" Bounds="254, 128, 33, 24" TraceId="image3015"/>
         <Group Id="exit" Class="clsExit" Bounds="221, 62, 37, 54" TraceId="image3049" />
     </Layer>
-    <Layer Id="arp" BackColor="#FFFFFFFF">
+    <!--<Layer Id="arp" BackColor="#FFFFFFFF">
         <SequenceSet InProgress="true" RepeatCount="1">
             <Delay Duration="1" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -166,7 +166,7 @@
         </SequenceSet>
         <Group Id="grpAirplane" Class="clsAirplane" Bounds="600,100,100,66" />
         
-    </Layer>
+    </Layer>-->
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
