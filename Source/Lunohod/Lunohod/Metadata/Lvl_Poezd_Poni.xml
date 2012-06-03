@@ -334,7 +334,7 @@
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
         <SequenceSet Id="setWay" InProgress="true">
-            <Do Action="dashboard:+NoArrows;tower:+LevelWithParachutes" InProgress="true"/>
+            <Do Action="tower:+LevelWithParachutes" InProgress="true"/>
             <Do Action="hero.SetTransaction(false, true, true)" />
             
             <Do Action="sndTrainStart.Start()" />
