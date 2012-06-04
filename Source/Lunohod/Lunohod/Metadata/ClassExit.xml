@@ -1,4 +1,10 @@
-<Include>	
+<Include>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndParachute_open" Source="parachute_open"/>
+    </Resources>
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_parachute" Source="parachute" />
+    </Resources>
 	<Class Id="clsExit">
         <Group>
 
