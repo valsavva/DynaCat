@@ -9,6 +9,8 @@
 		<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
 		<SoundFile Id="sndBombHiss" Source="bombHiss"/>
 
+        <SoundFile Id="sndTowerAlarm" Source="tower_alarm"/>
+
 		<SoundFile Id="sndEnemyRat1Dying" Source="skeletonFX_enemy_dead_scream_1"/>
         <SoundFile Id="sndEnemyRat1Hit1" Source="rat_hit1_demo"/>
         <SoundFile Id="sndEnemyRat1Hit2" Source="rat_hit2_demo"/>
