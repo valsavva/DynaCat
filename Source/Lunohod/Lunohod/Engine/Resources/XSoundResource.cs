@@ -118,6 +118,7 @@ namespace Lunohod.Objects
 
 				this.instanceCheckoutTimes[result] = currCheckoutTime;
 
+				/*
 				Console.WriteLine("*** Id:" + this.Id + " Source:" + this.Source + " Result:" + result.GetHashCode() + " ***");
 				Console.WriteLine("*** chekout times *** ");
 				foreach(var item in this.instanceCheckoutTimes)
@@ -130,6 +131,7 @@ namespace Lunohod.Objects
 					Console.WriteLine(item.Key.GetHashCode().ToString() + " - " + item.Value);
 				}
 				Console.WriteLine("******");
+				*/
 			}
 			else
 			{
