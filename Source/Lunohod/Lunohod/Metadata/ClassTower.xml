@@ -1,26 +1,40 @@
 <Include>	
 
     <Resources RootFolder="Textures">
-        <Texture Id="towerLedOn" Source="transmitter_2_on"/>
-        <Texture Id="towerLedOff" Source="transmitter_2_off"/>
+        <Texture Id="txr_towerLedOn" Source="transmitter_2_on"/>
+        <Texture Id="txr_towerLedOff" Source="transmitter_2_off"/>
+        <Texture Id="txr_towerAlarm" Source="transmitter_2_Alarm"/>
     </Resources>
 
 	<Class Id="clsTower">
 		<Tower SignalSpeed="256" Bounds="0, 0, 1, 1" Depth="0.3">
                         
-            <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="tower:+LedOn;this_anmSignal.Start()"/>
-            
+            <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="this:+LedOn;this_anmSignal.Start()"/>
+            <BoolTrigger Condition="system:cpsLimitExceeded and not this_anmAlarm.InProgress" Action="this_anmAlarm.Start();this:+Alarm" />
+                
             <SequenceSet Id="this_anmSignal">
                 <Delay Duration="0.4"/>
-                <Do Action="tower:-LedOn"/>
+                <Do Action="this:-LedOn"/>
             </SequenceSet>
             
-            <BoolTrigger Condition="tower:LedOn" Group="sttTower">
-                <Image TextureId="towerLedOn" Bounds="0, 0, 30, 30"/>
+            <Sound Id="sndTowerAlarmId" FileId="sndTowerAlarm" Volume="0.5" Pitch="0"/>
+            
+            <SequenceSet Id="this_anmAlarm" RepeatCount="1">
+                <Do Action="sndTowerAlarmId.Start()"/>
+                <Delay Duration="0.8"/>
+                <Do Action="this:-Alarm" />
+            </SequenceSet>
+            
+            <BoolTrigger Condition="this:Alarm" EnterAction="this:-LedOn" Group="this_sttTower">
+                <Image TextureId="txr_towerAlarm" Bounds="0, 0, 30, 30"/>
+            </BoolTrigger>
+            
+            <BoolTrigger Condition="this:LedOn" Group="this_sttTower">
+                <Image TextureId="txr_towerLedOn" Bounds="0, 0, 30, 30"/>
             </BoolTrigger>
 
-            <BoolTrigger Group="sttTower">
-                <Image TextureId="towerLedOff" Bounds="0, 0, 30, 30"/>
+            <BoolTrigger Group="this_sttTower">
+                <Image TextureId="txr_towerLedOff" Bounds="0, 0, 30, 30"/>
             </BoolTrigger>
 
             <!-- We'll need to remove this 
