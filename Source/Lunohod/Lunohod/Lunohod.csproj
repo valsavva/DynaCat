@@ -16,7 +16,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-    <DefineConstants>DEBUG;IPHONE;PERFMON</DefineConstants>
+    <DefineConstants>IPHONE;DEBUG;PERFMON</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
@@ -36,13 +36,14 @@
     <ConsolePause>false</ConsolePause>
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchI18n />
+    <DefineConstants>IPHONE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG, PERFMON</DefineConstants>
+    <DefineConstants>IPHONE;DEBUG;PERFMON</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchDebug>true</MtouchDebug>
@@ -72,6 +73,7 @@
       </CustomCommands>
     </CustomCommands>
     <BuildIpa>true</BuildIpa>
+    <DefineConstants>IPHONE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -223,9 +225,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\Game.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Metadata\Lvl_Poezd_Dvoynoy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\Lvl_Poezd_Dvoynoy.xml">
@@ -591,25 +590,25 @@
     <Content Include="Content\Textures\cat_var_eat_sprite_2x40x41.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\airplane.png">
+    <Content Include="Content\Textures\airplane.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\parachute.png">
+    <Content Include="Content\Textures\parachute.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sound\demo_fx_saw_end.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Sound\train_bells.wav">
+    <Content Include="Content\Sound\train_bells.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Sound\tower_alarm.wav">
+    <Content Include="Content\Sound\tower_alarm.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Sound\airplane.wav">
+    <Content Include="Content\Sound\airplane.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Sound\parachute_open.wav">
+    <Content Include="Content\Sound\parachute_open.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sound\whistle.wav">
@@ -624,7 +623,7 @@
     <Content Include="Content\Sound\skeletonFX_hero_eating_chavk2.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	    <Content Include="Content\Sound\spider_dying.wav">
+    <Content Include="Content\Sound\spider_dying.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sound\spider_shhh1.wav">
@@ -1290,7 +1289,7 @@
     <Content Include="Metadata\Dashboard.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\Dashboard_Poezd_Series.xml">
+    <Content Include="Metadata\Dashboard_Poezd_Series.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\test_b-2_stick_and_bounce_objects.xml">
@@ -1383,7 +1382,7 @@
     <Content Include="Content\TestTextures\_E_.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\spider1.png">
+    <Content Include="Content\Textures\spider1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\spider1attack.png">
@@ -2084,7 +2083,7 @@
     <Content Include="Metadata\ClassEnemySaw.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\ClassEnemySpider1.xml">
+    <Content Include="Metadata\ClassEnemySpider1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassExit.xml">
@@ -2093,7 +2092,7 @@
     <Content Include="Metadata\ClassExplosion.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\ClassAirplane.xml">
+    <Content Include="Metadata\ClassAirplane.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\ClassBarrel.xml">
@@ -2339,7 +2338,7 @@
     <Content Include="Content\Textures\transmitter-2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\transmitter_2_Alarm.png">
+    <Content Include="Content\Textures\transmitter_2_Alarm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\icon_iphone_114x114.png" />
@@ -2412,7 +2411,7 @@
     <Content Include="Content\Textures\arr_Curve1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Global\TimeBonusSprite_16x16x24.png">
+    <Content Include="Content\Global\TimeBonusSprite_16x16x24.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\heroHealth000.png">
@@ -2520,7 +2519,7 @@
     <Content Include="Metadata\CommonTextures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\includeSemafor.xml">
+    <Content Include="Metadata\includeSemafor.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -2531,23 +2530,3 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
