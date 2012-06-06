@@ -110,7 +110,7 @@ namespace Lunohod.Objects
 		{
 			var depth = this.PropState.Depth + p.NextSystemImageDepth();
 			var imageRes = this.texture.Image.Bounds;
-			Rectangle screenBounds;
+			Rectangle screenBounds = Rectangle.Empty;
 			this.PropState.ScreenBounds.Value.ToRectangle(ref screenBounds);
 
 			// fill whole rows and cols first
