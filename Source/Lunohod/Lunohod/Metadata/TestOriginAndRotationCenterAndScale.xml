@@ -35,8 +35,8 @@
 		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
 		
 		<Group Bounds="50,100,150,150" Rotation="45">
-			<NumAnimation Target="RotationCenterX" From="0" To="50" Duration="2" InProgress="true" Autoreverse="true" />
-			<NumAnimation Target="RotationCenterY" From="0" To="50" Duration="2" InProgress="true" Autoreverse="true" />
+			<NumAnimation Target="RotationCenterX" From="0" To="50" Duration="10" InProgress="true" Autoreverse="true" />
+			<NumAnimation Target="RotationCenterY" From="0" To="50" Duration="10" InProgress="true" Autoreverse="true" />
 			<Image TextureId="blank" BackColor="#005500" Opacity="0.3"/>
 			<NumAnimation Class="clsRotationAnimation" ClassParams="@duration=10" />
 			<Image Location="50,50" TextureId="chargers" BackColor="#FF0000"/>
@@ -52,9 +52,7 @@
 			</Image>
 			<Text FontId="SystemFont" Location="15,105" Text="Text scales too!" Color="#000000"/>
 		</Group>
-		<Image TextureId="chargers" Origin ="0,50" Location="0,150">
-			<NumAnimation Target="X" From="0" To="50" Duration="0.5" RepeatCount="1" InProgress="true" />
-		</Image>
+		<Image TextureId="chargers" Location="50,100" RotationCenter="10,10" Rotation="45"/>
 		<Image TextureId="chargers" Origin ="0,50" Location="0,320" Scale="3" />
 		<Group Id="imgScaleAnimationTest" Bounds="100,0,50,50" Class="clsScalingGroup" />
 	</Layer>
