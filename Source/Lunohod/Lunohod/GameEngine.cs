@@ -339,6 +339,10 @@ namespace Lunohod
 
 		public void LoadScreen(string fileName)
 		{
+#if IPHONE
+			MonoTouch.UIKit.UIApplication.SharedApplication.BeginIgnoringInteractionEvents();
+#endif
+
             var newScreenEngine = new ScreenEngine(this, fileName, this.ScreenEngine);
 
 			lock(this.screenEngines)
@@ -355,6 +359,10 @@ namespace Lunohod
 
 		public void LoadLevel(XLevelInfo levelInfo)
 		{
+#if IPHONE
+			MonoTouch.UIKit.UIApplication.SharedApplication.BeginIgnoringInteractionEvents();
+#endif
+
 			var newScreenEngine = new LevelEngine(this, this.ScreenEngine, levelInfo, this.ScoreFile.LevelScores.First(ls => ls.Id == levelInfo.Id));
 
 			lock(this.screenEngines)
