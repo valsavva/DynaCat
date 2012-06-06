@@ -35,6 +35,8 @@
 		<Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
 		
 		<Group Bounds="50,100,150,150" Rotation="45">
+			<NumAnimation Target="RotationCenterX" From="0" To="50" Duration="2" InProgress="true" Autoreverse="true" />
+			<NumAnimation Target="RotationCenterY" From="0" To="50" Duration="2" InProgress="true" Autoreverse="true" />
 			<Image TextureId="blank" BackColor="#005500" Opacity="0.3"/>
 			<NumAnimation Class="clsRotationAnimation" ClassParams="@duration=10" />
 			<Image Location="50,50" TextureId="chargers" BackColor="#FF0000"/>

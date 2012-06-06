@@ -49,14 +49,18 @@ namespace Lunohod.Objects
 		
 		[XmlIgnore]
         public System.Drawing.RectangleF Bounds;
-        [XmlAttribute]
+		[XmlIgnore]
         public float X { get { return this.Bounds.X; } set { this.Bounds.X = value; } }
-        [XmlAttribute]
+		[XmlIgnore]
         public float Y { get { return this.Bounds.Y; } set { this.Bounds.Y = value; } }
-        [XmlAttribute]
+		[XmlIgnore]
         public float Width { get { return this.Bounds.Width; } set { this.Bounds.Width = value; } }
-        [XmlAttribute]
+		[XmlIgnore]
         public float Height { get { return this.Bounds.Height; } set { this.Bounds.Height = value; } }
+		[XmlIgnore]
+		public float RotationCenterX { get { return this.RotationCenter.X; } set { this.rotationCenter.X = this.Origin.X = value; } }
+		[XmlIgnore]
+		public float RotationCenterY { get { return this.RotationCenter.Y; } set { this.rotationCenter.Y = this.Origin.Y = value; } }
 
         [XmlIgnore]
         public Vector2 Location
@@ -332,6 +336,8 @@ namespace Lunohod.Objects
                 case "Scale": getter = () => Scale; setter = (v) => Scale = v; break;
                 case "Opacity": getter = () => Opacity; setter = (v) => Opacity = v; break;
 				case "Depth": getter = () => Depth; setter = (v) => Depth = (float)v; break;
+				case "RotationCenterX": getter = () => RotationCenterX; setter = (v) => RotationCenterX = (float)v; break;
+				case "RotationCenterY": getter = () => RotationCenterY; setter = (v) => RotationCenterY = (float)v; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}
