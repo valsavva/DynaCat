@@ -25,6 +25,10 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public ScreenEngine ScreenEngine;
 
+#if IPHONE
+		private int updates;
+#endif
+
         public override void Update(UpdateParameters p)
         {
             if (p.Game.ScreenEngine.CurrentEvents.ContainsKey("system:levelLoaded"))
@@ -32,7 +36,17 @@ namespace Lunohod.Objects
                 p.GameTime = new GameTime(
                     p.GameTime.TotalGameTime, TimeSpan.Zero
                 );
+
             }
+
+#if IPHONE
+			if (updates <= 3)
+			{
+				if (updates == 3)
+					MonoTouch.UIKit.UIApplication.SharedApplication.EndIgnoringInteractionEvents();
+				updates++;
+			}
+#endif
 
             base.Update(p);
         }
