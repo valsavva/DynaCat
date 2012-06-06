@@ -11,6 +11,14 @@ using System.Diagnostics;
 
 namespace Lunohod.Objects
 {
+	public enum XImageStretchMode
+	{
+		Auto = 0,
+		ActualSize = 1,
+		Stretch = 2,
+		Tile = 3
+	}
+
     [XmlType("Image")]
     public class XImage : XElement
     {
@@ -23,7 +31,7 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public string TextureId;
 		[XmlAttribute]
-		public bool Stretch;
+		public XImageStretchMode StretchMode;
 		[XmlAttribute]
 		public XFlipEffects FlipEffects;
 		
@@ -48,7 +56,7 @@ namespace Lunohod.Objects
 		
         private double screenRotation;
 		private Color actualBackColor;
-		
+
         public override void Update(UpdateParameters p)
         {
             base.Update(p);
@@ -62,26 +70,73 @@ namespace Lunohod.Objects
 		{
 			if (this.PropState.ScreenBounds.HasValue)
 			{
-				if ((this.Bounds.X != 0 || this.Bounds.Y != 0) && this.Bounds.Width == 0 && this.Bounds.Height == 0)
+				// first resolve the actual way we want to draw the image
+				XImageStretchMode actualStretchMode = this.StretchMode;
+
+				if (actualStretchMode == XImageStretchMode.Auto)
 				{
-					// we're using location
-					this.tmpVector1.X = this.PropState.ScreenBounds.Value.X;
-					this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
-					
-					p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, (float)screenRotation, this.Origin, this.PropState.Scale, (SpriteEffects)this.FlipEffects, this.PropState.Depth + p.NextSystemImageDepth());
+					if ((this.Bounds.X != 0 || this.Bounds.Y != 0) && this.Bounds.Width == 0 && this.Bounds.Height == 0)
+						actualStretchMode = XImageStretchMode.ActualSize;
+					else
+						actualStretchMode = XImageStretchMode.Stretch;
 				}
+
+				// draw it
+				if (actualStretchMode == XImageStretchMode.ActualSize)
+					DrawActualSize(p);
+				else if (actualStretchMode == XImageStretchMode.Stretch)
+					DrawStretched(p);
 				else
-				{
-					p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, (SpriteEffects)this.FlipEffects, this.PropState.Depth + p.NextSystemImageDepth());
-				}
+					DrawTiles(p);
 			}
 			base.Draw(p);
 		}
 
+		void DrawActualSize(DrawParameters p)
+		{
+			// we're using location
+			this.tmpVector1.X = this.PropState.ScreenBounds.Value.X;
+			this.tmpVector1.Y = this.PropState.ScreenBounds.Value.Y;
+			
+			p.SpriteBatch.Draw(this.texture.Image, this.tmpVector1, this.SourceRectangle, actualBackColor, (float)screenRotation, this.Origin, this.PropState.Scale, (SpriteEffects)this.FlipEffects, this.PropState.Depth + p.NextSystemImageDepth());
+		}
+
+		void DrawStretched(DrawParameters p)
+		{
+			p.SpriteBatch.Draw(this.texture.Image, this.PropState.ScreenBounds.Value, this.SourceRectangle, actualBackColor, screenRotation, this.Origin, (SpriteEffects)this.FlipEffects, this.PropState.Depth + p.NextSystemImageDepth());
+		}
+
+		void DrawTiles(DrawParameters p)
+		{
+			var depth = this.PropState.Depth + p.NextSystemImageDepth();
+			var imageRes = this.texture.Image.Bounds;
+			Rectangle screenBounds;
+			this.PropState.ScreenBounds.Value.ToRectangle(ref screenBounds);
+
+			// fill whole rows and cols first
+			int wholeCols = screenBounds.Width / imageRes.Width;
+			int wholeRows = screenBounds.Height / imageRes.Height;
+
+			Vector2 loc = new Vector2(screenBounds.X, screenBounds.Y);
+
+			for(int row = 0; row < wholeRows; row++)
+			{
+				loc.X = 0;
+				for(int col = 0; col < wholeCols; col++)
+				{
+					p.SpriteBatch.Draw(this.texture.Image, loc, null, actualBackColor, 0f, Vector2.Zero, 0f, SpriteEffects.None, depth);
+					loc.X += imageRes.Width;
+				}
+				loc.Y += imageRes.Height;
+			}
+
+
+		}
+
         public override void ReadXml(System.Xml.XmlReader reader)
         {
-            this.TextureId = reader["TextureId"];
-            this.Stretch = reader.ReadAttrAsBoolean("Stretch", true);
+            reader.ReadAttrAsString("TextureId", ref this.TextureId);
+            reader.ReadAttrAsEnum<XImageStretchMode>("StretchMode", ref this.StretchMode);
 			reader.ReadAttrAsEnum<XFlipEffects>("FlipEffects", ref this.FlipEffects);
 
             base.ReadXml(reader);
