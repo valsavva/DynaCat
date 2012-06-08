@@ -116,7 +116,7 @@
         <Enemy Id="enm10" Class="clsEnemyRat3" Bounds="3, 268, 24, 25" TraceId="image3402"/>
         <Enemy Id="enm11" Class="clsEnemyRat3" Bounds="237, 88, 24, 25" TraceId="image3404"/>
         <Enemy Id="enm12" Class="clsEnemyRat3" Bounds="234, 208, 24, 25" TraceId="image3393"/>
-        <Food Id="fd12" Class="clsFoodFish1" Bounds="280, 53,  30,  15" TraceId="image3433"/>
+        <Food Id="fd12" Class="clsFoodFish1" Bounds="258, 54,   30,   15" TraceId="image3433"/>
         <Food Id="fd13" Class="clsFoodFish1" Bounds="26, 71, 30, 15" TraceId="image3435"/>
         <Food Id="fd14" Class="clsFoodFish1" Bounds="15, 92, 30, 15" TraceId="image3438"/>
         <Food Id="fd15" Class="clsFoodFish1" Bounds="28, 111, 30, 15" TraceId="image3440"/>
@@ -124,35 +124,35 @@
         <Food Id="fd17" Class="clsFoodFish1" Bounds="18, 212, 30, 15" TraceId="image3444"/>
         <Food Id="fd18" Class="clsFoodFish1" Bounds="29, 232, 30, 15" TraceId="image3417"/>
         <Food Id="fd19" Class="clsFoodFish1" Bounds="233, 70, 30, 15" TraceId="image3419"/>
-        <Food Id="fd20" Class="clsFoodFish1" Bounds="187, 53, 30, 15" TraceId="image3421"/>
-        <Food Id="fd21" Class="clsFoodFish1" Bounds="359, 125, 30, 15" TraceId="image3423"/>
+        <Food Id="fd20" Class="clsFoodFish1" Bounds="211, 54,  30,  15" TraceId="image3421"/>
+        <Food Id="fd21" Class="clsFoodFish1" Bounds="377, 136,  30,  15" TraceId="image3423"/>
         <Food Id="fd22" Class="clsFoodFish1" Bounds="387, 153, 30, 15" TraceId="image3425"/>
-        <Food Id="fd23" Class="clsFoodFish1" Bounds="359, 181, 30, 15" TraceId="image3427"/>
-        <Food Id="fd24" Class="clsFoodFish1" Bounds="190, 255, 30, 15" TraceId="image3429"/>
+        <Food Id="fd23" Class="clsFoodFish1" Bounds="376, 171,  30,  15" TraceId="image3427"/>
+        <Food Id="fd24" Class="clsFoodFish1" Bounds="205, 255,  30,  15" TraceId="image3429"/>
         <Food Id="fd25" Class="clsFoodFish1" Bounds="230, 236, 30, 15" TraceId="image3431"/>
-        <Food Id="fd26" Class="clsFoodFish1" Bounds="271, 255, 30, 15" TraceId="image3414"/>
+        <Food Id="fd26" Class="clsFoodFish1" Bounds="254, 255,  30,  15" TraceId="image3414"/>
     </Layer>
     <Layer Id="Action3" BackColor="#FFFFFFFF" Enabled="false">
-        <Enemy Id="enm13" Class="clsEnemyRat2" Bounds="391, 147, 22, 23" TraceId="image3458"/>
-        <Enemy Id="enm14" Class="clsEnemyRat2" Bounds="82, 118, 22, 23" TraceId="image3460"/>
-        <Enemy Id="enm15" Class="clsEnemyRat2" Bounds="78, 240, 22, 23" TraceId="image3470"/>
-        <Enemy Id="enm16" Class="clsEnemyRat2" Bounds="81, 179, 22, 23" TraceId="image3464"/>
-        <Enemy Id="enm17" Class="clsEnemyRat2" Bounds="340, 239, 22, 23" TraceId="image3466"/>
-        <Enemy Id="enm18" Class="clsEnemyRat2" Bounds="346, 179,  22,  23" TraceId="image3468"/>
-        <Enemy Id="enm19" Class="clsEnemyRat2" Bounds="345, 118,  22,  23" TraceId="image3462"/>
-        <Food Id="fd27" Class="clsFoodFish2" Bounds="418, 53, 27, 15" TraceId="image3483"/>
-        <Food Id="fd28" Class="clsFoodFish2" Bounds="383, 72, 27, 15" TraceId="image3485"/>
-        <Food Id="fd29" Class="clsFoodFish2" Bounds="345, 52, 27, 15" TraceId="image3487"/>
+        <Enemy Id="enm13" Class="clsEnemyRat2" Bounds="381, 174,  22,  23" TraceId="image3458"/>
+        <Enemy Id="enm14" Class="clsEnemyRat2" Bounds="67, 107,  22,  23" TraceId="image3460"/>
+        <Enemy Id="enm15" Class="clsEnemyRat2" Bounds="67, 232,  22,  23" TraceId="image3470"/>
+        <Enemy Id="enm16" Class="clsEnemyRat2" Bounds="393, 147,  22,  23" TraceId="image3464"/>
+        <Enemy Id="enm17" Class="clsEnemyRat2" Bounds="382, 122,  22,  23" TraceId="image3466"/>
+        <Enemy Id="enm18" Class="clsEnemyRat2" Bounds="100, 232,   22,   23" TraceId="image3468"/>
+        <Enemy Id="enm19" Class="clsEnemyRat2" Bounds="96, 108,   22,   23" TraceId="image3462"/>
+        <Food Id="fd27" Class="clsFoodFish2" Bounds="218, 252,  27,  15" TraceId="image3483"/>
+        <Food Id="fd28" Class="clsFoodFish2" Bounds="216, 171,  27,  15" TraceId="image3485"/>
+        <Food Id="fd29" Class="clsFoodFish2" Bounds="214, 137,  27,  15" TraceId="image3487"/>
         <Food Id="fd30" Class="clsFoodFish2" Bounds="143, 70,  27,  15" TraceId="image3493"/>
-        <Food Id="fd31" Class="clsFoodFish2" Bounds="181, 134, 27, 15" TraceId="image3495"/>
+        <Food Id="fd31" Class="clsFoodFish2" Bounds="196, 125,  27,  15" TraceId="image3495"/>
         <Food Id="fd32" Class="clsFoodFish2" Bounds="216, 111, 27, 15" TraceId="image3497"/>
-        <Food Id="fd33" Class="clsFoodFish2" Bounds="248, 135, 27, 15" TraceId="image3499"/>
-        <Food Id="fd34" Class="clsFoodFish2" Bounds="247, 172, 27, 15" TraceId="image3501"/>
+        <Food Id="fd33" Class="clsFoodFish2" Bounds="234, 127,  27,  15" TraceId="image3499"/>
+        <Food Id="fd34" Class="clsFoodFish2" Bounds="234, 183,  27,  15" TraceId="image3501"/>
         <Food Id="fd35" Class="clsFoodFish2" Bounds="215, 196, 27, 15" TraceId="image3507"/>
-        <Food Id="fd36" Class="clsFoodFish2" Bounds="188, 252, 27, 15" TraceId="image3509"/>
-        <Food Id="fd37" Class="clsFoodFish2" Bounds="224, 234, 27, 15" TraceId="image3511"/>
-        <Food Id="fd38" Class="clsFoodFish2" Bounds="257, 255, 27, 15" TraceId="image3503"/>
-        <Food Id="fd39" Class="clsFoodFish2" Bounds="177, 173, 27, 15" TraceId="image3489"/>
+        <Food Id="fd36" Class="clsFoodFish2" Bounds="199, 243,  27,  15" TraceId="image3509"/>
+        <Food Id="fd37" Class="clsFoodFish2" Bounds="216, 234,  27,  15" TraceId="image3511"/>
+        <Food Id="fd38" Class="clsFoodFish2" Bounds="235, 245,  27,  15" TraceId="image3503"/>
+        <Food Id="fd39" Class="clsFoodFish2" Bounds="194, 183,  27,  15" TraceId="image3489"/>
         <Food Id="fd40" Class="clsFoodFish2" Bounds="113, 49,  27,  15" TraceId="image3491"/>
         <Food Id="fd41" Class="clsFoodFish2" Bounds="81, 71,  27,  15" TraceId="image3505"/>
     </Layer>
@@ -179,11 +179,11 @@
     </Layer>
     <Layer Id="Action5" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd55" Class="clsFoodFish1" Bounds="422, 53, 30, 15" TraceId="image3657"/>
-        <Food Id="fd56" Class="clsFoodFish1" Bounds="379, 248,  30,  15" TraceId="image3659"/>
-        <Food Id="fd57" Class="clsFoodFish1" Bounds="374, 237,  30,  15" TraceId="image3661"/>
-        <Food Id="fd58" Class="clsFoodFish1" Bounds="237, 251,  30,  15" TraceId="image3663"/>
-        <Food Id="fd59" Class="clsFoodFish1" Bounds="231, 240,  30,  15" TraceId="image3665"/>
-        <Food Id="fd60" Class="clsFoodFish1" Bounds="218, 253,  30,  15" TraceId="image3667"/>
+        <Food Id="fd56" Class="clsFoodFish1" Bounds="424, 153,   30,   15" TraceId="image3659"/>
+        <Food Id="fd57" Class="clsFoodFish1" Bounds="450, 183,   30,   15" TraceId="image3661"/>
+        <Food Id="fd58" Class="clsFoodFish1" Bounds="448, 121,   30,   15" TraceId="image3663"/>
+        <Food Id="fd59" Class="clsFoodFish1" Bounds="433, 209,   30,   15" TraceId="image3665"/>
+        <Food Id="fd60" Class="clsFoodFish1" Bounds="425, 89,   30,   15" TraceId="image3667"/>
         <Food Id="fd61" Class="clsFoodFish1" Bounds="71, 243,  30,  15" TraceId="image3669"/>
         <Food Id="fd62" Class="clsFoodFish1" Bounds="49, 251,  30,  15" TraceId="image3671"/>
         <Food Id="fd63" Class="clsFoodFish1" Bounds="56, 235,  30,  15" TraceId="image3582"/>
@@ -272,16 +272,16 @@
         </BoolTrigger>
         <BoolTrigger Id="bt9b" Condition="not blk9.Enabled" EnterAction="setWay.Resume();bt9a.Disable();bt9b.Disable()" />
         <Food Id="fd71" Class="clsFoodFish4" Bounds="192, 111, 26, 17" TraceId="image3796"/>
-        <Food Id="fd72" Class="clsFoodFish4" Bounds="216, 130, 26, 17" TraceId="image3798"/>
+        <Food Id="fd72" Class="clsFoodFish4" Bounds="218, 119,  26,  17" TraceId="image3798"/>
         <Food Id="fd73" Class="clsFoodFish4" Bounds="214, 172, 26, 17" TraceId="image3800"/>
-        <Food Id="fd74" Class="clsFoodFish4" Bounds="188, 190, 26, 17" TraceId="image3802"/>
-        <Food Id="fd75" Class="clsFoodFish4" Bounds="192, 230, 26, 17" TraceId="image3804"/>
-        <Food Id="fd76" Class="clsFoodFish4" Bounds="214, 252, 26, 17" TraceId="image3806"/>
-        <Food Id="fd77" Class="clsFoodFish4" Bounds="392, 151, 26, 17" TraceId="image3808"/>
-        <Food Id="fd78" Class="clsFoodFish4" Bounds="31, 212, 26, 17" TraceId="image3810"/>
-        <Food Id="fd79" Class="clsFoodFish4" Bounds="25, 91, 26, 17" TraceId="image3812"/>
+        <Food Id="fd74" Class="clsFoodFish4" Bounds="203, 192,  26,  17" TraceId="image3802"/>
+        <Food Id="fd75" Class="clsFoodFish4" Bounds="193, 235,  26,  17" TraceId="image3804"/>
+        <Food Id="fd76" Class="clsFoodFish4" Bounds="204, 246,  26,  17" TraceId="image3806"/>
+        <Food Id="fd77" Class="clsFoodFish4" Bounds="195, 133,  26,  17" TraceId="image3808"/>
+        <Food Id="fd78" Class="clsFoodFish4" Bounds="188, 175,  26,  17" TraceId="image3810"/>
+        <Food Id="fd79" Class="clsFoodFish4" Bounds="217, 67,  26,  17" TraceId="image3812"/>
         <Food Id="fd80" Class="clsFoodFish4" Bounds="219, 49, 26, 17" TraceId="image3814"/>
-        <Food Id="fd81" Class="clsFoodFish4" Bounds="193, 70, 26, 17" TraceId="image3793"/>
+        <Food Id="fd81" Class="clsFoodFish4" Bounds="196, 54,  26,  17" TraceId="image3793"/>
     </Layer>
     <Layer Id="Way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
@@ -403,4 +403,5 @@
 <!-- 1% = 98.3; 45% = 4423.5; 90% = 8847 -->
 <!-- minPointsFood = 70 (0.7%) -->
 <!-- minPointsEnemy = 50 (0.5%) -->
+
 
