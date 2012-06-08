@@ -142,6 +142,11 @@
                 <Image TextureId="txrHeroSurprised" Bounds="-4, -10, 40, 33"/>
             </BoolTrigger>
             
+            <!-- beamed by magnet waves -->
+            <BoolTrigger Condition="hero:Magneted" Group="sttHeroStates" >
+                <Image TextureId="txrHeroSurprised" Bounds="-4, -10, 40, 33"/>
+            </BoolTrigger>
+            
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
                 <Image TextureId="txrHeroDefault" Bounds="-4, -10, 40, 33"/>

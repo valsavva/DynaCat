@@ -31,6 +31,7 @@
     <BoolTrigger Condition="hero:OnOilMotion" EnterAction="system.WriteLine('EnterOldMotion');anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="system.WriteLine('ExitOldMotion');anmDeceleration.Resume();hero.EndTransaction()" />
 
     <BoolTrigger Condition="hero:ElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
+    <BoolTrigger Condition="hero:Magneted" EnterAction="anmMagnetSpeed.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
@@ -61,7 +62,14 @@
         <KeyFrame Time="0.5" Value="200" Smoothing="Smooth"/>
         <KeyFrame Time="1" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
-	
+    
+	<!-- hero magneted by excavator animation -->
+    <NumAnimation Id="anmMagnetSpeed" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
+        <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
+        <KeyFrame Time="0.5" Value="600" Smoothing="Smooth"/>
+        <KeyFrame Time="1" Value="1000" Smoothing="Smooth"/>
+    </NumAnimation>
+    
 	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** 
     <BoolTrigger Condition="system:heroSpeedRecalculate">
 		<BoolTrigger Condition="system:heroReduceSpeed" Action="@heroBaseSpeed=@heroBaseSpeed-5"/>

@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest5ME" Bounds="0, 0, 480, 320">-->
 <Include>
     <Resources RootFolder="Textures">
         <Texture Id="txr_magnet_excavator" Source="magnet_excavator" />
@@ -26,19 +27,26 @@
 
         
             <Block Id="this_blkExcavator" Edges="Stick" Bounds="0, 0, 60, 40">
-                <Image TextureId="txrEnemyRat3Default" Bounds="24, 2, 24, 25"/>
+                <Image TextureId="txrEnemyRat3Default" Location="14, 2"/>
                 <Image TextureId="txr_magnet_excavator"/>
             </Block>
     
             <Group Id="this_grpMagnetWaves">
                 <SequenceSet RepeatCount="0" InProgress="true" >
-                    <Do Action="this_grpMagnetWaves.Enable()" />
-                    <NumAnimation Target="this_grpMagnetWaves.Opacity" Autoreverse="true" From="0.8" To="0.3" Duration="0.1" Smoothing="Smooth" RepeatCount="30" InProgress="true" />
-                    <Do Action="this_grpMagnetWaves.Disable()" />
+                    <!--<Do Action="this_grpMagnetWaves.Enable()" />-->
+                    <Do Action="this:+IsBeaming" />
+                    <NumAnimation Target="this_grpMagnetWaves.Opacity" Autoreverse="true" From="0.8" To="0.3" Duration="0.1" Smoothing="Smooth" RepeatCount="30"/>
+                    <Do Action="this_grpMagnetWaves.Opacity=0;this:-IsBeaming;hero:-Magneted" />
+                    <!--<Do Action="this_grpMagnetWaves.Disable()" />-->
                     <Delay Duration="2" />
                 </SequenceSet>
                 <Image Id="this_imgBeam" TextureId="txr_magnet_waves" StretchMode="Tile"/>
             </Group>
+
+            <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
+                <BoolTrigger Condition="this:IsBeaming" EnterAction="hero:+Magneted;hero.SetDirection(-1*@this_dirX,-1*@this_dirY);hero.Y=this.Y+8" ExitAction="hero:-Magneted"/>
+            </IntersectionTrigger>
+            
         </Group>
     </Class>
 </Include>

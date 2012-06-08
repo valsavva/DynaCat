@@ -20,9 +20,9 @@
         <Hero Id="hero" Class="clsHero" Bounds="200, 120, 33, 24" TraceId="image3015"/>
 
 
-        <Group Id="exv1" Bounds="30,50,270,40" Class="clsExcavator" ClassParams="@paramDirX=1,@paramDirY=0" />
+        <Group Id="exv1" Bounds="30,50,480,40" Class="clsExcavator" ClassParams="@paramDirX=1,@paramDirY=0" />
 
-        <Group Id="exv2" Bounds="130,200,270,40" Class="clsExcavator" ClassParams="@paramDirX=-1,@paramDirY=0" />
+        <Group Id="exv2" Bounds="230,200,100,40" Class="clsExcavator" ClassParams="@paramDirX=-1,@paramDirY=0" />
         
     </Layer>
 
