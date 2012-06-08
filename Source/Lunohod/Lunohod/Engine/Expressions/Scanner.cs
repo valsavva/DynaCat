@@ -109,7 +109,7 @@ namespace Lunohod.Xge
 
                 }
                 // id
-                else if (char.IsLetter(ch))
+                else if (char.IsLetter(ch) || ch == '_')
                 {
                     for (; i < text.Length && (char.IsLetterOrDigit(text[i]) || text[i] == '_'); i++) { }
 
