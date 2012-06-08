@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Include>
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_magnet_excavator" Source="magnet_excavator" />
+        <Texture Id="txr_magnet_waves" Source="magnet_waves" />
+    </Resources>
+
+    <Class Id="clsExcavator">
+        <Group>
+            <Do Action="@this_dirX=@paramDirX;@this_dirY=@paramDirY;" InProgress="true" />
+
+            <!-- horizontal, shooting right -->
+            <BoolTrigger Condition="@this_dirX==1">
+                <Do Action="this_blkExcavator.X=0;
+                    this_grpMagnetWaves.SetBounds(this_blkExcavator.Width, 5, this.Width-this_blkExcavator.Width, 30);"
+                    RepeatCount="0" InProgress="true"
+                />
+            </BoolTrigger>
+            <!-- horizontal, shooting left -->
+            <BoolTrigger Condition="@this_dirX==-1">
+                <Do Action="this_blkExcavator.X=this.Width-this_blkExcavator.Width;
+                    this_grpMagnetWaves.SetBounds(0, 5, this.Width-this_blkExcavator.Width, 30);"
+                    RepeatCount="0" InProgress="true"
+                />
+            </BoolTrigger>
+
+        
+            <Block Id="this_blkExcavator" Edges="Stick" Bounds="0, 0, 60, 40">
+                <Image TextureId="txrEnemyRat3Default" Bounds="24, 2, 24, 25"/>
+                <Image TextureId="txr_magnet_excavator"/>
+            </Block>
+    
+            <Group Id="this_grpMagnetWaves">
+                <SequenceSet RepeatCount="0" InProgress="true" >
+                    <Do Action="this_grpMagnetWaves.Enable()" />
+                    <NumAnimation Target="this_grpMagnetWaves.Opacity" Autoreverse="true" From="0.8" To="0.3" Duration="0.1" Smoothing="Smooth" RepeatCount="30" InProgress="true" />
+                    <Do Action="this_grpMagnetWaves.Disable()" />
+                    <Delay Duration="2" />
+                </SequenceSet>
+                <Image Id="this_imgBeam" TextureId="txr_magnet_waves" StretchMode="Tile"/>
+            </Group>
+        </Group>
+    </Class>
+</Include>

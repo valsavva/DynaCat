@@ -121,17 +121,57 @@ namespace Lunohod.Objects
 
 			for(int row = 0; row < wholeRows; row++)
 			{
-				loc.X = 0;
+				loc.X = screenBounds.X;
 				for(int col = 0; col < wholeCols; col++)
 				{
-					p.SpriteBatch.Draw(this.texture.Image, loc, null, actualBackColor, 0f, Vector2.Zero, 0f, SpriteEffects.None, depth);
+					p.SpriteBatch.Draw(this.texture.Image, loc, null, actualBackColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, depth);
 					loc.X += imageRes.Width;
 				}
 				loc.Y += imageRes.Height;
 			}
 
 
-		}
+            // fill margins
+            int rightMargin = screenBounds.Width % imageRes.Width;
+            int bottomMargin = screenBounds.Height % imageRes.Height;
+            Rectangle sourceBounds = imageRes;
+
+            if (rightMargin != 0)
+            {
+                loc.X = screenBounds.X + wholeCols * imageRes.Width;
+                loc.Y = screenBounds.Y;
+
+                sourceBounds.Width = rightMargin;
+
+                for (int row = 0; row < wholeRows; row++)
+                {
+                    p.SpriteBatch.Draw(this.texture.Image, loc, sourceBounds, actualBackColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, depth);
+                    loc.Y += imageRes.Height;
+                }
+
+
+                if (bottomMargin != 0)
+                {
+                    sourceBounds.Height = bottomMargin;
+                    p.SpriteBatch.Draw(this.texture.Image, loc, sourceBounds, actualBackColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, depth);
+                }
+            }
+
+
+            if (bottomMargin != 0)
+            {
+                loc.X = screenBounds.X;
+
+                sourceBounds.Width = imageRes.Width;
+
+                for (int col = 0; col < wholeCols; col++)
+                {
+                    p.SpriteBatch.Draw(this.texture.Image, loc, sourceBounds, actualBackColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, depth);
+                    loc.X += imageRes.Width;
+                }
+            }
+
+        }
 
         public override void ReadXml(System.Xml.XmlReader reader)
         {

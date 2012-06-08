@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level Name="AnimationSamples.xml" Bounds="0,0,480,320">
+    <Include File="ClassTower.xml" />
+    <Include File="ClassHero.xml" />
+    <Include File="ClassExcavator.xml" />
+    
+    <Resources RootFolder="Global">
+        <Texture Id="blank" Source="blank" />
+        <Font Id="SystemFont" Source="SystemFont" />
+        <Texture Id="chargers" Source="ch"/>
+    </Resources>
+
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
+        <Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
+        <Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
+        <Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
+
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Hero Id="hero" Class="clsHero" Bounds="200, 120, 33, 24" TraceId="image3015"/>
+
+
+        <Group Id="exv1" Bounds="30,50,270,40" Class="clsExcavator" ClassParams="@paramDirX=1,@paramDirY=0" />
+
+        <Group Id="exv2" Bounds="130,200,270,40" Class="clsExcavator" ClassParams="@paramDirX=-1,@paramDirY=0" />
+        
+    </Layer>
+
+    <Include File="Dashboard.xml" />
+
+</Level>
+
