@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Lunohod;
+using Lunohod.Xge;
 
 namespace Lunohod.Objects
 {
@@ -295,6 +296,14 @@ namespace Lunohod.Objects
 			}
 		}
 
+        public void SetBounds(float x, float y, float w, float h)
+        {
+            this.Bounds.X = x;
+            this.Bounds.Y = y;
+            this.Bounds.Width = w;
+            this.Bounds.Height = h;
+        }
+
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             Color color = Color.White;
@@ -324,6 +333,16 @@ namespace Lunohod.Objects
             base.ReadXml(reader);
         }
 		
+		public override void GetMethod(string methodName, out Action<List<Expression>> method)
+		{
+            switch (methodName)
+            {
+                case "SetBounds": method = (ps) => SetBounds((float)ps[0].GetNumValue(), (float)ps[1].GetNumValue(), (float)ps[2].GetNumValue(), (float)ps[3].GetNumValue()); break;
+                default:
+					base.GetMethod(methodName, out method); break;
+            }
+		}
+
 		public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
 		{
 			switch (propertyName)
