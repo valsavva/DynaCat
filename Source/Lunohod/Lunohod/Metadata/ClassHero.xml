@@ -144,8 +144,17 @@
             
             <!-- beamed by magnet waves -->
             <BoolTrigger Condition="hero:Magneted" Group="sttHeroStates" >
-                <Image TextureId="txrHeroSurprised" Bounds="-4, -10, 40, 33"/>
+                <Image Id="this_imgHeroSurprised" TextureId="txrHeroSurprised" Bounds="-4, -10, 40, 33"/>
             </BoolTrigger>
+
+            <BoolTrigger Condition="hero:Magneted and not hero:Magneting" EnterAction="this_setHeroSurQuake.Start()" ExitAction="this_setHeroSurQuake.Stop();this_setHeroSurQuakeStop.Start()" />
+            <SequenceSet Id="this_setHeroSurQuake" RepeatCount="0">
+                <NumAnimation Target="this_imgHeroSurprised.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
+                <NumAnimation Target="this_imgHeroSurprised.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
+            </SequenceSet>
+
+            <NumAnimation Id="this_setHeroSurQuakeStop" Target="this_imgHeroSurprised.X" From="this_imgHeroSurprised.X" To="-4" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
+
             
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">

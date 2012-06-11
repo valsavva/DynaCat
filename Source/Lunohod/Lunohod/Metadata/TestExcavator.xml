@@ -3,27 +3,43 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExcavator.xml" />
+    <Include File="ClassExcavatorLeft.xml" />
+    <Include File="ClassWoodenBox.xml" />
     
     <Resources RootFolder="Global">
         <Texture Id="blank" Source="blank" />
         <Font Id="SystemFont" Source="SystemFont" />
         <Texture Id="chargers" Source="ch"/>
     </Resources>
-
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_box_old_1" Source="box_old_1" />
+    </Resources>
+    
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="0,0,480,1" Edges="Bounce" />
         <Block Id="blk2" Bounds="480,0,1,320" Edges="Bounce" />
         <Block Id="blk3" Bounds="0,320,480,1" Edges="Bounce" />
         <Block Id="blk4" Bounds="0,0,1,320" Edges="Bounce" />
 
-        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Hero Id="hero" Class="clsHero" Bounds="200, 120, 33, 24" TraceId="image3015"/>
 
-
-        <Group Id="exv1" Bounds="30,50,480,40" Class="clsExcavator" ClassParams="@paramDirX=1,@paramDirY=0" />
-
-        <Group Id="exv2" Bounds="230,200,100,40" Class="clsExcavator" ClassParams="@paramDirX=-1,@paramDirY=0" />
+        <SequenceSet RepeatCount="1" InProgress="true">
+            <Delay Duration="2.9" />
+            <Do Action="system:up" />
+        </SequenceSet>
         
+        
+        <Group Id="exv1" Bounds="30,50,60,40" Class="clsExcavator" ClassParams="@paramDirX=1,@paramDirY=0" />
+        <!--<Enemy Id="exv2" Bounds="280,200,60,40" Class="clsExcavatorLeft" />-->
+        <Group Id="exv2" Bounds="230,200,60,40" Class="clsExcavator" ClassParams="@paramDirX=-1,@paramDirY=0" />
+        <Group Id="exv3" Bounds="130,100,40,60" Class="clsExcavator" ClassParams="@paramDirX=0,@paramDirY=1" />
+        <Group Id="exv4" Bounds="370,200,40,60" Class="clsExcavator" ClassParams="@paramDirX=0,@paramDirY=-1" />
+
+        <!--<Block Id="box1" Class="clsWoodenBox" Bounds="230, 55, 30, 30" Edges="Stick">
+            <Image TextureId="txr_box_old_1" />
+        </Block>-->
+        
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Hero Id="hero" Class="clsHero" Bounds="430, 120, 33, 24" TraceId="image3015"/>
     </Layer>
 
     <Include File="Dashboard.xml" />
