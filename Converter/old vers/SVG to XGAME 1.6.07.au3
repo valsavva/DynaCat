@@ -641,7 +641,7 @@ Func GetAttr($str, $attr)
 		Case 'fish_5_me'
 			$ret = 'clsFoodFish4'
 		Case Else
-			$ret = 'ERROR'
+			$ret = 'clsFoodFish1'
 		EndSwitch
 
 		Return $ret
