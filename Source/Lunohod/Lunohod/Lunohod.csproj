@@ -227,6 +227,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Metadata\Lvl_1D_Magnet_v2_Intro.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Metadata\Lvl_1D_Magnet_v1_Intro.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2590,4 +2593,5 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
+
 

@@ -58,8 +58,8 @@
         <Image Id="dfltMask26" TextureId="txr_oil" Bounds="248, 142, 17, 26" Stretch="true" TraceId="image3177"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
+        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="302, 143, 22, 23" TraceId="image3129"/>
         <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="355, 144, 22, 23" TraceId="image3072"/>
-        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="332, 143, 22, 23" TraceId="image3129"/>
         <Group Id="exv3" Class="clsExcavator" Bounds="382, 135, 60, 40" ClassParams="@paramDirX=-1,@paramDirY=0" TraceId="image3107"/>
         <Food Id="fd1" Class="clsFoodFish4" Bounds="238, 186, 26, 17" TraceId="image3207"/>
         <Food Id="fd2" Class="clsFoodFish4" Bounds="223, 203, 26, 17" TraceId="image3205"/>

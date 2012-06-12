@@ -4,9 +4,10 @@
 		<Texture Id="blank" Source="blank"/>
 		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
-	
-	<!-- 
-	<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
+
+    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="=''+system.Str(system.Round(hero.Speed))" Color="#000000" />
+	<!-- 	
+    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
     <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(system.Round(hero.X)) + ')(' + system.Str(system.Round(hero.Y)) + ')'" Color="#000000" />
     -->
 	
@@ -30,16 +31,17 @@
 
     <BoolTrigger Condition="hero:OnOilMotion" EnterAction="system.WriteLine('EnterOldMotion');anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="system.WriteLine('ExitOldMotion');anmDeceleration.Resume();hero.EndTransaction()" />
 
-    <BoolTrigger Condition="hero:Magneted" EnterAction="anmDeceleration.Stop();hero.SetTransaction(true,true,false)" ExitAction="hero.EndTransaction()"/>
+    <BoolTrigger Condition="hero:Magneted" EnterAction="hero:+Inertia;anmDeceleration.Stop();hero.SetTransaction(true,true,false)" ExitAction="hero.EndTransaction()"/>
 
     <BoolTrigger Condition="hero:ElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="hero.EndTransaction();anmMagnetSpeed.Stop();anmDeceleration.Start()" Group="heroSpeedAnm"/>
+    <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="hero.EndTransaction();anmMagnetSpeed.Stop()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop()" />
-    
+    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop()" />
+    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();hero:-Inertia" />
+    <BoolTrigger Condition="not hero:Magneted and hero:Inertia" EnterAction="hero:-Inertia;anmDeceleration.Start();system.WriteLine('- - - Inertia - - -')" />
     <!-- hero speed animation (old)    
 	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="@heroSpeed1" Smoothing="Smooth"/>
@@ -70,6 +72,8 @@
         <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
         <KeyFrame Time="0.5" Value="1000" Smoothing="Smooth"/>
         <KeyFrame Time="1" Value="2000" Smoothing="Smooth"/>
+        <KeyFrame Time="3" Value="2000" Smoothing="Smooth"/>
+        <KeyFrame Time="5" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
     
 	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** 
