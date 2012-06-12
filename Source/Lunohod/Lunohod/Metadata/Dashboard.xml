@@ -19,7 +19,8 @@
         <Texture Id="txrHeroHealth060" Source="heroHealth060"/>
         <Texture Id="txrHeroHealth080" Source="heroHealth080"/>
         <Texture Id="txrHeroHealth100" Source="heroHealth100"/>
-        <Texture Id="txrTimeBonusSprite" Source="TimeBonusSprite_16x16x24"/>
+        <!--<Texture Id="txrTimeBonusSprite" Source="TimeBonusSprite_16x16x24"/>-->
+        <Texture Id="txrTimeBonusSprite" Source="clock_fin_sprite_60x60x13"/>
     </Resources>
     <Resources RootFolder="Textures">
         <Texture Id="txr_health_and_score_text_demo" Source="health_and_score_text_demo" />
@@ -170,8 +171,8 @@
         <Image TextureId="txr_health_bar_front" Bounds="150, 8, 100, 8"/>
 		<Text Text="=system.Round(hero.Time)" FontId="SystemFont" Location="155, 6" />-->
 
-        <Sprite Id="sprTimeBonus" TextureId="txrTimeBonusSprite" Bounds="350,2,16,16" FrameBounds="0,0,16,16" FrameCount="24">
-            <NumAnimation From="0" To="23" Duration="levelInfo.TimeBonusThreshold" Target="CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
+        <Sprite Id="sprTimeBonus" TextureId="txrTimeBonusSprite" Bounds="350,0,20,20" FrameBounds="0,0,60,60" FrameCount="24">
+            <NumAnimation From="0" To="12" Duration="levelInfo.TimeBonusThreshold" Target="CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
         </Sprite>
         
 		<!-- CPS 
