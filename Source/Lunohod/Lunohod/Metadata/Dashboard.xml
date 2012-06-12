@@ -171,7 +171,7 @@
         <Image TextureId="txr_health_bar_front" Bounds="150, 8, 100, 8"/>
 		<Text Text="=system.Round(hero.Time)" FontId="SystemFont" Location="155, 6" />-->
 
-        <Sprite Id="sprTimeBonus" TextureId="txrTimeBonusSprite" Bounds="350,0,23,23" FrameBounds="0,0,60,60" FrameCount="24">
+        <Sprite Id="sprTimeBonus" TextureId="txrTimeBonusSprite" Bounds="350,0,23,23" FrameBounds="0,0,60,60" FrameCount="13">
             <NumAnimation From="0" To="12" Duration="levelInfo.TimeBonusThreshold" Target="CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
         </Sprite>
         

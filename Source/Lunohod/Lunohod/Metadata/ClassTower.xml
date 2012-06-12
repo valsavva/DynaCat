@@ -1,8 +1,9 @@
 <Include>	
 
     <Resources RootFolder="Textures">
-        <Texture Id="txr_towerLedOn" Source="transmitter_2_on"/>
-        <Texture Id="txr_towerLedOff" Source="transmitter_2_off"/>
+        <!--<Texture Id="txr_towerLedOn" Source="transmitter_2_on"/>-->
+        <Texture Id="spr_towerLedOn" Source="Tow_trans_SignalSprite_60x60x4"/>
+        <Texture Id="txr_towerLedOff" Source="Tow_trans_off"/>
         <Texture Id="txr_towerAlarm" Source="transmitter_2_Alarm"/>
     </Resources>
 
@@ -12,8 +13,8 @@
             <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="this:+LedOn;this_anmSignal.Start()"/>
             <BoolTrigger Condition="system:cpsLimitExceeded and not this_anmAlarm.InProgress" Action="this_anmAlarm.Start();this:+Alarm" />
                 
-            <SequenceSet Id="this_anmSignal">
-                <Delay Duration="0.4"/>
+            <SequenceSet Id="this_anmSignal" RepeatCount="1">
+                <NumAnimation From="0" To="3" Duration="0.4" Target="this_sprTowerLedOn.CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
                 <Do Action="this:-LedOn"/>
             </SequenceSet>
             
@@ -30,7 +31,7 @@
             </BoolTrigger>
             
             <BoolTrigger Condition="this:LedOn" Group="this_sttTower">
-                <Image TextureId="txr_towerLedOn" Bounds="0, 0, 30, 30"/>
+                <Sprite Id="this_sprTowerLedOn" TextureId="spr_towerLedOn" Bounds="0, 0, 30, 30" FrameBounds="0,0,60,60" FrameCount="4"/>                    
             </BoolTrigger>
 
             <BoolTrigger Group="this_sttTower">
