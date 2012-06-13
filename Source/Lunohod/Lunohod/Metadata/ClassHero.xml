@@ -19,9 +19,9 @@
     </Resources>
 	
     <Resources RootFolder="Textures">
-        <Texture Id="txrHeroDefault" Source="cat_var_2b"/>
-        <Texture Id="txrHeroEating" Source="cat_var_eat"/> <!--_sprite_2x40x41"/>-->
-        <!--<Texture Id="txrHeroEating2" Source="cat_var_eat2"/>-->
+        <Texture Id="txrHeroDefault" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroEating" Source="cat_var_eat"/>
+        <Texture Id="sprHeroEating" Source="Cat_eat_Spr_100x100x3.png"/>
         <Texture Id="txrHeroDying" Source="cat_var_2c"/>
         <Texture Id="txrHeroGottaDamage" Source="cat_var_2c"/>
         <Texture Id="txrHeroWaitingExplosion" Source="cat_var_1c"/>
@@ -35,14 +35,16 @@
 		<Hero Speed="0" Direction="0,0" Deceleration="0">
             <Include File="includeSkeletonHeroMotions.xml"/>
 		
-<!-- Init Vars -->
+<!-- Init -->
 
-         	<Do InProgress="true" Action="
+         	<Do InProgress="true" RepeatCount="1"  Action="
                 @heroDepartPointX=0;
                 @heroDepartPointY=0;
                 @heroDestPointX=0;
-                @heroDestPointY=0"/>
-                
+                @heroDestPointY=0;
+                this.Width=31;
+                this.Height=24"/>
+
             <!-- enter -->
             <BoolTrigger Condition="this:Enter" EnterAction="setHeroEnter.Start()" Group="sttHeroStates">
                 <Image TextureId="txrHeroExit" Bounds="-4, -10, 40, 33"/>
@@ -120,13 +122,11 @@
 
             <!-- eating -->
 			<BoolTrigger Condition="this:Eating" EnterAction="setHeroEating.Start()" StayTriggered="false" Group="sttHeroStates">
-                <!--<Image TextureId="txrHeroEating" Bounds="-4, -18, 40, 41"/>-->
-                <Image Id="sprHeroEating" TextureId="txrHeroEating" Bounds="-4, -18, 40, 41" /><!--FrameBounds="0,0,40,41"--> 
-                <!--<BoolTrigger Property="zzzsprHeroEating.InProgress" ExitAction="this:-Eating" />-->
+                <Sprite Id="this_sprHeroEating" TextureId="sprHeroEating" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="3"/>
                 <SequenceSet Id="setHeroEating">
                     <ParallelSet>
                         <Do Action="this_setHeroFoleyEating.Start()" />
-                        <Delay Duration="0.15" />
+                        <NumAnimation From="0" To="2" Duration="0.5" Target="this_sprHeroEating.CurrentFrame" RepeatCount="1" Fill="End"/>
                     </ParallelSet>
                     <RandomSet>
                         <Do Action="hero:Chavk" />
@@ -158,7 +158,7 @@
             
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
-                <Image TextureId="txrHeroDefault" Bounds="-4, -10, 40, 33"/>
+                <Image TextureId="txrHeroDefault" Bounds="-33, -46, 100, 100"/>
 				<!--bolbex:<Image TextureId="txrHeroDefault" Bounds="-3, -14, 40, 38"/>-->
                 <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
 			</BoolTrigger>
