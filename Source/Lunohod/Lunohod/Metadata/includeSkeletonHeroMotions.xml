@@ -6,6 +6,10 @@
 	</Resources>
 
     <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="=''+system.Str(system.Round(hero.Speed))" Color="#000000" />
+	<BoolTrigger Condition="hero:stick">
+	<Text FontId="SystemFont" Location="10,25"  Text="'***********STICK***************'" Color="#000000" />
+	
+	</BoolTrigger>
 	<!-- 	
     <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
     <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(system.Round(hero.X)) + ')(' + system.Str(system.Round(hero.Y)) + ')'" Color="#000000" />
@@ -39,9 +43,15 @@
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop()" />
+	
+	<!-- Inertia -->
     <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();hero:-Inertia" />
-    <BoolTrigger Condition="not hero:Magneted and hero:Inertia" EnterAction="hero:-Inertia;anmDeceleration.Start();system.WriteLine('- - - Inertia - - -')" />
+	<BoolTrigger Condition="not hero:Magneted and hero:Inertia" EnterAction="hero:-Inertia;anmDeceleration.Start();system.WriteLine('- - - Inertia - - -')" />
+	
+	<!-- tonneling with magnet pole -->
+    <BoolTrigger Condition="hero:stick and hero:Magneted" EnterAction="hero:+Tunneling" />
+	<BoolTrigger Condition="not hero:stick and hero:Tunneling" EnterAction="hero:-Tunneling" />
+		
     <!-- hero speed animation (old)    
 	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="@heroSpeed1" Smoothing="Smooth"/>

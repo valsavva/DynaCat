@@ -39,6 +39,9 @@
                 <Do Action="this_grpMagnetWaves.SetBounds(7, this_blkExcavator.Y-300, 26, 300)" RepeatCount="1" InProgress="true"/>
                 <Do Action="this_init4.Disable()" />
             </BoolTrigger>
+			
+			<!-- avoid tunneling -->
+			<BoolTrigger Condition="hero:Tunneling" Action="hero.X=hero.X+@this_dirX;hero.Y=hero.Y+@this_dirY"/>
 
             <!-- excavator -->
             
