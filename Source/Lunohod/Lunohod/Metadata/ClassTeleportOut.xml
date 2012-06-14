@@ -2,7 +2,7 @@
 <Include>
 
     <Class Id="clsTeleportOut">
-        <SequenceSet InProgress="true" RepeatCount="1">
+        <SequenceSet RepeatCount="1">
             <Delay Duration="@delay" />
             <Do Action="hero:sttPortOut" />
             <Do Action="hero.X=@outX;hero.Y=@outY;hero.Opacity=1" />

@@ -8,7 +8,7 @@
 	</Resources>
     
     <Class Id="clsTeleportEntry">
-        <SequenceSet InProgress="true" RepeatCount="1">
+        <SequenceSet RepeatCount="1">
             <Do Action="hero.SetTransaction(false, false, false);hero.SetDirection(0,0);hero:+sttPortIn"/>
             <Do Action="@heroDepartPointX=hero.X;
                         @heroDepartPointY=hero.Y;                             

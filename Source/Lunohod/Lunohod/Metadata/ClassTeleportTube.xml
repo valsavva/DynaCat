@@ -2,7 +2,7 @@
 <Include>	
 
     <Class Id="clsTeleportTube">
-        <SequenceSet InProgress="true" RepeatCount="1">
+        <SequenceSet RepeatCount="1">
             <Do Action="hero:+sttPortCont" />
             <Delay Duration="@delay" />
             <Do Action="imgTeleportTubeHorHero.X=@horX;imgTeleportTubeHorHero.Y=@horY;imgTeleportTubeVertHero.X=@vertX;imgTeleportTubeVertHero.Y=@vertY" />
