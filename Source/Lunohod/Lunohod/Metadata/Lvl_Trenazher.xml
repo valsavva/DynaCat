@@ -105,7 +105,7 @@
         <Enemy Id="enm18" Class="clsEnemyElectricity1" Bounds="190, 167, 11, 11" TraceId="image4336"/>
         <Image Id="dfltMask2" TextureId="txr_wire_current" Bounds="165, 172, 45, 8" TraceId="image4338"/>
         <Image Id="dfltMask3" TextureId="txr_wire_currentLR" Bounds="162, 84, 45, 8" Rotation="41.58" TraceId="image4340"/>
-        <Group Id="exit" Class="clsExit" Bounds="333, 116, 37, 54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="309, 116,  37,  54" TraceId="image3049" />
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
         <Image Id="dfltMask4" TextureId="txr_texture_brick_clean" Bounds="0, 0, 26, 20" TraceId="image3415"/>
@@ -457,3 +457,4 @@
 <!-- 1% = 34.4; 45% = 1548; 90% = 3096 -->
 <!-- minPointsFood = 70 (2%) -->
 <!-- minPointsEnemy = 75 (2.2%) -->
+

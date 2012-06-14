@@ -40,8 +40,7 @@
                 <Do Action="@heroDepartPointX=hero.X;
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             
-                            @heroDestPointY=exit.Y+10;                             
-                            hero:+sttExit"/>
+                            @heroDestPointY=exit.Y+10"/>
                 <Do Action="this_sndExitFlight.Start()"/>
                 <Delay Duration="1"/>
                 <Do Action="this_imgExitStatic.Disable();this_imgExitFlight.Enable()"/>
@@ -58,7 +57,7 @@
 				<Do Action="system.StartScreen('ScreenLevelComplete.xml')"/>
 			</SequenceSet>
 			
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start()"/>
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit"/>
 		</Group>
 	</Class>
 
