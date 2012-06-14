@@ -1,10 +1,5 @@
  <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" >-->
 <Include>	
-
-	<Resources RootFolder="Sound">
-		<!--<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
-		<SoundFile Id="sndBombHiss" Source="bombHiss"/>-->
-	</Resources>
    
     <Class Id="clsTeleportKoleno">
         <SequenceSet InProgress="true" RepeatCount="1">

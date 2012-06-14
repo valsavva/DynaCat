@@ -49,8 +49,8 @@
                 hero.Width=31;
                 hero.Height=24"/>
             
-<!-- States -->
-            <!--
+<!-- States 
+
             hero.IsDead         : /major/ hero dying
             sttExit             : /major/ hero reached exit
             sttElecticShock     : /major/ gotta electic shock
@@ -63,6 +63,7 @@
             OnOilMotion         : /minor/ hero on the Oil
             Magneted            : /minor/ beamed by magnet waves
             -->
+            
 
             <!-- hero.IsDead : /major/ hero dying -->
             <BoolTrigger Condition="hero.IsDead" 
@@ -203,23 +204,23 @@
 			</BoolTrigger>
 
             
-            
-            
-            
 <!-- foley -->
             
             <!-- hero dying -->
             <BoolTrigger Condition="hero.IsDead"
-                         EnterAction="folHeroDying.Start()">
+                         EnterAction="sfxHeroDying.Start()">
             </BoolTrigger>
-            <RandomSet Id="folHeroDying">
+            
+            <RandomSet Id="sfxHeroDying" RepeatCount="1">
                 <Sound FileId="sndHeroDying" Volume="0.5" Pitch="0" Pan="0"/>
                 <Sound FileId="sndHeroDying" Volume="0.5" Pitch="-0.03" Pan="0"/>
             </RandomSet>
             
             <!-- bounce -->
-            <BoolTrigger Condition="hero:bounce" EnterAction="setHeroBounce.Start()"/>
-            <RandomSet Id="setHeroBounce">
+            <BoolTrigger Condition="hero:bounce" 
+                         EnterAction="sfxHeroBounce.Start()"/>
+            
+            <RandomSet Id="sfxHeroBounce" RepeatCount="1">
 				<Sound FileId="sndHeroBounce1" Volume="0.2" Pitch="0"/>
 				<Sound FileId="sndHeroBounce2" Volume="0.2" Pitch="0"/>
 				<Sound FileId="sndHeroBounce1" Volume="0.2" Pitch="-0.03"/>
@@ -227,17 +228,21 @@
 			</RandomSet>
 
             <!-- stick -->
-            <BoolTrigger Condition="hero:stick" EnterAction="setHeroStick.Start()"/>
-            <RandomSet Id="setHeroStick">
+            <BoolTrigger Condition="hero:stick" 
+                         EnterAction="sfxHeroStick.Start()"/>
+            
+            <RandomSet Id="sfxHeroStick" RepeatCount="1">
                 <Sound FileId="sndHeroStick1" Volume="0.2" Pitch="0"/>
                 <Sound FileId="sndHeroStick2" Volume="0.2" Pitch="0"/>
                 <Sound FileId="sndHeroStick1" Volume="0.2" Pitch="0.1"/>
                 <Sound FileId="sndHeroStick2" Volume="0.2" Pitch="0.1"/>
             </RandomSet>
             
-            <!-- Eating -->
-            <BoolTrigger Condition="hero:sttEating" EnterAction="setHeroFoleyEating.Start()"/>
-            <RandomSet Id="setHeroFoleyEating">
+            <!-- eating -->
+            <BoolTrigger Condition="hero:sttEating" 
+                         EnterAction="sfxHeroFoleyEating.Start()"/>
+            
+            <RandomSet Id="sfxHeroFoleyEating" RepeatCount="1">
                 <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
@@ -248,9 +253,11 @@
                 <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0.3"/>
             </RandomSet>
 
-            <!-- Chavk -->
-            <BoolTrigger Condition="hero:Chavk" EnterAction="setHeroChavk.Start()"/>
-            <RandomSet Id="setHeroChavk">
+            <!-- chavk (finish of the eating) -->
+            <BoolTrigger Condition="hero:Chavk" 
+                         EnterAction="sfxHeroChavk.Start()"/>
+            
+            <RandomSet Id="sfxHeroChavk" RepeatCount="1">
                 <Sound FileId="sndHeroEatingChavk1" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEatingChavk2" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEatingChavk1" Volume="0.5" Pitch="-0.1"/>
@@ -259,18 +266,23 @@
             
             <!-- Teleport -->
 
-            <BoolTrigger Condition="hero:PortIn" EnterAction="PortIn.Start()" ExitAction="PortIn.Stop()"/>
-            <SequenceSet Id="PortIn">
+            <BoolTrigger Condition="hero:sttPortIn" 
+                         EnterAction="sfxPortIn.Start()" />
+            
+            <SequenceSet Id="sfxPortIn" RepeatCount="1">
                 <Sound FileId="sndTeleportIn" Volume="0.5" Pitch="0"/>
             </SequenceSet>
 
-            <BoolTrigger Condition="hero:PortCont" EnterAction="PortCont.Resume()" ExitAction="PortCont.Pause()"/>
-            <SequenceSet Id="PortCont">
-                <Sound FileId="sndTeleportCont" Volume="0.5" Pitch="0"/>
+            <BoolTrigger Condition="hero:sttPortCont" 
+                         EnterAction="sfxPortCont.Play()" 
+                         ExitAction="sfxPortCont.Pause()"/>
+            <SequenceSet Id="sfxPortCont">
+                <Sound FileId="sndTeleportCont" Volume="0.5" Pitch="0" IsLooped="true"/>
             </SequenceSet>
 
-            <BoolTrigger Condition="hero:PortOut" EnterAction="PortOut.Start()"/>
-            <RandomSet Id="PortOut">
+            <BoolTrigger Condition="hero:sttPortOut" 
+                         EnterAction="sfxPortOut.Start()"/>
+            <RandomSet Id="sfxPortOut">
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="-0.1"/>
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0.1"/>
