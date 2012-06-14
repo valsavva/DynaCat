@@ -84,10 +84,6 @@
         <Block Id="blk1" Class="clsWoodenBox" Bounds="245, 113, 30, 30" Edges="Stick" TraceId="image3321">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt1a" Condition="blk1.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk1" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt1b" Condition="not blk1.Enabled" EnterAction="setWay.Resume();bt1a.Disable();bt1b.Disable()" />
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="214, 119, 22, 23" TraceId="image3366"/>
         <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="68, 91,  22,  23" TraceId="image3368"/>
         <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="67, 209,  22,  23" TraceId="image3370"/>
@@ -96,17 +92,9 @@
         <Block Id="blk2" Class="clsWoodenBox" Bounds="211, 176, 30, 30" Edges="Stick" TraceId="image3355">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <BoolTrigger Id="bt2a" Condition="blk2.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk2" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt2b" Condition="not blk2.Enabled" EnterAction="setWay.Resume();bt2a.Disable();bt2b.Disable()" />
         <Block Id="blk3" Class="clsWoodenBox" Bounds="242, 236, 30, 30" Edges="Stick" TraceId="image3362">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt3a" Condition="blk3.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk3" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt3b" Condition="not blk3.Enabled" EnterAction="setWay.Resume();bt3a.Disable();bt3b.Disable()" />
         <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="214, 242, 22, 23" TraceId="image3364"/>
     </Layer>
     <Layer Id="Action2" BackColor="#FFFFFFFF" Enabled="false">
@@ -232,45 +220,21 @@
         <Block Id="blk4" Class="clsWoodenBox" Bounds="92, 111, 30, 30" Edges="Stick" TraceId="image3779">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt4a" Condition="blk4.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk4" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt4b" Condition="not blk4.Enabled" EnterAction="setWay.Resume();bt4a.Disable();bt4b.Disable()" />
         <Block Id="blk5" Class="clsWoodenBox" Bounds="329, 107, 30, 30" Edges="Stick" TraceId="image3754">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt5a" Condition="blk5.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk5" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt5b" Condition="not blk5.Enabled" EnterAction="setWay.Resume();bt5a.Disable();bt5b.Disable()" />
         <Block Id="blk6" Class="clsWoodenBox" Bounds="105, 234, 30, 30" Edges="Stick" TraceId="image3783">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <BoolTrigger Id="bt6a" Condition="blk6.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk6" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt6b" Condition="not blk6.Enabled" EnterAction="setWay.Resume();bt6a.Disable();bt6b.Disable()" />
         <Block Id="blk7" Class="clsWoodenBox" Bounds="336, 234, 30, 30" Edges="Stick" TraceId="image3765">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <BoolTrigger Id="bt7a" Condition="blk7.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk7" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt7b" Condition="not blk7.Enabled" EnterAction="setWay.Resume();bt7a.Disable();bt7b.Disable()" />
         <Block Id="blk8" Class="clsWoodenBox" Bounds="70, 172, 30, 30" Edges="Stick" TraceId="image3781">
             <Image TextureId="txr_box_old_3" />
         </Block>
-        <BoolTrigger Id="bt8a" Condition="blk8.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk8" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt8b" Condition="not blk8.Enabled" EnterAction="setWay.Resume();bt8a.Disable();bt8b.Disable()" />
         <Block Id="blk9" Class="clsWoodenBox" Bounds="303, 170, 30, 30" Edges="Stick" TraceId="image3776">
             <Image TextureId="txr_box_old_3" />
         </Block>
-        <BoolTrigger Id="bt9a" Condition="blk9.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk9" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt9b" Condition="not blk9.Enabled" EnterAction="setWay.Resume();bt9a.Disable();bt9b.Disable()" />
         <Food Id="fd71" Class="clsFoodFish4" Bounds="192, 111, 26, 17" TraceId="image3796"/>
         <Food Id="fd72" Class="clsFoodFish4" Bounds="218, 119,  26,  17" TraceId="image3798"/>
         <Food Id="fd73" Class="clsFoodFish4" Bounds="214, 172, 26, 17" TraceId="image3800"/>
@@ -373,7 +337,8 @@
 
 
         </SequenceSet>
-        <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Pause()" /><BoolTrigger Condition="hero.IsDead" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>
         <!-- HAND EDIT <<< -->
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
