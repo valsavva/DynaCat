@@ -27,7 +27,7 @@
             
             <!-- eaten -->
 			<BoolTrigger Condition="not this:eaten">
-				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);this_anmEated.Start();this:+eaten;hero:+Eating" StayTriggered="false" />
+				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);this_anmEated.Start();this:+eaten;hero:+sttEating" StayTriggered="false" />
 			</BoolTrigger>
             <SequenceSet Id="this_anmEated">
 				<Do Action="this.IsExploding=false;this_grpShowPoints.Enable()" />
@@ -41,7 +41,7 @@
             <!-- destroy -->
 			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="true" Group="this_foodStates"/>
 			<SequenceSet Id="this_setDestroy1">
-                <Do Action="hero:+BadExplosion"/>
+                <Do Action="hero:+sttBadExplosion"/>
 				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
 				<Do Action="this.Disable()"/>
 			</SequenceSet>

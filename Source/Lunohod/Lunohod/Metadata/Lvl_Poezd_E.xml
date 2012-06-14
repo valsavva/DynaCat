@@ -373,7 +373,7 @@
 
 
         </SequenceSet>
-        <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:+sttExit" EnterAction="setWay.Stop()" />
         <!-- HAND EDIT <<< -->
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">

@@ -33,11 +33,13 @@
 
 	<BoolTrigger Condition="hero:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />-->
 
+    <BoolTrigger Condition="hero.IsDead" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();anmElectricShockSpeed.Stop();hero.Speed=0" />
+                 
     <BoolTrigger Condition="hero:OnOilMotion" EnterAction="system.WriteLine('EnterOldMotion');anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="system.WriteLine('ExitOldMotion');anmDeceleration.Resume();hero.EndTransaction()" />
 
     <BoolTrigger Condition="hero:Magneted" EnterAction="hero:+Inertia;anmDeceleration.Stop();hero.SetTransaction(true,true,false)" ExitAction="hero.EndTransaction()"/>
 
-    <BoolTrigger Condition="hero:ElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
+    <BoolTrigger Condition="hero:sttElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
     <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="hero.EndTransaction();anmMagnetSpeed.Stop()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>

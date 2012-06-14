@@ -80,7 +80,7 @@
                 <Image Id="this_imgSpider1Dying" TextureId="txrSpider1Dying"/>
             </BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
-                <Do Action="hero:+GoodExplosion;this_grpShowPoints.Enable()"/>
+                <Do Action="hero:+sttGoodExplosion;this_grpShowPoints.Enable()"/>
                 <Sound FileId="sndSpider1Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
                 <NumAnimation Target="this_imgSpider1Dying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <SequenceSet>
@@ -90,7 +90,7 @@
             </ParallelSet>
 
             <!-- attack -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:sttGottaDamage" Group="this_sttStates">
                 <Image Id="this_txrSpider1Attack" TextureId="txrSpider1Attack"/>
             </IntersectionTrigger>
 

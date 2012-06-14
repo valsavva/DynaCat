@@ -40,7 +40,7 @@
             
             <!-- eaten -->
 			<BoolTrigger Condition="not this:Eaten and not this:Borned">
-				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);hero:+Eating;this:+Eaten;this_anmEating.Start();this.IsExploding=false;this_grpShowPoints.Enable()"/>
+				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);hero:+sttEating;this:+Eaten;this_anmEating.Start();this.IsExploding=false;this_grpShowPoints.Enable()"/>
 			</BoolTrigger>
             <SequenceSet Id="this_anmEating">
                 <ParallelSet>
@@ -55,7 +55,7 @@
                 <Image Id="this_imgFishBones" TextureId="txrFishBones" RotationCenter="15,6" Bounds="0,0,30,13"/>
             </BoolTrigger>
 
-            <BoolTrigger Condition="this:BoomClose" EnterAction="this:+Borned;this_setDestroy1.Start();hero:+BadExplosion" StayTriggered="false" Group="this_foodStates" />
+            <BoolTrigger Condition="this:BoomClose" EnterAction="this:+Borned;this_setDestroy1.Start();hero:+sttBadExplosion" StayTriggered="false" Group="this_foodStates" />
 			<SequenceSet Id="this_setDestroy1">
                 <ParallelSet>
 				    <NumAnimation Target="this.Y" From="0" To="-30" Duration="0.3" IsDelta="true" Autoreverse="true" RepeatCount="1" />

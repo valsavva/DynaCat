@@ -145,7 +145,7 @@
             <NumAnimation From="0" To="-200" Target="hero.X" Duration="2.38" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3820"/>
             <NumAnimation From="0" To="-74" Target="hero.Y" Duration="0.88" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3822"/>
         </SequenceSet>
-        <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:+sttExit" EnterAction="setWay.Stop()" />
         <!-- HAND EDIT <<< -->
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">

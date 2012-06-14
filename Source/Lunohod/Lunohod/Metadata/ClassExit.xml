@@ -41,7 +41,7 @@
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             
                             @heroDestPointY=exit.Y+10;                             
-                            hero:+Enter"/>
+                            hero:+sttExit"/>
                 <Do Action="this_sndExitFlight.Start()"/>
                 <Delay Duration="1"/>
                 <Do Action="this_imgExitStatic.Disable();this_imgExitFlight.Enable()"/>

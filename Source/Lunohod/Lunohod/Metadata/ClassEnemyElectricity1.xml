@@ -14,7 +14,7 @@
 		<Enemy IsExploding="false" Damage="20"> <!-- Damage="9" -->
 		
 			<!-- attack -->
-   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start();hero:+ElecticShock" ExitAction="this_anmDamageDealing.Stop();hero:-ElecticShock" Group="this_sttStates"/>
+   			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start();hero:+sttElecticShock" ExitAction="this_anmDamageDealing.Stop();hero:-ElecticShock" Group="this_sttStates"/>
 
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
                 <Do Action="this_anmAttack.Start()" />

@@ -20,15 +20,19 @@
 	
     <Resources RootFolder="Textures">
         <Texture Id="txrHeroDefault" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroEating" Source="cat_var_eat"/>
-        <Texture Id="sprHeroEating" Source="Cat_eat_Spr_100x100x3.png"/>
-        <Texture Id="txrHeroDying" Source="cat_var_2c"/>
-        <Texture Id="txrHeroGottaDamage" Source="cat_var_2c"/>
-        <Texture Id="txrHeroWaitingExplosion" Source="cat_var_1c"/>
-        <Texture Id="txrHeroGoodExplosion" Source="cat_var_1a"/>
-        <Texture Id="txrHeroBadExplosion" Source="cat_var_2c"/>
-        <Texture Id="txrHeroSurprised" Source="cat_var_2cSurprise.png"/>
-        <Texture Id="txrHeroExit" Source="cat_var_1b"/>
+        <!--<Texture Id="txrHeroEating" Source="cat_var_eat"/>-->
+        <Texture Id="txrHeroEating" Source="Cat_eat_Spr_100x100x3"/>
+        <Texture Id="txrHeroGottaEShock" Source="Cat_lightning_Spr_100x100x3"/>
+        <Texture Id="txrHeroDying" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroGottaDamage" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroWaitingExplosion" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroGoodExplosion" Source="Cat_smile0001"/>
+        <Texture Id="txrHeroBadExplosion" Source="Cat_eats0002"/>
+        <Texture Id="txrHeroScareLeft" Source="Cat_scare_left_Spr_100x100x3"/>
+        <Texture Id="txrHeroScareRight" Source="Cat_scare_right_Spr_100x100x3"/>
+        <Texture Id="txrHeroScareLeftRight" Source="Cat_scare_leftright_Spr_100x100x6"/>
+        <Texture Id="txrHeroSurprised" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroExit" Source="Cat_0000_norm"/>
     </Resources>
 
 	<Class Id="clsHero">
@@ -42,132 +46,180 @@
                 @heroDepartPointY=0;
                 @heroDestPointX=0;
                 @heroDestPointY=0;
-                this.Width=31;
-                this.Height=24"/>
+                hero.Width=31;
+                hero.Height=24"/>
+            
+<!-- States -->
+            <!--
+            hero.IsDead         : /major/ hero dying
+            sttExit             : /major/ hero reached exit
+            sttElecticShock     : /major/ gotta electic shock
+            sttEating           : /major/ eating
+            sttGottaDamage      : /major/ gotta damage
+            
+            sttWaitingExplosion : /minor/ hero fire a bomb
+            sttGoodExplosion    : /minor/ explosion - good one!
+            sttBadExplosion     : /minor/ explosion - bad
+            OnOilMotion         : /minor/ hero on the Oil
+            Magneted            : /minor/ beamed by magnet waves
+            -->
 
-            <!-- enter -->
-            <BoolTrigger Condition="this:Enter" EnterAction="setHeroEnter.Start()" Group="sttHeroStates">
-                <Image TextureId="txrHeroExit" Bounds="-4, -10, 40, 33"/>
-                <SequenceSet Id="setHeroEnter">
-                    <Do Action="hero.SetTransaction(false, false, false);this:-Eating" />
-                    <Delay Duration="0.3" />
-                    <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
-                    <!--<Delay Duration="1.5" />-->
-                    <Do Action="this:-Enter" />
-                </SequenceSet>
-            </BoolTrigger>            
-
-            <!-- electic shock -->
-            <BoolTrigger Condition="this:ElecticShock" EnterAction="anmElecticShock.Start();this:+GottaDamage" ExitAction="anmElecticShockEnd.Start()" />
-            <NumAnimation Id="anmElecticShock" From="-1" To="1" Target="this.Rotation" Duration="0.05" Autoreverse="true" RepeatCount="0" />
-            <SequenceSet Id="anmElecticShockEnd">
-                <Do Action="this:-Eating" />
-                <Delay Duration="2" />
-                <Do Action="anmElecticShock.Stop();this:-GottaDamage" />
-                <NumAnimation From="0" To="0" Target="this.Rotation" Duration="0.1" Autoreverse="true" RepeatCount="1" />
-            </SequenceSet>
-
-            <!-- explosion : wait -->
-            <BoolTrigger Condition="this:WaitingExplosion" Group="sttHeroStates">
-                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
-                <Image TextureId="txrHeroWaitingExplosion" Bounds="-4, -10, 40, 33"/>
-            </BoolTrigger>
-
-            <!-- explosion : good one!-->
-            <BoolTrigger Condition="this:GoodExplosion" EnterAction="anmGoodExplosion.Start()" Group="sttHeroStates">
-                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
-                <Image TextureId="txrHeroGoodExplosion" Bounds="-4, -10, 40, 33"/>
-            </BoolTrigger>
-            <SequenceSet Id="anmGoodExplosion">
-                <Do Action="this:-Eating" />
-                <Delay Duration="1" />
-                <Do Action="this:-GoodExplosion" />
-            </SequenceSet>
-
-            <!-- explosion : bad -->
-            <BoolTrigger Condition="this:BadExplosion" EnterAction="anmBadExplosion.Start()" Group="sttHeroStates">
-                <!--bolbex<Image TextureId="txrHeroWaitingExplosion" Bounds="-3, -14, 40, 38"/>-->
-                <Image TextureId="txrHeroBadExplosion" Bounds="-4, -10, 40, 33"/>
-            </BoolTrigger>
-            <SequenceSet Id="anmBadExplosion">
-                <Do Action="this:-Eating" />
-                <Delay Duration="1" />
-                <Do Action="this:-BadExplosion" />
-            </SequenceSet>
-
-
-            <!-- dying -->
-			<BoolTrigger Condition="this.IsDead" EnterAction="setHeroDying.Start()" StayTriggered="true" Group="sttHeroStates">
-				<Image Id="imgHeroDying" TextureId="txrHeroDying" Bounds="-4, -10, 40, 33"/>
-				<SequenceSet Id="setHeroDying">
-					<Do Action="this.SetTransaction()"/>
-					<ParallelSet>
-						<Sound FileId="sndHeroDying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-						<NumAnimation Duration="0.1" Target="imgHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
-					</ParallelSet>
-					<Do Action="this.EndTransaction()"/>
-					<Do Action="system.StartScreen('ScreenLevelFailed.xml')"/>
-				</SequenceSet>
-			</BoolTrigger>
-
-            <!-- gotta damage -->
-            <BoolTrigger Condition="this:GottaDamage" EnterAction="setHeroGottaDamage.Start()" StayTriggered="false" Group="sttHeroStates">
-                <Image Id="imgHeroGottaDamage" TextureId="txrHeroGottaDamage" Bounds="-4, -10, 40, 33"/>
-            </BoolTrigger>
-            <SequenceSet Id="setHeroGottaDamage">
-                <Do Action="this:-Eating" />
-                <NumAnimation Target="imgHeroGottaDamage.Height" From="0" To="-1" Duration="0.2" IsDelta="true" Autoreverse="true" Fill="Reset" RepeatCount="5" />
-                <Delay Duration="1" />
-            </SequenceSet>
-
-            <!-- eating -->
-			<BoolTrigger Condition="this:Eating" EnterAction="setHeroEating.Start()" StayTriggered="false" Group="sttHeroStates">
-                <Sprite Id="this_sprHeroEating" TextureId="sprHeroEating" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="3"/>
-                <SequenceSet Id="setHeroEating">
-                    <ParallelSet>
-                        <Do Action="this_setHeroFoleyEating.Start()" />
-                        <NumAnimation From="0" To="2" Duration="0.5" Target="this_sprHeroEating.CurrentFrame" RepeatCount="1" Fill="End"/>
-                    </ParallelSet>
-                    <RandomSet>
-                        <Do Action="hero:Chavk" />
-                        <Do Action="hero:-Chavk" />
-                    </RandomSet>
-                    <Do Action="this:-Eating" />
-                </SequenceSet>
-			</BoolTrigger>
-
-
-            <!-- on Oil -->
-            <BoolTrigger Condition="hero:OnOilMotion" Group="sttHeroStates" >
-                <Image TextureId="txrHeroSurprised" Bounds="-4, -10, 40, 33"/>
+            <!-- hero.IsDead : /major/ hero dying -->
+            <BoolTrigger Condition="hero.IsDead" 
+                         EnterAction="hero.SetTransaction(false, false, false);
+                         anmHeroDying.Start()"
+                         StayTriggered="true"
+                         Group="sttHeroStates">
+                <Image Id="imgHeroDying" TextureId="txrHeroDying" Bounds="-33, -46, 100, 100"/>
             </BoolTrigger>
             
-            <!-- beamed by magnet waves -->
-            <BoolTrigger Condition="hero:Magneted" Group="sttHeroStates" >
-                <Image Id="this_imgHeroSurprised" TextureId="txrHeroSurprised" Bounds="-4, -10, 40, 33"/>
+            <SequenceSet Id="anmHeroDying">
+                <NumAnimation Duration="0.1" Target="imgHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+                <Do Action="system.StartScreen('ScreenLevelFailed.xml')"/>
+            </SequenceSet>
+            
+            
+            <!-- sttExit : /major/ hero reached exit -->
+            <BoolTrigger Condition="hero:sttExit" 
+                         EnterAction="hero.SetTransaction(false, false, false);
+                         anmHeroExit.Start()"
+                         StayTriggered="true"
+                         Group="sttHeroStates">
+                <Image TextureId="txrHeroExit" Bounds="-33, -46, 100, 100"/>
+            </BoolTrigger>
+            
+            <SequenceSet Id="anmHeroExit" RepeatCount="1">
+                <Delay Duration="0.3" />
+                <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
+                        
+
+            <!-- sttElecticShock : /major/ gotta electic shock -->
+            <BoolTrigger Condition="hero:sttElecticShock" 
+                         EnterAction="anmElecticShock.Start();
+                         hero:-sttEating;hero:-sttGoodExplosion"
+                         ExitAction="anmElecticShock.Stop()"
+                         Group="sttHeroStates">
+                <Sprite Id="sprHeroGottaEShock" TextureId="txrHeroGottaEShock" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="3"/>
             </BoolTrigger>
 
-            <BoolTrigger Condition="hero:Magneted and not hero:Magneting" EnterAction="this_setHeroSurQuake.Start()" ExitAction="this_setHeroSurQuake.Stop();this_setHeroSurQuakeStop.Start()" />
-            <SequenceSet Id="this_setHeroSurQuake" RepeatCount="0">
-                <NumAnimation Target="this_imgHeroSurprised.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
-                <NumAnimation Target="this_imgHeroSurprised.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
+            <SequenceSet Id="anmElecticShock" RepeatCount="1">
+                <NumAnimation From="0" To="2" Duration="0.5" Target="sprHeroGottaEShock.CurrentFrame" RepeatCount="1" Fill="End"/>
+                <Do Action="hero:-sttElecticShock" />
             </SequenceSet>
 
-            <NumAnimation Id="this_setHeroSurQuakeStop" Target="this_imgHeroSurprised.X" From="this_imgHeroSurprised.X" To="-4" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
+            <!-- sttGottaDamage : /major/ gotta damage -->
+            <BoolTrigger Condition="hero:sttGottaDamage"
+                         EnterAction="anmHeroGottaDamage.Start();
+                         hero:-sttEating;hero:-sttGoodExplosion"
+                         ExitAction="anmHeroGottaDamage.Stop()"
+                         Group="sttHeroStates">
+                <Image TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" BackColor="#770000"/>
+            </BoolTrigger>
+            
+            <NumAnimation Id="anmHeroGottaDamage" Target="hero.Opacity" From="1" To="0" Duration="0.2" Autoreverse="true" Fill="End" RepeatCount="5" />
+            
+
+            <!-- sttEating : /major/ eating -->
+            <BoolTrigger Condition="hero:sttEating" 
+                         EnterAction="anmHeroEating.Start()" 
+                         ExitAction="anmHeroEating.Stop()"
+                         Group="sttHeroStates">
+                <Sprite Id="sprHeroEating" TextureId="txrHeroEating" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="3"/>
+            </BoolTrigger>
+            <SequenceSet Id="anmHeroEating" RepeatCount="1">
+                <NumAnimation From="0" To="2" Duration="0.5" Target="sprHeroEating.CurrentFrame" RepeatCount="1" Fill="End"/>
+                <RandomSet>
+                    <Do Action="hero:Chavk" />
+                    <Do Action="hero:-Chavk" />
+                </RandomSet>
+                <RandomSet>
+                    <Delay Duration="0.1" />
+                    <Delay Duration="0.25" />
+                    <Delay Duration="0.4" />
+                </RandomSet>
+                <Do Action="hero:-sttEating" />
+            </SequenceSet>
+
+
+            <!-- sttWaitingExplosion : /minor/ hero fire a bomb -->
+            <BoolTrigger Condition="hero:sttWaitingExplosion" 
+                         Group="sttHeroStates">
+                <Image TextureId="txrHeroWaitingExplosion" Bounds="-33, -46, 100, 100"/>
+            </BoolTrigger>
+
+            <!-- sttGoodExplosion : /minor/ explosion - good one! -->
+            <BoolTrigger Condition="hero:sttGoodExplosion" 
+                         EnterAction="anmGoodExplosion.Start()" 
+                         ExitAction="anmGoodExplosion.Stop()"
+                         Group="sttHeroStates">
+                <Image TextureId="txrHeroGoodExplosion" Bounds="-33, -46, 100, 100"/>
+            </BoolTrigger>
+            <SequenceSet Id="anmGoodExplosion">
+                <Delay Duration="1" />
+                <Do Action="hero:-sttGoodExplosion" />
+            </SequenceSet>
+
+            <!-- sttBadExplosion : /minor/ explosion - bad -->
+            <BoolTrigger Condition="hero:sttBadExplosion" 
+                         EnterAction="anmBadExplosion.Start()"
+                         ExitAction="anmBadExplosion.Stop()"
+                         Group="sttHeroStates">
+                <Image TextureId="txrHeroBadExplosion" Bounds="-33, -46, 100, 100"/>
+            </BoolTrigger>
+            <SequenceSet Id="anmBadExplosion">
+                <Delay Duration="1" />
+                <Do Action="hero:-sttBadExplosion" />
+            </SequenceSet>            
+            
+            <!-- OnOilMotion : /minor/ hero on the Oil -->
+            <BoolTrigger Condition="hero:OnOilMotion" 
+                         EnterAction="anmOnOilMotion.Start()"
+                         ExitAction="anmOnOilMotion.Stop()"
+                         Group="sttHeroStates" >
+                <Sprite Id="sprHeroScareLeftRight" TextureId="txrHeroScareLeftRight" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="6"/>
+            </BoolTrigger>
+            <SequenceSet Id="anmOnOilMotion" RepeatCount="0">
+                <NumAnimation From="0" To="5" Duration="0.8" Target="sprHeroScareLeftRight.CurrentFrame" RepeatCount="1" Fill="End"/>
+            </SequenceSet>
+
+            <!-- Magneted : /minor/ beamed by magnet waves -->
+            <BoolTrigger Condition="hero:Magneted" Group="sttHeroStates" >
+                <Image Id="imgHeroSurprised" TextureId="txrHeroSurprised" Bounds="-33, -46, 100, 100"/>
+            </BoolTrigger>
+
+            <BoolTrigger Condition="hero:Magneted and not hero:Magneting" EnterAction="setHeroSurQuake.Start()" ExitAction="setHeroSurQuake.Stop();setHeroSurQuakeEnd.Start()" />
+            <SequenceSet Id="setHeroSurQuake" RepeatCount="0">
+                <NumAnimation Target="imgHeroSurprised.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
+                <NumAnimation Target="imgHeroSurprised.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
+            </SequenceSet>
+
+            <NumAnimation Id="setHeroSurQuakeEnd" Target="imgHeroSurprised.X" From="imgHeroSurprised.X" To="-4" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
 
             
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
                 <Image TextureId="txrHeroDefault" Bounds="-33, -46, 100, 100"/>
-				<!--bolbex:<Image TextureId="txrHeroDefault" Bounds="-3, -14, 40, 38"/>-->
-                <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
 			</BoolTrigger>
 
+            
+            
+            
+            
 <!-- foley -->
-
+            
+            <!-- hero dying -->
+            <BoolTrigger Condition="hero.IsDead"
+                         EnterAction="folHeroDying.Start()">
+            </BoolTrigger>
+            <RandomSet Id="folHeroDying">
+                <Sound FileId="sndHeroDying" Volume="0.5" Pitch="0" Pan="0"/>
+                <Sound FileId="sndHeroDying" Volume="0.5" Pitch="-0.03" Pan="0"/>
+            </RandomSet>
+            
             <!-- bounce -->
-            <BoolTrigger Condition="hero:bounce" EnterAction="this_setHeroBounce.Start()"/>
-            <RandomSet Id="this_setHeroBounce">
+            <BoolTrigger Condition="hero:bounce" EnterAction="setHeroBounce.Start()"/>
+            <RandomSet Id="setHeroBounce">
 				<Sound FileId="sndHeroBounce1" Volume="0.2" Pitch="0"/>
 				<Sound FileId="sndHeroBounce2" Volume="0.2" Pitch="0"/>
 				<Sound FileId="sndHeroBounce1" Volume="0.2" Pitch="-0.03"/>
@@ -175,8 +227,8 @@
 			</RandomSet>
 
             <!-- stick -->
-            <BoolTrigger Condition="hero:stick" EnterAction="this_setHeroStick.Start()"/>
-            <RandomSet Id="this_setHeroStick">
+            <BoolTrigger Condition="hero:stick" EnterAction="setHeroStick.Start()"/>
+            <RandomSet Id="setHeroStick">
                 <Sound FileId="sndHeroStick1" Volume="0.2" Pitch="0"/>
                 <Sound FileId="sndHeroStick2" Volume="0.2" Pitch="0"/>
                 <Sound FileId="sndHeroStick1" Volume="0.2" Pitch="0.1"/>
@@ -184,7 +236,8 @@
             </RandomSet>
             
             <!-- Eating -->
-            <RandomSet Id="this_setHeroFoleyEating">
+            <BoolTrigger Condition="hero:sttEating" EnterAction="setHeroFoleyEating.Start()"/>
+            <RandomSet Id="setHeroFoleyEating">
                 <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
@@ -196,8 +249,8 @@
             </RandomSet>
 
             <!-- Chavk -->
-            <BoolTrigger Condition="hero:Chavk" EnterAction="this_setHeroChavk.Start()"/>
-            <RandomSet Id="this_setHeroChavk">
+            <BoolTrigger Condition="hero:Chavk" EnterAction="setHeroChavk.Start()"/>
+            <RandomSet Id="setHeroChavk">
                 <Sound FileId="sndHeroEatingChavk1" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEatingChavk2" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndHeroEatingChavk1" Volume="0.5" Pitch="-0.1"/>
@@ -206,18 +259,18 @@
             
             <!-- Teleport -->
 
-            <BoolTrigger Condition="hero:PortIn" EnterAction="this_PortIn.Start()" ExitAction="this_PortIn.Stop()"/>
-            <SequenceSet Id="this_PortIn">
+            <BoolTrigger Condition="hero:PortIn" EnterAction="PortIn.Start()" ExitAction="PortIn.Stop()"/>
+            <SequenceSet Id="PortIn">
                 <Sound FileId="sndTeleportIn" Volume="0.5" Pitch="0"/>
             </SequenceSet>
 
-            <BoolTrigger Condition="hero:PortCont" EnterAction="this_PortCont.Resume()" ExitAction="this_PortCont.Pause()"/>
-            <SequenceSet Id="this_PortCont">
+            <BoolTrigger Condition="hero:PortCont" EnterAction="PortCont.Resume()" ExitAction="PortCont.Pause()"/>
+            <SequenceSet Id="PortCont">
                 <Sound FileId="sndTeleportCont" Volume="0.5" Pitch="0"/>
             </SequenceSet>
 
-            <BoolTrigger Condition="hero:PortOut" EnterAction="this_PortOut.Start()"/>
-            <RandomSet Id="this_PortOut">
+            <BoolTrigger Condition="hero:PortOut" EnterAction="PortOut.Start()"/>
+            <RandomSet Id="PortOut">
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0"/>
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="-0.1"/>
                 <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0.1"/>

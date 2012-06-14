@@ -97,7 +97,7 @@
             </SequenceSet>
 
             <!-- attack -->
-            <BoolTrigger Condition="this:ElectrodeOn and hero:OnElectrodes" EnterAction="this.Attack();this_anmDamageDealing.Start();hero:+ElecticShock" ExitAction="this_anmDamageDealing.Stop();hero:-ElecticShock" />
+            <BoolTrigger Condition="this:ElectrodeOn and hero:OnElectrodes" EnterAction="this.Attack();this_anmDamageDealing.Start();hero:+sttElecticShock" ExitAction="this_anmDamageDealing.Stop();hero:-ElecticShock" />
             <IntersectionTrigger ObjectId1="hero" ObjectId2="this_imgElectrode" EnterAction="hero:+OnElectrodes" ExitAction="hero:-OnElectrodes"/>
 
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
