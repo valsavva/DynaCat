@@ -1914,6 +1914,7 @@
     </Content>
     <Content Include="Metadata\ClassTeleportKoleno.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassTeleportOut.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

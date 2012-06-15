@@ -3,7 +3,7 @@
    
     <Class Id="clsTeleportKoleno">
         <SequenceSet RepeatCount="1">
-            <Do Action="imgTeleportKoleno.X=@X;imgTeleportKoleno.Y=@Y" />
+            <Do Action="imgTeleportKoleno.X=@X;imgTeleportKoleno.Y=@Y;hero:bounce" />
             <Delay Duration="@delay" />
             <RandomSet RepeatCount="1">
                 <NumAnimation Target="imgTeleportKoleno.X" From="2" To="-2" IsDelta="true" Duration="0.05" RepeatCount="1"/>

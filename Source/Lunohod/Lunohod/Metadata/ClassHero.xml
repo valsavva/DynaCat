@@ -189,13 +189,15 @@
                 <Image Id="imgHeroSurprised" TextureId="txrHeroSurprised" Bounds="-33, -46, 100, 100"/>
             </BoolTrigger>
 
-            <BoolTrigger Condition="hero:Magneted and not hero:Magneting" EnterAction="setHeroSurQuake.Start()" ExitAction="setHeroSurQuake.Stop();setHeroSurQuakeEnd.Start()" />
+            <BoolTrigger Condition="hero:Magneted and not hero:Magneting" 
+                         EnterAction="setHeroSurQuake.Start()" 
+                         ExitAction="setHeroSurQuake.Stop();setHeroSurQuakeEnd.Start()" />
             <SequenceSet Id="setHeroSurQuake" RepeatCount="0">
                 <NumAnimation Target="imgHeroSurprised.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
                 <NumAnimation Target="imgHeroSurprised.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
             </SequenceSet>
 
-            <NumAnimation Id="setHeroSurQuakeEnd" Target="imgHeroSurprised.X" From="imgHeroSurprised.X" To="-4" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
+            <NumAnimation Id="setHeroSurQuakeEnd" Target="imgHeroSurprised.X" From="imgHeroSurprised.X" To="-33" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
 
             
             <!-- default -->
