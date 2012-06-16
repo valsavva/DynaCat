@@ -20,6 +20,10 @@
         <Texture Id="txr_laz_turn1" Source="laz_turn1" />
         <Texture Id="txr_barrel" Source="barrel" />
     </Resources>
+    <!--<Resources RootFolder="Sound">
+        <MusicFile Id="Music" Source="DynaCat_theme_one.wma" />
+    </Resources>
+    <Music FileId="Music" Volume="0.5"/>-->
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="0, -32, 480, 96" Edges="Stick" TraceId="image4815"/>
         <Block Id="blk2" Bounds="0, 274, 480, 72" Edges="Stick" TraceId="image4822"/>

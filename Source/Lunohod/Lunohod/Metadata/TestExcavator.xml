@@ -42,6 +42,7 @@
         <Hero Id="hero" Class="clsHero" Bounds="430, 120, 33, 24" TraceId="image3015"/>
     </Layer>
 
+    <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 
 </Level>
