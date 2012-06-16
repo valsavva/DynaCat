@@ -40,9 +40,6 @@
                 <Do Action="this_init4.Disable()" />
             </BoolTrigger>
 			
-			<!-- avoid tunneling -->
-			<BoolTrigger Condition="hero:Tunneling" Action="hero.X=hero.X+@this_dirX;hero.Y=hero.Y+@this_dirY"/>
-
             <!-- excavator -->
             
             <Block Id="this_blkExcavator" Edges="Stick">
@@ -85,11 +82,15 @@
             </Group>
             
             <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
-                <BoolTrigger Condition="this:IsBeaming and (@this_dirX==1 or @this_dirX==-1) and not hero:Magneted" EnterAction="hero:+Magneted;this_anmSetHeroOnHor.Start()"/>
+                <BoolTrigger Condition="this:IsBeaming and (@this_dirX==1 or @this_dirX==-1) and not hero:Magneted" 
+                             EnterAction="hero:+Magneted;this_anmSetHeroOnHor.Start();
+                             @heroTunnelngX=@this_dirX;@heroTunnelngY=0"/>
             </IntersectionTrigger>
             
             <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
-                <BoolTrigger Condition="this:IsBeaming and (@this_dirY==1 or @this_dirY==-1) and not hero:Magneted" EnterAction="hero:+Magneted;this_anmSetHeroOnVert.Start()"/>
+                <BoolTrigger Condition="this:IsBeaming and (@this_dirY==1 or @this_dirY==-1) and not hero:Magneted" 
+                             EnterAction="hero:+Magneted;this_anmSetHeroOnVert.Start();
+                             @heroTunnelngX=0;@heroTunnelngY=@this_dirY"/>
             </IntersectionTrigger>
             
             <SequenceSet Id="this_anmSetHeroOnHor" RepeatCount="1" >

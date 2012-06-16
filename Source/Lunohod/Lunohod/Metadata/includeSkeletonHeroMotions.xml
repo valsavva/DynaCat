@@ -37,15 +37,33 @@
 
 	<BoolTrigger Condition="hero:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />-->
 
-    <BoolTrigger Condition="hero.IsDead" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();anmElectricShockSpeed.Stop();hero.Speed=0" />
-                 
-    <BoolTrigger Condition="hero:OnOilMotion" EnterAction="system.WriteLine('EnterOldMotion');anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="system.WriteLine('ExitOldMotion');anmDeceleration.Resume();hero.EndTransaction()" />
+    <BoolTrigger Condition="hero.IsDead" 
+                 EnterAction="anmDeceleration.Stop();
+                 anmMagnetSpeed.Stop();
+                 anmElectricShockSpeed.Stop();
+                 hero.Speed=0" 
+                 Group="heroCondition"/>
 
-    <BoolTrigger Condition="hero:Magneted" EnterAction="hero:+Inertia;anmDeceleration.Stop();hero.SetTransaction(true,true,false)" ExitAction="hero.EndTransaction()"/>
+    <BoolTrigger Condition="hero:Magneted"
+                 EnterAction="hero:+Inertia;
+                 anmDeceleration.Stop();
+                 hero.SetTransaction(true,true,false)"
+                 ExitAction="hero.EndTransaction()"
+                 Group="heroCondition"/>
 
+    <BoolTrigger Condition="hero:OnOilMotion" 
+                 EnterAction="system.WriteLine('EnterOldMotion');
+                 anmDeceleration.Pause();
+                 hero.SetTransaction(true, true, false)" 
+                 ExitAction="system.WriteLine('ExitOldMotion');
+                 anmDeceleration.Resume();
+                 hero.EndTransaction()" 
+                 Group="heroCondition"/>
+
+
+    <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="anmMagnetSpeed.Stop()" Group="heroSpeedAnm"/>
     <BoolTrigger Condition="hero:sttElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="hero.EndTransaction();anmMagnetSpeed.Stop()" Group="heroSpeedAnm"/>
-	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
+    <BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
@@ -57,8 +75,12 @@
 	<!-- tonneling with magnet pole -->
     <BoolTrigger Condition="hero:stick and hero:Magneted" EnterAction="hero:+Tunneling" />
 	<BoolTrigger Condition="not hero:stick and hero:Tunneling" EnterAction="hero:-Tunneling" />
+
+    <!-- avoid tunneling -->
+    <Do Action="@heroTunnelngX=0;@heroTunnelngY=0" />
+    <BoolTrigger Condition="hero:Tunneling" Action="hero.X=hero.X+@heroTunnelngX;hero.Y=hero.Y+@heroTunnelngY"/>
+
     
-		
     <!-- hero speed animation (old)    
 	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="@heroSpeed1" Smoothing="Smooth"/>
