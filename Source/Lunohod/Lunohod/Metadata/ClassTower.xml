@@ -18,7 +18,7 @@
                 <Do Action="this:-LedOn"/>
             </SequenceSet>
             
-            <Sound Id="sndTowerAlarmId" FileId="sndTowerAlarm" Volume="0.5" Pitch="0"/>
+            <Sound Id="sndTowerAlarmId" FileId="sndTowerAlarm" Volume="1" Pitch="0"/>
             
             <SequenceSet Id="this_anmAlarm" RepeatCount="1">
                 <Do Action="sndTowerAlarmId.Start()"/>
