@@ -54,15 +54,16 @@
             <LevelInfo Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" TimeBonusThreshold="38"/>
             <LevelInfo Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" TimeBonusThreshold="38"/>
             <LevelInfo Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" TimeBonusThreshold="32"/>
-            <LevelInfo Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" TimeBonusThreshold="14" BombCount="0" />
-            <LevelInfo Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" TimeBonusThreshold="46" />
-            <LevelInfo Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" TimeBonusThreshold="50" />
-            <LevelInfo Id="Lvl_1D_Magnet_v4" File="Lvl_1D_Magnet_v4.xml" TimeBonusThreshold="50" />
-            <LevelInfo Id="Lvl_1D_Magnet_v5" File="Lvl_1D_Magnet_v5.xml" TimeBonusThreshold="50" />
-            <LevelInfo Id="Lvl_1D_Magnet_v6" File="Lvl_1D_Magnet_v6.xml" TimeBonusThreshold="50" />
-            <LevelInfo Id="Lvl_1D_Zamanuha" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
-            <!--<LevelInfo Id="Lvl_1D_Zamanuha_v2" File="Lvl_1D_Zamanuha_v2.xml" TimeBonusThreshold="18"/>-->
-            <LevelInfo Id="Lvl_1D_Zamanuha_v3" File="Lvl_1D_Zamanuha_v3.xml" TimeBonusThreshold="15"/>
+            <LevelInfo Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" TimeBonusThreshold="15" BombCount="0" />
+            <LevelInfo Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" TimeBonusThreshold="43" />
+            <LevelInfo Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" TimeBonusThreshold="42" />
+            <LevelInfo Id="Lvl_1D_Magnet_v4" File="Lvl_1D_Magnet_v4.xml" TimeBonusThreshold="60" />
+            <LevelInfo Id="Lvl_1D_Magnet_v5" File="Lvl_1D_Magnet_v5.xml" TimeBonusThreshold="69" />
+            <LevelInfo Id="Lvl_1D_Magnet_v6" File="Lvl_1D_Magnet_v6.xml" TimeBonusThreshold="60" />
+            <LevelInfo Id="Lvl_1D_Magnet_v7" File="Lvl_1D_Magnet_v7.xml" TimeBonusThreshold="76" />
+            <!--<LevelInfo Id="Lvl_1D_Zamanuha" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
+            <LevelInfo Id="Lvl_1D_Zamanuha_v2" File="Lvl_1D_Zamanuha_v2.xml" TimeBonusThreshold="18"/>
+            --><LevelInfo Id="Lvl_1D_Zamanuha_v3" File="Lvl_1D_Zamanuha_v3.xml" TimeBonusThreshold="15"/>
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Series 3 Poezd -----" File="ScreenSeries3.xml">
             <LevelInfo Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" TimeBonusThreshold="33.7"/>
