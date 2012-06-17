@@ -82,13 +82,21 @@
             </Group>
             
             <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
-                <BoolTrigger Condition="this:IsBeaming and (@this_dirX==1 or @this_dirX==-1) and not hero:Magneted" 
+                <BoolTrigger Condition="this:IsBeaming 
+                             and (@this_dirX==1 or @this_dirX==-1) 
+                             and not hero:Magneted 
+                             and not hero.IsDead 
+                             and not hero:sttExit" 
                              EnterAction="hero:+Magneted;this_anmSetHeroOnHor.Start();
                              @heroTunnelngX=@this_dirX;@heroTunnelngY=0"/>
             </IntersectionTrigger>
             
             <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
-                <BoolTrigger Condition="this:IsBeaming and (@this_dirY==1 or @this_dirY==-1) and not hero:Magneted" 
+                <BoolTrigger Condition="this:IsBeaming 
+                             and (@this_dirY==1 or @this_dirY==-1) 
+                             and not hero:Magneted 
+                             and not hero.IsDead 
+                             and not hero:sttExit" 
                              EnterAction="hero:+Magneted;this_anmSetHeroOnVert.Start();
                              @heroTunnelngX=0;@heroTunnelngY=@this_dirY"/>
             </IntersectionTrigger>

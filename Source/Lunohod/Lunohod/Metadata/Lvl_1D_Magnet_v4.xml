@@ -122,8 +122,8 @@
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFoodFish4" Bounds="188, 46, 26, 17" TraceId="image3423"/>
         <Food Id="fd2" Class="clsFoodFish4" Bounds="196, 54, 26, 17" TraceId="image3435"/>
-        <Food Id="fd3" Class="clsFoodFish4" Bounds="302, 149, 26, 17" TraceId="image3469"/>
-        <Food Id="fd4" Class="clsFoodFish4" Bounds="158, 150, 26, 17" TraceId="image3514"/>
+        <Food Id="fd3" Class="clsFoodFish4" Bounds="258, 149,  26,  17" TraceId="image3469"/>
+        <Food Id="fd4" Class="clsFoodFish4" Bounds="198, 150,  26,  17" TraceId="image3514"/>
         <Food Id="fd5" Class="clsFoodFish4" Bounds="221, 257, 26, 17" TraceId="image3504"/>
         <Food Id="fd6" Class="clsFoodFish4" Bounds="230, 265, 26, 17" TraceId="image3317"/>
         <Food Id="fd7" Class="clsFoodFish4" Bounds="229, 126, 26, 17" TraceId="image3234"/>
@@ -160,6 +160,7 @@
 <!-- 1% = 9; 45% = 405; 90% = 810 -->
 <!-- minPointsFood = 100 (11.1%) -->
 <!-- minPointsEnemy = 50 (5.6%) -->
+
 
 
 
