@@ -34,12 +34,12 @@
         <Group Id="exv3" Bounds="130,100,40,60" Class="clsExcavator" ClassParams="@paramDirX=0,@paramDirY=1" />
         <Group Id="exv4" Bounds="370,200,40,60" Class="clsExcavator" ClassParams="@paramDirX=0,@paramDirY=-1" />
 
-        <!--<Block Id="box1" Class="clsWoodenBox" Bounds="230, 55, 30, 30" Edges="Stick">
+        <Block Id="box1" Class="clsWoodenBox" Bounds="110, 55, 30, 30" Edges="Stick">
             <Image TextureId="txr_box_old_1" />
-        </Block>-->
+        </Block>
         
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Hero Id="hero" Class="clsHero" Bounds="430, 120, 33, 24" TraceId="image3015"/>
+        <Hero Id="hero" Class="clsHero" Bounds="430, 55, 33, 24" TraceId="image3015"/>
     </Layer>
 
     <Include File="ClassExplosion.xml" />

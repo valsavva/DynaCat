@@ -41,28 +41,38 @@ namespace Lunohod.Objects
 			{
 				case XEdgeType.None : break;
 				case XEdgeType.Bounce : {
+
+					var sb = this.GetScreenBounds();
+
+					if (level.Hero.DirectionX > 0)
+						level.Hero.Bounds.X = sb.Left - level.Hero.Bounds.Width - (level.Hero.Bounds.Right - sb.Left);
+					else if (level.Hero.DirectionX < 0)
+						level.Hero.Bounds.X = sb.Right + sb.Right - level.Hero.Bounds.Left;
+					else if (level.Hero.DirectionY > 0)
+						level.Hero.Bounds.Y = sb.Top - level.Hero.Bounds.Height - (level.Hero.Bounds.Bottom - sb.Top);
+					else if (level.Hero.DirectionY < 0)
+						level.Hero.Bounds.Y = sb.Bottom + sb.Bottom - level.Hero.Bounds.Top;
+
 					// change hero's direction
 					level.Hero.Direction = level.Hero.Direction.Reverse();
 					
-					level.Hero.Bounds.Offset(
-						intersect.Width * level.Hero.Direction.X,
-						intersect.Height * level.Hero.Direction.Y
-					);
-				
 					this.EnqueueEvent(level.Hero.Id + ":bounce");
 				}; break;
 				case XEdgeType.Stick : {
-					// don't change hero's direction, just keep him in place
-					var direction = level.Hero.Direction.Reverse();
-					
-					level.Hero.Bounds.Offset(
-						intersect.Width * direction.X,
-						intersect.Height * direction.Y
-					);
-				
+					var sb = this.GetScreenBounds();
+
+					if (level.Hero.DirectionX > 0)
+						level.Hero.Bounds.X = sb.Left - level.Hero.Bounds.Width;
+					else if (level.Hero.DirectionX < 0)
+						level.Hero.Bounds.X = sb.Right;
+					else if (level.Hero.DirectionY > 0)
+						level.Hero.Bounds.Y = sb.Top - level.Hero.Bounds.Height;
+					else if (level.Hero.DirectionY < 0)
+						level.Hero.Bounds.Y = sb.Bottom;
+
 					level.Hero.Direction = Direction.VectorStop;
 
-				this.EnqueueEvent(level.Hero.Id + ":stick");
+					this.EnqueueEvent(level.Hero.Id + ":stick");
 				}; break;
 				case XEdgeType.Teleport : break;
 			}
