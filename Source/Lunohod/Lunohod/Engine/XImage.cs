@@ -22,7 +22,7 @@ namespace Lunohod.Objects
     [XmlType("Image")]
     public class XImage : XElement
     {
-		private XTextureResource texture;
+		protected XTextureResource texture;
 
         public XImage()
         {
