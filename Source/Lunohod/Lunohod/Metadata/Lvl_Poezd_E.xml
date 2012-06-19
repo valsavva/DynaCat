@@ -98,34 +98,33 @@
         <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="214, 242, 22, 23" TraceId="image3364"/>
     </Layer>
     <Layer Id="Action2" BackColor="#FFFFFFFF" Enabled="false">
-        <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="453, 16, 24, 25" TraceId="image3396"/>
+        <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="451, 24,  24,  25" TraceId="image3396"/>
         <Enemy Id="enm8" Class="clsEnemyRat3" Bounds="6, 26, 24, 25" TraceId="image3398"/>
         <Enemy Id="enm9" Class="clsEnemyRat3" Bounds="4, 148, 24, 25" TraceId="image3400"/>
         <Enemy Id="enm10" Class="clsEnemyRat3" Bounds="3, 268, 24, 25" TraceId="image3402"/>
         <Enemy Id="enm11" Class="clsEnemyRat3" Bounds="237, 88, 24, 25" TraceId="image3404"/>
         <Enemy Id="enm12" Class="clsEnemyRat3" Bounds="234, 208, 24, 25" TraceId="image3393"/>
         <Food Id="fd12" Class="clsFoodFish1" Bounds="258, 54,   30,   15" TraceId="image3433"/>
-        <Food Id="fd13" Class="clsFoodFish1" Bounds="26, 71, 30, 15" TraceId="image3435"/>
+        <Food Id="fd13" Class="clsFoodFish1" Bounds="26, 85,  30,  15" TraceId="image3435"/>
         <Food Id="fd14" Class="clsFoodFish1" Bounds="15, 92, 30, 15" TraceId="image3438"/>
-        <Food Id="fd15" Class="clsFoodFish1" Bounds="28, 111, 30, 15" TraceId="image3440"/>
-        <Food Id="fd16" Class="clsFoodFish1" Bounds="30, 191, 30, 15" TraceId="image3442"/>
+        <Food Id="fd15" Class="clsFoodFish1" Bounds="28, 99,  30,  15" TraceId="image3440"/>
+        <Food Id="fd16" Class="clsFoodFish1" Bounds="30, 203,  30,  15" TraceId="image3442"/>
         <Food Id="fd17" Class="clsFoodFish1" Bounds="18, 212, 30, 15" TraceId="image3444"/>
-        <Food Id="fd18" Class="clsFoodFish1" Bounds="29, 232, 30, 15" TraceId="image3417"/>
+        <Food Id="fd18" Class="clsFoodFish1" Bounds="29, 218,  30,  15" TraceId="image3417"/>
         <Food Id="fd19" Class="clsFoodFish1" Bounds="233, 70, 30, 15" TraceId="image3419"/>
         <Food Id="fd20" Class="clsFoodFish1" Bounds="211, 54,  30,  15" TraceId="image3421"/>
-        <Food Id="fd21" Class="clsFoodFish1" Bounds="377, 136,  30,  15" TraceId="image3423"/>
+        <Food Id="fd21" Class="clsFoodFish1" Bounds="377, 146,   30,   15" TraceId="image3423"/>
         <Food Id="fd22" Class="clsFoodFish1" Bounds="387, 153, 30, 15" TraceId="image3425"/>
-        <Food Id="fd23" Class="clsFoodFish1" Bounds="376, 171,  30,  15" TraceId="image3427"/>
+        <Food Id="fd23" Class="clsFoodFish1" Bounds="376, 161,   30,   15" TraceId="image3427"/>
         <Food Id="fd24" Class="clsFoodFish1" Bounds="205, 255,  30,  15" TraceId="image3429"/>
         <Food Id="fd25" Class="clsFoodFish1" Bounds="230, 236, 30, 15" TraceId="image3431"/>
         <Food Id="fd26" Class="clsFoodFish1" Bounds="254, 255,  30,  15" TraceId="image3414"/>
     </Layer>
     <Layer Id="Action3" BackColor="#FFFFFFFF" Enabled="false">
-        <Enemy Id="enm13" Class="clsEnemyRat2" Bounds="381, 174,  22,  23" TraceId="image3458"/>
         <Enemy Id="enm14" Class="clsEnemyRat2" Bounds="67, 107,  22,  23" TraceId="image3460"/>
         <Enemy Id="enm15" Class="clsEnemyRat2" Bounds="67, 232,  22,  23" TraceId="image3470"/>
-        <Enemy Id="enm16" Class="clsEnemyRat2" Bounds="393, 147,  22,  23" TraceId="image3464"/>
-        <Enemy Id="enm17" Class="clsEnemyRat2" Bounds="382, 122,  22,  23" TraceId="image3466"/>
+        <Enemy Id="enm16" Class="clsEnemyRat2" Bounds="355, 109,   22,   23" TraceId="image3464"/>
+        <Enemy Id="enm17" Class="clsEnemyRat2" Bounds="392, 110,   22,   23" TraceId="image3466"/>
         <Enemy Id="enm18" Class="clsEnemyRat2" Bounds="100, 232,   22,   23" TraceId="image3468"/>
         <Enemy Id="enm19" Class="clsEnemyRat2" Bounds="96, 108,   22,   23" TraceId="image3462"/>
         <Food Id="fd27" Class="clsFoodFish2" Bounds="218, 252,  27,  15" TraceId="image3483"/>
@@ -267,11 +266,14 @@
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
+            <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
             <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action2.Enable();grpAirplane:FlyThroughScreen" />
-            <Delay Duration="3" />
+            <Delay Duration="2" />
+            <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
+            <Delay Duration="1" />
 
             <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
             <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
@@ -280,11 +282,15 @@
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
+            <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
             <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action3.Enable();grpAirplane:FlyThroughScreen" />
-            <Delay Duration="3" />
+            <Delay Duration="2" />
+            <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
+            <Delay Duration="1" />
+
 
             <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
             <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
@@ -293,11 +299,15 @@
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
+            <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
             <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action4.Enable();grpAirplane:FlyThroughScreen" />
-            <Delay Duration="3" />
+            <Delay Duration="2" />
+            <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
+            <Delay Duration="1" />
+
 
             <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
             <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
@@ -306,11 +316,15 @@
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
+            <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
             <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action5.Enable();grpAirplane:FlyThroughScreen" />
-            <Delay Duration="3" />
+            <Delay Duration="2" />
+            <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
+            <Delay Duration="1" />
+
 
             <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
             <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
@@ -319,12 +333,16 @@
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
+            <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
             <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
 
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action6.Enable();grpAirplane:FlyThroughScreen" />
-            <Delay Duration="3" />
+            <Delay Duration="2" />
+            <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
+            <Delay Duration="1" />
+
 
             <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
             <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
@@ -333,6 +351,7 @@
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
+            <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
             <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
 
 
@@ -352,7 +371,7 @@
         <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="412, 167, 38, 60" Enabled="false" TraceId="image3179" />
     </Layer>
     <Include File="ClassExplosion.xml" />
-    <Include File="Dashboard.xml" />
+    <Include File="Dashboard_Poezd_Series.xml" />
 </Level>
 <!-- Food=81 Enemy=57 Block=9 DesignImage=40 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
@@ -368,5 +387,6 @@
 <!-- 1% = 98.3; 45% = 4423.5; 90% = 8847 -->
 <!-- minPointsFood = 70 (0.7%) -->
 <!-- minPointsEnemy = 50 (0.5%) -->
+
 
 
