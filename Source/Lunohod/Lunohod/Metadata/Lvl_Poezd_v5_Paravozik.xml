@@ -141,9 +141,11 @@
             <SequenceSet Id="heroSet" Class="clsWay" ClassParams="@obj=hero" />
         </Hero>
 
-        <BoolTrigger Condition="hero:Enter" EnterAction="heroSet.Stop()" />
+        <BoolTrigger Condition="hero:sttExit" EnterAction="heroSet.Pause()" />
+        <BoolTrigger Condition="hero.IsDead" EnterAction="heroSet.Stop()" />
+        <BoolTrigger Condition="hero:stick" EnterAction="heroSet.Pause()" ExitAction="heroSet.Resume()"/>
+        
         <BoolTrigger Condition="blk1.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk1" EnterAction="heroSet.Pause()"/>
             <IntersectionTrigger ObjectId1="enm1" ObjectId2="blk1" EnterAction="enm1Set.Pause()"/>
             <IntersectionTrigger ObjectId1="enm2" ObjectId2="blk1" EnterAction="enm2Set.Pause()"/>
             <IntersectionTrigger ObjectId1="enm3" ObjectId2="blk1" EnterAction="enm3Set.Pause()"/>

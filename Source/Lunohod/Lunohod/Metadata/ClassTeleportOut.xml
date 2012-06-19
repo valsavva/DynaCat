@@ -2,11 +2,10 @@
 <Include>
 
     <Class Id="clsTeleportOut">
-        <SequenceSet InProgress="true" RepeatCount="1">
-            <Do Action="hero:PortOut" />
+        <SequenceSet RepeatCount="1">
             <Delay Duration="@delay" />
+            <Do Action="hero:sttPortOut" />
             <Do Action="hero.X=@outX;hero.Y=@outY;hero.Opacity=1" />
-            <!--<NumAnimation Target="hero.Opacity" From="0" To="1" Duration="0.2" RepeatCount="1" Fill="End"/>-->
             <Do Action="hero.SetTransaction(true, true, true)"/>
             <Do Action="system:@heroOutDirection"/>
         </SequenceSet>

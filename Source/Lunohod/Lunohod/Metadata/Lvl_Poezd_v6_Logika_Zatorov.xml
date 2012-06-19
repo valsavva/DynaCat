@@ -67,24 +67,12 @@
         <Block Id="blk1" Class="clsWoodenBox" Bounds="213, 89, 30, 30" Edges="Stick" TraceId="image3378">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt1a" Condition="blk1.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk1" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt1b" Condition="not blk1.Enabled" EnterAction="setWay.Resume();bt1a.Disable();bt1b.Disable()" />
         <Block Id="blk2" Class="clsWoodenBox" Bounds="110, 180, 30, 30" Edges="Stick" TraceId="image3274">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt2a" Condition="blk2.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk2" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt2b" Condition="not blk2.Enabled" EnterAction="setWay.Resume();bt2a.Disable();bt2b.Disable()" />
         <Block Id="blk3" Class="clsWoodenBox" Bounds="372, 73, 30, 30" Edges="Stick" TraceId="image3285">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <BoolTrigger Id="bt3a" Condition="blk3.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk3" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt3b" Condition="not blk3.Enabled" EnterAction="setWay.Resume();bt3a.Disable();bt3b.Disable()" />
         <Food Id="fd1" Class="clsFoodFish2" Bounds="254, 119, 27, 15" TraceId="image3380"/>
         <Food Id="fd2" Class="clsFoodFish2" Bounds="308, 139, 27, 15" TraceId="image3372"/>
         <Food Id="fd3" Class="clsFoodFish2" Bounds="373, 137, 27, 15" TraceId="image3374"/>
@@ -115,7 +103,8 @@
             <NumAnimation From="0" To="323" Target="hero.X" Duration="3.85" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3480"/>
             <NumAnimation From="0" To="84" Target="hero.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3482"/>
         </SequenceSet>
-        <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Pause()" /><BoolTrigger Condition="hero.IsDead" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>
         <!-- HAND EDIT <<< -->
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">

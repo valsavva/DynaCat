@@ -1,20 +1,14 @@
  <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" >-->
 <Include>	
 
-	<Resources RootFolder="Sound">
-		<!--<SoundFile Id="sndExplosion" Source="skeletonFX_explosion"/>
-		<SoundFile Id="sndBombHiss" Source="bombHiss"/>-->
-	</Resources>
-
     <Class Id="clsTeleportTube">
-        <SequenceSet InProgress="true" RepeatCount="1">
-            <Do Action="hero:+PortCont" />
+        <SequenceSet RepeatCount="1">
+            <Do Action="hero:+sttPortCont" />
             <Delay Duration="@delay" />
             <Do Action="imgTeleportTubeHorHero.X=@horX;imgTeleportTubeHorHero.Y=@horY;imgTeleportTubeVertHero.X=@vertX;imgTeleportTubeVertHero.Y=@vertY" />
             <NumAnimation Target="imgTeleportTubeHorHero.X,imgTeleportTubeVertHero.Y" From="0,0" To="@delta,@delta" IsDelta="true" Duration="@duration" RepeatCount="1" Autoreverse="false" Fill="End"/>
-            <!--<Do Action="imgTeleportTubeHorHero.Disable();imgTeleportTubeVertHero.Disable()" />-->
             <Do Action="imgTeleportTubeHorHero.X=-7777777;imgTeleportTubeHorHero.Y=-7777777;imgTeleportTubeVertHero.X=-7777777;imgTeleportTubeVertHero.Y=-7777777" />
-            <Do Action="hero:-PortCont" />
+            <Do Action="hero:-sttPortCont" />
         </SequenceSet>
     </Class>
 

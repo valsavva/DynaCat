@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest5ME" Bounds="0, 0, 480, 320">-->
+<Include>
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_excavator" Source="excavator" />
+        <Texture Id="txr_magnet" Source="magnet" />
+        <Texture Id="txr_electrode" Source="electrode" />
+        <Texture Id="txr_magnet_waves" Source="magnet_waves" />
+        <Texture Id="txr_changes" Source="changes" />
+    </Resources>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="electric_spark_1" Source="skeletonFX_electric_spark_1"/>
+        <SoundFile Id="electric_spark_2" Source="skeletonFX_electric_spark_2"/>
+        <SoundFile Id="electric_spark_3" Source="skeletonFX_electric_spark_3"/>
+        <SoundFile Id="electric_spark_4" Source="skeletonFX_electric_spark_4"/>
+    </Resources>
+
+    <Class Id="clsExcavatorLeft">
+        <Enemy IsExploding="false" Damage="20">
+
+            <!-- init -->
+
+            <Do Action="this_grpMagnetWaves.SetBounds(this_blkExcavator.X-500,7,500,26)" RepeatCount="1" InProgress="true"/>
+            <Do Action="this_grpElectrode.SetBounds(this_blkExcavator.X-20,10,20,20)" RepeatCount="1" InProgress="true"/>
+            <Do Action="this:+MagnetMode" RepeatCount="1" InProgress="true"/>
+            
+            <!-- SYS WATCH
+            <BoolTrigger Condition="this:MagnetMode" EnterAction="system.WriteLine('this:+MagnetMode')" ExitAction="system.WriteLine('this:-MagnetMode')"/>
+            <BoolTrigger Condition="this:ElectrodeMode" EnterAction="system.WriteLine('this:+ElectrodeMode')" ExitAction="system.WriteLine('this:-ElectrodeMode')" />
+            <BoolTrigger Condition="this:MagnetOn" EnterAction="system.WriteLine('this:+MagnetOn')" ExitAction="system.WriteLine('this:-MagnetOn')"/>
+            <BoolTrigger Condition="this:ElectrodeOn" EnterAction="system.WriteLine('this:+ElectrodeOn')" ExitAction="system.WriteLine('this:-ElectrodeOn')" />
+            -->
+            
+            <!-- excavator -->
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this_grpElectrode" EnterAction="this:+ElectrodeMode;this:-MagnetMode" ExitAction="this:+MagnetMode;this:-ElectrodeMode"/>
+
+            <Block Id="this_blkExcavator" Edges="Stick">
+                    <Image Id="this_imgExcavator" TextureId="txr_excavator" FlipEffects="Horizontally" />
+                    <Image Id="this_imgMagnet" TextureId="txr_magnet" FlipEffects="Horizontally" Location="0,7" Opacity="0"/>
+                    <Image Id="this_imgChanges" TextureId="txr_changes" FlipEffects="Horizontally" Location="-10,7" Opacity="0"/>
+                    <Image Id="this_imgElectrode" TextureId="txr_electrode" FlipEffects="Horizontally" Location="-20,8" Opacity="0"/>
+            </Block>
+            
+            <!-- waves -->
+
+            <BoolTrigger Condition="this:MagnetOn" EnterAction="this_grpMagnetWaves.Enable();this_anmBeaming.Start()" ExitAction="this_grpMagnetWaves.Disable();this:-IsBeaming;hero:-Magneted;hero:-Magneting;this_anmBeaming.Pause()" />
+            
+            <Group Id="this_grpMagnetWaves" Enabled="false">
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="0,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="50,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="100,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="150,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="200,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="250,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="300,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="350,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="400,0" StretchMode="ActualSize"/>
+                <Image TextureId="txr_magnet_waves" FlipEffects="Horizontally" Location="450,0" StretchMode="ActualSize"/>
+            </Group>
+            
+            <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
+                <BoolTrigger Condition="this:IsBeaming and not hero:Magneted" EnterAction="hero:+Magneted;this_anmSetHeroOnCenter.Start()"/>
+            </IntersectionTrigger>
+            
+            <SequenceSet Id="this_anmBeaming" RepeatCount="0" InProgress="false" >
+                <Do Action="this:+IsBeaming" />
+                <NumAnimation Target="this_grpMagnetWaves.Opacity" Autoreverse="true" From="0.8" To="0.2" Duration="0.2" Smoothing="Smooth" RepeatCount="10"/>
+                <Do Action="this_grpMagnetWaves.Opacity=0;this:-IsBeaming" />
+                <Delay Duration="4" />
+            </SequenceSet>
+
+            <SequenceSet Id="this_anmSetHeroOnCenter" RepeatCount="1" >
+                <NumAnimation Target="hero.Y" From="hero.Y" To="this.Y+10" Duration="0.4" RepeatCount="1" Fill="End"/>
+                <Do Action="hero:+Magneting;hero.SetDirection(1,0)" />
+            </SequenceSet>
+            
+            <!-- electrodes. this group need for checking the moment when hero is caught-->
+            <Group Id="this_grpElectrode" />
+            
+            <!-- setups -->
+                
+            <!-- setting up the electrodes -->
+            <BoolTrigger Condition="this:ElectrodeMode" EnterAction="this_SetMagnetMode.Pause();this_SetElectrodeMode.Start()"/>
+
+            <SequenceSet Id="this_SetElectrodeMode" RepeatCount="1">
+                <Do Action="this:-MagnetOn;this_imgChanges.Opacity=1;this_imgMagnet.Opacity=0" />
+                <NumAnimation Target="this_imgChanges.Y" From="-3" To="0" Duration="0.1" RepeatCount="20" IsDelta="true" Fill="End" />
+                <Do Action="this_imgChanges.Opacity=0;this_imgElectrode.Opacity=1;this:+ElectrodeOn" />
+            </SequenceSet>
+
+            <!-- setting up the magnet -->
+            <BoolTrigger Condition="this:MagnetMode" EnterAction="this_SetElectrodeMode.Pause();this_SetMagnetMode.Start()"/>
+            <SequenceSet Id="this_SetMagnetMode" RepeatCount="1">
+                <Do Action="this:-ElectrodeOn;this_imgChanges.Opacity=1;this_imgElectrode.Opacity=0" />
+                <NumAnimation Target="this_imgChanges.Y" From="-3" To="0" Duration="0.1" RepeatCount="20" IsDelta="true" Fill="End" />
+                <Do Action="this_imgChanges.Opacity=0;this_imgMagnet.Opacity=1;this:+MagnetOn" />
+            </SequenceSet>
+
+            <!-- attack -->
+            <BoolTrigger Condition="this:ElectrodeOn and hero:OnElectrodes" EnterAction="this.Attack();this_anmDamageDealing.Start();hero:+sttElecticShock" ExitAction="this_anmDamageDealing.Stop();hero:-ElecticShock" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this_imgElectrode" EnterAction="hero:+OnElectrodes" ExitAction="hero:-OnElectrodes"/>
+
+            <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
+                <Do Action="this_anmAttack.Start()" />
+                <Delay Duration="0.15" />
+            </SequenceSet>
+
+            <ParallelSet Id="this_anmAttack" RepeatCount="1">
+                <Do Action="hero.SetTransaction(false, true, true)"/>
+                <Do Action="this.Attack()" />
+                <RandomSet>
+                    <Do Action="system:left"/>
+                    <Do Action="system:right"/>
+                    <Do Action="system:up"/>
+                    <Do Action="system:down"/>
+                </RandomSet>
+                <Do Action="hero.EndTransaction()"/>
+                <NumAnimation Duration="0.1" Target="hero.Opacity" Autoreverse="false" From="1" To="0" RepeatCount="5"/>
+                <RandomSet Id="electric_sparking" RepeatCount="1">
+                    <Sound FileId="electric_spark_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+                    <Sound FileId="electric_spark_2" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+                    <Sound FileId="electric_spark_3" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+                    <Sound FileId="electric_spark_4" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+                </RandomSet>
+            </ParallelSet>
+            
+        </Enemy>
+    </Class>
+</Include>

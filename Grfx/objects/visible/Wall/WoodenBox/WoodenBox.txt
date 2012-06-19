@@ -17,25 +17,3 @@
 " />
 ###@CRLF
 </Block>
-###@CRLF
-<BoolTrigger Id="bt
-###@cntrValue3
-a" Condition="blk
-###@cntrValue3
-.Enabled">
-###@CRLF
-<IntersectionTrigger ObjectId1="hero" ObjectId2="blk
-###@cntrValue3
-" EnterAction="setWay.Pause()"/>
-###@CRLF
-</BoolTrigger>
-###@CRLF
-<BoolTrigger Id="bt
-###@cntrValue3
-b" Condition="not blk
-###@cntrValue3
-.Enabled" EnterAction="setWay.Resume();bt
-###@cntrValue3
-a.Disable();bt
-###@cntrValue3
-b.Disable()" />

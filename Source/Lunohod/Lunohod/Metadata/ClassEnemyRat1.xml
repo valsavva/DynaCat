@@ -11,8 +11,8 @@
 		<Enemy IsExploding="true" Damage="30" Points="75"> <!-- Damage="9" -->
             
 <!-- Points Animation -->
-            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
-                <Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y" InProgress="true" />
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" Depth="0.2" Enabled="false">
+                <!--<Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y" InProgress="true" />-->
                 <Text FontId="Splash14Font" Text="='+' + system.Str(this.Points)" Location="6,-12" Color="#FFFFFF">
                     <SequenceSet RepeatCount="1" InProgress="true">
                         <ParallelSet RepeatCount="1">
@@ -61,7 +61,7 @@
 				<Image Id="this_imgEnemyRat1Dying" TextureId="txrEnemyRat1Dying" Bounds="-6, -2, 40, 29"/>
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
-                <Do Action="hero:+GoodExplosion;this_grpShowPoints.Enable()"/>
+                <Do Action="hero:+sttGoodExplosion;this_grpShowPoints.Enable()"/>
                 <Sound FileId="sndEnemyRat1Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
                 <NumAnimation Target="this_imgEnemyRat1Dying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <SequenceSet>
@@ -71,10 +71,11 @@
             </ParallelSet>
 
 			<!-- attack -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:GottaDamage" Group="this_sttStates">
-                <Image Id="this_txrEnemyRat1Attack" TextureId="txrEnemyRat1Attack" Bounds="-6, -2, 40, 29"/>
-            </IntersectionTrigger>
-
+            <BoolTrigger Condition="hero.CanCollide and not this_grpShowPoints.Enabled">
+                <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:sttGottaDamage" Group="this_sttStates">
+                    <Image Id="this_txrEnemyRat1Attack" TextureId="txrEnemyRat1Attack" Bounds="-6, -2, 40, 29"/>
+                </IntersectionTrigger>
+            </BoolTrigger>
 
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
                 <Do Action="this_anmAttack.Start()" />

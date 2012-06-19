@@ -339,7 +339,7 @@
 				<NumAnimation Target="this.X" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="3" IsDelta="true"/>
 			</SequenceSet>
 
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();hero:eating" StayTriggered="true" Group="foodStates">
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_anmEated.Start();hero:sttEating" StayTriggered="true" Group="foodStates">
 				<Image TextureId="cursor_50x50_green">
 					<SequenceSet InProgress="true">
                         <ParallelSet Id="this_anmEated">

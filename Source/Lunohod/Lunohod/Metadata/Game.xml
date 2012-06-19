@@ -10,6 +10,7 @@
 		<Texture Id="wave1000" Source="wave1000" />
 	</Resources>
 	<Levels>
+        
 		<!-- These are default setting
 		<LevelInfo
 			BombCount="-1"
@@ -27,6 +28,7 @@
 		-->
         <LevelSeries Id="series1" Name="----- Series 1: Tutorial -----" File="ScreenSeries1.xml">
 	        <LevelInfo Id="[EMPTY]" File="Lvl_Tutorial_01.xml" BombCount="0" />
+            <LevelInfo Id="zzzzz2" File="zzzzz2.xml" TimeBonusThreshold="50"/>
 		</LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
             <LevelInfo Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" TimeBonusThreshold="50"/>
@@ -35,26 +37,33 @@
             <LevelInfo Id="Lvl_1D_Perekrestok" File="Lvl_1D_Perekrestok.xml" TimeBonusThreshold="40"/>
             <LevelInfo Id="Lvl_1D_Perekrestok_v2" File="Lvl_1D_Perekrestok_v2.xml" TimeBonusThreshold="35"/>
             <LevelInfo Id="LvL_1D_FF" File="LvL_1D_FF.xml" TimeBonusThreshold="46"/>
-            <!--<LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
+        <!--<LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
             <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
             <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="17"/>
             <LevelInfo Id="Lvl_1D_Intro_v7" File="Lvl_1D_Intro_v7.xml" TimeBonusThreshold="18"/>
             <LevelInfo Id="Lvl_1D_Intro_v8" File="Lvl_1D_Intro_v8.xml" TimeBonusThreshold="18"/>
-            <LevelInfo Id="Lvl_1D_Intro" File="Lvl_1D_Intro.xml" BombCount="0" TimeBonusThreshold="25"/>-->
+            <LevelInfo Id="Lvl_1D_Intro" File="Lvl_1D_Intro.xml" BombCount="0" TimeBonusThreshold="25"/>
             <LevelInfo Id="Lvl_1D_Intro_v2" File="Lvl_1D_Intro_v2.xml" BombCount="0" TimeBonusThreshold="24"/>
             <LevelInfo Id="Lvl_1D_Intro_v3" File="Lvl_1D_Intro_v3.xml" BombCount="0" TimeBonusThreshold="28"/>
             <LevelInfo Id="Lvl_1D_Boxes_v2" File="Lvl_1D_Boxes_v2.xml" TimeBonusThreshold="30"/>
             <LevelInfo Id="Lvl_1D_Boxes" File="Lvl_1D_Boxes.xml" TimeBonusThreshold="33"/>
             <LevelInfo Id="Lvl_1D_Boxes_v3_behindTheWall" File="Lvl_1D_Boxes_v3_behindTheWall.xml" TimeBonusThreshold="36"/>
-            <LevelInfo Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" TimeBonusThreshold="40"/>
+            --><LevelInfo Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" TimeBonusThreshold="40"/>
             <LevelInfo Id="Lvl_1D_Middle_v2" File="Lvl_1D_Middle_v2.xml" TimeBonusThreshold="40"/>
             <LevelInfo Id="Lvl_1D_Middle_v3" File="Lvl_1D_Middle_v3.xml" TimeBonusThreshold="40"/>
             <LevelInfo Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" TimeBonusThreshold="38"/>
             <LevelInfo Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" TimeBonusThreshold="38"/>
             <LevelInfo Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" TimeBonusThreshold="32"/>
-            <LevelInfo Id="Lvl_1D_Zamanuha" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
+            <LevelInfo Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" TimeBonusThreshold="15" BombCount="0" />
+            <LevelInfo Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" TimeBonusThreshold="43" />
+            <LevelInfo Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" TimeBonusThreshold="42" />
+            <LevelInfo Id="Lvl_1D_Magnet_v4" File="Lvl_1D_Magnet_v4.xml" TimeBonusThreshold="60" />
+            <LevelInfo Id="Lvl_1D_Magnet_v5" File="Lvl_1D_Magnet_v5.xml" TimeBonusThreshold="69" />
+            <LevelInfo Id="Lvl_1D_Magnet_v6" File="Lvl_1D_Magnet_v6.xml" TimeBonusThreshold="60" />
+            <LevelInfo Id="Lvl_1D_Magnet_v7" File="Lvl_1D_Magnet_v7.xml" TimeBonusThreshold="76" />
+            <!--<LevelInfo Id="Lvl_1D_Zamanuha" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
             <LevelInfo Id="Lvl_1D_Zamanuha_v2" File="Lvl_1D_Zamanuha_v2.xml" TimeBonusThreshold="18"/>
-            <LevelInfo Id="Lvl_1D_Zamanuha_v3" File="Lvl_1D_Zamanuha_v3.xml" TimeBonusThreshold="15"/>
+            --><LevelInfo Id="Lvl_1D_Zamanuha_v3" File="Lvl_1D_Zamanuha_v3.xml" TimeBonusThreshold="15"/>
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Series 3 Poezd -----" File="ScreenSeries3.xml">
             <LevelInfo Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" TimeBonusThreshold="33.7"/>
@@ -112,6 +121,7 @@
         <LevelSeries Id="series6" Name="----- Tests -----" File="ScreenTests.xml">
             <!--<LevelInfo Id="AlphaTest" File="AlphaTest.xml" />-->
 	        <LevelInfo Id="AlphaTest" File="AlphaTest.xml" />
+            <LevelInfo Id="AlphaTestNewFish" File="AlphaTestNewFish.xml" />
 	        <LevelInfo Id="AlphaTest2" File="AlphaTest2.xml" />
 	        <LevelInfo Id="AlphaTest3" File="AlphaTest3.xml" />
             <LevelInfo Id="AlphaTest4 (Oil Barrel)" File="AlphaTest4.xml" />
@@ -160,7 +170,7 @@
 			<LevelInfo Id="TestLevel2" File="TestLevel2.xml" />
 			<LevelInfo Id="TestLevel3" File="TestLevel3.xml" />
 			<LevelInfo Id="TestSignals" File="TestSignals.xml" />
-            <LevelInfo Id="TestExcavator" File="TestExcavator.xml" />
+            <LevelInfo Id="TestExcavator" File="TestExcavator.xml" HeroHealth="100000"/>
             <LevelInfo Id="TestRnd" File="TestRnd.xml" />
 			<LevelInfo Id="test_c_boloto" File="test_c_boloto.xml" />
 			<LevelInfo Id="FPSTest" File="FPSTest.xml" />

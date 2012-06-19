@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="AlphaTest5ME.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Perekrestok\Lvl_1D_Perekrestok.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4641" inkscape:cx="261.166" inkscape:cy="150.55401" inkscape:document-units="px" inkscape:current-layer="layer3" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.0821976" inkscape:cx="354.45098" inkscape:cy="117.81207" inkscape:document-units="px" inkscape:current-layer="layer3" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -21,7 +21,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -199,7 +199,7 @@
         <image width="28" height="17" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_6_me.png" id="image3198" x="101.61356" y="261.20007" />
         <image y="204.91348" x="66.437164" id="image3674" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat1/EnemyRat1_Dimensions.png" height="25" width="28" />
     </g>
-    <g inkscape:groupmode="layer" id="layer3" inkscape:label="me">
+    <g inkscape:groupmode="layer" id="layer3" inkscape:label="me" style="display:inline">
         <image y="135" x="430" id="image3271" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat3/EnemyRat3_enemy_1.png" height="30" width="46" />
         <image y="135" x="420" id="image3282" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/MagnetExcavator/magnet_excavator.png" height="40" width="60" />
         <g id="grpMagnetWaves" inkscape:label="#g3343">
@@ -214,9 +214,24 @@
             <image y="140" x="-80" id="image3250" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/MagnetExcavator/magnet_waves.png" height="30" width="50" />
             <image y="140" x="220" id="image3309" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/MagnetExcavator/magnet_waves.png" height="30" width="50" />
         </g>
+        <image y="42.735535" x="550.66785" id="image3222" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/magnet_waves_up.png" height="50" width="26" />
+        <image y="55.65958" x="587.64227" id="image3233" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/magnet_waves_right.png" height="26" width="50" />
+        <image y="57.507671" x="643.08502" id="image3244-1" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/magnet_waves_left.png" height="26" width="50" />
+        <image y="42.735535" x="705.90753" id="image3255-7" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/magnet_waves_down.png" height="50" width="26" />
+        <image y="9.4572973" x="637.75598" id="image3266-4" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/magnet.png" height="26" width="20" />
+        <image y="59.912632" x="604.65485" id="image3277" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/excavator_vert_magnet.png" height="60" width="40" />
+        <image y="1.697754" x="576.00946" id="image3288" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/excavator_vert.png" height="60" width="40" />
+        <image y="18.166073" x="674.1228" id="image3299" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/excavator_hor_magnet.png" height="40" width="60" />
+        <image y="82.849266" x="561.38922" id="image3310" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/excavator_hor.png" height="40" width="60" />
+        <image y="93.93782" x="644.55334" id="image3321" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/excavator.png" height="40" width="60" />
+        <image y="87.241638" x="720.76819" id="image3332" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/electrode_vert.png" height="46" width="24" />
+        <image y="113.95041" x="591.49036" id="image3343" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/electrode_hor.png" height="24" width="46" />
+        <image y="86.229042" x="501.85794" id="image3354-0" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/electrode.png" height="24" width="46" />
+        <image y="116.64659" x="524.64264" id="image3365" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/changes.png" height="26" width="30" />
+        <image y="36.254623" x="503.55411" id="image3376" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/magnet_waves.png" height="26" width="50" />
     </g>
-    <g inkscape:groupmode="layer" id="layer5" inkscape:label="actionTHE" style="display:inline">
-        <image y="0" x="0" id="image3038" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Tower/transmitter-2.png" height="30" width="30" />
+    <g inkscape:groupmode="layer" id="layer5" inkscape:label="actionTHE" style="display:inline" sodipodi:insensitive="true">
+        <image y="0" x="0" id="image3038" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Tower/transmitter_2_off.png" height="30" width="30" />
         <image y="233.70493" x="61.770493" id="image3049" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Exit/refrigerator.png" height="54" width="37" />
         <image y="79.683334" x="223.52893" id="image3606" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="24" width="33" />
     </g>

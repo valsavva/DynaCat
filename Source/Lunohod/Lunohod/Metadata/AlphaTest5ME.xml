@@ -3,6 +3,7 @@
 <!-- source: D:\Lunohod\Levels\AlphaTest\AlphaTest5ME.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest5ME" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassExcavator.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -14,7 +15,20 @@
         <Texture Id="txr_laz_hor" Source="laz_hor" />
         <Texture Id="txr_laz_cross" Source="laz_cross" />
         <Texture Id="txr_laz_T_vert" Source="laz_T_vert" />
-        <Texture Id="txr_magnet_excavator" Source="magnet_excavator" />
+        <Texture Id="txr_magnet_waves_up" Source="magnet_waves_up" />
+        <Texture Id="txr_magnet_waves_right" Source="magnet_waves_right" />
+        <Texture Id="txr_magnet_waves_left" Source="magnet_waves_left" />
+        <Texture Id="txr_magnet_waves_down" Source="magnet_waves_down" />
+        <Texture Id="txr_magnet" Source="magnet" />
+        <Texture Id="txr_excavator_vert_magnet" Source="excavator_vert_magnet" />
+        <Texture Id="txr_excavator_vert" Source="excavator_vert" />
+        <Texture Id="txr_excavator_hor_magnet" Source="excavator_hor_magnet" />
+        <Texture Id="txr_excavator_hor" Source="excavator_hor" />
+        <Texture Id="txr_excavator" Source="excavator" />
+        <Texture Id="txr_electrode_vert" Source="electrode_vert" />
+        <Texture Id="txr_electrode_hor" Source="electrode_hor" />
+        <Texture Id="txr_electrode" Source="electrode" />
+        <Texture Id="txr_changes" Source="changes" />
         <Texture Id="txr_magnet_waves" Source="magnet_waves" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
@@ -53,7 +67,7 @@
         <Image Id="dfltMask21" TextureId="txr_laz_hor" Bounds="100, 20, 40, 30" TraceId="image3304"/>
         <Image Id="dfltMask22" TextureId="txr_laz_hor" Bounds="300, 20, 40, 30" TraceId="image3306"/>
         <Image Id="dfltMask23" TextureId="txr_laz_hor" Bounds="340, 20, 40, 30" TraceId="image3308"/>
-        <Image Id="dfltMask24" TextureId="txr_laz_turn1" Bounds="420, 290, 40, 30" Rotation="180" FlipEffects="Horizontally" TraceId="image3312"/>
+        <Image Id="dfltMask24" TextureId="txr_laz_turn1" Bounds="420, 290, 40, 30" Rotation="180" Stretch="true" FlipEffects="Horizontally" TraceId="image3312"/>
         <Image Id="dfltMask25" TextureId="txr_laz_T_hor" Bounds="260, 290, 40, 30" Rotation="180" Stretch="true" TraceId="image3318"/>
         <Image Id="dfltMask26" TextureId="txr_laz_turn1" Bounds="100, 290, 40, 30" Rotation="180" Stretch="true" TraceId="image3322"/>
         <Image Id="dfltMask27" TextureId="txr_laz_hor" Bounds="140, 260, 40, 30" TraceId="image3324"/>
@@ -78,25 +92,35 @@
         <Image Id="dfltMask46" TextureId="txr_laz_vert" Bounds="380, 230, 40, 30" TraceId="image3182"/>
     </Layer>
     <Layer Id="me" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="444, 137, 24, 25" TraceId="image3271"/>
-        <Image Id="dfltMask47" TextureId="txr_magnet_excavator" Bounds="420, 135, 60, 40" TraceId="image3282"/>
-        <Group Id="grpMagnetWaves">
-            <SequenceSet RepeatCount="0" InProgress="true" >
-                <NumAnimation Target="grpMagnetWaves.Opacity" Autoreverse="true" From="0.8" To="0.3" Duration="0.1" Smoothing="Smooth" RepeatCount="30" InProgress="true" />
-                <Do Action="grpMagnetWaves.Opacity=0" />
-                <Delay Duration="2" />
-            </SequenceSet>
-            <Image Id="dfltMask48" TextureId="txr_magnet_waves" Bounds="370, 140, 50, 30" TraceId="image3224-1"/>
-            <Image Id="dfltMask49" TextureId="txr_magnet_waves" Bounds="320, 140, 50, 30" TraceId="image3227"/>
-            <Image Id="dfltMask50" TextureId="txr_magnet_waves" Bounds="270, 140, 50, 30" TraceId="image3235"/>
-            <Image Id="dfltMask51" TextureId="txr_magnet_waves" Bounds="170, 140, 50, 30" TraceId="image3239"/>
-            <Image Id="dfltMask52" TextureId="txr_magnet_waves" Bounds="120, 140, 50, 30" TraceId="image3242"/>
-            <Image Id="dfltMask53" TextureId="txr_magnet_waves" Bounds="70, 140, 50, 30" TraceId="image3244"/>
-            <Image Id="dfltMask54" TextureId="txr_magnet_waves" Bounds="20, 140, 50, 30" TraceId="image3246"/>
-            <Image Id="dfltMask55" TextureId="txr_magnet_waves" Bounds="-30, 140, 50, 30" TraceId="image3248"/>
-            <Image Id="dfltMask56" TextureId="txr_magnet_waves" Bounds="-80, 140, 50, 30" TraceId="image3250"/>
-            <Image Id="dfltMask57" TextureId="txr_magnet_waves" Bounds="220, 140, 50, 30" TraceId="image3309"/>
+        <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="430, 135, 24, 25" TraceId="image3271"/>
+        <Group Id="exv2" Class="clsExcavator" Bounds="420, 135, 60, 40" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3282"/>
+        <Group Id="grp_grpMagnetWaves">
+            <Group Id="exv3" Class="clsExcavator" Bounds="370, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3224-1"/>
+            <Group Id="exv4" Class="clsExcavator" Bounds="320, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3227"/>
+            <Group Id="exv5" Class="clsExcavator" Bounds="270, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3235"/>
+            <Group Id="exv6" Class="clsExcavator" Bounds="170, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3239"/>
+            <Group Id="exv7" Class="clsExcavator" Bounds="120, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3242"/>
+            <Group Id="exv8" Class="clsExcavator" Bounds="70, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3244"/>
+            <Group Id="exv9" Class="clsExcavator" Bounds="20, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3246"/>
+            <Group Id="exv10" Class="clsExcavator" Bounds="-30, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3248"/>
+            <Group Id="exv11" Class="clsExcavator" Bounds="-80, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3250"/>
+            <Group Id="exv12" Class="clsExcavator" Bounds="220, 140, 50, 30" ClassParams="@paramDirX=1,@paramDirY=0" TraceId="image3309"/>
         </Group>
+        <Image Id="dfltMask47" TextureId="txr_magnet_waves_up" Bounds="551, 43, 26, 50" TraceId="image3222"/>
+        <Image Id="dfltMask48" TextureId="txr_magnet_waves_right" Bounds="588, 56, 50, 26" TraceId="image3233"/>
+        <Image Id="dfltMask49" TextureId="txr_magnet_waves_left" Bounds="643, 58, 50, 26" TraceId="image3244-1"/>
+        <Image Id="dfltMask50" TextureId="txr_magnet_waves_down" Bounds="706, 43, 26, 50" TraceId="image3255-7"/>
+        <Image Id="dfltMask51" TextureId="txr_magnet" Bounds="638, 9, 20, 26" TraceId="image3266-4"/>
+        <Image Id="dfltMask52" TextureId="txr_excavator_vert_magnet" Bounds="605, 60, 40, 60" TraceId="image3277"/>
+        <Image Id="dfltMask53" TextureId="txr_excavator_vert" Bounds="576, 2, 40, 60" TraceId="image3288"/>
+        <Image Id="dfltMask54" TextureId="txr_excavator_hor_magnet" Bounds="674, 18, 60, 40" TraceId="image3299"/>
+        <Image Id="dfltMask55" TextureId="txr_excavator_hor" Bounds="561, 83, 60, 40" TraceId="image3310"/>
+        <Image Id="dfltMask56" TextureId="txr_excavator" Bounds="645, 94, 60, 40" TraceId="image3321"/>
+        <Image Id="dfltMask57" TextureId="txr_electrode_vert" Bounds="721, 87, 24, 46" TraceId="image3332"/>
+        <Image Id="dfltMask58" TextureId="txr_electrode_hor" Bounds="591, 114, 46, 24" TraceId="image3343"/>
+        <Image Id="dfltMask59" TextureId="txr_electrode" Bounds="502, 86, 46, 24" TraceId="image3354-0"/>
+        <Image Id="dfltMask60" TextureId="txr_changes" Bounds="525, 117, 30, 26" TraceId="image3365"/>
+        <Image Id="dfltMask61" TextureId="txr_magnet_waves" Bounds="504, 36, 50, 26" TraceId="image3376"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -106,7 +130,7 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=1 Block=8 DesignImage=57 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=12 Block=8 DesignImage=61 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Enemy Points = 75 -->
 <!-- 1% = 0.75; 45% = 33.75; 90% = 67.5 -->

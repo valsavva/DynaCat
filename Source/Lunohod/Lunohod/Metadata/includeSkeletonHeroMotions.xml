@@ -4,9 +4,18 @@
 		<Texture Id="blank" Source="blank"/>
 		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
-	
-	<!-- 
-	<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
+
+    <BoolTrigger Condition="hero:Tunneling">
+        <Text FontId="SystemFont" Location="10,25"  Text="'Tunneling'" Color="#000000" />
+    </BoolTrigger>
+    
+    <!--<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="=''+system.Str(system.Round(hero.Speed))" Color="#000000" />
+	<BoolTrigger Condition="hero:stick">
+	    <Text FontId="SystemFont" Location="10,25"  Text="'***********STICK***************'" Color="#000000" />
+	</BoolTrigger>-->
+    
+	<!-- 	
+    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
     <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(system.Round(hero.X)) + ')(' + system.Str(system.Round(hero.Y)) + ')'" Color="#000000" />
     -->
 	
@@ -28,15 +37,49 @@
 
 	<BoolTrigger Condition="hero:OnIce" EnterAction="anmDeceleration.Pause()" ExitAction="anmDeceleration.Resume()" />-->
 
-    <BoolTrigger Condition="hero:OnOilMotion" EnterAction="system.WriteLine('EnterOldMotion');anmDeceleration.Pause();hero.SetTransaction(true, true, false)" ExitAction="system.WriteLine('ExitOldMotion');anmDeceleration.Resume();hero.EndTransaction()" />
+    <BoolTrigger Condition="hero.IsDead" 
+                 EnterAction="anmDeceleration.Stop();
+                 anmMagnetSpeed.Stop();
+                 anmElectricShockSpeed.Stop();
+                 hero.Speed=0" 
+                 Group="heroCondition"/>
 
-    <BoolTrigger Condition="hero:ElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="hero:Magneting" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Start();hero.SetTransaction(true,true,false)" ExitAction="hero.EndTransaction()" Group="heroSpeedAnm"/>
-	<BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
+    <BoolTrigger Condition="hero:Magneted"
+                 EnterAction="hero:+Inertia;
+                 anmDeceleration.Stop();
+                 hero.SetTransaction(true,true,false)"
+                 ExitAction="hero.EndTransaction()"
+                 Group="heroCondition"/>
+
+    <BoolTrigger Condition="hero:OnOilMotion" 
+                 EnterAction="system.WriteLine('EnterOldMotion');
+                 anmDeceleration.Pause();
+                 hero.SetTransaction(true, true, false)" 
+                 ExitAction="system.WriteLine('ExitOldMotion');
+                 anmDeceleration.Resume();
+                 hero.EndTransaction()" 
+                 Group="heroCondition"/>
+
+
+    <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="anmMagnetSpeed.Stop()" Group="heroSpeedAnm"/>
+    <BoolTrigger Condition="hero:sttElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
+    <BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
-    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop()" />
+	
+	<!-- Inertia -->
+    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();hero:-Inertia" />
+	<BoolTrigger Condition="not hero:Magneted and hero:Inertia" EnterAction="hero:-Inertia;anmDeceleration.Start();system.WriteLine('- - - Inertia - - -')" />
+	
+	<!-- tonneling with magnet pole -->
+    <BoolTrigger Condition="hero:stick and hero:Magneted" EnterAction="hero:+Tunneling" />
+	<BoolTrigger Condition="not hero:stick and hero:Tunneling" EnterAction="hero:-Tunneling" />
+
+    <!-- avoid tunneling -->
+    <Do Action="@heroTunnelngX=0;@heroTunnelngY=0" />
+    <BoolTrigger Condition="hero:Tunneling" Action="hero.X=hero.X+@heroTunnelngX;hero.Y=hero.Y+@heroTunnelngY"/>
+
     
     <!-- hero speed animation (old)    
 	<NumAnimation Id="anmDeceleration" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
@@ -68,6 +111,8 @@
         <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
         <KeyFrame Time="0.5" Value="1000" Smoothing="Smooth"/>
         <KeyFrame Time="1" Value="2000" Smoothing="Smooth"/>
+        <KeyFrame Time="3" Value="2000" Smoothing="Smooth"/>
+        <KeyFrame Time="5" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
     
 	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** 

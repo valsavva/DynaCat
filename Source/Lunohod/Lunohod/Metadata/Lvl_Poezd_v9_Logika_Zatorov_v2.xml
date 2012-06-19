@@ -81,31 +81,15 @@
         <Block Id="blk1" Class="clsWoodenBox" Bounds="368, 47, 30, 30" Edges="Stick" TraceId="image3182">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt1a" Condition="blk1.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk1" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt1b" Condition="not blk1.Enabled" EnterAction="setWay.Resume();bt1a.Disable();bt1b.Disable()" />
         <Block Id="blk2" Class="clsWoodenBox" Bounds="352, 250, 30, 30" Edges="Stick" TraceId="image3184">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt2a" Condition="blk2.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk2" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt2b" Condition="not blk2.Enabled" EnterAction="setWay.Resume();bt2a.Disable();bt2b.Disable()" />
         <Block Id="blk3" Class="clsWoodenBox" Bounds="44, 213, 30, 30" Edges="Stick" TraceId="image3186">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt3a" Condition="blk3.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk3" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt3b" Condition="not blk3.Enabled" EnterAction="setWay.Resume();bt3a.Disable();bt3b.Disable()" />
         <Block Id="blk4" Class="clsWoodenBox" Bounds="90, 92, 30, 30" Edges="Stick" TraceId="image3164">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <BoolTrigger Id="bt4a" Condition="blk4.Enabled">
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="blk4" EnterAction="setWay.Pause()"/>
-        </BoolTrigger>
-        <BoolTrigger Id="bt4b" Condition="not blk4.Enabled" EnterAction="setWay.Resume();bt4a.Disable();bt4b.Disable()" />
     </Layer>
     <Layer Id="enemies" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="338, 54, 22, 23" TraceId="image3197"/>
@@ -137,7 +121,8 @@
             <NumAnimation From="0" To="179" Target="hero.X" Duration="2.13" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3303"/>
             <NumAnimation From="0" To="59" Target="hero.Y" Duration="0.7" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3305"/>
         </SequenceSet>
-        <BoolTrigger Condition="hero:Enter" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Pause()" /><BoolTrigger Condition="hero.IsDead" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>
         <!-- HAND EDIT <<< -->
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">

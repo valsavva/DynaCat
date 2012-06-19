@@ -1,6 +1,6 @@
 ;SVG to XGAME
 ;<Element Attribute="SubAttribute:1111;">Value</Element>
-Global $ProgVers = "1.6.07"
+Global $ProgVers = "1.6.09"
 
 #include "Array.au3"
 #include <Constants.au3>
@@ -641,7 +641,7 @@ Func GetAttr($str, $attr)
 		Case 'fish_5_me'
 			$ret = 'clsFoodFish4'
 		Case Else
-			$ret = 'ERROR'
+			$ret = 'clsFoodFish1'
 		EndSwitch
 
 		Return $ret
@@ -696,6 +696,35 @@ Func GetAttr($str, $attr)
 		EndIf
 	EndIf
 	
+	if $attr = "@magnetDirX" Then
+		Switch GetFileName(GetFullPath($str))
+		Case 'left' 
+			Return -1
+		Case 'right' 
+			Return 1
+		Case 'up' 
+			Return 0
+		Case 'down' 
+			Return 0
+		Case Else
+			Return '!!!ERROR!!!'
+		EndSwitch
+	EndIf
+	
+	if $attr = "@magnetDirY" Then
+		Switch GetFileName(GetFullPath($str))
+		Case 'left' 
+			Return 0
+		Case 'right' 
+			Return 0
+		Case 'up' 
+			Return -1
+		Case 'down' 
+			Return 1
+		Case Else
+			Return '!!!ERROR!!!'
+		EndSwitch
+	EndIf
 	;getting regular attribute
 	
 	$arr = StringSplit($str, '"')

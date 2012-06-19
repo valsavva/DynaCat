@@ -8,17 +8,14 @@
 	</Resources>
     
     <Class Id="clsTeleportEntry">
-        <SequenceSet InProgress="true" RepeatCount="1">
-            <Do Action="hero.SetTransaction(false, false, false);hero.SetDirection(0,0);hero:+PortIn"/>
+        <SequenceSet RepeatCount="1">
+            <Do Action="hero.SetTransaction(false, false, false);hero.SetDirection(0,0);hero:+sttPortIn"/>
             <Do Action="@heroDepartPointX=hero.X;
                         @heroDepartPointY=hero.Y;                             
                         @heroDestPointX=@entryX;                             
                         @heroDestPointY=@entryY+10"/>
-            <!--<Delay Duration="0.05" />-->
-            <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,0.5" To="@heroDestPointX,@heroDestPointY,0" Duration="0.3" InProgress="true" RepeatCount="1" Fill="End"/>
-            <Do Action="hero.X=-101;hero.Y=-101" />
+            <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,0.5" To="@heroDestPointX,@heroDestPointY,0" Duration="0.3" RepeatCount="1" Fill="End"/>
             <Delay Duration="@delay" />
-            <Do Action="hero:-PortIn" />
         </SequenceSet>
     </Class>
 
