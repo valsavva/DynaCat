@@ -196,6 +196,11 @@ namespace Lunohod
             rect.Height = (int)Math.Round(rectF.Height);
         }
 		
+		public static void Clear(this System.Drawing.RectangleF rectF)
+		{
+			rectF.X = 0; rectF.Y = 0; rectF.Width = 0; rectF.Height = 0;
+		}
+
 		public static bool IsZero(this System.Drawing.RectangleF rectF)
 		{
 			return rectF.Width == 0 && rectF.Height == 0 && rectF.X == 0 && rectF.Y == 0;

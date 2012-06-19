@@ -248,25 +248,25 @@
     <Content Include="Content\Textures\Cat_0000_norm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\Cat_eat_Spr_100x100x3.png">
+    <Content Include="Content\Textures\Cat_eat_Spr_100x100x3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\Cat_smile0001.png">
+    <Content Include="Content\Textures\Cat_smile0001.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\Cat_lightning_Spr_100x100x3.png">
+    <Content Include="Content\Textures\Cat_lightning_Spr_100x100x3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\Cat_eats0002.png">
+    <Content Include="Content\Textures\Cat_eats0002.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\Cat_scare_left_Spr_100x100x3.png">
+    <Content Include="Content\Textures\Cat_scare_left_Spr_100x100x3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Cat_scare_right_Spr_100x100x3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\Cat_scare_leftright_Spr_100x100x6.png">
+    <Content Include="Content\Textures\Cat_scare_leftright_Spr_100x100x6.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\AlphaTestNewFish.xml">
@@ -2431,7 +2431,7 @@
     <Content Include="Content\Textures\tap_this_button_text.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Textures\Tow_trans_off.png">
+    <Content Include="Content\Textures\Tow_trans_off.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Tow_trans_SignalSprite_60x60x4.png">
@@ -2522,7 +2522,7 @@
     <Content Include="Content\Global\TimeBonusSprite_16x16x24.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Global\clock_fin_sprite_60x60x13.png">
+    <Content Include="Content\Global\clock_fin_sprite_60x60x13.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\heroHealth000.png">
@@ -2671,22 +2671,3 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -18,6 +18,8 @@ namespace Lunohod
         private XHero hero;
         private XTower tower;
 
+		private System.Drawing.RectangleF heroPrevBounds;
+
 		private XClass explosionClass;
 		
 		private Dictionary<GameEvent, RadioWave> waves;
@@ -171,16 +173,72 @@ namespace Lunohod
 
 		#region Collisions
 
+		private const float MaxSingleMoveX = 50;
+		private const float MaxSingleMoveY = 50;
+
 		public void ProcessCollisions()
 		{
 			// if here is in transactional state - get out
 			if (!hero.CanCollide)
+			{
+				heroPrevBounds.Clear();
 				return;
-			
+			}
+
+			colliders.Clear();
+
+			// tunneling prevention
+			if (!heroPrevBounds.IsZero())
+			{
+				// horizontal move
+				{
+					var d = hero.Bounds.X - heroPrevBounds.X;
+
+					if (d != 0)
+					{
+						float n = (int)Math.Abs(d / MaxSingleMoveX);
+
+						if (n > 1.0f)
+						{
+							var inc = MaxSingleMoveX * d / Math.Abs(d);
+
+							for(int i = 0; i < n && colliders.Count == 0; i++)
+							{
+								heroPrevBounds.X += inc;
+								FindCollisions(ref heroPrevBounds);
+							}
+						}
+					}
+			    }
+				// vertical move
+				{
+					var d = hero.Bounds.Y - heroPrevBounds.Y;
+
+					if (d != 0)
+					{
+						float n = (int)Math.Abs(d / MaxSingleMoveY);
+
+						if (n > 1.0f)
+						{
+							var inc = MaxSingleMoveY * d / Math.Abs(d);
+
+							for(int i = 0; i < n && colliders.Count == 0; i++)
+							{
+								heroPrevBounds.Y += inc;
+								FindCollisions(ref heroPrevBounds);
+							}
+						}
+					}
+			    }
+			}
+
 			// find objects we collided with
-			FindCollisions();
+			if (colliders.Count == 0)
+				FindCollisions(ref hero.Bounds);
 			
-			if (colliders.Count() == 0)
+			heroPrevBounds = hero.Bounds;
+
+			if (colliders.Count == 0)
 				return;
 			
 			// sort them by the amounth of intersection (descending)
@@ -195,12 +253,9 @@ namespace Lunohod
 			}
 		}
 
-		void FindCollisions()
+		void FindCollisions(ref System.Drawing.RectangleF heroBounds)
 		{
-			colliders.Clear();
-			
 			XElement obstacle;
-			System.Drawing.RectangleF heroBounds = this.hero.Bounds;
 			System.Drawing.RectangleF obstacleBounds;
 			System.Drawing.RectangleF intersect;
 			
