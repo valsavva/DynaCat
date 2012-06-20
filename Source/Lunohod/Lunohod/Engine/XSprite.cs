@@ -23,6 +23,9 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
+
+            if (this.FrameBounds.Width * FrameCount > this.texture.Image.Width)
+                throw new InvalidOperationException("Specified FrameCount exceeds the Width of the texture");
 		}
 		
 		public override void Update(UpdateParameters p)
