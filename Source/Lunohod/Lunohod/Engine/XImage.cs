@@ -181,5 +181,13 @@ namespace Lunohod.Objects
 
             base.ReadXml(reader);
         }
+
+        internal override void ReplaceParameter(string par, string val)
+        {
+            if (this.TextureId != null)
+                this.TextureId.Replace(par, val);
+
+            base.ReplaceParameter(par, val);
+        }
     }
 }
