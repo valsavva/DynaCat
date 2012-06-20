@@ -82,5 +82,14 @@
 
         <Texture Id="txrFish4Default" Source="fish_5_me" />
         <Texture Id="txrFishBones" Source="fish_skelet_demo" />
-	</Resources>
+        
+        <Texture Id="txrFishTypeDefault_1" Source="fishType01" />
+        <Texture Id="txrFishTypeDefault_2" Source="fishType02" />
+        <Texture Id="txrFishTypeDefault_3" Source="fishType03" />
+        <Texture Id="txrFishTypeDefault_4" Source="fishType04" />
+        <Texture Id="txrFishTypeDefault_5" Source="fishType05" />
+        <Texture Id="txrFishTypeDefault_6" Source="fishType06" />
+        <Texture Id="txrFishTypeDefault_7" Source="fishType07" />
+        
+    </Resources>
 </Include>

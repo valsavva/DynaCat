@@ -1,6 +1,39 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTestNewFish" Bounds="0, 0, 480, 320">-->
 <Include>
+    
     <Class Id="clsFood">
 		<Food IsExploding="true" >
+
+<!-- Init -->
+            <BoolTrigger Id="this_trgInit1" Condition="@fishType==1" EnterAction="
+                    this.Points=50;
+                    this_trgInit1.Disable()">
+            </BoolTrigger>
+            <BoolTrigger Id="this_trgInit2" Condition="@fishType==2" EnterAction="
+                    this.Points=70;
+                    this_trgInit2.Disable()">
+            </BoolTrigger>
+            <BoolTrigger Id="this_trgInit3" Condition="@fishType==3" EnterAction="
+                    this.Points=70;
+                    this_trgInit3.Disable()">
+            </BoolTrigger>
+            <BoolTrigger Id="this_trgInit4" Condition="@fishType==4" EnterAction="
+                    this.Points=70;
+                    this_trgInit4.Disable()">
+            </BoolTrigger>
+            <BoolTrigger Id="this_trgInit5" Condition="@fishType==5" EnterAction="
+                    this.Points=100;
+                    this_trgInit5.Disable()">
+            </BoolTrigger>
+            <BoolTrigger Id="this_trgInit6" Condition="@fishType==6" EnterAction="
+                    this.Points=150;
+                    this_trgInit6.Disable()">
+            </BoolTrigger>
+            <BoolTrigger Id="this_trgInit7" Condition="@fishType==7" EnterAction="
+                    this.Points=150;
+                    this_trgInit7.Disable()">
+            </BoolTrigger>
+            
 
 <!-- Points Animation -->
             <Group Id="this_grpShowPoints" Bounds="0,0,100,50" IsRoot="true" Depth="0.2" Enabled="false">
@@ -23,49 +56,68 @@
                 </Text>
             </Group>
             
-<!-- States -->
-            
-            <!-- eaten -->
-			<BoolTrigger Condition="not this:eaten">
-				<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="hero.AddScore(this.Points);this_anmEated.Start();this:+eaten;hero:+sttEating" StayTriggered="false" />
-			</BoolTrigger>
-            <SequenceSet Id="this_anmEated">
-				<Do Action="this.IsExploding=false;this_grpShowPoints.Enable()" />
-                <ParallelSet>
-                    <NumAnimation Duration="1" Target="this.Opacity" Autoreverse="false" From="1" To="0" Fill="End" RepeatCount="1"/>
-                    <NumAnimation Duration="1" Target="this.X,this.Y" Autoreverse="false" From="this.X,this.Y" To="hero.X,hero.Y" Fill="End" RepeatCount="1"/>
-                </ParallelSet>
-            </SequenceSet>
-            
-            <!-- explosion  -->
-            <!-- destroy -->
-			<BoolTrigger Condition="this:BoomClose" EnterAction="this_setDestroy1.Start()" StayTriggered="true" Group="this_foodStates"/>
-			<SequenceSet Id="this_setDestroy1">
-                <Do Action="hero:+sttBadExplosion"/>
-				<NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="2"/>
-				<Do Action="this.Disable()"/>
-			</SequenceSet>
+<!-- Parachute animation-->
 
-            <!-- quake -->
-			<BoolTrigger Condition="this:BoomFar" EnterAction="this_setQuake1.Start()" StayTriggered="false" Group="this_foodStates"/>
-			<SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
-				<NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="2.5" IsDelta="false"/>
-			</SequenceSet>
-			
-			<BoolTrigger Id="this_default" Group="this_foodStates"/>
-		</Food>	
-	</Class>
+            <BoolTrigger Condition="tower:LevelWithParachutes" EnterAction="this.Y=this.Y-120;this.Opacity=0">
+                <SequenceSet InProgress="true">
+                    <Delay Duration="system.Rnd(1,2)" />
+                    <Do Action="this.Opacity=1" />
+                    <NumAnimation Target="this.Y" From="0" To="120" IsDelta="true" Autoreverse="false" RepeatCount="1" Duration="0.6" Fill="End" />
+                    <NumAnimation Target="this.Y" From="0" To="-7" IsDelta="true" Autoreverse="true" RepeatCount="1" Duration="0.1" Fill="End" />
+                </SequenceSet>
+            </BoolTrigger>    
+            
+            
+<!-- States -->
+
+            <!-- eaten -->
+            <BoolTrigger Condition="not this:Eaten and not this:Borned">
+                <IntersectionTrigger ObjectId1="hero" ObjectId2="this" 
+                                     EnterAction="hero.AddScore(this.Points);
+                                     hero:+sttEating;
+                                     this:+Eaten;
+                                     this_anmEating.Start();
+                                     this.IsExploding=false;
+                                     this_grpShowPoints.Enable()"/>
+            </BoolTrigger>
+            
+            <NumAnimation Id="this_anmEating" Duration="1" Target="this.X,this.Y,this.Opacity" Autoreverse="false" From="this.X,this.Y,1" To="hero.X,hero.Y,0" Fill="End" RepeatCount="1" InProgress="false"/>
+
+            <!-- Borned: set destroyed images -->
+            <BoolTrigger Id="this_borned" 
+                         Condition="this:Borned" 
+                         Group="this_foodStates">
+                <Image Id="this_imgFishBones" TextureId="txrFishBones" RotationCenter="15,6" Bounds="0,0,30,13"/>
+            </BoolTrigger>
+
+            <!-- BoomClose: explosion - destroy -->
+            <BoolTrigger Condition="this:BoomClose" 
+                         EnterAction="this:+Borned;
+                         this_setDestroy1.Start();
+                         hero:+sttBadExplosion" 
+                         Group="this_foodStates" />
+            <SequenceSet Id="this_setDestroy1">
+                <ParallelSet>
+                    <NumAnimation Target="this.Y" From="0" To="-30" Duration="0.3" IsDelta="true" Autoreverse="true" RepeatCount="1" />
+                    <NumAnimation Target="this_imgFishBones.Rotation" From="0" To="360" Duration="0.3" Autoreverse="false" RepeatCount="2" />
+                </ParallelSet>
+                <NumAnimation Target="this.Y" From="0" To="-3" Duration="0.15" IsDelta="true" Autoreverse="true" RepeatCount="1" />
+            </SequenceSet>
+
+            <!-- BoomFar: explosion - quake -->
+            <BoolTrigger Condition="this:BoomFar" 
+                         EnterAction="this_setQuake1.Start()" 
+                         Group="this_foodStates"/>
+            <SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+                <NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="2.5" IsDelta="false" Fill="End"/>
+            </SequenceSet>
+
+            
+            <!-- default -->
+            <BoolTrigger Group="this_foodStates">
+                <Image Id="this_imgDefault" TextureId="txrFishTypeDefault_@fishType"/>
+            </BoolTrigger>
+        </Food>
+    </Class>
 
 </Include>
-
-
-
-
-
-
-
-
-
-
-
-

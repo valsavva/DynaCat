@@ -204,6 +204,9 @@
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
                 <Image TextureId="txrHeroDefault" Bounds="-33, -46, 100, 100"/>
+                <!--<Group BackColor="#0000FF">
+                    <Image TextureId="blank"/>
+                </Group>-->
 			</BoolTrigger>
 
             

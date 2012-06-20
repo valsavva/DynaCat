@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.09 -->
+<!-- SVG to XGAME xml converter v1.6.10 -->
 <!-- source: D:\Lunohod\Levels\zzzzzzgrfx_updt.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="zzzzzzgrfx_updt" Bounds="0, 0, 480, 320">
     <Include File="ClassTower.xml" />
@@ -57,12 +57,12 @@
         <Texture Id="txr_stone_01" Source="stone_01" />
         <Texture Id="txr_stone_02" Source="stone_02" />
         <Texture Id="txr_stone_03" Source="stone_03" />
-        <Texture Id="txr_stone_02" Source="stone_02" />
-        <Texture Id="txr_stone_03" Source="stone_03" />
-        <Texture Id="txr_stone_01" Source="stone_01" />
         <Texture Id="txr_web_02" Source="web_02" />
         <Texture Id="txr_spider" Source="spider" />
         <Texture Id="txr_web_01" Source="web_01" />
+        <Texture Id="txr_stone_brown_02" Source="stone_brown_02" />
+        <Texture Id="txr_stone_brown_03" Source="stone_brown_03" />
+        <Texture Id="txr_stone_brown_01" Source="stone_brown_01" />
     </Resources>
     <Layer Id="design" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_under_land_level_BG" Bounds="-178, -20, 480, 320" TraceId="image3016-17"/>
@@ -133,12 +133,19 @@
         <Image Id="dfltMask66" TextureId="txr_stone_01" Bounds="632, 133, 10, 8" TraceId="image3544"/>
         <Image Id="dfltMask67" TextureId="txr_stone_02" Bounds="674, 140, 20, 15" TraceId="image3555"/>
         <Image Id="dfltMask68" TextureId="txr_stone_03" Bounds="709, 174, 17, 12" TraceId="image3566"/>
-        <Image Id="dfltMask69" TextureId="txr_stone_02" Bounds="135, 42, 11, 10" TraceId="image3577"/>
-        <Image Id="dfltMask70" TextureId="txr_stone_03" Bounds="203, 30, 15, 16" TraceId="image3588"/>
-        <Image Id="dfltMask71" TextureId="txr_stone_01" Bounds="373, 53, 15, 12" TraceId="image3599"/>
-        <Image Id="dfltMask72" TextureId="txr_web_02" Bounds="230, -19, 55, 59" TraceId="image3610"/>
-        <Image Id="dfltMask73" TextureId="txr_spider" Bounds="269, -1, 12, 10" TraceId="image3621"/>
-        <Image Id="dfltMask74" TextureId="txr_web_01" Bounds="-181, -18, 42, 50" TraceId="image3632"/>
+        <Image Id="dfltMask69" TextureId="txr_web_02" Bounds="230, -19, 55, 59" TraceId="image3610"/>
+        <Image Id="dfltMask70" TextureId="txr_spider" Bounds="269, -1, 12, 10" TraceId="image3621"/>
+        <Image Id="dfltMask71" TextureId="txr_web_01" Bounds="-181, -18, 42, 50" TraceId="image3632"/>
+        <Image Id="dfltMask72" TextureId="txr_stone_brown_02" Bounds="238, 88, 11, 10" TraceId="image3167"/>
+        <Image Id="dfltMask73" TextureId="txr_stone_brown_03" Bounds="252, 142, 15, 16" TraceId="image3178"/>
+        <Image Id="dfltMask74" TextureId="txr_stone_brown_01" Bounds="198, 144, 15, 12" TraceId="image3189"/>
+        <Food Id="fd1" Class="" ClassParams="@fishType5" Bounds="757, 202, 27, 20" TraceId="image3100"/>
+        <Food Id="fd2" Class="" ClassParams="@fishType6" Bounds="706, 267, 22, 27" TraceId="image3111"/>
+        <Food Id="fd3" Class="" ClassParams="@fishType7" Bounds="540, 243, 32, 30" TraceId="image3122"/>
+        <Food Id="fd4" Class="" ClassParams="@fishType1" Bounds="531, 182, 32, 21" TraceId="image3133"/>
+        <Food Id="fd5" Class="" ClassParams="@fishType2" Bounds="573, 193, 28, 19" TraceId="image3144"/>
+        <Food Id="fd6" Class="" ClassParams="@fishType3" Bounds="463, 208, 31, 20" TraceId="image3155"/>
+        <Food Id="fd7" Class="" ClassParams="@fishType4" Bounds="506, 161, 28, 22" TraceId="image3166"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -148,4 +155,8 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=74 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=7 Enemy=0 Block=0 DesignImage=74 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- -->
+<!-- Food Points = 660 -->
+<!-- 1% = 6.6; 45% = 297; 90% = 594 -->
+<!-- minPointsFood = 50 (7.6%) -->
