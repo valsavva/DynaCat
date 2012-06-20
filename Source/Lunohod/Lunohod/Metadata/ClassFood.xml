@@ -7,32 +7,39 @@
 <!-- Init -->
             <BoolTrigger Id="this_trgInit1" Condition="@fishType==1" EnterAction="
                     this.Points=50;
-                    this_trgInit1.Disable()">
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
+            
             <BoolTrigger Id="this_trgInit2" Condition="@fishType==2" EnterAction="
                     this.Points=70;
-                    this_trgInit2.Disable()">
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
+            
             <BoolTrigger Id="this_trgInit3" Condition="@fishType==3" EnterAction="
                     this.Points=70;
-                    this_trgInit3.Disable()">
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
+            
             <BoolTrigger Id="this_trgInit4" Condition="@fishType==4" EnterAction="
                     this.Points=70;
-                    this_trgInit4.Disable()">
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
+            
             <BoolTrigger Id="this_trgInit5" Condition="@fishType==5" EnterAction="
                     this.Points=100;
-                    this_trgInit5.Disable()">
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
+            
             <BoolTrigger Id="this_trgInit6" Condition="@fishType==6" EnterAction="
                     this.Points=150;
-                    this_trgInit6.Disable()">
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
+            
             <BoolTrigger Id="this_trgInit7" Condition="@fishType==7" EnterAction="
                     this.Points=150;
-                    this_trgInit7.Disable()">
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
+            
             
 
 <!-- Points Animation -->
@@ -66,7 +73,6 @@
                     <NumAnimation Target="this.Y" From="0" To="-7" IsDelta="true" Autoreverse="true" RepeatCount="1" Duration="0.1" Fill="End" />
                 </SequenceSet>
             </BoolTrigger>    
-            
             
 <!-- States -->
 
