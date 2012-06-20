@@ -72,7 +72,7 @@
 
 
             <!-- attack -->
-            <BoolTrigger Condition="hero.CanCollide and not this_grpShowPoints.Enabled">
+            <BoolTrigger Condition="hero.CanCollide and not this_grpShowPoints.Enabled and not hero.IsDead" ExitAction="this_anmDamageDealing.Stop()" >
                 <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this_anmDamageDealing.Start()" ExitAction="this_anmDamageDealing.Stop()" Action="hero:sttGottaDamage" Group="this_sttStates">
                     <Image Id="this_txrEnemyRat5Attack" TextureId="txrEnemyRat5Attack" Bounds="-17, -2, 52, 32"/>
                 </IntersectionTrigger>
