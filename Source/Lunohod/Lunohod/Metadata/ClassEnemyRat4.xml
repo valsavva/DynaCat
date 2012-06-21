@@ -1,12 +1,5 @@
 <Include>
     
-    <Resources RootFolder="Sound">
-        <SoundFile Id="sndParachute_open" Source="parachute_open"/>
-    </Resources>
-    <Resources RootFolder="Textures">
-        <Texture Id="txr_parachute" Source="parachute" />
-    </Resources>
-    
 	<Class Id="clsEnemyRat4">
 		<Enemy IsExploding="true" Damage="20" Points="50"> <!-- Damage="5" -->
 
@@ -36,11 +29,13 @@
 
 <!-- Parachute animation-->
 
-            <BoolTrigger Condition="tower:LevelWithParachutes" EnterAction="this.Y=this.Y-60;this.Opacity=0">
-                <Image Id="this_imgParachute" TextureId="txr_parachute" Bounds="-14, -44, 50, 50"/>
+            <BoolTrigger Id="this_trgParashutes" Condition="tower:LevelWithParachutes" EnterAction="this.Y=this.Y-60;this.Opacity=0">
+                <Image Id="this_imgParachute" TextureId="txr_parachute" Bounds="-14, -48, 53, 62"/>
                 <SequenceSet InProgress="true">
                     <Delay Duration="system.Rnd(1,2)" />
-                    <Do Action="this.Opacity=1" />
+                    <Do Action="this.Opacity=1;
+                           this.RotationCenterX=9;
+                           this.RotationCenterY=-30" />
                     <ParallelSet>
                         <Sound FileId="sndParachute_open" Volume="0.2" Pitch="0" Pan="0"/>
                         <NumAnimation Target="this.Y" From="0" To="60" IsDelta="true" Autoreverse="false" RepeatCount="1" Duration="1.6" Fill="End" />
@@ -50,7 +45,10 @@
                         </SequenceSet>
                     </ParallelSet>
                     <NumAnimation Target="this_imgParachute.Opacity" From="1" To="0" IsDelta="false" Autoreverse="false" RepeatCount="1" Duration="0.4" Fill="End" />
-                    <Do Action="this_imgParachute.Disable()" />
+                    <Do Action="this_imgParachute.Disable();
+                        this.RotationCenterX=0;
+                        this.RotationCenterY=0;
+                        this_trgParashutes.Disable()" />
                 </SequenceSet>
             </BoolTrigger>
             

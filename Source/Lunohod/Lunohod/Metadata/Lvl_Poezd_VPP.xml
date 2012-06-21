@@ -202,7 +202,7 @@
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="32, 212, 33, 24" TraceId="image3016-1"/>
-        <Group Id="grpAirplane" Class="clsAirplane" Bounds="502, 64, 100, 66" TraceId="image3412"/>
+        <Group Id="grpAirplane" Class="clsAirplane" Bounds="502, 64, 84, 73" TraceId="image3412"/>
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
         <Include File="includeSemafor.xml" />

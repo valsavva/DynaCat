@@ -232,7 +232,7 @@
 
     </Layer>
     <Layer Id="Airplane" BackColor="#FFFFFFFF">
-        <Group Id="grpAirplane" Class="clsAirplane" Bounds="528, 50, 100, 66" TraceId="image3148"/>
+        <Group Id="grpAirplane" Class="clsAirplane" Bounds="528, 50, 84, 73" TraceId="image3148"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
