@@ -227,8 +227,8 @@
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="28, 24, 33, 24" TraceId="image3016-1"/>
         <Include File="includeSemafor.xml" />
-        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="62, 10, 38, 60" TraceId="image3136" />
-        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="62, 10, 38, 60" Enabled="false" TraceId="image3136" />
+        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="62, 6, 44, 67" TraceId="image3136" />
+        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="62, 6, 44, 67" Enabled="false" TraceId="image3136" />
 
     </Layer>
     <Layer Id="Airplane" BackColor="#FFFFFFFF">

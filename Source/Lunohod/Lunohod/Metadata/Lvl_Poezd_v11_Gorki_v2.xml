@@ -122,8 +122,8 @@
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
         <Include File="includeSemafor.xml" />
-        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="62, 20, 38, 60" TraceId="image3098" />
-        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="62, 20, 38, 60" Enabled="false" TraceId="image3098" />
+        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="62, 16, 44, 67" TraceId="image3098" />
+        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="62, 16, 44, 67" Enabled="false" TraceId="image3098" />
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
