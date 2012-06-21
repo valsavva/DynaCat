@@ -52,7 +52,13 @@
         <Texture Id="txrEnemyRat1Attack" Source="enemy_1"/>
         <Texture Id="txrEnemyRat1Dying" Source="enemy_1"/>
         <Texture Id="txrCloud1" Source="cloud1"/>
-
+        <Texture Id="txrSmoke_1" Source="smoke_01"/>
+        <Texture Id="txrSmoke_2" Source="smoke_02"/>
+        <Texture Id="txrSmoke_3" Source="smoke_03"/>
+        <Texture Id="txrSmoke_4" Source="smoke_04"/>
+        
+        <Texture Id="txrSmokeSprite" Source="smoke_spr_30x30x4"/>
+        
         <Texture Id="txrEnemyRat2Default" Source="EnemyRat2_enemy_4"/>
         <Texture Id="txrEnemyRat2Attack" Source="EnemyRat2_enemy_4"/>
         <Texture Id="txrEnemyRat2Dying" Source="EnemyRat2_enemy_4"/>

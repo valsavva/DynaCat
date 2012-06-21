@@ -1,0 +1,59 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_DveGory" Bounds="0, 0, 480, 320">-->
+<Include>
+
+	<Class Id="clsSmoke">
+        <Group>
+            
+            <Image Id="this_imgSmoke" TextureId="txrSmoke_@type" Location="1,1" RotationCenter="15,15" Opacity="0" Enable="false"/>
+            <!--<Sprite Id="this_imgSmoke" TextureId="txrSmokeSprite" FrameBounds="0,0,30,30" Location="1,1" RotationCenter="15,15" Opacity="0" Enable="false"/>-->
+            
+            <BoolTrigger Condition="this:Run" EnterAction="this_Run.Start()" />
+            
+            <SequenceSet Id="this_Run" RepeatCount="1" InProgress="false">
+                <Do Action="this_imgSmoke.Enable()" />
+                <ParallelSet RepeatCount="1" >
+                    <!--<NumAnimation Target="this_imgSmoke.CurrentFrame" From="0" To="3" Autoreverse="false" RepeatCount="1" Duration="0.4" Fill="End" />-->
+                    <NumAnimation Target="this_imgSmoke.Scale" From="1" To="1.3" Duration="1.5" Autoreverse="false" RepeatCount="1" Fill="End" />
+                    <RandomSet>
+                        <NumAnimation Target="this_imgSmoke.Rotation" From="-10" To="5" Duration="1.5" Autoreverse="false" RepeatCount="1" Fill="End" />
+                        <NumAnimation Target="this_imgSmoke.Rotation" From="10" To="-5" Duration="1.5" Autoreverse="false" RepeatCount="1" Fill="End" />
+                        <NumAnimation Target="this_imgSmoke.Rotation" From="5" To="-5" Duration="1.5" Autoreverse="false" RepeatCount="1" Fill="End" />
+                        <NumAnimation Target="this_imgSmoke.Rotation" From="-5" To="5" Duration="1.5" Autoreverse="false" RepeatCount="1" Fill="End" />
+                    </RandomSet>
+                    <RandomSet>
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="-5,-5" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset"/>
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="0,-5" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="-5,0" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="-10,-5" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="-5,-10" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="-10,-10" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="0,-10" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="-10,0" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                        <NumAnimation Target="this_imgSmoke.X,this_imgSmoke.Y" From="0,0" To="0,0" Duration="1.5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="Reset" />
+                    </RandomSet>
+                    <SequenceSet RepeatCount="1" >
+                        <NumAnimation Target="this_imgSmoke.Opacity" From="0" To="1" Duration="0.1" Autoreverse="false" RepeatCount="1" Fill="End" />
+                        <Delay Duration="0.2" />
+                        <NumAnimation Target="this_imgSmoke.Opacity" From="1" To="0" Duration="1" Autoreverse="false" RepeatCount="1" Fill="End" />
+                    </SequenceSet>
+                </ParallelSet>
+            </SequenceSet>
+        </Group>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 <Include>
+    <Include File="ClassSmoke.xml" />
 
     <Class Id="clsEnemyRat3">
 		<Enemy IsExploding="true" Damage="30" Points="75"> <!-- Damage="9" -->
@@ -54,6 +55,10 @@
 
             <!-- explosion -->
             <!-- dying -->
+
+            <Group Id="this_Smoke2" Class="clsSmoke" ClassParams="@type=2" />
+            <Group Id="this_Smoke3" Class="clsSmoke" ClassParams="@type=3" />
+            
 			<BoolTrigger Condition="this:BoomClose" EnterAction="hero.AddScore(this.Points);this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
 				<Image Id="this_imgEnemyRat3Dying" TextureId="txrEnemyRat3Dying" Bounds="-14, -3, 46, 30"/>
 			</BoolTrigger>
@@ -61,10 +66,10 @@
                 <Do Action="hero:+sttGoodExplosion;this_grpShowPoints.Enable()"/>
                 <Sound FileId="sndEnemyRat3Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
                 <NumAnimation Target="this_imgEnemyRat3Dying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                <SequenceSet>
-                    <Do Action="this_imgCloud1.Enable()" />
-                    <NumAnimation Target="this_imgCloud1.Opacity" From="1" To="0" Duration="0.5" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <RandomSet>
+                    <Do Action="this_Smoke2:Run" />
+                    <Do Action="this_Smoke3:Run" />
+                </RandomSet>
             </ParallelSet>
 
             <!-- attack -->

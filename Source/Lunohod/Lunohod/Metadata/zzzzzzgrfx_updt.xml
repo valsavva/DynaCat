@@ -68,6 +68,11 @@
         <Texture Id="txr_parashut_01" Source="parashut_01" />
         <Texture Id="txr_parashut_02" Source="parashut_02" />
         <Texture Id="txr_parashut_03" Source="parashut_03" />
+        <Texture Id="txr_smoke_01" Source="smoke_01" />
+        <Texture Id="txr_smoke_02" Source="smoke_02" />
+        <Texture Id="txr_smoke_03" Source="smoke_03" />
+        <Texture Id="txr_smoke_04" Source="smoke_04" />
+        <Texture Id="txr_smoke_spr_30x30x4" Source="smoke_spr_30x30x4" />
     </Resources>
     <Layer Id="design" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_under_land_level_BG" Bounds="-178, -20, 480, 320" TraceId="image3016-17"/>
@@ -151,10 +156,15 @@
         <Food Id="fd5" Class="clsFood" ClassParams="@fishType=2" Bounds="573, 193, 28, 19" TraceId="image3144"/>
         <Food Id="fd6" Class="clsFood" ClassParams="@fishType=3" Bounds="463, 208, 31, 20" TraceId="image3155"/>
         <Food Id="fd7" Class="clsFood" ClassParams="@fishType=4" Bounds="506, 161, 28, 22" TraceId="image3166"/>
-        <Image Id="dfltMask75" TextureId="txr_plane_spr_84x73x3" Bounds="264, 25, 252, 73" TraceId="image3101"/>
+        <Image Id="dfltMask75" TextureId="txr_plane_spr_84x73x3" Bounds="98, 28, 252, 73" TraceId="image3101"/>
         <Image Id="dfltMask76" TextureId="txr_parashut_01" Bounds="416, 113, 53, 61" TraceId="image3112"/>
         <Image Id="dfltMask77" TextureId="txr_parashut_02" Bounds="355, 107, 53, 65" TraceId="image3123"/>
         <Image Id="dfltMask78" TextureId="txr_parashut_03" Bounds="303, 119, 53, 62" TraceId="image3134"/>
+        <Image Id="dfltMask79" TextureId="txr_smoke_01" Bounds="376, 52, 27, 24" Stretch="true" TraceId="image3101-1"/>
+        <Image Id="dfltMask80" TextureId="txr_smoke_02" Bounds="456, 65, 21, 22" Stretch="true" TraceId="image3112-7"/>
+        <Image Id="dfltMask81" TextureId="txr_smoke_03" Bounds="545, 60, 20, 19" Stretch="true" TraceId="image3123-4"/>
+        <Image Id="dfltMask82" TextureId="txr_smoke_04" Bounds="640, 34, 14, 13" Stretch="true" TraceId="image3134-0"/>
+        <Image Id="dfltMask83" TextureId="txr_smoke_spr_30x30x4" Bounds="339, 19, 120, 30" TraceId="image3105"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -164,7 +174,7 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=7 Enemy=0 Block=0 DesignImage=78 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=7 Enemy=0 Block=0 DesignImage=83 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 660 -->
 <!-- 1% = 6.6; 45% = 297; 90% = 594 -->

@@ -5,13 +5,23 @@
     <Resources RootFolder="Textures">
         <Texture Id="txrAirplaneSprite" Source="plane_spr_84x73x3"/>
     </Resources>
-    
+        
 	<Class Id="clsAirplane">
         <Group>
 
             <Sprite Id="sprAirplane" TextureId="txrAirplaneSprite" Bounds="0,0,84,73" FrameBounds="0,0,84,73" />
+
+            <NumTrigger Property="this.X" Compare="L" Value="350" EnterAction="AirplaneSmoke1:Run" />
+            <NumTrigger Property="this.X" Compare="L" Value="250" EnterAction="AirplaneSmoke2:Run" />
+            <NumTrigger Property="this.X" Compare="L" Value="150" EnterAction="AirplaneSmoke3:Run" />
+            <NumTrigger Property="this.X" Compare="L" Value="50" EnterAction="AirplaneSmoke4:Run" />
             
-            <BoolTrigger Condition="this:FlyThroughScreen" EnterAction="setFlyThroughScreen.Start()" />
+            <BoolTrigger Condition="this:FlyThroughScreen" EnterAction="
+                    setFlyThroughScreen.Start();
+                    AirplaneSmoke1.X=390;AirplaneSmoke1.Y=55;
+                    AirplaneSmoke2.X=290;AirplaneSmoke2.Y=65;
+                    AirplaneSmoke3.X=190;AirplaneSmoke3.Y=65;
+                    AirplaneSmoke4.X=90;AirplaneSmoke4.Y=55" />
             <SequenceSet Id="setFlyThroughScreen" InProgress="false" RepeatCount="1">
                 <ParallelSet RepeatCount="1">
                     <Sound FileId="sndAirplane" Volume="0.5" Pitch="0" Pan="0"/>
