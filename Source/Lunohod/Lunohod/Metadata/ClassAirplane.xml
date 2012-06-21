@@ -18,17 +18,17 @@
             
             <BoolTrigger Condition="this:FlyThroughScreen" EnterAction="
                     setFlyThroughScreen.Start();
-                    AirplaneSmoke1.X=390;AirplaneSmoke1.Y=55;
-                    AirplaneSmoke2.X=290;AirplaneSmoke2.Y=65;
-                    AirplaneSmoke3.X=190;AirplaneSmoke3.Y=65;
-                    AirplaneSmoke4.X=90;AirplaneSmoke4.Y=55" />
+                    AirplaneSmoke1.X=390;AirplaneSmoke1.Y=60;
+                    AirplaneSmoke2.X=290;AirplaneSmoke2.Y=70;
+                    AirplaneSmoke3.X=190;AirplaneSmoke3.Y=70;
+                    AirplaneSmoke4.X=90;AirplaneSmoke4.Y=60" />
             <SequenceSet Id="setFlyThroughScreen" InProgress="false" RepeatCount="1">
                 <ParallelSet RepeatCount="1">
                     <Sound FileId="sndAirplane" Volume="0.5" Pitch="0" Pan="0"/>
                     <NumAnimation From="0" To="2" Duration="0.2" Autoreverse="false" Target="sprAirplane.CurrentFrame" RepeatTime="2"/>
                     <NumAnimation Target="this.X" From="540" To="-160" Duration="2" RepeatCount="1"/>
                     <NumAnimation Target="this.Y" From="0" To="40" Autoreverse="true" Duration="1" Smoothing="Flat" RepeatCount="1"/>
-                    <NumAnimation Target="this.Rotation" From="-15" To="15" Duration="2" Smoothing="Flat" RepeatCount="1"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="30" Duration="2" Smoothing="Flat" RepeatCount="1"/>
                 </ParallelSet>
                 <Do Action="this.X=600" />
             </SequenceSet>

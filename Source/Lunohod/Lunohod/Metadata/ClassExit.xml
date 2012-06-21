@@ -36,7 +36,6 @@
                 <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="true" Target="sprExitFlightFire.CurrentFrame" InProgress="true"/>
 			</Sprite>
 			<SequenceSet Id="this_setExit" InProgress="false">
-                <Do Action="this.Depth=0.1" />
                 <Do Action="@heroDepartPointX=hero.X;
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             
@@ -46,7 +45,7 @@
                 <Do Action="this_imgExitStatic.Disable();this_imgExitFlight.Enable()"/>
                 <Delay Duration="1"/>
 				<ParallelSet>
-                    <Do Action="sprExitFlightFire.Enable()"/>
+                    <Do Action="this.Depth=0.1;sprExitFlightFire.Enable()"/>
     				<NumAnimation Target="this.X,this.Y,this.Rotation" Duration="2.5" Autoreverse="false" IsDelta="true" RepeatCount="1" Fill="End">
     					<KeyFrame Time="0" Value="0,0,0" Smoothing="Smooth"/>
     					<KeyFrame Time="1" Value="0,-30,0" Smoothing="Smooth"/>
