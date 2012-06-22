@@ -103,7 +103,8 @@
             <NumAnimation From="0" To="323" Target="hero.X" Duration="3.85" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3480"/>
             <NumAnimation From="0" To="84" Target="hero.Y" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3482"/>
         </SequenceSet>
-        <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Pause()" /><BoolTrigger Condition="hero.IsDead" EnterAction="setWay.Stop()" />
+        <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Pause()" />
+        <BoolTrigger Condition="hero.IsDead" EnterAction="setWay.Stop()" />
         <BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>
         <!-- HAND EDIT <<< -->
     </Layer>
