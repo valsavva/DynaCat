@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.10 -->
+<!-- SVG to XGAME xml converter v1.6.12 -->
 <!-- source: D:\Lunohod\Levels\zzzzzzgrfx_updt.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="zzzzzzgrfx_updt" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
@@ -91,6 +91,9 @@
         <Texture Id="txr_butter_04" Source="butter_04" />
         <Texture Id="txr_butter_05" Source="butter_05" />
         <Texture Id="txr_butter_02" Source="butter_02" />
+        <Texture Id="txr_radar_wave_spr_87x33x4" Source="radar_wave_spr_87x33x4" />
+        <Texture Id="txr_radar_spr_01" Source="radar_spr_01" />
+        <Texture Id="txr_radar_spr_02" Source="radar_spr_02" />
     </Resources>
     <Layer Id="design" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_under_land_level_BG" Bounds="-178, -20, 480, 320" TraceId="image3016-17"/>
@@ -209,6 +212,9 @@
 <Image Id="dfltMask97" TextureId="txr_butter_04" Bounds="-60, 0, 28, 19" TraceId="image3284"/>
 <Image Id="dfltMask98" TextureId="txr_butter_05" Bounds="-75, 1, 32, 40" TraceId="image3295"/>
 <Image Id="dfltMask99" TextureId="txr_butter_02" Bounds="-88, 0, 27, 20" TraceId="image3262"/>
+<Image Id="dfltMask100" TextureId="txr_radar_wave_spr_87x33x4" Bounds="15, 172, 348, 33" TraceId="image3139"/>
+<Image Id="dfltMask101" TextureId="txr_radar_spr_01" Bounds="35, 214, 208, 51" TraceId="image3150"/>
+<Image Id="dfltMask102" TextureId="txr_radar_spr_02" Bounds="53, 257, 188, 68" TraceId="image3161"/>
 </Layer>
 <Layer Id="actionTHE" BackColor="#FFFFFFFF">
     <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -218,7 +224,7 @@
 <Include File="ClassExplosion.xml" />
 <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=7 Enemy=0 Block=0 DesignImage=99 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=7 Enemy=0 Block=0 DesignImage=102 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 660 -->
 <!-- 1% = 6.6; 45% = 297; 90% = 594 -->
