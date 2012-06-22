@@ -218,5 +218,34 @@ namespace Lunohod
 			}
 			return result;
 		}
+
+		public static TEnum ToEnum<TEnum>(this string s)
+			where TEnum : struct
+		{
+			int result = 0;
+
+			var svalues = s.Split('|');
+
+			for(int i = 0; i < svalues.Length; i++)
+			{
+				TEnum tmp = default(TEnum);
+
+				if (!Enum.TryParse<TEnum>(svalues[i], true, out tmp))
+					throw new InvalidOperationException(string.Format("Unknown member: {0} of enum: {1}", svalues[i], typeof(TEnum).Name));
+
+				if (i == 0)
+					result = ((IConvertible)tmp).ToInt32(CultureInfo.InvariantCulture);
+				else
+					result |= ((IConvertible)tmp).ToInt32(CultureInfo.InvariantCulture);
+			}
+
+			return (TEnum)Enum.ToObject(typeof(TEnum), result);
+		}
+
+		public static string EnumToString<TEnum>(this TEnum e)
+			where TEnum : struct
+		{
+			return e.ToString().Replace(", ","|").Replace(",","|");
+		}
     }
 }
