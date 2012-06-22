@@ -1,10 +1,19 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Enemies_v1" Bounds="0, 0, 480, 320">-->
+
 <Include>
-    <Resources RootFolder="Textures">
-        <Texture Id="txr_oil" Source="oil" />
-    </Resources>
+
     <Class Id="clsOilSpot">
-        <Image TextureId="txr_oil" Opacity="0" Stretch="true" >
-            <NumAnimation Target="this.Opacity" From="0" To="1" Duration="@appearanceTime" RepeatCount="1" Fill="End" InProgress="true" />
+        <Image TextureId="txr_butter_@txrNum" Opacity="0" StretchMode="Stretch" >
+            <NumTrigger Property="@appearanceTime" Compare="LE" Value="3" EnterAction="@this_delay=@appearanceTime/10;@this_duration=0.1;this_anm.Start()" />
+            <NumTrigger Property="@appearanceTime" Compare="G" Value="3" EnterAction="@this_delay=@appearanceTime/4;@this_duration=@appearanceTime/2;this_anm.Start()" />
+            <!--<NumTrigger Property="@appearanceTime" Compare="LE" Value="3" EnterAction="@this_delay=@appearanceTime/10;@this_duration=0.1;@this_W=this.Width;@this_H=this.Height;this_anm.Start()" />
+            <NumTrigger Property="@appearanceTime" Compare="G" Value="3" EnterAction="@this_delay=@appearanceTime/4;@this_duration=@appearanceTime/2;@this_W=this.Width;@this_H=this.Height;this_anm.Start()" />-->
+
+            <SequenceSet Id="this_anm" RepeatCount="1" InProgress="false">
+                <Delay Duration="@this_delay" />
+                <NumAnimation Target="this.Opacity" From="0" To="1" Duration="@this_duration" RepeatCount="1" Fill="End"/>
+                <!--<NumAnimation Target="this.Opacity,this.Width,this.Height" From="0,@this_W*0.9,@this_H*0.9" To="1,@this_W,@this_H" Duration="@this_duration" RepeatCount="1" Fill="End"/>-->
+            </SequenceSet>
         </Image>
 	</Class>
 

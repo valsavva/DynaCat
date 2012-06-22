@@ -3,24 +3,31 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_1D_Enemies_v1.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Enemies_v1\Lvl_1D_Enemies_v1.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.61051" inkscape:cx="240.32853" inkscape:cy="165.94884" inkscape:document-units="px" inkscape:current-layer="layer2" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
-        <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
-        <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
-        <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
-        <sodipodi:guide orientation="1,0" position="80,128" id="guide3024" />
-        <sodipodi:guide orientation="0,1" position="240,160" id="guide3005" />
-        <sodipodi:guide orientation="1,0" position="240,160" id="guide3007" />
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="5.5599173" inkscape:cx="201.60579" inkscape:cy="164.90231" inkscape:document-units="px" inkscape:current-layer="layer8" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+        <sodipodi:guide orientation="0,1" position="380,60" id="guide3020" />
+        <sodipodi:guide orientation="1,0" position="62,150" id="guide3024" />
+        <sodipodi:guide orientation="0,1" position="222,150" id="guide3005" />
+        <sodipodi:guide orientation="1,0" position="222,150" id="guide3007" />
         <sodipodi:guide orientation="1,0" position="0,160" id="guide3072" />
         <sodipodi:guide orientation="1,0" position="480,160" id="guide3074" />
         <sodipodi:guide orientation="0,1" position="240,320" id="guide3076" />
         <inkscape:grid type="xygrid" id="grid3023" />
+        <sodipodi:guide orientation="1,0" position="262,180" id="guide3110" />
+        <sodipodi:guide orientation="0,1" position="262,180" id="guide3112" />
+        <sodipodi:guide orientation="0,1" position="145,0" id="guide3114" />
+        <sodipodi:guide orientation="0,1" position="420,300" id="guide3116" />
+        <sodipodi:guide orientation="0,1" position="380,270" id="guide3118" />
+        <sodipodi:guide orientation="1,0" position="380,270" id="guide3120" />
+        <sodipodi:guide orientation="1,0" position="102,180" id="guide3122" />
+        <sodipodi:guide orientation="1,0" position="420,300" id="guide3124" />
+        <sodipodi:guide orientation="0,1" position="262,30" id="guide3169" />
     </sodipodi:namedview>
     <metadata id="metadata7">
         <rdf:RDF>
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -35,10 +42,9 @@
         <image y="0" x="-18" id="image3230" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockStick/BlockStick.png" height="357.07031" width="80" />
     </g>
     <g inkscape:groupmode="layer" id="layer1" inkscape:label="background" style="display:inline" sodipodi:insensitive="true">
-        <image y="0" x="0" id="image4550" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/brickWall.png" height="320" width="480" />
+        <image y="0" x="0" id="image3107" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/under_land_level_BG.png" height="320" width="480" />
     </g>
-    <g inkscape:groupmode="layer" id="layer7" inkscape:label="secondbckg" sodipodi:insensitive="true" style="display:none" />
-    <g inkscape:groupmode="layer" id="layer10" inkscape:label="laz" style="display:inline" sodipodi:insensitive="true">
+    <g inkscape:groupmode="layer" id="layer10" inkscape:label="laz old" style="display:none" sodipodi:insensitive="true">
         <image width="40" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert.png" id="image4497" x="222" y="170" />
         <image y="140" x="222" id="image4519" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_turn1.png" height="30" width="40" />
         <image y="200" x="222" id="image4696" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert.png" height="30" width="40" />
@@ -80,56 +86,110 @@
         <image width="40" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_turn1.png" id="image3082" x="222" y="20" inkscape:label="Flip:Hor" />
         <image transform="scale(-1,-1)" width="40" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_turn1.png" id="image3192" x="-102" y="-170" />
     </g>
-    <g inkscape:groupmode="layer" id="layer8" inkscape:label="oil" style="display:inline" sodipodi:insensitive="true">
-        <image y="92.758614" x="222.56396" id="image3085-1" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/grpOil/grpOil.png" height="101.30859" width="39.310707" />
-        <image width="11.10473" height="13.993508" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3100" x="224.61562" y="117.34262" />
-        <image y="107.56883" x="245.36002" id="image3098" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="17.982815" width="14.296175" />
-        <image width="17.08869" height="17.982815" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3096" x="224.61563" y="94.204659" />
-        <image y="94.204659" x="224.61563" id="image3144" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="37.729881" width="34.043243" />
-        <image width="32.424515" height="37.729881" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3146" x="223.86438" y="112.63785" />
-        <image y="129.75436" x="229.09227" id="image3148" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="27.459963" width="30.568279" />
-        <image width="32.726585" height="27.459963" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3150" x="222.24565" y="138.70763" />
-        <image y="141.07761" x="228.82893" id="image3152" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="32.790222" width="34.705032" />
-        <image width="34.165455" height="37.466549" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3154" x="223.86011" y="154.24417" />
-        <image y="171.3607" x="230.14558" id="image3156" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="24.563318" width="29.668985" />
-        <image y="108" x="227" id="image3103" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Barrel/barrel.png" height="32" width="28" />
+    <g inkscape:groupmode="layer" id="layer11" inkscape:label="Laz New" style="display:inline" sodipodi:insensitive="true">
+        <image y="80" x="57" id="image3135" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" height="30" width="49" />
+        <image y="50" x="57" id="image3146-1" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_02.png" height="30" width="49" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" id="image3149" x="57" y="110" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" id="image3151" x="217" y="50" />
+        <image y="80" x="217" id="image3153" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" height="30" width="49" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_02.png" id="image3155" x="217" y="110" />
+        <image y="140" x="217" id="image3157" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_bckgrnd_01.png" height="30" width="49" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" id="image3159" x="217" y="170" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_02.png" id="image3161" x="217" y="200" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" id="image3163" x="217" y="230" />
+        <image y="50" x="375" id="image3171" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" height="30" width="49" />
+        <image y="80" x="375" id="image3174" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_02.png" height="30" width="49" />
+        <image y="110" x="375" id="image3176" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" height="30" width="49" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" id="image3178" x="375" y="140" />
+        <image y="170" x="375" id="image3181" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" height="30" width="49" />
+        <image width="49" height="30" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_01.png" id="image3185" x="375" y="200" />
+        <image y="230" x="375" id="image3187" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_vert_02.png" height="30" width="49" />
+        <image y="17.100018" x="262" id="image3214" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" height="36" width="40" />
+        <image width="40" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" id="image3216" x="302" y="17.100018" />
+        <image y="17.100018" x="342" id="image3218" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" height="36" width="40" />
+        <image width="40" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" id="image3231" x="262" y="257.10001" />
+        <image y="257.10001" x="302" id="image3233" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" height="36" width="40" />
+        <image width="40" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" id="image3235" x="342" y="257.10001" />
+        <image width="40" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" id="image3239" x="102" y="137.10001" />
+        <image y="137.10001" x="142" id="image3241" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" height="36" width="40" />
+        <image width="40" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" id="image3243" x="182" y="137.10001" />
+        <image width="40" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" id="image3247" x="262" y="137.10001" />
+        <image y="137.10001" x="302" id="image3249" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" height="36" width="40" />
+        <image width="40" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_hor_01.png" id="image3251" x="342" y="137.10001" />
+        <image y="16" x="380" id="image3263" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_turn_02.png" height="34" width="44" />
+        <image width="44" height="34" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_turn_02.png" id="image3266" x="-101.90125" y="-173.95659" transform="scale(-1,-1)" />
+        <image width="44" height="34" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_turn_02.png" id="image3272" x="-262.07059" y="-294.00732" transform="scale(-1,-1)" />
+        <image width="44" height="34" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_turn_02.png" id="image3764" x="218.07181" y="16.350494" inkscape:label="Flip:Hor" />
+        <image width="44" height="34" xlink:href="file:///D:/Lunohod/Grfx/design/laz/new/laz_turn_02.png" id="image3766" x="-424" y="-294" transform="scale(-1,-1)" inkscape:label="Flip:Hor" />
+    </g>
+    <g inkscape:groupmode="layer" id="layer7" inkscape:label="secondbckg" style="display:inline" sodipodi:insensitive="true">
+        <image y="16.946283" x="221.26033" id="image3566" xlink:href="file:///D:/Lunohod/Grfx/design/web/web_02.png" height="28.85725" width="26.900826" />
+        <image width="15" height="16" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_03.png" id="image3624" x="8.5" y="57" />
+        <image width="15" height="16" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_03.png" id="image3626" x="-6.5" y="109" />
+        <image width="15" height="16" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_03.png" id="image3628" x="22.5" y="182" />
+        <image width="15" height="16" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_03.png" id="image3630" x="443.5" y="58" />
+        <image y="185" x="447.5" id="image3599" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_03.png" height="16" width="15" />
+        <image width="15" height="12" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_01.png" id="image3632" x="170.5" y="217" />
+        <image width="15" height="12" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_01.png" id="image3634" x="455.5" y="174" />
+        <image width="15" height="12" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_01.png" id="image3636" x="459.5" y="255" />
+        <image y="290" x="455.5" id="image3610" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_01.png" height="12" width="15" />
+        <image y="281" x="160.5" id="image3756" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_02.png" height="10" width="11" />
+        <image y="90" x="332.5" id="image3758" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_02.png" height="10" width="11" />
+        <image y="106" x="356.5" id="image3760" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_02.png" height="10" width="11" />
+        <image y="201" x="285.5" id="image3762" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_02.png" height="10" width="11" />
+        <image width="11" height="10" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_02.png" id="image3640" x="172.5" y="306" />
+        <image width="11" height="10" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_brown_02.png" id="image3642" x="127.5" y="20" />
+        <image y="221.5" x="68.5" id="image3663" xlink:href="file:///D:/Lunohod/Grfx/design/bones/bones_01.png" height="31" width="35" />
+        <image y="222.5" x="111.5" id="image3674" xlink:href="file:///D:/Lunohod/Grfx/design/bones/bones_09.png" height="23" width="19" />
+        <image y="209" x="65.5" id="image3685" xlink:href="file:///D:/Lunohod/Grfx/design/bones/bones_02.png" height="12" width="15" />
+        <image y="258" x="98.5" id="image3696" xlink:href="file:///D:/Lunohod/Grfx/design/bones/bones_03.png" height="18" width="15" />
+        <image y="246.5" x="118.5" id="image3707" xlink:href="file:///D:/Lunohod/Grfx/design/bones/bones_04.png" height="19" width="15" />
+        <image y="169.5" x="341.5" id="image3718" xlink:href="file:///D:/Lunohod/Grfx/design/bones/bones_07.png" height="13" width="21" />
+        <image y="-4.5" x="130" id="image3729" xlink:href="file:///D:/Lunohod/Grfx/design/metal/metal_02.png" height="23" width="28" />
+        <image y="-152.30003" x="-151.14317" id="image3740" xlink:href="file:///D:/Lunohod/Grfx/design/metal/metal_01.png" height="26" width="35" transform="matrix(-0.70710678,0.70710678,-0.70710678,-0.70710678,0,0)" />
     </g>
     <g style="display:inline" inkscape:label="oil 2" id="g3160" inkscape:groupmode="layer" sodipodi:insensitive="true">
-        <image width="116.6532" height="27.979755" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/grpOil/grpOil.png" id="image3162" x="175.31564" y="140.0582" />
-        <image width="15.893856" height="12.984584" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3104" x="193.36903" y="142.61029" />
-        <image y="153.2383" x="176.03719" id="image3102" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="15.764219" width="20.145063" />
-        <image width="34.043243" height="27.04627" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3164" x="176.03719" y="141.95624" />
-        <image y="141.75839" x="194.43674" id="image3182" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="27.04627" width="34.043243" />
-        <image width="38.395824" height="27.04627" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3184" x="207.29665" y="140.57132" />
-        <image y="137.20796" x="221.14577" id="image3186" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="30.013941" width="38.395824" />
-        <image width="38.395824" height="27.639805" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3189" x="235.39058" y="140.57133" />
-        <image y="141.75842" x="258.53842" id="image3191" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="22.100155" width="24.744541" />
-        <image width="24.744541" height="22.100155" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" id="image3193" x="255.7686" y="147.10023" />
-        <image y="147.10023" x="270.60696" id="image3195" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/oil.png" height="22.100155" width="24.744541" />
+        <image width="90.104362" height="27.979755" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/grpOil/grpOil.png" id="image3162" x="175.31564" y="140.0582" />
+        <image y="142.15332" x="178.10641" id="image3293-9" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_08.png" height="24.896645" width="50.475971" />
+        <image y="141.18452" x="164.86775" id="image3350" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_07.png" height="19" width="34" />
+        <image y="148.93945" x="213.12169" id="image3361" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_08.png" height="22" width="47" />
+        <image y="143.05211" x="187.20198" id="image3170" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_03.png" height="23.966173" width="33" />
+        <image y="143.72504" x="205.38991" id="image3181-1" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_04.png" height="19" width="33.068413" />
+        <image y="146.60399" x="169.20425" id="image3192-7" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_02.png" height="21.930824" width="29.654884" />
+        <image y="140.77655" x="231.29005" id="image3203" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_04.png" height="18.758646" width="31.861649" />
+        <image y="152.98328" x="235.42458" id="image3315" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_02.png" height="20" width="27" />
         <image width="28" height="32" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Barrel/barrel.png" id="image3180" x="194" y="138" />
+    </g>
+    <g inkscape:groupmode="layer" id="layer8" inkscape:label="oil" style="display:inline" sodipodi:insensitive="true">
+        <image y="93.917267" x="222.56396" id="image3085-1" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/grpOil/grpOil.png" height="82.190742" width="39.310707" />
+        <image y="99.397224" x="224.16667" id="image3304-4" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_06.png" height="42.627384" width="37.144165" />
+        <image y="131.84988" x="223.50906" id="image3225" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_08.png" height="16.702814" width="35.683285" />
+        <image y="89.171173" x="226.09174" id="image3236" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_07.png" height="19" width="34" />
+        <image y="103.47542" x="224.19783" id="image3258" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_03.png" height="36.964134" width="36.482067" />
+        <image y="129.09802" x="219.20747" id="image3269" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_05.png" height="51.007248" width="36.924297" />
+        <image y="150.3156" x="238.29768" id="image3280" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Oil/butter_04.png" height="19" width="28" />
+        <image y="108" x="227" id="image3103" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Barrel/barrel.png" height="32" width="28" />
     </g>
     <g inkscape:groupmode="layer" id="layer3" inkscape:label="oil 3" style="display:inline" sodipodi:insensitive="true">
         <image y="104.90781" x="382.44754" id="image3230-7" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/grpOilStatic/grpOilStatic.png" height="81.302643" width="35.118416" />
-        <image width="34.86842" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/oil.png" id="image3209" x="384.46188" y="103.13388" />
-        <image y="105.46642" x="380.72983" id="image3206" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/oil.png" height="40" width="26.471287" />
-        <image width="26.471287" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/oil.png" id="image3211" x="392.85901" y="125.52624" />
-        <image y="134.38988" x="379.33029" id="image3213" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/oil.png" height="40" width="26.471287" />
-        <image width="30.421431" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/oil.png" id="image3215" x="388.05399" y="148.85159" />
-        <image y="156.23692" x="382.22345" id="image3094" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/oil.png" height="29.116358" width="27.311819" />
+        <image y="110.02805" x="382.45041" id="image3282" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/butter_05.png" height="40" width="32" />
+        <image width="32" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/butter_05.png" id="image3307" x="385.68549" y="145.3671" />
+        <image y="140.47063" x="372.22961" id="image3293" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/butter_03.png" height="30" width="33" />
+        <image y="130.61841" x="389.53012" id="image3304" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/butter_04.png" height="19" width="28" />
     </g>
     <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline" sodipodi:insensitive="true">
         <image style="display:inline" y="53.276684" x="233.75626" id="image3129" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat4/EnemyRat4_Dimensions.png" height="21" width="18" />
-        <image width="30" height="15" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" id="image3173" x="223.84297" y="244.7314" />
-        <image width="28" height="17" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_6_me.png" id="image3188" x="388.56039" y="107.85118" />
-        <image width="28" height="17" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_6_me.png" id="image3190" x="343.02478" y="145.38429" />
-        <image y="239" x="384" id="image3183" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_6_me.png" height="17" width="28" />
-        <image width="26" height="17" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_5_me.png" id="image3205" x="61.545452" y="73.318184" />
-        <image width="26" height="17" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_5_me.png" id="image3207" x="67.909088" y="89.681824" />
         <image style="display:inline" y="23.51366" x="350.57812" id="image3240" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat2/EnemyRat2_Dimensions.png" height="23" width="22" />
         <image width="30" height="30" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Wall/WoodenBox/box_old_1.png" id="image3296" x="385.13663" y="21.95645" />
+        <image y="111.20087" x="387.66284" id="image3487" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType04.png" height="22" width="28" />
+        <image y="144.88989" x="343.34467" id="image3498" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image width="31" height="20" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType03.png" id="image3512" x="227.08383" y="239.09087" />
+        <image y="238.15785" x="383.83032" id="image3509" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType03.png" height="20" width="31" />
+        <image y="73.246307" x="65.040703" id="image3522" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType06.png" height="27" width="22" />
+        <image y="98.107567" x="73.837364" id="image3533" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
     </g>
     <g inkscape:groupmode="layer" id="layer5" inkscape:label="actionTHE" style="display:inline" sodipodi:insensitive="true">
-        <image y="0" x="0" id="image3038" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Tower/transmitter-2.png" height="30" width="30" />
+        <image y="0" x="0" id="image3038" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Tower/transmitter_2_off.png" height="30" width="30" />
         <image y="11.362473" x="62" id="image3049" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Exit/refrigerator.png" height="54" width="37" />
         <image y="143" x="225" id="image3606" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="24" width="33" />
     </g>

@@ -57,8 +57,8 @@
             <!-- explosion -->
             <!-- dying -->
             
-            <Group Id="this_Smoke2" Class="clsSmoke" ClassParams="@type=2" />
-            <Group Id="this_Smoke3" Class="clsSmoke" ClassParams="@type=3" />
+            <Group Id="this_Smoke2" Class="clsSmoke" Location="-4,-2" ClassParams="@type=2" />
+            <Group Id="this_Smoke3" Class="clsSmoke" Location="-4,-2" ClassParams="@type=3" />
 
             <BoolTrigger Condition="this:BoomClose" EnterAction="hero.AddScore(this.Points);this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
 				<Image Id="this_imgEnemyRat1Dying" TextureId="txrEnemyRat1Dying" Bounds="-6, -2, 40, 29"/>
