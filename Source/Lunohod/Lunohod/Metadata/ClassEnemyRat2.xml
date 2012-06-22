@@ -57,8 +57,8 @@
             <!-- explosion -->
             <!-- dying -->
 
-            <Group Id="this_Smoke1" Class="clsSmoke" ClassParams="@type=1" />
-            <Group Id="this_Smoke2" Class="clsSmoke" ClassParams="@type=2" />
+            <Group Id="this_Smoke1" Class="clsSmoke" Location="-4,-2" ClassParams="@type=1" />
+            <Group Id="this_Smoke2" Class="clsSmoke" Location="-4,-2" ClassParams="@type=2" />
 
             <BoolTrigger Condition="this:BoomClose" EnterAction="hero.AddScore(this.Points);this_setDying.Start()" StayTriggered="true" Group="this_sttStates">
 				<Image Id="this_imgEnemyRat2Dying" TextureId="txrEnemyRat2Dying" Bounds="-15, -4, 43, 29"/>
@@ -68,8 +68,8 @@
                 <Sound FileId="sndEnemyRat2Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
                 <NumAnimation Target="this_imgEnemyRat2Dying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <RandomSet>
-                    <Do Action="this_Smoke2:Run" />
                     <Do Action="this_Smoke1:Run" />
+                    <Do Action="this_Smoke2:Run" />
                 </RandomSet>
             </ParallelSet>
 
