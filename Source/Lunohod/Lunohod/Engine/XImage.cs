@@ -173,6 +173,17 @@ namespace Lunohod.Objects
 
         }
 
+		public override void GetProperty(string propertyName, out Func<string> getter, out Action<string> setter)
+		{
+			switch (propertyName)
+			{
+                case "FlipEffects": getter = () => this.FlipEffects.EnumToString(); setter = (v) => this.FlipEffects = v.ToEnum<XFlipEffects>() ; break;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
+
+
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             reader.ReadAttrAsString("TextureId", ref this.TextureId);

@@ -204,7 +204,8 @@ namespace Microsoft.Xna.Framework
                     return;
                 if (IsPlayingVideo)
                     return;
-
+				if (!Game.IsActive)
+					return;
                 // FIXME: Remove this call, and the whole Tick method, once
                 //        GraphicsDevice is where platform-specific Present
                 //        functionality is actually implemented.  At that

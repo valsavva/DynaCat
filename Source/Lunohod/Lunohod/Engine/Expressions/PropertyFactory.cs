@@ -43,8 +43,13 @@ namespace Lunohod.Xge
                     );
             }
 
-            if (returnType == typeof(string))
-                throw new InvalidOperationException("No String properties");
+            if (returnType == typeof(string) || returnType.IsEnum)
+			{
+				Func<string> getter;
+				Action<string> setter;
+				target.GetProperty(propertyId, out getter, out setter);
+				return new Property<string>(target, objectId, propertyId, getter, setter);
+			}
             else if (returnType == typeof(bool))
 			{
 				Func<bool> getter;

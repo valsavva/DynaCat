@@ -64,12 +64,17 @@
 		<Group Location=" 10,250">
 			<Image Location="  5,0" TextureId="chargers" FlipEffects="Vertically"/>
 			<Image Location=" 75,0" TextureId="chargers" FlipEffects="Horizontally"/>
-			<Image Location="145,0" TextureId="chargers" FlipEffects="Vertically|Horizontally"/>
+			<Image Id="imgFlipping" Location="145,0" TextureId="chargers" FlipEffects="Vertically|Horizontally"/>
 
 			<Text Location="  5,50" Text="VERTICAL" FontId="SystemFont" FlipEffects="Vertically"/>
 			<Text Location="  75,50" Text="HORIZONTAL" FontId="SystemFont" FlipEffects="Horizontally"/>
 			<Text Location="145,50" Text="V AND H" FontId="SystemFont" FlipEffects="Vertically|Horizontally"/>
 		</Group>
+		
+		<SequenceSet RepeatCount="0" InProgress="true">
+			<Do Action="imgFlipping.FlipEffects=system.IIfStr(imgFlipping.FlipEffects=='None','Vertically|Horizontally','None');"/>
+			<Delay Duration="2"/>
+		</SequenceSet>
 	</Layer>
 
 	<Include File="Dashboard.xml" />	
