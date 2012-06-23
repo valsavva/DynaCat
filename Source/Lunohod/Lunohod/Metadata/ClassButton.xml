@@ -1,0 +1,92 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Boxes" Bounds="0, 0, 480, 320">-->
+    
+<Include>
+    
+    <!-- 
+    @BtnImg is the button's texture index
+    
+    @BtnImg=1 : Back
+    @BtnImg=2 : Forwind
+    @BtnImg=3 : Full Version
+    @BtnImg=4 : Info
+    @BtnImg=5 : Home (Menu)
+    @BtnImg=6 : Play
+    @BtnImg=7 : Restart
+    -->
+    
+    <Resources RootFolder="Global">
+        <Texture Id="txrButton1Basic" Source="btn_1_basic" />
+        <Texture Id="txrButton1Pressed" Source="btn_1_pressed" />
+        <Texture Id="txrButton2Basic" Source="btn_2_basic" />
+        <Texture Id="txrButton2Pressed" Source="btn_2_pressed" />
+        <Texture Id="txrButton3Basic" Source="btn_3_basic" />
+        <Texture Id="txrButton3Pressed" Source="btn_3_pressed" />
+        <Texture Id="txrButton4Basic" Source="btn_4_basic" />
+        <Texture Id="txrButton4Pressed" Source="btn_4_pressed" />
+        <Texture Id="txrButton5Basic" Source="btn_5_basic" />
+        <Texture Id="txrButton5Pressed" Source="btn_5_pressed" />
+        <Texture Id="txrButton6Basic" Source="btn_6_basic" />
+        <Texture Id="txrButton6Pressed" Source="btn_6_pressed" />
+        <Texture Id="txrButton7Basic" Source="btn_7_basic" />
+        <Texture Id="txrButton7Pressed" Source="btn_7_pressed" />
+    </Resources>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndButtonTapped" Source="btn_click"/>
+    </Resources>
+
+    
+    
+    <Class Id="clsButton">
+		<Group>
+            <Sound Id="this_sndButtonTapped" FileId="sndButtonTapped" Volume="0.5" Pitch="0"/>
+            
+            <!-- Init -->
+            <SequenceSet Id="this_Init" RepeatCount="1" InProgress="true">
+                <Do Action="this:-Pressed;
+                    this:-Action" />
+                <Delay Duration="0.3" /> <!-- trying to prevent double taping -->
+                <Do Action="this_tapArea.Enable()" />
+            </SequenceSet>
+
+            <!-- button is pressed -->
+            <SequenceSet Id="this_Pressed" RepeatCount="1" InProgress="false">
+                <Do Action="this_sndButtonTapped.Start()" />
+                <Delay Duration="0.1" /> <!-- pause for animation and fxs -->
+                <Do Action="this:Action;this:-Pressed" />
+            </SequenceSet>
+
+
+            <TapArea Id="this_tapArea" Action="this:+Pressed" Enabled="false"/>
+
+
+            <!-- state : basic, not pressed -->
+            <BoolTrigger Condition="not this:Pressed" 
+                         Group="this_sttButton">
+                <Image Id="this_imgButtonBasic" TextureId="txrButton@BtnImgBasic" StretchMode="ActualSize" />
+            </BoolTrigger>
+            
+            <!-- state : pressed -->
+            <BoolTrigger Condition="this:Pressed" 
+                         EnterAction="system:InterfaceButtonPressed;
+                         this_Pressed.Start()" 
+                         Group="this_sttButton">
+                <Image TextureId="txrButton@BtnImgPressed" StretchMode="ActualSize" />
+            </BoolTrigger>
+
+            <!-- avoidance of tapping more than one button -->
+            <BoolTrigger Condition="system:InterfaceButtonPressed" EnterAction="this_tapArea.Disable()" />
+            
+		</Group>
+	</Class>
+	
+</Include>
+
+
+
+
+
+
+
+
+
+
