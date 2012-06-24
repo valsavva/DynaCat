@@ -96,10 +96,12 @@ namespace Lunohod
 		
 		private void CountLevelPoints()
 		{
-			this.LevelScore.AvaliablePoints = 0;
+			XLevelScore levelScore = (XLevelScore)this.RootComponent.FindLocal("levelScore");
+
+			levelScore.AvaliablePoints = 0;
 			this.LevelObject.TraveseTree(o => {
 				if (o is IHasPoints && !(this.LevelInfo.BombCount == 0 && o is XEnemy))
-					this.LevelScore.AvaliablePoints += ((IHasPoints)o).Points;
+					levelScore.AvaliablePoints += ((IHasPoints)o).Points;
 			});
 		}
 		
