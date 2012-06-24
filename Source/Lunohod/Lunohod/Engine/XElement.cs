@@ -114,13 +114,13 @@ namespace Lunohod.Objects
 		
 		private void UpdateTransforms()
 		{
-			if (TransState.TransformCycle == this.updateCycle)
+			if (TransState.TransformCycle == GameEngine.Instance.CycleNumber)
 				return;
 			
 			// Initialize state
 			if (this.IsRoot || this.ParentElement == null)
 			{
-				TransState.TransformCycle = this.updateCycle;
+				TransState.TransformCycle = GameEngine.Instance.CycleNumber;
 				TransState.LocationTransform = Matrix.Identity;
 				TransState.ScaleTransform = Matrix.Identity;
 			}
@@ -149,12 +149,12 @@ namespace Lunohod.Objects
 
 		private void UpdateProps()
 		{
-			if (PropState.PropCycle == this.updateCycle)
+			if (PropState.PropCycle == GameEngine.Instance.CycleNumber)
 				return;
 			
 			if  (this.IsRoot || this.ParentElement == null)
 			{
-				PropState.PropCycle = this.updateCycle;
+				PropState.PropCycle = GameEngine.Instance.CycleNumber;
 				PropState.Opacity = 1;
 				PropState.Rotation = 0;
                 PropState.Depth = DefaultDepth;
