@@ -8,9 +8,8 @@
             <stop style="stop-color:#000000;stop-opacity:1;" offset="0" id="stop6949" />
             <stop style="stop-color:#000000;stop-opacity:0;" offset="1" id="stop6951" />
         </linearGradient>
-        <linearGradient y2="110" x2="224.3598" y1="459" x1="215.01045" gradientUnits="userSpaceOnUse" id="linearGradient6970" xlink:href="#linearGradient6947" inkscape:collect="always" />
     </defs>
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1" inkscape:cx="309.53325" inkscape:cy="155.54619" inkscape:document-units="px" inkscape:current-layer="layer10" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.771561" inkscape:cx="261.77422" inkscape:cy="98.596983" inkscape:document-units="px" inkscape:current-layer="layer11" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -33,298 +32,102 @@
         </rdf:RDF>
     </metadata>
     <g inkscape:groupmode="layer" id="layer1" inkscape:label="background" style="display:inline" sodipodi:insensitive="true">
-        <image y="0" x="0" id="image4744" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/backg_demo.png" height="320" width="480" />
         <image y="0" x="0" id="image4733" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/railway2.png" height="320" width="480" />
+        <image y="0" x="0" id="image3291" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/level_BG.png" height="320" width="480" />
     </g>
-    <g inkscape:groupmode="layer" id="layer7" inkscape:label="secondbckg" sodipodi:insensitive="true" style="display:inline" />
+    <g inkscape:groupmode="layer" id="layer7" inkscape:label="secondbckg" style="display:inline" sodipodi:insensitive="true">
+        <image y="194.94627" x="-83.47934" id="image3537" xlink:href="file:///D:/Lunohod/Grfx/design/lake/lake_02.png" height="103" width="162" />
+        <image y="235.48759" x="334.47519" id="image3588" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_03.png" height="12" width="17" />
+        <image y="233.31406" x="344.69836" id="image3566" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_05.png" height="18" width="23" />
+        <image width="10" height="8" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_01.png" id="image3591" x="330.5372" y="249.05785" />
+        <image width="10" height="8" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_01.png" id="image3593" x="311.52893" y="243.27272" />
+        <image y="248.2314" x="282.6033" id="image3577" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_01.png" height="8" width="10" />
+        <image y="192.95042" x="65.838844" id="image3603" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_07.png" height="26" width="27" />
+        <image width="10" height="8" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_01.png" id="image3628" x="65.24794" y="223.43802" />
+        <image y="209.19421" x="81.735542" id="image3625" xlink:href="file:///D:/Lunohod/Grfx/design/stone/stone_02.png" height="15" width="20" />
+        <image y="234.94627" x="67.359505" id="image3640" xlink:href="file:///D:/Lunohod/Grfx/design/bones/bones_09.png" height="23" width="19" />
+        <image y="175.80992" x="-16.500002" id="image3662" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_08.png" height="14" width="33" />
+        <image y="286.03305" x="21.731409" id="image3673" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_09.png" height="20" width="21" />
+        <image width="32" height="27" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_10.png" id="image3698" x="82.347115" y="205.67355" />
+        <image style="display:inline;enable-background:new" y="-4" x="131.5" id="image3706" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" height="14" width="33" />
+        <image style="display:inline;enable-background:new" y="-1" x="431" id="image3726" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" height="14" width="33" />
+        <image width="33" height="14" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" id="image3376" x="464" y="-3" style="display:inline;enable-background:new" />
+    </g>
     <g inkscape:groupmode="layer" id="layer4" inkscape:label="blocks" sodipodi:insensitive="true" style="display:inline" />
-    <g inkscape:groupmode="layer" id="layer8" inkscape:label="design" style="display:inline" sodipodi:insensitive="true" />
-    <g inkscape:groupmode="layer" id="layer12" inkscape:label="curves2" style="display:none" sodipodi:insensitive="true">
-        <rect style="fill:#c0e888;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4593" width="480" height="320" x="0" y="0" />
-        <rect y="0" x="0" height="320" width="480" id="rect6101" style="opacity:0.12107622;fill:url(#pattern6921);fill-opacity:1;fill-rule:nonzero;stroke:none" />
-    </g>
-    <g inkscape:groupmode="layer" id="layer13" inkscape:label="curves3" style="opacity:0.34080715;display:none" sodipodi:insensitive="true">
-        <path sodipodi:type="arc" style="fill:url(#linearGradient6970);fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" id="path6925" sodipodi:cx="223.5" sodipodi:cy="240.5" sodipodi:rx="254.5" sodipodi:ry="254.5" d="m 478,240.5 a 254.5,254.5 0 1 1 -509,0 254.5,254.5 0 1 1 509,0 z" transform="matrix(1.2336741,0,0.03877953,1,-51.462037,-19.922307)" />
-    </g>
-    <g inkscape:groupmode="layer" id="layer3" inkscape:label="curves" style="display:none" sodipodi:insensitive="true">
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4590" width="8" height="32" x="117.40863" y="376.23965" transform="matrix(0.86105134,-0.50851804,0.50851804,0.86105134,0,0)" />
-        <rect y="80" x="240" height="32" width="8" id="rect4340" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g id="g3917" transform="translate(-136,-56)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3796" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect3800" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect3009" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3012" width="40" height="4" x="110" y="100" />
-        </g>
-        <g id="g4573" transform="translate(25.5,48.9)">
-            <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" id="rect3895" d="m 76.5,-28.9 6,0 0,32 -8,0 z" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" id="rect3897" d="m 94.5,-28.9 8,0 0,32 -6,0 z" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <path sodipodi:nodetypes="ccccccc" inkscape:connector-curvature="0" id="rect3899" d="M 68.5,-24.9 88.10535,-24.18057 108.5,-24.9 l 0,4 -20.57451,0.71943 L 68.5,-20.9 z" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <path inkscape:connector-curvature="0" id="rect3901" d="m 68.5,-4.9 40,0 0,4 -40,0 z" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3931" width="8" height="32" x="20" y="20" />
-        <path style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 40,20 8,0 0,32 -6,0 z" id="rect3933" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" />
-        <rect y="24" x="14" height="4" width="40" id="rect3935" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3937" width="40" height="4" x="14" y="44" />
-        <rect y="20" x="60" height="32" width="8" id="rect3941" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3943" width="8" height="32" x="80" y="20" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3945" width="40" height="4" x="54" y="24" />
-        <rect y="44" x="54" height="4" width="40" id="rect3947" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g id="g3959" transform="translate(24,-56)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3961" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect3963" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect3965" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3967" width="40" height="4" x="110" y="100" />
-        </g>
-        <g transform="translate(64,-56)" id="g3969">
-            <rect y="76" x="116" height="32" width="8" id="rect3971" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3973" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3975" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect3977" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <rect y="20" x="220" height="32" width="8" id="rect3981" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3983" width="8" height="32" x="242.64058" y="-15.34588" transform="matrix(0.98967399,0.14333665,-0.14333665,0.98967399,0,0)" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3985" width="40" height="4" x="214" y="24" />
-        <rect y="44" x="214" height="4" width="40" id="rect3987" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g transform="translate(144,-56)" id="g3989">
-            <rect y="76" x="116" height="32" width="8" id="rect3991" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3993" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3995" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect3997" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <g id="g4030" transform="translate(184,-56)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4032" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4034" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4036" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4038" width="40" height="4" x="110" y="100" />
-        </g>
-        <g transform="translate(224,-56)" id="g4040">
-            <rect y="76" x="116" height="32" width="8" id="rect4042" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4044" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4046" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4048" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <rect y="20" x="380" height="32" width="8" id="rect3337" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3339" width="8" height="32" x="400" y="20" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3341" width="40" height="4" x="374" y="24" />
-        <rect y="44" x="374" height="4" width="40" id="rect3343" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3365" width="8" height="32" x="380" y="80" />
-        <rect y="80" x="400" height="32" width="8" id="rect3367" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="84" x="374" height="4" width="40" id="rect3369" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3371" width="40" height="4" x="374" y="104" />
-        <g id="g4297">
-            <rect transform="matrix(0,1,-1,0,0,0)" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4153" width="8" height="32" x="61.171032" y="-463.8327" />
-            <rect transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)" y="-89.149895" x="414.77106" height="32" width="8" id="rect3847" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3849" width="8" height="32" x="340.23401" y="-294.22098" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3347" width="8" height="32" x="-187.0824" y="-426.30353" transform="matrix(-0.5713095,0.8207347,-0.8207347,-0.5713095,0,0)" />
-            <rect y="-217.29767" x="-388.50497" height="32" width="8" id="rect3349" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(-0.96592583,0.25881905,-0.25881905,-0.96592583,0,0)" />
-            <path transform="matrix(3.6947461,0,0,3.4369759,-1079.5441,-164.53172)" sodipodi:open="true" sodipodi:end="7.8718929" sodipodi:start="4.702855" d="m 404.11877,55.436392 a 12.145255,11.639203 0 1 1 -0.10174,23.27601" sodipodi:ry="11.639203" sodipodi:rx="12.145255" sodipodi:cy="67.075066" sodipodi:cx="404.23456" id="path3377" style="fill:none;stroke:#666666;stroke-width:1.12248218;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" sodipodi:type="arc" />
-            <path sodipodi:type="arc" style="fill:none;stroke:#666666;stroke-width:2.24498963;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" id="path4151" sodipodi:cx="404.23456" sodipodi:cy="67.075066" sodipodi:rx="12.145255" sodipodi:ry="11.639203" d="m 404.11877,55.436392 a 12.145255,11.639203 0 1 1 -0.10174,23.27601" sodipodi:start="4.702855" sodipodi:end="7.8718929" sodipodi:open="true" transform="matrix(1.8473523,0,0,1.7184686,-332.76364,-49.264789)" />
-        </g>
-        <path style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 140,80 8,0 0,32 -8,0 z" id="rect4241" inkscape:connector-curvature="0" />
-        <path style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 160,80 8,0 0,32 -8,0 z" id="rect4243" inkscape:connector-curvature="0" />
-        <rect y="84" x="134" height="4" width="40" id="rect4245" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4247" width="40" height="4" x="134" y="104" />
-        <g id="g4249" transform="translate(64,4)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4251" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4253" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4255" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4257" width="40" height="4" x="110" y="100" />
-        </g>
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4259" width="8" height="32" x="220" y="80" />
-        <rect y="84" x="214" height="4" width="40" id="rect4263" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4265" width="40" height="4" x="214" y="104" />
-        <g id="g4267" transform="translate(144,4)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4269" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4271" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4273" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4275" width="40" height="4" x="110" y="100" />
-        </g>
-        <g transform="translate(184,4)" id="g4277">
-            <rect y="76" x="116" height="32" width="8" id="rect4279" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4281" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4283" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4285" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <g id="g4287" transform="translate(224,4)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4289" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4291" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4293" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4295" width="40" height="4" x="110" y="100" />
-        </g>
-        <g id="g4306" transform="matrix(-1,0,0,-1,468.08766,192.00919)">
-            <rect y="-463.8327" x="61.171032" height="32" width="8" id="rect4308" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0,1,-1,0,0,0)" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4310" width="8" height="32" x="414.77106" y="-89.149895" transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)" />
-            <rect y="-294.22098" x="340.23401" height="32" width="8" id="rect4312" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
-            <rect transform="matrix(-0.5713095,0.8207347,-0.8207347,-0.5713095,0,0)" y="-426.30353" x="-187.0824" height="32" width="8" id="rect4314" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect transform="matrix(-0.96592583,0.25881905,-0.25881905,-0.96592583,0,0)" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4316" width="8" height="32" x="-388.50497" y="-217.29767" />
-            <path sodipodi:type="arc" style="fill:none;stroke:#666666;stroke-width:1.12248218;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" id="path4318" sodipodi:cx="404.23456" sodipodi:cy="67.075066" sodipodi:rx="12.145255" sodipodi:ry="11.639203" d="m 404.11877,55.436392 c 6.70733,-0.06128 12.19654,5.099845 12.26049,11.527707 0.064,6.427863 -5.32158,11.688356 -12.02891,11.749641 -0.11111,0.001 -0.22222,5.69e-4 -0.33332,-0.0013" sodipodi:start="4.702855" sodipodi:end="7.8718929" sodipodi:open="true" transform="matrix(3.6947461,0,0,3.4369759,-1079.5441,-164.53172)" />
-            <path transform="matrix(1.8473523,0,0,1.7184686,-332.76364,-49.264789)" sodipodi:open="true" sodipodi:end="7.8718929" sodipodi:start="4.702855" d="m 404.11877,55.436392 c 6.70733,-0.06128 12.19654,5.099845 12.26049,11.527707 0.064,6.427863 -5.32158,11.688356 -12.02891,11.749641 -0.11111,0.001 -0.22222,5.69e-4 -0.33332,-0.0013" sodipodi:ry="11.639203" sodipodi:rx="12.145255" sodipodi:cy="67.075066" sodipodi:cx="404.23456" id="path4320" style="fill:none;stroke:#666666;stroke-width:2.24498963;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" sodipodi:type="arc" />
-        </g>
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4322" width="8" height="32" x="60" y="80" />
-        <rect y="80" x="80" height="32" width="8" id="rect4324" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="84" x="54" height="4" width="40" id="rect4326" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4328" width="40" height="4" x="54" y="104" />
-        <g id="g4330" transform="translate(-16,4)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4332" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4334" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4336" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4338" width="40" height="4" x="110" y="100" />
-        </g>
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4342" width="8" height="32" x="240" y="140" />
-        <rect y="140" x="380" height="32" width="8" id="rect4344" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4346" width="8" height="32" x="400" y="140" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4348" width="40" height="4" x="374" y="144" />
-        <rect y="164" x="374" height="4" width="40" id="rect4350" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="156.78467" x="119.35907" height="32" width="8" id="rect4354" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.99214842,-0.12506604,0.12506604,0.99214842,0,0)" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4356" width="8" height="32" x="189.24348" y="101.8514" transform="matrix(0.97745065,0.211164,-0.211164,0.97745065,0,0)" />
-        <path style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 134,144 c 0,0 13.30008,2 20,2 6.69992,0 20,-2 20,-2 l 0,4 c 0,0 -13.30008,2 -20,2 -6.69992,0 -20,-2 -20,-2 z" id="rect4358" inkscape:connector-curvature="0" sodipodi:nodetypes="czcczcc" />
-        <rect y="164" x="134" height="4" width="40" id="rect4360" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g transform="translate(64,64)" id="g4362">
-            <rect y="76" x="116" height="32" width="8" id="rect4364" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4366" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4368" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4370" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <rect y="140" x="220" height="32" width="8" id="rect4372" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4374" width="40" height="4" x="214" y="144" />
-        <rect y="164" x="214" height="4" width="40" id="rect4376" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g transform="translate(144,64)" id="g4378">
-            <rect y="76" x="116" height="32" width="8" id="rect4380" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4382" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4384" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4386" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <g id="g4388" transform="translate(184,64)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4390" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4392" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4394" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4396" width="40" height="4" x="110" y="100" />
-        </g>
-        <g transform="translate(224,64)" id="g4398">
-            <rect y="76" x="116" height="32" width="8" id="rect4400" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4402" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4404" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4406" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <rect y="140" x="60" height="32" width="8" id="rect4408" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4410" width="8" height="32" x="80" y="140" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4412" width="40" height="4" x="54" y="144" />
-        <rect y="164" x="54" height="4" width="40" id="rect4414" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g transform="translate(-16,64)" id="g4416">
-            <rect y="76" x="116" height="32" width="8" id="rect4418" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4420" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4422" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4424" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <g id="g4426" transform="translate(0,120)">
-            <rect y="-463.8327" x="61.171032" height="32" width="8" id="rect4428" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0,1,-1,0,0,0)" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4430" width="8" height="32" x="414.77106" y="-89.149895" transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)" />
-            <rect y="-294.22098" x="340.23401" height="32" width="8" id="rect4432" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
-            <rect transform="matrix(-0.5713095,0.8207347,-0.8207347,-0.5713095,0,0)" y="-426.30353" x="-187.0824" height="32" width="8" id="rect4434" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect transform="matrix(-0.96592583,0.25881905,-0.25881905,-0.96592583,0,0)" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4436" width="8" height="32" x="-388.50497" y="-217.29767" />
-            <path sodipodi:type="arc" style="fill:none;stroke:#666666;stroke-width:1.12248218;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" id="path4438" sodipodi:cx="404.23456" sodipodi:cy="67.075066" sodipodi:rx="12.145255" sodipodi:ry="11.639203" d="m 404.11877,55.436392 c 6.70733,-0.06128 12.19654,5.099845 12.26049,11.527707 0.064,6.427863 -5.32158,11.688356 -12.02891,11.749641 -0.11111,0.001 -0.22222,5.69e-4 -0.33332,-0.0013" sodipodi:start="4.702855" sodipodi:end="7.8718929" sodipodi:open="true" transform="matrix(3.6947461,0,0,3.4369759,-1079.5441,-164.53172)" />
-            <path transform="matrix(1.8473523,0,0,1.7184686,-332.76364,-49.264789)" sodipodi:open="true" sodipodi:end="7.8718929" sodipodi:start="4.702855" d="m 404.11877,55.436392 c 6.70733,-0.06128 12.19654,5.099845 12.26049,11.527707 0.064,6.427863 -5.32158,11.688356 -12.02891,11.749641 -0.11111,0.001 -0.22222,5.69e-4 -0.33332,-0.0013" sodipodi:ry="11.639203" sodipodi:rx="12.145255" sodipodi:cy="67.075066" sodipodi:cx="404.23456" id="path4440" style="fill:none;stroke:#666666;stroke-width:2.24498963;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" sodipodi:type="arc" />
-        </g>
-        <rect y="200" x="380" height="32" width="8" id="rect4444" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4446" width="8" height="32" x="400" y="200" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4448" width="40" height="4" x="374" y="204" />
-        <rect y="224" x="374" height="4" width="40" id="rect4450" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g transform="translate(144,124)" id="g4478">
-            <rect y="76" x="116" height="32" width="8" id="rect4480" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4482" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4484" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4486" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <rect y="200" x="300" height="32" width="8" id="rect4490" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <path sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" id="rect4492" d="m 321.853,200.1447 3.96382,-0.53675 4.29401,31.71059 -7.92765,1.07351 z" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4494" width="40" height="4" x="294" y="204" />
-        <rect y="224" x="294" height="4" width="40" id="rect4496" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g transform="translate(224,124)" id="g4498">
-            <path style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 120,76 4,0 0,32 -8,0 z" id="rect4500" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" />
-            <path style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 136,76 8,0 0,32 -4,0 z" id="rect4502" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4504" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4506" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <g transform="matrix(-1,0,0,-1,588.08766,312.00919)" id="g4508">
-            <rect transform="matrix(0,1,-1,0,0,0)" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4510" width="8" height="32" x="61.171032" y="-463.8327" />
-            <rect transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)" y="-89.149895" x="414.77106" height="32" width="8" id="rect4512" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4514" width="8" height="32" x="340.23401" y="-294.22098" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4516" width="8" height="32" x="-187.0824" y="-426.30353" transform="matrix(-0.5713095,0.8207347,-0.8207347,-0.5713095,0,0)" />
-            <rect y="-217.29767" x="-388.50497" height="32" width="8" id="rect4518" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(-0.96592583,0.25881905,-0.25881905,-0.96592583,0,0)" />
-            <path transform="matrix(3.6947461,0,0,3.4369759,-1079.5441,-164.53172)" sodipodi:open="true" sodipodi:end="7.8718929" sodipodi:start="4.702855" d="m 404.11877,55.436392 c 6.70733,-0.06128 12.19654,5.099845 12.26049,11.527707 0.064,6.427863 -5.32158,11.688356 -12.02891,11.749641 -0.11111,0.001 -0.22222,5.69e-4 -0.33332,-0.0013" sodipodi:ry="11.639203" sodipodi:rx="12.145255" sodipodi:cy="67.075066" sodipodi:cx="404.23456" id="path4520" style="fill:none;stroke:#666666;stroke-width:1.12248218;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" sodipodi:type="arc" />
-            <path sodipodi:type="arc" style="fill:none;stroke:#666666;stroke-width:2.24498963;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" id="path4522" sodipodi:cx="404.23456" sodipodi:cy="67.075066" sodipodi:rx="12.145255" sodipodi:ry="11.639203" d="m 404.11877,55.436392 c 6.70733,-0.06128 12.19654,5.099845 12.26049,11.527707 0.064,6.427863 -5.32158,11.688356 -12.02891,11.749641 -0.11111,0.001 -0.22222,5.69e-4 -0.33332,-0.0013" sodipodi:start="4.702855" sodipodi:end="7.8718929" sodipodi:open="true" transform="matrix(1.8473523,0,0,1.7184686,-332.76364,-49.264789)" />
-        </g>
-        <rect y="200" x="180" height="32" width="8" id="rect4524" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4526" width="8" height="32" x="200" y="200" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4528" width="40" height="4" x="174" y="204" />
-        <rect y="224" x="174" height="4" width="40" id="rect4530" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <g transform="translate(104,124)" id="g4532">
-            <rect y="76" x="116" height="32" width="8" id="rect4534" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4536" width="8" height="32" x="136" y="76" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4538" width="40" height="4" x="110" y="80" />
-            <rect y="100" x="110" height="4" width="40" id="rect4540" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        </g>
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4544" width="8" height="32" x="380" y="260" />
-        <rect y="260" x="400" height="32" width="8" id="rect4546" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="264" x="374" height="4" width="40" id="rect4548" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4550" width="40" height="4" x="374" y="284" />
-        <rect y="283.97968" x="232.39838" height="32" width="8" id="rect4580" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.99541765,-0.09562275,0.09562275,0.99541765,0,0)" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4582" width="8" height="32" x="238.5381" y="297.06113" transform="matrix(0.99014035,-0.14007885,0.14007885,0.99014035,0,0)" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4584" width="40" height="4" x="254" y="264" />
-        <rect y="284" x="254" height="4" width="40" id="rect4586" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="260" x="320" height="32" width="8" id="rect4592" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="264" x="294" height="4" width="40" id="rect4594" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4596" width="40" height="4" x="294" y="284" />
-        <g id="g4598" transform="translate(224,184)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4600" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4602" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4604" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4606" width="40" height="4" x="110" y="100" />
-        </g>
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4608" width="8" height="32" x="180" y="260" />
-        <rect y="260" x="200" height="32" width="8" id="rect4610" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="264" x="174" height="4" width="40" id="rect4612" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4614" width="40" height="4" x="174" y="284" />
-        <g id="g4616" transform="translate(104,184)">
-            <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4618" width="8" height="32" x="116" y="76" />
-            <rect y="76" x="136" height="32" width="8" id="rect4620" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect y="80" x="110" height="4" width="40" id="rect4622" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-            <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4624" width="40" height="4" x="110" y="100" />
-        </g>
-        <rect y="260" x="420" height="32" width="8" id="rect4626" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4628" width="8" height="32" x="440" y="260" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4630" width="40" height="4" x="414" y="264" />
-        <rect y="284" x="414" height="4" width="40" id="rect4632" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4634" width="8" height="32" x="460" y="260" />
-        <rect y="260" x="480" height="32" width="8" id="rect4636" style="fill:#502d16;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect y="264" x="454" height="4" width="40" id="rect4638" style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" />
-        <rect style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect4640" width="40" height="4" x="454" y="284" />
+    <g inkscape:groupmode="layer" id="layer15" inkscape:label="design" style="display:inline" sodipodi:insensitive="true">
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3773" x="214" y="16" />
+        <image y="16" x="254" id="image3775" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3777" x="294" y="16" />
+        <image y="16" x="334" id="image3781" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3783" x="374" y="16" />
+        <image y="16" x="14" id="image3827" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3829" x="54" y="16" />
+        <image y="16" x="94" id="image3831" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3833" x="134" y="16" />
+        <image y="16" x="174" id="image3835" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3837" x="-26" y="16" />
+        <image y="76" x="214" id="image3839" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3841" x="254" y="76" />
+        <image y="76" x="294" id="image3843" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3845" x="334" y="76" />
+        <image y="76" x="374" id="image3847" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image y="76" x="54" id="image3849" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3851" x="94" y="76" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3861" x="254" y="136" />
+        <image y="136" x="294" id="image3863" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3865" x="334" y="136" />
+        <image y="136" x="374" id="image3867" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image y="136" x="54" id="image3869" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3871" x="94" y="136" />
+        <image y="136" x="134" id="image3873" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3877" x="214" y="196" />
+        <image y="196" x="254" id="image3879" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3881" x="294" y="196" />
+        <image y="196" x="334" id="image3883" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3885" x="374" y="196" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3891" x="334" y="256" />
+        <image y="256" x="374" id="image3893" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3895" x="414" y="256" />
+        <image y="256" x="454" id="image3897" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" id="image3901" x="174" y="256" />
+        <image y="256" x="294" id="image3907" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
+        <image style="display:inline;enable-background:new" y="15.999996" x="414" id="image3793" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayTurn180a.png" height="100" width="60" />
+        <image style="display:inline;enable-background:new" y="76" x="-6" id="image3824" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayTurn180b.png" height="100" width="60" />
+        <image style="display:inline;enable-background:new" width="60" height="100" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayTurn180a.png" id="image3857" x="414" y="136" />
+        <image style="display:inline;enable-background:new" width="60" height="100" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayTurn180b.png" id="image3889" x="113.99998" y="196" />
+        <image y="136" x="214" id="image3944" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor4.png" height="40" width="40" />
+        <image y="136" x="174" id="image3955" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor7.png" height="40" width="40" />
+        <image y="256" x="214" id="image3966" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor6.png" height="40" width="40" />
+        <image y="256" x="254" id="image3977" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor7.png" height="40" width="40" />
+        <image y="76" x="174" id="image3988" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor3.png" height="40" width="40" />
+        <image y="76" x="134" id="image3999" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor2.png" height="40" width="40" />
+        <image y="196" x="174" id="image4010" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor5.png" height="40" width="40" />
     </g>
     <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline" sodipodi:insensitive="true">
         <image y="55.096218" x="401.41205" id="image4799" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat4/EnemyRat4_Dimensions.png" height="21" width="18" />
         <image y="115.13115" x="44.584709" id="image4801" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat4/EnemyRat4_Dimensions.png" height="21" width="18" />
-        <image y="250.42114" x="189.46939" id="image4803" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat4/EnemyRat4_Dimensions.png" height="21" width="18" />
+        <image y="254.42114" x="172.94046" id="image4803" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat4/EnemyRat4_Dimensions.png" height="21" width="18" />
         <image width="18" height="21" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat4/EnemyRat4_Dimensions.png" id="image4606" x="400.56647" y="176.01164" />
-        <image y="33.577274" x="159.32027" id="image4761" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="30.195024" x="193.14276" id="image4763" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="32.731712" x="272.62561" id="image4765" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="32.731712" x="357.18185" id="image4767" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="85.156578" x="375.78424" id="image4769" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="94.457764" x="364.79193" id="image4771" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="90.229958" x="239.6487" id="image4773" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="99.531143" x="214.28181" id="image4775" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="82.619896" x="57.007225" id="image4777" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="157.87495" x="64.617279" id="image4779" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="146.88263" x="85.756355" id="image4781" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="160.41162" x="113.6599" id="image4783" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="152.80157" x="325.05051" id="image4785" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="218.75543" x="341.96176" id="image4787" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="217.06432" x="287.84576" id="image4789" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="206.07201" x="231.19307" id="image4791" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="268.64362" x="358.02744" id="image4793" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="262.72467" x="375.78424" id="image4795" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image y="266.95251" x="332.66058" id="image4797" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" height="15" width="30" />
-        <image width="30" height="15" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fish_4_me.png" id="image4663" x="331.815" y="277.09924" />
+        <image y="27.577274" x="159.32027" id="image4761" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="24.195024" x="193.14276" id="image4763" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="26.731712" x="272.62561" id="image4765" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="26.731712" x="357.18185" id="image4767" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="79.156578" x="375.78424" id="image4769" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="88.457764" x="364.79193" id="image4771" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="84.229958" x="239.6487" id="image4773" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="93.531143" x="214.28181" id="image4775" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="76.619896" x="57.007225" id="image4777" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="151.87495" x="64.617279" id="image4779" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="140.88263" x="85.756355" id="image4781" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="154.41162" x="113.6599" id="image4783" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="146.80157" x="325.05051" id="image4785" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="212.75543" x="335.35019" id="image4787" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="211.06432" x="287.84576" id="image4789" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="200.07201" x="231.19307" id="image4791" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="262.64362" x="358.02744" id="image4793" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="260.95251" x="332.66058" id="image4797" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="269.94781" x="339.42059" id="image4795" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType02.png" height="19" width="28" />
+        <image y="257.0661" x="385.65289" id="image3291-1" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType07.png" height="30" width="32" />
     </g>
     <g inkscape:groupmode="layer" id="layer11" inkscape:label="way" style="display:inline" sodipodi:insensitive="true">
         <image y="23" x="26" id="image3336" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Moving/right.png" height="4" width="397.9895" />
@@ -335,20 +138,40 @@
         <image width="4" height="60.363117" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Moving/down.png" id="image4755" x="423.91238" y="143.70253" />
         <image y="204.06592" x="127.96564" id="image3369" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Moving/left.png" height="4" width="295.83411" />
         <image y="203.70253" x="127.91238" id="image4757" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Moving/down.png" height="60.363117" width="4" />
-        <image y="263.87952" x="127.88879" id="image4759" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Moving/right.png" height="4" width="270" />
+        <image y="263.87952" x="127.88879" id="image4759" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Moving/right.png" height="4" width="283.54736" />
     </g>
     <g inkscape:groupmode="layer" id="layer5" inkscape:label="actionTHE" style="display:inline" sodipodi:insensitive="true">
-        <image y="0" x="0" id="image3038" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Tower/transmitter-2.png" height="30" width="30" />
+        <image y="0" x="0" id="image3038" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Tower/transmitter_2_off.png" height="30" width="30" />
         <image y="23" x="26" id="image3015" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="23" width="33" />
         <image y="235.39763" x="427.53668" id="image3049" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Exit/refrigerator.png" height="54" width="37" />
     </g>
+    <g inkscape:groupmode="layer" id="layer14" inkscape:label="foreground" style="display:inline" sodipodi:insensitive="true">
+        <image style="display:inline;enable-background:new" y="39.262402" x="222.7149" id="image3335" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_02.png" height="27" width="32" />
+        <image width="33" height="14" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" id="image3368" x="78.413223" y="53.200413" style="display:inline;enable-background:new" />
+        <image style="display:inline;enable-background:new" y="57.332645" x="8.1652899" id="image3704" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" height="14" width="33" />
+        <image width="33" height="14" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" id="image3378" x="304.03305" y="111.05165" style="display:inline;enable-background:new" />
+        <image width="33" height="14" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" id="image3380" x="423.04132" y="111.05165" style="display:inline;enable-background:new" />
+        <image style="display:inline;enable-background:new" y="24.150826" x="327.7438" id="image3313" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_05.png" height="44" width="55" />
+        <image style="display:inline;enable-background:new" y="48.373966" x="191.74794" id="image3324" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_01.png" height="22" width="46" />
+        <image style="display:inline;enable-background:new" y="42.568184" x="283.87192" id="image3382" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_02.png" height="27" width="32" />
+        <image width="32" height="27" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_02.png" id="image3366" x="447.50827" y="92.981407" style="display:inline;enable-background:new" />
+        <image width="55" height="44" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_05.png" id="image3370" x="91.380165" y="86.1343" style="display:inline;enable-background:new" />
+        <image style="display:inline;enable-background:new" y="97.940086" x="126.84712" id="image3372" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_02.png" height="27" width="32" />
+        <image width="46" height="22" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_01.png" id="image3374" x="250.42563" y="108.70454" style="display:inline;enable-background:new" />
+        <image width="33" height="14" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_08.png" id="image3700" x="87.63224" y="274.98346" />
+        <image width="33" height="14" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_08.png" id="image3702" x="410.77274" y="302.2562" />
+        <image y="298.12396" x="444.65704" id="image3392" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_08.png" height="14" width="33" />
+        <image y="201.54132" x="464.16531" id="image3414" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_10.png" height="27" width="32" />
+        <image y="263.28928" x="-28.326464" id="image3425" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_07.png" height="44" width="55" />
+        <image style="display:inline;enable-background:new" y="187.19421" x="361.49173" id="image3436" xlink:href="file:///D:/Lunohod/Grfx/design/box_strip/box_strip_01.png" height="63" width="39" />
+    </g>
     <g inkscape:groupmode="layer" id="layer10" inkscape:label="semafor" style="display:inline" sodipodi:insensitive="true">
-        <image y="8" x="69" id="image3336-1" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Semafor/semafor_green.png" height="60" width="38" />
+        <image y="1" x="69" id="image3336-1" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Semafor/semafor_green.png" height="67" width="44" />
     </g>
     <g inkscape:groupmode="layer" id="layer9" inkscape:label="dash" style="opacity:0.29861109;display:none" sodipodi:insensitive="true">
         <image y="0" x="0" id="image3016" xlink:href="file:///D:/Lunohod/Art/dashboard/screenTapAreas_dash_M_btnSize52.png" height="320" width="480" />
     </g>
-    <g inkscape:groupmode="layer" id="layer6" inkscape:label="upmask" sodipodi:insensitive="true" style="display:none">
+    <g inkscape:groupmode="layer" id="layer6" inkscape:label="upmask" style="display:none" sodipodi:insensitive="true">
         <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3011" width="1499.1859" height="380.14673" x="-434.48303" y="-380.14673" />
         <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3013" width="644.82831" height="1098.9973" x="480" y="-256.73999" />
         <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3015" width="1018.1825" height="736.57312" x="-257.47144" y="320" />

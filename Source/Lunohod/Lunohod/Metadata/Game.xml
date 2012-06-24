@@ -65,7 +65,7 @@
             --><LevelInfo Id="Lvl_1D_Zamanuha_v3" File="Lvl_1D_Zamanuha_v3.xml" StarScoreRatio2="0.50" StarScoreRatio3="1" TimeBonusThreshold="12.86"/>
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Series 3 Poezd -----" File="ScreenSeries3.xml">
-            <LevelInfo Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" StarScoreRatio1="0.88" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="32.34"/>
+            <!--DONE--><LevelInfo Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" StarScoreRatio1="0.88" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="32.34"/>
             <!--DONE--><LevelInfo Id="Lvl_Poezd_v4_Perekrestok" File="Lvl_Poezd_v4_Perekrestok.xml" StarScoreRatio1="0.67" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="24.37"/>
             <!--DONE--><LevelInfo Id="Lvl_Poezd_v3_Spiral" File="Lvl_Poezd_v3_Spiral.xml" StarScoreRatio2="0.92" StarScoreRatio3="1" TimeBonusThreshold="30.95"/>
             <LevelInfo Id="Lvl_Poezd_v10_Gorki" File="Lvl_Poezd_v10_Gorki.xml" StarScoreRatio1="0.73" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="34.15"/>
