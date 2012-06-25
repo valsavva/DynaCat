@@ -1,9 +1,11 @@
-<NumAnimation From="0" To="
+<NumAnimation  Id="anm
+###@counter5
+" From="0" To="
 ###@MovingLen
-" Target="hero.
+" Target="
 ###@Direction
 " Duration="
 ###@Duration
-" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="
+" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="
 ###id
 "/>
