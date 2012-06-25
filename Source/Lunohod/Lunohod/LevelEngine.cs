@@ -316,6 +316,8 @@ namespace Lunohod
 				
                 double signalTraveledDistance = wave.Radius;
 
+				wave.IsHeroActive = hero.CanReceiveSignals;
+
 				if (wave.IsDeadSignal)
 				{
 					// if dead signal

@@ -21,6 +21,7 @@ namespace Lunohod
 		public double Diameter;
 		public double Radius;
 		public bool IsDeadSignal;
+		public bool IsHeroActive;
 		
 		public override void Update(UpdateParameters p)
 		{
@@ -55,8 +56,11 @@ namespace Lunohod
 
             if (Diameter > GameEngine.MaxWaveTextureDiameter * 2)
 				return;
-			
-			p.SpriteBatch.Draw(texture, bounds, Color.White);
+
+			if (this.IsHeroActive && !this.IsDeadSignal)
+				p.SpriteBatch.Draw(texture, bounds, Color.White);
+			else
+				p.SpriteBatch.Draw(texture, bounds, Color.Gray);
 		}
 	}
 }
