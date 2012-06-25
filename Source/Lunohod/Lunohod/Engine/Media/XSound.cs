@@ -75,7 +75,9 @@ namespace Lunohod.Objects
 #if WINDOWS
             this.soundEffectInstance.Pitch = (float)this.Pitch;
 #else
-            this.soundEffectInstance.Pitch = 1;
+			// mapping XNA Pitch values to MonoGame (OpenAL)
+			// http://monogame.codeplex.com/discussions/324813
+            this.soundEffectInstance.Pitch = 1f + (float)this.Pitch * 0.5f;
 #endif
             this.soundEffectInstance.Pan = (float)this.Pan;
 			this.soundEffectInstance.Play();
