@@ -18,6 +18,8 @@
         <Texture Id="txr_column_03n" Source="column_03n" />
         <Texture Id="txr_column_01n" Source="column_01n" />
         <Texture Id="txr_plane_01n_spr_84x74x3" Source="plane_01n_spr_84x74x3" />
+        <Texture Id="txr_railway_end_horiz" Source="railway_end_horiz" />
+        <Texture Id="txr_railway_end_vertic" Source="railway_end_vertic" />
     </Resources>
     <Layer Id="GRFX update" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_level_BG" Bounds="0, 0, 480, 320" TraceId="image4080"/>
@@ -32,6 +34,8 @@
         <Image Id="dfltMask10" TextureId="txr_column_03n" Bounds="181, 113, 14, 27" TraceId="image4058"/>
         <Image Id="dfltMask11" TextureId="txr_column_01n" Bounds="88, 118, 13, 30" TraceId="image4069"/>
         <Image Id="dfltMask12" TextureId="txr_plane_01n_spr_84x74x3" Bounds="33, 151, 252, 74" TraceId="image4102"/>
+        <Image Id="dfltMask13" TextureId="txr_railway_end_horiz" Bounds="391, 172, 40, 40" TraceId="image4113"/>
+        <Image Id="dfltMask14" TextureId="txr_railway_end_vertic" Bounds="325, 168, 40, 40" TraceId="image4124"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -41,4 +45,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=12 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=14 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
