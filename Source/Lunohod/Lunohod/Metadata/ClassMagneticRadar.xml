@@ -14,6 +14,7 @@
             <!-- init horizontal, shooting right -->
             <BoolTrigger Id="this_init1" Condition="@this_dirX==1">
                 <Do Action="this_grpMagnetWaves.SetBounds(this_blkExcavator.X+60, 7, 500, 26)" RepeatCount="1" InProgress="true"/>
+                <Do Action="this_sprRadar.FlipEffects='Horizontally'" RepeatCount="1" InProgress="true" />
                 <Do Action="this_init1.Disable();
                     this_init2.Disable();
                     this_init3.Disable();
@@ -50,22 +51,9 @@
             <!-- excavator -->
             
             <Block Id="this_blkExcavator" Edges="Stick">
-                <Sprite Id="this_sprRadar" TextureId="txrRadarSprite_1" Bounds="0,0,52,51" FrameBounds="0,0,52,51" />
+
+                <Sprite Id="this_sprRadar" TextureId="txrRadarSprite_1" Bounds="0,0,52,51" FrameBounds="0,0,52,51"/>
                 <NumAnimation Id="this_RadarAnm" From="0" To="3" Duration="1" Autoreverse="false" Target="this_sprRadar.CurrentFrame" RepeatCount="0" Fill="Reset"/>
-                
-                <BoolTrigger Condition="@this_dirX==1" Group="this_sttExcavatorView">
-                    <Image TextureId="txr_excavator_hor_magnet" FlipEffects="Horizontally" />
-                </BoolTrigger>
-                
-                <BoolTrigger Condition="@this_dirX==-1" Group="this_sttExcavatorView">
-                    
-                </BoolTrigger>
-                <BoolTrigger Condition="@this_dirY==1" Group="this_sttExcavatorView">
-                    <Image TextureId="txr_excavator_vert_magnet"/>
-                </BoolTrigger>
-                <BoolTrigger Condition="@this_dirY==-1" Group="this_sttExcavatorView">
-                    <Image TextureId="txr_excavator_vert_magnet"  FlipEffects="Vertically"/>
-                </BoolTrigger>
 
                 <!--<Image TextureId="blank" BackColor="#0000FF" Opacity="0.5"/>-->
             </Block>
@@ -121,14 +109,27 @@
                 </SequenceSet>
                 
                 <BoolTrigger Condition="@this_dirX==1" Group="this_sttWavesView">
-                    <!--<Image TextureId="txr_magnet_waves_right" StretchMode="Tile"/>-->
-
-                    <!--<Sprite Id="sprMagnetWavesRight" TextureId="txr_magnet_waves_right_Sprite" Bounds="348,0,87,33" FrameBounds="0,0,87,33">
-                        <NumAnimation From="3" To="0" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
-                    </Sprite>-->
+                    <Sprite Id="this_Wave1" TextureId="txrWaves" Bounds="0,-3,87,33" FrameBounds="0,0,87,33" FlipEffects="Horizontally">
+                        <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                    </Sprite>
+                    <Sprite Id="this_Wave2" TextureId="txrWaves" Bounds="87,-3,87,33" FrameBounds="0,0,87,33" FlipEffects="Horizontally">
+                        <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                    </Sprite>
+                    <Sprite Id="this_Wave3" TextureId="txrWaves" Bounds="174,-3,87,33" FrameBounds="0,0,87,33" FlipEffects="Horizontally">
+                        <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                    </Sprite>
+                    <Sprite Id="this_Wave4" TextureId="txrWaves" Bounds="261,-3,87,33" FrameBounds="0,0,87,33" FlipEffects="Horizontally">
+                        <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                    </Sprite>
+                    <Sprite Id="this_Wave5" TextureId="txrWaves" Bounds="348,-3,87,33" FrameBounds="0,0,87,33" FlipEffects="Horizontally">
+                        <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                    </Sprite>
+                    <Sprite Id="this_Wave6" TextureId="txrWaves" Bounds="435,-3,87,33" FrameBounds="0,0,87,33" FlipEffects="Horizontally">
+                        <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                    </Sprite>
                 </BoolTrigger>
+                
                 <BoolTrigger Condition="@this_dirX==-1" Group="this_sttWavesView">
-
                     <Sprite Id="this_Wave1" TextureId="txrWaves" Bounds="435,-3,87,33" FrameBounds="0,0,87,33">
                         <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
                     </Sprite>
@@ -144,16 +145,10 @@
                     <Sprite Id="this_Wave5" TextureId="txrWaves" Bounds="87,-3,87,33" FrameBounds="0,0,87,33">
                         <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
                     </Sprite>
-                    <Sprite Id="this_Wave6" TextureId="txrWaves" Bounds="0,-3,87,33" FrameBounds="0,0,87,33" Rotation="90">
+                    <Sprite Id="this_Wave6" TextureId="txrWaves" Bounds="0,-3,87,33" FrameBounds="0,0,87,33">
                         <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
                     </Sprite>
                     <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
-                </BoolTrigger>
-                <BoolTrigger Condition="@this_dirY==1" Group="this_sttWavesView">
-                    <Image TextureId="txr_magnet_waves_down" StretchMode="Tile"/>
-                </BoolTrigger>
-                <BoolTrigger Condition="@this_dirY==-1" Group="this_sttWavesView">
-                    <Image TextureId="txr_magnet_waves_up" StretchMode="Tile"/>
                 </BoolTrigger>
                 
             </Group>

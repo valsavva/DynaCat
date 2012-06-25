@@ -64,24 +64,17 @@
 		<Group Location=" 10,250">
 			<Image Location="  5,0" TextureId="chargers" FlipEffects="Vertically"/>
 			<Image Location=" 75,0" TextureId="chargers" FlipEffects="Horizontally"/>
-			<Sprite Id="imgFlipping" Location="145,0" TextureId="chargers" FrameBounds="0,0,50,50" FlipEffects="Vertically|Horizontally"/>
+			<Sprite Id="imgFlipping" Location="145,0" TextureId="chargers" FrameBounds="0,0,50,50"/>
 			<!--<Image Id="imgFlipping" Location="145,0" TextureId="chargers" FlipEffects="Vertically|Horizontally"/>-->
 
 			<Text Location="  5,50" Text="VERTICAL" FontId="SystemFont" FlipEffects="Vertically"/>
 			<Text Location="  75,50" Text="HORIZONTAL" FontId="SystemFont" FlipEffects="Horizontally"/>
 			<Text Location="145,50" Text="V AND H" FontId="SystemFont" FlipEffects="Vertically|Horizontally"/>
 		</Group>
-		
-		<SequenceSet RepeatCount="0" InProgress="true">
-			<Do Action="imgFlipping.FlipEffects='None'"/>
-			<Delay Duration="2"/>
+
+        <BoolTrigger Condition="true">
 			<Do Action="imgFlipping.FlipEffects='Vertically'"/>
-			<Delay Duration="2"/>
-			<Do Action="imgFlipping.FlipEffects='Horizontally'"/>
-			<Delay Duration="2"/>
-			<Do Action="imgFlipping.FlipEffects='Horizontally|Vertically'"/>
-			<Delay Duration="2"/>
-		</SequenceSet>
+        </BoolTrigger>
 	</Layer>
 
 	<Include File="Dashboard.xml" />	
