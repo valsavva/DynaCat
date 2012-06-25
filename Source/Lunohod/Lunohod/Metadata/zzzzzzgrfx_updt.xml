@@ -5,113 +5,36 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
-    <Resources RootFolder="Global">
-        <Texture Id="txr_info_BG" Source="info_BG" />
-        <Texture Id="txr_info_for_txt_panel" Source="info_for_txt_panel" />
-        <Texture Id="txr_btn_1_basic" Source="btn_1_basic" />
-        <Texture Id="txr_death_BG" Source="death_BG" />
-        <Texture Id="txr_death_level_number" Source="death_level_number" />
-        <Texture Id="txr_scores" Source="scores" />
-        <Texture Id="txr_btn_7_basic" Source="btn_7_basic" />
-        <Texture Id="txr_btn_5_basic" Source="btn_5_basic" />
-        <Texture Id="txr_pause_BG" Source="pause_BG" />
-        <Texture Id="txr_scr_pause_txt" Source="scr_pause_txt" />
-        <Texture Id="txr_scr_high_scores" Source="scr_high_scores" />
-        <Texture Id="txr_btn_6_basic" Source="btn_6_basic" />
-        <Texture Id="txr_Victory_BG" Source="Victory_BG" />
-        <Texture Id="txr_Victory_Hero" Source="Victory_Hero" />
-        <Texture Id="txr_btn_2_basic" Source="btn_2_basic" />
-        <Texture Id="txr_select_level_BG" Source="select_level_BG" />
-        <Texture Id="txr_select_level_txt" Source="select_level_txt" />
-        <Texture Id="txr_select_level_panel_02" Source="select_level_panel_02" />
-        <Texture Id="txr_select_level_panel_beydg" Source="select_level_panel_beydg" />
-        <Texture Id="txr_select_level_panel_star" Source="select_level_panel_star" />
-        <Texture Id="txr_select_level_panel_05" Source="select_level_panel_05" />
-        <Texture Id="txr_select_level_panel_03" Source="select_level_panel_03" />
-        <Texture Id="txr_select_level_panel_04" Source="select_level_panel_04" />
-        <Texture Id="txr_select_level_panel_01" Source="select_level_panel_01" />
-        <Texture Id="txr_ScrMain_BG" Source="ScrMain_BG" />
-        <Texture Id="txr_ScrMain_panel_01" Source="ScrMain_panel_01" />
-        <Texture Id="txr_ScrMain_panel_02" Source="ScrMain_panel_02" />
-        <Texture Id="txr_ScrMain_panel_03" Source="ScrMain_panel_03" />
-        <Texture Id="txr_btn_sound_on" Source="btn_sound_on" />
-        <Texture Id="txr_btn_4_basic" Source="btn_4_basic" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_tree_04" Source="tree_04" />
+        <Texture Id="txr_hemps_02" Source="hemps_02" />
+        <Texture Id="txr_hemps_03" Source="hemps_03" />
+        <Texture Id="txr_hemps_01" Source="hemps_01" />
+        <Texture Id="txr_tree_02" Source="tree_02" />
+        <Texture Id="txr_tree_03" Source="tree_03" />
+        <Texture Id="txr_tree_01" Source="tree_01" />
+        <Texture Id="txr_column_02n" Source="column_02n" />
+        <Texture Id="txr_column_03n" Source="column_03n" />
+        <Texture Id="txr_column_01n" Source="column_01n" />
     </Resources>
+    <Layer Id="GRFX update" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_tree_04" Bounds="335, 114, 90, 60" TraceId="image3257"/>
+        <Image Id="dfltMask2" TextureId="txr_hemps_02" Bounds="435, 210, 31, 24" TraceId="image3202"/>
+        <Image Id="dfltMask3" TextureId="txr_hemps_03" Bounds="385, 193, 43, 41" TraceId="image3213"/>
+        <Image Id="dfltMask4" TextureId="txr_hemps_01" Bounds="332, 208, 32, 26" TraceId="image3224"/>
+        <Image Id="dfltMask5" TextureId="txr_tree_02" Bounds="245, 118, 88, 119" TraceId="image3235"/>
+        <Image Id="dfltMask6" TextureId="txr_tree_03" Bounds="134, 112, 114, 124" TraceId="image3246"/>
+        <Image Id="dfltMask7" TextureId="txr_tree_01" Bounds="35, 120, 91, 116" TraceId="image3268"/>
+        <Image Id="dfltMask8" TextureId="txr_column_02n" Bounds="74, 246, 15, 27" TraceId="image4047"/>
+        <Image Id="dfltMask9" TextureId="txr_column_03n" Bounds="100, 247, 14, 27" TraceId="image4058"/>
+        <Image Id="dfltMask10" TextureId="txr_column_01n" Bounds="140, 246, 13, 30" TraceId="image4069"/>
+    </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="366, 252, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="40, 24, 33, 24" TraceId="image3016-1"/>
     </Layer>
-    <Layer Id="ScreenCredits" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_info_BG" Bounds="0, 0, 480, 320" TraceId="bckg2"/>
-        <Image Id="dfltMask2" TextureId="txr_info_for_txt_panel" Bounds="110, 65, 257, 205" Opacity="0.96" TraceId="PanelForText"/>
-        <Image Id="dfltMask3" TextureId="txr_btn_1_basic" Bounds="33, 256, 62, 62" TraceId="btnBack2"/>
-    </Layer>
-    <Layer Id="ScreenDeath" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask4" TextureId="txr_death_BG" Bounds="0, 0, 480, 320" TraceId="bckg"/>
-        <Image Id="dfltMask5" TextureId="txr_death_level_number" Bounds="40, 32, 111, 111" TraceId="PanelForLevelName3"/>
-        <Image Id="dfltMask6" TextureId="txr_scores" Bounds="293, 49, 164, 40" TraceId="score4"/>
-        <Image Id="dfltMask7" TextureId="txr_btn_7_basic" Bounds="278, 238, 62, 62" TraceId="btnRestart3"/>
-        <Image Id="dfltMask8" TextureId="txr_btn_5_basic" Bounds="160, 238, 62, 62" TraceId="btnHome3"/>
-    </Layer>
-    <Layer Id="ScreenPause" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask9" TextureId="txr_pause_BG" Bounds="0, 0, 480, 320" TraceId="ScreenPauseBckg"/>
-        <Image Id="dfltMask10" TextureId="txr_death_level_number" Bounds="40, 22, 111, 111" TraceId="PanelForLevelName2"/>
-        <Image Id="dfltMask11" TextureId="txr_scores" Bounds="293, 71, 164, 40" TraceId="score3"/>
-        <Image Id="dfltMask12" TextureId="txr_scr_pause_txt" Bounds="154, 134, 173, 57" TraceId="Label4"/>
-        <Image Id="dfltMask13" TextureId="txr_scr_high_scores" Bounds="240, 33, 217, 40" TraceId="HighScore"/>
-        <Image Id="dfltMask14" TextureId="txr_btn_7_basic" Bounds="209, 238, 62, 62" TraceId="btnRestart2"/>
-        <Image Id="dfltMask15" TextureId="txr_btn_5_basic" Bounds="109, 238, 62, 62" TraceId="btnHome2"/>
-        <Image Id="dfltMask16" TextureId="txr_btn_6_basic" Bounds="309, 238, 62, 62" TraceId="btnPlay"/>
-    </Layer>
-    <Layer Id="ScreenComplete" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask17" TextureId="txr_Victory_BG" Bounds="0, 0, 480, 320" TraceId="ScreenCompleteBckg"/>
-        <Image Id="dfltMask18" TextureId="txr_Victory_Hero" Bounds="103, 21, 274, 247" TraceId="designImage_Cat"/>
-        <Image Id="dfltMask19" TextureId="txr_death_level_number" Bounds="40, 22, 111, 111" TraceId="PanelForLevelName"/>
-        <Image Id="dfltMask20" TextureId="txr_scores" Bounds="293, 71, 164, 40" TraceId="Score"/>
-        <Image Id="dfltMask21" TextureId="txr_scr_high_scores" Bounds="240, 33, 217, 40" TraceId="Highscore_z"/>
-        <Image Id="dfltMask22" TextureId="txr_btn_7_basic" Bounds="209, 238, 62, 62" TraceId="btnRestart"/>
-        <Image Id="dfltMask23" TextureId="txr_btn_5_basic" Bounds="109, 238, 62, 62" TraceId="btnHome1"/>
-        <Image Id="dfltMask24" TextureId="txr_btn_2_basic" Bounds="309, 238, 62, 62" TraceId="btnFF"/>
-    </Layer>
-    <Layer Id="ScreenSelectLevel" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask25" TextureId="txr_select_level_BG" Bounds="0, 0, 480, 320" TraceId="ScreenSelectLevelBckg"/>
-        <Image Id="dfltMask26" TextureId="txr_select_level_txt" Bounds="125, 7, 231, 46" TraceId="Label"/>
-        <Image Id="dfltMask27" TextureId="txr_btn_1_basic" Bounds="32, 264, 62, 62" TraceId="btnBack"/>
-        <Image Id="dfltMask28" TextureId="txr_select_level_panel_02" Bounds="16, 51, 94, 51" TraceId="level1"/>
-        <Image Id="dfltMask29" TextureId="txr_select_level_panel_beydg" Bounds="78, 56, 25, 32" TraceId="badge"/>
-        <Image Id="dfltMask30" TextureId="txr_select_level_panel_star" Bounds="40, 82, 18, 20" TraceId="Star1"/>
-        <Image Id="dfltMask31" TextureId="txr_select_level_panel_star" Bounds="54, 82, 18, 20" TraceId="star2"/>
-        <Image Id="dfltMask32" TextureId="txr_select_level_panel_star" Bounds="67, 82, 18, 20" TraceId="star3"/>
-        <Image Id="dfltMask33" TextureId="txr_select_level_panel_05" Bounds="107, 51, 94, 51" TraceId="level2"/>
-        <Image Id="dfltMask34" TextureId="txr_select_level_panel_03" Bounds="197, 51, 94, 51" TraceId="level3"/>
-        <Image Id="dfltMask35" TextureId="txr_select_level_panel_04" Bounds="287, 51, 94, 51" TraceId="level4"/>
-        <Image Id="dfltMask36" TextureId="txr_select_level_panel_01" Bounds="379, 51, 93, 51" TraceId="level5"/>
-        <Image Id="dfltMask37" TextureId="txr_select_level_panel_02" Bounds="16, 105, 94, 51" TraceId="level6"/>
-        <Image Id="dfltMask38" TextureId="txr_select_level_panel_05" Bounds="107, 105, 94, 51" TraceId="level7"/>
-        <Image Id="dfltMask39" TextureId="txr_select_level_panel_03" Bounds="197, 105, 94, 51" TraceId="level8"/>
-        <Image Id="dfltMask40" TextureId="txr_select_level_panel_04" Bounds="287, 105, 94, 51" TraceId="level9"/>
-        <Image Id="dfltMask41" TextureId="txr_select_level_panel_01" Bounds="379, 105, 93, 51" TraceId="level10"/>
-        <Image Id="dfltMask42" TextureId="txr_select_level_panel_02" Bounds="16, 159, 94, 51" TraceId="level11"/>
-        <Image Id="dfltMask43" TextureId="txr_select_level_panel_05" Bounds="107, 159, 94, 51" TraceId="level12"/>
-        <Image Id="dfltMask44" TextureId="txr_select_level_panel_03" Bounds="197, 159, 94, 51" TraceId="level13"/>
-        <Image Id="dfltMask45" TextureId="txr_select_level_panel_04" Bounds="287, 159, 94, 51" TraceId="level14"/>
-        <Image Id="dfltMask46" TextureId="txr_select_level_panel_01" Bounds="379, 159, 93, 51" TraceId="level15"/>
-        <Image Id="dfltMask47" TextureId="txr_select_level_panel_02" Bounds="16, 213, 94, 51" TraceId="level16"/>
-        <Image Id="dfltMask48" TextureId="txr_select_level_panel_05" Bounds="107, 213, 94, 51" TraceId="level17"/>
-        <Image Id="dfltMask49" TextureId="txr_select_level_panel_03" Bounds="197, 213, 94, 51" TraceId="level18"/>
-        <Image Id="dfltMask50" TextureId="txr_select_level_panel_04" Bounds="287, 213, 94, 51" TraceId="level19"/>
-        <Image Id="dfltMask51" TextureId="txr_select_level_panel_01" Bounds="379, 213, 93, 51" TraceId="level20"/>
-    </Layer>
-    <Layer Id="ScreenMain" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask52" TextureId="txr_ScrMain_BG" Bounds="0, 0, 480, 320" TraceId="ScreenMainBckg"/>
-        <Image Id="dfltMask53" TextureId="txr_ScrMain_panel_01" Bounds="29, 47, 133, 159" TraceId="Series1"/>
-        <Image Id="dfltMask54" TextureId="txr_ScrMain_panel_02" Bounds="174, 73, 133, 159" TraceId="Series2"/>
-        <Image Id="dfltMask55" TextureId="txr_ScrMain_panel_03" Bounds="319, 49, 133, 159" TraceId="Series3"/>
-        <Image Id="dfltMask56" TextureId="txr_btn_sound_on" Bounds="272, 236, 62, 62" TraceId="btnSound"/>
-        <Image Id="dfltMask57" TextureId="txr_btn_4_basic" Bounds="146, 236, 62, 62" TraceId="btnInfo"/>
-    </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=57 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=10 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
