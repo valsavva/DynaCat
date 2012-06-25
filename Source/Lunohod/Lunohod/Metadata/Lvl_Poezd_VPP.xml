@@ -207,7 +207,7 @@
         <Group Id="AirplaneSmoke2" Class="clsSmoke" ClassParams="@type=2" Location="1,1"/>
         <Group Id="AirplaneSmoke3" Class="clsSmoke" ClassParams="@type=3" Location="1,1"/>
         <Group Id="AirplaneSmoke4" Class="clsSmoke" ClassParams="@type=4" Location="1,1"/>
-        <Group Id="grpAirplane" Class="clsAirplane" Bounds="502, 64, 84, 73" TraceId="image3412"/>
+        <Group Id="grpAirplane" Class="clsAirplane" Bounds="502, 64, 84, 74" TraceId="image3412"/>
 
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">

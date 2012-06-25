@@ -6,6 +6,7 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
+        <Texture Id="txr_level_BG" Source="level_BG" />
         <Texture Id="txr_tree_04" Source="tree_04" />
         <Texture Id="txr_hemps_02" Source="hemps_02" />
         <Texture Id="txr_hemps_03" Source="hemps_03" />
@@ -16,18 +17,21 @@
         <Texture Id="txr_column_02n" Source="column_02n" />
         <Texture Id="txr_column_03n" Source="column_03n" />
         <Texture Id="txr_column_01n" Source="column_01n" />
+        <Texture Id="txr_plane_01n_spr_84x74x3" Source="plane_01n_spr_84x74x3" />
     </Resources>
     <Layer Id="GRFX update" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tree_04" Bounds="335, 114, 90, 60" TraceId="image3257"/>
-        <Image Id="dfltMask2" TextureId="txr_hemps_02" Bounds="435, 210, 31, 24" TraceId="image3202"/>
-        <Image Id="dfltMask3" TextureId="txr_hemps_03" Bounds="385, 193, 43, 41" TraceId="image3213"/>
-        <Image Id="dfltMask4" TextureId="txr_hemps_01" Bounds="332, 208, 32, 26" TraceId="image3224"/>
-        <Image Id="dfltMask5" TextureId="txr_tree_02" Bounds="245, 118, 88, 119" TraceId="image3235"/>
-        <Image Id="dfltMask6" TextureId="txr_tree_03" Bounds="134, 112, 114, 124" TraceId="image3246"/>
-        <Image Id="dfltMask7" TextureId="txr_tree_01" Bounds="35, 120, 91, 116" TraceId="image3268"/>
-        <Image Id="dfltMask8" TextureId="txr_column_02n" Bounds="74, 246, 15, 27" TraceId="image4047"/>
-        <Image Id="dfltMask9" TextureId="txr_column_03n" Bounds="100, 247, 14, 27" TraceId="image4058"/>
-        <Image Id="dfltMask10" TextureId="txr_column_01n" Bounds="140, 246, 13, 30" TraceId="image4069"/>
+        <Image Id="dfltMask1" TextureId="txr_level_BG" Bounds="0, 0, 480, 320" TraceId="image4080"/>
+        <Image Id="dfltMask2" TextureId="txr_tree_04" Bounds="376, 74, 90, 60" TraceId="image3257"/>
+        <Image Id="dfltMask3" TextureId="txr_hemps_02" Bounds="339, 101, 31, 24" TraceId="image3202"/>
+        <Image Id="dfltMask4" TextureId="txr_hemps_03" Bounds="295, 87, 43, 41" TraceId="image3213"/>
+        <Image Id="dfltMask5" TextureId="txr_hemps_01" Bounds="250, 107, 32, 26" TraceId="image3224"/>
+        <Image Id="dfltMask6" TextureId="txr_tree_02" Bounds="179, 11, 88, 119" TraceId="image3235"/>
+        <Image Id="dfltMask7" TextureId="txr_tree_03" Bounds="83, 13, 114, 124" TraceId="image3246"/>
+        <Image Id="dfltMask8" TextureId="txr_tree_01" Bounds="8, 18, 91, 116" TraceId="image3268"/>
+        <Image Id="dfltMask9" TextureId="txr_column_02n" Bounds="415, 118, 15, 27" TraceId="image4047"/>
+        <Image Id="dfltMask10" TextureId="txr_column_03n" Bounds="181, 113, 14, 27" TraceId="image4058"/>
+        <Image Id="dfltMask11" TextureId="txr_column_01n" Bounds="88, 118, 13, 30" TraceId="image4069"/>
+        <Image Id="dfltMask12" TextureId="txr_plane_01n_spr_84x74x3" Bounds="33, 151, 252, 74" TraceId="image4102"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -37,4 +41,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=10 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=12 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->

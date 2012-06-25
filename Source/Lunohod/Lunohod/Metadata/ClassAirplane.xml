@@ -3,13 +3,13 @@
         <SoundFile Id="sndAirplane" Source="airplane"/>
     </Resources>
     <Resources RootFolder="Textures">
-        <Texture Id="txrAirplaneSprite" Source="plane_spr_84x73x3"/>
+        <Texture Id="txrAirplaneSprite" Source="plane_01n_spr_84x74x3"/>
     </Resources>
         
 	<Class Id="clsAirplane">
         <Group>
 
-            <Sprite Id="sprAirplane" TextureId="txrAirplaneSprite" Bounds="0,0,84,73" FrameBounds="0,0,84,73" />
+            <Sprite Id="sprAirplane" TextureId="txrAirplaneSprite" Bounds="0,0,84,74" FrameBounds="0,0,84,74" />
 
             <NumTrigger Property="this.X" Compare="L" Value="350" EnterAction="AirplaneSmoke1:Run" />
             <NumTrigger Property="this.X" Compare="L" Value="250" EnterAction="AirplaneSmoke2:Run" />
