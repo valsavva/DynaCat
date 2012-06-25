@@ -2,9 +2,9 @@
 MonoGame is an OpenSource, OpenGL implementation of Microsoft's XNA 4 APIs that allows developers to build games that run on Android, iPhone, iPad, MacOS, Linux and soon PlayStation Suite and Windows Metro, all reusing their existing XNA code that runs on Xbox 360 or Windows Phone 7.
 
 # LATEST NEWS
-[Infinite Flight](http://itunes.apple.com/us/app/infinite-flight/id471341991?ls=1&mt=8), MonoGame's first 3D powered game, has been released.
+v2.5 has been released and is now available for public consumption.
 
-v2.5 is nearing public release. Stay tuned.
+[Infinite Flight](http://itunes.apple.com/us/app/infinite-flight/id471341991?ls=1&mt=8), MonoGame's first 3D powered game, has been released.
 
 # FEATURED GAMES
 ### [Infinite Flight](http://itunes.apple.com/us/app/infinite-flight/id471341991?ls=1&mt=8)
@@ -44,6 +44,7 @@ This is what players had to say about the Google Chrome version of the game...
 
 Firstly, go over to github and register. Then fork the main repo found at https://github.com/mono/MonoGame
 This will allow you to make changes to your own repo and send us patches and enhancements, thus benefiting everyone.
+Once you've done a *git clone [your forked repo]*, if you are interested in the associated sub-modules like Samples and Starterkits, you will need to execute the *git submodule init* and *git submodule update* commands, to pull them all down.
 
 You can also join the active community of developers on IRC at irc.gnome.org on the #monogame channel, where the day-to-day improvements are being discussed in real time.
 If you release a game using MonoGame, please let us know so we can update our released games page, and mention MonoGame in your tweet.

@@ -78,15 +78,12 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
-using MonoTouch.CoreAnimation;
 
 namespace Microsoft.Xna.Framework
 {
     class iOSGamePlatform : GamePlatform
     {
-		private CADisplayLink _caDisplayLink;
-		
-		private iOSGameViewController _viewController;
+        private iOSGameViewController _viewController;
         private UIWindow _mainWindow;
         private List<NSObject> _applicationObservers;
 		private OpenALSoundController soundControllerInstance = null;
@@ -190,22 +187,19 @@ namespace Microsoft.Xna.Framework
 
             _viewController.View.BecomeFirstResponder();
             _runTimer = NSTimer.CreateRepeatingScheduledTimer(Game.TargetElapsedTime, Tick);
-//			_caDisplayLink = CADisplayLink.Create( delegate {
-//				Tick ();
-//			});
-//			_caDisplayLink.FrameInterval = 1;
-//			_caDisplayLink.AddToRunLoop(NSRunLoop.Current, NSRunLoop.NSDefaultRunLoopMode);
-		}
+        }
 
         private void Tick()
         {
+            if (!Game.IsActive)
+                return;
+
             try {
                 if (PerformPendingExit())
                     return;
                 if (IsPlayingVideo)
                     return;
-				if (!Game.IsActive)
-					return;
+
                 // FIXME: Remove this call, and the whole Tick method, once
                 //        GraphicsDevice is where platform-specific Present
                 //        functionality is actually implemented.  At that
@@ -239,14 +233,7 @@ namespace Microsoft.Xna.Framework
                 _runTimer.Dispose ();
                 _runTimer = null;
             }
-			
-			if (_caDisplayLink != null) {
-				_caDisplayLink.Invalidate();
-				_caDisplayLink.Dispose();
-				_caDisplayLink = null;
-			}
-			
-			UIApplication.SharedApplication.SetStatusBarHidden(false, UIStatusBarAnimation.Fade);
+            UIApplication.SharedApplication.SetStatusBarHidden(false, UIStatusBarAnimation.Fade);
             StopObservingUIApplication ();
             RaiseAsyncRunLoopEnded ();
             return true;
