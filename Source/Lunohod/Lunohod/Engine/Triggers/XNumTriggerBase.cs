@@ -46,8 +46,12 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-			
-			value2Reader = Compiler.CompileExpression<double>(this, this.Value);
+
+            if (this.Value == "0")
+                value2Reader = NumConstant.Zero;
+            else
+			    value2Reader = Compiler.CompileExpression<double>(this, this.Value);
+
 			compareFunc = compareFuncs[this.Compare];
 		}
 		
