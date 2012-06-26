@@ -144,9 +144,9 @@
     </Layer>
     <Layer Id="Action3" BackColor="#FFFFFFFF" Enabled="false">
         <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="273, 143, 24, 25" TraceId="image3260"/>
-        <!--<Block Id="blk1" Class="clsWoodenBox" Bounds="235, 137, 30, 30" Edges="Stick" TraceId="image3271">
+        <Block Id="blk1" Class="clsWoodenBox" Bounds="235, 137, 30, 30" Edges="Stick" TraceId="image3271">
             <Image TextureId="txr_box_old_1" />
-        </Block>-->
+        </Block>
         <Food Id="fd7" Class="clsFood" ClassParams="@fishType=2" Bounds="118, 78, 28, 19" TraceId="image4567"/>
         <Food Id="fd8" Class="clsFood" ClassParams="@fishType=2" Bounds="41, 88, 28, 19" TraceId="image4569"/>
         <Food Id="fd9" Class="clsFood" ClassParams="@fishType=2" Bounds="30, 150, 28, 19" TraceId="image4564"/>
