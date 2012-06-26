@@ -254,7 +254,7 @@
         </SequenceSet>
         <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Pause()" />
         <BoolTrigger Condition="hero.IsDead" EnterAction="setWay.Stop()" />
-        <BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>
+        <!--<BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>-->
 
         <!-- HAND EDIT <<< -->
     </Layer>

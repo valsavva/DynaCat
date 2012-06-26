@@ -415,9 +415,10 @@
         <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.5" Pitch="0"/>
 
     </Layer>
+    <!-- HAND EDIT <<< -->
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
-    <!-- HAND EDIT <<< -->
+
 </Level>
 <!-- Food=69 Enemy=76 Block=14 DesignImage=55 Animation=10 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
