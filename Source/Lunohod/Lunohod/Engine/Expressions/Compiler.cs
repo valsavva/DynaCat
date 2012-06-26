@@ -207,7 +207,7 @@ namespace Lunohod.Xge
             else
                 result = TProperty(objectId, id);
 		
-			PerfMon.Start("MethodOrProperty");
+			PerfMon.Stop("MethodOrProperty");
 
 			return result;
         }

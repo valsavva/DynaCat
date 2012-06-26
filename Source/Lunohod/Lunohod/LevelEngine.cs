@@ -94,15 +94,16 @@ namespace Lunohod
 			this.RootComponent.ResetComponentDictionary();
 		}
 		
-		private void CountLevelPoints()
+		public double CountLevelPoints()
 		{
-			XLevelScore levelScore = (XLevelScore)this.RootComponent.FindLocal("levelScore");
+			double result = 0;
 
-			levelScore.AvaliablePoints = 0;
 			this.LevelObject.TraveseTree(o => {
 				if (o is IHasPoints && !(this.LevelInfo.BombCount == 0 && o is XEnemy))
-					levelScore.AvaliablePoints += ((IHasPoints)o).Points;
+					result += ((IHasPoints)o).Points;
 			});
+
+			return result;
 		}
 		
 		public void SaveNewScore(XLevelScore newScore)
@@ -265,7 +266,7 @@ namespace Lunohod
 			{
 				obstacle = this.obstacles[i];
 
-                if (!obstacle.Enabled)
+                if (!(obstacle.Enabled && obstacle.WasUpdated))
                     continue;
 
 				obstacleBounds = obstacle.GetScreenBounds();

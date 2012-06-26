@@ -242,7 +242,7 @@ namespace Lunohod.Objects
             var exploding = this as IExploding;
 			if (exploding != null &&  exploding.IsExploding)
 			{
-				((XLevel)this.GetRoot()).Exploding.Add(this);
+				((XLevel)this.GetScreen()).Exploding.Add(this);
 			}
 		}
 		

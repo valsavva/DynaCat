@@ -55,7 +55,11 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public bool WasUpdated
 		{
-			get { return Math.Abs(this.updateCycle - GameEngine.Instance.CycleNumber) <= 1; }
+			get {
+				int diff = this.updateCycle - GameEngine.Instance.CycleNumber;
+
+				return diff >= -1 && diff <= 1;
+			}
 		}
         /// <summary>
         /// Gets collection of subcomponents.
@@ -197,7 +201,11 @@ namespace Lunohod.Objects
 				for(int i = 0; i < this.Subcomponents.Count; i++)
 				{
 					var subcomponent = this.Subcomponents[i];
+
+					string perfmonCat = "** Init of " + subcomponent.GetType().Name;
+					PerfMon.Start(perfmonCat);
 					subcomponent.Initialize(p);
+					PerfMon.Stop(perfmonCat);
 				}
 		}
         /// <summary>
@@ -339,15 +347,15 @@ namespace Lunohod.Objects
 		}
 		internal XObject FindGlobal(string id)
 		{
-			var root = this.GetRoot();
-			var result = root.FindDescendant(id);
+			var screen = this.GetScreen();
+			var result = screen.FindDescendant(id);
 			
 			if (result == null)
 			{
-				if (root.ScreenEngine.Owner == null)
+				if (screen.ScreenEngine.Owner == null)
 					return GameEngine.Instance.GameObject.FindLocal(id);
 				else
-					return root.ScreenEngine.Owner.RootComponent.FindGlobal(id);
+					return screen.ScreenEngine.Owner.RootComponent.FindGlobal(id);
 			}
 			
 			return result;
@@ -398,14 +406,19 @@ namespace Lunohod.Objects
 			
 			return result;
 		}
-		internal XScreen GetRoot()
+		internal XScreen GetScreen()
+		{
+			return (XScreen)GetRoot();
+		}
+
+		internal XObject GetRoot()
 		{
 			XObject result = this;
 	
 			while (result.Parent != null)
 				result = result.Parent;
 
-			return (XScreen)result;
+			return result;
 		}
         #endregion
 
