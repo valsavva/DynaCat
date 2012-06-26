@@ -138,7 +138,7 @@ namespace Lunohod.Objects
 		
 		public double GetCommandsPerSecond()
 		{
-			return ((LevelEngine)this.GetRoot().ScreenEngine).CommandsPerSecond;
+			return ((LevelEngine)this.GetScreen().ScreenEngine).CommandsPerSecond;
 		}
 		
 		public double RndX(double start, double end)

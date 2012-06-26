@@ -39,7 +39,7 @@ namespace Lunohod.Objects
         /// </summary>
 		public void Attack()
 		{
-			var hero = ((LevelEngine)GetRoot().ScreenEngine).Hero;
+			var hero = ((LevelEngine)this.GetScreen().ScreenEngine).Hero;
 			hero.InflictDamage(this.Damage);
 		}
 

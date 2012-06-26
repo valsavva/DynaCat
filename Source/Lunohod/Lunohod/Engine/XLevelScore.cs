@@ -89,6 +89,15 @@ namespace Lunohod.Objects
 			if (calculated)
 				return;
 
+			// get max score whenever we get a chance
+			var screen = this.GetRoot() as XScreen;
+			if (screen != null)
+			{
+				var levelEngine = screen.ScreenEngine as LevelEngine;
+				if (levelEngine != null)
+					availablePoints = levelEngine.CountLevelPoints();
+			}
+
 			scoreRatio = score / (availablePoints != 0 ? availablePoints : 1);
 
 			if (scoreRatio >= StarScoreRatio3)
@@ -109,7 +118,7 @@ namespace Lunohod.Objects
 		
 		public void Save()
 		{
-			var levelEngine = (LevelEngine)this.GetRoot().ScreenEngine;
+			var levelEngine = (LevelEngine)this.GetScreen().ScreenEngine;
 			levelEngine.SaveNewScore(this);
 		}
 		

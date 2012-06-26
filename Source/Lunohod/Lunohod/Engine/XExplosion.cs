@@ -48,7 +48,7 @@ namespace Lunohod.Objects
 			
 			this.PropState.ScreenBounds.Value.Center(ref this.tmpVector1);
 			
-			XLevel level = this.GetRoot() as XLevel;
+			XLevel level = this.GetScreen() as XLevel;
 			
 			for(int i = 0; i < level.Exploding.Count; i++)
 			{
