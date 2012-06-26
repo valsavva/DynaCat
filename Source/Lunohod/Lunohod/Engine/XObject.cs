@@ -55,7 +55,11 @@ namespace Lunohod.Objects
 		[XmlIgnore]
 		public bool WasUpdated
 		{
-			get { return Math.Abs(this.updateCycle - GameEngine.Instance.CycleNumber) <= 1; }
+			get {
+				int diff = this.updateCycle - GameEngine.Instance.CycleNumber;
+
+				return diff >= -1 && diff <= 1;
+			}
 		}
         /// <summary>
         /// Gets collection of subcomponents.

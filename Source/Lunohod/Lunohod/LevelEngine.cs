@@ -266,7 +266,7 @@ namespace Lunohod
 			{
 				obstacle = this.obstacles[i];
 
-                if (!obstacle.Enabled)
+                if (!(obstacle.Enabled && obstacle.WasUpdated))
                     continue;
 
 				obstacleBounds = obstacle.GetScreenBounds();
