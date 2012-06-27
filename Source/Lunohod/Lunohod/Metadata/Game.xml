@@ -82,7 +82,7 @@
             <!--DONE--><LevelInfo Id="Lvl_Poezd_Dvoynoy" File="Lvl_Poezd_Dvoynoy.xml" StarScoreRatio2="0.96" StarScoreRatio3="1" TimeBonusThreshold="86.47"/>
             <!--DONE--><LevelInfo Id="Lvl_Poezd_Poni" File="Lvl_Poezd_Poni.xml" StarScoreRatio2="0.97" StarScoreRatio3="1" TimeBonusThreshold="230.78"/>
             <!--DONE--><LevelInfo Id="Lvl_Poezd_E" File="Lvl_Poezd_E.xml" StarScoreRatio2="0.98" StarScoreRatio3="1" TimeBonusThreshold="161.42" />
-            <LevelInfo Id="Lvl_Poezd_Plus" File="Lvl_Poezd_Plus.xml" StarScoreRatio2="0.97" StarScoreRatio3="1" TimeBonusThreshold="78"/>
+            <!--DONE--><LevelInfo Id="Lvl_Poezd_Plus" File="Lvl_Poezd_Plus.xml" StarScoreRatio2="0.97" StarScoreRatio3="1" TimeBonusThreshold="78"/>
         </LevelSeries>
         <LevelSeries Id="series4" Name="----- Series 4: Ceh -----" File="ScreenSeries4.xml">
             <LevelInfo Id="Lvl_Ceh_v1" File="Lvl_Ceh_v1.xml" StarScoreRatio3="1" TimeBonusThreshold="17.91" BombCount="0" />
