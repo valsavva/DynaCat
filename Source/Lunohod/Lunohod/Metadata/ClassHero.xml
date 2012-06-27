@@ -91,6 +91,7 @@
             
             <SequenceSet Id="anmHeroExit" RepeatCount="1">
                 <Delay Duration="0.3" />
+                <Do Action="hero.Depth=exit.Depth+0.1" />
                 <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
                 <Do Action="hero.X=-7777777;hero.Y=-7777777" />
             </SequenceSet>
