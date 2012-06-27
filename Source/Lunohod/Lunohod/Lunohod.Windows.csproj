@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{669A160E-877C-462B-ACBF-93FEF1899EAF}</ProjectGuid>
@@ -2036,6 +2036,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Metadata\Lvl_Poezd_Plus_MG.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Lvl_Poezd_Plus_MergedFrg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Lvl_Poezd_Plus_MergedBackg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\railway_end_vertic.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -3292,3 +3301,6 @@ rem start /B "C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\Lunoho
       </Target>
     -->
 </Project>
+
+
+
