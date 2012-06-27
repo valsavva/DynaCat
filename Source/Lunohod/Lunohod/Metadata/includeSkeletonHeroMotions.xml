@@ -60,7 +60,9 @@
                  hero.EndTransaction()" 
                  Group="heroCondition"/>
 
-
+    <BoolTrigger Condition="hero:OnOilMotion and anmDeceleration.InProgress"
+                 EnterAction="hero.Speed=120" />
+    
     <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="anmMagnetSpeed.Stop()" Group="heroSpeedAnm"/>
     <BoolTrigger Condition="hero:sttElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
     <BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start()" Group="heroSpeedAnm"/>
@@ -69,7 +71,7 @@
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start()"  Group="heroSpeedAnm"/>
 	
 	<!-- Inertia -->
-    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();hero:-Inertia" />
+    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();anmOnOilSpeed.Stop();hero:-Inertia" />
 	<BoolTrigger Condition="not hero:Magneted and hero:Inertia" EnterAction="hero:-Inertia;anmDeceleration.Start();system.WriteLine('- - - Inertia - - -')" />
 	
 	<!-- tonneling with magnet pole 
@@ -107,7 +109,7 @@
         <KeyFrame Time="1" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
     
-	<!-- hero magneted by excavator animation -->
+	<!-- hero magneted by radar animation -->
     <NumAnimation Id="anmMagnetSpeed" Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
         <KeyFrame Time="0" Value="60" Smoothing="Smooth"/>
         <KeyFrame Time="0.5" Value="1000" Smoothing="Smooth"/>
@@ -115,8 +117,19 @@
         <KeyFrame Time="3" Value="2000" Smoothing="Smooth"/>
         <KeyFrame Time="5" Value="0" Smoothing="Smooth"/>
     </NumAnimation>
-    
-	<!-- ** Animation parameters adjustment. Need to remove this at some point. ** 
+
+    <!-- hero on oil spped animation -->
+    <SequenceSet Id="anmOnOilSpeed" RepeatCoun="1" InProgress="false">
+    <NumAnimation Target="this.Speed" From="60" To="120" Duration="0.5" IsDelta="false" RepeatCount="1" Fill="End"/>
+    <NumAnimation Target="this.Speed" IsDelta="false" RepeatCount="1" Fill="End">
+        <KeyFrame Time="0" Value="120"/>
+        <KeyFrame Time="3" Value="600"/>
+        <KeyFrame Time="5" Value="0"/>
+    </NumAnimation>
+    </SequenceSet>
+
+
+    <!-- ** Animation parameters adjustment. Need to remove this at some point. ** 
     <BoolTrigger Condition="system:heroSpeedRecalculate">
 		<BoolTrigger Condition="system:heroReduceSpeed" Action="@heroBaseSpeed=@heroBaseSpeed-5"/>
 		<BoolTrigger Condition="system:heroIncreaseSpeed" Action="@heroBaseSpeed=@heroBaseSpeed+5"/>
