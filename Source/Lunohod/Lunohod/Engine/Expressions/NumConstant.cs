@@ -10,6 +10,8 @@ namespace Lunohod.Xge
     {
         private double number;
 
+        public static readonly NumConstant Zero = new NumConstant(0);
+
         public NumConstant(double number)
         {
             this.number = number;

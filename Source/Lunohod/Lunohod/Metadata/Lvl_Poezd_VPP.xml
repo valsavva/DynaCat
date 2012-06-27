@@ -1,93 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.07 -->
+<!-- SVG to XGAME xml converter v1.6.12 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd_VPP\Lvl_Poezd_VPP.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_VPP" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat4.xml" />
-    <Include File="ClassFoodFish3.xml" />
     <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassFood.xml" />
     <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassFoodFish4.xml" />
-    <Include File="ClassFoodFish1.xml" />
     <Include File="ClassEnemyRat1.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassAirplane.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_backg_demo" Source="backg_demo" />
+        <Texture Id="txr_level_BG" Source="level_BG" />
+        <Texture Id="txr_grass_09" Source="grass_09" />
+        <Texture Id="txr_lake_01" Source="lake_01" />
+        <Texture Id="txr_grass_05" Source="grass_05" />
+        <Texture Id="txr_grass_01" Source="grass_01" />
+        <Texture Id="txr_grass_02" Source="grass_02" />
+        <Texture Id="txr_grass_03" Source="grass_03" />
+        <Texture Id="txr_grass_04" Source="grass_04" />
+        <Texture Id="txr_stone_04" Source="stone_04" />
+        <Texture Id="txr_stone_05" Source="stone_05" />
+        <Texture Id="txr_stone_01" Source="stone_01" />
+        <Texture Id="txr_stone_03" Source="stone_03" />
+        <Texture Id="txr_column_01n" Source="column_01n" />
+        <Texture Id="txr_column_03n" Source="column_03n" />
+        <Texture Id="txr_column_02n" Source="column_02n" />
+        <Texture Id="txr_texture_brick_3" Source="texture_brick_3" />
+        <Texture Id="txr_texture_brick_4" Source="texture_brick_4" />
+        <Texture Id="txr_texture_brick_5" Source="texture_brick_5" />
+        <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
+        <Texture Id="txr_box_old_1" Source="box_old_1" />
+        <Texture Id="txr_box_old_2" Source="box_old_2" />
+        <Texture Id="txr_box_old_3" Source="box_old_3" />
+        <Texture Id="txr_grass_08" Source="grass_08" />
+        <Texture Id="txr_grass_06" Source="grass_06" />
+        <Texture Id="txr_grass_07" Source="grass_07" />
+        <Texture Id="txr_grass_10" Source="grass_10" />
         <Texture Id="txr_railwayHor1" Source="railwayHor1" />
         <Texture Id="txr_railwayTurn180a" Source="railwayTurn180a" />
         <Texture Id="txr_railwayTurn90b" Source="railwayTurn90b" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
+        <Texture Id="txr_hemps_03" Source="hemps_03" />
+        <Texture Id="txr_tree_03" Source="tree_03" />
+        <Texture Id="txr_tree_02" Source="tree_02" />
+        <Texture Id="txr_tree_01" Source="tree_01" />
+        <Texture Id="txr_tree_04" Source="tree_04" />
         <Texture Id="txr_semafor_green" Source="semafor_green" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_backg_demo" Bounds="0, 0, 480, 320" TraceId="image3016-17"/>
+        <Image Id="dfltMask1" TextureId="txr_level_BG" Bounds="0, 0, 480, 320" TraceId="image3092-1"/>
+    </Layer>
+    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_grass_09" Bounds="275, 50, 21, 20" TraceId="image4342"/>
+        <Image Id="dfltMask3" TextureId="txr_lake_01" Bounds="223, 289, 138, 46" Stretch="true" TraceId="image3166"/>
+        <Image Id="dfltMask4" TextureId="txr_grass_05" Bounds="311, 286, 55, 44" TraceId="image3195"/>
+        <Image Id="dfltMask5" TextureId="txr_grass_01" Bounds="354, 278, 46, 22" TraceId="image3242"/>
+        <Image Id="dfltMask6" TextureId="txr_grass_01" Bounds="413, 288, 46, 22" TraceId="image3206-7"/>
+        <Image Id="dfltMask7" TextureId="txr_grass_02" Bounds="289, 264, 32, 27" TraceId="image3217"/>
+        <Image Id="dfltMask8" TextureId="txr_grass_03" Bounds="267, 273, 21, 20" TraceId="image3228"/>
+        <Image Id="dfltMask9" TextureId="txr_grass_04" Bounds="151, 278, 33, 14" TraceId="image4358"/>
+        <Image Id="dfltMask10" TextureId="txr_grass_04" Bounds="-11, 196, 33, 14" TraceId="image4354"/>
+        <Image Id="dfltMask11" TextureId="txr_grass_04" Bounds="-4, 152, 33, 14" TraceId="image3244"/>
+        <Image Id="dfltMask12" TextureId="txr_grass_04" Bounds="122, 292, 33, 14" TraceId="image3246"/>
+        <Image Id="dfltMask13" TextureId="txr_grass_04" Bounds="122, 292, 33, 14" TraceId="image3239"/>
+        <Image Id="dfltMask14" TextureId="txr_stone_04" Bounds="-15, 268, 45, 35" TraceId="image4068"/>
+        <Image Id="dfltMask15" TextureId="txr_stone_05" Bounds="229, 277, 23, 18" TraceId="image4079"/>
+        <Image Id="dfltMask16" TextureId="txr_stone_01" Bounds="221, 308, 10, 8" TraceId="image4131"/>
+        <Image Id="dfltMask17" TextureId="txr_stone_01" Bounds="251, 291, 10, 8" TraceId="image4133"/>
+        <Image Id="dfltMask18" TextureId="txr_stone_01" Bounds="253, 280, 10, 8" TraceId="image4090"/>
+        <Image Id="dfltMask19" TextureId="txr_stone_03" Bounds="220, 288, 17, 12" TraceId="image4057"/>
+        <Image Id="dfltMask20" TextureId="txr_stone_05" Bounds="26, 291, 23, 18" TraceId="image4135"/>
+        <Image Id="dfltMask21" TextureId="txr_stone_01" Bounds="67, 305, 10, 8" TraceId="image4139"/>
+        <Image Id="dfltMask22" TextureId="txr_grass_05" Bounds="-7, 274, 55, 44" TraceId="image4143"/>
+        <Image Id="dfltMask23" TextureId="txr_column_01n" Bounds="51, 46, 13, 30" TraceId="image4153"/>
+        <Image Id="dfltMask24" TextureId="txr_column_03n" Bounds="132, 45, 14, 27" TraceId="image4178"/>
+        <Image Id="dfltMask25" TextureId="txr_column_03n" Bounds="289, 45, 14, 27" TraceId="image4180"/>
+        <Image Id="dfltMask26" TextureId="txr_column_03n" Bounds="436, 46, 14, 27" TraceId="image4164"/>
+        <Image Id="dfltMask27" TextureId="txr_column_02n" Bounds="212, 45, 15, 27" TraceId="image4182"/>
+        <Image Id="dfltMask28" TextureId="txr_column_02n" Bounds="363, 45, 15, 27" TraceId="image4175"/>
+        <Image Id="dfltMask29" TextureId="txr_texture_brick_3" Bounds="80, 0, 26, 20" TraceId="image4192"/>
+        <Image Id="dfltMask30" TextureId="txr_texture_brick_4" Bounds="54, 0, 26, 20" TraceId="image4203"/>
+        <Image Id="dfltMask31" TextureId="txr_texture_brick_5" Bounds="106, 0, 26, 20" TraceId="image4214"/>
+        <Image Id="dfltMask32" TextureId="txr_texture_brick_clean" Bounds="132, 0, 26, 20" TraceId="image4225"/>
+        <Image Id="dfltMask33" TextureId="txr_texture_brick_3" Bounds="184, 0, 26, 20" TraceId="image4228"/>
+        <Image Id="dfltMask34" TextureId="txr_texture_brick_4" Bounds="158, 0, 26, 20" TraceId="image4230"/>
+        <Image Id="dfltMask35" TextureId="txr_texture_brick_5" Bounds="210, 0, 26, 20" TraceId="image4232"/>
+        <Image Id="dfltMask36" TextureId="txr_texture_brick_clean" Bounds="236, 0, 26, 20" TraceId="image4234"/>
+        <Image Id="dfltMask37" TextureId="txr_texture_brick_4" Bounds="262, 0, 26, 20" TraceId="image4238"/>
+        <Image Id="dfltMask38" TextureId="txr_box_old_1" Bounds="291, -15, 30, 30" TraceId="image4260"/>
+        <Image Id="dfltMask39" TextureId="txr_box_old_2" Bounds="326, -11, 30, 30" TraceId="image4271"/>
+        <Image Id="dfltMask40" TextureId="txr_box_old_3" Bounds="361, -23, 30, 30" TraceId="image4282"/>
+        <Image Id="dfltMask41" TextureId="txr_grass_09" Bounds="303, 1, 21, 20" TraceId="image4293"/>
+        <Image Id="dfltMask42" TextureId="txr_grass_08" Bounds="191, 21, 33, 14" TraceId="image4315"/>
+        <Image Id="dfltMask43" TextureId="txr_grass_06" Bounds="234, 6, 46, 21" TraceId="image4326"/>
+        <Image Id="dfltMask44" TextureId="txr_grass_07" Bounds="40, -17, 55, 44" TraceId="image4337"/>
+        <Image Id="dfltMask45" TextureId="txr_grass_09" Bounds="56, 64,  15,  15" Stretch="true" TraceId="image4340"/>
+        <Image Id="dfltMask46" TextureId="txr_grass_08" Bounds="424, 63, 33, 14" TraceId="image4344"/>
+        <Image Id="dfltMask47" TextureId="txr_stone_01" Bounds="355, 65, 10, 8" TraceId="image4348"/>
+        <Image Id="dfltMask48" TextureId="txr_grass_10" Bounds="-5, 61, 32, 27" TraceId="image4356"/>
+        <Image Id="dfltMask49" TextureId="txr_grass_03" Bounds="190, 205, 21, 20" TraceId="image4360"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_railwayHor1" Bounds="128, 76, 40, 40" TraceId="image3030"/>
-        <Image Id="dfltMask3" TextureId="txr_railwayHor1" Bounds="168, 76, 40, 40" TraceId="image3032"/>
-        <Image Id="dfltMask4" TextureId="txr_railwayHor1" Bounds="208, 76, 40, 40" TraceId="image3034"/>
-        <Image Id="dfltMask5" TextureId="txr_railwayHor1" Bounds="248, 76, 40, 40" TraceId="image3036"/>
-        <Image Id="dfltMask6" TextureId="txr_railwayHor1" Bounds="288, 76, 40, 40" TraceId="image3039"/>
-        <Image Id="dfltMask7" TextureId="txr_railwayHor1" Bounds="328, 76, 40, 40" TraceId="image3041"/>
-        <Image Id="dfltMask8" TextureId="txr_railwayHor1" Bounds="368, 76, 40, 40" TraceId="image3043"/>
-        <Image Id="dfltMask9" TextureId="txr_railwayHor1" Bounds="168, 136, 40, 40" TraceId="image3050"/>
-        <Image Id="dfltMask10" TextureId="txr_railwayHor1" Bounds="208, 136, 40, 40" TraceId="image3052"/>
-        <Image Id="dfltMask11" TextureId="txr_railwayHor1" Bounds="248, 136, 40, 40" TraceId="image3054"/>
-        <Image Id="dfltMask12" TextureId="txr_railwayHor1" Bounds="288, 136, 40, 40" TraceId="image3056"/>
-        <Image Id="dfltMask13" TextureId="txr_railwayHor1" Bounds="328, 136, 40, 40" TraceId="image3058"/>
-        <Image Id="dfltMask14" TextureId="txr_railwayHor1" Bounds="368, 136, 40, 40" TraceId="image3060"/>
-        <Image Id="dfltMask15" TextureId="txr_railwayTurn180a" Bounds="408, 76, 60, 100" TraceId="image3070"/>
-        <Image Id="dfltMask16" TextureId="txr_railwayTurn90b" Bounds="88, 136, 80, 80" TraceId="image3081"/>
-        <Image Id="dfltMask17" TextureId="txr_railwayTurn180a" Bounds="128, 236, 60, 100" Rotation="90" TraceId="image3084"/>
-        <Image Id="dfltMask18" TextureId="txr_railwayTurn90b" Bounds="28, 76, 80, 80" TraceId="image3092"/>
-        <Image Id="dfltMask19" TextureId="txr_railwayHor1" Bounds="68, 156, 40, 40" Rotation="90" TraceId="image3094"/>
-        <Image Id="dfltMask20" TextureId="txr_railwayHor1" Bounds="108, 76, 40, 40" TraceId="image3096"/>
-        <Image Id="dfltMask21" TextureId="txr_railwayHor1" Bounds="68, 196, 40, 40" Rotation="90" TraceId="image3098"/>
-        <Image Id="dfltMask22" TextureId="txr_railwayHor1" Bounds="128, 196, 40, 40" Rotation="90" TraceId="image3102"/>
+        <Image Id="dfltMask50" TextureId="txr_railwayHor1" Bounds="128, 76, 40, 40" TraceId="image3030"/>
+        <Image Id="dfltMask51" TextureId="txr_railwayHor1" Bounds="168, 76, 40, 40" TraceId="image3032"/>
+        <Image Id="dfltMask52" TextureId="txr_railwayHor1" Bounds="208, 76, 40, 40" TraceId="image3034"/>
+        <Image Id="dfltMask53" TextureId="txr_railwayHor1" Bounds="248, 76, 40, 40" TraceId="image3036"/>
+        <Image Id="dfltMask54" TextureId="txr_railwayHor1" Bounds="288, 76, 40, 40" TraceId="image3039"/>
+        <Image Id="dfltMask55" TextureId="txr_railwayHor1" Bounds="328, 76, 40, 40" TraceId="image3041"/>
+        <Image Id="dfltMask56" TextureId="txr_railwayHor1" Bounds="368, 76, 40, 40" TraceId="image3043"/>
+        <Image Id="dfltMask57" TextureId="txr_railwayHor1" Bounds="168, 136, 40, 40" TraceId="image3050"/>
+        <Image Id="dfltMask58" TextureId="txr_railwayHor1" Bounds="208, 136, 40, 40" TraceId="image3052"/>
+        <Image Id="dfltMask59" TextureId="txr_railwayHor1" Bounds="248, 136, 40, 40" TraceId="image3054"/>
+        <Image Id="dfltMask60" TextureId="txr_railwayHor1" Bounds="288, 136, 40, 40" TraceId="image3056"/>
+        <Image Id="dfltMask61" TextureId="txr_railwayHor1" Bounds="328, 136, 40, 40" TraceId="image3058"/>
+        <Image Id="dfltMask62" TextureId="txr_railwayHor1" Bounds="368, 136, 40, 40" TraceId="image3060"/>
+        <Image Id="dfltMask63" TextureId="txr_railwayTurn180a" Bounds="408, 76, 60, 100" TraceId="image3070"/>
+        <Image Id="dfltMask64" TextureId="txr_railwayTurn90b" Bounds="88, 136, 80, 80" TraceId="image3081"/>
+        <Image Id="dfltMask65" TextureId="txr_railwayTurn180a" Bounds="128, 236, 60, 100" Rotation="90" TraceId="image3084"/>
+        <Image Id="dfltMask66" TextureId="txr_railwayTurn90b" Bounds="28, 76, 80, 80" TraceId="image3092"/>
+        <Image Id="dfltMask67" TextureId="txr_railwayHor1" Bounds="68, 156, 40, 40" Rotation="90" TraceId="image3094"/>
+        <Image Id="dfltMask68" TextureId="txr_railwayHor1" Bounds="108, 76, 40, 40" TraceId="image3096"/>
+        <Image Id="dfltMask69" TextureId="txr_railwayHor1" Bounds="68, 196, 40, 40" Rotation="90" TraceId="image3098"/>
+        <Image Id="dfltMask70" TextureId="txr_railwayHor1" Bounds="128, 196, 40, 40" Rotation="90" TraceId="image3102"/>
     </Layer>
     <Layer Id="Action1" BackColor="#FFFFFFFF" Enabled="false">
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="390, 152, 22, 23" TraceId="image3176"/>
-        <Food Id="fd1" Class="clsFoodFish3" Bounds="81, 80, 28, 17" TraceId="image3192"/>
-        <Food Id="fd2" Class="clsFoodFish3" Bounds="143, 97, 28, 17" TraceId="image3194"/>
-        <Food Id="fd3" Class="clsFoodFish3" Bounds="219, 78, 28, 17" TraceId="image3189"/>
         <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="347, 134, 22, 23" TraceId="image3206"/>
         <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="134, 236, 22, 23" TraceId="image3454"/>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=5" Bounds="81, 75, 27, 20" TraceId="image4515"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=5" Bounds="140, 94, 27, 20" TraceId="image4517"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="219, 75, 27, 20" TraceId="image4454"/>
     </Layer>
     <Layer Id="Action2" BackColor="#FFFFFFFF" Enabled="false">
         <Enemy Id="enm4" Class="clsEnemyRat2" Bounds="115, 137, 22, 23" TraceId="image3221"/>
         <Enemy Id="enm5" Class="clsEnemyRat2" Bounds="386, 138, 22, 23" TraceId="image3218"/>
-        <Food Id="fd4" Class="clsFoodFish3" Bounds="184, 77, 28, 17" TraceId="image3234"/>
-        <Food Id="fd5" Class="clsFoodFish3" Bounds="247, 98, 28, 17" TraceId="image3236"/>
-        <Food Id="fd6" Class="clsFoodFish3" Bounds="310, 78, 28, 17" TraceId="image3231"/>
         <Enemy Id="enm6" Class="clsEnemyRat2" Bounds="252, 197, 22, 23" TraceId="image3457"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=4" Bounds="183, 75, 28, 22" TraceId="image4530"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=4" Bounds="244, 99, 28, 22" TraceId="image4532"/>
+        <Food Id="fd6" Class="clsFood" ClassParams="@fishType=4" Bounds="307, 76, 28, 22" TraceId="image4527"/>
     </Layer>
     <Layer Id="Action3" BackColor="#FFFFFFFF" Enabled="false">
         <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="273, 143, 24, 25" TraceId="image3260"/>
         <Block Id="blk1" Class="clsWoodenBox" Bounds="235, 137, 30, 30" Edges="Stick" TraceId="image3271">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Food Id="fd7" Class="clsFoodFish3" Bounds="34, 153, 28, 17" TraceId="image3285"/>
-        <Food Id="fd8" Class="clsFoodFish3" Bounds="49, 87, 28, 17" TraceId="image3287"/>
-        <Food Id="fd9" Class="clsFoodFish3" Bounds="124, 82, 28, 17" TraceId="image3289"/>
-        <Food Id="fd10" Class="clsFoodFish3" Bounds="367, 84, 28, 17" TraceId="image3291"/>
-        <Food Id="fd11" Class="clsFoodFish3" Bounds="430, 119, 28, 17" TraceId="image3293"/>
-        <Food Id="fd12" Class="clsFoodFish3" Bounds="370, 150, 28, 17" TraceId="image3282"/>
+        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=2" Bounds="118, 78, 28, 19" TraceId="image4567"/>
+        <Food Id="fd8" Class="clsFood" ClassParams="@fishType=2" Bounds="41, 88, 28, 19" TraceId="image4569"/>
+        <Food Id="fd9" Class="clsFood" ClassParams="@fishType=2" Bounds="30, 150, 28, 19" TraceId="image4564"/>
+        <Food Id="fd10" Class="clsFood" ClassParams="@fishType=5" Bounds="368, 83, 27, 20" TraceId="image4582"/>
+        <Food Id="fd11" Class="clsFood" ClassParams="@fishType=5" Bounds="372, 147, 27, 20" TraceId="image4584"/>
+        <Food Id="fd12" Class="clsFood" ClassParams="@fishType=5" Bounds="428, 118, 27, 20" TraceId="image4579"/>
     </Layer>
     <Layer Id="Action4" BackColor="#FFFFFFFF" Enabled="false">
-        <Food Id="fd13" Class="clsFoodFish4" Bounds="217, 152, 26, 17" TraceId="image3307"/>
-        <Food Id="fd14" Class="clsFoodFish4" Bounds="271, 151, 26, 17" TraceId="image3304"/>
         <Enemy Id="enm8" Class="clsEnemyRat2" Bounds="398, 144, 22, 23" TraceId="image3328"/>
         <Enemy Id="enm9" Class="clsEnemyRat4" Bounds="109, 137, 22, 23" TraceId="image3339"/>
-        <Food Id="fd15" Class="clsFoodFish1" Bounds="211, 81, 30, 15" TraceId="image3359"/>
-        <Food Id="fd16" Class="clsFoodFish1" Bounds="239, 105, 30, 15" TraceId="image3361"/>
-        <Food Id="fd17" Class="clsFoodFish1" Bounds="270, 81, 30, 15" TraceId="image3363"/>
-
-        <Enemy Id="enm10" Class="clsEnemyRat1" Bounds="495, 199, 24, 25" TraceId="image3494"/>
-        <Enemy Id="enm11" Class="clsEnemyRat1" Bounds="584, 200, 24, 25" TraceId="image3491"/>
+        <Enemy Id="enm10" Class="clsEnemyRat1" Bounds="495, 199,  24,  25" TraceId="image3494"/>
+        <Enemy Id="enm11" Class="clsEnemyRat1" Bounds="584, 200,  24,  25" TraceId="image3491"/>
         <Enemy Id="enm12" Class="clsEnemyRat3" Bounds="242, 214, 24, 25" TraceId="image3506"/>
+        <Food Id="fd13" Class="clsFood" ClassParams="@fishType=1" Bounds="206, 75, 32, 21" TraceId="image4597"/>
+        <Food Id="fd14" Class="clsFood" ClassParams="@fishType=1" Bounds="243, 97, 32, 21" TraceId="image4599"/>
+        <Food Id="fd15" Class="clsFood" ClassParams="@fishType=1" Bounds="271, 74, 32, 21" TraceId="image4594"/>
+        <Food Id="fd16" Class="clsFood" ClassParams="@fishType=7" Bounds="242, 142, 32, 30" TraceId="image4609"/>
+
         <!-- HAND EDIT 1 >>> -->
         <SequenceSet InProgress="true" RepeatCount="1">
             <Delay Duration="4" />
@@ -98,15 +175,16 @@
     </Layer>
     <Layer Id="Action_End" BackColor="#FFFFFFFF" Enabled="false">
         <Group Id="exit" Class="clsExit" Bounds="91, 128, 37, 54" TraceId="image3049" />
-        <Food Id="fd18" Class="clsFoodFish4" Bounds="47, 98, 26, 17" TraceId="image3395"/>
-        <Food Id="fd19" Class="clsFoodFish4" Bounds="123, 81, 26, 17" TraceId="image3397"/>
-        <Food Id="fd20" Class="clsFoodFish4" Bounds="197, 90, 26, 17" TraceId="image3399"/>
-        <Food Id="fd21" Class="clsFoodFish4" Bounds="306, 79, 26, 17" TraceId="image3401"/>
-        <Food Id="fd22" Class="clsFoodFish4" Bounds="373, 96, 26, 17" TraceId="image3392"/>
         <Enemy Id="enm13" Class="clsEnemyRat3" Bounds="140, 135, 24, 25" TraceId="image3414"/>
         <Enemy Id="enm14" Class="clsEnemyRat3" Bounds="262, 147, 24, 25" TraceId="image3416"/>
         <Enemy Id="enm15" Class="clsEnemyRat3" Bounds="405, 134, 24, 25" TraceId="image3411"/>
+        <Food Id="fd17" Class="clsFood" ClassParams="@fishType=5" Bounds="47, 97, 27, 20" TraceId="image4620"/>
+        <Food Id="fd18" Class="clsFood" ClassParams="@fishType=5" Bounds="122, 80, 27, 20" TraceId="image4623"/>
+        <Food Id="fd19" Class="clsFood" ClassParams="@fishType=5" Bounds="197, 88, 27, 20" TraceId="image4625"/>
+        <Food Id="fd20" Class="clsFood" ClassParams="@fishType=5" Bounds="305, 77, 27, 20" TraceId="image4627"/>
+        <Food Id="fd21" Class="clsFood" ClassParams="@fishType=5" Bounds="372, 95, 27, 20" TraceId="image4629"/>
     </Layer>
+    
     <!-- HAND EDIT 2 >>> -->
     <Layer Id="way" BackColor="#FFFFFFFF">
 
@@ -215,21 +293,33 @@
         <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="10, 172, 44, 67" TraceId="image3164" />
         <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="10, 172, 44, 67" Enabled="false" TraceId="image3164" />
     </Layer>
+    <!-- HAND EDIT 2 <<< -->
+    
+    <Layer Id="foreground" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask71" TextureId="txr_hemps_03" Bounds="205, 200, 43, 41" TraceId="image4399"/>
+        <Image Id="dfltMask72" TextureId="txr_tree_03" Bounds="301, 154, 114, 124" TraceId="image3103"/>
+        <Image Id="dfltMask73" TextureId="txr_tree_02" Bounds="379, 204, 88, 119" TraceId="image3133"/>
+        <Image Id="dfltMask74" TextureId="txr_grass_02" Bounds="406, 299, 32, 27" TraceId="image3256"/>
+        <Image Id="dfltMask75" TextureId="txr_grass_03" Bounds="341, 254, 21, 20" TraceId="image3267"/>
+        <Image Id="dfltMask76" TextureId="txr_tree_01" Bounds="432, 143, 91, 116" TraceId="image3278"/>
+        <Image Id="dfltMask77" TextureId="txr_tree_04" Bounds="182, 216, 72, 36" Stretch="true" TraceId="image4370"/>
+    </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
-    <!-- HAND EDIT 1 <<< -->
+
 </Level>
-<!-- Food=22 Enemy=15 Block=1 DesignImage=22 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=21 Enemy=15 Block=1 DesignImage=77 Animation=7 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
-<!-- Food Points = 1990 -->
-<!-- 1% = 19.9; 45% = 895.5; 90% = 1791 -->
-<!-- minPointsFood = 70 (3.5%) -->
+<!-- Food Points = 1820 -->
+<!-- 1% = 18.2; 45% = 819; 90% = 1638 -->
+<!-- minPointsFood = 50 (2.7%) -->
 <!-- -->
-<!-- Enemy Points = 925 -->
-<!-- 1% = 9.25; 45% = 416.25; 90% = 832.5 -->
-<!-- minPointsEnemy = 50 (5.4%) -->
+<!-- Enemy Points = 875 -->
+<!-- 1% = 8.75; 45% = 393.75; 90% = 787.5 -->
+<!-- minPointsEnemy = 50 (5.7%) -->
 <!-- -->
-<!-- Food + Enemy Points = 2915 -->
-<!-- 1% = 29.15; 45% = 1311.75; 90% = 2623.5 -->
-<!-- minPointsFood = 70 (2.4%) -->
-<!-- minPointsEnemy = 50 (1.7%) -->
+<!-- Food + Enemy Points = 2695 -->
+<!-- 1% = 26.95; 45% = 1212.75; 90% = 2425.5 -->
+<!-- minPointsFood = 50 (1.9%) -->
+<!-- minPointsEnemy = 50 (1.9%) -->
+

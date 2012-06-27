@@ -38,6 +38,13 @@ namespace Lunohod.Xge
 
         public static IExpression<T> CompileExpression<T>(XObject currentObject, string text)
         {
+            if (typeof(T) == typeof(double))
+            {
+                double numValue;
+                if (double.TryParse(text, out numValue))
+                    return (IExpression<T>)new NumConstant(numValue);
+            }
+
 			PerfMon.Start("CompileExpression");
 
             Instance.Initialize(currentObject, text);
