@@ -1031,7 +1031,16 @@
     <Content Include="Metadata\ClassTeleportKoleno.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Metadata\ClassMagneticRadar.xml">
+    <Content Include="Metadata\ClassMagneticRadarDown.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassMagneticRadarLeft.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassMagneticRadarRight.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\ClassMagneticRadarUp.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\Lvl_Trenazher.xml">

@@ -3,7 +3,10 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExcavator.xml" />
-    <Include File="ClassMagneticRadar.xml" />
+    <Include File="ClassMagneticRadarLeft.xml" />
+    <Include File="ClassMagneticRadarRight.xml" />
+    <Include File="ClassMagneticRadarDown.xml" />
+    <Include File="ClassMagneticRadarUp.xml" />
     <Include File="ClassExcavatorLeft.xml" />
     <Include File="ClassWoodenBox.xml" />
     
@@ -35,8 +38,12 @@
         <Group Id="exv3" Bounds="130,100,40,60" Class="clsExcavator" ClassParams="@paramDirX=0,@paramDirY=1" />
         <Group Id="exv4" Bounds="370,200,40,60" Class="clsExcavator" ClassParams="@paramDirX=0,@paramDirY=-1" />-->
 
-        <Group Id="rad1" Bounds="430,30,52,51" Class="clsMagneticRadar" ClassParams="@paramDirX=-1,@paramDirY=0" />
-        <Group Id="rad2" Bounds="30,130,52,51" Class="clsMagneticRadar" ClassParams="@paramDirX=1,@paramDirY=0" />
+        <Group Id="rad1" Bounds="430,30,52,51" Class="clsMagneticRadarLeft"/>
+        <Group Id="rad2" Bounds="30,130,52,51" Class="clsMagneticRadarRight"/>
+        
+        <Group Id="rad3" Bounds="300,10,47,68" Class="clsMagneticRadarDown"/>
+
+        <Group Id="rad4" Bounds="150,290, 47,68" Class="clsMagneticRadarUp"/>
 
         <!--<Block Id="box1" Class="clsWoodenBox" Bounds="110, 55, 30, 30" Edges="Stick">
             <Image TextureId="txr_box_old_1" />
