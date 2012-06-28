@@ -1,48 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.12 -->
+<!-- SVG to XGAME xml converter v1.6.14 -->
 <!-- source: D:\Lunohod\Levels\zzzzzzgrfx_updt.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="zzzzzzgrfx_updt" Bounds="0, 0, 480, 320">
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_level_BG" Source="level_BG" />
-        <Texture Id="txr_tree_04" Source="tree_04" />
-        <Texture Id="txr_hemps_02" Source="hemps_02" />
-        <Texture Id="txr_hemps_03" Source="hemps_03" />
-        <Texture Id="txr_hemps_01" Source="hemps_01" />
-        <Texture Id="txr_tree_02" Source="tree_02" />
-        <Texture Id="txr_tree_03" Source="tree_03" />
-        <Texture Id="txr_tree_01" Source="tree_01" />
-        <Texture Id="txr_column_02n" Source="column_02n" />
-        <Texture Id="txr_column_03n" Source="column_03n" />
-        <Texture Id="txr_column_01n" Source="column_01n" />
-        <Texture Id="txr_plane_01n_spr_84x74x3" Source="plane_01n_spr_84x74x3" />
-        <Texture Id="txr_railway_end_horiz" Source="railway_end_horiz" />
-        <Texture Id="txr_railway_end_vertic" Source="railway_end_vertic" />
+        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_03n" Source="under_land_BG_03n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
+        <Texture Id="txr_laz_vert_01n" Source="laz_vert_01n" />
+        <Texture Id="txr_laz_vert_02n" Source="laz_vert_02n" />
+        <Texture Id="txr_laz_vert_03n" Source="laz_vert_03n" />
+        <Texture Id="txr_laz_baza_01n" Source="laz_baza_01n" />
+        <Texture Id="txr_laz_baza_02n" Source="laz_baza_02n" />
+        <Texture Id="txr_laz_hor_01n" Source="laz_hor_01n" />
+        <Texture Id="txr_laz_hor_02n" Source="laz_hor_02n" />
+        <Texture Id="txr_laz_hor_03n" Source="laz_hor_03n" />
+        <Texture Id="txr_laz_turn_01n" Source="laz_turn_01n" />
+        <Texture Id="txr_laz_turn_02n" Source="laz_turn_02n" />
+        <Texture Id="txr_bones_06n" Source="bones_06n" />
+        <Texture Id="txr_bones_07n" Source="bones_07n" />
+        <Texture Id="txr_bones_08n" Source="bones_08n" />
+        <Texture Id="txr_bones_09n" Source="bones_09n" />
+        <Texture Id="txr_bones_01n" Source="bones_01n" />
+        <Texture Id="txr_bones_02n" Source="bones_02n" />
+        <Texture Id="txr_bones_03n" Source="bones_03n" />
+        <Texture Id="txr_bones_04n" Source="bones_04n" />
+        <Texture Id="txr_bones_05n" Source="bones_05n" />
+        <Texture Id="txr_glass_06n" Source="glass_06n" />
+        <Texture Id="txr_glass_07n" Source="glass_07n" />
+        <Texture Id="txr_glass_08n" Source="glass_08n" />
+        <Texture Id="txr_glass_01n" Source="glass_01n" />
+        <Texture Id="txr_glass_02n" Source="glass_02n" />
+        <Texture Id="txr_glass_03n" Source="glass_03n" />
+        <Texture Id="txr_glass_04n" Source="glass_04n" />
+        <Texture Id="txr_glass_05n" Source="glass_05n" />
+        <Texture Id="txr_metal_03n" Source="metal_03n" />
+        <Texture Id="txr_metal_04n" Source="metal_04n" />
+        <Texture Id="txr_metal_01n" Source="metal_01n" />
+        <Texture Id="txr_metal_02n" Source="metal_02n" />
+        <Texture Id="txr_stone_02n" Source="stone_02n" />
+        <Texture Id="txr_stone_03n" Source="stone_03n" />
+        <Texture Id="txr_stone_01n" Source="stone_01n" />
     </Resources>
     <Layer Id="GRFX update" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_level_BG" Bounds="0, 0, 480, 320" TraceId="image4080"/>
-        <Image Id="dfltMask2" TextureId="txr_tree_04" Bounds="376, 74, 90, 60" TraceId="image3257"/>
-        <Image Id="dfltMask3" TextureId="txr_hemps_02" Bounds="339, 101, 31, 24" TraceId="image3202"/>
-        <Image Id="dfltMask4" TextureId="txr_hemps_03" Bounds="295, 87, 43, 41" TraceId="image3213"/>
-        <Image Id="dfltMask5" TextureId="txr_hemps_01" Bounds="250, 107, 32, 26" TraceId="image3224"/>
-        <Image Id="dfltMask6" TextureId="txr_tree_02" Bounds="179, 11, 88, 119" TraceId="image3235"/>
-        <Image Id="dfltMask7" TextureId="txr_tree_03" Bounds="83, 13, 114, 124" TraceId="image3246"/>
-        <Image Id="dfltMask8" TextureId="txr_tree_01" Bounds="8, 18, 91, 116" TraceId="image3268"/>
-        <Image Id="dfltMask9" TextureId="txr_column_02n" Bounds="415, 118, 15, 27" TraceId="image4047"/>
-        <Image Id="dfltMask10" TextureId="txr_column_03n" Bounds="181, 113, 14, 27" TraceId="image4058"/>
-        <Image Id="dfltMask11" TextureId="txr_column_01n" Bounds="88, 118, 13, 30" TraceId="image4069"/>
-        <Image Id="dfltMask12" TextureId="txr_plane_01n_spr_84x74x3" Bounds="33, 151, 252, 74" TraceId="image4102"/>
-        <Image Id="dfltMask13" TextureId="txr_railway_end_horiz" Bounds="391, 172, 40, 40" TraceId="image4113"/>
-        <Image Id="dfltMask14" TextureId="txr_railway_end_vertic" Bounds="325, 168, 40, 40" TraceId="image4124"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3105"/>
+        <Image Id="dfltMask2" TextureId="txr_under_land_BG_03n" Bounds="0, 0, 480, 320" TraceId="image3116"/>
+        <Image Id="dfltMask3" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3127"/>
+    </Layer>
+    <Layer Id="GRFX update2" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask4" TextureId="txr_laz_vert_01n" Bounds="136, 100, 46, 36" TraceId="image3150"/>
+        <Image Id="dfltMask5" TextureId="txr_laz_vert_02n" Bounds="136, 72, 46, 36" TraceId="image3161"/>
+        <Image Id="dfltMask6" TextureId="txr_laz_vert_03n" Bounds="136, 128, 46, 36" TraceId="image3172"/>
+        <Image Id="dfltMask7" TextureId="txr_laz_baza_01n" Bounds="317, 16, 83, 99" TraceId="image3183"/>
+        <Image Id="dfltMask8" TextureId="txr_laz_baza_02n" Bounds="347, 160, 83, 99" TraceId="image3194"/>
+        <Image Id="dfltMask9" TextureId="txr_laz_hor_01n" Bounds="288, 44, 46, 36" TraceId="image3205"/>
+        <Image Id="dfltMask10" TextureId="txr_laz_hor_02n" Bounds="174, 44, 46, 36" TraceId="image3216"/>
+        <Image Id="dfltMask11" TextureId="txr_laz_hor_03n" Bounds="250, 44, 46, 36" TraceId="image3227"/>
+        <Image Id="dfltMask12" TextureId="txr_laz_turn_01n" Bounds="136, 44, 46, 36" TraceId="image3238"/>
+        <Image Id="dfltMask13" TextureId="txr_laz_hor_02n" Bounds="212, 44, 46, 36" TraceId="image3241"/>
+        <Image Id="dfltMask14" TextureId="txr_laz_turn_02n" Bounds="236, 100, 46, 36" TraceId="image3139"/>
+        <Image Id="dfltMask15" TextureId="txr_bones_06n" Bounds="35, 115, 18, 9" TraceId="image3253"/>
+        <Image Id="dfltMask16" TextureId="txr_bones_07n" Bounds="43, 147, 15, 14" TraceId="image3264"/>
+        <Image Id="dfltMask17" TextureId="txr_bones_08n" Bounds="23, 214, 21, 13" TraceId="image3275"/>
+        <Image Id="dfltMask18" TextureId="txr_bones_09n" Bounds="26, 265, 28, 31" TraceId="image3286"/>
+        <Image Id="dfltMask19" TextureId="txr_bones_01n" Bounds="87, 222, 19, 23" TraceId="image3297"/>
+        <Image Id="dfltMask20" TextureId="txr_bones_02n" Bounds="55, 171, 35, 31" TraceId="image3308"/>
+        <Image Id="dfltMask21" TextureId="txr_bones_03n" Bounds="59, 161, 15, 12" TraceId="image3319"/>
+        <Image Id="dfltMask22" TextureId="txr_bones_04n" Bounds="82, 110, 15, 18" TraceId="image3330"/>
+        <Image Id="dfltMask23" TextureId="txr_bones_05n" Bounds="64, 87, 15, 19" TraceId="image3341"/>
+        <Image Id="dfltMask24" TextureId="txr_glass_06n" Bounds="119, 249, 19, 21" TraceId="image3352"/>
+        <Image Id="dfltMask25" TextureId="txr_glass_07n" Bounds="166, 261, 12, 15" TraceId="image3363"/>
+        <Image Id="dfltMask26" TextureId="txr_glass_08n" Bounds="222, 280, 11, 7" TraceId="image3374"/>
+        <Image Id="dfltMask27" TextureId="txr_glass_01n" Bounds="242, 287, 14, 27" TraceId="image3385"/>
+        <Image Id="dfltMask28" TextureId="txr_glass_02n" Bounds="303, 284, 16, 32" TraceId="image3396"/>
+        <Image Id="dfltMask29" TextureId="txr_glass_03n" Bounds="328, 293, 17, 15" TraceId="image3407"/>
+        <Image Id="dfltMask30" TextureId="txr_glass_04n" Bounds="387, 290, 26, 20" TraceId="image3418"/>
+        <Image Id="dfltMask31" TextureId="txr_glass_05n" Bounds="426, 291, 27, 19" TraceId="image3429"/>
+        <Image Id="dfltMask32" TextureId="txr_metal_03n" Bounds="139, 4, 20, 21" TraceId="image3440"/>
+        <Image Id="dfltMask33" TextureId="txr_metal_04n" Bounds="248, 8, 22, 15" TraceId="image3451"/>
+        <Image Id="dfltMask34" TextureId="txr_metal_01n" Bounds="294, 89, 35, 26" TraceId="image3462"/>
+        <Image Id="dfltMask35" TextureId="txr_metal_02n" Bounds="440, 10, 28, 23" TraceId="image3473"/>
+        <Image Id="dfltMask36" TextureId="txr_laz_hor_02n" Bounds="174, 104, 46, 36" TraceId="image3555"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="366, 252, 37, 54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="343, 36, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="40, 24, 33, 24" TraceId="image3016-1"/>
+        <Image Id="dfltMask37" TextureId="txr_stone_02n" Bounds="199, 187, 11, 10" TraceId="image3509"/>
+        <Image Id="dfltMask38" TextureId="txr_stone_02n" Bounds="194, 178, 11, 10" TraceId="image3511"/>
+        <Image Id="dfltMask39" TextureId="txr_stone_02n" Bounds="202, 179, 11, 10" TraceId="image3513"/>
+        <Image Id="dfltMask40" TextureId="txr_stone_03n" Bounds="180, 179, 15, 16" TraceId="image3495"/>
+        <Image Id="dfltMask41" TextureId="txr_stone_01n" Bounds="212, 187, 15, 12" TraceId="image3506"/>
+        <Image Id="dfltMask42" TextureId="txr_stone_01n" Bounds="211, 178, 15, 12" TraceId="image3515"/>
+        <Image Id="dfltMask43" TextureId="txr_stone_02n" Bounds="205, 184, 11, 10" TraceId="image3484"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=14 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=43 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
