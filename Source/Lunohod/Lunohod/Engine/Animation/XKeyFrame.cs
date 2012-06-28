@@ -40,14 +40,24 @@ namespace Lunohod.Objects
 			
             animation = (XNumAnimation)this.Parent;
 
-            this.valueReaders = this.Value.Split(',').Select(s => Compiler.CompileExpression<double>(this.Parent, s)).ToList();
+            GenerateValueReaders();
             this.timeReader = Compiler.CompileExpression<double>(this.Parent, this.Time);
 			this.CurrentTime = 0f;
-            this.CurveKeys = valueReaders.Select(
-				r => new CurveKey(0f, 0f)
-             ).ToList();
 		
 			PerfMon.Stop("Other-KeyFrame");
+        }
+
+        private void GenerateValueReaders()
+        {
+            var valueStrings = this.Value.Split(',');
+            this.valueReaders = new List<IExpression<double>>();
+            this.CurveKeys = new List<CurveKey>(valueStrings.Length);
+
+            for (int i = 0; i < valueStrings.Length; i++)
+            {
+                this.valueReaders.Add(Compiler.CompileExpression<double>(this.Parent, valueStrings[i]));
+                this.CurveKeys.Add(new CurveKey(0f, 0f));
+            }
         }
 
         public override void Update(UpdateParameters p)
