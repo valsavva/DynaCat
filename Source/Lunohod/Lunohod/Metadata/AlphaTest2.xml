@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.08 -->
+<!-- SVG to XGAME xml converter v1.6.14 -->
 <!-- source: D:\Lunohod\Levels\AlphaTest\AlphaTest2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest2" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat1.xml" />
@@ -35,14 +35,6 @@
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
-        <Texture Id="txr_fish_04" Source="fish_04" />
-        <Texture Id="txr_fish_05" Source="fish_05" />
-        <Texture Id="txr_fish_06" Source="fish_06" />
-        <Texture Id="txr_fish_07" Source="fish_07" />
-        <Texture Id="txr_fish_08" Source="fish_08" />
-        <Texture Id="txr_fish_01" Source="fish_01" />
-        <Texture Id="txr_fish_02" Source="fish_02" />
-        <Texture Id="txr_fish_03" Source="fish_03" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3072"/>
@@ -173,30 +165,6 @@
         <Enemy Id="enm4" Class="clsEnemyElectricity1" Bounds="258, 273, 11, 11" TraceId="image3171"/>
         <Enemy Id="enm5" Class="clsEnemyElectricity1" Bounds="343, 260, 11, 11" TraceId="image3178"/>
         <Enemy Id="enm6" Class="clsEnemyElectricity1" Bounds="50, 211, 11, 11" TraceId="image3180"/>
-        <Food Id="fd1" Class="clsFood" Points="100" Bounds="173, 40, 28, 22" TraceId="image3161">
-            <Image TextureId="txr_fish_04" />
-        </Food>
-        <Food Id="fd2" Class="clsFood" Points="100" Bounds="380, 220, 22, 27" TraceId="image3172">
-            <Image TextureId="txr_fish_05" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="100" Bounds="84, 176, 32, 21" TraceId="image3183">
-            <Image TextureId="txr_fish_06" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="100" Bounds="406, 47, 32, 30" TraceId="image3194">
-            <Image TextureId="txr_fish_07" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="100" Bounds="45, 240, 61, 42" TraceId="image3205-1">
-            <Image TextureId="txr_fish_08" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="100" Bounds="223, 104, 28, 19" TraceId="image3216">
-            <Image TextureId="txr_fish_01" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="100" Bounds="159, 66, 27, 20" TraceId="image3227">
-            <Image TextureId="txr_fish_02" />
-        </Food>
-        <Food Id="fd8" Class="clsFood" Points="100" Bounds="176, 98, 31, 20" TraceId="image3238">
-            <Image TextureId="txr_fish_03" />
-        </Food>
         <Block Id="blk20" Bounds="119, 203, 30, 30" Edges="Bounce" TraceId="image3252">
             <Image TextureId="txr_container_steel_2" />
         </Block>
@@ -206,6 +174,13 @@
         <Block Id="blk22" Bounds="199, 203, 30, 30" Edges="Bounce" TraceId="image3256">
             <Image TextureId="txr_container_steel_2" />
         </Block>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="159, 46, 28, 19" TraceId="image3136"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=3" Bounds="221, 102, 31, 20" TraceId="image3147"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="152, 263, 28, 22" TraceId="image3158-1"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="122, 240, 27, 20" TraceId="image3169"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=6" Bounds="78, 251, 22, 27" TraceId="image3180-7"/>
+        <Food Id="fd6" Class="clsFood" ClassParams="@fishType=7" Bounds="395, 50, 32, 30" TraceId="image3191"/>
+        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=1" Bounds="64, 180, 32, 21" TraceId="image3202"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -215,8 +190,17 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=8 Enemy=6 Block=22 DesignImage=85 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=7 Enemy=6 Block=22 DesignImage=85 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- -->
+<!-- Food Points = 660 -->
+<!-- 1% = 6.6; 45% = 297; 90% = 594 -->
+<!-- minPointsFood = 50 (7.6%) -->
 <!-- -->
 <!-- Enemy Points = 200 -->
 <!-- 1% = 2; 45% = 90; 90% = 180 -->
 <!-- minPointsEnemy = 50 (25%) -->
+<!-- -->
+<!-- Food + Enemy Points = 860 -->
+<!-- 1% = 8.6; 45% = 387; 90% = 774 -->
+<!-- minPointsFood = 50 (5.8%) -->
+<!-- minPointsEnemy = 50 (5.8%) -->

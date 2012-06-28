@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.08 -->
+<!-- SVG to XGAME xml converter v1.6.14 -->
 <!-- source: D:\Lunohod\Levels\AlphaTest\AlphaTestNewFish.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTestNewFish" Bounds="0, 0, 480, 320">
-    <Include File="ClassFood.xml" />
     <Include File="ClassFoodPack.xml" />
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassEnemyRat1.xml" />
@@ -11,13 +10,13 @@
     <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassTower.xml" />
+    <Include File="ClassFood.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_brickBlue" Source="brickBlue" />
         <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
         <Texture Id="txr_second_phon_communications2" Source="second_phon_communications2" />
         <Texture Id="txr_second_phon_communications" Source="second_phon_communications" />
         <Texture Id="txr_second_phon_communications_2" Source="second_phon_communications_2" />
-        <Texture Id="txr_fish_05" Source="fish_05" />
         <Texture Id="txr_detal_me1" Source="detal_me1" />
         <Texture Id="txr_package_1" Source="package_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
@@ -26,10 +25,6 @@
         <Texture Id="txr_detal_me2" Source="detal_me2" />
         <Texture Id="txr_detal_2" Source="detal_2" />
         <Texture Id="txr_detal_me2" Source="detal_me2" />
-        <Texture Id="txr_fish_02" Source="fish_02" />
-        <Texture Id="txr_fish_03" Source="fish_03" />
-        <Texture Id="txr_fish_04" Source="fish_04" />
-        <Texture Id="txr_fish_01" Source="fish_01" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3115"/>
@@ -41,9 +36,6 @@
         <Image Id="dfltMask7" TextureId="txr_second_phon_communications_2" Bounds="32, 32, 70, 118" TraceId="image3172-0"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" Points="100" Bounds="352, 42, 22, 27" TraceId="image3147-4">
-            <Image TextureId="txr_fish_05" />
-        </Food>
         <Block Id="blk1" Bounds="207, 260, 25, 40" Edges="Bounce" TraceId="image3255"/>
         <Block Id="blk2" Bounds="207, 20, 25, 60" Edges="Bounce" TraceId="image3253"/>
         <Block Id="blk3" Bounds="-99, 0, 130, 320" Edges="Bounce" TraceId="image3251"/>
@@ -216,33 +208,16 @@
         </Group>
         <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="308, 77, 22, 23" TraceId="image3113"/>
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3125"/>
-        <Food Id="fd2" Class="clsFood" Points="100" Bounds="357, 19, 27, 20" TraceId="image3114-1">
-            <Image TextureId="txr_fish_02" />
-        </Food>
-        <Food Id="fd3" Class="clsFood" Points="100" Bounds="395, 57, 31, 20" TraceId="image3125-7">
-            <Image TextureId="txr_fish_03" />
-        </Food>
-        <Food Id="fd4" Class="clsFood" Points="100" Bounds="372, 26, 28, 22" TraceId="image3136">
-            <Image TextureId="txr_fish_04" />
-        </Food>
-        <Food Id="fd5" Class="clsFood" Points="100" Bounds="370, 52, 28, 19" TraceId="image3158-0">
-            <Image TextureId="txr_fish_01" />
-        </Food>
-        <Food Id="fd6" Class="clsFood" Points="100" Bounds="61, 203, 28, 19" TraceId="image3216">
-            <Image TextureId="txr_fish_01" />
-        </Food>
-        <Food Id="fd7" Class="clsFood" Points="100" Bounds="144, 215, 28, 19" TraceId="image3180">
-            <Image TextureId="txr_fish_01" />
-        </Food>
-        <Food Id="fd8" Class="clsFood" Points="100" Bounds="78, 220, 31, 20" TraceId="image3218">
-            <Image TextureId="txr_fish_03" />
-        </Food>
-        <Food Id="fd9" Class="clsFood" Points="100" Bounds="126, 200, 31, 20" TraceId="image3202">
-            <Image TextureId="txr_fish_03" />
-        </Food>
-        <Food Id="fd10" Class="clsFood" Points="100" Bounds="100, 198, 22, 27" TraceId="image3169-9">
-            <Image TextureId="txr_fish_05" />
-        </Food>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=4" Bounds="321, 18, 28, 22" TraceId="image3115-1"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=5" Bounds="331, 53, 27, 20" TraceId="image3126"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=6" Bounds="47, 203, 22, 27" TraceId="image3137"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=7" Bounds="372, 43, 32, 30" TraceId="image3148"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=1" Bounds="73, 196, 32, 21" TraceId="image3184"/>
+        <Food Id="fd6" Class="clsFood" ClassParams="@fishType=1" Bounds="92, 216, 32, 21" TraceId="image3186"/>
+        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=1" Bounds="131, 201, 32, 21" TraceId="image3188"/>
+        <Food Id="fd8" Class="clsFood" ClassParams="@fishType=1" Bounds="156, 217, 32, 21" TraceId="image3159"/>
+        <Food Id="fd9" Class="clsFood" ClassParams="@fishType=2" Bounds="399, 74, 28, 19" TraceId="image3170-7"/>
+        <Food Id="fd10" Class="clsFood" ClassParams="@fishType=3" Bounds="357, 72, 31, 20" TraceId="image3181-4"/>
     </Layer>
     <Layer Id="action2" BackColor="#FFFFFFFF">
         <Block Id="blk44" Bounds="-100, -100, 697, 100" Edges="Stick" TraceId="image3058"/>
@@ -254,6 +229,15 @@
 </Level>
 <!-- Food=10 Enemy=3 Block=46 DesignImage=42 Animation=2 Teleport Animations=0 FoodPack=2 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
+<!-- Food Points = 810 -->
+<!-- 1% = 8.1; 45% = 364.5; 90% = 729 -->
+<!-- minPointsFood = 50 (6.2%) -->
+<!-- -->
 <!-- Enemy Points = 150 -->
 <!-- 1% = 1.5; 45% = 67.5; 90% = 135 -->
 <!-- minPointsEnemy = 75 (50%) -->
+<!-- -->
+<!-- Food + Enemy Points = 960 -->
+<!-- 1% = 9.6; 45% = 432; 90% = 864 -->
+<!-- minPointsFood = 50 (5.2%) -->
+<!-- minPointsEnemy = 75 (7.8%) -->
