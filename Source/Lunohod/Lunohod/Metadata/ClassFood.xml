@@ -2,7 +2,7 @@
 <Include>
     
     <Class Id="clsFood">
-		<Food IsExploding="true" >
+		<Food IsExploding="true">
 
 <!-- Init -->
             <BoolTrigger Id="this_trgInit1" Condition="@fishType==1" EnterAction="
@@ -84,10 +84,11 @@
                                      this:+Eaten;
                                      this_anmEating.Start();
                                      this.IsExploding=false;
-                                     this_grpShowPoints.Enable()"/>
+                                     this_grpShowPoints.Enable()"
+                                     Group="this_foodStates"/>
             </BoolTrigger>
             
-            <NumAnimation Id="this_anmEating" Duration="1" Target="this.X,this.Y,this.Opacity" Autoreverse="false" From="this.X,this.Y,1" To="hero.X,hero.Y,0" Fill="End" RepeatCount="1" InProgress="false"/>
+            <NumAnimation Id="this_anmEating" Duration="1" Target="this.X,this.Y,this.Opacity,this.Width,this.Height" Autoreverse="false" From="this.X,this.Y,1,this.Width,this.Height" To="hero.X+15,hero.Y+10,0,this.Width/1.4,this.Height/1.4" Fill="End" RepeatCount="1" InProgress="false"/>
 
             <!-- Borned: set destroyed images -->
             <BoolTrigger Id="this_borned" 
@@ -110,6 +111,7 @@
                 <NumAnimation Target="this.Y" From="0" To="-3" Duration="0.15" IsDelta="true" Autoreverse="true" RepeatCount="1" />
             </SequenceSet>
 
+
             <!-- BoomFar: explosion - quake -->
             <BoolTrigger Condition="this:BoomFar" 
                          EnterAction="this_setQuake1.Start()" 
@@ -117,11 +119,37 @@
             <SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
                 <NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="2.5" IsDelta="false" Fill="End"/>
             </SequenceSet>
-
+            
+            <!-- hero close animation
+            
+            <DistanceTrigger ObjectId1="hero" ObjectId2="this" Compare="L" Value="40"
+                             EnterAction="this_anmHeroClose.Start()"
+                             ExitAction="this_anmHeroClose.Stop()"
+                             Group="this_foodStates">
+                <Image Id="this_imgHeroClose" TextureId="txrFishTypeDefault_@fishType" RotationCenter="5,11"/>
+            </DistanceTrigger>
+            <RandomSet Id="this_anmHeroClose" RepeatCount="0" InProgress="false">
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this_imgHeroClose.Rotation" From="-3" To="3" Duration="0.07" Autoreverse="true" RepeatCount="2" Fill="Hold"/>
+                    <Do Action="this_imgHeroClose.Rotation=0" />
+                    <Delay Duration="1" />
+                </SequenceSet>
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this_imgHeroClose.Rotation" From="-3" To="3" Duration="0.07" Autoreverse="true" RepeatCount="3" Fill="Hold"/>
+                    <Do Action="this_imgHeroClose.Rotation=0" />
+                    <Delay Duration="2" />
+                </SequenceSet>
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this_imgHeroClose.Rotation" From="-3" To="3" Duration="0.07" Autoreverse="true" RepeatCount="1" Fill="Hold"/>
+                    <Do Action="this_imgHeroClose.Rotation=0" />
+                    <Delay Duration="3" />
+                </SequenceSet>
+            </RandomSet>
+            -->
             
             <!-- default -->
             <BoolTrigger Group="this_foodStates">
-                <Image Id="this_imgDefault" TextureId="txrFishTypeDefault_@fishType"/>
+                <Image Id="this_imgDefault" TextureId="txrFishTypeDefault_@fishType" RotationCenter="5,11"/>
             </BoolTrigger>
         </Food>
     </Class>

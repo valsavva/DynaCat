@@ -95,7 +95,7 @@ namespace Lunohod.Objects
 			PerfMon.Start("Other-Ani");
 
 			// get targets
-            targets = this.Target.Split(',').Select(s => (Property<double>)Compiler.CompileExpression<double>(this, s)).ToList();
+            GenerateTargets();
 			startValues = new List<double?>(new double?[targets.Count]);
 
             // collect keyFrames and check for consistency
@@ -122,6 +122,15 @@ namespace Lunohod.Objects
                 curves.Add(curve);
             }
 			PerfMon.Stop("Other-Ani");
+        }
+
+        private void GenerateTargets()
+        {
+            var targetStrings = this.Target.Split(',');
+            targets = new List<Property<double>>(targetStrings.Length);
+
+            for(int i = 0; i < targetStrings.Length; i++)
+                targets.Add((Property<double>)Compiler.CompileExpression<double>(this, targetStrings[i]));
         }
 
 		/// <inheritdoc />

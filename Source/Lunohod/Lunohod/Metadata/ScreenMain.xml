@@ -14,10 +14,12 @@
 	<Layer>
 		<Group Bounds="50,50,100,40">
 			<TapArea Action="system.StartScreen('ScreenSeriesChoice.xml')" />
+            <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
 			<Text Text="Start" FontId="fntSystem" Color="#333333" />
 		</Group>
 		<Group Bounds="50,100,100,40">
 			<TapArea Action="system.StartScreen('ScreenCredits.xml')" />
+            <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
 			<Text Text="Credits" FontId="fntSystem" Color="#333333" />
 		</Group>
 	</Layer>

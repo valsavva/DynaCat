@@ -136,17 +136,17 @@
         <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="64, 173, 22, 23" TraceId="image3345-8"/>
     </Layer>
     <Layer Id="Action5" BackColor="#FFFFFFFF" Enabled="false">
+        <Food Id="fd20" Class="clsFood" ClassParams="@fishType=7" Bounds="427, 136, 32, 30" TraceId="image4236"/>
+        <Food Id="fd21" Class="clsFood" ClassParams="@fishType=4" Bounds="226, 25, 28, 22" TraceId="image4247"/>
+        <Food Id="fd22" Class="clsFood" ClassParams="@fishType=5" Bounds="374, 263, 27, 20" TraceId="image4261"/>
+        <Food Id="fd23" Class="clsFood" ClassParams="@fishType=5" Bounds="402, 283, 27, 20" TraceId="image4263"/>
+        <Food Id="fd24" Class="clsFood" ClassParams="@fishType=5" Bounds="425, 264, 27, 20" TraceId="image4258"/>
         <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="380, 102, 24, 25" TraceId="image3442"/>
         <Enemy Id="enm8" Class="clsEnemyRat3" Bounds="196, 59, 24, 25" TraceId="image3444"/>
         <Enemy Id="enm9" Class="clsEnemyRat3" Bounds="225, 76, 24, 25" TraceId="image3446"/>
         <Enemy Id="enm10" Class="clsEnemyRat3" Bounds="254, 60, 24, 25" TraceId="image3438"/>
         <Enemy Id="enm11" Class="clsEnemyRat3" Bounds="359, 137, 24, 25" TraceId="image3440"/>
         <Enemy Id="enm12" Class="clsEnemyRat3" Bounds="380, 171, 24, 25" TraceId="image3435"/>
-        <Food Id="fd20" Class="clsFood" ClassParams="@fishType=7" Bounds="427, 136, 32, 30" TraceId="image4236"/>
-        <Food Id="fd21" Class="clsFood" ClassParams="@fishType=4" Bounds="226, 25, 28, 22" TraceId="image4247"/>
-        <Food Id="fd22" Class="clsFood" ClassParams="@fishType=5" Bounds="374, 263, 27, 20" TraceId="image4261"/>
-        <Food Id="fd23" Class="clsFood" ClassParams="@fishType=5" Bounds="402, 283, 27, 20" TraceId="image4263"/>
-        <Food Id="fd24" Class="clsFood" ClassParams="@fishType=5" Bounds="425, 264, 27, 20" TraceId="image4258"/>
     </Layer>
     <Layer Id="Action6" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd25" Class="clsFood" ClassParams="@fishType=2" Bounds="88, 258, 28, 19" TraceId="image4298"/>

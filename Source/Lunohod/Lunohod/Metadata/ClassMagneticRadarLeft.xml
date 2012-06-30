@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest5ME" Bounds="0, 0, 480, 320">-->
+<Include>
+    <Resources RootFolder="Textures">
+        <Texture Id="txrRadarSprite_1" Source="radar_spr_01" />
+        <Texture Id="txrWaves" Source="radar_wave_spr_87x33x4.png" />
+    </Resources>
+    
+    <!-- Magnetic Radar, horizontal, shooting left -->
+    <Class Id="clsMagneticRadarLeft">
+        <Group>
+            
+            <!-- radar -->
+            <Block Id="this_blkRadar" Edges="Stick">
+                <Sprite Id="this_sprRadar" TextureId="txrRadarSprite_1" Bounds="0,0,52,51" FrameBounds="0,0,52,51"/>
+                <NumAnimation Id="this_RadarAnm" From="0" To="3" Duration="1" Autoreverse="false" Target="this_sprRadar.CurrentFrame" RepeatCount="0" Fill="Reset"/>
+                <!--<Image TextureId="blank" BackColor="#0000FF" Opacity="0.5"/>-->
+            </Block>
+            
+            <!-- waves -->
+            <Group Id="this_grpMagnetWaves" Bounds="-512, 9, 512, 26">
+                <Sprite Id="this_Wave1" TextureId="txrWaves" Bounds="435,-3,87,33" FrameBounds="0,0,87,33">
+                    <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                </Sprite>
+                <Sprite Id="this_Wave2" TextureId="txrWaves" Bounds="348,-3,87,33" FrameBounds="0,0,87,33">
+                    <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                </Sprite>
+                <Sprite Id="this_Wave3" TextureId="txrWaves" Bounds="261,-3,87,33" FrameBounds="0,0,87,33">
+                    <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                </Sprite>
+                <Sprite Id="this_Wave4" TextureId="txrWaves" Bounds="174,-3,87,33" FrameBounds="0,0,87,33">
+                    <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                </Sprite>
+                <Sprite Id="this_Wave5" TextureId="txrWaves" Bounds="87,-3,87,33" FrameBounds="0,0,87,33">
+                    <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                </Sprite>
+                <Sprite Id="this_Wave6" TextureId="txrWaves" Bounds="0,-3,87,33" FrameBounds="0,0,87,33">
+                    <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
+                    <Text FontId="SystemFont" Location="0,0"  Text="6" Color="#000000" />
+                </Sprite>
+                <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
+
+                <SequenceSet Id="this_Beaming" RepeatCount="0" InProgress="true" >
+                    <Do Action="this_RadarAnm.Start()" />
+                    <Delay Duration="0.5" />
+                    <Do Action="this:+IsBeaming" />
+                    <Do Action="this_ShowWaves.Start()" />
+                    <Delay Duration="3.5" />
+                    <Do Action="this_HideWaves.Start()" />
+                    <Delay Duration="0.5" />
+                    <Do Action="this_RadarAnm.Stop();
+                        this:-IsBeaming;
+                        hero:-Magneted;
+                        hero:-Magneting;
+                        this_anmSetHeroOnWaves.Pause()" />
+                    <Delay Duration="3.5" />
+                </SequenceSet>
+
+                <SequenceSet Id="this_ShowWaves" RepeatCount="1" InProgress="false" >
+                    <Do Action="this_Wave1.Opacity=1" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave2.Opacity=1" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave3.Opacity=1" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave4.Opacity=1" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave5.Opacity=1" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave6.Opacity=1" />
+                    <Delay Duration="0.05" />
+                </SequenceSet>
+
+                <SequenceSet Id="this_HideWaves" RepeatCount="1" InProgress="false" >
+                    <Do Action="this_Wave6.Opacity=0" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave5.Opacity=0" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave4.Opacity=0" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave3.Opacity=0" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave2.Opacity=0" />
+                    <Delay Duration="0.05" />
+                    <Do Action="this_Wave1.Opacity=0" />
+                    <Delay Duration="0.05" />
+                </SequenceSet>                
+            </Group>
+            
+            <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
+                <BoolTrigger Condition="this:IsBeaming 
+                             and not hero:Magneted 
+                             and not hero.IsDead 
+                             and not hero:sttExit" 
+                             EnterAction="hero:+Magneted;
+                             this_anmSetHeroOnWaves.Start()"/>
+            </IntersectionTrigger>
+            
+            <SequenceSet Id="this_anmSetHeroOnWaves" RepeatCount="1" >
+                <NumAnimation Target="hero.Y" From="hero.Y" To="this.Y+10" Duration="0.4" RepeatCount="1" Fill="End"/>
+                <Do Action="hero.SetDirection(1,0);hero:+Magneting" />
+            </SequenceSet>
+            
+        </Group>
+    </Class>
+</Include>
