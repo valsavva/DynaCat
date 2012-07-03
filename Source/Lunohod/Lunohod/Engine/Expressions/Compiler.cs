@@ -67,7 +67,7 @@ namespace Lunohod.Xge
 			return result;
         }
 
-        public IExpression<T> CompileExpression<T>()
+        private IExpression<T> CompileExpression<T>()
         {
             currentToken = scanner.NextToken();
 

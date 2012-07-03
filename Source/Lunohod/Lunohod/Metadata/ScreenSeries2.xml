@@ -2,5 +2,5 @@
 
 <Screen Bounds="0,0,480,320">
 	<Include File="ScreenSeriesLevelsTemplate.xml" />
-	<Layer Class="clsLevelsLayer" ClassParams="@layerSeriesNum=1"/>
+	<Layer Id="levelsLayer" Class="clsLevelsLayer" ClassParams="@layerSeriesNum=1"/>
 </Screen>

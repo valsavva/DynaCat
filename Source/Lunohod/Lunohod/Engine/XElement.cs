@@ -45,7 +45,7 @@ namespace Lunohod.Objects
 		protected Vector2 tmpVector1;
 		protected Vector2 tmpVector2;
 		
-		private ElementState TransState;
+		internal ElementState TransState;
 		internal PropertiesState PropState;
 		
 		[XmlIgnore]
@@ -111,7 +111,15 @@ namespace Lunohod.Objects
 		}
         [XmlIgnore]
         public XElement ParentElement;
-		
+
+		public override void PreventUpdate()
+		{
+			base.PreventUpdate();
+
+			this.TransState.TransformCycle = GameEngine.Instance.CycleNumber;
+			this.PropState.PropCycle = GameEngine.Instance.CycleNumber;
+		}
+
 		private void UpdateTransforms()
 		{
 			if (TransState.TransformCycle == GameEngine.Instance.CycleNumber)
