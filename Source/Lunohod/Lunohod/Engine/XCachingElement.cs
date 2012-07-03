@@ -21,57 +21,61 @@ namespace Lunohod
 		
 		public override void Update(UpdateParameters p)
 		{
-			updated = true;
-			
-			base.Update(p);
-		}
-		
-		public override void Draw(DrawParameters p)
-		{
-			if (this.CacheContent && updated)
+			if (!CacheContent || !updated)
 			{
-				if (cachedContent == null)
-				{
-					cachedContent = new RenderTarget2D(
-						p.Game.GraphicsDevice,
-						p.Game.GraphicsDevice.PresentationParameters.BackBufferWidth,
-						p.Game.GraphicsDevice.PresentationParameters.BackBufferHeight,
-			           	false, SurfaceFormat.Color, DepthFormat.None
-			   		);
-
-					p.SpriteBatch.End();
-					//var oldSpriteBatch = p.SpriteBatch;
-					//p.SpriteBatch = new SpriteBatchWithFloats(p.Game.GraphicsDevice);
-
-					p.Game.GraphicsDevice.SetRenderTarget(cachedContent);
-					p.Game.GraphicsDevice.Clear(Color.Transparent);
-					
-					p.SpriteBatch.Begin();
-					
-					base.Draw(p);
-					
-					p.SpriteBatch.End();
-					
-					p.Game.GraphicsDevice.SetRenderTarget(null);
-					
-					p.SpriteBatch.Begin();
-					//p.SpriteBatch = oldSpriteBatch;
-				}
-
-				p.SpriteBatch.Draw(cachedContent, Vector2.Zero, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, p.NextSystemImageDepth());
+				base.Update(p);
+				updated = true;
 			}
 			else
-			{
-				if (cachedContent != null)
-				{
-					cachedContent.Dispose();
-					cachedContent = null;
-				}
-
-				base.Draw(p);
-			}
-			
+				this.TraveseTree(o => o.PreventUpdate());
 		}
+		
+//		public override void Draw(DrawParameters p)
+//		{
+//			if (this.CacheContent && updated)
+//			{
+//				if (cachedContent == null)
+//				{
+//					cachedContent = new RenderTarget2D(
+//						p.Game.GraphicsDevice,
+//						p.Game.GraphicsDevice.PresentationParameters.BackBufferWidth,
+//						p.Game.GraphicsDevice.PresentationParameters.BackBufferHeight,
+//			           	false, SurfaceFormat.Color, DepthFormat.None
+//			   		);
+//
+//					p.SpriteBatch.End();
+//					//var oldSpriteBatch = p.SpriteBatch;
+//					//p.SpriteBatch = new SpriteBatchWithFloats(p.Game.GraphicsDevice);
+//
+//					p.Game.GraphicsDevice.SetRenderTarget(cachedContent);
+//					p.Game.GraphicsDevice.Clear(Color.Transparent);
+//					
+//					p.SpriteBatch.Begin();
+//					
+//					base.Draw(p);
+//					
+//					p.SpriteBatch.End();
+//					
+//					p.Game.GraphicsDevice.SetRenderTarget(null);
+//					
+//					p.SpriteBatch.Begin();
+//					//p.SpriteBatch = oldSpriteBatch;
+//				}
+//
+//				p.SpriteBatch.Draw(cachedContent, Vector2.Zero, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, p.NextSystemImageDepth());
+//			}
+//			else
+//			{
+//				if (cachedContent != null)
+//				{
+//					cachedContent.Dispose();
+//					cachedContent = null;
+//				}
+//
+//				base.Draw(p);
+//			}
+//			
+//		}
 		
         public override void ReadXml(System.Xml.XmlReader reader)
         {

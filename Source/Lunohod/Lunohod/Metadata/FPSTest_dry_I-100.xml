@@ -96,7 +96,7 @@
     <Layer Id="background" BackColor="#FFFFFFFF">
     </Layer>
 
-	<Layer Id="action" BackColor="#FFFFFFFF">
+	<Layer Id="action" BackColor="#FFFFFFFF" CacheContent="true">
 <!-- I >> -->
 
                 <Image Id="imgI1" TextureId="FPSTestImage26" Bounds="360,287,100,100"/>

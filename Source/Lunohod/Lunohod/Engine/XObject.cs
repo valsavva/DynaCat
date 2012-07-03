@@ -249,6 +249,11 @@ namespace Lunohod.Objects
                         subcomponent.Draw(p);
 				}
 		}
+
+		public virtual void PreventUpdate()
+		{
+		}
+
         /// <summary>
         /// Creates a new instance from the class specified in the <see cref="Class"/> property.
         /// </summary>
