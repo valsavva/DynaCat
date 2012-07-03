@@ -2042,6 +2042,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Metadata\Lvl_1D_Open.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\sky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\screenTapAreas_dash_M_btnSize52.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\laz_fork_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -3431,3 +3440,6 @@ rem start /B "C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\Lunoho
       </Target>
     -->
 </Project>
+
+
+
