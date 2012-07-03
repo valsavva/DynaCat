@@ -2,7 +2,7 @@
 
 <Screen Bounds="0,0,480,320">
 
-    <Include File="ClassButton.xml" />
+    <Include File="ClassUIButton.xml" />
 
     <Resources RootFolder="Global">
         <Texture Id="txrBackground" Source="info_BG" />
