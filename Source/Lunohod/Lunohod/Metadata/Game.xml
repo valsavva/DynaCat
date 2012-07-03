@@ -30,12 +30,6 @@
             <LevelInfo Id="[EMPTY]" File="zzzzzzgrfx_updt.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
-            <LevelInfo Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" StarScoreRatio2="0.55" StarScoreRatio3="1" TimeBonusThreshold="37.20"/>
-            <LevelInfo Id="Lvl_1D_Dva_Prohoda" File="Lvl_1D_Dva_Prohoda.xml" StarScoreRatio3="1" TimeBonusThreshold="31.98"/>
-            <LevelInfo Id="Lvl_1D_Chetyre_Kruga" File="Lvl_1D_Chetyre_Kruga.xml" StarScoreRatio3="1" TimeBonusThreshold="35.95"/>
-            <LevelInfo Id="Lvl_1D_Perekrestok" File="Lvl_1D_Perekrestok.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="31.40"/>
-            <LevelInfo Id="Lvl_1D_Perekrestok_v2" File="Lvl_1D_Perekrestok_v2.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="28.08"/>
-            <LevelInfo Id="LvL_1D_FF" File="LvL_1D_FF.xml" StarScoreRatio3="1" TimeBonusThreshold="45.19"/>
             <!--<LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
             <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
             <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="17"/>
@@ -53,6 +47,12 @@
             <LevelInfo Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="29.97"/>
             <LevelInfo Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" StarScoreRatio2="0.75" StarScoreRatio3="1" TimeBonusThreshold="31.15"/>
             <LevelInfo Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="21.62"/>
+            <LevelInfo Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" StarScoreRatio2="0.55" StarScoreRatio3="1" TimeBonusThreshold="37.20"/>
+            <LevelInfo Id="Lvl_1D_Dva_Prohoda" File="Lvl_1D_Dva_Prohoda.xml" StarScoreRatio3="1" TimeBonusThreshold="31.98"/>
+            <LevelInfo Id="Lvl_1D_Chetyre_Kruga" File="Lvl_1D_Chetyre_Kruga.xml" StarScoreRatio3="1" TimeBonusThreshold="35.95"/>
+            <LevelInfo Id="Lvl_1D_Perekrestok" File="Lvl_1D_Perekrestok.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="31.40"/>
+            <LevelInfo Id="Lvl_1D_Perekrestok_v2" File="Lvl_1D_Perekrestok_v2.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="28.08"/>
+            <LevelInfo Id="LvL_1D_FF" File="LvL_1D_FF.xml" StarScoreRatio3="1" TimeBonusThreshold="45.19"/>
             <LevelInfo Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" StarScoreRatio3="1" TimeBonusThreshold="11.61" BombCount="0" />
             <LevelInfo Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="35.37" />
             <LevelInfo Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" StarScoreRatio3="1" TimeBonusThreshold="39.77" />
