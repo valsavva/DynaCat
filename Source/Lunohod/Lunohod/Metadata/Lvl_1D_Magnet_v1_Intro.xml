@@ -26,12 +26,12 @@
         <Texture Id="txr_laz_baza_01n" Source="laz_baza_01n" />
         <Texture Id="txr_laz_baza_02n" Source="laz_baza_02n" />
         <Texture Id="txr_laz_vert_03n" Source="laz_vert_03n" />
-        <Texture Id="txr_laz_vert_01n" Source="laz_vert_01n" />
         <Texture Id="txr_laz_vert_02n" Source="laz_vert_02n" />
+        <Texture Id="txr_laz_vert_01n" Source="laz_vert_01n" />
+        <Texture Id="txr_laz_fork_3" Source="laz_fork_3" />
+        <Texture Id="txr_laz_hor_01n" Source="laz_hor_01n" />
         <Texture Id="txr_laz_hor_02n" Source="laz_hor_02n" />
         <Texture Id="txr_laz_hor_03n" Source="laz_hor_03n" />
-        <Texture Id="txr_laz_hor_01n" Source="laz_hor_01n" />
-        <Texture Id="txr_laz_fork_3" Source="laz_fork_3" />
         <Texture Id="txr_web_01" Source="web_01" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
@@ -46,9 +46,9 @@
         <Image Id="dfltMask1" TextureId="txr_under_land_BG_03n" Bounds="0, 0, 480, 320" TraceId="image3057"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_bones_02n" Bounds="354, 171, 35, 31" TraceId="image3057-1"/>
+        <Image Id="dfltMask2" TextureId="txr_bones_02n" Bounds="354, 175, 35, 31" TraceId="image3057-1"/>
         <Image Id="dfltMask3" TextureId="txr_bones_03n" Bounds="373, 198, 15, 12" TraceId="image3068-7"/>
-        <Image Id="dfltMask4" TextureId="txr_bones_04n" Bounds="352, 118, 15, 18" TraceId="image3079-4"/>
+        <Image Id="dfltMask4" TextureId="txr_bones_04n" Bounds="320, 86, 15, 18" TraceId="image3079-4"/>
         <Image Id="dfltMask5" TextureId="txr_bones_05n" Bounds="392, 197, 15, 19" TraceId="image3090-0"/>
         <Image Id="dfltMask6" TextureId="txr_bones_06n" Bounds="340, 216, 18, 9" TraceId="image3101"/>
         <Image Id="dfltMask7" TextureId="txr_bones_08n" Bounds="338, 39, 21, 13" TraceId="image3123"/>
@@ -66,20 +66,18 @@
         <Image Id="dfltMask19" TextureId="txr_metal_02n" Bounds="-9, 34, 28, 23" TraceId="image3217-8"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask20" TextureId="txr_laz_baza_01n" Bounds="372, 107, 83, 99" TraceId="image3165"/>
-        <Image Id="dfltMask21" TextureId="txr_laz_baza_02n" Bounds="76, 210, 83, 99" FlipEffects="Vertically" TraceId="image3111"/>
-        <Image Id="dfltMask22" TextureId="txr_laz_vert_03n" Bounds="100, -6, 46, 36" TraceId="image3068"/>
-        <Image Id="dfltMask23" TextureId="txr_laz_vert_01n" Bounds="100, 22, 46, 36" TraceId="image3079"/>
-        <Image Id="dfltMask24" TextureId="txr_laz_vert_02n" Bounds="100, 50, 46, 36" TraceId="image3090"/>
-        <Image Id="dfltMask25" TextureId="txr_laz_vert_02n" Bounds="100, 78, 46, 36" TraceId="image3093"/>
-        <Image Id="dfltMask26" TextureId="txr_laz_vert_03n" Bounds="100, 190, 46, 36" TraceId="image3114"/>
-        <Image Id="dfltMask27" TextureId="txr_laz_hor_02n" Bounds="176, 136, 46, 36" TraceId="image3135"/>
-        <Image Id="dfltMask28" TextureId="txr_laz_hor_03n" Bounds="214, 136, 46, 36" TraceId="image3146"/>
-        <Image Id="dfltMask29" TextureId="txr_laz_hor_01n" Bounds="252, 136, 46, 36" TraceId="image3149"/>
-        <Image Id="dfltMask30" TextureId="txr_laz_hor_02n" Bounds="290, 136, 46, 36" TraceId="image3151"/>
-        <Image Id="dfltMask31" TextureId="txr_laz_hor_03n" Bounds="328, 136, 46, 36" TraceId="image3153"/>
-        <Image Id="dfltMask32" TextureId="txr_laz_hor_03n" Bounds="346, 136, 46, 36" TraceId="image3155"/>
-        <Image Id="dfltMask33" TextureId="txr_laz_fork_3" Bounds="62, 108, 122, 92" TraceId="image3077"/>
+        <Image Id="dfltMask20" TextureId="txr_laz_baza_01n" Bounds="379, 102, 81, 106" TraceId="image3060"/>
+        <Image Id="dfltMask21" TextureId="txr_laz_baza_02n" Bounds="82, 215, 81, 106" TraceId="image3071"/>
+        <Image Id="dfltMask22" TextureId="txr_laz_vert_03n" Bounds="99, 17, 46, 36" TraceId="image3082"/>
+        <Image Id="dfltMask23" TextureId="txr_laz_vert_02n" Bounds="99, 47, 46, 36" TraceId="image3093"/>
+        <Image Id="dfltMask24" TextureId="txr_laz_vert_01n" Bounds="99, 77, 46, 36" TraceId="image3104"/>
+        <Image Id="dfltMask25" TextureId="txr_laz_fork_3" Bounds="61, 109, 122, 92" TraceId="image3121"/>
+        <Image Id="dfltMask26" TextureId="txr_laz_vert_02n" Bounds="99, 185, 46, 36" TraceId="image3124"/>
+        <Image Id="dfltMask27" TextureId="txr_laz_hor_01n" Bounds="219, 137, 46, 36" TraceId="image3134"/>
+        <Image Id="dfltMask28" TextureId="txr_laz_hor_02n" Bounds="259, 137, 46, 36" TraceId="image3145"/>
+        <Image Id="dfltMask29" TextureId="txr_laz_hor_03n" Bounds="179, 137, 46, 36" TraceId="image3156"/>
+        <Image Id="dfltMask30" TextureId="txr_laz_hor_01n" Bounds="299, 137, 46, 36" TraceId="image3159"/>
+        <Image Id="dfltMask31" TextureId="txr_laz_hor_02n" Bounds="339, 137, 46, 36" TraceId="image3161"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="355, 144, 22, 23" TraceId="image3072"/>
@@ -96,14 +94,12 @@
         <Hero Id="hero" Class="clsHero" Bounds="105, 23, 33, 24" TraceId="image3606"/>
     </Layer>
     <Layer Id="foreground" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask34" TextureId="txr_web_01" Bounds="420, 110, 29, 34" Rotation="8.65" Stretch="true" TraceId="image3228-2"/>
-    </Layer>
-    <Layer Id="upmask" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask32" TextureId="txr_web_01" Bounds="420, 110, 29, 34" Rotation="8.65" Stretch="true" TraceId="image3228-2"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=1 Enemy=3 Block=6 DesignImage=34 Animation=1 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=1 Enemy=3 Block=6 DesignImage=32 Animation=1 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 150 -->
 <!-- 1% = 1.5; 45% = 67.5; 90% = 135 -->
