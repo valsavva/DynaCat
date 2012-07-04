@@ -56,6 +56,11 @@ namespace Lunohod.Objects
 			return levelInfo != null ? levelInfo.Name : "";
 		}
 		
+		public double GetSeriesLevelCount(int seriesIndex)
+		{
+			return game.GameObject.LevelSeries[seriesIndex].Levels.Count;
+		}
+		
 		public double GetSeriesLevelStars(int seriesIndex, int levelIndex)
 		{
 			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
@@ -161,6 +166,10 @@ namespace Lunohod.Objects
 		{
 			return Math.Round(num, digits);
 		}
+		public double Ceiling(double num)
+		{
+			return Math.Ceiling(num);
+		}
 		public double Clamp (double value, double min, double max)
 		{
 			if (value < min)
@@ -226,6 +235,7 @@ namespace Lunohod.Objects
             switch (methodName)
             {
                 case "Rnd": method = (ps) => Rnd(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
+                case "Ceiling": method = (ps) => Ceiling(ps[0].GetNumValue()); break;
                 case "RndX": method = (ps) => RndX(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "RndY": method = (ps) => RndY(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "Round": method = (ps) => Round(ps[0].GetNumValue(), ps.Count < 2 ? 0 : ps[1].GetIntValue()); break;
@@ -236,6 +246,7 @@ namespace Lunohod.Objects
 				case "IIf": method = (ps) => IIf(ps[0].GetBoolValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
 				case "GetSeriesLevelStars": method = (ps) => GetSeriesLevelStars(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
 				case "GetCommandsPerSecond": method = (ps) => GetCommandsPerSecond(); break;
+				case "GetSeriesLevelCount": method = (ps) => GetSeriesLevelCount(ps[0].GetIntValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }
