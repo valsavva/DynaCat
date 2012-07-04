@@ -24,14 +24,23 @@
 			/>
 			<BoolTrigger Condition="@this_levelExists">
 				<Do Action="
+					this_sprPanel.CurrentFrame=system.Rnd(0,4);
+					this_sprNumber1.CurrentFrame=system.IIf((@levelNum+1)>=10,system.Truncate((@levelNum+1)/10),@levelNum+1);
+					this_sprNumber2.CurrentFrame=(@levelNum+1)%10;
+					this_sprNumber2.Enabled=(@levelNum+1)>=10;
+					"
+					InProgress="true"
+					RepeatCount="1"
+				/>
+			
+				<Do Action="
 					@this_numberOfStars=system.GetSeriesLevelStars(@seriesNum,@levelNum);
 					@this_hasBadge=system.GetSeriesLevelHasBadge(@seriesNum,@levelNum);
 					"
 					InProgress="true"
 					RepeatCount="0"
 				/>
-				<Do Action="this_sprPanel.CurrentFrame=system.Rnd(0,4);this_sprNumber.CurrentFrame=@levelNum;" InProgress="true"/>
-			
+				
 				<TapArea Action="this_setPress.Start()"/>
 	            <SequenceSet Id="this_setPress">
 	                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.2" Autoreverse="true" RepeatCount="1"/>
@@ -40,7 +49,8 @@
 	            
 	            <Sprite Id="this_sprPanel" TextureId="txrPanels" Bounds="0,0,94,51" FrameBounds="0,0,94,51" FrameCount="2"/>
 
-	            <Sprite Id="this_sprNumber" TextureId="txrNumbers" Bounds="5,5,84,54" FrameBounds="0,0,84,54" FrameCount="5"/>
+	            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Bounds="5,5,32,32" FrameBounds="0,0,32,32"/>
+	            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Bounds="27,5,32,32" FrameBounds="0,0,32,32"/>
 	            
 	            <BoolTrigger Condition="@this_numberOfStars>0">
 	            	<Image TextureId="txrStar" Location="24,32" />
