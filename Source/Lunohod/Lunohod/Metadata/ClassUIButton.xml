@@ -29,6 +29,8 @@
         <Texture Id="txrButton6Pressed" Source="btn_6_pressed" />
         <Texture Id="txrButton7Basic" Source="btn_7_basic" />
         <Texture Id="txrButton7Pressed" Source="btn_7_pressed" />
+        <Texture Id="txrButton8Basic" Source="btn_8_basic" />
+        <Texture Id="txrButton8Pressed" Source="btn_8_pressed" />
     </Resources>
     <Resources RootFolder="Sound">
         <SoundFile Id="sndButtonTapped" Source="btn_click"/>

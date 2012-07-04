@@ -170,6 +170,10 @@ namespace Lunohod.Objects
 		{
 			return Math.Ceiling(num);
 		}
+		public double Truncate(double num)
+		{
+			return Math.Truncate(num);
+		}
 		public double Clamp (double value, double min, double max)
 		{
 			if (value < min)
@@ -236,6 +240,7 @@ namespace Lunohod.Objects
             {
                 case "Rnd": method = (ps) => Rnd(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "Ceiling": method = (ps) => Ceiling(ps[0].GetNumValue()); break;
+                case "Truncate": method = (ps) => Truncate(ps[0].GetNumValue()); break;
                 case "RndX": method = (ps) => RndX(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "RndY": method = (ps) => RndY(ps[0].GetNumValue(), ps[1].GetNumValue()); break;
                 case "Round": method = (ps) => Round(ps[0].GetNumValue(), ps.Count < 2 ? 0 : ps[1].GetIntValue()); break;
