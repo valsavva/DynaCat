@@ -118,7 +118,7 @@
 				</BoolTrigger>
 			</Group>
             <Image TextureId="txrSelectLevelText" Location="125,5" />
-			<Group Id="this_btnBack" Class="clsButton" ClassParams="@BtnImg=1" Bounds="33, 256, 62, 62">
+			<Group Id="this_btnBack" Class="clsButton" ClassParams="@BtnImg=5" Bounds="33, 256, 62, 62">
 			    <BoolTrigger Condition="this_btnBack:Action" EnterAction="system.CloseCurrentScreen();this_btnBack:-Action;" />
 			</Group>
 			<Group Id="this_btnPrevPage" Class="clsButton" ClassParams="@BtnImg=1" Bounds="173, 256, 62, 62">
@@ -127,7 +127,7 @@
 			    		this_btnPrevPage:-Action;system.WriteLine('PageNumber: {0} Nop: {1}',@currentPage,@numberOfPages);"
 	    		/>
 			</Group>
-			<Group Id="this_btnNextPage" Class="clsButton" ClassParams="@BtnImg=6" Bounds="245, 256, 62, 62">
+			<Group Id="this_btnNextPage" Class="clsButton" ClassParams="@BtnImg=8" Bounds="245, 256, 62, 62">
 			    <BoolTrigger Condition="this_btnNextPage:Action" EnterAction="
 			    		@currentPage=system.IIf((@currentPage+1)>=(@numberOfPages-1),@numberOfPages-1,@currentPage+1);
 			    		this_btnNextPage:-Action;system.WriteLine('PageNumber: {0} Nop: {1}',@currentPage,@numberOfPages);"
