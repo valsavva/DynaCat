@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.07 -->
+<!-- SVG to XGAME xml converter v1.6.14 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Dva_Prohoda\Lvl_1D_Dva_Prohoda.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Dva_Prohoda" Bounds="0, 0, 480, 320">
     <Include File="ClassOil.xml" />
     <Include File="ClassOilSpot.xml" />
     <Include File="ClassBarrel.xml" />
     <Include File="ClassEnemyRat4.xml" />
-    <Include File="ClassFoodFish3.xml" />
     <Include File="ClassEnemyRat2.xml" />
-    <Include File="ClassFoodFish4.xml" />
+    <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_brickWall" Source="brickWall" />
-        <Texture Id="txr_laz_turn1" Source="laz_turn1" />
-        <Texture Id="txr_laz_vert" Source="laz_vert" />
-        <Texture Id="txr_laz_hor" Source="laz_hor" />
-        <Texture Id="txr_laz_T_hor" Source="laz_T_hor" />
+        <Texture Id="txr_under_land_BG_03n" Source="under_land_BG_03n" />
+        <Texture Id="txr_laz_fork_2" Source="laz_fork_2" />
+        <Texture Id="txr_laz_turn_02n" Source="laz_turn_02n" />
+        <Texture Id="txr_laz_turn_01n" Source="laz_turn_01n" />
+        <Texture Id="txr_laz_hor_02n" Source="laz_hor_02n" />
+        <Texture Id="txr_laz_vert_02n" Source="laz_vert_02n" />
+        <Texture Id="txr_laz_vert_03n" Source="laz_vert_03n" />
+        <Texture Id="txr_laz_vert_01n" Source="laz_vert_01n" />
+        <Texture Id="txr_laz_baza_08n" Source="laz_baza_08n" />
+        <Texture Id="txr_bones_08n" Source="bones_08n" />
+        <Texture Id="txr_bones_02n" Source="bones_02n" />
+        <Texture Id="txr_bones_04n" Source="bones_04n" />
+        <Texture Id="txr_bones_06n" Source="bones_06n" />
+        <Texture Id="txr_stone_03n" Source="stone_03n" />
+        <Texture Id="txr_stone_01n" Source="stone_01n" />
+        <Texture Id="txr_stone_02n" Source="stone_02n" />
         <Texture Id="txr_barrel" Source="barrel" />
-        <Texture Id="txr_oil" Source="oil" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="0, -16, 480, 50" Edges="Stick" TraceId="image4815"/>
@@ -31,168 +40,163 @@
         <Block Id="blk7" Bounds="320, 64, 80, 180" Edges="Stick" TraceId="image3391"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickWall" Bounds="0, 0, 480, 320" TraceId="image4550"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_03n" Bounds="0, 0, 480, 320" TraceId="image3141-1"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_laz_turn1" Bounds="400, 34, 40, 30" TraceId="image3197"/>
-        <Image Id="dfltMask3" TextureId="txr_laz_vert" Bounds="40, 64, 40, 30" TraceId="image3208"/>
-        <Image Id="dfltMask4" TextureId="txr_laz_hor" Bounds="240, 34, 40, 30" TraceId="image3219"/>
-        <Image Id="dfltMask5" TextureId="txr_laz_hor" Bounds="200, 34, 40, 30" TraceId="image3223"/>
-        <Image Id="dfltMask6" TextureId="txr_laz_vert" Bounds="160, 64, 40, 30" TraceId="image3241"/>
-        <Image Id="dfltMask7" TextureId="txr_laz_vert" Bounds="280, 64, 40, 30" TraceId="image3243"/>
-        <Image Id="dfltMask8" TextureId="txr_laz_vert" Bounds="400, 64, 40, 30" TraceId="image3245"/>
-        <Image Id="dfltMask9" TextureId="txr_laz_T_hor" Bounds="160, 34, 40, 30" TraceId="image3255"/>
-        <Image Id="dfltMask10" TextureId="txr_laz_T_hor" Bounds="280, 34, 40, 30" TraceId="image3258"/>
-        <Image Id="dfltMask11" TextureId="txr_laz_vert" Bounds="40, 94, 40, 30" TraceId="image3260"/>
-        <Image Id="dfltMask12" TextureId="txr_laz_vert" Bounds="160, 94, 40, 30" TraceId="image3262"/>
-        <Image Id="dfltMask13" TextureId="txr_laz_vert" Bounds="280, 94, 40, 30" TraceId="image3264"/>
-        <Image Id="dfltMask14" TextureId="txr_laz_vert" Bounds="400, 94, 40, 30" TraceId="image3266"/>
-        <Image Id="dfltMask15" TextureId="txr_laz_vert" Bounds="40, 124, 40, 30" TraceId="image3268"/>
-        <Image Id="dfltMask16" TextureId="txr_laz_vert" Bounds="160, 124, 40, 30" TraceId="image3270"/>
-        <Image Id="dfltMask17" TextureId="txr_laz_vert" Bounds="280, 124, 40, 30" TraceId="image3272"/>
-        <Image Id="dfltMask18" TextureId="txr_laz_vert" Bounds="400, 124, 40, 30" TraceId="image3274"/>
-        <Image Id="dfltMask19" TextureId="txr_laz_vert" Bounds="40, 154, 40, 30" TraceId="image3276"/>
-        <Image Id="dfltMask20" TextureId="txr_laz_vert" Bounds="160, 154, 40, 30" TraceId="image3278"/>
-        <Image Id="dfltMask21" TextureId="txr_laz_vert" Bounds="280, 154, 40, 30" TraceId="image3280"/>
-        <Image Id="dfltMask22" TextureId="txr_laz_vert" Bounds="400, 154, 40, 30" TraceId="image3282"/>
-        <Image Id="dfltMask23" TextureId="txr_laz_vert" Bounds="40, 184, 40, 30" TraceId="image3284"/>
-        <Image Id="dfltMask24" TextureId="txr_laz_vert" Bounds="160, 184, 40, 30" TraceId="image3286"/>
-        <Image Id="dfltMask25" TextureId="txr_laz_vert" Bounds="280, 184, 40, 30" TraceId="image3288"/>
-        <Image Id="dfltMask26" TextureId="txr_laz_vert" Bounds="400, 184, 40, 30" TraceId="image3290"/>
-        <Image Id="dfltMask27" TextureId="txr_laz_vert" Bounds="40, 214, 40, 30" TraceId="image3292"/>
-        <Image Id="dfltMask28" TextureId="txr_laz_vert" Bounds="160, 214, 40, 30" TraceId="image3294"/>
-        <Image Id="dfltMask29" TextureId="txr_laz_vert" Bounds="280, 214, 40, 30" TraceId="image3296"/>
-        <Image Id="dfltMask30" TextureId="txr_laz_vert" Bounds="400, 214, 40, 30" TraceId="image3298"/>
-        <Image Id="dfltMask31" TextureId="txr_laz_turn1" Bounds="40, 34, 40, 30" FlipEffects="Horizontally" TraceId="image3300"/>
-        <Image Id="dfltMask32" TextureId="txr_laz_hor" Bounds="120, 34, 40, 30" TraceId="image3302"/>
-        <Image Id="dfltMask33" TextureId="txr_laz_hor" Bounds="80, 34, 40, 30" TraceId="image3304"/>
-        <Image Id="dfltMask34" TextureId="txr_laz_hor" Bounds="320, 34, 40, 30" TraceId="image3306"/>
-        <Image Id="dfltMask35" TextureId="txr_laz_hor" Bounds="360, 34, 40, 30" TraceId="image3308"/>
-        <Image Id="dfltMask36" TextureId="txr_laz_turn1" Bounds="440, 274, 40, 30" Rotation="180" Stretch="true" FlipEffects="Horizontally" TraceId="image3312"/>
-        <Image Id="dfltMask37" TextureId="txr_laz_hor" Bounds="240, 244, 40, 30" TraceId="image3314"/>
-        <Image Id="dfltMask38" TextureId="txr_laz_hor" Bounds="200, 244, 40, 30" TraceId="image3316"/>
-        <Image Id="dfltMask39" TextureId="txr_laz_T_hor" Bounds="200, 274, 40, 30" Rotation="180" Stretch="true" TraceId="image3318"/>
-        <Image Id="dfltMask40" TextureId="txr_laz_T_hor" Bounds="320, 274, 40, 30" Rotation="180" Stretch="true" TraceId="image3320"/>
-        <Image Id="dfltMask41" TextureId="txr_laz_turn1" Bounds="80, 274, 40, 30" Rotation="180" Stretch="true" TraceId="image3322"/>
-        <Image Id="dfltMask42" TextureId="txr_laz_hor" Bounds="120, 244, 40, 30" TraceId="image3324"/>
-        <Image Id="dfltMask43" TextureId="txr_laz_hor" Bounds="80, 244, 40, 30" TraceId="image3326"/>
-        <Image Id="dfltMask44" TextureId="txr_laz_hor" Bounds="320, 244, 40, 30" TraceId="image3328"/>
-        <Image Id="dfltMask45" TextureId="txr_laz_hor" Bounds="360, 244, 40, 30" TraceId="image3330"/>
+        <Image Id="dfltMask2" TextureId="txr_laz_fork_2" Bounds="119, 3, 122, 92" TraceId="image3153"/>
+        <Image Id="dfltMask3" TextureId="txr_laz_fork_2" Bounds="239, 3, 122, 92" TraceId="image3157"/>
+        <Image Id="dfltMask4" TextureId="txr_laz_fork_2" Bounds="361, 305, 122, 92" Rotation="180" Stretch="true" TraceId="image3159"/>
+        <Image Id="dfltMask5" TextureId="txr_laz_fork_2" Bounds="241, 305, 122, 92" Rotation="180" Stretch="true" TraceId="image3161"/>
+        <Image Id="dfltMask6" TextureId="txr_laz_turn_02n" Bounds="83, 277, 46, 36" Rotation="180" Stretch="true" TraceId="image3171"/>
+        <Image Id="dfltMask7" TextureId="txr_laz_turn_01n" Bounds="37, 31, 46, 36" TraceId="image3182"/>
+        <Image Id="dfltMask8" TextureId="txr_laz_turn_01n" Bounds="443, 277, 46, 36" Rotation="180" Stretch="true" TraceId="image3185"/>
+        <Image Id="dfltMask9" TextureId="txr_laz_hor_02n" Bounds="77, 31, 46, 36" TraceId="image3206"/>
+        <Image Id="dfltMask10" TextureId="txr_laz_hor_02n" Bounds="77, 241, 46, 36" TraceId="image3209"/>
+        <Image Id="dfltMask11" TextureId="txr_laz_hor_02n" Bounds="357, 241, 46, 36" TraceId="image3211"/>
+        <Image Id="dfltMask12" TextureId="txr_laz_hor_02n" Bounds="357, 31, 46, 36" TraceId="image3213"/>
+        <Image Id="dfltMask13" TextureId="txr_laz_vert_02n" Bounds="37, 61, 46, 36" TraceId="image3223-7"/>
+        <Image Id="dfltMask14" TextureId="txr_laz_vert_03n" Bounds="37, 91, 46, 36" TraceId="image3234"/>
+        <Image Id="dfltMask15" TextureId="txr_laz_vert_01n" Bounds="37, 121, 46, 36" TraceId="image3245-4"/>
+        <Image Id="dfltMask16" TextureId="txr_laz_vert_03n" Bounds="37, 151, 46, 36" TraceId="image3248"/>
+        <Image Id="dfltMask17" TextureId="txr_laz_vert_01n" Bounds="37, 181, 46, 36" TraceId="image3250"/>
+        <Image Id="dfltMask18" TextureId="txr_laz_vert_02n" Bounds="37, 211, 46, 36" TraceId="image3252"/>
+        <Image Id="dfltMask19" TextureId="txr_laz_vert_01n" Bounds="157, 91, 46, 36" TraceId="image3254"/>
+        <Image Id="dfltMask20" TextureId="txr_laz_vert_03n" Bounds="157, 121, 46, 36" TraceId="image3256"/>
+        <Image Id="dfltMask21" TextureId="txr_laz_vert_01n" Bounds="157, 151, 46, 36" TraceId="image3259"/>
+        <Image Id="dfltMask22" TextureId="txr_laz_vert_02n" Bounds="157, 181, 46, 36" TraceId="image3261"/>
+        <Image Id="dfltMask23" TextureId="txr_laz_vert_02n" Bounds="277, 91, 46, 36" TraceId="image3263"/>
+        <Image Id="dfltMask24" TextureId="txr_laz_vert_03n" Bounds="277, 121, 46, 36" TraceId="image3265"/>
+        <Image Id="dfltMask25" TextureId="txr_laz_vert_01n" Bounds="277, 151, 46, 36" TraceId="image3267"/>
+        <Image Id="dfltMask26" TextureId="txr_laz_vert_03n" Bounds="277, 181, 46, 36" TraceId="image3269"/>
+        <Image Id="dfltMask27" TextureId="txr_laz_vert_03n" Bounds="397, 121, 46, 36" TraceId="image3271"/>
+        <Image Id="dfltMask28" TextureId="txr_laz_vert_01n" Bounds="397, 151, 46, 36" TraceId="image3273"/>
+        <Image Id="dfltMask29" TextureId="txr_laz_vert_03n" Bounds="397, 181, 46, 36" TraceId="image3275"/>
+        <Image Id="dfltMask30" TextureId="txr_laz_vert_01n" Bounds="397, 211, 46, 36" TraceId="image3277"/>
+        <Image Id="dfltMask31" TextureId="txr_laz_baza_08n" Bounds="380, -5, 81, 106" FlipEffects="Vertically" TraceId="image3195"/>
+        <Image Id="dfltMask32" TextureId="txr_laz_vert_01n" Bounds="397, 91, 46, 36" TraceId="image3279"/>
+    </Layer>
+    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask33" TextureId="txr_bones_08n" Bounds="409, 284, 21, 13" TraceId="image3609"/>
+        <Image Id="dfltMask34" TextureId="txr_bones_02n" Bounds="429, 281, 35, 31" TraceId="image3620-5"/>
+        <Image Id="dfltMask35" TextureId="txr_bones_04n" Bounds="445, 261, 15, 18" TraceId="image3631"/>
+        <Image Id="dfltMask36" TextureId="txr_bones_06n" Bounds="459, 250, 18, 9" TraceId="image3642"/>
+        <Image Id="dfltMask37" TextureId="txr_stone_03n" Bounds="99, 105, 15, 16" TraceId="image3653"/>
+        <Image Id="dfltMask38" TextureId="txr_stone_01n" Bounds="86, 215, 15, 12" TraceId="image3678"/>
+        <Image Id="dfltMask39" TextureId="txr_stone_01n" Bounds="214, 281, 15, 12" TraceId="image3680"/>
+        <Image Id="dfltMask40" TextureId="txr_stone_01n" Bounds="246, 276, 15, 12" TraceId="image3682"/>
+        <Image Id="dfltMask41" TextureId="txr_stone_01n" Bounds="332, 70, 15, 12" TraceId="image3684"/>
+        <Image Id="dfltMask42" TextureId="txr_stone_01n" Bounds="366, 76, 15, 12" TraceId="image3686"/>
+        <Image Id="dfltMask43" TextureId="txr_stone_01n" Bounds="59, 16, 15, 12" TraceId="image3664"/>
+        <Image Id="dfltMask44" TextureId="txr_stone_02n" Bounds="107, 211, 11, 10" TraceId="image3688"/>
+        <Image Id="dfltMask45" TextureId="txr_stone_02n" Bounds="225, 295, 11, 10" TraceId="image3690"/>
+        <Image Id="dfltMask46" TextureId="txr_stone_02n" Bounds="357, 80, 11, 10" TraceId="image3692"/>
+        <Image Id="dfltMask47" TextureId="txr_stone_02n" Bounds="375, 140, 11, 10" TraceId="image3694"/>
+        <Image Id="dfltMask48" TextureId="txr_stone_02n" Bounds="459, 84, 11, 10" TraceId="image3696"/>
+        <Image Id="dfltMask49" TextureId="txr_stone_02n" Bounds="103, 80, 11, 10" TraceId="image3698"/>
+        <Image Id="dfltMask50" TextureId="txr_stone_02n" Bounds="90, 16, 11, 10" TraceId="image3700"/>
+        <Image Id="dfltMask51" TextureId="txr_stone_02n" Bounds="91, 62, 11, 10" TraceId="image3675"/>
     </Layer>
     <Layer Id="oil1" BackColor="#FFFFFFFF">
         <Group Id="grpOil1" Enabled="false">
-            <Group Id="grpOilArea1" Class="clsOil" Bounds="401, 83, 39, 101" TraceId="image3085-1"/>
-            <Image Id="img46" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=0" Bounds="403, 107, 11, 14" TraceId="image3100" />
-            <Image Id="img47" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=0" Bounds="423, 98, 14, 18" TraceId="image3098" />
-            <Image Id="img48" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=0" Bounds="403, 84, 17, 18" TraceId="image3096" />
-            <Image Id="img49" Class="clsOilSpot" ClassParams="@appearanceTime=4,@txrNum=0" Bounds="403, 84, 34, 38" TraceId="image3144" />
-            <Image Id="img50" Class="clsOilSpot" ClassParams="@appearanceTime=5,@txrNum=0" Bounds="402, 103, 32, 38" TraceId="image3146" />
-            <Image Id="img51" Class="clsOilSpot" ClassParams="@appearanceTime=6,@txrNum=0" Bounds="407, 120, 31, 27" TraceId="image3148" />
-            <Image Id="img52" Class="clsOilSpot" ClassParams="@appearanceTime=7,@txrNum=0" Bounds="400, 129, 33, 27" TraceId="image3150" />
-            <Image Id="img53" Class="clsOilSpot" ClassParams="@appearanceTime=8,@txrNum=0" Bounds="407, 131, 35, 33" TraceId="image3152" />
-            <Image Id="img54" Class="clsOilSpot" ClassParams="@appearanceTime=9,@txrNum=0" Bounds="402, 144, 34, 37" TraceId="image3154" />
-            <Image Id="img55" Class="clsOilSpot" ClassParams="@appearanceTime=10,@txrNum=0" Bounds="408, 161, 30, 25" TraceId="image3156" />
+            <Group Id="grpOilArea1" Class="clsOil" Bounds="401, 82, 39, 84" TraceId="image3085-1"/>
+            <Image Id="img52" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=6" Bounds="403, 97, 36, 49" TraceId="image3323" />
+            <Image Id="img53" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=1" Bounds="404, 79, 19, 17" TraceId="image3334" />
+            <Image Id="img54" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=2" Bounds="410, 150, 27, 20" TraceId="image3345" />
+            <Image Id="img55" Class="clsOilSpot" ClassParams="@appearanceTime=4,@txrNum=5" Bounds="403, 86, 34, 47" TraceId="image3356-0" />
+            <Image Id="img56" Class="clsOilSpot" ClassParams="@appearanceTime=5,@txrNum=3" Bounds="402, 113, 32, 30" TraceId="image3367" />
+            <Image Id="img57" Class="clsOilSpot" ClassParams="@appearanceTime=6,@txrNum=4" Bounds="410, 135, 28, 19" TraceId="image3378" />
+            <Image Id="img58" Class="clsOilSpot" ClassParams="@appearanceTime=7,@txrNum=5" Bounds="402, 132, 32, 40" TraceId="image3389-9" />
         </Group>
-        <Block Id="blkBarrel1" Class="clsBarrel" Bounds="405, 98, 28, 32" Edges="Stick" TraceId="image3103">
+        <Block Id="blkBarrel1" Class="clsBarrel" Bounds="405, 96, 28, 32" Edges="Stick" TraceId="image3103">
             <Image TextureId="txr_barrel" />
             <BoolTrigger Condition="blkBarrel1:Destroyed" EnterAction="grpOil1.Enable()" />
         </Block>
     </Layer>
+    <Layer Id="Static_Oil" BackColor="#FFFFFFFF">
+        <Group Id="grpOilArea2" Class="clsOil" Bounds="247, 243, 102, 28" TraceId="image3356"/>
+        <Image Id="img59" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=7" Bounds="321, 252, 34, 19" TraceId="image3526" />
+        <Image Id="img60" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=8" Bounds="244, 248, 47, 22" TraceId="image3515" />
+        <Image Id="img61" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=7" Bounds="191, 38, 34, 19" TraceId="image3469" />
+        <Group Id="grpOilArea3" Class="clsOil" Bounds="145, 35, 69, 28" TraceId="image3210"/>
+        <Image Id="img62" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=3" Bounds="151, 37, 46, 30" TraceId="image3436" />
+        <Image Id="img63" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=4" Bounds="183, 42, 28, 19" TraceId="image3447" />
+        <Image Id="img64" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=2" Bounds="140, 36, 27, 20" TraceId="image3458" />
+        <Image Id="img65" Class="clsOilSpot" ClassParams="@appearanceTime=4,@txrNum=3" Bounds="263, 246, 41, 25" TraceId="image3480" />
+        <Image Id="img66" Class="clsOilSpot" ClassParams="@appearanceTime=5,@txrNum=4" Bounds="297, 253, 36, 19" TraceId="image3491" />
+        <Image Id="img67" Class="clsOilSpot" ClassParams="@appearanceTime=6,@txrNum=5" Bounds="286, 239, 32, 33" TraceId="image3502" />
+        <Image Id="img68" Class="clsOilSpot" ClassParams="@appearanceTime=7,@txrNum=4" Bounds="313, 247, 36, 19" TraceId="image3505" />
+    </Layer>
     <Layer Id="oil 2" BackColor="#FFFFFFFF">
-        <Group Id="grpOil2" Enabled="false">
-            <Group Id="grpOilArea2" Class="clsOil" Bounds="155, 244, 101, 28" TraceId="image3214"/>
-            <Image Id="img56" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=0" Bounds="184, 260, 16, 13" TraceId="image3289" />
-            <Image Id="img57" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=0" Bounds="221, 247, 16, 13" TraceId="image3291" />
-            <Image Id="img58" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=0" Bounds="190, 245, 16, 13" TraceId="image3293" />
-            <Image Id="img59" Class="clsOilSpot" ClassParams="@appearanceTime=4,@txrNum=0" Bounds="209, 259, 16, 13" TraceId="image3216" />
-            <Image Id="img60" Class="clsOilSpot" ClassParams="@appearanceTime=5,@txrNum=0" Bounds="185, 247, 39, 25" TraceId="image3218" />
-            <Image Id="img61" Class="clsOilSpot" ClassParams="@appearanceTime=6,@txrNum=0" Bounds="214, 245, 39, 25" TraceId="image3295" />
-            <Image Id="img62" Class="clsOilSpot" ClassParams="@appearanceTime=7,@txrNum=0" Bounds="157, 247, 39, 25" TraceId="image3297" />
-            <Image Id="img63" Class="clsOilSpot" ClassParams="@appearanceTime=8,@txrNum=0" Bounds="231, 254, 25, 18" TraceId="image3299" />
+        <Group Id="grpOil4" Enabled="false">
+            <Group Id="grpOilArea4" Class="clsOil" Bounds="155, 245, 103, 28" TraceId="image3445"/>
+            <Image Id="img69" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=2" Bounds="202, 249, 27, 20" TraceId="image3543" />
+            <Image Id="img70" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=7" Bounds="239, 251, 34, 19" TraceId="image3554" />
+            <Image Id="img71" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=8" Bounds="157, 246, 47, 22" TraceId="image3565-0" />
+            <Image Id="img72" Class="clsOilSpot" ClassParams="@appearanceTime=4,@txrNum=1" Bounds="193, 254, 19, 17" TraceId="image3576" />
+            <Image Id="img73" Class="clsOilSpot" ClassParams="@appearanceTime=5,@txrNum=4" Bounds="218, 247, 28, 19" TraceId="image3587" />
+            <Image Id="img74" Class="clsOilSpot" ClassParams="@appearanceTime=6,@txrNum=3" Bounds="187, 248, 41, 25" TraceId="image3598" />
+            <Image Id="img75" Class="clsOilSpot" ClassParams="@appearanceTime=7,@txrNum=4" Bounds="232, 255, 26, 16" TraceId="image3609-9" />
+            <Image Id="img76" Class="clsOilSpot" ClassParams="@appearanceTime=8,@txrNum=1" Bounds="168, 254, 31, 17" TraceId="image3620" />
         </Group>
-        <Block Id="blkBarrel2" Class="clsBarrel" Bounds="200, 242, 28, 32" Edges="Stick" TraceId="image3235">
+        <Block Id="blkBarrel4" Class="clsBarrel" Bounds="200, 242, 28, 32" Edges="Stick" TraceId="image3517">
             <Image TextureId="txr_barrel" />
-            <BoolTrigger Condition="blkBarrel2:Destroyed" EnterAction="grpOil2.Enable()" />
+            <BoolTrigger Condition="blkBarrel4:Destroyed" EnterAction="grpOil4.Enable()" />
         </Block>
-        <Image Id="img64" Class="clsOilSpot" ClassParams="@appearanceTime=9,@txrNum=0" Bounds="238, 250, 31, 21" TraceId="image3393" />
     </Layer>
     <Layer Id="oil3" BackColor="#FFFFFFFF">
-        <Group Id="grpOil3" Enabled="false">
-            <Group Id="grpOilArea3" Class="clsOil" Bounds="280, 34, 100, 28" TraceId="image3353"/>
-            <Image Id="img65" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=0" Bounds="313, 37, 16, 13" TraceId="image3359" />
-            <Image Id="img66" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=0" Bounds="296, 47, 20, 16" TraceId="image3361" />
-            <Image Id="img67" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=0" Bounds="329, 46, 20, 16" TraceId="image3409" />
-            <Image Id="img68" Class="clsOilSpot" ClassParams="@appearanceTime=4,@txrNum=0" Bounds="308, 40, 29, 20" TraceId="image3411" />
-            <Image Id="img69" Class="clsOilSpot" ClassParams="@appearanceTime=5,@txrNum=0" Bounds="329, 36, 29, 20" TraceId="image3413" />
-            <Image Id="img70" Class="clsOilSpot" ClassParams="@appearanceTime=6,@txrNum=0" Bounds="288, 36, 29, 20" TraceId="image3415" />
-            <Image Id="img71" Class="clsOilSpot" ClassParams="@appearanceTime=7,@txrNum=0" Bounds="279, 43, 29, 20" TraceId="image3417" />
-            <Image Id="img72" Class="clsOilSpot" ClassParams="@appearanceTime=8,@txrNum=0" Bounds="338, 43, 29, 20" TraceId="image3419" />
-            <Image Id="img73" Class="clsOilSpot" ClassParams="@appearanceTime=9,@txrNum=0" Bounds="353, 37, 29, 20" TraceId="image3421" />
+        <Group Id="grpOil5" Enabled="false">
+            <Group Id="grpOilArea5" Class="clsOil" Bounds="280, 34, 100, 28" TraceId="image3353"/>
+            <Image Id="img77" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=8" Bounds="310, 37, 47, 22" TraceId="image3337" />
+            <Image Id="img78" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=2" Bounds="279, 37, 27, 20" TraceId="image3348-4" />
+            <Image Id="img79" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=7" Bounds="343, 37, 34, 19" TraceId="image3359" />
+            <Image Id="img80" Class="clsOilSpot" ClassParams="@appearanceTime=4,@txrNum=3" Bounds="304, 37, 51, 25" TraceId="image3370-8" />
+            <Image Id="img81" Class="clsOilSpot" ClassParams="@appearanceTime=5,@txrNum=4" Bounds="338, 38, 35, 18" TraceId="image3381" />
+            <Image Id="img82" Class="clsOilSpot" ClassParams="@appearanceTime=6,@txrNum=1" Bounds="302, 46, 19, 17" TraceId="image3392" />
+            <Image Id="img83" Class="clsOilSpot" ClassParams="@appearanceTime=7,@txrNum=3" Bounds="284, 37, 33, 29" TraceId="image3414-2" />
+            <Image Id="img84" Class="clsOilSpot" ClassParams="@appearanceTime=8,@txrNum=4" Bounds="344, 44, 36, 17" TraceId="image3425" />
         </Group>
-        <Block Id="blkBarrel3" Class="clsBarrel" Bounds="320, 32, 28, 32" Edges="Stick" TraceId="image3423">
+        <Block Id="blkBarrel5" Class="clsBarrel" Bounds="320, 32, 28, 32" Edges="Stick" TraceId="image3423">
             <Image TextureId="txr_barrel" />
-            <BoolTrigger Condition="blkBarrel3:Destroyed" EnterAction="grpOil3.Enable()" />
+            <BoolTrigger Condition="blkBarrel5:Destroyed" EnterAction="grpOil5.Enable()" />
         </Block>
-    </Layer>
-    <Layer Id="Static_Oil" BackColor="#FFFFFFFF">
-        <Group Id="grpOilArea4" Class="clsOil" Bounds="256, 243, 108, 28" TraceId="image3356"/>
-        <Group Id="grpOilArea5" Class="clsOil" Bounds="128, 35, 108, 28" TraceId="image3210"/>
-        <Image Id="dfltMask74" TextureId="txr_oil" Bounds="125, 35, 22, 21" Stretch="true" TraceId="image3352"/>
-        <Image Id="dfltMask75" TextureId="txr_oil" Bounds="177, 48, 22, 21" Stretch="true" TraceId="image3354"/>
-        <Image Id="dfltMask76" TextureId="txr_oil" Bounds="213, 41, 22, 21" Stretch="true" TraceId="image3194"/>
-        <Image Id="dfltMask77" TextureId="txr_oil" Bounds="127, 37, 29, 25" Stretch="true" TraceId="image3342"/>
-        <Image Id="dfltMask78" TextureId="txr_oil" Bounds="143, 36, 29, 25" Stretch="true" TraceId="image3344"/>
-        <Image Id="dfltMask79" TextureId="txr_oil" Bounds="157, 36, 29, 28" Stretch="true" TraceId="image3346"/>
-        <Image Id="dfltMask80" TextureId="txr_oil" Bounds="166, 35, 29, 25" Stretch="true" TraceId="image3348"/>
-        <Image Id="dfltMask81" TextureId="txr_oil" Bounds="184, 38, 29, 25" Stretch="true" TraceId="image3350"/>
-        <Image Id="dfltMask82" TextureId="txr_oil" Bounds="196, 35, 33, 25" Stretch="true" TraceId="image3196"/>
-        <Image Id="dfltMask83" TextureId="txr_oil" Bounds="253, 243, 22, 21" Stretch="true" TraceId="image3358"/>
-        <Image Id="dfltMask84" TextureId="txr_oil" Bounds="305, 252, 22, 21" Stretch="true" TraceId="image3360"/>
-        <Image Id="dfltMask85" TextureId="txr_oil" Bounds="341, 249, 22, 21" Stretch="true" TraceId="image3362"/>
-        <Image Id="dfltMask86" TextureId="txr_oil" Bounds="255, 245, 29, 25" Stretch="true" TraceId="image3364"/>
-        <Image Id="dfltMask87" TextureId="txr_oil" Bounds="271, 244, 29, 25" Stretch="true" TraceId="image3366"/>
-        <Image Id="dfltMask88" TextureId="txr_oil" Bounds="285, 240, 29, 28" Stretch="true" TraceId="image3368"/>
-        <Image Id="dfltMask89" TextureId="txr_oil" Bounds="294, 243, 29, 25" Stretch="true" TraceId="image3370"/>
-        <Image Id="dfltMask90" TextureId="txr_oil" Bounds="312, 246, 29, 25" Stretch="true" TraceId="image3372"/>
-        <Image Id="dfltMask91" TextureId="txr_oil" Bounds="324, 243, 33, 25" Stretch="true" TraceId="image3374"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="210, 40, 22, 23" TraceId="image3141"/>
-        <Food Id="fd1" Class="clsFoodFish3" Bounds="408, 135, 28, 17" TraceId="image3414"/>
-        <Food Id="fd2" Class="clsFoodFish3" Bounds="412, 159, 28, 17" TraceId="image3416"/>
-        <Food Id="fd3" Class="clsFoodFish3" Bounds="408, 185, 28, 17" TraceId="image3332"/>
-        <Food Id="fd4" Class="clsFoodFish3" Bounds="42, 137, 28, 17" TraceId="image3397"/>
-        <Food Id="fd5" Class="clsFoodFish3" Bounds="48, 161, 28, 17" TraceId="image3399"/>
-        <Food Id="fd6" Class="clsFoodFish3" Bounds="45, 185, 28, 17" TraceId="image3401"/>
-        <Food Id="fd7" Class="clsFoodFish3" Bounds="171, 133, 28, 17" TraceId="image3403"/>
-        <Food Id="fd8" Class="clsFoodFish3" Bounds="161, 157, 28, 17" TraceId="image3405"/>
-        <Food Id="fd9" Class="clsFoodFish3" Bounds="166, 185, 28, 17" TraceId="image3407"/>
-        <Food Id="fd10" Class="clsFoodFish3" Bounds="292, 188, 28, 17" TraceId="image3410"/>
-        <Food Id="fd11" Class="clsFoodFish3" Bounds="286, 160, 28, 17" TraceId="image3412"/>
-        <Food Id="fd12" Class="clsFoodFish3" Bounds="291, 134, 28, 17" TraceId="image3188"/>
         <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="323, 249, 22, 23" TraceId="image3395"/>
         <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="92, 248, 22, 23" TraceId="image3240"/>
-        <Food Id="fd13" Class="clsFoodFish4" Bounds="248, 252, 26, 17" TraceId="image3384"/>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="48, 132, 28, 19" TraceId="image3573"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="49, 158, 28, 19" TraceId="image3575"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=2" Bounds="45, 184, 28, 19" TraceId="image3537"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=3" Bounds="163, 160, 31, 20" TraceId="image3577"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=3" Bounds="168, 136, 31, 20" TraceId="image3579"/>
+        <Food Id="fd6" Class="clsFood" ClassParams="@fishType=3" Bounds="167, 186, 31, 20" TraceId="image3548"/>
+        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=5" Bounds="290, 159, 27, 20" TraceId="image3581"/>
+        <Food Id="fd8" Class="clsFood" ClassParams="@fishType=5" Bounds="282, 136, 27, 20" TraceId="image3583"/>
+        <Food Id="fd9" Class="clsFood" ClassParams="@fishType=5" Bounds="283, 181, 27, 20" TraceId="image3559"/>
+        <Food Id="fd10" Class="clsFood" ClassParams="@fishType=4" Bounds="407, 136, 28, 22" TraceId="image3585"/>
+        <Food Id="fd11" Class="clsFood" ClassParams="@fishType=4" Bounds="411, 166, 28, 22" TraceId="image3588"/>
+        <Food Id="fd12" Class="clsFood" ClassParams="@fishType=4" Bounds="405, 189, 28, 22" TraceId="image3570"/>
+        <Food Id="fd13" Class="clsFood" ClassParams="@fishType=1" Bounds="244, 248, 32, 21" TraceId="image3710"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="400, 10, 37, 54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="402, 20, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="43, 38, 33, 24" TraceId="image3606"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=13 Enemy=3 Block=7 DesignImage=91 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=5 dealy sec=0 -->
+<!-- Food=13 Enemy=3 Block=7 DesignImage=84 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=5 dealy sec=8 -->
 <!-- -->
-<!-- Food Points = 1180 -->
-<!-- 1% = 11.8; 45% = 531; 90% = 1062 -->
-<!-- minPointsFood = 90 (7.6%) -->
+<!-- Food Points = 980 -->
+<!-- 1% = 9.8; 45% = 441; 90% = 882 -->
+<!-- minPointsFood = 50 (5.1%) -->
 <!-- -->
-<!-- Enemy Points = 150 -->
-<!-- 1% = 1.5; 45% = 67.5; 90% = 135 -->
-<!-- minPointsEnemy = 50 (33.3%) -->
+<!-- Enemy Points = 100 -->
+<!-- 1% = 1; 45% = 45; 90% = 90 -->
+<!-- minPointsEnemy = 50 (50%) -->
 <!-- -->
-<!-- Food + Enemy Points = 1330 -->
-<!-- 1% = 13.3; 45% = 598.5; 90% = 1197 -->
-<!-- minPointsFood = 90 (6.8%) -->
-<!-- minPointsEnemy = 50 (3.8%) -->
+<!-- Food + Enemy Points = 1080 -->
+<!-- 1% = 10.8; 45% = 486; 90% = 972 -->
+<!-- minPointsFood = 50 (4.6%) -->
+<!-- minPointsEnemy = 50 (4.6%) -->
