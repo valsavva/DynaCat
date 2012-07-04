@@ -39,14 +39,6 @@
     <Class Id="clsButton">
 		<Group>
             <Sound Id="this_sndButtonTapped" FileId="sndButtonTapped" Volume="0.5" Pitch="0"/>
-            
-            <!-- Init -->
-            <SequenceSet Id="this_Init" RepeatCount="1" InProgress="true">
-                <Do Action="this:-Pressed;
-                    this:-Action" />
-                <Delay Duration="0.3" /> <!-- trying to prevent double taping -->
-                <Do Action="this_tapArea.Enable()" />
-            </SequenceSet>
 
             <!-- button is pressed -->
             <SequenceSet Id="this_Pressed" RepeatCount="1" InProgress="false">
@@ -55,9 +47,7 @@
                 <Do Action="this:Action;this:-Pressed" />
             </SequenceSet>
 
-
-            <TapArea Id="this_tapArea" Action="this:+Pressed" Enabled="false"/>
-
+            <TapArea Id="this_tapArea" Action="this:+Pressed"/>
 
             <!-- state : basic, not pressed -->
             <BoolTrigger Condition="not this:Pressed" 
@@ -67,15 +57,10 @@
             
             <!-- state : pressed -->
             <BoolTrigger Condition="this:Pressed" 
-                         EnterAction="system:InterfaceButtonPressed;
-                         this_Pressed.Start()" 
+                         EnterAction="this_Pressed.Start()" 
                          Group="this_sttButton">
                 <Image TextureId="txrButton@BtnImgPressed" StretchMode="ActualSize" />
             </BoolTrigger>
-
-            <!-- avoidance of tapping more than one button -->
-            <BoolTrigger Condition="system:InterfaceButtonPressed" EnterAction="this_tapArea.Disable()" />
-            
 		</Group>
 	</Class>
 	
