@@ -82,8 +82,8 @@
             </IntersectionTrigger>
             
             <SequenceSet Id="this_anmSetHeroOnWaves" RepeatCount="1" >
-                <NumAnimation Target="hero.X" From="hero.X" To="this.X" Duration="0.4" RepeatCount="1" Fill="End"/>
-                <Do Action="hero.SetDirection(0,1);hero:+Magneting" />
+                <NumAnimation Target="hero.X" From="hero.X" To="this.X+10" Duration="0.4" RepeatCount="1" Fill="End"/>
+                <Do Action="hero.SetDirection(0,-1);hero:+Magneting" />
             </SequenceSet>
             
         </Group>

@@ -14,7 +14,7 @@
             <Block Id="this_blkRadar" Edges="Stick">
                 <Sprite Id="this_sprRadar" TextureId="txrRadarSprite_2" Bounds="0,0,47,68" FrameBounds="0,0,47,68" FlipEffects="Vertically"/>
                 <NumAnimation Id="this_RadarAnm" From="0" To="3" Duration="1" Autoreverse="false" Target="this_sprRadar.CurrentFrame" RepeatCount="0" Fill="Reset"/>
-                <!--<Image TextureId="blank" BackColor="#0000FF" Opacity="0.5"/>-->
+                <Image TextureId="blank" BackColor="#0000FF" Opacity="0.5"/>
             </Block>
             
             <!-- waves -->
@@ -31,7 +31,7 @@
                 <Sprite Id="this_Wave4" TextureId="txrWaves" Bounds="29,10,87,33" FrameBounds="0,0,87,33" Rotation="90">
                     <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" RepeatCount="0" InProgress="true"/>
                 </Sprite>
-                <!--<Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>-->
+                <Image TextureId="blank" BackColor="#00FF00" Opacity="0.5"/>
 
                 <SequenceSet Id="this_Beaming" RepeatCount="0" InProgress="true" >
                     <Do Action="this_RadarAnm.Start()" />
@@ -82,8 +82,8 @@
             </IntersectionTrigger>
             
             <SequenceSet Id="this_anmSetHeroOnWaves" RepeatCount="1" >
-                <NumAnimation Target="hero.X" From="hero.X" To="this.X" Duration="0.4" RepeatCount="1" Fill="End"/>
-                <Do Action="hero.SetDirection(0,-1);hero:+Magneting" />
+                <NumAnimation Target="hero.X" From="hero.X" To="this.X+10" Duration="0.4" RepeatCount="1" Fill="End"/>
+                <Do Action="hero.SetDirection(0,1);hero:+Magneting" />
             </SequenceSet>
             
         </Group>
