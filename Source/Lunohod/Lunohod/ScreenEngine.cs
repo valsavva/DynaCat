@@ -80,6 +80,8 @@ namespace Lunohod
 				// turning on the event for one update
 				this.CurrentEvents[e.Id] = false;
 			}
+
+			e.IsHandled = true;
 		}
 
 		public virtual bool EventAllowed(GameEvent e)
