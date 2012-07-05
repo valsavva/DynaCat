@@ -1,141 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Include>
-
-    <Include File="ClassUIButton.xml" />
-
-    <Resources RootFolder="Global">
-        <Texture Id="txrBackground" Source="select_level_BG" />
-        <Texture Id="txrSelectLevelText" Source="select_level_txt" />
-        <Texture Id="txrPanels" Source="select_level_panels" />
-        <Texture Id="txrStar" Source="select_level_panel_star" />
-        <Texture Id="txrBadge" Source="select_level_panel_beydg" />
-        <Texture Id="txrNumbers" Source="numbers" />
-        <Font Id="fntSystem" Source="SystemFont"/>
-    </Resources>
+	<Resources RootFolder="Global">
+		<Font Id="fntSystem" Source="SystemFont"/>
+	</Resources>
 
 	<Class Id="clsLevelButton">
 		<Group>
 			<Do Action="
-				@this_levelExists=system.GetSeriesLevelName(@seriesNum,@levelNum)!='';
-				"
+				@this_numberOfStars=system.GetSeriesLevelStars(@buttonSeriesNum,@levelNum);
+				@this_starsStr=system.IIfStr(@this_numberOfStars==3,'***',system.IIfStr(@this_numberOfStars==2,'**-',system.IIfStr(@this_numberOfStars==1,'*--','---')));
+				@this_starsStr=@this_starsStr + system.IIfStr(system.GetSeriesLevelHasBadge(@buttonSeriesNum,@levelNum), '# ', '  ');
+				@this_levelName=system.GetSeriesLevelName(@buttonSeriesNum,@levelNum);
+				@this_levelExists=@this_levelName!='';
+				@this_levelName=@this_starsStr + @this_levelName;"
 				InProgress="true"
-				RepeatCount="1"
+				RepeatCount="0"
 			/>
 			<BoolTrigger Condition="@this_levelExists">
-				<Do Action="
-					this_sprPanel.CurrentFrame=system.Rnd(0,4);
-					this_sprNumber1.CurrentFrame=system.IIf((@levelNum+1)>=10,system.Truncate((@levelNum+1)/10),@levelNum+1);
-					this_sprNumber2.CurrentFrame=(@levelNum+1)%10;
-					this_sprNumber2.Enabled=(@levelNum+1)>=10;
-					"
-					InProgress="true"
-					RepeatCount="1"
-				/>
-			
-				<Do Action="
-					@this_numberOfStars=system.GetSeriesLevelStars(@seriesNum,@levelNum);
-					@this_hasBadge=system.GetSeriesLevelHasBadge(@seriesNum,@levelNum);
-					"
-					InProgress="true"
-					RepeatCount="0"
-				/>
-				
 				<TapArea Action="this_setPress.Start()"/>
 	            <SequenceSet Id="this_setPress">
-	                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.2" Autoreverse="true" RepeatCount="1"/>
-	                <Do Action="system.StartSeriesLevel(@seriesNum,@levelNum)"/>
+	                <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
+	                <Do Action="system.StartSeriesLevel(@buttonSeriesNum,@levelNum)"/>
 	            </SequenceSet>
-	            
-	            <Sprite Id="this_sprPanel" TextureId="txrPanels" Bounds="0,0,94,51" FrameBounds="0,0,94,51" FrameCount="2"/>
-
-	            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Bounds="5,5,32,32" FrameBounds="0,0,32,32"/>
-	            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Bounds="27,5,32,32" FrameBounds="0,0,32,32"/>
-	            
-	            <BoolTrigger Condition="@this_numberOfStars>0">
-	            	<Image TextureId="txrStar" Location="24,32" />
-	            </BoolTrigger>
-	            <BoolTrigger Condition="@this_numberOfStars>1">
-	            	<Image TextureId="txrStar" Location="37,32" />
-	            </BoolTrigger>
-	            <BoolTrigger Condition="@this_numberOfStars>2">
-	            	<Image TextureId="txrStar" Location="50,32" />
-	            </BoolTrigger>
-	            
-	            <BoolTrigger Condition="@this_hasBadge">
-	            	<Image TextureId="txrBadge" Location="50,0" />
-	            </BoolTrigger>
-	            
+				<Text Id="this_text" FontId="fntSystem" Color="#003366" Origin="50,10" Location="50,10" Text="=@this_levelName" />
+				<RandomSet RepeatCount="0" InProgress="true">
+					<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
+						<KeyFrame Time="0" Value="0"/>
+						<KeyFrame Time="0.01" Value="-3"/>
+						<KeyFrame Time="0.05" Value="3"/>
+					</NumAnimation>
+					<Delay Duration="3"/>
+				</RandomSet>
+				<RandomSet RepeatCount="0" InProgress="true">
+					<NumAnimation Target="this.X" Autoreverse="true" RepeatCount="1" Duration="1" IsDelta="true" Fill="Reset">
+						<KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
+						<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth"/>
+						<KeyFrame Time="0.6" Value="6" Smoothness="Smooth"/>
+						<KeyFrame Time="1" Value="0" Smoothness="Smooth"/>
+					</NumAnimation>
+					<Delay Duration="3"/>
+				</RandomSet>
 			</BoolTrigger>
 		</Group>
 	</Class>
 
 	<Class Id="clsLevelsLayer">
 		<Layer Id="action" BackColor="#FFFFFFFF">
-
-			<Do Action="
-				@seriesNum=@layerSeriesNum;
-				@numberOfLevels=system.GetSeriesLevelCount(@layerSeriesNum);
-				@currentPage=0;
-				@numberOfPages=system.Ceiling(@numberOfLevels/16);
-				"
-				InProgress="true"
-			/>
-			
-            <Image TextureId="txrBackground" />
-			<Group Id="grpScreen0" Bounds="045,040,500,500">
-				<BoolTrigger Condition="@currentPage==0">
-					<Group Id="grpL00" Bounds="000,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=00"/>
-					<Group Id="grpL01" Bounds="100,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=01"/>
-					<Group Id="grpL02" Bounds="200,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=02"/>
-					<Group Id="grpL03" Bounds="300,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=03"/>
-
-					<Group Id="grpL04" Bounds="000,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=04"/>
-					<Group Id="grpL05" Bounds="100,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=05"/>
-					<Group Id="grpL06" Bounds="200,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=06"/>
-					<Group Id="grpL07" Bounds="300,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=07"/>
-
-					<Group Id="grpL08" Bounds="000,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=08"/>
-					<Group Id="grpL09" Bounds="100,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=09"/>
-					<Group Id="grpL10" Bounds="200,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=10"/>
-					<Group Id="grpL11" Bounds="300,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=11"/>
-
-					<Group Id="grpL12" Bounds="000,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=12"/>
-					<Group Id="grpL13" Bounds="100,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=13"/>
-					<Group Id="grpL14" Bounds="200,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=14"/>
-					<Group Id="grpL15" Bounds="300,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=15"/>
-				</BoolTrigger>
-				<BoolTrigger Condition="@currentPage==1">
-					<Group Id="grpL16" Bounds="000,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=16"/>
-					<Group Id="grpL17" Bounds="100,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=17"/>
-					<Group Id="grpL18" Bounds="200,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=18"/>
-					<Group Id="grpL19" Bounds="300,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=19"/>
-
-					<Group Id="grpL20" Bounds="000,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=20"/>
-					<Group Id="grpL21" Bounds="100,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=21"/>
-					<Group Id="grpL22" Bounds="200,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=22"/>
-					<Group Id="grpL23" Bounds="300,057,095,050" Class="clsLevelButton" ClassParams="@levelNum=23"/>
-
-					<Group Id="grpL24" Bounds="000,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=24"/>
-					<Group Id="grpL25" Bounds="100,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=25"/>
-					<Group Id="grpL26" Bounds="200,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=26"/>
-					<Group Id="grpL27" Bounds="300,114,095,050" Class="clsLevelButton" ClassParams="@levelNum=27"/>
-
-					<Group Id="grpL28" Bounds="000,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=28"/>
-					<Group Id="grpL29" Bounds="100,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=29"/>
-					<Group Id="grpL30" Bounds="200,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=30"/>
-					<Group Id="grpL31" Bounds="300,171,095,050" Class="clsLevelButton" ClassParams="@levelNum=31"/>
-				</BoolTrigger>
+			<Group Id="grpScreen0" Bounds="50,5,500,500">
+				<Group Id="grpL01" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=00"/>
+				<Group Id="grpL02" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=01"/>
+				<Group Id="grpL03" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=02"/>
+				<Group Id="grpL04" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=03"/>
+				<Group Id="grpL05" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=04"/>
+				<Group Id="grpL06" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=05"/>
+				<Group Id="grpL07" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=06"/>
+				<Group Id="grpL08" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=07"/>
+				<Group Id="grpL09" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=08"/>
+				<Group Id="grpL10" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=09"/>
+				
+				<Group Id="grpL11" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=10"/>
+				<Group Id="grpL12" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=11"/>
+				<Group Id="grpL13" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=12"/>
+				<Group Id="grpL14" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=13"/>
+				<Group Id="grpL15" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=14"/>
+				<Group Id="grpL16" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=15"/>
+				<Group Id="grpL17" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=16"/>
+				<Group Id="grpL18" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=17"/>
+				<Group Id="grpL19" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=18"/>
+				<Group Id="grpL20" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@buttonSeriesNum=@layerSeriesNum,@levelNum=19"/>
 			</Group>
-            <Image TextureId="txrSelectLevelText" Location="125,5" />
-			<Group Id="this_btnBack" Class="clsButton" ClassParams="@BtnImg=5" Bounds="33, 256, 62, 62">
-			    <BoolTrigger Condition="this_btnBack:Action" EnterAction="system.CloseCurrentScreen();" />
-			</Group>
-			<Group Id="this_btnPrevPage" Class="clsButton" ClassParams="@BtnImg=1" Bounds="173, 256, 62, 62">
-			    <BoolTrigger Condition="this_btnPrevPage:Action" EnterAction="@currentPage=system.IIf((@currentPage-1)&lt;0,0,@currentPage-1);" />
-			</Group>
-			<Group Id="this_btnNextPage" Class="clsButton" ClassParams="@BtnImg=8" Bounds="245, 256, 62, 62">
-			    <BoolTrigger Condition="this_btnNextPage:Action" EnterAction="@currentPage=system.IIf((@currentPage+1)>=(@numberOfPages-1),@numberOfPages-1,@currentPage+1);" />
+			<Group Bounds="430,50,50,100">
+				<TapArea Action="system.CloseCurrentScreen()" />
+				<Text Text="back" FontId="fntSystem" Color="#FF0000" Rotation="90" Origin="0,20" />
 			</Group>
 		</Layer>
 	</Class>	
