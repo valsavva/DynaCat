@@ -26,7 +26,7 @@
         </Group>
 
         <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=1" Bounds="33, 256, 62, 62">
-            <BoolTrigger Condition="btnScrnCreditsBack:Action" EnterAction="system.CloseCurrentScreen();this:-Action" />
+            <BoolTrigger Condition="btnScrnCreditsBack:Action" EnterAction="system.CloseCurrentScreen();" />
         </Group>
     </Layer>
 </Screen>

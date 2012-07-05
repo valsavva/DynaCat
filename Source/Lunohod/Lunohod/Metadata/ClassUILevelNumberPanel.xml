@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Include>
+    <Resources RootFolder="Global">
+        <Texture Id="txrLevelNumberPanel" Source="level_number_panel" />
+        <Texture Id="txrNumbers" Source="numbers" />
+	</Resources>
+
+	<Class Id="clsNumber">
+		<Group>
+			<Do Action="
+				this_sprNumber1.CurrentFrame=system.IIf((@numberParam)>=10,system.Truncate((@numberParam)/10),@numberParam);
+				this_sprNumber2.CurrentFrame=(@numberParam)%10;
+				this_sprNumber2.Enabled=(@numberParam)>=10;
+				"
+				InProgress="true"
+				RepeatCount="1"
+			/>
+            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Bounds="00,0,32,32" FrameBounds="0,0,32,32"/>
+            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Bounds="22,0,32,32" FrameBounds="0,0,32,32"/>
+		</Group>
+	</Class>
+
+	<Class Id="clsLevelNumberPanel">
+		<Group>
+			<Image TextureId="txrLevelNumberPanel" StretchMode="ActualSize" Location="0,0" />
+			<Group Id="this_grpSeriesNumber" Location="12,30" Class="clsNumber" ClassParams="@numberParam=(levelInfo.SeriesNumber+1)"/>
+            <Sprite TextureId="txrNumbers" Bounds="41,45,8,5" FrameBounds="81,21,8,5"/>
+			<Group Id="this_grpLevelNumber" Location="44,30" Class="clsNumber" ClassParams="@numberParam=(levelInfo.LevelNumber+1)"/>
+		</Group>
+	</Class>
+</Include>

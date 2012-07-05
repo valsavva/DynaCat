@@ -12,6 +12,7 @@
     @BtnImg=5 : Home (Menu)
     @BtnImg=6 : Play
     @BtnImg=7 : Restart
+    @BtnImg=8 : Forward
     -->
     
     <Resources RootFolder="Global">
@@ -43,24 +44,22 @@
             <Sound Id="this_sndButtonTapped" FileId="sndButtonTapped" Volume="0.5" Pitch="0"/>
 
             <!-- button is pressed -->
-            <SequenceSet Id="this_Pressed" RepeatCount="1" InProgress="false">
+            <SequenceSet Id="this_setPressed" RepeatCount="1" InProgress="false">
                 <Do Action="this_sndButtonTapped.Start()" />
                 <Delay Duration="0.1" /> <!-- pause for animation and fxs -->
-                <Do Action="this:Action;this:-Pressed" />
+                <Do Action="this:Action;" />
             </SequenceSet>
 
-            <TapArea Id="this_tapArea" Action="this:+Pressed"/>
+            <TapArea Id="this_tapArea" Action="this_setPressed.Play();"/>
 
             <!-- state : basic, not pressed -->
-            <BoolTrigger Condition="not this:Pressed" 
+            <BoolTrigger Condition="not this_setPressed.InProgress" 
                          Group="this_sttButton">
-                <Image Id="this_imgButtonBasic" TextureId="txrButton@BtnImgBasic" StretchMode="ActualSize" />
+                <Image TextureId="txrButton@BtnImgBasic" StretchMode="ActualSize" />
             </BoolTrigger>
             
             <!-- state : pressed -->
-            <BoolTrigger Condition="this:Pressed" 
-                         EnterAction="this_Pressed.Start()" 
-                         Group="this_sttButton">
+            <BoolTrigger Group="this_sttButton">
                 <Image TextureId="txrButton@BtnImgPressed" StretchMode="ActualSize" />
             </BoolTrigger>
 		</Group>
