@@ -31,7 +31,12 @@ namespace Lunohod
 		{
 			base.Initialize(p);
 
-			GameEngine.Instance.MuteChanged += (sender, e) => AdjustVolume();
+			GameEngine.Instance.MuteChanged += HandleMuteChanged;
+		}
+
+		void HandleMuteChanged (object sender, EventArgs e)
+		{
+			AdjustVolume();
 		}
 
         public override void ReadXml(System.Xml.XmlReader reader)
@@ -40,6 +45,11 @@ namespace Lunohod
 
             base.ReadXml(reader);
         }
+
+		public override void Dispose()
+		{
+			GameEngine.Instance.MuteChanged -= HandleMuteChanged;
+		}
 	}
 }
 

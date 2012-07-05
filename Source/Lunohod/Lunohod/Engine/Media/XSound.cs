@@ -124,16 +124,6 @@ namespace Lunohod.Objects
             
             base.ReadXml(reader);
         }
-//		public override void Dispose()
-//		{
-//            if (!this.soundEffectInstance.IsDisposed)
-//            {
-//                this.soundEffectInstance.Stop();
-//                this.soundEffectInstance.Dispose();
-//            }
-//			
-//			base.Dispose();
-//		}
 	}
 }
 
