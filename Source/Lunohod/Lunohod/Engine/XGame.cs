@@ -52,6 +52,21 @@ namespace Lunohod.Objects
 		[XmlAttribute]
 		public double CpsTimeSpan;
 
+		public override void Initialize(InitializeParameters p)
+		{
+			for(int i = 0; i < this.LevelSeries.Count; i++)
+			{
+				var series = this.LevelSeries[i];
+				for(int j = 0; j < series.Levels.Count; j++)
+				{
+					series.Levels[j].SeriesNumber = i;
+					series.Levels[j].LevelNumber = j;
+				}
+			}
+
+			base.Initialize(p);
+		}
+
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             this.StartScreen = reader["StartScreen"];

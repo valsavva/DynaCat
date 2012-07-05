@@ -8,6 +8,9 @@ namespace Lunohod.Objects
     [XmlType("LevelInfo")]
 	public class XLevelInfo : XObject
 	{
+		public int SeriesNumber;
+		public int LevelNumber;
+
         [XmlAttribute]
         public string Name;
 		[XmlAttribute]
@@ -58,6 +61,8 @@ namespace Lunohod.Objects
 		public void CopyTo(XLevelInfo other)
 		{
 			other.Id = this.Id;
+			other.SeriesNumber = this.SeriesNumber;
+			other.LevelNumber = this.LevelNumber;
 			other.Name = this.Name;
 			other.File = this.File;
 			other.BombCount = this.BombCount;
@@ -119,6 +124,8 @@ namespace Lunohod.Objects
 		{
 			switch (propertyName)
 			{
+                case "SeriesNumber": getter = () => SeriesNumber; setter = null; break;
+                case "LevelNumber": getter = () => LevelNumber; setter = null; break;
                 case "BombCount": getter = () => BombCount; setter = (v) => BombCount = (int)Math.Round(v); break;
                 case "HeroHealth": getter = () => HeroHealth; setter = (v) => HeroHealth = v; break;
                 case "StarScoreRatio1": getter = () => StarScoreRatio1; setter = (v) => StarScoreRatio1 = v; break;
