@@ -428,7 +428,7 @@ namespace Lunohod
 		
 		public static XObject LoadXml(string fileName, Type type)
 		{
-			string gameXmlFile = Path.Combine(GameEngine.MetadataRootDirectory, fileName);
+			string gameXmlFile = Path.Combine(GameEngine.MetadataRootDirectory, fileName.Replace('/', Path.DirectorySeparatorChar));
 			
 			try
 			{
