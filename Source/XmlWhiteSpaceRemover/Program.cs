@@ -18,9 +18,11 @@ namespace XmlWhiteSpaceRemover
             string pattern = args[1];
             string outPath = args[2];
 
-            var files = Directory.GetFiles(path, pattern);
-            if (!Directory.Exists(outPath))
-                Directory.CreateDirectory(outPath);
+            path = Path.GetFullPath(path);
+            outPath = Path.GetFullPath(outPath);
+
+            var files = Directory.GetFiles(path, pattern, SearchOption.AllDirectories);
+            Array.Sort(files);
 
             try
             {
@@ -38,7 +40,16 @@ namespace XmlWhiteSpaceRemover
                     foreach (var c in toDelete)
                         c.ParentNode.RemoveChild(c);
 
-                    using (XmlWriter w = XmlWriter.Create(Path.Combine(outPath, Path.GetFileName(file)), new XmlWriterSettings() { Indent = false, NewLineHandling = NewLineHandling.None }))
+
+                    string relativeDir = Path.GetDirectoryName(file.Substring(path.Length+1));
+                    string newFileDir = Path.Combine(outPath, relativeDir);
+
+                    if (!Directory.Exists(newFileDir))
+                        Directory.CreateDirectory(newFileDir);
+                    
+                    string newFilePath = Path.Combine(newFileDir, Path.GetFileName(file));
+
+                    using (XmlWriter w = XmlWriter.Create(newFilePath, new XmlWriterSettings() { Indent = false, NewLineHandling = NewLineHandling.None }))
                     {
                         doc.WriteTo(w);
                     }
