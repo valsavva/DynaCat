@@ -2,7 +2,9 @@
 
 <Include>	
     <Resources RootFolder="Global">
+		<Texture Id="txrBlank" Source="blank" />
         <Font Id="Splash14Font" Source="Splash14Font" />
+		<Font Id="fntSystem" Source="SystemFont" />
     </Resources>
 
 	<Resources RootFolder="Sound">

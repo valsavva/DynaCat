@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Include>
+    <Resources RootFolder="Global">
+        <Texture Id="txrMute" Source="btn_sound_on" />
+        <Texture Id="txrUnmute" Source="btn_sound_off" />
+    </Resources>
+
+	<Class Id="clsMuteButton">
+		<Group>
+			<TapArea Action="system.IsMute=not system.IsMute;" />
+			<BoolTrigger Condition="system.IsMute">
+				<Image TextureId="txrUnmute" />
+			</BoolTrigger>
+			<BoolTrigger Condition="not system.IsMute">
+				<Image TextureId="txrMute" />
+			</BoolTrigger>
+		</Group>
+	</Class>
+</Include>

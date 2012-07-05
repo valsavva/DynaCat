@@ -25,7 +25,7 @@
             <Text Location="0,120,100,50" Text="Val Savvateev - programming" FontId="fntSystem" />
         </Group>
 
-        <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=1" Bounds="33, 256, 62, 62">
+        <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=5" Bounds="33, 256, 62, 62">
             <BoolTrigger Condition="btnScrnCreditsBack:Action" EnterAction="system.CloseCurrentScreen();" />
         </Group>
     </Layer>

@@ -128,7 +128,7 @@
 				</BoolTrigger>
 			</Group>
             <Image TextureId="txrSelectLevelText" Location="125,5" />
-			<Group Id="this_btnBack" Class="clsButton" ClassParams="@BtnImg=5" Bounds="33, 256, 62, 62">
+			<Group Id="this_btnBack" Class="clsButton" ClassParams="@BtnImg=5" Bounds="50, 256, 62, 62">
 			    <BoolTrigger Condition="this_btnBack:Action" EnterAction="system.CloseCurrentScreen();" />
 			</Group>
 			<Group Id="this_btnPrevPage" Class="clsButton" ClassParams="@BtnImg=1" Bounds="173, 256, 62, 62">

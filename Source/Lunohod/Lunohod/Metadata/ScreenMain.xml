@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Screen Bounds="0,0,480,320">
-	<Resources RootFolder="Textures">
-		<Texture Id="txrBackground" Source="screenBackgroundBig" />
-	</Resources>
-	<Resources RootFolder="Global">
-		<Font Id="fntSystem" Source="SystemFont"/>
-	</Resources>
-	
+<Screen Bounds="0,0,480,320" IsModal="true">
+	<Include File="CommonTextures.xml" />
+    <Include File="ClassUIButton.xml" />
+    <Include File="ClassUIMuteButton.xml" />
+
+    <Resources RootFolder="Global">
+        <Texture Id="txrBackground" Source="ScrMain_BG" />
+        <Texture Id="txrFrame" Source="ScrMain_frame" />
+        <Texture Id="txrSeriesPanel1" Source="ScrMain_panel_01" />
+        <Texture Id="txrSeriesPanel2" Source="ScrMain_panel_02" />
+        <Texture Id="txrSeriesPanel3" Source="ScrMain_panel_03" />
+        <Texture Id="txrLogo" Source="dynacat_logo" />
+    </Resources>
+
 	<Layer Id="background">
 		<Image TextureId="txrBackground" />
 	</Layer>
 	<Layer>
-		<Group Bounds="50,50,100,40">
-			<TapArea Action="system.StartScreen('ScreenSeriesChoice.xml')" />
-            <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
-			<Text Text="Start" FontId="fntSystem" Color="#333333" />
+		<Image TextureId="txrLogo" Bounds="-10,0,180,120" BackColor="#EEEEEE"/>
+	
+		<Image TextureId="txrFrame" />
+		
+		<Group Bounds="050,070,130,170">
+			<Image TextureId="txrSeriesPanel1" StretchMode="ActualSize" />
+			<TapArea Action="system.StartSeries(1);" />
 		</Group>
-		<Group Bounds="50,100,100,40">
-			<TapArea Action="system.StartScreen('ScreenCredits.xml')" />
-            <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
-			<Text Text="Credits" FontId="fntSystem" Color="#333333" />
+		<Group Bounds="180,070,130,170">
+			<Image TextureId="txrSeriesPanel2" StretchMode="ActualSize" />
+			<TapArea Action="system.StartSeries(2);" />
 		</Group>
+		<Group Bounds="310,070,130,170">
+			<Image TextureId="txrSeriesPanel3" StretchMode="ActualSize" />
+			<TapArea Action="system.StartSeries(3);" />
+		</Group>
+		
+		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=4" Bounds="180, 240, 62, 62">
+		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />
+		</Group>
+		<Group Id="btnMute" Bounds="250,240, 62,62" Class="clsMuteButton" />
 	</Layer>
 </Screen>

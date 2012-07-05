@@ -2,6 +2,7 @@
 
 <Screen Bounds="0,0,480,320" IsModal="true">
     <Include File="ClassUIButton.xml" />
+    <Include File="ClassUIMuteButton.xml" />
     <Include File="ClassUILevelNumberPanel.xml" />
 
     <Resources RootFolder="Global">
@@ -31,15 +32,6 @@
 		<Group Id="btnResume" Class="clsButton" ClassParams="@BtnImg=6" Bounds="210, 190, 62, 62">
 		    <BoolTrigger Condition="btnResume:Action" EnterAction="system.CloseCurrentScreen();" />
 		</Group>
-		
-		<Group Bounds="40,124,62,62">
-			<TapArea Action="system.IsMute=not system.IsMute;" />
-			<BoolTrigger Condition="system.IsMute">
-				<Image TextureId="txrUnmute" />
-			</BoolTrigger>
-			<BoolTrigger Condition="not system.IsMute">
-				<Image TextureId="txrMute" />
-			</BoolTrigger>
-		</Group>
+		<Group Id="btnMute" Bounds="40,124,62,62" Class="clsMuteButton" />
 	</Layer>
 </Screen>
