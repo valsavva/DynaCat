@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Screen Bounds="0,0,480,320">
+
+    <Include File="ClassUIButton.xml" />
+
+    <Resources RootFolder="Global">
+        <Texture Id="txrBackground" Source="info_BG" />
+        <Texture Id="txr_info_for_txt_panel" Source="info_for_txt_panel" />
+        <Font Id="fntSystem" Source="SystemFont"/>
+    </Resources>
+
+    <Layer Id="background">
+        <Image TextureId="txrBackground" />
+    </Layer>
+    <Layer>
+
+        <Image TextureId="txr_info_for_txt_panel" Bounds="110, 65, 257, 205" Opacity="1"/>
+
+        <Group Bounds="120,75,237,185">
+            <Text Location="0,0,100,50" Text="(c) NomNomApps LLC, 2011-2012" FontId="fntSystem" />
+            <Text Location="0,30,100,50" Text="Airat Davletshin - graphics design" FontId="fntSystem" />
+            <Text Location="0,60,100,50" Text="Ruslan Suleymanov - graphics design" FontId="fntSystem" />
+            <Text Location="0,90,100,50" Text="Vlad Savvateev - level design, original music, sound effects" FontId="fntSystem" />
+            <Text Location="0,120,100,50" Text="Val Savvateev - programming" FontId="fntSystem" />
+        </Group>
+
+        <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=1" Bounds="33, 256, 62, 62">
+            <BoolTrigger Condition="btnScrnCreditsBack:Action" EnterAction="system.CloseCurrentScreen();" />
+        </Group>
+    </Layer>
+</Screen>

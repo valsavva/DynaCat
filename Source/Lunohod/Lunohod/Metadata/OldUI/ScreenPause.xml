@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Screen Bounds="0,0,480,320" IsModal="true">
+    <Include File="ClassUIButton.xml" />
+    <Include File="ClassUILevelNumberPanel.xml" />
+
+    <Resources RootFolder="Global">
+        <Texture Id="txrBackground" Source="pause_BG" />
+        <Texture Id="txrPauseText" Source="scr_pause_txt" />
+        <Texture Id="txrNumbers" Source="numbers" />
+        <Texture Id="txrMute" Source="btn_sound_on" />
+        <Texture Id="txrUnmute" Source="btn_sound_off" />
+        
+        <Font Id="fntSystem" Source="SystemFont"/>
+    </Resources>
+
+	<Layer Id="background">
+		<Image TextureId="txrBlank" BackColor="#040404" Opacity="0.6" />
+		<Image TextureId="txrBackground" />
+	</Layer>
+	<Layer>
+		<Image TextureId="txrPauseText" Location="150,130" />
+		
+		<Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel" ClassParams="@seriesNumberParam=1,@levelNumberParam=26"/>
+		
+		<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=7" Bounds="40, 190, 62, 62">
+		    <BoolTrigger Condition="btnRestart:Action" EnterAction="system.CloseCurrentScreen();system.RestartLevel();" />
+		</Group>
+		<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=5" Bounds="40, 256, 62, 62">
+		    <BoolTrigger Condition="btnHome:Action" EnterAction="system.CloseCurrentScreen();system.AbandonLevel();" />
+		</Group>
+		<Group Id="btnResume" Class="clsButton" ClassParams="@BtnImg=6" Bounds="210, 190, 62, 62">
+		    <BoolTrigger Condition="btnResume:Action" EnterAction="system.CloseCurrentScreen();" />
+		</Group>
+		
+		<Group Bounds="40,124,62,62">
+			<TapArea Action="system.IsMute=not system.IsMute;" />
+			<BoolTrigger Condition="system.IsMute">
+				<Image TextureId="txrUnmute" />
+			</BoolTrigger>
+			<BoolTrigger Condition="not system.IsMute">
+				<Image TextureId="txrMute" />
+			</BoolTrigger>
+		</Group>
+	</Layer>
+</Screen>

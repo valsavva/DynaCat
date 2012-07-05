@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Screen Bounds="0,0,480,320">
+	<Include File="CommonTextures.xml" />
+
+	<Class Id="clsSeriesButton">
+		<Group>
+			<TapArea Action="system.StartSeries(@seriesNum)" />
+			<Text Text="=system.GetSeriesName(@seriesNum)" Color="#333333" FontId="fntSystem" />
+		</Group>
+	</Class>
+
+	<Resources RootFolder="Textures">
+		<Texture Id="txrBackground" Source="screenBackgroundBig" />
+	</Resources>
+	<Resources RootFolder="Global">
+		<Texture Id="txrBlank" Source="blank" />
+		<Font Id="fntSystem" Source="SystemFont" />
+	</Resources>
+	
+	<Layer Id="background">
+		<Image TextureId="txrBackground" />
+	</Layer>
+	<Layer>
+		<Group Bounds="30,30,500,500">
+            <Group Bounds="0,0,180,38" Class="clsSeriesButton" ClassParams="@seriesNum=0">
+                <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
+            </Group>
+			<Group Bounds="0,40,180,38" Class="clsSeriesButton" ClassParams="@seriesNum=1" >
+                <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
+            </Group>
+			<Group Bounds="0,80,180,38" Class="clsSeriesButton" ClassParams="@seriesNum=2" >
+                <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
+            </Group>
+			<Group Bounds="0,120,180,38" Class="clsSeriesButton" ClassParams="@seriesNum=3" >
+                <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
+            </Group>
+            <Group Bounds="0,160,180,38" Class="clsSeriesButton" ClassParams="@seriesNum=4" >
+                <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
+            </Group>
+            <Group Bounds="0,200,180,38" Class="clsSeriesButton" ClassParams="@seriesNum=5" >
+                <Image TextureId="blank" BackColor="#0000FF" Opacity="0.2"/>
+            </Group>
+        </Group>
+		
+		<Group Bounds="430,50,50,100">
+			<TapArea Action="system.CloseCurrentScreen()" />
+			<Text Text="back" FontId="fntSystem" Color="#FF0000" Rotation="90" Origin="0,20" />
+		</Group>
+	</Layer>
+</Screen>

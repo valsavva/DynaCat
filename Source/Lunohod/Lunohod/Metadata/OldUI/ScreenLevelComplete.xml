@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Screen Bounds="0,0,480,320" IsModal="true">
+	<Resources RootFolder="Textures">
+		<Texture Id="txrBackground" Source="screenBackgroundSmall1" />
+	</Resources>
+	<Resources RootFolder="Global">
+		<Texture Id="txrBlank" Source="blank" />
+		<Font Id="fntSystem" Source="SystemFont"/>
+	</Resources>
+
+	<Layer Id="background">
+		<Image TextureId="txrBlank" BackColor="#040404" Opacity="0.6" />
+		<Image TextureId="txrBackground" Bounds="80,0,300,320" />
+	</Layer>
+	<Layer>
+		<Do Action="levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time; levelScore.Save();" InProgress="true" />
+		<Do Action="system.WriteLine('Score Ratio: {0}', levelScore.ScoreRatio)" InProgress="true" />
+		
+		<Group Bounds="80,0,300,320">
+			<Text Text="Level complete! :-) :-)" FontId="fntSystem" Location="50,50" />
+			<Text Text="='Score:' + system.Str(levelScore.Score) + '  Time:' + system.Str(system.Round(levelScore.Time, 2)) + '  Health:' + system.Str(levelScore.Health)" FontId="fntSystem" Location="50,80" />
+
+			<!-- Stars -->
+			<BoolTrigger Condition="levelScore.NumberOfStars==3">
+				<Text Text="***" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
+			</BoolTrigger>
+			<BoolTrigger Condition="levelScore.NumberOfStars==2">
+				<Text Text="**-" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
+			</BoolTrigger>
+			<BoolTrigger Condition="levelScore.NumberOfStars==1">
+				<Text Text="*--" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
+			</BoolTrigger>
+			<BoolTrigger Condition="levelScore.NumberOfStars==0">
+				<Text Text="---" FontId="fntSystem" Location="50,100" Color="#FFFF00" />
+			</BoolTrigger>
+
+			<BoolTrigger Condition="levelScore.NumberOfStars==3">
+				<!-- Time bonus -->
+				<BoolTrigger Condition="levelScore.TimeBonus>0">
+					<Text Text="='Time Bonus!!  ' + system.Str(levelScore.TimeBonus)" FontId="fntSystem" Location="50,130" Color="#FFFF00" />
+				</BoolTrigger>
+				
+				<!-- Health bonus -->
+				<BoolTrigger Condition="levelScore.HealthBonus>0">
+					<Text Text="='Health Bonus!!  ' + system.Str(levelScore.HealthBonus)" FontId="fntSystem" Location="50,150" Color="#FFFF00" />
+				</BoolTrigger>
+				
+				<!-- Badge -->
+				<BoolTrigger Condition="levelScore.HasBadge">
+					<Text Text="='BADGE!!!'" FontId="fntSystem" Location="50,170" Color="#FF00FF" />
+				</BoolTrigger>
+				
+			</BoolTrigger>
+	
+			<Text Text="='Total Score:  ' + system.Str(levelScore.TotalScore)" FontId="fntSystem" Location="50,190" Color="#FFFF00" />
+	
+			<!-- Buttons -->
+			<Group Bounds="40,224,64,64">
+				<TapArea Action="system.CloseCurrentScreen();system.AbandonLevel()" />
+			</Group>
+			<Group Bounds="118,224,64,64">
+				<TapArea Action="system.CloseCurrentScreen();system.RestartLevel();" />
+			</Group>
+			<Group Bounds="196,224,64,64">
+				<TapArea Action="system.CloseCurrentScreen();system.StartNextLevel()" />
+			</Group>
+		</Group>
+	</Layer>
+</Screen>

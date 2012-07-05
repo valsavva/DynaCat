@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Screen Bounds="0,0,480,320">
+	<Class Id="clsLevelButton">
+		<Group>
+			<TapArea Action="this_setPress.Start()"/>
+            <SequenceSet Id="this_setPress">
+                <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
+                <Do Action="system.StartLevel(@levelNum)"/>
+            </SequenceSet>
+			<Text Id="this_text" FontId="fntSystem" Origin="50,10" Location="50,10" Text="=system.GetLevelName(@levelNum)" Color="#000000"/>
+			<RandomSet RepeatCount="0" InProgress="true">
+				<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
+					<KeyFrame Time="0" Value="0"/>
+					<KeyFrame Time="0.01" Value="-3"/>
+					<KeyFrame Time="0.05" Value="3"/>
+				</NumAnimation>
+				<Delay Duration="3"/>
+			</RandomSet>
+			<RandomSet RepeatCount="0" InProgress="true">
+				<NumAnimation Target="this.X" Autoreverse="true" RepeatCount="1" Duration="1" IsDelta="true" Fill="Reset">
+					<KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
+					<KeyFrame Time="0.3" Value="-6" Smoothness="Smooth"/>
+					<KeyFrame Time="0.6" Value="6" Smoothness="Smooth"/>
+					<KeyFrame Time="1" Value="0" Smoothness="Smooth"/>
+				</NumAnimation>
+				<Delay Duration="3"/>
+			</RandomSet>
+		</Group>
+	</Class>
+	
+	<Class Id="clsScreenButton">
+		<Group>
+			<TapArea Action="@screenNum=@screenNumParam"/>
+			<BoolTrigger Condition="@screenNum==@screenNumParam" Group="text">
+				<Text FontId="fntSystem" Text="='Tests0' + system.Str(@screenNumParam)" Color="#CC0000" Location="0,75" Rotation="-90"/>
+			</BoolTrigger>
+			<BoolTrigger Group="text">
+				<Text FontId="fntSystem" Text="='Tests0' + system.Str(@screenNumParam)" Color="#CCCCCC" Location="0,75" Rotation="-90"/>
+			</BoolTrigger>
+		</Group>
+	</Class>
+	
+	<Resources RootFolder="Global">
+		<Texture Id="blank" Source="blank"/>
+		<Font Id="fntSystem" Source="SystemFont"/>
+	</Resources>
+
+	<Do Action="@screenNum=0" InProgress="true" />
+	
+	<Layer Id="action" BackColor="#FFFFFFFF">
+		<Group Bounds="5,0,35,75" Class="clsScreenButton" ClassParams="@screenNumParam=0" />
+		<Group Bounds="5,60,35,75" Class="clsScreenButton" ClassParams="@screenNumParam=1" />
+		<Group Bounds="5,120,35,75" Class="clsScreenButton" ClassParams="@screenNumParam=2" />
+		<Group Bounds="5,180,35,75" Class="clsScreenButton" ClassParams="@screenNumParam=3" />
+		<Group Bounds="5,240,35,75" Class="clsScreenButton" ClassParams="@screenNumParam=4" />
+		
+		
+		<BoolTrigger Condition="@screenNum==0" EnterAction="grpScreen0.Enable()">
+			<Group Id="grpScreen0" Bounds="50,5,500,500">
+				<Group Id="grpL01" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=100"/>
+				<Group Id="grpL02" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=101"/>
+				<Group Id="grpL03" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=102"/>
+				<Group Id="grpL04" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=103"/>
+				<Group Id="grpL05" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=104"/>
+				<Group Id="grpL06" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=105"/>
+				<Group Id="grpL07" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=106"/>
+				<Group Id="grpL08" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=107"/>
+				<Group Id="grpL09" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=108"/>
+				<Group Id="grpL10" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=109"/>
+				
+				<Group Id="grpL11" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=110"/>
+				<Group Id="grpL12" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=111"/>
+				<Group Id="grpL13" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=112"/>
+				<Group Id="grpL14" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=113"/>
+				<Group Id="grpL15" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=114"/>
+				<Group Id="grpL16" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=115"/>
+				<Group Id="grpL17" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=116"/>
+				<Group Id="grpL18" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=117"/>
+				<Group Id="grpL19" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=118"/>
+				<Group Id="grpL20" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=119"/>
+			</Group>
+		</BoolTrigger>
+
+		<BoolTrigger Condition="@screenNum==1" EnterAction="grpScreen1.Enable()">
+			<Group Id="grpScreen1" Bounds="50,5,500,500">
+				<Group Id="grpL21" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=20"/>
+				<Group Id="grpL22" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=21"/>
+				<Group Id="grpL23" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=22"/>
+				<Group Id="grpL24" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=23"/>
+				<Group Id="grpL25" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=24"/>
+				<Group Id="grpL26" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=25"/>
+				<Group Id="grpL27" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=26"/>
+				<Group Id="grpL28" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=27"/>
+				<Group Id="grpL29" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=28"/>
+				<Group Id="grpL30" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=29"/>
+				
+				<Group Id="grpL31" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=30"/>
+				<Group Id="grpL32" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=31"/>
+				<Group Id="grpL33" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=32"/>
+				<Group Id="grpL34" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=33"/>
+				<Group Id="grpL35" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=34"/>
+				<Group Id="grpL36" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=35"/>
+				<Group Id="grpL37" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=36"/>
+				<Group Id="grpL38" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=37"/>
+				<Group Id="grpL39" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=38"/>
+				<Group Id="grpL40" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=39"/>
+			</Group>
+		</BoolTrigger>
+
+		<BoolTrigger Condition="@screenNum==2" EnterAction="grpScreen2.Enable()">
+			<Group Id="grpScreen2" Bounds="50,5,500,500">
+				<Group Id="grpL41" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=40"/>
+				<Group Id="grpL42" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=41"/>
+				<Group Id="grpL43" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=42"/>
+				<Group Id="grpL44" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=43"/>
+				<Group Id="grpL45" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=44"/>
+				<Group Id="grpL46" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=45"/>
+				<Group Id="grpL47" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=46"/>
+				<Group Id="grpL48" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=47"/>
+				<Group Id="grpL49" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=48"/>
+				<Group Id="grpL50" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=49"/>
+				
+				<Group Id="grpL51" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=50"/>
+				<Group Id="grpL52" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=51"/>
+				<Group Id="grpL53" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=52"/>
+				<Group Id="grpL54" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=53"/>
+				<Group Id="grpL55" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=54"/>
+				<Group Id="grpL56" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=55"/>
+				<Group Id="grpL57" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=56"/>
+				<Group Id="grpL58" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=57"/>
+				<Group Id="grpL59" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=58"/>
+				<Group Id="grpL60" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=59"/>
+			</Group>
+		</BoolTrigger>
+
+		<BoolTrigger Condition="@screenNum==3" EnterAction="grpScreen3.Enable()">
+			<Group Id="grpScreen3" Bounds="50,5,500,500">
+				<Group Id="grpL61" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=60"/>
+				<Group Id="grpL62" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=61"/>
+				<Group Id="grpL63" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=62"/>
+				<Group Id="grpL64" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=63"/>
+				<Group Id="grpL65" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=64"/>
+				<Group Id="grpL66" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=65"/>
+				<Group Id="grpL67" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=66"/>
+				<Group Id="grpL68" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=67"/>
+				<Group Id="grpL69" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=68"/>
+				<Group Id="grpL70" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=69"/>
+				
+				<Group Id="grpL71" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=70"/>
+				<Group Id="grpL72" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=71"/>
+				<Group Id="grpL73" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=72"/>
+				<Group Id="grpL74" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=73"/>
+				<Group Id="grpL75" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=74"/>
+				<Group Id="grpL76" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=75"/>
+				<Group Id="grpL77" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=76"/>
+				<Group Id="grpL78" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=77"/>
+				<Group Id="grpL79" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=78"/>
+				<Group Id="grpL80" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=79"/>
+			</Group>
+		</BoolTrigger>
+		
+		<BoolTrigger Condition="@screenNum==4" EnterAction="grpScreen4.Enable()">
+			<Group Id="grpScreen4" Bounds="50,5,500,500">
+				<Group Id="grpL81" Bounds="0,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=80"/>
+				<Group Id="grpL82" Bounds="0,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=81"/>
+				<Group Id="grpL83" Bounds="0,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=82"/>
+				<Group Id="grpL84" Bounds="0,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=83"/>
+				<Group Id="grpL85" Bounds="0,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=84"/>
+				<Group Id="grpL86" Bounds="0,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=85"/>
+				<Group Id="grpL87" Bounds="0,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=86"/>
+				<Group Id="grpL88" Bounds="0,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=87"/>
+				<Group Id="grpL89" Bounds="0,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=88"/>
+				<Group Id="grpL90" Bounds="0,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=89"/>
+				
+				<Group Id="grpL91" Bounds="200,000,180,030" Class="clsLevelButton" ClassParams="@levelNum=90"/>
+				<Group Id="grpL92" Bounds="200,030,180,030" Class="clsLevelButton" ClassParams="@levelNum=91"/>
+				<Group Id="grpL93" Bounds="200,060,180,030" Class="clsLevelButton" ClassParams="@levelNum=92"/>
+				<Group Id="grpL94" Bounds="200,090,180,030" Class="clsLevelButton" ClassParams="@levelNum=93"/>
+				<Group Id="grpL95" Bounds="200,120,180,030" Class="clsLevelButton" ClassParams="@levelNum=94"/>
+				<Group Id="grpL96" Bounds="200,150,180,030" Class="clsLevelButton" ClassParams="@levelNum=95"/>
+				<Group Id="grpL97" Bounds="200,180,180,030" Class="clsLevelButton" ClassParams="@levelNum=96"/>
+				<Group Id="grpL98" Bounds="200,210,180,030" Class="clsLevelButton" ClassParams="@levelNum=97"/>
+				<Group Id="grpL99" Bounds="200,240,180,030" Class="clsLevelButton" ClassParams="@levelNum=98"/>
+				<Group Id="grpL100" Bounds="200,270,180,030" Class="clsLevelButton" ClassParams="@levelNum=99"/>
+			</Group>
+		</BoolTrigger>
+		<Group Bounds="430,50,50,100">
+			<TapArea Action="system.CloseCurrentScreen()" />
+			<Text Text="back" FontId="fntSystem" Color="#FF0000" Rotation="90" Origin="0,20" />
+		</Group>
+	</Layer>
+</Screen>
+
