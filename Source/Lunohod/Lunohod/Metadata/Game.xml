@@ -27,7 +27,7 @@
 		/>
 		-->
         <LevelSeries Id="series1" Name="----- Series 1: Tutorial -----" File="ScreenSeries1.xml">
-            <LevelInfo Id="[EMPTY]" File="zzzzzzgrfx_updt.xml" BombCount="0" />
+            <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
             <!--<LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
@@ -99,8 +99,6 @@
             <LevelInfo Id="Lvl_Ceh_v9_chetire_ugla" File="Lvl_Ceh_v9_chetire_ugla.xml" StarScoreRatio2="0.7" StarScoreRatio3="1" TimeBonusThreshold="26.10"/>
             <LevelInfo Id="Lvl_Ceh_v6_proizvodstvo" File="Lvl_Ceh_v6_proizvodstvo.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="123.99"/>
             <LevelInfo Id="Lvl_Ceh_v7_nasos" File="Lvl_Ceh_v7_nasos.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="33.64"/>
-        </LevelSeries>
-        <LevelSeries Id="series5" Name="----- Series 5: Full 2D -----" File="ScreenSeries5.xml">
             <LevelInfo Id="Lvl_LogikaPeredv_Tropinka" File="Lvl_LogikaPeredv_Tropinka.xml" StarScoreRatio3="1" TimeBonusThreshold="21.94" BombCount="0" />
             <LevelInfo Id="Lvl_Labirint" File="Lvl_Labirint.xml" StarScoreRatio3="1" TimeBonusThreshold="33.89" BombCount="0" />
             <LevelInfo Id="Lvl_Nozhnicy" File="Lvl_Nozhnicy.xml" StarScoreRatio3="1" TimeBonusThreshold="11.72" BombCount="0" />
@@ -120,6 +118,9 @@
             <LevelInfo Id="Lvl_4_Komnati" File="Lvl_4_Komnati.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="43.77" />
             <LevelInfo Id="Lvl_Sport" File="Lvl_Sport.xml" BombCount="0" HeroHealth="100" StarScoreRatio3="1" TimeBonusThreshold="75.45" />
             <LevelInfo Id="Lvl_VKolce" File="Lvl_VKolce.xml" BombCount="0" />
+        </LevelSeries>
+        <LevelSeries Id="series5" Name="----- Series 5: Full 2D -----" File="ScreenSeries5.xml">
+            <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series6" Name="----- Tests -----" File="ScreenTests.xml">
             <LevelInfo Id="zzzzzzgrfx_updt" File="zzzzzzgrfx_updt.xml" />
