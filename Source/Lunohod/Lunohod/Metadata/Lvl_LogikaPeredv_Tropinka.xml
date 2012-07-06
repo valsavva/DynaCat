@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.14 -->
+<!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_LogikaPeredv_Tropinka\Lvl_LogikaPeredv_Tropinka.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_LogikaPeredv_Tropinka" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
@@ -24,10 +24,10 @@
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
     </Resources>
-    <Layer Id="background" BackColor="#FFFFFFFF">
+    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image4212"/>
     </Layer>
-    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+    <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_second_phon_index3" Bounds="62, 63, 38, 35" Stretch="true" TraceId="image3144"/>
         <Image Id="dfltMask3" TextureId="txr_second_phon_index3" Bounds="302, 266, 38, 35" Stretch="true" FlipEffects="Horizontally" TraceId="image3147"/>
         <Image Id="dfltMask4" TextureId="txr_second_phon_grill_with_fan_2" Bounds="378, 27, 31, 30" Stretch="true" TraceId="image3206"/>
@@ -41,7 +41,7 @@
         <Block Id="blk3" Bounds="454, 0, 50, 320" Edges="Stick" TraceId="image4288"/>
         <Block Id="blk4" Bounds="0, 300, 480, 50" Edges="Stick" TraceId="image4290"/>
     </Layer>
-    <Layer Id="design" BackColor="#FFFFFFFF">
+    <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="454, 280, 26, 20" TraceId="image4174"/>
         <Image Id="dfltMask9" TextureId="txr_texture_brick_clean" Bounds="0, 280, 26, 20" TraceId="image4172"/>
         <Image Id="dfltMask10" TextureId="txr_texture_brick_clean" Bounds="172, 300, 26, 20" TraceId="image4028"/>
@@ -171,8 +171,6 @@
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="34, 31, 33, 24" TraceId="image3015"/>
         <Group Id="exit" Class="clsExit" Bounds="388, 115, 37, 54" TraceId="image3049" />
-    </Layer>
-    <Layer Id="upmask" BackColor="#FFFFFFFF">
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />

@@ -1,7 +1,7 @@
 <Include>
 	
     <Resources RootFolder="Textures">
-        <Texture Id="txrElectricitySparks" Source="sprite_current"/>
+        <Texture Id="txrElectricitySparks" Source="electric_spark_spr_39x35x4"/>
     </Resources>
 	<Resources RootFolder="Sound">
 		<SoundFile Id="electric_spark_1" Source="skeletonFX_electric_spark_1"/>
@@ -42,10 +42,60 @@
     			</RandomSet>
             </ParallelSet>
             <!-- default -->
-            <Sprite TextureId="txrElectricitySparks" FrameBounds="0,0,11,11">
-                <NumAnimation From="0" To="3" Duration="0.2" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
+            <Sprite Id="this_mainView" TextureId="txrElectricitySparks" Location="-14,-12" FrameBounds="0,0,39,35">
+                <NumAnimation From="0" To="3" Duration="0.3" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
             </Sprite>
-			
+
+            <SequenceSet InProgress="true" RepeatCount="0">
+                <RandomSet>
+                    <Delay Duration="0.5" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Opacity=0" />
+                        <Delay Duration="0.5" />
+                        <Do Action="this_mainView.Opacity=1" />
+                    </SequenceSet>
+                    <Delay Duration="1" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Opacity=0" />
+                        <Delay Duration="1" />
+                        <Do Action="this_mainView.Opacity=1" />
+                    </SequenceSet>
+                    <Delay Duration="1.5" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Opacity=0" />
+                        <Delay Duration="1.5" />
+                        <Do Action="this_mainView.Opacity=1" />
+                    </SequenceSet>
+                </RandomSet>
+            </SequenceSet>
+
+            <SequenceSet InProgress="true" RepeatCount="0">
+                <RandomSet>
+                    <Delay Duration="0.4" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.X=this_mainView.X+1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.X=this_mainView.X-1" />
+                    </SequenceSet>
+                    <Delay Duration="0.8" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.X=this_mainView.X-1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.X=this_mainView.X+1" />
+                    </SequenceSet>
+                    <Delay Duration="1.6" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Y=this_mainView.Y+1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.Y=this_mainView.Y-1" />
+                    </SequenceSet>
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Y=this_mainView.Y-1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.Y=this_mainView.Y+1" />
+                    </SequenceSet>
+                </RandomSet>
+            </SequenceSet>
 		</Enemy>
 	</Class>
 
