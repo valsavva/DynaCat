@@ -11,7 +11,16 @@ namespace Lunohod.Objects
 	{
 		[XmlArray("LevelScores")]
 		public List<XLevelScore> LevelScores;
-		
+		[XmlIgnore]
+		public Dictionary<string, XLevelScore> LevelScoreDict = new Dictionary<string, XLevelScore>();
+
+
+		public void GenerateScoreDict()
+		{
+			this.LevelScoreDict.Clear();
+			this.LevelScores.ForEach(s => this.LevelScoreDict[s.Id] = s);
+		}
+
 		public override void WriteXml(XmlWriter writer)
 		{
 			foreach(var score in this.LevelScores)

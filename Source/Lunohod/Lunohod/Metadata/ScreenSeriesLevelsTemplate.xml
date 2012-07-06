@@ -36,21 +36,41 @@
 				<Do Action="
 					@this_numberOfStars=system.GetSeriesLevelStars(@seriesNum,@levelNum);
 					@this_hasBadge=system.GetSeriesLevelHasBadge(@seriesNum,@levelNum);
+					@this_previosLevelScore=777;
 					"
 					InProgress="true"
 					RepeatCount="0"
 				/>
 				
-				<TapArea Action="this_setPress.Start()"/>
+				<BoolTrigger Condition="@levelNum>0" Action="@this_previosLevelScore=system.GetSeriesLevelScore(@seriesNum,@levelNum-1);" />
+				
 	            <SequenceSet Id="this_setPress">
 	                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.2" Autoreverse="true" RepeatCount="1"/>
 	                <Do Action="system.StartSeriesLevel(@seriesNum,@levelNum)"/>
 	            </SequenceSet>
 	            
-	            <Sprite Id="this_sprPanel" TextureId="txrPanels" Bounds="0,0,94,51" FrameBounds="0,0,94,51" FrameCount="2"/>
+	            <BoolTrigger Condition="@this_previosLevelScore > 0">
+					<TapArea Action="this_setPress.Start()"/>
+	            </BoolTrigger>
 
-	            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Bounds="5,5,32,32" FrameBounds="0,0,32,32"/>
-	            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Bounds="27,5,32,32" FrameBounds="0,0,32,32"/>
+	            <BoolTrigger Condition="@this_previosLevelScore == 0"
+	            	EnterAction="
+	            	this_sprPanel.SetBackColor(255,200,200,200);
+	            	this_sprNumber1.SetBackColor(255,200,200,200);
+	            	this_sprNumber2.SetBackColor(255,200,200,200);
+	            	"
+	            	ExitAction="
+	            	this_sprPanel.SetBackColor(255,255,255,255);
+	            	this_sprNumber1.SetBackColor(255,255,255,255);
+	            	this_sprNumber2.SetBackColor(255,255,255,255);
+	            	"
+            	/>
+
+				<Group Id="this_grpLevelPanel">
+	            	<Sprite Id="this_sprPanel" TextureId="txrPanels" Bounds="0,0,94,51" FrameBounds="0,0,94,51" FrameCount="2"/>
+		            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Bounds="5,5,32,32" FrameBounds="0,0,32,32"/>
+		            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Bounds="27,5,32,32" FrameBounds="0,0,32,32"/>
+	            </Group>
 	            
 	            <BoolTrigger Condition="@this_numberOfStars>0">
 	            	<Image TextureId="txrStar" Location="24,32" />

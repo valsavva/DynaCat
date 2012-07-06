@@ -68,11 +68,22 @@ namespace Lunohod.Objects
 			if (levelInfo == null)
 				return 0;
 			
-			var score = game.ScoreFile.LevelScores.Find(ls => ls.Id == levelInfo.Id);
+			var score = game.ScoreFile.LevelScoreDict[levelInfo.Id];
 			
 			return score.NumberOfStars;
 		}
 		
+		public double GetSeriesLevelScore(int seriesIndex, int levelIndex)
+		{
+			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
+
+			if (levelInfo == null)
+				return 0;
+			
+			var score = game.ScoreFile.LevelScoreDict[levelInfo.Id];
+
+			return score.TotalScore;
+		}
 		public bool GetSeriesLevelHasBadge(int seriesIndex, int levelIndex)
 		{
 			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
@@ -80,8 +91,8 @@ namespace Lunohod.Objects
 			if (levelInfo == null)
 				return false;
 			
-			var score = game.ScoreFile.LevelScores.Find(ls => ls.Id == levelInfo.Id);
-			
+			var score = game.ScoreFile.LevelScoreDict[levelInfo.Id];
+
 			return score.HasBadge;
 		}
 		
@@ -250,6 +261,7 @@ namespace Lunohod.Objects
                 case "Abs": method = (ps) => Abs(ps[0].GetNumValue()); break;
 				case "IIf": method = (ps) => IIf(ps[0].GetBoolValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
 				case "GetSeriesLevelStars": method = (ps) => GetSeriesLevelStars(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
+				case "GetSeriesLevelScore": method = (ps) => GetSeriesLevelScore(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
 				case "GetCommandsPerSecond": method = (ps) => GetCommandsPerSecond(); break;
 				case "GetSeriesLevelCount": method = (ps) => GetSeriesLevelCount(ps[0].GetIntValue()); break;
                 default:

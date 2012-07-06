@@ -312,6 +312,11 @@ namespace Lunohod.Objects
             this.Bounds.Height = h;
         }
 
+		public void SetBackColor(int a, int r, int g, int b)
+		{
+			this.BackColor = new Color(r, g, b, a);
+		}
+
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             Color color = Color.White;
@@ -346,6 +351,7 @@ namespace Lunohod.Objects
             switch (methodName)
             {
                 case "SetBounds": method = (ps) => SetBounds((float)ps[0].GetNumValue(), (float)ps[1].GetNumValue(), (float)ps[2].GetNumValue(), (float)ps[3].GetNumValue()); break;
+                case "SetBackColor": method = (ps) => SetBackColor(ps[0].GetIntValue(), ps[1].GetIntValue(), ps[2].GetIntValue(), ps[3].GetIntValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

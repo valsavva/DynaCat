@@ -171,13 +171,13 @@ namespace Lunohod
 					).ToList()
 				}
 			);
-			
-			var scoresDict = this.ScoreFile.LevelScores.ToDictionary(ls => ls.Id);
-			
+
+			this.ScoreFile.GenerateScoreDict();
+
 			this.ScoreFile.LevelScores = this.GameObject.Levels.Select(l => {
 				var score = new XLevelScore(l);
 				XLevelScore scoreFromFile;
-				if (scoresDict.TryGetValue(score.Id, out scoreFromFile))
+				if (this.ScoreFile.LevelScoreDict.TryGetValue(score.Id, out scoreFromFile))
 					scoreFromFile.CopyTo(score);
 				return score;
 			}).ToList();
@@ -363,7 +363,7 @@ namespace Lunohod
 			MonoTouch.UIKit.UIApplication.SharedApplication.BeginIgnoringInteractionEvents();
 #endif
 
-			var newScreenEngine = new LevelEngine(this, this.ScreenEngine, levelInfo, this.ScoreFile.LevelScores.First(ls => ls.Id == levelInfo.Id));
+			var newScreenEngine = new LevelEngine(this, this.ScreenEngine, levelInfo, this.ScoreFile.LevelScoreDict[levelInfo.Id]);
 
 			lock(this.screenEngines)
 			{
