@@ -63,14 +63,14 @@
         <Image Id="dfltMask31" TextureId="txr_laz_baza_01n" Bounds="188, 97, 81, 106" FlipEffects="Horizontally" TraceId="image3213"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="111, 22, 28, 19" TraceId="image3235"/>
-        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=4" Bounds="109, 227, 28, 22" TraceId="image3246"/>
-        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="346, 20, 27, 20" TraceId="image3257"/>
-        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=6" Bounds="347, 133, 22, 27" TraceId="image3268"/>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="111, 230, 28, 19" TraceId="image3235"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=4" Bounds="109, 230, 28, 22" TraceId="image3246"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="346, 230, 27, 20" TraceId="image3257"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=6" Bounds="347, 230, 22, 27" TraceId="image3268"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="213, 124, 37, 54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="105, 230, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="381, 230, 33, 24" TraceId="image3016-1"/>
     </Layer>
     <Include File="ClassExplosion.xml" />

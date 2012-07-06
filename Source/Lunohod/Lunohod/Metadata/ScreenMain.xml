@@ -14,6 +14,15 @@
         <Texture Id="txrLogo" Source="dynacat_logo" />
     </Resources>
 
+	<Class Id="clsSeriesPanel">
+		<Group>
+			<Image TextureId="txrSeriesPanel@seriesNumberParam" StretchMode="ActualSize" />
+			<TapArea Action="system.StartSeries(@seriesNumberParam);" />
+			<Text Text="=system.Str(system.GetSeriesScore(@seriesNumberParam))" Location="17,126" FontId="Splash14Font" Scale="0.7" />
+			<Text Text="=system.Str(system.GetSeriesStars(@seriesNumberParam))+'/'+system.Str(system.GetSeriesAvailableStars(@seriesNumberParam))" Location="70,126" FontId="Splash14Font" Scale="0.7" />
+		</Group>
+	</Class>
+
 	<Layer Id="background">
 		<Image TextureId="txrBackground" />
 	</Layer>
@@ -22,18 +31,9 @@
 	
 		<Image TextureId="txrFrame" />
 		
-		<Group Bounds="050,070,130,170">
-			<Image TextureId="txrSeriesPanel1" StretchMode="ActualSize" />
-			<TapArea Action="system.StartSeries(1);" />
-		</Group>
-		<Group Bounds="180,070,130,170">
-			<Image TextureId="txrSeriesPanel2" StretchMode="ActualSize" />
-			<TapArea Action="system.StartSeries(2);" />
-		</Group>
-		<Group Bounds="310,070,130,170">
-			<Image TextureId="txrSeriesPanel3" StretchMode="ActualSize" />
-			<TapArea Action="system.StartSeries(3);" />
-		</Group>
+		<Group Bounds="050,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
+		<Group Bounds="180,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
+		<Group Bounds="310,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
 		
 		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=4" Bounds="180, 240, 62, 62">
 		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />

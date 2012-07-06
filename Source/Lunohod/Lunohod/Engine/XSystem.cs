@@ -96,6 +96,33 @@ namespace Lunohod.Objects
 			return score.HasBadge;
 		}
 		
+		public double GetSeriesScore(int seriesIndex)
+		{
+			double result = 0;
+
+			game.ScoreFile.LevelScores.ForEach(s => {
+				if (s.SeriesNumber == seriesIndex)
+					result += s.TotalScore;
+			});
+
+			return result;
+		}
+		public double GetSeriesStars(int seriesIndex)
+		{
+			double result = 0;
+
+			game.ScoreFile.LevelScores.ForEach(s => {
+				if (s.SeriesNumber == seriesIndex)
+					result += s.NumberOfStars;
+			});
+
+			return result;
+		}
+		public double GetSeriesAvailableStars(int seriesIndex)
+		{
+			return game.GameObject.LevelSeries[seriesIndex].Levels.Count * 3;
+		}
+		
 		public void StartSeriesLevel(int seriesIndex, int levelIndex)
 		{
 			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
@@ -105,7 +132,7 @@ namespace Lunohod.Objects
 			
 			game.LoadLevel(levelInfo);
 		}
-		
+
         public void StartNextLevel()
         {
             this.EnqueueEvent(GameEventType.StartNextLevel);
@@ -264,11 +291,14 @@ namespace Lunohod.Objects
 				case "GetSeriesLevelScore": method = (ps) => GetSeriesLevelScore(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
 				case "GetCommandsPerSecond": method = (ps) => GetCommandsPerSecond(); break;
 				case "GetSeriesLevelCount": method = (ps) => GetSeriesLevelCount(ps[0].GetIntValue()); break;
+				case "GetSeriesScore": method = (ps) => GetSeriesScore(ps[0].GetIntValue()); break;
+				case "GetSeriesStars": method = (ps) => GetSeriesStars(ps[0].GetIntValue()); break;
+				case "GetSeriesAvailableStars": method = (ps) => GetSeriesAvailableStars(ps[0].GetIntValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }
 		}
-		
+
 		public override void GetMethod(string methodName, out Func<List<Expression>, string> method)
 		{
             switch (methodName)

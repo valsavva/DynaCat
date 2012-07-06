@@ -164,6 +164,8 @@ namespace Lunohod
 		
 		private void LoadScore()
 		{
+			// TODO: This is a mindfuck, we need to simplify it
+
 			this.ScoreFile = LoadFromContainerOrCreateNew(SaveFileName, () =>
 				new XScoreFile() { 
 					LevelScores = this.GameObject.Levels.Select(l => 
@@ -181,6 +183,8 @@ namespace Lunohod
 					scoreFromFile.CopyTo(score);
 				return score;
 			}).ToList();
+
+			this.ScoreFile.GenerateScoreDict();
 		}
 		
 		public void SaveScore()

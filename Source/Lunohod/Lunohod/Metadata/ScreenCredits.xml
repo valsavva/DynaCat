@@ -7,7 +7,7 @@
     <Resources RootFolder="Global">
         <Texture Id="txrBackground" Source="info_BG" />
         <Texture Id="txr_info_for_txt_panel" Source="info_for_txt_panel" />
-        <Font Id="fntSystem" Source="SystemFont"/>
+        <Font Id="Splash14Font" Source="SystemFont"/>
     </Resources>
 
     <Layer Id="background">
@@ -15,14 +15,17 @@
     </Layer>
     <Layer>
 
-        <Image TextureId="txr_info_for_txt_panel" Bounds="110, 65, 257, 205" Opacity="1"/>
+        <Image TextureId="txr_info_for_txt_panel" Bounds="110, 65, 257, 205" Opacity="0.8"/>
 
-        <Group Bounds="120,75,237,185">
-            <Text Location="0,0,100,50" Text="(c) NomNomApps LLC, 2011-2012" FontId="fntSystem" />
-            <Text Location="0,30,100,50" Text="Airat Davletshin - graphics design" FontId="fntSystem" />
-            <Text Location="0,60,100,50" Text="Ruslan Suleymanov - graphics design" FontId="fntSystem" />
-            <Text Location="0,90,100,50" Text="Vlad Savvateev - level design, original music, sound effects" FontId="fntSystem" />
-            <Text Location="0,120,100,50" Text="Val Savvateev - programming" FontId="fntSystem" />
+        <Group Bounds="120,82,237,185">
+            <Text Location="20,000" Text="(c) NomNomApps LLC, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
+            <Text Location="00,030" Text="Our team:" FontId="Splash14Font" />
+            <Text Location="00,050" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
+            <Text Location="00,070" Text="Ruslan Suleymanov - graphics design" FontId="Splash14Font" />
+            <Text Location="00,090" Text="Vlad Savvateev    - level design," FontId="Splash14Font" />
+            <Text Location="00,110" Text="                    original music," FontId="Splash14Font" />
+            <Text Location="00,130" Text="                    sound effects" FontId="Splash14Font" />
+            <Text Location="00,150" Text="Val Savvateev     - programming" FontId="Splash14Font" />
         </Group>
 
         <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=5" Bounds="33, 256, 62, 62">
