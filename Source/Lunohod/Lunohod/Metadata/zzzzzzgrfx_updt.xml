@@ -6,46 +6,36 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_laz_hor_02n" Source="laz_hor_02n" />
-        <Texture Id="txr_laz_hor_03n" Source="laz_hor_03n" />
-        <Texture Id="txr_laz_turn_01n" Source="laz_turn_01n" />
-        <Texture Id="txr_laz_turn_02n" Source="laz_turn_02n" />
-        <Texture Id="txr_laz_vert_01n" Source="laz_vert_01n" />
-        <Texture Id="txr_laz_vert_02n" Source="laz_vert_02n" />
-        <Texture Id="txr_laz_vert_03n" Source="laz_vert_03n" />
-        <Texture Id="txr_laz_baza_01n" Source="laz_baza_01n" />
-        <Texture Id="txr_laz_baza_02n" Source="laz_baza_02n" />
-        <Texture Id="txr_laz_baza_03n" Source="laz_baza_03n" />
-        <Texture Id="txr_laz_baza_04n" Source="laz_baza_04n" />
-        <Texture Id="txr_laz_baza_05n" Source="laz_baza_05n" />
-        <Texture Id="txr_laz_baza_06n" Source="laz_baza_06n" />
-        <Texture Id="txr_laz_baza_07n" Source="laz_baza_07n" />
-        <Texture Id="txr_laz_baza_08n" Source="laz_baza_08n" />
-        <Texture Id="txr_laz_fork_1" Source="laz_fork_1" />
-        <Texture Id="txr_laz_fork_2" Source="laz_fork_2" />
-        <Texture Id="txr_laz_fork_3" Source="laz_fork_3" />
-        <Texture Id="txr_laz_hor_01n" Source="laz_hor_01n" />
+        <Texture Id="txr_BrickWall3" Source="BrickWall3" />
+        <Texture Id="txr_level_BG" Source="level_BG" />
+        <Texture Id="txr_sky" Source="sky" />
+        <Texture Id="txr_tailsBlue" Source="tailsBlue" />
+        <Texture Id="txr_tailsBrown" Source="tailsBrown" />
+        <Texture Id="txr_tailsGreen" Source="tailsGreen" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
+        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_03n" Source="under_land_BG_03n" />
+        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_brickBrown" Source="brickBrown" />
+        <Texture Id="txr_brickGreen" Source="brickGreen" />
+        <Texture Id="txr_BrickWall1" Source="BrickWall1" />
+        <Texture Id="txr_BrickWall2" Source="BrickWall2" />
     </Resources>
     <Layer Id="GRFX update" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_laz_hor_02n" Bounds="40, 101, 46, 36" TraceId="image3137"/>
-        <Image Id="dfltMask2" TextureId="txr_laz_hor_03n" Bounds="157, 101, 46, 36" TraceId="image3148"/>
-        <Image Id="dfltMask3" TextureId="txr_laz_turn_01n" Bounds="160, 43, 46, 36" TraceId="image3159"/>
-        <Image Id="dfltMask4" TextureId="txr_laz_turn_02n" Bounds="99, 97, 46, 36" TraceId="image3170"/>
-        <Image Id="dfltMask5" TextureId="txr_laz_vert_01n" Bounds="99, 129, 46, 36" TraceId="image3181"/>
-        <Image Id="dfltMask6" TextureId="txr_laz_vert_02n" Bounds="104, 195, 46, 36" TraceId="image3192"/>
-        <Image Id="dfltMask7" TextureId="txr_laz_vert_03n" Bounds="140, 206, 46, 36" TraceId="image3203"/>
-        <Image Id="dfltMask8" TextureId="txr_laz_baza_01n" Bounds="126, 186, 81, 106" TraceId="image3214"/>
-        <Image Id="dfltMask9" TextureId="txr_laz_baza_02n" Bounds="156, 125, 81, 106" TraceId="image3225"/>
-        <Image Id="dfltMask10" TextureId="txr_laz_baza_03n" Bounds="232, 77, 81, 106" TraceId="image3236"/>
-        <Image Id="dfltMask11" TextureId="txr_laz_baza_04n" Bounds="240, 38, 81, 106" TraceId="image3247"/>
-        <Image Id="dfltMask12" TextureId="txr_laz_baza_05n" Bounds="245, 11, 81, 106" TraceId="image3258"/>
-        <Image Id="dfltMask13" TextureId="txr_laz_baza_06n" Bounds="204, 127, 81, 106" TraceId="image3269"/>
-        <Image Id="dfltMask14" TextureId="txr_laz_baza_07n" Bounds="205, 173, 81, 106" TraceId="image3280"/>
-        <Image Id="dfltMask15" TextureId="txr_laz_baza_08n" Bounds="189, 252, 81, 106" TraceId="image3291"/>
-        <Image Id="dfltMask16" TextureId="txr_laz_fork_1" Bounds="226, 119, 122, 92" TraceId="image3302"/>
-        <Image Id="dfltMask17" TextureId="txr_laz_fork_2" Bounds="262, 74, 122, 92" TraceId="image3313"/>
-        <Image Id="dfltMask18" TextureId="txr_laz_fork_3" Bounds="322, 31, 122, 92" TraceId="image3324"/>
-        <Image Id="dfltMask19" TextureId="txr_laz_hor_01n" Bounds="411, 30, 46, 36" TraceId="image3335"/>
+        <Image Id="dfltMask1" TextureId="txr_BrickWall3" Bounds="-406, -58, 480, 320" TraceId="image3110"/>
+        <Image Id="dfltMask2" TextureId="txr_level_BG" Bounds="-439, 74, 480, 320" TraceId="image3121"/>
+        <Image Id="dfltMask3" TextureId="txr_sky" Bounds="-421, 311, 480, 50" TraceId="image3132"/>
+        <Image Id="dfltMask4" TextureId="txr_tailsBlue" Bounds="-395, 271, 480, 320" TraceId="image3143"/>
+        <Image Id="dfltMask5" TextureId="txr_tailsBrown" Bounds="-227, 275, 480, 320" TraceId="image3154"/>
+        <Image Id="dfltMask6" TextureId="txr_tailsGreen" Bounds="-144, 228, 480, 320" TraceId="image3165"/>
+        <Image Id="dfltMask7" TextureId="txr_under_land_BG_01n" Bounds="-67, 95, 480, 320" TraceId="image3176"/>
+        <Image Id="dfltMask8" TextureId="txr_under_land_BG_02n" Bounds="74, 234, 480, 320" TraceId="image3187"/>
+        <Image Id="dfltMask9" TextureId="txr_under_land_BG_03n" Bounds="-9, 361, 480, 320" TraceId="image3198"/>
+        <Image Id="dfltMask10" TextureId="txr_brickBlue" Bounds="190, 254, 480, 320" TraceId="image3209"/>
+        <Image Id="dfltMask11" TextureId="txr_brickBrown" Bounds="144, 61, 480, 320" TraceId="image3220"/>
+        <Image Id="dfltMask12" TextureId="txr_brickGreen" Bounds="146, -98, 480, 320" TraceId="image3231"/>
+        <Image Id="dfltMask13" TextureId="txr_BrickWall1" Bounds="356, 46, 480, 320" TraceId="image3242"/>
+        <Image Id="dfltMask14" TextureId="txr_BrickWall2" Bounds="448, 239, 480, 320" TraceId="image3253"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -55,4 +45,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=19 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=14 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
