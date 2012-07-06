@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Bounds="0,0,480,320" IsModal="true">
+    <Include File="ClassUIMovingBackground.xml" />
     <Include File="ClassUIButton.xml" />
     <Include File="ClassUIMuteButton.xml" />
     <Include File="ClassUILevelNumberPanel.xml" />
@@ -13,8 +14,7 @@
     </Resources>
 
 	<Layer Id="background">
-		<Image TextureId="txrBlank" BackColor="#040404" Opacity="0.6" />
-		<Image TextureId="txrBackground" />
+		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
 	<Layer>
 		<Image TextureId="txrPauseText" Location="150,130" />

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Include>
+	<Class Id="clsMovingBackground">
+		<Group>
+			<Image Id="this_imgBackground" TextureId="@textureIdParam" StretchMode="ActualSize" Scale="1.05" />
+			<RandomSet InProgress="true" RepeatCount="0">
+				<NumAnimation Target="this_imgBackground.X" From="0" To="-24" Autoreverse="true" Duration="25" RepeatCount="1" />
+				<NumAnimation Target="this_imgBackground.Y" From="0" To="-16" Autoreverse="true" Duration="25" RepeatCount="1" />
+				<NumAnimation Target="this_imgBackground.X,this_imgBackground.Y" From="0,0" To="-24,-16" Autoreverse="true" Duration="25" RepeatCount="1" />
+			</RandomSet>
+		</Group>
+	</Class>
+</Include>

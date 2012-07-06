@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Include>
-
+    <Include File="ClassUIMovingBackground.xml" />
     <Include File="ClassUIButton.xml" />
 
     <Resources RootFolder="Global">
@@ -101,7 +101,7 @@
 				InProgress="true"
 			/>
 			
-            <Image TextureId="txrBackground" />
+			<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 			<Group Id="grpScreen0" Bounds="045,040,500,500">
 				<BoolTrigger Condition="@currentPage==0">
 					<Group Id="grpL00" Bounds="000,000,095,050" Class="clsLevelButton" ClassParams="@levelNum=00"/>

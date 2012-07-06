@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Bounds="0,0,480,320" IsModal="true">
+    <Include File="ClassUIMovingBackground.xml" />
     <Include File="ClassUIButton.xml" />
     <Include File="ClassUILevelNumberPanel.xml" />
 
@@ -16,7 +17,7 @@
     </Resources>
 
 	<Layer Id="background">
-		<Image TextureId="txrBackground"/>
+		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
 	<Layer>
 		<Do Action="levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time; levelScore.Save();" InProgress="true" />
