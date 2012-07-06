@@ -109,9 +109,9 @@ namespace Lunohod.Objects
 			else
 				numberOfStars = 0;
 
-			timeBonus = numberOfStars == 3 && time <= TimeBonusThreshold ? score * (TimeBonusRatio + TimeExtraBonusRatio * (TimeBonusThreshold - time)) : 0;
-			healthBonus = numberOfStars == 3 && health >= HealthBonusThreshold ? (score + timeBonus) * HealthBonusRatio : 0;
-			totalScore = score + timeBonus + healthBonus;
+			timeBonus = Math.Round(numberOfStars == 3 && time <= TimeBonusThreshold ? score * (TimeBonusRatio + TimeExtraBonusRatio * (TimeBonusThreshold - time)) : 0);
+			healthBonus = Math.Round(numberOfStars == 3 && health >= HealthBonusThreshold ? (score + timeBonus) * HealthBonusRatio : 0);
+			totalScore = Math.Round(score + timeBonus + healthBonus);
 
 			calculated = true;
 		}

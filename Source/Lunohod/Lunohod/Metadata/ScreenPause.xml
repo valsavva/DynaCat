@@ -8,8 +8,6 @@
     <Resources RootFolder="Global">
         <Texture Id="txrBackground" Source="pause_BG" />
         <Texture Id="txrPauseText" Source="scr_pause_txt" />
-        <Texture Id="txrMute" Source="btn_sound_on" />
-        <Texture Id="txrUnmute" Source="btn_sound_off" />
         
         <Font Id="fntSystem" Source="SystemFont"/>
     </Resources>
