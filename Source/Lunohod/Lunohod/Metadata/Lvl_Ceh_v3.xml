@@ -100,7 +100,7 @@
         </Enemy>
         <Enemy Id="enm3" Class="clsEnemySaw" Bounds="437, 237, 50, 50" TraceId="STOPPED">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
-                <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
+                <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="5.5" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_19" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
@@ -114,14 +114,15 @@
                 <Delay Duration="0.2"/>
                 <Do Action="enm3_sndSawMid.Start()"/>
             </SequenceSet>
+            <!-- HANDEDIT 2 >>> -->
             <SequenceSet InProgress="true" RepeatCount="0">
-                <NumAnimation From="0" To="30" Target="enm3.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="5" Target="enm3.Y" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-35" Target="enm3.Y" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
+                <Delay Duration="2.5"/>
+                <NumAnimation From="0" To="-5" Target="enm3.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
+                <Delay Duration="0.3"/>
+                <NumAnimation From="0" To="5" Target="enm3.X" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
+                <Delay Duration="2.5"/>
             </SequenceSet>
+            <!-- HANDEDIT 2 <<< -->
         </Enemy>
         <Enemy Id="enm4" Class="clsEnemySaw" Bounds="310, -10, 50, 50" TraceId="image3459">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
