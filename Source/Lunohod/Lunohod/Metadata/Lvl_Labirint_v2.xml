@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.04 -->
+<!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Labirint_v2\Lvl_Labirint_v2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Labirint_v2" Bounds="0, 0, 480, 320">
-    <Include File="ClassFoodFish4.xml" />
     <Include File="ClassWoodenBox.xml" />
+    <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -12,67 +12,30 @@
         <Texture Id="txr_second_phon_plate1" Source="second_phon_plate1" />
         <Texture Id="txr_second_phon_communications_5" Source="second_phon_communications_5" />
         <Texture Id="txr_second_phon_index2" Source="second_phon_index2" />
-
         <Texture Id="txr_box_old_1" Source="box_old_1" />
+        <Texture Id="txr_box_old_2" Source="box_old_2" />
+        <Texture Id="txr_box_old_3" Source="box_old_3" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
     </Resources>
-    <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image4871"/>
-    </Layer>
-    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_second_phon_plate1" Bounds="308, 255, 42, 33" Stretch="true" TraceId="image4928"/>
-        <Image Id="dfltMask3" TextureId="txr_second_phon_communications_5" Bounds="449, 19, 88, 40" Rotation="90" Stretch="true" TraceId="image4939"/>
-        <Image Id="dfltMask4" TextureId="txr_second_phon_index2" Bounds="76, 34, 44, 21" Stretch="true" TraceId="image4950"/>
-        <Image Id="dfltMask5" TextureId="txr_second_phon_plate1" Bounds="170, 173, 42, 33" Stretch="true" TraceId="image4953"/>
-    </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-24, 0, 50, 320" Edges="Stick" TraceId="image4840"/>
         <Block Id="blk2" Bounds="454, 0, 50, 320" Edges="Stick" TraceId="image4843"/>
         <Block Id="blk3" Bounds="0, -20, 480, 40" Edges="Stick" TraceId="image4845"/>
         <Block Id="blk4" Bounds="0, 300, 480, 40" Edges="Stick" TraceId="image4847"/>
     </Layer>
+    <Layer Id="_ackground" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image4871"/>
+    </Layer>
+    <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_second_phon_plate1" Bounds="308, 255, 42, 33" Stretch="true" TraceId="image4928"/>
+        <Image Id="dfltMask3" TextureId="txr_second_phon_communications_5" Bounds="449, 19, 88, 40" Rotation="90" Stretch="true" TraceId="image4939"/>
+        <Image Id="dfltMask4" TextureId="txr_second_phon_index2" Bounds="76, 34, 44, 21" Stretch="true" TraceId="image4950"/>
+        <Image Id="dfltMask5" TextureId="txr_second_phon_plate1" Bounds="170, 173, 42, 33" Stretch="true" TraceId="image4953"/>
+    </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFoodFish4"  Bounds="35, 101, 26, 17" TraceId="image3207"/>
-        <Food Id="fd2" Class="clsFoodFish4"  Bounds="35, 129, 26, 17" TraceId="image3209"/>
-        <Food Id="fd3" Class="clsFoodFish4"  Bounds="36, 148, 26, 17" TraceId="image3211"/>
-        <Food Id="fd4" Class="clsFoodFish4"  Bounds="42, 171, 26, 17" TraceId="image3213"/>
-        <Food Id="fd5" Class="clsFoodFish4"  Bounds="34, 191, 26, 17" TraceId="image3215"/>
-        <Food Id="fd6" Class="clsFoodFish4"  Bounds="37, 220, 26, 17" TraceId="image4556"/>
         <Block Id="blk5" Class="clsWoodenBox" Bounds="34, 56, 30, 30" Edges="Stick" TraceId="image4570">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Food Id="fd7" Class="clsFoodFish4"  Bounds="91, 94, 26, 17" TraceId="image4742"/>
-        <Food Id="fd8" Class="clsFoodFish4"  Bounds="108, 105, 26, 17" TraceId="image4744"/>
-        <Food Id="fd9" Class="clsFoodFish4"  Bounds="131, 94, 26, 17" TraceId="image4746"/>
-        <Food Id="fd10" Class="clsFoodFish4"  Bounds="211, 94, 26, 17" TraceId="image4748"/>
-        <Food Id="fd11" Class="clsFoodFish4"  Bounds="227, 96, 26, 17" TraceId="image4750"/>
-        <Food Id="fd12" Class="clsFoodFish4"  Bounds="251, 93, 26, 17" TraceId="image4752"/>
-        <Food Id="fd13" Class="clsFoodFish4"  Bounds="292, 95, 26, 17" TraceId="image4754"/>
-        <Food Id="fd14" Class="clsFoodFish4"  Bounds="291, 115, 26, 17" TraceId="image4756"/>
-        <Food Id="fd15" Class="clsFoodFish4"  Bounds="292, 170, 26, 17" TraceId="image4758"/>
-        <Food Id="fd16" Class="clsFoodFish4"  Bounds="269, 183, 26, 17" TraceId="image4760"/>
-        <Food Id="fd17" Class="clsFoodFish4"  Bounds="264, 164, 26, 17" TraceId="image4822"/>
-        <Food Id="fd18" Class="clsFoodFish4"  Bounds="31, 276, 26, 17" TraceId="image4896"/>
-        <Food Id="fd19" Class="clsFoodFish4"  Bounds="56, 275, 26, 17" TraceId="image4898"/>
-        <Food Id="fd20" Class="clsFoodFish4"  Bounds="71, 267, 26, 17" TraceId="image4900"/>
-        <Food Id="fd21" Class="clsFoodFish4"  Bounds="78, 279, 26, 17" TraceId="image4774"/>
-        <Food Id="fd22" Class="clsFoodFish4"  Bounds="222, 261, 26, 17" TraceId="image4778"/>
-        <Food Id="fd23" Class="clsFoodFish4"  Bounds="222, 280, 26, 17" TraceId="image4780"/>
-        <Food Id="fd24" Class="clsFoodFish4"  Bounds="145, 283, 26, 17" TraceId="image4782"/>
-        <Food Id="fd25" Class="clsFoodFish4"  Bounds="407, 210, 26, 17" TraceId="image4812"/>
-        <Food Id="fd26" Class="clsFoodFish4"  Bounds="407, 132, 26, 17" TraceId="image4814"/>
-        <Food Id="fd27" Class="clsFoodFish4"  Bounds="345, 135, 26, 17" TraceId="image4786"/>
-        <Food Id="fd28" Class="clsFoodFish4"  Bounds="365, 86, 26, 17" TraceId="image4788"/>
-        <Food Id="fd29" Class="clsFoodFish4"  Bounds="353, 112, 26, 17" TraceId="image4790"/>
-        <Food Id="fd30" Class="clsFoodFish4"  Bounds="255, 45, 26, 17" TraceId="image4874"/>
-        <Food Id="fd31" Class="clsFoodFish4"  Bounds="295, 34, 26, 17" TraceId="image4876"/>
-        <Food Id="fd32" Class="clsFoodFish4"  Bounds="338, 24, 26, 17" TraceId="image4878"/>
-        <Food Id="fd33" Class="clsFoodFish4"  Bounds="360, 44, 26, 17" TraceId="image4880"/>
-        <Food Id="fd34" Class="clsFoodFish4"  Bounds="359, 29, 26, 17" TraceId="image4796"/>
-        <Food Id="fd35" Class="clsFoodFish4"  Bounds="171, 44, 26, 17" TraceId="image4798"/>
-        <Food Id="fd36" Class="clsFoodFish4"  Bounds="153, 27, 26, 17" TraceId="image4800"/>
-        <Food Id="fd37" Class="clsFoodFish4"  Bounds="271, 29, 26, 17" TraceId="image4802"/>
-        <Food Id="fd38" Class="clsFoodFish4"  Bounds="80, 34, 26, 17" TraceId="image4586"/>
         <Block Id="blk6" Class="clsWoodenBox" Bounds="74, 56, 30, 30" Edges="Stick" TraceId="image4588">
             <Image TextureId="txr_box_old_1" />
         </Block>
@@ -86,16 +49,16 @@
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Block Id="blk10" Class="clsWoodenBox" Bounds="234, 66, 30, 30" Edges="Stick" TraceId="image4604">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk11" Class="clsWoodenBox" Bounds="274, 66, 30, 30" Edges="Stick" TraceId="image4612">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk12" Class="clsWoodenBox" Bounds="314, 66, 30, 30" Edges="Stick" TraceId="image4616">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_3" />
         </Block>
         <Block Id="blk13" Class="clsWoodenBox" Bounds="314, 106, 30, 30" Edges="Stick" TraceId="image4620">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_3" />
         </Block>
         <Block Id="blk14" Class="clsWoodenBox" Bounds="314, 146, 30, 30" Edges="Stick" TraceId="image4622">
             <Image TextureId="txr_box_old_1" />
@@ -119,25 +82,25 @@
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Block Id="blk21" Class="clsWoodenBox" Bounds="114, 224, 30, 30" Edges="Stick" TraceId="image4638">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk22" Class="clsWoodenBox" Bounds="114, 124, 30, 30" Edges="Stick" TraceId="image4640">
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Block Id="blk23" Class="clsWoodenBox" Bounds="154, 124, 30, 30" Edges="Stick" TraceId="image4642">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk24" Class="clsWoodenBox" Bounds="194, 112, 30, 30" Edges="Stick" TraceId="image4644">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_3" />
         </Block>
         <Block Id="blk25" Class="clsWoodenBox" Bounds="234, 112, 30, 30" Edges="Stick" TraceId="image4646">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk26" Class="clsWoodenBox" Bounds="74, 132, 30, 30" Edges="Stick" TraceId="image4654">
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Block Id="blk27" Class="clsWoodenBox" Bounds="34, 246, 30, 30" Edges="Stick" TraceId="image4662">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_3" />
         </Block>
         <Block Id="blk28" Class="clsWoodenBox" Bounds="382, 66, 30, 30" Edges="Stick" TraceId="image4688">
             <Image TextureId="txr_box_old_1" />
@@ -155,42 +118,82 @@
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Block Id="blk33" Class="clsWoodenBox" Bounds="382, 26, 30, 30" Edges="Stick" TraceId="image4700">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk34" Class="clsWoodenBox" Bounds="382, 264, 30, 30" Edges="Stick" TraceId="image4702">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Food Id="fd39" Class="clsFoodFish4"  Bounds="414, 61, 26, 17" TraceId="image4704"/>
-        <Food Id="fd40" Class="clsFoodFish4"  Bounds="411, 91, 26, 17" TraceId="image4890"/>
-        <Food Id="fd41" Class="clsFoodFish4"  Bounds="317, 256, 26, 17" TraceId="image4892"/>
-        <Food Id="fd42" Class="clsFoodFish4"  Bounds="308, 269, 26, 17" TraceId="image4894"/>
-        <Food Id="fd43" Class="clsFoodFish4"  Bounds="331, 273, 26, 17" TraceId="image4708"/>
-        <Food Id="fd44" Class="clsFoodFish4"  Bounds="415, 152, 26, 17" TraceId="image4824"/>
-        <Food Id="fd45" Class="clsFoodFish4"  Bounds="409, 170, 26, 17" TraceId="image4710"/>
-        <Food Id="fd46" Class="clsFoodFish4"  Bounds="414, 192, 26, 17" TraceId="image4712"/>
-        <Food Id="fd47" Class="clsFoodFish4"  Bounds="414, 232, 26, 17" TraceId="image4714"/>
-        <Food Id="fd48" Class="clsFoodFish4"  Bounds="412, 284, 26, 17" TraceId="image4816"/>
-        <Food Id="fd49" Class="clsFoodFish4"  Bounds="413, 264, 26, 17" TraceId="image4818"/>
-        <Food Id="fd50" Class="clsFoodFish4"  Bounds="410, 248, 26, 17" TraceId="image4820"/>
-        <Food Id="fd51" Class="clsFoodFish4"  Bounds="421, 218, 26, 17" TraceId="image4882"/>
-        <Food Id="fd52" Class="clsFoodFish4"  Bounds="430, 244, 26, 17" TraceId="image4884"/>
-        <Food Id="fd53" Class="clsFoodFish4"  Bounds="432, 261, 26, 17" TraceId="image4886"/>
-        <Food Id="fd54" Class="clsFoodFish4"  Bounds="422, 276, 26, 17" TraceId="image4888"/>
-        <Food Id="fd55" Class="clsFoodFish4"  Bounds="430, 283, 26, 17" TraceId="image4716"/>
         <Block Id="blk35" Class="clsWoodenBox" Bounds="74, 224, 30, 30" Edges="Stick" TraceId="image4738">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk36" Class="clsWoodenBox" Bounds="250, 264, 30, 30" Edges="Stick" TraceId="image4804">
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Block Id="blk37" Class="clsWoodenBox" Bounds="140, 174, 30, 30" Edges="Stick" TraceId="image4806">
-            <Image TextureId="txr_box_old_1" />
+            <Image TextureId="txr_box_old_3" />
         </Block>
-        <Food Id="fd56" Class="clsFoodFish4"  Bounds="414, 25, 26, 17" TraceId="image4914"/>
-        <Food Id="fd57" Class="clsFoodFish4"  Bounds="164, 283, 26, 17" TraceId="image4762"/>
-        <Food Id="fd58" Class="clsFoodFish4"  Bounds="178, 281, 26, 17" TraceId="image4955"/>
     </Layer>
-    <Layer Id="brick_images" BackColor="#FFFFFFFF">
+    <Layer Id="food" BackColor="#FFFFFFFF">
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="80, 33, 28, 19" TraceId="image3278"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="36, 101, 28, 19" TraceId="image3280"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=2" Bounds="35, 128, 28, 19" TraceId="image3282"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=2" Bounds="35, 147, 28, 19" TraceId="image3284"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=2" Bounds="41, 173, 28, 19" TraceId="image3286"/>
+        <Food Id="fd6" Class="clsFood" ClassParams="@fishType=2" Bounds="34, 190, 28, 19" TraceId="image3288"/>
+        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=2" Bounds="37, 218, 28, 19" TraceId="image3290"/>
+        <Food Id="fd8" Class="clsFood" ClassParams="@fishType=2" Bounds="32, 277, 28, 19" TraceId="image3292"/>
+        <Food Id="fd9" Class="clsFood" ClassParams="@fishType=2" Bounds="56, 274, 28, 19" TraceId="image3294"/>
+        <Food Id="fd10" Class="clsFood" ClassParams="@fishType=2" Bounds="77, 279, 28, 19" TraceId="image3296"/>
+        <Food Id="fd11" Class="clsFood" ClassParams="@fishType=2" Bounds="71, 267, 28, 19" TraceId="image3298"/>
+        <Food Id="fd12" Class="clsFood" ClassParams="@fishType=2" Bounds="92, 92, 28, 19" TraceId="image3300"/>
+        <Food Id="fd13" Class="clsFood" ClassParams="@fishType=2" Bounds="107, 102, 28, 19" TraceId="image3304"/>
+        <Food Id="fd14" Class="clsFood" ClassParams="@fishType=3" Bounds="153, 25, 31, 20" TraceId="image3615"/>
+        <Food Id="fd15" Class="clsFood" ClassParams="@fishType=3" Bounds="129, 95, 31, 20" TraceId="image3317"/>
+        <Food Id="fd16" Class="clsFood" ClassParams="@fishType=3" Bounds="171, 42, 31, 20" TraceId="image3319"/>
+        <Food Id="fd17" Class="clsFood" ClassParams="@fishType=3" Bounds="212, 94, 31, 20" TraceId="image3321"/>
+        <Food Id="fd18" Class="clsFood" ClassParams="@fishType=3" Bounds="229, 95, 31, 20" TraceId="image3325"/>
+        <Food Id="fd19" Class="clsFood" ClassParams="@fishType=3" Bounds="146, 282, 31, 20" TraceId="image3327"/>
+        <Food Id="fd20" Class="clsFood" ClassParams="@fishType=3" Bounds="159, 282, 31, 20" TraceId="image3329"/>
+        <Food Id="fd21" Class="clsFood" ClassParams="@fishType=3" Bounds="175, 282, 31, 20" TraceId="image3331"/>
+        <Food Id="fd22" Class="clsFood" ClassParams="@fishType=3" Bounds="219, 259, 31, 20" TraceId="image3333"/>
+        <Food Id="fd23" Class="clsFood" ClassParams="@fishType=3" Bounds="219, 279, 31, 20" TraceId="image3314"/>
+        <Food Id="fd24" Class="clsFood" ClassParams="@fishType=4" Bounds="254, 44, 28, 22" TraceId="image3347"/>
+        <Food Id="fd25" Class="clsFood" ClassParams="@fishType=4" Bounds="269, 27, 28, 22" TraceId="image3349"/>
+        <Food Id="fd26" Class="clsFood" ClassParams="@fishType=4" Bounds="296, 33, 28, 22" TraceId="image3351"/>
+        <Food Id="fd27" Class="clsFood" ClassParams="@fishType=4" Bounds="291, 93, 28, 22" TraceId="image3353"/>
+        <Food Id="fd28" Class="clsFood" ClassParams="@fishType=4" Bounds="250, 90, 28, 22" TraceId="image3355"/>
+        <Food Id="fd29" Class="clsFood" ClassParams="@fishType=4" Bounds="289, 115, 28, 22" TraceId="image3357"/>
+        <Food Id="fd30" Class="clsFood" ClassParams="@fishType=4" Bounds="263, 163, 28, 22" TraceId="image3359"/>
+        <Food Id="fd31" Class="clsFood" ClassParams="@fishType=4" Bounds="289, 165, 28, 22" TraceId="image3361"/>
+        <Food Id="fd32" Class="clsFood" ClassParams="@fishType=4" Bounds="266, 178, 28, 22" TraceId="image3363"/>
+        <Food Id="fd33" Class="clsFood" ClassParams="@fishType=4" Bounds="306, 268, 28, 22" TraceId="image3343"/>
+        <Food Id="fd34" Class="clsFood" ClassParams="@fishType=5" Bounds="328, 270, 27, 20" TraceId="image3617"/>
+        <Food Id="fd35" Class="clsFood" ClassParams="@fishType=5" Bounds="354, 242, 27, 20" TraceId="image3376"/>
+        <Food Id="fd36" Class="clsFood" ClassParams="@fishType=5" Bounds="318, 255, 27, 20" TraceId="image3378"/>
+        <Food Id="fd37" Class="clsFood" ClassParams="@fishType=5" Bounds="343, 134, 27, 20" TraceId="image3380"/>
+        <Food Id="fd38" Class="clsFood" ClassParams="@fishType=5" Bounds="352, 109, 27, 20" TraceId="image3382"/>
+        <Food Id="fd39" Class="clsFood" ClassParams="@fishType=5" Bounds="361, 86, 27, 20" TraceId="image3384"/>
+        <Food Id="fd40" Class="clsFood" ClassParams="@fishType=5" Bounds="357, 45, 27, 20" TraceId="image3386"/>
+        <Food Id="fd41" Class="clsFood" ClassParams="@fishType=5" Bounds="336, 22, 27, 20" TraceId="image3373"/>
+        <Food Id="fd42" Class="clsFood" ClassParams="@fishType=5" Bounds="358, 27, 27, 20" TraceId="image3388"/>
+        <Food Id="fd43" Class="clsFood" ClassParams="@fishType=6" Bounds="413, 22, 22, 27" TraceId="image3401"/>
+        <Food Id="fd44" Class="clsFood" ClassParams="@fishType=6" Bounds="413, 56, 22, 27" TraceId="image3403"/>
+        <Food Id="fd45" Class="clsFood" ClassParams="@fishType=6" Bounds="424, 86, 22, 27" TraceId="image3405"/>
+        <Food Id="fd46" Class="clsFood" ClassParams="@fishType=6" Bounds="410, 113, 22, 27" TraceId="image3407"/>
+        <Food Id="fd47" Class="clsFood" ClassParams="@fishType=6" Bounds="426, 136, 22, 27" TraceId="image3409"/>
+        <Food Id="fd48" Class="clsFood" ClassParams="@fishType=6" Bounds="409, 166, 22, 27" TraceId="image3411"/>
+        <Food Id="fd49" Class="clsFood" ClassParams="@fishType=6" Bounds="431, 181, 22, 27" TraceId="image3413"/>
+        <Food Id="fd50" Class="clsFood" ClassParams="@fishType=6" Bounds="410, 193, 22, 27" TraceId="image3415"/>
+        <Food Id="fd51" Class="clsFood" ClassParams="@fishType=6" Bounds="419, 207, 22, 27" TraceId="image3417"/>
+        <Food Id="fd52" Class="clsFood" ClassParams="@fishType=6" Bounds="431, 225, 22, 27" TraceId="image3419"/>
+        <Food Id="fd53" Class="clsFood" ClassParams="@fishType=6" Bounds="410, 241, 22, 27" TraceId="image3421"/>
+        <Food Id="fd54" Class="clsFood" ClassParams="@fishType=6" Bounds="422, 250, 22, 27" TraceId="image3423"/>
+        <Food Id="fd55" Class="clsFood" ClassParams="@fishType=6" Bounds="434, 255, 22, 27" TraceId="image3425"/>
+        <Food Id="fd56" Class="clsFood" ClassParams="@fishType=6" Bounds="411, 268, 22, 27" TraceId="image3427"/>
+        <Food Id="fd57" Class="clsFood" ClassParams="@fishType=6" Bounds="419, 273, 22, 27" TraceId="image3429"/>
+        <Food Id="fd58" Class="clsFood" ClassParams="@fishType=6" Bounds="432, 269, 22, 27" TraceId="image3398"/>
+    </Layer>
+    <Layer Id="_brick_images" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask6" TextureId="txr_texture_brick_clean" Bounds="0, 40, 26, 20" TraceId="image3255"/>
         <Image Id="dfltMask7" TextureId="txr_texture_brick_clean" Bounds="0, 60, 26, 20" TraceId="image3334"/>
         <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="0, 80, 26, 20" TraceId="image3336"/>
@@ -266,8 +269,8 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=58 Enemy=0 Block=37 DesignImage=71 Animation=0 Teleport Animations=0 FoodPack=0 -->
+<!-- Food=58 Enemy=0 Block=37 DesignImage=71 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
-<!-- Food Points = 5800 -->
-<!-- 1% = 58; 45% = 2610; 90% = 5220 -->
-<!-- minPointsFood = 100 (1.7%) -->
+<!-- Food Points = 5610 -->
+<!-- 1% = 56.1; 45% = 2524.5; 90% = 5049 -->
+<!-- minPointsFood = 70 (1.2%) -->
