@@ -6,10 +6,10 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_electric_spark_spr_39x35x4" Source="electric_spark_spr_39x35x4" />
+        <Texture Id="txr_electric_wave_spr_264x28x3" Source="electric_wave_spr_264x28x3" />
     </Resources>
     <Layer Id="GRFX update" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_electric_spark_spr_39x35x4" Bounds="117, 149, 156, 35" TraceId="image3217"/>
+        <Image Id="dfltMask1" TextureId="txr_electric_wave_spr_264x28x3" Bounds="-221, 146, 792, 28" TraceId="image3092"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
