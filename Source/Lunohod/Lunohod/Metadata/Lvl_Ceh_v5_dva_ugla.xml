@@ -17,8 +17,7 @@
         <Texture Id="txr_texture_brick_4" Source="texture_brick_4" />
         <Texture Id="txr_texture_brick_5" Source="texture_brick_5" />
         <Texture Id="txr_detal_3" Source="detal_3" />
-        <Texture Id="txr_box_b_005" Source="box_b_005" />
-        <Texture Id="txr_box_b_020" Source="box_b_020" />
+        <Texture Id="txr_box_b_016" Source="box_b_016" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="122, -180, 407, 224" Edges="Stick" TraceId="image3815"/>
@@ -94,10 +93,10 @@
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=7" Bounds="397, 248, 32, 30" TraceId="image3268"/>
-        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=5" Bounds="202, 120, 27, 20" TraceId="image3282"/>
-        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="202, 191, 27, 20" TraceId="image3284"/>
-        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="153, 157, 27, 20" TraceId="image3286"/>
-        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=5" Bounds="249, 157, 27, 20" TraceId="image3279-1"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=5" Bounds="204, 124, 27, 20" TraceId="image3282"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="204, 189, 27, 20" TraceId="image3284"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="145, 157, 27, 20" TraceId="image3286"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=5" Bounds="263, 157, 27, 20" TraceId="image3279-1"/>
     </Layer>
     <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_texture_brick_clean" Bounds="100, 24, 26, 20" TraceId="image3369"/>
@@ -325,9 +324,9 @@
         <Image Id="dfltMask224" TextureId="txr_texture_brick_clean" Bounds="282, 224, 26, 20" TraceId="image3429"/>
         <Image Id="dfltMask225" TextureId="txr_texture_brick_clean" Bounds="282, 204, 26, 20" TraceId="image3432"/>
         <Image Id="dfltMask226" TextureId="txr_texture_brick_clean" Bounds="360, 144, 26, 20" TraceId="image3472"/>
-        <Image Id="dfltMask227" TextureId="txr_box_b_005" Bounds="401, 37, 40, 40" TraceId="image3299"/>
-        <Image Id="dfltMask228" TextureId="txr_box_b_005" Bounds="451, 37, 40, 40" TraceId="image3296"/>
-        <Image Id="dfltMask229" TextureId="txr_box_b_020" Bounds="-13, 244, 40, 40" TraceId="image3309-7"/>
+        <Image Id="dfltMask227" TextureId="txr_box_b_016" Bounds="397, 49, 40, 40" TraceId="image3271"/>
+        <Image Id="dfltMask228" TextureId="txr_box_b_016" Bounds="451, 49, 40, 40" TraceId="image3268-1"/>
+        <Image Id="dfltMask229" TextureId="txr_box_b_016" Bounds="3, 214, 40, 40" Rotation="18.43" TraceId="image3295"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
