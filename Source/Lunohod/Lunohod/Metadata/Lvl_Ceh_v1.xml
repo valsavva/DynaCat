@@ -45,7 +45,9 @@
             </Image>
             <Group Id="grpDamageZone_15" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_15" EnterAction="setAttack_enm1.Start();setSound_enm1.Start()" ExitAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_15" EnterAction="setAttack_enm1.Start();setSound_enm1.Start()" ExitAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm1" RepeatCount="0">
                 <Do Action="enm1.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -70,7 +72,9 @@
             </Image>
             <Group Id="grpDamageZone_16" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_16" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_16" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm2" RepeatCount="0">
                 <Do Action="enm2.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -97,13 +101,15 @@
         <Food Id="fd6" Class="clsFood" ClassParams="@fishType=4" Bounds="276, 131, 28, 22" TraceId="image3366"/>
         <Food Id="fd7" Class="clsFood" ClassParams="@fishType=4" Bounds="263, 188, 28, 22" TraceId="image3368"/>
         <Food Id="fd8" Class="clsFood" ClassParams="@fishType=4" Bounds="276, 245, 28, 22" TraceId="image3358-4"/>
-        <Enemy Id="enm3" Class="clsEnemySaw" Bounds="186, 12, 50, 50" TraceId="image3386">
+        <Enemy Id="enm3" Class="clsEnemySaw" Bounds="212, 12, 50, 50" TraceId="image3388">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_17" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_17" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_17" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm3" RepeatCount="0">
                 <Do Action="enm3.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -122,13 +128,15 @@
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
-        <Enemy Id="enm4" Class="clsEnemySaw" Bounds="206, 12, 50, 50" TraceId="image3388">
+        <Enemy Id="enm4" Class="clsEnemySaw" Bounds="184, 12, 50, 50" TraceId="image3386">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_18" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_18" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_18" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm4" RepeatCount="0">
                 <Do Action="enm4.Attack()"/>
                 <Delay Duration="0.2"/>

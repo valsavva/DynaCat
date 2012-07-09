@@ -242,7 +242,9 @@
             </Image>
             <Group Id="grpDamageZone_25" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_25" EnterAction="setAttack_enm8.Start();setSound_enm8.Start()" ExitAction="setAttack_enm8.Stop();setSound_enm8.Stop();enm8_sndSawMid.Stop();enm8_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_25" EnterAction="setAttack_enm8.Start();setSound_enm8.Start()" ExitAction="setAttack_enm8.Stop();setSound_enm8.Stop();enm8_sndSawMid.Stop();enm8_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm8.Stop();setSound_enm8.Stop();enm8_sndSawMid.Stop();enm8_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm8" RepeatCount="0">
                 <Do Action="enm8.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -267,7 +269,9 @@
             </Image>
             <Group Id="grpDamageZone_26" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_26" EnterAction="setAttack_enm9.Start();setSound_enm9.Start()" ExitAction="setAttack_enm9.Stop();setSound_enm9.Stop();enm9_sndSawMid.Stop();enm9_sndSawEnd.Start()" />
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_26" EnterAction="setAttack_enm9.Start();setSound_enm9.Start()" ExitAction="setAttack_enm9.Stop();setSound_enm9.Stop();enm9_sndSawMid.Stop();enm9_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm9.Stop();setSound_enm9.Stop();enm9_sndSawMid.Stop();enm9_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm9" RepeatCount="0">
                 <Do Action="enm9.Attack()"/>
                 <Delay Duration="0.2"/>
