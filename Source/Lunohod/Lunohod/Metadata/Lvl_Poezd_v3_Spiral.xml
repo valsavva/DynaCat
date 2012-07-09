@@ -112,6 +112,20 @@
         <Image Id="dfltMask66" TextureId="txr_traces_singl" Bounds="218, 171, 25, 18" TraceId="image3127"/>
         <Image Id="dfltMask67" TextureId="txr_traces_singl" Bounds="214, 191, 25, 18" TraceId="image3129"/>
         <Image Id="dfltMask68" TextureId="txr_traces_singl" Bounds="216, 211, 25, 18" TraceId="image3132"/>
+        <Image Id="dfltMask69" TextureId="txr_traces_singl" Bounds="122, 60, 25, 18" Rotation="90" TraceId="image3127-1"/>
+        <Image Id="dfltMask70" TextureId="txr_traces_singl" Bounds="142, 64, 25, 18" Rotation="90" TraceId="image3130"/>
+        <Image Id="dfltMask71" TextureId="txr_traces_singl" Bounds="162, 60, 25, 18" Rotation="90" TraceId="image3133"/>
+        <Image Id="dfltMask72" TextureId="txr_traces_singl" Bounds="182, 60, 25, 18" Rotation="90" TraceId="image3135"/>
+        <Image Id="dfltMask73" TextureId="txr_traces_singl" Bounds="202, 64, 25, 18" Rotation="90" TraceId="image3137"/>
+        <Image Id="dfltMask74" TextureId="txr_traces_singl" Bounds="222, 60, 25, 18" Rotation="90" TraceId="image3139"/>
+        <Image Id="dfltMask75" TextureId="txr_traces_singl" Bounds="242, 60, 25, 18" Rotation="90" TraceId="image3141"/>
+        <Image Id="dfltMask76" TextureId="txr_traces_singl" Bounds="262, 60, 25, 18" Rotation="90" TraceId="image3143"/>
+        <Image Id="dfltMask77" TextureId="txr_traces_singl" Bounds="282, 62, 25, 18" Rotation="90" TraceId="image3145"/>
+        <Image Id="dfltMask78" TextureId="txr_traces_singl" Bounds="302, 64, 25, 18" Rotation="90" TraceId="image3147"/>
+        <Image Id="dfltMask79" TextureId="txr_traces_singl" Bounds="322, 60, 25, 18" Rotation="90" TraceId="image3149"/>
+        <Image Id="dfltMask80" TextureId="txr_traces_singl" Bounds="342, 60, 25, 18" Rotation="90" TraceId="image3151"/>
+        <Image Id="dfltMask81" TextureId="txr_traces_singl" Bounds="362, 60, 25, 18" Rotation="90" TraceId="image3153"/>
+        <Image Id="dfltMask82" TextureId="txr_traces_singl" Bounds="382, 62, 25, 18" Rotation="90" TraceId="image3157"/>
     </Layer>
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
@@ -165,13 +179,13 @@
         <Group Id="exit" Class="clsExit" Bounds="83, 166, 37, 54" TraceId="image3049" />
     </Layer>
     <Layer Id="_foreground" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask70" TextureId="txr_box_strip_02" Bounds="227, 197, 47, 53" TraceId="image3103"/>
-        <Image Id="dfltMask71" TextureId="txr_grass_07" Bounds="325, 192, 55, 44" TraceId="image3144"/>
-        <Image Id="dfltMask72" TextureId="txr_grass_06" Bounds="84, 205, 46, 21" TraceId="image3166"/>
-        <Image Id="dfltMask73" TextureId="txr_grass_02" Bounds="39, 39, 32, 27" TraceId="image3188"/>
-        <Image Id="dfltMask74" TextureId="txr_grass_03" Bounds="105, 114, 21, 20" TraceId="image3210"/>
-        <Image Id="dfltMask75" TextureId="txr_grass_05" Bounds="52, 91, 55, 44" TraceId="image3232"/>
-        <Image Id="dfltMask76" TextureId="txr_grass_09" Bounds="-5, 115, 21, 20" TraceId="image3199"/>
+        <Image Id="dfltMask84" TextureId="txr_box_strip_02" Bounds="227, 197, 47, 53" TraceId="image3103"/>
+        <Image Id="dfltMask85" TextureId="txr_grass_07" Bounds="325, 192, 55, 44" TraceId="image3144"/>
+        <Image Id="dfltMask86" TextureId="txr_grass_06" Bounds="84, 205, 46, 21" TraceId="image3166"/>
+        <Image Id="dfltMask87" TextureId="txr_grass_02" Bounds="39, 39, 32, 27" TraceId="image3188"/>
+        <Image Id="dfltMask88" TextureId="txr_grass_03" Bounds="105, 114, 21, 20" TraceId="image3210"/>
+        <Image Id="dfltMask89" TextureId="txr_grass_05" Bounds="52, 91, 55, 44" TraceId="image3232"/>
+        <Image Id="dfltMask90" TextureId="txr_grass_09" Bounds="-5, 115, 21, 20" TraceId="image3199"/>
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
         <Include File="includeSemafor.xml" />
@@ -181,7 +195,7 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
 </Level>
-<!-- Food=17 Enemy=4 Block=0 DesignImage=76 Animation=9 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=17 Enemy=4 Block=0 DesignImage=90 Animation=9 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 1470 -->
 <!-- 1% = 14.7; 45% = 661.5; 90% = 1323 -->

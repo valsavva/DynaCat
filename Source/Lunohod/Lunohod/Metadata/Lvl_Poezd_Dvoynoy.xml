@@ -163,6 +163,12 @@
     </Layer>
     <Layer Id="Action7" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd30" Class="clsFood" ClassParams="@fishType=2" Bounds="223, 32, 28, 19" TraceId="image4310"/>
+        <Food Id="fd31" Class="clsFood" ClassParams="@fishType=6" Bounds="84, 97, 22, 27" TraceId="image4324"/>
+        <Food Id="fd32" Class="clsFood" ClassParams="@fishType=6" Bounds="105, 125, 22, 27" TraceId="image4326"/>
+        <Food Id="fd33" Class="clsFood" ClassParams="@fishType=6" Bounds="86, 157, 22, 27" TraceId="image4321"/>
+        <Food Id="fd34" Class="clsFood" ClassParams="@fishType=2" Bounds="373, 265, 28, 19" TraceId="image4339"/>
+        <Food Id="fd35" Class="clsFood" ClassParams="@fishType=2" Bounds="398, 282, 28, 19" TraceId="image4341"/>
+        <Food Id="fd36" Class="clsFood" ClassParams="@fishType=2" Bounds="427, 266, 28, 19" TraceId="image4336"/>
         <Group Id="exit" Class="clsExit" Bounds="83, 192, 37, 54" TraceId="image3049" />
         <Enemy Id="enm19" Class="clsEnemyRat4" Bounds="404, 98, 22, 23" TraceId="image3520"/>
         <Enemy Id="enm20" Class="clsEnemyRat4" Bounds="403, 239, 22, 23" TraceId="image3529"/>
@@ -172,12 +178,6 @@
             <Image TextureId="txr_box_old_1" />
         </Block>
         <Enemy Id="enm23" Class="clsEnemyRat3" Bounds="237, 58, 24, 25" TraceId="image3588"/>
-        <Food Id="fd31" Class="clsFood" ClassParams="@fishType=6" Bounds="84, 97, 22, 27" TraceId="image4324"/>
-        <Food Id="fd32" Class="clsFood" ClassParams="@fishType=6" Bounds="105, 125, 22, 27" TraceId="image4326"/>
-        <Food Id="fd33" Class="clsFood" ClassParams="@fishType=6" Bounds="86, 157, 22, 27" TraceId="image4321"/>
-        <Food Id="fd34" Class="clsFood" ClassParams="@fishType=2" Bounds="373, 265, 28, 19" TraceId="image4339"/>
-        <Food Id="fd35" Class="clsFood" ClassParams="@fishType=2" Bounds="398, 282, 28, 19" TraceId="image4341"/>
-        <Food Id="fd36" Class="clsFood" ClassParams="@fishType=2" Bounds="427, 266, 28, 19" TraceId="image4336"/>
     </Layer>
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
@@ -254,7 +254,7 @@
         </SequenceSet>
         <BoolTrigger Condition="hero:sttExit" EnterAction="setWay.Pause()" />
         <BoolTrigger Condition="hero.IsDead" EnterAction="setWay.Stop()" />
-        <!--<BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>-->
+        <BoolTrigger Condition="hero:stick" EnterAction="setWay.Pause()" ExitAction="setWay.Resume()"/>
 
         <!-- HAND EDIT <<< -->
     </Layer>
