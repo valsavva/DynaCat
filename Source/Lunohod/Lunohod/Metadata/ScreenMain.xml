@@ -28,11 +28,12 @@
 		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
 	<Layer>
-		<Image TextureId="txrLogo" Bounds="-10,0,180,120" BackColor="#EEEEEE"/>
 	
 		<Image TextureId="txrFrame" />
-		
-		<Group Bounds="050,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
+
+        <Image TextureId="txrLogo" Bounds="-10,0,180,120" BackColor="#EEEEEE"/>
+
+        <Group Bounds="050,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
 		<Group Bounds="180,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
 		<Group Bounds="310,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
 		
@@ -40,5 +41,6 @@
 		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />
 		</Group>
 		<Group Id="btnMute" Bounds="250,240, 62,62" Class="clsMuteButton" />
-	</Layer>
+
+    </Layer>
 </Screen>

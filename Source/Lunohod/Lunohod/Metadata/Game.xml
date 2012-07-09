@@ -124,8 +124,7 @@
             <!--DONE--><LevelInfo Id="Lvl_Ceh_v7_nasos" File="Lvl_Ceh_v7_nasos.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="33.64"/>
             <!--DONE--><LevelInfo Id="Lvl_4_Komnati" File="Lvl_4_Komnati.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="43.77" />
             <!--DONE--><LevelInfo Id="Lvl_Sport" File="Lvl_Sport.xml" BombCount="0" HeroHealth="100" StarScoreRatio3="1" TimeBonusThreshold="75.45" />
-            <LevelInfo Id="Lvl_VKolce" File="Lvl_VKolce.xml" BombCount="0" />
-            <!--<LevelInfo Id="Lvl_VKolce_v2" File="Lvl_VKolce_v2.xml" />-->
+            <!--DONE--><LevelInfo Id="Lvl_VKolce" File="Lvl_VKolce.xml" BombCount="0" TimeBonusThreshold="70"/>
         </LevelSeries>
         <LevelSeries Id="series5" Name="----- Series 5: empty -----" File="ScreenSeries5.xml">
             <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />

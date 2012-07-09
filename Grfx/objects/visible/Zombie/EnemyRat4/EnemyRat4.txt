@@ -21,6 +21,8 @@
 ###@cntrValue2
 .Y)/10" IsDelta="true" Duration="1" Fill="Hold" Autoreverse="false" RepeatCount="1" />
 ###@CRLF
+<Delay Duration="6" />
+###@CRLF
 </SequenceSet>
 ###@CRLF
 </Enemy>
