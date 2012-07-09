@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.02 -->
-<!-- source: D:\Lunohod\Levels\S03LXX_Pryatki\S03LXX_Pryatki.svg -->
-<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S03LXX_Pryatki" Bounds="0, 0, 480, 320">
+<!-- SVG to XGAME xml converter v1.6.15 -->
+<!-- source: D:\Lunohod\Levels\Lvl_Sport\Lvl_Sport.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Sport" Bounds="0, 0, 480, 320">
     <Include File="ClassTeleportEntry.xml" />
     <Include File="ClassTeleportTube.xml" />
     <Include File="ClassTeleportKoleno.xml" />
     <Include File="ClassTeleportOut.xml" />
-    <Include File="ClassFoodFish1.xml" />
-    <Include File="ClassFoodFish4.xml" />
+    <Include File="ClassFood.xml" />
     <Include File="ClassEnemyRat5.xml" />
     <Include File="ClassEnemyRat1.xml" />
     <Include File="ClassEnemyRat2.xml" />
@@ -29,13 +28,17 @@
         <Texture Id="txr_TeleportEntryRight" Source="TeleportEntryRight" />
         <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
         <Texture Id="txr_TeleportEntryLeft" Source="TeleportEntryLeft" />
-
-
     </Resources>
-    <Layer Id="background" BackColor="#FFFFFFFF">
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="0, -30, 480, 50" Edges="Stick" TraceId="image3904"/>
+        <Block Id="blk2" Bounds="0, 300, 480, 50" Edges="Stick" TraceId="image3909"/>
+        <Block Id="blk3" Bounds="-82, 0, 100, 350" Edges="Stick" TraceId="image3911"/>
+        <Block Id="blk4" Bounds="460, 0, 100, 350" Edges="Stick" TraceId="image3913"/>
+    </Layer>
+    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3240"/>
     </Layer>
-    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+    <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_second_phon_communications" Bounds="226, 17, 154, 117" TraceId="image3555"/>
         <Image Id="dfltMask3" TextureId="txr_second_phon_ladder" Bounds="187, 159, 30, 131" Stretch="true" TraceId="image3566"/>
         <Image Id="dfltMask4" TextureId="txr_second_phon_tank" Bounds="148, 253, 32, 39" Stretch="true" TraceId="image3577"/>
@@ -47,13 +50,7 @@
         <Image Id="dfltMask10" TextureId="txr_second_phon_communications_5_noVent_me" Bounds="72, 52, 38, 82" Stretch="true" TraceId="image3318"/>
         <Image Id="dfltMask11" TextureId="txr_second_phon_communications_5_noVent_me" Bounds="72, -30, 38, 82" Stretch="true" TraceId="image3321"/>
     </Layer>
-    <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="0, -30, 480, 50" Edges="Stick" TraceId="image3904"/>
-        <Block Id="blk2" Bounds="0, 300, 480, 50" Edges="Stick" TraceId="image3909"/>
-        <Block Id="blk3" Bounds="-82, 0, 100, 350" Edges="Stick" TraceId="image3911"/>
-        <Block Id="blk4" Bounds="460, 0, 100, 350" Edges="Stick" TraceId="image3913"/>
-    </Layer>
-    <Layer Id="design" BackColor="#FFFFFFFF">
+    <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask12" TextureId="txr_texture_brick_clean" Bounds="-8, 0, 26, 20" TraceId="image3069"/>
         <Image Id="dfltMask13" TextureId="txr_texture_brick_clean" Bounds="18, 0, 26, 20" TraceId="image3072"/>
         <Image Id="dfltMask14" TextureId="txr_texture_brick_clean" Bounds="44, 0, 26, 20" TraceId="image3074"/>
@@ -121,7 +118,7 @@
         <Image Id="dfltMask76" TextureId="txr_texture_brick_clean" Bounds="460, 40, 26, 20" TraceId="image3200"/>
         <Image Id="dfltMask77" TextureId="txr_texture_brick_clean" Bounds="460, 20, 26, 20" TraceId="image3202"/>
     </Layer>
-    <Layer Id="portDesign" BackColor="#FFFFFFFF">
+    <Layer Id="_portDesign" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask78" TextureId="txr_TeleportEntryRight" Bounds="8, 66, 24, 56" TraceId="image3017"/>
         <Image Id="dfltMask79" TextureId="txr_TeleportTubeHor" Bounds="466, 66, 40, 56" TraceId="image3028"/>
         <Image Id="dfltMask80" TextureId="txr_TeleportEntryLeft" Bounds="446, 66, 24, 56" TraceId="image3039"/>
@@ -154,24 +151,23 @@
         </SequenceSet>
     </Layer>
     <Layer Id="fish" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFoodFish1"  Bounds="44, 23, 30, 15" TraceId="image3343"/>
-        <Food Id="fd2" Class="clsFoodFish1"  Bounds="102, 79, 30, 15" TraceId="image3345"/>
-        <Food Id="fd3" Class="clsFoodFish1"  Bounds="238, 40, 30, 15" TraceId="image3347"/>
-        <Food Id="fd4" Class="clsFoodFish1"  Bounds="340, 54, 30, 15" TraceId="image3349"/>
-        <Food Id="fd5" Class="clsFoodFish1"  Bounds="345, 98, 30, 15" TraceId="image3351"/>
-        <Food Id="fd6" Class="clsFoodFish1"  Bounds="280, 137, 30, 15" TraceId="image3353"/>
-        <Food Id="fd7" Class="clsFoodFish1"  Bounds="143, 110, 30, 15" TraceId="image3355"/>
-        <Food Id="fd8" Class="clsFoodFish1"  Bounds="106, 163, 30, 15" TraceId="image3357"/>
-        <Food Id="fd9" Class="clsFoodFish1"  Bounds="213, 168, 30, 15" TraceId="image3359"/>
-        <Food Id="fd10" Class="clsFoodFish1"  Bounds="281, 197, 30, 15" TraceId="image3361"/>
-        <Food Id="fd11" Class="clsFoodFish1"  Bounds="215, 227, 30, 15" TraceId="image3363"/>
-        <Food Id="fd12" Class="clsFoodFish1"  Bounds="19, 216, 30, 15" TraceId="image3384"/>
-        <Food Id="fd13" Class="clsFoodFish1"  Bounds="16, 205, 30, 15" TraceId="image3365"/>
-        <Food Id="fd14" Class="clsFoodFish1"  Bounds="112, 283, 30, 15" TraceId="image3270"/>
-        <Food Id="fd15" Class="clsFoodFish4"  Bounds="216, 273, 26, 17" TraceId="image3382"/>
-        <Food Id="fd16" Class="clsFoodFish4"  Bounds="237, 282, 26, 17" TraceId="image3380"/>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="46, 22, 28, 19" TraceId="image3553"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="105, 75, 28, 19" TraceId="image3556"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=2" Bounds="148, 108, 28, 19" TraceId="image3558"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=2" Bounds="109, 161, 28, 19" TraceId="image3560"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=2" Bounds="17, 201, 28, 19" TraceId="image3562"/>
+        <Food Id="fd6" Class="clsFood" ClassParams="@fishType=2" Bounds="24, 218, 28, 19" TraceId="image3564"/>
+        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=2" Bounds="115, 279, 28, 19" TraceId="image3567"/>
+        <Food Id="fd8" Class="clsFood" ClassParams="@fishType=2" Bounds="219, 226, 28, 19" TraceId="image3569"/>
+        <Food Id="fd9" Class="clsFood" ClassParams="@fishType=2" Bounds="216, 166, 28, 19" TraceId="image3571"/>
+        <Food Id="fd10" Class="clsFood" ClassParams="@fishType=2" Bounds="241, 40, 28, 19" TraceId="image3573"/>
+        <Food Id="fd11" Class="clsFood" ClassParams="@fishType=2" Bounds="344, 52, 28, 19" TraceId="image3575"/>
+        <Food Id="fd12" Class="clsFood" ClassParams="@fishType=2" Bounds="347, 96, 28, 19" TraceId="image3578"/>
+        <Food Id="fd13" Class="clsFood" ClassParams="@fishType=2" Bounds="281, 135, 28, 19" TraceId="image3581"/>
+        <Food Id="fd14" Class="clsFood" ClassParams="@fishType=2" Bounds="283, 194, 28, 19" TraceId="image3583"/>
+        <Food Id="fd15" Class="clsFood" ClassParams="@fishType=7" Bounds="225, 269, 32, 30" TraceId="image3593"/>
     </Layer>
-<!-- HAND EDIT >>> -->
+    <!-- HAND EDIT >>> -->
     <Resources RootFolder="Sound">
         <SoundFile Id="whistle" Source="whistle"/>
         <SoundFile Id="whistle_ready" Source="whistle_ready"/>
@@ -183,7 +179,7 @@
 
         <BoolTrigger Condition="hero:EnemiesRun" EnterAction="setRunToTheLeft.Start()" />
         <BoolTrigger Condition="not hero:EnemiesRun" EnterAction="setRunToTheRight.Start()" />
-        
+
         <SequenceSet Id="setRunToTheRight">
             <Do Action="@time2=system.Round(system.Rnd(4.2,5)*10)/10;@dx2=387;
                         @time3=system.Round(system.Rnd(4.1,4.9)*10)/10;@dx3=380;
@@ -195,7 +191,7 @@
                         @time9=system.Round(system.Rnd(4,4.8)*10)/10;@dx9=368" />
             <Do Action="setRunOnce.Start()" />
         </SequenceSet>
-        
+
         <SequenceSet  Id="setRunToTheLeft" >
             <Do Action="setRunOnce.Start()" />
             <Do Action="@time2=system.Round(system.Rnd(4.2,5)*10)/10;@dx2=-387;
@@ -209,7 +205,7 @@
             <Do Action="setRunOnce.Start()" />
 
         </SequenceSet>
-        
+
         <SequenceSet Id="setRunOnce" RepeatCount="1">
             <Delay Duration="1" />
             <ParallelSet RepeatCount="1" >
@@ -217,7 +213,7 @@
                 <NumAnimation From="0" To="-7" Target="enm1.Y" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1" Fill="End"/>
             </ParallelSet>
             <Delay Duration="2" />
-            
+
             <ParallelSet RepeatCount="1" >
                 <Do Action="sndWhistle.Start()" />
                 <SequenceSet RepeatCount="1" >
@@ -273,7 +269,7 @@
             <Do Action="hero:*EnemiesRun" />
         </SequenceSet>
 
-        
+
         <Enemy Id="enm1" Class="clsEnemyRat5" Bounds="350, 261, 26, 28" TraceId="Boss"/>
         <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="41, 35, 24, 25" TraceId="image3750"/>
         <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="26, 68, 22, 23" TraceId="image3739"/>
@@ -284,7 +280,7 @@
         <Enemy Id="enm8" Class="clsEnemyRat3" Bounds="26, 269, 24, 25" TraceId="image3779"/>
         <Enemy Id="enm9" Class="clsEnemyRat2" Bounds="40, 136, 22, 23" TraceId="image3325"/>
     </Layer>
-<!-- HAND EDIT <<< -->
+    <!-- HAND EDIT <<< -->
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="247, 84, 33, 24" TraceId="image3015"/>
@@ -293,4 +289,17 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=16 Enemy=9 Block=4 DesignImage=81 Animation=8 Teleport Animations=8 FoodPack=0 -->
+<!-- Food=15 Enemy=9 Block=4 DesignImage=81 Animation=8 Teleport Animations=8 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- -->
+<!-- Food Points = 1130 -->
+<!-- 1% = 11.3; 45% = 508.5; 90% = 1017 -->
+<!-- minPointsFood = 70 (6.2%) -->
+<!-- -->
+<!-- Enemy Points = 635 -->
+<!-- 1% = 6.35; 45% = 285.75; 90% = 571.5 -->
+<!-- minPointsEnemy = 50 (7.9%) -->
+<!-- -->
+<!-- Food + Enemy Points = 1765 -->
+<!-- 1% = 17.65; 45% = 794.25; 90% = 1588.5 -->
+<!-- minPointsFood = 70 (4%) -->
+<!-- minPointsEnemy = 50 (2.8%) -->
