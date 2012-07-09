@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.12 -->
+<!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd\Lvl_Poezd.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat4.xml" />
@@ -26,6 +26,7 @@
         <Texture Id="txr_railwayTurn90b" Source="railwayTurn90b" />
         <Texture Id="txr_railwayCross" Source="railwayCross" />
         <Texture Id="txr_railwayHor8" Source="railwayHor8" />
+        <Texture Id="txr_traces_singl" Source="traces_singl" />
         <Texture Id="txr_grass_05" Source="grass_05" />
         <Texture Id="txr_tree_03" Source="tree_03" />
         <Texture Id="txr_tree_04" Source="tree_04" />
@@ -34,10 +35,10 @@
         <Texture Id="txr_web_02" Source="web_02" />
         <Texture Id="txr_semafor_green" Source="semafor_green" />
     </Resources>
-    <Layer Id="Background" BackColor="#FFFFFFFF">
+    <Layer Id="_Background" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_level_BG" Bounds="0, 0, 480, 320" TraceId="image3522"/>
     </Layer>
-    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+    <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_stone_01" Bounds="22, 58, 10, 8" TraceId="image3377"/>
         <Image Id="dfltMask3" TextureId="txr_hemps_03" Bounds="450, 4, 43, 41" TraceId="image3731"/>
         <Image Id="dfltMask4" TextureId="txr_grass_02" Bounds="257, 269, 32, 27" TraceId="image3342"/>
@@ -57,7 +58,7 @@
         <Image Id="dfltMask18" TextureId="txr_stone_01" Bounds="236, 269, 10, 8" TraceId="image3270"/>
         <Image Id="dfltMask19" TextureId="txr_stone_01" Bounds="29, 193, 10, 8" TraceId="image3375"/>
     </Layer>
-    <Layer Id="design" BackColor="#FFFFFFFF">
+    <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask20" TextureId="txr_railwayHor1" Bounds="-6, 16, 40, 40" TraceId="image3341"/>
         <Image Id="dfltMask21" TextureId="txr_railwayHor1" Bounds="34, 16, 40, 40" TraceId="image3344"/>
         <Image Id="dfltMask22" TextureId="txr_railwayHor1" Bounds="74, 16, 40, 40" TraceId="image3346"/>
@@ -109,6 +110,11 @@
         <Image Id="dfltMask68" TextureId="txr_railwayHor1" Bounds="370, 272, 40, 40" TraceId="image3500"/>
         <Image Id="dfltMask69" TextureId="txr_railwayHor8" Bounds="346, 118, 40, 40" FlipEffects="Horizontally" TraceId="image3510"/>
     </Layer>
+    <Layer Id="_traces" Opacity="0.5" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask70" TextureId="txr_traces_singl" Bounds="227, 52,  25,  18" TraceId="image3141"/>
+        <Image Id="dfltMask71" TextureId="txr_traces_singl" Bounds="223, 68,  25,  18" TraceId="image3145"/>
+        <Image Id="dfltMask72" TextureId="txr_traces_singl" Bounds="225, 88,  25,  18" TraceId="image3147"/>
+    </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="130, 63, 22, 23" TraceId="image4606"/>
         <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="393, 236, 22, 23" TraceId="image4608"/>
@@ -135,8 +141,8 @@
         <Food Id="fd14" Class="clsFood" ClassParams="@fishType=2" Bounds="275, 28, 28, 19" TraceId="image3610"/>
         <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="354, 161, 24, 25" TraceId="image3812"/>
     </Layer>
-    <Layer Id="midgrnd" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask70" TextureId="txr_grass_05" Bounds="389, 223, 55, 44" FlipEffects="Horizontally" TraceId="image3122"/>
+    <Layer Id="_midgrnd" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask73" TextureId="txr_grass_05" Bounds="389, 223, 55, 44" FlipEffects="Horizontally" TraceId="image3122"/>
     </Layer>
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
@@ -164,17 +170,17 @@
         <Hero Id="hero" Class="clsHero" Bounds="26, 23, 33, 24" TraceId="image3015"/>
         <Group Id="exit" Class="clsExit" Bounds="6, 93, 37, 54" TraceId="image3049" />
     </Layer>
-    <Layer Id="Foreground" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask71" TextureId="txr_tree_03" Bounds="41, 195, 114, 124" TraceId="image3626"/>
-        <Image Id="dfltMask72" TextureId="txr_tree_04" Bounds="196, 129, 90, 60" TraceId="image3643"/>
-        <Image Id="dfltMask73" TextureId="txr_tree_01" Bounds="304, -40, 91, 116" TraceId="image3672"/>
-        <Image Id="dfltMask74" TextureId="txr_grass_02" Bounds="187, 164, 32, 27" TraceId="image3718"/>
-        <Image Id="dfltMask75" TextureId="txr_grass_05" Bounds="12, 127, 55, 44" TraceId="image3753"/>
-        <Image Id="dfltMask76" TextureId="txr_grass_01" Bounds="85, 147, 46, 22" TraceId="image3764"/>
-        <Image Id="dfltMask77" TextureId="txr_grass_03" Bounds="355, 59, 21, 20" TraceId="image3144-1"/>
-        <Image Id="dfltMask78" TextureId="txr_box_strip_02" Bounds="-8, 151, 47, 53" TraceId="image3219"/>
-        <Image Id="dfltMask79" TextureId="txr_web_02" Bounds="252, 161, 35, 33" Stretch="true" TraceId="image3305"/>
-        <Image Id="dfltMask80" TextureId="txr_grass_04" Bounds="105, 309, 33, 14" TraceId="image3351"/>
+    <Layer Id="_Foreground" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask74" TextureId="txr_tree_03" Bounds="41, 195, 114, 124" TraceId="image3626"/>
+        <Image Id="dfltMask75" TextureId="txr_tree_04" Bounds="196, 129, 90, 60" TraceId="image3643"/>
+        <Image Id="dfltMask76" TextureId="txr_tree_01" Bounds="304, -40, 91, 116" TraceId="image3672"/>
+        <Image Id="dfltMask77" TextureId="txr_grass_02" Bounds="187, 164, 32, 27" TraceId="image3718"/>
+        <Image Id="dfltMask78" TextureId="txr_grass_05" Bounds="12, 127, 55, 44" TraceId="image3753"/>
+        <Image Id="dfltMask79" TextureId="txr_grass_01" Bounds="85, 147, 46, 22" TraceId="image3764"/>
+        <Image Id="dfltMask80" TextureId="txr_grass_03" Bounds="355, 59, 21, 20" TraceId="image3144-1"/>
+        <Image Id="dfltMask81" TextureId="txr_box_strip_02" Bounds="-8, 151, 47, 53" TraceId="image3219"/>
+        <Image Id="dfltMask82" TextureId="txr_web_02" Bounds="252, 161, 35, 33" Stretch="true" TraceId="image3305"/>
+        <Image Id="dfltMask83" TextureId="txr_grass_04" Bounds="105, 309, 33, 14" TraceId="image3351"/>
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
         <Include File="includeSemafor.xml" />
@@ -184,7 +190,7 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
 </Level>
-<!-- Food=14 Enemy=7 Block=0 DesignImage=80 Animation=12 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=14 Enemy=7 Block=0 DesignImage=83 Animation=12 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 1320 -->
 <!-- 1% = 13.2; 45% = 594; 90% = 1188 -->
@@ -198,3 +204,4 @@
 <!-- 1% = 16.95; 45% = 762.75; 90% = 1525.5 -->
 <!-- minPointsFood = 70 (4.1%) -->
 <!-- minPointsEnemy = 50 (2.9%) -->
+

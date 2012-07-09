@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.12 -->
+<!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd_v3_Spiral\Lvl_Poezd_v3_Spiral.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_v3_Spiral" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyRat4.xml" />
@@ -27,6 +27,7 @@
         <Texture Id="txr_railwayHor8" Source="railwayHor8" />
         <Texture Id="txr_railwayHor2" Source="railwayHor2" />
         <Texture Id="txr_railwayHor4" Source="railwayHor4" />
+        <Texture Id="txr_traces_singl" Source="traces_singl" />
         <Texture Id="txr_railway_end_horiz" Source="railway_end_horiz" />
         <Texture Id="txr_box_strip_02" Source="box_strip_02" />
         <Texture Id="txr_grass_06" Source="grass_06" />
@@ -36,10 +37,10 @@
         <Texture Id="txr_grass_09" Source="grass_09" />
         <Texture Id="txr_semafor_green" Source="semafor_green" />
     </Resources>
-    <Layer Id="background" BackColor="#FFFFFFFF">
+    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_level_BG" Bounds="0, 0, 480, 320" TraceId="image3092"/>
     </Layer>
-    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
+    <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_stone_05" Bounds="263, 231, 23, 18" TraceId="image3261"/>
         <Image Id="dfltMask3" TextureId="txr_stone_brown_02" Bounds="290, 223, 11, 10" TraceId="image3320"/>
         <Image Id="dfltMask4" TextureId="txr_stone_01" Bounds="322, 237, 10, 8" TraceId="image3310"/>
@@ -63,7 +64,7 @@
         <Image Id="dfltMask22" TextureId="txr_grass_07" Bounds="453, 30, 55, 44" TraceId="image3398-7"/>
         <Image Id="dfltMask23" TextureId="txr_stone_brown_01" Bounds="403, 77, 15, 12" TraceId="image3415"/>
     </Layer>
-    <Layer Id="design" BackColor="#FFFFFFFF">
+    <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask24" TextureId="txr_railwayHor1" Bounds="60, 20, 40, 40" TraceId="image3016-1"/>
         <Image Id="dfltMask25" TextureId="txr_railwayHor1" Bounds="100, 20, 40, 40" TraceId="image3019"/>
         <Image Id="dfltMask26" TextureId="txr_railwayHor1" Bounds="140, 20, 40, 40" TraceId="image3021"/>
@@ -105,6 +106,13 @@
         <Image Id="dfltMask62" TextureId="txr_railwayHor2" Bounds="460, 140, 40, 40" Rotation="90" TraceId="image3134"/>
         <Image Id="dfltMask63" TextureId="txr_railwayHor4" Bounds="100, 260, 40, 40" TraceId="image3156"/>
     </Layer>
+    <Layer Id="_traces" Opacity="0.5" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask64" TextureId="txr_traces_singl" Bounds="216, 131, 25, 18" TraceId="image3122"/>
+        <Image Id="dfltMask65" TextureId="txr_traces_singl" Bounds="216, 151, 25, 18" TraceId="image3125"/>
+        <Image Id="dfltMask66" TextureId="txr_traces_singl" Bounds="218, 171, 25, 18" TraceId="image3127"/>
+        <Image Id="dfltMask67" TextureId="txr_traces_singl" Bounds="214, 191, 25, 18" TraceId="image3129"/>
+        <Image Id="dfltMask68" TextureId="txr_traces_singl" Bounds="216, 211, 25, 18" TraceId="image3132"/>
+    </Layer>
     <Layer Id="way" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
         <SequenceSet Id="setWay" InProgress="true">
@@ -127,7 +135,7 @@
             <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="107, 59, 22, 23" TraceId="image3478"/>
             <NumAnimation Id="anm8" From="0" To="254" Target="X" Duration="7" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3489"/>
         </Group>
-        <Group Id="grp_g3567">
+        <Group Id="grp_g3115">
             <NumAnimation Id="anm9" From="0" To="91" Target="Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3556"/>
             <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="219, 124, 22, 23" TraceId="image3588"/>
         </Group>
@@ -156,14 +164,14 @@
         <Hero Id="hero" Class="clsHero" Bounds="20, 29, 33, 24" TraceId="image3015"/>
         <Group Id="exit" Class="clsExit" Bounds="83, 166, 37, 54" TraceId="image3049" />
     </Layer>
-    <Layer Id="foreground" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask65" TextureId="txr_box_strip_02" Bounds="227, 197, 47, 53" TraceId="image3103"/>
-        <Image Id="dfltMask66" TextureId="txr_grass_07" Bounds="325, 192, 55, 44" TraceId="image3144"/>
-        <Image Id="dfltMask67" TextureId="txr_grass_06" Bounds="84, 205, 46, 21" TraceId="image3166"/>
-        <Image Id="dfltMask68" TextureId="txr_grass_02" Bounds="39, 39, 32, 27" TraceId="image3188"/>
-        <Image Id="dfltMask69" TextureId="txr_grass_03" Bounds="105, 114, 21, 20" TraceId="image3210"/>
-        <Image Id="dfltMask70" TextureId="txr_grass_05" Bounds="52, 91, 55, 44" TraceId="image3232"/>
-        <Image Id="dfltMask71" TextureId="txr_grass_09" Bounds="-5, 115, 21, 20" TraceId="image3199"/>
+    <Layer Id="_foreground" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask70" TextureId="txr_box_strip_02" Bounds="227, 197, 47, 53" TraceId="image3103"/>
+        <Image Id="dfltMask71" TextureId="txr_grass_07" Bounds="325, 192, 55, 44" TraceId="image3144"/>
+        <Image Id="dfltMask72" TextureId="txr_grass_06" Bounds="84, 205, 46, 21" TraceId="image3166"/>
+        <Image Id="dfltMask73" TextureId="txr_grass_02" Bounds="39, 39, 32, 27" TraceId="image3188"/>
+        <Image Id="dfltMask74" TextureId="txr_grass_03" Bounds="105, 114, 21, 20" TraceId="image3210"/>
+        <Image Id="dfltMask75" TextureId="txr_grass_05" Bounds="52, 91, 55, 44" TraceId="image3232"/>
+        <Image Id="dfltMask76" TextureId="txr_grass_09" Bounds="-5, 115, 21, 20" TraceId="image3199"/>
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
         <Include File="includeSemafor.xml" />
@@ -173,7 +181,7 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
 </Level>
-<!-- Food=17 Enemy=4 Block=0 DesignImage=71 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=17 Enemy=4 Block=0 DesignImage=76 Animation=9 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 1470 -->
 <!-- 1% = 14.7; 45% = 661.5; 90% = 1323 -->
