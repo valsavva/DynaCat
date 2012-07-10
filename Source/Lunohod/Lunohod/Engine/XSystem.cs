@@ -60,6 +60,18 @@ namespace Lunohod.Objects
 		{
 			return game.GameObject.LevelSeries[seriesIndex].Levels.Count;
 		}
+
+        public double GetSeriesUnlockedLevelNumber(int seriesIndex)
+        {
+            var levels = game.GameObject.LevelSeries[seriesIndex].Levels;
+            int i = 0;
+            for (; i < levels.Count - 1; i++)
+            {
+                if (game.ScoreFile.LevelScoreDict[levels[i].Id].Time == 0)
+                    break;
+            }
+            return i;
+        }
 		
 		public double GetSeriesLevelStars(int seriesIndex, int levelIndex)
 		{
@@ -84,6 +96,7 @@ namespace Lunohod.Objects
 
 			return score.TotalScore;
 		}
+
 		public bool GetSeriesLevelHasBadge(int seriesIndex, int levelIndex)
 		{
 			var levelInfo = GetSeriesLevelInfo(seriesIndex, levelIndex);
@@ -288,12 +301,13 @@ namespace Lunohod.Objects
                 case "Abs": method = (ps) => Abs(ps[0].GetNumValue()); break;
 				case "IIf": method = (ps) => IIf(ps[0].GetBoolValue(), ps[1].GetNumValue(), ps[2].GetNumValue()); break;
 				case "GetSeriesLevelStars": method = (ps) => GetSeriesLevelStars(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
-				case "GetSeriesLevelScore": method = (ps) => GetSeriesLevelScore(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
+                case "GetSeriesUnlockedLevelNumber": method = (ps) => GetSeriesUnlockedLevelNumber(ps[0].GetIntValue()); break;
 				case "GetCommandsPerSecond": method = (ps) => GetCommandsPerSecond(); break;
 				case "GetSeriesLevelCount": method = (ps) => GetSeriesLevelCount(ps[0].GetIntValue()); break;
 				case "GetSeriesScore": method = (ps) => GetSeriesScore(ps[0].GetIntValue()); break;
 				case "GetSeriesStars": method = (ps) => GetSeriesStars(ps[0].GetIntValue()); break;
 				case "GetSeriesAvailableStars": method = (ps) => GetSeriesAvailableStars(ps[0].GetIntValue()); break;
+                case "GetSeriesLevelScore": method = (ps) => GetSeriesLevelScore(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

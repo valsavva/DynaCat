@@ -35,24 +35,22 @@
 				<Do Action="
 					@this_numberOfStars=system.GetSeriesLevelStars(@seriesNum,@levelNum);
 					@this_hasBadge=system.GetSeriesLevelHasBadge(@seriesNum,@levelNum);
-					@this_previosLevelScore=777;
+					@this_unlockedLevelNumber=system.GetSeriesUnlockedLevelNumber(@seriesNum);
 					"
 					InProgress="true"
 					RepeatCount="0"
 				/>
-				
-				<BoolTrigger Condition="@levelNum>0" Action="@this_previosLevelScore=system.GetSeriesLevelScore(@seriesNum,@levelNum-1);" />
 				
 	            <SequenceSet Id="this_setPress">
 	                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.2" Autoreverse="true" RepeatCount="1"/>
 	                <Do Action="system.StartSeriesLevel(@seriesNum,@levelNum)"/>
 	            </SequenceSet>
 	            
-	            <BoolTrigger Condition="@this_previosLevelScore > 0">
+	            <BoolTrigger Condition="@levelNum &lt;= @this_unlockedLevelNumber">
 					<TapArea Action="this_setPress.Start()"/>
 	            </BoolTrigger>
 
-	            <BoolTrigger Condition="@this_previosLevelScore == 0"
+	            <BoolTrigger Condition="@levelNum > @this_unlockedLevelNumber"
 	            	EnterAction="
 	            	this_sprPanel.SetBackColor(255,200,200,200);
 	            	this_sprNumber1.SetBackColor(255,200,200,200);
