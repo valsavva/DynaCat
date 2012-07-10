@@ -33,6 +33,8 @@
 ###@cntrValue2
 .Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
 ###@CRLF
+<Delay Duration="7.2" />
+###@CRLF
 </SequenceSet>
 ###@CRLF
 </Enemy>

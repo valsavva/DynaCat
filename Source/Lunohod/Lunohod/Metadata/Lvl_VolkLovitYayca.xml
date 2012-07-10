@@ -1,241 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.5.07 -->
-<!-- source: D:\Lunohod\Levels\SXXLXX_VolkLovitYayca\SXXLXX_VolkLovitYayca.svg -->
-<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="SXXLXX_VolkLovitYayca" Bounds="0, 0, 480, 320">
+<!-- SVG to XGAME xml converter v1.6.15 -->
+<!-- source: D:\Lunohod\Levels\Lvl_VolkLovitYayca\Lvl_VolkLovitYayca.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_VolkLovitYayca" Bounds="0, 0, 480, 320">
+    <Include File="ClassEnemyElectricity2.xml" />
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassEnemyRat3.xml" />
-    <Include File="ClassFoodFish2.xml" />
-    
-    
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
+    <Include File="ClassFood.xml" />
     <Include File="ClassExit.xml" />
+    <Include File="ClassEnemyElectricity1.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_fish_3_me" Source="fish_3_me" />
         <Texture Id="txr_tailsGreen" Source="tailsGreen" />
-        <Texture Id="txr_second_phon_ventilation_grille" Source="second_phon_ventilation_grille" />
-        <Texture Id="txr_second_phon_grill_with_fan_2" Source="second_phon_grill_with_fan_2" />
-        <Texture Id="txr_second_phon_crack" Source="second_phon_crack" />
-        <Texture Id="txr_second_phon_ladder" Source="second_phon_ladder" />
-        <Texture Id="txr_second_phon_communications2" Source="second_phon_communications2" />
-        <Texture Id="txr_wire_currentLR" Source="wire_currentLR" />
-        <Texture Id="txr_container_steel_1" Source="container_steel_1" />
-        <Texture Id="txr_container_steel_1_b" Source="container_steel_1_b" />
+        <Texture Id="txr_traces_singl" Source="traces_singl" />
+        <Texture Id="txr_box_30x30_008" Source="box_30x30_008" />
+        <Texture Id="txr_box_30x30_009" Source="box_30x30_009" />
+        <Texture Id="txr_box_30x30_005" Source="box_30x30_005" />
+        <Texture Id="txr_box_30x30_004" Source="box_30x30_004" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_box_old_3" Source="box_old_3" />
+        <Texture Id="txr_wire_005" Source="wire_005" />
+        <Texture Id="txr_wire_002" Source="wire_002" />
+        <Texture Id="txr_wire_003" Source="wire_003" />
     </Resources>
-    <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsGreen" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3459"/>
-    </Layer>
-    <Layer Id="secondbckg" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_second_phon_ventilation_grille" Bounds="350, 46, 40, 40" Rotation="0" Stretch="true" Opacity="1" TraceId="image3481"/>
-        <Image Id="dfltMask3" TextureId="txr_second_phon_ventilation_grille" Bounds="302, 46, 40, 40" Rotation="0" Stretch="true" Opacity="1" TraceId="image3486"/>
-        <Image Id="dfltMask4" TextureId="txr_second_phon_grill_with_fan_2" Bounds="252, 46, 40, 40" Rotation="0" Stretch="true" Opacity="1" TraceId="image3496"/>
-        <Image Id="dfltMask5" TextureId="txr_second_phon_crack" Bounds="49, 256, 111, 40" Rotation="0" Stretch="true" Opacity="1" TraceId="image3507"/>
-        <Image Id="dfltMask6" TextureId="txr_second_phon_ladder" Bounds="456, 150, 27, 178" Rotation="22.72" Stretch="true" Opacity="1" TraceId="image3518"/>
-        <Image Id="dfltMask7" TextureId="txr_second_phon_communications2" Bounds="423, 54, 65, 103" Rotation="0" Stretch="false" Opacity="1" TraceId="image3529"/>
-    </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
-        <Block Id="blk1" Bounds="-42, 0, 50, 320" Edges="Bounce" TraceId="image3379"/>
-        <Block Id="blk2" Bounds="472, 0, 50, 320" Edges="Bounce" TraceId="image3382"/>
-        <Block Id="blk3" Bounds="0, -52, 480, 60" Edges="Bounce" TraceId="image3384"/>
-        <Block Id="blk4" Bounds="0, 312, 480, 60" Edges="Bounce" TraceId="image3386"/>
+        <Block Bounds="-42, -31, 50, 351" Edges="Bounce" TraceId="image3379"/>
+        <Block Bounds="472, -38, 50, 358" Edges="Bounce" TraceId="image3382"/>
+        <Block Bounds="0, 312, 480, 60" Edges="Bounce" TraceId="image3386"/>
+        <Block Bounds="0, -86, 480, 60" Edges="Bounce" TraceId="image3348"/>
+        <Block Bounds="-20, -70, 150, 100" Edges="Bounce" TraceId="image3663"/>
+        <Block Bounds="350, -70, 150, 100" Edges="Bounce" TraceId="image3665"/>
+        <Block Bounds="350, 30, 30, 30" Edges="Bounce" TraceId="image3667"/>
+        <Block Bounds="100, 30, 30, 30" Edges="Bounce" TraceId="image3669"/>
+    </Layer>
+    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_tailsGreen" Bounds="0, 0, 480, 320" TraceId="image3459"/>
+    </Layer>
+    <Layer Id="_traces" Opacity="0.5" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_traces_singl" Bounds="62, 69,  25,  18" TraceId="image3201"/>
+        <Image Id="dfltMask3" TextureId="txr_traces_singl" Bounds="64, 89,  25,  18" TraceId="image3204"/>
+        <Image Id="dfltMask4" TextureId="txr_traces_singl" Bounds="64, 109,  25,  18" TraceId="image3206"/>
+        <Image Id="dfltMask5" TextureId="txr_traces_singl" Bounds="60, 129,  25,  18" TraceId="image3208"/>
+        <Image Id="dfltMask6" TextureId="txr_traces_singl" Bounds="60, 149,  25,  18" TraceId="image3210"/>
+        <Image Id="dfltMask7" TextureId="txr_traces_singl" Bounds="64, 169,  25,  18" TraceId="image3212"/>
+        <Image Id="dfltMask8" TextureId="txr_traces_singl" Bounds="64, 189,  25,  18" TraceId="image3214"/>
+        <Image Id="dfltMask9" TextureId="txr_traces_singl" Bounds="58, 209,  25,  18" TraceId="image3216"/>
+        <Image Id="dfltMask10" TextureId="txr_traces_singl" Bounds="62, 229,  25,  18" TraceId="image3218"/>
+        <Image Id="dfltMask11" TextureId="txr_traces_singl" Bounds="62, 249,  25,  18" TraceId="image3220"/>
+        <Image Id="dfltMask12" TextureId="txr_traces_singl" Bounds="62, 269,  25,  18" TraceId="image3222"/>
+        <Image Id="dfltMask13" TextureId="txr_traces_singl" Bounds="393, 115, 25, 18" TraceId="image3224"/>
+        <Image Id="dfltMask14" TextureId="txr_traces_singl" Bounds="393, 135, 25, 18" TraceId="image3226"/>
+        <Image Id="dfltMask15" TextureId="txr_traces_singl" Bounds="393, 155, 25, 18" TraceId="image3228"/>
+        <Image Id="dfltMask16" TextureId="txr_traces_singl" Bounds="397, 175, 25, 18" TraceId="image3230"/>
+        <Image Id="dfltMask17" TextureId="txr_traces_singl" Bounds="395, 195, 25, 18" TraceId="image3232"/>
+        <Image Id="dfltMask18" TextureId="txr_traces_singl" Bounds="389, 215, 25, 18" TraceId="image3234"/>
+        <Image Id="dfltMask19" TextureId="txr_traces_singl" Bounds="391, 235, 25, 18" TraceId="image3236"/>
+        <Image Id="dfltMask20" TextureId="txr_traces_singl" Bounds="391, 255, 25, 18" TraceId="image3238"/>
+    </Layer>
+    <Layer Id="elecWaves" BackColor="#FFFFFFFF">
+        <Group Id="grp_g3651">
+            <Enemy Id="enm1" Class="clsEnemyElectricity2" Bounds="123, -12, 264, 28" TraceId="image3254"/>
+            <NumAnimation Id="anm1" From="0" To="-20" Target="Y" Duration="1.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3283"/>
+        </Group>
+        <Group Id="grp_g3655">
+            <Enemy Id="enm2" Class="clsEnemyElectricity2" Bounds="121, -10, 264, 28" TraceId="image3322"/>
+            <NumAnimation Id="anm2" From="0" To="-20" Target="Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3324"/>
+        </Group>
+    </Layer>
+    <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask21" TextureId="txr_box_30x30_008" Bounds="100, 0, 30, 30" TraceId="image3360"/>
+        <Image Id="dfltMask22" TextureId="txr_box_30x30_008" Bounds="350, 0, 30, 30" TraceId="image3363"/>
+        <Image Id="dfltMask23" TextureId="txr_box_30x30_008" Bounds="350, 30, 30, 30" TraceId="image3365"/>
+        <Image Id="dfltMask24" TextureId="txr_box_30x30_008" Bounds="100, 30, 30, 30" TraceId="image3367"/>
+        <!-- HAND EDIT >>> -->
+        <Image Id="imgCoverBox1" TextureId="txr_box_30x30_009" Bounds="100, 0, 30, 30" />
+        <Image Id="imgCoverBox2" TextureId="txr_box_30x30_009" Bounds="350, 0, 30, 30" />
+        <Image Id="imgCoverBox3" TextureId="txr_box_30x30_009" Bounds="350, 30, 30, 30" />
+        <Image Id="imgCoverBox4" TextureId="txr_box_30x30_009" Bounds="100, 30, 30, 30" />
+        <!-- HAND EDIT <<< -->
+        <Image Id="dfltMask25" TextureId="txr_box_30x30_005" Bounds="440, 0, 30, 30" TraceId="image3377"/>
+        <Image Id="dfltMask26" TextureId="txr_box_30x30_005" Bounds="380, 0, 30, 30" TraceId="image3380"/>
+        <Image Id="dfltMask27" TextureId="txr_box_30x30_005" Bounds="410, 0, 30, 30" TraceId="image3383"/>
+        <Image Id="dfltMask28" TextureId="txr_box_30x30_005" Bounds="470, 0, 30, 30" TraceId="image3397"/>
+        <Image Id="dfltMask29" TextureId="txr_box_30x30_005" Bounds="40, 0, 30, 30" TraceId="image3438"/>
+        <Image Id="dfltMask30" TextureId="txr_box_30x30_005" Bounds="-20, 0, 30, 30" TraceId="image3440"/>
+        <Image Id="dfltMask31" TextureId="txr_box_30x30_005" Bounds="10, 0, 30, 30" TraceId="image3442"/>
+        <Image Id="dfltMask32" TextureId="txr_box_30x30_005" Bounds="70, 0, 30, 30" TraceId="image3444"/>
+        <Image Id="dfltMask33" TextureId="txr_box_30x30_004" Bounds="472, 30, 30, 30" TraceId="image3457"/>
+        <Image Id="dfltMask34" TextureId="txr_box_30x30_004" Bounds="472, 60, 30, 30" TraceId="image3460"/>
+        <Image Id="dfltMask35" TextureId="txr_box_30x30_004" Bounds="472, 30, 30, 30" TraceId="image3462"/>
+        <Image Id="dfltMask36" TextureId="txr_box_30x30_004" Bounds="472, 60, 30, 30" TraceId="image3464"/>
+        <Image Id="dfltMask37" TextureId="txr_box_30x30_004" Bounds="472, 90, 30, 30" TraceId="image3474"/>
+        <Image Id="dfltMask38" TextureId="txr_box_30x30_004" Bounds="472, 120, 30, 30" TraceId="image3476"/>
+        <Image Id="dfltMask39" TextureId="txr_box_30x30_004" Bounds="472, 150, 30, 30" TraceId="image3478"/>
+        <Image Id="dfltMask40" TextureId="txr_box_30x30_004" Bounds="472, 180, 30, 30" TraceId="image3480"/>
+        <Image Id="dfltMask41" TextureId="txr_box_30x30_004" Bounds="472, 210, 30, 30" TraceId="image3482"/>
+        <Image Id="dfltMask42" TextureId="txr_box_30x30_004" Bounds="472, 240, 30, 30" TraceId="image3484"/>
+        <Image Id="dfltMask43" TextureId="txr_box_30x30_004" Bounds="472, 270, 30, 30" TraceId="image3487"/>
+        <Image Id="dfltMask44" TextureId="txr_box_30x30_004" Bounds="-22, 30, 30, 30" TraceId="image3491"/>
+        <Image Id="dfltMask45" TextureId="txr_box_30x30_004" Bounds="-22, 60, 30, 30" TraceId="image3493"/>
+        <Image Id="dfltMask46" TextureId="txr_box_30x30_004" Bounds="-22, 30, 30, 30" TraceId="image3495"/>
+        <Image Id="dfltMask47" TextureId="txr_box_30x30_004" Bounds="-22, 60, 30, 30" TraceId="image3497"/>
+        <Image Id="dfltMask48" TextureId="txr_box_30x30_004" Bounds="-22, 90, 30, 30" TraceId="image3499"/>
+        <Image Id="dfltMask49" TextureId="txr_box_30x30_004" Bounds="-22, 120, 30, 30" TraceId="image3501"/>
+        <Image Id="dfltMask50" TextureId="txr_box_30x30_004" Bounds="-22, 150, 30, 30" TraceId="image3503"/>
+        <Image Id="dfltMask51" TextureId="txr_box_30x30_004" Bounds="-22, 180, 30, 30" TraceId="image3505"/>
+        <Image Id="dfltMask52" TextureId="txr_box_30x30_004" Bounds="-22, 210, 30, 30" TraceId="image3508"/>
+        <Image Id="dfltMask53" TextureId="txr_box_30x30_004" Bounds="-22, 240, 30, 30" TraceId="image3510"/>
+        <Image Id="dfltMask54" TextureId="txr_box_30x30_004" Bounds="-22, 270, 30, 30" TraceId="image3512"/>
+        <Image Id="dfltMask55" TextureId="txr_box_30x30_004" Bounds="-22, 300, 30, 30" TraceId="image3514"/>
+        <Image Id="dfltMask56" TextureId="txr_box_30x30_005" Bounds="68, 312, 30, 30" TraceId="image3516"/>
+        <Image Id="dfltMask57" TextureId="txr_box_30x30_005" Bounds="8, 312, 30, 30" TraceId="image3519"/>
+        <Image Id="dfltMask58" TextureId="txr_box_30x30_005" Bounds="38, 312, 30, 30" TraceId="image3521"/>
+        <Image Id="dfltMask59" TextureId="txr_box_30x30_005" Bounds="98, 312, 30, 30" TraceId="image3523"/>
+        <Image Id="dfltMask60" TextureId="txr_box_30x30_005" Bounds="188, 312, 30, 30" TraceId="image3525"/>
+        <Image Id="dfltMask61" TextureId="txr_box_30x30_005" Bounds="128, 312, 30, 30" TraceId="image3527"/>
+        <Image Id="dfltMask62" TextureId="txr_box_30x30_005" Bounds="158, 312, 30, 30" TraceId="image3530"/>
+        <Image Id="dfltMask63" TextureId="txr_box_30x30_005" Bounds="218, 312, 30, 30" TraceId="image3532"/>
+        <Image Id="dfltMask64" TextureId="txr_box_30x30_005" Bounds="308, 312, 30, 30" TraceId="image3534"/>
+        <Image Id="dfltMask65" TextureId="txr_box_30x30_005" Bounds="248, 312, 30, 30" TraceId="image3536"/>
+        <Image Id="dfltMask66" TextureId="txr_box_30x30_005" Bounds="278, 312, 30, 30" TraceId="image3538"/>
+        <Image Id="dfltMask67" TextureId="txr_box_30x30_005" Bounds="338, 312, 30, 30" TraceId="image3540"/>
+        <Image Id="dfltMask68" TextureId="txr_box_30x30_005" Bounds="428, 312, 30, 30" TraceId="image3542"/>
+        <Image Id="dfltMask69" TextureId="txr_box_30x30_005" Bounds="368, 312, 30, 30" TraceId="image3544"/>
+        <Image Id="dfltMask70" TextureId="txr_box_30x30_005" Bounds="398, 312, 30, 30" TraceId="image3546"/>
+        <Image Id="dfltMask71" TextureId="txr_box_30x30_005" Bounds="458, 312, 30, 30" TraceId="image3548"/>
+        <Image Id="dfltMask72" TextureId="txr_box_30x30_004" Bounds="472, 300, 30, 30" TraceId="image3489"/>
     </Layer>
 
     <!-- >>> HANDEDIT >>> -->
-    <!-- >>> HANDEDIT >>> -->
-    <!-- FIX FOR START AFTER LOAD LEVEL DECREASE 10 SEC. -->
-    <Layer Id="Food" BackColor="#FFFFFFFF">
 
-        <Food Id="fd1" Bounds="90, -98, 27, 15" Class="clsFoodFish2" >
+    <Layer Id="Food" BackColor="#FFFFFFFF">
+        <SequenceSet InProgress="true" RepeatCount="1">
+            <Delay Duration="2" />
+            <Do Action="imgCoverBox1.Disable();
+                    imgCoverBox2.Disable();
+                    imgCoverBox3.Disable();
+                    imgCoverBox4.Disable()" />
+            <Delay Duration="28" />
+            <Do Action="imgCoverBox1.Enable();
+                    imgCoverBox2.Enable();
+                    imgCoverBox3.Enable();
+                    imgCoverBox4.Enable()" />
+        </SequenceSet>
+        
+            <Food Id="fd1" Bounds="130, -98, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="1" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="5" />
+                <Delay Duration="2" />               
                 <NumAnimation Id="anm1" From="0" To="500" Target="fd1.Y" Duration="7" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd2" Bounds="112, -95, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd2" Bounds="152, -95, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="2" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="7" />
+                <Delay Duration="4" />
                 <NumAnimation Id="anm2" From="0" To="500" Target="fd2.Y" Duration="9" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd3" Bounds="245, -95, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd3" Bounds="245, -95, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="3" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="10" />
+                <Delay Duration="7" />
                 <NumAnimation Id="anm3" From="0" To="500" Target="fd3.Y" Duration="7" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd4" Bounds="360, -94, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd4" Bounds="322, -94, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="4" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="8.6" />
+                <Delay Duration="5.6" />
                 <NumAnimation Id="anm4" From="0" To="500" Target="fd4.Y" Duration="12" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd5" Bounds="204, -94, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd5" Bounds="204, -94, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="5" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="13" />
+                <Delay Duration="10" />
                 <NumAnimation Id="anm5" From="0" To="500" Target="fd5.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd6" Bounds="300, -94, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd6" Bounds="300, -94, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="6" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="14" />
+                <Delay Duration="11" />
                 <NumAnimation Id="anm6" From="0" To="500" Target="fd6.Y" Duration="10" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd7" Bounds="350, -94, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd7" Bounds="310, -94, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="7" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="19" />
+                <Delay Duration="16" />
                 <NumAnimation Id="anm7" From="0" To="500" Target="fd7.Y" Duration="4" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd8" Bounds="350, -94, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd8" Bounds="322, -94, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="8" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="18" />
+                <Delay Duration="15" />
                 <NumAnimation Id="anm8" From="0" To="500" Target="fd8.Y" Duration="19" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd9" Bounds="90, -94, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd9" Bounds="230, -94, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="9" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="21" />
+                <Delay Duration="18" />
                 <NumAnimation Id="anm9" From="0" To="500" Target="fd9.Y" Duration="8" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
-        <Food Id="fd10" Bounds="90, -94, 27, 15" Class="clsFoodFish2" >
+        <Food Id="fd10" Bounds="130, -94, 28, 22" Class="clsFood" ClassParams="@fishType=4" >
             <!--<Text FontId="SystemFont" Text="10" Location="24,12" Color="#000000" />-->
             <SequenceSet InProgress="true" RepeatCount="1">
-                <Delay Duration="28" />
+                <Delay Duration="24" />
                 <NumAnimation Id="anm10" From="0" To="500" Target="fd10.Y" Duration="10" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
+            </SequenceSet>
+        </Food>
+
+        <Food Id="fd11"  Bounds="201, -94, 22,  27" Class="clsFood" ClassParams="@fishType=6">
+            <!--<Text FontId="SystemFont" Text="11" Location="24,12" Color="#000000" />-->
+            <SequenceSet InProgress="true" RepeatCount="1">
+                <Delay Duration="24" />
+                <NumAnimation Id="anm10" From="0" To="500" Target="fd11.Y" Duration="15" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
             </SequenceSet>
         </Food>
 
     </Layer>
     <!-- <<< HANDEDIT <<< -->
-    <!-- <<< HANDEDIT <<< -->
-    <Layer Id="design" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask8" TextureId="txr_wire_currentLR" Bounds="312, -8, 45, 8" Rotation="71.43" Stretch="false" Opacity="1" TraceId="image3553"/>
-        <Image Id="dfltMask9" TextureId="txr_wire_currentLR" Bounds="235, -4, 45, 8" Rotation="111.99" Stretch="false" Opacity="1" TraceId="image3543"/>
-        <Image Id="dfltMask10" TextureId="txr_wire_currentLR" Bounds="99, -17, 45, 8" Rotation="60" Stretch="false" Opacity="1" TraceId="image3540"/>
-
-        <Enemy Id="enmEl1" Class="clsEnemyElectricity1" Bounds="110, 17, 11, 11"/>
-        <Enemy Id="enmEl2" Class="clsEnemyElectricity1" Bounds="209, 26, 11, 11"/>
-        <Enemy Id="enmEl3" Class="clsEnemyElectricity1" Bounds="313, 28, 11, 11"/>
-
-        <Image Id="dfltMask11" TextureId="txr_container_steel_1" Bounds="-21, 288, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3070"/>
-        <Image Id="dfltMask12" TextureId="txr_container_steel_1" Bounds="-21, 258, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3073"/>
-        <Image Id="dfltMask13" TextureId="txr_container_steel_1" Bounds="-21, 228, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3075"/>
-        <Image Id="dfltMask14" TextureId="txr_container_steel_1" Bounds="-21, 198, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3077"/>
-        <Image Id="dfltMask15" TextureId="txr_container_steel_1" Bounds="-21, 168, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3079"/>
-        <Image Id="dfltMask16" TextureId="txr_container_steel_1" Bounds="-21, 138, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3081"/>
-        <Image Id="dfltMask17" TextureId="txr_container_steel_1" Bounds="-21, 108, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3083"/>
-        <Image Id="dfltMask18" TextureId="txr_container_steel_1" Bounds="-21, 78, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3085"/>
-        <Image Id="dfltMask19" TextureId="txr_container_steel_1" Bounds="-21, 48, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3087"/>
-        <Image Id="dfltMask20" TextureId="txr_container_steel_1" Bounds="-21, 18, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3089"/>
-        <Image Id="dfltMask21" TextureId="txr_container_steel_1" Bounds="-21, -12, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3091"/>
-        <Image Id="dfltMask22" TextureId="txr_container_steel_1" Bounds="471, 288, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3095"/>
-        <Image Id="dfltMask23" TextureId="txr_container_steel_1" Bounds="471, 258, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3097"/>
-        <Image Id="dfltMask24" TextureId="txr_container_steel_1" Bounds="471, 228, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3099"/>
-        <Image Id="dfltMask25" TextureId="txr_container_steel_1" Bounds="471, 198, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3101"/>
-        <Image Id="dfltMask26" TextureId="txr_container_steel_1" Bounds="471, 168, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3103"/>
-        <Image Id="dfltMask27" TextureId="txr_container_steel_1" Bounds="471, 138, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3105"/>
-        <Image Id="dfltMask28" TextureId="txr_container_steel_1" Bounds="471, 108, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3107"/>
-        <Image Id="dfltMask29" TextureId="txr_container_steel_1" Bounds="471, 78, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3109"/>
-        <Image Id="dfltMask30" TextureId="txr_container_steel_1" Bounds="471, 48, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3111"/>
-        <Image Id="dfltMask31" TextureId="txr_container_steel_1" Bounds="471, 18, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3113"/>
-        <Image Id="dfltMask32" TextureId="txr_container_steel_1" Bounds="471, -12, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3115"/>
-        <Image Id="dfltMask33" TextureId="txr_container_steel_1_b" Bounds="-1, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3129"/>
-        <Image Id="dfltMask34" TextureId="txr_container_steel_1_b" Bounds="29, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3132"/>
-        <Image Id="dfltMask35" TextureId="txr_container_steel_1_b" Bounds="59, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3134"/>
-        <Image Id="dfltMask36" TextureId="txr_container_steel_1_b" Bounds="89, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3136"/>
-        <Image Id="dfltMask37" TextureId="txr_container_steel_1_b" Bounds="119, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3138"/>
-        <Image Id="dfltMask38" TextureId="txr_container_steel_1_b" Bounds="149, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3140"/>
-        <Image Id="dfltMask39" TextureId="txr_container_steel_1_b" Bounds="179, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3142"/>
-        <Image Id="dfltMask40" TextureId="txr_container_steel_1_b" Bounds="209, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3144"/>
-        <Image Id="dfltMask41" TextureId="txr_container_steel_1_b" Bounds="239, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3146"/>
-        <Image Id="dfltMask42" TextureId="txr_container_steel_1_b" Bounds="269, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3148"/>
-        <Image Id="dfltMask43" TextureId="txr_container_steel_1_b" Bounds="299, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3150"/>
-        <Image Id="dfltMask44" TextureId="txr_container_steel_1_b" Bounds="329, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3152"/>
-        <Image Id="dfltMask45" TextureId="txr_container_steel_1_b" Bounds="359, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3154"/>
-        <Image Id="dfltMask46" TextureId="txr_container_steel_1_b" Bounds="389, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3156"/>
-        <Image Id="dfltMask47" TextureId="txr_container_steel_1_b" Bounds="419, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3158"/>
-        <Image Id="dfltMask48" TextureId="txr_container_steel_1_b" Bounds="449, -22, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3160"/>
-        <Image Id="dfltMask49" TextureId="txr_container_steel_1_b" Bounds="-1, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3162"/>
-        <Image Id="dfltMask50" TextureId="txr_container_steel_1_b" Bounds="29, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3164"/>
-        <Image Id="dfltMask51" TextureId="txr_container_steel_1_b" Bounds="59, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3166"/>
-        <Image Id="dfltMask52" TextureId="txr_container_steel_1_b" Bounds="89, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3168"/>
-        <Image Id="dfltMask53" TextureId="txr_container_steel_1_b" Bounds="119, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3170"/>
-        <Image Id="dfltMask54" TextureId="txr_container_steel_1_b" Bounds="149, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3172"/>
-        <Image Id="dfltMask55" TextureId="txr_container_steel_1_b" Bounds="179, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3174"/>
-        <Image Id="dfltMask56" TextureId="txr_container_steel_1_b" Bounds="209, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3176"/>
-        <Image Id="dfltMask57" TextureId="txr_container_steel_1_b" Bounds="239, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3178"/>
-        <Image Id="dfltMask58" TextureId="txr_container_steel_1_b" Bounds="269, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3180"/>
-        <Image Id="dfltMask59" TextureId="txr_container_steel_1_b" Bounds="299, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3182"/>
-        <Image Id="dfltMask60" TextureId="txr_container_steel_1_b" Bounds="329, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3184"/>
-        <Image Id="dfltMask61" TextureId="txr_container_steel_1_b" Bounds="359, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3186"/>
-        <Image Id="dfltMask62" TextureId="txr_container_steel_1_b" Bounds="389, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3188"/>
-        <Image Id="dfltMask63" TextureId="txr_container_steel_1_b" Bounds="419, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3190"/>
-        <Image Id="dfltMask64" TextureId="txr_container_steel_1_b" Bounds="449, 312, 30, 30" Rotation="0" Stretch="false" Opacity="1" TraceId="image3192"/>
-    </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Block Id="blk5" Class="clsWoodenBox" Bounds="46, 202, 30, 30" Edges="Stick" TraceId="image3016-1">
+        <Block Id="blk5" Class="clsWoodenBox" Bounds="96, 204, 30, 30" Edges="Stick" TraceId="image3016-1">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk6" Class="clsWoodenBox" Bounds="50, 240, 30, 30" Edges="Stick" TraceId="image3027">
+        <Block Id="blk6" Class="clsWoodenBox" Bounds="100, 242, 30, 30" Edges="Stick" TraceId="image3027">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <Block Id="blk7" Class="clsWoodenBox" Bounds="50, 276, 30, 30" Edges="Stick" TraceId="image3038-7">
+        <Block Id="blk7" Class="clsWoodenBox" Bounds="100, 278, 30, 30" Edges="Stick" TraceId="image3038-7">
             <Image TextureId="txr_box_old_3" />
         </Block>
-        <Block Id="blk8" Class="clsWoodenBox" Bounds="400, 276, 30, 30" Edges="Stick" TraceId="image3041">
+        <Block Id="blk8" Class="clsWoodenBox" Bounds="350, 278, 30, 30" Edges="Stick" TraceId="image3041">
             <Image TextureId="txr_box_old_3" />
         </Block>
-        <Block Id="blk9" Class="clsWoodenBox" Bounds="400, 240, 30, 30" Edges="Stick" TraceId="image3043">
+        <Block Id="blk9" Class="clsWoodenBox" Bounds="350, 242, 30, 30" Edges="Stick" TraceId="image3043">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk10" Class="clsWoodenBox" Bounds="404, 204, 30, 30" Edges="Stick" TraceId="image3045">
+        <Block Id="blk10" Class="clsWoodenBox" Bounds="354, 206, 30, 30" Edges="Stick" TraceId="image3045">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <Group Id="grp_g3410">
-            <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="18, 273, 24, 25" TraceId="image3396"/>
-            <NumAnimation Id="anm1" From="0" To="-200" Target="Y" Duration="8" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3407"/>
+        <Group Id="grp_g3569">
+            <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="64, 257, 24, 25" TraceId="image3396"/>
+            <NumAnimation Id="anm3" From="0" To="-200" Target="Y" Duration="7" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3407"/>
         </Group>
-        <Group Id="grp_g3436">
-            <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="438, 41, 22, 23" TraceId="image3422"/>
-            <NumAnimation Id="anm2" From="0" To="200" Target="Y" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3433"/>
+        <Group Id="grp_g3575">
+            <Enemy Id="enm4" Class="clsEnemyRat2" Bounds="393, 99, 22, 23" TraceId="image3422"/>
+            <NumAnimation Id="anm4" From="0" To="154" Target="Y" Duration="5.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3433"/>
         </Group>
     </Layer>
-    
- 
-   <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="223, 246, 33, 24" TraceId="image3015"/>
-        <Group Id="exit" Class="clsExit" Bounds="22, 16, 37, 54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="15, 35, 37, 54" TraceId="image3049" />
     </Layer>
-    <Layer Id="upmask" BackColor="#FFFFFFFF">
+    <Layer Id="fg" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask73" TextureId="txr_wire_005" Bounds="375, 0, 34, 93" TraceId="image3108"/>
+        <Image Id="dfltMask74" TextureId="txr_wire_002" Bounds="140, -10, 146, 49" TraceId="image3119"/>
+        <Image Id="dfltMask75" TextureId="txr_wire_003" Bounds="235, -4, 90, 58" TraceId="image3130"/>
+        <Enemy Id="enm5" Class="clsEnemyElectricity1" Bounds="138, -7, 12, 12" TraceId="image3659"/>
+        <Enemy Id="enm6" Class="clsEnemyElectricity1" Bounds="179, -10, 12, 12" TraceId="image3661"/>
+        <Enemy Id="enm7" Class="clsEnemyElectricity1" Bounds="274, -8, 12, 12" TraceId="image3173"/>
+        <Enemy Id="enm8" Class="clsEnemyElectricity1" Bounds="232, 20, 12, 12" TraceId="image3175"/>
+        <Enemy Id="enm9" Class="clsEnemyElectricity1" Bounds="314, 44, 12, 12" TraceId="image3177"/>
+        <Enemy Id="enm10" Class="clsEnemyElectricity1" Bounds="372, 79, 12, 12" TraceId="image3169"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
-
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=2 Block=10 DesignImage=64 Animation=2 Teleport Animations=0 FoodPack=0 -->
+<!-- Food=0 Enemy=10 Block=10 DesignImage=75 Animation=4 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- -->
+<!-- Enemy Points = 125 -->
+<!-- 1% = 1.25; 45% = 56.25; 90% = 112.5 -->
+<!-- minPointsEnemy = 50 (40%) -->
+

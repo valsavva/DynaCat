@@ -44,7 +44,19 @@
 ###@cntrValue2
 _sndSawMid.Stop();enm
 ###@cntrValue2
+_sndSawEnd.Start()">
+###@CRLF
+<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm
+###@cntrValue2
+.Stop();setSound_enm
+###@cntrValue2
+.Stop();enm
+###@cntrValue2
+_sndSawMid.Stop();enm
+###@cntrValue2
 _sndSawEnd.Start()" />
+###@CRLF
+</IntersectionTrigger>
 ###@CRLF
 <SequenceSet Id="setAttack_enm
 ###@cntrValue2

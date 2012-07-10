@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- SVG to XGAME xml converter v1.5.07 -->
-<!-- source: D:\Lunohod\Levels\S03LXX_Chelnok\S03LXX_Chelnok.svg -->
+
+<!-- HAND EDIT >> -->
+
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S03LXX_Chelnok" Bounds="0, 0, 480, 320">
-    <Include File="ClassFoodFish2.xml" />
-    <Include File="ClassFoodFish1.xml" />
-    <Include File="ClassFoodFish3.xml" />
-    <Include File="ClassFoodFish4.xml" />
-    <Include File="ClassEnemyElectricity1.xml" />
+    <Include File="ClassFood.xml" />
+    <Include File="ClassEnemyElectricity2.xml" />
     <Include File="ClassTeleportEntry.xml" />
     <Include File="ClassTeleportOut.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_brickGreen" Source="brickGreen" />
+        <Texture Id="txr_wire_003" Source="wire_003" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
-
-
-
-
+        <Texture Id="txr_box_30x30_017" Source="box_30x30_017" />
+        <Texture Id="txr_wire_001" Source="wire_001" />
+        <Texture Id="txr_wire_002" Source="wire_002" />
+        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_box1" Source="box_30x30_009" />
+        <Texture Id="txr_box2" Source="box_30x30_008" />
+        <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
         <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
         <Texture Id="txr_TeleportEntryRight" Source="TeleportEntryRight" />
         <Texture Id="txr_TeleportEntryLeft" Source="TeleportEntryLeft" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" Rotation="0" Stretch="false" Opacity="1" TraceId="image3580"/>
+        <Image Id="dfltMask1" TextureId="txr_brickGreen" Bounds="0, 0, 480, 320" TraceId="image3248"/>
     </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="200, 0, 80, 130" Edges="Stick" TraceId="image3023"/>
@@ -35,53 +38,64 @@
         <Block Id="blk6" Bounds="0, 320, 480, 64" Edges="Stick" TraceId="image3329"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_texture_brick_clean" Bounds="200, -10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3339"/>
-        <Image Id="dfltMask3" TextureId="txr_texture_brick_clean" Bounds="226, -10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3342"/>
-        <Image Id="dfltMask4" TextureId="txr_texture_brick_clean" Bounds="252, -10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3344"/>
-        <Image Id="dfltMask5" TextureId="txr_texture_brick_clean" Bounds="200, 10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3346"/>
-        <Image Id="dfltMask6" TextureId="txr_texture_brick_clean" Bounds="226, 10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3348"/>
-        <Image Id="dfltMask7" TextureId="txr_texture_brick_clean" Bounds="252, 10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3350"/>
-        <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="200, 30, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3352"/>
-        <Image Id="dfltMask9" TextureId="txr_texture_brick_clean" Bounds="226, 30, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3354"/>
-        <Image Id="dfltMask10" TextureId="txr_texture_brick_clean" Bounds="252, 30, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3356"/>
-        <Image Id="dfltMask11" TextureId="txr_texture_brick_clean" Bounds="200, 50, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3358"/>
-        <Image Id="dfltMask12" TextureId="txr_texture_brick_clean" Bounds="226, 50, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3360"/>
-        <Image Id="dfltMask13" TextureId="txr_texture_brick_clean" Bounds="252, 50, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3362"/>
-        <Image Id="dfltMask14" TextureId="txr_texture_brick_clean" Bounds="200, 70, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3364"/>
-        <Image Id="dfltMask15" TextureId="txr_texture_brick_clean" Bounds="226, 70, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3366"/>
-        <Image Id="dfltMask16" TextureId="txr_texture_brick_clean" Bounds="252, 70, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3368"/>
-        <Image Id="dfltMask17" TextureId="txr_texture_brick_clean" Bounds="200, 90, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3370"/>
-        <Image Id="dfltMask18" TextureId="txr_texture_brick_clean" Bounds="226, 90, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3372"/>
-        <Image Id="dfltMask19" TextureId="txr_texture_brick_clean" Bounds="252, 90, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3374"/>
-        <Image Id="dfltMask20" TextureId="txr_texture_brick_clean" Bounds="200, 110, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3376"/>
-        <Image Id="dfltMask21" TextureId="txr_texture_brick_clean" Bounds="226, 110, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3378"/>
-        <Image Id="dfltMask22" TextureId="txr_texture_brick_clean" Bounds="252, 110, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3380"/>
-        <Image Id="dfltMask23" TextureId="txr_texture_brick_clean" Bounds="200, 186, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3382"/>
-        <Image Id="dfltMask24" TextureId="txr_texture_brick_clean" Bounds="200, 206, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3388"/>
-        <Image Id="dfltMask25" TextureId="txr_texture_brick_clean" Bounds="200, 226, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3394"/>
-        <Image Id="dfltMask26" TextureId="txr_texture_brick_clean" Bounds="200, 246, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3400"/>
-        <Image Id="dfltMask27" TextureId="txr_texture_brick_clean" Bounds="226, 186, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3416"/>
-        <Image Id="dfltMask28" TextureId="txr_texture_brick_clean" Bounds="226, 206, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3418"/>
-        <Image Id="dfltMask29" TextureId="txr_texture_brick_clean" Bounds="226, 226, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3420"/>
-        <Image Id="dfltMask30" TextureId="txr_texture_brick_clean" Bounds="226, 246, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3422"/>
-        <Image Id="dfltMask31" TextureId="txr_texture_brick_clean" Bounds="254, 186, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3424"/>
-        <Image Id="dfltMask32" TextureId="txr_texture_brick_clean" Bounds="254, 206, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3426"/>
-        <Image Id="dfltMask33" TextureId="txr_texture_brick_clean" Bounds="254, 226, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3428"/>
-        <Image Id="dfltMask34" TextureId="txr_texture_brick_clean" Bounds="254, 246, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3430"/>
-        <Image Id="dfltMask35" TextureId="txr_texture_brick_clean" Bounds="252, 186, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3432"/>
-        <Image Id="dfltMask36" TextureId="txr_texture_brick_clean" Bounds="252, 206, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3434"/>
-        <Image Id="dfltMask37" TextureId="txr_texture_brick_clean" Bounds="252, 226, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3436"/>
-        <Image Id="dfltMask38" TextureId="txr_texture_brick_clean" Bounds="252, 246, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3438"/>
-        <Image Id="dfltMask39" TextureId="txr_texture_brick_clean" Bounds="254, -10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3440"/>
-        <Image Id="dfltMask40" TextureId="txr_texture_brick_clean" Bounds="254, 10, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3442"/>
-        <Image Id="dfltMask41" TextureId="txr_texture_brick_clean" Bounds="254, 30, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3444"/>
-        <Image Id="dfltMask42" TextureId="txr_texture_brick_clean" Bounds="254, 50, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3446"/>
-        <Image Id="dfltMask43" TextureId="txr_texture_brick_clean" Bounds="254, 70, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3448"/>
-        <Image Id="dfltMask44" TextureId="txr_texture_brick_clean" Bounds="254, 90, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3450"/>
-        <Image Id="dfltMask45" TextureId="txr_texture_brick_clean" Bounds="254, 110, 26, 20" Rotation="0" Stretch="false" Opacity="1" TraceId="image3452"/>
+        <Image Id="dfltMask2" TextureId="txr_wire_003" Bounds="199, 260, 80, 45" Stretch="true" TraceId="image3219"/>
+        <Image Id="dfltMask3" TextureId="txr_texture_brick_clean" Bounds="200, -10, 26, 20" TraceId="image3339"/>
+        <Image Id="dfltMask4" TextureId="txr_texture_brick_clean" Bounds="226, -10, 26, 20" TraceId="image3342"/>
+        <Image Id="dfltMask5" TextureId="txr_texture_brick_clean" Bounds="252, -10, 26, 20" TraceId="image3344"/>
+        <Image Id="dfltMask6" TextureId="txr_texture_brick_clean" Bounds="200, 10, 26, 20" TraceId="image3346"/>
+        <Image Id="dfltMask7" TextureId="txr_texture_brick_clean" Bounds="226, 10, 26, 20" TraceId="image3348"/>
+        <Image Id="dfltMask8" TextureId="txr_texture_brick_clean" Bounds="252, 10, 26, 20" TraceId="image3350"/>
+        <Image Id="dfltMask9" TextureId="txr_texture_brick_clean" Bounds="200, 30, 26, 20" TraceId="image3352"/>
+        <Image Id="dfltMask10" TextureId="txr_texture_brick_clean" Bounds="226, 30, 26, 20" TraceId="image3354"/>
+        <Image Id="dfltMask11" TextureId="txr_texture_brick_clean" Bounds="252, 30, 26, 20" TraceId="image3356"/>
+        <Image Id="dfltMask12" TextureId="txr_texture_brick_clean" Bounds="200, 50, 26, 20" TraceId="image3358"/>
+        <Image Id="dfltMask13" TextureId="txr_texture_brick_clean" Bounds="226, 50, 26, 20" TraceId="image3360"/>
+        <Image Id="dfltMask14" TextureId="txr_texture_brick_clean" Bounds="252, 50, 26, 20" TraceId="image3362"/>
+        <Image Id="dfltMask15" TextureId="txr_texture_brick_clean" Bounds="200, 70, 26, 20" TraceId="image3364"/>
+        <Image Id="dfltMask16" TextureId="txr_texture_brick_clean" Bounds="226, 70, 26, 20" TraceId="image3366"/>
+        <Image Id="dfltMask17" TextureId="txr_texture_brick_clean" Bounds="252, 70, 26, 20" TraceId="image3368"/>
+        <Image Id="dfltMask18" TextureId="txr_texture_brick_clean" Bounds="200, 90, 26, 20" TraceId="image3370"/>
+        <Image Id="dfltMask19" TextureId="txr_texture_brick_clean" Bounds="226, 90, 26, 20" TraceId="image3372"/>
+        <Image Id="dfltMask20" TextureId="txr_texture_brick_clean" Bounds="252, 90, 26, 20" TraceId="image3374"/>
+        <Image Id="dfltMask21" TextureId="txr_texture_brick_clean" Bounds="200, 110, 26, 20" TraceId="image3376"/>
+        <Image Id="dfltMask22" TextureId="txr_texture_brick_clean" Bounds="226, 110, 26, 20" TraceId="image3378"/>
+        <Image Id="dfltMask23" TextureId="txr_texture_brick_clean" Bounds="252, 110, 26, 20" TraceId="image3380"/>
+        <Image Id="dfltMask24" TextureId="txr_texture_brick_clean" Bounds="200, 186, 26, 20" TraceId="image3382"/>
+        <Image Id="dfltMask25" TextureId="txr_texture_brick_clean" Bounds="200, 206, 26, 20" TraceId="image3388"/>
+        <Image Id="dfltMask26" TextureId="txr_texture_brick_clean" Bounds="200, 226, 26, 20" TraceId="image3394"/>
+        <Image Id="dfltMask27" TextureId="txr_texture_brick_clean" Bounds="200, 246, 26, 20" TraceId="image3400"/>
+        <Image Id="dfltMask28" TextureId="txr_texture_brick_clean" Bounds="226, 186, 26, 20" TraceId="image3416"/>
+        <Image Id="dfltMask29" TextureId="txr_texture_brick_clean" Bounds="226, 206, 26, 20" TraceId="image3418"/>
+        <Image Id="dfltMask30" TextureId="txr_texture_brick_clean" Bounds="226, 226, 26, 20" TraceId="image3420"/>
+        <Image Id="dfltMask31" TextureId="txr_texture_brick_clean" Bounds="226, 246, 26, 20" TraceId="image3422"/>
+        <Image Id="dfltMask32" TextureId="txr_texture_brick_clean" Bounds="254, 186, 26, 20" TraceId="image3424"/>
+        <Image Id="dfltMask33" TextureId="txr_texture_brick_clean" Bounds="254, 206, 26, 20" TraceId="image3426"/>
+        <Image Id="dfltMask34" TextureId="txr_texture_brick_clean" Bounds="254, 226, 26, 20" TraceId="image3428"/>
+        <Image Id="dfltMask35" TextureId="txr_texture_brick_clean" Bounds="254, 246, 26, 20" TraceId="image3430"/>
+        <Image Id="dfltMask36" TextureId="txr_texture_brick_clean" Bounds="252, 186, 26, 20" TraceId="image3432"/>
+        <Image Id="dfltMask37" TextureId="txr_texture_brick_clean" Bounds="252, 206, 26, 20" TraceId="image3434"/>
+        <Image Id="dfltMask38" TextureId="txr_texture_brick_clean" Bounds="252, 226, 26, 20" TraceId="image3436"/>
+        <Image Id="dfltMask39" TextureId="txr_texture_brick_clean" Bounds="252, 246, 26, 20" TraceId="image3438"/>
+        <Image Id="dfltMask40" TextureId="txr_texture_brick_clean" Bounds="254, -10, 26, 20" TraceId="image3440"/>
+        <Image Id="dfltMask41" TextureId="txr_texture_brick_clean" Bounds="254, 10, 26, 20" TraceId="image3442"/>
+        <Image Id="dfltMask42" TextureId="txr_texture_brick_clean" Bounds="254, 30, 26, 20" TraceId="image3444"/>
+        <Image Id="dfltMask43" TextureId="txr_texture_brick_clean" Bounds="254, 50, 26, 20" TraceId="image3446"/>
+        <Image Id="dfltMask44" TextureId="txr_texture_brick_clean" Bounds="254, 70, 26, 20" TraceId="image3448"/>
+        <Image Id="dfltMask45" TextureId="txr_texture_brick_clean" Bounds="254, 90, 26, 20" TraceId="image3450"/>
+        <Image Id="dfltMask46" TextureId="txr_texture_brick_clean" Bounds="254, 110, 26, 20" TraceId="image3452"/>
+        <Image Id="dfltMask47" TextureId="txr_box_30x30_017" Bounds="204, 2, 30, 30" TraceId="image3134"/>
+        <Image Id="dfltMask48" TextureId="txr_box_30x30_017" Bounds="245, 2, 30, 30" TraceId="image3130"/>
+        <Image Id="dfltMask49" TextureId="txr_box_30x30_017" Bounds="204, 42, 30, 30" TraceId="image3136"/>
+        <Image Id="dfltMask50" TextureId="txr_box_30x30_017" Bounds="245, 42, 30, 30" TraceId="image3138"/>
+        <Image Id="dfltMask51" TextureId="txr_box_30x30_017" Bounds="204, 82, 30, 30" TraceId="image3141"/>
+        <Image Id="dfltMask52" TextureId="txr_box_30x30_017" Bounds="245, 82, 30, 30" TraceId="image3143"/>
+        <Image Id="dfltMask53" TextureId="txr_box_30x30_017" Bounds="204, 190, 30, 30" TraceId="image3145"/>
+        <Image Id="dfltMask54" TextureId="txr_box_30x30_017" Bounds="245, 190, 30, 30" TraceId="image3147"/>
+        <Image Id="dfltMask55" TextureId="txr_box_30x30_017" Bounds="204, 230, 30, 30" TraceId="image3149"/>
+        <Image Id="dfltMask56" TextureId="txr_box_30x30_017" Bounds="245, 230, 30, 30" TraceId="image3151"/>
     </Layer>
     <Layer Id="Food" BackColor="#FFFFFFFF">
-        <Food Id="fdimage3467"  Bounds="17, 32, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3467"/>
+        <Food Id="fdimage3467"  Bounds="17, 32, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3467"/>
         <SequenceSet Id="setfdimage3467" InProgress="true" RepeatCount="1" >
             <Delay Duration="1" />
             <Do Action="fdimage3467.Enable()" />
@@ -89,7 +103,7 @@
             <NumAnimation Target="fdimage3467.Opacity" From="1" To="0" Duration="1" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3467:+Borned;fdimage3467.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3469"  Bounds="421, 280, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3469"/>
+        <Food Id="fdimage3469"  Bounds="421, 280, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3469"/>
         <SequenceSet Id="setfdimage3469" InProgress="true" RepeatCount="1" >
             <Delay Duration="2" />
             <Do Action="fdimage3469.Enable()" />
@@ -97,7 +111,7 @@
             <NumAnimation Target="fdimage3469.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3469:+Borned;fdimage3469.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3471"  Bounds="139, 286, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3471"/>
+        <Food Id="fdimage3471"  Bounds="139, 286, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3471"/>
         <SequenceSet Id="setfdimage3471" InProgress="true" RepeatCount="1" >
             <Delay Duration="3" />
             <Do Action="fdimage3471.Enable()" />
@@ -105,7 +119,7 @@
             <NumAnimation Target="fdimage3471.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3471:+Borned;fdimage3471.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3473"  Bounds="416, 22, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3473"/>
+        <Food Id="fdimage3473"  Bounds="416, 22, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3473"/>
         <SequenceSet Id="setfdimage3473" InProgress="true" RepeatCount="1" >
             <Delay Duration="4" />
             <Do Action="fdimage3473.Enable()" />
@@ -113,7 +127,7 @@
             <NumAnimation Target="fdimage3473.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3473:+Borned;fdimage3473.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3475"  Bounds="325, 104, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3475"/>
+        <Food Id="fdimage3475"  Bounds="325, 104, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3475"/>
         <SequenceSet Id="setfdimage3475" InProgress="true" RepeatCount="1" >
             <Delay Duration="5" />
             <Do Action="fdimage3475.Enable()" />
@@ -121,7 +135,7 @@
             <NumAnimation Target="fdimage3475.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3475:+Borned;fdimage3475.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3477"  Bounds="40, 212, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3477"/>
+        <Food Id="fdimage3477"  Bounds="40, 212, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3477"/>
         <SequenceSet Id="setfdimage3477" InProgress="true" RepeatCount="1" >
             <Delay Duration="6" />
             <Do Action="fdimage3477.Enable()" />
@@ -129,7 +143,7 @@
             <NumAnimation Target="fdimage3477.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3477:+Borned;fdimage3477.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3479"  Bounds="143, 66, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3479"/>
+        <Food Id="fdimage3479"  Bounds="143, 66, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3479"/>
         <SequenceSet Id="setfdimage3479" InProgress="true" RepeatCount="1" >
             <Delay Duration="7" />
             <Do Action="fdimage3479.Enable()" />
@@ -137,7 +151,7 @@
             <NumAnimation Target="fdimage3479.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3479:+Borned;fdimage3479.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3481"  Bounds="308, 274, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3481"/>
+        <Food Id="fdimage3481"  Bounds="308, 274, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3481"/>
         <SequenceSet Id="setfdimage3481" InProgress="true" RepeatCount="1" >
             <Delay Duration="8" />
             <Do Action="fdimage3481.Enable()" />
@@ -145,7 +159,7 @@
             <NumAnimation Target="fdimage3481.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3481:+Borned;fdimage3481.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3483"  Bounds="427, 155, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3483"/>
+        <Food Id="fdimage3483"  Bounds="427, 155, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3483"/>
         <SequenceSet Id="setfdimage3483" InProgress="true" RepeatCount="1" >
             <Delay Duration="9" />
             <Do Action="fdimage3483.Enable()" />
@@ -153,7 +167,7 @@
             <NumAnimation Target="fdimage3483.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3483:+Borned;fdimage3483.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3464"  Bounds="40, 119, 27, 15" Class="clsFoodFish2" Enabled="false" TraceId="image3464"/>
+        <Food Id="fdimage3464"  Bounds="40, 119, 28, 19" Class="clsFood" ClassParams="@fishType=2" Enabled="false" TraceId="image3464"/>
         <SequenceSet Id="setfdimage3464" InProgress="true" RepeatCount="1" >
             <Delay Duration="10" />
             <Do Action="fdimage3464.Enable()" />
@@ -161,7 +175,7 @@
             <NumAnimation Target="fdimage3464.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3464:+Borned;fdimage3464.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3496"  Bounds="84, 60, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3496"/>
+        <Food Id="fdimage3496"  Bounds="84, 60, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3496"/>
         <SequenceSet Id="setfdimage3496" InProgress="true" RepeatCount="1" >
             <Delay Duration="11" />
             <Do Action="fdimage3496.Enable()" />
@@ -169,7 +183,7 @@
             <NumAnimation Target="fdimage3496.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3496:+Borned;fdimage3496.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3498"  Bounds="339, 194, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3498"/>
+        <Food Id="fdimage3498"  Bounds="339, 194, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3498"/>
         <SequenceSet Id="setfdimage3498" InProgress="true" RepeatCount="1" >
             <Delay Duration="12" />
             <Do Action="fdimage3498.Enable()" />
@@ -177,7 +191,7 @@
             <NumAnimation Target="fdimage3498.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3498:+Borned;fdimage3498.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3500"  Bounds="330, 50, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3500"/>
+        <Food Id="fdimage3500"  Bounds="330, 50, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3500"/>
         <SequenceSet Id="setfdimage3500" InProgress="true" RepeatCount="1" >
             <Delay Duration="13" />
             <Do Action="fdimage3500.Enable()" />
@@ -185,7 +199,7 @@
             <NumAnimation Target="fdimage3500.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3500:+Borned;fdimage3500.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3502"  Bounds="101, 205, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3502"/>
+        <Food Id="fdimage3502"  Bounds="101, 205, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3502"/>
         <SequenceSet Id="setfdimage3502" InProgress="true" RepeatCount="1" >
             <Delay Duration="14" />
             <Do Action="fdimage3502.Enable()" />
@@ -193,7 +207,7 @@
             <NumAnimation Target="fdimage3502.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3502:+Borned;fdimage3502.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3504"  Bounds="69, 286, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3504"/>
+        <Food Id="fdimage3504"  Bounds="69, 286, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3504"/>
         <SequenceSet Id="setfdimage3504" InProgress="true" RepeatCount="1" >
             <Delay Duration="15" />
             <Do Action="fdimage3504.Enable()" />
@@ -201,7 +215,7 @@
             <NumAnimation Target="fdimage3504.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3504:+Borned;fdimage3504.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3506"  Bounds="428, 222, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3506"/>
+        <Food Id="fdimage3506"  Bounds="428, 222, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3506"/>
         <SequenceSet Id="setfdimage3506" InProgress="true" RepeatCount="1" >
             <Delay Duration="16" />
             <Do Action="fdimage3506.Enable()" />
@@ -209,7 +223,7 @@
             <NumAnimation Target="fdimage3506.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3506:+Borned;fdimage3506.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3508"  Bounds="115, 133, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3508"/>
+        <Food Id="fdimage3508"  Bounds="115, 133, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3508"/>
         <SequenceSet Id="setfdimage3508" InProgress="true" RepeatCount="1" >
             <Delay Duration="17" />
             <Do Action="fdimage3508.Enable()" />
@@ -217,7 +231,7 @@
             <NumAnimation Target="fdimage3508.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3508:+Borned;fdimage3508.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3510"  Bounds="297, 8, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3510"/>
+        <Food Id="fdimage3510"  Bounds="297, 8, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3510"/>
         <SequenceSet Id="setfdimage3510" InProgress="true" RepeatCount="1" >
             <Delay Duration="18" />
             <Do Action="fdimage3510.Enable()" />
@@ -225,7 +239,7 @@
             <NumAnimation Target="fdimage3510.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3510:+Borned;fdimage3510.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3512"  Bounds="155, 237, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3512"/>
+        <Food Id="fdimage3512"  Bounds="155, 237, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3512"/>
         <SequenceSet Id="setfdimage3512" InProgress="true" RepeatCount="1" >
             <Delay Duration="19" />
             <Do Action="fdimage3512.Enable()" />
@@ -233,7 +247,7 @@
             <NumAnimation Target="fdimage3512.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3512:+Borned;fdimage3512.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3493"  Bounds="430, 86, 30, 15" Class="clsFoodFish1" Enabled="false" TraceId="image3493"/>
+        <Food Id="fdimage3493"  Bounds="430, 86, 28, 22" Class="clsFood" ClassParams="@fishType=4" Enabled="false" TraceId="image3493"/>
         <SequenceSet Id="setfdimage3493" InProgress="true" RepeatCount="1" >
             <Delay Duration="20" />
             <Do Action="fdimage3493.Enable()" />
@@ -241,7 +255,7 @@
             <NumAnimation Target="fdimage3493.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3493:+Borned;fdimage3493.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3525"  Bounds="110, 22, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3525"/>
+        <Food Id="fdimage3525"  Bounds="110, 22, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3525"/>
         <SequenceSet Id="setfdimage3525" InProgress="true" RepeatCount="1" >
             <Delay Duration="21" />
             <Do Action="fdimage3525.Enable()" />
@@ -249,7 +263,7 @@
             <NumAnimation Target="fdimage3525.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3525:+Borned;fdimage3525.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3527"  Bounds="101, 246, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3527"/>
+        <Food Id="fdimage3527"  Bounds="101, 246, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3527"/>
         <SequenceSet Id="setfdimage3527" InProgress="true" RepeatCount="1" >
             <Delay Duration="22" />
             <Do Action="fdimage3527.Enable()" />
@@ -257,7 +271,7 @@
             <NumAnimation Target="fdimage3527.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3527:+Borned;fdimage3527.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3529"  Bounds="378, 99, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3529"/>
+        <Food Id="fdimage3529"  Bounds="378, 99, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3529"/>
         <SequenceSet Id="setfdimage3529" InProgress="true" RepeatCount="1" >
             <Delay Duration="23" />
             <Do Action="fdimage3529.Enable()" />
@@ -265,7 +279,7 @@
             <NumAnimation Target="fdimage3529.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3529:+Borned;fdimage3529.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3531"  Bounds="20, 82, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3531"/>
+        <Food Id="fdimage3531"  Bounds="20, 82, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3531"/>
         <SequenceSet Id="setfdimage3531" InProgress="true" RepeatCount="1" >
             <Delay Duration="24" />
             <Do Action="fdimage3531.Enable()" />
@@ -273,7 +287,7 @@
             <NumAnimation Target="fdimage3531.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3531:+Borned;fdimage3531.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3533"  Bounds="363, 240, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3533"/>
+        <Food Id="fdimage3533"  Bounds="363, 240, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3533"/>
         <SequenceSet Id="setfdimage3533" InProgress="true" RepeatCount="1" >
             <Delay Duration="25" />
             <Do Action="fdimage3533.Enable()" />
@@ -281,7 +295,7 @@
             <NumAnimation Target="fdimage3533.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3533:+Borned;fdimage3533.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3535"  Bounds="31, 161, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3535"/>
+        <Food Id="fdimage3535"  Bounds="31, 161, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3535"/>
         <SequenceSet Id="setfdimage3535" InProgress="true" RepeatCount="1" >
             <Delay Duration="26" />
             <Do Action="fdimage3535.Enable()" />
@@ -289,7 +303,7 @@
             <NumAnimation Target="fdimage3535.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3535:+Borned;fdimage3535.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3537"  Bounds="389, 50, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3537"/>
+        <Food Id="fdimage3537"  Bounds="389, 50, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3537"/>
         <SequenceSet Id="setfdimage3537" InProgress="true" RepeatCount="1" >
             <Delay Duration="27" />
             <Do Action="fdimage3537.Enable()" />
@@ -297,7 +311,7 @@
             <NumAnimation Target="fdimage3537.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3537:+Borned;fdimage3537.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3539"  Bounds="147, 185, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3539"/>
+        <Food Id="fdimage3539"  Bounds="147, 185, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3539"/>
         <SequenceSet Id="setfdimage3539" InProgress="true" RepeatCount="1" >
             <Delay Duration="28" />
             <Do Action="fdimage3539.Enable()" />
@@ -305,7 +319,7 @@
             <NumAnimation Target="fdimage3539.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3539:+Borned;fdimage3539.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3541"  Bounds="21, 252, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3541"/>
+        <Food Id="fdimage3541"  Bounds="21, 252, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3541"/>
         <SequenceSet Id="setfdimage3541" InProgress="true" RepeatCount="1" >
             <Delay Duration="29" />
             <Do Action="fdimage3541.Enable()" />
@@ -313,7 +327,7 @@
             <NumAnimation Target="fdimage3541.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3541:+Borned;fdimage3541.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3522"  Bounds="367, 151, 28, 17" Class="clsFoodFish3" Enabled="false" TraceId="image3522"/>
+        <Food Id="fdimage3522"  Bounds="367, 151, 27, 20" Class="clsFood" ClassParams="@fishType=5" Enabled="false" TraceId="image3522"/>
         <SequenceSet Id="setfdimage3522" InProgress="true" RepeatCount="1" >
             <Delay Duration="30" />
             <Do Action="fdimage3522.Enable()" />
@@ -321,7 +335,7 @@
             <NumAnimation Target="fdimage3522.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3522:+Borned;fdimage3522.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3554"  Bounds="60, 32, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3554"/>
+        <Food Id="fdimage3554"  Bounds="60, 32, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3554"/>
         <SequenceSet Id="setfdimage3554" InProgress="true" RepeatCount="1" >
             <Delay Duration="31" />
             <Do Action="fdimage3554.Enable()" />
@@ -329,7 +343,7 @@
             <NumAnimation Target="fdimage3554.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3554:+Borned;fdimage3554.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3556"  Bounds="295, 212, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3556"/>
+        <Food Id="fdimage3556"  Bounds="295, 212, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3556"/>
         <SequenceSet Id="setfdimage3556" InProgress="true" RepeatCount="1" >
             <Delay Duration="32" />
             <Do Action="fdimage3556.Enable()" />
@@ -337,7 +351,7 @@
             <NumAnimation Target="fdimage3556.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3556:+Borned;fdimage3556.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3558"  Bounds="85, 174, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3558"/>
+        <Food Id="fdimage3558"  Bounds="85, 174, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3558"/>
         <SequenceSet Id="setfdimage3558" InProgress="true" RepeatCount="1" >
             <Delay Duration="33" />
             <Do Action="fdimage3558.Enable()" />
@@ -345,7 +359,7 @@
             <NumAnimation Target="fdimage3558.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3558:+Borned;fdimage3558.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3560"  Bounds="295, 73, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3560"/>
+        <Food Id="fdimage3560"  Bounds="295, 73, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3560"/>
         <SequenceSet Id="setfdimage3560" InProgress="true" RepeatCount="1" >
             <Delay Duration="34" />
             <Do Action="fdimage3560.Enable()" />
@@ -353,7 +367,7 @@
             <NumAnimation Target="fdimage3560.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3560:+Borned;fdimage3560.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3562"  Bounds="88, 95, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3562"/>
+        <Food Id="fdimage3562"  Bounds="88, 95, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3562"/>
         <SequenceSet Id="setfdimage3562" InProgress="true" RepeatCount="1" >
             <Delay Duration="35" />
             <Do Action="fdimage3562.Enable()" />
@@ -361,7 +375,7 @@
             <NumAnimation Target="fdimage3562.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3562:+Borned;fdimage3562.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3564"  Bounds="359, 279, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3564"/>
+        <Food Id="fdimage3564"  Bounds="359, 279, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3564"/>
         <SequenceSet Id="setfdimage3564" InProgress="true" RepeatCount="1" >
             <Delay Duration="36" />
             <Do Action="fdimage3564.Enable()" />
@@ -369,7 +383,7 @@
             <NumAnimation Target="fdimage3564.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3564:+Borned;fdimage3564.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3566"  Bounds="373, 16, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3566"/>
+        <Food Id="fdimage3566"  Bounds="373, 16, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3566"/>
         <SequenceSet Id="setfdimage3566" InProgress="true" RepeatCount="1" >
             <Delay Duration="37" />
             <Do Action="fdimage3566.Enable()" />
@@ -377,7 +391,7 @@
             <NumAnimation Target="fdimage3566.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3566:+Borned;fdimage3566.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3568"  Bounds="153, 103, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3568"/>
+        <Food Id="fdimage3568"  Bounds="153, 103, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3568"/>
         <SequenceSet Id="setfdimage3568" InProgress="true" RepeatCount="1" >
             <Delay Duration="38" />
             <Do Action="fdimage3568.Enable()" />
@@ -385,7 +399,7 @@
             <NumAnimation Target="fdimage3568.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3568:+Borned;fdimage3568.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3570"  Bounds="30, 289, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3570"/>
+        <Food Id="fdimage3570"  Bounds="30, 289, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3570"/>
         <SequenceSet Id="setfdimage3570" InProgress="true" RepeatCount="1" >
             <Delay Duration="39" />
             <Do Action="fdimage3570.Enable()" />
@@ -393,7 +407,7 @@
             <NumAnimation Target="fdimage3570.Opacity" From="1" To="0" Duration="3" Autoreverse="false" Fill="End" RepeatCount="1" />
             <Do Action="fdimage3570:+Borned;fdimage3570.Opacity=1" />
         </SequenceSet>
-        <Food Id="fdimage3551"  Bounds="401, 192, 26, 17" Class="clsFoodFish4" Enabled="false" TraceId="image3551"/>
+        <Food Id="fdimage3551"  Bounds="401, 192, 22,  27" Class="clsFood" ClassParams="@fishType=6" Enabled="false" TraceId="image3551"/>
         <SequenceSet Id="setfdimage3551" InProgress="true" RepeatCount="1" >
             <Delay Duration="40" />
             <Do Action="fdimage3551.Enable()" />
@@ -429,11 +443,34 @@
             <SequenceSet Id="setTlp4Out" Class="clsTeleportOut" ClassParams="@outX=165,@outY=147,@delay=0,@heroOutDirection=left" TraceId="image3182-1" />
         </SequenceSet>
     </Layer>
-    <!-- HAND EDIT >> -->
-
     <Layer Id="elec" >
-        <Enemy Id="enm1" Bounds="0, -30, 200, 10" Class="clsEnemyElectricity1" TraceId="image3031"/>
-        <Enemy Id="enm2" Bounds="280, -30, 200, 10" Class="clsEnemyElectricity1" TraceId="image3029"/>
+        <Group Id="enm1" Bounds="-60, -30, 264, 28" >
+            <Enemy Id="enm1i" Class="clsEnemyElectricity2"/>
+            <Image TextureId="txr_box1" Bounds="60,0,10,30" />
+            <Image Id="img_x2a" TextureId="txr_box2" Bounds="70,0,30,10" Rotation="90"/>
+            <Image TextureId="txr_box1" Bounds="250,0,10,30" />
+            <Image Id="img_x2b" TextureId="txr_box2" Bounds="260,0,30,10" Rotation="90" />
+        </Group>
+        <Group Id="enm2" Bounds="280, -30, 264, 28" >
+            <Enemy Id="enm2i" Class="clsEnemyElectricity2"/>
+            <Image TextureId="txr_box1" Bounds="0,0,10,30" />
+            <Image Id="img_x2c" TextureId="txr_box2" Bounds="10,0,30,10" Rotation="90" />
+            <Image TextureId="txr_box1" Bounds="190,0,10,30" />
+            <Image Id="img_x2d" TextureId="txr_box2" Bounds="200,0,30,10" Rotation="90" />
+        </Group>
+
+        <SequenceSet InProgress="true" RepeatCount="0" >
+            <Do Action="img_x2a.Opacity=1;
+                img_x2b.Opacity=1;
+                img_x2c.Opacity=1;
+                img_x2d.Opacity=1" />
+            <Delay Duration="1" />
+            <Do Action="img_x2a.Opacity=0;
+                img_x2b.Opacity=0;
+                img_x2c.Opacity=0;
+                img_x2d.Opacity=0" />
+            <Delay Duration="1" />
+        </SequenceSet>
 
         <SequenceSet InProgress="true" RepeatCount="1">
             <Delay Duration="3" />
@@ -462,14 +499,17 @@
             </SequenceSet>
         </SequenceSet>
     </Layer>
-    <!-- HAND EDIT << -->
     <Layer Id="THE" BackColor="#FFFFFFFF">
         <Hero Id="hero" Class="clsHero" Bounds="23, 267, 33, 24" TraceId="image3140"/>
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="222, 268, 37, 54" TraceId="image3049" />
     </Layer>
+    <Layer Id="fg" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask57" TextureId="txr_wire_001" Bounds="-16, -17, 72, 70" TraceId="image3161"/>
+        <Image Id="dfltMask58" TextureId="txr_wire_001" Bounds="505, 270, 72, 70" Rotation="90" TraceId="image3172"/>
+        <Image Id="dfltMask59" TextureId="txr_wire_002" Bounds="22, -2, 146, 49" TraceId="image3183"/>
+    </Layer>
     <Include File="ClassExplosion.xml" />
-
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=40 Enemy=0 Block=6 DesignImage=48 Animation=0 Teleport Animations=4 FoodPack=0 -->
+<!-- HAND EDIT << -->

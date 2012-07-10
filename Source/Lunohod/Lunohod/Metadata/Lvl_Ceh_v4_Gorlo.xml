@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.03 -->
-<!-- source: D:\Lunohod\Levels\S04LXX_Ceh_v4_Gorlo\S04LXX_Ceh_v4_Gorlo.svg -->
-<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S04LXX_Ceh_v4_Gorlo" Bounds="0, 0, 480, 320">
-    <Include File="ClassFoodFish3.xml" />
-    <Include File="ClassFoodFish4.xml" />
+<!-- SVG to XGAME xml converter v1.6.15 -->
+<!-- source: D:\Lunohod\Levels\Lvl_Ceh_v4_Gorlo\Lvl_Ceh_v4_Gorlo.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Ceh_v4_Gorlo" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemySaw.xml" />
+    <Include File="ClassFood.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
@@ -24,9 +23,6 @@
         <Texture Id="txr_container_steel_1_b" Source="container_steel_1_b" />
         <Texture Id="txr_detal_3" Source="detal_3" />
     </Resources>
-    <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3839"/>
-    </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="454, 0, 239, 387" Edges="Stick" TraceId="image4678"/>
         <Block Id="blk2" Bounds="-239, -29, 239, 387" Edges="Stick" TraceId="image4680"/>
@@ -46,16 +42,11 @@
         <Block Id="blk16" Bounds="224, 60, 36, 200" Edges="Bounce" TraceId="image3670"/>
         <Block Id="blk17" Bounds="312, 60, 36, 200" Edges="Bounce" TraceId="image3672"/>
     </Layer>
+    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3839"/>
+    </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFoodFish3"  Bounds="166, 38, 28, 17" TraceId="image3551"/>
-        <Food Id="fd2" Class="clsFoodFish3"  Bounds="182, 29, 28, 17" TraceId="image4759"/>
-        <Food Id="fd3" Class="clsFoodFish3"  Bounds="31, 266, 28, 17" TraceId="image4763"/>
-        <Food Id="fd4" Class="clsFoodFish3"  Bounds="409, 28, 28, 17" TraceId="image3543"/>
-        <Food Id="fd5" Class="clsFoodFish3"  Bounds="425, 38, 28, 17" TraceId="image4538"/>
-        <Food Id="fd6" Class="clsFoodFish4"  Bounds="139, 182, 26, 17" TraceId="image3547"/>
-        <Food Id="fd7" Class="clsFoodFish4"  Bounds="153, 191, 26, 17" TraceId="image3549"/>
-        
-<!-- HAND EDIT >>> -->        
+        <!-- HAND EDIT >>> -->
         <Enemy Id="enm1" Class="clsEnemySaw" Bounds="209, 66, 50, 50" TraceId="Left1">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
@@ -101,28 +92,28 @@
             <!-- 10,10,60,60 -->
         </Enemy>
 
-        
+
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_18" EnterAction="setAttack_enm1.Start();setSound_enm1.Start()" ExitAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" >
-			<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
-		</IntersectionTrigger>
+            <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm1.Stop();setSound_enm1.Stop();enm1_sndSawMid.Stop();enm1_sndSawEnd.Start()" />
+        </IntersectionTrigger>
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_19" EnterAction="setAttack_enm2.Start();setSound_enm2.Start()" ExitAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" >
-			<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
-		</IntersectionTrigger>
+            <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm2.Stop();setSound_enm2.Stop();enm2_sndSawMid.Stop();enm2_sndSawEnd.Start()" />
+        </IntersectionTrigger>
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_20" EnterAction="setAttack_enm3.Start();setSound_enm3.Start()" ExitAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" >
-			<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
-		</IntersectionTrigger>
+            <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm3.Stop();setSound_enm3.Stop();enm3_sndSawMid.Stop();enm3_sndSawEnd.Start()" />
+        </IntersectionTrigger>
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_21" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" >
-			<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
-		</IntersectionTrigger>
+            <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
+        </IntersectionTrigger>
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_22" EnterAction="setAttack_enm5.Start();setSound_enm5.Start()" ExitAction="setAttack_enm5.Stop();setSound_enm5.Stop();enm5_sndSawMid.Stop();enm5_sndSawEnd.Start()" >
-			<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm5.Stop();setSound_enm5.Stop();enm5_sndSawMid.Stop();enm5_sndSawEnd.Start()" />
-		</IntersectionTrigger>
+            <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm5.Stop();setSound_enm5.Stop();enm5_sndSawMid.Stop();enm5_sndSawEnd.Start()" />
+        </IntersectionTrigger>
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_23" EnterAction="setAttack_enm6.Start();setSound_enm6.Start()" ExitAction="setAttack_enm6.Stop();setSound_enm6.Stop();enm6_sndSawMid.Stop();enm6_sndSawEnd.Start()" >
-			<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm6.Stop();setSound_enm6.Stop();enm6_sndSawMid.Stop();enm6_sndSawEnd.Start()" />
-		</IntersectionTrigger>
+            <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm6.Stop();setSound_enm6.Stop();enm6_sndSawMid.Stop();enm6_sndSawEnd.Start()" />
+        </IntersectionTrigger>
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_24" EnterAction="setAttack_enm7.Start();setSound_enm7.Start()" ExitAction="setAttack_enm7.Stop();setSound_enm7.Stop();enm7_sndSawMid.Stop();enm7_sndSawEnd.Start()" >
-			<BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm7.Stop();setSound_enm7.Stop();enm7_sndSawMid.Stop();enm7_sndSawEnd.Start()" />
-		</IntersectionTrigger>
+            <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm7.Stop();setSound_enm7.Stop();enm7_sndSawMid.Stop();enm7_sndSawEnd.Start()" />
+        </IntersectionTrigger>
 
 
         <SequenceSet Id="setAttack_enm1" RepeatCount="0">
@@ -189,10 +180,10 @@
             <Do Action="enm7_sndSawMid.Start()"/>
         </SequenceSet>
 
-        
+
         <!-- moving -->
         <SequenceSet InProgress="true" RepeatCount="0">
-            <ParallelSet > 
+            <ParallelSet >
                 <SequenceSet>
                     <Delay Duration="0.3"/>
                     <NumAnimation From="0" To="30" Target="enm1.X" Duration="0.5" IsDelta="true"  RepeatCount="1" Autoreverse="false" Fill="End" />
@@ -244,17 +235,16 @@
             </ParallelSet>
             <Delay Duration="0.55"/>
         </SequenceSet>
-<!-- HAND EDIT <<< -->
-
+        <!-- HAND EDIT <<< -->
         <Enemy Id="enm8" Class="clsEnemySaw" Bounds="85, 70, 50, 50" TraceId="Vert1">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
             <Group Id="grpDamageZone_25" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_25" EnterAction="setAttack_enm8.Start();setSound_enm8.Start()" ExitAction="setAttack_enm8.Stop();setSound_enm8.Stop();enm8_sndSawMid.Stop();enm8_sndSawEnd.Start()" >
-			    <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm8.Stop();setSound_enm8.Stop();enm8_sndSawMid.Stop();enm8_sndSawEnd.Start()" />
-		    </IntersectionTrigger>
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_25" EnterAction="setAttack_enm8.Start();setSound_enm8.Start()" ExitAction="setAttack_enm8.Stop();setSound_enm8.Stop();enm8_sndSawMid.Stop();enm8_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm8.Stop();setSound_enm8.Stop();enm8_sndSawMid.Stop();enm8_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm8" RepeatCount="0">
                 <Do Action="enm8.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -279,9 +269,9 @@
             </Image>
             <Group Id="grpDamageZone_26" Bounds="7,7,36,36" />
             <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_26" EnterAction="setAttack_enm9.Start();setSound_enm9.Start()" ExitAction="setAttack_enm9.Stop();setSound_enm9.Stop();enm9_sndSawMid.Stop();enm9_sndSawEnd.Start()" >
-			    <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm9.Stop();setSound_enm9.Stop();enm9_sndSawMid.Stop();enm9_sndSawEnd.Start()" />
-		    </IntersectionTrigger>
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_26" EnterAction="setAttack_enm9.Start();setSound_enm9.Start()" ExitAction="setAttack_enm9.Stop();setSound_enm9.Stop();enm9_sndSawMid.Stop();enm9_sndSawEnd.Start()">
+                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm9.Stop();setSound_enm9.Stop();enm9_sndSawMid.Stop();enm9_sndSawEnd.Start()" />
+            </IntersectionTrigger>
             <SequenceSet Id="setAttack_enm9" RepeatCount="0">
                 <Do Action="enm9.Attack()"/>
                 <Delay Duration="0.2"/>
@@ -300,10 +290,15 @@
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
-        <Food Id="fd8" Class="clsFoodFish3"  Bounds="48, 277, 28, 17" TraceId="image3545"/>
-        <Enemy Id="enm10" Class="clsEnemyElectricity1" Bounds="26, 129, 11, 11" TraceId="image3682"/>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=6" Bounds="422, 27, 22, 27" TraceId="image3269"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=6" Bounds="146, 181, 22, 27" TraceId="image3225"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=2" Bounds="166, 37, 28, 19" TraceId="image3241"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=2" Bounds="32, 260, 28, 19" TraceId="image3243"/>
+        <Food Id="fd5" Class="clsFood" ClassParams="@fishType=2" Bounds="55, 277, 28, 19" TraceId="image3239"/>
+        <Food Id="fd6" Class="clsFood" ClassParams="@fishType=2" Bounds="188, 23, 28, 19" TraceId="image3236"/>
+        <Enemy Id="enm10" Class="clsEnemyElectricity1" Bounds="28, 128, 12, 12" TraceId="image3279-7"/>
     </Layer>
-    <Layer Id="design" BackColor="#FFFFFFFF">
+    <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_wire_currentLR" Bounds="72, 118, 45, 8" Rotation="150" TraceId="image3572"/>
         <Image Id="dfltMask3" TextureId="txr_texture_brick_clean" Bounds="454, 40, 26, 20" TraceId="image3740"/>
         <Image Id="dfltMask4" TextureId="txr_texture_brick_clean" Bounds="468, 0, 26, 20" TraceId="image3782"/>
@@ -472,7 +467,7 @@
         <Image Id="dfltMask167" TextureId="txr_texture_brick_clean" Bounds="312, 60, 26, 20" TraceId="image3652"/>
         <Image Id="dfltMask168" TextureId="txr_texture_brick_clean" Bounds="312, 200, 26, 20" TraceId="image3654"/>
     </Layer>
-    <Layer Id="design2" BackColor="#FFFFFFFF">
+    <Layer Id="_design2" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask169" TextureId="txr_detal_3" Bounds="108, 84, 40, 40" TraceId="image3356"/>
         <Image Id="dfltMask170" TextureId="txr_detal_3" Bounds="70, 84, 40, 40" TraceId="image3358"/>
         <Image Id="dfltMask171" TextureId="txr_detal_3" Bounds="224, 60, 40, 40" TraceId="image3299"/>
@@ -496,4 +491,8 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=8 Enemy=10 Block=26 DesignImage=182 Animation=0 Teleport Animations=0 FoodPack=0 -->
+<!-- Food=6 Enemy=10 Block=26 DesignImage=182 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- -->
+<!-- Food Points = 580 -->
+<!-- 1% = 5.8; 45% = 261; 90% = 522 -->
+<!-- minPointsFood = 70 (12.1%) -->

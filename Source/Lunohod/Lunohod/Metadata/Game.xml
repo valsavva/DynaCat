@@ -26,11 +26,16 @@
 			HealthBonusRatio="0.25"
 		/>
 		-->
-        <LevelSeries Id="series1" Name="----- Series 1: Tutorial -----" File="ScreenSeries1.xml">
-            <LevelInfo Id="[EMPTY]" File="zzzzzzgrfx_updt.xml" BombCount="0" />
+        <LevelSeries Id="series1" Name="----- Series 1: empty -----" File="ScreenSeries1.xml">
+            <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
         </LevelSeries>
-        <LevelSeries Id="series2" Name="----- Series 2: 1D -----" File="ScreenSeries2.xml">
-            <!--<LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
+        <LevelSeries Id="series2" Name="----- Series 2: Puzzle -----" File="ScreenSeries2.xml">
+            <!--
+            
+            vault
+            
+            <LevelInfo Name="I-13" Id="Lvl_1D_Perekrestok_v2" File="Lvl_1D_Perekrestok_v2.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="28.08"/>
+            <LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
             <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
             <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="17"/>
             <LevelInfo Id="Lvl_1D_Intro_v7" File="Lvl_1D_Intro_v7.xml" TimeBonusThreshold="18"/>
@@ -41,85 +46,83 @@
             <LevelInfo Id="Lvl_1D_Boxes_v2" File="Lvl_1D_Boxes_v2.xml" TimeBonusThreshold="30"/>
             <LevelInfo Id="Lvl_1D_Boxes" File="Lvl_1D_Boxes.xml" TimeBonusThreshold="33"/>
             <LevelInfo Id="Lvl_1D_Boxes_v3_behindTheWall" File="Lvl_1D_Boxes_v3_behindTheWall.xml" TimeBonusThreshold="36"/>
-            -->
-            <!--DONE--><LevelInfo Name="I-1" Id="Lvl_1D_Open" File="Lvl_1D_Open.xml" StarScoreRatio3="1" TimeBonusThreshold="30" BombCount="0" />
-            <!--DONE--><LevelInfo Name="I-2" Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" StarScoreRatio3="1" TimeBonusThreshold="29.92"/>
-            <!--DONE--><LevelInfo Name="I-3" Id="Lvl_1D_Middle_v2" File="Lvl_1D_Middle_v2.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="26.71"/>
-            <!--DONE--><LevelInfo Name="I-4" Id="Lvl_1D_Oil_Introducing" File="Lvl_1D_Oil_Introducing.xml" StarScoreRatio3="1" TimeBonusThreshold="24"/>
-            <!--DONE--><LevelInfo Name="I-5" Id="Lvl_1D_Middle_v3" File="Lvl_1D_Middle_v3.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="29.85"/>
-            <!--DONE--><LevelInfo Name="I-6" Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="29.97"/>
-            <!--DONE--><LevelInfo Name="I-7" Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" StarScoreRatio2="0.75" StarScoreRatio3="1" TimeBonusThreshold="31.15"/>
-            <!--DONE--><LevelInfo Name="I-8" Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="21.62"/>
-            <!--DONE--><LevelInfo Name="I-9" Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" StarScoreRatio2="0.55" StarScoreRatio3="1" TimeBonusThreshold="37.20"/>
-            <!--DONE--><LevelInfo Name="I-10" Id="Lvl_1D_Dva_Prohoda" File="Lvl_1D_Dva_Prohoda.xml" StarScoreRatio3="1" TimeBonusThreshold="31.98"/>
-            <!--DONE--><LevelInfo Name="I-11" Id="Lvl_1D_Chetyre_Kruga" File="Lvl_1D_Chetyre_Kruga.xml" StarScoreRatio3="1" TimeBonusThreshold="35.95"/>
-            <!--DONE--><LevelInfo Name="I-12" Id="Lvl_1D_Perekrestok" File="Lvl_1D_Perekrestok.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="31.40"/>
-            <!--<LevelInfo Name="I-13" Id="Lvl_1D_Perekrestok_v2" File="Lvl_1D_Perekrestok_v2.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="28.08"/>-->
-            <!--DONE--><LevelInfo Name="I-13" Id="LvL_1D_FF" File="LvL_1D_FF.xml" StarScoreRatio3="1" TimeBonusThreshold="45.19"/>
-            <!--DONE--><LevelInfo Name="I-14" Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" StarScoreRatio3="1" TimeBonusThreshold="11.61" BombCount="0" />
-            <!--DONE--><LevelInfo Name="I-15" Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="35.37" />
-            <!--DONE--><LevelInfo Name="I-16" Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" StarScoreRatio3="1" TimeBonusThreshold="39.77" />
-            <!--DONE--><LevelInfo Name="I-17" Id="Lvl_1D_Magnet_v4" File="Lvl_1D_Magnet_v4.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="54.38" />
-            <!--DONE--><LevelInfo Name="I-18" Id="Lvl_1D_Magnet_v5" File="Lvl_1D_Magnet_v5.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="69.29" />
-            <!--DONE--><LevelInfo Name="I-19" Id="Lvl_1D_Magnet_v6" File="Lvl_1D_Magnet_v6.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="43.07" />
-            <!--DONE--><LevelInfo Name="I-20" Id="Lvl_1D_Magnet_v7" File="Lvl_1D_Magnet_v7.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="53.32" />
-            <!--<LevelInfo Name="Lvl_1D_Zamanuha" Id="" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
+            <LevelInfo Name="Lvl_1D_Zamanuha" Id="" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
             <LevelInfo Name="Lvl_1D_Zamanuha_v2" Id="" File="Lvl_1D_Zamanuha_v2.xml" TimeBonusThreshold="18"/>
             <LevelInfo Name="I-20" Id="" File="Lvl_1D_Zamanuha_v3.xml" StarScoreRatio2="0.50" StarScoreRatio3="1" TimeBonusThreshold="12.86"/>
             -->
+            
+            <LevelInfo Name="I-1" Id="Lvl_1D_Open" File="Lvl_1D_Open.xml" StarScoreRatio3="1" TimeBonusThreshold="30.3" BombCount="0" />
+            <LevelInfo Name="I-2" Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" StarScoreRatio3="1" TimeBonusThreshold="30.2"/>
+            <LevelInfo Name="I-3" Id="Lvl_1D_Middle_v2" File="Lvl_1D_Middle_v2.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="27"/>
+            <LevelInfo Name="I-4" Id="Lvl_1D_Oil_Introducing" File="Lvl_1D_Oil_Introducing.xml" StarScoreRatio3="1" TimeBonusThreshold="17"/>
+            <LevelInfo Name="I-5" Id="Lvl_1D_Middle_v3" File="Lvl_1D_Middle_v3.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="30.2"/>
+            <LevelInfo Name="I-6" Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="30.3"/>
+            <LevelInfo Name="I-7" Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" StarScoreRatio2="0.75" StarScoreRatio3="1" TimeBonusThreshold="31.5"/>
+            <LevelInfo Name="I-8" Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="21.9"/>
+            <LevelInfo Name="I-9" Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" StarScoreRatio2="0.55" StarScoreRatio3="1" TimeBonusThreshold="37.2"/>
+            <LevelInfo Name="I-10" Id="Lvl_1D_Dva_Prohoda" File="Lvl_1D_Dva_Prohoda.xml" StarScoreRatio3="1" TimeBonusThreshold="32.3"/>
+            <LevelInfo Name="I-11" Id="Lvl_1D_Chetyre_Kruga" File="Lvl_1D_Chetyre_Kruga.xml" StarScoreRatio3="1" TimeBonusThreshold="36.3"/>
+            <LevelInfo Name="I-12" Id="Lvl_1D_Perekrestok" File="Lvl_1D_Perekrestok.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="32.6"/>
+            <LevelInfo Name="I-13" Id="LvL_1D_FF" File="LvL_1D_FF.xml" StarScoreRatio3="1" TimeBonusThreshold="45.5"/>
+            <LevelInfo Name="I-14" Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" StarScoreRatio3="1" TimeBonusThreshold="11.9" BombCount="0" />
+            <LevelInfo Name="I-15" Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="39.1" />
+            <LevelInfo Name="I-16" Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" StarScoreRatio3="1" TimeBonusThreshold="44.8" />
+            <LevelInfo Name="I-17" Id="Lvl_1D_Magnet_v4" File="Lvl_1D_Magnet_v4.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="54.7" />
+            <LevelInfo Name="I-18" Id="Lvl_1D_Magnet_v5" File="Lvl_1D_Magnet_v5.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="73.5" />
+            <LevelInfo Name="I-19" Id="Lvl_1D_Magnet_v6" File="Lvl_1D_Magnet_v6.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="43.4" />
+            <LevelInfo Name="I-20" Id="Lvl_1D_Magnet_v7" File="Lvl_1D_Magnet_v7.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="64.3" />
         </LevelSeries>
-        <LevelSeries Id="series3" Name="----- Series 3 Poezd -----" File="ScreenSeries3.xml">
-            <!--DONE--><LevelInfo Name="II-1" Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" StarScoreRatio1="0.88" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="32.34"/>
-            <!--DONE--><LevelInfo Name="II-2" Id="Lvl_Poezd_v4_Perekrestok" File="Lvl_Poezd_v4_Perekrestok.xml" StarScoreRatio1="0.67" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="24.37"/>
-            <!--DONE--><LevelInfo Name="II-3" Id="Lvl_Poezd_v3_Spiral" File="Lvl_Poezd_v3_Spiral.xml" StarScoreRatio2="0.92" StarScoreRatio3="1" TimeBonusThreshold="30.95"/>
-            <!--DONE--><LevelInfo Name="II-4" Id="Lvl_Poezd_v10_Gorki" File="Lvl_Poezd_v10_Gorki.xml" StarScoreRatio1="0.73" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="34.15"/>
-            <!--DONE--><LevelInfo Name="II-5" Id="Lvl_Poezd_v6_Logika_Zatorov" File="Lvl_Poezd_v6_Logika_Zatorov.xml" StarScoreRatio3="1" TimeBonusThreshold="30.79"/>
-            <!--DONE--><LevelInfo Name="II-6" Id="Lvl_Poezd" File="Lvl_Poezd.xml" StarScoreRatio1="0.72" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="36.25"/>
-            <!--DONE--><LevelInfo Name="II-7" Id="Lvl_Poezd_v11_Gorki_v2" File="Lvl_Poezd_v11_Gorki_v2.xml" StarScoreRatio2="0.91" StarScoreRatio3="1" TimeBonusThreshold="32.44"/>
-            <!--DONE--><LevelInfo Name="II-8" Id="Lvl_Poezd_Rozha" File="Lvl_Poezd_Rozha.xml" StarScoreRatio2="0.94" StarScoreRatio3="1" TimeBonusThreshold="34.3"/>
-            <!--DONE--><LevelInfo Name="II-9" Id="Lvl_Poezd_v9_Logika_Zatorov_v2" File="Lvl_Poezd_v9_Logika_Zatorov_v2.xml" StarScoreRatio2="0.79" StarScoreRatio3="0.9" TimeBonusThreshold="40.25"/>
-            <!--DONE--><LevelInfo Name="II-10" Id="Lvl_Poezd_DveGory" File="Lvl_Poezd_DveGory.xml" StarScoreRatio2="0.94" StarScoreRatio3="1" TimeBonusThreshold="28.35"/>
-            <!--DONE--><LevelInfo Name="II-11" Id="Lvl_Poezd_v5_Paravozik" File="Lvl_Poezd_v5_Paravozik.xml" StarScoreRatio2="0.93" StarScoreRatio3="1" TimeBonusThreshold="34.36"/>
-            <!--DONE--><LevelInfo Name="II-12" Id="Lvl_Poezd_v7_Razvyazka" File="Lvl_Poezd_v7_Razvyazka.xml" StarScoreRatio2="0.88" StarScoreRatio3="1" TimeBonusThreshold="39.22"/>
-            <!--DONE--><LevelInfo Name="II-13" Id="Lvl_Poezd_v8_Zmeyka" File="Lvl_Poezd_v8_Zmeyka.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="39.74"/>
-            <!--DONE--><LevelInfo Name="II-14" Id="Lvl_Poezd_VPP" File="Lvl_Poezd_VPP.xml" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="81.4"/>
-            <!--DONE--><LevelInfo Name="II-15" Id="Lvl_Poezd_Dvoynoy" File="Lvl_Poezd_Dvoynoy.xml" StarScoreRatio2="0.96" StarScoreRatio3="1" TimeBonusThreshold="86.47"/>
-            <!--DONE--><LevelInfo Name="II-16" Id="Lvl_Poezd_Poni" File="Lvl_Poezd_Poni.xml" StarScoreRatio2="0.97" StarScoreRatio3="1" TimeBonusThreshold="230.78"/>
-            <!--DONE--><LevelInfo Name="II-17" Id="Lvl_Poezd_E" File="Lvl_Poezd_E.xml" StarScoreRatio2="0.98" StarScoreRatio3="1" TimeBonusThreshold="161.42" />
-            <!--DONE--><LevelInfo Name="II-18" Id="Lvl_Poezd_Plus" File="Lvl_Poezd_Plus.xml" StarScoreRatio2="0.97" StarScoreRatio3="1" TimeBonusThreshold="78"/>
+        <LevelSeries Id="series3" Name="----- Series 3 Drive-By -----" File="ScreenSeries3.xml">
+            <LevelInfo Name="II-1" Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="33.3"/>
+            <LevelInfo Name="II-2" Id="Lvl_Poezd_v4_Perekrestok" File="Lvl_Poezd_v4_Perekrestok.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="24.8"/>
+            <LevelInfo Name="II-3" Id="Lvl_Poezd_v10_Gorki" File="Lvl_Poezd_v10_Gorki.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="34.5"/>
+            <LevelInfo Name="II-4" Id="Lvl_Poezd_v3_Spiral" File="Lvl_Poezd_v3_Spiral.xml" StarScoreRatio2="0.92" StarScoreRatio3="1" TimeBonusThreshold="31.3"/>
+            <LevelInfo Name="II-5" Id="Lvl_Poezd_v6_Logika_Zatorov" File="Lvl_Poezd_v6_Logika_Zatorov.xml" StarScoreRatio3="1" TimeBonusThreshold="31.2"/>
+            <LevelInfo Name="II-6" Id="Lvl_Poezd" File="Lvl_Poezd.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="37"/>
+            <LevelInfo Name="II-7" Id="Lvl_Poezd_v11_Gorki_v2" File="Lvl_Poezd_v11_Gorki_v2.xml" StarScoreRatio2="0.91" StarScoreRatio3="1" TimeBonusThreshold="32.8"/>
+            <LevelInfo Name="II-8" Id="Lvl_Poezd_v9_Logika_Zatorov_v2" File="Lvl_Poezd_v9_Logika_Zatorov_v2.xml" StarScoreRatio2="0.79" StarScoreRatio3="0.9" TimeBonusThreshold="41"/>
+            <LevelInfo Name="II-9" Id="Lvl_Poezd_DveGory" File="Lvl_Poezd_DveGory.xml" StarScoreRatio2="0.94" StarScoreRatio3="1" TimeBonusThreshold="28.7"/>
+            <LevelInfo Name="II-10" Id="Lvl_Poezd_Rozha" File="Lvl_Poezd_Rozha.xml" StarScoreRatio2="0.94" StarScoreRatio3="1" TimeBonusThreshold="34.6"/>
+            <LevelInfo Name="II-11" Id="Lvl_Poezd_v5_Paravozik" File="Lvl_Poezd_v5_Paravozik.xml" StarScoreRatio2="0.93" StarScoreRatio3="1" TimeBonusThreshold="34.7"/>
+            <LevelInfo Name="II-12" Id="Lvl_Poezd_v7_Razvyazka" File="Lvl_Poezd_v7_Razvyazka.xml" StarScoreRatio2="0.88" StarScoreRatio3="1" TimeBonusThreshold="39.9"/>
+            <LevelInfo Name="II-13" Id="Lvl_Poezd_v8_Zmeyka" File="Lvl_Poezd_v8_Zmeyka.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="40"/>
+            <LevelInfo Name="II-14" Id="Lvl_Poezd_VPP" File="Lvl_Poezd_VPP.xml" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="83.7"/>
+            <LevelInfo Name="II-15" Id="Lvl_Poezd_Dvoynoy" File="Lvl_Poezd_Dvoynoy.xml" StarScoreRatio2="0.96" StarScoreRatio3="1" TimeBonusThreshold="87.2"/>
+            <LevelInfo Name="II-16" Id="Lvl_Poezd_Poni" File="Lvl_Poezd_Poni.xml" StarScoreRatio2="0.97" StarScoreRatio3="1" TimeBonusThreshold="232"/>
+            <LevelInfo Name="II-17" Id="Lvl_Poezd_E" File="Lvl_Poezd_E.xml" StarScoreRatio2="0.98" StarScoreRatio3="1" TimeBonusThreshold="162" />
+            <LevelInfo Name="II-18" Id="Lvl_Poezd_Plus" File="Lvl_Poezd_Plus.xml" StarScoreRatio2="0.97" StarScoreRatio3="1" TimeBonusThreshold="78.3"/>
         </LevelSeries>
-        <LevelSeries Id="series4" Name="----- Series 4: Ceh -----" File="ScreenSeries4.xml">
-            <LevelInfo Id="Lvl_Ceh_v1" File="Lvl_Ceh_v1.xml" StarScoreRatio3="1" TimeBonusThreshold="17.91" BombCount="0" />
-            <!--<LevelInfo Id="Lvl_Ceh_v1_Tiled" File="Lvl_Ceh_v1_Tiled.xml" BombCount="0" />-->
-            <LevelInfo Id="Lvl_Ceh_v2" File="Lvl_Ceh_v2.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="35.68" />
-            <LevelInfo Id="Lvl_Ceh_v3" File="Lvl_Ceh_v3.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="34.82"/>
-            <LevelInfo Id="Lvl_Ceh_v8_etazhi" File="Lvl_Ceh_v8_etazhi.xml" StarScoreRatio1="0.18" StarScoreRatio2="0.67" StarScoreRatio3="1" TimeBonusThreshold="47.55" />
-            <LevelInfo Id="Lvl_Ceh_v4_Gorlo" File="Lvl_Ceh_v4_Gorlo.xml" StarScoreRatio2="0.5" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="65.59"/>
-            <LevelInfo Id="Lvl_Ceh_v5_dva_ugla" File="Lvl_Ceh_v5_dva_ugla.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="27.5"/>
-            <LevelInfo Id="Lvl_Ceh_v9_chetire_ugla" File="Lvl_Ceh_v9_chetire_ugla.xml" StarScoreRatio2="0.7" StarScoreRatio3="1" TimeBonusThreshold="26.10"/>
-            <LevelInfo Id="Lvl_Ceh_v6_proizvodstvo" File="Lvl_Ceh_v6_proizvodstvo.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="123.99"/>
-            <LevelInfo Id="Lvl_Ceh_v7_nasos" File="Lvl_Ceh_v7_nasos.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="33.64"/>
+        <LevelSeries Id="series4" Name="----- Series 4: Classic -----" File="ScreenSeries4.xml">            
+            <LevelInfo Name="III-1" Id="Lvl_LogikaPeredv_Tropinka" File="Lvl_LogikaPeredv_Tropinka.xml" StarScoreRatio3="1" TimeBonusThreshold="23.3" BombCount="0" />
+            <LevelInfo Name="III-2" Id="Lvl_Labirint" File="Lvl_Labirint.xml" StarScoreRatio3="1" TimeBonusThreshold="34.3" BombCount="0" />
+            <LevelInfo Name="III-3" Id="Lvl_Labirint_v3_Box" File="Lvl_Labirint_v3_Box.xml" StarScoreRatio2="0.50" StarScoreRatio3="1" TimeBonusThreshold="32.3" BombCount="0" /><!--<LevelInfo Id="Lvl_Labirint_v3_Box_NCO" File="Lvl_Labirint_v3_Box_NCO.xml" StarScoreRatio2="0.50" StarScoreRatio3="1" TimeBonusThreshold="31.96" BombCount="0" />-->
+            <LevelInfo Name="III-4" Id="Lvl_Labirint_v4_Office" File="Lvl_Labirint_v4_Office.xml" StarScoreRatio3="1" TimeBonusThreshold="36.3" BombCount="0" />
+            <LevelInfo Name="III-5" Id="Lvl_Dyrka" File="Lvl_Dyrka.xml" StarScoreRatio3="1" TimeBonusThreshold="15.8" />
+            <LevelInfo Name="III-6" Id="Lvl_Trenazher" File="Lvl_Trenazher.xml" BombCount="0" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="167" />    
+            <LevelInfo Name="III-7" Id="Lvl_4_Komnati" File="Lvl_4_Komnati.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="52" />
+            <LevelInfo Name="III-8" Id="Lvl_Ceh_v1" File="Lvl_Ceh_v1.xml" StarScoreRatio3="1" TimeBonusThreshold="19.3" BombCount="0" />
+            <LevelInfo Name="III-9" Id="Lvl_Ceh_v5_dva_ugla" File="Lvl_Ceh_v5_dva_ugla.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="27.8"/>
+            <LevelInfo Name="III-10" Id="Lvl_Ceh_v2" File="Lvl_Ceh_v2.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="36" />
+            <LevelInfo Name="III-11" Id="Lvl_Labirint_v5_Vorishka" File="Lvl_Labirint_v5_Vorishka.xml" StarScoreRatio3="1" TimeBonusThreshold="49.5"/>
+            <LevelInfo Name="III-12" Id="Lvl_Labirint_v2" File="Lvl_Labirint_v2.xml" StarScoreRatio2="0.96" StarScoreRatio3="1" TimeBonusThreshold="75.8" />
+            <LevelInfo Name="III-13" Id="Lvl_LogikaPeredvizhenii" File="Lvl_LogikaPeredvizhenii.xml" StarScoreRatio2="0.90" StarScoreRatio3="1" TimeBonusThreshold="35.8" />
+            <LevelInfo Name="III-14" Id="Lvl_Chelnok" File="Lvl_Chelnok.xml" StarScoreRatio3="0.80" TimeBonusThreshold="82.5" BombCount="0" />
+            <LevelInfo Name="III-15" Id="Lvl_Ceh_v3" File="Lvl_Ceh_v3.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="35.1"/>
+            <LevelInfo Name="III-16" Id="Lvl_Ceh_v9_chetire_ugla" File="Lvl_Ceh_v9_chetire_ugla.xml" StarScoreRatio2="0.7" StarScoreRatio3="1" TimeBonusThreshold="26.4"/>
+            <LevelInfo Name="III-17" Id="Lvl_Ceh_v8_etazhi" File="Lvl_Ceh_v8_etazhi.xml" StarScoreRatio2="0.67" StarScoreRatio3="1" TimeBonusThreshold="47.9" />
+            <LevelInfo Name="III-18" Id="Lvl_Elochka" File="Lvl_Elochka.xml" StarScoreRatio3="1" TimeBonusThreshold="34.4" />
+            <LevelInfo Name="III-19" Id="Lvl_Nozhnicy" File="Lvl_Nozhnicy.xml" StarScoreRatio3="1" TimeBonusThreshold="12" BombCount="0" />
+            <LevelInfo Name="III-20" Id="Lvl_RyadyVragov" File="Lvl_RyadyVragov.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="41" />
+            <LevelInfo Name="III-21" Id="Lvl_Sport" File="Lvl_Sport.xml" BombCount="0" HeroHealth="100" StarScoreRatio3="1" TimeBonusThreshold="75.8" />
+            <LevelInfo Name="III-22" Id="Lvl_VodoprovodniiNindzya" File="Lvl_VodoprovodniiNindzya.xml" StarScoreRatio3="1" TimeBonusThreshold="73.1" />
+            <LevelInfo Name="III-23" Id="Lvl_Ceh_v4_Gorlo" File="Lvl_Ceh_v4_Gorlo.xml" StarScoreRatio2="0.5" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="65.9"/>
+            <LevelInfo Name="III-24" Id="Lvl_Ceh_v6_proizvodstvo" File="Lvl_Ceh_v6_proizvodstvo.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="125"/>
+            <LevelInfo Name="III-25" Id="Lvl_Ceh_v7_nasos" File="Lvl_Ceh_v7_nasos.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="36"/>
+            <LevelInfo Name="III-26" Id="Lvl_VolkLovitYayca" File="Lvl_VolkLovitYayca.xml" StarScoreRatio3="1" TimeBonusThreshold="58.8" />
+            <LevelInfo Name="III-27" Id="Lvl_VKolce" File="Lvl_VKolce.xml" BombCount="0" TimeBonusThreshold="70"/>
         </LevelSeries>
-        <LevelSeries Id="series5" Name="----- Series 5: Full 2D -----" File="ScreenSeries5.xml">
-            <LevelInfo Id="Lvl_LogikaPeredv_Tropinka" File="Lvl_LogikaPeredv_Tropinka.xml" StarScoreRatio3="1" TimeBonusThreshold="21.94" BombCount="0" />
-            <LevelInfo Id="Lvl_Labirint" File="Lvl_Labirint.xml" StarScoreRatio3="1" TimeBonusThreshold="33.89" BombCount="0" />
-            <LevelInfo Id="Lvl_Nozhnicy" File="Lvl_Nozhnicy.xml" StarScoreRatio3="1" TimeBonusThreshold="11.72" BombCount="0" />
-            <LevelInfo Id="Lvl_Dyrka" File="Lvl_Dyrka.xml" StarScoreRatio3="1" TimeBonusThreshold="15.49" />
-            <LevelInfo Id="Lvl_Labirint_v3_Box" File="Lvl_Labirint_v3_Box.xml" StarScoreRatio1="0.18" StarScoreRatio2="0.50" StarScoreRatio3="1" TimeBonusThreshold="31.96" BombCount="0" />
-            <LevelInfo Id="Lvl_Trenazher" File="Lvl_Trenazher.xml" BombCount="0" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="166.23" />
-            <LevelInfo Id="Lvl_Labirint_v5_Vorishka" File="Lvl_Labirint_v5_Vorishka.xml" StarScoreRatio3="1" TimeBonusThreshold="49.18"/>
-            <LevelInfo Id="Lvl_LogikaPeredvizhenii" File="Lvl_LogikaPeredvizhenii.xml" StarScoreRatio2="0.90" StarScoreRatio3="1" TimeBonusThreshold="35.41" />
-            <LevelInfo Id="Lvl_Labirint_v4_Office" File="Lvl_Labirint_v4_Office.xml" StarScoreRatio3="1" TimeBonusThreshold="35.98" BombCount="0" />
-            <LevelInfo Id="Lvl_Chelnok" File="Lvl_Chelnok.xml" TimeBonusThreshold="82" BombCount="0" />
-            <!--<LevelInfo Id="Lvl_VKolce_v2" File="Lvl_VKolce_v2.xml" />-->
-            <LevelInfo Id="Lvl_Labirint_v2" File="Lvl_Labirint_v2.xml" StarScoreRatio2="0.96" StarScoreRatio3="1" TimeBonusThreshold="75.50" />
-            <LevelInfo Id="Lvl_VodoprovodniiNindzya" File="Lvl_VodoprovodniiNindzya.xml" StarScoreRatio3="1" TimeBonusThreshold="72.73" />
-            <LevelInfo Id="Lvl_RyadyVragov" File="Lvl_RyadyVragov.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="38.76" />
-            <LevelInfo Id="Lvl_Elochka" File="Lvl_Elochka.xml" StarScoreRatio3="1" TimeBonusThreshold="34.09" />
-            <LevelInfo Id="Lvl_VolkLovitYayca" File="Lvl_VolkLovitYayca.xml" StarScoreRatio3="1" TimeBonusThreshold="58.49" />
-            <LevelInfo Id="Lvl_4_Komnati" File="Lvl_4_Komnati.xml" BombCount="0" StarScoreRatio3="1" TimeBonusThreshold="43.77" />
-            <LevelInfo Id="Lvl_Sport" File="Lvl_Sport.xml" BombCount="0" HeroHealth="100" StarScoreRatio3="1" TimeBonusThreshold="75.45" />
-            <LevelInfo Id="Lvl_VKolce" File="Lvl_VKolce.xml" BombCount="0" />
+        <LevelSeries Id="series5" Name="----- Series 5: empty -----" File="ScreenSeries5.xml">
+            <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series6" Name="----- Tests -----" File="ScreenTests.xml">
             <LevelInfo Id="zzzzzzgrfx_updt" File="zzzzzzgrfx_updt.xml" />

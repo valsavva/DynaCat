@@ -1,0 +1,118 @@
+<Include>
+	
+    <Resources RootFolder="Textures">
+        <Texture Id="txrElectricityWave" Source="electric_wave_spr_264x28x3"/>
+    </Resources>
+	<Resources RootFolder="Sound">
+		<SoundFile Id="electric_spark_1" Source="skeletonFX_electric_spark_1"/>
+		<SoundFile Id="electric_spark_2" Source="skeletonFX_electric_spark_2"/>
+		<SoundFile Id="electric_spark_3" Source="skeletonFX_electric_spark_3"/>
+		<SoundFile Id="electric_spark_4" Source="skeletonFX_electric_spark_4"/>
+	</Resources>
+         
+	<Class Id="clsEnemyElectricity2">
+		<Enemy IsExploding="false" Damage="20"> <!-- Damage="9" -->
+		
+			<!-- attack -->
+            <BoolTrigger Condition="hero.CanCollide">
+                <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this.Attack();this.Attack();this_anmDamageDealing.Start();hero:+sttElecticShock" ExitAction="this_anmDamageDealing.Stop();hero:-ElecticShock" Group="this_sttStates"/>
+            </BoolTrigger>
+            
+            <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
+                <Do Action="this_anmAttack.Start()" />
+                <Delay Duration="0.15" />
+            </SequenceSet>
+            
+   			<ParallelSet Id="this_anmAttack" RepeatCount="1">
+                <Do Action="hero.SetTransaction(false, true, true)"/>
+                <Do Action="this.Attack()" />
+                <RandomSet>
+                    <Do Action="system:left"/>
+                    <Do Action="system:right"/>
+                    <Do Action="system:up"/>
+                    <Do Action="system:down"/>
+                </RandomSet>
+                <Do Action="hero.EndTransaction()"/>
+    			<NumAnimation Duration="0.1" Target="hero.Opacity" Autoreverse="false" From="1" To="0" RepeatCount="5"/>
+    			<RandomSet Id="electric_sparking" RepeatCount="1">
+    				<Sound FileId="electric_spark_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    				<Sound FileId="electric_spark_2" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    				<Sound FileId="electric_spark_3" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    				<Sound FileId="electric_spark_4" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    			</RandomSet>
+            </ParallelSet>
+            <!-- default -->
+            <Sprite Id="this_mainView" TextureId="txrElectricityWave" Location="-1,0" FrameBounds="0,0,264,28">
+                <NumAnimation From="0" To="2" Duration="0.3" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
+            </Sprite>
+
+            <SequenceSet InProgress="true" RepeatCount="0">
+                <RandomSet>
+                    <Delay Duration="0.2" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Opacity=0" />
+                        <Delay Duration="0.2" />
+                        <Do Action="this_mainView.Opacity=1" />
+                    </SequenceSet>
+                    <Delay Duration="0.5" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Opacity=0" />
+                        <Delay Duration="0.4" />
+                        <Do Action="this_mainView.Opacity=1" />
+                    </SequenceSet>
+                    <Delay Duration="1" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Opacity=0" />
+                        <Delay Duration="0.6" />
+                        <Do Action="this_mainView.Opacity=1" />
+                    </SequenceSet>
+                </RandomSet>
+            </SequenceSet>
+
+            <SequenceSet InProgress="true" RepeatCount="0">
+                <RandomSet>
+                    <Delay Duration="0.4" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.X=this_mainView.X+1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.X=this_mainView.X-1" />
+                    </SequenceSet>
+                    <Delay Duration="0.8" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.X=this_mainView.X-1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.X=this_mainView.X+1" />
+                    </SequenceSet>
+                    <Delay Duration="1.6" />
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Y=this_mainView.Y+1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.Y=this_mainView.Y-1" />
+                    </SequenceSet>
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="this_mainView.Y=this_mainView.Y-1" />
+                        <Delay Duration="1.33" />
+                        <Do Action="this_mainView.Y=this_mainView.Y+1" />
+                    </SequenceSet>
+                </RandomSet>
+            </SequenceSet>
+		</Enemy>
+	</Class>
+
+</Include>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
