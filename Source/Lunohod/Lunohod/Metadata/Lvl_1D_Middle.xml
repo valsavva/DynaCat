@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.14 -->
+<!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Middle\Lvl_1D_Middle.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Middle" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
@@ -9,6 +9,7 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
+    <Include File="ClassHelpText.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_sky" Source="sky" />
         <Texture Id="txr_hill_01" Source="hill_01" />
@@ -105,7 +106,7 @@
         <Image Id="dfltMask50" TextureId="txr_laz_hor_02n" Bounds="277, 237, 46, 36" TraceId="image3179"/>
         <Image Id="dfltMask51" TextureId="txr_laz_hor_02n" Bounds="317, 237, 46, 36" TraceId="image3183"/>
         <Image Id="dfltMask52" TextureId="txr_laz_baza_01n" Bounds="357, 202, 81, 106" TraceId="image3197"/>
-        <Image Id="dfltMask53" TextureId="txr_laz_turn_02n" Bounds="122, 273, 46, 36" Rotation="180" TraceId="image3200"/>
+        <Image Id="dfltMask53" TextureId="txr_laz_turn_02n" Bounds="122, 273, 46, 36" Rotation="180" Stretch="true" TraceId="image3200"/>
         <Image Id="dfltMask54" TextureId="txr_laz_turn_01n" Bounds="403, 183, 46, 36" Rotation="180" Stretch="true" TraceId="image3202"/>
         <Image Id="dfltMask55" TextureId="txr_laz_vert_03n" Bounds="357, 87, 46, 36" TraceId="image3212"/>
         <Image Id="dfltMask56" TextureId="txr_laz_vert_01n" Bounds="357, 117, 46, 36" TraceId="image3223"/>
@@ -145,10 +146,19 @@
         <Group Id="exit" Class="clsExit" Bounds="376, 228, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="46, 62, 33, 24" TraceId="image3606"/>
     </Layer>
+    <Layer Id="helpText" BackColor="#FFFFFFFF">
+        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Enemies,@txrIndex=1,@blink=false,@rttn=0" Location="279, 133" TraceId="text3103"/>
+        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=Boxes,@txrIndex=1,@blink=false,@rttn=0" Location="161, 114" TraceId="text3107"/>
+        <Group Id="grp3" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=127" Location="369, 160" TraceId="image3119"/>
+        <Group Id="grp4" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=2,@blink=false,@rttn=50" Location="173, 111" TraceId="image3130"/>
+        <Group Id="grp5" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=53" Location="362, 88" TraceId="image3135"/>
+        <Group Id="grp6" Class="clsHelpText" ClassParams="@type='text',@txt=Try your weapon!!!,@txrIndex=1,@blink=false,@rttn=0" Location="171, 222" TraceId="text3137"/>
+        <Group Id="grp7" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=145" Location="281, 261" TraceId="image3164"/>
+    </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=1 Enemy=4 Block=12 DesignImage=65 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=1 Enemy=4 Block=12 DesignImage=65 Animation=7 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 150 -->
 <!-- 1% = 1.5; 45% = 67.5; 90% = 135 -->
