@@ -1,18 +1,32 @@
 <Include>
-         
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_helpTextArrow_1" Source="helpTextArrow1" />
+        <Texture Id="txr_helpTextArrow_2" Source="helpTextArrow2" />
+    </Resources>         
 	<Class Id="clsHelpText">
-		<Group>
+		<Group Opacity="0">
 
-            <BoolTrigger Condition="system:startHelpText" EnterAction="this_anmEntry.Start()"/>
-            <BoolTrigger Condition="@blink" EnterAction="this_blink.Start()"/>
-            <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="this_anmRemove.Start()"/>
-
-
-            <!-- onstart falling -->
-            <SequenceSet Id="this_anmEntry" InProgress="false" RepeatCount="1">
             
-                <!-- <Delay Duration="system.Rnd(1,1.5)" /> -->
-                    <Delay Duration="0.4"/>
+            
+            <!-- type: text or arrow-->
+            <BoolTrigger Condition="@type=='text'">
+                <Text Id="this_txtShadow" FontId="Splash14Font" Text="@txt" Color="#000000" Location="1,2"/>
+                <Text Id="this_txt" FontId="Splash14Font" Text="@txt" Color="#EEEEEE" Location="0,0"/>
+                <!-- compensation -->
+                <Do Action="this_txt.Y=this_txt.Y-18;this_txtShadow.Y=this_txtShadow.Y-18;" InProgress="true" RepeatCount="1"/>
+            </BoolTrigger>
+
+            <BoolTrigger Condition="@type=='arrow'">
+                <Image Id="this_imgShadow" TextureId="txr_helpTextArrow_@txrIndex" Location="2,3" BackColor="#000000" />
+                <Image Id="this_img" TextureId="txr_helpTextArrow_@txrIndex" Location="1,1" BackColor="#FFFFFF" />
+                <Do Action="this_img.Rotation=@rttn;this_imgShadow.Rotation=@rttn" InProgress="true" RepeatCount="1" />
+            </BoolTrigger>
+
+            <!-- appearance -->
+            <SequenceSet Id="this_anmEntry" InProgress="true" RepeatCount="1">
+            
+                <Delay Duration="system.Rnd(0.1,0.5)" /> 
+                    <!-- <Delay Duration="0.4"/>-->
                 <!--<RandomSet RepeatCount="1">
                     <Delay Duration="1.0"/>
                     <Delay Duration="1.02"/>
@@ -22,9 +36,7 @@
                     <Delay Duration="1.1"/>
                 </RandomSet>-->
 
-                <!--<Let Target="this.Y" Value="-600" />-->
-                <NumAnimation Target="this.Y" From="0" To="-600" Duration="0.001" Autoreverse="false" IsDelta="true" RepeatCount="1" Fill="End"/>
-                <NumAnimation Target="this_img.Opacity" From="0" To="1" Duration="0.001" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <Do Action="this.Y=this.Y-600;this.Opacity=1" />
 
                 <NumAnimation Duration="1.6" Target="this.Y" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End">
                     <KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
@@ -34,29 +46,27 @@
                     <KeyFrame Time="1.5" Value="595" Smoothness="Smooth"/>
                     <KeyFrame Time="1.6" Value="600" Smoothness="Smooth"/>
                 </NumAnimation>
-
             </SequenceSet>
             
             
             
             <!-- blinking -->
+            <BoolTrigger Condition="@blink" EnterAction="this_blink.Start()"/>
             <SequenceSet Id="this_blink">
                 <Delay Duration="12"/>
                 <SequenceSet RepeatCount="30">
-                    <NumAnimation Target="this_img.Opacity" InProgress="false" From="1" To="0" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
-                    <NumAnimation Target="this_img.Opacity" InProgress="false" From="0" To="1" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
+                    <NumAnimation Target="this.Opacity" InProgress="false" From="1" To="0" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
+                    <NumAnimation Target="this.Opacity" InProgress="false" From="0" To="1" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
                     <Delay Duration="0.6"/>
                 </SequenceSet>
             </SequenceSet>
 
-
-
             <!-- help text removing -->
+            <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="this_anmRemove.Start()"/>
             <SequenceSet Id="this_anmRemove" InProgress="false" RepeatCount="1">
-                <NumAnimation Target="this_img.Opacity" From="this_img.Opacity" To="0" Duration="0.3" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <Do Action="this.Disable()"/>
             </SequenceSet>
-
             
 		</Group>
 	</Class>

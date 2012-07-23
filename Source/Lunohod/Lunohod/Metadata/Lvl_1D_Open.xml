@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.14 -->
+<!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Open\Lvl_1D_Open.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Open" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
+    <Include File="ClassHelpText.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_hor_01n" Source="laz_hor_01n" />
@@ -63,20 +64,31 @@
         <Image Id="dfltMask31" TextureId="txr_laz_baza_01n" Bounds="188, 97, 81, 106" FlipEffects="Horizontally" TraceId="image3213"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="111, 22, 28, 19" TraceId="image3235"/>
-        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=4" Bounds="109, 227, 28, 22" TraceId="image3246"/>
-        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="346, 20, 27, 20" TraceId="image3257"/>
-        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=6" Bounds="347, 133, 22, 27" TraceId="image3268"/>
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=6" Bounds="347, 133, 22, 27" TraceId="image3268"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="109, 228, 28, 19" TraceId="image3068"/>
+        <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="344, 20, 28, 22" TraceId="image3079"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="109, 22, 27, 20" TraceId="image3090"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="213, 124, 37, 54" TraceId="image3049" />
-        <Hero Id="hero" Class="clsHero" Bounds="381, 230, 33, 24" TraceId="image3016-1"/>
+        <Hero Id="hero" Class="clsHero" Bounds="325, 228, 33, 24" TraceId="image3016-1"/>
+    </Layer>
+    <Layer Id="helpText" BackColor="#FFFFFFFF">
+        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Exit,@txrIndex=1,@blink=false,@rttn=0" Location="282, 96" TraceId="text3057"/>
+        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=,@txrIndex=1,@blink=false,@rttn=0" Location="14, 70" TraceId="text3072"/>
+        <Group Id="grp3" Class="clsHelpText" ClassParams="@type='text',@txt=DynaCat is waiting a signal,@txrIndex=1,@blink=false,@rttn=0" Location="225, 298" TraceId="text3098"/>
+        <Group Id="grp4" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=2,@blink=false,@rttn=53" Location="285, 96" TraceId="image3124"/>
+        <Group Id="grp5" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=2,@blink=false,@rttn=126" Location="60, 45" TraceId="image3121"/>
+        <Group Id="grp6" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=45" Location="310, 248" TraceId="image3145"/>
+        <Group Id="grp7" Class="clsHelpText" ClassParams="@type='text',@txt=sends a signals,@txrIndex=1,@blink=false,@rttn=0" Location="4, 90" TraceId="text3154"/>
+    </Layer>
+    <Layer Id="upmask" BackColor="#FFFFFFFF">
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=4 Enemy=0 Block=7 DesignImage=31 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=4 Enemy=0 Block=7 DesignImage=31 Animation=7 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 390 -->
 <!-- 1% = 3.9; 45% = 175.5; 90% = 351 -->
