@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_1D_Enemies_v2.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Enemies_v2\Lvl_1D_Enemies_v2.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.21" inkscape:cx="309.09534" inkscape:cy="129.35698" inkscape:document-units="px" inkscape:current-layer="layer8" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4641" inkscape:cx="247.44244" inkscape:cy="128.99021" inkscape:document-units="px" inkscape:current-layer="layer4" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="true" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -21,7 +21,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -65,18 +65,21 @@
         <image y="101" x="38" id="image3161" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_baza_01n.png" height="106" width="81" inkscape:label="Flip:Hor" />
         <image y="77" x="219" id="image3172" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_01n.png" height="36" width="46" />
         <image y="47" x="219" id="image3183" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" height="36" width="46" />
-        <image y="17" x="219" id="image3194" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_03n.png" height="36" width="46" />
-        <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3201" x="219" y="257" />
         <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_03n.png" id="image3203" x="219" y="227" />
         <image y="197" x="219" id="image3206" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" height="36" width="46" />
         <image y="137" x="377" id="image3216" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_turn_02n.png" height="36" width="46" />
-        <image y="257" x="377" id="image3219" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_01n.png" height="36" width="46" />
         <image y="227" x="377" id="image3221" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" height="36" width="46" />
         <image y="197" x="377" id="image3223" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_03n.png" height="36" width="46" />
         <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3225" x="377" y="167" />
         <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_hor_03n.png" id="image3625" x="139" y="137" />
+        <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_dead_end.png" id="image3124" x="-423" y="-297" transform="scale(-1,-1)" />
+        <image y="11" x="219" id="image3121" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_dead_end.png" height="36" width="46" />
+        <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3126" x="219" y="41" />
+        <image y="-297" x="-265" id="image3128" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_dead_end.png" height="36" width="46" transform="scale(-1,-1)" />
+        <image y="231" x="219" id="image3130" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_03n.png" height="36" width="46" />
+        <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3132" x="377" y="233" />
     </g>
-    <g inkscape:groupmode="layer" id="layer8" inkscape:label="_traces" style="opacity:0.5" sodipodi:insensitive="true">
+    <g inkscape:groupmode="layer" id="layer8" inkscape:label="_traces" style="opacity:0.5;display:inline" sodipodi:insensitive="true">
         <image y="211.82645" x="230.82231" id="image3100-1" xlink:href="file:///D:/Lunohod/Grfx/design/misc/traces_singl.png" height="18" width="25" />
         <image width="25" height="18" xlink:href="file:///D:/Lunohod/Grfx/design/misc/traces_singl.png" id="image3103" x="226.82231" y="231.82645" />
         <image y="251.82645" x="230.82231" id="image3105" xlink:href="file:///D:/Lunohod/Grfx/design/misc/traces_singl.png" height="18" width="25" />
