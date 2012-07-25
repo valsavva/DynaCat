@@ -80,7 +80,7 @@
         <Group Id="grp3" Class="clsHelpText" ClassParams="@type='text',@txt=Tap to send a signal,@txrIndex=1,@blink=true,@rttn=0" Location="171, 209" TraceId="text3212" Enabled="false"/>
         <Group Id="grp4" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=2,@blink=true,@rttn=90" Location="152, 194" TraceId="image3224"  Enabled="false"/>
 
-        <Group Id="grp6" Class="clsHelpText" ClassParams="@type='text',@txt=Once again to reach the exit!,@txrIndex=1,@blink=true,@rttn=0" Location="140, 165" TraceId="text3248" Enabled="false"/>
+        <Group Id="grp6" Class="clsHelpText" ClassParams="@type='text',@txt=Tap once again to reach the exit!,@txrIndex=1,@blink=true,@rttn=0" Location="140, 165" TraceId="text3248" Enabled="false"/>
 
         <NumTrigger Property="hero.X" Compare="L" Value="200" EnterAction="anmOnceAgain.Start()" />
         <SequenceSet Id="anmOnceAgain" RepeatCount="1" InProgress="false">
