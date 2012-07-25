@@ -77,9 +77,10 @@
         <Texture Id="txrEnemyRat5Attack" Source="EnemyRat5_enemy_3"/>
         <Texture Id="txrEnemyRat5Dying" Source="EnemyRat5_enemy_3"/>
 
-        <Texture Id="txrExitStatic" Source="refrigerator"/>
-        <Texture Id="txrExitOpen" Source="refrigerator_open"/>
-        <Texture Id="txrExitFlight" Source="refrigerator_wings"/>
+        <Texture Id="txrExitStatic" Source="refrigerator_pose_01_static"/>
+        <Texture Id="txrExitReady" Source="refrigerator_pose_02_static.png"/>
+        <Texture Id="txrExitFlight" Source="refrigerator_pose_03_flight"/>
+        <Texture Id="txrExitTransform" Source="refrigerator_spr_80x111x11"/>
         <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
 
         <Texture Id="txrFish1Default" Source="fish_4_me" />

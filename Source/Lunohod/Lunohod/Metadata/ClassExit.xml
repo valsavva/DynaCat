@@ -29,23 +29,33 @@
             </BoolTrigger>
 
 <!-- Exit animation-->
-            <Image Id="this_imgExitStatic" TextureId="txrExitStatic"/>
-			<Image Id="this_imgExitFlight" TextureId="txrExitFlight" Bounds="-12,0,62,54" Enabled="false"/>
+            <Image Id="this_imgExitStatic" TextureId="txrExitStatic" Location="-23,-56" />
+			<Image Id="this_imgExitFlight" TextureId="txrExitFlight" Location="-23,-56" Enabled="false"/>
+            <Image Id="this_imgExitReady" TextureId="txrExitReady" Location="-23,-56" Enabled="false"/>
 			<Sound Id="this_sndExitFlight" FileId="sndExitFlight" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-			<Sprite Id="sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="12,56,16,34" FrameBounds="0,0,16,34" Enabled="false">
-                <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="true" Target="sprExitFlightFire.CurrentFrame" InProgress="true"/>
+			<Sprite Id="this_sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="10,41,16,34" FrameBounds="0,0,16,34" Enabled="false">
+                <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="true" Target="this_sprExitFlightFire.CurrentFrame" InProgress="true"/>
 			</Sprite>
-			<SequenceSet Id="this_setExit" InProgress="false">
+            <Sprite Id="this_sprExitTransform" TextureId="txrExitTransform" Bounds="-23,-56,80,111" FrameBounds="0,0,80,111" Enabled="false" />
+
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit;this:+StartFlight"/>
+
+            <SequenceSet Id="this_setExit" InProgress="false">
                 <Do Action="@heroDepartPointX=hero.X;
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             
                             @heroDestPointY=exit.Y+10"/>
-                <Do Action="this_sndExitFlight.Start()"/>
-                <Delay Duration="1"/>
-                <Do Action="this_imgExitStatic.Disable();this_imgExitFlight.Enable()"/>
-                <Delay Duration="1"/>
+                <Delay Duration="0.2"/>
+                <Do Action="this_sprExitTransform.Enable();this_imgExitStatic.Disable();this_sndExitFlight.Start()"/>
+                <NumAnimation From="0" To="10" Duration="1.375" Autoreverse="false" Target="this_sprExitTransform.CurrentFrame" InProgress="true" RepeatCount="1"/>
+                <Delay Duration="0.425"/>
+                <Do Action="this_sprExitTransform.Disable();this_imgExitReady.Enable()"/>
 				<ParallelSet>
-                    <Do Action="this.Depth=0.1;sprExitFlightFire.Enable()"/>
+                    <Do Action="this.Depth=0.1;this_sprExitFlightFire.Enable()"/>
+                    <SequenceSet RepeatCount="1">
+                        <Delay Duration="1" />
+                        <Do Action="this_imgExitReady.Disable();this_imgExitFlight.Enable()" />
+                    </SequenceSet>
     				<NumAnimation Target="this.X,this.Y,this.Rotation" Duration="2.5" Autoreverse="false" IsDelta="true" RepeatCount="1" Fill="End">
     					<KeyFrame Time="0" Value="0,0,0" Smoothing="Smooth"/>
     					<KeyFrame Time="1" Value="0,-30,0" Smoothing="Smooth"/>
@@ -55,9 +65,7 @@
 				</ParallelSet>
 				<Do Action="system.StartScreen('ScreenLevelComplete.xml')"/>
 			</SequenceSet>
-			
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit;this:+StartFlight"/>
-			
+						
 			<BoolTrigger Condition="this:StartFlight">
 				<NumTrigger Property="this.Y" Compare="L" Value="-110" EnterAction="
 					this_setExit.Stop();
