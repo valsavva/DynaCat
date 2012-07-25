@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.6.20 -->
+<!-- source: D:\Lunohod\Levels\Lvl_1D_Tutorial1\Lvl_1D_Tutorial1.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Tutorial1" Bounds="0, 0, 480, 320">
+    <Include File="ClassFood.xml" />
+    <Include File="ClassTower.xml" />
+    <Include File="ClassExit.xml" />
+    <Include File="ClassHero.xml" />
+    <Include File="ClassHelpText.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_laz_hor_01n" Source="laz_hor_01n" />
+        <Texture Id="txr_laz_hor_02n" Source="laz_hor_02n" />
+        <Texture Id="txr_laz_hor_03n" Source="laz_hor_03n" />
+        <Texture Id="txr_laz_baza_01n" Source="laz_baza_01n" />
+        <Texture Id="txr_bones_07n" Source="bones_07n" />
+        <Texture Id="txr_bones_08n" Source="bones_08n" />
+        <Texture Id="txr_bones_01n" Source="bones_01n" />
+        <Texture Id="txr_bones_02n" Source="bones_02n" />
+        <Texture Id="txr_bones_03n" Source="bones_03n" />
+        <Texture Id="txr_bones_04n" Source="bones_04n" />
+        <Texture Id="txr_bones_06n" Source="bones_06n" />
+    </Resources>
+    <Layer Id="blocks" BackColor="#FFFFFFFF">
+        <Block Id="blk1" Bounds="-11, 32, 566, 50" Edges="Stick" TraceId="image3260"/>
+        <Block Id="blk2" Bounds="-11, 110, 566, 50" Edges="Stick" TraceId="image3263"/>
+        <Block Id="blk3" Bounds="-11, 16, 54, 144" Edges="Stick" TraceId="image3265"/>
+        <Block Id="blk4" Bounds="479, 16, 54, 144" Edges="Stick" TraceId="image3267"/>
+    </Layer>
+    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3016-17"/>
+    </Layer>
+    <Layer Id="_Laz" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask2" TextureId="txr_laz_hor_01n" Bounds="300, 78, 46, 36" TraceId="image3028"/>
+        <Image Id="dfltMask3" TextureId="txr_laz_hor_02n" Bounds="340, 78, 46, 36" TraceId="image3039"/>
+        <Image Id="dfltMask4" TextureId="txr_laz_hor_03n" Bounds="380, 78, 46, 36" TraceId="image3050"/>
+        <Image Id="dfltMask5" TextureId="txr_laz_hor_01n" Bounds="220, 78, 46, 36" TraceId="image3075"/>
+        <Image Id="dfltMask6" TextureId="txr_laz_hor_02n" Bounds="260, 78, 46, 36" TraceId="image3077"/>
+        <Image Id="dfltMask7" TextureId="txr_laz_hor_02n" Bounds="140, 78, 46, 36" TraceId="image3079"/>
+        <Image Id="dfltMask8" TextureId="txr_laz_hor_03n" Bounds="180, 78, 46, 36" TraceId="image3081"/>
+        <Image Id="dfltMask9" TextureId="txr_laz_hor_03n" Bounds="100, 78, 46, 36" TraceId="image3085"/>
+        <Image Id="dfltMask10" TextureId="txr_laz_baza_01n" Bounds="107, 150, 81, 106" Rotation="180" TraceId="image3072"/>
+        <Image Id="dfltMask11" TextureId="txr_laz_hor_01n" Bounds="460, 78, 46, 36" TraceId="image3087"/>
+        <Image Id="dfltMask12" TextureId="txr_laz_hor_02n" Bounds="420, 78, 46, 36" TraceId="image3091"/>
+    </Layer>
+    <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask13" TextureId="txr_bones_07n" Bounds="134, -3, 15, 14" TraceId="image3101"/>
+        <Image Id="dfltMask14" TextureId="txr_bones_08n" Bounds="466, 312, 21, 13" TraceId="image3112"/>
+        <Image Id="dfltMask15" TextureId="txr_bones_01n" Bounds="458, 49, 19, 23" TraceId="image3134"/>
+        <Image Id="dfltMask16" TextureId="txr_bones_02n" Bounds="396, 1, 35, 31" TraceId="image3145"/>
+        <Image Id="dfltMask17" TextureId="txr_bones_03n" Bounds="416, 36, 15, 12" TraceId="image3156"/>
+        <Image Id="dfltMask18" TextureId="txr_bones_04n" Bounds="401, 169, 15, 18" TraceId="image3167"/>
+        <Image Id="dfltMask19" TextureId="txr_bones_06n" Bounds="67, 20, 18, 9" TraceId="image3178"/>
+    </Layer>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Food Id="fd1" Class="clsFood" ClassParams="@fishType=1" Bounds="94, 84, 32, 21" TraceId="image3189"/>
+    </Layer>
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Group Id="exit" Class="clsExit" Bounds="49, 66, 37, 54" TraceId="image3049" />
+        <Hero Id="hero" Class="clsHero" Bounds="400, 84, 33, 24" TraceId="image3016-1"/>
+    </Layer>
+    <Layer Id="HelpText" BackColor="#FFFFFFFF">
+        <!-- HAND EDIT >>> -->
+        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Dynacat will not move,@txrIndex=1,@blink=false,@rttn=0" Location="160, 36" TraceId="text3193"/>
+        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=until he receives a signal,@txrIndex=1,@blink=false,@rttn=0" Location="152, 62" TraceId="text3197"/>
+        <SequenceSet InProgress="true" RepeatCount="1">
+            <Delay Duration="3" />
+            <Do Action="grp3.Enable();grp4.Enable()" />
+            <Delay Duration="3" />
+            <SequenceSet RepeatCount="0">
+                <NumAnimation From="0" To="-35" Target="grp4.X" Duration="0.65" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3235"/>
+                <NumAnimation From="0" To="5" Target="grp4.X" Duration="0.25" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="1" TraceId="image3235"/>
+                <Delay Duration="0.5" />
+                <NumAnimation From="0" To="35" Target="grp4.X" Duration="0.65" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" TraceId="image3235"/>
+                <Delay Duration="0.2" />
+            </SequenceSet>
+        </SequenceSet>
+
+        <Group Id="grp3" Class="clsHelpText" ClassParams="@type='text',@txt=Tap to send a signal,@txrIndex=1,@blink=true,@rttn=0" Location="171, 209" TraceId="text3212" Enabled="false"/>
+        <Group Id="grp4" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=2,@blink=true,@rttn=90" Location="152, 194" TraceId="image3224"  Enabled="false"/>
+
+        <Group Id="grp6" Class="clsHelpText" ClassParams="@type='text',@txt=Once again to reach the exit!,@txrIndex=1,@blink=true,@rttn=0" Location="140, 165" TraceId="text3248" Enabled="false"/>
+
+        <NumTrigger Property="hero.X" Compare="L" Value="200" EnterAction="anmOnceAgain.Start()" />
+        <SequenceSet Id="anmOnceAgain" RepeatCount="1" InProgress="false">
+            <Delay Duration="1" />
+            <Do Action="grp6.Enable()" />
+        </SequenceSet>
+
+        <BoolTrigger Condition="hero:sttExit" EnterAction="grp6.Disable();anmOnceAgain.Stop()" />
+
+        <!-- HAND EDIT <<< -->
+    </Layer>
+    <Layer Id="upmask" BackColor="#FFFFFFFF">
+    </Layer>
+    <Include File="ClassExplosion.xml" />
+    <Include File="Dashboard.xml" />
+</Level>
+<!-- Food=1 Enemy=0 Block=4 DesignImage=19 Animation=6 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- -->
+<!-- Food Points = 50 -->
+<!-- 1% = 0.5; 45% = 22.5; 90% = 45 -->
+<!-- minPointsFood = 50 (100%) -->
