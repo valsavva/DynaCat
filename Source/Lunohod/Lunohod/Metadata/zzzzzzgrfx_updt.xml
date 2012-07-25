@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.15 -->
+<!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\zzzzzzgrfx_updt.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="zzzzzzgrfx_updt" Bounds="0, 0, 480, 320">
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_electric_wave_spr_264x28x3" Source="electric_wave_spr_264x28x3" />
+        <Texture Id="txr_laz_vert_dead_end" Source="laz_vert_dead_end" />
+        <Texture Id="txr_laz_hor_dead_end" Source="laz_hor_dead_end" />
     </Resources>
     <Layer Id="GRFX update" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_electric_wave_spr_264x28x3" Bounds="-221, 146, 792, 28" TraceId="image3092"/>
+        <Image Id="dfltMask1" TextureId="txr_laz_vert_dead_end" Bounds="218, 49, 46, 36" TraceId="image3092"/>
+        <Image Id="dfltMask2" TextureId="txr_laz_hor_dead_end" Bounds="100, 61, 46, 36" TraceId="image3103"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -19,4 +21,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=1 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=2 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->

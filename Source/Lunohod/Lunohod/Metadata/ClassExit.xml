@@ -56,7 +56,15 @@
 				<Do Action="system.StartScreen('ScreenLevelComplete.xml')"/>
 			</SequenceSet>
 			
-			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit"/>
+			<IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit;this:+StartFlight"/>
+			
+			<BoolTrigger Condition="this:StartFlight">
+				<NumTrigger Property="this.Y" Compare="L" Value="-110" EnterAction="
+					this_setExit.Stop();
+					system.StartScreen('ScreenLevelComplete.xml')
+				" />
+			</BoolTrigger>
+			
 		</Group>
 	</Class>
 

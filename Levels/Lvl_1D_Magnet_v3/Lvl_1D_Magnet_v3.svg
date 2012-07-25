@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_1D_Magnet_v3.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Magnet_v3\Lvl_1D_Magnet_v3.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.7513148" inkscape:cx="320.69955" inkscape:cy="63.49023" inkscape:document-units="px" inkscape:current-layer="layer3" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1" inkscape:cx="193.10867" inkscape:cy="117.54524" inkscape:document-units="px" inkscape:current-layer="layer4" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
         <sodipodi:guide orientation="1,0" position="80,128" id="guide3024" />
         <sodipodi:guide orientation="0,1" position="240,160" id="guide3005" />
@@ -19,7 +19,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -73,11 +73,12 @@
         <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3367" x="337" y="63.000015" style="display:inline" />
         <image y="93.000023" x="337" id="image3369" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" height="36" width="46" style="display:inline" />
         <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3371" x="337" y="123.00002" style="display:inline" />
-        <image style="display:inline" width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3377" x="417" y="81.000023" />
         <image style="display:inline" y="111.00002" x="417" id="image3379" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" height="36" width="46" />
         <image y="231" x="417" id="image3389-4" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_03n.png" height="36" width="46" />
         <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_03n.png" id="image3392" x="17" y="231" />
         <image y="93" x="177" id="image3394" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_03n.png" height="36" width="46" />
+        <image y="77" x="417" id="image3170" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_dead_end.png" height="36" width="46" />
+        <image width="46" height="36" xlink:href="file:///D:/Lunohod/Grfx/design/laz/laz_vert_02n.png" id="image3174" x="417" y="107.00002" style="display:inline" />
     </g>
     <g inkscape:groupmode="layer" id="layer8" inkscape:label="StaticOil" style="display:inline" sodipodi:insensitive="true">
         <image y="174" x="103.00106" id="image3344" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/grpOilStatic/grpOilStatic.png" height="30" width="30" />
@@ -95,14 +96,20 @@
         <image width="47" height="18.584932" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/butter_08.png" id="image3489" x="331.66699" y="177.86142" />
         <image width="29.366028" height="19" xlink:href="file:///D:/Lunohod/Grfx/design/Oil/butter_04.png" id="image3491" x="349.36316" y="183.4595" />
     </g>
-    <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline">
+    <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline" sodipodi:insensitive="true">
         <image y="204" x="26" id="image3266" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Wall/WoodenBox/box_old_1.png" height="30" width="30" />
-        <image inkscape:label="Sprite:sprite_current" width="11" height="11" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/sprite_current_img.png" id="image3460" x="113.49309" y="101.79567" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Magnet_v3\image3472.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
-        <image inkscape:label="Sprite:sprite_current" width="11" height="11" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/sprite_current_img.png" id="image3464" x="191.95114" y="99.251083" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Magnet_v3\image3472.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
-        <image inkscape:label="Sprite:sprite_current" width="11" height="11" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/sprite_current_img.png" id="image3468" x="273.3779" y="101.79567" inkscape:export-filename="D:\Lunohod\Levels\Lvl_1D_Magnet_v3\image3472.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
-        <image inkscape:label="Sprite:sprite_current" width="11" height="11" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/sprite_current_img.png" id="image3472" x="353.53235" y="99.675186" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
         <image width="28" height="22" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType04.png" id="image3547" x="25.513176" y="238.44077" />
         <image y="109.7407" x="427.98309" id="image3544" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Food/fishType04.png" height="22" width="28" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3144" x="101.91613" y="72.213234" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3146" x="123.08955" y="81.775421" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3148" x="110.11229" y="94.752678" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3150" x="185.92679" y="88.556519" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3152" x="206.41719" y="57.186939" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3154" x="255.59416" y="56.503925" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3156" x="282.9147" y="79.726387" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3158" x="264.42429" y="91.971588" />
+        <image width="12" height="12" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" id="image3160" x="343.01987" y="71.53022" />
+        <image y="90.654602" x="361.46124" id="image3141" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyElectricity1/EnemyElectricity1.png" height="12" width="12" />
     </g>
     <g inkscape:groupmode="layer" id="layer10" inkscape:label="Oil1" sodipodi:insensitive="true">
         <image y="177.02495" x="246.51196" id="image3569" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/grpOil/grpOil.png" height="25.727621" width="63.547375" />
