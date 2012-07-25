@@ -62,8 +62,9 @@
             </SequenceSet>
 
             <!-- help text removing -->
-            <BoolTrigger Condition="dashboard:AnyKeyPressed" EnterAction="this_anmRemove.Start()"/>
+            <BoolTrigger Condition="dashboard:AnyKeyPressed and this.Enabled" EnterAction="this_anmRemove.Start()"/>
             <SequenceSet Id="this_anmRemove" InProgress="false" RepeatCount="1">
+                <!--<Delay Duration="0.5" />-->
                 <NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <Do Action="this.Disable()"/>
             </SequenceSet>
@@ -72,20 +73,3 @@
 	</Class>
 
 </Include>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

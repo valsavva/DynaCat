@@ -143,16 +143,15 @@
         <Hero Id="hero" Class="clsHero" Bounds="69, 64, 33, 24" TraceId="image3016-1"/>
     </Layer>
     <Layer Id="helpText" BackColor="#FFFFFFFF">
-        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=a signals on the,@txrIndex=1,@blink=false,@rttn=0" Location="234, 141" TraceId="text3125"/>
-        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=spilled oil !,@txrIndex=1,@blink=false,@rttn=0" Location="291, 164" TraceId="text3129"/>
-        <Group Id="grp3" Class="clsHelpText" ClassParams="@type='text',@txt=DynaCat can't receive,@txrIndex=1,@blink=false,@rttn=0" Location="153, 116" TraceId="text3133"/>
-        <Group Id="grp4" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=2,@blink=false,@rttn=42" Location="321, 167" TraceId="image3145"/>
-        <Group Id="grp5" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=3" Location="363, 80" TraceId="image3156-7"/>
+        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Spilled oil prevents receive signals,@txrIndex=1,@blink=false,@rttn=0" Location="127, 136" TraceId="text3129"/>
+        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=,@txrIndex=1,@blink=false,@rttn=0" Location="293, 163" TraceId="text3104"/>
+        <Group Id="grp3" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=138" Location="228, 176" TraceId="image3116"/>
+        <Group Id="grp4" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=42" Location="223, 83" TraceId="image3130"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=1 Enemy=0 Block=5 DesignImage=71 Animation=5 Teleport Animations=0 FoodPack=0 Oil Barrel=3 dealy sec=6 -->
+<!-- Food=1 Enemy=0 Block=5 DesignImage=71 Animation=4 Teleport Animations=0 FoodPack=0 Oil Barrel=3 dealy sec=6 -->
 <!-- -->
 <!-- Food Points = 70 -->
 <!-- 1% = 0.7; 45% = 31.5; 90% = 63 -->

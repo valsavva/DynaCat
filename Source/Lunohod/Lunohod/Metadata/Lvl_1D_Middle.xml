@@ -9,7 +9,85 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
-    <Include File="ClassHelpText.xml" />
+
+    <!-- HAND EDIT 1 >>> -->
+    <!-- CLASS HELP TEXT modified to react on dynamite button -->
+
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_helpTextArrow_1" Source="helpTextArrow1" />
+        <Texture Id="txr_helpTextArrow_2" Source="helpTextArrow2" />
+    </Resources>
+    <Class Id="clsHelpText">
+        <Group Opacity="0">
+
+
+
+            <!-- type: text or arrow-->
+            <BoolTrigger Condition="@type=='text'">
+                <Text Id="this_txtShadow" FontId="Splash14Font" Text="@txt" Color="#000000" Location="1,2"/>
+                <Text Id="this_txt" FontId="Splash14Font" Text="@txt" Color="#EEEEEE" Location="0,0"/>
+                <!-- compensation -->
+                <Do Action="this_txt.Y=this_txt.Y-18;this_txtShadow.Y=this_txtShadow.Y-18;" InProgress="true" RepeatCount="1"/>
+            </BoolTrigger>
+
+            <BoolTrigger Condition="@type=='arrow'">
+                <Image Id="this_imgShadow" TextureId="txr_helpTextArrow_@txrIndex" Location="2,3" BackColor="#000000" />
+                <Image Id="this_img" TextureId="txr_helpTextArrow_@txrIndex" Location="1,1" BackColor="#FFFFFF" />
+                <Do Action="this_img.Rotation=@rttn;this_imgShadow.Rotation=@rttn" InProgress="true" RepeatCount="1" />
+            </BoolTrigger>
+
+            <!-- appearance -->
+            <SequenceSet Id="this_anmEntry" InProgress="true" RepeatCount="1">
+
+                <Delay Duration="system.Rnd(0.1,0.5)" />
+                <!-- <Delay Duration="0.4"/>-->
+                <!--<RandomSet RepeatCount="1">
+                    <Delay Duration="1.0"/>
+                    <Delay Duration="1.02"/>
+                    <Delay Duration="1.04"/>
+                    <Delay Duration="1.06"/>
+                    <Delay Duration="1.08"/>
+                    <Delay Duration="1.1"/>
+                </RandomSet>-->
+
+                <Do Action="this.Y=this.Y-600;this.Opacity=1" />
+
+                <NumAnimation Duration="1.6" Target="this.Y" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End">
+                    <KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
+                    <KeyFrame Time="1" Value="600" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.2" Value="580" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.4" Value="600" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.5" Value="595" Smoothness="Smooth"/>
+                    <KeyFrame Time="1.6" Value="600" Smoothness="Smooth"/>
+                </NumAnimation>
+            </SequenceSet>
+
+
+
+            <!-- blinking -->
+            <BoolTrigger Condition="@blink" EnterAction="this_blink.Start()"/>
+            <SequenceSet Id="this_blink">
+                <Delay Duration="12"/>
+                <SequenceSet RepeatCount="30">
+                    <NumAnimation Target="this.Opacity" InProgress="false" From="1" To="0" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
+                    <NumAnimation Target="this.Opacity" InProgress="false" From="0" To="1" Duration="0.2" Autoreverse="false" Fill="End" RepeatCount="1"/>
+                    <Delay Duration="0.6"/>
+                </SequenceSet>
+            </SequenceSet>
+
+            <!-- help text removing -->
+            <BoolTrigger Condition="dashboard:BtnBombPressed and this.Enabled" EnterAction="this_anmRemove.Start()"/>
+            <SequenceSet Id="this_anmRemove" InProgress="false" RepeatCount="1">
+                <!--<Delay Duration="0.5" />-->
+                <NumAnimation Target="this.Opacity" From="1" To="0" Duration="0.3" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <Do Action="this.Disable()"/>
+            </SequenceSet>
+
+        </Group>
+    </Class>
+
+    <!-- HAND EDIT 1 <<< -->
+    
     <Resources RootFolder="Textures">
         <Texture Id="txr_sky" Source="sky" />
         <Texture Id="txr_hill_01" Source="hill_01" />
@@ -145,20 +223,19 @@
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="376, 228, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="46, 62, 33, 24" TraceId="image3606"/>
+<!-- HAND EDIT 2 >>> -->        
+        <NumTrigger Property="hero.X" Compare="G" Value="250" EnterAction="helpText.Enable()" />
     </Layer>
-    <Layer Id="helpText" BackColor="#FFFFFFFF">
-        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Enemies,@txrIndex=1,@blink=false,@rttn=0" Location="279, 133" TraceId="text3103"/>
-        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=Boxes,@txrIndex=1,@blink=false,@rttn=0" Location="161, 114" TraceId="text3107"/>
-        <Group Id="grp3" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=127" Location="369, 160" TraceId="image3119"/>
-        <Group Id="grp4" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=2,@blink=false,@rttn=50" Location="173, 111" TraceId="image3130"/>
-        <Group Id="grp5" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=53" Location="362, 88" TraceId="image3135"/>
-        <Group Id="grp6" Class="clsHelpText" ClassParams="@type='text',@txt=Try your weapon!!!,@txrIndex=1,@blink=false,@rttn=0" Location="171, 222" TraceId="text3137"/>
-        <Group Id="grp7" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=145" Location="281, 261" TraceId="image3164"/>
+    <Layer Id="helpText" BackColor="#FFFFFFFF" Enabled="false">
+<!-- HAND EDIT 2 <<< -->
+        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Use dynamite to blow up,@txrIndex=1,@blink=false,@rttn=0" Location="145, 205" TraceId="text3113"/>
+        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=boxes and enemies,@txrIndex=1,@blink=false,@rttn=0" Location="204, 225" TraceId="text3117"/>
+        <Group Id="grp3" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=143" Location="288, 263" TraceId="image3129-1"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=1 Enemy=4 Block=12 DesignImage=65 Animation=7 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=1 Enemy=4 Block=12 DesignImage=65 Animation=3 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 150 -->
 <!-- 1% = 1.5; 45% = 67.5; 90% = 135 -->

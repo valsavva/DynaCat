@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.14 -->
+<!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Middle_v2\Lvl_1D_Middle_v2.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Middle_v2" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
@@ -8,6 +8,7 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
+    <Include File="ClassHelpText.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_sky" Source="sky" />
         <Texture Id="txr_hemps_02" Source="hemps_02" />
@@ -147,10 +148,14 @@
         <Group Id="exit" Class="clsExit" Bounds="376, 228, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="46, 62, 33, 24" TraceId="image3606"/>
     </Layer>
+    <Layer Id="HelpText" BackColor="#FFFFFFFF">
+        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Be careful!,@txrIndex=1,@blink=false,@rttn=0" Location="199, 129" TraceId="text3103"/>
+        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='text',@txt=Don't blow up your food!,@txrIndex=1,@blink=false,@rttn=0" Location="153, 215" TraceId="text3107"/>
+    </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=3 Enemy=2 Block=11 DesignImage=66 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=3 Enemy=2 Block=11 DesignImage=66 Animation=2 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 290 -->
 <!-- 1% = 2.9; 45% = 130.5; 90% = 261 -->

@@ -93,7 +93,7 @@
             <TapArea Bounds="248, 234, 100, 86" Action="tap8_setPress.Start()"/>
             <Image Id="imgBtnBomb" TextureId="txrBtnBomb" Bounds="270, 256, 56, 56" Stretch="false" Opacity="0.5"/>
             <SequenceSet Id="tap8_setPress">
-                <Do Action="~system:explosion;dashboard:AnyKeyPressed"/>
+                <Do Action="~system:explosion;dashboard:AnyKeyPressed;dashboard:BtnBombPressed"/>
                 <NumAnimation Target="imgBtnBomb.Opacity" From="1" To="0.5" Duration="0.3" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
             </SequenceSet>
         </BoolTrigger>

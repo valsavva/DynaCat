@@ -50,27 +50,27 @@
             <LevelInfo Name="Lvl_1D_Zamanuha_v2" Id="" File="Lvl_1D_Zamanuha_v2.xml" TimeBonusThreshold="18"/>
             <LevelInfo Name="I-20" Id="" File="Lvl_1D_Zamanuha_v3.xml" StarScoreRatio2="0.50" StarScoreRatio3="1" TimeBonusThreshold="12.86"/>
             -->
-            
-            <LevelInfo Name="I-1" Id="Lvl_1D_Open" File="Lvl_1D_Open.xml" StarScoreRatio3="1" TimeBonusThreshold="30.3" BombCount="0" />
-            <LevelInfo Name="I-2" Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" StarScoreRatio3="1" TimeBonusThreshold="30.2"/>
-            <LevelInfo Name="I-3" Id="Lvl_1D_Middle_v2" File="Lvl_1D_Middle_v2.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="27"/>
-            <LevelInfo Name="I-4" Id="Lvl_1D_Oil_Introducing" File="Lvl_1D_Oil_Introducing.xml" StarScoreRatio3="1" TimeBonusThreshold="17"/>
-            <LevelInfo Name="I-5" Id="Lvl_1D_Middle_v3" File="Lvl_1D_Middle_v3.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="30.2"/>
-            <LevelInfo Name="I-6" Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="30.3"/>
-            <LevelInfo Name="I-7" Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" StarScoreRatio2="0.75" StarScoreRatio3="1" TimeBonusThreshold="31.5"/>
-            <LevelInfo Name="I-8" Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="21.9"/>
-            <LevelInfo Name="I-9" Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" StarScoreRatio2="0.55" StarScoreRatio3="1" TimeBonusThreshold="37.2"/>
-            <LevelInfo Name="I-10" Id="Lvl_1D_Dva_Prohoda" File="Lvl_1D_Dva_Prohoda.xml" StarScoreRatio3="1" TimeBonusThreshold="32.3"/>
-            <LevelInfo Name="I-11" Id="Lvl_1D_Chetyre_Kruga" File="Lvl_1D_Chetyre_Kruga.xml" StarScoreRatio3="1" TimeBonusThreshold="36.3"/>
-            <LevelInfo Name="I-12" Id="Lvl_1D_Perekrestok" File="Lvl_1D_Perekrestok.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="32.6"/>
-            <LevelInfo Name="I-13" Id="LvL_1D_FF" File="LvL_1D_FF.xml" StarScoreRatio3="1" TimeBonusThreshold="45.5"/>
-            <LevelInfo Name="I-14" Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" StarScoreRatio3="1" TimeBonusThreshold="11.9" BombCount="0" />
-            <LevelInfo Name="I-15" Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="39.1" />
-            <LevelInfo Name="I-16" Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" StarScoreRatio3="1" TimeBonusThreshold="44.8" />
-            <LevelInfo Name="I-17" Id="Lvl_1D_Magnet_v4" File="Lvl_1D_Magnet_v4.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="54.7" />
-            <LevelInfo Name="I-18" Id="Lvl_1D_Magnet_v5" File="Lvl_1D_Magnet_v5.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="73.5" />
-            <LevelInfo Name="I-19" Id="Lvl_1D_Magnet_v6" File="Lvl_1D_Magnet_v6.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="43.4" />
-            <LevelInfo Name="I-20" Id="Lvl_1D_Magnet_v7" File="Lvl_1D_Magnet_v7.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="64.3" />
+            <LevelInfo Name="I-1" Id="Lvl_1D_Tutorial1" File="Lvl_1D_Tutorial1.xml" StarScoreRatio3="1" TimeBonusThreshold="30" BombCount="0" />
+            <LevelInfo Name="I-2" Id="Lvl_1D_Open" File="Lvl_1D_Open.xml" StarScoreRatio3="1" TimeBonusThreshold="30.3" BombCount="0" />
+            <LevelInfo Name="I-3" Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" StarScoreRatio3="1" TimeBonusThreshold="30.2"/>
+            <LevelInfo Name="I-4" Id="Lvl_1D_Middle_v2" File="Lvl_1D_Middle_v2.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="27"/>
+            <LevelInfo Name="I-5" Id="Lvl_1D_Oil_Introducing" File="Lvl_1D_Oil_Introducing.xml" StarScoreRatio3="1" TimeBonusThreshold="17"/>
+            <LevelInfo Name="I-6" Id="Lvl_1D_Middle_v3" File="Lvl_1D_Middle_v3.xml" StarScoreRatio2="0.83" StarScoreRatio3="1" TimeBonusThreshold="30.2"/>
+            <LevelInfo Name="I-7" Id="Lvl_1D_Enemies_v1" File="Lvl_1D_Enemies_v1.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="30.3"/>
+            <LevelInfo Name="I-8" Id="Lvl_1D_Enemies_v2" File="Lvl_1D_Enemies_v2.xml" StarScoreRatio2="0.75" StarScoreRatio3="1" TimeBonusThreshold="31.5"/>
+            <LevelInfo Name="I-9" Id="Lvl_1D_Enemies_v3" File="Lvl_1D_Enemies_v3.xml" StarScoreRatio2="0.9" StarScoreRatio3="1" TimeBonusThreshold="21.9"/>
+            <LevelInfo Name="I-10" Id="Lvl_1D_Vosmerka" File="Lvl_1D_Vosmerka.xml" StarScoreRatio2="0.55" StarScoreRatio3="1" TimeBonusThreshold="37.2"/>
+            <LevelInfo Name="I-11" Id="Lvl_1D_Dva_Prohoda" File="Lvl_1D_Dva_Prohoda.xml" StarScoreRatio3="1" TimeBonusThreshold="32.3"/>
+            <LevelInfo Name="I-12" Id="Lvl_1D_Chetyre_Kruga" File="Lvl_1D_Chetyre_Kruga.xml" StarScoreRatio3="1" TimeBonusThreshold="36.3"/>
+            <LevelInfo Name="I-13" Id="Lvl_1D_Perekrestok" File="Lvl_1D_Perekrestok.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="32.6"/>
+            <LevelInfo Name="I-14" Id="LvL_1D_FF" File="LvL_1D_FF.xml" StarScoreRatio3="1" TimeBonusThreshold="45.5"/>
+            <LevelInfo Name="I-15" Id="Lvl_1D_Magnet_v1_Intro" File="Lvl_1D_Magnet_v1_Intro.xml" StarScoreRatio3="1" TimeBonusThreshold="11.9" BombCount="0" />
+            <LevelInfo Name="I-16" Id="Lvl_1D_Magnet_v2_Intro" File="Lvl_1D_Magnet_v2_Intro.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="39.1" />
+            <LevelInfo Name="I-17" Id="Lvl_1D_Magnet_v3" File="Lvl_1D_Magnet_v3.xml" StarScoreRatio3="1" TimeBonusThreshold="44.8" />
+            <LevelInfo Name="I-18" Id="Lvl_1D_Magnet_v4" File="Lvl_1D_Magnet_v4.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="54.7" />
+            <LevelInfo Name="I-19" Id="Lvl_1D_Magnet_v5" File="Lvl_1D_Magnet_v5.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="73.5" />
+            <LevelInfo Name="I-20" Id="Lvl_1D_Magnet_v6" File="Lvl_1D_Magnet_v6.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="43.4" />
+            <LevelInfo Name="I-21" Id="Lvl_1D_Magnet_v7" File="Lvl_1D_Magnet_v7.xml" StarScoreRatio2="0.85" StarScoreRatio3="1" TimeBonusThreshold="64.3" />
         </LevelSeries>
         <LevelSeries Id="series3" Name="----- Series 3 Drive-By -----" File="ScreenSeries3.xml">
             <LevelInfo Name="II-1" Id="Lvl_Poezd_v2" File="Lvl_Poezd_v2.xml" StarScoreRatio2="0.95" StarScoreRatio3="1" TimeBonusThreshold="33.3"/>
