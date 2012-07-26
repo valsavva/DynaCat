@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="Level" nillable="true" type="Level" />
+  <xs:element name="Screen" nillable="true" type="Screen" />
+  <xs:element name="Include" nillable="true" type="Include" />
   <xs:complexType name="Level">
     <xs:complexContent mixed="false">
       <xs:extension base="Screen" />
