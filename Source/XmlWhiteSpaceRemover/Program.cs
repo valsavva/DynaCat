@@ -30,16 +30,10 @@ namespace XmlWhiteSpaceRemover
                 {
                     XmlDocument doc = new XmlDocument();
                     doc.Load(file);
-                    var comments = doc.SelectNodes(@"//comment()");
 
-                    List<XmlNode> toDelete = new List<XmlNode>();
-
-                    foreach (XmlNode c in comments)
-                        toDelete.Add(c);
-
-                    foreach (var c in toDelete)
-                        c.ParentNode.RemoveChild(c);
-
+                    RemoveComments(doc);
+                    
+                    RemoveTraceIdAttribute(doc);
 
                     string relativeDir = Path.GetDirectoryName(file.Substring(path.Length+1));
                     string newFileDir = Path.Combine(outPath, relativeDir);
@@ -59,6 +53,27 @@ namespace XmlWhiteSpaceRemover
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        private static void RemoveComments(XmlDocument doc)
+        {
+            var comments = doc.SelectNodes(@"//comment()");
+
+            List<XmlNode> toDelete = new List<XmlNode>();
+
+            foreach (XmlNode c in comments)
+                toDelete.Add(c);
+
+            foreach (var c in toDelete)
+                c.ParentNode.RemoveChild(c);
+        }
+
+        private static void RemoveTraceIdAttribute(XmlDocument doc)
+        {
+            var nodes = doc.SelectNodes(@"//*[@TraceId]");
+
+            foreach (XmlNode c in nodes)
+                c.Attributes.Remove(c.Attributes["TraceId"]);
         }
     }
 }
