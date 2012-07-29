@@ -317,46 +317,29 @@ namespace Lunohod
 				
                 double signalTraveledDistance = wave.Radius;
 
-				wave.IsHeroActive = hero.CanReceiveSignals;
-
-				if (wave.IsDeadSignal)
+				// if reached max, remove signal, report processed
+				if (signalTraveledDistance >= GameEngine.MaxWaveTravelDistance)
 				{
-					// if dead signal
-					if (signalTraveledDistance >= GameEngine.MaxWaveTravelDistance)
-					{
-						// if reached max, remove signal, report processed
-						e.IsHandled = true;
-                    	waves.Remove(e);
-					}
-					else
-						// not reached max yet
-						e.IsHandled = false;
+					e.IsHandled = true;
+	            	waves.Remove(e);
 					return;
+				}
+
+				wave.IsHeroActive = hero.CanReceiveSignals;
+				bool wasEnclosingHero = wave.IsEnclosingHero;
+				wave.IsEnclosingHero = signalTraveledDistance >= this.hero.DistanceToTower;
+
+				// if hero is not in transaction and the signal was in front of him and now it's past him, then...
+				if (hero.CanReceiveSignals && !wasEnclosingHero && wave.IsEnclosingHero)
+				{
+					// hero is receiving the signal
+	            	waves.Remove(e);
 				}
 				else
 				{
-					// if reached hero
-	                if (signalTraveledDistance >= this.hero.DistanceToTower)
-					{
-						if (!this.hero.CanReceiveSignals)
-						{
-							// hero can't receive signals - mark the signal dead - return
-							wave.IsDeadSignal = true;
-							e.IsHandled = false;
-							return;
-						}
-						else
-						{
-							// hero is receiving the signal
-	                    	waves.Remove(e);
-						}
-					}
-					else
-					{
-						// didn't receive the signal yet
-						e.IsHandled = false;
-						return;
-					}
+					// hero either missed the signal or it hasn't reached him yet
+					e.IsHandled = false;
+					return;
 				}
 			}
 			
