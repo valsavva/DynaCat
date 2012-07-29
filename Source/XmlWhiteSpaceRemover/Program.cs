@@ -21,6 +21,11 @@ namespace XmlWhiteSpaceRemover
             path = Path.GetFullPath(path);
             outPath = Path.GetFullPath(outPath);
 
+            if (!path.EndsWith(""+Path.DirectorySeparatorChar))
+                path += Path.DirectorySeparatorChar;
+            if (!outPath.EndsWith(""+Path.DirectorySeparatorChar))
+                outPath += Path.DirectorySeparatorChar;
+
             var files = Directory.GetFiles(path, pattern, SearchOption.AllDirectories);
             Array.Sort(files);
 
@@ -35,7 +40,7 @@ namespace XmlWhiteSpaceRemover
                     
                     RemoveTraceIdAttribute(doc);
 
-                    string relativeDir = Path.GetDirectoryName(file.Substring(path.Length+1));
+                    string relativeDir = Path.GetDirectoryName(file.Substring(path.Length));
                     string newFileDir = Path.Combine(outPath, relativeDir);
 
                     if (!Directory.Exists(newFileDir))
