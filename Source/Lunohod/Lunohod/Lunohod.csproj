@@ -25,12 +25,6 @@
     <MtouchI18n />
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchProfiling>true</MtouchProfiling>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="BeforeBuild" command="sh ${ProjectDir}/BeforeBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
-        <Command type="AfterBuild" command="sh ${ProjectDir}/AfterBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -43,12 +37,6 @@
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchI18n />
     <DefineConstants>IPHONE</DefineConstants>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="BeforeBuild" command="sh ${ProjectDir}/BeforeBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
-        <Command type="AfterBuild" command="sh ${ProjectDir}/AfterBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
