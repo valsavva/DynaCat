@@ -25,6 +25,12 @@
     <MtouchI18n />
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchProfiling>true</MtouchProfiling>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="sh ${ProjectDir}/BeforeBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
+        <Command type="AfterBuild" command="sh ${ProjectDir}/AfterBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -37,6 +43,12 @@
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchI18n />
     <DefineConstants>IPHONE</DefineConstants>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="sh ${ProjectDir}/BeforeBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
+        <Command type="AfterBuild" command="sh ${ProjectDir}/AfterBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,6 +65,12 @@
     <IpaPackageName />
     <MtouchProfiling>true</MtouchProfiling>
     <MtouchUseSGen>true</MtouchUseSGen>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="sh ${ProjectDir}/BeforeBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
+        <Command type="AfterBuild" command="sh ${ProjectDir}/AfterBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -69,7 +87,8 @@
     <MtouchUseSGen>true</MtouchUseSGen>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="mono ${ProjectDir}/XmlWhiteSpaceRemover.exe ${TargetDir}/Metadata *.xml ${TargetDir}/Metadata" workingdir="" pauseExternalConsole="true" />
+        <Command type="BeforeBuild" command="sh ${ProjectDir}/BeforeBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
+        <Command type="AfterBuild" command="sh ${ProjectDir}/AfterBuild.sh ${ProjectDir}" pauseExternalConsole="true" />
       </CustomCommands>
     </CustomCommands>
     <BuildIpa>true</BuildIpa>
@@ -3519,10 +3538,3 @@
     </ProjectReference>
   </ItemGroup>
 </Project>
-
-
-
-
-
-
-
