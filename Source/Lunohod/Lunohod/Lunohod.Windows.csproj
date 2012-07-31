@@ -3733,13 +3733,6 @@
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)\XmlWhiteSpaceRemover.exe $(TargetDir)\Metadata\ *.xml $(TargetDir)\Metadata\
-
-rem del c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar
-rem powershell start-process -WindowStyle Hidden $(ProjectDir)\pack.bat $(TargetDir)
-rem start /B "C:\Program Files\WinRAR\Rar.exe" a  -r c:\Users\Val\Dropbox\LunohodBinaries\binaries.rar $(TargetDir)</PostBuildEvent>
-  </PropertyGroup>
   <!--
       To modify your build process, add your task inside one of the targets below and uncomment it. 
       Other similar extension points exist, see Microsoft.Common.targets.
