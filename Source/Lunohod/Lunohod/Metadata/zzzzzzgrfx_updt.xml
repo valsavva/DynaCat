@@ -6,24 +6,19 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_refrigerator_pose_02_static" Source="refrigerator_pose_02_static" />
-        <Texture Id="txr_refrigerator_pose_03_flight" Source="refrigerator_pose_03_flight" />
-        <Texture Id="txr_refrigerator_pose_01_static" Source="refrigerator_pose_01_static" />
-        <Texture Id="txr_refrigerator_spr_80x111x11" Source="refrigerator_spr_80x111x11" />
+        <Texture Id="txr_BM_K_walk_spr_80x80x4" Source="BM_K_walk_spr_80x80x4" />
+        <Texture Id="txr_BM_F_walk_spr_80x80x4" Source="BM_F_walk_spr_80x80x4" />
     </Resources>
     <Layer Id="GRFX update" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_refrigerator_pose_02_static" Bounds="8, 127, 80, 111" TraceId="image3104"/>
-        <Image Id="dfltMask2" TextureId="txr_refrigerator_pose_03_flight" Bounds="19, 231, 80, 111" TraceId="image3115"/>
-        <Image Id="dfltMask3" TextureId="txr_refrigerator_pose_01_static" Bounds="77, 142, 80, 111" TraceId="image3126"/>
-        <Image Id="dfltMask4" TextureId="txr_refrigerator_spr_80x111x11" Bounds="-197, 297, 880, 111" TraceId="image3137"/>
-        <Image Id="dfltMask5" TextureId="txr_refrigerator_pose_01_static" Bounds="249, 175, 80, 111" TraceId="image3091"/>
+        <Image Id="dfltMask1" TextureId="txr_BM_K_walk_spr_80x80x4" Bounds="-29, 155, 320, 80" TraceId="image3091"/>
+        <Image Id="dfltMask2" TextureId="txr_BM_F_walk_spr_80x80x4" Bounds="-39, 230, 320, 80" TraceId="image3102"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Group Id="exit" Class="clsExit" Bounds="247, 46, 37, 54" TraceId="image3049" />
-        <Hero Id="hero" Class="clsHero" Bounds="40, 24, 33, 24" TraceId="image3016-1"/>
+        <Group Id="exit" Class="clsExit" Bounds="143, 38, 37, 54" TraceId="image3049" />
+        <Hero Id="hero" Class="clsHero" Bounds="272, 69, 33, 24" TraceId="image3016-1"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=5 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=2 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
