@@ -53,13 +53,11 @@
         <Texture Id="txrEnemyRat1Default" Source="enemy_1"/>
         <Texture Id="txrEnemyRat1Attack" Source="enemy_1"/>
         <Texture Id="txrEnemyRat1Dying" Source="enemy_1"/>
-        <Texture Id="txrCloud1" Source="cloud1"/>
+
         <Texture Id="txrSmoke_1" Source="smoke_01"/>
         <Texture Id="txrSmoke_2" Source="smoke_02"/>
         <Texture Id="txrSmoke_3" Source="smoke_03"/>
         <Texture Id="txrSmoke_4" Source="smoke_04"/>
-        
-        <Texture Id="txrSmokeSprite" Source="smoke_spr_30x30x4"/>
         
         <Texture Id="txrEnemyRat2Default" Source="EnemyRat2_enemy_4"/>
         <Texture Id="txrEnemyRat2Attack" Source="EnemyRat2_enemy_4"/>
@@ -82,11 +80,6 @@
         <Texture Id="txrExitFlight" Source="refrigerator_pose_03_flight"/>
         <Texture Id="txrExitTransform" Source="refrigerator_spr_80x111x11"/>
         <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
-
-        <Texture Id="txrFish1Default" Source="fish_4_me" />
-        <Texture Id="txrFish2Default" Source="fish_3_me" />
-        <Texture Id="txrFish3Default" Source="fish_6_me" />
-        <Texture Id="txrFish4Default" Source="fish_5_me" />
         
         <Texture Id="txrFishBones" Source="fish_skelet_demo" />
         
@@ -108,13 +101,10 @@
         <Texture Id="txrEnemyRatDefaultType_4" Source="BM_K_pose_static" />
         <Texture Id="txrEnemyRatAttackType_4" Source="BM_K_blow_spr_80x80x6" />
         <Texture Id="txrEnemyRatWalkType_4" Source="BM_K_walk_spr_80x80x4" />
-        <Texture Id="txrEnemyRatWalkType_4" Source="BM_K_walk_spr_80x80x4" />
         <Texture Id="txrEnemyRatDyingType_4" Source="BM_K_pose_static" />
         <Texture Id="txrEnemyRat4_OnRest1" Source="BM_K_looks_spr_80x80x12x9" />
         <Texture Id="txrEnemyRat4_OnRest2" Source="BM_K_juggler_spr_80x80x12x3" />
 
-        <Texture Id="txr_oil" Source="oil" />
-        <Texture Id="txr_butter_0" Source="oil" />
         <Texture Id="txr_butter_8" Source="butter_08" />
         <Texture Id="txr_butter_7" Source="butter_07" />
         <Texture Id="txr_butter_1" Source="butter_01" />

@@ -1,7 +1,6 @@
 <Include>	
 
     <Resources RootFolder="Textures">
-        <!--<Texture Id="txr_towerLedOn" Source="transmitter_2_on"/>-->
         <Texture Id="spr_towerLedOn" Source="Tow_trans_SignalSprite_60x60x4"/>
         <Texture Id="txr_towerLedOff" Source="Tow_trans_off"/>
         <Texture Id="txr_towerAlarm" Source="transmitter_2_Alarm"/>

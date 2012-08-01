@@ -9,7 +9,7 @@
             
             <BoolTrigger Id="this_trgInit3" Condition="@ratType==3" EnterAction="
                     this.Points=75;this.Damage=30;
-                    @this_ERrest1FC=29;@this_ERrest2FC=29;
+                    @this_ERrest1FC=28;@this_ERrest2FC=28;
                     this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-42;
                     this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-42;
                     this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-32;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-42;
@@ -20,7 +20,7 @@
             </BoolTrigger>
             <BoolTrigger Id="this_trgInit4" Condition="@ratType==4" EnterAction="
                     this.Points=75;this.Damage=30;
-                    @this_ERrest1FC=21;@this_ERrest2FC=15;
+                    @this_ERrest1FC=20;@this_ERrest2FC=14;
                     this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-41;
                     this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-41;
                     this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-32;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-41;
@@ -50,8 +50,6 @@
                     </SequenceSet>
                 </Text>
             </Group>
-
-            <Image Id="this_imgCloud1" TextureId="txrCloud1" Bounds="-2, 3, 32, 23" Enabled="false"/>
 
 <!-- Parachute animation-->
 

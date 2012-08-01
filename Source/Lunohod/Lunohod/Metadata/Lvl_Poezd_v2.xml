@@ -8,7 +8,6 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_railway2" Source="railway2" />
         <Texture Id="txr_level_BG" Source="level_BG" />
         <Texture Id="txr_lake_02" Source="lake_02" />
         <Texture Id="txr_stone_03" Source="stone_03" />
@@ -38,7 +37,6 @@
         <Texture Id="txr_semafor_green" Source="semafor_green" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_railway2" Bounds="0, 0, 480, 320" TraceId="image4733"/>
         <Image Id="dfltMask2" TextureId="txr_level_BG" Bounds="0, 0, 480, 320" TraceId="image3291"/>
     </Layer>
     <Layer Id="secondbckg" BackColor="#FFFFFFFF">

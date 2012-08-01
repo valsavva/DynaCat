@@ -25,7 +25,7 @@
                 </Text>
             </Group>
 
-            <Image Id="this_imgCloud1" TextureId="txrCloud1" Bounds="-7, 1, 32, 23" Enabled="false"/>
+
 <!-- Parachute animation-->
 
             <BoolTrigger Id="this_trgParashutes" Condition="tower:LevelWithParachutes" EnterAction="this.Y=this.Y-60;this.Opacity=0">

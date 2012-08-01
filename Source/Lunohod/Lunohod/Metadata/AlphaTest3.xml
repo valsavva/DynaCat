@@ -3,6 +3,7 @@
 <!-- source: D:\Lunohod\Levels\AlphaTest\AlphaTest3.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest3" Bounds="0, 0, 480, 320">
     <Include File="ClassTower.xml" />
+    <Include File="ClassMagneticRadarUp.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassEnemyRat.xml" />

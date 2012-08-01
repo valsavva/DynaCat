@@ -30,26 +30,6 @@
             <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: Puzzle -----" File="ScreenSeries2.xml">
-            <!--
-            
-            vault
-            
-            <LevelInfo Name="I-13" Id="Lvl_1D_Perekrestok_v2" File="Lvl_1D_Perekrestok_v2.xml" StarScoreRatio2="0.65" StarScoreRatio3="1" TimeBonusThreshold="28.08"/>
-            <LevelInfo Id="Lvl_1D_Intro_v4" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
-            <LevelInfo Id="Lvl_1D_Intro_v5" File="Lvl_1D_Intro_v5.xml" TimeBonusThreshold="11"/>
-            <LevelInfo Id="Lvl_1D_Intro_v6" File="Lvl_1D_Intro_v6.xml" TimeBonusThreshold="17"/>
-            <LevelInfo Id="Lvl_1D_Intro_v7" File="Lvl_1D_Intro_v7.xml" TimeBonusThreshold="18"/>
-            <LevelInfo Id="Lvl_1D_Intro_v8" File="Lvl_1D_Intro_v8.xml" TimeBonusThreshold="18"/>
-            <LevelInfo Id="Lvl_1D_Intro" File="Lvl_1D_Intro.xml" BombCount="0" TimeBonusThreshold="25"/>
-            <LevelInfo Id="Lvl_1D_Intro_v2" File="Lvl_1D_Intro_v2.xml" BombCount="0" TimeBonusThreshold="24"/>
-            <LevelInfo Id="Lvl_1D_Intro_v3" File="Lvl_1D_Intro_v3.xml" BombCount="0" TimeBonusThreshold="28"/>
-            <LevelInfo Id="Lvl_1D_Boxes_v2" File="Lvl_1D_Boxes_v2.xml" TimeBonusThreshold="30"/>
-            <LevelInfo Id="Lvl_1D_Boxes" File="Lvl_1D_Boxes.xml" TimeBonusThreshold="33"/>
-            <LevelInfo Id="Lvl_1D_Boxes_v3_behindTheWall" File="Lvl_1D_Boxes_v3_behindTheWall.xml" TimeBonusThreshold="36"/>
-            <LevelInfo Name="Lvl_1D_Zamanuha" Id="" File="Lvl_1D_Zamanuha.xml" TimeBonusThreshold="15"/>
-            <LevelInfo Name="Lvl_1D_Zamanuha_v2" Id="" File="Lvl_1D_Zamanuha_v2.xml" TimeBonusThreshold="18"/>
-            <LevelInfo Name="I-20" Id="" File="Lvl_1D_Zamanuha_v3.xml" StarScoreRatio2="0.50" StarScoreRatio3="1" TimeBonusThreshold="12.86"/>
-            -->
             <LevelInfo Name="nameAlphaTest3" Id="AlphaTest3" File="AlphaTest3.xml" StarScoreRatio3="1" TimeBonusThreshold="30"/>
             <LevelInfo Name="I-1" Id="Lvl_1D_Tutorial1" File="Lvl_1D_Tutorial1.xml" StarScoreRatio3="1" TimeBonusThreshold="30" BombCount="0" />
             <LevelInfo Name="I-2" Id="Lvl_1D_Open" File="Lvl_1D_Open.xml" StarScoreRatio3="1" TimeBonusThreshold="30.3" BombCount="0" />
@@ -126,68 +106,8 @@
             <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series6" Name="----- Tests -----" File="ScreenTests.xml">
-            <LevelInfo Id="zzzzzzgrfx_updt" File="zzzzzzgrfx_updt.xml" />
-            <LevelInfo Id="AlphaTest" File="AlphaTest.xml" />
-            <LevelInfo Id="AlphaTestNewFish" File="AlphaTestNewFish.xml" />
-            <LevelInfo Id="AlphaTest2" File="AlphaTest2.xml" />
-            <LevelInfo Id="AlphaTest3" File="AlphaTest3.xml" />
-            <LevelInfo Id="AlphaTest4 (Oil Barrel)" File="AlphaTest4.xml" />
-            <LevelInfo Id="AlphaTest5ME (Magnet Excavator)" File="AlphaTest5ME.xml" HeroHealth="5000" />
-            <LevelInfo Id="style100500" File="style100500.xml" HeroHealth="5" />
-            <LevelInfo Id="skeletonAlisa" File="skeletonAlisa.xml" />
-            <LevelInfo Id="skeletonCehSPressami" File="skeletonCehSPressami.xml" />
-            <LevelInfo Id="skeletonChelnok" File="skeletonChelnok.xml" />
-            <LevelInfo Id="skeletonChetyreKomnaty" File="skeletonChetyreKomnaty.xml" />
-            <LevelInfo Id="skeletonDiraVRyadahVragov" File="skeletonDiraVRyadahVragov.xml" />
-            <LevelInfo Id="skeletonElochka" File="skeletonElochka.xml" />
-            <LevelInfo Id="skeletonKruchuVerchu" File="skeletonKruchuVerchu.xml" />
-            <LevelInfo Id="skeletonLabirinth" File="skeletonLabirinth.xml" />
-            <LevelInfo Id="skeletonLogikaPeredvijenii" File="skeletonLogikaPeredvijenii.xml" />
-            <LevelInfo Id="skeletonLoshadka" File="skeletonLoshadka.xml" />
-            <LevelInfo Id="skeletonNozhnicy" File="skeletonNozhnicy.xml" />
-            <LevelInfo Id="skeletonNozhnicy2Hockey" File="skeletonNozhnicy2Hockey.xml" />
-            <LevelInfo Id="skeletonParavozik" File="skeletonParavozik.xml" />
-            <LevelInfo Id="skeletonTir" File="skeletonTir.xml" />
-            <LevelInfo Id="skeletonTrenazher" File="skeletonTrenazher.xml" />
-            <LevelInfo Id="skeletonTroynoyZaslon" File="skeletonTroynoyZaslon.xml" />
-            <LevelInfo Id="skeletonVKolce" File="skeletonVKolce.xml" />
-            <LevelInfo Id="skeletonVodoprovodniiNindzya" File="skeletonVodoprovodniiNindzya.xml" />
-            <LevelInfo Id="skeletonVolkLovitYaica" File="skeletonVolkLovitYaica.xml" />
-            <LevelInfo Id="---" File="skeletonAlisa.xml" />
+			<LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
 
-            <!-- Test screens start here -->
-            <LevelInfo Id="style100500opt" File="style100500opt.xml" HeroHealth="5" />
-            <LevelInfo Id="style100500opt2" File="style100500opt2.xml" HeroHealth="5" />
-            <LevelInfo Id="style100500opt3dash" File="style100500opt3dash.xml" HeroHealth="5" />
-            <LevelInfo Id="style100500DashXLSize57" File="style100500DashXLSize57.xml" HeroHealth="5" />
-            <LevelInfo Id="style100500NewControl" File="style100500NewControl.xml" HeroHealth="5" />
-            <LevelInfo Id="AnimationSamples" File="AnimationSamples.xml" />
-            <LevelInfo Id="TestDeath" File="TestDeath.xml" HeroHealth="5" />
-            <LevelInfo Id="TestOriginAndRotationCenterAndScale" File="TestOriginAndRotationCenterAndScale.xml" />
-            <LevelInfo Id="TestORCS2" File="TestORCS2.xml" />
-            <LevelInfo Id="TestExplosion" File="TestExplosion.xml" BombCount="3" />
-            <LevelInfo Id="robocat_demo" File="robocat_demo.xml" />
-
-            <LevelInfo Id="TestTeleport" File="TestTeleport.xml" />
-            <LevelInfo Id="TestFood" File="TestFood.xml" />
-            <LevelInfo Id="TestActionsAndEnabled" File="TestActionsAndEnabled.xml" />
-            <LevelInfo Id="TestClasses" File="TestClasses.xml" />
-            <LevelInfo Id="TestDepthAndFlipEffect" File="TestDepthAndFlipEffect.xml" />
-            <LevelInfo Id="TestLevel1" File="TestLevel1.xml" />
-            <LevelInfo Id="TestLevel2" File="TestLevel2.xml" />
-            <LevelInfo Id="TestLevel3" File="TestLevel3.xml" />
-            <LevelInfo Id="TestSignals" File="TestSignals.xml" />
-            <LevelInfo Id="TestExcavator" File="TestExcavator.xml" HeroHealth="100000"/>
-            <LevelInfo Id="TestRnd" File="TestRnd.xml" />
-            <LevelInfo Id="test_c_boloto" File="test_c_boloto.xml" />
-            <LevelInfo Id="FPSTest" File="FPSTest.xml" />
-            <LevelInfo Id="FPSTest_dry_I-100" File="FPSTest_dry_I-100.xml" />
-            <LevelInfo Id="FPSTest_dry_I-1000" File="FPSTest_dry_I-1000.xml" />
-            <LevelInfo Id="FPSTest_dry_IA-100" File="FPSTest_dry_IA-100.xml" />
-            <LevelInfo Id="FPSTest_dry_IA-1000" File="FPSTest_dry_IA-1000.xml" />
-            <LevelInfo Id="FPSTest_dry_IBA-100" File="FPSTest_dry_IBA-100.xml" />
-            <LevelInfo Id="FPSTest_dry_IBA-1000" File="FPSTest_dry_IBA-1000.xml" />
-            <LevelInfo Id="FPSTest_dry_IBA-1000_sheet" File="FPSTest_dry_IBA-1000_sheet.xml" />
         </LevelSeries>
     </Levels>
 </Game>

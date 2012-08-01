@@ -22,11 +22,6 @@
         <!--<Texture Id="txrTimeBonusSprite" Source="TimeBonusSprite_16x16x24"/>-->
         <Texture Id="txrTimeBonusSprite" Source="clock_fin_sprite_60x60x13"/>
     </Resources>
-    <Resources RootFolder="Textures">
-        <Texture Id="txr_health_and_score_text_demo" Source="health_and_score_text_demo" />
-        <Texture Id="txr_health_bar_back" Source="health_bar_back" />
-        <Texture Id="txr_health_bar_front" Source="health_bar_front" />
-    </Resources>
     
     <Dashboard Id="dashboard" BackColor="#FFFFFFFF">
 		<Viewport Bounds="50,50,380,270"/>
@@ -123,18 +118,7 @@
         </TapArea>
 		-->
         
-        <!--hero health-->
-        <!-- OLD
-        <Image TextureId="txr_health_and_score_text_demo" Bounds="265, 6, 170, 10" />
-        <Image Id="txrHealthBar" TextureId="txr_health_bar_back" Bounds="300, 8, 100, 8"/>
-        <Group Id="grpHeroHealthBar" Bounds="300, 8, 100, 8" BackColor="#CC2A2A">
-			<Do Action="grpHeroHealthBar.Width=txrHealthBar.Width*(hero.Health/hero.DefaultHealth)" InProgress="true" RepeatCount="0" />
-            <Image TextureId="blank" />
-        </Group>
-        <Image TextureId="txr_health_bar_front" Bounds="300, 8, 100, 8"/>
-        <Text Text="=hero.Health" FontId="SystemFont" Location="305,6" Color="#FFFFFF"/>
-		<Text Text="=hero.Score" FontId="SystemFont" Location="438, 6" />
-        -->
+
 
         <!--<Text Text="=hero.Health" FontId="SystemFont" Location="360,6" Color="#FFFFFF"/>-->
         <Group Id="grpHeroHealthImage" Bounds="320, 0, 24, 24" >
