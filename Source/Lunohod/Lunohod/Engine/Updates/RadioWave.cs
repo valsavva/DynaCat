@@ -44,18 +44,17 @@ namespace Lunohod
 			}
 
             texture = p.Game.WaveTextures[(int)textureDiameter / GameEngine.WaveTextureDiameterStep - 1];
-			bounds.X = (p.LevelEngine.Tower.Bounds.X + p.LevelEngine.Tower.Bounds.Width / 2 - (int)(Diameter / 2));
-			bounds.Y = (p.LevelEngine.Tower.Bounds.Y + p.LevelEngine.Tower.Bounds.Height / 2 - (int)(Diameter / 2));
-			
-			bounds.Width = bounds.Height = (int)(Diameter);
+
+            bounds.Width = (int)(Radius + p.LevelEngine.Tower.Bounds.Width / 2);
+            bounds.Height = (int)(Radius + p.LevelEngine.Tower.Bounds.Height / 2);
 		}
 		
 		public override void Draw(DrawParameters p)
 		{
 			base.Draw(p);
 
-            if (Diameter > GameEngine.MaxWaveTextureDiameter * 2)
-				return;
+            if (Radius > GameEngine.MaxWaveTravelDistance)
+                return;
 
 			if (this.IsHeroActive)
 				p.SpriteBatch.Draw(texture, bounds, Color.White);
