@@ -2,11 +2,10 @@
 <!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\AlphaTest\AlphaTest3.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest3" Bounds="0, 0, 480, 320">
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassTower.xml" />
-    <Include File="ClassMagneticRadarUp.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
-    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassFood.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_tailsBlue" Source="tailsBlue" />
@@ -19,33 +18,22 @@
         <Block Id="blk2" Bounds="480, -60, 50, 432" Edges="Stick" TraceId="image3070"/>
         <Block Id="blk3" Bounds="0, -64, 552, 64" Edges="Stick" TraceId="image3072"/>
         <Block Id="blk4" Bounds="-72, 320, 618, 64" Edges="Stick" TraceId="image3074"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="60, 58, 22, 23" TraceId="image3207"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="237, 56, 22, 23" TraceId="image3218"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="145, 137, 24, 25" TraceId="image3229"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="302, 137, 24, 25" TraceId="image3240"/>
+        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="258, 234, 26, 28" TraceId="image3251"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="419, 235, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="47, 187, 33, 24" TraceId="image3062"/>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="210, 28, 24, 25" TraceId="image3022"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="96, 28, 24, 25" TraceId="image3020"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=7" Bounds="445, 289, 32, 30" TraceId="image3095"/>
-        <Group Id="grp_g3050">
-            <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="29, 270, 24, 25" TraceId="image3073"/>
-            <Do Action="enm3:+Walker" InProgress="true" RepeatCount="1"/>
-            <BoolTrigger Condition="not enm3:IntersectHero and not enm3:onRest and not enm3_setDying.InProgress">
-                <NumAnimation Id="anm1" From="0" To="361" Target="enm3.X" Duration="8.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3032"/>
-            </BoolTrigger>
-        </Group>
-        <Group Id="grp_g3046">
-            <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="393, 31, 24, 25" TraceId="image3084"/>
-            <Do Action="enm4:+Walker" InProgress="true" RepeatCount="1"/>
-            <BoolTrigger Condition="not enm4:IntersectHero and not enm4:onRest and not enm4_setDying.InProgress">
-                <NumAnimation Id="anm2" From="0" To="175" Target="enm4.Y" Duration="4.16" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3043"/>
-            </BoolTrigger>
-        </Group>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=1 Enemy=4 Block=4 DesignImage=1 Animation=2 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=1 Enemy=5 Block=4 DesignImage=1 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 150 -->
 <!-- 1% = 1.5; 45% = 67.5; 90% = 135 -->

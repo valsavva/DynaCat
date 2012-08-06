@@ -6,6 +6,29 @@
 		<Enemy IsExploding="true">
 
 <!-- Init -->
+            <BoolTrigger Id="this_trgInit1" Condition="@ratType==1" EnterAction="
+                    this.Points=50;this.Damage=20;
+                    @this_ERrest1FC=20;@this_ERrest2FC=20;
+                    this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-44;
+                    this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-44;
+                    this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-32;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-44;
+                    this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-44;
+                    this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-44;
+                    this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-44;
+                    ">
+            </BoolTrigger>
+
+            <BoolTrigger Id="this_trgInit2" Condition="@ratType==2" EnterAction="
+                    this.Points=50;this.Damage=20;
+                    @this_ERrest1FC=20;@this_ERrest2FC=20;
+                    this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-45;
+                    this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-45;
+                    this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-32;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-45;
+                    this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-45;
+                    this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-45;
+                    this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-45;
+                    ">
+            </BoolTrigger>
             
             <BoolTrigger Id="this_trgInit3" Condition="@ratType==3" EnterAction="
                     this.Points=75;this.Damage=30;
@@ -18,6 +41,7 @@
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-42;
                     ">
             </BoolTrigger>
+            
             <BoolTrigger Id="this_trgInit4" Condition="@ratType==4" EnterAction="
                     this.Points=75;this.Damage=30;
                     @this_ERrest1FC=20;@this_ERrest2FC=14;
@@ -27,6 +51,18 @@
                     this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-41;
                     this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-41;
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-41;
+                    ">
+            </BoolTrigger>
+
+            <BoolTrigger Id="this_trgInit7" Condition="@ratType==7" EnterAction="
+                    this.Points=110;this.Damage=50;
+                    @this_ERrest1FC=34;@this_ERrest2FC=44;
+                    this_imgDefault.X=this_imgDefault.X-30;this_imgDefault.Y=this_imgDefault.Y-40;
+                    this_sprAttack.X=this_sprAttack.X-30;this_sprAttack.Y=this_sprAttack.Y-40;
+                    this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-30;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-40;
+                    this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-30;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-40;
+                    this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-30;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-40;
+                    this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-30;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-40;
                     ">
             </BoolTrigger>
 
@@ -138,36 +174,32 @@
             </ParallelSet>
             
             <!-- on rest -->
-            <BoolTrigger Condition="this:onRestTimerReset" EnterAction="this:-onRest;this_onRestTimer.Start()" />
+            <BoolTrigger Condition="this:onRestTimerReset" EnterAction="@this_rest=0;this_onRestTimer.Start()" />
             
             <SequenceSet Id="this_onRestTimer" InProgress="true" RepeatCount="0">
                 <Do Action="@this_delay=system.Rnd(10,30)" />
-                <!--<Do Action="system.WriteLine(system.Str(@this_delay))" />-->
                 <Delay Duration="@this_delay" />
-                <Do Action="@this_restNum=system.Rnd(1,2)" />
-                <Do Action="this:+onRest" />
+                <RandomSet RepeatCount="1">
+                    <Do Action="@this_rest=1" />
+                    <Do Action="@this_rest=2" />
+                </RandomSet>
             </SequenceSet>
                         
-            <BoolTrigger Condition="this:onRest"
-                         Group="this_sttStates">
+            <NumTrigger Property="@this_rest" Compare="E" Value="1" EnterAction="this_anmEnemyRatOnRest1.Start()" Group="this_sttStates">
+                <Sprite Id="this_sprEnemyRatOnRest1" TextureId="txrEnemyRat@ratType_OnRest1" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
+                <SequenceSet Id="this_anmEnemyRatOnRest1" RepeatCount="1">
+                    <NumAnimation From="0" To="@this_ERrest1FC" Duration="@this_ERrest1FC*0.125" Target="this_sprEnemyRatOnRest1.CurrentFrame" RepeatCount="1" Fill="Reset"/>
+                    <Do Action="@this_rest=0;this:onRestTimerReset" />
+                </SequenceSet>
+            </NumTrigger>
 
-                <NumTrigger Property="@this_restNum" Compare="G" Value="1.5" EnterAction="this_anmEnemyRatOnRest1.Start()">
-                    <Sprite Id="this_sprEnemyRatOnRest1" TextureId="txrEnemyRat@ratType_OnRest1" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
-                    <SequenceSet Id="this_anmEnemyRatOnRest1" RepeatCount="1">
-                        <NumAnimation From="0" To="@this_ERrest1FC" Duration="@this_ERrest1FC*0.125" Target="this_sprEnemyRatOnRest1.CurrentFrame" RepeatCount="1" Fill="Reset"/>
-                        <Do Action="this:-onRest;this:onRestTimerReset" />
-                    </SequenceSet>
-                </NumTrigger>
-
-                <NumTrigger Property="@this_restNum" Compare="LE" Value="1.5" EnterAction="this_anmEnemyRatOnRest2.Start()">
-                    <Sprite Id="this_sprEnemyRatOnRest2" TextureId="txrEnemyRat@ratType_OnRest2" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
-                    <SequenceSet Id="this_anmEnemyRatOnRest2" RepeatCount="1">
-                        <NumAnimation From="0" To="@this_ERrest2FC" Duration="@this_ERrest2FC*0.125" Target="this_sprEnemyRatOnRest2.CurrentFrame" RepeatCount="1" Fill="Reset"/>
-                        <Do Action="this:-onRest;this:onRestTimerReset" />
-                    </SequenceSet>
-                </NumTrigger>
-                
-            </BoolTrigger>
+            <NumTrigger Property="@this_rest" Compare="E" Value="2" EnterAction="this_anmEnemyRatOnRest2.Start()" Group="this_sttStates">
+                <Sprite Id="this_sprEnemyRatOnRest2" TextureId="txrEnemyRat@ratType_OnRest2" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
+                <SequenceSet Id="this_anmEnemyRatOnRest2" RepeatCount="1">
+                    <NumAnimation From="0" To="@this_ERrest2FC" Duration="@this_ERrest2FC*0.125" Target="this_sprEnemyRatOnRest2.CurrentFrame" RepeatCount="1" Fill="Reset"/>
+                    <Do Action="@this_rest=0;this:onRestTimerReset" />
+                </SequenceSet>
+            </NumTrigger>
 
             <!-- walk -->
             <BoolTrigger Condition="this:Walker" Group="this_sttStates">

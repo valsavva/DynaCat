@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Rates and Dimensions.svg">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.1" inkscape:cx="256.53982" inkscape:cy="200.16015" inkscape:document-units="px" inkscape:current-layer="layer5" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.82644628" inkscape:cx="446.17124" inkscape:cy="307.23221" inkscape:document-units="px" inkscape:current-layer="layer5" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -22,7 +22,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title />
+                <dc:title></dc:title>
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -32,9 +32,10 @@
         <image width="480" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/tailsBlue.png" id="image3177" x="0" y="320" />
         <image y="320" x="480" id="image3179" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/tailsBlue.png" height="320" width="480" />
     </g>
-    <g inkscape:groupmode="layer" id="layer7" inkscape:label="secondbckg" sodipodi:insensitive="true" />
-    <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline" sodipodi:insensitive="true" />
+    <g inkscape:groupmode="layer" id="layer7" inkscape:label="secondbckg" sodipodi:insensitive="true" style="display:none" />
+    <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:none" sodipodi:insensitive="true" />
     <g inkscape:groupmode="layer" id="layer5" inkscape:label="actionTHE" style="display:inline">
+        <image width="80" height="80" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/B_mause_W_small/BM_Ws_pose_static.png" id="image3228" x="40" y="-26" />
         <image y="362.51526" x="617.14636" id="image3027" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/bolbex-1_me.png" height="38" width="40" />
         <image y="285.69458" x="254.79297" id="image3049" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Exit/refrigerator.png" height="50" width="34" />
         <image style="display:inline" y="11" x="270" id="image2994" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/EnemyRat1/enemy_1.png" height="29" width="40" />
@@ -134,11 +135,9 @@
         <image y="456.30804" x="356.93631" id="image3173" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/smoke_04.png" height="30" width="30" />
         <image style="display:inline" y="96.679466" x="631.50098" id="image3096" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_D/BM_D_pose_static.png" height="80" width="80" />
         <image style="display:inline" y="96.058548" x="249.80423" id="image3107" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_F/BM_F_pose_static.png" height="80" width="80" />
-        <image style="display:inline" y="97.92131" x="753.6958" id="image3118" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_G/BM_G_pose_static.png" height="80" width="80" />
         <image style="display:inline" y="97.300385" x="513.6286" id="image3129" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_J/BM_J_pose_static.png" height="80" width="80" />
         <image style="display:inline" y="97.92131" x="347.12668" id="image3140" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_K/BM_K_pose_static.png" height="80" width="80" />
         <image y="23" x="878" id="image3208" xlink:href="file:///D:/Lunohod/Source/Lunohod/Lunohod/Content/Textures/Cat_0000_norm.png" height="100" width="100" />
-        <image width="87.014488" height="84.618423" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_G/BM_G_pose_static.png" id="image3219" x="812.50513" y="-34.611404" style="display:inline" />
         <rect y="137.09099" x="281.73206" height="25" width="24" id="rect3233" style="opacity:0.48611109;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
         <rect y="139.42349" x="378.86838" height="25" width="24" id="rect3235" style="opacity:0.48611109;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="560.14587" y="204.10721" id="text3119" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3121" x="560.14587" y="204.10721">5-J</tspan></text>
@@ -146,7 +145,6 @@
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="290.86819" y="196.53252" id="text3127" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3129" x="290.86819" y="196.53252">3-F</tspan></text>
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="408.27591" y="195.77504" id="text3131" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3133" x="408.27591" y="195.77504">4-K</tspan></text>
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="799.76978" y="195.01756" id="text3135" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3137" x="799.76978" y="195.01756">7-G</tspan></text>
-        <rect style="opacity:0.53658537;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" id="rect3152" width="26" height="28" x="847" y="10" inkscape:export-filename="D:\Lunohod\Grfx\objects\visible\EnemyRat\RatType05.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="284.10287" y="54.599827" id="text3926" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3928" x="284.10287" y="54.599827">1</tspan></text>
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="390.08481" y="51.928013" id="text3930" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3932" x="390.08481" y="51.928013">3</tspan></text>
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="793.06543" y="53.709221" id="text3934" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3936" x="793.06543" y="53.709221">5</tspan></text>
@@ -154,9 +152,9 @@
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="31.171162" y="52.818619" id="text3942" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3944" x="31.171162" y="52.818619">4</tspan></text>
         <image width="80" height="80" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_F/BM_F_pose_static.png" id="image3946" x="290" y="-30" style="display:inline" />
         <image width="80" height="80" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/Bad_mause_K/BM_K_pose_static.png" id="image3948" x="415" y="-30" style="display:inline" />
-        <rect y="12" x="322" height="25" width="24" id="rect3950" style="opacity:0.48611109;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
+        <rect y="12" x="322" height="25" width="24" id="rect3950" style="opacity:0.46341463;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" inkscape:export-filename="D:\Lunohod\Grfx\objects\visible\EnemyRat\ratType03.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
         <rect y="-30" x="290" height="42" width="32" id="rect3952" style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
-        <rect y="11" x="447" height="25" width="24" id="rect3956" style="opacity:0.48611109;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
+        <rect y="11" x="447" height="25" width="24" id="rect3956" style="opacity:0.44878049;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" inkscape:export-filename="D:\Lunohod\Grfx\objects\visible\EnemyRat\ratType04.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
         <rect style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" id="rect3958" width="32" height="41" x="415" y="-30" />
         <image style="display:inline" y="317.66138" x="-211.70929" id="image3016-1" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="24" width="33" />
         <image style="display:inline" width="33" height="24" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" id="image3221" x="-215.97803" y="385.9606" />
@@ -172,10 +170,17 @@
         <rect y="512.25446" x="-213.5379" height="7" width="3" id="rect3231" style="opacity:0.53658537;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="61.983471" y="203.47107" id="text3184" sodipodi:linespacing="100%"><tspan sodipodi:role="line" x="61.983471" y="203.47107" id="tspan3188">1-W</tspan></text>
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="186.77686" y="199.33884" id="text3192" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3194" x="186.77686" y="199.33884">2-M</tspan></text>
-        <rect y="18" x="73" height="23" width="22" id="rect3196" style="opacity:0.48611109;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
-        <rect y="-16" x="46" height="34" width="27" id="rect3198" style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
-        <rect y="17" x="194" height="23" width="22" id="rect3200" style="opacity:0.48611109;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
-        <rect y="-17" x="167" height="34" width="27" id="rect3202" style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
+        <rect y="-26" x="40" height="45" width="32" id="rect3198" style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
+        <image y="107.49812" x="37.084896" id="image3203" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/B_mause_W_small/BM_Ws_pose_static.png" height="80" width="80" />
+        <image y="104.79339" x="158.34711" id="image3214" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/B_mause_M_small/BM_Ms_pose_static.png" height="80" width="80" />
+        <image y="99.008263" x="766.61157" id="image3225-1" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/B_mause_G_boss/BM_Gb_pose_static.png" height="80" width="80" />
+        <rect y="18.999992" x="72" height="23" width="22" id="rect3230" style="opacity:0.3804878;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" inkscape:export-filename="D:\Lunohod\Grfx\objects\visible\EnemyRat\ratType01.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
+        <image width="80" height="80" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/B_mause_M_small/BM_Ms_pose_static.png" id="image3232" x="160" y="-26" />
+        <rect y="18" x="192" height="23" width="22" id="rect3234" style="opacity:0.46341463;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" inkscape:export-filename="D:\Lunohod\Grfx\objects\visible\EnemyRat\ratType02.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
+        <rect y="-26" x="160" height="44" width="32" id="rect3202" style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
+        <image width="80" height="80" xlink:href="file:///D:/Lunohod/Art/grfx_Ruslan/Mouses/B_mause_G_boss/BM_Gb_pose_static.png" id="image3236" x="818" y="-28" />
+        <rect style="opacity:0.52195122;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" id="rect3238" width="26" height="28" x="848" y="12" inkscape:export-filename="D:\Lunohod\Grfx\objects\visible\EnemyRat\ratType07.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" />
+        <rect style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" id="rect3240" width="30" height="40" x="818" y="-28" />
     </g>
     <g inkscape:groupmode="layer" id="layer3" inkscape:label="foreground" style="display:none" sodipodi:insensitive="true" />
     <g inkscape:groupmode="layer" id="layer6" inkscape:label="upmask" sodipodi:insensitive="true" style="display:none">
