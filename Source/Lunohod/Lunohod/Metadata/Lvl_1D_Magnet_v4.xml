@@ -117,7 +117,7 @@
             <Image Id="dfltMask52" TextureId="txr_butter_01" Bounds="222, 63, 19, 17" TraceId="image3301"/>
             <Image Id="dfltMask53" TextureId="txr_butter_03" Bounds="201, 48, 33, 21" Stretch="true" TraceId="image3312"/>
         </Group>
-        <Block Id="blkBarrel3" Class="clsBarrel" Bounds="224, 42, 28, 32" Edges="Stick" TraceId="image3432">
+        <Block Id="blkBarrel3" Class="clsBarrel" Bounds="226, 42, 28, 32" Edges="Stick" TraceId="image3432">
             <Image TextureId="txr_barrel" />
             <BoolTrigger Condition="blkBarrel3:Destroyed" EnterAction="grpOil3.Enable()" />
         </Block>
