@@ -1,15 +1,23 @@
 <Enemy Id="enm
 ###@counter2
-" Class="clsEnemyRat2" Bounds="
+" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="
 ###x
 , 
 ###y
-, 22, 23
+, 24, 25
 " TraceId="
 ###id
 ">
 ###@CRLF
 <SequenceSet InProgress="true" RepeatCount="0" >
+###@CRLF
+<Do Action="enm
+###@cntrValue2
+:+Walker" InProgress="true" RepeatCount="1"/>
+###@CRLF
+<BoolTrigger Condition="not enm
+###@cntrValue2
+:IntersectHero">
 ###@CRLF
 <NumAnimation Target="enm
 ###@cntrValue2
@@ -19,7 +27,25 @@
 ###@cntrValue2
 .X)/10,(hero.Y-enm
 ###@cntrValue2
-.Y)/10" IsDelta="true" Duration="1" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+.Y)/10" IsDelta="true" Duration="(hero.X-enm
+###@cntrValue2
+.X)*(hero.X-enm
+###@cntrValue2
+.X)/(hero.X-enm
+###@cntrValue2
+.X)/40+(hero.Y-enm
+###@cntrValue2
+.Y)*(hero.Y-enm
+###@cntrValue2
+.Y)/(hero.Y-enm
+###@cntrValue2
+.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+###@CRLF
+</BoolTrigger>
+###@CRLF
+<Do Action="enm
+###@cntrValue2
+:-Walker" InProgress="true" RepeatCount="1"/>
 ###@CRLF
 <Delay Duration="6.5" />
 ###@CRLF

@@ -4,8 +4,7 @@
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Magnet_v4" Bounds="0, 0, 480, 320">
     <Include File="ClassOil.xml" />
     <Include File="ClassBarrel.xml" />
-    <Include File="ClassEnemyRat2.xml" />
-    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -123,10 +122,10 @@
         </Block>
     </Layer>
     <Layer Id="enemies" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="353, 258, 22, 23" TraceId="image3454"/>
-        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="229, 75, 22, 23" TraceId="image3456"/>
-        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="106, 161, 22, 23" TraceId="image3500"/>
-        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="197, 258, 22, 23" TraceId="image3479"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="353, 258, 22, 23" TraceId="image3454"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="229, 75, 22, 23" TraceId="image3456"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="106, 161, 22, 23" TraceId="image3500"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="197, 258, 22, 23" TraceId="image3479"/>
     </Layer>
     <Layer Id="food" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=5" Bounds="199, 161, 27, 20" TraceId="image3345"/>

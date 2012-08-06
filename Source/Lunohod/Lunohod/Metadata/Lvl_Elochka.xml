@@ -2,8 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Elochka\Lvl_Elochka.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Elochka" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat1.xml" />
-    <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassTower.xml" />
@@ -122,9 +121,9 @@
         <Image Id="dfltMask85" TextureId="txr_container_steel_2" Bounds="178, 222, 30, 30" TraceId="image3587"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="298, 51, 24, 25" TraceId="image3035"/>
-        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="126, 125, 24, 25" TraceId="image3039"/>
-        <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="215, 196, 24, 25" TraceId="image3049-1"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="298, 51, 24, 25" TraceId="image3035"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="126, 125, 24, 25" TraceId="image3039"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="215, 196, 24, 25" TraceId="image3049-1"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=4" Bounds="121, 53, 28, 22" TraceId="image3153"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=5" Bounds="364, 130, 27, 20" TraceId="image3164-1"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=2" Bounds="210, 127, 28, 19" TraceId="image3175"/>

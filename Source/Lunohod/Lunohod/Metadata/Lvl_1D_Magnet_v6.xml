@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Magnet_v6\Lvl_1D_Magnet_v6.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Magnet_v6" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -73,10 +73,10 @@
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=6" Bounds="111, 27, 22, 27" TraceId="image3212"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=6" Bounds="392, 58, 22, 27" TraceId="image3215"/>
         <Food Id="fd4" Class="clsFood" ClassParams="@fishType=6" Bounds="352, 265, 22, 27" TraceId="image3207"/>
-        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="162, 108, 24, 25" TraceId="image3299"/>
-        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="162, 192, 24, 25" TraceId="image3301"/>
-        <Enemy Id="enm3" Class="clsEnemyRat1" Bounds="291, 193, 24, 25" TraceId="image3303"/>
-        <Enemy Id="enm4" Class="clsEnemyRat1" Bounds="292, 107, 24, 25" TraceId="image3296"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="162, 108, 24, 25" TraceId="image3299"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="162, 192, 24, 25" TraceId="image3301"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="291, 193, 24, 25" TraceId="image3303"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="292, 107, 24, 25" TraceId="image3296"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

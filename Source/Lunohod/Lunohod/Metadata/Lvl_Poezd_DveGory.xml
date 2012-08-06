@@ -2,9 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.12 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd_DveGory\Lvl_Poezd_DveGory.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_DveGory" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat3.xml" />
-    <Include File="ClassEnemyRat4.xml" />
-    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -105,16 +103,16 @@
         <Image Id="dfltMask62" TextureId="txr_railwayHor1" Bounds="320, 280, 40, 40" TraceId="image3150"/>
     </Layer>
     <Layer Id="Action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="155, 240, 24, 25" TraceId="image3239"/>
-        <Enemy Id="enm2" Class="clsEnemyRat3" Bounds="294, 242, 24, 25" TraceId="image3236"/>
-        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="93, 210, 22, 23" TraceId="image3275"/>
-        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="92, 120, 22, 23" TraceId="image3281"/>
-        <Enemy Id="enm5" Class="clsEnemyRat4" Bounds="93, 165, 22, 23" TraceId="image3267"/>
-        <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="92, 78, 22, 23" TraceId="image3330"/>
-        <Enemy Id="enm7" Class="clsEnemyRat4" Bounds="458, 62, 22, 23" TraceId="image3334"/>
-        <Enemy Id="enm8" Class="clsEnemyRat4" Bounds="460, 124, 22, 23" TraceId="image3271"/>
-        <Enemy Id="enm9" Class="clsEnemyRat2" Bounds="210, 202, 22, 23" TraceId="image3312"/>
-        <Enemy Id="enm10" Class="clsEnemyRat2" Bounds="250, 202, 22, 23" TraceId="image3309"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="155, 240, 24, 25" TraceId="image3239"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="294, 242, 24, 25" TraceId="image3236"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="93, 210, 22, 23" TraceId="image3275"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="92, 120, 22, 23" TraceId="image3281"/>
+        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="93, 165, 22, 23" TraceId="image3267"/>
+        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="92, 78, 22, 23" TraceId="image3330"/>
+        <Enemy Id="enm7" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="458, 62, 22, 23" TraceId="image3334"/>
+        <Enemy Id="enm8" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="460, 124, 22, 23" TraceId="image3271"/>
+        <Enemy Id="enm9" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="210, 202, 22, 23" TraceId="image3312"/>
+        <Enemy Id="enm10" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="250, 202, 22, 23" TraceId="image3309"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=3" Bounds="178, 100, 31, 20" TraceId="image3492"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=3" Bounds="288, 10, 31, 20" TraceId="image3459"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="158, 135, 28, 22" TraceId="image3507"/>

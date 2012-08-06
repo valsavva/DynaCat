@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Enemies_v3\Lvl_1D_Enemies_v3.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Enemies_v3" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -114,12 +114,12 @@
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="68, 238, 28, 19" TraceId="image3305"/>
-        <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="170, 13, 22, 23" TraceId="image3240"/>
-        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="270, 13, 22, 23" TraceId="image3111"/>
-        <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="370, 13, 22, 23" TraceId="image3117"/>
-        <Enemy Id="enm4" Class="clsEnemyRat2" Bounds="170, 293, 22, 23" TraceId="image3177"/>
-        <Enemy Id="enm5" Class="clsEnemyRat2" Bounds="270, 293, 22, 23" TraceId="image3179"/>
-        <Enemy Id="enm6" Class="clsEnemyRat2" Bounds="370, 293, 22, 23" TraceId="image3181"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="170, 13, 22, 23" TraceId="image3240"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="270, 13, 22, 23" TraceId="image3111"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="370, 13, 22, 23" TraceId="image3117"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="170, 293, 22, 23" TraceId="image3177"/>
+        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="270, 293, 22, 23" TraceId="image3179"/>
+        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="370, 293, 22, 23" TraceId="image3181"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=5" Bounds="138, 67, 27, 20" TraceId="image3310"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="168, 60, 27, 20" TraceId="image3312"/>
         <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="194, 68, 27, 20" TraceId="image3272"/>

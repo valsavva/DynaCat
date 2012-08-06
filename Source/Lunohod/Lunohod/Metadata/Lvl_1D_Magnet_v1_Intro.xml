@@ -2,8 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Magnet_v1_Intro\Lvl_1D_Magnet_v1_Intro.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Magnet_v1_Intro" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat2.xml" />
-    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassMagneticRadarLeft.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
@@ -94,18 +93,21 @@
         <Image Id="dfltMask41" TextureId="txr_traces_singl" Bounds="348, 143, 25, 18" Rotation="90" TraceId="image3094"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="355, 144, 22, 23" TraceId="image3072"/>
-        <Group Id="grp_g3089">
-            <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="322, 143, 22, 23" TraceId="image3129"/>
-            <NumAnimation Id="anm1" From="0" To="-168" Target="X" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3086"/>
-        </Group>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="355, 144, 22, 23" TraceId="image3072"/>
+        
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="322, 143, 22, 23" TraceId="image3129"/>
+        <Do Action="enm2:+Walker" InProgress="true" RepeatCount="1"/>
+        <BoolTrigger Condition="not enm2:IntersectHero and not enm2_setDying.InProgress">
+            <NumAnimation Id="anm1" From="0" To="-168" Target="enm2.X" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3086"/>
+        </BoolTrigger>
+        
         <Group Id="enm3" Class="clsMagneticRadarLeft" Bounds="385, 131, 52, 51" TraceId="image3058"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=6" Bounds="109, 191, 22, 27" TraceId="image3069"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="103, 234, 37, 54" TraceId="image3049" />
-        <Hero Id="hero" Class="clsHero" Bounds="105, 23, 33, 24" TraceId="image3606"/>
+        <Hero Id="hero" Class="clsHero" Bounds="104, 25, 33, 24" TraceId="image3606"/>
     </Layer>
     <Layer Id="foreground" BackColor="#FFFFFFFF">
         <Image Id="dfltMask42" TextureId="txr_web_01" Bounds="420, 110, 29, 34" Rotation="9" Stretch="true" TraceId="image3228-2"/>

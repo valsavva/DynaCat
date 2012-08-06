@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.12 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd_v10_Gorki\Lvl_Poezd_v10_Gorki.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_v10_Gorki" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
@@ -108,12 +108,12 @@
         <Image Id="dfltMask67" TextureId="txr_railway_end_vertic" Bounds="400, 20, 40, 40" FlipEffects="Vertically" TraceId="image3432-4"/>
     </Layer>
     <Layer Id="enemies" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="80, 53, 22, 23" TraceId="image3151"/>
-        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="200, 53, 22, 23" TraceId="image3154"/>
-        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="320, 53, 22, 23" TraceId="image3156"/>
-        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="380, 249, 22, 23" TraceId="image3158"/>
-        <Enemy Id="enm5" Class="clsEnemyRat4" Bounds="260, 249, 22, 23" TraceId="image3160"/>
-        <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="140, 249, 22, 23" TraceId="image3162"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="80, 53, 22, 23" TraceId="image3151"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="200, 53, 22, 23" TraceId="image3154"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="320, 53, 22, 23" TraceId="image3156"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="380, 249, 22, 23" TraceId="image3158"/>
+        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="260, 249, 22, 23" TraceId="image3160"/>
+        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="140, 249, 22, 23" TraceId="image3162"/>
     </Layer>
     <Layer Id="food" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=3" Bounds="38, 99, 31, 20" TraceId="image3131"/>

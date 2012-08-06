@@ -172,34 +172,37 @@
                     <Sound FileId="sndEnemyRat3Hit3" Volume="0.5" Pitch="-0.3" Pan="0"/>
                 </RandomSet>
             </ParallelSet>
-            
+
             <!-- on rest -->
-            <BoolTrigger Condition="this:onRestTimerReset" EnterAction="@this_rest=0;this_onRestTimer.Start()" />
-            
+            <BoolTrigger Condition="this:onRestTimerReset and not this:Walker" EnterAction="this:-onRest;this_onRestTimer.Start()" />
+
             <SequenceSet Id="this_onRestTimer" InProgress="true" RepeatCount="0">
                 <Do Action="@this_delay=system.Rnd(10,30)" />
+                <!--<Do Action="system.WriteLine(system.Str(@this_delay))" />-->
                 <Delay Duration="@this_delay" />
-                <RandomSet RepeatCount="1">
-                    <Do Action="@this_rest=1" />
-                    <Do Action="@this_rest=2" />
-                </RandomSet>
+                <Do Action="@this_restNum=system.Rnd(1,2);this:+onRest" />
             </SequenceSet>
-                        
-            <NumTrigger Property="@this_rest" Compare="E" Value="1" EnterAction="this_anmEnemyRatOnRest1.Start()" Group="this_sttStates">
-                <Sprite Id="this_sprEnemyRatOnRest1" TextureId="txrEnemyRat@ratType_OnRest1" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
-                <SequenceSet Id="this_anmEnemyRatOnRest1" RepeatCount="1">
-                    <NumAnimation From="0" To="@this_ERrest1FC" Duration="@this_ERrest1FC*0.125" Target="this_sprEnemyRatOnRest1.CurrentFrame" RepeatCount="1" Fill="Reset"/>
-                    <Do Action="@this_rest=0;this:onRestTimerReset" />
-                </SequenceSet>
-            </NumTrigger>
 
-            <NumTrigger Property="@this_rest" Compare="E" Value="2" EnterAction="this_anmEnemyRatOnRest2.Start()" Group="this_sttStates">
-                <Sprite Id="this_sprEnemyRatOnRest2" TextureId="txrEnemyRat@ratType_OnRest2" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
-                <SequenceSet Id="this_anmEnemyRatOnRest2" RepeatCount="1">
-                    <NumAnimation From="0" To="@this_ERrest2FC" Duration="@this_ERrest2FC*0.125" Target="this_sprEnemyRatOnRest2.CurrentFrame" RepeatCount="1" Fill="Reset"/>
-                    <Do Action="@this_rest=0;this:onRestTimerReset" />
-                </SequenceSet>
-            </NumTrigger>
+            <BoolTrigger Condition="this:onRest and not this:Walker"
+                         Group="this_sttStates">
+
+                <NumTrigger Property="@this_restNum" Compare="G" Value="1.5" EnterAction="this_anmEnemyRatOnRest1.Start()">
+                    <Sprite Id="this_sprEnemyRatOnRest1" TextureId="txrEnemyRat@ratType_OnRest1" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
+                    <SequenceSet Id="this_anmEnemyRatOnRest1" RepeatCount="1">
+                        <NumAnimation From="0" To="@this_ERrest1FC" Duration="@this_ERrest1FC*0.125" Target="this_sprEnemyRatOnRest1.CurrentFrame" RepeatCount="1" Fill="Reset"/>
+                        <Do Action="this:-onRest;this:onRestTimerReset" />
+                    </SequenceSet>
+                </NumTrigger>
+
+                <NumTrigger Property="@this_restNum" Compare="LE" Value="1.5" EnterAction="this_anmEnemyRatOnRest2.Start()">
+                    <Sprite Id="this_sprEnemyRatOnRest2" TextureId="txrEnemyRat@ratType_OnRest2" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
+                    <SequenceSet Id="this_anmEnemyRatOnRest2" RepeatCount="1">
+                        <NumAnimation From="0" To="@this_ERrest2FC" Duration="@this_ERrest2FC*0.125" Target="this_sprEnemyRatOnRest2.CurrentFrame" RepeatCount="1" Fill="Reset"/>
+                        <Do Action="this:-onRest;this:onRestTimerReset" />
+                    </SequenceSet>
+                </NumTrigger>
+
+            </BoolTrigger>
 
             <!-- walk -->
             <BoolTrigger Condition="this:Walker" Group="this_sttStates">

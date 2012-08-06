@@ -4,9 +4,7 @@
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_E" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassEnemyRat4.xml" />
-    <Include File="ClassEnemyRat3.xml" />
-    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
@@ -185,18 +183,18 @@
         <Block Id="blk1" Class="clsWoodenBox" Bounds="245, 113, 30, 30" Edges="Stick" TraceId="image3321">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="214, 119, 22, 23" TraceId="image3366"/>
-        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="68, 91, 22, 23" TraceId="image3368"/>
-        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="67, 209, 22, 23" TraceId="image3370"/>
-        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="358, 149, 22, 23" TraceId="image3358"/>
-        <Enemy Id="enm5" Class="clsEnemyRat4" Bounds="252, 179, 22, 23" TraceId="image3332"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="214, 119, 22, 23" TraceId="image3366"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="68, 91, 22, 23" TraceId="image3368"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="67, 209, 22, 23" TraceId="image3370"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="358, 149, 22, 23" TraceId="image3358"/>
+        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="252, 179, 22, 23" TraceId="image3332"/>
         <Block Id="blk2" Class="clsWoodenBox" Bounds="211, 176, 30, 30" Edges="Stick" TraceId="image3355">
             <Image TextureId="txr_box_old_2" />
         </Block>
         <Block Id="blk3" Class="clsWoodenBox" Bounds="242, 236, 30, 30" Edges="Stick" TraceId="image3362">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="214, 242, 22, 23" TraceId="image3364"/>
+        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="214, 242, 22, 23" TraceId="image3364"/>
     </Layer>
     <Layer Id="Action2" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd11" Class="clsFood" ClassParams="@fishType=4" Bounds="233, 233, 28, 22" TraceId="image3411"/>
@@ -208,12 +206,12 @@
         <Food Id="fd17" Class="clsFood" ClassParams="@fishType=2" Bounds="213, 51, 28, 19" TraceId="image3407"/>
         <Food Id="fd18" Class="clsFood" ClassParams="@fishType=2" Bounds="237, 68, 28, 19" TraceId="image3409"/>
         <Food Id="fd19" Class="clsFood" ClassParams="@fishType=2" Bounds="258, 49, 28, 19" TraceId="image3399"/>
-        <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="451, 24, 24, 25" TraceId="image3396"/>
-        <Enemy Id="enm8" Class="clsEnemyRat3" Bounds="6, 26, 24, 25" TraceId="image3398"/>
-        <Enemy Id="enm9" Class="clsEnemyRat3" Bounds="4, 148, 24, 25" TraceId="image3400"/>
-        <Enemy Id="enm10" Class="clsEnemyRat3" Bounds="3, 268, 24, 25" TraceId="image3402"/>
-        <Enemy Id="enm11" Class="clsEnemyRat3" Bounds="237, 88, 24, 25" TraceId="image3404"/>
-        <Enemy Id="enm12" Class="clsEnemyRat3" Bounds="234, 208, 24, 25" TraceId="image3393"/>
+        <Enemy Id="enm7" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="451, 24, 24, 25" TraceId="image3396"/>
+        <Enemy Id="enm8" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="6, 26, 24, 25" TraceId="image3398"/>
+        <Enemy Id="enm9" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="4, 148, 24, 25" TraceId="image3400"/>
+        <Enemy Id="enm10" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="3, 268, 24, 25" TraceId="image3402"/>
+        <Enemy Id="enm11" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="237, 88, 24, 25" TraceId="image3404"/>
+        <Enemy Id="enm12" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="234, 208, 24, 25" TraceId="image3393"/>
     </Layer>
     <Layer Id="Action3" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd20" Class="clsFood" ClassParams="@fishType=1" Bounds="79, 68, 32, 21" TraceId="image3426"/>
@@ -231,12 +229,12 @@
         <Food Id="fd32" Class="clsFood" ClassParams="@fishType=4" Bounds="215, 229, 28, 22" TraceId="image3484"/>
         <Food Id="fd33" Class="clsFood" ClassParams="@fishType=2" Bounds="233, 242, 28, 19" TraceId="image3486"/>
         <Food Id="fd34" Class="clsFood" ClassParams="@fishType=5" Bounds="215, 254, 27, 20" TraceId="image3488"/>
-        <Enemy Id="enm13" Class="clsEnemyRat2" Bounds="67, 107, 22, 23" TraceId="image3460"/>
-        <Enemy Id="enm14" Class="clsEnemyRat2" Bounds="67, 232, 22, 23" TraceId="image3470"/>
-        <Enemy Id="enm15" Class="clsEnemyRat2" Bounds="355, 109, 22, 23" TraceId="image3464"/>
-        <Enemy Id="enm16" Class="clsEnemyRat2" Bounds="392, 110, 22, 23" TraceId="image3466"/>
-        <Enemy Id="enm17" Class="clsEnemyRat2" Bounds="100, 232, 22, 23" TraceId="image3468"/>
-        <Enemy Id="enm18" Class="clsEnemyRat2" Bounds="96, 108, 22, 23" TraceId="image3462"/>
+        <Enemy Id="enm13" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="67, 107, 22, 23" TraceId="image3460"/>
+        <Enemy Id="enm14" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="67, 232, 22, 23" TraceId="image3470"/>
+        <Enemy Id="enm15" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="355, 109, 22, 23" TraceId="image3464"/>
+        <Enemy Id="enm16" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="392, 110, 22, 23" TraceId="image3466"/>
+        <Enemy Id="enm17" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="100, 232, 22, 23" TraceId="image3468"/>
+        <Enemy Id="enm18" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="96, 108, 22, 23" TraceId="image3462"/>
     </Layer>
     <Layer Id="Action4" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd35" Class="clsFood" ClassParams="@fishType=1" Bounds="347, 61, 32, 21" TraceId="image3512"/>
@@ -252,12 +250,12 @@
         <Food Id="fd45" Class="clsFood" ClassParams="@fishType=5" Bounds="354, 121, 27, 20" TraceId="image3573"/>
         <Food Id="fd46" Class="clsFood" ClassParams="@fishType=5" Bounds="354, 182, 27, 20" TraceId="image3575"/>
         <Food Id="fd47" Class="clsFood" ClassParams="@fishType=5" Bounds="392, 147, 27, 20" TraceId="image3570"/>
-        <Enemy Id="enm19" Class="clsEnemyRat3" Bounds="207, 102, 24, 25" TraceId="image3525"/>
-        <Enemy Id="enm20" Class="clsEnemyRat3" Bounds="243, 116, 24, 25" TraceId="image3527"/>
-        <Enemy Id="enm21" Class="clsEnemyRat3" Bounds="243, 170, 24, 25" TraceId="image3529"/>
-        <Enemy Id="enm22" Class="clsEnemyRat3" Bounds="201, 186, 24, 25" TraceId="image3531"/>
-        <Enemy Id="enm23" Class="clsEnemyRat3" Bounds="200, 229, 24, 25" TraceId="image3533"/>
-        <Enemy Id="enm24" Class="clsEnemyRat3" Bounds="241, 246, 24, 25" TraceId="image3522"/>
+        <Enemy Id="enm19" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="207, 102, 24, 25" TraceId="image3525"/>
+        <Enemy Id="enm20" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="243, 116, 24, 25" TraceId="image3527"/>
+        <Enemy Id="enm21" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="243, 170, 24, 25" TraceId="image3529"/>
+        <Enemy Id="enm22" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="201, 186, 24, 25" TraceId="image3531"/>
+        <Enemy Id="enm23" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="200, 229, 24, 25" TraceId="image3533"/>
+        <Enemy Id="enm24" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="241, 246, 24, 25" TraceId="image3522"/>
     </Layer>
     <Layer Id="Action5" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd48" Class="clsFood" ClassParams="@fishType=2" Bounds="449, 183, 28, 19" TraceId="image3588"/>
@@ -274,32 +272,32 @@
         <Food Id="fd59" Class="clsFood" ClassParams="@fishType=2" Bounds="103, 48, 28, 19" TraceId="image3612"/>
         <Food Id="fd60" Class="clsFood" ClassParams="@fishType=2" Bounds="56, 68, 28, 19" TraceId="image3585"/>
         <Food Id="fd61" Class="clsFood" ClassParams="@fishType=7" Bounds="59, 237, 32, 30" TraceId="image3622"/>
-        <Enemy Id="enm25" Class="clsEnemyRat4" Bounds="70, 92, 22, 23" TraceId="image3655"/>
-        <Enemy Id="enm26" Class="clsEnemyRat4" Bounds="25, 277, 22, 23" TraceId="image3607"/>
-        <Enemy Id="enm27" Class="clsEnemyRat4" Bounds="136, 90, 22, 23" TraceId="image3609"/>
-        <Enemy Id="enm28" Class="clsEnemyRat4" Bounds="187, 90, 22, 23" TraceId="image3611"/>
-        <Enemy Id="enm29" Class="clsEnemyRat4" Bounds="235, 90, 22, 23" TraceId="image3613"/>
-        <Enemy Id="enm30" Class="clsEnemyRat4" Bounds="292, 90, 22, 23" TraceId="image3615"/>
-        <Enemy Id="enm31" Class="clsEnemyRat4" Bounds="334, 91, 22, 23" TraceId="image3617"/>
-        <Enemy Id="enm32" Class="clsEnemyRat4" Bounds="383, 90, 22, 23" TraceId="image3619"/>
-        <Enemy Id="enm33" Class="clsEnemyRat4" Bounds="355, 150, 22, 23" TraceId="image3621"/>
-        <Enemy Id="enm34" Class="clsEnemyRat4" Bounds="301, 150, 22, 23" TraceId="image3623"/>
-        <Enemy Id="enm35" Class="clsEnemyRat4" Bounds="250, 150, 22, 23" TraceId="image3625"/>
-        <Enemy Id="enm36" Class="clsEnemyRat4" Bounds="193, 150, 22, 23" TraceId="image3627"/>
-        <Enemy Id="enm37" Class="clsEnemyRat4" Bounds="144, 150, 22, 23" TraceId="image3629"/>
-        <Enemy Id="enm38" Class="clsEnemyRat4" Bounds="88, 149, 22, 23" TraceId="image3631"/>
-        <Enemy Id="enm39" Class="clsEnemyRat4" Bounds="68, 210, 22, 23" TraceId="image3633"/>
-        <Enemy Id="enm40" Class="clsEnemyRat4" Bounds="140, 209, 22, 23" TraceId="image3635"/>
-        <Enemy Id="enm41" Class="clsEnemyRat4" Bounds="205, 209, 22, 23" TraceId="image3637"/>
-        <Enemy Id="enm42" Class="clsEnemyRat4" Bounds="266, 209, 22, 23" TraceId="image3639"/>
-        <Enemy Id="enm43" Class="clsEnemyRat4" Bounds="317, 209, 22, 23" TraceId="image3641"/>
-        <Enemy Id="enm44" Class="clsEnemyRat4" Bounds="368, 209, 22, 23" TraceId="image3643"/>
-        <Enemy Id="enm45" Class="clsEnemyRat4" Bounds="374, 273, 22, 23" TraceId="image3645"/>
-        <Enemy Id="enm46" Class="clsEnemyRat4" Bounds="305, 272, 22, 23" TraceId="image3647"/>
-        <Enemy Id="enm47" Class="clsEnemyRat4" Bounds="249, 274, 22, 23" TraceId="image3649"/>
-        <Enemy Id="enm48" Class="clsEnemyRat4" Bounds="191, 275, 22, 23" TraceId="image3651"/>
-        <Enemy Id="enm49" Class="clsEnemyRat4" Bounds="143, 275, 22, 23" TraceId="image3653"/>
-        <Enemy Id="enm50" Class="clsEnemyRat4" Bounds="83, 276, 22, 23" TraceId="image3604"/>
+        <Enemy Id="enm25" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="70, 92, 22, 23" TraceId="image3655"/>
+        <Enemy Id="enm26" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="25, 277, 22, 23" TraceId="image3607"/>
+        <Enemy Id="enm27" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="136, 90, 22, 23" TraceId="image3609"/>
+        <Enemy Id="enm28" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="187, 90, 22, 23" TraceId="image3611"/>
+        <Enemy Id="enm29" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="235, 90, 22, 23" TraceId="image3613"/>
+        <Enemy Id="enm30" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="292, 90, 22, 23" TraceId="image3615"/>
+        <Enemy Id="enm31" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="334, 91, 22, 23" TraceId="image3617"/>
+        <Enemy Id="enm32" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="383, 90, 22, 23" TraceId="image3619"/>
+        <Enemy Id="enm33" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="355, 150, 22, 23" TraceId="image3621"/>
+        <Enemy Id="enm34" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="301, 150, 22, 23" TraceId="image3623"/>
+        <Enemy Id="enm35" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="250, 150, 22, 23" TraceId="image3625"/>
+        <Enemy Id="enm36" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="193, 150, 22, 23" TraceId="image3627"/>
+        <Enemy Id="enm37" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="144, 150, 22, 23" TraceId="image3629"/>
+        <Enemy Id="enm38" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="88, 149, 22, 23" TraceId="image3631"/>
+        <Enemy Id="enm39" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="68, 210, 22, 23" TraceId="image3633"/>
+        <Enemy Id="enm40" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="140, 209, 22, 23" TraceId="image3635"/>
+        <Enemy Id="enm41" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="205, 209, 22, 23" TraceId="image3637"/>
+        <Enemy Id="enm42" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="266, 209, 22, 23" TraceId="image3639"/>
+        <Enemy Id="enm43" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="317, 209, 22, 23" TraceId="image3641"/>
+        <Enemy Id="enm44" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="368, 209, 22, 23" TraceId="image3643"/>
+        <Enemy Id="enm45" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="374, 273, 22, 23" TraceId="image3645"/>
+        <Enemy Id="enm46" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="305, 272, 22, 23" TraceId="image3647"/>
+        <Enemy Id="enm47" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="249, 274, 22, 23" TraceId="image3649"/>
+        <Enemy Id="enm48" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="191, 275, 22, 23" TraceId="image3651"/>
+        <Enemy Id="enm49" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="143, 275, 22, 23" TraceId="image3653"/>
+        <Enemy Id="enm50" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="83, 276, 22, 23" TraceId="image3604"/>
     </Layer>
     <Layer Id="Action6" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd62" Class="clsFood" ClassParams="@fishType=6" Bounds="192, 225, 22, 27" TraceId="image3648"/>
@@ -314,12 +312,12 @@
         <Food Id="fd71" Class="clsFood" ClassParams="@fishType=4" Bounds="203, 168, 28, 22" TraceId="image3701"/>
         <Food Id="fd72" Class="clsFood" ClassParams="@fishType=4" Bounds="220, 189, 28, 22" TraceId="image3696"/>
         <Group Id="exit" Class="clsExit" Bounds="373, 220, 37, 54" TraceId="image3049" />
-        <Enemy Id="enm51" Class="clsEnemyRat4" Bounds="69, 122, 22, 23" TraceId="image3718"/>
-        <Enemy Id="enm52" Class="clsEnemyRat4" Bounds="304, 118, 22, 23" TraceId="image3716"/>
-        <Enemy Id="enm53" Class="clsEnemyRat2" Bounds="103, 179, 22, 23" TraceId="image3731"/>
-        <Enemy Id="enm54" Class="clsEnemyRat2" Bounds="340, 179, 22, 23" TraceId="image3728"/>
-        <Enemy Id="enm55" Class="clsEnemyRat3" Bounds="74, 240, 24, 25" TraceId="image3744"/>
-        <Enemy Id="enm56" Class="clsEnemyRat3" Bounds="307, 240, 24, 25" TraceId="image3741"/>
+        <Enemy Id="enm51" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="69, 122, 22, 23" TraceId="image3718"/>
+        <Enemy Id="enm52" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="304, 118, 22, 23" TraceId="image3716"/>
+        <Enemy Id="enm53" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="103, 179, 22, 23" TraceId="image3731"/>
+        <Enemy Id="enm54" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="340, 179, 22, 23" TraceId="image3728"/>
+        <Enemy Id="enm55" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="74, 240, 24, 25" TraceId="image3744"/>
+        <Enemy Id="enm56" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="307, 240, 24, 25" TraceId="image3741"/>
         <Block Id="blk4" Class="clsWoodenBox" Bounds="92, 111, 30, 30" Edges="Stick" TraceId="image3779">
             <Image TextureId="txr_box_old_1" />
         </Block>

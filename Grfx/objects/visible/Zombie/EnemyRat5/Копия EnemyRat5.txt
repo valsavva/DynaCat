@@ -1,0 +1,28 @@
+<Enemy Id="enm
+###@counter2
+" Class="clsEnemyRat5" Bounds="
+###x
+, 
+###y
+, 26, 28
+" TraceId="
+###id
+">
+###@CRLF
+<SequenceSet InProgress="true" RepeatCount="0" >
+###@CRLF
+<NumAnimation Target="enm
+###@cntrValue2
+.X,enm
+###@cntrValue2
+.Y" From="0,0" To="(hero.X-enm
+###@cntrValue2
+.X)/10,(hero.Y-enm
+###@cntrValue2
+.Y)/10" IsDelta="true" Duration="1" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+###@CRLF
+<Delay Duration="8" />
+###@CRLF
+</SequenceSet>
+###@CRLF
+</Enemy>

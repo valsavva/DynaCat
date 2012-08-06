@@ -5,8 +5,7 @@
     <Include File="ClassOil.xml" />
     <Include File="ClassOilSpot.xml" />
     <Include File="ClassBarrel.xml" />
-    <Include File="ClassEnemyRat2.xml" />
-    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
@@ -115,10 +114,10 @@
         </Block>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="228, 155, 22, 23" TraceId="image3294"/>
-        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="169, 205, 22, 23" TraceId="image3454"/>
-        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="292, 111, 22, 23" TraceId="image3296"/>
-        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="171, 90, 22, 23" TraceId="image3500"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="228, 155, 22, 23" TraceId="image3294"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="169, 205, 22, 23" TraceId="image3454"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="292, 111, 22, 23" TraceId="image3296"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="171, 90, 22, 23" TraceId="image3500"/>
         <Block Id="blk11" Class="clsWoodenBox" Bounds="339, 49,  30,  30" Edges="Stick" TraceId="image3133">
             <Image TextureId="txr_box_old_1" />
         </Block>

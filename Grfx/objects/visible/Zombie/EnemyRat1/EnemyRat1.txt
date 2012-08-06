@@ -1,6 +1,6 @@
 <Enemy Id="enm
 ###@counter2
-" Class="clsEnemyRat1" Bounds="
+" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="
 ###x
 , 
 ###y
@@ -10,6 +10,14 @@
 ">
 ###@CRLF
 <SequenceSet InProgress="true" RepeatCount="0" >
+###@CRLF
+<Do Action="enm
+###@cntrValue2
+:+Walker" InProgress="true" RepeatCount="1"/>
+###@CRLF
+<BoolTrigger Condition="not enm
+###@cntrValue2
+:IntersectHero">
 ###@CRLF
 <NumAnimation Target="enm
 ###@cntrValue2
@@ -32,6 +40,12 @@
 .Y)/(hero.Y-enm
 ###@cntrValue2
 .Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+###@CRLF
+</BoolTrigger>
+###@CRLF
+<Do Action="enm
+###@cntrValue2
+:-Walker" InProgress="true" RepeatCount="1"/>
 ###@CRLF
 <Delay Duration="7.2" />
 ###@CRLF

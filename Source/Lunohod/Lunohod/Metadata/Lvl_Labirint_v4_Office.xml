@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\Lvl_Labirint_v4_Office\Lvl_Labirint_v4_Office.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Labirint_v4_Office" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -198,15 +198,16 @@
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
-        <Group Id="grp_g3152">
-            <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="293, 80, 24, 25" TraceId="image4496"/>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <Delay Duration="2"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="293, 80, 24, 25" TraceId="image4496"/>
+        <Do Action="enm1:+Walker" InProgress="true" RepeatCount="1"/>
+        <BoolTrigger Condition="not enm1:IntersectHero and not enm1_setDying.InProgress">
+            <SequenceSet Id="anm_enm1" InProgress="true" RepeatCount="0">
                 <NumAnimation Id="anm1" From="0" To="160" Target="enm1.Y" Duration="6" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image4590"/>
-                <Delay Duration="2"/>
-                <NumAnimation Id="anm1" From="0" To="-160" Target="enm1.Y" Duration="6" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image4590"/>
+                <Delay Duration="0.4"/>
+                <NumAnimation From="0" To="-160" Target="enm1.Y" Duration="6" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image4590"/>
+                <Delay Duration="0.4"/>
             </SequenceSet>
-        </Group>
+        </BoolTrigger>
         <!-- HAND EDIT <<< -->
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">

@@ -7,11 +7,7 @@
     <Include File="ClassTeleportKoleno.xml" />
     <Include File="ClassTeleportOut.xml" />
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat5.xml" />
-    <Include File="ClassEnemyRat1.xml" />
-    <Include File="ClassEnemyRat2.xml" />
-    <Include File="ClassEnemyRat3.xml" />
-    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -209,60 +205,96 @@
         <SequenceSet Id="setRunOnce" RepeatCount="1">
             <Delay Duration="1" />
             <ParallelSet RepeatCount="1" >
-                <Do Action="sndWhistleReady.Start()" />
+                <Do Action="sndWhistleReady.Start();enm1:+Walker" />
                 <NumAnimation From="0" To="-7" Target="enm1.Y" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1" Fill="End"/>
             </ParallelSet>
+            <Do Action="enm1:-Walker" />
             <Delay Duration="2" />
 
             <ParallelSet RepeatCount="1" >
                 <Do Action="sndWhistle.Start()" />
                 <SequenceSet RepeatCount="1" >
+                    <Do Action="enm1:+Walker" />
                     <NumAnimation From="0" To="-10" Target="enm1.Y" Duration="0.1" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
                     <NumAnimation From="-1" To="1" Target="enm1.X" Duration="0.05" IsDelta="true" Autoreverse="true" RepeatCount="4.5" Fill="End"/>
                     <NumAnimation From="0" To="10" Target="enm1.Y" Duration="0.1" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                    <Do Action="enm1:-Walker" />
                 </SequenceSet>
             </ParallelSet>
 
             <ParallelSet RepeatCount="1">
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx2" Target="enm2.X" Duration="@time2" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                
+                <BoolTrigger Condition="not enm2:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm2:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx2" Target="enm2.X" Duration="@time2" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm2:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx3" Target="enm3.X" Duration="@time3" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <BoolTrigger Condition="not enm3:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm3:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx3" Target="enm3.X" Duration="@time3" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm3:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx4" Target="enm4.X" Duration="@time4" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <BoolTrigger Condition="not enm4:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm4:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx4" Target="enm4.X" Duration="@time4" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm4:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx5" Target="enm5.X" Duration="@time5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <BoolTrigger Condition="not enm5:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm5:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx5" Target="enm5.X" Duration="@time5" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm5:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx6" Target="enm6.X" Duration="@time6" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <BoolTrigger Condition="not enm6:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm6:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx6" Target="enm6.X" Duration="@time6" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm6:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx7" Target="enm7.X" Duration="@time7" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <BoolTrigger Condition="not enm7:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm7:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx7" Target="enm7.X" Duration="@time7" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm7:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx8" Target="enm8.X" Duration="@time8" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <BoolTrigger Condition="not enm8:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm8:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx8" Target="enm8.X" Duration="@time8" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm8:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
-                <SequenceSet RepeatCount="1">
-                    <Delay Duration="system.Rnd(0.2,0.4)" />
-                    <NumAnimation From="0" To="@dx9" Target="enm9.X" Duration="@time9" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                </SequenceSet>
+                <BoolTrigger Condition="not enm9:IntersectHero">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="enm9:+Walker" InProgress="true" RepeatCount="1"/>
+                        <Delay Duration="system.Rnd(0.2,0.4)" />
+                        <NumAnimation From="0" To="@dx9" Target="enm9.X" Duration="@time9" IsDelta="true" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                        <Do Action="enm9:-Walker" InProgress="true" RepeatCount="1"/>
+                    </SequenceSet>
+                </BoolTrigger>
 
             </ParallelSet>
             <Delay Duration="6" />
@@ -270,15 +302,15 @@
         </SequenceSet>
 
 
-        <Enemy Id="enm1" Class="clsEnemyRat5" Bounds="350, 261, 26, 28" TraceId="Boss"/>
-        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="41, 35, 24, 25" TraceId="image3750"/>
-        <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="26, 68, 22, 23" TraceId="image3739"/>
-        <Enemy Id="enm4" Class="clsEnemyRat3" Bounds="38, 93, 24, 25" TraceId="image3728"/>
-        <Enemy Id="enm5" Class="clsEnemyRat1" Bounds="28, 181, 24, 25" TraceId="image3775"/>
-        <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="59, 207, 22, 23" TraceId="image3761"/>
-        <Enemy Id="enm7" Class="clsEnemyRat1" Bounds="48, 234, 24, 25" TraceId="image3777"/>
-        <Enemy Id="enm8" Class="clsEnemyRat3" Bounds="26, 269, 24, 25" TraceId="image3779"/>
-        <Enemy Id="enm9" Class="clsEnemyRat2" Bounds="40, 136, 22, 23" TraceId="image3325"/>
+        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="41, 35, 24, 25" TraceId="image3750"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="26, 68, 22, 23" TraceId="image3739"/>
+        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="38, 93, 24, 25" TraceId="image3728"/>
+        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="28, 181, 24, 25" TraceId="image3775"/>
+        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="59, 207, 22, 23" TraceId="image3761"/>
+        <Enemy Id="enm7" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="48, 234, 24, 25" TraceId="image3777"/>
+        <Enemy Id="enm8" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="26, 269, 24, 25" TraceId="image3779"/>
+        <Enemy Id="enm9" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="40, 136, 22, 23" TraceId="image3325"/>
+        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="350, 261, 26, 28" TraceId="Boss"/>
     </Layer>
     <!-- HAND EDIT <<< -->
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
