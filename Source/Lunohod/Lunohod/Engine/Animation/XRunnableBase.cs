@@ -14,7 +14,7 @@ namespace Lunohod.Objects
     /// </summary>
 	public abstract class XRunnableBase : XObject, IRunnable
 	{
-        protected TimeSpan elapsedTime;
+        protected double elapsedTime;
 		protected bool inProgress = false;
 		protected bool isPaused = false;
 		protected double repeatsDone = 0;
@@ -44,7 +44,7 @@ namespace Lunohod.Objects
         /// <summary>
         /// Gets the amount of time elapsed since the component was started.
         /// </summary>
-        public TimeSpan ElapsedTime
+        public double ElapsedTime
         {
             get { return elapsedTime; }
         }
@@ -90,11 +90,11 @@ namespace Lunohod.Objects
 		
 		internal virtual void UpdateTime(UpdateParameters p)
 		{
-			this.elapsedTime += p.GameTime.ElapsedGameTime;
+			this.elapsedTime += p.GameTime.ElapsedGameTime.TotalSeconds;
         	
     		if (this.RepeatTime != 0f)
 			{
-				if (this.elapsedTime.TotalSeconds > this.RepeatTime)
+				if (this.elapsedTime > this.RepeatTime)
 					  Stop();
 			}
 			else if (this.RepeatCount != 0f)
@@ -109,7 +109,7 @@ namespace Lunohod.Objects
         /// <inheritdoc />
         public virtual void Start()
 		{
-			this.elapsedTime = TimeSpan.Zero;
+			this.elapsedTime = 0.0;
 			this.inProgress = true;
 			this.isPaused = false;
 			this.repeatsDone = 0;

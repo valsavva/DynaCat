@@ -148,19 +148,15 @@ namespace Lunohod.Objects
 			if (this.inProgress)
 			{
 				if (this.Fill == XAnimationFillBehavior.Reset)
-					this.elapsedTime = TimeSpan.Zero;
+					this.elapsedTime = 0.0;
 				else if (this.Fill == XAnimationFillBehavior.End)
-					this.elapsedTime = TimeSpan.FromSeconds(this.Autoreverse ? this.InternalDuration * 2f : this.InternalDuration);
+					this.elapsedTime = this.Autoreverse ? this.InternalDuration * 2f : this.InternalDuration;
 				else
 				{
 					if (this.RepeatCount > 0)
-						this.elapsedTime = TimeSpan.FromSeconds(
-							Math.Min(this.elapsedTime.TotalSeconds, this.RepeatCount * (this.Autoreverse ? this.InternalDuration * 2f : this.InternalDuration))
-						);
+						this.elapsedTime = Math.Min(this.elapsedTime, this.RepeatCount * (this.Autoreverse ? this.InternalDuration * 2f : this.InternalDuration));
 					else if (this.RepeatTime > 0f)
-						this.elapsedTime = TimeSpan.FromSeconds(
-							Math.Min(this.elapsedTime.TotalSeconds, this.RepeatTime)
-						);
+						this.elapsedTime = Math.Min(this.elapsedTime, this.RepeatTime);
 				}
 
 				UpdateAnimation();
@@ -172,25 +168,27 @@ namespace Lunohod.Objects
 		/// <exclude />
         internal override double CalculateRepeatsDone()
 		{
-			if (this.elapsedTime == TimeSpan.Zero || this.InternalDuration == 0f)
+			if (this.elapsedTime == 0.0 || this.InternalDuration == 0f)
 				return 0f;
 			
 			if (this.Autoreverse)
-				return (this.elapsedTime.TotalSeconds / (this.InternalDuration * 2.0));
+				return (this.elapsedTime / (this.InternalDuration * 2.0));
 			else
-				return (this.elapsedTime.TotalSeconds / this.InternalDuration);
+				return (this.elapsedTime / this.InternalDuration);
 		}
 		
 		private void UpdateAnimation()
 		{
 			for (int i = 0; i < targets.Count; i++)
             {
+				var curve = curves[i];
+
                 for (int j = 0; j < curves[i].Keys.Count; j++)
                 {
-                    curves[i].ComputeT(j, keyFrames[j].Smoothing);
+                    curve.ComputeT(j, keyFrames[j].Smoothing);
                 }
 
-                double newPropertyValue = curves[i].Evaluate((float)this.elapsedTime.TotalSeconds);
+                double newPropertyValue = curve.Evaluate((float)this.elapsedTime);
 
                 if (this.IsDelta)
                 {

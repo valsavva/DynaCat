@@ -67,7 +67,7 @@ namespace Lunohod.Objects
             if (!animation.InProgress || animation.IsPaused)
                 return;
 			
-			double newTime = timeReader.GetValue();
+			double newTime = Math.Max(timeReader.GetValue(), 0.0);
 			
 			if (this.CurrentTime != newTime)
 			{
