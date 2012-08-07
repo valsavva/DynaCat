@@ -15,6 +15,7 @@
                     this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-44;
                     this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-44;
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-44;
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
                     ">
             </BoolTrigger>
 
@@ -27,6 +28,7 @@
                     this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-45;
                     this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-45;
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-45;
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
                     ">
             </BoolTrigger>
             
@@ -39,6 +41,7 @@
                     this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-42;
                     this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-42;
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-42;
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
                     ">
             </BoolTrigger>
             
@@ -51,6 +54,7 @@
                     this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-41;
                     this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-41;
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-41;
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
                     ">
             </BoolTrigger>
 
@@ -63,6 +67,7 @@
                     this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-30;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-40;
                     this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-30;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-40;
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-30;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-40;
+                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
                     ">
             </BoolTrigger>
 
@@ -129,7 +134,7 @@
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
                 <Do Action="hero:+sttGoodExplosion;this_grpShowPoints.Enable()"/>
-                <Sound FileId="sndEnemyRat5Dying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+                <Sound FileId="sndEnemyRatDying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
                 <NumAnimation Target="this_imgEnemyRatDying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <RandomSet>
                     <Do Action="this_Smoke3:Run" />
@@ -164,12 +169,10 @@
             <ParallelSet Id="this_anmAttack" RepeatCount="1">
                 <Do Action="this.Attack()" />
                 <RandomSet>
-                    <Sound FileId="sndEnemyRat3Hit1" Volume="0.5" Pitch="0" Pan="0"/>
-                    <Sound FileId="sndEnemyRat3Hit2" Volume="0.5" Pitch="0" Pan="0"/>
-                    <Sound FileId="sndEnemyRat3Hit3" Volume="0.5" Pitch="0" Pan="0"/>
-                    <Sound FileId="sndEnemyRat3Hit1" Volume="0.5" Pitch="0.2" Pan="0"/>
-                    <Sound FileId="sndEnemyRat3Hit2" Volume="0.5" Pitch="0.3" Pan="0"/>
-                    <Sound FileId="sndEnemyRat3Hit3" Volume="0.5" Pitch="-0.3" Pan="0"/>
+                    <Sound FileId="sndEnemyRatHit1" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndEnemyRatHit2" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sndEnemyRatHit1" Volume="0.5" Pitch="0.2" Pan="0"/>
+                    <Sound FileId="sndEnemyRatHit2" Volume="0.5" Pitch="0.3" Pan="0"/>
                 </RandomSet>
             </ParallelSet>
 
