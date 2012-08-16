@@ -7,7 +7,23 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
-    <Resources RootFolder="Textures">
+    <Class Id="clsRingRat">
+    	<Group>
+    		<Do Action="@this_dur=system.Rnd(0.8, 1.2)" RepeatCount="1" InProgress="true" />
+	        <Enemy Id="this_rat" Class="clsEnemyRat" ClassParams="@ratType=@ratTypeParam">
+	            <SequenceSet InProgress="true" RepeatCount="0" >
+	                <Do Action="this_rat:+Walker" InProgress="true" RepeatCount="1"/>
+	                <BoolTrigger Condition="not this_rat:IntersectHero">
+	                    <NumAnimation Id="anmWalkUp_this" Target="this.X,this.Y" From="0,0" To="(hero.X-this.X)/10,(hero.Y-this.Y)/10" IsDelta="true" Duration="@this_dur" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+	                </BoolTrigger>
+	                <Do Action="this_rat:-Walker" InProgress="true" RepeatCount="1"/>
+	                <Delay Duration="7.2" />
+	            </SequenceSet>
+	        </Enemy>
+    	</Group>
+    </Class>
+
+	<Resources RootFolder="Textures">
         <Texture Id="txr_tailsBrown" Source="tailsBrown" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
@@ -46,386 +62,44 @@
         <Food Id="fd24" Class="clsFood" ClassParams="@fishType=5" Bounds="162, 177, 27, 20" TraceId="image3127"/>
     </Layer>
     <Layer Id="zombies" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="-81, -2, 24, 25" TraceId="image3072">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm1:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm1:IntersectHero">
-                    <NumAnimation Target="enm1.X,enm1.Y" From="0,0" To="(hero.X-enm1.X)/10,(hero.Y-enm1.Y)/10" IsDelta="true" Duration="(hero.X-enm1.X)*(hero.X-enm1.X)/(hero.X-enm1.X)/40+(hero.Y-enm1.Y)*(hero.Y-enm1.Y)/(hero.Y-enm1.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm1:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="82, -78, 24, 25" TraceId="image3377">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm2:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm2:IntersectHero">
-                    <NumAnimation Target="enm2.X,enm2.Y" From="0,0" To="(hero.X-enm2.X)/10,(hero.Y-enm2.Y)/10" IsDelta="true" Duration="(hero.X-enm2.X)*(hero.X-enm2.X)/(hero.X-enm2.X)/40+(hero.Y-enm2.Y)*(hero.Y-enm2.Y)/(hero.Y-enm2.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm2:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="81, 374, 24, 25" TraceId="image3074">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm3:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm3:IntersectHero">
-                    <NumAnimation Target="enm3.X,enm3.Y" From="0,0" To="(hero.X-enm3.X)/10,(hero.Y-enm3.Y)/10" IsDelta="true" Duration="(hero.X-enm3.X)*(hero.X-enm3.X)/(hero.X-enm3.X)/40+(hero.Y-enm3.Y)*(hero.Y-enm3.Y)/(hero.Y-enm3.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm3:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="271, -83, 24, 25" TraceId="image3076">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm4:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm4:IntersectHero">
-                    <NumAnimation Target="enm4.X,enm4.Y" From="0,0" To="(hero.X-enm4.X)/10,(hero.Y-enm4.Y)/10" IsDelta="true" Duration="(hero.X-enm4.X)*(hero.X-enm4.X)/(hero.X-enm4.X)/40+(hero.Y-enm4.Y)*(hero.Y-enm4.Y)/(hero.Y-enm4.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm4:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="553, -18, 24, 25" TraceId="image3078">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm5:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm5:IntersectHero">
-                    <NumAnimation Target="enm5.X,enm5.Y" From="0,0" To="(hero.X-enm5.X)/10,(hero.Y-enm5.Y)/10" IsDelta="true" Duration="(hero.X-enm5.X)*(hero.X-enm5.X)/(hero.X-enm5.X)/40+(hero.Y-enm5.Y)*(hero.Y-enm5.Y)/(hero.Y-enm5.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm5:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="562, 249, 24, 25" TraceId="image3080">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm6:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm6:IntersectHero">
-                    <NumAnimation Target="enm6.X,enm6.Y" From="0,0" To="(hero.X-enm6.X)/10,(hero.Y-enm6.Y)/10" IsDelta="true" Duration="(hero.X-enm6.X)*(hero.X-enm6.X)/(hero.X-enm6.X)/40+(hero.Y-enm6.Y)*(hero.Y-enm6.Y)/(hero.Y-enm6.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm6:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm7" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="312, 377, 24, 25" TraceId="image3082">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm7:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm7:IntersectHero">
-                    <NumAnimation Target="enm7.X,enm7.Y" From="0,0" To="(hero.X-enm7.X)/10,(hero.Y-enm7.Y)/10" IsDelta="true" Duration="(hero.X-enm7.X)*(hero.X-enm7.X)/(hero.X-enm7.X)/40+(hero.Y-enm7.Y)*(hero.Y-enm7.Y)/(hero.Y-enm7.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm7:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm8" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="119, 401, 24, 25" TraceId="image3084">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm8:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm8:IntersectHero">
-                    <NumAnimation Target="enm8.X,enm8.Y" From="0,0" To="(hero.X-enm8.X)/10,(hero.Y-enm8.Y)/10" IsDelta="true" Duration="(hero.X-enm8.X)*(hero.X-enm8.X)/(hero.X-enm8.X)/40+(hero.Y-enm8.Y)*(hero.Y-enm8.Y)/(hero.Y-enm8.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm8:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm9" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="-107, 288, 24, 25" TraceId="image3086">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm9:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm9:IntersectHero">
-                    <NumAnimation Target="enm9.X,enm9.Y" From="0,0" To="(hero.X-enm9.X)/10,(hero.Y-enm9.Y)/10" IsDelta="true" Duration="(hero.X-enm9.X)*(hero.X-enm9.X)/(hero.X-enm9.X)/40+(hero.Y-enm9.Y)*(hero.Y-enm9.Y)/(hero.Y-enm9.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm9:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm10" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="-120, 116, 24, 25" TraceId="image3069">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm10:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm10:IntersectHero">
-                    <NumAnimation Target="enm10.X,enm10.Y" From="0,0" To="(hero.X-enm10.X)/10,(hero.Y-enm10.Y)/10" IsDelta="true" Duration="(hero.X-enm10.X)*(hero.X-enm10.X)/(hero.X-enm10.X)/40+(hero.Y-enm10.Y)*(hero.Y-enm10.Y)/(hero.Y-enm10.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm10:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm11" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="33, -84, 24, 25" TraceId="image3099">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm11:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm11:IntersectHero">
-                    <NumAnimation Target="enm11.X,enm11.Y" From="0,0" To="(hero.X-enm11.X)/10,(hero.Y-enm11.Y)/10" IsDelta="true" Duration="(hero.X-enm11.X)*(hero.X-enm11.X)/(hero.X-enm11.X)/40+(hero.Y-enm11.Y)*(hero.Y-enm11.Y)/(hero.Y-enm11.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm11:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm12" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="322, -72, 24, 25" TraceId="image3373">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm12:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm12:IntersectHero">
-                    <NumAnimation Target="enm12.X,enm12.Y" From="0,0" To="(hero.X-enm12.X)/10,(hero.Y-enm12.Y)/10" IsDelta="true" Duration="(hero.X-enm12.X)*(hero.X-enm12.X)/(hero.X-enm12.X)/40+(hero.Y-enm12.Y)*(hero.Y-enm12.Y)/(hero.Y-enm12.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm12:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm13" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="-107, 68, 24, 25" TraceId="image3375">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm13:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm13:IntersectHero">
-                    <NumAnimation Target="enm13.X,enm13.Y" From="0,0" To="(hero.X-enm13.X)/10,(hero.Y-enm13.Y)/10" IsDelta="true" Duration="(hero.X-enm13.X)*(hero.X-enm13.X)/(hero.X-enm13.X)/40+(hero.Y-enm13.Y)*(hero.Y-enm13.Y)/(hero.Y-enm13.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm13:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm14" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="-111, 254, 24, 25" TraceId="image3101">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm14:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm14:IntersectHero">
-                    <NumAnimation Target="enm14.X,enm14.Y" From="0,0" To="(hero.X-enm14.X)/10,(hero.Y-enm14.Y)/10" IsDelta="true" Duration="(hero.X-enm14.X)*(hero.X-enm14.X)/(hero.X-enm14.X)/40+(hero.Y-enm14.Y)*(hero.Y-enm14.Y)/(hero.Y-enm14.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm14:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm15" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="555, 153, 24, 25" TraceId="image3103">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm15:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm15:IntersectHero">
-                    <NumAnimation Target="enm15.X,enm15.Y" From="0,0" To="(hero.X-enm15.X)/10,(hero.Y-enm15.Y)/10" IsDelta="true" Duration="(hero.X-enm15.X)*(hero.X-enm15.X)/(hero.X-enm15.X)/40+(hero.Y-enm15.Y)*(hero.Y-enm15.Y)/(hero.Y-enm15.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm15:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm16" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="427, 374, 24, 25" TraceId="image3105">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm16:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm16:IntersectHero">
-                    <NumAnimation Target="enm16.X,enm16.Y" From="0,0" To="(hero.X-enm16.X)/10,(hero.Y-enm16.Y)/10" IsDelta="true" Duration="(hero.X-enm16.X)*(hero.X-enm16.X)/(hero.X-enm16.X)/40+(hero.Y-enm16.Y)*(hero.Y-enm16.Y)/(hero.Y-enm16.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm16:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm17" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="194, 376, 24, 25" TraceId="image3107">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm17:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm17:IntersectHero">
-                    <NumAnimation Target="enm17.X,enm17.Y" From="0,0" To="(hero.X-enm17.X)/10,(hero.Y-enm17.Y)/10" IsDelta="true" Duration="(hero.X-enm17.X)*(hero.X-enm17.X)/(hero.X-enm17.X)/40+(hero.Y-enm17.Y)*(hero.Y-enm17.Y)/(hero.Y-enm17.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm17:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm18" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="21, 378, 24, 25" TraceId="image3109">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm18:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm18:IntersectHero">
-                    <NumAnimation Target="enm18.X,enm18.Y" From="0,0" To="(hero.X-enm18.X)/10,(hero.Y-enm18.Y)/10" IsDelta="true" Duration="(hero.X-enm18.X)*(hero.X-enm18.X)/(hero.X-enm18.X)/40+(hero.Y-enm18.Y)*(hero.Y-enm18.Y)/(hero.Y-enm18.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm18:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm19" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="-133, 196, 24, 25" TraceId="image3096">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm19:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm19:IntersectHero">
-                    <NumAnimation Target="enm19.X,enm19.Y" From="0,0" To="(hero.X-enm19.X)/10,(hero.Y-enm19.Y)/10" IsDelta="true" Duration="(hero.X-enm19.X)*(hero.X-enm19.X)/(hero.X-enm19.X)/40+(hero.Y-enm19.Y)*(hero.Y-enm19.Y)/(hero.Y-enm19.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm19:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6.5" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm20" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="176, -81, 24, 25" TraceId="image3122">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm20:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm20:IntersectHero">
-                    <NumAnimation Target="enm20.X,enm20.Y" From="0,0" To="(hero.X-enm20.X)/10,(hero.Y-enm20.Y)/10" IsDelta="true" Duration="(hero.X-enm20.X)*(hero.X-enm20.X)/(hero.X-enm20.X)/40+(hero.Y-enm20.Y)*(hero.Y-enm20.Y)/(hero.Y-enm20.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm20:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm21" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="546, 90, 24, 25" TraceId="image3124">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm21:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm21:IntersectHero">
-                    <NumAnimation Target="enm21.X,enm21.Y" From="0,0" To="(hero.X-enm21.X)/10,(hero.Y-enm21.Y)/10" IsDelta="true" Duration="(hero.X-enm21.X)*(hero.X-enm21.X)/(hero.X-enm21.X)/40+(hero.Y-enm21.Y)*(hero.Y-enm21.Y)/(hero.Y-enm21.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm21:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm22" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="254, 376, 24, 25" TraceId="image3119">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm22:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm22:IntersectHero">
-                    <NumAnimation Target="enm22.X,enm22.Y" From="0,0" To="(hero.X-enm22.X)/10,(hero.Y-enm22.Y)/10" IsDelta="true" Duration="(hero.X-enm22.X)*(hero.X-enm22.X)/(hero.X-enm22.X)/40+(hero.Y-enm22.Y)*(hero.Y-enm22.Y)/(hero.Y-enm22.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm22:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="7.2" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm23" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="-107, 33, 24, 25" TraceId="image3137">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm23:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm23:IntersectHero">
-                    <NumAnimation Target="enm23.X,enm23.Y" From="0,0" To="(hero.X-enm23.X)/10,(hero.Y-enm23.Y)/10" IsDelta="true" Duration="(hero.X-enm23.X)*(hero.X-enm23.X)/(hero.X-enm23.X)/40+(hero.Y-enm23.Y)*(hero.Y-enm23.Y)/(hero.Y-enm23.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm23:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm24" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="441, -84, 24, 25" TraceId="image3170">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm24:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm24:IntersectHero">
-                    <NumAnimation Target="enm24.X,enm24.Y" From="0,0" To="(hero.X-enm24.X)/10,(hero.Y-enm24.Y)/10" IsDelta="true" Duration="(hero.X-enm24.X)*(hero.X-enm24.X)/(hero.X-enm24.X)/40+(hero.Y-enm24.Y)*(hero.Y-enm24.Y)/(hero.Y-enm24.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm24:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm25" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="548, 197, 24, 25" TraceId="image3172">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm25:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm25:IntersectHero">
-                    <NumAnimation Target="enm25.X,enm25.Y" From="0,0" To="(hero.X-enm25.X)/10,(hero.Y-enm25.Y)/10" IsDelta="true" Duration="(hero.X-enm25.X)*(hero.X-enm25.X)/(hero.X-enm25.X)/40+(hero.Y-enm25.Y)*(hero.Y-enm25.Y)/(hero.Y-enm25.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm25:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm26" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="587, 118, 24, 25" TraceId="image3174">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm26:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm26:IntersectHero">
-                    <NumAnimation Target="enm26.X,enm26.Y" From="0,0" To="(hero.X-enm26.X)/10,(hero.Y-enm26.Y)/10" IsDelta="true" Duration="(hero.X-enm26.X)*(hero.X-enm26.X)/(hero.X-enm26.X)/40+(hero.Y-enm26.Y)*(hero.Y-enm26.Y)/(hero.Y-enm26.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm26:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm27" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="-93, 325, 24, 25" TraceId="image3139">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm27:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm27:IntersectHero">
-                    <NumAnimation Target="enm27.X,enm27.Y" From="0,0" To="(hero.X-enm27.X)/10,(hero.Y-enm27.Y)/10" IsDelta="true" Duration="(hero.X-enm27.X)*(hero.X-enm27.X)/(hero.X-enm27.X)/40+(hero.Y-enm27.Y)*(hero.Y-enm27.Y)/(hero.Y-enm27.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm27:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm28" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="380, 383, 24, 25" TraceId="image3141">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm28:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm28:IntersectHero">
-                    <NumAnimation Target="enm28.X,enm28.Y" From="0,0" To="(hero.X-enm28.X)/10,(hero.Y-enm28.Y)/10" IsDelta="true" Duration="(hero.X-enm28.X)*(hero.X-enm28.X)/(hero.X-enm28.X)/40+(hero.Y-enm28.Y)*(hero.Y-enm28.Y)/(hero.Y-enm28.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm28:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm29" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="-129, 235, 24, 25" TraceId="image3134">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm29:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm29:IntersectHero">
-                    <NumAnimation Target="enm29.X,enm29.Y" From="0,0" To="(hero.X-enm29.X)/10,(hero.Y-enm29.Y)/10" IsDelta="true" Duration="(hero.X-enm29.X)*(hero.X-enm29.X)/(hero.X-enm29.X)/40+(hero.Y-enm29.Y)*(hero.Y-enm29.Y)/(hero.Y-enm29.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm29:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="6" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm30" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="-137, 73, 24, 25" TraceId="image3154">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm30:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm30:IntersectHero">
-                    <NumAnimation Target="enm30.X,enm30.Y" From="0,0" To="(hero.X-enm30.X)/10,(hero.Y-enm30.Y)/10" IsDelta="true" Duration="(hero.X-enm30.X)*(hero.X-enm30.X)/(hero.X-enm30.X)/40+(hero.Y-enm30.Y)*(hero.Y-enm30.Y)/(hero.Y-enm30.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm30:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm31" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="366, -85, 24, 25" TraceId="image3156">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm31:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm31:IntersectHero">
-                    <NumAnimation Target="enm31.X,enm31.Y" From="0,0" To="(hero.X-enm31.X)/10,(hero.Y-enm31.Y)/10" IsDelta="true" Duration="(hero.X-enm31.X)*(hero.X-enm31.X)/(hero.X-enm31.X)/40+(hero.Y-enm31.Y)*(hero.Y-enm31.Y)/(hero.Y-enm31.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm31:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm32" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="56, 408, 24, 25" TraceId="image3158">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm32:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm32:IntersectHero">
-                    <NumAnimation Target="enm32.X,enm32.Y" From="0,0" To="(hero.X-enm32.X)/10,(hero.Y-enm32.Y)/10" IsDelta="true" Duration="(hero.X-enm32.X)*(hero.X-enm32.X)/(hero.X-enm32.X)/40+(hero.Y-enm32.Y)*(hero.Y-enm32.Y)/(hero.Y-enm32.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm32:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm33" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="551, 296, 24, 25" TraceId="image3160">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm33:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm33:IntersectHero">
-                    <NumAnimation Target="enm33.X,enm33.Y" From="0,0" To="(hero.X-enm33.X)/10,(hero.Y-enm33.Y)/10" IsDelta="true" Duration="(hero.X-enm33.X)*(hero.X-enm33.X)/(hero.X-enm33.X)/40+(hero.Y-enm33.Y)*(hero.Y-enm33.Y)/(hero.Y-enm33.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm33:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm34" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="544, 47, 24, 25" TraceId="image3162">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm34:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm34:IntersectHero">
-                    <NumAnimation Target="enm34.X,enm34.Y" From="0,0" To="(hero.X-enm34.X)/10,(hero.Y-enm34.Y)/10" IsDelta="true" Duration="(hero.X-enm34.X)*(hero.X-enm34.X)/(hero.X-enm34.X)/40+(hero.Y-enm34.Y)*(hero.Y-enm34.Y)/(hero.Y-enm34.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm34:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm35" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="-127, 153, 24, 25" TraceId="image3164">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm35:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm35:IntersectHero">
-                    <NumAnimation Target="enm35.X,enm35.Y" From="0,0" To="(hero.X-enm35.X)/10,(hero.Y-enm35.Y)/10" IsDelta="true" Duration="(hero.X-enm35.X)*(hero.X-enm35.X)/(hero.X-enm35.X)/40+(hero.Y-enm35.Y)*(hero.Y-enm35.Y)/(hero.Y-enm35.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm35:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm36" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="116, -71, 24, 25" TraceId="image3168">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm36:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm36:IntersectHero">
-                    <NumAnimation Target="enm36.X,enm36.Y" From="0,0" To="(hero.X-enm36.X)/10,(hero.Y-enm36.Y)/10" IsDelta="true" Duration="(hero.X-enm36.X)*(hero.X-enm36.X)/(hero.X-enm36.X)/40+(hero.Y-enm36.Y)*(hero.Y-enm36.Y)/(hero.Y-enm36.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm36:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm37" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="213, -81, 24, 25" TraceId="image3166">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm37:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm37:IntersectHero">
-                    <NumAnimation Target="enm37.X,enm37.Y" From="0,0" To="(hero.X-enm37.X)/10,(hero.Y-enm37.Y)/10" IsDelta="true" Duration="(hero.X-enm37.X)*(hero.X-enm37.X)/(hero.X-enm37.X)/40+(hero.Y-enm37.Y)*(hero.Y-enm37.Y)/(hero.Y-enm37.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm37:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm38" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="172, 430, 24, 25" TraceId="image3151">
-            <SequenceSet InProgress="true" RepeatCount="0" >
-                <Do Action="enm38:+Walker" InProgress="true" RepeatCount="1"/>
-                <BoolTrigger Condition="not enm38:IntersectHero">
-                    <NumAnimation Target="enm38.X,enm38.Y" From="0,0" To="(hero.X-enm38.X)/10,(hero.Y-enm38.Y)/10" IsDelta="true" Duration="(hero.X-enm38.X)*(hero.X-enm38.X)/(hero.X-enm38.X)/40+(hero.Y-enm38.Y)*(hero.Y-enm38.Y)/(hero.Y-enm38.Y)/40" Fill="Hold" Autoreverse="false" RepeatCount="1" />
-                </BoolTrigger>
-                <Do Action="enm38:-Walker" InProgress="true" RepeatCount="1"/>
-                <Delay Duration="8" />
-            </SequenceSet>
-        </Enemy>
+        <Group Id="enm01" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="-81, -2, 24, 25" TraceId="image3072"/>
+        <Group Id="enm02" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="82, -78, 24, 25" TraceId="image3377"/>
+        <Group Id="enm03" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="81, 374, 24, 25" TraceId="image3074"/>
+        <Group Id="enm04" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="271, -83, 24, 25" TraceId="image3076"/>
+        <Group Id="enm05" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="553, -18, 24, 25" TraceId="image3078"/>
+        <Group Id="enm06" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="562, 249, 24, 25" TraceId="image3080"/>
+        <Group Id="enm07" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="312, 377, 24, 25" TraceId="image3082"/>
+        <Group Id="enm08" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="119, 401, 24, 25" TraceId="image3084"/>
+        <Group Id="enm09" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="-107, 288, 24, 25" TraceId="image3086"/>
+        <Group Id="enm10" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="-120, 116, 24, 25" TraceId="image3069"/>
+        <Group Id="enm11" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="33, -84, 24, 25" TraceId="image3099"/>
+        <Group Id="enm12" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="322, -72, 24, 25" TraceId="image3373"/>
+        <Group Id="enm13" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="-107, 68, 24, 25" TraceId="image3375"/>
+        <Group Id="enm14" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="-111, 254, 24, 25" TraceId="image3101"/>
+        <Group Id="enm15" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="555, 153, 24, 25" TraceId="image3103"/>
+        <Group Id="enm16" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="427, 374, 24, 25" TraceId="image3105"/>
+        <Group Id="enm17" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="194, 376, 24, 25" TraceId="image3107"/>
+        <Group Id="enm18" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="21, 378, 24, 25" TraceId="image3109"/>
+        <Group Id="enm19" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="-133, 196, 24, 25" TraceId="image3096"/>
+        <Group Id="enm20" Class="clsRingRat" ClassParams="@ratTypeParam=4" Bounds="176, -81, 24, 25" TraceId="image3122"/>
+        <Group Id="enm21" Class="clsRingRat" ClassParams="@ratTypeParam=4" Bounds="546, 90, 24, 25" TraceId="image3124"/>
+        <Group Id="enm22" Class="clsRingRat" ClassParams="@ratTypeParam=4" Bounds="254, 376, 24, 25" TraceId="image3119"/>
+        <Group Id="enm23" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="-107, 33, 24, 25" TraceId="image3137"/>
+        <Group Id="enm24" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="441, -84, 24, 25" TraceId="image3170"/>
+        <Group Id="enm25" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="548, 197, 24, 25" TraceId="image3172"/>
+        <Group Id="enm26" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="587, 118, 24, 25" TraceId="image3174"/>
+        <Group Id="enm27" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="-93, 325, 24, 25" TraceId="image3139"/>
+        <Group Id="enm28" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="380, 383, 24, 25" TraceId="image3141"/>
+        <Group Id="enm29" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="-129, 235, 24, 25" TraceId="image3134"/>
+        <Group Id="enm30" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="-137, 73, 24, 25" TraceId="image3154"/>
+        <Group Id="enm31" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="366, -85, 24, 25" TraceId="image3156"/>
+        <Group Id="enm32" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="56, 408, 24, 25" TraceId="image3158"/>
+        <Group Id="enm33" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="551, 296, 24, 25" TraceId="image3160"/>
+        <Group Id="enm34" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="544, 47, 24, 25" TraceId="image3162"/>
+        <Group Id="enm35" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="-127, 153, 24, 25" TraceId="image3164"/>
+        <Group Id="enm36" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="116, -71, 24, 25" TraceId="image3168"/>
+        <Group Id="enm37" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="213, -81, 24, 25" TraceId="image3166"/>
+        <Group Id="enm38" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="172, 430, 24, 25" TraceId="image3151"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
