@@ -151,9 +151,11 @@
                                     not this_grpShowPoints.Enabled and 
                                     not hero.IsDead"
                          EnterAction="this.Attack();
-                                    this_anmDamageDealing.Start()" 
+                                    this_anmDamageDealing.Start();
+                                    this.Depth=0.38"
                          ExitAction="this_anmDamageDealing.Stop();
-                                    this:onRestTimerReset" 
+                                    this:onRestTimerReset;
+                                    this.Depth=0.5" 
                          Group="this_sttStates">
                 
                     <Sprite Id="this_sprAttack" TextureId="txrEnemyRatAttackType_@ratType" Bounds="0,0,80,80" FrameBounds="0,0,80,80"/>
