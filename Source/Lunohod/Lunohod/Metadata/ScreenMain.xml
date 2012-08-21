@@ -15,7 +15,11 @@
         <Texture Id="txrLogo" Source="dynacat_logo" />
     </Resources>
 
-	<Class Id="clsSeriesPanel">
+    <!--<Resources RootFolder="Sound">
+        <SoundFile Id="sfGameMusic" Source="gameMusic.mp3"/>
+    </Resources>-->
+
+        <Class Id="clsSeriesPanel">
 		<Group>
 			<Image TextureId="txrSeriesPanel@seriesNumberParam" StretchMode="ActualSize" />
 			<TapArea Action="system.StartSeries(@seriesNumberParam);" />
@@ -25,6 +29,8 @@
 	</Class>
 
 	<Layer Id="background">
+        <!--<Music Id="sndGameMusic" FileId="sfGameMusic" Volume="0.5"/>-->
+
 		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
 	<Layer>
