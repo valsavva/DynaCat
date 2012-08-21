@@ -1,40 +1,6 @@
 <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Trenazher" Bounds="0, 0, 480, 320">-->
 <Include>
 
-	<Resources RootFolder="Sound">
-		<SoundFile Id="sndHeroDying" Source="skeletonFX_crash_1"/>
-		<SoundFile Id="sndHeroEating1" Source="skeletonFX_hero_eating_1"/>
-		<SoundFile Id="sndHeroEating2" Source="skeletonFX_hero_eating_2"/>
-		<SoundFile Id="sndHeroEating3" Source="skeletonFX_hero_eating_3"/>
-		<SoundFile Id="sndHeroEating4" Source="skeletonFX_hero_eating_4"/>
-        <SoundFile Id="sndHeroEatingChavk1" Source="skeletonFX_hero_eating_chavk1"/>
-        <SoundFile Id="sndHeroEatingChavk2" Source="skeletonFX_hero_eating_chavk2"/>
-        <SoundFile Id="sndHeroBounce1" Source="skeletonFX_hero_metal_wall_1"/>
-		<SoundFile Id="sndHeroBounce2" Source="skeletonFX_hero_metal_wall_2"/>
-        <SoundFile Id="sndHeroStick1" Source="skeletonFX_hero_wooden_wall_1"/>
-        <SoundFile Id="sndHeroStick2" Source="skeletonFX_hero_wooden_wall_2"/>
-        <SoundFile Id="sndTeleportIn" Source="demo_fx_port_in"/>
-        <SoundFile Id="sndTeleportOut" Source="demo_fx_port_out"/>
-        <SoundFile Id="sndTeleportCont" Source="demo_fx_port_cont"/>
-    </Resources>
-	
-    <Resources RootFolder="Textures">
-        <Texture Id="txrHeroDefault" Source="Cat_0000_norm"/>
-        <!--<Texture Id="txrHeroEating" Source="cat_var_eat"/>-->
-        <Texture Id="txrHeroEating" Source="Cat_eat_Spr_100x100x3"/>
-        <Texture Id="txrHeroGottaEShock" Source="Cat_lightning_Spr_100x100x3"/>
-        <Texture Id="txrHeroDying" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroGottaDamage" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroWaitingExplosion" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroGoodExplosion" Source="Cat_smile0001"/>
-        <Texture Id="txrHeroBadExplosion" Source="Cat_eats0002"/>
-        <Texture Id="txrHeroScareLeft" Source="Cat_scare_left_Spr_100x100x3"/>
-        <Texture Id="txrHeroScareRight" Source="Cat_scare_right_Spr_100x100x3"/>
-        <Texture Id="txrHeroScareLeftRight" Source="Cat_scare_leftright_Spr_100x100x6"/>
-        <Texture Id="txrHeroSurprised" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroExit" Source="Cat_0000_norm"/>
-    </Resources>
-
 	<Class Id="clsHero">
 		<Hero Speed="0" Direction="0,0" Deceleration="0">
             <Include File="includeSkeletonHeroMotions.xml"/>
@@ -116,59 +82,68 @@
                          EnterAction="anmHeroGottaDamage.Play();
                          hero:-sttEating;hero:-sttGoodExplosion"
                          Group="sttHeroStates">
-                <Image TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" BackColor="#770000"/>
+                <Sprite Id="this_shtHeroGottaDamage" TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="5" />
+                <NumAnimation From="0" To="4" Duration="2.5" Target="this_shtHeroGottaDamage.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
             </BoolTrigger>
-
+            
             <Sprite Id="this_sprBlowFlash1" TextureId="txrBlowFlash1" Bounds="-13,-15,57,56" FrameBounds="0,0,57,56" FrameCount="3" Enabled="false" Depth="0.08" />
             <Sprite Id="this_sprBlowFlash2" TextureId="txrBlowFlash2" Bounds="-15,-22,64,64" FrameBounds="0,0,64,64" FrameCount="3" Enabled="false" Depth="0.08" />
             <Sprite Id="this_sprBlowFlash3" TextureId="txrBlowFlash3" Bounds="-10,-12,50,54" FrameBounds="0,0,50,54" FrameCount="3" Enabled="false" Depth="0.08" />
             <Sprite Id="this_sprBlowFlash4" TextureId="txrBlowFlash4" Bounds="-3,-7,37,35" FrameBounds="0,0,37,35" FrameCount="3" Enabled="false" Depth="0.08" />
+
+            <ParallelSet Id="anmHeroGottaDamage" RepeatCount="1">
+                <SequenceSet RepeatCount="1">
+                    <Delay Duration="0.4" />
+                    <Do Action="this_shtHeroGottaDamage.CurrentFrame=system.Rnd(0,4)" />
+                    <Delay Duration="0.4" />
+                    <Do Action="hero:-sttGottaDamage"/>
+                </SequenceSet>
+                <RandomSet RepeatCount="1">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
+                        <Do Action="this_sprBlowFlash1.Enable();
+                            this_sprBlowFlash1.X=this_sprBlowFlash1.X+@this_flashDX;
+                            this_sprBlowFlash1.Y=this_sprBlowFlash1.Y+@this_flashDY" />
+                        <NumAnimation From="0" To="2" Duration="0.3" Target="this_sprBlowFlash1.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Do Action="this_sprBlowFlash1.Disable();
+                            this_sprBlowFlash1.X=this_sprBlowFlash1.X-@this_flashDX
+                            this_sprBlowFlash1.Y=this_sprBlowFlash1.Y-@this_flashDY" />
+
+                        <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
+                        <Do Action="this_sprBlowFlash4.Enable();
+                            this_sprBlowFlash4.X=this_sprBlowFlash4.X+@this_flashDX;
+                            this_sprBlowFlash4.Y=this_sprBlowFlash4.Y+@this_flashDY" />
+                        <NumAnimation From="0" To="2" Duration="0.2" Target="this_sprBlowFlash4.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Do Action="this_sprBlowFlash4.Disable();
+                            this_sprBlowFlash4.X=this_sprBlowFlash4.X-@this_flashDX
+                            this_sprBlowFlash4.Y=this_sprBlowFlash4.Y-@this_flashDY" />
+                    </SequenceSet>
+                
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
+                        <Do Action="this_sprBlowFlash2.Enable();
+                            this_sprBlowFlash2.X=this_sprBlowFlash2.X+@this_flashDX;
+                            this_sprBlowFlash2.Y=this_sprBlowFlash2.Y+@this_flashDY" />
+                        <NumAnimation From="0" To="2" Duration="0.5" Target="this_sprBlowFlash2.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Do Action="this_sprBlowFlash2.Disable();
+                            this_sprBlowFlash2.X=this_sprBlowFlash2.X-@this_flashDX
+                            this_sprBlowFlash2.Y=this_sprBlowFlash2.Y-@this_flashDY" />
+                    </SequenceSet>
+                
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
+                        <Do Action="this_sprBlowFlash3.Enable();
+                            this_sprBlowFlash3.X=this_sprBlowFlash3.X+@this_flashDX;
+                            this_sprBlowFlash3.Y=this_sprBlowFlash3.Y+@this_flashDY" />
+                        <NumAnimation From="0" To="2" Duration="0.5" Target="this_sprBlowFlash3.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Do Action="this_sprBlowFlash3.Disable();
+                            this_sprBlowFlash3.X=this_sprBlowFlash3.X-@this_flashDX
+                            this_sprBlowFlash3.Y=this_sprBlowFlash3.Y-@this_flashDY" />             
+                    </SequenceSet>
+
+                </RandomSet>
+            </ParallelSet>
             
-            <RandomSet Id="anmHeroGottaDamage" RepeatCount="1">
-                <SequenceSet RepeatCount="1">
-                    <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                    <Do Action="this_sprBlowFlash1.Enable();
-                        this_sprBlowFlash1.X=this_sprBlowFlash1.X+@this_flashDX;
-                        this_sprBlowFlash1.Y=this_sprBlowFlash1.Y+@this_flashDY" />
-                    <NumAnimation From="0" To="2" Duration="0.3" Target="this_sprBlowFlash1.CurrentFrame" RepeatCount="1" Fill="End"/>
-                    <Do Action="this_sprBlowFlash1.Disable();
-                        this_sprBlowFlash1.X=this_sprBlowFlash1.X-@this_flashDX
-                        this_sprBlowFlash1.Y=this_sprBlowFlash1.Y-@this_flashDY" />
-
-                    <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                    <Do Action="this_sprBlowFlash4.Enable();
-                        this_sprBlowFlash4.X=this_sprBlowFlash4.X+@this_flashDX;
-                        this_sprBlowFlash4.Y=this_sprBlowFlash4.Y+@this_flashDY" />
-                    <NumAnimation From="0" To="2" Duration="0.2" Target="this_sprBlowFlash4.CurrentFrame" RepeatCount="1" Fill="End"/>
-                    <Do Action="this_sprBlowFlash4.Disable();
-                        this_sprBlowFlash4.X=this_sprBlowFlash4.X-@this_flashDX
-                        this_sprBlowFlash4.Y=this_sprBlowFlash4.Y-@this_flashDY" />
-                </SequenceSet>
-                
-                <SequenceSet RepeatCount="1">
-                    <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                    <Do Action="this_sprBlowFlash2.Enable();
-                        this_sprBlowFlash2.X=this_sprBlowFlash2.X+@this_flashDX;
-                        this_sprBlowFlash2.Y=this_sprBlowFlash2.Y+@this_flashDY" />
-                    <NumAnimation From="0" To="2" Duration="0.3" Target="this_sprBlowFlash2.CurrentFrame" RepeatCount="1" Fill="End"/>
-                    <Do Action="this_sprBlowFlash2.Disable();
-                        this_sprBlowFlash2.X=this_sprBlowFlash2.X-@this_flashDX
-                        this_sprBlowFlash2.Y=this_sprBlowFlash2.Y-@this_flashDY" />
-                </SequenceSet>
-                
-                <SequenceSet RepeatCount="1">
-                    <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                    <Do Action="this_sprBlowFlash3.Enable();
-                        this_sprBlowFlash3.X=this_sprBlowFlash3.X+@this_flashDX;
-                        this_sprBlowFlash3.Y=this_sprBlowFlash3.Y+@this_flashDY" />
-                    <NumAnimation From="0" To="2" Duration="0.3" Target="this_sprBlowFlash3.CurrentFrame" RepeatCount="1" Fill="End"/>
-                    <Do Action="this_sprBlowFlash3.Disable();
-                        this_sprBlowFlash3.X=this_sprBlowFlash3.X-@this_flashDX
-                        this_sprBlowFlash3.Y=this_sprBlowFlash3.Y-@this_flashDY" />             
-                </SequenceSet>
-
-            </RandomSet>
-
             <!-- sttEating : /major/ eating -->
             <BoolTrigger Condition="hero:sttEating" 
                          EnterAction="anmHeroEating.Start()" 
@@ -223,29 +198,28 @@
             
             <!-- OnOilMotion : /minor/ hero on the Oil -->
             <BoolTrigger Condition="hero:OnOilMotion" 
-                         EnterAction="anmOnOilMotion.Start()"
-                         ExitAction="anmOnOilMotion.Stop()"
                          Group="sttHeroStates" >
-                <Sprite Id="sprHeroScareLeftRight" TextureId="txrHeroScareLeftRight" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="6"/>
+                <Sprite TextureId="txrHeroSurprised" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="2">
+                    <NumAnimation From="0" To="1" Duration="0.4" Target="CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
+                </Sprite>
             </BoolTrigger>
-            <SequenceSet Id="anmOnOilMotion" RepeatCount="0">
-                <NumAnimation From="0" To="5" Duration="0.8" Target="sprHeroScareLeftRight.CurrentFrame" RepeatCount="1" Fill="End"/>
-            </SequenceSet>
-
+ 
             <!-- Magneted : /minor/ beamed by magnet waves -->
             <BoolTrigger Condition="hero:Magneted" Group="sttHeroStates" >
-                <Image Id="imgHeroSurprised" TextureId="txrHeroSurprised" Bounds="-33, -46, 100, 100"/>
+                <Sprite Id="shtHeroSurprised" TextureId="txrHeroSurprised" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="2">
+                    <NumAnimation From="0" To="1" Duration="0.4" Target="CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
+                </Sprite>
             </BoolTrigger>
 
             <BoolTrigger Condition="hero:Magneted and not hero:Magneting" 
                          EnterAction="setHeroSurQuake.Start()" 
                          ExitAction="setHeroSurQuake.Stop();setHeroSurQuakeEnd.Start()" />
             <SequenceSet Id="setHeroSurQuake" RepeatCount="0">
-                <NumAnimation Target="imgHeroSurprised.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
-                <NumAnimation Target="imgHeroSurprised.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
+                <NumAnimation Target="shtHeroSurprised.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
+                <NumAnimation Target="shtHeroSurprised.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
             </SequenceSet>
 
-            <NumAnimation Id="setHeroSurQuakeEnd" Target="imgHeroSurprised.X" From="imgHeroSurprised.X" To="-33" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
+            <NumAnimation Id="setHeroSurQuakeEnd" Target="shtHeroSurprised.X" From="shtHeroSurprised.X" To="-33" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
 
             
             <!-- default -->

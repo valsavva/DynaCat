@@ -19,6 +19,7 @@
         <Texture Id="txr_laz_baza_01n" Source="laz_baza_01n" />
         <Texture Id="txr_laz_hor_dead_end" Source="laz_hor_dead_end" />
         <Texture Id="txr_laz_vert_01n" Source="laz_vert_01n" />
+        <Texture Id="txr_Cat_question_spr_100x100x2" Source="Cat_question_spr_100x100x2" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="108, 44, 192, 91" Edges="Stick" TraceId="image3279"/>
@@ -67,9 +68,10 @@
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=6" Bounds="307, 133, 22, 27" TraceId="image3268"/>
-        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="75, 228,  28,  19" TraceId="image3068"/>
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="75, 228, 28, 19" TraceId="image3068"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="304, 20, 28, 22" TraceId="image3079"/>
-        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="75, 22,  27,  20" TraceId="image3090"/>
+        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="75, 22, 27, 20" TraceId="image3090"/>
+        <Image Id="dfltMask32" TextureId="txr_Cat_question_spr_100x100x2" Bounds="-740, 1, 200, 100" TraceId="image3133"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -85,9 +87,8 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=4 Enemy=0 Block=8 DesignImage=31 Animation=4 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=4 Enemy=0 Block=8 DesignImage=32 Animation=4 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 390 -->
 <!-- 1% = 3.9; 45% = 175.5; 90% = 351 -->
 <!-- minPointsFood = 70 (17.9%) -->
-
