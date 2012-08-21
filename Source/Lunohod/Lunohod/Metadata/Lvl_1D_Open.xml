@@ -19,7 +19,6 @@
         <Texture Id="txr_laz_baza_01n" Source="laz_baza_01n" />
         <Texture Id="txr_laz_hor_dead_end" Source="laz_hor_dead_end" />
         <Texture Id="txr_laz_vert_01n" Source="laz_vert_01n" />
-        <Texture Id="txr_Cat_question_spr_100x100x2" Source="Cat_question_spr_100x100x2" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="108, 44, 192, 91" Edges="Stick" TraceId="image3279"/>
@@ -49,7 +48,7 @@
         <Image Id="dfltMask13" TextureId="txr_laz_turn_02n" Bounds="298, 12, 46, 36" TraceId="image3158"/>
         <Image Id="dfltMask14" TextureId="txr_laz_vert_02n" Bounds="297, 72, 46, 36" TraceId="image3167"/>
         <Image Id="dfltMask15" TextureId="txr_laz_vert_03n" Bounds="297, 42, 46, 36" TraceId="image3169"/>
-        <Image Id="dfltMask16" TextureId="txr_laz_turn_01n" Bounds="343, 168, 46, 36" Rotation="180" TraceId="image3190"/>
+        <Image Id="dfltMask16" TextureId="txr_laz_turn_01n" Bounds="343, 168, 46, 36" Rotation="180" Stretch="true" TraceId="image3190"/>
         <Image Id="dfltMask17" TextureId="txr_laz_hor_02n" Bounds="258, 132, 46, 36" TraceId="image3195"/>
         <Image Id="dfltMask18" TextureId="txr_laz_hor_03n" Bounds="198, 132, 46, 36" TraceId="image3199"/>
         <Image Id="dfltMask19" TextureId="txr_laz_vert_02n" Bounds="297, 102, 46, 36" TraceId="image3203"/>
@@ -57,7 +56,7 @@
         <Image Id="dfltMask21" TextureId="txr_laz_hor_dead_end" Bounds="378, 222, 46, 36" TraceId="image3071"/>
         <Image Id="dfltMask22" TextureId="txr_laz_hor_01n" Bounds="138, 222, 46, 36" TraceId="image3075"/>
         <Image Id="dfltMask23" TextureId="txr_laz_hor_02n" Bounds="238, 132, 46, 36" TraceId="image3077"/>
-        <Image Id="dfltMask24" TextureId="txr_laz_turn_02n" Bounds="111, 258, 46, 36" Rotation="180" TraceId="image3074"/>
+        <Image Id="dfltMask24" TextureId="txr_laz_turn_02n" Bounds="111, 258, 46, 36" Rotation="180" Stretch="true" TraceId="image3074"/>
         <Image Id="dfltMask25" TextureId="txr_laz_vert_01n" Bounds="65, 192, 46, 36" TraceId="image3085"/>
         <Image Id="dfltMask26" TextureId="txr_laz_vert_02n" Bounds="65, 162, 46, 36" TraceId="image3096"/>
         <Image Id="dfltMask27" TextureId="txr_laz_vert_03n" Bounds="65, 132, 46, 36" TraceId="image3107"/>
@@ -71,7 +70,6 @@
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="75, 228, 28, 19" TraceId="image3068"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="304, 20, 28, 22" TraceId="image3079"/>
         <Food Id="fd4" Class="clsFood" ClassParams="@fishType=5" Bounds="75, 22, 27, 20" TraceId="image3090"/>
-        <Image Id="dfltMask32" TextureId="txr_Cat_question_spr_100x100x2" Bounds="-740, 1, 200, 100" TraceId="image3133"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -87,7 +85,7 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=4 Enemy=0 Block=8 DesignImage=32 Animation=4 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=4 Enemy=0 Block=8 DesignImage=31 Animation=4 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 390 -->
 <!-- 1% = 3.9; 45% = 175.5; 90% = 351 -->

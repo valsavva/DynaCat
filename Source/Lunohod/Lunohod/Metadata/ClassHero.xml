@@ -82,8 +82,8 @@
                          EnterAction="anmHeroGottaDamage.Play();
                          hero:-sttEating;hero:-sttGoodExplosion"
                          Group="sttHeroStates">
-                <Sprite Id="this_shtHeroGottaDamage" TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="5" />
-                <NumAnimation From="0" To="4" Duration="2.5" Target="this_shtHeroGottaDamage.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
+                <Sprite Id="this_shtHeroGottaDamage" TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="5"/>
+                <!--<NumAnimation From="0" To="4" Duration="2.5" Target="this_shtHeroGottaDamage.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>-->
             </BoolTrigger>
             
             <Sprite Id="this_sprBlowFlash1" TextureId="txrBlowFlash1" Bounds="-13,-15,57,56" FrameBounds="0,0,57,56" FrameCount="3" Enabled="false" Depth="0.08" />

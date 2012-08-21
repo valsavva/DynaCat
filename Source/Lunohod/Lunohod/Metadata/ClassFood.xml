@@ -94,8 +94,9 @@
             <BoolTrigger Id="this_borned" 
                          Condition="this:Borned" 
                          Group="this_foodStates">
-                <Image Id="this_imgFishBones" TextureId="txrFishBones" RotationCenter="15,6" Bounds="0,0,30,13"/>
+                <Sprite Id="this_shtFishBones" TextureId="txrFishBones" RotationCenter="16,11" Bounds="0,0,33,22" FrameBounds="0,0,33,22" FrameCount="3"/>
             </BoolTrigger>
+            <Do Action="this_shtFishBones.CurrentFrame=system.Rnd(0,2)" InProgress="true" />
 
             <!-- BoomClose: explosion - destroy -->
             <BoolTrigger Condition="this:BoomClose" 
@@ -103,10 +104,11 @@
                          this_setDestroy1.Start();
                          hero:+sttBadExplosion" 
                          Group="this_foodStates" />
+            
             <SequenceSet Id="this_setDestroy1">
                 <ParallelSet>
                     <NumAnimation Target="this.Y" From="0" To="-30" Duration="0.3" IsDelta="true" Autoreverse="true" RepeatCount="1" />
-                    <NumAnimation Target="this_imgFishBones.Rotation" From="0" To="360" Duration="0.3" Autoreverse="false" RepeatCount="2" />
+                    <NumAnimation Target="this_shtFishBones.Rotation" From="0" To="360" Duration="0.3" Autoreverse="false" RepeatCount="2" />
                 </ParallelSet>
                 <NumAnimation Target="this.Y" From="0" To="-3" Duration="0.15" IsDelta="true" Autoreverse="true" RepeatCount="1" />
             </SequenceSet>
