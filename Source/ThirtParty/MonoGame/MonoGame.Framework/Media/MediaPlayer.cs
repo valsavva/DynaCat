@@ -203,9 +203,10 @@ using Microsoft.Xna.Framework.Audio;
 			}
             set
             {         
+				_volume = value;
+
 				if (_song != null)
 				{
-					_volume = value;
 					_song.Volume = value;
 				}
 			}
