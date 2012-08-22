@@ -10,6 +10,9 @@ namespace Lunohod
 		private double volume;
 
 		[XmlAttribute]
+        public string FileId;
+
+		[XmlAttribute]
 		public double Volume
 		{
 			get { return this.volume; }
@@ -41,6 +44,7 @@ namespace Lunohod
 
         public override void ReadXml(System.Xml.XmlReader reader)
         {
+            this.FileId = reader["FileId"];
             this.Volume = reader.ReadAttrAsFloat("Volume");
 
             base.ReadXml(reader);

@@ -15,9 +15,9 @@
         <Texture Id="txrLogo" Source="dynacat_logo" />
     </Resources>
 
-    <!--<Resources RootFolder="Sound">
-        <SoundFile Id="sfGameMusic" Source="gameMusic.mp3"/>
-    </Resources>-->
+    <Resources RootFolder="Sound">
+        <MusicFile Id="sfGameMusic" Source="gameMusic.mp3"/>
+    </Resources>
 
         <Class Id="clsSeriesPanel">
 		<Group>
@@ -29,7 +29,7 @@
 	</Class>
 
 	<Layer Id="background">
-        <!--<Music Id="sndGameMusic" FileId="sfGameMusic" Volume="0.5"/>-->
+        <Music Id="sndGameMusic" FileId="sfGameMusic" Volume="0.5"/>
 
 		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>

@@ -20,9 +20,6 @@ namespace Lunohod.Objects
 		{
 		}
 		
-        [XmlAttribute]
-        public string FileId;
-		
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
