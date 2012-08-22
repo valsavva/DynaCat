@@ -17,10 +17,10 @@
 	<Layer>
 		<Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel"/>
 		
-		<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=7" Bounds="40, 190, 62, 62">
+		<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=restart" Bounds="40, 190, 62, 62">
 		    <BoolTrigger Condition="btnRestart:Action" EnterAction="system.CloseCurrentScreen();system.RestartLevel();" />
 		</Group>
-		<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=5" Bounds="40, 256, 62, 62">
+		<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="40, 256, 62, 62">
 		    <BoolTrigger Condition="btnHome:Action" EnterAction="system.CloseCurrentScreen();system.AbandonLevel();" />
 		</Group>
 	</Layer>

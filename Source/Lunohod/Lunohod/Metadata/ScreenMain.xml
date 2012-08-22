@@ -43,7 +43,7 @@
 		<Group Bounds="180,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
 		<Group Bounds="310,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
 		
-		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=4" Bounds="180, 240, 62, 62">
+		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=info" Bounds="180, 240, 62, 62">
 		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />
 		</Group>
 		<Group Id="btnMute" Bounds="250,240, 62,62" Class="clsMuteButton" />

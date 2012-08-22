@@ -2,8 +2,8 @@
 
 <Include>
     <Resources RootFolder="Global">
-        <Texture Id="txrMute" Source="btn_sound_on" />
-        <Texture Id="txrUnmute" Source="btn_sound_off" />
+        <Texture Id="txrMute" Source="ui_btn_sound_02" />
+        <Texture Id="txrUnmute" Source="ui_btn_sound_01" />
     </Resources>
 
 	<Class Id="clsMuteButton">

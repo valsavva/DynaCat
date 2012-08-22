@@ -26,14 +26,14 @@
 		
 		<Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel"/>
 
-		<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=7" Bounds="40, 190, 62, 62">
+		<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=restart" Bounds="40, 190, 62, 62">
 		    <BoolTrigger Condition="btnRestart:Action" EnterAction="system.CloseCurrentScreen();system.RestartLevel();" />
 		</Group>
-		<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=5" Bounds="40, 256, 62, 62">
+		<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="40, 256, 62, 62">
 		    <BoolTrigger Condition="btnHome:Action" EnterAction="system.CloseCurrentScreen();system.AbandonLevel();" />
 		</Group>
-		<Group Id="btnResume" Class="clsButton" ClassParams="@BtnImg=2" Bounds="380, 256, 62, 62">
-		    <BoolTrigger Condition="btnResume:Action" EnterAction="system.CloseCurrentScreen();system.StartNextLevel();" />
+		<Group Id="btnNextLevel" Class="clsButton" ClassParams="@BtnImg=forwind" Bounds="380, 256, 62, 62">
+		    <BoolTrigger Condition="btnNextLevel:Action" EnterAction="system.CloseCurrentScreen();system.StartNextLevel();" />
 		</Group>
 
 		<Group Bounds="175,235,150,60">

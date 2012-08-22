@@ -1,37 +1,23 @@
 <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Boxes" Bounds="0, 0, 480, 320">-->
     
 <Include>
-    
-    <!-- 
-    @BtnImg is the button's texture index
-    
-    @BtnImg=1 : Back
-    @BtnImg=2 : Forwind
-    @BtnImg=3 : Full Version
-    @BtnImg=4 : Info
-    @BtnImg=5 : Home (Menu)
-    @BtnImg=6 : Play
-    @BtnImg=7 : Restart
-    @BtnImg=8 : Forward
-    -->
-    
     <Resources RootFolder="Global">
-        <Texture Id="txrButton1Basic" Source="btn_1_basic" />
-        <Texture Id="txrButton1Pressed" Source="btn_1_pressed" />
-        <Texture Id="txrButton2Basic" Source="btn_2_basic" />
-        <Texture Id="txrButton2Pressed" Source="btn_2_pressed" />
-        <Texture Id="txrButton3Basic" Source="btn_3_basic" />
-        <Texture Id="txrButton3Pressed" Source="btn_3_pressed" />
-        <Texture Id="txrButton4Basic" Source="btn_4_basic" />
-        <Texture Id="txrButton4Pressed" Source="btn_4_pressed" />
-        <Texture Id="txrButton5Basic" Source="btn_5_basic" />
-        <Texture Id="txrButton5Pressed" Source="btn_5_pressed" />
-        <Texture Id="txrButton6Basic" Source="btn_6_basic" />
-        <Texture Id="txrButton6Pressed" Source="btn_6_pressed" />
-        <Texture Id="txrButton7Basic" Source="btn_7_basic" />
-        <Texture Id="txrButton7Pressed" Source="btn_7_pressed" />
-        <Texture Id="txrButton8Basic" Source="btn_8_basic" />
-        <Texture Id="txrButton8Pressed" Source="btn_8_pressed" />
+        <Texture Id="txrUiBtn_back_N" Source="ui_btn_back_01" />
+        <Texture Id="txrUiBtn_back_P" Source="ui_btn_back_03" />
+        <Texture Id="txrUiBtn_next_N" Source="ui_btn_next_01" />
+        <Texture Id="txrUiBtn_next_P" Source="ui_btn_next_03" />
+        <Texture Id="txrUiBtn_forwind_N" Source="ui_btn_forwind_01" />
+        <Texture Id="txrUiBtn_forwind_P" Source="ui_btn_forwind_03" />
+        <Texture Id="txrUiBtn_full version_N" Source="ui_btn_full version_01" />
+        <Texture Id="txrUiBtn_full version_P" Source="ui_btn_full version_03" />
+        <Texture Id="txrUiBtn_info_N" Source="ui_btn_info_01" />
+        <Texture Id="txrUiBtn_info_P" Source="ui_btn_info_03" />
+        <Texture Id="txrUiBtn_exit_N" Source="ui_btn_exit_01" />
+        <Texture Id="txrUiBtn_exit_P" Source="ui_btn_exit_03" />
+        <Texture Id="txrUiBtn_play_N" Source="ui_btn_play_01" />
+        <Texture Id="txrUiBtn_play_P" Source="ui_btn_play_03" />
+        <Texture Id="txrUiBtn_restart_N" Source="ui_btn_restart_01" />
+        <Texture Id="txrUiBtn_restart_P" Source="ui_btn_restart_03" />
     </Resources>
     <Resources RootFolder="Sound">
         <SoundFile Id="sndButtonTapped" Source="btn_click"/>
@@ -55,12 +41,12 @@
             <!-- state : basic, not pressed -->
             <BoolTrigger Condition="not this_setPressed.InProgress" 
                          Group="this_sttButton">
-                <Image TextureId="txrButton@BtnImgBasic" StretchMode="ActualSize" />
+                <Image TextureId="txrUiBtn_@BtnImg_N" StretchMode="ActualSize" />
             </BoolTrigger>
             
             <!-- state : pressed -->
             <BoolTrigger Group="this_sttButton">
-                <Image TextureId="txrButton@BtnImgPressed" StretchMode="ActualSize" />
+                <Image TextureId="txrUiBtn_@BtnImg_P" StretchMode="ActualSize" />
             </BoolTrigger>
 		</Group>
 	</Class>
