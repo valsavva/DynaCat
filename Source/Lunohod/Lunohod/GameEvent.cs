@@ -24,7 +24,8 @@ namespace Lunohod
 			{ "system:endLevel", GameEventType.EndLevel },
 			{ "system:cpsLimitExceeded", GameEventType.CpsLimitExceeded },
 			
-			{ "system:levelLoaded", GameEventType.LevelLoaded }
+			{ "system:levelLoaded", GameEventType.LevelLoaded },
+			{ "system:screenActivated", GameEventType.ScreenActivated }
 		};
 		
 		private static readonly Dictionary<GameEventType, string> eventTypeNameDict = new Dictionary<GameEventType, string>();

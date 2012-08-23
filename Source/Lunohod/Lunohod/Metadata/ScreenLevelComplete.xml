@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Bounds="0,0,480,320" IsModal="true">
+    <Include File="CommonScreenFunctionality.xml" />
+
     <Include File="ClassUIMovingBackground.xml" />
     <Include File="ClassUIButton.xml" />
     <Include File="ClassUILevelNumberPanel.xml" />

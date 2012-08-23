@@ -120,7 +120,6 @@
     <Compile Include="Engine\XGroup.cs" />
     <Compile Include="Engine\Media\XMusic.cs" />
     <Compile Include="Engine\Media\XSound.cs" />
-    <Compile Include="Engine\Media\IHasVolume.cs" />
     <Compile Include="Engine\XEdgeType.cs" />
     <Compile Include="Engine\XEnemy.cs" />
     <Compile Include="Engine\XClass.cs" />
@@ -1834,6 +1833,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\ui_btn_sound_03.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\CommonScreenFunctionality.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\CommonLevelFunctionality.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -18,7 +18,8 @@ namespace Lunohod
         EndLevel,
         LevelLoaded,
         StartNextLevel,
-		CpsLimitExceeded
+		CpsLimitExceeded,
+		ScreenActivated
     }
 }
 

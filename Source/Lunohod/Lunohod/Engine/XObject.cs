@@ -586,15 +586,6 @@ namespace Lunohod.Objects
 		{
 			getter = null; setter = null;
 
-			if (this is IHasVolume)
-			{
-				IHasVolume audio = (IHasVolume)this;
-				switch (propertyName)
-				{
-	                case "Volume": getter = () => audio.Volume; setter = (v) => audio.Volume = v; return;
-				}
-			}
-			
 			if (this is IHasPoints)
 			{
 				IHasPoints hasPoints = (IHasPoints)this;

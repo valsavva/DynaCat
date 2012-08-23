@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Bounds="0,0,480,320" IsModal="true">
+    <Include File="CommonScreenFunctionality.xml" />
+
     <Include File="ClassUIMovingBackground.xml" />
 	<Include File="CommonTextures.xml" />
     <Include File="ClassUIButton.xml" />
@@ -29,7 +31,7 @@
 	</Class>
 
 	<Layer Id="background">
-        <Music Id="sndGameMusic" FileId="sfGameMusic" Volume="0.5"/>
+        <Music Id="sndGameMusic" FileId="sfGameMusic"/>
 
 		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
@@ -47,6 +49,5 @@
 		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />
 		</Group>
 		<Group Id="btnMute" Bounds="250,240, 62,62" Class="clsMuteButton" />
-
     </Layer>
 </Screen>

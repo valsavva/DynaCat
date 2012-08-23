@@ -5,7 +5,7 @@ using Lunohod.Objects;
 
 namespace Lunohod
 {
-	public abstract class XAudibleBase : XObject, IHasVolume
+	public abstract class XAudibleBase : XObject
 	{
 		private double volume;
 
@@ -25,7 +25,7 @@ namespace Lunohod
 
 		protected void AdjustVolume()
 		{
-			AdjustVolumeImpl(GameEngine.Instance.IsMute ? 0 : volume);
+			AdjustVolumeImpl(GameEngine.Instance.IsMute ? 0 : this.volume);
 		}
 
 		protected abstract void AdjustVolumeImpl(double volume);
@@ -49,6 +49,16 @@ namespace Lunohod
 
             base.ReadXml(reader);
         }
+
+		public override void GetProperty(string propertyName, out Func<double> getter, out Action<double> setter)
+		{
+			switch (propertyName)
+			{
+                case "Volume": getter = () => this.Volume; setter = (v) => this.Volume = v; return;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
 
 		public override void Dispose()
 		{
