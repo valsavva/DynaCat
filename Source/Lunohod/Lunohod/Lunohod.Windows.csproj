@@ -183,7 +183,6 @@
     <Compile Include="Engine\Triggers\XTriggerBase.cs" />
     <Compile Include="Engine\IExploding.cs" />
     <Compile Include="Engine\IRunnable.cs" />
-    <Compile Include="Engine\Media\IHasVolume.cs" />
     <Compile Include="Engine\Media\XMusic.cs" />
     <Compile Include="Engine\Media\XSound.cs" />
     <Compile Include="Engine\Resources\XFontResource.cs" />
@@ -826,6 +825,12 @@
     <Content Include="Metadata\ClassWoodenBox.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Metadata\CommonLevelFunctionality.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\CommonScreenFunctionality.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Metadata\CommonTextures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
