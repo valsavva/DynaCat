@@ -40,7 +40,7 @@
         <Texture Id="txrExitTransform" Source="refrigerator_spr_80x111x11"/>
         <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
         
-        <Texture Id="txrFishBones" Source="fish_skelet_demo" />
+        <Texture Id="txrFishBones" Source="fish_bone_sht_33x20x3" />
         
         <Texture Id="txrFishTypeDefault_1" Source="fishType01" />
         <Texture Id="txrFishTypeDefault_2" Source="fishType02" />
@@ -105,5 +105,40 @@
         <Texture Id="txrBlowFlash3" Source="blow_flash_3_spr_50x54x3" />
         <Texture Id="txrBlowFlash4" Source="blow_flash_4_spr_37x35x3" />
         
+    </Resources>
+
+    <!-- hero -->
+    
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndHeroDying" Source="skeletonFX_crash_1"/>
+        <SoundFile Id="sndHeroEating1" Source="skeletonFX_hero_eating_1"/>
+        <SoundFile Id="sndHeroEating2" Source="skeletonFX_hero_eating_2"/>
+        <SoundFile Id="sndHeroEating3" Source="skeletonFX_hero_eating_3"/>
+        <SoundFile Id="sndHeroEating4" Source="skeletonFX_hero_eating_4"/>
+        <SoundFile Id="sndHeroEatingChavk1" Source="skeletonFX_hero_eating_chavk1"/>
+        <SoundFile Id="sndHeroEatingChavk2" Source="skeletonFX_hero_eating_chavk2"/>
+        <SoundFile Id="sndHeroBounce1" Source="skeletonFX_hero_metal_wall_1"/>
+        <SoundFile Id="sndHeroBounce2" Source="skeletonFX_hero_metal_wall_2"/>
+        <SoundFile Id="sndHeroStick1" Source="skeletonFX_hero_wooden_wall_1"/>
+        <SoundFile Id="sndHeroStick2" Source="skeletonFX_hero_wooden_wall_2"/>
+        <SoundFile Id="sndTeleportIn" Source="demo_fx_port_in"/>
+        <SoundFile Id="sndTeleportOut" Source="demo_fx_port_out"/>
+        <SoundFile Id="sndTeleportCont" Source="demo_fx_port_cont"/>
+    </Resources>
+
+    <Resources RootFolder="Textures">
+        <Texture Id="txrHeroDefault" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroEating" Source="Cat_eat_Spr_100x100x3"/>
+        <Texture Id="txrHeroGottaEShock" Source="Cat_lightning_Spr_100x100x3"/>
+        <Texture Id="txrHeroGottaDamage" Source="Cat_beating_sht_100x100x5" />
+        <Texture Id="txrHeroDying" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroWaitingExplosion" Source="Cat_0000_norm"/>
+        <Texture Id="txrHeroGoodExplosion" Source="Cat_smile0001"/>
+        <Texture Id="txrHeroBadExplosion" Source="Cat_eats0002"/>
+        <Texture Id="txrHeroScareLeft" Source="Cat_scare_left_Spr_100x100x3"/>
+        <Texture Id="txrHeroScareRight" Source="Cat_scare_right_Spr_100x100x3"/>
+        <Texture Id="txrHeroScareLeftRight" Source="Cat_scare_leftright_Spr_100x100x6"/>
+        <Texture Id="txrHeroSurprised" Source="Cat_question_spr_100x100x2"/>
+        <Texture Id="txrHeroExit" Source="Cat_0000_norm"/>
     </Resources>
 </Include>

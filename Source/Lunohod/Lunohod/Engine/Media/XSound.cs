@@ -19,9 +19,6 @@ namespace Lunohod.Objects
 		internal SoundEffectInstance soundEffectInstance;
 
 		[XmlAttribute]
-        public string FileId;
-
-		[XmlAttribute]
 		public double Pitch = 0;
 		
 		[XmlAttribute]
@@ -118,7 +115,6 @@ namespace Lunohod.Objects
 
         public override void ReadXml(System.Xml.XmlReader reader)
         {
-            this.FileId = reader["FileId"];
             reader.ReadAttrAsFloat("Pitch", ref this.Pitch);
             reader.ReadAttrAsFloat("Pan", ref this.Pan);
             

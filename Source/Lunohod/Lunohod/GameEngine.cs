@@ -352,6 +352,7 @@ namespace Lunohod
 			lock(this.screenEngines)
 			{
 				screenEngines.Add(newScreenEngine);
+				this.EnqueueEvent(new GameEvent(GameEventType.ScreenActivated, this.CurrentUpdateTime ?? new GameTime(), true));
 			}
 
 			newScreenEngine.Initialize();
@@ -372,6 +373,7 @@ namespace Lunohod
 			lock(this.screenEngines)
 			{
 				screenEngines.Add(newScreenEngine);
+				this.EnqueueEvent(new GameEvent(GameEventType.ScreenActivated, this.CurrentUpdateTime ?? new GameTime(), true));
 			}
 			
 			newScreenEngine.Initialize();
@@ -404,6 +406,7 @@ namespace Lunohod
 			{
 				screenEngine = this.screenEngines[this.screenEngines.Count - 1];
 				this.screenEngines.Remove(screenEngine);
+				this.EnqueueEvent(new GameEvent(GameEventType.ScreenActivated, this.CurrentUpdateTime ?? new GameTime(), true));
 			}
 			
 			screenEngine.Unload();

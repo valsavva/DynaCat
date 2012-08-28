@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Bounds="0,0,480,320">
+    <Include File="CommonScreenFunctionality.xml" />
 
     <Include File="ClassUIButton.xml" />
 
@@ -28,7 +29,7 @@
             <Text Location="00,150" Text="Val Savvateev     - programming" FontId="Splash14Font" />
         </Group>
 
-        <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=5" Bounds="33, 256, 62, 62">
+        <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="33, 256, 62, 62">
             <BoolTrigger Condition="btnScrnCreditsBack:Action" EnterAction="system.CloseCurrentScreen();" />
         </Group>
     </Layer>

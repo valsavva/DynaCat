@@ -1,4 +1,5 @@
 <Include>	
+    <Include File="CommonLevelFunctionality.xml" />
 
     <Resources RootFolder="Textures">
         <Texture Id="spr_towerLedOn" Source="Tow_trans_SignalSprite_60x60x4"/>

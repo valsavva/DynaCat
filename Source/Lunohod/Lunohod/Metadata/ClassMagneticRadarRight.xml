@@ -86,7 +86,7 @@
                 </SequenceSet>                
             </Group>
             
-            <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero">
+            <IntersectionTrigger ObjectId1="this_grpMagnetWaves" ObjectId2="hero" Value="200">
                 <BoolTrigger Condition="this:IsBeaming 
                              and not hero:Magneted 
                              and not hero.IsDead 
