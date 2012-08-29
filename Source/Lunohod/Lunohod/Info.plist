@@ -10,7 +10,7 @@
 		<string>Graphics/icon_iphone_114x114.png</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>0.02</string>
+	<string>0.04</string>
 	<key>MinimumOSVersion</key>
 	<string>4.0</string>
 	<key>UIDeviceFamily</key>
@@ -19,6 +19,8 @@
 	</array>
 	<key>UIInterfaceOrientation</key>
 	<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
