@@ -6,8 +6,9 @@
     <Include File="ClassUIButton.xml" />
 
     <Resources RootFolder="Global">
-        <Texture Id="txrBackground" Source="info_BG" />
-        <Texture Id="txr_info_for_txt_panel" Source="info_for_txt_panel" />
+        <Texture Id="txrBackground" Source="scr_credits_bg" />
+        <Texture Id="txrFrame" Source="scr_credits_frame" />
+        <Texture Id="txrPanel" Source="scr_credits_panel" />
         <Font Id="Splash14Font" Source="SystemFont"/>
     </Resources>
 
@@ -16,7 +17,7 @@
     </Layer>
     <Layer>
 
-        <Image TextureId="txr_info_for_txt_panel" Bounds="110, 65, 257, 205" Opacity="0.8"/>
+        <Image TextureId="txrPanel" Opacity="0.8"/>
 
         <Group Bounds="120,82,237,185">
             <Text Location="20,000" Text="(c) NomNomApps LLC, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
@@ -28,6 +29,8 @@
             <Text Location="00,130" Text="                    sound effects" FontId="Splash14Font" />
             <Text Location="00,150" Text="Val Savvateev     - programming" FontId="Splash14Font" />
         </Group>
+
+        <Image TextureId="txrFrame" Opacity="0.8"/>
 
         <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="33, 256, 62, 62">
             <BoolTrigger Condition="btnScrnCreditsBack:Action" EnterAction="system.CloseCurrentScreen();" />
