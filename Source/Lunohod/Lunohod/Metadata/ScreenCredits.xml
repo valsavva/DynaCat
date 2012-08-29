@@ -9,7 +9,7 @@
         <Texture Id="txrBackground" Source="scr_credits_bg" />
         <Texture Id="txrFrame" Source="scr_credits_frame" />
         <Texture Id="txrPanel" Source="scr_credits_panel" />
-        <Font Id="Splash14Font" Source="SystemFont"/>
+        <Font Id="Splash14Font" Source="Splash14Font"/>
     </Resources>
 
     <Layer Id="background">
@@ -19,15 +19,14 @@
 
         <Image TextureId="txrPanel" Opacity="0.8"/>
 
-        <Group Bounds="120,82,237,185">
+        <Group Bounds="90,67,237,185">
             <Text Location="20,000" Text="(c) NomNomApps LLC, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
-            <Text Location="00,030" Text="Our team:" FontId="Splash14Font" />
-            <Text Location="00,050" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
-            <Text Location="00,070" Text="Ruslan Suleymanov - graphics design" FontId="Splash14Font" />
-            <Text Location="00,090" Text="Vlad Savvateev    - level design," FontId="Splash14Font" />
-            <Text Location="00,110" Text="                    original music," FontId="Splash14Font" />
+            <Text Location="00,030" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
+            <Text Location="00,055" Text="Ruslan Suleymanov - graphics design" FontId="Splash14Font" />
+            <Text Location="00,080" Text="Vlad Savvateev    - level design," FontId="Splash14Font" />
+            <Text Location="00,105" Text="                    original music," FontId="Splash14Font" />
             <Text Location="00,130" Text="                    sound effects" FontId="Splash14Font" />
-            <Text Location="00,150" Text="Val Savvateev     - programming" FontId="Splash14Font" />
+            <Text Location="00,155" Text="Val Savvateev     - programming" FontId="Splash14Font" />
         </Group>
 
         <Image TextureId="txrFrame" Opacity="0.8"/>
