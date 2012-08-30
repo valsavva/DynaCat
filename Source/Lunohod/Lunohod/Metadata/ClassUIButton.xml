@@ -38,12 +38,12 @@
             <!-- state : basic, not pressed -->
             <BoolTrigger Condition="not this_setPressed.InProgress" 
                          Group="this_sttButton">
-                <Sprite Id="this_sprUnpressed" TextureId="txtButtons" FrameBounds="0,0,67,68" FrameCount="9" />
+                <Sprite Id="this_sprUnpressed" TextureId="txtButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" />
             </BoolTrigger>
             
             <!-- state : pressed -->
             <BoolTrigger Group="this_sttButton">
-                <Sprite Id="this_sprPressed" TextureId="txtButtons" FrameBounds="0,0,67,68" FrameCount="9" />
+                <Sprite Id="this_sprPressed" TextureId="txtButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" />
             </BoolTrigger>
 		</Group>
 	</Class>

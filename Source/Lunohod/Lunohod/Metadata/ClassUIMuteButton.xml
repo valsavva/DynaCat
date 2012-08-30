@@ -9,10 +9,10 @@
 		<Group>
 			<TapArea Action="system.IsMute=not system.IsMute;" />
 			<BoolTrigger Condition="system.IsMute">
-                <Sprite TextureId="txtButtons" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="17" />
+                <Sprite TextureId="txtButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="17" />
 			</BoolTrigger>
 			<BoolTrigger Condition="not system.IsMute">
-                <Sprite TextureId="txtButtons" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="8" />
+                <Sprite TextureId="txtButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="8" />
 			</BoolTrigger>
 		</Group>
 	</Class>
