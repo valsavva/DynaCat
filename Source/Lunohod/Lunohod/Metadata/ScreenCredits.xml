@@ -30,19 +30,18 @@
 	            <Text Location="00,030" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
 	            <Text Location="00,055" Text="Ruslan Suleymanov - graphics design" FontId="Splash14Font" />
 	            <Text Location="00,080" Text="Vlad Savvateev    - level design," FontId="Splash14Font" />
-	            <Text Location="00,105" Text="                    original music," FontId="Splash14Font" />
-	            <Text Location="00,130" Text="                    sound effects" FontId="Splash14Font" />
-	            <Text Location="00,155" Text="Val Savvateev     - programming" FontId="Splash14Font" />
-	            <Text Location="00,195" Text="Powered by MonoGame, XGame" FontId="Splash14Font" Color="#FFDDDD" />
+	            <Text Location="00,105" Text="                    original music / sfx," FontId="Splash14Font" />
+	            <Text Location="00,130" Text="Val Savvateev     - programming" FontId="Splash14Font" />
+	            <Text Location="00,170" Text="Powered by MonoGame, XGame" FontId="Splash14Font" Color="#FFDDDD" />
 
-	            <Image TextureId="txrLogo" Location="0, 300" />
-	            <Text Location="0,370" Text="(c) NomNomApps, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
-	            <Text Location="0,395" Text="    www.nomnomapps.com" FontId="Splash14Font" Color="#DDFFDD" />
-	            <TapArea Bounds="0,370,310,50" Action="system.OpenUrl('http://www.nomnomapps.com')" />
+	            <Image TextureId="txrLogo" Location="0, 275" />
+	            <Text Location="0,345" Text="(c) NomNomApps, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
+	            <Text Location="0,370" Text="    www.nomnomapps.com" FontId="Splash14Font" Color="#DDFFDD" />
+	            <TapArea Bounds="0,345,310,50" Action="system.OpenUrl('http://www.nomnomapps.com')" />
 	        </Group>
 	        
 	        <SequenceSet Id="setScrolling" InProgress="true" RepeatCount="0">
-	            <NumAnimation Target="grpText.Y" From="240" To="-240" Duration="20" RepeatCount="1" Fill="Hold"/>
+	            <NumAnimation Target="grpText.Y" From="240" To="-230" Duration="20" RepeatCount="1" Fill="Hold"/>
 	            <Delay Duration="10"/>
 	            <NumAnimation Target="grpText.Opacity" From="1" To="0" Duration="1.1" RepeatCount="1"/>
 	        	<Do Action="grpText.Y=240;grpText.Opacity=1" />
