@@ -1,76 +1,59 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-
+  
 <Screen Bounds="0,0,480,320">
     <Include File="CommonScreenFunctionality.xml" />
-
+  
     <Include File="ClassUIButton.xml" />
-    <Resources RootFolder="Textures">
-        <Texture Id="txr_fon" Source="fon" />
-        <Texture Id="txr_fon2" Source="fon2" />
-        <Texture Id="txr_Credits_DC_logo" Source="Credits_DC_logo" />
-        <Texture Id="txr_Credits_Cat" Source="Credits_Cat" />
-        <Texture Id="txr_fishType05" Source="fishType05" />
-        <Texture Id="txr_fishType06" Source="fishType06" />
-        <Texture Id="txr_fishType07" Source="fishType07" />
-        <Texture Id="txr_fishType01" Source="fishType01" />
-        <Texture Id="txr_fishType02" Source="fishType02" />
-        <Texture Id="txr_fishType03" Source="fishType03" />
-        <Texture Id="txr_fishType04" Source="fishType04" />
-    </Resources>
+  
     <Resources RootFolder="Global">
-        <Font Id="Splash14Font" Source="SystemFont"/>
+        <Texture Id="txrBackground" Source="scr_credits_bg" />
+        <Texture Id="txrFrame" Source="scr_credits_frame" />
+        <Texture Id="txrPanel" Source="scr_credits_panel" />
+        <Font Id="Splash14Font" Source="Splash14Font" />
     </Resources>
-    <Layer Id="fon1" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_fon" Bounds="0, 0, 480, 320" TraceId="image3016-17"/>
+    
+    <Resources RootFolder="Textures">
+        <Texture Id="txrLogo" Source="nomnomlogo_round" />
+    </Resources>
+  
+    <Layer Id="background">
+        <Image TextureId="txrBackground" />
     </Layer>
-    <Layer Id="text" BackColor="#FFFFFFFF">
-        <Group Id="grpText" Bounds="120,300,237,185">
-            <Text Location="20,000" Text="(c) NomNomApps LLC, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
-            <Text Location="00,050" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
-            <Text Location="00,070" Text="Ruslan Suleymanov - graphics design" FontId="Splash14Font" />
-            <Text Location="00,090" Text="Vlad Savvateev    - level design," FontId="Splash14Font" />
-            <Text Location="00,110" Text="                    original music/sfx" FontId="Splash14Font" />
-            <Text Location="00,130" Text="Val Savvateev     - programming" FontId="Splash14Font" />
-        </Group>
-        <NumAnimation Id="anmScroll" Target="grpText.Y" From="0" To="-1000" Duration="36" InProgress="true" IsDelta="true"/>
+    
+    <Layer>
+  
+  		<Group Bounds="60,50,370,220">
+	        <Group Id="grpText" Bounds="30,237,310,200">
+	            <Text Location="00,000" Text="Our team:" FontId="Splash14Font" Color="#FFDDDD" />
+	            <Text Location="00,030" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
+	            <Text Location="00,055" Text="Ruslan Suleymanov - graphics design" FontId="Splash14Font" />
+	            <Text Location="00,080" Text="Vlad Savvateev    - level design," FontId="Splash14Font" />
+	            <Text Location="00,105" Text="                    original music," FontId="Splash14Font" />
+	            <Text Location="00,130" Text="                    sound effects" FontId="Splash14Font" />
+	            <Text Location="00,155" Text="Val Savvateev     - programming" FontId="Splash14Font" />
+	            <Text Location="00,195" Text="Powered by MonoGame, XGame" FontId="Splash14Font" Color="#FFDDDD" />
 
-    </Layer>
-    <Layer Id="fon2" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_fon2" Bounds="0, 0, 480, 320" TraceId="image3027"/>
+	            <Image TextureId="txrLogo" Location="0, 300" />
+	            <Text Location="0,370" Text="(c) NomNomApps, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
+	        </Group>
+	        
+	        <SequenceSet Id="setScrolling" InProgress="true" RepeatCount="0">
+	            <NumAnimation Target="grpText.Y" From="240" To="-240" Duration="20" RepeatCount="1" Fill="Hold"/>
+	            <Delay Duration="10"/>
+	            <NumAnimation Target="grpText.Opacity" From="1" To="0" Duration="1.1" RepeatCount="1"/>
+	        	<Do Action="grpText.Y=240;grpText.Opacity=1" />
+	        </SequenceSet>
+	        
+	        <TapArea Action="grpText:*pause" />
+	        <BoolTrigger Condition="grpText:pause" EnterAction="setScrolling.Pause()" ExitAction="setScrolling.Play()" />
+  		</Group>
+  
+        <Image TextureId="txrPanel" Opacity="1"/>
+
+        <Image TextureId="txrFrame" Opacity="1"/>
+  
         <Group Id="btnScrnCreditsBack" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="33, 256, 62, 62">
             <BoolTrigger Condition="btnScrnCreditsBack:Action" EnterAction="system.CloseCurrentScreen();" />
         </Group>
     </Layer>
-    <Layer Id="layer" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask3" TextureId="txr_Credits_DC_logo" Bounds="-8, -3, 128, 106" TraceId="image3227"/>
-        <Image Id="dfltMask4" TextureId="txr_Credits_Cat" Bounds="363, 214, 109, 98" TraceId="image3238"/>
-        <Image Id="dfltMask5" TextureId="txr_fishType05" Bounds="3, 97, 27, 20" TraceId="image3441"/>
-        <Image Id="dfltMask6" TextureId="txr_fishType05" Bounds="20, 108, 27, 20" TraceId="image3395"/>
-        <Image Id="dfltMask7" TextureId="txr_fishType05" Bounds="238, 8, 27, 20" TraceId="image3413"/>
-        <!--<Image Id="dfltMask8" TextureId="txr_fishType05" Bounds="62, 289, 27, 20" TraceId="image3415"/>-->
-        <Image Id="dfltMask9" TextureId="txr_fishType05" Bounds="164, 277, 27, 20" TraceId="image3429"/>
-        <Image Id="dfltMask10" TextureId="txr_fishType05" Bounds="432, 114, 27, 20" TraceId="image3417"/>
-        <Image Id="dfltMask11" TextureId="txr_fishType05" Bounds="335, 301, 27, 20" TraceId="image3419"/>
-        <Image Id="dfltMask12" TextureId="txr_fishType05" Bounds="439, 130, 27, 20" TraceId="image3326"/>
-        <Image Id="dfltMask13" TextureId="txr_fishType06" Bounds="8, 216, 22, 27" TraceId="image3401"/>
-        <Image Id="dfltMask14" TextureId="txr_fishType07" Bounds="210, 282, 32, 30" TraceId="image3399"/>
-        <Image Id="dfltMask15" TextureId="txr_fishType07" Bounds="440, 64, 32, 30" TraceId="image3348"/>
-        <Image Id="dfltMask16" TextureId="txr_fishType01" Bounds="408, 16, 32, 21" TraceId="image3421"/>
-        <Image Id="dfltMask17" TextureId="txr_fishType01" Bounds="19, 151, 32, 21" TraceId="image3359"/>
-        <Image Id="dfltMask18" TextureId="txr_fishType02" Bounds="110, 279, 28, 19" TraceId="image3435"/>
-        <Image Id="dfltMask19" TextureId="txr_fishType02" Bounds="262, 278, 28, 19" TraceId="image3437"/>
-        <Image Id="dfltMask20" TextureId="txr_fishType02" Bounds="245, 303, 28, 19" TraceId="image3439"/>
-        <Image Id="dfltMask21" TextureId="txr_fishType02" Bounds="300, 280, 28, 19" TraceId="image3423"/>
-        <Image Id="dfltMask22" TextureId="txr_fishType02" Bounds="203, 14, 28, 19" TraceId="image3425"/>
-        <Image Id="dfltMask23" TextureId="txr_fishType02" Bounds="243, 32, 28, 19" TraceId="image3427"/>
-        <Image Id="dfltMask24" TextureId="txr_fishType02" Bounds="278, 6, 28, 19" TraceId="image3409"/>
-        <Image Id="dfltMask25" TextureId="txr_fishType03" Bounds="317, 27, 31, 20" TraceId="image3381"/>
-        <Image Id="dfltMask26" TextureId="txr_fishType04" Bounds="153, 15, 28, 22" TraceId="image3431"/>
-        <Image Id="dfltMask27" TextureId="txr_fishType04" Bounds="441, 166, 28, 22" TraceId="image3433"/>
-        <Image Id="dfltMask28" TextureId="txr_fishType04" Bounds="364, 2, 28, 22" TraceId="image3403"/>
-        <Image Id="dfltMask29" TextureId="txr_fishType04" Bounds="22, 190, 28, 22" TraceId="image3405"/>
-        <Image Id="dfltMask30" TextureId="txr_fishType04" Bounds="35, 228, 28, 22" TraceId="image3407"/>
-        <!--<Image Id="dfltMask31" TextureId="txr_fishType04" Bounds="20, 255, 28, 22" TraceId="image3392"/>-->
-    </Layer>
-
-    </Screen>
+</Screen>
