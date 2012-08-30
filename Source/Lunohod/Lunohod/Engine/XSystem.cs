@@ -267,8 +267,12 @@ namespace Lunohod.Objects
 
 		public void OpenUrl(string url)
 		{
+#if IPHONE
             MonoTouch.UIKit.UIApplication.SharedApplication.OpenUrl(new MonoTouch.Foundation.NSUrl(url));
-		}
+#elif WINDOWS
+            System.Diagnostics.Process.Start(url);
+#endif
+        }
 
 		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
 		{
