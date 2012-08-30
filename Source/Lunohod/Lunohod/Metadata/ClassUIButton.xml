@@ -2,31 +2,28 @@
     
 <Include>
     <Resources RootFolder="Global">
-        <Texture Id="txrUiBtn_back_N" Source="ui_btn_back_01" />
-        <Texture Id="txrUiBtn_back_P" Source="ui_btn_back_03" />
-        <Texture Id="txrUiBtn_next_N" Source="ui_btn_next_01" />
-        <Texture Id="txrUiBtn_next_P" Source="ui_btn_next_03" />
-        <Texture Id="txrUiBtn_forwind_N" Source="ui_btn_forwind_01" />
-        <Texture Id="txrUiBtn_forwind_P" Source="ui_btn_forwind_03" />
-        <Texture Id="txrUiBtn_full version_N" Source="ui_btn_full version_01" />
-        <Texture Id="txrUiBtn_full version_P" Source="ui_btn_full version_03" />
-        <Texture Id="txrUiBtn_info_N" Source="ui_btn_info_01" />
-        <Texture Id="txrUiBtn_info_P" Source="ui_btn_info_03" />
-        <Texture Id="txrUiBtn_exit_N" Source="ui_btn_exit_01" />
-        <Texture Id="txrUiBtn_exit_P" Source="ui_btn_exit_03" />
-        <Texture Id="txrUiBtn_play_N" Source="ui_btn_play_01" />
-        <Texture Id="txrUiBtn_play_P" Source="ui_btn_play_03" />
-        <Texture Id="txrUiBtn_restart_N" Source="ui_btn_restart_01" />
-        <Texture Id="txrUiBtn_restart_P" Source="ui_btn_restart_03" />
+        <Texture Id="txtButtons" Source="ui_buttons" />
     </Resources>
     <Resources RootFolder="Sound">
         <SoundFile Id="sndButtonTapped" Source="btn_click"/>
     </Resources>
 
-    
-    
     <Class Id="clsButton">
 		<Group>
+	    	<Group Id="this_grpInit">
+		    	<BoolTrigger Condition="'@BtnImg'=='back'" Action="this_sprUnpressed.CurrentFrame=00" />
+		    	<BoolTrigger Condition="'@BtnImg'=='exit'" Action="this_sprUnpressed.CurrentFrame=01" />
+		    	<BoolTrigger Condition="'@BtnImg'=='forwind'" Action="this_sprUnpressed.CurrentFrame=02" />
+		    	<BoolTrigger Condition="'@BtnImg'=='info'" Action="this_sprUnpressed.CurrentFrame=03" />
+		    	<BoolTrigger Condition="'@BtnImg'=='next'" Action="this_sprUnpressed.CurrentFrame=04" />
+		    	<BoolTrigger Condition="'@BtnImg'=='play'" Action="this_sprUnpressed.CurrentFrame=05" />
+		    	<BoolTrigger Condition="'@BtnImg'=='question'" Action="this_sprUnpressed.CurrentFrame=06" />
+		    	<BoolTrigger Condition="'@BtnImg'=='restart'" Action="this_sprUnpressed.CurrentFrame=07" />
+		    	<BoolTrigger Condition="'@BtnImg'=='sound'" Action="this_sprUnpressed.CurrentFrame=08" />
+		    	<Do Action="this_sprPressed.CurrentFrame=this_sprUnpressed.CurrentFrame+9" InProgress="true" />
+		    	<Do Action="this_grpInit.Disable()" />
+	    	</Group>
+
             <Sound Id="this_sndButtonTapped" FileId="sndButtonTapped" Volume="0.5" Pitch="0"/>
 
             <!-- button is pressed -->
@@ -41,12 +38,12 @@
             <!-- state : basic, not pressed -->
             <BoolTrigger Condition="not this_setPressed.InProgress" 
                          Group="this_sttButton">
-                <Image TextureId="txrUiBtn_@BtnImg_N" StretchMode="ActualSize" />
+                <Sprite Id="this_sprUnpressed" TextureId="txtButtons" FrameBounds="0,0,67,68" FrameCount="9" />
             </BoolTrigger>
             
             <!-- state : pressed -->
             <BoolTrigger Group="this_sttButton">
-                <Image TextureId="txrUiBtn_@BtnImg_P" StretchMode="ActualSize" />
+                <Sprite Id="this_sprPressed" TextureId="txtButtons" FrameBounds="0,0,67,68" FrameCount="9" />
             </BoolTrigger>
 		</Group>
 	</Class>
