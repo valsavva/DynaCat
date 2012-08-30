@@ -265,6 +265,11 @@ namespace Lunohod.Objects
 			set { GameEngine.Instance.IsMute = value; }
 		}
 
+		public void OpenUrl(string url)
+		{
+            MonoTouch.UIKit.UIApplication.SharedApplication.OpenUrl(new MonoTouch.Foundation.NSUrl(url));
+		}
+
 		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
 		{
 			switch(propertyName)
@@ -341,6 +346,7 @@ namespace Lunohod.Objects
                 case "EndLevel": method = (ps) => EndLevel(); break;
                 case "StartNextLevel": method = (ps) => StartNextLevel(); break;
                 case "WriteLine": method = (ps) => WriteLine(ps[0].GetStrValue(), ps.GetRange(1, ps.Count - 1).Select(p => p.GetObjValue()).ToArray()); break;
+                case "OpenUrl": method = (ps) => OpenUrl(ps[0].GetStrValue()); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

@@ -23,6 +23,8 @@
     <Layer>
   
   		<Group Bounds="60,50,370,220">
+	        <TapArea Action="grpText:*pause" />
+
 	        <Group Id="grpText" Bounds="30,237,310,200">
 	            <Text Location="00,000" Text="Our team:" FontId="Splash14Font" Color="#FFDDDD" />
 	            <Text Location="00,030" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
@@ -35,6 +37,8 @@
 
 	            <Image TextureId="txrLogo" Location="0, 300" />
 	            <Text Location="0,370" Text="(c) NomNomApps, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
+	            <Text Location="0,395" Text="    www.nomnomapps.com" FontId="Splash14Font" Color="#DDFFDD" />
+	            <TapArea Bounds="0,370,310,50" Action="system.OpenUrl('http://www.nomnomapps.com')" />
 	        </Group>
 	        
 	        <SequenceSet Id="setScrolling" InProgress="true" RepeatCount="0">
@@ -44,7 +48,6 @@
 	        	<Do Action="grpText.Y=240;grpText.Opacity=1" />
 	        </SequenceSet>
 	        
-	        <TapArea Action="grpText:*pause" />
 	        <BoolTrigger Condition="grpText:pause" EnterAction="setScrolling.Pause()" ExitAction="setScrolling.Play()" />
   		</Group>
   
