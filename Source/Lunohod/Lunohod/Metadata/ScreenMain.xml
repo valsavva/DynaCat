@@ -32,6 +32,7 @@
 
 	<Layer Id="background">
         <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="false"/>
+<!--        <Do Action="sndGameMusic.Start()" InProgress="true" />-->
 
 		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
