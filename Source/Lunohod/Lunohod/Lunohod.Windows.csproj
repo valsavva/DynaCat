@@ -770,8 +770,9 @@
     <Content Include="Metadata\includeSemafor.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\includeSFX.xml">
+    <Content Include="Metadata\ClassSFX.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\Lvl_1D_Chetyre_Kruga.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

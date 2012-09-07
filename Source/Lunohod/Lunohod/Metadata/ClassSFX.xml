@@ -1,0 +1,28 @@
+<Include>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndfExplosion1" Source="sfxExplosion1"/>
+        <SoundFile Id="sndfExplosion2" Source="sfxExplosion2"/>
+        <SoundFile Id="sndfHiss" Source="sfxHiss"/>
+    </Resources>
+    
+    <Class Id="clsSFX">
+        <Group>
+
+            <!-- explosion -->
+
+            <BoolTrigger Condition="this:BombHiss"
+                         EnterAction="sndBombHiss.Start()"/>
+            <Sound Id="sndBombHiss" FileId="sndfHiss" Volume="0.2" Pitch="0"/>
+
+            <BoolTrigger Condition="this:Explosion"
+                         EnterAction="setExplosion.Start()"/>
+            <Sound Id="sndExplosion1" FileId="sndfExplosion1" Volume="1" Pitch="0"/>
+            <Sound Id="sndExplosion2" FileId="sndfExplosion2" Volume="1" Pitch="0"/>
+
+            <RandomSet Id="setExplosion" RepeatCount="1">
+                <Do Action="sndExplosion1.Start()" />
+                <Do Action="sndExplosion2.Start()" />
+            </RandomSet>
+        </Group>
+    </Class>
+</Include>

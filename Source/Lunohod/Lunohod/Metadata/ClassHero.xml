@@ -1,6 +1,6 @@
 <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Trenazher" Bounds="0, 0, 480, 320">-->
 <Include>
-    <Include File="includeSFX.xml" />
+    
 	<Class Id="clsHero">
 		<Hero Speed="0" Direction="0,0" Deceleration="0">
             <Include File="includeSkeletonHeroMotions.xml"/>

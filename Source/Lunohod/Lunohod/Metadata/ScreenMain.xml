@@ -2,9 +2,9 @@
 
 <Screen Bounds="0,0,480,320" IsModal="true">
     <Include File="CommonScreenFunctionality.xml" />
-
     <Include File="ClassUIMovingBackground.xml" />
 	<Include File="CommonTextures.xml" />
+    <Include File="ClassSFX.xml" />
     <Include File="ClassUIButton.xml" />
     <Include File="ClassUIMuteButton.xml" />
 
@@ -19,6 +19,7 @@
 
     <Resources RootFolder="Sound">
         <MusicFile Id="sfGameMusic" Source="gameMusic.mp3"/>
+        <Group Id="SFX" Class="clsSFX" />
     </Resources>
 
         <Class Id="clsSeriesPanel">
