@@ -10,7 +10,7 @@
 
     <BoolTrigger Condition="system:sfxBombHiss" 
                  EnterAction="sndBombHiss.Start()"/>
-    <Sound Id="sndBombHiss" FileId="sndfHiss" Volume="0.5" Pitch="0"/>
+    <Sound Id="sndBombHiss" FileId="sndfHiss" Volume="0.2" Pitch="0"/>
 
 
     <BoolTrigger Condition="system:sfxExplosion"
