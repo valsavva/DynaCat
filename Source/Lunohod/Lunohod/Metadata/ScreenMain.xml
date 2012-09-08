@@ -19,7 +19,6 @@
 
     <Resources RootFolder="Sound">
         <MusicFile Id="sfGameMusic" Source="gameMusic.mp3"/>
-        <Group Id="SFX" Class="clsSFX" />
     </Resources>
 
         <Class Id="clsSeriesPanel">
