@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Include>
-	<BoolTrigger Condition="system:screenActivated" EnterAction="sndGameMusic.Volume=0.05" />
+	<BoolTrigger Condition="system:screenActivated" EnterAction="sndGameMusic.Volume=0.1" />
 	<Group Id="SFX" Class="clsSFX" />
 </Include>
