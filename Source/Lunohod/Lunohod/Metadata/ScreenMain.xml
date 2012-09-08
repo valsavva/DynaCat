@@ -4,7 +4,7 @@
     <Include File="CommonScreenFunctionality.xml" />
     <Include File="ClassUIMovingBackground.xml" />
 	<Include File="CommonTextures.xml" />
-    
+    <Include File="ClassSFX.xml" />
     <Include File="ClassUIButton.xml" />
     <Include File="ClassUIMuteButton.xml" />
 
@@ -18,7 +18,7 @@
     </Resources>
 
     <Resources RootFolder="Sound">
-        <MusicFile Id="sfGameMusic" Source="gameMusic.mp3"/>        
+        <MusicFile Id="sfGameMusic" Source="gameMusic.mp3"/>
     </Resources>
 
         <Class Id="clsSeriesPanel">

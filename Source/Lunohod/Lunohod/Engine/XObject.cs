@@ -260,7 +260,7 @@ namespace Lunohod.Objects
         /// <returns>New instance of the class.</returns>
         internal XObject InitiazeFromClass()
         {
-            XClass cls = (XClass)this.GetRoot().FindDescendant(this.Class);
+            XClass cls = (XClass)this.FindGlobal(this.Class);
 
             if (cls == null)
                 throw new InvalidOperationException("Could not find class: " + this.Class);

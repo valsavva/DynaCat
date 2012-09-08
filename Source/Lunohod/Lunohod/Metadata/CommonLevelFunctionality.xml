@@ -2,4 +2,5 @@
 
 <Include>
 	<BoolTrigger Condition="system:screenActivated" EnterAction="sndGameMusic.Volume=0.05" />
+	<Group Id="SFX" Class="clsSFX" />
 </Include>
