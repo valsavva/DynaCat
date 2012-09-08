@@ -102,7 +102,7 @@
                            this.RotationCenterX=14;
                            this.RotationCenterY=-30" />
                     <ParallelSet>
-                        <Sound FileId="sndParachute_open" Volume="0.2" Pitch="0" Pan="0"/>
+                        <Do Action="SFX:Parashute" />
                         <NumAnimation Target="this.Y" From="0" To="60" IsDelta="true" Autoreverse="false" RepeatCount="1" Duration="1.6" Fill="End" />
                         <SequenceSet InProgress="true" RepeatCount="2" >
                             <NumAnimation Target="this.Rotation" From="0" To="-3" Autoreverse="true" Duration="0.2" Fill="End" RepeatCount="1" Smoothing="Smooth"/>
@@ -127,6 +127,7 @@
 
             <BoolTrigger Condition="this:BoomClose" 
                          EnterAction="hero.AddScore(this.Points);
+                         @KilledRatNum=@KilledRatNum+1;
                          this_setDying.Start()" 
                          StayTriggered="true" 
                          Group="this_sttStates">
@@ -134,7 +135,7 @@
 			</BoolTrigger>
             <ParallelSet Id="this_setDying" InProgress="false">
                 <Do Action="hero:+sttGoodExplosion;this_grpShowPoints.Enable()"/>
-                <Sound FileId="sndEnemyRatDying" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+                <Sound FileId="sndEnemyRatDying" Volume="1" Pitch="0" Pan="0" InProfress="true"/>
                 <NumAnimation Target="this_imgEnemyRatDying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
                 <RandomSet>
                     <Do Action="this_Smoke3:Run" />
@@ -149,7 +150,7 @@
             <BoolTrigger Condition="hero.CanCollide and 
                                     this:IntersectHero and 
                                     not this_grpShowPoints.Enabled and 
-                                    not hero.IsDead"
+                                    not hero:IsVeryDead"
                          EnterAction="this.Attack();
                                     this_anmDamageDealing.Start()"
                                     
@@ -164,27 +165,25 @@
                 <NumTrigger Property="this.Y" Compare="G" Value="hero.Y-5" Action="this.Depth=0.38" ExitAction="this.Depth=0.5" />
             </BoolTrigger>
 
-
+            <!--<BoolTrigger Condition="this:LastShot" EnterAction="anmLastShot.Start()" Group="this_sttStates">
+                <Sprite Id="this_sprAttackLastShot" TextureId="txrEnemyRatAttackType_@ratType" Bounds="0,0,80,80" FrameBounds="0,0,80,80"/>
+            </BoolTrigger>
+            <SequenceSet Id="anmLastShot" InProgress="false" RepeatCount="1"> 
+                <NumAnimation From="0" To="5" Duration="0.75" Autoreverse="false" Target="this_sprAttackLastShot.CurrentFrame" RepeatCount="1" Fill="Reset"/>
+                <Do Action="this:-LastShot" />
+                <Do Action="system.WriteLine('-LastShot')" />
+            </SequenceSet>-->
+            
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
-                <Do Action="this_anmAttack.Start();hero:+sttGottaDamage" />
+                <Do Action="this.Attack();hero:+sttGottaDamage;SFX:RatHit" />
                 <Delay Duration="system.Rnd(0.7,1.3)" />
             </SequenceSet>
-
-            <ParallelSet Id="this_anmAttack" RepeatCount="1">
-                <Do Action="this.Attack()" />
-                <RandomSet>
-                    <Sound FileId="sndEnemyRatHit1" Volume="0.5" Pitch="0" Pan="0"/>
-                    <Sound FileId="sndEnemyRatHit2" Volume="0.5" Pitch="0" Pan="0"/>
-                    <Sound FileId="sndEnemyRatHit1" Volume="0.5" Pitch="0.2" Pan="0"/>
-                    <Sound FileId="sndEnemyRatHit2" Volume="0.5" Pitch="0.3" Pan="0"/>
-                </RandomSet>
-            </ParallelSet>
 
             <!-- on rest -->
             <BoolTrigger Condition="this:onRestTimerReset and not this:Walker" EnterAction="this:-onRest;this_onRestTimer.Start()" />
 
             <SequenceSet Id="this_onRestTimer" InProgress="true" RepeatCount="0">
-                <Do Action="@this_delay=system.Rnd(10,30)" />
+                <Do Action="@this_delay=system.Rnd(10,25)" />
                 <!--<Do Action="system.WriteLine(system.Str(@this_delay))" />-->
                 <Delay Duration="@this_delay" />
                 <Do Action="@this_restNum=system.Rnd(1,2);this:+onRest" />
@@ -194,6 +193,9 @@
                          Group="this_sttStates">
 
                 <NumTrigger Property="@this_restNum" Compare="G" Value="1.5" EnterAction="this_anmEnemyRatOnRest1.Start()">
+                    <BoolTrigger Condition="@ratType==1 or @ratType==2" EnterAction="SFX:Chomp" />
+                    <BoolTrigger Condition="@ratType==3" EnterAction="SFX:Gum" />
+                    <BoolTrigger Condition="@ratType==7" EnterAction="SFX:Newspaper" />
                     <Sprite Id="this_sprEnemyRatOnRest1" TextureId="txrEnemyRat@ratType_OnRest1" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
                     <SequenceSet Id="this_anmEnemyRatOnRest1" RepeatCount="1">
                         <NumAnimation From="0" To="@this_ERrest1FC" Duration="@this_ERrest1FC*0.125" Target="this_sprEnemyRatOnRest1.CurrentFrame" RepeatCount="1" Fill="Reset"/>
@@ -202,6 +204,10 @@
                 </NumTrigger>
 
                 <NumTrigger Property="@this_restNum" Compare="LE" Value="1.5" EnterAction="this_anmEnemyRatOnRest2.Start()">
+                    <BoolTrigger Condition="@ratType==1" EnterAction="SFX:Chomp" />
+                    <BoolTrigger Condition="@ratType==2" EnterAction="SFX:BadJuggler" />
+                    <BoolTrigger Condition="@ratType==3" EnterAction="SFX:Gum" />
+                    <BoolTrigger Condition="@ratType==4" EnterAction="SFX:GoodJuggler" />
                     <Sprite Id="this_sprEnemyRatOnRest2" TextureId="txrEnemyRat@ratType_OnRest2" Bounds="0,0,80,80"  FrameBounds="0,0,80,80" FrameCount="12" />
                     <SequenceSet Id="this_anmEnemyRatOnRest2" RepeatCount="1">
                         <NumAnimation From="0" To="@this_ERrest2FC" Duration="@this_ERrest2FC*0.125" Target="this_sprEnemyRatOnRest2.CurrentFrame" RepeatCount="1" Fill="Reset"/>

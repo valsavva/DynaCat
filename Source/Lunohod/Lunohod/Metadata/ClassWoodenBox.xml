@@ -13,7 +13,7 @@
                            this.RotationCenterX=15;
                            this.RotationCenterY=-30" />
                     <ParallelSet>
-                        <Sound FileId="sndParachute_open" Volume="0.2" Pitch="0" Pan="0"/>
+                        <Do Action="SFX:Parashute" />
                         <NumAnimation Target="this.Y" From="0" To="60" IsDelta="true" Autoreverse="false" RepeatCount="1" Duration="1.6" Fill="End" />
                         <SequenceSet InProgress="true" RepeatCount="2" >
                             <NumAnimation Target="this.Rotation" From="0" To="-2" Autoreverse="true" Duration="0.2" Fill="End" RepeatCount="1" Smoothing="Smooth"/>

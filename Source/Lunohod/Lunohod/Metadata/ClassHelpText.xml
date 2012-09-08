@@ -2,20 +2,25 @@
     <Resources RootFolder="Textures">
         <Texture Id="txr_helpTextArrow_1" Source="helpTextArrow1" />
         <Texture Id="txr_helpTextArrow_2" Source="helpTextArrow2" />
-    </Resources>         
+    </Resources>
+    
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sfHereItIs" Source="sfxGlassKnock"/>
+    </Resources>
+    
 	<Class Id="clsHelpText">
 		<Group Opacity="0">
 
-            
-            
             <!-- type: text or arrow-->
             <BoolTrigger Condition="@type=='text'">
                 <Text Id="this_txtShadow" FontId="Splash14Font" Text="@txt" Color="#000000" Location="1,2"/>
                 <Text Id="this_txt" FontId="Splash14Font" Text="@txt" Color="#EEEEEE" Location="0,0"/>
                 <!-- compensation -->
                 <Do Action="this_txt.Y=this_txt.Y-18;this_txtShadow.Y=this_txtShadow.Y-18;" InProgress="true" RepeatCount="1"/>
+                <BoolTrigger Condition="this:sound" EnterAction="this_sndHereItIs.Start()"/>
             </BoolTrigger>
-
+            <Sound Id="this_sndHereItIs" FileId="sfHereItIs" Volume="0.34"/>
+            
             <BoolTrigger Condition="@type=='arrow'">
                 <Image Id="this_imgShadow" TextureId="txr_helpTextArrow_@txrIndex" Location="2,3" BackColor="#000000" />
                 <Image Id="this_img" TextureId="txr_helpTextArrow_@txrIndex" Location="1,1" BackColor="#FFFFFF" />
@@ -26,26 +31,23 @@
             <SequenceSet Id="this_anmEntry" InProgress="true" RepeatCount="1">
             
                 <Delay Duration="system.Rnd(0.1,0.5)" /> 
-                    <!-- <Delay Duration="0.4"/>-->
-                <!--<RandomSet RepeatCount="1">
-                    <Delay Duration="1.0"/>
-                    <Delay Duration="1.02"/>
-                    <Delay Duration="1.04"/>
-                    <Delay Duration="1.06"/>
-                    <Delay Duration="1.08"/>
-                    <Delay Duration="1.1"/>
-                </RandomSet>-->
 
                 <Do Action="this.Y=this.Y-600;this.Opacity=1" />
 
-                <NumAnimation Duration="1.6" Target="this.Y" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End">
-                    <KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
-                    <KeyFrame Time="1" Value="600" Smoothness="Smooth"/>
-                    <KeyFrame Time="1.2" Value="580" Smoothness="Smooth"/>
-                    <KeyFrame Time="1.4" Value="600" Smoothness="Smooth"/>
-                    <KeyFrame Time="1.5" Value="595" Smoothness="Smooth"/>
-                    <KeyFrame Time="1.6" Value="600" Smoothness="Smooth"/>
-                </NumAnimation>
+                <ParallelSet RepeatCount="1">
+                    <NumAnimation Duration="1.6" Target="this.Y" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End">
+                        <KeyFrame Time="0" Value="0" Smoothness="Smooth"/>
+                        <KeyFrame Time="1" Value="600" Smoothness="Smooth"/>
+                        <KeyFrame Time="1.2" Value="580" Smoothness="Smooth"/>
+                        <KeyFrame Time="1.4" Value="600" Smoothness="Smooth"/>
+                        <KeyFrame Time="1.5" Value="595" Smoothness="Smooth"/>
+                        <KeyFrame Time="1.6" Value="600" Smoothness="Smooth"/>
+                    </NumAnimation>
+                    <SequenceSet RepeatCount="1">
+                        <Delay Duration="1" />
+                        <Do Action="this:sound" />
+                    </SequenceSet>
+                </ParallelSet>
             </SequenceSet>
             
             

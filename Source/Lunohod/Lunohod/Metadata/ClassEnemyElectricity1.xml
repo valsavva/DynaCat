@@ -4,10 +4,10 @@
         <Texture Id="txrElectricitySparks" Source="electric_spark_spr_39x35x4"/>
     </Resources>
 	<Resources RootFolder="Sound">
-		<SoundFile Id="electric_spark_1" Source="skeletonFX_electric_spark_1"/>
-		<SoundFile Id="electric_spark_2" Source="skeletonFX_electric_spark_2"/>
-		<SoundFile Id="electric_spark_3" Source="skeletonFX_electric_spark_3"/>
-		<SoundFile Id="electric_spark_4" Source="skeletonFX_electric_spark_4"/>
+		<SoundFile Id="electric_spark_1" Source="sfxElectricSpark1"/>
+		<SoundFile Id="electric_spark_2" Source="sfxElectricSpark2"/>
+		<SoundFile Id="electric_spark_3" Source="sfxElectricSpark3"/>
+		<SoundFile Id="electric_spark_4" Source="sfxElectricSpark4"/>
 	</Resources>
          
 	<Class Id="clsEnemyElectricity1">
@@ -35,10 +35,10 @@
                 <Do Action="hero.EndTransaction()"/>
     			<NumAnimation Duration="0.1" Target="hero.Opacity" Autoreverse="false" From="1" To="0" RepeatCount="5"/>
     			<RandomSet Id="electric_sparking" RepeatCount="1">
-    				<Sound FileId="electric_spark_1" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-    				<Sound FileId="electric_spark_2" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-    				<Sound FileId="electric_spark_3" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
-    				<Sound FileId="electric_spark_4" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+    				<Sound FileId="electric_spark_1" Volume="0.7"/>
+    				<Sound FileId="electric_spark_2" Volume="0.7"/>
+    				<Sound FileId="electric_spark_3" Volume="0.7"/>
+    				<Sound FileId="electric_spark_4" Volume="0.7"/>
     			</RandomSet>
             </ParallelSet>
             <!-- default -->

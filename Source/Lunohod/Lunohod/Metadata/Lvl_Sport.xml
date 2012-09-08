@@ -165,8 +165,8 @@
     </Layer>
     <!-- HAND EDIT >>> -->
     <Resources RootFolder="Sound">
-        <SoundFile Id="whistle" Source="whistle"/>
-        <SoundFile Id="whistle_ready" Source="whistle_ready"/>
+        <SoundFile Id="whistle" Source="sfxCoachWhistleGo"/>
+        <SoundFile Id="whistle_ready" Source="sfxCoachWhistleReady"/>
     </Resources>
     <Layer Id="banda" BackColor="#FFFFFFFF">
         <Sound Id="sndWhistle" FileId="whistle" Volume="0.5" Pitch="0"/>

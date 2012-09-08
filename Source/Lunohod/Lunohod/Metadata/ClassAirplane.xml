@@ -1,6 +1,6 @@
 <Include>
     <Resources RootFolder="Sound">
-        <SoundFile Id="sndAirplane" Source="airplane"/>
+        <SoundFile Id="sfAirplane" Source="sfxAirplane"/>
     </Resources>
     <Resources RootFolder="Textures">
         <Texture Id="txrAirplaneSprite" Source="plane_01n_spr_84x74x3"/>
@@ -24,7 +24,7 @@
                     AirplaneSmoke4.X=90;AirplaneSmoke4.Y=60" />
             <SequenceSet Id="setFlyThroughScreen" InProgress="false" RepeatCount="1">
                 <ParallelSet RepeatCount="1">
-                    <Sound FileId="sndAirplane" Volume="0.5" Pitch="0" Pan="0"/>
+                    <Sound FileId="sfAirplane" Volume="0.5" Pitch="0" Pan="0"/>
                     <NumAnimation From="0" To="2" Duration="0.2" Autoreverse="false" Target="sprAirplane.CurrentFrame" RepeatTime="2"/>
                     <NumAnimation Target="this.X" From="540" To="-160" Duration="2" RepeatCount="1"/>
                     <NumAnimation Target="this.Y" From="0" To="40" Autoreverse="true" Duration="1" Smoothing="Flat" RepeatCount="1"/>

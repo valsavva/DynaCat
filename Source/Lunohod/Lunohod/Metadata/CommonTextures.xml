@@ -8,18 +8,7 @@
     </Resources>
 
 	<Resources RootFolder="Sound">
-
-        <SoundFile Id="sndParachute_open" Source="parachute_open"/>
-        
-        <SoundFile Id="sndTowerAlarm" Source="tower_alarm"/>
-
         <SoundFile Id="sndEnemyRatDying" Source="skeletonFX_enemy_dead_scream_1"/>
-        <SoundFile Id="sndEnemyRatHit1" Source="rat_hit1_demo"/>
-        <SoundFile Id="sndEnemyRatHit2" Source="rat_hit2_demo"/>
-
-		<SoundFile Id="sfExitEndLevel" Source="sfxExitEndLevel"/>
-        <SoundFile Id="sndExitDoorOpen" Source="skeletonFX_door_open"/>
-        <SoundFile Id="sndExitDoorClose" Source="skeletonFX_door_close"/>
 	</Resources>
 	
     <Resources RootFolder="Textures">
@@ -109,9 +98,6 @@
     
     <Resources RootFolder="Sound">
         <SoundFile Id="sndHeroDying" Source="skeletonFX_crash_1"/>
-        <SoundFile Id="sndTeleportIn" Source="demo_fx_port_in"/>
-        <SoundFile Id="sndTeleportOut" Source="demo_fx_port_out"/>
-        <SoundFile Id="sndTeleportCont" Source="demo_fx_port_cont"/>
     </Resources>
 
     <Resources RootFolder="Textures">

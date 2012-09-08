@@ -99,7 +99,11 @@
                 <NumAnimation Target="hero.Y" From="hero.Y" To="this.Y+10" Duration="0.4" RepeatCount="1" Fill="End"/>
                 <Do Action="hero.SetDirection(-1,0);hero:+Magneting" />
             </SequenceSet>
-            
+
+            <BoolTrigger Condition="this:IsBeaming"
+                        EnterAction="SFX:+RadarWork"
+                        ExitAction="SFX:-RadarWork" />
+
         </Group>
     </Class>
 </Include>

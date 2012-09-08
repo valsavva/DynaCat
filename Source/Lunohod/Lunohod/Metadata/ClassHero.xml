@@ -1,9 +1,7 @@
 <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Trenazher" Bounds="0, 0, 480, 320">-->
 <Include>
-    <Include File="ClassSFX.xml" />
     <Class Id="clsHero">
 		<Hero Speed="0" Direction="0,0" Deceleration="0">
-            <Group Id="SFX" Class="clsSFX" />
             
             <Include File="includeSkeletonHeroMotions.xml"/>
 		
@@ -35,7 +33,7 @@
 
             <!-- hero.IsDead : /major/ hero dying -->
             <BoolTrigger Condition="hero.IsDead" 
-                         EnterAction="hero.SetTransaction(false, false, false);
+                         EnterAction="hero.SetTransaction(false, true, false);
                          anmHeroDying.Start()"
                          StayTriggered="true"
                          Group="sttHeroStates">
@@ -227,43 +225,6 @@
                     <Image TextureId="blank"/>
                 </Group>-->
 			</BoolTrigger>
-
-            
-<!-- foley -->
-            
-            <!-- hero dying -->
-            <BoolTrigger Condition="hero.IsDead"
-                         EnterAction="sfxHeroDying.Start()">
-            </BoolTrigger>
-            
-            <RandomSet Id="sfxHeroDying" RepeatCount="1">
-                <Sound FileId="sndHeroDying" Volume="0.5" Pitch="0" Pan="0"/>
-                <Sound FileId="sndHeroDying" Volume="0.5" Pitch="-0.03" Pan="0"/>
-            </RandomSet>
-                        
-            <!-- Teleport -->
-
-            <BoolTrigger Condition="hero:sttPortIn" 
-                         EnterAction="sfxPortIn.Start()" />
-            
-            <SequenceSet Id="sfxPortIn" RepeatCount="1">
-                <Sound FileId="sndTeleportIn" Volume="0.5" Pitch="0"/>
-            </SequenceSet>
-
-            <BoolTrigger Condition="hero:sttPortCont" 
-                         EnterAction="sfxPortCont.Play()" 
-                         ExitAction="sfxPortCont.Pause()"/>
-            <SequenceSet Id="sfxPortCont">
-                <Sound FileId="sndTeleportCont" Volume="0.5" Pitch="0" IsLooped="true"/>
-            </SequenceSet>
-
-            <BoolTrigger Condition="hero:sttPortOut" 
-                         EnterAction="sfxPortOut.Start()"/>
-            <RandomSet Id="sfxPortOut">
-                <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="-0.1"/>
-                <Sound FileId="sndTeleportOut" Volume="0.5" Pitch="0.1"/>
-            </RandomSet>
 
         </Hero>
 		

@@ -1,5 +1,28 @@
 <Include>
     <Resources RootFolder="Sound">
+        
+        <SoundFile Id="sfHeroShout1" Source="heroShout1"/>
+        <SoundFile Id="sfHeroShout5" Source="heroShout5"/>
+        <SoundFile Id="sfHeroShout6" Source="heroShout6"/>
+        <SoundFile Id="sfHeroShout7" Source="heroShout7"/>
+        <SoundFile Id="sfHeroShout8" Source="heroShout8"/>
+        <SoundFile Id="sfHeroShout9" Source="heroShout9"/>
+        <SoundFile Id="sfHeroOops1" Source="heroOops1"/>
+        <SoundFile Id="sfHeroOops2" Source="heroOops2"/>
+        <SoundFile Id="sfHeroMuttering1" Source="heroMuttering1"/>
+        <SoundFile Id="sfHeroMuttering2" Source="heroMuttering2"/>
+        <SoundFile Id="sfHeroMuttering3" Source="heroMuttering3"/>
+        <SoundFile Id="sfHeroLaugh1" Source="heroLaugh1"/>
+        <SoundFile Id="sfHeroLaugh2" Source="heroLaugh2"/>
+        <SoundFile Id="sfHeroLaugh3" Source="heroLaugh3"/>
+        <SoundFile Id="sfHeroLaugh4" Source="heroLaugh4"/>
+        <SoundFile Id="sfHeroLaugh5" Source="heroLaugh5"/>
+        <SoundFile Id="sfHeroLaugh6" Source="heroLaugh6"/>
+        <SoundFile Id="sfHeroLaugh7" Source="heroLaugh7"/>
+        <SoundFile Id="sfHeroLaugh8" Source="heroLaugh8"/>
+        <SoundFile Id="sfHeroYeah4" Source="heroYeah4"/>
+        <SoundFile Id="sfHeroYeah6" Source="heroYeah6"/>
+        
         <SoundFile Id="sfExplosion1" Source="sfxExplosion1"/>
         <SoundFile Id="sfExplosion2" Source="sfxExplosion2"/>
         <SoundFile Id="sfHiss" Source="sfxHiss"/>
@@ -10,65 +33,263 @@
         <SoundFile Id="sfBounce1" Source="sfxBounce1"/>
         <SoundFile Id="sfBounce2" Source="sfxBounce2"/>
         <SoundFile Id="sfStick1" Source="sfxStick1"/>
-        <SoundFile Id="sfStick2" Source="sfxStick1"/>
+        <SoundFile Id="sfStick2" Source="sfxStick2"/>
+        <SoundFile Id="sfPortIn" Source="sfxTinInTubeShot"/>
+        <SoundFile Id="sfPortCont" Source="sfxTinInTubeCont"/>
+        <SoundFile Id="sfPortOut" Source="sfxDrop3"/>
+        <SoundFile Id="sfHeroDying" Source="sfxTinCloseDown"/>
+        
+        <SoundFile Id="sfHit1" Source="sfxHit1"/>
+        <SoundFile Id="sfHit2" Source="sfxHit2"/>
+        <SoundFile Id="sfHit3" Source="sfxHit3"/>
 
+        <SoundFile Id="sfSwish1" Source="sfxSwish1"/>
+        <SoundFile Id="sfSwish2" Source="sfxSwish2"/>
+        
+        <SoundFile Id="sfLoseBaseballBat" Source="sfxLoseBaseballBat"/>
+        <SoundFile Id="sfNewspaper" Source="sfxNewspaper"/>
+
+        <SoundFile Id="sfChomp1" Source="sfxChomp1"/>
+        <SoundFile Id="sfChomp2" Source="sfxChomp2"/>
+        <SoundFile Id="sfChomp3" Source="sfxChomp3"/>
+        
+        <SoundFile Id="sfAlarm" Source="sfxAlarm"/>
+        <SoundFile Id="sfDrop1" Source="sfxDrop1"/>
+        <SoundFile Id="sfDrop2" Source="sfxDrop2"/>
+        <SoundFile Id="sfDrop3" Source="sfxDrop3"/>
+        <SoundFile Id="sfRadarWorkLoop" Source="sfxRadarWorkLoop"/>
+        <SoundFile Id="sfExitEndLevel" Source="sfxExitEndLevel"/>
     </Resources>
     
     <Class Id="clsSFX">
         <Group>
-
-            <!-- hiss -->
-            <BoolTrigger Condition="this:BombHiss"
-                         EnterAction="sndBombHiss.Start()"/>
-            <Sound Id="sndBombHiss" FileId="sfHiss" Volume="0.2" Pitch="0"/>
-
-            <!-- explosion -->
-            <BoolTrigger Condition="this:Explosion"
-                         EnterAction="setExplosion.Start()"/>
-            <RandomSet Id="setExplosion" RepeatCount="1">
-                <Sound FileId="sfExplosion1" Volume="1" Pitch="0"/>
-                <Sound FileId="sfExplosion2" Volume="1" Pitch="0"/>
-            </RandomSet>
+<!-- init -->
+            <Do Action="@KilledRatNum=0" InProgress="true" RepeatCount="1"/>
 
 <!-- HERO -->
+<!-- ...foley -->
             <!-- eating -->
-            <BoolTrigger Condition="this:Eating"
-                         EnterAction="setHeroEating.Start()"/>
-            <RandomSet Id="setHeroEating" Probabilities="10,10,10,1" RepeatCount="1">
-                <Sound FileId="sfHeroEating1" Volume="0.4" Pitch="0"/>
-                <Sound FileId="sfHeroEating2" Volume="0.4" Pitch="0"/>
-                <Sound FileId="sfHeroEating1" Volume="0.4" Pitch="0.2"/>
-                <Sound FileId="sfHeroEating2" Volume="0.4" Pitch="0.4"/>
+            <BoolTrigger Condition="this:Eating" EnterAction="this_setHeroEating.Start()"/>
+            <RandomSet Id="this_setHeroEating" Probabilities="10,10,10,1" RepeatCount="1">
+                <Sound FileId="sfHeroEating1" Volume="0.38"/>
+                <Sound FileId="sfHeroEating2" Volume="0.38"/>
+                <Sound FileId="sfHeroEating1" Volume="0.38" Pitch="0.2"/>
+                <Sound FileId="sfHeroEating2" Volume="0.38" Pitch="0.4"/>
             </RandomSet>
 
             <!-- eating gold fish -->
-            <BoolTrigger Condition="this:EatingGoldFish"
-                         EnterAction="sndHeroEatingGoldFish.Start()"/>
-            <Sound Id="sndHeroEatingGoldFish" FileId="sfHeroEating3GoldFish" Volume="0.4" Pitch="0"/>
-
+            <BoolTrigger Condition="this:EatingGoldFish" EnterAction="this_sndHeroEatingGoldFish.Start()"/>
+            <Sound Id="this_sndHeroEatingGoldFish" FileId="sfHeroEating3GoldFish" Volume="0.4" Pitch="0"/>
+            
             <!-- bounce -->
-            <BoolTrigger Condition="hero:bounce"
-                         EnterAction="setHeroBounce.Start()"/>
-
-            <RandomSet Id="setHeroBounce" RepeatCount="1">
-                <Sound FileId="sfBounce1" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sfBounce2" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sfBounce1" Volume="0.5" Pitch="-0.03"/>
-                <Sound FileId="sfBounce2" Volume="0.5" Pitch="-0.03"/>
+            <BoolTrigger Condition="hero:bounce" EnterAction="this_setHeroBounce.Start()"/>
+            <RandomSet Id="this_setHeroBounce" RepeatCount="1">
+                <Sound FileId="sfBounce1" Volume="0.3"/>
+                <Sound FileId="sfBounce2" Volume="0.3"/>
+                <Sound FileId="sfBounce1" Volume="0.3" Pitch="-0.03"/>
+                <Sound FileId="sfBounce2" Volume="0.3" Pitch="-0.03"/>
             </RandomSet>
 
             <!-- stick -->
-            <BoolTrigger Condition="hero:stick"
-                         EnterAction="setHeroStick.Start()"/>
-
-            <RandomSet Id="setHeroStick" RepeatCount="1">
-                <Sound FileId="sfStick1" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sfStick2" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sfStick1" Volume="0.5" Pitch="0.1"/>
-                <Sound FileId="sfStick2" Volume="0.5" Pitch="0.1"/>
+            <BoolTrigger Condition="hero:stick" EnterAction="this_setHeroStick.Start()"/>
+            <RandomSet Id="this_setHeroStick" RepeatCount="1">
+                <Sound FileId="sfStick1" Volume="0.3"/>
+                <Sound FileId="sfStick2" Volume="0.3"/>
             </RandomSet>
 
+            <!-- Teleport -->
 
+            <BoolTrigger Condition="hero:sttPortIn" EnterAction="this_sndPortIn.Start()" />
+            <Sound Id="this_sndPortIn" FileId="sfPortIn" Volume="0.5"/>
+
+            <BoolTrigger Condition="hero:sttPortCont"
+                         EnterAction="this_setPortCont.Play()"
+                         ExitAction="this_setPortCont.Pause()"/>
+            <SequenceSet Id="this_setPortCont" RepeatCount="0">
+                <Sound FileId="sfPortCont" Volume="0.5" IsLooped="true"/>
+            </SequenceSet>
+
+            <BoolTrigger Condition="hero:sttPortOut" EnterAction="this_sndPortOut.Start()"/>
+            <Sound Id="this_sndPortOut" FileId="sfPortOut" Volume="1"/>
+            
+            <!-- dying -->
+            <BoolTrigger Condition="hero.IsDead" EnterAction="sndHeroDying.Start()"/>
+            <Sound Id="sndHeroDying" FileId="sfHeroDying" Volume="1"/>
+            
+<!-- ...voice -->
+            <!-- beaten -->
+            <BoolTrigger Condition="SFX:RatHit" EnterAction="this_setHeroGottaDamage.Start()"/>
+            <SequenceSet Id="this_setHeroGottaDamage" RepeatCount="1">
+                <Delay Duration="0.2" />
+                <RandomSet RepeatCount="1">
+                    <Sound FileId="sfHeroShout1" Volume="0.7"/>
+                    <Sound FileId="sfHeroShout5" Volume="0.7"/>
+                    <Sound FileId="sfHeroShout6" Volume="0.7"/>
+                    <Sound FileId="sfHeroShout7" Volume="0.7"/>
+                    <Sound FileId="sfHeroShout8" Volume="0.7"/>
+                    <Sound FileId="sfHeroShout9" Volume="0.7"/>
+                </RandomSet>
+            </SequenceSet>
+
+            <!-- good explosion: distroyed more than 2 rats -->
+            <BoolTrigger Condition="hero:sttGoodExplosion">
+                <NumTrigger Property="@KilledRatNum" Compare="G" Value="2" EnterAction="this_setGoodExplosion.Start()"/>
+                <NumTrigger Property="@KilledRatNum" Compare="LE" Value="2" EnterAction="@KilledRatNum=0"/>
+            </BoolTrigger>
+
+            <SequenceSet Id="this_setGoodExplosion"  RepeatCount="1">
+                <Delay Duration="0.8" />
+                <RandomSet RepeatCount="1">
+                    <Sound FileId="sfHeroYeah4" Volume="0.4"/>
+                    <Sound FileId="sfHeroYeah6" Volume="0.4"/>
+                </RandomSet>
+                <Do Action="@KilledRatNum=0" />
+            </SequenceSet>
+            
+             <!-- bad explosion: food distroyed -->
+            <BoolTrigger Condition="hero:sttBadExplosion" EnterAction="this_setOops.Start()"/>
+            <SequenceSet Id="this_setOops" RepeatCount="1">
+                <Delay Duration="0.4" />
+                <RandomSet  RepeatCount="1">
+                    <Sound FileId="sfHeroOops1" Volume="0.5"/>
+                    <Sound FileId="sfHeroOops2" Volume="0.5"/>
+                </RandomSet>
+            </SequenceSet>           
+            
+            <!-- muttering -->
+            <BoolTrigger Condition="hero:OnOilMotion or hero:Magneted" EnterAction="this_wait.Start()"/>
+            <SequenceSet Id="this_wait" RepeatCount="1">
+                <Delay Duration="0.5"/>
+                <Do Action="this:longTime" />
+            </SequenceSet>
+
+            <BoolTrigger Condition="(hero:OnOilMotion or hero:Magneted) and this:longTime" EnterAction="this_setHeroMuttering.Start()"/>
+            <RandomSet Id="this_setHeroMuttering"  RepeatCount="1">
+                <Sound FileId="sfHeroMuttering1" Volume="0.2"/>
+                <Sound FileId="sfHeroMuttering2" Volume="0.3"/>
+                <Sound FileId="sfHeroMuttering3" Volume="0.2"/>
+            </RandomSet>
+            
+            <!-- lol:health and time bonus! -->
+            <BoolTrigger Condition="this:Laugh" EnterAction="this_setHeroLaugh.Start()"/>
+            <RandomSet Id="this_setHeroLaugh"  RepeatCount="1">
+                <Sound FileId="sfHeroLaugh1" Volume="0.5"/>
+                <Sound FileId="sfHeroLaugh2" Volume="0.5"/>
+                <Sound FileId="sfHeroLaugh3" Volume="0.5"/>
+                <Sound FileId="sfHeroLaugh4" Volume="0.5"/>
+                <Sound FileId="sfHeroLaugh5" Volume="0.5"/>
+                <Sound FileId="sfHeroLaugh6" Volume="0.5"/>
+                <Sound FileId="sfHeroLaugh7" Volume="0.5"/>
+                <Sound FileId="sfHeroLaugh8" Volume="0.5"/>
+            </RandomSet>
+            
+<!-- RATS  -->
+            <!-- hit -->
+            <BoolTrigger Condition="this:RatHit" EnterAction="this_setRatHit.Start()"/>
+            <SequenceSet Id="this_setRatHit" RepeatCount="1">
+                <RandomSet RepeatCount="1">
+                    <Sound FileId="sfHit1" Volume="1"/>
+                    <Sound FileId="sfHit2" Volume="1"/>
+                    <Sound FileId="sfHit3" Volume="1"/>
+                </RandomSet>
+                <Do Action="this:Swish" />
+            </SequenceSet>
+            
+            <!-- swish -->
+            <BoolTrigger Condition="this:Swish" EnterAction="this_setSwish.Start()"/>
+            <RandomSet Id="this_setSwish" RepeatCount="1">
+                <Sound FileId="sfSwish1" Volume="0.7"/>
+                <Sound FileId="sfSwish2" Volume="0.7"/>
+            </RandomSet>
+            
+            <!-- chomp-chomp -->
+            <BoolTrigger Condition="this:Chomp" EnterAction="this_setChomp.Start()"/>
+            <SequenceSet Id="this_setChomp" RepeatCount="1">
+                <Delay Duration="0.3"/>
+                <Do Action="this_setChompOnce.Start()" />
+                <Delay Duration="0.8"/>
+                <Do Action="this_setChompOnce.Start()" />
+                <Delay Duration="0.8"/>
+                <Do Action="this_setChompOnce.Start()" />
+            </SequenceSet>
+            <RandomSet Id="this_setChompOnce" RepeatCount="1">
+                <Sound FileId="sfChomp1" Volume="0.3"/>
+                <Sound FileId="sfChomp2" Volume="0.3"/>
+                <Sound FileId="sfChomp3" Volume="0.3"/>
+            </RandomSet>
+
+            <!-- good juggler -->
+            <BoolTrigger Condition="this:GoodJuggler" EnterAction="this_setGoodJuggler.Start()"/>
+            <SequenceSet Id="this_setGoodJuggler" RepeatCount="1">
+                <Delay Duration="0.3"/>
+                <Do Action="this:Swish" />
+                <Delay Duration="0.8"/>
+                <Do Action="this:Swish" />
+            </SequenceSet>
+            
+            <!-- bad juggler -->
+            <BoolTrigger Condition="this:BadJuggler" EnterAction="this_setBadJuggler.Start()"/>
+            <SequenceSet Id="this_setBadJuggler" RepeatCount="1">
+                <Delay Duration="0.3"/>
+                <Do Action="this:Swish" />
+                <Delay Duration="0.3"/>
+                <Sound FileId="sfLoseBaseballBat" Volume="0.3"/>
+            </SequenceSet>
+
+            <!-- gum -->
+            <BoolTrigger Condition="this:Gum" EnterAction="this_setGum.Start()"/>
+            <SequenceSet Id="this_setGum" RepeatCount="1">
+                <Delay Duration="3"/>
+                <Do Action="this:Parashute" />
+            </SequenceSet>
+            
+            <!-- newspaper -->
+            <BoolTrigger Condition="this:Newspaper" EnterAction="this_setNewspaper.Start()"/>
+            <SequenceSet Id="this_setNewspaper" RepeatCount="1">
+                <Delay Duration="0.4"/>
+                <Sound FileId="sfNewspaper" Volume="0.4"/>
+                <Delay Duration="1.6"/>
+                <Sound FileId="sfNewspaper" Volume="0.4"/>
+            </SequenceSet>
+
+<!-- EXIT -->
+            <!-- end level -->
+            <BoolTrigger Condition="this:EndLevel" EnterAction="this_sndExitFlight.Start()"/>
+            <Sound Id="this_sndExitFlight" FileId="sfExitEndLevel" Volume="0.6"/>
+            
+<!-- MISC -->
+            <!-- hiss -->
+            <BoolTrigger Condition="this:BombHiss" EnterAction="this_sndBombHiss.Start()"/>
+            <Sound Id="this_sndBombHiss" FileId="sfHiss" Volume="0.2"/>
+
+            <!-- explosion -->
+            <BoolTrigger Condition="this:Explosion" EnterAction="this_setExplosion.Start()"/>
+            <RandomSet Id="this_setExplosion" RepeatCount="1">
+                <Sound FileId="sfExplosion1" Volume="1"/>
+                <Sound FileId="sfExplosion2" Volume="1"/>
+            </RandomSet>
+            
+            <!-- parashute open -->
+            <BoolTrigger Condition="this:Parashute" EnterAction="this_setParashuteOpen.Start()"/>
+            <RandomSet Id="this_setParashuteOpen" RepeatCount="1">
+                <Sound FileId="sfDrop1" Volume="0.9"/>
+                <Sound FileId="sfDrop2" Volume="0.9"/>
+                <Sound FileId="sfDrop3" Volume="0.9"/>
+            </RandomSet>
+            
+            <!-- alarm -->
+            <BoolTrigger Condition="this:Alarm" EnterAction="this_sndAlarm.Start()"/>
+            <Sound Id="this_sndAlarm" FileId="sfAlarm" Volume="0.8"/>
+            
+            <!-- radar working -->
+            <BoolTrigger Condition="this:RadarWork"
+                         EnterAction="this_setRadarWorkLoop.Start()"
+                         ExitAction="this_setRadarWorkLoop.Stop()"/>
+            <SequenceSet Id="this_setRadarWorkLoop" RepeatCount="0">
+                <Sound Id="this_sndRadarWorkLoop" FileId="sfRadarWorkLoop" Volume="0.1" IsLooped="true"/>
+            </SequenceSet>
+            <!--<NumAnimation Id="this_setRadarStartWork" Duration="0.5" Target="this_sndRadarWorkLoop.Volume" Autoreverse="false" From="0" To="0.3" RepeatCount="1"/>
+            <NumAnimation Id="this_setRadarEndWork" Duration="0.5" Target="this_sndRadarWorkLoop.Volume" Autoreverse="false" From="0.3" To="0" RepeatCount="1"/>-->
         </Group>
     </Class>
 </Include>

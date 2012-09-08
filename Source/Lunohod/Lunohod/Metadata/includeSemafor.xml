@@ -1,6 +1,6 @@
 <Include>
     <Resources RootFolder="Sound">
-        <SoundFile Id="sndTrain_bells" Source="train_bells"/>
+        <SoundFile Id="sndTrain_bells" Source="sfxTranBells"/>
     </Resources>
     
     <Resources RootFolder="Textures">
@@ -10,7 +10,7 @@
     
     <!--<Do Action="dashboard:+NoArrows" InProgress="true"/>-->
     
-    <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.5" Pitch="0"/>
+    <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.4" Pitch="0"/>
     
     <SequenceSet InProgress="true" RepeatCount="1">
         <Do Action="sndTrainStart.Start()" />

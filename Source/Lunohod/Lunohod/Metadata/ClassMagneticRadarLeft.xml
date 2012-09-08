@@ -101,6 +101,10 @@
                 <Do Action="hero.SetDirection(1,0);hero:+Magneting" />
             </SequenceSet>
             
+            <BoolTrigger Condition="this:IsBeaming"
+                         EnterAction="SFX:+RadarWork"
+                         ExitAction="SFX:-RadarWork" />
+
         </Group>
     </Class>
 </Include>
