@@ -32,7 +32,7 @@
             <Image Id="this_imgExitStatic" TextureId="txrExitStatic" Location="-23,-56" />
 			<Image Id="this_imgExitFlight" TextureId="txrExitFlight" Location="-23,-56" Enabled="false"/>
             <Image Id="this_imgExitReady" TextureId="txrExitReady" Location="-23,-56" Enabled="false"/>
-			<Sound Id="this_sndExitFlight" FileId="sndExitFlight" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
+			<Sound Id="this_sndExitFlight" FileId="sfExitEndLevel" Volume="0.5" Pitch="0" Pan="0" InProfress="true"/>
 			<Sprite Id="this_sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="10,41,16,34" FrameBounds="0,0,16,34" Enabled="false">
                 <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="true" Target="this_sprExitFlightFire.CurrentFrame" InProgress="true"/>
 			</Sprite>
@@ -44,9 +44,10 @@
                 <Do Action="@heroDepartPointX=hero.X;
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             
-                            @heroDestPointY=exit.Y+10"/>
+                            @heroDestPointY=exit.Y+10;
+                            this_sndExitFlight.Start()"/>
                 <Delay Duration="0.2"/>
-                <Do Action="this_sprExitTransform.Enable();this_imgExitStatic.Disable();this_sndExitFlight.Start()"/>
+                <Do Action="this_sprExitTransform.Enable();this_imgExitStatic.Disable()"/>
                 <NumAnimation From="0" To="10" Duration="1.375" Autoreverse="false" Target="this_sprExitTransform.CurrentFrame" InProgress="true" RepeatCount="1"/>
                 <Delay Duration="0.425"/>
                 <Do Action="this_sprExitTransform.Disable();this_imgExitReady.Enable()"/>

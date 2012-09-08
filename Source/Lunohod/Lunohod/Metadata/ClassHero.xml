@@ -1,8 +1,10 @@
 <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="S02LXX_Trenazher" Bounds="0, 0, 480, 320">-->
 <Include>
-    
-	<Class Id="clsHero">
+    <Include File="ClassSFX.xml" />
+    <Class Id="clsHero">
 		<Hero Speed="0" Direction="0,0" Deceleration="0">
+            <Group Id="SFX" Class="clsSFX" />
+            
             <Include File="includeSkeletonHeroMotions.xml"/>
 		
 <!-- Init -->
@@ -154,10 +156,6 @@
             <SequenceSet Id="anmHeroEating" RepeatCount="1">
                 <NumAnimation From="0" To="2" Duration="0.5" Target="sprHeroEating.CurrentFrame" RepeatCount="1" Fill="End"/>
                 <RandomSet>
-                    <Do Action="hero:Chavk" />
-                    <Do Action="hero:-Chavk" />
-                </RandomSet>
-                <RandomSet>
                     <Delay Duration="0.1" />
                     <Delay Duration="0.25" />
                     <Delay Duration="0.4" />
@@ -242,55 +240,7 @@
                 <Sound FileId="sndHeroDying" Volume="0.5" Pitch="0" Pan="0"/>
                 <Sound FileId="sndHeroDying" Volume="0.5" Pitch="-0.03" Pan="0"/>
             </RandomSet>
-            
-            <!-- bounce -->
-            <BoolTrigger Condition="hero:bounce" 
-                         EnterAction="sfxHeroBounce.Start()"/>
-            
-            <RandomSet Id="sfxHeroBounce" RepeatCount="1">
-				<Sound FileId="sndHeroBounce1" Volume="0.2" Pitch="0"/>
-				<Sound FileId="sndHeroBounce2" Volume="0.2" Pitch="0"/>
-				<Sound FileId="sndHeroBounce1" Volume="0.2" Pitch="-0.03"/>
-				<Sound FileId="sndHeroBounce2" Volume="0.2" Pitch="-0.03"/>
-			</RandomSet>
-
-            <!-- stick -->
-            <BoolTrigger Condition="hero:stick" 
-                         EnterAction="sfxHeroStick.Start()"/>
-            
-            <RandomSet Id="sfxHeroStick" RepeatCount="1">
-                <Sound FileId="sndHeroStick1" Volume="0.2" Pitch="0"/>
-                <Sound FileId="sndHeroStick2" Volume="0.2" Pitch="0"/>
-                <Sound FileId="sndHeroStick1" Volume="0.2" Pitch="0.1"/>
-                <Sound FileId="sndHeroStick2" Volume="0.2" Pitch="0.1"/>
-            </RandomSet>
-            
-            <!-- eating -->
-            <BoolTrigger Condition="hero:sttEating" 
-                         EnterAction="sfxHeroFoleyEating.Start()"/>
-            
-            <RandomSet Id="sfxHeroFoleyEating" RepeatCount="1">
-                <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sndHeroEating1" Volume="0.5" Pitch="0.3"/>
-                <Sound FileId="sndHeroEating2" Volume="0.5" Pitch="0.3"/>
-                <Sound FileId="sndHeroEating3" Volume="0.5" Pitch="0.3"/>
-                <Sound FileId="sndHeroEating4" Volume="0.5" Pitch="0.3"/>
-            </RandomSet>
-
-            <!-- chavk (finish of the eating) -->
-            <BoolTrigger Condition="hero:Chavk" 
-                         EnterAction="sfxHeroChavk.Start()"/>
-            
-            <RandomSet Id="sfxHeroChavk" RepeatCount="1">
-                <Sound FileId="sndHeroEatingChavk1" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sndHeroEatingChavk2" Volume="0.5" Pitch="0"/>
-                <Sound FileId="sndHeroEatingChavk1" Volume="0.5" Pitch="-0.1"/>
-                <Sound FileId="sndHeroEatingChavk2" Volume="0.5" Pitch="0.1"/>
-            </RandomSet>
-            
+                        
             <!-- Teleport -->
 
             <BoolTrigger Condition="hero:sttPortIn" 

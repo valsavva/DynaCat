@@ -1,4 +1,4 @@
-<Include>    
+<Include>
 	<Class Id="clsExplosion">
         <Explosion Bounds="0,0,400,400" Ranges="BoomVeryClose=50,BoomClose=85,BoomFar=170,BoomVeryFar=210,BoomVeryVeryFar=250">
 			<Image Id="this_imgBomb" Bounds="190,190,31,9" RotationCenter="15,5" TextureId="txrBomb" Opacity="1" Depth="0.09"/>

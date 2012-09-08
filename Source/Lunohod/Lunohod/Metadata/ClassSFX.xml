@@ -1,28 +1,74 @@
 <Include>
     <Resources RootFolder="Sound">
-        <SoundFile Id="sndfExplosion1" Source="sfxExplosion1"/>
-        <SoundFile Id="sndfExplosion2" Source="sfxExplosion2"/>
-        <SoundFile Id="sndfHiss" Source="sfxHiss"/>
+        <SoundFile Id="sfExplosion1" Source="sfxExplosion1"/>
+        <SoundFile Id="sfExplosion2" Source="sfxExplosion2"/>
+        <SoundFile Id="sfHiss" Source="sfxHiss"/>
+        
+        <SoundFile Id="sfHeroEating1" Source="sfxEating1"/>
+        <SoundFile Id="sfHeroEating2" Source="sfxEating2"/>
+        <SoundFile Id="sfHeroEating3GoldFish" Source="sfxEating3Gold"/>
+        <SoundFile Id="sfBounce1" Source="sfxBounce1"/>
+        <SoundFile Id="sfBounce2" Source="sfxBounce2"/>
+        <SoundFile Id="sfStick1" Source="sfxStick1"/>
+        <SoundFile Id="sfStick2" Source="sfxStick1"/>
+
     </Resources>
     
     <Class Id="clsSFX">
         <Group>
 
-            <!-- explosion -->
-
+            <!-- hiss -->
             <BoolTrigger Condition="this:BombHiss"
                          EnterAction="sndBombHiss.Start()"/>
-            <Sound Id="sndBombHiss" FileId="sndfHiss" Volume="0.2" Pitch="0"/>
+            <Sound Id="sndBombHiss" FileId="sfHiss" Volume="0.2" Pitch="0"/>
 
+            <!-- explosion -->
             <BoolTrigger Condition="this:Explosion"
                          EnterAction="setExplosion.Start()"/>
-            <Sound Id="sndExplosion1" FileId="sndfExplosion1" Volume="1" Pitch="0"/>
-            <Sound Id="sndExplosion2" FileId="sndfExplosion2" Volume="1" Pitch="0"/>
-
             <RandomSet Id="setExplosion" RepeatCount="1">
-                <Do Action="sndExplosion1.Start()" />
-                <Do Action="sndExplosion2.Start()" />
+                <Sound FileId="sfExplosion1" Volume="1" Pitch="0"/>
+                <Sound FileId="sfExplosion2" Volume="1" Pitch="0"/>
             </RandomSet>
+
+<!-- HERO -->
+            <!-- eating -->
+            <BoolTrigger Condition="this:Eating"
+                         EnterAction="setHeroEating.Start()"/>
+            <RandomSet Id="setHeroEating" Probabilities="10,10,10,1" RepeatCount="1">
+                <Sound FileId="sfHeroEating1" Volume="0.4" Pitch="0"/>
+                <Sound FileId="sfHeroEating2" Volume="0.4" Pitch="0"/>
+                <Sound FileId="sfHeroEating1" Volume="0.4" Pitch="0.2"/>
+                <Sound FileId="sfHeroEating2" Volume="0.4" Pitch="0.4"/>
+            </RandomSet>
+
+            <!-- eating gold fish -->
+            <BoolTrigger Condition="this:EatingGoldFish"
+                         EnterAction="sndHeroEatingGoldFish.Start()"/>
+            <Sound Id="sndHeroEatingGoldFish" FileId="sfHeroEating3GoldFish" Volume="0.4" Pitch="0"/>
+
+            <!-- bounce -->
+            <BoolTrigger Condition="hero:bounce"
+                         EnterAction="setHeroBounce.Start()"/>
+
+            <RandomSet Id="setHeroBounce" RepeatCount="1">
+                <Sound FileId="sfBounce1" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sfBounce2" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sfBounce1" Volume="0.5" Pitch="-0.03"/>
+                <Sound FileId="sfBounce2" Volume="0.5" Pitch="-0.03"/>
+            </RandomSet>
+
+            <!-- stick -->
+            <BoolTrigger Condition="hero:stick"
+                         EnterAction="setHeroStick.Start()"/>
+
+            <RandomSet Id="setHeroStick" RepeatCount="1">
+                <Sound FileId="sfStick1" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sfStick2" Volume="0.5" Pitch="0"/>
+                <Sound FileId="sfStick1" Volume="0.5" Pitch="0.1"/>
+                <Sound FileId="sfStick2" Volume="0.5" Pitch="0.1"/>
+            </RandomSet>
+
+
         </Group>
     </Class>
 </Include>

@@ -78,14 +78,18 @@
 
             <!-- eaten -->
             <BoolTrigger Condition="not this:Eaten and not this:Borned">
-                <IntersectionTrigger ObjectId1="hero" ObjectId2="this" 
-                                     EnterAction="hero.AddScore(this.Points);
-                                     hero:+sttEating;
+                <IntersectionTrigger ObjectId1="hero" ObjectId2="this"
+                                     EnterAction="hero.AddScore(this.Points);                                     
                                      this:+Eaten;
+                                     hero:+sttEating;
                                      this_anmEating.Start();
                                      this.IsExploding=false;
                                      this_grpShowPoints.Enable()"
-                                     Group="this_foodStates"/>
+                                     Group="this_foodStates">
+                    
+                    <BoolTrigger Condition="@fishType==1 or @fishType==2 or @fishType==3 or @fishType==4 or @fishType==5" EnterAction="SFX:Eating" />
+                    <BoolTrigger Condition="@fishType==6 or @fishType==7" EnterAction="SFX:EatingGoldFish" />
+                </IntersectionTrigger>
             </BoolTrigger>
             
             <NumAnimation Id="this_anmEating" Duration="1" Target="this.X,this.Y,this.Opacity,this.Width,this.Height" Autoreverse="false" From="this.X,this.Y,1,this.Width,this.Height" To="hero.X+15,hero.Y+10,0,this.Width/1.4,this.Height/1.4" Fill="End" RepeatCount="1" InProgress="false"/>
