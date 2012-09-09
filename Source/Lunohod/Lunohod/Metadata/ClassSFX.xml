@@ -9,11 +9,10 @@
         <SoundFile Id="sfHeroShout9" Source="heroShout9"/>
         <SoundFile Id="sfHeroOops1" Source="heroOops1"/>
         <SoundFile Id="sfHeroOops2" Source="heroOops2"/>
-        <SoundFile Id="sfHeroMuttering1" Source="heroMuttering1"/>
         <SoundFile Id="sfHeroMuttering2" Source="heroMuttering2"/>
         <SoundFile Id="sfHeroMuttering3" Source="heroMuttering3"/>
+        <SoundFile Id="sfHeroMuttering4" Source="heroMuttering4"/>
         <SoundFile Id="sfHeroLaugh1" Source="heroLaugh1"/>
-        <SoundFile Id="sfHeroLaugh2" Source="heroLaugh2"/>
         <SoundFile Id="sfHeroLaugh3" Source="heroLaugh3"/>
         <SoundFile Id="sfHeroLaugh4" Source="heroLaugh4"/>
         <SoundFile Id="sfHeroLaugh5" Source="heroLaugh5"/>
@@ -150,9 +149,9 @@
             <BoolTrigger Condition="hero:sttBadExplosion" EnterAction="this_setOops.Start()"/>
             <SequenceSet Id="this_setOops" RepeatCount="1">
                 <Delay Duration="0.4" />
-                <RandomSet  RepeatCount="1">
-                    <Sound FileId="sfHeroOops1" Volume="0.5"/>
+                <RandomSet  RepeatCount="1" Probabilities="3,1">
                     <Sound FileId="sfHeroOops2" Volume="0.5"/>
+                    <Sound FileId="sfHeroOops2" Volume="0.5" Pitch="-0.3"/>
                 </RandomSet>
             </SequenceSet>           
             
@@ -165,16 +164,15 @@
 
             <BoolTrigger Condition="(hero:OnOilMotion or hero:Magneted) and this:longTime" EnterAction="this_setHeroMuttering.Start()"/>
             <RandomSet Id="this_setHeroMuttering"  RepeatCount="1">
-                <Sound FileId="sfHeroMuttering1" Volume="0.2"/>
                 <Sound FileId="sfHeroMuttering2" Volume="0.3"/>
                 <Sound FileId="sfHeroMuttering3" Volume="0.2"/>
+                <Sound FileId="sfHeroMuttering4" Volume="0.2"/>
             </RandomSet>
             
             <!-- lol:health and time bonus! -->
             <BoolTrigger Condition="this:Laugh" EnterAction="this_setHeroLaugh.Start()"/>
             <RandomSet Id="this_setHeroLaugh"  RepeatCount="1">
                 <Sound FileId="sfHeroLaugh1" Volume="0.5"/>
-                <Sound FileId="sfHeroLaugh2" Volume="0.5"/>
                 <Sound FileId="sfHeroLaugh3" Volume="0.5"/>
                 <Sound FileId="sfHeroLaugh4" Volume="0.5"/>
                 <Sound FileId="sfHeroLaugh5" Volume="0.5"/>
