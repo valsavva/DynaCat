@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SVG to XGAME xml converter v1.6.20 -->
+<!-- source: D:\Lunohod\Levels\zzzzzzgrfx_updt.svg -->
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="zzzzzzgrfx_updt" Bounds="0, 0, 480, 320">
+    <Include File="ClassTower.xml" />
+    <Include File="ClassExit.xml" />
+    <Include File="ClassHero.xml" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_fish_spr_42x38_type03" Source="fish_spr_42x38_type03" />
+        <Texture Id="txr_fish_spr_42x38_type04" Source="fish_spr_42x38_type04" />
+        <Texture Id="txr_fish_spr_42x38_type05" Source="fish_spr_42x38_type05" />
+        <Texture Id="txr_fish_spr_42x38_type06" Source="fish_spr_42x38_type06" />
+        <Texture Id="txr_fish_spr_42x38_type07" Source="fish_spr_42x38_type07" />
+        <Texture Id="txr_fish_spr_42x38_type01" Source="fish_spr_42x38_type01" />
+        <Texture Id="txr_fish_spr_42x38_type02" Source="fish_spr_42x38_type02" />
+    </Resources>
+    <Layer Id="GRFX update" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_fish_spr_42x38_type03" Bounds="-292, 182, 168, 38" TraceId="image3093"/>
+        <Image Id="dfltMask2" TextureId="txr_fish_spr_42x38_type04" Bounds="-287, 212, 168, 38" TraceId="image3104"/>
+        <Image Id="dfltMask3" TextureId="txr_fish_spr_42x38_type05" Bounds="-287, 240, 168, 38" TraceId="image3115"/>
+        <Image Id="dfltMask4" TextureId="txr_fish_spr_42x38_type06" Bounds="-296, 275, 168, 38" TraceId="image3126"/>
+        <Image Id="dfltMask5" TextureId="txr_fish_spr_42x38_type07" Bounds="-286, 307, 168, 38" TraceId="image3137"/>
+        <Image Id="dfltMask6" TextureId="txr_fish_spr_42x38_type01" Bounds="-311, 342, 168, 38" TraceId="image3148"/>
+        <Image Id="dfltMask7" TextureId="txr_fish_spr_42x38_type02" Bounds="-312, 373, 168, 38" TraceId="image3159"/>
+    </Layer>
+    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+        <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
+        <Group Id="exit" Class="clsExit" Bounds="143, 38, 37, 54" TraceId="image3049" />
+        <Hero Id="hero" Class="clsHero" Bounds="272, 69, 33, 24" TraceId="image3016-1"/>
+    </Layer>
+    <Include File="ClassExplosion.xml" />
+    <Include File="Dashboard.xml" />
+</Level>
+<!-- Food=0 Enemy=0 Block=0 DesignImage=7 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
