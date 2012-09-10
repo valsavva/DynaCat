@@ -10,7 +10,7 @@
     
     <!--<Do Action="dashboard:+NoArrows" InProgress="true"/>-->
     
-    <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.4" Pitch="0"/>
+    <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.3" Pitch="0"/>
     
     <SequenceSet InProgress="true" RepeatCount="1">
         <Do Action="sndTrainStart.Start()" />
