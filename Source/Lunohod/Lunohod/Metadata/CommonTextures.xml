@@ -95,10 +95,7 @@
     </Resources>
 
     <!-- hero -->
-    
-    <Resources RootFolder="Sound">
-        <SoundFile Id="sndHeroDying" Source="skeletonFX_crash_1"/>
-    </Resources>
+
 
     <Resources RootFolder="Textures">
         <Texture Id="txrHeroDefault" Source="Cat_0000_norm"/>

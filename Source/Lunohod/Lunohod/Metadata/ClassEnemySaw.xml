@@ -4,7 +4,6 @@
         <SoundFile Id="sfSawStart" Source="sfxSawStart"/>
         <SoundFile Id="sfSawMid" Source="sfxSawCont"/>
         <SoundFile Id="sfSawEnd" Source="sfxSawEnd"/>
-        <SoundFile Id="sfSawWork" Source="demo_fx_saw_work"/>
     </Resources>
 
     <Class Id="clsEnemySaw">

@@ -18,7 +18,7 @@
     </Resources>
 
     <Resources RootFolder="Sound">
-        <MusicFile Id="sfGameMusic" Source="gameMusic.mp3"/>
+        <MusicFile Id="sfGameMusic" Source="DynacatMusic.mp3"/>
     </Resources>
 
         <Class Id="clsSeriesPanel">
