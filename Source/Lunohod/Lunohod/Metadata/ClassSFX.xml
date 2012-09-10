@@ -168,7 +168,7 @@
             
             <!-- dying -->
             <BoolTrigger Condition="hero.IsDead" EnterAction="sndHeroDying.Start()"/>
-            <Sound Id="sndHeroDying" FileId="sfHeroDying" Volume="1"/>
+            <Sound Id="sndHeroDying" FileId="sfHeroDying" Volume="0.7"/>
             
 <!-- ...voice -->
             <!-- beaten -->

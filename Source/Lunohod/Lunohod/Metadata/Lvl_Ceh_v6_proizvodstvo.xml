@@ -75,6 +75,9 @@
         <Texture Id="txr_box_b_004" Source="box_b_004" />
         <Texture Id="txr_box_b_003" Source="box_b_003" />
     </Resources>
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sfSawEnd" Source="sfxSawEnd"/>
+    </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3839"/>
     </Layer>
@@ -87,9 +90,6 @@
         <Block Id="blk6" Bounds="26, 0, 78, 284" Edges="Stick" TraceId="image4537"/>
     </Layer>
     <!-- HAND EDIT >>> -->
-    <Resources RootFolder="Sound">
-        <SoundFile Id="sndSawWork" Source="demo_fx_saw_work"/>
-    </Resources>
     <Layer Id="food" BackColor="#FFFFFFFF">
 
         <SequenceSet InProgress="true">
@@ -134,14 +134,16 @@
             <NumAnimation From="0" To="360" Target="imgEnm3.Rotation" InProgress="true" Duration="5" Autoreverse="false" RepeatCount="0"/>
         </SequenceSet>
 
-        <Sound Id="sndSawAndFish" FileId="sndSawWork" Volume="0.5" Pitch="1" Pan="0"/>
+        <Sound Id="sndSawAndFish" FileId="sfSawEnd" Volume="0.3" Pitch="1" Pan="0"/>
+        <Do Action="sndSawAndFish.Start()" InProgress="true" RepeatCount="1"/>
+        
         <Do Action="tower:+LevelWithParachutes" InProgress="true" RepeatCount="1"/>
 
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="349, 94, 28, 19" Enabled="false" TraceId="image4511" >
             <BoolTrigger Condition="not fd1:Borned and fd1.Enabled">
-                <IntersectionTrigger ObjectId1="fd1" ObjectId2="enm1" EnterAction="fd1:BoomClose;sndSawAndFish.Start()" />
-                <IntersectionTrigger ObjectId1="fd1" ObjectId2="enm2" EnterAction="fd1:BoomClose;sndSawAndFish.Start()" />
-                <IntersectionTrigger ObjectId1="fd1" ObjectId2="enm3" EnterAction="fd1:BoomClose;sndSawAndFish.Start()" />
+                <IntersectionTrigger ObjectId1="fd1" ObjectId2="enm1" EnterAction="sndSawAndFish.Start();fd1:BoomClose" />
+                <IntersectionTrigger ObjectId1="fd1" ObjectId2="enm2" EnterAction="sndSawAndFish.Start();fd1:BoomClose" />
+                <IntersectionTrigger ObjectId1="fd1" ObjectId2="enm3" EnterAction="sndSawAndFish.Start();fd1:BoomClose" />
             </BoolTrigger>
         </Food>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2"  Bounds="246, 143, 28, 19" Enabled="false" TraceId="image4513" >
