@@ -219,8 +219,8 @@
             <BoolTrigger Condition="(hero:OnOilMotion or hero:Magneted) and this:longTime" EnterAction="this_setHeroMuttering.Start()"/>
             <RandomSet Id="this_setHeroMuttering"  RepeatCount="1">
                 <Sound FileId="sfHeroMuttering2" Volume="0.4"/>
-                <Sound FileId="sfHeroMuttering3" Volume="0.3"/>
-                <Sound FileId="sfHeroMuttering4" Volume="0.3"/>
+                <Sound FileId="sfHeroMuttering3" Volume="0.4"/>
+                <Sound FileId="sfHeroMuttering4" Volume="0.4"/>
             </RandomSet>
             
             <!-- lol:health and time bonus! -->
