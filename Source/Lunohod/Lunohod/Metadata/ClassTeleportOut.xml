@@ -7,7 +7,7 @@
             <Do Action="hero:sttPortOut" />
             <Do Action="hero.X=@outX;hero.Y=@outY;hero.Opacity=1" />
             <Do Action="hero.SetTransaction(true, true, true)"/>
-            <Do Action="system:@heroOutDirection"/>
+            <Do Action="system:@heroOutDirection;hero:-sttPortIn"/>
         </SequenceSet>
     </Class>
 
