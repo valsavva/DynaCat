@@ -37,7 +37,14 @@
         <Texture Id="txrFishTypeDefault_6" Source="fishType06" />
         <Texture Id="txrFishTypeDefault_7" Source="fishType07" />
 
-
+        <Texture Id="txrFishAnmType_1" Source="fish_spr_42x38_type01" />
+        <Texture Id="txrFishAnmType_2" Source="fish_spr_42x38_type02" />
+        <Texture Id="txrFishAnmType_3" Source="fish_spr_42x38_type03" />
+        <Texture Id="txrFishAnmType_4" Source="fish_spr_42x38_type04" />
+        <Texture Id="txrFishAnmType_5" Source="fish_spr_42x38_type05" />
+        <Texture Id="txrFishAnmType_6" Source="fish_spr_42x38_type06" />
+        <Texture Id="txrFishAnmType_7" Source="fish_spr_42x38_type07" />
+        
         <!-- rat 1 -->
         <Texture Id="txrEnemyRatDefaultType_1" Source="BM_Ws_pose_static" />
         <Texture Id="txrEnemyRatAttackType_1" Source="BM_Ws_1_blow_spr_80x80x6" />
@@ -95,10 +102,7 @@
     </Resources>
 
     <!-- hero -->
-    
-    <Resources RootFolder="Sound">
-        <SoundFile Id="sndHeroDying" Source="skeletonFX_crash_1"/>
-    </Resources>
+
 
     <Resources RootFolder="Textures">
         <Texture Id="txrHeroDefault" Source="Cat_0000_norm"/>

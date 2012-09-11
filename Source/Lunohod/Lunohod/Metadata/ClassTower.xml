@@ -4,7 +4,7 @@
     <Resources RootFolder="Textures">
         <Texture Id="spr_towerLedOn" Source="Tow_trans_SignalSprite_60x60x4"/>
         <Texture Id="txr_towerLedOff" Source="Tow_trans_off"/>
-        <Texture Id="txr_towerAlarm" Source="transmitter_2_Alarm"/>
+        <Texture Id="txr_towerAlarm" Source="Tow_trans_off"/>
     </Resources>
 
 	<Class Id="clsTower">
@@ -25,7 +25,7 @@
             </SequenceSet>
             
             <BoolTrigger Condition="this:Alarm" EnterAction="this:-LedOn" Group="this_sttTower">
-                <Image TextureId="txr_towerAlarm" Bounds="0, 0, 30, 30"/>
+                <Image TextureId="txr_towerAlarm" Bounds="0, 0, 30, 30" BackColor="#FF3333"/>
             </BoolTrigger>
             
             <BoolTrigger Condition="this:LedOn" Group="this_sttTower">

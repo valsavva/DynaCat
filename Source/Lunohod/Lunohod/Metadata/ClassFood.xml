@@ -7,36 +7,43 @@
 <!-- Init -->
             <BoolTrigger Id="this_trgInit1" Condition="@fishType==1" EnterAction="
                     this.Points=50;
+                    this_sprTailAnimation.X=this_sprTailAnimation.X-3;this_sprTailAnimation.Y=this_sprTailAnimation.Y-9;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
             
             <BoolTrigger Id="this_trgInit2" Condition="@fishType==2" EnterAction="
                     this.Points=70;
+                    this_sprTailAnimation.X=this_sprTailAnimation.X-6;this_sprTailAnimation.Y=this_sprTailAnimation.Y-9;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
             
             <BoolTrigger Id="this_trgInit3" Condition="@fishType==3" EnterAction="
                     this.Points=70;
+                    this_sprTailAnimation.X=this_sprTailAnimation.X-4;this_sprTailAnimation.Y=this_sprTailAnimation.Y-9;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
             
             <BoolTrigger Id="this_trgInit4" Condition="@fishType==4" EnterAction="
                     this.Points=70;
+                    this_sprTailAnimation.X=this_sprTailAnimation.X-6;this_sprTailAnimation.Y=this_sprTailAnimation.Y-8;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
             
             <BoolTrigger Id="this_trgInit5" Condition="@fishType==5" EnterAction="
                     this.Points=100;
+                    this_sprTailAnimation.X=this_sprTailAnimation.X-6;this_sprTailAnimation.Y=this_sprTailAnimation.Y-9;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
             
             <BoolTrigger Id="this_trgInit6" Condition="@fishType==6" EnterAction="
                     this.Points=150;
+                    this_sprTailAnimation.X=this_sprTailAnimation.X-12;this_sprTailAnimation.Y=this_sprTailAnimation.Y-5;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
             
             <BoolTrigger Id="this_trgInit7" Condition="@fishType==7" EnterAction="
                     this.Points=150;
+                    this_sprTailAnimation.X=this_sprTailAnimation.X-3;this_sprTailAnimation.Y=this_sprTailAnimation.Y-4;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit5.Disable();this_trgInit6.Disable();this_trgInit7.Disable()">
             </BoolTrigger>
             
@@ -92,7 +99,7 @@
                 </IntersectionTrigger>
             </BoolTrigger>
             
-            <NumAnimation Id="this_anmEating" Duration="1" Target="this.X,this.Y,this.Opacity,this.Width,this.Height" Autoreverse="false" From="this.X,this.Y,1,this.Width,this.Height" To="hero.X+15,hero.Y+10,0,this.Width/1.4,this.Height/1.4" Fill="End" RepeatCount="1" InProgress="false"/>
+            <NumAnimation Id="this_anmEating" Duration="1" Target="this.X,this.Y,this.Opacity,this_sprTailAnimation.Width,this_sprTailAnimation.Height" Autoreverse="false" From="this.X,this.Y,1,this_sprTailAnimation.Width,this_sprTailAnimation.Height" To="hero.X+15,hero.Y+10,0,this_sprTailAnimation.Width/1.4,this_sprTailAnimation.Height/1.4" Fill="End" RepeatCount="1" InProgress="false"/>
 
             <!-- Borned: set destroyed images -->
             <BoolTrigger Id="this_borned" 
@@ -119,12 +126,21 @@
 
 
             <!-- BoomFar: explosion - quake -->
-            <BoolTrigger Condition="this:BoomFar" 
+            <BoolTrigger Condition="this:BoomFar and not this_setQuake1.InProgress" 
                          EnterAction="this_setQuake1.Start()" 
                          Group="this_foodStates"/>
-            <SequenceSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
-                <NumAnimation Target="this.Rotation" From="-2" To="2" Duration="0.15" Autoreverse="false" RepeatCount="2.5" IsDelta="false" Fill="End"/>
-            </SequenceSet>
+            <RandomSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this.X" From="0" To="1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.X" From="0" To="-2" Duration="0.1" Autoreverse="true" RepeatCount="2" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.X" From="0" To="-1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                </SequenceSet>
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this.Y" From="0" To="1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Y" From="0" To="-2" Duration="0.1" Autoreverse="true" RepeatCount="2" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Y" From="0" To="-1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                </SequenceSet>
+            </RandomSet>
             
             <!-- hero close animation
             
@@ -153,10 +169,34 @@
             </RandomSet>
             -->
             
+            <!-- tail animation -->
+            <DistanceTrigger ObjectId1="hero" ObjectId2="this" Value="130" 
+                             EnterAction="this_imgDefault.Opacity=0;this_sprTailAnimation.Opacity=1"
+                             ExitAction="this_imgDefault.Opacity=1;this_sprTailAnimation.Opacity=0"
+                             Group="this_foodStates">
+                <NumAnimation From="0" To="3" Duration="0.32" Autoreverse="false" Target="this_sprTailAnimation.CurrentFrame" RepeatCount="0" Fill="Reset" InProgress="true"/>
+            </DistanceTrigger>               
+            
             <!-- default -->
             <BoolTrigger Group="this_foodStates">
                 <Image Id="this_imgDefault" TextureId="txrFishTypeDefault_@fishType" RotationCenter="5,11"/>
             </BoolTrigger>
+
+            <Sprite Id="this_sprTailAnimation" TextureId="txrFishAnmType_@fishType" Bounds="0,0,42,38" FrameBounds="0,0,42,38" Opacity="0"/>
+            
+
+            <!--<SequenceSet RepeatCount="0" InProgress="true">
+                <Do Action="@this_delay=system.Rnd(0,10)" />
+                <Delay Duration="@this_delay" />
+                <Do Action="this_imgDefault.Opacity=0;this_sprTailAnimation.Opacity=1" />
+                <RandomSet RepeatCount="1">
+                    <NumAnimation From="0" To="3" Duration="0.5" Autoreverse="false" Target="this_sprTailAnimation.CurrentFrame" RepeatCount="2" Fill="Reset" InProgress="true"/>
+                    <NumAnimation From="0" To="3" Duration="0.5" Autoreverse="false" Target="this_sprTailAnimation.CurrentFrame" RepeatCount="4" Fill="Reset" InProgress="true"/>
+                </RandomSet>
+                <Do Action="this_imgDefault.Opacity=1;this_sprTailAnimation.Opacity=0" />
+            </SequenceSet>-->
+
+
         </Food>
     </Class>
 
