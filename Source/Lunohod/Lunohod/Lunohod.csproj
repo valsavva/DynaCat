@@ -80,6 +80,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Performance.txt" />
+    <None Include="Content\Sound\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utility.cs" />
@@ -1818,6 +1819,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\scr_victory_badge_glow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\sfxSawCont.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\sfxSawEnd.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\sfxSawStart.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

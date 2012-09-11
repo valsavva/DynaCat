@@ -37,11 +37,13 @@
                          anmHeroDying.Start()"
                          StayTriggered="true"
                          Group="sttHeroStates">
-                <Image Id="imgHeroDying" TextureId="txrHeroDying" Bounds="-33, -46, 100, 100"/>
+<!--                <Image Id="imgHeroDying" TextureId="txrHeroDying" Bounds="-33, -46, 100, 100"/>-->
+                <Sprite Id="this_shtHeroDying" TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="5"/>
             </BoolTrigger>
             
             <SequenceSet Id="anmHeroDying">
-                <NumAnimation Duration="0.1" Target="imgHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+           		<Do Action="this_shtHeroDying.CurrentFrame=system.Rnd(0,4)" />
+                <NumAnimation Duration="0.1" Target="this_shtHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
                 <Do Action="system.StartScreen('ScreenLevelFailed.xml')"/>
             </SequenceSet>
             

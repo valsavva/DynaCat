@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Game Bounds="0,0,480,320" StartScreen="ScreenMain.xml" PauseScreen="ScreenPause.xml" ShowFPS="true" CpsLimit="4" CpsTimeSpan="2">
+<Game Bounds="0,0,480,320" StartScreen="ScreenMain.xml" PauseScreen="ScreenPause.xml" ShowFPS="false" CpsLimit="4" CpsTimeSpan="2">
     <Resources RootFolder="Global">
         <Texture Id="blank" Source="blank" />
         <Font Id="SystemFont" Source="SystemFont" />
