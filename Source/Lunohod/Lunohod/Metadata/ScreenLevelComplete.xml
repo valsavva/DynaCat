@@ -8,26 +8,23 @@
     <Include File="ClassUILevelNumberPanel.xml" />
 
     <Resources RootFolder="Global">
-        <Texture Id="txrBackground" Source="Victory_BG" />
-        <Texture Id="txrHeroArt" Source="Victory_Hero" />
-        <Texture Id="txrScore" Source="scores" />
-        <Texture Id="txrPanels" Source="select_level_panels" />
-        <Texture Id="txrStar" Source="select_level_panel_star" />
-        <Texture Id="txrBadge" Source="select_level_panel_beydg" />
+        <Texture Id="txrBackground" Source="scr_victory_bg" />
+        <Texture Id="txrStars" Source="scr_victory_stars" />
+        <Texture Id="txrAlarm" Source="scr_victory_alarm" />
+        <Texture Id="txrHeart" Source="scr_victory_heart" />
+        <Texture Id="txrBadge" Source="scr_victory_badge" />
+        <Texture Id="txrBadgeGlow" Source="scr_victory_badge_glow" />
+        <Texture Id="txrStamp" Source="scr_victory_stamp" />
         
-        <Font Id="fntSystem" Source="SystemFont"/>
+        <Font Id="fntSystem" Source="Splash14Font"/>
     </Resources>
 
-	<Layer Id="background">
-		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
-	</Layer>
-	<Layer>
-		<Do Action="levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time; levelScore.Save();" InProgress="true" />
-		
-		<Image TextureId="txrHeroArt" Location="110,0" />
-		
+    <Layer Id="background">
+        <Image TextureId="txrBackground" />
+    </Layer>
+    
+	<Layer Id="lyrControls">
 		<Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel"/>
-
 		<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=restart" Bounds="40, 190, 62, 62">
 		    <BoolTrigger Condition="btnRestart:Action" EnterAction="system.CloseCurrentScreen();system.RestartLevel();" />
 		</Group>
@@ -37,30 +34,73 @@
 		<Group Id="btnNextLevel" Class="clsButton" ClassParams="@BtnImg=forwind" Bounds="380, 256, 62, 62">
 		    <BoolTrigger Condition="btnNextLevel:Action" EnterAction="system.CloseCurrentScreen();system.StartNextLevel();" />
 		</Group>
+	</Layer>
 
-		<Group Bounds="175,235,150,60">
-			<!-- star plate -->
-			<Group Location="65,0">
-	    		<Sprite Id="this_sprPanel" TextureId="txrPanels" Location="0,0" FrameBounds="0,0,94,51" FrameCount="2" StretchMode="ActualSize"/>
+	<Layer>
+		<!-- We'll use this group's X attribute to animate score. It's a hack, because we can't animate variables (yet) -->
+		<Group Id="dispScore" />
+		<Do Action="
+			levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time;
+			@isNewScore=levelScore.IsNewScore;
+			levelScore.Save();
+			" InProgress="true" />
 
-			    <BoolTrigger Condition="levelScore.NumberOfStars>0">
-			    	<Image TextureId="txrStar" Location="24,32" />
-			    </BoolTrigger>
-			    <BoolTrigger Condition="levelScore.NumberOfStars>1">
-			    	<Image TextureId="txrStar" Location="37,32" />
-			    </BoolTrigger>
-			    <BoolTrigger Condition="levelScore.NumberOfStars>2">
-			    	<Image TextureId="txrStar" Location="50,32" />
-			    </BoolTrigger>
-			    
-			    <BoolTrigger Condition="levelScore.HasBadge">
-			    	<Image TextureId="txrBadge" Location="65,20" Depth="0.2" />
-			    </BoolTrigger>
-	    	</Group>
-	    	<!-- score plate -->
-			<Image TextureId="txrScore" Location="0,0" StretchMode="ActualSize" />
-			<Text Text="=system.Str(levelScore.TotalScore)" Location="70,5" FontId="Splash14Font" />
-		</Group>
+		<!-- Text and graphics -->
+		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="210, 195" />
 
+		<Sprite Id="sprStar1" TextureId="txrStars" Bounds="200,218,33,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="0" Enabled="false" />
+		<Sprite Id="sprStar2" TextureId="txrStars" Bounds="232,215,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="1" Enabled="false" />
+		<Sprite Id="sprStar3" TextureId="txrStars" Bounds="262,217,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="2" Enabled="false" />
+		<Image Id="imgAlarm" TextureId="txrAlarm" Location="206,238" Enabled="false" />
+		<Image Id="imgHeart" TextureId="txrHeart" Location="245,253" Enabled="false" />
+		<Image Id="imgBadgeGlow" TextureId="txrBadgeGlow" Location="279,162" Enabled="false" />
+		<Image Id="imgBadge" TextureId="txrBadge" Location="276,182" Enabled="false" />
+		<Image Id="imgStamp" TextureId="txrStamp" Location="310,8" Enabled="false" />
+
+		<!-- Start score animation -->
+		<SequenceSet Id="setScoreAnimations" InProgress="true">
+			<NumAnimation Id="anmScore" Target="dispScore.X" From="0" To="levelScore.TotalScore" Duration="3" RepeatCount="1" Fill="Hold"/>
+			<!--
+			<NumAnimation Id="anmTimeBonus" Target="dispScore.X" From="levelScore.Score" To="levelScore.Score+levelScore.TimeBonus" Duration="1" RepeatCount="1" Fill="Hold" />
+			<NumAnimation Id="anmHealthBonus" Target="dispScore.X" From="levelScore.Score+levelScore.TimeBonus" To="levelScore.TotalScore" Duration="1" RepeatCount="1" Fill="Hold" />
+			-->
+		</SequenceSet>
+		
+		<!-- Sets that responsible for animating stars, and the badges -->
+		<ParallelSet Id="setStar1">
+			<Do Action="sprStar1.Enabled=true" />
+			<NumAnimation Target="sprStar1.Scale" From="2" To="1" Duration="0.5" Fill="Hold" />
+		</ParallelSet>
+		<ParallelSet Id="setStar2">
+			<Do Action="sprStar2.Enabled=true" />
+			<NumAnimation Target="sprStar2.Scale" From="2" To="1" Duration="0.5" Fill="Hold" />
+		</ParallelSet>
+		<ParallelSet Id="setStar3">
+			<Do Action="sprStar3.Enabled=true" />
+			<NumAnimation Target="sprStar3.Scale" From="2" To="1" Duration="0.5" Fill="Hold" />
+		</ParallelSet>
+		<ParallelSet Id="setAlarm">
+			<Do Action="imgAlarm.Enabled=true" />
+		</ParallelSet>
+		<ParallelSet Id="setHeart">
+			<Do Action="imgHeart.Enabled=true" />
+		</ParallelSet>
+		<ParallelSet Id="setBadge">
+			<Do Action="imgBadgeGlow.Enabled=true" />
+			<Do Action="imgBadge.Enabled=true" />
+		</ParallelSet>
+		<ParallelSet Id="setStamp">
+			<Do Action="imgStamp.Enabled=true" />
+		</ParallelSet>
+		
+		
+
+		<BoolTrigger Condition="(dispScore.X/levelScore.AvailablePoints) >= levelScore.StarScoreRatio1" EnterAction="setStar1.Start()" />
+		<BoolTrigger Condition="(dispScore.X/levelScore.AvailablePoints) >= levelScore.StarScoreRatio2" EnterAction="setStar2.Start()" />
+		<BoolTrigger Condition="(dispScore.X/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3" EnterAction="setStar3.Start()" />
+		<BoolTrigger Condition="(levelScore.TimeBonus > 0) and (dispScore.X > levelScore.Score)" EnterAction="setAlarm.Start()" />
+		<BoolTrigger Condition="(levelScore.HealthBonus > 0) and (dispScore.X > (levelScore.Score + levelScore.TimeBonus))" EnterAction="setHeart.Start()" />
+		<BoolTrigger Condition="(not setScoreAnimations.InProgress) and levelScore.HasBadge" EnterAction="setBadge.Start()" />
+		<BoolTrigger Condition="(not setScoreAnimations.InProgress) and (not setBadge.InProgress) and @isNewScore" EnterAction="setStamp.Start()" />
 	</Layer>
 </Screen>

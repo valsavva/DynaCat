@@ -42,7 +42,10 @@ namespace Lunohod.Objects
                 for (int i = 0; i < obj.Subcomponents.Count; i++)
                 {
                     var subcomponent = obj.Subcomponents[i];
-                    IRunnable runnable = subcomponent as IRunnable;
+					if (!subcomponent.Enabled)
+						continue;
+
+					IRunnable runnable = subcomponent as IRunnable;
                     if (runnable != null)
                         result.Add(runnable);
 

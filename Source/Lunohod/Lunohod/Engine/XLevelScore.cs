@@ -35,11 +35,17 @@ namespace Lunohod.Objects
 		}
 		
 		[XmlAttribute]
-		public double AvaliablePoints { get { return availablePoints; } set { availablePoints = value; calculated = false; } }
+		public double AvailablePoints { get { return availablePoints; } set { availablePoints = value; calculated = false; } }
 		[XmlAttribute]
-		public double Score { get { return score; } set { score = value; calculated = false; } }
+		public double Score {
+			get { return score; } 
+			set { score = value; calculated = false; }
+		}
 		[XmlAttribute]
-		public double Time { get { return time; } set { time = value; calculated = false; } }
+		public double Time { 
+			get { return time; }
+			set { time = value; calculated = false; }
+		}
 		[XmlAttribute]
 		public double Health { get { return health; } set { health = value; calculated = false; } }
 		
@@ -72,6 +78,16 @@ namespace Lunohod.Objects
 		public bool HasBadge
 		{
 			get { return TimeBonus > 0 && HealthBonus > 0; }
+		}
+
+		[XmlIgnore]
+		public bool IsNewScore
+		{
+			get
+			{
+				var levelEngine = (LevelEngine)this.GetScreen().ScreenEngine;
+				return this.TotalScore > levelEngine.LevelScore.TotalScore;
+			}
 		}
 
 		public void CopyTo(XLevelScore other)
@@ -136,7 +152,7 @@ namespace Lunohod.Objects
 			writer.WriteStartElement("LevelScore");
 			
 			writer.WriteAttributeString("Id", this.Id);
-			writer.WriteAttributeString("AvailablePoints", this.AvaliablePoints.ToString(CultureInfo.InvariantCulture));
+			writer.WriteAttributeString("AvailablePoints", this.AvailablePoints.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("Score", this.Score.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("Time", this.Time.ToString(CultureInfo.InvariantCulture));
 			writer.WriteAttributeString("Health", this.Health.ToString(CultureInfo.InvariantCulture));
@@ -148,7 +164,7 @@ namespace Lunohod.Objects
 		{
 			switch (propertyName)
 			{
-                case "AvaliablePoints": getter = () => AvaliablePoints; setter = (v) => AvaliablePoints = v; break;
+                case "AvailablePoints": getter = () => AvailablePoints; setter = (v) => AvailablePoints = v; break;
                 case "Score": getter = () => Score; setter = (v) => Score = v; break;
                 case "Time": getter = () => Time; setter = (v) => Time = v; break;
                 case "Health": getter = () => Health; setter = (v) => Health = v; break;
@@ -167,6 +183,7 @@ namespace Lunohod.Objects
 			switch (propertyName)
 			{
                 case "HasBadge": getter = () => HasBadge; setter = null; break;
+                case "IsNewScore": getter = () => IsNewScore; setter = null; break;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}

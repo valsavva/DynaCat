@@ -85,7 +85,7 @@ namespace Lunohod
 			// Insert lelelInfo and scoreInfo
 			var li = (XLevelInfo)LevelInfo.Copy();
 			var ls = (XLevelScore)LevelScore.Copy();
-			
+				
 			li.Id = "levelInfo";
 			ls.Id = "levelScore";
 			
