@@ -7,6 +7,8 @@
     <Include File="ClassUIButton.xml" />
     <Include File="ClassUILevelNumberPanel.xml" />
 
+	<Include File="ClassSmoke.xml" />
+    
     <Resources RootFolder="Global">
         <Texture Id="txrBackground" Source="scr_victory_bg" />
         <Texture Id="txrStars" Source="scr_victory_stars" />
@@ -15,10 +17,14 @@
         <Texture Id="txrBadge" Source="scr_victory_badge" />
         <Texture Id="txrBadgeGlow" Source="scr_victory_badge_glow" />
         <Texture Id="txrStamp" Source="scr_victory_stamp" />
-        
+         <Texture Id="txrHeroSplash" Source="Victory_new_Spark Cat" />
         <Font Id="fntSystem" Source="Splash14Font"/>
     </Resources>
-
+    
+	<Resources RootFolder="Sound">
+        <SoundFile Id="sfScoreRatchet" Source="sfxScoreRatchet"/>
+    </Resources>
+        
     <Layer Id="background">
         <Image TextureId="txrBackground" />
     </Layer>
@@ -48,59 +54,108 @@
 		<!-- Text and graphics -->
 		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="210, 195" />
 
+		<Image Id="imgStar1Splash" TextureId="txrHeroSplash" Bounds="190,208,53,56" Opacity="0"/>
 		<Sprite Id="sprStar1" TextureId="txrStars" Bounds="200,218,33,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="0" Enabled="false" />
+		
+		<Image Id="imgStar2Splash" TextureId="txrHeroSplash" Bounds="222,205,51,56" Opacity="0"/>
 		<Sprite Id="sprStar2" TextureId="txrStars" Bounds="232,215,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="1" Enabled="false" />
+		
+		<Image Id="imgStar3Splash" TextureId="txrHeroSplash" Bounds="252,207,51,56" Opacity="0"/>
 		<Sprite Id="sprStar3" TextureId="txrStars" Bounds="262,217,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="2" Enabled="false" />
-		<Image Id="imgAlarm" TextureId="txrAlarm" Location="206,238" Enabled="false" />
-		<Image Id="imgHeart" TextureId="txrHeart" Location="245,253" Enabled="false" />
+		
+		<Group Id="grpAlarmSmoke" Class="clsSmoke" Location="206,238" ClassParams="@type=5" />
+		<Image Id="imgAlarm" TextureId="txrAlarm" Bounds="206,238,40,59" Enabled="false" >
+		    <!-- Points Animation -->
+            <Group Id="imgAlarm_grpShowPoints" Bounds="-30,40,100,50" Depth="0.2" Enabled="false">
+                <Text FontId="Splash14Font" Text="='+' + system.Str(1234)" Location="6,-12" Color="#FFFFFF">
+                    <SequenceSet RepeatCount="1" InProgress="true">
+                        <ParallelSet RepeatCount="1">
+                            <NumAnimation Target="imgAlarm_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
+                            <NumAnimation Target="imgAlarm_grpShowPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
+                        </ParallelSet>
+                        <Do Action="imgAlarm_grpShowPoints.Disable()"/>
+                    </SequenceSet>
+                </Text>
+            </Group>
+		</Image>
+		
+		<Group Id="grpHeartSmoke" Class="clsSmoke" Location="245,253" ClassParams="@type=5" />
+		<Image Id="imgHeart" TextureId="txrHeart" Bounds="245,253,42,40" Enabled="false">
+			<!-- Points Animation -->
+            <Group Id="imgHeart_grpShowPoints" Bounds="30,40,100,50" Depth="0.2" Enabled="false">
+                <Text FontId="Splash14Font" Text="='+' + system.Str(1234)" Location="6,-12" Color="#FFFFFF">
+                    <SequenceSet RepeatCount="1" InProgress="true">
+                        <ParallelSet RepeatCount="1">
+                            <NumAnimation Target="imgHeart_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
+                            <NumAnimation Target="imgHeart_grpShowPoints.X" From="2" To="-2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
+                        </ParallelSet>
+                        <Do Action="imgHeart_grpShowPoints.Disable()"/>
+                    </SequenceSet>
+                </Text>
+            </Group>
+		</Image>
 		<Image Id="imgBadgeGlow" TextureId="txrBadgeGlow" Location="279,162" Enabled="false" />
 		<Image Id="imgBadge" TextureId="txrBadge" Location="276,182" Enabled="false" />
 		<Image Id="imgStamp" TextureId="txrStamp" Location="310,8" Enabled="false" />
 
+
 		<!-- Start score animation -->
-		<SequenceSet Id="setScoreAnimations" InProgress="true">
-			<NumAnimation Id="anmScore" Target="dispScore.X" From="0" To="levelScore.TotalScore" Duration="3" RepeatCount="1" Fill="Hold"/>
+		<ParallelSet Id="setScoreAnimations" InProgress="true">
+			<NumAnimation Id="anmScore" Target="dispScore.X" From="0" To="levelScore.TotalScore" Duration="2" RepeatCount="1" Fill="Hold"/>
+			<Sound Id="sndScoreRatchet" FileId="sfScoreRatchet" Volume="0.5" IsLooped="true"/>
+			
 			<!--
 			<NumAnimation Id="anmTimeBonus" Target="dispScore.X" From="levelScore.Score" To="levelScore.Score+levelScore.TimeBonus" Duration="1" RepeatCount="1" Fill="Hold" />
 			<NumAnimation Id="anmHealthBonus" Target="dispScore.X" From="levelScore.Score+levelScore.TimeBonus" To="levelScore.TotalScore" Duration="1" RepeatCount="1" Fill="Hold" />
 			-->
-		</SequenceSet>
+		</ParallelSet>
+		
+		<!-- fixing IsLooped="true" -->
+		<BoolTrigger Condition="not sndScoreRatchet.InProgress" EnterAction="sndScoreRatchet.Start()" />
+		
+		<Class Id="clsObjAnimation">
+			<SequenceSet RepeatCount="1">
+				<Do Action="@ObjName.Y=@ObjName.Y-500; @ObjName.X=@ObjName.X-@starDX" />
+				<Delay Duration="@starDelay" />
+				<Do Action="@ObjName.Enabled=true" />
+				<NumAnimation Target="@ObjName.X,@ObjName.Y" From="0,0" To="@starDX,500" IsDelta="true" Duration="0.4" Fill="Hold" RepeatCount="1"/>
+				<ParallelSet RepeatCount="1">
+					<NumAnimation Target="@ObjName.Y,@ObjName.Width,@ObjName.Height" From="0,0,0" To="-5,5,5" IsDelta="true" Autoreverse="true" Duration="0.2" Fill="Hold" RepeatCount="1"/>
+					<Do Action="@SplashObjName:Run" />
+					<NumAnimation Target="@SplashObjName.Opacity" From="0" To="0.3" IsDelta="true" Autoreverse="true" Duration="0.1" Fill="Hold" RepeatCount="1"/>
+				</ParallelSet>
+			</SequenceSet>
+			
+		</Class>
 		
 		<!-- Sets that responsible for animating stars, and the badges -->
-		<ParallelSet Id="setStar1">
-			<Do Action="sprStar1.Enabled=true" />
-			<NumAnimation Target="sprStar1.Scale" From="2" To="1" Duration="0.5" Fill="Hold" />
-		</ParallelSet>
-		<ParallelSet Id="setStar2">
-			<Do Action="sprStar2.Enabled=true" />
-			<NumAnimation Target="sprStar2.Scale" From="2" To="1" Duration="0.5" Fill="Hold" />
-		</ParallelSet>
-		<ParallelSet Id="setStar3">
-			<Do Action="sprStar3.Enabled=true" />
-			<NumAnimation Target="sprStar3.Scale" From="2" To="1" Duration="0.5" Fill="Hold" />
-		</ParallelSet>
-		<ParallelSet Id="setAlarm">
-			<Do Action="imgAlarm.Enabled=true" />
-		</ParallelSet>
-		<ParallelSet Id="setHeart">
-			<Do Action="imgHeart.Enabled=true" />
-		</ParallelSet>
-		<ParallelSet Id="setBadge">
+		<SequenceSet Id="setStar1" Class="clsObjAnimation" ClassParams="@ObjName=sprStar1, @starDX=200, @starDelay=0, @SplashObjName=imgStar1Splash"/>
+		<SequenceSet Id="setStar2" Class="clsObjAnimation" ClassParams="@ObjName=sprStar2, @starDX=0, @starDelay=0.2, @SplashObjName=imgStar2Splash"/>
+		<SequenceSet Id="setStar3" Class="clsObjAnimation" ClassParams="@ObjName=sprStar3, @starDX=-200, @starDelay=0.4, @SplashObjName=imgStar3Splash"/>
+
+		<SequenceSet Id="setAlarm" Class="clsObjAnimation" ClassParams="@ObjName=imgAlarm, @starDX=0, @starDelay=1, @SplashObjName=grpAlarmSmoke"/>
+		<SequenceSet Id="setHeart" Class="clsObjAnimation" ClassParams="@ObjName=imgHeart, @starDX=0, @starDelay=1, @SplashObjName=grpHeartSmoke"/>
+
+		<ParallelSet Id="setBadge" RepeatCount="1">
 			<Do Action="imgBadgeGlow.Enabled=true" />
 			<Do Action="imgBadge.Enabled=true" />
 		</ParallelSet>
-		<ParallelSet Id="setStamp">
+		
+		<ParallelSet Id="setStamp" RepeatCount="1">
 			<Do Action="imgStamp.Enabled=true" />
 		</ParallelSet>
 		
 		
 
-		<BoolTrigger Condition="(dispScore.X/levelScore.AvailablePoints) >= levelScore.StarScoreRatio1" EnterAction="setStar1.Start()" />
-		<BoolTrigger Condition="(dispScore.X/levelScore.AvailablePoints) >= levelScore.StarScoreRatio2" EnterAction="setStar2.Start()" />
-		<BoolTrigger Condition="(dispScore.X/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3" EnterAction="setStar3.Start()" />
-		<BoolTrigger Condition="(levelScore.TimeBonus > 0) and (dispScore.X > levelScore.Score)" EnterAction="setAlarm.Start()" />
-		<BoolTrigger Condition="(levelScore.HealthBonus > 0) and (dispScore.X > (levelScore.Score + levelScore.TimeBonus))" EnterAction="setHeart.Start()" />
+		<BoolTrigger Condition="(hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio1" EnterAction="setStar1.Start()" />
+		<BoolTrigger Condition="(hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio2" EnterAction="setStar2.Start()" />
+		<BoolTrigger Condition="(hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3" EnterAction="setStar3.Start()" />
+		<BoolTrigger Condition="(levelScore.TimeBonus > 0) and ((hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3)" EnterAction="setAlarm.Start()" />
+		<BoolTrigger Condition="(levelScore.HealthBonus > 0) and ((hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3)" EnterAction="setHeart.Start()" />
 		<BoolTrigger Condition="(not setScoreAnimations.InProgress) and levelScore.HasBadge" EnterAction="setBadge.Start()" />
 		<BoolTrigger Condition="(not setScoreAnimations.InProgress) and (not setBadge.InProgress) and @isNewScore" EnterAction="setStamp.Start()" />
+	
+		
+	
 	</Layer>
 </Screen>

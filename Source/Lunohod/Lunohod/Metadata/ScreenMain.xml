@@ -31,7 +31,7 @@
 	</Class>
 
 	<Layer Id="background">
-        <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="false"/>
+        <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="true"/>
 
 		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
