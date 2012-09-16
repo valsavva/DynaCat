@@ -9,45 +9,42 @@
     <Include File="ClassUIMuteButton.xml" />
 
     <Resources RootFolder="Global">
-        <Texture Id="txrBackground" Source="ScrMain_BG" />
-        <Texture Id="txrFrame" Source="ScrMain_frame" />
-        <Texture Id="txrSeriesPanel1" Source="ScrMain_panel_01" />
-        <Texture Id="txrSeriesPanel2" Source="ScrMain_panel_02" />
-        <Texture Id="txrSeriesPanel3" Source="ScrMain_panel_03" />
-        <Texture Id="txrLogo" Source="dynacat_logo" />
+        <Texture Id="txrBackground" Source="scr_main_bg" />
+        <Texture Id="txrSeriesPanel1" Source="scr_main_panel01" />
+        <Texture Id="txrSeriesPanel2" Source="scr_main_panel02" />
+        <Texture Id="txrSeriesPanel3" Source="scr_main_panel03" />
+        <Texture Id="txrLogo" Source="scr_main_logo" />
     </Resources>
 
     <Resources RootFolder="Sound">
         <MusicFile Id="sfGameMusic" Source="DynacatMusic.mp3"/>
     </Resources>
 
-        <Class Id="clsSeriesPanel">
+	<Class Id="clsSeriesPanel">
 		<Group>
 			<Image TextureId="txrSeriesPanel@seriesNumberParam" StretchMode="ActualSize" />
 			<TapArea Action="system.StartSeries(@seriesNumberParam);" />
-			<Text Text="=system.Str(system.GetSeriesScore(@seriesNumberParam))" Location="17,126" FontId="Splash14Font" Scale="0.7" />
-			<Text Text="=system.Str(system.GetSeriesStars(@seriesNumberParam))+'/'+system.Str(system.GetSeriesAvailableStars(@seriesNumberParam))" Location="70,126" FontId="Splash14Font" Scale="0.7" />
+			<Text Text="=system.Str(system.GetSeriesScore(@seriesNumberParam))" Location="65,125" FontId="Splash14Font" Scale="0.7" />
+			<Text Text="=system.Str(system.GetSeriesStars(@seriesNumberParam))+'/'+system.Str(system.GetSeriesAvailableStars(@seriesNumberParam))" Location="27,95" FontId="Splash14Font" Scale="0.7" />
+			<Text Text="=system.Str(system.GetSeriesBadges(@seriesNumberParam))+'/'+system.Str(system.GetSeriesLevelCount(@seriesNumberParam))" Location="95,95" FontId="Splash14Font" Scale="0.7" />
 		</Group>
 	</Class>
 
 	<Layer Id="background">
         <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="false"/>
-
-		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
+		<Image TextureId="txrBackground" />
 	</Layer>
+
 	<Layer>
-	
-		<Image TextureId="txrFrame" />
+        <Image TextureId="txrLogo" Location="140,-20" BackColor="#EEEEEE"/>
 
-        <Image TextureId="txrLogo" Bounds="-10,0,180,120" BackColor="#EEEEEE"/>
-
-        <Group Bounds="050,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
-		<Group Bounds="180,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
-		<Group Bounds="310,070,130,170" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
+        <Group Bounds="010,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
+		<Group Bounds="165,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
+		<Group Bounds="320,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
 		
-		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=info" Bounds="180, 240, 62, 62">
+		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=info" Bounds="20, 245,62,62">
 		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />
 		</Group>
-		<Group Id="btnMute" Bounds="250,240, 62,62" Class="clsMuteButton" />
+		<Group Id="btnMute" Bounds="85,245,62,62" Class="clsMuteButton" />
     </Layer>
 </Screen>

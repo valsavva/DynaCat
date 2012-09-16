@@ -123,12 +123,24 @@ namespace Lunohod.Objects
 		public double GetSeriesStars(int seriesIndex)
 		{
 			double result = 0;
-
+			
 			game.ScoreFile.LevelScores.ForEach(s => {
 				if (s.SeriesNumber == seriesIndex)
 					result += s.NumberOfStars;
 			});
-
+			
+			return result;
+		}
+		public double GetSeriesBadges(int seriesIndex)
+		{
+			double result = 0;
+			
+			game.ScoreFile.LevelScores.ForEach(s => {
+				if (s.SeriesNumber == seriesIndex)
+					if (s.HasBadge)
+						result++;
+			});
+			
 			return result;
 		}
 		public double GetSeriesAvailableStars(int seriesIndex)
@@ -315,6 +327,7 @@ namespace Lunohod.Objects
 				case "GetSeriesLevelCount": method = (ps) => GetSeriesLevelCount(ps[0].GetIntValue()); break;
 				case "GetSeriesScore": method = (ps) => GetSeriesScore(ps[0].GetIntValue()); break;
 				case "GetSeriesStars": method = (ps) => GetSeriesStars(ps[0].GetIntValue()); break;
+				case "GetSeriesBadges": method = (ps) => GetSeriesBadges(ps[0].GetIntValue()); break;
 				case "GetSeriesAvailableStars": method = (ps) => GetSeriesAvailableStars(ps[0].GetIntValue()); break;
                 case "GetSeriesLevelScore": method = (ps) => GetSeriesLevelScore(ps[0].GetIntValue(), ps[1].GetIntValue()); break;
                 default:
