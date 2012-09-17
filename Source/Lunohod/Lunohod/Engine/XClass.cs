@@ -64,6 +64,9 @@ namespace Lunohod.Objects
 				
 				if (srcElement.backColor.HasValue)
 					destElement.BackColor = srcElement.BackColor;
+
+				if (srcElement.Rotation != 0)
+					destElement.Rotation = srcElement.Rotation;
 			}
 			
 			// IHasPoints
