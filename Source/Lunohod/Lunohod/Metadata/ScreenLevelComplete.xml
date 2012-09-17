@@ -10,14 +10,20 @@
 	<Include File="ClassSmoke.xml" />
     
     <Resources RootFolder="Global">
-        <Texture Id="txrBackground" Source="scr_victory_bg" />
+<!--        <Texture Id="txrBackground" Source="scr_victory_bg" />-->
         <Texture Id="txrStars" Source="scr_victory_stars" />
         <Texture Id="txrAlarm" Source="scr_victory_alarm" />
         <Texture Id="txrHeart" Source="scr_victory_heart" />
         <Texture Id="txrBadge" Source="scr_victory_badge" />
         <Texture Id="txrBadgeGlow" Source="scr_victory_badge_glow" />
         <Texture Id="txrStamp" Source="scr_victory_stamp" />
-         <Texture Id="txrHeroSplash" Source="Victory_new_Spark Cat" />
+        
+        <Texture Id="txr_Victory_new_BG" Source="Victory_new_BG" />
+        <Texture Id="txr_Victory_new_Light_Cat" Source="Victory_new_Light_Cat" />
+        <Texture Id="txrLight_yellow" Source="light_yellow" />
+        <Texture Id="txr_Victory_new_Spark_Cat" Source="Victory_new_Spark_Cat" />
+        <Texture Id="txr_Victory_new_Panel2" Source="Victory_new_Panel2" />
+        <Texture Id="txr_Victory_new_Cat" Source="Victory_new_Cat" />
         <Font Id="fntSystem" Source="Splash14Font"/>
     </Resources>
     
@@ -25,8 +31,31 @@
         <SoundFile Id="sfScoreRatchet" Source="sfxScoreRatchet"/>
     </Resources>
         
-    <Layer Id="background">
-        <Image TextureId="txrBackground" />
+    <Layer Id="backg">
+        <Image Id="dfltMask1" TextureId="txr_Victory_new_BG" Bounds="0, 0, 480, 320" TraceId="image3105"/>
+<!--        <Image Id="imgVictory_new_Light_Cat" TextureId="txr_Victory_new_Light_Cat" Bounds="106, -17, 284, 274" TraceId="image3093">
+        	<NumAnimation Target="imgVictory_new_Light_Cat.Opacity" From="1" To="0.5" Duration="2" Autoreverse="true" RepeatCount="0"  InProgress="true"/>
+        </Image>-->
+
+        <BoolTrigger Condition="not setScoreAnimations.InProgress" >
+	        <Image Id="imgLight_yellow" TextureId="txrLight_yellow" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" TraceId="image3093"/>
+	        <Image Id="imgLight_yellow2" TextureId="txrLight_yellow" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" TraceId="image3093"/>  
+		        <ParallelSet RepeatCount="1" InProgress="true">
+	        		<NumAnimation Target="imgLight_yellow2.Opacity,imgLight_yellow.Opacity" From="0,0" To="0.4,0.4" Duration="1.5" Autoreverse="false" RepeatCount="1" Fill="Hold"  InProgress="true"/>
+		        	<NumAnimation Target="imgLight_yellow2.Rotation" From="0" To="-360" Duration="60" Autoreverse="false" RepeatCount="0"  InProgress="true"/>
+	        		<NumAnimation Target="imgLight_yellow.Rotation" From="0" To="360" Duration="46" Autoreverse="false" RepeatCount="0"  InProgress="true"/>
+				</ParallelSet>
+  	
+        </BoolTrigger>
+       
+<!--        <Image Id="imgVictory_new_Spark_Cat" TextureId="txr_Victory_new_Spark_Cat" Bounds="137, 8, 216, 184" Rotation="-5" TraceId="image3116">
+			<NumAnimation Target="imgVictory_new_Spark_Cat.Rotation" From="0" To="10" InProgress="true" Duration="20" IsDelta="true" Autoreverse="true" RepeatCount="0" />
+        </Image>-->
+        
+        <Image Id="imgVictory_new_Panel2" TextureId="txr_Victory_new_Panel2" Bounds="125, 459, 249, 161" TraceId="image3027">
+        	<NumAnimation Id="anmVictory_new_Panel2" Target="imgVictory_new_Panel2.Y" From="0" To="-298" Duration="0.3" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
+        </Image>
+        <Image Id="dfltMask5" TextureId="txr_Victory_new_Cat" Bounds="179, 22, 115, 127" TraceId="image3082"/>
     </Layer>
     
 	<Layer Id="lyrControls">
@@ -52,49 +81,53 @@
 			" InProgress="true" />
 
 		<!-- Text and graphics -->
+		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="211, 197" Color="#000000"/>
 		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="210, 195" />
 
-		<Image Id="imgStar1Splash" TextureId="txrHeroSplash" Bounds="190,208,53,56" Opacity="0"/>
+		<Image Id="imgStar1Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="190,208,53,56" Opacity="0"/>
 		<Sprite Id="sprStar1" TextureId="txrStars" Bounds="200,218,33,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="0" Enabled="false" />
 		
-		<Image Id="imgStar2Splash" TextureId="txrHeroSplash" Bounds="222,205,51,56" Opacity="0"/>
+		<Image Id="imgStar2Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="222,205,51,56" Opacity="0"/>
 		<Sprite Id="sprStar2" TextureId="txrStars" Bounds="232,215,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="1" Enabled="false" />
 		
-		<Image Id="imgStar3Splash" TextureId="txrHeroSplash" Bounds="252,207,51,56" Opacity="0"/>
+		<Image Id="imgStar3Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="252,207,51,56" Opacity="0"/>
 		<Sprite Id="sprStar3" TextureId="txrStars" Bounds="262,217,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="2" Enabled="false" />
 		
-		<Group Id="grpAlarmSmoke" Class="clsSmoke" Location="206,238" ClassParams="@type=5" />
+		<Group Id="grpAlarmSmoke" Class="clsSmoke" Location="196,248" ClassParams="@type=5" />
 		<Image Id="imgAlarm" TextureId="txrAlarm" Bounds="206,238,40,59" Enabled="false" >
-		    <!-- Points Animation -->
-            <Group Id="imgAlarm_grpShowPoints" Bounds="-30,40,100,50" Depth="0.2" Enabled="false">
-                <Text FontId="Splash14Font" Text="='+' + system.Str(1234)" Location="6,-12" Color="#FFFFFF">
-                    <SequenceSet RepeatCount="1" InProgress="true">
-                        <ParallelSet RepeatCount="1">
-                            <NumAnimation Target="imgAlarm_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
-                            <NumAnimation Target="imgAlarm_grpShowPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
-                        </ParallelSet>
-                        <Do Action="imgAlarm_grpShowPoints.Disable()"/>
-                    </SequenceSet>
-                </Text>
-            </Group>
+			<Group Id="grpTimeBonusPoints" Depth="0.2" Enabled="false">
+	            <Text Location="-19,2" FontId="Splash14Font" Text="='+' + system.Str(levelScore.TimeBonus)" Color="#000000"/>
+	            <Text Location="-20,0" FontId="Splash14Font" Text="='+' + system.Str(levelScore.TimeBonus)" Color="#FFFFFF"/>
+			</Group>
+            <SequenceSet RepeatCount="1" InProgress="true">
+            	<Delay Duration="0.8" />
+            	<Do Action="grpTimeBonusPoints.Enable()" />
+                <ParallelSet RepeatCount="1">
+                    <NumAnimation Target="grpTimeBonusPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
+                    <NumAnimation Target="grpTimeBonusPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
+                </ParallelSet>
+                <Do Action="grpTimeBonusPoints.Disable()"/>
+            </SequenceSet>
 		</Image>
 		
 		<Group Id="grpHeartSmoke" Class="clsSmoke" Location="245,253" ClassParams="@type=5" />
 		<Image Id="imgHeart" TextureId="txrHeart" Bounds="245,253,42,40" Enabled="false">
-			<!-- Points Animation -->
-            <Group Id="imgHeart_grpShowPoints" Bounds="30,40,100,50" Depth="0.2" Enabled="false">
-                <Text FontId="Splash14Font" Text="='+' + system.Str(1234)" Location="6,-12" Color="#FFFFFF">
-                    <SequenceSet RepeatCount="1" InProgress="true">
-                        <ParallelSet RepeatCount="1">
-                            <NumAnimation Target="imgHeart_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
-                            <NumAnimation Target="imgHeart_grpShowPoints.X" From="2" To="-2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
-                        </ParallelSet>
-                        <Do Action="imgHeart_grpShowPoints.Disable()"/>
-                    </SequenceSet>
-                </Text>
-            </Group>
+			<Group Id="grpHealthBonusPoints" Depth="0.2" Enabled="false">
+	            <Text Location="41,2" FontId="Splash14Font" Text="='+' + system.Str(levelScore.HealthBonus)" Color="#000000"/>
+	            <Text Location="40,0" FontId="Splash14Font" Text="='+' + system.Str(levelScore.HealthBonus)" Color="#FFFFFF"/>
+			</Group>
+            <SequenceSet RepeatCount="1" InProgress="true">
+            	<Delay Duration="0.8" />
+            	<Do Action="grpHealthBonusPoints.Enable()" />
+                <ParallelSet RepeatCount="1">
+                    <NumAnimation Target="grpHealthBonusPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
+                    <NumAnimation Target="grpHealthBonusPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
+                </ParallelSet>
+                <Do Action="grpHealthBonusPoints.Disable()"/>
+            </SequenceSet>
 		</Image>
-		<Image Id="imgBadgeGlow" TextureId="txrBadgeGlow" Location="279,162" Enabled="false" />
+		
+<!--		<Image Id="imgBadgeGlow" TextureId="txrBadgeGlow" Location="279,162" Enabled="false" />-->
 		<Image Id="imgBadge" TextureId="txrBadge" Location="276,182" Enabled="false" />
 		<Image Id="imgStamp" TextureId="txrStamp" Location="310,8" Enabled="false" />
 
@@ -102,6 +135,7 @@
 		<!-- Start score animation -->
 		<ParallelSet Id="setScoreAnimations" InProgress="true">
 			<NumAnimation Id="anmScore" Target="dispScore.X" From="0" To="levelScore.TotalScore" Duration="2" RepeatCount="1" Fill="Hold"/>
+			
 			<Sound Id="sndScoreRatchet" FileId="sfScoreRatchet" Volume="0.5" IsLooped="true"/>
 			
 			<!--
@@ -137,7 +171,7 @@
 		<SequenceSet Id="setHeart" Class="clsObjAnimation" ClassParams="@ObjName=imgHeart, @starDX=0, @starDelay=1, @SplashObjName=grpHeartSmoke"/>
 
 		<ParallelSet Id="setBadge" RepeatCount="1">
-			<Do Action="imgBadgeGlow.Enabled=true" />
+<!--			<Do Action="imgBadgeGlow.Enabled=true" />-->
 			<Do Action="imgBadge.Enabled=true" />
 		</ParallelSet>
 		

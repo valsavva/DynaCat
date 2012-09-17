@@ -63,8 +63,9 @@
     <Class Id="clsSFX">
         <Group>
         
-
-        	<TapArea Id="this_soundcheck" Bounds="100,0,280,60" Action="this_anmSoundCheck.Start()"/>
+        
+<!--        	
+			<TapArea Id="this_soundcheck" Bounds="100,0,280,60" Action="this_anmSoundCheck.Start()"/>
         	<SequenceSet Id="this_anmSoundCheck" RepeatCount="0">
         		<Do Action="this:Eating" /><Delay Duration="1" />
         		<Do Action="this:EatingGoldFish" /><Delay Duration="1" />
@@ -115,7 +116,7 @@
         		<Do Action="this:RadarWork" /><Delay Duration="1" />
         		
         	</SequenceSet>
-
+-->
         
 <!-- init -->
             <Do Action="@KilledRatNum=0" InProgress="true" RepeatCount="1"/>
