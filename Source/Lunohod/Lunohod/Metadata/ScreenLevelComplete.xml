@@ -24,37 +24,57 @@
         <Texture Id="txr_Victory_new_Spark_Cat" Source="Victory_new_Spark_Cat" />
         <Texture Id="txr_Victory_new_Panel2" Source="Victory_new_Panel2" />
         <Texture Id="txr_Victory_new_Cat" Source="Victory_new_Cat" />
+        <Texture Id="txrShining_star" Source="shining_star" />
         <Font Id="fntSystem" Source="Splash14Font"/>
     </Resources>
     
-	<Resources RootFolder="Sound">
+    <Resources RootFolder="Sound">
+    	<SoundFile Id="sfMusicVictory" Source="musicVictory"/>
+    	<SoundFile Id="sfChimes" Source="sfxChimes"/>
+    	<SoundFile Id="sfMusicEQdThemeLoop" Source="musicEQdThemeLoop"/>
         <SoundFile Id="sfScoreRatchet" Source="sfxScoreRatchet"/>
     </Resources>
         
     <Layer Id="backg">
-        <Image Id="dfltMask1" TextureId="txr_Victory_new_BG" Bounds="0, 0, 480, 320" TraceId="image3105"/>
-<!--        <Image Id="imgVictory_new_Light_Cat" TextureId="txr_Victory_new_Light_Cat" Bounds="106, -17, 284, 274" TraceId="image3093">
-        	<NumAnimation Target="imgVictory_new_Light_Cat.Opacity" From="1" To="0.5" Duration="2" Autoreverse="true" RepeatCount="0"  InProgress="true"/>
-        </Image>-->
+     	<Sound Id="sndVictoryMusic" FileId="sfMusicVictory" Volume="1"/>
 
-        <BoolTrigger Condition="not setScoreAnimations.InProgress" >
+		<SequenceSet InProgress="true" RepeatCount="1">
+			<Delay Duration="0.55" />
+     		<Do Action="sndVictoryMusic.Start()" InProgress="true" RepeatCount="1"/>
+		</SequenceSet>
+     
+        <Image Id="dfltMask1" TextureId="txr_Victory_new_BG" Bounds="0, 0, 480, 320" TraceId="image3105"/>
+        <Image Id="imgVictory_new_Light_Cat" TextureId="txr_Victory_new_Light_Cat" Bounds="106, -17, 284, 274" TraceId="image3093">
+        	<NumAnimation Target="imgVictory_new_Light_Cat.Opacity" From="0.8" To="0.5" Duration="2" Autoreverse="true" RepeatCount="0"  InProgress="true"/>
+        </Image>
+        
+		<Sound Id="sndMusicEQdThemeLoop" FileId="sfMusicEQdThemeLoop" Volume="1" IsLooped="true"/>
+        <BoolTrigger Condition="(levelScore.HasBadge) and (system:bonusAnmEnd)" >
 	        <Image Id="imgLight_yellow" TextureId="txrLight_yellow" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" TraceId="image3093"/>
 	        <Image Id="imgLight_yellow2" TextureId="txrLight_yellow" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" TraceId="image3093"/>  
 		        <ParallelSet RepeatCount="1" InProgress="true">
-	        		<NumAnimation Target="imgLight_yellow2.Opacity,imgLight_yellow.Opacity" From="0,0" To="0.4,0.4" Duration="1.5" Autoreverse="false" RepeatCount="1" Fill="Hold"  InProgress="true"/>
+			        <SequenceSet>
+			        	<Delay Duration="23" />
+			        	<Do Action="sndMusicEQdThemeLoop.Start();system:DncStrs" />
+		        		<NumAnimation Target="imgLight_yellow2.Opacity,imgLight_yellow.Opacity" From="0,0" To="0.4,0.4" Duration="1" Autoreverse="false" RepeatCount="1" Fill="Hold"  InProgress="true"/>
+			        </SequenceSet>
 		        	<NumAnimation Target="imgLight_yellow2.Rotation" From="0" To="-360" Duration="60" Autoreverse="false" RepeatCount="0"  InProgress="true"/>
 	        		<NumAnimation Target="imgLight_yellow.Rotation" From="0" To="360" Duration="46" Autoreverse="false" RepeatCount="0"  InProgress="true"/>
 				</ParallelSet>
-  	
-        </BoolTrigger>
+  	    </BoolTrigger>
        
-<!--        <Image Id="imgVictory_new_Spark_Cat" TextureId="txr_Victory_new_Spark_Cat" Bounds="137, 8, 216, 184" Rotation="-5" TraceId="image3116">
+        <Image Id="imgVictory_new_Spark_Cat" TextureId="txr_Victory_new_Spark_Cat" Bounds="137, 8, 216, 184" RotationCenter="108,144" Rotation="-5" TraceId="image3116">
 			<NumAnimation Target="imgVictory_new_Spark_Cat.Rotation" From="0" To="10" InProgress="true" Duration="20" IsDelta="true" Autoreverse="true" RepeatCount="0" />
-        </Image>-->
-        
-        <Image Id="imgVictory_new_Panel2" TextureId="txr_Victory_new_Panel2" Bounds="125, 459, 249, 161" TraceId="image3027">
-        	<NumAnimation Id="anmVictory_new_Panel2" Target="imgVictory_new_Panel2.Y" From="0" To="-298" Duration="0.3" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
         </Image>
+        
+        <Group Id="grpVictoryPanel">
+	        <Image Id="imgVictory_new_Panel2" TextureId="txr_Victory_new_Panel2" Bounds="125, 459, 249, 161" TraceId="image3027" />
+    		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="211, 495" Color="#000000"/>
+			<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="210, 493" />
+			
+        	<NumAnimation Id="anmVictory_new_Panel2" Target="grpVictoryPanel.Y" From="0" To="-298" Duration="0.3" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
+		</Group>
+			
         <Image Id="dfltMask5" TextureId="txr_Victory_new_Cat" Bounds="179, 22, 115, 127" TraceId="image3082"/>
     </Layer>
     
@@ -72,81 +92,7 @@
 	</Layer>
 
 	<Layer>
-		<!-- We'll use this group's X attribute to animate score. It's a hack, because we can't animate variables (yet) -->
-		<Group Id="dispScore" />
-		<Do Action="
-			levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time;
-			@isNewScore=levelScore.IsNewScore;
-			levelScore.Save();
-			" InProgress="true" />
-
-		<!-- Text and graphics -->
-		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="211, 197" Color="#000000"/>
-		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="210, 195" />
-
-		<Image Id="imgStar1Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="190,208,53,56" Opacity="0"/>
-		<Sprite Id="sprStar1" TextureId="txrStars" Bounds="200,218,33,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="0" Enabled="false" />
-		
-		<Image Id="imgStar2Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="222,205,51,56" Opacity="0"/>
-		<Sprite Id="sprStar2" TextureId="txrStars" Bounds="232,215,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="1" Enabled="false" />
-		
-		<Image Id="imgStar3Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="252,207,51,56" Opacity="0"/>
-		<Sprite Id="sprStar3" TextureId="txrStars" Bounds="262,217,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="2" Enabled="false" />
-		
-		<Group Id="grpAlarmSmoke" Class="clsSmoke" Location="196,248" ClassParams="@type=5" />
-		<Image Id="imgAlarm" TextureId="txrAlarm" Bounds="206,238,40,59" Enabled="false" >
-			<Group Id="grpTimeBonusPoints" Depth="0.2" Enabled="false">
-	            <Text Location="-19,2" FontId="Splash14Font" Text="='+' + system.Str(levelScore.TimeBonus)" Color="#000000"/>
-	            <Text Location="-20,0" FontId="Splash14Font" Text="='+' + system.Str(levelScore.TimeBonus)" Color="#FFFFFF"/>
-			</Group>
-            <SequenceSet RepeatCount="1" InProgress="true">
-            	<Delay Duration="0.8" />
-            	<Do Action="grpTimeBonusPoints.Enable()" />
-                <ParallelSet RepeatCount="1">
-                    <NumAnimation Target="grpTimeBonusPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
-                    <NumAnimation Target="grpTimeBonusPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
-                </ParallelSet>
-                <Do Action="grpTimeBonusPoints.Disable()"/>
-            </SequenceSet>
-		</Image>
-		
-		<Group Id="grpHeartSmoke" Class="clsSmoke" Location="245,253" ClassParams="@type=5" />
-		<Image Id="imgHeart" TextureId="txrHeart" Bounds="245,253,42,40" Enabled="false">
-			<Group Id="grpHealthBonusPoints" Depth="0.2" Enabled="false">
-	            <Text Location="41,2" FontId="Splash14Font" Text="='+' + system.Str(levelScore.HealthBonus)" Color="#000000"/>
-	            <Text Location="40,0" FontId="Splash14Font" Text="='+' + system.Str(levelScore.HealthBonus)" Color="#FFFFFF"/>
-			</Group>
-            <SequenceSet RepeatCount="1" InProgress="true">
-            	<Delay Duration="0.8" />
-            	<Do Action="grpHealthBonusPoints.Enable()" />
-                <ParallelSet RepeatCount="1">
-                    <NumAnimation Target="grpHealthBonusPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
-                    <NumAnimation Target="grpHealthBonusPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
-                </ParallelSet>
-                <Do Action="grpHealthBonusPoints.Disable()"/>
-            </SequenceSet>
-		</Image>
-		
-<!--		<Image Id="imgBadgeGlow" TextureId="txrBadgeGlow" Location="279,162" Enabled="false" />-->
-		<Image Id="imgBadge" TextureId="txrBadge" Location="276,182" Enabled="false" />
-		<Image Id="imgStamp" TextureId="txrStamp" Location="310,8" Enabled="false" />
-
-
-		<!-- Start score animation -->
-		<ParallelSet Id="setScoreAnimations" InProgress="true">
-			<NumAnimation Id="anmScore" Target="dispScore.X" From="0" To="levelScore.TotalScore" Duration="2" RepeatCount="1" Fill="Hold"/>
-			
-			<Sound Id="sndScoreRatchet" FileId="sfScoreRatchet" Volume="0.5" IsLooped="true"/>
-			
-			<!--
-			<NumAnimation Id="anmTimeBonus" Target="dispScore.X" From="levelScore.Score" To="levelScore.Score+levelScore.TimeBonus" Duration="1" RepeatCount="1" Fill="Hold" />
-			<NumAnimation Id="anmHealthBonus" Target="dispScore.X" From="levelScore.Score+levelScore.TimeBonus" To="levelScore.TotalScore" Duration="1" RepeatCount="1" Fill="Hold" />
-			-->
-		</ParallelSet>
-		
-		<!-- fixing IsLooped="true" -->
-		<BoolTrigger Condition="not sndScoreRatchet.InProgress" EnterAction="sndScoreRatchet.Start()" />
-		
+	
 		<Class Id="clsObjAnimation">
 			<SequenceSet RepeatCount="1">
 				<Do Action="@ObjName.Y=@ObjName.Y-500; @ObjName.X=@ObjName.X-@starDX" />
@@ -159,37 +105,205 @@
 					<NumAnimation Target="@SplashObjName.Opacity" From="0" To="0.3" IsDelta="true" Autoreverse="true" Duration="0.1" Fill="Hold" RepeatCount="1"/>
 				</ParallelSet>
 			</SequenceSet>
-			
 		</Class>
 		
+		<!-- We'll use this group's X attribute to animate score. It's a hack, because we can't animate variables (yet) -->
+		<Group Id="dispScore" />
+		<Do Action="
+			levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time;
+			@isNewScore=levelScore.IsNewScore;
+			levelScore.Save();
+			" InProgress="true" />
+
+		<!-- Text and graphics -->
+
+		<Image Id="imgStar1Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="180,198,70,70" Opacity="0"/>
+		<Sprite Id="sprStar1" TextureId="txrStars" Bounds="200,218,33,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="0" RotationCenter="16,18" Enabled="false" />
+		
+		<Image Id="imgStar2Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="212,195,70,70" Opacity="0"/>
+		<Sprite Id="sprStar2" TextureId="txrStars" Bounds="232,215,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="1" RotationCenter="16,18"  Enabled="false" />
+		
+		<Image Id="imgStar3Splash" TextureId="txr_Victory_new_Spark_Cat" Bounds="242,197,70,70" Opacity="0"/>
+		<Sprite Id="sprStar3" TextureId="txrStars" Bounds="262,217,31,36" FrameBounds="0,0,33,36" FrameCount="3" CurrentFrame="2" RotationCenter="16,18"  Enabled="false" />
+		
+		<BoolTrigger Condition="system:DncStrs" EnterAction="setDncStr1.Start();setDncStr2.Start();setDncStr3.Start()" />
+		
+		<Class Id="clsDncgStrs">
+			<SequenceSet InProgress="false" RepeatCount="0" >
+				<SequenceSet RepeatCount="3" >
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="5,10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="5,-10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="-5,10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="-5,-10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="-5,10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="-5,-10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="5,10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="5,-10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+				</SequenceSet>	
+					
+				<SequenceSet RepeatCount="1" >
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="5,10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="5,-10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="-5,10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+					<NumAnimation Target="@DSName.X,@DSName.Width" From="0,0" To="-5,-10" IsDelta="true" Fill="Hold" Autoreverse="false" Duration="0.25" RepeatCount="1" />
+					<Delay Duration="0.139" />
+
+					<ParallelSet RepeatCount="1">
+						<NumAnimation Target="@DSName.Rotation" From="0" To="360" Duration="0.8" IsDelta="true"  Autoreverse="false" RepeatCount="1"/>
+						<NumAnimation Target="@DSName.Y" From="0" To="-50" Duration="0.4" IsDelta="true" Autoreverse="true" RepeatCount="1"/>
+					</ParallelSet>	
+										
+				</SequenceSet>
+			</SequenceSet>
+		</Class>		
+		
+		<SequenceSet Id="setDncStr1" Class="clsDncgStrs" ClassParams="@DSName=sprStar1" />
+		<SequenceSet Id="setDncStr2" Class="clsDncgStrs" ClassParams="@DSName=sprStar2" />
+		<SequenceSet Id="setDncStr3" Class="clsDncgStrs" ClassParams="@DSName=sprStar3" />
+		
+		<Group Id="grpAlarmSmoke" Class="clsSmoke" Location="196,248" ClassParams="@type=5" />
+		<Image Id="imgAlarm" TextureId="txrAlarm" Bounds="206,238,40,59" Enabled="false" >
+			<Group Id="grpTimeBonusPoints" Depth="0.2" Enabled="false">
+	            <Text Location="-19,2" FontId="Splash14Font" Text="='+' + system.Str(levelScore.TimeBonus)" Color="#000000"/>
+	            <Text Location="-20,0" FontId="Splash14Font" Text="='+' + system.Str(levelScore.TimeBonus)" Color="#FFFFFF"/>
+			</Group>
+            <SequenceSet RepeatCount="1" InProgress="true">
+            	<Do Action="grpTimeBonusPoints.Enable()" />
+                <ParallelSet RepeatCount="1">
+                    <NumAnimation Target="grpTimeBonusPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
+                    <NumAnimation Target="grpTimeBonusPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
+                </ParallelSet>
+
+                <Do Action="grpTimeBonusPoints.Disable()"/>
+            </SequenceSet>
+		</Image>
+		
+		<Group Id="grpHeartSmoke" Class="clsSmoke" Location="245,253" ClassParams="@type=5" />
+		<Image Id="imgHeart" TextureId="txrHeart" Bounds="245,253,42,40" Enabled="false">
+			<Group Id="grpHealthBonusPoints" Depth="0.2" Enabled="false">
+	            <Text Location="41,2" FontId="Splash14Font" Text="='+' + system.Str(levelScore.HealthBonus)" Color="#000000"/>
+	            <Text Location="40,0" FontId="Splash14Font" Text="='+' + system.Str(levelScore.HealthBonus)" Color="#FFFFFF"/>
+			</Group>
+            <SequenceSet RepeatCount="1" InProgress="true">
+            	<Do Action="grpHealthBonusPoints.Enable()" />
+                <ParallelSet RepeatCount="1">
+                    <NumAnimation Target="grpHealthBonusPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="2" Fill="Hold" />
+                    <NumAnimation Target="grpHealthBonusPoints.X" From="-2" To="2" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.8" Fill="Hold" />
+                </ParallelSet>
+
+                <Do Action="grpHealthBonusPoints.Disable()"/>
+            </SequenceSet>
+		</Image>
+		
+		<BoolTrigger Condition="(levelScore.HasBadge)" >
+			<Sound Id="sndChimes" FileId="sfChimes" Volume="0.07"/> 
+			<SequenceSet RepeatCount="1" InProgress="true">
+				<Delay Duration="3" />
+				<Do Action="sndChimes.Start()"/>
+			</SequenceSet>
+		</BoolTrigger>
+		
+		<Class Id="clsShiningStarAnimation">
+			<SequenceSet RepeatCount="1" InProgress="true">
+				<Do Action="system:+bonusAnmEnd" />
+				<Delay Duration="system.Rnd(3,5)" />
+				<SequenceSet RepeatCount="0">
+					<NumAnimation Target="@ShStName.Opacity" From="0" To="1" IsDelta="false" Autoreverse="true" Duration="0.3" Fill="Hold" RepeatCount="1"/>
+					<Delay Duration="@shStarDelay" />
+				</SequenceSet>
+			</SequenceSet>
+		</Class>
+		
+		<Group Id="grpBadge" >
+			<Image Id="imgBadgeGlow" TextureId="txrBadgeGlow" Location="179,462" >
+				<NumAnimation Target="imgBadgeGlow.Opacity" From="0.5" To="1" Duration="1.3" Autoreverse="true" RepeatCount="0"  InProgress="true"/>
+			</Image>
+			<Image Id="imgBadge" TextureId="txrBadge" Location="176,482" Enabled="true" />
+			
+			<Image Id="imgShiningStar1" TextureId="txrShining_star" Location="212,470" Opacity="0" />
+			<Image Id="imgShiningStar2" TextureId="txrShining_star" Location="255,483" Opacity="0" />
+			<Image Id="imgShiningStar3" TextureId="txrShining_star" Location="291,502" Opacity="0" />
+			<Image Id="imgShiningStar4" TextureId="txrShining_star" Location="219,498" Opacity="0" />
+			
+		</Group>
+		
+		<SequenceSet Class="clsShiningStarAnimation" ClassParams="@ShStName=imgShiningStar1, @shStarDelay=2"/>
+		<SequenceSet Class="clsShiningStarAnimation" ClassParams="@ShStName=imgShiningStar2, @shStarDelay=1.3"/>
+		<SequenceSet Class="clsShiningStarAnimation" ClassParams="@ShStName=imgShiningStar3, @shStarDelay=2.2"/>
+		<SequenceSet Class="clsShiningStarAnimation" ClassParams="@ShStName=imgShiningStar4, @shStarDelay=4"/>
+		
+		
+		<Group Id="grpStampSmoke1" Class="clsSmoke" Location="320,100" ClassParams="@type=5" />
+		<Group Id="grpStampSmoke2" Class="clsSmoke" Location="430,90" ClassParams="@type=5" />
+		<Group Id="grpStampSmoke3" Class="clsSmoke" Location="400,120" ClassParams="@type=5" />
+		<Group Id="grpStampSmoke4" Class="clsSmoke" Location="385,125" ClassParams="@type=5" />
+		<Group Id="grpStampSmoke5" Class="clsSmoke" Location="400,30" ClassParams="@type=5" />
+		<Group Id="grpStampSmoke6" Class="clsSmoke" Location="355,20" ClassParams="@type=5" />
+		
+		<Image Id="imgStamp" TextureId="txrStamp" Bounds="240,-40,600,600" Opacity="0"/>
+
+		<Sound Id="sndScoreRatchet" FileId="sfScoreRatchet" Volume="0.2" IsLooped="true"/>
+
 		<!-- Sets that responsible for animating stars, and the badges -->
-		<SequenceSet Id="setStar1" Class="clsObjAnimation" ClassParams="@ObjName=sprStar1, @starDX=200, @starDelay=0, @SplashObjName=imgStar1Splash"/>
+		<ParallelSet Id="setStar1">
+			<SequenceSet Class="clsObjAnimation" ClassParams="@ObjName=sprStar1, @starDX=200, @starDelay=0, @SplashObjName=imgStar1Splash"/>
+			<SequenceSet RepeatCount="1">
+<!--				<Delay Duration="0.4" />-->
+				<Do Action="sndScoreRatchet.Start()" />
+				<NumAnimation Target="dispScore.X" From="0" To="levelScore.Score" Duration="0.6" RepeatCount="1" Fill="Hold"/>
+				<Do Action="sndScoreRatchet.Stop();system:BonusAnmStart" />
+			</SequenceSet>
+		</ParallelSet>
 		<SequenceSet Id="setStar2" Class="clsObjAnimation" ClassParams="@ObjName=sprStar2, @starDX=0, @starDelay=0.2, @SplashObjName=imgStar2Splash"/>
 		<SequenceSet Id="setStar3" Class="clsObjAnimation" ClassParams="@ObjName=sprStar3, @starDX=-200, @starDelay=0.4, @SplashObjName=imgStar3Splash"/>
 
-		<SequenceSet Id="setAlarm" Class="clsObjAnimation" ClassParams="@ObjName=imgAlarm, @starDX=0, @starDelay=1, @SplashObjName=grpAlarmSmoke"/>
-		<SequenceSet Id="setHeart" Class="clsObjAnimation" ClassParams="@ObjName=imgHeart, @starDX=0, @starDelay=1, @SplashObjName=grpHeartSmoke"/>
+		<SequenceSet Id="setAlarm" Class="clsObjAnimation" ClassParams="@ObjName=imgAlarm, @starDX=0, @starDelay=0, @SplashObjName=grpAlarmSmoke"/>
+		<SequenceSet Id="setHeart" Class="clsObjAnimation" ClassParams="@ObjName=imgHeart, @starDX=0, @starDelay=0.2, @SplashObjName=grpHeartSmoke"/>
 
-		<ParallelSet Id="setBadge" RepeatCount="1">
-<!--			<Do Action="imgBadgeGlow.Enabled=true" />-->
-			<Do Action="imgBadge.Enabled=true" />
-		</ParallelSet>
+		<BoolTrigger Condition="((levelScore.TimeBonus > 0) or (levelScore.HealthBonus > 0)) and (system:BonusAnmStart)" EnterAction="anmBonusScore.Start()"/>
+		<SequenceSet Id="anmBonusScore" RepeatCount="1">
+			<Delay Duration="0.8" />
+			<Do Action="sndScoreRatchet.Start();system:BadgeAnmStart" />
+			<NumAnimation Target="dispScore.X" From="levelScore.Score" To="levelScore.TotalScore" Duration="0.6" RepeatCount="1" Fill="Hold"/>
+			<Do Action="sndScoreRatchet.Stop()" />
+		</SequenceSet>
 		
-		<ParallelSet Id="setStamp" RepeatCount="1">
-			<Do Action="imgStamp.Enabled=true" />
-		</ParallelSet>
+		<SequenceSet Id="setBadge" RepeatCount="1">
+			<Do Action="system:StampAnmStart" RepeatCount="1"/>
+			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="100,-300" Duration="0.2" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
+			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="-2,6" Duration="0.1" IsDelta="true" Autoreverse="true" RepeatCount="1" InProgress="true"/>
+			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="-1,3" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1" InProgress="true"/>
+<!--			<NumAnimation Target="imgBadge.Rotation" From="0" To="180" Duration="0.125" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
+			<NumAnimation Target="imgBadge.Rotation" From="-2" To="2" Duration="0.125" IsDelta="true" Autoreverse="true" RepeatCount="1.125" InProgress="true"/>-->
+		</SequenceSet>
 		
-		
+		<SequenceSet Id="setStamp" RepeatCount="1">
+			<NumAnimation Target="imgStamp.Width,imgStamp.Height,imgStamp.X,imgStamp.Y,imgStamp.Opacity" From="600,600,210,-40,0" To="158,158,310,8,1" Duration="0.2" Autoreverse="false" RepeatCount="1" />
+			<Do Action="grpStampSmoke1:Run;grpStampSmoke2:Run;grpStampSmoke3:Run;grpStampSmoke4:Run;grpStampSmoke5:Run;grpStampSmoke6:Run" />
+		</SequenceSet>		
 
 		<BoolTrigger Condition="(hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio1" EnterAction="setStar1.Start()" />
 		<BoolTrigger Condition="(hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio2" EnterAction="setStar2.Start()" />
 		<BoolTrigger Condition="(hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3" EnterAction="setStar3.Start()" />
-		<BoolTrigger Condition="(levelScore.TimeBonus > 0) and ((hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3)" EnterAction="setAlarm.Start()" />
-		<BoolTrigger Condition="(levelScore.HealthBonus > 0) and ((hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3)" EnterAction="setHeart.Start()" />
-		<BoolTrigger Condition="(not setScoreAnimations.InProgress) and levelScore.HasBadge" EnterAction="setBadge.Start()" />
-		<BoolTrigger Condition="(not setScoreAnimations.InProgress) and (not setBadge.InProgress) and @isNewScore" EnterAction="setStamp.Start()" />
-	
-		
+		<BoolTrigger Condition="(levelScore.TimeBonus > 0) and ((hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3) and (system:BonusAnmStart)" EnterAction="setAlarm.Start()" />
+		<BoolTrigger Condition="(levelScore.HealthBonus > 0) and ((hero.Score/levelScore.AvailablePoints) >= levelScore.StarScoreRatio3) and (system:BonusAnmStart)" EnterAction="setHeart.Start()" />
+		<BoolTrigger Condition="(levelScore.HasBadge) and (system:BadgeAnmStart)" EnterAction="setBadge.Start()" />
+		<BoolTrigger Condition="(@isNewScore) and  (system:StampAnmStart)" EnterAction="setStamp.Start()" />
 	
 	</Layer>
 </Screen>

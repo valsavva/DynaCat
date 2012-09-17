@@ -48,7 +48,7 @@
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             
                             @heroDestPointY=exit.Y+10"/>
-                <Delay Duration="0.8"/>
+<!--                <Delay Duration="0.8"/>-->
                 <Do Action="SFX:EndLevel"/>
                 <Delay Duration="0.12"/>
                 <Do Action="this_sprExitTransform.Enable();this_imgExitStatic.Disable()"/>
