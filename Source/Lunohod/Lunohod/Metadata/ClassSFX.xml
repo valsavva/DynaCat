@@ -53,6 +53,7 @@
         <SoundFile Id="sfChomp3" Source="sfxChomp3"/>
         
         <SoundFile Id="sfAlarm" Source="sfxAlarm"/>
+        <SoundFile Id="sfGoldBell" Source="sfxGoldBell"/>
         <SoundFile Id="sfDrop1" Source="sfxDrop1"/>
         <SoundFile Id="sfDrop2" Source="sfxDrop2"/>
         <SoundFile Id="sfDrop3" Source="sfxDrop3"/>
@@ -63,8 +64,9 @@
     <Class Id="clsSFX">
         <Group>
         
-
-        	<TapArea Id="this_soundcheck" Bounds="100,0,280,60" Action="this_anmSoundCheck.Start()"/>
+        
+<!--        	
+			<TapArea Id="this_soundcheck" Bounds="100,0,280,60" Action="this_anmSoundCheck.Start()"/>
         	<SequenceSet Id="this_anmSoundCheck" RepeatCount="0">
         		<Do Action="this:Eating" /><Delay Duration="1" />
         		<Do Action="this:EatingGoldFish" /><Delay Duration="1" />
@@ -115,7 +117,7 @@
         		<Do Action="this:RadarWork" /><Delay Duration="1" />
         		
         	</SequenceSet>
-
+-->
         
 <!-- init -->
             <Do Action="@KilledRatNum=0" InProgress="true" RepeatCount="1"/>
@@ -341,6 +343,10 @@
             <BoolTrigger Condition="this:Alarm" EnterAction="this_sndAlarm.Start()"/>
             <Sound Id="this_sndAlarm" FileId="sfAlarm" Volume="0.5"/>
             
+            <!-- gold bell -->
+            <BoolTrigger Condition="this:GoldBell" EnterAction="this_sndGoldBell.Start()"/>
+            <Sound Id="this_sndGoldBell" FileId="sfGoldBell" Volume="1"/>  
+                      
             <!-- radar working -->
             <BoolTrigger Condition="this:RadarWork"
                          EnterAction="this_setRadarWorkLoop.Start();this_setRadarStartWork.Start()"
