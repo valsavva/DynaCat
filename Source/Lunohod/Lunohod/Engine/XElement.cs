@@ -126,17 +126,17 @@ namespace Lunohod.Objects
 				return;
 			
 			// Initialize state
-			if (this.IsRoot || this.ParentElement == null)
+			//if (this.IsRoot || this.ParentElement == null)
 			{
 				TransState.TransformCycle = GameEngine.Instance.CycleNumber;
 				TransState.LocationTransform = Matrix.Identity;
 				TransState.ScaleTransform = Matrix.Identity;
 			}
-			else
-			{
-				this.ParentElement.UpdateTransforms();
-				TransState = this.ParentElement.TransState;
-			}			
+			//else
+			//{
+			//	this.ParentElement.UpdateTransforms();
+			//	TransState = this.ParentElement.TransState;
+			//}			
 			
 			// Location transform
 			if (this.Origin != Vector2.Zero)
@@ -153,6 +153,12 @@ namespace Lunohod.Objects
 			if (this.Bounds.X != 0 || this.Bounds.Y != 0 || this.RotationCenter != Vector2.Zero)
 				TransState.LocationTransform *= Matrix.CreateTranslation(this.Bounds.X + this.RotationCenter.X, this.Bounds.Y + this.RotationCenter.Y, 0);
 			
+			if (!this.IsRoot && this.ParentElement != null)
+			{
+				this.ParentElement.UpdateTransforms();
+				TransState.LocationTransform *= this.ParentElement.TransState.LocationTransform;
+				TransState.ScaleTransform *= this.ParentElement.TransState.ScaleTransform;
+			}
 		}
 
 		private void UpdateProps()
