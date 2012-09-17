@@ -46,6 +46,12 @@ namespace Lunohod.Objects
 				this.soundEffectInstance.Volume = (float)volume;
 		}
 
+		protected override void AdjustIsLooped()
+		{
+			if (this.soundFile != null && this.soundFile.VerifyInstance(this))
+				this.soundEffectInstance.IsLooped = this.IsLooped;
+		}
+
         public bool InProgress
         {
             get { return this.soundFile.VerifyInstance(this) && this.soundEffectInstance.State != SoundState.Stopped; }
@@ -69,6 +75,8 @@ namespace Lunohod.Objects
 				this.soundEffectInstance.Stop();
 
 			AdjustVolume();
+			AdjustIsLooped();
+
 #if WINDOWS
             this.soundEffectInstance.Pitch = (float)this.Pitch;
 #else
