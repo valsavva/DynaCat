@@ -23,12 +23,20 @@ namespace Lunohod
 			}
 		}
 
+		[XmlAttribute]
+		public bool IsLooped
+		{
+			get; set;
+		}
+
 		protected void AdjustVolume()
 		{
 			AdjustVolumeImpl(GameEngine.Instance.IsMute ? 0 : this.volume);
 		}
 
 		protected abstract void AdjustVolumeImpl(double volume);
+
+		protected abstract void AdjustIsLooped();
 
 		public override void Initialize(InitializeParameters p)
 		{
@@ -46,6 +54,7 @@ namespace Lunohod
         {
             this.FileId = reader["FileId"];
             this.Volume = reader.ReadAttrAsFloat("Volume");
+			this.IsLooped = reader.ReadAttrAsBoolean("IsLooped");
 
             base.ReadXml(reader);
         }
@@ -55,6 +64,16 @@ namespace Lunohod
 			switch (propertyName)
 			{
                 case "Volume": getter = () => this.Volume; setter = (v) => this.Volume = v; return;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
+
+		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
+		{
+			switch (propertyName)
+			{
+				case "IsLooped": getter = () => this.IsLooped; setter = (v) => this.IsLooped = v; return;
 				default :
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}

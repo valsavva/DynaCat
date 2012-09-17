@@ -40,6 +40,11 @@ namespace Lunohod.Objects
 			MediaPlayer.Volume = (float)volume;
 		}
 
+		protected override void AdjustIsLooped()
+		{
+			MediaPlayer.IsRepeating = this.IsLooped;
+		}
+
 		public bool InProgress
         {
             get { return MediaPlayer.State != MediaState.Stopped; }
