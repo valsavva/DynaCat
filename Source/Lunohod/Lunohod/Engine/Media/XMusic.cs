@@ -18,6 +18,7 @@ namespace Lunohod.Objects
 
 		public XMusic()
 		{
+			this.IsLooped = true;
 		}
 		
 		public override void Initialize(InitializeParameters p)
@@ -38,6 +39,11 @@ namespace Lunohod.Objects
 		protected override void AdjustVolumeImpl(double volume)
 		{
 			MediaPlayer.Volume = (float)volume;
+		}
+
+		protected override void AdjustIsLooped()
+		{
+			MediaPlayer.IsRepeating = this.IsLooped;
 		}
 
 		public bool InProgress
@@ -63,10 +69,8 @@ namespace Lunohod.Objects
                 // Play the music
 				AdjustVolume();
                 MediaPlayer.Play(this.musicFile.Song);
-
-                // Loop the currently playing song
-                MediaPlayer.IsRepeating = true;
-            }
+				AdjustIsLooped();
+			}
             catch { }
         }
 		public void Play()
