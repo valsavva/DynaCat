@@ -337,9 +337,6 @@ namespace Lunohod.Xge
 
             var expression = TFactor();
 
-            if (expression.Type != typeof(bool))
-                Error("Unary operator 'not' cannot be applied to opearand of type '{0}'", expression.Type.Name);
-
             return new UnaryNotOperator(expression);
         }
 
