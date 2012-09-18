@@ -58,7 +58,7 @@
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="49, 66, 37, 54" TraceId="image3049" />
-        <Hero Id="hero" Class="clsHero" Bounds="100, 84, 33, 24" TraceId="image3016-1"/>
+        <Hero Id="hero" Class="clsHero" Bounds="400, 84, 33, 24" TraceId="image3016-1"/>
     </Layer>
     <Layer Id="HelpText" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->

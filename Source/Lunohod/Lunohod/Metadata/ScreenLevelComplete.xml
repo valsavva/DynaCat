@@ -266,7 +266,7 @@
 <!--				<Delay Duration="0.4" />-->
 				<Do Action="sndScoreRatchet.Start()" />
 				<NumAnimation Target="dispScore.X" From="0" To="levelScore.Score" Duration="0.6" RepeatCount="1" Fill="Hold"/>
-				<Do Action="sndScoreRatchet.Stop();system:BonusAnmStart" />
+				<Do Action="sndScoreRatchet.Stop();system:+BonusAnmStart;system:+StampAnmStart" />
 			</SequenceSet>
 		</ParallelSet>
 		<SequenceSet Id="setStar2" Class="clsObjAnimation" ClassParams="@ObjName=sprStar2, @starDX=0, @starDelay=0.2, @SplashObjName=imgStar2Splash"/>
@@ -278,13 +278,12 @@
 		<BoolTrigger Condition="((levelScore.TimeBonus > 0) or (levelScore.HealthBonus > 0)) and (system:BonusAnmStart)" EnterAction="anmBonusScore.Start()"/>
 		<SequenceSet Id="anmBonusScore" RepeatCount="1">
 			<Delay Duration="0.8" />
-			<Do Action="sndScoreRatchet.Start();system:BadgeAnmStart" />
+			<Do Action="sndScoreRatchet.Start();system:+BadgeAnmStart" />
 			<NumAnimation Target="dispScore.X" From="levelScore.Score" To="levelScore.TotalScore" Duration="0.6" RepeatCount="1" Fill="Hold"/>
 			<Do Action="sndScoreRatchet.Stop()" />
 		</SequenceSet>
 		
 		<SequenceSet Id="setBadge" RepeatCount="1">
-			<Do Action="system:StampAnmStart" RepeatCount="1"/>
 			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="100,-300" Duration="0.2" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
 			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="-2,6" Duration="0.1" IsDelta="true" Autoreverse="true" RepeatCount="1" InProgress="true"/>
 			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="-1,3" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1" InProgress="true"/>
@@ -293,6 +292,7 @@
 		</SequenceSet>
 		
 		<SequenceSet Id="setStamp" RepeatCount="1">
+			<Delay Duration="1.2" />
 			<NumAnimation Target="imgStamp.Width,imgStamp.Height,imgStamp.X,imgStamp.Y,imgStamp.Opacity" From="600,600,210,-40,0" To="158,158,310,8,1" Duration="0.2" Autoreverse="false" RepeatCount="1" />
 			<Do Action="grpStampSmoke1:Run;grpStampSmoke2:Run;grpStampSmoke3:Run;grpStampSmoke4:Run;grpStampSmoke5:Run;grpStampSmoke6:Run" />
 		</SequenceSet>		
