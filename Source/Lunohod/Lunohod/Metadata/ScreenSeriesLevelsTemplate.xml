@@ -171,7 +171,8 @@
 			    <BoolTrigger Condition="this_btnNextPage:Action" EnterAction="@currentPage=system.IIf((@currentPage+1)>=(@numberOfPages-1),@numberOfPages-1,@currentPage+1);" />
 			</Group>
 			
-			<BoolTrigger Condition="system:screenActivated" EnterAction="sndGameMusic.Volume=0.8" />
+			<BoolTrigger Condition="(system:screenActivated) and (sndGameMusic.Volume==0)" EnterAction="anmMusicVolumeUp2.Start()" />
+			<NumAnimation Id="anmMusicVolumeUp2" Target="sndGameMusic.Volume" From="0" To="0.8" Duration="0.5" RepeatCount="1"/>     
 		</Layer>
 	</Class>	
 </Include>

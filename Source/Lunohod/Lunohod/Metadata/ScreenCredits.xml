@@ -41,7 +41,7 @@
 	        </Group>
 	        
 	        <SequenceSet Id="setScrolling" InProgress="true" RepeatCount="0">
-	            <NumAnimation Target="grpText.Y" From="240" To="-230" Duration="20" RepeatCount="1" Fill="Hold"/>
+	            <NumAnimation Target="grpText.Y" From="220" To="-230" Duration="20" RepeatCount="1" Fill="Hold"/>
 	            <Delay Duration="10"/>
 	            <NumAnimation Target="grpText.Opacity" From="1" To="0" Duration="1.1" RepeatCount="1"/>
 	        	<Do Action="grpText.Y=240;grpText.Opacity=1" />
