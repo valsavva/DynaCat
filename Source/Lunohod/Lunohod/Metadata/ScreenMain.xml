@@ -31,7 +31,8 @@
 	</Class>
 
 	<Layer Id="background">
-        <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="false"/>
+        <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="true" IsLooped="true"/>
+        <BoolTrigger Condition="system:screenActivated" EnterAction="sndGameMusic.Volume=0.8" />
 		<Image TextureId="txrBackground" />
 	</Layer>
 

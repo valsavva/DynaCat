@@ -170,6 +170,8 @@
 			<Group Id="this_btnNextPage" Class="clsButton" ClassParams="@BtnImg=next" Bounds="245, 256, 62, 62">
 			    <BoolTrigger Condition="this_btnNextPage:Action" EnterAction="@currentPage=system.IIf((@currentPage+1)>=(@numberOfPages-1),@numberOfPages-1,@currentPage+1);" />
 			</Group>
+			
+			<BoolTrigger Condition="system:screenActivated" EnterAction="sndGameMusic.Volume=0.8" />
 		</Layer>
 	</Class>	
 </Include>
