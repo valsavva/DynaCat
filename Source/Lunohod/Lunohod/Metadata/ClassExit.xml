@@ -39,7 +39,7 @@
 
             <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit;this:+StartFlight">
                 <NumTrigger Property="hero.Health" Compare="E" Value="100">
-                    <BoolTrigger Condition="anmTimeBonus.InProgress" EnterAction="SFX:Laugh"/>
+                    <BoolTrigger Condition="(anmTimeBonus.InProgress) and (not SFX:hasBadExplosion)" EnterAction="SFX:Laugh"/>
                 </NumTrigger>
             </IntersectionTrigger>
 

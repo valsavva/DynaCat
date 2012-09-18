@@ -184,7 +184,8 @@
 
             <!-- sttBadExplosion : /minor/ explosion - bad -->
             <BoolTrigger Condition="hero:sttBadExplosion" 
-                         EnterAction="anmBadExplosion.Start()"
+                         EnterAction="anmBadExplosion.Start();
+                         SFX:+hasBadExplosion"
                          ExitAction="anmBadExplosion.Stop()"
                          Group="sttHeroStates">
                 <Image TextureId="txrHeroBadExplosion" Bounds="-33, -46, 100, 100"/>
