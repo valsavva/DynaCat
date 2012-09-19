@@ -14,8 +14,6 @@
         <Texture Id="txrWire02" Source="scr_pause_wire02" />
         <Texture Id="txrWire03" Source="scr_pause_wire03" />
         <Texture Id="txrWire04" Source="scr_pause_wire04" />
-        
-        <Font Id="fntSystem" Source="SystemFont"/>
     </Resources>
 
 	<Layer Id="background">
@@ -32,6 +30,7 @@
 				
 			<Group Id="grpLevelNumberPanel" Bounds="97,67,100,100" Class="clsLevelNumberPanel" Rotation="7.5" />
 			
+			<!-- buttons -->
 			<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=restart" Bounds="35, 40, 62, 62">
 			    <BoolTrigger Condition="btnRestart:Action" EnterAction="system.CloseCurrentScreen();system.RestartLevel();" />
 			</Group>
@@ -42,6 +41,11 @@
 			    <BoolTrigger Condition="btnResume:Action" EnterAction="system.CloseCurrentScreen();" />
 			</Group>
 			<Group Id="btnMute" Bounds="391,32,62,62" Class="clsMuteButton" />
+			
+			<!-- scores -->
+			<!-- <Do Action="levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time;" /> -->
+			<Text Text="=system.Str(system.GetSeriesLevelScore(levelInfo.SeriesNumber,levelInfo.LevelNumber))" FontId="Splash14Font" Location="301,109" Rotation="7.5" Scale="0.7" />
+			<Text Text="=system.Str(hero.Score)" FontId="Splash14Font" Location="254,136" Rotation="7.5" Scale="0.7" />
 		</Group>
 		
 		<NumAnimation Target="grpAssembly.Y" InProgress="true" RepeatCount="1" Fill="Hold">
