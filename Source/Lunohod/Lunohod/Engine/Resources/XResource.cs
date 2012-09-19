@@ -21,7 +21,7 @@ namespace Lunohod.Objects
         [XmlAttribute]
         public string Source;
 
-        protected T LoadResource<T>(ContentManager content, string buildProcessor, string defaultInExtension, string defaultOutExtension)
+        protected T LoadResource<T>(ContentManager content, string buildProcessor, string defaultInExtension, string defaultOutExtension, string importer = "")
         {
             XResourceBundle r = (XResourceBundle)this.Parent;
 
@@ -41,7 +41,7 @@ namespace Lunohod.Objects
             {
                 using (Lunohod.ContentLoading.ContentBuilder b = new ContentLoading.ContentBuilder(outputPath))
                 {
-                    b.Add(inFile, this.Source, "", buildProcessor);
+                    b.Add(inFile, this.Source, importer, buildProcessor);
                     string error = b.Build();
 
                     if (!string.IsNullOrEmpty(error))
