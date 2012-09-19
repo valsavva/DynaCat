@@ -128,6 +128,13 @@ namespace Lunohod.Objects
             
             base.ReadXml(reader);
         }
+
+		public override void Dispose()
+		{
+			this.Stop();
+
+			base.Dispose();
+		}
 	}
 }
 

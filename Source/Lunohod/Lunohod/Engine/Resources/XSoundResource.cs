@@ -155,7 +155,7 @@ namespace Lunohod.Objects
 
 			if (this.NumberOfInstances > 0)
 			{
-				if (this.instanceOwners[owner.soundEffectInstance] != owner.GetHashCode())
+				if (this.instanceOwners == null || this.instanceOwners[owner.soundEffectInstance] != owner.GetHashCode())
 				{
 					owner.soundEffectInstance = null;
 					return false;
