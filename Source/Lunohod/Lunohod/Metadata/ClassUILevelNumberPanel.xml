@@ -16,16 +16,16 @@
 				InProgress="true"
 				RepeatCount="1"
 			/>
-            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Bounds="00,0,32,32" FrameBounds="0,0,32,32"/>
-            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Bounds="22,0,32,32" FrameBounds="0,0,32,32"/>
+            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Bounds="00,0,35,31" FrameBounds="0,0,35,31"/>
+            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Bounds="20,0,35,31" FrameBounds="0,0,35,31"/>
 		</Group>
 	</Class>
 
 	<Class Id="clsLevelNumberPanel">
 		<Group>
 			<Image TextureId="txrLevelNumberPanel" StretchMode="ActualSize" Location="0,0" />
-			<Group Id="this_grpSeriesNumber" Location="12,30" Class="clsNumber" ClassParams="@numberParam=(levelInfo.SeriesNumber)"/>
-            <Sprite TextureId="txrNumbers" Bounds="41,45,8,5" FrameBounds="81,21,8,5"/>
+			<Group Id="this_grpSeriesNumber" Location="11,30" Class="clsNumber" ClassParams="@numberParam=(levelInfo.SeriesNumber)"/>
+            <Sprite TextureId="txrNumbers" Bounds="40,44,8,6" FrameBounds="255,2,8,7"/>
 			<Group Id="this_grpLevelNumber" Location="44,30" Class="clsNumber" ClassParams="@numberParam=(levelInfo.LevelNumber+1)"/>
 		</Group>
 	</Class>
