@@ -80,7 +80,9 @@
         <TapArea Bounds="132, 234, 100, 86" Action="tap7_setPress.Start()"/>
         <Image Id="imgBtnPause" TextureId="txrBtnPause" Bounds="154, 256, 56, 56" Stretch="false" Opacity="0.5"/>
         <SequenceSet Id="tap7_setPress">
+       		<Do Action="dashboard.Opacity=0"/>
             <Do Action="system:pause"/>
+            <Do Action="dashboard.Opacity=1"/>
             <NumAnimation Target="imgBtnPause.Opacity" From="1" To="0.5" Duration="0.5" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
         </SequenceSet>
 
