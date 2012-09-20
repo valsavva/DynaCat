@@ -66,6 +66,8 @@ namespace Lunohod
 		public bool IsInstant;
 		
 		public bool IsHandled;
+
+		public int OwnerScreen;
 		
 		public override string ToString()
 		{

@@ -464,7 +464,9 @@ namespace Lunohod
 		{
 			if (!this.ScreenEngine.EventAllowed(e))
 				return;
-			
+
+			e.OwnerScreen = this.ScreenEngine.GetHashCode();
+
 			this.eventQueue.Enqueue(e);
 		}
 		
@@ -472,9 +474,17 @@ namespace Lunohod
 		{
 			int numOfEvents = this.eventQueue.Count;
 
+			int currentOwner = this.ScreenEngine.GetHashCode();
+
 			for (int i = 0; i < numOfEvents; i++)
 			{
 				var e = this.eventQueue.Dequeue();
+
+				if (e.OwnerScreen != currentOwner && e.OwnerScreen != this.ScreenEngine.GetHashCode())
+				{
+					this.eventQueue.Enqueue(e);
+					continue;
+				}
 
 				e.IsHandled = true;
 
@@ -482,8 +492,8 @@ namespace Lunohod
                 {
                     case GameEventType.Pause:
 						{
-                            this.eventQueue.Clear();
-							numOfEvents = 0;
+                            //this.eventQueue.Clear();
+							//numOfEvents = 0;
 							
 							LoadScreen(this.GameObject.PauseScreen);
 						} break;
