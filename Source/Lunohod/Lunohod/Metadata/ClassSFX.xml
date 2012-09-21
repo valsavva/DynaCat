@@ -65,9 +65,11 @@
         <Group>
         
         
-<!--        	
+	
 			<TapArea Id="this_soundcheck" Bounds="100,0,280,60" Action="this_anmSoundCheck.Start()"/>
         	<SequenceSet Id="this_anmSoundCheck" RepeatCount="0">
+                <Do Action="this:BombHiss" />
+                <Delay Duration="3" />
         		<Do Action="this:Eating" /><Delay Duration="1" />
         		<Do Action="this:EatingGoldFish" /><Delay Duration="1" />
         		<Do Action="hero:bounce" /><Delay Duration="1" />
@@ -110,14 +112,13 @@
         		<Do Action="this:Gum" /><Delay Duration="1" />
         		<Do Action="this:Newspaper" /><Delay Duration="1" />
         		<Do Action="this:EndLevel" /><Delay Duration="1" />
-        		<Do Action="this:BombHiss" /><Delay Duration="1" />
         		<Do Action="this:Explosion" /><Delay Duration="1" />
         		<Do Action="this:Parashute" /><Delay Duration="1" />
         		<Do Action="this:Alarm" /><Delay Duration="1" />
         		<Do Action="this:RadarWork" /><Delay Duration="1" />
         		
         	</SequenceSet>
--->
+
         
 <!-- init -->
             <Do Action="@KilledRatNum=0" InProgress="true" RepeatCount="1"/>
