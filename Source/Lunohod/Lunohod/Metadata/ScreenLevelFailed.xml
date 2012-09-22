@@ -9,13 +9,20 @@
 
     <Resources RootFolder="Global">
         <Texture Id="txrBackground" Source="death_BG" />
+        <Texture Id="txr_Death_n_red_sparks" Source="Death_n_red_sparks" />
+        <Texture Id="txr_Death_n_sparks_01" Source="Death_n_sparks_01" />
+        <Texture Id="txr_Death_Cat_skull_01" Source="Death_Cat_skull_01" />
         
         <Font Id="fntSystem" Source="SystemFont"/>
     </Resources>
 
 	<Layer Id="background">
 		<Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
-	</Layer>
+        <Image Id="dfltMask1" TextureId="txr_Death_n_red_sparks" Bounds="91, 18, 322, 303" TraceId="image3016-17"/>
+        <Image Id="dfltMask2" TextureId="txr_Death_n_sparks_01" Bounds="139, 41, 235, 211" TraceId="image3027"/>
+        <Image Id="dfltMask3" TextureId="txr_Death_Cat_skull_01" Bounds="206, 72, 95, 139" TraceId="image3071"/>
+        <NumAnimation Target="dfltMask1.Opacity" From="1" To="0.5" Duration="3" Autoreverse="true" RepeatCount="0" InProgress="true"/>
+    </Layer>
 	<Layer>
 		<Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel"/>
 		
