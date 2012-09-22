@@ -21,10 +21,12 @@
 	</Layer>
 	<Layer>
 		<Group Id="grpAssembly" Bounds="0,-320,480,320">
-			<Image TextureId="txrWire04" Location="160,0" />
-			<Image TextureId="txrWire03" Location="85,0" />
-			<Image TextureId="txrWire02" Location="105,172" />
-			<Image TextureId="txrWire01" Location="192,183" />
+
+			
+			<Image Id="imgWire01" TextureId="txrWire01" Bounds="192,183,133,99" />
+			<Image Id="imgWire02" TextureId="txrWire02" Bounds="105,168,196,26" />
+			<Image Id="imgWire03" TextureId="txrWire03" Bounds="85,0,337,111" />
+			<Image Id="imgWire04" TextureId="txrWire04" Bounds="160,0,207,103" />
 
 			<Image TextureId="txrPanel" />
 				
@@ -38,7 +40,7 @@
 			    <BoolTrigger Condition="btnHome:Action" EnterAction="system.CloseCurrentScreen();system.AbandonLevel();" />
 			</Group>
 			<Group Id="btnResume" Class="clsButton" ClassParams="@BtnImg=play" Bounds="339, 167, 62, 62">
-			    <BoolTrigger Condition="btnResume:Action" EnterAction="system.CloseCurrentScreen();" />
+			    <BoolTrigger Condition="btnResume:Action" EnterAction="grpAssemblyRemove.Start()" />
 			</Group>
 			<Group Id="btnMute" Bounds="391,32,62,62" Class="clsMuteButton" />
 			
@@ -50,8 +52,49 @@
 		
 		<NumAnimation Target="grpAssembly.Y" InProgress="true" RepeatCount="1" Fill="Hold">
 			<KeyFrame Time="0" Value="-320" Smoothness="Smooth" />
-			<KeyFrame Time="0.3" Value="0" Smoothness="Smooth" />
+			<KeyFrame Time="0.2" Value="0" Smoothness="Smooth" />
 		</NumAnimation>
 		
+		<SequenceSet Id="grpAssemblyRemove" RepeatCount="1">
+			<NumAnimation Target="grpAssembly.Y" From="0" To="-320" Duration="0.2" IsDelta="true" InProgress="false" Fill="Hold"  RepeatCount="1"/>		
+			<Do Action="system.CloseCurrentScreen()" />
+		</SequenceSet>
+		
+		<SequenceSet InProgress="true" RepeatCount="1" >
+			<Delay Duration="0.2" />
+			<NumAnimation Target="imgWire01.Height" RepeatCount="1" Fill="Hold">
+				<KeyFrame Time="0" Value="99" Smoothness="Smooth" />
+				<KeyFrame Time="0.2" Value="105" Smoothness="Smooth" />
+				<KeyFrame Time="0.4" Value="94" Smoothness="Smooth" />
+				<KeyFrame Time="0.6" Value="104" Smoothness="Smooth" />
+				<KeyFrame Time="0.8" Value="99" Smoothness="Smooth" />
+			</NumAnimation>
+		</SequenceSet>
+
+		<SequenceSet InProgress="true" RepeatCount="1" >
+			<Delay Duration="0.1" />
+			<NumAnimation Target="imgWire02.Height" RepeatCount="1" Fill="Hold">
+				<KeyFrame Time="0" Value="26" Smoothness="Smooth" />
+				<KeyFrame Time="0.2" Value="32" Smoothness="Smooth" />
+				<KeyFrame Time="0.4" Value="21" Smoothness="Smooth" />
+				<KeyFrame Time="0.6" Value="30" Smoothness="Smooth" />
+				<KeyFrame Time="0.8" Value="26" Smoothness="Smooth" />
+			</NumAnimation>
+		</SequenceSet>
+
+
+		<SequenceSet InProgress="true" RepeatCount="1" >
+			<Delay Duration="0.2" />
+			<NumAnimation Target="imgWire04.Height" RepeatCount="1" Fill="Hold">
+				<KeyFrame Time="0" Value="103" Smoothness="Smooth" />
+				<KeyFrame Time="0.2" Value="109" Smoothness="Smooth" />
+				<KeyFrame Time="0.5" Value="99" Smoothness="Smooth" />
+				<KeyFrame Time="0.8" Value="108" Smoothness="Smooth" />
+				<KeyFrame Time="1.1" Value="103" Smoothness="Smooth" />
+			</NumAnimation>
+		</SequenceSet>
+					
+
+
 	</Layer>
 </Screen>
