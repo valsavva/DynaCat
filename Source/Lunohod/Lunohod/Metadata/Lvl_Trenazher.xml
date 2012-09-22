@@ -5,6 +5,7 @@
     <Include File="ClassFood.xml" />
     <Include File="ClassEnemyRat.xml" />
     <Include File="ClassExit.xml" />
+    <Include File="ClassHelpText.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Include File="ClassTeleportEntry.xml" />
     <Include File="ClassTeleportKoleno.xml" />
@@ -435,6 +436,10 @@
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="49, 132, 33, 24" TraceId="image3015"/>
+    </Layer>
+    <Layer Id="HelpTxt" BackColor="#FFFFFFFF">
+        <Group Id="grp1" Class="clsHelpText" ClassParams="@type='text',@txt=Teleport,@txrIndex=1,@blink=false,@rttn=0" Location="266, 205" TraceId="text3353"/>
+        <Group Id="grp2" Class="clsHelpText" ClassParams="@type='arrow',@txrIndex=1,@blink=false,@rttn=60" Location="367, 165" TraceId="image3365"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
