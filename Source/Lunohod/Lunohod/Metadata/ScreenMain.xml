@@ -35,7 +35,8 @@
        <BoolTrigger Condition="(system:screenActivated) and (sndGameMusic.Volume==0)" EnterAction="anmMusicVolumeUp.Start()" />
        <NumAnimation Id="anmMusicVolumeUp" Target="sndGameMusic.Volume" From="0" To="0.8" Duration="0.5" RepeatCount="1"/>
        
-		<Image TextureId="txrBackground" />
+		<!--<Image TextureId="txrBackground" />-->
+        <Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
 
 	<Layer>
