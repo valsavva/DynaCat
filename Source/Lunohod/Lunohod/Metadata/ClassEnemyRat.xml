@@ -153,8 +153,8 @@
                                     not hero:IsVeryDead"
                          EnterAction="this.Attack();
                                     this_anmDamageDealing.Start()"
-                                    
                          ExitAction="this_anmDamageDealing.Stop();
+                                    this_anmDamageDealingStoped.Start();
                                     this:onRestTimerReset;
                                     this.Depth=0.5" 
                          Group="this_sttStates">
@@ -177,6 +177,11 @@
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
                 <Do Action="this.Attack();hero:+sttGottaDamage;SFX:RatHit" />
                 <Delay Duration="system.Rnd(0.7,1.3)" />
+            </SequenceSet>
+
+            <SequenceSet Id="this_anmDamageDealingStoped" RepeatCount="1">
+                <Delay Duration="0.5" />
+                <Do Action="hero:-sttGottaDamage" />
             </SequenceSet>
 
             <!-- on rest -->

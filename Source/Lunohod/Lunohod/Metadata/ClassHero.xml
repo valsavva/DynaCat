@@ -81,7 +81,7 @@
 
             <!-- sttGottaDamage : /major/ gotta damage -->
             <BoolTrigger Condition="hero:sttGottaDamage"
-                         EnterAction="anmHeroGottaDamage.Play();
+                         EnterAction="anmHeroGottaDamage.Start();
                          hero:-sttEating;hero:-sttGoodExplosion"
                          Group="sttHeroStates">
                 <Sprite Id="this_shtHeroGottaDamage" TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="5"/>
@@ -93,12 +93,12 @@
             <Sprite Id="this_sprBlowFlash3" TextureId="txrBlowFlash3" Bounds="-10,-12,50,54" FrameBounds="0,0,50,54" FrameCount="3" Enabled="false" Depth="0.08" />
             <Sprite Id="this_sprBlowFlash4" TextureId="txrBlowFlash4" Bounds="-3,-7,37,35" FrameBounds="0,0,37,35" FrameCount="3" Enabled="false" Depth="0.08" />
 
-            <ParallelSet Id="anmHeroGottaDamage" RepeatCount="1">
+            <ParallelSet Id="anmHeroGottaDamage" RepeatCount="0">
                 <SequenceSet RepeatCount="1">
-                    <Delay Duration="0.4" />
-                    <Do Action="this_shtHeroGottaDamage.CurrentFrame=system.Rnd(0,4)" />
-                    <Delay Duration="0.4" />
-                    <Do Action="hero:-sttGottaDamage"/>
+                    <Delay Duration="0.3" />
+                    <Do Action="this_shtHeroGottaDamage.CurrentFrame=system.Rnd(0,4)" RepeatCount="1"/>
+                    <Delay Duration="0.5" />
+                    <Do Action="hero:-sttGottaDamage" />
                 </SequenceSet>
                 <RandomSet RepeatCount="1">
                     <SequenceSet RepeatCount="1">
