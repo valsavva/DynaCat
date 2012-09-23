@@ -11,6 +11,13 @@ namespace Lunohod
 {
 	public class LaunchController : UIViewController
 	{
+		public override void ViewWillAppear(bool animated)
+		{
+			Program.Wait(Program.appStart, Program.appStartDuration);
+
+			base.ViewWillAppear(animated);
+		}
+
 		public override void ViewDidAppear(bool animated)
 		{
 			base.ViewDidAppear(animated);
@@ -30,8 +37,11 @@ namespace Lunohod
 
 		internal static UIWindow startWindow;
 
+		internal static DateTime appStart;
+		internal static TimeSpan appStartDuration = TimeSpan.FromSeconds(1);
+
 		private static DateTime splashStart;
-		private static TimeSpan splashDuration = TimeSpan.FromSeconds(2.5);
+		private static TimeSpan splashDuration = TimeSpan.FromSeconds(2);
 
 		public override void FinishedLaunching(UIApplication app)
         {
@@ -46,10 +56,15 @@ namespace Lunohod
 			splashStart = DateTime.UtcNow;
         }
 
+		public static void Wait(DateTime startTime, TimeSpan duration)
+		{
+			while ((DateTime.UtcNow - startTime) < duration)
+				System.Threading.Thread.Sleep(200);
+		}
+
 		public static void FinishShowingSplash()
 		{
-			while((DateTime.UtcNow - splashStart) < splashDuration)
-				System.Threading.Thread.Sleep(200);
+			Wait(splashStart, splashDuration);
 		}
 
         /// <summary>
@@ -57,6 +72,8 @@ namespace Lunohod
         /// </summary>
         static void Main(string[] args)
         {
+			appStart = System.Diagnostics.Process.GetCurrentProcess().StartTime.ToUniversalTime();
+
             AppDomain.CurrentDomain.UnhandledException += HandleAppDomainCurrentDomainUnhandledException; ;
 
 			UIApplication.Main(args, null, "AppDelegate");
