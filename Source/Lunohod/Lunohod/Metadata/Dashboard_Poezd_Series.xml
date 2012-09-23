@@ -92,20 +92,20 @@
 
 
         <TapArea Bounds="76, 238, 116, 86" Action="tap7_setPress.Start()"/>
-        <Image Id="imgBtnPause" TextureId="txr_btnRectPause" Bounds="96, 256, 61, 84" Stretch="false" Opacity="0.5"/>
+        <Image Id="imgBtnPause" TextureId="txr_btnRectPause" Bounds="96, 256, 61, 84" Stretch="false" BackColor="#000000" Opacity="0.35"/>
         <SequenceSet Id="tap7_setPress">
             <Do Action="dashboard.Opacity=0"/>
             <Do Action="system:pause"/>
             <Do Action="dashboard.Opacity=1"/>
-            <NumAnimation Target="imgBtnPause.Opacity" From="1" To="0.5" Duration="0.5" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+            <NumAnimation Target="imgBtnPause.Opacity" From="1" To="0.35" Duration="0.5" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
         </SequenceSet>
 
         <!--<BoolTrigger Condition="hero.BombCount != 0">-->
             <TapArea Bounds="292, 238, 112, 86" Action="tap8_setPress.Start()"/>
-            <Image Id="imgBtnBomb" TextureId="txr_btnRectBomb" Bounds="322, 256, 61, 84" Stretch="false" Opacity="0.5"/>
+            <Image Id="imgBtnBomb" TextureId="txr_btnRectBomb" Bounds="322, 256, 61, 84" Stretch="false" BackColor="#000000" Opacity="0.35"/>
             <SequenceSet Id="tap8_setPress">
                 <Do Action="~system:explosion;dashboard:AnyKeyPressed;dashboard:BtnBombPressed"/>
-                <NumAnimation Target="imgBtnBomb.Opacity" From="1" To="0.5" Duration="0.5" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                <NumAnimation Target="imgBtnBomb.Opacity" From="1" To="0.35" Duration="0.5" Smoothing="Flat" Autoreverse="false" RepeatCount="1" Fill="End"/>
             </SequenceSet>
         <!--</BoolTrigger>-->
 
