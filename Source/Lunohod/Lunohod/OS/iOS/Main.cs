@@ -95,11 +95,6 @@ namespace Lunohod
 			GotoBackgroundMode();
 		}
 
-		public override void OnResignActivation(UIApplication application)
-		{
-			GotoBackgroundMode();
-		}
-
 		public override void OnActivated(UIApplication application)
 		{
 			GotoForegroundMode();
