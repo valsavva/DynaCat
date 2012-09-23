@@ -33,9 +33,9 @@ namespace Lunohod
 		public SpriteFont SystemFont { get; private set; }
 		public List<Texture2D> WaveTextures { get; private set; }
         
-		public const int MinWaveTextureDiameter = 200;
-        public const int MaxWaveTextureDiameter = 1100;
-        public const int WaveTextureDiameterStep = 200;
+		public const int MinWaveTextureDiameter = 400;
+        public const int MaxWaveTextureDiameter = 400;
+        public const int WaveTextureDiameterStep = 400;
 		public const int MaxWaveTravelDistance = 577;
 		
 		//public Stopwatch gameWatch = new Stopwatch();
@@ -281,7 +281,7 @@ namespace Lunohod
 			base.Initialize ();
 		}
 		
-		protected override void LoadContent()
+		protected void LoadContent()
 		{
             LoadGameElement();
 
@@ -295,8 +295,6 @@ namespace Lunohod
 			
 			LoadScreen(GameObject.StartScreen);
 
-			base.LoadContent();
-
 #if IPHONE
 			Lunohod.Program.FinishShowingSplash();
 #endif
@@ -304,6 +302,13 @@ namespace Lunohod
 
 		protected override void Update(GameTime gameTime)
 		{
+			if (this.CycleNumber == 0)
+			{
+				LoadContent();
+				this.CycleNumber++;
+				return;
+			}
+
 			if (this.InBackground)
 				return;
 
