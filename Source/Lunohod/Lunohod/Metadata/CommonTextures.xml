@@ -5,9 +5,11 @@
 		<Texture Id="txrBlank" Source="blank" />
         <Font Id="Splash14Font" Source="Splash14Font" />
 		<Font Id="fntSystem" Source="SystemFont" />
+        <Texture Id="txrButtons" Source="ui_buttons" />
     </Resources>
 
-	<Resources RootFolder="Sound">
+    <Resources RootFolder="Sound">
+        <SoundFile Id="sndButtonTapped" Source="sfxClick"/>
         <SoundFile Id="sndEnemyRatDying" Source="skeletonFX_enemy_dead_scream_1"/>
 	</Resources>
 	

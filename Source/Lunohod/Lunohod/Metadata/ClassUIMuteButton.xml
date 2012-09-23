@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Include>
-    <Resources RootFolder="Global">
-        <Texture Id="txtButtons" Source="ui_buttons" />
-    </Resources>
-
 	<Class Id="clsMuteButton">
 		<Group>
 			<TapArea Action="system.IsMute=not system.IsMute;" />
 			<BoolTrigger Condition="system.IsMute">
-                <Sprite TextureId="txtButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="17" />
+                <Sprite TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="17" />
 			</BoolTrigger>
 			<BoolTrigger Condition="not system.IsMute">
-                <Sprite TextureId="txtButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="8" />
+                <Sprite TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="8" />
 			</BoolTrigger>
 		</Group>
 	</Class>

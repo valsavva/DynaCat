@@ -23,6 +23,10 @@ namespace Lunohod.Objects
 
         protected T LoadResource<T>(ContentManager content, string buildProcessor, string defaultInExtension, string defaultOutExtension, string importer = "")
         {
+#if DEBUG
+			Console.WriteLine("==> Loading resource {0} Source: {1}", this.Id, this.Source);
+#endif
+
             XResourceBundle r = (XResourceBundle)this.Parent;
 
             string fileName = Path.Combine(r.RootFolder.Replace('/', Path.DirectorySeparatorChar), this.Source);
