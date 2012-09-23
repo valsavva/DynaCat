@@ -296,6 +296,10 @@ namespace Lunohod
 			LoadScreen(GameObject.StartScreen);
 
 			base.LoadContent();
+
+#if IPHONE
+			Lunohod.Program.FinishShowingSplash();
+#endif
 		}
 
 		protected override void Update(GameTime gameTime)

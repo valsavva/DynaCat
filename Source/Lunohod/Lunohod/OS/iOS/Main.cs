@@ -9,18 +9,48 @@ using System.IO;
 
 namespace Lunohod
 {
-	
+	public class LaunchController : UIViewController
+	{
+		public override void ViewDidAppear(bool animated)
+		{
+			base.ViewDidAppear(animated);
+
+			Program.game = new GameEngine();
+			Program.game.Run();
+
+			Program.startWindow.RemoveFromSuperview();
+			Program.startWindow = null;
+		}
+	}
+
     [Register("AppDelegate")]
-    class Program : UIApplicationDelegate
+    public class Program : UIApplicationDelegate
     {
-		GameEngine game;
-		
-        public override void FinishedLaunching(UIApplication app)
+		internal static GameEngine game;
+
+		internal static UIWindow startWindow;
+
+		private static DateTime splashStart;
+		private static TimeSpan splashDuration = TimeSpan.FromSeconds(2.5);
+
+		public override void FinishedLaunching(UIApplication app)
         {
-			// Fun begins..
-            this.game = new GameEngine();
-            this.game.Run();
+			var image = new UIImage(@"splash.png");
+			UIImageView view = new UIImageView(image);
+
+			startWindow = new UIWindow(UIScreen.MainScreen.Bounds);
+			startWindow.RootViewController = new LaunchController();
+			startWindow.Add(view);
+			startWindow.MakeKeyAndVisible();
+
+			splashStart = DateTime.UtcNow;
         }
+
+		public static void FinishShowingSplash()
+		{
+			while((DateTime.UtcNow - splashStart) < splashDuration)
+				System.Threading.Thread.Sleep(200);
+		}
 
         /// <summary>
         /// The main entry point for the application.
@@ -65,6 +95,9 @@ namespace Lunohod
 
 		private void GotoBackgroundMode()
 		{
+			if (Program.game == null)
+				return;
+
 			game.InBackground = true;
 
 			if (game.ScreenEngine is LevelEngine)
@@ -73,6 +106,9 @@ namespace Lunohod
 
 		private void GotoForegroundMode()
 		{
+			if (Program.game == null)
+				return;
+
 			game.InBackground = false;
 		}
 	

@@ -1307,8 +1307,6 @@
     <Content Include="Metadata\Textures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Default%402x.png" />
-    <Content Include="Default.png" />
     <Content Include="Metadata\includeSkeletonHeroMotions.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1914,5 +1912,7 @@
   <ItemGroup>
     <BundleResource Include="Default.png" />
     <BundleResource Include="Default%402x.png" />
+    <BundleResource Include="splash.png" />
+    <BundleResource Include="splash%402x.png" />
   </ItemGroup>
 </Project>
