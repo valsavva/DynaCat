@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Lunohod</RootNamespace>
     <AssemblyName>Lunohod</AssemblyName>
-    <ReleaseVersion>0.06</ReleaseVersion>
+    <ReleaseVersion>0.07</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>True</DebugSymbols>
