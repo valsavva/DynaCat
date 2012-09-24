@@ -1460,6 +1460,9 @@
     <Content Include="Content\Textures\transmitter_2_Alarm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+	<Content Include="Content\Textures\ALARM_sparks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Graphics\icon_iphone_114x114.png" />
     <Content Include="Graphics\icon_iphone_57x57.png" />
     <Content Include="Graphics\launch_iphone_320x480.png" />

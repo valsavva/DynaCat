@@ -643,6 +643,9 @@
     <Content Include="Content\Sound\skeletonFX_enemy_dead_scream_1.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\ALARM_sparks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\bomb.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -851,6 +854,7 @@
     </Content>
     <Content Include="Metadata\ClassUIButton.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ClassUILevelNumberPanel.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

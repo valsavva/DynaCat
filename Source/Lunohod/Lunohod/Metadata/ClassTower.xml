@@ -4,7 +4,7 @@
     <Resources RootFolder="Textures">
         <Texture Id="spr_towerLedOn" Source="Tow_trans_SignalSprite_60x60x4"/>
         <Texture Id="txr_towerLedOff" Source="Tow_trans_off"/>
-        <Texture Id="txr_towerAlarm" Source="Tow_trans_off"/>
+        <Texture Id="txrTowerAlarmGlow" Source="ALARM_sparks"/>
     </Resources>
 
 	<Class Id="clsTower">
@@ -20,12 +20,13 @@
             
             <SequenceSet Id="this_anmAlarm" RepeatCount="1">
                 <Do Action="SFX:Alarm"/>
-                <Delay Duration="0.8"/>
+                <NumAnimation Target="imgTowerAlarmGlow.Opacity,imgTowerAlarmGlow.Width,imgTowerAlarmGlow.Height" From="0,78,60" To="1,104,80" Duration="0.4" Autoreverse="true" RepeatCount="1" Fill="End"/>
                 <Do Action="this:-Alarm" />
             </SequenceSet>
             
             <BoolTrigger Condition="this:Alarm" EnterAction="this:-LedOn" Group="this_sttTower">
-                <Image TextureId="txr_towerAlarm" Bounds="0, 0, 30, 30" BackColor="#FF3333"/>
+                <Image Id="imgTowerAlarm" TextureId="txr_towerLedOff" Bounds="0, 0, 30, 30" BackColor="#FF3333"/>
+                <Image Id="imgTowerAlarmGlow" TextureId="txrTowerAlarmGlow" Bounds="-10, -4, 104,80" Opacity="0"/>
             </BoolTrigger>
             
             <BoolTrigger Condition="this:LedOn" Group="this_sttTower">
