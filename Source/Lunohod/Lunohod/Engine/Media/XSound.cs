@@ -48,8 +48,11 @@ namespace Lunohod.Objects
 
 		protected override void AdjustIsLooped()
 		{
-			if (this.soundFile != null && this.soundFile.VerifyInstance(this))
-				this.soundEffectInstance.IsLooped = this.IsLooped;
+            if (this.soundFile != null && this.soundFile.VerifyInstance(this))
+            {
+                if (this.soundEffectInstance.IsLooped != this.IsLooped)
+                    this.soundEffectInstance.IsLooped = this.IsLooped;
+            }
 		}
 
         public bool InProgress

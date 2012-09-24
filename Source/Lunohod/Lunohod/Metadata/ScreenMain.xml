@@ -17,7 +17,7 @@
     </Resources>
 
     <Resources RootFolder="Sound">
-        <MusicFile Id="sfGameMusic" Source="DynacatMusic.mp3"/>
+        <MusicFile Id="sfGameMusic" Source="DynacatMusic"/>
     </Resources>
 
 	<Class Id="clsSeriesPanel">
@@ -31,11 +31,10 @@
 	</Class>
 
 	<Layer Id="background">
-        <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="true" IsLooped="true" Volume="0.8"/>
+       <Music Id="sndGameMusic" FileId="sfGameMusic" Enabled="true" IsLooped="true" Volume="0.8"/>
        <BoolTrigger Condition="(system:screenActivated) and (sndGameMusic.Volume==0)" EnterAction="anmMusicVolumeUp.Start()" />
        <NumAnimation Id="anmMusicVolumeUp" Target="sndGameMusic.Volume" From="0" To="0.8" Duration="0.5" RepeatCount="1"/>
        
-		<!--<Image TextureId="txrBackground" />-->
         <Group Class="clsMovingBackground" ClassParams="@textureIdParam=txrBackground" />
 	</Layer>
 

@@ -287,8 +287,6 @@ namespace Lunohod
 
 			ChooseStorageDevice();
 			
-			Microsoft.Xna.Framework.Media.MediaPlayer.IsMuted = true;
-			
 			LoadSettings();
 			
 			LoadScore();
