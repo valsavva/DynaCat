@@ -4,7 +4,7 @@
 			<Image Id="this_imgBomb" Bounds="190,190,31,9" RotationCenter="15,5" TextureId="txrBomb" Opacity="1" Depth="0.09"/>
             <Image Id="this_imgExplosion1" Bounds="116,104,250,208" TextureId="txrExplosion" Enabled="false" RotationCenter="79,96" Depth="0.4"/>
 			<SequenceSet InProgress="true">
-				<Do Action="this_sndBombHiss.Play();hero:+sttWaitingExplosion"/>
+				<Do Action="hero:+sttWaitingExplosion"/><!-- HISS -->
                 <ParallelSet RepeatCount="1">
                     <NumAnimation Target="this_imgBomb.Rotation" From="0" To="360" Duration="0.3" Autoreverse="false" RepeatCount="1"/>
 				    <NumAnimation Target="this_imgBomb.Y" From="0" To="-40" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1"/>
@@ -21,12 +21,9 @@
             
             <Sound Id="this_sndBombHiss" FileId="sfHiss" Volume="0.2"/>
             
-            <RandomSet Id="this_setExplosion" RepeatCount="1">
-                <Sound FileId="sfExplosion1" Volume="1"/>
-                <Sound FileId="sfExplosion2" Volume="1"/>
-                <Sound FileId="sfExplosion1" Volume="1" Pitch="-0.2"/>
-                <Sound FileId="sfExplosion2" Volume="1" Pitch="-0.2"/>
-            </RandomSet>
+<!--            <RandomSet RepeatCount="1">-->
+                <Sound Id="this_setExplosion" FileId="sfExplosion1" Pan="-1" Volume="1"/>
+<!--            </RandomSet>-->
             
             
 		</Explosion>

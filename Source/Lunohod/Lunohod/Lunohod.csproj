@@ -218,7 +218,7 @@
     <Content Include="Content\Global\Death_Cat_skull_01.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="Content\Global\Death_Cat_skull_02.png">
+    <Content Include="Content\Global\Death_Cat_skull_02.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Global\Death_n_sparks_01.png">
@@ -1460,10 +1460,7 @@
     <Content Include="Content\Textures\Tow_trans_SignalSprite_60x60x4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\transmitter_2_Alarm.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-	<Content Include="Content\Textures\ALARM_sparks.png">
+    <Content Include="Content\Textures\ALARM_sparks.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\icon_iphone_114x114.png" />

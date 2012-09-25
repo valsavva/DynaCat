@@ -20,7 +20,7 @@
         <Block Id="blk4" Bounds="-72, 320, 618, 64" Edges="Stick" TraceId="image3074"/>
         <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="60, 58, 22, 23" TraceId="image3207"/>
         <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="237, 56, 22, 23" TraceId="image3218"/>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="145, 137, 24, 25" TraceId="image3229"/>
+        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="345, 137, 24, 25" TraceId="image3229"/>
 
         <Group Id="grp_g3050">
             <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="29, 270, 24, 25" TraceId="image3073"/>
@@ -28,6 +28,49 @@
             <BoolTrigger Condition="not enm4:IntersectHero and not enm4_setDying.InProgress">
                 <NumAnimation Id="anm1" From="0" To="361" Target="enm4.X" Duration="8.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3032"/>
             </BoolTrigger>
+            
+            <Do Action="@explNum=0" RepeatCount="1" InProgress="true"/>
+            
+            <Text FontId="Splash14Font" Text="='Explosion No:' + system.Str(@explNum)" Location="200,200" Color="#FFFFFF" />
+            
+            <SequenceSet RepeatCount="0" InProgress="true" >
+            	<Do Action="system:explosion;sfStickA1.Start()" />
+            	<Delay Duration="0.3" />
+            	<Do Action="system:explosion;sfStickA2.Start()" />
+            	<Delay Duration="0.3" />
+            	<Do Action="system:explosion;sfStickA3.Start()" />
+            	<Delay Duration="0.3" />
+            	<Do Action="system:explosion;sfStickA4.Start()" />
+            	<Delay Duration="0.3" />
+            	<Do Action="system:explosion;sfStickA5.Start()" />
+            	<Delay Duration="2" />
+            </SequenceSet>
+            
+            <SequenceSet Id="sfStickA1" RepeatCount="1" >
+            	<Delay Duration="0.5" />
+            	<Do Action="@explNum=1" />
+           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="2"/>
+            </SequenceSet>
+            <SequenceSet Id="sfStickA2" RepeatCount="1" >
+            	<Delay Duration="0.5" />
+            	<Do Action="@explNum=2" />
+           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="2"/>
+            </SequenceSet>            
+            <SequenceSet Id="sfStickA3" RepeatCount="1" >
+            	<Delay Duration="0.5" />
+            	<Do Action="@explNum=3" />
+           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="2"/>
+            </SequenceSet>            
+            <SequenceSet Id="sfStickA4" RepeatCount="1" >
+            	<Delay Duration="0.5" />
+            	<Do Action="@explNum=4" />
+           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="2"/>
+            </SequenceSet>            
+            <SequenceSet Id="sfStickA5" RepeatCount="1" >
+            	<Delay Duration="0.5" />
+            	<Do Action="@explNum=5" />
+           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="2"/>
+            </SequenceSet>
         </Group>
         
         <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=7" Bounds="258, 234, 26, 28" TraceId="image3251"/>
@@ -35,7 +78,7 @@
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="419, 235, 37, 54" TraceId="image3049" />
-        <Hero Id="hero" Class="clsHero" Bounds="47, 187, 33, 24" TraceId="image3062"/>
+        <Hero Id="hero" Class="clsHero" Bounds="200, 160, 33, 24" TraceId="image3062"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=7" Bounds="445, 289, 32, 30" TraceId="image3095"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
