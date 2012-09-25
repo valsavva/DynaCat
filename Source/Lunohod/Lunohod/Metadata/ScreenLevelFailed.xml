@@ -12,6 +12,7 @@
         <Texture Id="txr_Death_n_red_sparks" Source="Death_n_red_sparks" />
         <Texture Id="txr_Death_n_sparks_01" Source="Death_n_sparks_01" />
         <Texture Id="txr_Death_Cat_skull_01" Source="Death_Cat_skull_01" />
+        <Texture Id="txr_Death_Cat_skull_02" Source="Death_Cat_skull_02" />
         
         <Font Id="fntSystem" Source="SystemFont"/>
     </Resources>
@@ -21,7 +22,46 @@
         <Image Id="dfltMask1" TextureId="txr_Death_n_red_sparks" Bounds="91, 18, 322, 303" TraceId="image3016-17"/>
         <Image Id="dfltMask2" TextureId="txr_Death_n_sparks_01" Bounds="139, 41, 235, 211" TraceId="image3027"/>
         <Image Id="dfltMask3" TextureId="txr_Death_Cat_skull_01" Bounds="206, 72, 95, 139" TraceId="image3071"/>
-        <NumAnimation Target="dfltMask1.Opacity" From="1" To="0.5" Duration="3" Autoreverse="true" RepeatCount="0" InProgress="true"/>
+        <Image Id="dfltMask4" TextureId="txr_Death_Cat_skull_02" Bounds="206, 72, 95, 139" TraceId="image3071" Opacity="0"/>
+        
+        
+        
+        <NumAnimation Target="dfltMask1.Opacity" From="1" To="0.5" Duration="1" Autoreverse="true" RepeatCount="0" InProgress="true"/>
+
+        
+        <RandomSet RepeatCount="0" InProgress="true">
+            <SequenceSet RepeatCount="1">
+                <Delay Duration="system.Rnd(2,10)" />
+                <Do Action="dfltMask4.Opacity=1" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=0" />
+                <Delay Duration="0.06" />
+            </SequenceSet>
+            <SequenceSet RepeatCount="1">
+                <Delay Duration="system.Rnd(3,10)" />
+                <Do Action="dfltMask4.Opacity=1" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=0" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=1" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=0" />
+            </SequenceSet>
+            <SequenceSet RepeatCount="1">            
+                <Delay Duration="system.Rnd(4,10)" />
+                <Do Action="dfltMask4.Opacity=1" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=0" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=1" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=0" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=1" />
+                <Delay Duration="0.06" />
+                <Do Action="dfltMask4.Opacity=0" />
+            </SequenceSet>
+        </RandomSet>
     </Layer>
 	<Layer>
 		<Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel"/>
