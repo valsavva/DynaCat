@@ -143,6 +143,22 @@
                 </RandomSet>
             </ParallelSet>
 
+            <!-- BoomFar: explosion - quake -->
+            <BoolTrigger Condition="this:BoomFar and not this_setQuake1.InProgress and not this:BoomClose"
+                         EnterAction="this_setQuake1.Start()"/>
+            <RandomSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this.Rotation" From="0" To="1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-2" Duration="0.1" Autoreverse="true" RepeatCount="2" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                </SequenceSet>
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this.Rotation" From="0" To="1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-2" Duration="0.1" Autoreverse="true" RepeatCount="2" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                </SequenceSet>
+            </RandomSet>
+
 
             <!-- attack -->
             <IntersectionTrigger ObjectId1="hero" ObjectId2="this" Action="this:IntersectHero" />
