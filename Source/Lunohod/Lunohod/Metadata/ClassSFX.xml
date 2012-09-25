@@ -63,10 +63,8 @@
     
     <Class Id="clsSFX">
         <Group>
-        
-        
 	
-			<TapArea Id="this_soundcheck" Bounds="100,0,280,60" Action="this_anmSoundCheck.Start()"/>
+			<!--<TapArea Id="this_soundcheck" Bounds="100,0,280,60" Action="this_anmSoundCheck.Start()"/>
         	<SequenceSet Id="this_anmSoundCheck" RepeatCount="0">
                 <Do Action="this:BombHiss" />
                 <Delay Duration="3" />
@@ -117,7 +115,7 @@
         		<Do Action="this:Alarm" /><Delay Duration="1" />
         		<Do Action="this:RadarWork" /><Delay Duration="1" />
         		
-        	</SequenceSet>
+        	</SequenceSet>-->
 
         
 <!-- init -->
@@ -319,18 +317,22 @@
             <Sound Id="this_sndExitFlight" FileId="sfExitEndLevel" Volume="0.6"/>
             
 <!-- MISC -->
-            <!-- hiss -->
+            <!-- moved to ClassExplosion
+            
+            hiss 
             <BoolTrigger Condition="this:BombHiss" EnterAction="this_sndBombHiss.Start()"/>
             <Sound Id="this_sndBombHiss" FileId="sfHiss" Volume="0.2"/>
 
-            <!-- explosion -->
-            <BoolTrigger Condition="this:Explosion" EnterAction="this_setExplosion.Start()"/>
+            explosion
+            <BoolTrigger Condition="this:Explosion" EnterAction="this_setExplosion.Play()"/>
             <RandomSet Id="this_setExplosion" RepeatCount="1">
                 <Sound FileId="sfExplosion1" Volume="1"/>
                 <Sound FileId="sfExplosion2" Volume="1"/>
                 <Sound FileId="sfExplosion1" Volume="1" Pitch="-0.2"/>
                 <Sound FileId="sfExplosion2" Volume="1" Pitch="-0.2"/>
             </RandomSet>
+            
+            -->
             
             <!-- parashute open -->
             <BoolTrigger Condition="this:Parashute" EnterAction="this_setParashuteOpen.Start()"/>
