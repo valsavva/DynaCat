@@ -96,10 +96,17 @@
     </Layer>
     <Layer Id="Action1" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=4" Bounds="128, 182, 28, 22" TraceId="image3418"/>
-        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="365, 125, 28, 19" TraceId="image3429"/>
+        
+        <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="405, 120, 28, 19" TraceId="image3429"/>
+        <Food Id="fd2a" Class="clsFood" ClassParams="@fishType=2" Bounds="405, 180, 28, 19" TraceId="image3429"/>
+        <Food Id="fd2b" Class="clsFood" ClassParams="@fishType=2" Bounds="445, 150, 28, 19" TraceId="image3429"/>
+
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="195, 41, 27, 20" TraceId="image3440"/>
         <Food Id="fd4" Class="clsFood" ClassParams="@fishType=4" Bounds="93, 172, 28, 22" TraceId="image3444"/>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="352, 169, 24, 25" TraceId="image3117"/>
+        <!--<Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="352, 169, 24, 25" TraceId="image3117"/>-->
+        <Block Id="blk4" Class="clsWoodenBox" Bounds="194, 210, 30, 30" Edges="Stick" TraceId="image3146">
+            <Image TextureId="txr_box_old_2" />
+        </Block>
         <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="197, 244, 24, 25" TraceId="image3121"/>
         <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="92, 117, 24, 25" TraceId="image3123"/>
         <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="269, 23, 24, 25" TraceId="image3114"/>
@@ -109,12 +116,9 @@
         <Block Id="blk2" Class="clsWoodenBox" Bounds="121, 111, 30, 30" Edges="Stick" TraceId="image3133">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk3" Class="clsWoodenBox" Bounds="317, 175, 30, 30" Edges="Stick" TraceId="image3149">
+        <!--<Block Id="blk3" Class="clsWoodenBox" Bounds="317, 175, 30, 30" Edges="Stick" TraceId="image3149">
             <Image TextureId="txr_box_old_2" />
-        </Block>
-        <Block Id="blk4" Class="clsWoodenBox" Bounds="194, 210, 30, 30" Edges="Stick" TraceId="image3146">
-            <Image TextureId="txr_box_old_2" />
-        </Block>
+        </Block>-->
     </Layer>
     <Layer Id="Action2" BackColor="#FFFFFFFF" Enabled="false">
         <Food Id="fd5" Class="clsFood" ClassParams="@fishType=4" Bounds="189, 54, 28, 22" TraceId="image3483"/>
@@ -185,9 +189,9 @@
         </Block>
     </Layer>
     <Layer Id="Action7" BackColor="#FFFFFFFF" Enabled="false">
-        <Food Id="fd34" Class="clsFood" ClassParams="@fishType=5" Bounds="196, 222, 27, 20" TraceId="image3596"/>
+        <!--<Food Id="fd34" Class="clsFood" ClassParams="@fishType=5" Bounds="196, 222, 27, 20" TraceId="image3596"/>
         <Food Id="fd35" Class="clsFood" ClassParams="@fishType=5" Bounds="195, 195, 27, 20" TraceId="image3598"/>
-        <Food Id="fd36" Class="clsFood" ClassParams="@fishType=5" Bounds="168, 178, 27, 20" TraceId="image3593-0"/>
+        <Food Id="fd36" Class="clsFood" ClassParams="@fishType=5" Bounds="168, 178, 27, 20" TraceId="image3593-0"/>-->
         <Food Id="fd37" Class="clsFood" ClassParams="@fishType=6" Bounds="35, 176, 22, 27" TraceId="image3611"/>
         <Food Id="fd38" Class="clsFood" ClassParams="@fishType=6" Bounds="18, 160, 22, 27" TraceId="image3608"/>
         <Enemy Id="enm25" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="38, 104, 24, 25" TraceId="image3401-0"/>
