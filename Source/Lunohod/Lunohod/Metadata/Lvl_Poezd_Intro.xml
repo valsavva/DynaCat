@@ -73,7 +73,7 @@
         <Image Id="dfltMask26" TextureId="txr_railwayHor1" Bounds="0, 90, 40, 40" TraceId="image3150"/>
         <Image Id="dfltMask27" TextureId="txr_railwayHor1" Bounds="40, 90, 40, 40" TraceId="image3152"/>
         <Image Id="dfltMask28" TextureId="txr_railwayHor7" Bounds="40, 150, 40, 40" TraceId="image3154"/>
-        <Image Id="dfltMask29" TextureId="txr_railway_end_horiz" Bounds="0, 150, 40, 40" TraceId="image3164"/>
+        <Image Id="dfltMask29" TextureId="txr_railway_end_horiz" Bounds="0, 150, 40, 40" FlipEffects="Horizontally" TraceId="image3164"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="276, 152, 24, 25" TraceId="image3210"/>
