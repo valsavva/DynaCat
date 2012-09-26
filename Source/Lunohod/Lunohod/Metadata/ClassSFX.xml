@@ -317,14 +317,12 @@
             <Sound Id="this_sndExitFlight" FileId="sfExitEndLevel" Volume="0.6"/>
             
 <!-- MISC -->
-            <!-- moved to ClassExplosion
-            
-            hiss 
+            <!-- hiss -->
             <BoolTrigger Condition="this:BombHiss" EnterAction="this_sndBombHiss.Start()"/>
             <Sound Id="this_sndBombHiss" FileId="sfHiss" Volume="0.2"/>
 
-            explosion
-            <BoolTrigger Condition="this:Explosion" EnterAction="this_setExplosion.Play()"/>
+			<!-- explosion-->
+            <BoolTrigger Condition="this:Explosion" EnterAction="this_setExplosion.Start()"/>
             <RandomSet Id="this_setExplosion" RepeatCount="1">
                 <Sound FileId="sfExplosion1" Volume="1"/>
                 <Sound FileId="sfExplosion2" Volume="1"/>
@@ -332,8 +330,7 @@
                 <Sound FileId="sfExplosion2" Volume="1" Pitch="-0.2"/>
             </RandomSet>
             
-            -->
-            
+         
             <!-- parashute open -->
             <BoolTrigger Condition="this:Parashute" EnterAction="this_setParashuteOpen.Start()"/>
             <RandomSet Id="this_setParashuteOpen" RepeatCount="1">

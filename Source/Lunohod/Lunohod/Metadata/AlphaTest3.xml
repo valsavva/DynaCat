@@ -34,42 +34,42 @@
             <Text FontId="Splash14Font" Text="='Explosion No:' + system.Str(@explNum)" Location="200,200" Color="#FFFFFF" />
             
             <SequenceSet RepeatCount="0" InProgress="true" >
-            	<Do Action="system:explosion;sfStickA1.Start()" />
+            	<Do Action="sfStickA1.Start()" />
             	<Delay Duration="0.3" />
-            	<Do Action="system:explosion;sfStickA2.Start()" />
+            	<Do Action="sfStickA2.Start()" />
             	<Delay Duration="0.3" />
-            	<Do Action="system:explosion;sfStickA3.Start()" />
+            	<Do Action="sfStickA3.Start()" />
             	<Delay Duration="0.3" />
-            	<Do Action="system:explosion;sfStickA4.Start()" />
+            	<Do Action="sfStickA4.Start()" />
             	<Delay Duration="0.3" />
-            	<Do Action="system:explosion;sfStickA5.Start()" />
+            	<Do Action="sfStickA5.Start()" />
             	<Delay Duration="2" />
             </SequenceSet>
             
             <SequenceSet Id="sfStickA1" RepeatCount="1" >
             	<Delay Duration="0.5" />
             	<Do Action="@explNum=1" />
-           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="1"/>
+           		<Sound FileId="sfExplosion1" Volume="1" Pan="1" Pitch="1"/>
             </SequenceSet>
             <SequenceSet Id="sfStickA2" RepeatCount="1" >
             	<Delay Duration="0.5" />
             	<Do Action="@explNum=2" />
-           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="1"/>
+           		<Sound FileId="sfExplosion1" Volume="1" Pan="1" Pitch="1"/>
             </SequenceSet>            
             <SequenceSet Id="sfStickA3" RepeatCount="1" >
             	<Delay Duration="0.5" />
             	<Do Action="@explNum=3" />
-           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="1"/>
+           		<Sound FileId="sfExplosion1" Volume="1" Pan="1" Pitch="1"/>
             </SequenceSet>            
             <SequenceSet Id="sfStickA4" RepeatCount="1" >
             	<Delay Duration="0.5" />
             	<Do Action="@explNum=4" />
-           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="1"/>
+           		<Sound FileId="sfExplosion1" Volume="1" Pan="1" Pitch="1"/>
             </SequenceSet>            
             <SequenceSet Id="sfStickA5" RepeatCount="1" >
             	<Delay Duration="0.5" />
             	<Do Action="@explNum=5" />
-           		<Sound FileId="sndButtonTapped" Volume="1" Pan="1" Pitch="1"/>
+           		<Sound FileId="sfExplosion1" Volume="1" Pan="1" Pitch="1"/>
             </SequenceSet>
         </Group>
         
