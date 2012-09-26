@@ -194,7 +194,7 @@
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="418, 65, 28, 19" TraceId="image3182"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="387, 99, 28, 19" TraceId="image3184"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=2" Bounds="417, 133, 28, 19" TraceId="image3164"/>
-        <Food Id="fd4" Class="clsFood" ClassParams="@fishType=6" Bounds="292, 41, 22, 27" TraceId="image3364"/>
+        <!--<Food Id="fd4" Class="clsFood" ClassParams="@fishType=6" Bounds="292, 41, 22, 27" TraceId="image3364"/>-->
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
