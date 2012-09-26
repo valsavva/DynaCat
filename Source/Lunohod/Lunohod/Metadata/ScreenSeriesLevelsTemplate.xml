@@ -100,7 +100,7 @@
 				@numberOfLevels=system.GetSeriesLevelCount(@layerSeriesNum);
 				@currentPage=0;
 				@levelsPerRow=4; @levelRows=3;
-				@columnPadding=17; @rowPadding=10;
+				@columnPadding=8; @rowPadding=10;
 				@levelsPerPage=@levelsPerRow*@levelRows;
 				@numberOfPages=system.Ceiling(@numberOfLevels/@levelsPerPage);
 				
@@ -112,7 +112,7 @@
 			<Image TextureId="txrBackground" />
             <Sprite Id="sprSeriesName" TextureId="txrLevelNames" Location="175,0" FrameBounds="0,0,129,58"/>
 
-			<Group Id="grpScreen0" Bounds="028,066,500,500">
+			<Group Id="grpScreen0" Bounds="042,066,500,500">
 				<BoolTrigger Condition="@currentPage==0">
 					<Group Id="grpL00" Class="clsLevelButton" ClassParams="@levelNum=00"/>
 					<Group Id="grpL01" Class="clsLevelButton" ClassParams="@levelNum=01"/>
