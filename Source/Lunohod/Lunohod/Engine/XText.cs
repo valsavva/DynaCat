@@ -92,6 +92,16 @@ namespace Lunohod.Objects
 			base.ReplaceParameter(par, val);
 		}
 
+		public override void GetProperty(string propertyName, out Func<string> getter, out Action<string> setter)
+		{
+			switch (propertyName)
+			{
+				case "Text": getter = () => Text; setter = (v) => Text = v; break;
+				default :
+					base.GetProperty(propertyName, out getter, out setter); break;
+			}
+		}
+
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             reader.ReadAttrAsColor("Color", ref this.Color);

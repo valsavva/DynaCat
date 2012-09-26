@@ -24,24 +24,63 @@
   
   		<Group Bounds="60,50,370,220">
 	        <TapArea Action="grpText:*pause" />
-
+	        
+	        <Do Action="@creditsY=30;@creditsLine=''" InProgress="true" />
+			
+			<Class Id="clsShift">
+				<Group>
+					<Do Action="this.Y=@creditsY;this_text.Text=@creditsLine;@creditsY=@creditsY+25" InProgress="true"/>
+					<Text Id="this_text" Location="0,0" FontId="Splash14Font"/>
+				</Group>
+			</Class>
+			
 	        <Group Id="grpText" Bounds="30,237,310,200">
-	            <Text Location="00,000" Text="Our team:" FontId="Splash14Font" Color="#FFDDDD" />
-	            <Text Location="00,030" Text="Airat Davletshin  - graphics design" FontId="Splash14Font" />
-	            <Text Location="00,055" Text="Ruslan Suleymanov - graphics design" FontId="Splash14Font" />
-	            <Text Location="00,080" Text="Vlad Savvateev    - level design," FontId="Splash14Font" />
-	            <Text Location="00,105" Text="                    original music / sfx" FontId="Splash14Font" />
-	            <Text Location="00,130" Text="Val Savvateev     - programming" FontId="Splash14Font" />
-	            <Text Location="00,170" Text="Powered by MonoGame, XGame" FontId="Splash14Font" Color="#FFDDDD" />
+	        	<!-- Team -->
+	            <Text Text="Our team:" FontId="Splash14Font" Color="#FFDDDD" />
 
-	            <Image TextureId="txrLogo" Location="0, 275" />
-	            <Text Location="0,345" Text="(c) NomNomApps, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
-	            <Text Location="0,370" Text="    www.nomnomapps.com" FontId="Splash14Font" Color="#DDFFDD" />
-	            <TapArea Bounds="0,345,310,50" Action="system.OpenUrl('http://www.nomnomapps.com')" />
+	            <Do Action="@creditsLine='Airat Davletshin  - graphics design'" InProgress="true"/>
+	            <Group Id="t01" Class="clsShift"/>
+	            <Do Action="@creditsLine='Ruslan Suleymanov - graphics design'" InProgress="true"/>
+	            <Group Id="t02" Class="clsShift"/>
+	            <Do Action="@creditsLine='Vlad Savvateev    - level design,'" InProgress="true"/>
+	            <Group Id="t03" Class="clsShift"/>
+	            <Do Action="@creditsLine='                    original music / sfx'" InProgress="true"/>
+	            <Group Id="t04" Class="clsShift"/>
+	            <Do Action="@creditsLine='Val Savvateev     - programming'" InProgress="true"/>
+	            <Group Id="t05" Class="clsShift"/>
+
+	        	<!-- Special Thanks -->
+				<Do Action="@creditsY=@creditsY+30;txtThanks.Y=@creditsY;@creditsY=@creditsY+25" InProgress="true"/>
+	            <Text Id="txtThanks" Text="Special thanks to:" FontId="Splash14Font" Color="#FFDDDD" />
+
+	            <Do Action="@creditsLine='  Dmitry K, Natasha T, Rustem B'" InProgress="true"/>
+	            <Group Id="c01" Class="clsShift"/>
+	            <Do Action="@creditsLine='Cyrus K, Ivan A, Greg D, Jocelyn C'" InProgress="true"/>
+	            <Group Id="c02" Class="clsShift"/>
+	            <Do Action="@creditsLine='Mike B, Anton R, Irina H'" InProgress="true"/>
+	            <Group Id="c03" Class="clsShift"/>
+<!--	            <Do Action="@creditsLine=''" InProgress="true"/>
+	            <Group Id="t06" Class="clsShift"/>
+	            -->
+	            
+				<Do Action="@creditsY=@creditsY+105;imgLogo.Y=@creditsY;" InProgress="true"/>
+	            <Image Id="imgLogo" TextureId="txrLogo" StretchMode="ActualSize"/>
+				
+				<Do Action="@creditsY=@creditsY+imgLogo.Height+70;txtPowered.Y=@creditsY" InProgress="true"/>
+	            <Text Id="txtPowered" Text="Powered by XnomGame, MonoGame" FontId="Splash14Font" Color="#FFDDDD" />
+
+				<Do Action="@creditsY=@creditsY+25;txtNomNom.Y=@creditsY" InProgress="true"/>
+	            <Text Id="txtNomNom" Text="(c) NomNomApps, 2011-2012" FontId="Splash14Font" Color="#EEEEEE" />
+
+				<Do Action="@creditsY=@creditsY+25;grpNomNomLink.Y=@creditsY" InProgress="true"/>
+	            <Group Id="grpNomNomLink" Bounds="0,0,310,50">
+		            <Text Text="    www.nomnomapps.com" FontId="Splash14Font" Color="#DDFFDD" />
+		            <TapArea Bounds="0,0,310,50" Action="system.OpenUrl('http://www.nomnomapps.com')" />
+	            </Group>
 	        </Group>
 	        
 	        <SequenceSet Id="setScrolling" InProgress="true" RepeatCount="0">
-	            <NumAnimation Target="grpText.Y" From="220" To="-230" Duration="20" RepeatCount="1" Fill="Hold"/>
+	            <NumAnimation Target="grpText.Y" From="210" To="-@creditsY+150" Duration="17" RepeatCount="1" Fill="Hold"/>
 	            <Delay Duration="10"/>
 	            <NumAnimation Target="grpText.Opacity" From="1" To="0" Duration="1.1" RepeatCount="1"/>
 	        	<Do Action="grpText.Y=240;grpText.Opacity=1" />
