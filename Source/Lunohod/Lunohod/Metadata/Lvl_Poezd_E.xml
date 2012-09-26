@@ -350,15 +350,16 @@
             <Do Action="grpAirplane:FlyThroughScreen" />
             <Delay Duration="3" />
 
-            <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
-            <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
+            <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
+            <NumAnimation From="0" To="-412" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3202"/>
             <NumAnimation From="0" To="364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3224"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
             <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
-            <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action2.Enable();grpAirplane:FlyThroughScreen" />
@@ -366,15 +367,16 @@
             <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
             <Delay Duration="1" />
 
-            <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
-            <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
+            <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
+            <NumAnimation From="0" To="-412" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3202"/>
             <NumAnimation From="0" To="364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3224"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
             <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
-            <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action3.Enable();grpAirplane:FlyThroughScreen" />
@@ -383,15 +385,16 @@
             <Delay Duration="1" />
 
 
-            <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
-            <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
+            <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
+            <NumAnimation From="0" To="-412" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3202"/>
             <NumAnimation From="0" To="364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3224"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
             <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
-            <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action4.Enable();grpAirplane:FlyThroughScreen" />
@@ -400,15 +403,16 @@
             <Delay Duration="1" />
 
 
-            <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
-            <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
+            <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
+            <NumAnimation From="0" To="-412" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3202"/>
             <NumAnimation From="0" To="364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3224"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
             <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
-            <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
             <Do Action="sndTrainStart.Start()" />
             <Do Action="Action5.Enable();grpAirplane:FlyThroughScreen" />
@@ -417,15 +421,16 @@
             <Delay Duration="1" />
 
 
-            <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
-            <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
+            <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
+            <NumAnimation From="0" To="-412" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3202"/>
             <NumAnimation From="0" To="364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3224"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
             <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
-            <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
 
             <Do Action="sndTrainStart.Start()" />
@@ -435,15 +440,16 @@
             <Delay Duration="1" />
 
 
-            <NumAnimation From="0" To="-180" Target="hero.Y" Duration="2.14" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
-            <NumAnimation From="0" To="-414" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
+            <NumAnimation From="0" To="-160" Target="hero.Y" Duration="1.9" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3191"/>
+            <NumAnimation From="0" To="-412" Target="hero.X" Duration="4.93" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3213"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3202"/>
             <NumAnimation From="0" To="364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3224"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3227"/>
             <NumAnimation From="0" To="-364" Target="hero.X" Duration="4.33" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3229"/>
             <NumAnimation From="0" To="60" Target="hero.Y" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3231"/>
             <Do Action="img_semafor_green.Disable();img_semafor_red.Enable()" />
-            <NumAnimation From="0" To="416" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
+            <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
 
         </SequenceSet>
@@ -453,7 +459,7 @@
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Hero Id="hero" Class="clsHero" Bounds="434, 238, 33, 24" TraceId="image3016-1"/>
+        <Hero Id="hero" Class="clsHero" Bounds="432, 218, 33, 24" TraceId="image3016-1"/>
 
         <Group Id="AirplaneSmoke1" Class="clsSmoke" ClassParams="@type=1" Location="1,1"/>
         <Group Id="AirplaneSmoke2" Class="clsSmoke" ClassParams="@type=2" Location="1,1"/>
