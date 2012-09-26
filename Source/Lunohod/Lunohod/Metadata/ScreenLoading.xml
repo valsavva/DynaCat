@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Screen Bounds="0,0,480,320" IsModal="true">
+    <Include File="CommonScreenFunctionality.xml" />
+
+    <Layer Id="background">
+        <Image TextureId="txrBlank" BackColor="#333333" Opacity="0.6"/>
+    </Layer>
+    <Layer>
+            <Text Text="Loading" FontId="Splash14Font" Location="201,122" Color="#000000" />
+            <Text Text="Loading" FontId="Splash14Font" Location="200,120" Color="#EEEEEE" />
+
+            <Text Id="txtScrLdDot1" Text="." FontId="Splash14Font" Location="269,122" Color="#000000" Opacity="0"/>
+            <Text Id="txtScrLdDot1s" Text="." FontId="Splash14Font" Location="268,120" Color="#EEEEEE" Opacity="0"/>
+            <Text Id="txtScrLdDot2" Text="." FontId="Splash14Font" Location="275,122" Color="#000000" Opacity="0"/>
+            <Text Id="txtScrLdDot2s" Text="." FontId="Splash14Font" Location="274,120" Color="#EEEEEE" Opacity="0"/>
+            <Text Id="txtScrLdDot3" Text="." FontId="Splash14Font" Location="281,122" Color="#000000" Opacity="0"/>
+            <Text Id="txtScrLdDot3s" Text="." FontId="Splash14Font" Location="280,120" Color="#EEEEEE" Opacity="0"/>
+
+        <SequenceSet RepeatCount="0" InProgress="true" >
+            <Do Action="txtScrLdDot1.Opacity=1;txtScrLdDot1s.Opacity=1" />
+            <Delay Duration="0.1" />
+            <Do Action="txtScrLdDot2.Opacity=1;txtScrLdDot2s.Opacity=1" />
+            <Delay Duration="0.1" />
+            <Do Action="txtScrLdDot3.Opacity=1;txtScrLdDot3s.Opacity=1" />
+            <Delay Duration="0.1" />
+            <Do Action="txtScrLdDot1.Opacity=0;txtScrLdDot1s.Opacity=0" />
+            <Delay Duration="0.1" />
+            <Do Action="txtScrLdDot2.Opacity=0;txtScrLdDot2s.Opacity=0" />
+            <Delay Duration="0.1" />
+            <Do Action="txtScrLdDot3.Opacity=0;txtScrLdDot3s.Opacity=0" />
+            <Delay Duration="0.1" />
+        </SequenceSet>
+    </Layer>
+</Screen>
