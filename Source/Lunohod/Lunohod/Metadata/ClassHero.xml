@@ -68,16 +68,22 @@
             <!-- sttElecticShock : /major/ gotta electic shock -->
             <BoolTrigger Condition="hero:sttElecticShock" 
                          EnterAction="anmElecticShock.Start();
+                         this_anmWhiteLight.Start();
                          hero:-sttEating;hero:-sttGoodExplosion"
                          ExitAction="anmElecticShock.Stop()"
                          Group="sttHeroStates">
                 <Sprite Id="sprHeroGottaEShock" TextureId="txrHeroGottaEShock" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="3"/>
+                <Group Id="this_imgWhiteLight" IsRoot="true" Bounds="0,0,480,320" BackColor="#FFFFFF" Opacity="0" Depth="0.001">
+                    <Image TextureId="blank"/>
+                </Group>
             </BoolTrigger>
 
             <SequenceSet Id="anmElecticShock" RepeatCount="1">
                 <NumAnimation From="0" To="2" Duration="0.5" Target="sprHeroGottaEShock.CurrentFrame" RepeatCount="1" Fill="End"/>
                 <Do Action="hero:-sttElecticShock" />
             </SequenceSet>
+
+            <NumAnimation Id="this_anmWhiteLight" Target="this_imgWhiteLight.Opacity" From="0.7" To="0" Duration="0.2" RepeatCount="1" Autoreverse="false" Fill="Hold" InProgress="false"/>
 
             <!-- sttGottaDamage : /major/ gotta damage -->
             <BoolTrigger Condition="hero:sttGottaDamage"
@@ -224,9 +230,6 @@
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
                 <Image TextureId="txrHeroDefault" Bounds="-33, -46, 100, 100"/>
-                <!--<Group BackColor="#0000FF">
-                    <Image TextureId="blank"/>
-                </Group>-->
 			</BoolTrigger>
 
         </Hero>
