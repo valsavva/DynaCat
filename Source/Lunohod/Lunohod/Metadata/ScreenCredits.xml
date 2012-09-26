@@ -53,11 +53,11 @@
 				<Do Action="@creditsY=@creditsY+30;txtThanks.Y=@creditsY;@creditsY=@creditsY+25" InProgress="true"/>
 	            <Text Id="txtThanks" Text="Special thanks to:" FontId="Splash14Font" Color="#FFDDDD" />
 
-	            <Do Action="@creditsLine='  Dmitry K, Natasha T, Rustem B'" InProgress="true"/>
+	            <Do Action="@creditsLine='  Dmitry K, Natasha T, Tem B'" InProgress="true"/>
 	            <Group Id="c01" Class="clsShift"/>
 	            <Do Action="@creditsLine='Cyrus K, Ivan A, Greg D, Jocelyn C'" InProgress="true"/>
 	            <Group Id="c02" Class="clsShift"/>
-	            <Do Action="@creditsLine='Mike B, Anton R, Irina H'" InProgress="true"/>
+	            <Do Action="@creditsLine='Mike B, Anton R, Irina H, Des H'" InProgress="true"/>
 	            <Group Id="c03" Class="clsShift"/>
 <!--	            <Do Action="@creditsLine=''" InProgress="true"/>
 	            <Group Id="t06" Class="clsShift"/>
