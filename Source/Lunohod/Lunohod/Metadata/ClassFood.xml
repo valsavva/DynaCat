@@ -86,7 +86,8 @@
             <!-- eaten -->
             <BoolTrigger Condition="not this:Eaten and not this:Borned">
                 <IntersectionTrigger ObjectId1="hero" ObjectId2="this"
-                                     EnterAction="hero.AddScore(this.Points);                                     
+                                     EnterAction="hero.AddScore(this.Points); 
+                                     hero:+HasPoints
                                      this:+Eaten;
                                      hero:+sttEating;
                                      this_anmEating.Start();
