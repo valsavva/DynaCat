@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_Poezd_v6_Logika_Zatorov.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_Poezd_v6_Logika_Zatorov\Lvl_Poezd_v6_Logika_Zatorov.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1" inkscape:cx="311.69464" inkscape:cy="122.01155" inkscape:document-units="px" inkscape:current-layer="layer5" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.3201856" inkscape:cx="264.73155" inkscape:cy="149.28044" inkscape:document-units="px" inkscape:current-layer="layer8" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="true" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -21,7 +21,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -55,7 +55,7 @@
         <image y="35.372547" x="103.66423" id="image4242" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_03.png" height="11.723875" width="12.310069" style="opacity:0.70243901" />
         <image y="52.411102" x="61.906837" id="image4253" xlink:href="file:///D:/Lunohod/Grfx/design/grass/grass_04.png" height="14" width="33" style="opacity:0.5" />
     </g>
-    <g inkscape:groupmode="layer" id="layer8" inkscape:label="design" style="display:inline" sodipodi:insensitive="true">
+    <g inkscape:groupmode="layer" id="layer8" inkscape:label="design" style="display:inline">
         <image y="256" x="400" id="image3027" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
         <image y="116" x="300" id="image3038-7" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor2.png" height="40" width="40" />
         <image y="256" x="320" id="image3049-4" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor3.png" height="40" width="40" />
@@ -92,6 +92,8 @@
         <image y="116" x="260" id="image3351" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayHor1.png" height="40" width="40" />
         <image style="display:inline" y="116" x="380" id="image3406" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayTurn90a.png" height="80" width="80" />
         <image y="196" x="420" id="image4314" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railway_end_vertic.png" height="40" width="40" />
+        <image y="76" x="160" id="image3115-1" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayCross.png" height="40" width="40" />
+        <image width="40" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/railway/railwayCross.png" id="image3118" x="160" y="116" />
     </g>
     <g inkscape:groupmode="layer" id="layer2" inkscape:label="action" style="display:inline" sodipodi:insensitive="true">
         <image width="30" height="30" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Wall/WoodenBox/box_old_1.png" id="image3378" x="213.00342" y="88.524239" style="display:inline" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.12 -->
+<!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd_v6_Logika_Zatorov\Lvl_Poezd_v6_Logika_Zatorov.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_v6_Logika_Zatorov" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
@@ -36,6 +36,7 @@
         <Texture Id="txr_railwayTurn90b" Source="railwayTurn90b" />
         <Texture Id="txr_railwayTurn180a" Source="railwayTurn180a" />
         <Texture Id="txr_railway_end_vertic" Source="railway_end_vertic" />
+        <Texture Id="txr_railwayCross" Source="railwayCross" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
         <Texture Id="txr_grass_05" Source="grass_05" />
@@ -111,6 +112,8 @@
         <Image Id="dfltMask60" TextureId="txr_railwayHor1" Bounds="260, 116, 40, 40" TraceId="image3351"/>
         <Image Id="dfltMask61" TextureId="txr_railwayTurn90a" Bounds="380, 116, 80, 80" TraceId="image3406"/>
         <Image Id="dfltMask62" TextureId="txr_railway_end_vertic" Bounds="420, 196, 40, 40" TraceId="image4314"/>
+        <Image Id="dfltMask63" TextureId="txr_railwayCross" Bounds="160, 76, 40, 40" TraceId="image3115-1"/>
+        <Image Id="dfltMask64" TextureId="txr_railwayCross" Bounds="160, 116, 40, 40" TraceId="image3118"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Block Id="blk1" Class="clsWoodenBox" Bounds="213, 89, 30, 30" Edges="Stick" TraceId="image3378">
@@ -159,17 +162,17 @@
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Hero Id="hero" Class="clsHero" Bounds="435, 264, 33, 24" TraceId="image3015"/>
-        <Group Id="exit" Class="clsExit" Bounds="427, 157,  37,  54" TraceId="image3049" />
+        <Group Id="exit" Class="clsExit" Bounds="427, 157, 37, 54" TraceId="image3049" />
     </Layer>
     <Layer Id="foreground" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask63" TextureId="txr_grass_05" Bounds="249, 132, 55, 44" TraceId="image4197"/>
-        <Image Id="dfltMask64" TextureId="txr_tree_01" Bounds="420, -44, 91, 116" TraceId="image4008"/>
-        <Image Id="dfltMask65" TextureId="txr_grass_05" Bounds="355, 181, 55, 44" TraceId="image4194"/>
-        <Image Id="dfltMask66" TextureId="txr_grass_02" Bounds="285, 195, 32, 27" TraceId="image4266"/>
-        <Image Id="dfltMask67" TextureId="txr_grass_10" Bounds="227, 41, 32, 27" TraceId="image4279"/>
-        <Image Id="dfltMask68" TextureId="txr_grass_06" Bounds="363, 47, 46, 21" TraceId="image4290"/>
-        <Image Id="dfltMask69" TextureId="txr_grass_08" Bounds="-17, 178, 33, 14" TraceId="image4304"/>
-        <Image Id="dfltMask70" TextureId="txr_grass_08" Bounds="5, 224, 33, 14" TraceId="image4301"/>
+        <Image Id="dfltMask65" TextureId="txr_grass_05" Bounds="249, 132, 55, 44" TraceId="image4197"/>
+        <Image Id="dfltMask66" TextureId="txr_tree_01" Bounds="420, -44, 91, 116" TraceId="image4008"/>
+        <Image Id="dfltMask67" TextureId="txr_grass_05" Bounds="355, 181, 55, 44" TraceId="image4194"/>
+        <Image Id="dfltMask68" TextureId="txr_grass_02" Bounds="285, 195, 32, 27" TraceId="image4266"/>
+        <Image Id="dfltMask69" TextureId="txr_grass_10" Bounds="227, 41, 32, 27" TraceId="image4279"/>
+        <Image Id="dfltMask70" TextureId="txr_grass_06" Bounds="363, 47, 46, 21" TraceId="image4290"/>
+        <Image Id="dfltMask71" TextureId="txr_grass_08" Bounds="-17, 178, 33, 14" TraceId="image4304"/>
+        <Image Id="dfltMask72" TextureId="txr_grass_08" Bounds="5, 224, 33, 14" TraceId="image4301"/>
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
         <Include File="includeSemafor.xml" />
@@ -179,9 +182,8 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
 </Level>
-<!-- Food=13 Enemy=0 Block=3 DesignImage=70 Animation=10 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=13 Enemy=0 Block=3 DesignImage=72 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 1000 -->
 <!-- 1% = 10; 45% = 450; 90% = 900 -->
 <!-- minPointsFood = 70 (7%) -->
-
