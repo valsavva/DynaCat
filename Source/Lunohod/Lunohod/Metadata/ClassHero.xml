@@ -7,18 +7,20 @@
 		
 <!-- Init -->
 
-         	<Do InProgress="true" RepeatCount="1"  Action="
+         	<Do InProgress="true" RepeatCount="1" Action="
                 @heroDepartPointX=0;
                 @heroDepartPointY=0;
                 @heroDestPointX=0;
                 @heroDestPointY=0;
                 hero.Width=31;
-                hero.Height=24"/>
-            
+                hero.Height=24;
+                @heroLastDirection=1"/>
+
 <!-- States 
 
             hero.IsDead         : /major/ hero dying
             sttExit             : /major/ hero reached exit
+            sttPortIn           : /major/ hero goes to teleport entry
             sttElecticShock     : /major/ gotta electic shock
             sttEating           : /major/ eating
             sttGottaDamage      : /major/ gotta damage
@@ -63,7 +65,11 @@
                 <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
                 <Do Action="hero.X=-7777777;hero.Y=-7777777" />
             </SequenceSet>
-                        
+
+            <!--sttPortIn : /major/ hero goes to teleport entry-->
+            <BoolTrigger Condition="hero:sttPortIn" EnterAction="this_shtHeroDeform.CurrentFrame=@heroLastDirection-1" Group="sttHeroStates" >
+                <Sprite Id="this_shtHeroDeform" TextureId="txrHeroDeform" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="4"/>
+            </BoolTrigger>
 
             <!-- sttElecticShock : /major/ gotta electic shock -->
             <BoolTrigger Condition="hero:sttElecticShock" 
@@ -226,7 +232,6 @@
 
             <NumAnimation Id="setHeroSurQuakeEnd" Target="shtHeroSurprised.X" From="shtHeroSurprised.X" To="-33" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
 
-            
             <!-- default -->
 			<BoolTrigger Group="sttHeroStates">
                 <Image TextureId="txrHeroDefault" Bounds="-33, -46, 100, 100"/>

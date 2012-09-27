@@ -215,6 +215,9 @@
     <Content Include="Metadata\Game.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+	<Content Include="Content\Textures\Cat_deform_sht_100x100x4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Cat_waits_001.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1913,4 +1916,8 @@
     <BundleResource Include="splash%402x.png" />
   </ItemGroup>
 </Project>
+
+
+
+
 

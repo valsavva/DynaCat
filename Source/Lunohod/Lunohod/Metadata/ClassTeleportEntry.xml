@@ -9,12 +9,12 @@
     
     <Class Id="clsTeleportEntry">
         <SequenceSet RepeatCount="1">
-            <Do Action="hero.SetTransaction(false, false, false);hero.SetDirection(0,0);hero:+sttPortIn"/>
             <Do Action="@heroDepartPointX=hero.X;
                         @heroDepartPointY=hero.Y;                             
                         @heroDestPointX=@entryX;                             
                         @heroDestPointY=@entryY+10"/>
-            <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,0.5" To="@heroDestPointX,@heroDestPointY,0" Duration="0.3" RepeatCount="1" Fill="End"/>
+            <Do Action="hero.SetTransaction(false, false, false);hero.SetDirection(0,0);hero:+sttPortIn"/>
+            <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.3" RepeatCount="1" Fill="End"/>
             <Delay Duration="@delay" />
         </SequenceSet>
     </Class>
