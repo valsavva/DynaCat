@@ -5,15 +5,11 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
-    <Resources RootFolder="Global">
-        <Texture Id="txr_Death_n_red_sparks" Source="Death_n_red_sparks" />
-        <Texture Id="txr_Death_n_sparks_01" Source="Death_n_sparks_01" />
-        <Texture Id="txr_Death_Cat_skull_01" Source="Death_Cat_skull_01" />
+    <Resources RootFolder="Textures">
+        <Texture Id="txr_Cat_waits_001" Source="Cat_waits_001" />
     </Resources>
     <Layer Id="design" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_Death_n_red_sparks" Bounds="91, 18, 322, 303" TraceId="image3016-17"/>
-        <Image Id="dfltMask2" TextureId="txr_Death_n_sparks_01" Bounds="139, 41, 235, 211" TraceId="image3027"/>
-        <Image Id="dfltMask3" TextureId="txr_Death_Cat_skull_01" Bounds="206, 72, 95, 139" TraceId="image3071"/>
+        <Image Id="dfltMask1" TextureId="txr_Cat_waits_001" Bounds="214, 108, 100, 100" TraceId="image3023"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -23,4 +19,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=3 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=1 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
