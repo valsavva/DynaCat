@@ -6,16 +6,10 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_Cat_deform_left" Source="Cat_deform_left" />
-        <Texture Id="txr_Cat_deform_right" Source="Cat_deform_right" />
-        <Texture Id="txr_Cat_deform_up" Source="Cat_deform_up" />
-        <Texture Id="txr_Cat_deform_down" Source="Cat_deform_down" />
+        <Texture Id="txr_BM_death_spr_80x80x9" Source="BM_death_spr_80x80x9" />
     </Resources>
-    <Layer Id="design" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_Cat_deform_left" Bounds="92, 42, 100, 100" TraceId="image3017"/>
-        <Image Id="dfltMask2" TextureId="txr_Cat_deform_right" Bounds="128, 36, 100, 100" TraceId="image3028"/>
-        <Image Id="dfltMask3" TextureId="txr_Cat_deform_up" Bounds="111, 97, 100, 100" TraceId="image3039"/>
-        <Image Id="dfltMask4" TextureId="txr_Cat_deform_down" Bounds="125, 128, 100, 100" TraceId="image3050"/>
+    <Layer Id="action" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_BM_death_spr_80x80x9" Bounds="-48, 60, 720, 80" TraceId="image3034"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -25,4 +19,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=4 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=1 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->

@@ -88,6 +88,9 @@
         <Texture Id="txrEnemyRat7_OnRest1" Source="BM_Gb_read_spr_80x80x12x12x11" />
         <Texture Id="txrEnemyRat7_OnRest2" Source="BM_Gb_smoke_spr_P3_80x80x12x12x12x9" />
 
+        <Texture Id="txrEnemyRatDyingWithAsh" Source="BM_death_spr_80x80x9" />
+        
+
         <Texture Id="txr_butter_8" Source="butter_08" />
         <Texture Id="txr_butter_7" Source="butter_07" />
         <Texture Id="txr_butter_1" Source="butter_01" />

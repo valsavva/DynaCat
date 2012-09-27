@@ -120,29 +120,41 @@
 <!-- States -->
 
             <!-- explosion -->
+            
             <!-- dying -->
-
             <Group Id="this_Smoke3" Class="clsSmoke" Location="-4,-2" ClassParams="@type=3" />
             <Group Id="this_Smoke4" Class="clsSmoke" Location="-4,-2" ClassParams="@type=4" />
+            <Sprite Id="this_sprDyingWithAsh" TextureId="txrEnemyRatDyingWithAsh" Bounds="-32,-42,80,80" FrameBounds="0,0,80,80" FrameCount="9" Opacity="0"/>
 
             <BoolTrigger Condition="this:BoomClose" 
                          EnterAction="hero.AddScore(this.Points);
                          @KilledRatNum=@KilledRatNum+1;
-                         this_setDying.Start()" 
+                         this_setDying.Start();
+                         hero:+sttGoodExplosion;
+                         this_grpShowPoints.Enable()" 
                          StayTriggered="true" 
                          Group="this_sttStates">
 				<Image Id="this_imgEnemyRatDying" TextureId="txrEnemyRatDyingType_@ratType" Bounds="0,0,80,80" />
 			</BoolTrigger>
-            <ParallelSet Id="this_setDying" InProgress="false">
-                <Do Action="hero:+sttGoodExplosion;this_grpShowPoints.Enable()"/>
-                <Sound FileId="sndEnemyRatDying" Volume="1" Pitch="0" Pan="0" InProfress="true"/>
-                <NumAnimation Target="this_imgEnemyRatDying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
-                <RandomSet>
-                    <Do Action="this_Smoke3:Run" />
-                    <Do Action="this_Smoke4:Run" />
-                </RandomSet>
-            </ParallelSet>
 
+            <RandomSet Id="this_setDying" RepeatCount="1" Probabilities="12,1">
+                <ParallelSet Id="this_setDyingWithSteam" RepeatCount="1" InProgress="false">
+                    <Sound FileId="sndEnemyRatDying" Volume="1" Pitch="0" Pan="0" InProfress="true"/>
+                    <NumAnimation Target="this_imgEnemyRatDying.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                    <RandomSet>
+                        <Do Action="this_Smoke3:Run" />
+                        <Do Action="this_Smoke4:Run" />
+                    </RandomSet>
+                </ParallelSet>
+            
+                <SequenceSet Id="this_setDyingWithAsh" RepeatCount="1" InProgress="false">
+                    <Do Action="this_sprDyingWithAsh.Opacity=0.75;this_imgEnemyRatDying.Opacity=0" />
+                    <Delay Duration="0.5" />
+                    <NumAnimation Target="this_sprDyingWithAsh.CurrentFrame" From="0" To="8" Duration="1" Autoreverse="false" RepeatCount="1" Fill="End" InProgress="true"/>
+                    <NumAnimation Target="this_sprDyingWithAsh.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+            </RandomSet>
+            
             <!-- BoomFar: explosion - quake -->
             <BoolTrigger Condition="this:BoomFar and not this_setQuake1.InProgress and not this:BoomClose"
                          EnterAction="this_setQuake1.Start()"/>
