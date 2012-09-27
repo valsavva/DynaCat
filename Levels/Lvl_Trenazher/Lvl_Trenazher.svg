@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_Trenazher.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_Trenazher\Lvl_Trenazher.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.2001687" inkscape:cx="267.21503" inkscape:cy="140.43519" inkscape:document-units="px" inkscape:current-layer="layer12" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.3094591" inkscape:cx="260.22293" inkscape:cy="133.96447" inkscape:document-units="px" inkscape:current-layer="layer13" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -332,6 +332,14 @@
         <image y="300" x="442" id="image3908" xlink:href="file:///D:/Lunohod/Grfx/design/wall/Brick/texture_brick_clean.png" height="20" width="26" />
         <image width="26" height="20" xlink:href="file:///D:/Lunohod/Grfx/design/wall/Brick/texture_brick_clean.png" id="image3910" x="468" y="300" />
     </g>
+    <g inkscape:groupmode="layer" id="layer13" inkscape:label="Shtucaturka" sodipodi:insensitive="true">
+        <image y="6.7315931" x="17.494343" id="image3376" xlink:href="file:///D:/Lunohod/Grfx/design/wall/shtucaturka/shtucaturka_004.png" height="66" width="104" />
+        <image y="263.13467" x="165.91853" id="image3387" xlink:href="file:///D:/Lunohod/Grfx/design/wall/shtucaturka/shtucaturka_005.png" height="45" width="50" />
+        <image y="29.104658" x="434.70447" id="image3398" xlink:href="file:///D:/Lunohod/Grfx/design/wall/shtucaturka/shtucaturka_006.png" height="35" width="47" />
+        <image y="293.97266" x="196.12959" id="image3409" xlink:href="file:///D:/Lunohod/Grfx/design/wall/shtucaturka/shtucaturka_001.png" height="49" width="69" />
+        <image y="220.32404" x="170.01039" id="image3420-7" xlink:href="file:///D:/Lunohod/Grfx/design/wall/shtucaturka/shtucaturka_002.png" height="68" width="80" />
+        <image y="191.36327" x="120.63467" id="image3431" xlink:href="file:///D:/Lunohod/Grfx/design/wall/shtucaturka/shtucaturka_003.png" height="57" width="85" />
+    </g>
     <g inkscape:groupmode="layer" id="layer10" inkscape:label="_TeleportDesign" style="display:inline" sodipodi:insensitive="true">
         <image style="display:inline" y="264" x="378" id="image3334" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportTubeHor.png" height="56" width="40" />
         <image style="display:inline" y="175.57143" x="48" id="image3112" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportEntryUp.png" height="15" width="34" inkscape:label="OUT" />
@@ -356,7 +364,7 @@
         <image style="display:inline" y="264" x="370" id="image3393" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportTubeHor.png" height="56" width="40" />
         <image style="display:inline" width="56" height="40" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportTubeVert.png" id="image3402" x="36" y="200" />
     </g>
-    <g inkscape:groupmode="layer" id="layer11" inkscape:label="TeleportAction" style="display:inline" sodipodi:insensitive="true">
+    <g inkscape:groupmode="layer" id="layer11" inkscape:label="TeleportAction" style="display:none" sodipodi:insensitive="true">
         <image y="114" x="374" id="image3283" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Entry/Entry.png" height="56" width="24" />
         <image y="118" x="404" id="image3353" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Koleno/Koleno.png" height="20" width="20" />
         <image y="165.18538" x="402" id="image3346" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Tube/down.png" height="68.236389" width="4" />
@@ -396,12 +404,12 @@
         <image y="0" x="0" id="image3038" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Tower/transmitter_2_off.png" height="30" width="30" />
         <image y="132" x="49" id="image3015" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="23" width="33" />
     </g>
-    <g inkscape:groupmode="layer" id="layer12" inkscape:label="HelpTxt">
+    <g inkscape:groupmode="layer" id="layer12" inkscape:label="HelpTxt" sodipodi:insensitive="true">
         <text xml:space="preserve" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Splash;-inkscape-font-specification:Splash" x="265.79596" y="205.01616" id="text3353" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="tspan3355" x="265.79596" y="205.01616">Teleport</tspan></text>
         <image y="-234.80458" x="326.34842" id="image3365" xlink:href="file:///D:/Lunohod/Grfx/design/helpTextArrows/helpTextArrow1.png" height="40" width="13" transform="matrix(0.5,0.8660254,-0.8660254,0.5,0,0)" />
     </g>
-    <g inkscape:groupmode="layer" id="layer9" inkscape:label="dash" style="opacity:0.29861109;display:none" sodipodi:insensitive="true">
-        <image y="0" x="0" id="image3016" xlink:href="file:///D:/Lunohod/Art/dashboard/screenTapAreas_dash_M_btnSize52.png" height="320" width="480" />
+    <g inkscape:groupmode="layer" id="layer9" inkscape:label="dash" style="opacity:0.54861109;display:none" sodipodi:insensitive="true">
+        <image y="0" x="0" id="image3365-1" xlink:href="file:///D:/Lunohod/Art/_dash+interface.png" height="320" width="480" />
     </g>
     <g inkscape:groupmode="layer" id="layer6" inkscape:label="upmask" sodipodi:insensitive="true" style="display:none">
         <rect style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="rect3011" width="1499.1859" height="380.14673" x="-434.48303" y="-380.14673" />
