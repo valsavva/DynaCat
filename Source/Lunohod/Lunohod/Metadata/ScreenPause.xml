@@ -46,8 +46,8 @@
 			
 			<!-- scores -->
 			<!-- <Do Action="levelScore.Score = hero.Score; levelScore.Health = hero.Health; levelScore.Time = hero.Time;" /> -->
-			<Text Text="=system.Str(system.GetSeriesLevelScore(levelInfo.SeriesNumber,levelInfo.LevelNumber))" FontId="Splash14Font" Location="301,109" Rotation="7.5" Scale="0.7" />
-			<Text Text="=system.Str(hero.Score)" FontId="Splash14Font" Location="254,136" Rotation="7.5" Scale="0.7" />
+			<!--<Text Text="=system.Str(system.GetSeriesLevelScore(levelInfo.SeriesNumber,levelInfo.LevelNumber))" FontId="Splash14Font" Location="301,109" Rotation="7.5" Scale="0.7" />-->
+			<Text Text="=system.Str(hero.Score)" FontId="Splash14Font" Location="271,110" Rotation="7.5" Scale="0.7" />
 		</Group>
 		
 		<NumAnimation Target="grpAssembly.Y" InProgress="true" RepeatCount="1" Fill="Hold">
