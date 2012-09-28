@@ -159,7 +159,9 @@
         </Group>
         
         <!-- score -->
+        <Text Text="Score" FontId="SystemFont" Location="391, 3" Color="#000000" />
         <Text Text="Score" FontId="SystemFont" Location="390, 2" />
+        <Text Text="=hero.Score" FontId="SystemFont" Location="431, 3" Color="#000000" />
         <Text Text="=hero.Score" FontId="SystemFont" Location="430, 2" />
 
         <!--time bonus-->
@@ -173,8 +175,10 @@
 		<Text Text="=system.Round(hero.Time)" FontId="SystemFont" Location="155, 6" />-->
 
         <Sprite Id="sprTimeBonus" TextureId="txrTimeBonusSprite" Bounds="350,0,23,23" FrameBounds="0,0,60,60" FrameCount="13">
-            <NumAnimation Id="anmTimeBonus" From="0" To="12" Duration="levelInfo.TimeBonusThreshold" Target="CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
+            <NumAnimation Id="anmTimeBonus" From="0" To="11" Duration="levelInfo.TimeBonusThreshold" Target="CurrentFrame" InProgress="true" RepeatCount="1" Fill="End"/>
         </Sprite>
+
+        <BoolTrigger Condition="not anmTimeBonus.InProgress" EnterAction="sprTimeBonus.CurrentFrame=12" />
         
 		<!-- CPS 
         <BoolTrigger Condition="system:cpsLimitExceeded" >
