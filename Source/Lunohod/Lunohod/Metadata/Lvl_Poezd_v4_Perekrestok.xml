@@ -128,9 +128,9 @@
         <Food Id="fd4" Class="clsFood" ClassParams="@fishType=4" Bounds="267, 159, 28, 22" TraceId="image3520"/>
         <Food Id="fd5" Class="clsFood" ClassParams="@fishType=4" Bounds="303, 188, 28, 22" TraceId="image3522"/>
         <Food Id="fd6" Class="clsFood" ClassParams="@fishType=4" Bounds="268, 223, 28, 22" TraceId="image3515"/>
-        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=3" Bounds="124, 280, 31, 20" TraceId="image3561"/>
-        <Food Id="fd8" Class="clsFood" ClassParams="@fishType=3" Bounds="156, 261, 31, 20" TraceId="image3563"/>
-        <Food Id="fd9" Class="clsFood" ClassParams="@fishType=3" Bounds="91, 260, 31, 20" TraceId="image3558"/>
+        <Food Id="fd7" Class="clsFood" ClassParams="@fishType=3" Bounds="39, 265,  31,  20" TraceId="image3561"/>
+        <Food Id="fd8" Class="clsFood" ClassParams="@fishType=3" Bounds="63, 272,  31,  20" TraceId="image3563"/>
+        <Food Id="fd9" Class="clsFood" ClassParams="@fishType=3" Bounds="27, 243,  31,  20" TraceId="image3558"/>
     </Layer>
     <Layer Id="Design2" BackColor="#FFFFFFFF">
         <Image Id="dfltMask55" TextureId="txr_grass_05" Bounds="76, 219, 55, 44" TraceId="image3295"/>
@@ -165,3 +165,4 @@
 <!-- 1% = 11.5; 45% = 517.5; 90% = 1035 -->
 <!-- minPointsFood = 70 (6.1%) -->
 <!-- minPointsEnemy = 50 (4.3%) -->
+
