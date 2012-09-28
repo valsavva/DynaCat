@@ -236,24 +236,24 @@
     </Layer>
     <!-- <<< HANDEDIT <<< -->
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Block Id="blk5" Class="clsWoodenBox" Bounds="96, 204, 30, 30" Edges="Stick" TraceId="image3016-1">
+        <!--<Block Id="blk5" Class="clsWoodenBox" Bounds="96, 204, 30, 30" Edges="Stick" TraceId="image3016-1">
             <Image TextureId="txr_box_old_1" />
-        </Block>
+        </Block>-->
         <Block Id="blk6" Class="clsWoodenBox" Bounds="100, 242, 30, 30" Edges="Stick" TraceId="image3027">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <Block Id="blk7" Class="clsWoodenBox" Bounds="100, 278, 30, 30" Edges="Stick" TraceId="image3038-7">
+        <!--<Block Id="blk7" Class="clsWoodenBox" Bounds="100, 278, 30, 30" Edges="Stick" TraceId="image3038-7">
             <Image TextureId="txr_box_old_3" />
         </Block>
         <Block Id="blk8" Class="clsWoodenBox" Bounds="350, 278, 30, 30" Edges="Stick" TraceId="image3041">
             <Image TextureId="txr_box_old_3" />
-        </Block>
+        </Block>-->
         <Block Id="blk9" Class="clsWoodenBox" Bounds="350, 242, 30, 30" Edges="Stick" TraceId="image3043">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Block Id="blk10" Class="clsWoodenBox" Bounds="354, 206, 30, 30" Edges="Stick" TraceId="image3045">
+        <!--<Block Id="blk10" Class="clsWoodenBox" Bounds="354, 206, 30, 30" Edges="Stick" TraceId="image3045">
             <Image TextureId="txr_box_old_2" />
-        </Block>
+        </Block>-->
 
         
             <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="64, 257, 24, 25" TraceId="image3396"/>
