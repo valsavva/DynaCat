@@ -30,7 +30,7 @@
             <!-- appearance -->
             <SequenceSet Id="this_anmEntry" InProgress="true" RepeatCount="1">
             
-                <Delay Duration="system.Rnd(0.1,0.5)" /> 
+                <Delay Duration="system.Rnd(0,0.3)" /> 
 
                 <Do Action="this.Y=this.Y-600;this.Opacity=1" />
 
