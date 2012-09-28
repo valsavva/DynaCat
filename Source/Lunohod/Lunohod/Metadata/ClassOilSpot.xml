@@ -5,7 +5,7 @@
     <Class Id="clsOilSpot">
         <Image TextureId="txr_butter_@txrNum" Opacity="0" StretchMode="Stretch" >
             <NumTrigger Property="@appearanceTime" Compare="LE" Value="3" EnterAction="@this_delay=@appearanceTime/10;@this_duration=0.1;this_anm.Start()" />
-            <NumTrigger Property="@appearanceTime" Compare="G" Value="3" EnterAction="@this_delay=@appearanceTime/4;@this_duration=@appearanceTime/2;this_anm.Start()" />
+            <NumTrigger Property="@appearanceTime" Compare="G" Value="3" EnterAction="@this_delay=@appearanceTime/10;@this_duration=@appearanceTime/2;this_anm.Start()" />
             <!--<NumTrigger Property="@appearanceTime" Compare="LE" Value="3" EnterAction="@this_delay=@appearanceTime/10;@this_duration=0.1;@this_W=this.Width;@this_H=this.Height;this_anm.Start()" />
             <NumTrigger Property="@appearanceTime" Compare="G" Value="3" EnterAction="@this_delay=@appearanceTime/4;@this_duration=@appearanceTime/2;@this_W=this.Width;@this_H=this.Height;this_anm.Start()" />-->
 
