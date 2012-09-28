@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.15 -->
+<!-- SVG to XGAME xml converter v1.6.21 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Ceh_v1\Lvl_Ceh_v1.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Ceh_v1" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemySaw.xml" />
@@ -18,6 +18,7 @@
         <Texture Id="txr_detal_3" Source="detal_3" />
         <Texture Id="txr_box_b_004" Source="box_b_004" />
         <Texture Id="txr_box_b_009" Source="box_b_009" />
+        <Texture Id="txr__dash+interface" Source="_dash+interface" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="0, 0, 134, 208" Edges="Stick" TraceId="image3810"/>
@@ -101,7 +102,7 @@
         <Food Id="fd6" Class="clsFood" ClassParams="@fishType=4" Bounds="276, 131, 28, 22" TraceId="image3366"/>
         <Food Id="fd7" Class="clsFood" ClassParams="@fishType=4" Bounds="263, 188, 28, 22" TraceId="image3368"/>
         <Food Id="fd8" Class="clsFood" ClassParams="@fishType=4" Bounds="276, 245, 28, 22" TraceId="image3358-4"/>
-        <Enemy Id="enm3" Class="clsEnemySaw" Bounds="212, 12, 50, 50" TraceId="image3388">
+        <Enemy Id="enm3" Class="clsEnemySaw" Bounds="196, 12, 50, 50" TraceId="image3386">
             <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
                 <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
             </Image>
@@ -125,33 +126,6 @@
                 <NumAnimation From="0" To="5" Target="enm3.Y" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
                 <Delay Duration="0.5"/>
                 <NumAnimation From="0" To="-35" Target="enm3.Y" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.85"/>
-            </SequenceSet>
-        </Enemy>
-        <Enemy Id="enm4" Class="clsEnemySaw" Bounds="184, 12, 50, 50" TraceId="image3386">
-            <Image TextureId="txr_circular_saw_50" RotationCenter="25,25">
-                <NumAnimation From="0" To="360" Target="Rotation" InProgress="true" Duration="1" Autoreverse="false" RepeatCount="0"/>
-            </Image>
-            <Group Id="grpDamageZone_18" Bounds="7,7,36,36" />
-            <!-- 10,10,60,60 -->
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="grpDamageZone_18" EnterAction="setAttack_enm4.Start();setSound_enm4.Start()" ExitAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()">
-                <BoolTrigger Condition="hero.IsDead" EnterAction="setAttack_enm4.Stop();setSound_enm4.Stop();enm4_sndSawMid.Stop();enm4_sndSawEnd.Start()" />
-            </IntersectionTrigger>
-            <SequenceSet Id="setAttack_enm4" RepeatCount="0">
-                <Do Action="enm4.Attack()"/>
-                <Delay Duration="0.2"/>
-            </SequenceSet>
-            <SequenceSet Id="setSound_enm4" RepeatCount="1">
-                <Do Action="enm4_sndSawStart.Start()"/>
-                <Delay Duration="0.2"/>
-                <Do Action="enm4_sndSawMid.Start()"/>
-            </SequenceSet>
-            <SequenceSet InProgress="true" RepeatCount="0">
-                <NumAnimation From="0" To="30" Target="enm4.Y" Duration="0.5" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="5" Target="enm4.Y" Duration="0.1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.5"/>
-                <NumAnimation From="0" To="-35" Target="enm4.Y" Duration="1.6" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="End" />
                 <Delay Duration="0.85"/>
             </SequenceSet>
         </Enemy>
@@ -430,20 +404,20 @@
         <Image Id="dfltMask272" TextureId="txr_texture_brick_clean" Bounds="416, 284, 26, 20" TraceId="image3333"/>
     </Layer>
     <Layer Id="_design2" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask273" TextureId="txr_box_b_004" Bounds="382, 27, 40, 40" Rotation="5.55" TraceId="image3402"/>
+        <Image Id="dfltMask273" TextureId="txr_box_b_004" Bounds="382, 27, 40, 40" Rotation="6" TraceId="image3402"/>
         <Image Id="dfltMask274" TextureId="txr_box_b_004" Bounds="432, 31, 40, 40" TraceId="image3404"/>
         <Image Id="dfltMask275" TextureId="txr_box_b_004" Bounds="-7, 32, 40, 40" TraceId="image3399-0"/>
         <Image Id="dfltMask276" TextureId="txr_box_b_009" Bounds="49, 29, 40, 40" TraceId="image3414"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
-        <Hero Id="hero" Class="clsHero" Bounds="21, 256, 33, 24" TraceId="image3015"/>
-        <Group Id="exit" Class="clsExit" Bounds="426, 234, 37, 54" TraceId="image3049" />
+        <Hero Id="hero" Class="clsHero" Bounds="39, 256, 33, 24" TraceId="image3015"/>
+        <Group Id="exit" Class="clsExit" Bounds="400, 234, 37, 54" TraceId="image3049" />
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=8 Enemy=4 Block=18 DesignImage=276 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=8 Enemy=3 Block=17 DesignImage=277 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 680 -->
 <!-- 1% = 6.8; 45% = 306; 90% = 612 -->
