@@ -53,15 +53,28 @@
 				<Do Action="@creditsY=@creditsY+30;txtThanks.Y=@creditsY;@creditsY=@creditsY+25" InProgress="true"/>
 	            <Text Id="txtThanks" Text="Special thanks to:" FontId="Splash14Font" Color="#FFDDDD" />
 
-	            <Do Action="@creditsLine='  Dmitry K, Natasha T, Tem B'" InProgress="true"/>
-	            <Group Id="c01" Class="clsShift"/>
-	            <Do Action="@creditsLine='Cyrus K, Ivan A, Greg D, Jocelyn C'" InProgress="true"/>
-	            <Group Id="c02" Class="clsShift"/>
-	            <Do Action="@creditsLine='Mike B, Anton R, Irina H, Des H'" InProgress="true"/>
-	            <Group Id="c03" Class="clsShift"/>
-<!--	            <Do Action="@creditsLine=''" InProgress="true"/>
-	            <Group Id="t06" Class="clsShift"/>
-	            -->
+				<Do Action="@creditsLine='Anton R'" InProgress="true"/>
+				<Group Id="c01" Class="clsShift"/>
+				<Do Action="@creditsLine='Cyrus K'" InProgress="true"/>
+				<Group Id="c02" Class="clsShift"/>
+				<Do Action="@creditsLine='Des H'" InProgress="true"/>
+				<Group Id="c03" Class="clsShift"/>
+				<Do Action="@creditsLine='Greg D'" InProgress="true"/>
+				<Group Id="c04" Class="clsShift"/>
+				<Do Action="@creditsLine='Irina H'" InProgress="true"/>
+				<Group Id="c05" Class="clsShift"/>
+				<Do Action="@creditsLine='Ivan A'" InProgress="true"/>
+				<Group Id="c06" Class="clsShift"/>
+				<Do Action="@creditsLine='Jocelyn C'" InProgress="true"/>
+				<Group Id="c07" Class="clsShift"/>
+				<Do Action="@creditsLine='Mike B'" InProgress="true"/>
+				<Group Id="c08" Class="clsShift"/>
+				<Do Action="@creditsLine='Mr Rabbit'" InProgress="true"/>
+				<Group Id="c09" Class="clsShift"/>
+				<Do Action="@creditsLine='Natasha T'" InProgress="true"/>
+				<Group Id="c10" Class="clsShift"/>
+				<Do Action="@creditsLine='Tem B'" InProgress="true"/>
+				<Group Id="c11" Class="clsShift"/>
 	            
 				<Do Action="@creditsY=@creditsY+105;imgLogo.Y=@creditsY;" InProgress="true"/>
 	            <Image Id="imgLogo" TextureId="txrLogo" StretchMode="ActualSize"/>
