@@ -41,8 +41,11 @@ namespace Lunohod.Objects
 			if (string.IsNullOrEmpty(this.FontId))
 				throw new InvalidOperationException("Font is not specified for text field");
 			
-			this.font = (XFontResource)this.FindGlobal(this.FontId);
+			this.font = this.FindGlobal(this.FontId) as XFontResource;
 
+			if (this.font == null)
+				throw new InvalidOperationException("Font wasn't found: " + this.FontId);
+				
             if (this.Text != null && this.Text.StartsWith("="))
             {
                 this.strValueReader = Compiler.CompileExpression<string>(this, "system.Str(" + this.Text.Substring(1) + ")");

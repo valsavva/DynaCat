@@ -35,19 +35,33 @@ namespace Lunohod
 		public List<XElement> obstacles;
 		
 		// loading business
-        public string FileName { get; private set; }
+		public string FileName;
         public virtual Type RootComponentType { get { return typeof(XScreen); } }
-		public XScreen RootComponent { get; protected set; }
+		public XScreen RootComponent;
+		private XScreen xmlContent;
 		
 		// events
 		public Dictionary<string, bool> CurrentEvents { get; private set; }
-		
-		public ScreenEngine(GameEngine game, string fileName, ScreenEngine owner)
+
+		public bool IsInitialized = false;
+
+		public ScreenEngine(GameEngine game, string fileName)
 		{
 			this.game = game;
-			this.Owner = owner;
 			this.FileName = fileName;
+
 			this.CurrentEvents = new Dictionary<string, bool>();
+			this.tapAreas = new List<XTapArea>();
+			this.obstacles = new List<XElement>();
+			
+			this.spriteBatch = new SpriteBatchWithFloats(this.game.GraphicsDevice);
+			
+			if (this.game.Scale != Vector3.One)
+				scaleMatrix = Matrix.CreateScale(this.game.Scale);
+			
+			this.initializeParameters = new InitializeParameters() { Game = game, ScreenEngine = this };
+			this.updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
+			this.drawParameters = new DrawParameters() { Game = game, ScreenEngine = this, SpriteBatch = spriteBatch };
 		}
 		
 		public virtual void ProcessEvent(GameTime gameTime, GameEvent e)
@@ -93,38 +107,40 @@ namespace Lunohod
 		{
 			PerfMon.Reset();
 
+			this.IsInitialized = false;
+
 			PerfMon.Start("ScreenInitialize");
 
-			this.tapAreas = new List<XTapArea>();
-			this.obstacles = new List<XElement>();
-
-			spriteBatch = new SpriteBatchWithFloats(this.game.GraphicsDevice);
-			
-			if (this.game.Scale != Vector3.One)
-				scaleMatrix = Matrix.CreateScale(this.game.Scale);
-
-			initializeParameters = new InitializeParameters() { Game = game, ScreenEngine = this };
-			updateParameters = new UpdateParameters() { Game = game, ScreenEngine = this };
-			drawParameters = new DrawParameters() { Game = game, ScreenEngine = this, SpriteBatch = spriteBatch };
-
 			PerfMon.Start("LoadXml");
-			this.RootComponent = (XScreen)GameEngine.LoadXml(this.FileName, this.RootComponentType);
+			if (xmlContent == null)
+				xmlContent = (XScreen)GameEngine.LoadXml(this.FileName, this.RootComponentType);
+
+			this.RootComponent = (XScreen)xmlContent.Copy();
 			this.RootComponent.ScreenEngine = this;
 			this.InsertSystemSubcomponents();
 			PerfMon.Stop("LoadXml");
 
-			
+			this.CurrentEvents.Clear();
+			this.tapAreas.Clear();
+			this.obstacles.Clear();
+
 			PerfMon.Start("InitHierarchy");
 			this.RootComponent.InitHierarchy();
 			PerfMon.Stop("InitHierarchy");
 
 			PerfMon.Start("Initialize");
-			this.RootComponent.Initialize(initializeParameters);
+			game.InvokeOnMainThread(() => {
+				this.RootComponent.InitializeMainThread(this.initializeParameters);
+			});
+
+			this.RootComponent.Initialize(this.initializeParameters);
 			PerfMon.Stop("Initialize");
 
 			PerfMon.Stop("ScreenInitialize");
 
 			PerfMon.Dump();
+
+			this.IsInitialized = true;
 		}
 		
 		protected virtual void InsertSystemSubcomponents()
@@ -134,7 +150,7 @@ namespace Lunohod
 
 		//DateTime gt = DateTime.UtcNow;
 		//DateTime t = DateTime.UtcNow;
-		
+
 		public virtual void Update(GameTime gameTime)
 		{
 			//TimeSpan etg = DateTime.UtcNow - gt;

@@ -20,9 +20,9 @@ namespace Lunohod.Objects
 			get { return font; }
 		}
 
-		public override void Initialize(InitializeParameters p)
+		public override void InitializeMainThread(InitializeParameters p)
 		{
-			base.Initialize(p);
+			base.InitializeMainThread(p);
 
             font = LoadResource<SpriteFont>(p.Game.Content, "FontDescriptionProcessor", "spritefont", "xnb");
 		}

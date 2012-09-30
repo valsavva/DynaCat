@@ -185,7 +185,24 @@ namespace Lunohod.Objects
 			// force to rebiuld subcomponent hash
 			this.componentDict = null;
 		}
-		
+
+		/// <summary>
+		/// Just like the <see cref="Initialize"/> method, this method is called as part of component initialization.
+		/// This method is guaranteed to execute on the main thread.
+		/// </summary>
+		/// </param>
+		public virtual void InitializeMainThread(InitializeParameters p)
+		{
+			if (this.Subcomponents == null)
+				return;
+			
+			for(int i = 0; i < this.Subcomponents.Count; i++)
+			{
+				var subcomponent = this.Subcomponents[i];
+				
+				subcomponent.InitializeMainThread(p);
+			}
+		}
         /// <summary>
         /// This method represents the second stage of the four primary stages of the component lifecycle
         /// (hierarchy building, component initialization, update and draw, dispose).
@@ -197,17 +214,17 @@ namespace Lunohod.Objects
         /// </summary>
         public virtual void Initialize(InitializeParameters p)
 		{
-			if (this.Subcomponents != null)
-				for(int i = 0; i < this.Subcomponents.Count; i++)
-				{
-					var subcomponent = this.Subcomponents[i];
+			if (this.Subcomponents == null)
+				return;
 
-					string perfmonCat = "** Init of " + subcomponent.GetType().Name;
-					PerfMon.Start(perfmonCat);
-					subcomponent.Initialize(p);
-					PerfMon.Stop(perfmonCat);
-				}
+			for(int i = 0; i < this.Subcomponents.Count; i++)
+			{
+				var subcomponent = this.Subcomponents[i];
+
+				subcomponent.Initialize(p);
+			}
 		}
+
         /// <summary>
         /// This method represents the update stage of the four primary stages of the component lifecycle
         /// (hierarchy building, component initialization, update and draw, dispose).

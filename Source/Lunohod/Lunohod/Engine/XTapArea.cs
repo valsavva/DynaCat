@@ -72,7 +72,7 @@ namespace Lunohod.Objects
 			
 			PerfMon.Start("Other-Tap");
 
-			p.Game.ScreenEngine.tapAreas.Add(this);
+			p.ScreenEngine.tapAreas.Add(this);
 
             InitActions(this.Action, ref this.pressActions);
             InitActions(this.MoveAction, ref this.moveActions);

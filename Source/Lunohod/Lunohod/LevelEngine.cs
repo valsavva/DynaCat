@@ -31,8 +31,8 @@ namespace Lunohod
 		private EventRateCounter cps; 
 
         
-        public LevelEngine(GameEngine gameEngine, ScreenEngine owner, XLevelInfo levelInfo, XLevelScore levelScore)
-			: base(gameEngine, levelInfo.File, owner)
+        public LevelEngine(GameEngine gameEngine, XLevelInfo levelInfo, XLevelScore levelScore)
+			: base(gameEngine, levelInfo.File)
 		{
             this.LevelInfo = levelInfo;
 			this.LevelScore = levelScore;

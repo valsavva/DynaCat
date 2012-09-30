@@ -24,9 +24,9 @@ namespace Lunohod.Objects
 			get { return image; }
 		}
 
-		public override void Initialize(InitializeParameters p)
+		public override void InitializeMainThread(InitializeParameters p)
 		{
-			base.Initialize(p);
+			base.InitializeMainThread(p);
 
             image = LoadResource<Texture2D>(p.Game.Content, "TextureProcessor", "png", "xnb");
 		}

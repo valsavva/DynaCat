@@ -13,6 +13,7 @@ namespace Lunohod
         Stop,
         Explosion,
         CloseCurrentScreen,
+		DismissCurrentScreen,
         RestartLevel,
         AbandonLevel,
         EndLevel,

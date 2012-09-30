@@ -25,9 +25,9 @@ namespace Lunohod.Objects
 			get { return this.song; }
 		}
 		
-		public override void Initialize(InitializeParameters p)
+		public override void InitializeMainThread(InitializeParameters p)
 		{
-			base.Initialize(p);
+			base.InitializeMainThread(p);
 
             this.song = LoadResource<Song>(p.Game.Content, "SongProcessor", "mp3", "wma", "Mp3Importer");
 		}

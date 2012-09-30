@@ -45,9 +45,9 @@ namespace Lunohod.Objects
 			get { return this.soundEffect; }
 		}
 		
-		public override void Initialize(InitializeParameters p)
+		public override void InitializeMainThread(InitializeParameters p)
 		{
-			base.Initialize(p);
+			base.InitializeMainThread(p);
 
             this.soundEffect = LoadResource<SoundEffect>(p.Game.Content, "SoundEffectProcessor", "wav", "xnb");
 

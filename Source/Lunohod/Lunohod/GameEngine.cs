@@ -10,10 +10,11 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Storage;
+using System.Threading;
 
 namespace Lunohod
 {
-	public class GameEngine : Game
+	public partial class GameEngine : Game
 	{
         public const string MetadataRootDirectory = "Metadata";
         public const string ContentRootDirectory = "Content";
@@ -53,6 +54,13 @@ namespace Lunohod
         public List<ScreenEngine> ScreenEngines { get { return screenEngines; } }
 
         public GameEventQueue EventQueue { get { return eventQueue; } }
+
+
+		private ScreenEngine screenPause;
+		private ScreenEngine screenLoading;
+
+		private LevelEngine loadingLevel;
+		private IAsyncResult loadingResult;
 
 		public bool InBackground;
 
@@ -293,6 +301,15 @@ namespace Lunohod
 			
 			LoadScreen(GameObject.StartScreen);
 
+			screenPause = new ScreenEngine(this, GameObject.PauseScreen);
+			screenLoading = new ScreenEngine(this, "ScreenLoading.xml");
+
+			while(!this.ScreenEngine.IsInitialized)
+			{
+				DoEvents();
+				System.Threading.Thread.Sleep(100);
+			}
+
 #if IPHONE
 			Lunohod.Program.FinishShowingSplash();
 #endif
@@ -312,23 +329,36 @@ namespace Lunohod
 
 			this.CycleNumber++;
 			this.CurrentUpdateTime = gameTime;
-			
+
+			if (loadingResult != null)
+			{
+				this.DoEvents();
+
+				if (loadingResult.AsyncWaitHandle.WaitOne(0))
+				{
+					FinishLoadLevel();
+				}
+			}
+
 			ProcessInputProcessors(gameTime);
             
-            ProcessQueue(gameTime);
-			
+			ProcessQueue(gameTime);
+
+
+			if (loadingResult != null && (this.CycleNumber % 10) != 0)
+				return;
+
 			this.ScreenEngine.Update(gameTime);
-			/*
-			for(int i = 0; i < screenEngines.Count; i++)
-				screenEngines[i].Update(gameTime);
-				*/
 
 			base.Update(gameTime);
 		}
 		
 		protected override void Draw(GameTime gameTime)
 		{
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+			if (loadingResult != null && (this.CycleNumber % 10) != 0)
+			    return;
+
+			GraphicsDevice.Clear(Color.CornflowerBlue);
 			
             for(int i = 0; i < screenEngines.Count; i++)
             {
@@ -353,20 +383,9 @@ namespace Lunohod
 #if IPHONE
 			MonoTouch.UIKit.UIApplication.SharedApplication.BeginIgnoringInteractionEvents();
 #endif
+			var newScreenEngine = new ScreenEngine(this, fileName);
 
-            var newScreenEngine = new ScreenEngine(this, fileName, this.ScreenEngine);
-
-			lock(this.screenEngines)
-			{
-				screenEngines.Add(newScreenEngine);
-				this.EnqueueEvent(new GameEvent(GameEventType.ScreenActivated, this.CurrentUpdateTime ?? new GameTime(), true));
-			}
-
-			newScreenEngine.Initialize();
-
-			ResetControllers();
-
-			GC.Collect();
+			ActivateScreen(newScreenEngine);
 		}
 
 		public void LoadLevel(XLevelInfo levelInfo)
@@ -374,28 +393,146 @@ namespace Lunohod
 #if IPHONE
 			MonoTouch.UIKit.UIApplication.SharedApplication.BeginIgnoringInteractionEvents();
 #endif
+			var levelEngine = new LevelEngine(this, levelInfo, this.ScoreFile.LevelScoreDict[levelInfo.Id]);
+			levelEngine.Owner = this.ScreenEngine;
 
-			var newScreenEngine = new LevelEngine(this, this.ScreenEngine, levelInfo, this.ScoreFile.LevelScoreDict[levelInfo.Id]);
+			StartLevelInitialize(levelEngine);
+		}
 
-			lock(this.screenEngines)
-			{
+		private void StartLevelInitialize(LevelEngine levelEngine)
+		{
+			ActivateScreen(screenLoading);
+
+			loadingLevel = levelEngine;
+			Action action = loadingLevel.Initialize;
+			loadingResult = action.BeginInvoke(null, null);
+		}
+
+		public void FinishLoadLevel()
+		{
+			// remove "Loading..."
+			DismissCurrentScreen();
+
+
+			if (this.ScreenEngine != loadingLevel)
+				ActivateScreen(loadingLevel, false);
+
+			loadingLevel = null;
+			loadingResult = null;
+		}
+
+		void ActivateScreen(ScreenEngine newScreenEngine, bool initialize = true)
+		{
+			newScreenEngine.Owner = this.ScreenEngine;
+
+			lock (this.screenEngines) {
 				screenEngines.Add(newScreenEngine);
 				this.EnqueueEvent(new GameEvent(GameEventType.ScreenActivated, this.CurrentUpdateTime ?? new GameTime(), true));
 			}
-			
-			newScreenEngine.Initialize();
+
+			if (initialize)
+				newScreenEngine.Initialize();
 
 			ResetControllers();
-
 			GC.Collect();
 		}
+
+		public void ProcessQueue(GameTime gameTime)
+		{
+			int numOfEvents = this.eventQueue.Count;
+			
+			int currentOwner = this.ScreenEngine.GetHashCode();
+			
+			for (int i = 0; i < numOfEvents; i++)
+			{
+				var e = this.eventQueue.Dequeue();
+				
+				if (e.OwnerScreen != currentOwner && e.OwnerScreen != this.ScreenEngine.GetHashCode())
+				{
+					this.eventQueue.Enqueue(e);
+					continue;
+				}
+				
+				e.IsHandled = true;
+				
+				switch (e.EventType)
+				{
+					case GameEventType.Pause:
+					{
+						ActivateScreen(screenPause);
+						
+					} break;
+					case GameEventType.StartNextLevel:
+					{
+						this.eventQueue.Clear();
+						numOfEvents = 0;
+						
+						var levelInfo = this.LevelEngine.LevelInfo;
+						this.CloseCurrentScreen();
+						
+						var series = this.GameObject.LevelSeries.Where(s => s.Levels.Contains(levelInfo)).First();
+						
+						var levelIndex = series.Levels.IndexOf(levelInfo);
+						
+						levelIndex++;
+						
+						if (levelIndex < series.Levels.Count)
+							this.LoadLevel(series.Levels[levelIndex]);
+					} break;
+					case GameEventType.RestartLevel:
+					{
+						this.eventQueue.Clear();
+						numOfEvents = 0;
+						
+						var levelEngine = DismissCurrentScreen() as LevelEngine;
+
+						StartLevelInitialize(levelEngine);
+					} break;
+					case GameEventType.EndLevel:
+					{
+						goto case GameEventType.AbandonLevel;
+					}
+					case GameEventType.AbandonLevel:
+					{
+						this.eventQueue.Clear();
+						i = -1;
+						
+						this.CloseCurrentScreen();
+						
+						// break out of the loop
+						numOfEvents = this.eventQueue.Count;
+					} break;
+					case GameEventType.DismissCurrentScreen:
+					{
+						this.DismissCurrentScreen();
+					} break;
+					case GameEventType.CloseCurrentScreen:
+					{
+						this.CloseCurrentScreen();
+					} break;
+					default: 
+						e.IsHandled = false; break;
+				}
+				
+				if (!e.IsHandled)
+				{
+					this.ScreenEngine.ProcessEvent(gameTime, e);
+				}
+				
+				if (!e.IsHandled)
+					this.eventQueue.Enqueue(e);
+			}
+		}
 		
+
 		protected void LoadGameElement()
 		{
 			this.GameObject = LoadXml<XGame>("Game.xml");
 			
 			GameObject.InitHierarchy();
-			GameObject.Initialize(new InitializeParameters() { Game = this });
+			var initParameters = new InitializeParameters() { Game = this };
+			GameObject.InitializeMainThread(initParameters);
+			GameObject.Initialize(initParameters);
 
 			PrepareGlobals();
 		}
@@ -407,18 +544,27 @@ namespace Lunohod
 
 		public void CloseCurrentScreen()
 		{
+			ScreenEngine screenEngine = DismissCurrentScreen();
+
+			screenEngine.Unload();
+			
+			GC.Collect();
+		}
+		
+		public ScreenEngine DismissCurrentScreen()
+		{
 			ScreenEngine screenEngine;
 			
 			lock(this.screenEngines)
 			{
+				// remove screen from the scren list
 				screenEngine = this.screenEngines[this.screenEngines.Count - 1];
 				this.screenEngines.Remove(screenEngine);
+
 				this.EnqueueEvent(new GameEvent(GameEventType.ScreenActivated, this.CurrentUpdateTime ?? new GameTime(), true));
 			}
-			
-			screenEngine.Unload();
-			
-			GC.Collect();
+
+			return screenEngine;
 		}
 		
 		void PrepareGlobals()
@@ -475,91 +621,6 @@ namespace Lunohod
 			e.OwnerScreen = this.ScreenEngine.GetHashCode();
 
 			this.eventQueue.Enqueue(e);
-		}
-		
-		public void ProcessQueue(GameTime gameTime)
-		{
-			int numOfEvents = this.eventQueue.Count;
-
-			int currentOwner = this.ScreenEngine.GetHashCode();
-
-			for (int i = 0; i < numOfEvents; i++)
-			{
-				var e = this.eventQueue.Dequeue();
-
-				if (e.OwnerScreen != currentOwner && e.OwnerScreen != this.ScreenEngine.GetHashCode())
-				{
-					this.eventQueue.Enqueue(e);
-					continue;
-				}
-
-				e.IsHandled = true;
-
-				switch (e.EventType)
-                {
-                    case GameEventType.Pause:
-						{
-                            //this.eventQueue.Clear();
-							//numOfEvents = 0;
-							
-							LoadScreen(this.GameObject.PauseScreen);
-						} break;
-                    case GameEventType.StartNextLevel:
-                        {
-                            this.eventQueue.Clear();
-							numOfEvents = 0;
-
-                            var levelInfo = this.LevelEngine.LevelInfo;
-                            this.CloseCurrentScreen();
-
-                            var series = this.GameObject.LevelSeries.Where(s => s.Levels.Contains(levelInfo)).First();
-
-                            var levelIndex = series.Levels.IndexOf(levelInfo);
-
-                            levelIndex++;
-
-                            if (levelIndex < series.Levels.Count)
-                                this.LoadLevel(series.Levels[levelIndex]);
-                        } break;
-                    case GameEventType.RestartLevel:
-                        {
-                            this.eventQueue.Clear();
-							numOfEvents = 0;
-
-							var levelInfo = this.LevelEngine.LevelInfo;
-                            this.CloseCurrentScreen();
-                            this.LoadLevel(levelInfo);
-                        } break;
-                    case GameEventType.EndLevel:
-						{
-							goto case GameEventType.AbandonLevel;
-						}
-                    case GameEventType.AbandonLevel:
-                        {
-                            this.eventQueue.Clear();
-							i = -1;
-
-                            this.CloseCurrentScreen();
-
-                            // break out of the loop
-                            numOfEvents = this.eventQueue.Count;
-                        } break;
-                    case GameEventType.CloseCurrentScreen:
-                        {
-                            this.CloseCurrentScreen();
-                        } break;
-				default: 
-					e.IsHandled = false; break;
-                }
-				
-				if (!e.IsHandled)
-				{
-					this.ScreenEngine.ProcessEvent(gameTime, e);
-				}
-				
-				if (!e.IsHandled)
-					this.eventQueue.Enqueue(e);
-			}
 		}
 		
 		private void ProcessInputProcessors(GameTime gameTime)
