@@ -38,6 +38,7 @@ namespace Lunohod
 		public string FileName;
         public virtual Type RootComponentType { get { return typeof(XScreen); } }
 		public XScreen RootComponent;
+		private XScreen oldRootComponent;
 		private XScreen xmlContent;
 		
 		// events
@@ -107,6 +108,8 @@ namespace Lunohod
 		{
 			PerfMon.Reset();
 
+			this.oldRootComponent = this.RootComponent;
+
 			this.IsInitialized = false;
 
 			PerfMon.Start("ScreenInitialize");
@@ -141,6 +144,12 @@ namespace Lunohod
 			PerfMon.Dump();
 
 			this.IsInitialized = true;
+
+			if (this.oldRootComponent != null)
+			{
+				this.oldRootComponent.Dispose();
+				this.oldRootComponent = null;
+			}
 		}
 		
 		protected virtual void InsertSystemSubcomponents()
@@ -189,7 +198,7 @@ namespace Lunohod
 			}
 		}
 		
-		protected void PostDraw()
+		protected virtual void PostDraw()
 		{
 			if (this.game.GameObject.ShowFPS)
 				this.DrawDebugInfo(drawParameters);
@@ -202,8 +211,11 @@ namespace Lunohod
 			try 
 			{
 				PreDraw(gameTime);
-				
-				this.RootComponent.Draw(drawParameters);
+
+				if (!this.IsInitialized && this.oldRootComponent != null)
+					this.oldRootComponent.Draw(drawParameters);
+				else
+					this.RootComponent.Draw(drawParameters);
 				
 				PostDraw();				
 			}

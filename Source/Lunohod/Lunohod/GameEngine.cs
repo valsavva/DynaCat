@@ -484,7 +484,7 @@ namespace Lunohod
 						this.eventQueue.Clear();
 						numOfEvents = 0;
 						
-						var levelEngine = DismissCurrentScreen() as LevelEngine;
+						var levelEngine = this.ScreenEngine as LevelEngine;
 
 						StartLevelInitialize(levelEngine);
 					} break;

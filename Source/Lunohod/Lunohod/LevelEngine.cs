@@ -146,23 +146,12 @@ namespace Lunohod
 			ProcessCollisions();
 		}
 		
-		public override void Draw(GameTime gameTime)
+		protected override void PostDraw()
 		{
-			try 
-			{
-				PreDraw(gameTime);
-				
-				this.RootComponent.Draw(drawParameters);
-				
-				foreach(var wave in waves.Values)
-					wave.Draw(drawParameters);
+			foreach(var wave in waves.Values)
+				wave.Draw(drawParameters);
 
-				PostDraw();				
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.ToString());
-			}
+			base.PostDraw();
 		}
 
 		public override void Unload()

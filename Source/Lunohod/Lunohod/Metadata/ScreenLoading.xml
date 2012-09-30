@@ -17,19 +17,12 @@
             <Text Id="txtScrLdDot3" Text="." FontId="Splash14Font" Location="281,122" Color="#000000" Opacity="0"/>
             <Text Id="txtScrLdDot3s" Text="." FontId="Splash14Font" Location="280,120" Color="#EEEEEE" Opacity="0"/>
 
-        <SequenceSet RepeatCount="0" InProgress="true" >
-            <Do Action="txtScrLdDot1.Opacity=1;txtScrLdDot1s.Opacity=1" />
-            <Delay Duration="0.1" />
-            <Do Action="txtScrLdDot2.Opacity=1;txtScrLdDot2s.Opacity=1" />
-            <Delay Duration="0.1" />
-            <Do Action="txtScrLdDot3.Opacity=1;txtScrLdDot3s.Opacity=1" />
-            <Delay Duration="0.1" />
-            <Do Action="txtScrLdDot1.Opacity=0;txtScrLdDot1s.Opacity=0" />
-            <Delay Duration="0.1" />
-            <Do Action="txtScrLdDot2.Opacity=0;txtScrLdDot2s.Opacity=0" />
-            <Delay Duration="0.1" />
-            <Do Action="txtScrLdDot3.Opacity=0;txtScrLdDot3s.Opacity=0" />
-            <Delay Duration="0.1" />
-        </SequenceSet>
+		<Group Id="grpHack" />
+		
+		<NumAnimation Target="grpHack.X" From="0" To="6" Duration="0.6" RepeatCount="0" InProgress="true"/>
+
+		<Do Action="txtScrLdDot1.Opacity=system.IIf(grpHack.X>0 and (3>grpHack.X),1,0);txtScrLdDot1s.Opacity=txtScrLdDot1.Opacity" InProgress="true" RepeatCount="0" />
+		<Do Action="txtScrLdDot2.Opacity=system.IIf(grpHack.X>1 and (4>grpHack.X),1,0);txtScrLdDot2s.Opacity=txtScrLdDot2.Opacity" InProgress="true" RepeatCount="0" />
+		<Do Action="txtScrLdDot3.Opacity=system.IIf(grpHack.X>2 and (5>grpHack.X),1,0);txtScrLdDot3s.Opacity=txtScrLdDot3.Opacity" InProgress="true" RepeatCount="0" />
     </Layer>
 </Screen>
