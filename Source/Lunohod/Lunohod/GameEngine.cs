@@ -345,8 +345,10 @@ namespace Lunohod
 			ProcessQueue(gameTime);
 
 
+#if IPHONE
 			if (loadingResult != null && (this.CycleNumber % 10) != 0)
 				return;
+#endif
 
 			this.ScreenEngine.Update(gameTime);
 
@@ -355,10 +357,12 @@ namespace Lunohod
 		
 		protected override void Draw(GameTime gameTime)
 		{
+#if IPHONE
 			if (loadingResult != null && (this.CycleNumber % 10) != 0)
 			    return;
+#endif
 
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 			
             for(int i = 0; i < screenEngines.Count; i++)
             {
