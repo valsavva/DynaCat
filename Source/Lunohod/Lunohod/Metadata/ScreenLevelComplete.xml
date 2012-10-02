@@ -44,12 +44,12 @@
         <BoolTrigger Condition="hero.Score==0" EnterAction="setMusicComplete.Start()" />
         
 		<SequenceSet Id="setMusicVictory" InProgress="false" RepeatCount="1">
-			<Delay Duration="0.55" />
+			<Delay Duration="0.4" />
      		<Do Action="sndVictoryMusic.Start()" InProgress="true" RepeatCount="1"/>
 		</SequenceSet>
 
         <SequenceSet Id="setMusicComplete" InProgress="false" RepeatCount="1">
-            <Delay Duration="0.55" />
+            <Delay Duration="0.4" />
             <Do Action="sndCompleteMusic.Start()" InProgress="true" RepeatCount="1"/>
         </SequenceSet>
      
