@@ -3,7 +3,7 @@
 <Include>
     <Resources RootFolder="Textures">
         <Texture Id="txrRadarSprite_1" Source="radar_spr_01" />
-        <Texture Id="txrWaves" Source="radar_wave_spr_87x33x4.png" />
+        <Texture Id="txrWaves" Source="radar_wave_spr_87x33x4" />
     </Resources>
     
     <!-- Magnetic Radar, horizontal, shooting left -->
