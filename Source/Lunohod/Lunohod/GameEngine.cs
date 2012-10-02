@@ -418,8 +418,13 @@ namespace Lunohod
 			DismissCurrentScreen();
 
 
-			if (this.ScreenEngine != loadingLevel)
-				ActivateScreen(loadingLevel, false);
+            if (this.ScreenEngine != loadingLevel)
+            {
+                if (this.ScreenEngine is LevelEngine)
+                    CloseCurrentScreen();
+
+                ActivateScreen(loadingLevel, false);
+            }
 
 			loadingLevel = null;
 			loadingResult = null;
@@ -472,7 +477,6 @@ namespace Lunohod
 						numOfEvents = 0;
 						
 						var levelInfo = this.LevelEngine.LevelInfo;
-						this.CloseCurrentScreen();
 						
 						var series = this.GameObject.LevelSeries.Where(s => s.Levels.Contains(levelInfo)).First();
 						
