@@ -19,12 +19,7 @@
         <Texture Id="txr_wire_004" Source="wire_004" />
         <Texture Id="txr_wire_003" Source="wire_003" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
-        <Texture Id="txr_shtucaturka_004" Source="shtucaturka_004" />
-        <Texture Id="txr_shtucaturka_005" Source="shtucaturka_005" />
-        <Texture Id="txr_shtucaturka_006" Source="shtucaturka_006" />
-        <Texture Id="txr_shtucaturka_001" Source="shtucaturka_001" />
-        <Texture Id="txr_shtucaturka_002" Source="shtucaturka_002" />
-        <Texture Id="txr_shtucaturka_003" Source="shtucaturka_003" />
+        <Texture Id="txr_graffiti_dynacat" Source="graffiti_dynacat" />
         <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
         <Texture Id="txr_TeleportEntryUp" Source="TeleportEntryUp" />
         <Texture Id="txr_TeleportTubeVert" Source="TeleportTubeVert" />
@@ -339,14 +334,7 @@
         <Image Id="dfltMask230" TextureId="txr_texture_brick_clean" Bounds="416, 300, 26, 20" TraceId="image3906"/>
         <Image Id="dfltMask231" TextureId="txr_texture_brick_clean" Bounds="442, 300, 26, 20" TraceId="image3908"/>
         <Image Id="dfltMask232" TextureId="txr_texture_brick_clean" Bounds="468, 300, 26, 20" TraceId="image3910"/>
-    </Layer>
-    <Layer Id="Shtucaturka" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask233" TextureId="txr_shtucaturka_004" Bounds="17, 7, 104, 66" TraceId="image3376"/>
-        <Image Id="dfltMask234" TextureId="txr_shtucaturka_005" Bounds="166, 263, 50, 45" TraceId="image3387"/>
-        <Image Id="dfltMask235" TextureId="txr_shtucaturka_006" Bounds="435, 29, 47, 35" TraceId="image3398"/>
-        <Image Id="dfltMask236" TextureId="txr_shtucaturka_001" Bounds="196, 294, 69, 49" TraceId="image3409"/>
-        <Image Id="dfltMask237" TextureId="txr_shtucaturka_002" Bounds="170, 220, 80, 68" TraceId="image3420-7"/>
-        <Image Id="dfltMask238" TextureId="txr_shtucaturka_003" Bounds="121, 191, 85, 57" TraceId="image3431"/>
+        <Image Id="dfltMask233" TextureId="txr_graffiti_dynacat" Bounds="302, 220, 117, 66" Stretch="true" Opacity="0.55" TraceId="image4146"/>
     </Layer>
     <Layer Id="_TeleportDesign" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask233" TextureId="txr_TeleportTubeHor" Bounds="378, 264, 40, 56" TraceId="image3334"/>

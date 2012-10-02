@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.15 -->
+<!-- SVG to XGAME xml converter v1.6.21 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Ceh_v5_dva_ugla\Lvl_Ceh_v5_dva_ugla.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Ceh_v5_dva_ugla" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemySaw.xml" />
@@ -18,6 +18,8 @@
         <Texture Id="txr_texture_brick_5" Source="texture_brick_5" />
         <Texture Id="txr_detal_3" Source="detal_3" />
         <Texture Id="txr_box_b_016" Source="box_b_016" />
+        <Texture Id="txr_graffiti_dynacat" Source="graffiti_dynacat" />
+        <Texture Id="txr__dash+interface" Source="_dash+interface" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="122, -180, 407, 224" Edges="Stick" TraceId="image3815"/>
@@ -330,7 +332,8 @@
         <Image Id="dfltMask226" TextureId="txr_texture_brick_clean" Bounds="360, 144, 26, 20" TraceId="image3472"/>
         <Image Id="dfltMask227" TextureId="txr_box_b_016" Bounds="397, 49, 40, 40" TraceId="image3271"/>
         <Image Id="dfltMask228" TextureId="txr_box_b_016" Bounds="451, 49, 40, 40" TraceId="image3268-1"/>
-        <Image Id="dfltMask229" TextureId="txr_box_b_016" Bounds="3, 214, 40, 40" Rotation="18.43" TraceId="image3295"/>
+        <Image Id="dfltMask229" TextureId="txr_box_b_016" Bounds="3, 214, 40, 40" Rotation="18" TraceId="image3295"/>
+        <Image Id="dfltMask230" TextureId="txr_graffiti_dynacat" Bounds="310, 126, 119, 67" Stretch="true" Opacity="0.57" TraceId="image3266"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -339,10 +342,13 @@
     </Layer>
     <Layer Id="upmask" BackColor="#FFFFFFFF">
     </Layer>
+    <Layer Id="dash" Opacity="0.61805558" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask231" TextureId="txr__dash+interface" Bounds="0, 0, 480, 320" TraceId="image3278"/>
+    </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=5 Enemy=2 Block=15 DesignImage=229 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=5 Enemy=2 Block=15 DesignImage=231 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 550 -->
 <!-- 1% = 5.5; 45% = 247.5; 90% = 495 -->
