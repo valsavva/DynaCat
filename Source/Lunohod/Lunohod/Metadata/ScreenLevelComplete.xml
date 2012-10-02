@@ -30,6 +30,7 @@
     
     <Resources RootFolder="Sound">
     	<SoundFile Id="sfMusicVictory" Source="musicVictory"/>
+        <SoundFile Id="sfMusicComplete" Source="musicComplete"/>
     	<SoundFile Id="sfChimes" Source="sfxChimes"/>
     	<SoundFile Id="sfMusicEQdThemeLoop" Source="musicEQdThemeLoop"/>
         <SoundFile Id="sfScoreRatchet" Source="sfxScoreRatchet"/>
@@ -37,11 +38,20 @@
         
     <Layer Id="backg">
      	<Sound Id="sndVictoryMusic" FileId="sfMusicVictory" Volume="1"/>
+        <Sound Id="sndCompleteMusic" FileId="sfMusicComplete" Volume="1"/>
 
-		<SequenceSet InProgress="true" RepeatCount="1">
+        <BoolTrigger Condition="hero.Score>0" EnterAction="setMusicVictory.Start()" />
+        <BoolTrigger Condition="hero.Score==0" EnterAction="setMusicComplete.Start()" />
+        
+		<SequenceSet Id="setMusicVictory" InProgress="false" RepeatCount="1">
 			<Delay Duration="0.55" />
      		<Do Action="sndVictoryMusic.Start()" InProgress="true" RepeatCount="1"/>
 		</SequenceSet>
+
+        <SequenceSet Id="setMusicComplete" InProgress="false" RepeatCount="1">
+            <Delay Duration="0.55" />
+            <Do Action="sndCompleteMusic.Start()" InProgress="true" RepeatCount="1"/>
+        </SequenceSet>
      
         <Image Id="dfltMask1" TextureId="txr_Victory_new_BG" Bounds="0, 0, 480, 320" TraceId="image3105"/>
         <Image Id="imgVictory_new_Light_Cat" TextureId="txr_Victory_new_Light_Cat" Bounds="106, -17, 284, 274" TraceId="image3093">
