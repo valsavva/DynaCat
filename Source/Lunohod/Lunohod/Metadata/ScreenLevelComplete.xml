@@ -86,6 +86,9 @@
 		<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="40, 256, 62, 62">
 		    <BoolTrigger Condition="btnHome:Action" EnterAction="system.CloseCurrentScreen();system.AbandonLevel();" />
 		</Group>
+
+        <BoolTrigger Id="trgLevelNumberCheck" Condition="levelInfo.LevelNumber==(system.GetSeriesLevelCount(levelInfo.SeriesNumber) - 1)"
+                     EnterAction="trgLevelNumberCheck.Disable();" Action="btnNextLevel.Disable()" />
 		<Group Id="btnNextLevel" Class="clsButton" ClassParams="@BtnImg=forwind" Bounds="380, 256, 62, 62">
 		    <BoolTrigger Condition="btnNextLevel:Action" EnterAction="system.CloseCurrentScreen();system.StartNextLevel();" />
 		</Group>
