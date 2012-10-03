@@ -46,12 +46,14 @@ namespace Lunohod.Objects
                     "TextureId must be specified. Image: '{0}'", this.Id
                 ));
 
-			this.texture = (XTextureResource)this.FindGlobal(this.TextureId);
+            this.texture = this.FindGlobal(this.TextureId) as XTextureResource;
 			
 			if (this.texture == null)
 				throw new InvalidOperationException(string.Format(
 					"Texture was not found. Image: '{0}' TextureId: '{1}'", this.Id, this.TextureId
                 ));
+
+            this.SourceRectangle = this.texture.SourceRectangle;
 		}
 		
         private double screenRotation;
@@ -119,12 +121,15 @@ namespace Lunohod.Objects
 
 			Vector2 loc = new Vector2(screenBounds.X, screenBounds.Y);
 
+            Rectangle? srcRect = null;
+            this.SourceRectangle.ToRectangle(ref srcRect);
+
 			for(int row = 0; row < wholeRows; row++)
 			{
 				loc.X = screenBounds.X;
 				for(int col = 0; col < wholeCols; col++)
 				{
-					p.SpriteBatch.Draw(this.texture.Image, loc, null, actualBackColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, depth);
+					p.SpriteBatch.Draw(this.texture.Image, loc, srcRect, actualBackColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, depth);
 					loc.X += imageRes.Width;
 				}
 				loc.Y += imageRes.Height;

@@ -5,6 +5,10 @@
         <Font Id="SystemFont" Source="SystemFont" />
         <Texture Id="wave0400" Source="wave0400" />
     </Resources>
+    <Resources Id="GlobalSpriteSheets" RootFolder="Textures">
+        <SpriteSheet Id="sheet01" Source="sheet01" />
+        <SpriteSheet Id="sheet02" Source="sheet02" />
+    </Resources>
     <Levels>
 
         <!-- These are default setting

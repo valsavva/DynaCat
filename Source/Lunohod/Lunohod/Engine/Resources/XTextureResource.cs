@@ -24,13 +24,36 @@ namespace Lunohod.Objects
 			get { return image; }
 		}
 
+        public System.Drawing.RectangleF? SourceRectangle;
+
 		public override void InitializeMainThread(InitializeParameters p)
 		{
 			base.InitializeMainThread(p);
 
-            image = LoadResource<Texture2D>(p.Game.Content, "TextureProcessor", "png", "xnb");
+            XSpriteSheetResource spriteSheet = null;
+
+            if (p.Game.GlobalSpriteSheets != null)
+            {
+                foreach (XSpriteSheetResource tmpSheet in p.Game.GlobalSpriteSheets)
+                {
+                    if (tmpSheet.Map.ContainsKey(this.Source))
+                    {
+                        spriteSheet = tmpSheet;
+                        break;
+                    }
+                }
+
+            }
+
+            if (spriteSheet != null)
+            {
+                this.SourceRectangle = spriteSheet.Map[this.Source];
+                this.image = spriteSheet.Image;
+            }
+            else
+                image = LoadResource<Texture2D>(p.Game.Content, "TextureProcessor", "png", "xnb");
 		}
-		
+
 		public override void Dispose()
 		{
 			//image.Dispose();

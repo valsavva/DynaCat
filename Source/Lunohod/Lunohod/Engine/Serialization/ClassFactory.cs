@@ -68,6 +68,7 @@ namespace Lunohod.Objects
         // Resources
         { "Font", typeof(XFontResource) },
         { "Texture", typeof(XTextureResource) },
+        { "SpriteSheet", typeof(XSpriteSheetResource) },
         { "MusicFile", typeof(XMusicResource) },
         { "SoundFile", typeof(XSoundResource) },
 		

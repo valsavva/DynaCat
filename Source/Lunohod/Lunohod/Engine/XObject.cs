@@ -372,7 +372,7 @@ namespace Lunohod.Objects
 			var screen = this.GetScreen();
 			var result = screen.FindDescendant(id);
 			
-			if (result == null)
+			if (result == null && screen.ScreenEngine != null)
 			{
 				if (screen.ScreenEngine.Owner == null)
 					return GameEngine.Instance.GameObject.FindLocal(id);

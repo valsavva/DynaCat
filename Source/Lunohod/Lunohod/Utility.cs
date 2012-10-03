@@ -188,6 +188,21 @@ namespace Lunohod
             return rect.Width * rect.Height;
         }
 
+        public static void ToRectangle(this System.Drawing.RectangleF? rectF, ref Rectangle? rect)
+        {
+            if (rectF == null)
+            {
+                rect = null;
+                return;
+            }
+
+            var result = new Rectangle();
+
+            rectF.Value.ToRectangle(ref result);
+
+            rect = result;
+        }
+
         public static void ToRectangle(this System.Drawing.RectangleF rectF, ref Rectangle rect)
         {
             rect.X = (int)Math.Round(rectF.X);
