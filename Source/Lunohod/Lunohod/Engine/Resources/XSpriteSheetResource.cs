@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Xml;
 
 namespace Lunohod.Objects
 {
@@ -21,31 +22,24 @@ namespace Lunohod.Objects
         {
             // read file
             XResourceBundle r = (XResourceBundle)this.Parent;
-            string mapFilePath = Path.ChangeExtension(this.Source, "txt");
+            string mapFilePath = Path.ChangeExtension(this.Source, "xml");
             mapFilePath = Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, r.RootFolder.Replace('/', Path.DirectorySeparatorChar), mapFilePath);
 
             if (!File.Exists(mapFilePath))
                 throw new InvalidOperationException(string.Format("Could not find spritesheet map file: {0}", mapFilePath));
 
-            var content = File.ReadAllLines(mapFilePath);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(mapFilePath);
 
-            // parse texture names and coordinates
-            foreach (var line in content)
+            foreach (XmlElement spriteNode in doc.DocumentElement.ChildNodes)
             {
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                var parts = line.Split('=');
-
-                var boundsParts = parts[1].Trim().Split(' ');
-
                 this.Map.Add(
-                    parts[0].Trim(),
+                    spriteNode.GetAttribute("n"),
                     new System.Drawing.RectangleF(
-                        float.Parse(boundsParts[0]),
-                        float.Parse(boundsParts[1]),
-                        float.Parse(boundsParts[2]),
-                        float.Parse(boundsParts[3])
+                        float.Parse(spriteNode.GetAttribute("x")),
+                        float.Parse(spriteNode.GetAttribute("y")),
+                        float.Parse(spriteNode.GetAttribute("w")),
+                        float.Parse(spriteNode.GetAttribute("h"))
                     )
                 );
             }
