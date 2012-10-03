@@ -2,25 +2,13 @@
 <Include>
     <Include File="ClassSmoke.xml" />
 
-    <Class Id="clsEnemyRat">
-		<Enemy IsExploding="true">
+    <Class Id="clsEnemyRat2">
+		<Enemy IsExploding="true" Points="50" Damage="20">
 
 <!-- Init -->
-            <BoolTrigger Id="this_trgInit1" Condition="@ratType==1" EnterAction="
-                    this.Points=50;this.Damage=20;
-                    @this_ERrest1FC=20;@this_ERrest2FC=20;
-                    this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-44;
-                    this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-44;
-                    this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-32;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-44;
-                    this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-44;
-                    this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-44;
-                    this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-44;
-                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
-                    ">
-            </BoolTrigger>
+
 
             <BoolTrigger Id="this_trgInit2" Condition="@ratType==2" EnterAction="
-                    this.Points=50;this.Damage=20;
                     @this_ERrest1FC=20;@this_ERrest2FC=20;
                     this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-45;
                     this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-45;
@@ -28,45 +16,6 @@
                     this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-45;
                     this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-45;
                     this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-45;
-                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
-                    ">
-            </BoolTrigger>
-            
-            <BoolTrigger Id="this_trgInit3" Condition="@ratType==3" EnterAction="
-                    this.Points=75;this.Damage=30;
-                    @this_ERrest1FC=28;@this_ERrest2FC=28;
-                    this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-42;
-                    this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-42;
-                    this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-32;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-42;
-                    this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-42;
-                    this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-42;
-                    this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-42;
-                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
-                    ">
-            </BoolTrigger>
-            
-            <BoolTrigger Id="this_trgInit4" Condition="@ratType==4" EnterAction="
-                    this.Points=75;this.Damage=30;
-                    @this_ERrest1FC=20;@this_ERrest2FC=14;
-                    this_imgDefault.X=this_imgDefault.X-32;this_imgDefault.Y=this_imgDefault.Y-41;
-                    this_sprAttack.X=this_sprAttack.X-32;this_sprAttack.Y=this_sprAttack.Y-41;
-                    this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-32;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-41;
-                    this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-32;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-41;
-                    this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-32;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-41;
-                    this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-32;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-41;
-                    this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
-                    ">
-            </BoolTrigger>
-
-            <BoolTrigger Id="this_trgInit7" Condition="@ratType==7" EnterAction="
-                    this.Points=110;this.Damage=50;
-                    @this_ERrest1FC=34;@this_ERrest2FC=44;
-                    this_imgDefault.X=this_imgDefault.X-30;this_imgDefault.Y=this_imgDefault.Y-40;
-                    this_sprAttack.X=this_sprAttack.X-30;this_sprAttack.Y=this_sprAttack.Y-40;
-                    this_sprEnemyRatOnRest1.X=this_sprEnemyRatOnRest1.X-30;this_sprEnemyRatOnRest1.Y=this_sprEnemyRatOnRest1.Y-40;
-                    this_sprEnemyRatOnRest2.X=this_sprEnemyRatOnRest2.X-30;this_sprEnemyRatOnRest2.Y=this_sprEnemyRatOnRest2.Y-40;
-                    this_sprEnemyRatWalk.X=this_sprEnemyRatWalk.X-30;this_sprEnemyRatWalk.Y=this_sprEnemyRatWalk.Y-40;
-                    this_imgEnemyRatDying.X=this_imgEnemyRatDying.X-30;this_imgEnemyRatDying.Y=this_imgEnemyRatDying.Y-40;
                     this_trgInit1.Disable();this_trgInit2.Disable();this_trgInit3.Disable();this_trgInit4.Disable();this_trgInit7.Disable();
                     ">
             </BoolTrigger>
