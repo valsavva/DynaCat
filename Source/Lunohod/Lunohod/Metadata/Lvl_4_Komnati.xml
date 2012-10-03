@@ -149,9 +149,6 @@
         </SequenceSet>
         <Group Id="grpTlp6" Bounds="426, 178, 12, 56" TraceId="image4054" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp6" EnterAction="setTlp6.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp6">
             <SequenceSet Id="setTlp6Entry" Class="clsTeleportEntry" ClassParams="@entryX=426,@entryY=178,@delay=0"/>
             <SequenceSet Id="setTlp7Koleno" Class="clsTeleportKoleno" ClassParams="@X=448,@Y=182,@delay=0" TraceId="image4078" />
@@ -161,9 +158,6 @@
         </SequenceSet>
         <Group Id="grpTlp11" Bounds="238, 0, 12, 42" TraceId="image4093" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp11" EnterAction="setTlp11.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp11">
             <SequenceSet Id="setTlp11Entry" Class="clsTeleportEntry" ClassParams="@entryX=238,@entryY=0,@delay=0"/>
             <SequenceSet Id="setTlp12Tube" Class="clsTeleportTube" ClassParams="@horX=192,@horY=-14,@vertX=-7777777,@vertY=-7777777,@delay=0,@duration=1.24,@delta=-156"/>
@@ -173,9 +167,6 @@
         </SequenceSet>
         <Group Id="grpTlp16" Bounds="0, 281, 44, 12" TraceId="image4118" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp16" EnterAction="setTlp16.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp16">
             <SequenceSet Id="setTlp16Entry" Class="clsTeleportEntry" ClassParams="@entryX=0,@entryY=281,@delay=0"/>
             <SequenceSet Id="setTlp17Koleno" Class="clsTeleportKoleno" ClassParams="@X=-12,@Y=294,@delay=0" TraceId="image4121" />
@@ -189,9 +180,6 @@
     <Layer Id="portsAction vv" BackColor="#FFFFFFFF">
         <Group Id="grpTlp23" Bounds="148, 84, 12, 56" TraceId="image4164" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp23" EnterAction="setTlp23.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp23">
             <SequenceSet Id="setTlp23Entry" Class="clsTeleportEntry" ClassParams="@entryX=148,@entryY=84,@delay=0"/>
             <SequenceSet Id="setTlp24Koleno" Class="clsTeleportKoleno" ClassParams="@X=168,@Y=86,@delay=0" TraceId="image4184" />
@@ -203,9 +191,6 @@
         </SequenceSet>
         <Group Id="grpTlp30" Bounds="0, 172, 44, 12" TraceId="image4190" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp30" EnterAction="setTlp30.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp30">
             <SequenceSet Id="setTlp30Entry" Class="clsTeleportEntry" ClassParams="@entryX=0,@entryY=172,@delay=0"/>
             <SequenceSet Id="setTlp31Tube" Class="clsTeleportTube" ClassParams="@horX=-7777777,@horY=-7777777,@vertX=-12,@vertY=149,@delay=0,@duration=0.89,@delta=-112"/>
@@ -215,9 +200,6 @@
         </SequenceSet>
         <Group Id="grpTlp35" Bounds="426, 0, 12, 42" TraceId="image4154" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp35" EnterAction="setTlp35.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp35">
             <SequenceSet Id="setTlp35Entry" Class="clsTeleportEntry" ClassParams="@entryX=426,@entryY=0,@delay=0"/>
             <SequenceSet Id="setTlp36Koleno" Class="clsTeleportKoleno" ClassParams="@X=448,@Y=-10,@delay=0" TraceId="image4160" />
@@ -227,9 +209,6 @@
         </SequenceSet>
         <Group Id="grpTlp40" Bounds="269, 178, 12, 56" TraceId="image4144" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp40" EnterAction="setTlp40.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp40">
             <SequenceSet Id="setTlp40Entry" Class="clsTeleportEntry" ClassParams="@entryX=269,@entryY=178,@delay=0"/>
             <SequenceSet Id="setTlp41Koleno" Class="clsTeleportKoleno" ClassParams="@X=204,@Y=180,@delay=0" TraceId="image4150" />

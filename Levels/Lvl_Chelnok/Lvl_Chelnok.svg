@@ -3,7 +3,7 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_Chelnok.svg" inkscape:export-filename="D:\Lunohod\Levels\Lvl_Chelnok\Lvl_Chelnok.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" style="display:inline">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1" inkscape:cx="236.11837" inkscape:cy="143.3083" inkscape:document-units="px" inkscape:current-layer="layer8" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.2001687" inkscape:cx="165.88734" inkscape:cy="136.60421" inkscape:document-units="px" inkscape:current-layer="layer7" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="284,54" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
@@ -23,7 +23,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -152,18 +152,19 @@
             <image inkscape:label="Duration:5" width="4" height="360" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/moving/down.png" id="image3037-4-1-9" x="280" y="-30" style="display:inline" />
         </g>
     </g>
-    <g inkscape:groupmode="layer" id="layer4" inkscape:label="PortDesign" sodipodi:insensitive="true" style="display:none">
-        <image y="130" x="218.98773" id="image3144" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportTubeHor.png" height="56" width="40" />
-        <image y="130" x="256" id="image3133" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportEntryRight.png" height="56" width="24" />
-        <image y="130" x="200" id="image3155" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportEntryLeft.png" height="56" width="24" />
+    <g inkscape:groupmode="layer" id="layer4" inkscape:label="PortDesign" style="display:inline" sodipodi:insensitive="true">
+        <image y="130" x="198.98773" id="image3144" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportTubeHor.png" height="56" width="40" />
+        <image y="130" x="190" id="image3155" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportEntryLeft.png" height="56" width="24" />
+        <image width="40" height="56" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportTubeHor.png" id="image3125" x="238.98773" y="130" />
+        <image y="130" x="266" id="image3133" xlink:href="file:///D:/Lunohod/Grfx/design/teleport/TeleportEntryRight.png" height="56" width="24" />
     </g>
-    <g inkscape:groupmode="layer" id="layer6" inkscape:label="PortAction1" style="display:none" sodipodi:insensitive="true">
-        <image y="130" x="200" id="image3171" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Entry/Entry.png" height="56" width="24" />
-        <image style="display:inline" y="147" x="282" id="image3193" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Out/out_right.png" height="23" width="33" />
+    <g inkscape:groupmode="layer" id="layer6" inkscape:label="PortAction1" style="display:inline" sodipodi:insensitive="true">
+        <image y="130" x="190" id="image3171" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Entry/Entry.png" height="56" width="24" />
+        <image style="display:inline" y="147" x="292" id="image3193" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Out/out_right.png" height="23" width="33" />
     </g>
-    <g inkscape:groupmode="layer" id="layer7" inkscape:label="PortAction2" style="display:none" sodipodi:insensitive="true">
-        <image style="display:inline" y="130" x="256" id="image3171-7" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Entry/Entry.png" height="56" width="24" />
-        <image style="display:inline" y="147" x="165" id="image3182-1" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Out/out_left.png" height="23" width="33" />
+    <g inkscape:groupmode="layer" id="layer7" inkscape:label="PortAction2" style="display:inline" sodipodi:insensitive="true">
+        <image style="display:inline" y="130" x="266" id="image3171-7" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Entry/Entry.png" height="56" width="24" />
+        <image style="display:inline" y="147" x="155" id="image3182-1" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/Teleport/Out/out_left.png" height="23" width="33" />
     </g>
     <g inkscape:groupmode="layer" id="layer3" inkscape:label="THE" sodipodi:insensitive="true" style="display:none">
         <image y="266.78729" x="23.017305" id="image3140" xlink:href="file:///D:/Lunohod/Grfx/objects/visible/Hero/heroDimensions.png" height="23" width="33" />

@@ -416,31 +416,21 @@
             <Do Action="fdimage3551:+Borned;fdimage3551.Opacity=1" />
         </SequenceSet>
     </Layer>
-    <Layer Id="PortDesign" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask46" TextureId="txr_TeleportTubeHor" Bounds="219, 130, 40, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3144"/>
-        <Image Id="dfltMask47" TextureId="txr_TeleportEntryRight" Bounds="256, 130, 24, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3133"/>
-        <Image Id="dfltMask48" TextureId="txr_TeleportEntryLeft" Bounds="200, 130, 24, 56" Rotation="0" Stretch="false" Opacity="1" TraceId="image3155"/>
-    </Layer>
+
     <Layer Id="PortAction1" BackColor="#FFFFFFFF">
-        <Group Id="grpTlp1" Bounds="200, 130, 24, 56" TraceId="image3171" />
+        <Group Id="grpTlp1" Bounds="190, 130, 24, 56" TraceId="image3171" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp1" EnterAction="setTlp1.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp1">
-            <SequenceSet Id="setTlp1Entry" Class="clsTeleportEntry" ClassParams="@entryX=200,@entryY=130,@delay=0"/>
-            <SequenceSet Id="setTlp2Out" Class="clsTeleportOut" ClassParams="@outX=282,@outY=147,@delay=0,@heroOutDirection=right" TraceId="image3193" />
+            <SequenceSet Id="setTlp1Entry" Class="clsTeleportEntry" ClassParams="@entryX=190,@entryY=130,@delay=0"/>
+            <SequenceSet Id="setTlp2Out" Class="clsTeleportOut" ClassParams="@outX=292,@outY=147,@delay=0,@heroOutDirection=right" TraceId="image3193" />
         </SequenceSet>
     </Layer>
     <Layer Id="PortAction2" BackColor="#FFFFFFFF">
-        <Group Id="grpTlp3" Bounds="256, 130, 24, 56" TraceId="image3171-7" />
+        <Group Id="grpTlp3" Bounds="266, 130, 24, 56" TraceId="image3171-7" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp3" EnterAction="setTlp3.Start()"/>
-        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
-        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp3">
-            <SequenceSet Id="setTlp3Entry" Class="clsTeleportEntry" ClassParams="@entryX=256,@entryY=130,@delay=0"/>
-            <SequenceSet Id="setTlp4Out" Class="clsTeleportOut" ClassParams="@outX=165,@outY=147,@delay=0,@heroOutDirection=left" TraceId="image3182-1" />
+            <SequenceSet Id="setTlp3Entry" Class="clsTeleportEntry" ClassParams="@entryX=266,@entryY=130,@delay=0"/>
+            <SequenceSet Id="setTlp4Out" Class="clsTeleportOut" ClassParams="@outX=155,@outY=147,@delay=0,@heroOutDirection=left" TraceId="image3182-1" />
         </SequenceSet>
     </Layer>
     <Layer Id="elec" >
@@ -498,6 +488,12 @@
                 <NumAnimation Id="anm220" From="0" To="360" Target="enm2.Y" Duration="1" IsDelta="true" Autoreverse="false" InProgress="true" RepeatCount="1" Fill="Reset" />
             </SequenceSet>
         </SequenceSet>
+    </Layer>
+    <Layer Id="PortDesign" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask60" TextureId="txr_TeleportTubeHor" Bounds="199, 130, 40, 56" TraceId="image3144"/>
+        <Image Id="dfltMask61" TextureId="txr_TeleportEntryLeft" Bounds="190, 130, 24, 56" TraceId="image3155"/>
+        <Image Id="dfltMask62" TextureId="txr_TeleportTubeHor" Bounds="239, 130, 40, 56" TraceId="image3125"/>
+        <Image Id="dfltMask63" TextureId="txr_TeleportEntryRight" Bounds="266, 130, 24, 56" TraceId="image3133"/>
     </Layer>
     <Layer Id="THE" BackColor="#FFFFFFFF">
         <Hero Id="hero" Class="clsHero" Bounds="23, 267, 33, 24" TraceId="image3140"/>
