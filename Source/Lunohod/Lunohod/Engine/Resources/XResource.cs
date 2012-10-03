@@ -41,7 +41,8 @@ namespace Lunohod.Objects
             
             var outputPath = Path.GetDirectoryName(inFile);
 
-            if (File.Exists(inFile) && !File.Exists(outFile))
+            if (File.Exists(inFile) && 
+                (!File.Exists(outFile) || File.GetLastWriteTimeUtc(inFile) > File.GetLastWriteTimeUtc(outFile)))
             {
                 using (Lunohod.ContentLoading.ContentBuilder b = new ContentLoading.ContentBuilder(outputPath))
                 {
