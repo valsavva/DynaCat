@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:1071a32201f789009d1b40f72c0d26fb$ -->
+<!-- $TexturePacker:SmartUpdate:dacbad018d135e700cfd59806a3b54f0$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -13,21 +13,21 @@ oW => sprite's original width (only available if trimmed)
 oH => sprite's original height (only available if trimmed)
 r => 'y' only set if sprite is rotated
 -->
-<TextureAtlas imagePath="sheet02.png" width="511" height="319">
-    <sprite n="second_phon_communications" x="347" y="0" w="154" h="117"/>
-    <sprite n="second_phon_communications2" x="161" y="132" w="65" h="103"/>
-    <sprite n="second_phon_communications_2" x="91" y="119" w="70" h="118"/>
-    <sprite n="second_phon_communications_2_hor_me" x="339" y="185" w="118" h="30"/>
-    <sprite n="second_phon_communications_2a" x="0" y="0" w="200" h="119"/>
-    <sprite n="second_phon_communications_5" x="347" y="117" w="150" h="68"/>
-    <sprite n="second_phon_communications_5_noVent_me" x="0" y="119" w="91" h="200"/>
-    <sprite n="second_phon_crack" x="200" y="0" w="147" h="132"/>
-    <sprite n="second_phon_grill_with_fan_2" x="91" y="237" w="66" h="64"/>
-    <sprite n="second_phon_index2" x="268" y="232" w="62" h="30"/>
-    <sprite n="second_phon_index3" x="457" y="185" w="54" h="50"/>
-    <sprite n="second_phon_ladder" x="226" y="132" w="42" h="109"/>
-    <sprite n="second_phon_plate1" x="268" y="182" w="71" h="50"/>
-    <sprite n="second_phon_plate2" x="268" y="132" w="75" h="50"/>
-    <sprite n="second_phon_tank" x="339" y="215" w="44" h="54"/>
-    <sprite n="second_phon_ventilation_grille" x="161" y="235" w="56" h="50"/>
+<TextureAtlas imagePath="sheet02.png" width="509" height="325">
+    <sprite n="second_phon_communications" x="353" y="2" w="154" h="117"/>
+    <sprite n="second_phon_communications2" x="167" y="136" w="65" h="103"/>
+    <sprite n="second_phon_communications_2" x="95" y="123" w="70" h="118"/>
+    <sprite n="second_phon_communications_2_hor_me" x="324" y="243" w="118" h="30"/>
+    <sprite n="second_phon_communications_2a" x="2" y="2" w="200" h="119"/>
+    <sprite n="second_phon_communications_5" x="353" y="121" w="150" h="68"/>
+    <sprite n="second_phon_communications_5_noVent_me" x="2" y="123" w="91" h="200"/>
+    <sprite n="second_phon_crack" x="204" y="2" w="147" h="132"/>
+    <sprite n="second_phon_grill_with_fan_2" x="95" y="243" w="66" h="64"/>
+    <sprite n="second_phon_index2" x="163" y="293" w="62" h="30"/>
+    <sprite n="second_phon_index3" x="278" y="188" w="54" h="50"/>
+    <sprite n="second_phon_ladder" x="234" y="136" w="42" h="109"/>
+    <sprite n="second_phon_plate1" x="278" y="136" w="71" h="50"/>
+    <sprite n="second_phon_plate2" x="334" y="191" w="75" h="50"/>
+    <sprite n="second_phon_tank" x="278" y="240" w="44" h="54"/>
+    <sprite n="second_phon_ventilation_grille" x="167" y="241" w="56" h="50"/>
 </TextureAtlas>
