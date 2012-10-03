@@ -19,13 +19,19 @@ namespace Lunohod.Objects
 		public int FrameCount;
         [XmlAttribute]
         public int CurrentFrame;
-		
+
+        private System.Drawing.RectangleF? originalSourceRectangle;
+
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
 
-            if (this.FrameBounds.Width * FrameCount > this.texture.Image.Width)
+            int textureWidth = this.SourceRectangle.HasValue ? (int)this.SourceRectangle.Value.Width : this.texture.Image.Width;
+
+            if (this.FrameBounds.Width * FrameCount > textureWidth)
                 throw new InvalidOperationException("Specified FrameCount exceeds the Width of the texture");
+
+            this.originalSourceRectangle = this.SourceRectangle;
 		}
 		
 		public override void Update(UpdateParameters p)
@@ -43,6 +49,9 @@ namespace Lunohod.Objects
 			
 			this.tmpBounds.Width = this.FrameBounds.Width;
 			this.tmpBounds.Height = this.FrameBounds.Height;
+
+            if (originalSourceRectangle.HasValue)
+                this.tmpBounds.Offset(originalSourceRectangle.Value.X, originalSourceRectangle.Value.Y);
 			
 			this.SourceRectangle = this.tmpBounds;
 			

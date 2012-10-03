@@ -4,5 +4,5 @@ rem %2 - output name
 
 echo building %2
 
-dir %1 /B /S > dir.tmp
-..\..\ThirtParty\SpriteSheetPacker\sspack.exe /image:%2.png /map:%2.txt /il:dir.tmp /pad:0
+
+"C:\Program Files (x86)\CodeAndWeb\TexturePacker\bin\TexturePacker.exe" --allow-free-size --max-size 1024 --data %2.xml --format xml --algorithm MaxRects --maxrects-heuristics area --shape-padding 0 --border-padding 0 --padding 0 --no-trim --disable-rotation --sheet %2.png %1
