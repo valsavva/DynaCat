@@ -12,7 +12,7 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_03n" Source="under_land_BG_03n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_fork_2" Source="laz_fork_2" />
         <Texture Id="txr_laz_turn_02n" Source="laz_turn_02n" />
         <Texture Id="txr_laz_turn_01n" Source="laz_turn_01n" />
@@ -40,7 +40,7 @@
         <Block Id="blk7" Bounds="320, 64, 80, 180" Edges="Stick" TraceId="image3391"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_03n" Bounds="0, 0, 480, 320" TraceId="image3141-1"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3141-1"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_fork_2" Bounds="119, 3, 122, 92" TraceId="image3153"/>

@@ -22,7 +22,7 @@
         <Texture Id="txr_grass_04" Source="grass_04" />
         <Texture Id="txr_stone_07" Source="stone_07" />
         <Texture Id="txr_stone_03" Source="stone_03" />
-        <Texture Id="txr_under_land_BG_03n" Source="under_land_BG_03n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_vert_03n" Source="laz_vert_03n" />
         <Texture Id="txr_laz_hor_03n" Source="laz_hor_03n" />
         <Texture Id="txr_laz_turn_01n" Source="laz_turn_01n" />
@@ -163,7 +163,7 @@
         <Image Id="dfltMask28" TextureId="txr_stone_03" Bounds="100, 34, 11, 8" Stretch="true" TraceId="image4267"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask29" TextureId="txr_under_land_BG_03n" Bounds="0, 40, 480, 320" TraceId="image3069"/>
+        <Image Id="dfltMask29" TextureId="txr_under_land_BG_01n" Bounds="0, 40, 480, 320" FlipEffects="Horizontally" TraceId="image3069"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
         <Image Id="dfltMask30" TextureId="txr_laz_vert_03n" Bounds="37, 37, 46, 36" TraceId="image4193"/>

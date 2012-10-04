@@ -8,7 +8,7 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_stone_03n" Source="stone_03n" />
         <Texture Id="txr_stone_01n" Source="stone_01n" />
         <Texture Id="txr_stone_02n" Source="stone_02n" />
@@ -39,7 +39,7 @@
         <Block Id="blk5" Bounds="-8, 102, 398, 120" Edges="Stick" TraceId="image3185"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3076-1"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" FlipEffects="Horizontally" TraceId="image3076-1"/>
     </Layer>
     <Layer Id="secondbckg" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_stone_03n" Bounds="74, 284, 15, 16" TraceId="image3326"/>

@@ -10,7 +10,7 @@
     <Include File="ClassMagneticRadarLeft.xml" />
     <Include File="ClassMagneticRadarRight.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_fork_2" Source="laz_fork_2" />
         <Texture Id="txr_laz_fork_3" Source="laz_fork_3" />
         <Texture Id="txr_laz_vert_02n" Source="laz_vert_02n" />
@@ -36,13 +36,13 @@
         <Block Id="blk9" Bounds="140, -244, 480, 300" Edges="Stick" TraceId="image3229"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3090"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3090"/>
     </Layer>
     <Layer Id="laz2" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_fork_2" Bounds="300, 26, 122, 92" TraceId="image3102"/>
-        <Image Id="dfltMask3" TextureId="txr_under_land_BG_02n" Bounds="386, 0, 480, 320" TraceId="image3125"/>
+        <Image Id="dfltMask3" TextureId="txr_under_land_BG_01n" Bounds="386, 0, 480, 320" TraceId="image3125"/>
         <Image Id="dfltMask4" TextureId="txr_laz_fork_2" Bounds="182, 298, 122, 92" Rotation="180" Stretch="true" TraceId="image3117"/>
-        <Image Id="dfltMask5" TextureId="txr_under_land_BG_02n" Bounds="-397, 0, 480, 320" TraceId="image3090-1"/>
+        <Image Id="dfltMask5" TextureId="txr_under_land_BG_01n" Bounds="-397, 0, 480, 320" TraceId="image3090-1"/>
         <Image Id="dfltMask6" TextureId="txr_laz_fork_3" Bounds="60, 26, 122, 92" TraceId="image3113-1"/>
         <Image Id="dfltMask7" TextureId="txr_laz_fork_3" Bounds="422, 298, 122, 92" Rotation="180" Stretch="true" TraceId="image3119"/>
         <Image Id="dfltMask8" TextureId="txr_laz_vert_02n" Bounds="98, 114, 46, 36" TraceId="image3129"/>
