@@ -3,7 +3,9 @@
 <!-- source: D:\Lunohod\Levels\Lvl_Labirint_v3_Box\Lvl_Labirint_v3_Box.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Labirint_v3_Box" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -217,7 +219,7 @@
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=2" Bounds="410, 263, 28, 19" TraceId="image3501"/>
         <Food Id="fd4" Class="clsFood" ClassParams="@fishType=6" Bounds="300, 197, 22, 27" TraceId="image3516"/>
         <!-- HAND EDIT >>> -->
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="376, 264, 22, 23" TraceId="image3318"/>
+        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="376, 264, 22, 23" TraceId="image3318"/>
         <Do Action="enm1:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm1:IntersectHero and not enm1_setDying.InProgress">
             <SequenceSet InProgress="true" RepeatCount="0">
@@ -230,7 +232,7 @@
             </SequenceSet>
         </BoolTrigger>
         
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="418, 229, 22, 23" TraceId="image3329"/>
+        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="418, 229, 22, 23" TraceId="image3329"/>
         <Do Action="enm2:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm2:IntersectHero and not enm2_setDying.InProgress">
             <SequenceSet InProgress="true" RepeatCount="0">
@@ -243,7 +245,7 @@
             </SequenceSet>
         </BoolTrigger>
         <!-- HAND EDIT <<< -->
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="221, 175, 24, 25" TraceId="image4296"/>
+        <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="221, 175, 24, 25" TraceId="image4296"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

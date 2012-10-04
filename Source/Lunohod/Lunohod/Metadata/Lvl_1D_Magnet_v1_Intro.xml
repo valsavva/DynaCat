@@ -4,7 +4,8 @@
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Magnet_v1_Intro" Bounds="0, 0, 480, 320">
     <Include File="ClassMagneticRadarLeft.xml" />
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -87,11 +88,11 @@
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Group Id="enm1" Class="clsMagneticRadarLeft" Bounds="350, 131, 52, 51" TraceId="image3058"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=6" Bounds="111, 140, 22, 27" TraceId="image3069"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="322, 143, 22, 23" TraceId="image3129-1"/>
+        <Enemy Id="enm2" Class="clsEnemyRat1" Bounds="322, 143, 22, 23" TraceId="image3129-1"/>
         <Do Action="enm3:+Walker" InProgress="true" RepeatCount="1"/>
         <Group Id="grp_g3149">
             <NumAnimation Id="anm1" From="0" To="-145" Target="X" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3086"/>
-            <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="293, 143, 22, 23" TraceId="image3140-7"/>
+            <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="293, 143, 22, 23" TraceId="image3140-7"/>
         </Group>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">

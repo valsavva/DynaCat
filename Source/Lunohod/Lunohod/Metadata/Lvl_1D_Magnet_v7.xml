@@ -5,7 +5,7 @@
     <Include File="ClassOil.xml" />
     <Include File="ClassOilSpot.xml" />
     <Include File="ClassBarrel.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -149,10 +149,10 @@
         </Block>
     </Layer>
     <Layer Id="enemies" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="82, 150, 24, 25" TraceId="image3387"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="203, 150, 24, 25" TraceId="image3389"/>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="323, 150, 24, 25" TraceId="image3391"/>
-        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="412, 150, 24, 25" TraceId="image3384"/>
+        <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="82, 150, 24, 25" TraceId="image3387"/>
+        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="203, 150, 24, 25" TraceId="image3389"/>
+        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="323, 150, 24, 25" TraceId="image3391"/>
+        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="412, 150, 24, 25" TraceId="image3384"/>
     </Layer>
     <Layer Id="food" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=4" Bounds="163, 273, 28, 22" TraceId="image3655"/>

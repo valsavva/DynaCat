@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Enemies_v3\Lvl_1D_Enemies_v3.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Enemies_v3" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -117,12 +117,12 @@
         <Food Id="fd5" Class="clsFood" ClassParams="@fishType=4" Bounds="385, 218, 28, 22" TraceId="image3316"/>
         <Food Id="fd6" Class="clsFood" ClassParams="@fishType=4" Bounds="353, 228, 28, 22" TraceId="image3283"/>
         <Food Id="fd7" Class="clsFood" ClassParams="@fishType=7" Bounds="116, 223, 32, 30" TraceId="image3294"/>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="168, 24, 24, 25" TraceId="image3176"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="275, 25, 24, 25" TraceId="image3178"/>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="386, 26, 24, 25" TraceId="image3180"/>
-        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="385, 275, 24, 25" TraceId="image3184"/>
-        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="276, 273, 24, 25" TraceId="image3187"/>
-        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="169, 275, 24, 25" TraceId="image3173"/>
+        <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="168, 24, 24, 25" TraceId="image3176"/>
+        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="275, 25, 24, 25" TraceId="image3178"/>
+        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="386, 26, 24, 25" TraceId="image3180"/>
+        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="385, 275, 24, 25" TraceId="image3184"/>
+        <Enemy Id="enm5" Class="clsEnemyRat4" Bounds="276, 273, 24, 25" TraceId="image3187"/>
+        <Enemy Id="enm6" Class="clsEnemyRat4" Bounds="169, 275, 24, 25" TraceId="image3173"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

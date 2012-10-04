@@ -5,7 +5,8 @@
     <Include File="ClassOil.xml" />
     <Include File="ClassOilSpot.xml" />
     <Include File="ClassBarrel.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
@@ -145,8 +146,8 @@
         <Image Id="dfltMask62" TextureId="txr_butter_04" Bounds="390, 131, 28, 19" TraceId="image3304"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="234, 53, 22, 23" TraceId="image3129"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="351, 24, 22, 23" TraceId="image3240"/>
+        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="234, 53, 22, 23" TraceId="image3129"/>
+        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="351, 24, 22, 23" TraceId="image3240"/>
         <Block Id="blk9" Class="clsWoodenBox" Bounds="385, 22, 30, 30" Edges="Stick" TraceId="image3296">
             <Image TextureId="txr_box_old_1" />
         </Block>

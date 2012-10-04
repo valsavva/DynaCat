@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd_v8_Zmeyka\Lvl_Poezd_v8_Zmeyka.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_v8_Zmeyka" Bounds="0, 0, 480, 320">
     
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassTower.xml" />
@@ -99,11 +99,11 @@
         <Image Id="dfltMask64" TextureId="txr_railwayHor3" Bounds="120, 180, 40, 40" TraceId="image3464"/>
     </Layer>
     <Layer Id="enemies" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="208, 183, 24, 25" TraceId="image3272"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="148, 143, 24, 25" TraceId="image3281"/>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="378, 266, 24, 25" TraceId="image3287"/>
-        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="350, 104, 24, 25" TraceId="image3293"/>
-        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="60, 29, 24, 25" TraceId="image3297"/>
+        <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="208, 183, 24, 25" TraceId="image3272"/>
+        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="148, 143, 24, 25" TraceId="image3281"/>
+        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="378, 266, 24, 25" TraceId="image3287"/>
+        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="350, 104, 24, 25" TraceId="image3293"/>
+        <Enemy Id="enm5" Class="clsEnemyRat4" Bounds="60, 29, 24, 25" TraceId="image3297"/>
     </Layer>
     <Layer Id="food" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=5" Bounds="183, 79, 27, 20" TraceId="image3133"/>

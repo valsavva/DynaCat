@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Nozhnicy\Lvl_Nozhnicy.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Nozhnicy" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -72,26 +72,26 @@
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <!-- HAND EDIT >>> -->
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="334, 35, 24, 25" TraceId="image3013"/>
+        <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="334, 35, 24, 25" TraceId="image3013"/>
         <Do Action="enm1:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm1:IntersectHero and not enm1_setDying.InProgress">
             <NumAnimation Smoothing="Flat" Id="anm1" From="0" To="200" Target="enm1.Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3030"/>
         </BoolTrigger>
 
 
-            <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="174, 35, 24, 25" TraceId="image3018"/>
+            <Enemy Id="enm2" Class="clsEnemyRat3" Bounds="174, 35, 24, 25" TraceId="image3018"/>
             <Do Action="enm2:+Walker" InProgress="true" RepeatCount="1"/>
             <BoolTrigger Condition="not enm2:IntersectHero and not enm2_setDying.InProgress">
                 <NumAnimation Smoothing="Flat" Id="anm2" From="0" To="200" Target="enm2.Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3033"/>
             </BoolTrigger>
         
-            <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="174, 235, 24, 25" TraceId="image3020"/>
+            <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="174, 235, 24, 25" TraceId="image3020"/>
         <Do Action="enm3:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm3:IntersectHero and not enm3_setDying.InProgress">
             <NumAnimation Smoothing="Flat" Id="anm3" From="0" To="-200" Target="enm3.Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3043"/>
         </BoolTrigger>
         
-        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="334, 235, 24, 25" TraceId="image3016"/>
+        <Enemy Id="enm4" Class="clsEnemyRat3" Bounds="334, 235, 24, 25" TraceId="image3016"/>
         <Do Action="enm4:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm4:IntersectHero and not enm4_setDying.InProgress">
             <NumAnimation Smoothing="Flat" Id="anm4" From="0" To="-200" Target="enm4.Y" Duration="2" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3046"/>

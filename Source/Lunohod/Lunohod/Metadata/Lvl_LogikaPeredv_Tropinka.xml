@@ -3,7 +3,8 @@
 <!-- source: D:\Lunohod\Levels\Lvl_LogikaPeredv_Tropinka\Lvl_LogikaPeredv_Tropinka.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_LogikaPeredv_Tropinka" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
@@ -134,8 +135,8 @@
         <Block Id="blk12" Class="clsWoodenBox" Bounds="271, 268, 30, 30" Edges="Stick" TraceId="image3283">
             <Image TextureId="txr_box_old_2" />
         </Block>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="325, 33, 24, 25" TraceId="image3155"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="240, 202, 24, 25" TraceId="image3166"/>
+        <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="325, 33, 24, 25" TraceId="image3155"/>
+        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="240, 202, 24, 25" TraceId="image3166"/>
         <Block Id="blk13" Class="clsWoodenBox" Bounds="171, 268, 30, 30" Edges="Stick" TraceId="image3169">
             <Image TextureId="txr_box_old_3" />
         </Block>
