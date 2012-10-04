@@ -47,6 +47,12 @@
         <Texture Id="txrFishAnmType_5" Source="fish_spr_42x38_type05" />
         <Texture Id="txrFishAnmType_6" Source="fish_spr_42x38_type06" />
         <Texture Id="txrFishAnmType_7" Source="fish_spr_42x38_type07" />
+
+        <Texture Id="txrEnemyRat1Sheet" Source="BM_Ws" />
+        <Texture Id="txrEnemyRat2Sheet" Source="BM_Ms" />
+        <Texture Id="txrEnemyRat3Sheet" Source="BM_F" />
+        <Texture Id="txrEnemyRat4Sheet" Source="BM_K" />
+        <Texture Id="txrEnemyRat7Sheet" Source="BM_Gb" />
         
         <!-- rat 1 -->
         <Texture Id="txrEnemyRatDefaultType_1" Source="BM_Ws_pose_static" />
