@@ -6,18 +6,10 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_BM_Gb" Source="BM_Gb" />
-        <Texture Id="txr_BM_K" Source="BM_K" />
-        <Texture Id="txr_BM_Ms" Source="BM_Ms" />
-        <Texture Id="txr_BM_Ws" Source="BM_Ws" />
-        <Texture Id="txr_BM_F" Source="BM_F" />
+        <Texture Id="txr_BM_death" Source="BM_death" />
     </Resources>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_BM_Gb" Bounds="-80, -17, 478, 310" TraceId="image3027"/>
-        <Image Id="dfltMask2" TextureId="txr_BM_K" Bounds="221, -73, 485, 352" TraceId="image3038-1"/>
-        <Image Id="dfltMask3" TextureId="txr_BM_Ms" Bounds="44, -207, 250, 596" TraceId="image3049-7"/>
-        <Image Id="dfltMask4" TextureId="txr_BM_Ws" Bounds="51, -305, 122, 617" TraceId="image3060"/>
-        <Image Id="dfltMask5" TextureId="txr_BM_F" Bounds="64, 4, 221, 354" TraceId="image3071"/>
+        <Image Id="dfltMask1" TextureId="txr_BM_death" Bounds="200, 55, 98, 195" TraceId="image3038-1"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -27,4 +19,4 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=0 Enemy=0 Block=0 DesignImage=5 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=0 Enemy=0 Block=0 DesignImage=1 Animation=0 Teleport Animations=0 FoodPack=0 Oil Barrel=0 dealy sec=0 -->

@@ -10,7 +10,6 @@
 
     <Resources RootFolder="Sound">
         <SoundFile Id="sndButtonTapped" Source="sfxClick"/>
-        <SoundFile Id="sndEnemyRatDying" Source="skeletonFX_enemy_dead_scream_1"/>
 	</Resources>
 	
     <Resources RootFolder="Textures">
@@ -58,7 +57,7 @@
         <Texture Id="txrEnemyRat4Sheet" Source="BM_K" />
         <Texture Id="txrEnemyRat7Sheet" Source="BM_Gb" />
         
-        <Texture Id="txrEnemyRatDyingWithAsh" Source="BM_death_spr_80x80x9" />
+        <Texture Id="txrEnemyRatDyingWithAsh" Source="BM_death" />
                 
         <Texture Id="txrBlowFlash1" Source="blow_flash_1_spr_57x56x3" />
         <Texture Id="txrBlowFlash2" Source="blow_flash_2_spr_64x64x3" />

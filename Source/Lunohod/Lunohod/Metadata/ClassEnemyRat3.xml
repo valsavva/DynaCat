@@ -60,7 +60,7 @@
             
             <!-- dying -->
             <Group Id="this_Smoke" Class="clsSmoke" Location="-4,-2" ClassParams="@type=4" />
-            <Sprite Id="this_sprDyingWithAsh" TextureId="txrEnemyRatDyingWithAsh" Bounds="-32,-42,80,80" FrameBounds="0,0,80,80" FrameCount="9" Opacity="0"/>
+            <Sprite Id="this_sprDyingWithAsh" TextureId="txrEnemyRatDyingWithAsh" Bounds="-18,-7,49,39" FrameBounds="0,0,49,39" FrameCount="2" Opacity="0"/>
 
             <BoolTrigger Condition="this:BoomClose" 
                          EnterAction="hero.AddScore(this.Points);
