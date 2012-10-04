@@ -12,7 +12,7 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_bones_03n" Source="bones_03n" />
         <Texture Id="txr_bones_04n" Source="bones_04n" />
         <Texture Id="txr_bones_05n" Source="bones_05n" />
@@ -48,7 +48,7 @@
         <Block Id="blk8" Bounds="-16, 0, 38, 357" Edges="Stick" TraceId="image3230"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3100"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3100"/>
     </Layer>
     <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_bones_03n" Bounds="23, 305, 15, 12" TraceId="image3490"/>
