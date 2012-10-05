@@ -14,5 +14,5 @@ oH => sprite's original height (only available if trimmed)
 r => 'y' only set if sprite is rotated
 -->
 <TextureAtlas imagePath="sheet01.png" width="1" height="1">
-    <sprite n="blank" x="0" y="0" w="1" h="1"/>
+    <sprite n="mlank" x="0" y="0" w="1" h="1"/>
 </TextureAtlas>

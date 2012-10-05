@@ -6,10 +6,10 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_BM_death" Source="BM_death" />
+        <Texture Id="txr_refrigerator" Source="refrigerator" />
     </Resources>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_BM_death" Bounds="200, 55, 98, 195" TraceId="image3038-1"/>
+        <Image Id="dfltMask1" TextureId="txr_refrigerator" Bounds="106, -21, 246, 339" TraceId="image3028"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

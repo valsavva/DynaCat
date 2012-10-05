@@ -23,12 +23,9 @@
         <Texture Id="txrSmoke_4" Source="smoke_04"/>
         <Texture Id="txrSmoke_5" Source="smoke_05"/>
 
-        <Texture Id="txrExitStatic" Source="refrigerator_pose_01_static"/>
-        <Texture Id="txrExitReady" Source="refrigerator_pose_02_static"/>
-        <Texture Id="txrExitFlight" Source="refrigerator_pose_03_flight"/>
-        <Texture Id="txrExitTransform" Source="refrigerator_spr_80x111x11"/>
         <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
         
+        <Texture Id="txrRefrigerator" Source="refrigerator"/>
         <!-- fishes -->
         
         <Texture Id="txrFishBones" Source="fish_bone_sht_33x20x3" />
