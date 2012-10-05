@@ -1,7 +1,7 @@
 <Include>
 	
     <Resources RootFolder="Textures">
-        <Texture Id="txrElectricityWave" Source="electric_wave_spr_264x28x3"/>
+        <Texture Id="txrElectricityWave" Source="electric_wave"/>
     </Resources>
 	<Resources RootFolder="Sound">
 		<SoundFile Id="electric_spark_1" Source="sfxElectricSpark1"/>
@@ -43,7 +43,7 @@
             </ParallelSet>
             <!-- default -->
             <Sprite Id="this_mainView" TextureId="txrElectricityWave" Location="-1,0" FrameBounds="0,0,264,28">
-                <NumAnimation From="0" To="2" Duration="0.3" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
+                <NumAnimation From="0" To="1" Duration="0.2" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
             </Sprite>
 
             <SequenceSet InProgress="true" RepeatCount="0">

@@ -10,9 +10,6 @@
         <Texture Id="txrFrame" Source="scr_credits_frame" />
         <Texture Id="txrPanel" Source="scr_credits_panel" />
         <Font Id="Splash14Font" Source="Splash14Font" />
-    </Resources>
-    
-    <Resources RootFolder="Textures">
         <Texture Id="txrLogo" Source="nomnomlogo_round" />
     </Resources>
   

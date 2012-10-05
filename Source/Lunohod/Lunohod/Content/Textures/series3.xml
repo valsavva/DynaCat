@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:d7e1953970899869b27c3174e89d3f62$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="series3.png" width="1024" height="512">
+    <sprite n="TeleportEntryDown" x="282" y="475" w="56" h="24"/>
+    <sprite n="TeleportEntryLeft" x="414" y="353" w="24" h="56"/>
+    <sprite n="TeleportEntryRight" x="151" y="174" w="24" h="56"/>
+    <sprite n="TeleportEntryUp" x="224" y="475" w="56" h="24"/>
+    <sprite n="TeleportKoleno" x="350" y="71" w="56" h="56"/>
+    <sprite n="TeleportTubeHor" x="204" y="324" w="40" h="56"/>
+    <sprite n="TeleportTubeHorHero" x="294" y="275" w="38" h="56"/>
+    <sprite n="TeleportTubeVert" x="84" y="279" w="56" h="40"/>
+    <sprite n="TeleportTubeVertHero" x="142" y="279" w="56" h="38"/>
+    <sprite n="bckg_brick" x="2" y="2" w="80" h="320"/>
+    <sprite n="box_30x30_004" x="305" y="183" w="30" h="30"/>
+    <sprite n="box_30x30_005" x="273" y="183" w="30" h="30"/>
+    <sprite n="box_30x30_008" x="241" y="192" w="30" h="30"/>
+    <sprite n="box_30x30_009" x="209" y="192" w="30" h="30"/>
+    <sprite n="box_30x30_017" x="177" y="192" w="30" h="30"/>
+    <sprite n="box_30x30_023" x="500" y="475" w="30" h="30"/>
+    <sprite n="box_30x30_024" x="468" y="475" w="30" h="30"/>
+    <sprite n="box_30x30_025" x="436" y="475" w="30" h="30"/>
+    <sprite n="box_b_003" x="372" y="354" w="40" h="40"/>
+    <sprite n="box_b_004" x="377" y="235" w="40" h="40"/>
+    <sprite n="box_b_006" x="330" y="397" w="40" h="40"/>
+    <sprite n="box_b_007" x="330" y="355" w="40" h="40"/>
+    <sprite n="box_b_009" x="288" y="401" w="40" h="40"/>
+    <sprite n="box_b_012" x="288" y="359" w="40" h="40"/>
+    <sprite n="box_b_013" x="246" y="401" w="40" h="40"/>
+    <sprite n="box_b_016" x="246" y="359" w="40" h="40"/>
+    <sprite n="box_b_017" x="204" y="382" w="40" h="40"/>
+    <sprite n="box_old_2" x="377" y="277" w="30" h="30"/>
+    <sprite n="box_old_3" x="337" y="183" w="30" h="30"/>
+    <sprite n="circular_saw_50" x="426" y="140" w="50" h="50"/>
+    <sprite n="container_steel_1" x="404" y="475" w="30" h="30"/>
+    <sprite n="container_steel_1_b" x="372" y="475" w="30" h="30"/>
+    <sprite n="container_steel_2" x="340" y="475" w="30" h="30"/>
+    <sprite n="container_steel_2_big" x="84" y="72" w="100" h="100"/>
+    <sprite n="detal_2" x="151" y="232" w="40" h="40"/>
+    <sprite n="detal_3" x="419" y="235" w="40" h="40"/>
+    <sprite n="detal_me1" x="431" y="277" w="20" h="26"/>
+    <sprite n="detal_me2" x="350" y="332" w="26" h="20"/>
+    <sprite n="electric_spark_spr_39x35x4" x="2" y="475" w="156" h="35"/>
+    <sprite n="electric_wave" x="2" y="445" w="528" h="28"/>
+    <sprite n="farm_a001" x="409" y="277" w="20" h="26"/>
+    <sprite n="farm_a002" x="334" y="310" w="26" h="20"/>
+    <sprite n="graffiti_dynacat" x="236" y="2" w="119" h="67"/>
+    <sprite n="second_phon_communications" x="532" y="2" w="154" h="117"/>
+    <sprite n="second_phon_communications2" x="84" y="174" w="65" h="103"/>
+    <sprite n="second_phon_communications_2" x="186" y="72" w="70" h="118"/>
+    <sprite n="second_phon_communications_2a" x="2" y="324" w="200" h="119"/>
+    <sprite n="second_phon_communications_5" x="84" y="2" w="150" h="68"/>
+    <sprite n="second_phon_communications_5_noVent_me" x="254" y="275" w="38" h="82"/>
+    <sprite n="second_phon_crack" x="200" y="275" w="52" h="47"/>
+    <sprite n="second_phon_grill_with_fan_2" x="357" y="2" w="66" h="64"/>
+    <sprite n="second_phon_index2" x="160" y="475" w="62" h="30"/>
+    <sprite n="second_phon_index3" x="425" y="2" w="54" h="50"/>
+    <sprite n="second_phon_ladder" x="482" y="58" w="42" h="109"/>
+    <sprite n="second_phon_plate1" x="258" y="131" w="71" h="50"/>
+    <sprite n="second_phon_tank" x="481" y="2" w="44" h="54"/>
+    <sprite n="second_phon_ventilation_grille" x="331" y="131" w="56" h="50"/>
+    <sprite n="texture_brick_1" x="418" y="305" w="26" h="20"/>
+    <sprite n="texture_brick_2" x="322" y="333" w="26" h="20"/>
+    <sprite n="texture_brick_3" x="406" y="331" w="26" h="20"/>
+    <sprite n="texture_brick_4" x="390" y="309" w="26" h="20"/>
+    <sprite n="texture_brick_5" x="378" y="332" w="26" h="20"/>
+    <sprite n="texture_brick_6" x="294" y="333" w="26" h="20"/>
+    <sprite n="texture_brick_clean" x="362" y="310" w="26" h="20"/>
+    <sprite n="traces_group" x="440" y="327" w="25" h="51"/>
+    <sprite n="wire_001" x="408" y="68" w="72" h="70"/>
+    <sprite n="wire_002" x="193" y="224" w="146" h="49"/>
+    <sprite n="wire_003" x="258" y="71" w="90" h="58"/>
+    <sprite n="wire_004" x="389" y="140" w="35" h="93"/>
+    <sprite n="wire_005" x="341" y="215" w="34" h="93"/>
+    <sprite n="wire_current" x="271" y="501" w="45" h="8"/>
+    <sprite n="wire_currentLR" x="224" y="501" w="45" h="8"/>
+</TextureAtlas>

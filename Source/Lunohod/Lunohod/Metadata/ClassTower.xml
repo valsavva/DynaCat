@@ -2,7 +2,7 @@
     <Include File="CommonLevelFunctionality.xml" />
 
     <Resources RootFolder="Textures">
-        <Texture Id="spr_towerLedOn" Source="Tow_trans_SignalSprite_60x60x4"/>
+        <Texture Id="spr_towerLedOn" Source="Tow_trans_SignalSprite"/>
         <Texture Id="txr_towerLedOff" Source="Tow_trans_off"/>
         <Texture Id="txrTowerAlarmGlow" Source="ALARM_sparks"/>
     </Resources>
@@ -30,7 +30,7 @@
             </BoolTrigger>
             
             <BoolTrigger Condition="this:LedOn" Group="this_sttTower">
-                <Sprite Id="this_sprTowerLedOn" TextureId="spr_towerLedOn" Bounds="0, 0, 30, 30" FrameBounds="0,0,60,60" FrameCount="4"/>                    
+                <Sprite Id="this_sprTowerLedOn" TextureId="spr_towerLedOn" Bounds="0, 0, 30, 30" FrameBounds="0,0,30,30" FrameCount="4"/>                    
             </BoolTrigger>
 
             <BoolTrigger Group="this_sttTower">

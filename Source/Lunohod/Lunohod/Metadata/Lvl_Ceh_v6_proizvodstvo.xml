@@ -12,32 +12,39 @@
         <Group>
 
             <!-- Exit animation-->
-            <Image Id="this_imgExitStatic" TextureId="txrExitStatic" Location="-23,-56" />
-            <Image Id="this_imgExitFlight" TextureId="txrExitFlight" Location="-23,-56" Enabled="false"/>
-            <Image Id="this_imgExitReady" TextureId="txrExitReady" Location="-23,-56" Enabled="false"/>
-            <Sound Id="this_sndExitFlight" FileId="sfExitEndLevel" Volume="0.6" Pitch="0" Pan="0" InProfress="true"/>
+
+            <Sprite Id="this_sprRefrigerator" TextureId="txrRefrigerator" Bounds="-24,-57,82,113" FrameBounds="0,0,82,113" FrameCount="3" CurrentFrame="0" RotationCenter="44,105"/>
+
             <Sprite Id="this_sprExitFlightFire" TextureId="txrExitFlightFire" Bounds="10,41,16,34" FrameBounds="0,0,16,34" Enabled="false">
                 <NumAnimation From="0" To="3" Duration="0.15" Autoreverse="true" Target="this_sprExitFlightFire.CurrentFrame" InProgress="true"/>
             </Sprite>
-            <Sprite Id="this_sprExitTransform" TextureId="txrExitTransform" Bounds="-23,-56,80,111" FrameBounds="0,0,80,111" Enabled="false" />
 
-            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit;this:+StartFlight"/>
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" EnterAction="this_setExit.Start();hero:+sttExit;this:+StartFlight">
+                <NumTrigger Property="hero.Health" Compare="E" Value="100">
+                    <BoolTrigger Condition="(anmTimeBonus.InProgress) and (not SFX:hasBadExplosion) and hero:HasPoints" EnterAction="SFX:Laugh"/>
+                </NumTrigger>
+            </IntersectionTrigger>
 
             <SequenceSet Id="this_setExit" InProgress="false">
                 <Do Action="@heroDepartPointX=hero.X;
                             @heroDepartPointY=hero.Y;                             
                             @heroDestPointX=exit.X;                             
                             @heroDestPointY=exit.Y+10"/>
-                <Delay Duration="0.2"/>
-                <Do Action="this_sprExitTransform.Enable();this_imgExitStatic.Disable();this_sndExitFlight.Start()"/>
-                <NumAnimation From="0" To="10" Duration="1.375" Autoreverse="false" Target="this_sprExitTransform.CurrentFrame" InProgress="true" RepeatCount="1"/>
+                <!--                <Delay Duration="0.8"/>-->
+                <Do Action="SFX:EndLevel"/>
+                <Delay Duration="0.12"/>
+                <NumAnimation From="0" To="2" Duration="0.375" Autoreverse="false" Target="this_sprRefrigerator.CurrentFrame" InProgress="true" RepeatCount="1"/>
+                <Do Action="this_sprRefrigerator.CurrentFrame=0" />
+                <NumAnimation From="-5" To="2" Duration="0.375" Autoreverse="false" Target="this_sprRefrigerator.Rotation" InProgress="true" RepeatCount="1"/>
+                <Do Action="this_sprRefrigerator.Rotation=0" />
+                <NumAnimation From="3" To="7" Duration="0.625" Autoreverse="false" Target="this_sprRefrigerator.CurrentFrame" InProgress="true" RepeatCount="1"/>
                 <Delay Duration="0.425"/>
-                <Do Action="this_sprExitTransform.Disable();this_imgExitReady.Enable()"/>
+                <Do Action="this_sprRefrigerator.CurrentFrame=7"/>
                 <ParallelSet>
                     <Do Action="this.Depth=0.1;this_sprExitFlightFire.Enable()"/>
                     <SequenceSet RepeatCount="1">
                         <Delay Duration="1" />
-                        <Do Action="this_imgExitReady.Disable();this_imgExitFlight.Enable()" />
+                        <Do Action="this_sprRefrigerator.CurrentFrame=8" />
                     </SequenceSet>
                     <NumAnimation Target="this.X,this.Y,this.Rotation" Duration="2.5" Autoreverse="false" IsDelta="true" RepeatCount="1" Fill="End">
                         <KeyFrame Time="0" Value="0,0,0" Smoothing="Smooth"/>
