@@ -211,6 +211,7 @@ namespace Microsoft.Xna.Framework.Audio
 			//	assert(maxBufferSize == dataBufferSize);
 
 			// We do not need the ExtAudioFile so we will set it to null
+			extFile.Dispose();
 			extFile = null;
 			return pcmData;
 

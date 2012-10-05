@@ -293,8 +293,12 @@ namespace Microsoft.Xna.Framework.Graphics
 			{
 				var small = image.Scale (new SizeF (width, height));
 				theTexture = new ESImage(small, graphicsDevice.PreferedFilter);
+
+				small.Dispose();
 			}
-			
+
+			image.Dispose();
+
 			Texture2D result = new Texture2D(theTexture);
 			// result.Name = Path.GetFileNameWithoutExtension(filename);
 			result.Name = filename;

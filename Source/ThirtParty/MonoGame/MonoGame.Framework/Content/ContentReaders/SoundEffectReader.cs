@@ -82,26 +82,29 @@ namespace Microsoft.Xna.Framework.Content
 			int loopLength = input.ReadInt32();
 			int num = input.ReadInt32();
 			
-			MemoryStream mStream = new MemoryStream(20+header.Length+8+data.Length);
-			BinaryWriter writer = new BinaryWriter(mStream);
-			
-			writer.Write("RIFF".ToCharArray());
-			writer.Write((int)(20+header.Length+data.Length));
-			writer.Write("WAVE".ToCharArray());
-			
-			//header can be written as-is
-			writer.Write("fmt ".ToCharArray());
-			writer.Write(header.Length);
-			writer.Write(header);
-			
-			writer.Write("data".ToCharArray());
-			writer.Write((int)data.Length);
-			writer.Write(data);
-			
-			writer.Close();
-			mStream.Close();
-			
-			return new SoundEffect(input.AssetName, mStream.ToArray());
+			using (MemoryStream mStream = new MemoryStream(20+header.Length+8+data.Length))
+			{
+				using (BinaryWriter writer = new BinaryWriter(mStream))
+				{
+					writer.Write("RIFF".ToCharArray());
+					writer.Write((int)(20+header.Length+data.Length));
+					writer.Write("WAVE".ToCharArray());
+					
+					//header can be written as-is
+					writer.Write("fmt ".ToCharArray());
+					writer.Write(header.Length);
+					writer.Write(header);
+					
+					writer.Write("data".ToCharArray());
+					writer.Write((int)data.Length);
+					writer.Write(data);
+					
+					writer.Close();
+					mStream.Close();
+
+					return new SoundEffect(input.AssetName, mStream.ToArray());
+				}
+			}
 		}
 	}
 }
