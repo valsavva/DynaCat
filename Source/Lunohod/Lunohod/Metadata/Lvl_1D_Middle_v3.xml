@@ -3,7 +3,8 @@
 <!-- source: D:\Lunohod\Levels\Lvl_1D_Middle_v3\Lvl_1D_Middle_v3.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Middle_v3" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassOil.xml" />
     <Include File="ClassOilSpot.xml" />
@@ -12,7 +13,7 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_bones_08n" Source="bones_08n" />
         <Texture Id="txr_bones_04n" Source="bones_04n" />
         <Texture Id="txr_bones_06n" Source="bones_06n" />
@@ -39,7 +40,7 @@
         <Block Id="blk6" Bounds="-18, 40, 80, 357" Edges="Stick" TraceId="image3230"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3065"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3065"/>
     </Layer>
     <Layer Id="design" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_bones_08n" Bounds="80, 48, 21, 13" TraceId="image3373"/>
@@ -77,8 +78,8 @@
         <Block Id="blk8" Class="clsWoodenBox" Bounds="322, 180, 30, 30" Edges="Stick" TraceId="image3293">
             <Image TextureId="txr_box_old_1" />
         </Block>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="358, 181, 22, 23" TraceId="image3129"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="273, 64, 22, 23" TraceId="image3240"/>
+        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="358, 181, 22, 23" TraceId="image3129"/>
+        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="273, 64, 22, 23" TraceId="image3240"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="390, 127, 28, 19" TraceId="image3207"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=3" Bounds="229, 68, 31, 20" TraceId="image3218"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=6" Bounds="115, 179, 22, 27" TraceId="image3229"/>

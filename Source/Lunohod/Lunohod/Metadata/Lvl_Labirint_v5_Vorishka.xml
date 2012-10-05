@@ -3,7 +3,7 @@
 <!-- source: D:\Lunohod\Levels\Lvl_Labirint_v5_Vorishka\Lvl_Labirint_v5_Vorishka.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Labirint_v5_Vorishka" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
@@ -233,13 +233,13 @@
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
 
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="308, 30, 24, 25" TraceId="image3221"/>
+        <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="308, 30, 24, 25" TraceId="image3221"/>
         <Do Action="enm1:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm1:IntersectHero and not enm1_setDying.InProgress">
             <NumAnimation Id="anm1" From="0" To="-133" Target="enm1.X" Duration="5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image4164"/>
         </BoolTrigger>
         
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="176, 259, 24, 25" TraceId="image4296"/>
+        <Enemy Id="enm2" Class="clsEnemyRat3" Bounds="176, 259, 24, 25" TraceId="image4296"/>
         <Do Action="enm2:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm2:IntersectHero and not enm2_setDying.InProgress">
             <NumAnimation Id="anm2" From="0" To="126" Target="enm2.X" Duration="6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3235"/>

@@ -8,7 +8,7 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassHelpText.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_hor_01n" Source="laz_hor_01n" />
         <Texture Id="txr_laz_hor_02n" Source="laz_hor_02n" />
         <Texture Id="txr_laz_hor_03n" Source="laz_hor_03n" />
@@ -28,7 +28,7 @@
         <Block Id="blk4" Bounds="479, 16, 54, 144" Edges="Stick" TraceId="image3267"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3016-17"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3016-17"/>
     </Layer>
     <Layer Id="_Laz" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_hor_01n" Bounds="300, 78, 46, 36" TraceId="image3028"/>

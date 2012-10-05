@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.20 -->
+<!-- SVG to XGAME xml converter v1.6.21 -->
 <!-- source: D:\Lunohod\Levels\zzzzzzgrfx_updt.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="zzzzzzgrfx_updt" Bounds="0, 0, 480, 320">
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_healthBonus_sht_22x18x11" Source="healthBonus_sht_22x18x11" />
+        <Texture Id="txr_BM_death" Source="BM_death" />
     </Resources>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_healthBonus_sht_22x18x11" Bounds="125, 99, 242, 18" TraceId="image3028"/>
+        <Image Id="dfltMask1" TextureId="txr_BM_death" Bounds="200, 55, 98, 195" TraceId="image3038-1"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

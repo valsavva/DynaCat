@@ -45,6 +45,8 @@
         <SoundFile Id="sfSwish1" Source="sfxSwish1"/>
         <SoundFile Id="sfSwish2" Source="sfxSwish2"/>
         
+        <SoundFile Id="sndEnemyRatDying" Source="skeletonFX_enemy_dead_scream_1"/>
+        
         <SoundFile Id="sfLoseBaseballBat" Source="sfxLoseBaseballBat"/>
         <SoundFile Id="sfNewspaper" Source="sfxNewspaper"/>
 
@@ -303,13 +305,8 @@
             </SequenceSet>
             
             <!-- newspaper -->
-            <BoolTrigger Condition="this:Newspaper" EnterAction="this_setNewspaper.Start()"/>
-            <SequenceSet Id="this_setNewspaper" RepeatCount="1">
-                <Delay Duration="0.4"/>
-                <Sound FileId="sfNewspaper" Volume="0.3"/>
-                <Delay Duration="1.6"/>
-                <Sound FileId="sfNewspaper" Volume="0.3"/>
-            </SequenceSet>
+            <BoolTrigger Condition="this:Newspaper" EnterAction="this_sndNewspaper.Start()"/>
+            <Sound Id="this_sndNewspaper" FileId="sfNewspaper" Volume="0.3"/>
 
 <!-- EXIT -->
             <!-- end level -->

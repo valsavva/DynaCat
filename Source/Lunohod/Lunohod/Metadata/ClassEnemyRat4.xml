@@ -1,0 +1,175 @@
+<!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Boxes" Bounds="0, 0, 480, 320">-->
+<Include>
+    <Include File="ClassSmoke.xml" />
+
+    <Class Id="clsEnemyRat4">
+		<Enemy IsExploding="true" Points="50" Damage="20">
+
+<!-- Init -23, -39, 67, 68 -->
+
+            <!-- Points Animation -->
+            <Group Id="this_grpShowPoints" Bounds="0,0,100,50" Depth="0.2" Enabled="false">
+                <Text FontId="Splash14Font" Text="+50" Location="6,-12" Color="#FFFFFF">
+                    <SequenceSet RepeatCount="1" InProgress="true">
+                        <ParallelSet RepeatCount="1">
+                            <NumAnimation Target="this_grpShowPoints.Opacity" From="1" To="0.5" RepeatCount="1" Duration="1" Fill="Hold" />
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-50" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.Y" From="0" To="-40" IsDelta="true" RepeatCount="1" Duration="1" Fill="Hold" />
+                            </RandomSet>
+                            <RandomSet RepeatCount="1" >
+                                <NumAnimation Target="this_grpShowPoints.X" From="-4" To="4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                                <NumAnimation Target="this_grpShowPoints.X" From="4" To="-4" IsDelta="true" Autoreverse="true" RepeatCount="1.25" Duration="0.4" Fill="Hold" />
+                            </RandomSet>
+                        </ParallelSet>
+                        <Do Action="this.Disable()"/>
+                    </SequenceSet>
+                </Text>
+            </Group>
+
+<!-- Parachute animation-->
+
+            <BoolTrigger Id="this_trgParashutes" Condition="tower:LevelWithParachutes" EnterAction="this.Y=this.Y-60;this.Opacity=0">
+                <Image Id="this_imgParachute" TextureId="txr_parachute" Bounds="-14, -48, 53, 62"/>
+                <SequenceSet InProgress="true">
+                    <Delay Duration="system.Rnd(1,2)" />
+                    <Do Action="this.Opacity=1;
+                           this.RotationCenterX=14;
+                           this.RotationCenterY=-30" />
+                    <ParallelSet>
+                        <Do Action="SFX:Parashute" />
+                        <NumAnimation Target="this.Y" From="0" To="60" IsDelta="true" Autoreverse="false" RepeatCount="1" Duration="1.6" Fill="End" />
+                        <SequenceSet InProgress="true" RepeatCount="2" >
+                            <NumAnimation Target="this.Rotation" From="0" To="-3" Autoreverse="true" Duration="0.2" Fill="End" RepeatCount="1" Smoothing="Smooth"/>
+                            <NumAnimation Target="this.Rotation" From="0" To="3" Autoreverse="true" Duration="0.2" Fill="End" RepeatCount="1" Smoothing="Smooth"/>
+                        </SequenceSet>
+                    </ParallelSet>
+                    <NumAnimation Target="this_imgParachute.Opacity" From="1" To="0" IsDelta="false" Autoreverse="false" RepeatCount="1" Duration="0.4" Fill="End" />
+                    <Do Action="this_imgParachute.Disable();
+                        this.RotationCenterX=0;
+                        this.RotationCenterY=0;
+                        this_trgParashutes.Disable()" />
+                </SequenceSet>
+            </BoolTrigger>
+
+<!-- States -->
+
+            <Sprite Id="this_sprMain" TextureId="txrEnemyRat4Sheet" Bounds="-23, -39, 67, 68" FrameBounds="0,0,67,68" FrameCount="7" CurrentFrame="1"/>
+
+            <!-- explosion -->
+            
+            <!-- dying -->
+            <Group Id="this_Smoke" Class="clsSmoke" Location="-4,-2" ClassParams="@type=4" />
+            <Sprite Id="this_sprDyingWithAsh" TextureId="txrEnemyRatDyingWithAsh" Bounds="-18,-7,49,39" FrameBounds="0,0,49,39" FrameCount="2" Opacity="0"/>
+
+            <BoolTrigger Condition="this:BoomClose" 
+                         EnterAction="hero.AddScore(this.Points);
+                         @KilledRatNum=@KilledRatNum+1;
+                         this_setDying.Start();
+                         hero:+sttGoodExplosion;
+                         this_grpShowPoints.Enable();
+                         this_sprMain.CurrentFrame=1" 
+                         StayTriggered="true" 
+                         Group="this_sttStates">
+			</BoolTrigger>
+
+            <RandomSet Id="this_setDying" RepeatCount="1" Probabilities="12,1">
+                <ParallelSet Id="this_setDyingWithSteam" RepeatCount="1" InProgress="false">
+                    <Sound FileId="sndEnemyRatDying" Volume="1" Pitch="0" Pan="0" InProfress="true"/>
+                    <NumAnimation Target="this_sprMain.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                    <Do Action="this_Smoke:Run" />
+                </ParallelSet>
+            
+                <SequenceSet Id="this_setDyingWithAsh" RepeatCount="1" InProgress="false">
+                    <Do Action="this_sprDyingWithAsh.Opacity=0.75;this_sprMain.Opacity=0" />
+                    <Delay Duration="0.5" />
+                    <NumAnimation Target="this_sprDyingWithAsh.CurrentFrame" From="0" To="8" Duration="1" Autoreverse="false" RepeatCount="1" Fill="End" InProgress="true"/>
+                    <NumAnimation Target="this_sprDyingWithAsh.Opacity" From="1" To="0" Duration="0.2" Autoreverse="false" RepeatCount="1" Fill="End"/>
+                </SequenceSet>
+            </RandomSet>
+            
+            <!-- BoomFar: explosion - quake -->
+            <BoolTrigger Condition="this:BoomFar and not this_setQuake1.InProgress and not this:BoomClose"
+                         EnterAction="this_setQuake1.Start()"/>
+            <RandomSet Id="this_setQuake1" InProgress="false" RepeatCount="1">
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this.Rotation" From="0" To="1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-2" Duration="0.1" Autoreverse="true" RepeatCount="2" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                </SequenceSet>
+                <SequenceSet RepeatCount="1">
+                    <NumAnimation Target="this.Rotation" From="0" To="1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-2" Duration="0.1" Autoreverse="true" RepeatCount="2" IsDelta="true" Fill="End"/>
+                    <NumAnimation Target="this.Rotation" From="0" To="-1" Duration="0.1" Autoreverse="false" RepeatCount="1" IsDelta="true" Fill="End"/>
+                </SequenceSet>
+            </RandomSet>
+
+
+            <!-- attack -->
+            <IntersectionTrigger ObjectId1="hero" ObjectId2="this" Action="this:IntersectHero" />
+                
+            <BoolTrigger Condition="hero.CanCollide and 
+                                    this:IntersectHero and 
+                                    not this_grpShowPoints.Enabled and 
+                                    not hero:IsVeryDead"
+                         EnterAction="this.Attack();
+                                    this_anmDamageDealing.Start();
+                                    this_onRest.Stop()"
+                         ExitAction="this_anmDamageDealing.Stop();
+                                    this_anmDamageDealingStoped.Start();
+                                    this_onRest.Start();
+                                    this.Depth=0.5;
+                                    this_sprMain.CurrentFrame=1"
+                         Group="this_sttStates">
+                
+                <NumAnimation From="3" To="8" Duration="0.75" Autoreverse="false" Target="this_sprMain.CurrentFrame" RepeatCount="0" InProgress="true"/>
+                <NumTrigger Property="this.Y" Compare="G" Value="hero.Y-5" Action="this.Depth=0.38" ExitAction="this.Depth=0.5" />
+            </BoolTrigger>
+            
+            <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
+                <Do Action="this.Attack();hero:+sttGottaDamage;SFX:RatHit" />
+                <Delay Duration="system.Rnd(0.7,1.3)" />
+            </SequenceSet>
+
+            <SequenceSet Id="this_anmDamageDealingStoped" RepeatCount="1">
+                <Delay Duration="0.5" />
+                <Do Action="hero:-sttGottaDamage" />
+            </SequenceSet>
+
+            <!-- on rest -->
+            <BoolTrigger Condition="not this:Walker" EnterAction="this_onRest.Start()" Group="this_sttStates">
+
+            <SequenceSet Id="this_onRest" InProgress="false" RepeatCount="0">
+                <Do Action="@this_delay=system.Rnd(10,20)" />
+                <Delay Duration="@this_delay" />
+                <RandomSet RepeatCount="1">
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="SFX:GoodJuggler" />
+                        <NumAnimation From="9" To="21" Duration="1.625" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Do Action="this_sprMain.CurrentFrame=1" />
+                    </SequenceSet>
+                    <SequenceSet RepeatCount="1">
+                        <NumAnimation From="22" To="28" Duration="0.875" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Delay Duration="0.8" />
+                        <NumAnimation From="29" To="30" Duration="0.25" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Delay Duration="1" />
+                        <NumAnimation From="31" To="33" Duration="0.375" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <Do Action="this_sprMain.CurrentFrame=1" />
+                    </SequenceSet>
+                </RandomSet>
+            </SequenceSet>
+
+            </BoolTrigger>
+
+            <!-- walk -->
+            <BoolTrigger Condition="this:Walker" Group="this_sttStates">
+                <NumAnimation From="0" To="2" Duration="0.225" Target="this_sprMain.CurrentFrame" InProgress="true" RepeatCount="0" Autoreverse="true"/>
+            </BoolTrigger>
+
+            <!-- default -->
+			<BoolTrigger Group="this_sttStates" EnterAction="this_sprMain.CurrentFrame=1" />
+			
+		</Enemy>
+	</Class>
+
+</Include>

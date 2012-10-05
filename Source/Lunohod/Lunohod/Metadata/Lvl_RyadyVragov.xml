@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_RyadyVragov\Lvl_RyadyVragov.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_RyadyVragov" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
@@ -253,46 +253,46 @@
         <Do Action="enm40:+Walker" InProgress="true" RepeatCount="1"/>
         
         <Group Id="grp_g3125">
-            <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="0, 123, 24, 25" TraceId="image3015-1"/>
-            <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="40, 123, 24, 25" TraceId="image3018"/>
-            <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="80, 123, 24, 25" TraceId="image3020"/>
-            <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="120, 123, 24, 25" TraceId="image3022"/>
-            <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="160, 123, 24, 25" TraceId="image3024"/>
-            <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="200, 123, 24, 25" TraceId="image3026"/>
-            <Enemy Id="enm7" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="240, 123, 24, 25" TraceId="image3028"/>
-            <Enemy Id="enm8" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="280, 123, 24, 25" TraceId="image3030"/>
-            <Enemy Id="enm9" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="480, 123, 24, 25" TraceId="image3041"/>
-            <Enemy Id="enm10" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="520, 123, 24, 25" TraceId="image3043"/>
-            <Enemy Id="enm11" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="560, 123, 24, 25" TraceId="image3045"/>
-            <Enemy Id="enm12" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="600, 123, 24, 25" TraceId="image3047"/>
-            <Enemy Id="enm13" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="640, 123, 24, 25" TraceId="image3050"/>
-            <Enemy Id="enm14" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="680, 123, 24, 25" TraceId="image3052"/>
-            <Enemy Id="enm15" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="720, 123, 24, 25" TraceId="image3054"/>
-            <Enemy Id="enm16" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="760, 123, 24, 25" TraceId="image3056"/>
-            <Enemy Id="enm17" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="800, 123, 24, 25" TraceId="image3058"/>
-            <Enemy Id="enm18" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="840, 123, 24, 25" TraceId="image3060"/>
-            <Enemy Id="enm19" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="880, 123, 24, 25" TraceId="image3062"/>
-            <Enemy Id="enm20" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="920, 123, 24, 25" TraceId="image3064"/>
-            <Enemy Id="enm21" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="0, 211, 24, 25" TraceId="image3066"/>
-            <Enemy Id="enm22" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="40, 211, 24, 25" TraceId="image3068"/>
-            <Enemy Id="enm23" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="80, 211, 24, 25" TraceId="image3070"/>
-            <Enemy Id="enm24" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="120, 211, 24, 25" TraceId="image3072"/>
-            <Enemy Id="enm25" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="160, 211, 24, 25" TraceId="image3074"/>
-            <Enemy Id="enm26" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="200, 211, 24, 25" TraceId="image3076"/>
-            <Enemy Id="enm27" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="240, 211, 24, 25" TraceId="image3078"/>
-            <Enemy Id="enm28" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="440, 211, 24, 25" TraceId="image3088"/>
-            <Enemy Id="enm29" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="480, 211, 24, 25" TraceId="image3090"/>
-            <Enemy Id="enm30" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="520, 211, 24, 25" TraceId="image3092"/>
-            <Enemy Id="enm31" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="560, 211, 24, 25" TraceId="image3094"/>
-            <Enemy Id="enm32" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="600, 211, 24, 25" TraceId="image3096"/>
-            <Enemy Id="enm33" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="640, 211, 24, 25" TraceId="image3098"/>
-            <Enemy Id="enm34" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="680, 211, 24, 25" TraceId="image3100"/>
-            <Enemy Id="enm35" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="720, 211, 24, 25" TraceId="image3102"/>
-            <Enemy Id="enm36" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="760, 211, 24, 25" TraceId="image3104"/>
-            <Enemy Id="enm37" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="800, 211, 24, 25" TraceId="image3106"/>
-            <Enemy Id="enm38" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="840, 211, 24, 25" TraceId="image3108"/>
-            <Enemy Id="enm39" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="880, 211, 24, 25" TraceId="image3110"/>
-            <Enemy Id="enm40" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="920, 211, 24, 25" TraceId="image3112"/>
+            <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="0, 123, 24, 25" TraceId="image3015-1"/>
+            <Enemy Id="enm2" Class="clsEnemyRat3" Bounds="40, 123, 24, 25" TraceId="image3018"/>
+            <Enemy Id="enm3" Class="clsEnemyRat3" Bounds="80, 123, 24, 25" TraceId="image3020"/>
+            <Enemy Id="enm4" Class="clsEnemyRat3" Bounds="120, 123, 24, 25" TraceId="image3022"/>
+            <Enemy Id="enm5" Class="clsEnemyRat3" Bounds="160, 123, 24, 25" TraceId="image3024"/>
+            <Enemy Id="enm6" Class="clsEnemyRat3" Bounds="200, 123, 24, 25" TraceId="image3026"/>
+            <Enemy Id="enm7" Class="clsEnemyRat3" Bounds="240, 123, 24, 25" TraceId="image3028"/>
+            <Enemy Id="enm8" Class="clsEnemyRat3" Bounds="280, 123, 24, 25" TraceId="image3030"/>
+            <Enemy Id="enm9" Class="clsEnemyRat3" Bounds="480, 123, 24, 25" TraceId="image3041"/>
+            <Enemy Id="enm10" Class="clsEnemyRat3" Bounds="520, 123, 24, 25" TraceId="image3043"/>
+            <Enemy Id="enm11" Class="clsEnemyRat3" Bounds="560, 123, 24, 25" TraceId="image3045"/>
+            <Enemy Id="enm12" Class="clsEnemyRat3" Bounds="600, 123, 24, 25" TraceId="image3047"/>
+            <Enemy Id="enm13" Class="clsEnemyRat3" Bounds="640, 123, 24, 25" TraceId="image3050"/>
+            <Enemy Id="enm14" Class="clsEnemyRat3" Bounds="680, 123, 24, 25" TraceId="image3052"/>
+            <Enemy Id="enm15" Class="clsEnemyRat3" Bounds="720, 123, 24, 25" TraceId="image3054"/>
+            <Enemy Id="enm16" Class="clsEnemyRat3" Bounds="760, 123, 24, 25" TraceId="image3056"/>
+            <Enemy Id="enm17" Class="clsEnemyRat3" Bounds="800, 123, 24, 25" TraceId="image3058"/>
+            <Enemy Id="enm18" Class="clsEnemyRat3" Bounds="840, 123, 24, 25" TraceId="image3060"/>
+            <Enemy Id="enm19" Class="clsEnemyRat3" Bounds="880, 123, 24, 25" TraceId="image3062"/>
+            <Enemy Id="enm20" Class="clsEnemyRat3" Bounds="920, 123, 24, 25" TraceId="image3064"/>
+            <Enemy Id="enm21" Class="clsEnemyRat3" Bounds="0, 211, 24, 25" TraceId="image3066"/>
+            <Enemy Id="enm22" Class="clsEnemyRat3" Bounds="40, 211, 24, 25" TraceId="image3068"/>
+            <Enemy Id="enm23" Class="clsEnemyRat3" Bounds="80, 211, 24, 25" TraceId="image3070"/>
+            <Enemy Id="enm24" Class="clsEnemyRat3" Bounds="120, 211, 24, 25" TraceId="image3072"/>
+            <Enemy Id="enm25" Class="clsEnemyRat3" Bounds="160, 211, 24, 25" TraceId="image3074"/>
+            <Enemy Id="enm26" Class="clsEnemyRat3" Bounds="200, 211, 24, 25" TraceId="image3076"/>
+            <Enemy Id="enm27" Class="clsEnemyRat3" Bounds="240, 211, 24, 25" TraceId="image3078"/>
+            <Enemy Id="enm28" Class="clsEnemyRat3" Bounds="440, 211, 24, 25" TraceId="image3088"/>
+            <Enemy Id="enm29" Class="clsEnemyRat3" Bounds="480, 211, 24, 25" TraceId="image3090"/>
+            <Enemy Id="enm30" Class="clsEnemyRat3" Bounds="520, 211, 24, 25" TraceId="image3092"/>
+            <Enemy Id="enm31" Class="clsEnemyRat3" Bounds="560, 211, 24, 25" TraceId="image3094"/>
+            <Enemy Id="enm32" Class="clsEnemyRat3" Bounds="600, 211, 24, 25" TraceId="image3096"/>
+            <Enemy Id="enm33" Class="clsEnemyRat3" Bounds="640, 211, 24, 25" TraceId="image3098"/>
+            <Enemy Id="enm34" Class="clsEnemyRat3" Bounds="680, 211, 24, 25" TraceId="image3100"/>
+            <Enemy Id="enm35" Class="clsEnemyRat3" Bounds="720, 211, 24, 25" TraceId="image3102"/>
+            <Enemy Id="enm36" Class="clsEnemyRat3" Bounds="760, 211, 24, 25" TraceId="image3104"/>
+            <Enemy Id="enm37" Class="clsEnemyRat3" Bounds="800, 211, 24, 25" TraceId="image3106"/>
+            <Enemy Id="enm38" Class="clsEnemyRat3" Bounds="840, 211, 24, 25" TraceId="image3108"/>
+            <Enemy Id="enm39" Class="clsEnemyRat3" Bounds="880, 211, 24, 25" TraceId="image3110"/>
+            <Enemy Id="enm40" Class="clsEnemyRat3" Bounds="920, 211, 24, 25" TraceId="image3112"/>
             <NumAnimation Id="anm1" From="0" To="-480" Target="X" Duration="5.7" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3122"/>
         </Group>
         <!-- HAND EDIT <<< -->

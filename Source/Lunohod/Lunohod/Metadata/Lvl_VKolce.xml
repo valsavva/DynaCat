@@ -3,14 +3,19 @@
 <!-- source: D:\Lunohod\Levels\Lvl_VKolce\Lvl_VKolce.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_VKolce" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat7.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
-    <Class Id="clsRingRat">
+    
+    <Class Id="clsRingRat1">
     	<Group>
     		<Do Action="@this_dur=system.Rnd(0.8, 1.2)" RepeatCount="1" InProgress="true" />
-	        <Enemy Id="this_rat" Class="clsEnemyRat" ClassParams="@ratType=@ratTypeParam">
+	        <Enemy Id="this_rat" Class="clsEnemyRat1">
 	            <SequenceSet InProgress="true" RepeatCount="0" >
 	                <Do Action="this_rat:+Walker" InProgress="true" RepeatCount="1"/>
 	                <BoolTrigger Condition="not this_rat:IntersectHero">
@@ -21,6 +26,66 @@
 	            </SequenceSet>
 	        </Enemy>
     	</Group>
+    </Class>
+    <Class Id="clsRingRat2">
+        <Group>
+            <Do Action="@this_dur=system.Rnd(0.8, 1.2)" RepeatCount="1" InProgress="true" />
+            <Enemy Id="this_rat" Class="clsEnemyRat2">
+                <SequenceSet InProgress="true" RepeatCount="0" >
+                    <Do Action="this_rat:+Walker" InProgress="true" RepeatCount="1"/>
+                    <BoolTrigger Condition="not this_rat:IntersectHero">
+                        <NumAnimation Id="anmWalkUp_this" Target="this.X,this.Y" From="0,0" To="(hero.X-this.X)/10,(hero.Y-this.Y)/10" IsDelta="true" Duration="@this_dur" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+                    </BoolTrigger>
+                    <Do Action="this_rat:-Walker" InProgress="true" RepeatCount="1"/>
+                    <Delay Duration="7.2" />
+                </SequenceSet>
+            </Enemy>
+        </Group>
+    </Class>
+    <Class Id="clsRingRat3">
+        <Group>
+            <Do Action="@this_dur=system.Rnd(0.8, 1.2)" RepeatCount="1" InProgress="true" />
+            <Enemy Id="this_rat" Class="clsEnemyRat3">
+                <SequenceSet InProgress="true" RepeatCount="0" >
+                    <Do Action="this_rat:+Walker" InProgress="true" RepeatCount="1"/>
+                    <BoolTrigger Condition="not this_rat:IntersectHero">
+                        <NumAnimation Id="anmWalkUp_this" Target="this.X,this.Y" From="0,0" To="(hero.X-this.X)/10,(hero.Y-this.Y)/10" IsDelta="true" Duration="@this_dur" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+                    </BoolTrigger>
+                    <Do Action="this_rat:-Walker" InProgress="true" RepeatCount="1"/>
+                    <Delay Duration="7.2" />
+                </SequenceSet>
+            </Enemy>
+        </Group>
+    </Class>
+    <Class Id="clsRingRat4">
+        <Group>
+            <Do Action="@this_dur=system.Rnd(0.8, 1.2)" RepeatCount="1" InProgress="true" />
+            <Enemy Id="this_rat" Class="clsEnemyRat4">
+                <SequenceSet InProgress="true" RepeatCount="0" >
+                    <Do Action="this_rat:+Walker" InProgress="true" RepeatCount="1"/>
+                    <BoolTrigger Condition="not this_rat:IntersectHero">
+                        <NumAnimation Id="anmWalkUp_this" Target="this.X,this.Y" From="0,0" To="(hero.X-this.X)/10,(hero.Y-this.Y)/10" IsDelta="true" Duration="@this_dur" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+                    </BoolTrigger>
+                    <Do Action="this_rat:-Walker" InProgress="true" RepeatCount="1"/>
+                    <Delay Duration="7.2" />
+                </SequenceSet>
+            </Enemy>
+        </Group>
+    </Class>
+    <Class Id="clsRingRat7">
+        <Group>
+            <Do Action="@this_dur=system.Rnd(0.8, 1.2)" RepeatCount="1" InProgress="true" />
+            <Enemy Id="this_rat" Class="clsEnemyRat7">
+                <SequenceSet InProgress="true" RepeatCount="0" >
+                    <Do Action="this_rat:+Walker" InProgress="true" RepeatCount="1"/>
+                    <BoolTrigger Condition="not this_rat:IntersectHero">
+                        <NumAnimation Id="anmWalkUp_this" Target="this.X,this.Y" From="0,0" To="(hero.X-this.X)/10,(hero.Y-this.Y)/10" IsDelta="true" Duration="@this_dur" Fill="Hold" Autoreverse="false" RepeatCount="1" />
+                    </BoolTrigger>
+                    <Do Action="this_rat:-Walker" InProgress="true" RepeatCount="1"/>
+                    <Delay Duration="7.2" />
+                </SequenceSet>
+            </Enemy>
+        </Group>
     </Class>
 
 	<Resources RootFolder="Textures">
@@ -62,44 +127,44 @@
         <Food Id="fd24" Class="clsFood" ClassParams="@fishType=5" Bounds="162, 177, 27, 20" TraceId="image3127"/>
     </Layer>
     <Layer Id="zombies" BackColor="#FFFFFFFF">
-        <Group Id="enm01" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="-81, -2, 24, 25" TraceId="image3072"/>
-        <Group Id="enm02" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="82, -78, 24, 25" TraceId="image3377"/>
-        <Group Id="enm03" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="81, 374, 24, 25" TraceId="image3074"/>
-        <Group Id="enm04" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="271, -83, 24, 25" TraceId="image3076"/>
-        <Group Id="enm05" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="553, -18, 24, 25" TraceId="image3078"/>
-        <Group Id="enm06" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="562, 249, 24, 25" TraceId="image3080"/>
-        <Group Id="enm07" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="312, 377, 24, 25" TraceId="image3082"/>
-        <Group Id="enm08" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="119, 401, 24, 25" TraceId="image3084"/>
-        <Group Id="enm09" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="-107, 288, 24, 25" TraceId="image3086"/>
-        <Group Id="enm10" Class="clsRingRat" ClassParams="@ratTypeParam=3" Bounds="-120, 116, 24, 25" TraceId="image3069"/>
-        <Group Id="enm11" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="33, -84, 24, 25" TraceId="image3099"/>
-        <Group Id="enm12" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="322, -72, 24, 25" TraceId="image3373"/>
-        <Group Id="enm13" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="-107, 68, 24, 25" TraceId="image3375"/>
-        <Group Id="enm14" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="-111, 254, 24, 25" TraceId="image3101"/>
-        <Group Id="enm15" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="555, 153, 24, 25" TraceId="image3103"/>
-        <Group Id="enm16" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="427, 374, 24, 25" TraceId="image3105"/>
-        <Group Id="enm17" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="194, 376, 24, 25" TraceId="image3107"/>
-        <Group Id="enm18" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="21, 378, 24, 25" TraceId="image3109"/>
-        <Group Id="enm19" Class="clsRingRat" ClassParams="@ratTypeParam=2" Bounds="-133, 196, 24, 25" TraceId="image3096"/>
-        <Group Id="enm20" Class="clsRingRat" ClassParams="@ratTypeParam=4" Bounds="176, -81, 24, 25" TraceId="image3122"/>
-        <Group Id="enm21" Class="clsRingRat" ClassParams="@ratTypeParam=4" Bounds="546, 90, 24, 25" TraceId="image3124"/>
-        <Group Id="enm22" Class="clsRingRat" ClassParams="@ratTypeParam=4" Bounds="254, 376, 24, 25" TraceId="image3119"/>
-        <Group Id="enm23" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="-107, 33, 24, 25" TraceId="image3137"/>
-        <Group Id="enm24" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="441, -84, 24, 25" TraceId="image3170"/>
-        <Group Id="enm25" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="548, 197, 24, 25" TraceId="image3172"/>
-        <Group Id="enm26" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="587, 118, 24, 25" TraceId="image3174"/>
-        <Group Id="enm27" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="-93, 325, 24, 25" TraceId="image3139"/>
-        <Group Id="enm28" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="380, 383, 24, 25" TraceId="image3141"/>
-        <Group Id="enm29" Class="clsRingRat" ClassParams="@ratTypeParam=1" Bounds="-129, 235, 24, 25" TraceId="image3134"/>
-        <Group Id="enm30" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="-137, 73, 24, 25" TraceId="image3154"/>
-        <Group Id="enm31" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="366, -85, 24, 25" TraceId="image3156"/>
-        <Group Id="enm32" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="56, 408, 24, 25" TraceId="image3158"/>
-        <Group Id="enm33" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="551, 296, 24, 25" TraceId="image3160"/>
-        <Group Id="enm34" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="544, 47, 24, 25" TraceId="image3162"/>
-        <Group Id="enm35" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="-127, 153, 24, 25" TraceId="image3164"/>
-        <Group Id="enm36" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="116, -71, 24, 25" TraceId="image3168"/>
-        <Group Id="enm37" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="213, -81, 24, 25" TraceId="image3166"/>
-        <Group Id="enm38" Class="clsRingRat" ClassParams="@ratTypeParam=7" Bounds="172, 430, 24, 25" TraceId="image3151"/>
+        <Group Id="enm01" Class="clsRingRat3" Bounds="-81, -2, 24, 25" TraceId="image3072"/>
+        <Group Id="enm02" Class="clsRingRat3" Bounds="82, -78, 24, 25" TraceId="image3377"/>
+        <Group Id="enm03" Class="clsRingRat3" Bounds="81, 374, 24, 25" TraceId="image3074"/>
+        <Group Id="enm04" Class="clsRingRat3" Bounds="271, -83, 24, 25" TraceId="image3076"/>
+        <Group Id="enm05" Class="clsRingRat3" Bounds="553, -18, 24, 25" TraceId="image3078"/>
+        <Group Id="enm06" Class="clsRingRat3" Bounds="562, 249, 24, 25" TraceId="image3080"/>
+        <Group Id="enm07" Class="clsRingRat3" Bounds="312, 377, 24, 25" TraceId="image3082"/>
+        <Group Id="enm08" Class="clsRingRat3" Bounds="119, 401, 24, 25" TraceId="image3084"/>
+        <Group Id="enm09" Class="clsRingRat3" Bounds="-107, 288, 24, 25" TraceId="image3086"/>
+        <Group Id="enm10" Class="clsRingRat3" Bounds="-120, 116, 24, 25" TraceId="image3069"/>
+        <Group Id="enm11" Class="clsRingRat2" Bounds="33, -84, 24, 25" TraceId="image3099"/>
+        <Group Id="enm12" Class="clsRingRat2" Bounds="322, -72, 24, 25" TraceId="image3373"/>
+        <Group Id="enm13" Class="clsRingRat2" Bounds="-107, 68, 24, 25" TraceId="image3375"/>
+        <Group Id="enm14" Class="clsRingRat2" Bounds="-111, 254, 24, 25" TraceId="image3101"/>
+        <Group Id="enm15" Class="clsRingRat2" Bounds="555, 153, 24, 25" TraceId="image3103"/>
+        <Group Id="enm16" Class="clsRingRat2" Bounds="427, 374, 24, 25" TraceId="image3105"/>
+        <Group Id="enm17" Class="clsRingRat2" Bounds="194, 376, 24, 25" TraceId="image3107"/>
+        <Group Id="enm18" Class="clsRingRat2" Bounds="21, 378, 24, 25" TraceId="image3109"/>
+        <Group Id="enm19" Class="clsRingRat2" Bounds="-133, 196, 24, 25" TraceId="image3096"/>
+        <Group Id="enm20" Class="clsRingRat4" Bounds="176, -81, 24, 25" TraceId="image3122"/>
+        <Group Id="enm21" Class="clsRingRat4" Bounds="546, 90, 24, 25" TraceId="image3124"/>
+        <Group Id="enm22" Class="clsRingRat4" Bounds="254, 376, 24, 25" TraceId="image3119"/>
+        <Group Id="enm23" Class="clsRingRat1" Bounds="-107, 33, 24, 25" TraceId="image3137"/>
+        <Group Id="enm24" Class="clsRingRat1" Bounds="441, -84, 24, 25" TraceId="image3170"/>
+        <Group Id="enm25" Class="clsRingRat1" Bounds="548, 197, 24, 25" TraceId="image3172"/>
+        <Group Id="enm26" Class="clsRingRat1" Bounds="587, 118, 24, 25" TraceId="image3174"/>
+        <Group Id="enm27" Class="clsRingRat1" Bounds="-93, 325, 24, 25" TraceId="image3139"/>
+        <Group Id="enm28" Class="clsRingRat1" Bounds="380, 383, 24, 25" TraceId="image3141"/>
+        <Group Id="enm29" Class="clsRingRat1" Bounds="-129, 235, 24, 25" TraceId="image3134"/>
+        <Group Id="enm30" Class="clsRingRat7" Bounds="-137, 73, 24, 25" TraceId="image3154"/>
+        <Group Id="enm31" Class="clsRingRat7" Bounds="366, -85, 24, 25" TraceId="image3156"/>
+        <Group Id="enm32" Class="clsRingRat7" Bounds="56, 408, 24, 25" TraceId="image3158"/>
+        <Group Id="enm33" Class="clsRingRat7" Bounds="551, 296, 24, 25" TraceId="image3160"/>
+        <Group Id="enm34" Class="clsRingRat7" Bounds="544, 47, 24, 25" TraceId="image3162"/>
+        <Group Id="enm35" Class="clsRingRat7" Bounds="-127, 153, 24, 25" TraceId="image3164"/>
+        <Group Id="enm36" Class="clsRingRat7" Bounds="116, -71, 24, 25" TraceId="image3168"/>
+        <Group Id="enm37" Class="clsRingRat7" Bounds="213, -81, 24, 25" TraceId="image3166"/>
+        <Group Id="enm38" Class="clsRingRat7" Bounds="172, 430, 24, 25" TraceId="image3151"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

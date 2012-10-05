@@ -6,12 +6,12 @@
     <Include File="ClassOilSpot.xml" />
     <Include File="ClassBarrel.xml" />
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_fork_1" Source="laz_fork_1" />
         <Texture Id="txr_laz_fork_2" Source="laz_fork_2" />
         <Texture Id="txr_laz_fork_3" Source="laz_fork_3" />
@@ -54,7 +54,7 @@
         <Block Id="blk8" Bounds="260, 170, 120, 90" Edges="Stick" TraceId="image3219"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3176-1"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3176-1"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_fork_1" Bounds="180, 109, 122, 92" TraceId="image3164"/>
@@ -179,7 +179,7 @@
         <Food Id="fd23" Class="clsFood" ClassParams="@fishType=2" Bounds="185, 261, 28, 19" TraceId="image3469"/>
         <Food Id="fd24" Class="clsFood" ClassParams="@fishType=2" Bounds="142, 269, 28, 19" TraceId="image3471"/>
         <Food Id="fd25" Class="clsFood" ClassParams="@fishType=2" Bounds="102, 260, 28, 19" TraceId="image3421"/>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="73, 207, 22, 23" TraceId="image3481"/>
+        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="73, 207, 22, 23" TraceId="image3481"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>

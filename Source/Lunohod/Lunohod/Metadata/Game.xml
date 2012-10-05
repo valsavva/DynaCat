@@ -30,7 +30,6 @@
             <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />
         </LevelSeries>
         <LevelSeries Id="series2" Name="----- Series 2: Puzzle -----" File="ScreenSeries2.xml">
-            <!--<LevelInfo Name="nameAlphaTest3" Id="AlphaTest3" File="AlphaTest3.xml" StarScoreRatio3="1" TimeBonusThreshold="30"/>-->
             <LevelInfo Name="I-1" Id="Lvl_1D_Tutorial1" File="Lvl_1D_Tutorial1.xml" StarScoreRatio3="1" TimeBonusThreshold="30" BombCount="0" />
             <LevelInfo Name="I-2" Id="Lvl_1D_Open" File="Lvl_1D_Open.xml" StarScoreRatio3="1" TimeBonusThreshold="30.3" BombCount="0" />
             <LevelInfo Name="I-3" Id="Lvl_1D_Middle" File="Lvl_1D_Middle.xml" StarScoreRatio3="1" TimeBonusThreshold="30.2"/>
@@ -102,8 +101,8 @@
             <LevelInfo Name="III-23" Id="Lvl_Ceh_v6_proizvodstvo" File="Lvl_Ceh_v6_proizvodstvo.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="125"/>
             <LevelInfo Name="III-24" Id="Lvl_Ceh_v7_nasos" File="Lvl_Ceh_v7_nasos.xml" StarScoreRatio3="1" BombCount="0" TimeBonusThreshold="36"/>
             <LevelInfo Name="III-25" Id="Lvl_VolkLovitYayca" File="Lvl_VolkLovitYayca.xml" StarScoreRatio3="1" TimeBonusThreshold="58.8" />
-            <LevelInfo Name="III-26" Id="Lvl_Chelnok" File="Lvl_Chelnok.xml" StarScoreRatio3="0.80" TimeBonusThreshold="82.5" BombCount="0" />
-            <LevelInfo Name="III-27" Id="Lvl_VKolce" File="Lvl_VKolce.xml" BombCount="0" TimeBonusThreshold="70"/>
+            <LevelInfo Name="III-26" Id="Lvl_Chelnok" File="Lvl_Chelnok.xml" StarScoreRatio3="0.80" TimeBonusThreshold="120" BombCount="0" />
+            <LevelInfo Name="III-27" Id="Lvl_VKolce" File="Lvl_VKolce.xml" BombCount="0" TimeBonusThreshold="120"/>
         </LevelSeries>
         <LevelSeries Id="series5" Name="----- Series 5: empty -----" File="ScreenSeries5.xml">
             <LevelInfo Id="[EMPTY]" File="Lvl_1D_Open.xml" BombCount="0" />

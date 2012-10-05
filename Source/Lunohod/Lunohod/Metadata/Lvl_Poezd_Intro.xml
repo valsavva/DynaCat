@@ -2,7 +2,7 @@
 <!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\Lvl_Poezd_Intro\Lvl_Poezd_Intro.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_Poezd_Intro" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat3.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -76,7 +76,7 @@
         <Image Id="dfltMask29" TextureId="txr_railway_end_horiz" Bounds="0, 150, 40, 40" FlipEffects="Horizontally" TraceId="image3164"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="276, 152, 24, 25" TraceId="image3210"/>
+        <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="276, 152, 24, 25" TraceId="image3210"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=7" Bounds="70, 155, 32, 30" TraceId="image3221"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=5" Bounds="129, 91, 27, 20" TraceId="image3235"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=5" Bounds="165, 108, 27, 20" TraceId="image3237"/>

@@ -5,7 +5,7 @@
     <Include File="ClassOil.xml" />
     <Include File="ClassOilSpot.xml" />
     <Include File="ClassBarrel.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
@@ -13,7 +13,7 @@
     <Include File="ClassMagneticRadarLeft.xml" />
     <Include File="ClassMagneticRadarRight.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_fork_1" Source="laz_fork_1" />
         <Texture Id="txr_laz_fork_2" Source="laz_fork_2" />
         <Texture Id="txr_laz_fork_3" Source="laz_fork_3" />
@@ -43,7 +43,7 @@
         <Block Id="blk10" Bounds="320, 178, 80, 90" Edges="Stick" TraceId="image3403"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3143"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3143"/>
     </Layer>
     <Layer Id="laz2" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_fork_1" Bounds="119, 117, 122, 92" TraceId="image3155"/>
@@ -149,10 +149,10 @@
         </Block>
     </Layer>
     <Layer Id="enemies" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="82, 150, 24, 25" TraceId="image3387"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="203, 150, 24, 25" TraceId="image3389"/>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="323, 150, 24, 25" TraceId="image3391"/>
-        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="412, 150, 24, 25" TraceId="image3384"/>
+        <Enemy Id="enm1" Class="clsEnemyRat4" Bounds="82, 150, 24, 25" TraceId="image3387"/>
+        <Enemy Id="enm2" Class="clsEnemyRat4" Bounds="203, 150, 24, 25" TraceId="image3389"/>
+        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="323, 150, 24, 25" TraceId="image3391"/>
+        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="412, 150, 24, 25" TraceId="image3384"/>
     </Layer>
     <Layer Id="food" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=4" Bounds="163, 273, 28, 22" TraceId="image3655"/>

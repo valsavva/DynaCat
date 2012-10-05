@@ -4,7 +4,8 @@
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_1D_Middle_v2" Bounds="0, 0, 480, 320">
     <Include File="ClassWoodenBox.xml" />
     <Include File="ClassFood.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
@@ -20,7 +21,7 @@
         <Texture Id="txr_grass_02" Source="grass_02" />
         <Texture Id="txr_grass_03" Source="grass_03" />
         <Texture Id="txr_grass_04" Source="grass_04" />
-        <Texture Id="txr_under_land_BG_03n" Source="under_land_BG_03n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_hor_03n" Source="laz_hor_03n" />
         <Texture Id="txr_laz_turn_01n" Source="laz_turn_01n" />
         <Texture Id="txr_laz_turn_02n" Source="laz_turn_02n" />
@@ -76,7 +77,7 @@
         <Image Id="dfltMask25" TextureId="txr_grass_02" Bounds="237, 19, 32, 27" TraceId="image3382"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask26" TextureId="txr_under_land_BG_03n" Bounds="0, 40, 480, 320" TraceId="image3069"/>
+        <Image Id="dfltMask26" TextureId="txr_under_land_BG_01n" Bounds="0, 40, 480, 320" TraceId="image3069"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
         <Image Id="dfltMask27" TextureId="txr_laz_hor_03n" Bounds="77, 57, 46, 36" TraceId="image3102"/>
@@ -122,8 +123,8 @@
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=7" Bounds="287, 241, 32, 30" TraceId="image3120"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="362, 157, 28, 19" TraceId="image3131"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="167, 247, 28, 22" TraceId="image3153-1"/>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="171, 157, 22, 23" TraceId="image3137"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="366, 64, 22, 23" TraceId="image3148"/>
+        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="171, 157, 22, 23" TraceId="image3137"/>
+        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="366, 64, 22, 23" TraceId="image3148"/>
     </Layer>
     <Layer Id="secondbckg" BackColor="#FFFFFFFF">
         <Image Id="dfltMask53" TextureId="txr_stone_01n" Bounds="359, 45, 15, 12" TraceId="image4278"/>

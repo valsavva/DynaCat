@@ -4,7 +4,8 @@
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_VolkLovitYayca" Bounds="0, 0, 480, 320">
     <Include File="ClassEnemyElectricity2.xml" />
     <Include File="ClassWoodenBox.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat4.xml" />
+    <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassFood.xml" />
@@ -256,13 +257,13 @@
         </Block>-->
 
         
-            <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="64, 257, 24, 25" TraceId="image3396"/>
+            <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="64, 257, 24, 25" TraceId="image3396"/>
         <Do Action="enm3:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm3:IntersectHero and not enm3_setDying.InProgress">
             <NumAnimation Id="anm3" From="0" To="-200" Target="enm3.Y" Duration="7" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3407"/>
         </BoolTrigger>
         
-            <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="393, 99, 22, 23" TraceId="image3422"/>
+            <Enemy Id="enm4" Class="clsEnemyRat2" Bounds="393, 99, 22, 23" TraceId="image3422"/>
         <Do Action="enm4:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm4:IntersectHero and not enm4_setDying.InProgress">
             <NumAnimation Id="anm4" From="0" To="154" Target="enm4.Y" Duration="5.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3433"/>

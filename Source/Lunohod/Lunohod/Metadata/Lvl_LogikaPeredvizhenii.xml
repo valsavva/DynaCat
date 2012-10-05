@@ -2,7 +2,9 @@
 <!-- SVG to XGAME xml converter v1.6.15 -->
 <!-- source: D:\Lunohod\Levels\Lvl_LogikaPeredvizhenii\Lvl_LogikaPeredvizhenii.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_LogikaPeredvizhenii" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat2.xml" />
+    <Include File="ClassEnemyRat3.xml" />
+    <Include File="ClassEnemyRat4.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
@@ -37,12 +39,12 @@
         <Block Id="blk8" Bounds="402, 280, 78, 40" Edges="Stick" TraceId="image3135"/>
         <Block Id="blk9" Bounds="200, 280, 78, 40" Edges="Stick" TraceId="image3137"/>
         <Block Id="blk10" Bounds="226, 240, 26, 40" Edges="Stick" TraceId="image3141"/>
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="167, 35, 22, 23" TraceId="image3151"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="228, 109, 24, 25" TraceId="image3164"/>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="404, 162, 24, 25" TraceId="image3175"/>
-        <Enemy Id="enm4" Class="clsEnemyRat" ClassParams="@ratType=4" Bounds="165, 229, 24, 25" TraceId="image3186"/>
-        <Enemy Id="enm5" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="343, 111, 22, 23" TraceId="image3222"/>
-        <Enemy Id="enm6" Class="clsEnemyRat" ClassParams="@ratType=3" Bounds="82, 174, 24, 25" TraceId="image3309"/>
+        <Enemy Id="enm1" Class="clsEnemyRat2" Bounds="167, 35, 22, 23" TraceId="image3151"/>
+        <Enemy Id="enm2" Class="clsEnemyRat3" Bounds="228, 109, 24, 25" TraceId="image3164"/>
+        <Enemy Id="enm3" Class="clsEnemyRat4" Bounds="404, 162, 24, 25" TraceId="image3175"/>
+        <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="165, 229, 24, 25" TraceId="image3186"/>
+        <Enemy Id="enm5" Class="clsEnemyRat2" Bounds="343, 111, 22, 23" TraceId="image3222"/>
+        <Enemy Id="enm6" Class="clsEnemyRat3" Bounds="82, 174, 24, 25" TraceId="image3309"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="254, 37, 28, 19" TraceId="image3187"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=2" Bounds="337, 60, 28, 19" TraceId="image3166"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="338, 155, 28, 22" TraceId="image3200"/>

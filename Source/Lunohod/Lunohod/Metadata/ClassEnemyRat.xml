@@ -73,7 +73,6 @@
 
             <!-- Points Animation -->
             <Group Id="this_grpShowPoints" Bounds="0,0,100,50" Depth="0.2" Enabled="false">
-                <!--<Do Action="this_grpShowPoints.X=this.X;this_grpShowPoints.Y=this.Y" InProgress="true" />-->
                 <Text FontId="Splash14Font" Text="='+' + system.Str(this.Points)" Location="6,-12" Color="#FFFFFF">
                     <SequenceSet RepeatCount="1" InProgress="true">
                         <ParallelSet RepeatCount="1">
@@ -192,15 +191,6 @@
                 
                 <NumTrigger Property="this.Y" Compare="G" Value="hero.Y-5" Action="this.Depth=0.38" ExitAction="this.Depth=0.5" />
             </BoolTrigger>
-
-            <!--<BoolTrigger Condition="this:LastShot" EnterAction="anmLastShot.Start()" Group="this_sttStates">
-                <Sprite Id="this_sprAttackLastShot" TextureId="txrEnemyRatAttackType_@ratType" Bounds="0,0,80,80" FrameBounds="0,0,80,80"/>
-            </BoolTrigger>
-            <SequenceSet Id="anmLastShot" InProgress="false" RepeatCount="1"> 
-                <NumAnimation From="0" To="5" Duration="0.75" Autoreverse="false" Target="this_sprAttackLastShot.CurrentFrame" RepeatCount="1" Fill="Reset"/>
-                <Do Action="this:-LastShot" />
-                <Do Action="system.WriteLine('-LastShot')" />
-            </SequenceSet>-->
             
             <SequenceSet Id="this_anmDamageDealing" RepeatCount="0">
                 <Do Action="this.Attack();hero:+sttGottaDamage;SFX:RatHit" />

@@ -5,13 +5,14 @@
     <Include File="ClassOil.xml" />
     <Include File="ClassOilSpot.xml" />
     <Include File="ClassBarrel.xml" />
-    <Include File="ClassEnemyRat.xml" />
+    <Include File="ClassEnemyRat1.xml" />
+    <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassFood.xml" />
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_under_land_BG_02n" Source="under_land_BG_02n" />
+        <Texture Id="txr_under_land_BG_01n" Source="under_land_BG_01n" />
         <Texture Id="txr_laz_fork_1" Source="laz_fork_1" />
         <Texture Id="txr_laz_fork_2" Source="laz_fork_2" />
         <Texture Id="txr_laz_fork_3" Source="laz_fork_3" />
@@ -47,7 +48,7 @@
         <Block Id="blk8" Bounds="102, 170, 120, 90" Edges="Stick" TraceId="image3615"/>
     </Layer>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_under_land_BG_02n" Bounds="0, 0, 480, 320" TraceId="image3153-1"/>
+        <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" TraceId="image3153-1"/>
     </Layer>
     <Layer Id="laz" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_fork_1" Bounds="181, 109, 122, 92" TraceId="image3164"/>
@@ -190,9 +191,9 @@
         </Block>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
-        <Enemy Id="enm1" Class="clsEnemyRat" ClassParams="@ratType=1" Bounds="233, 57, 22, 23" TraceId="image3141"/>
-        <Enemy Id="enm2" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="68, 113, 22, 23" TraceId="image3347"/>
-        <Enemy Id="enm3" Class="clsEnemyRat" ClassParams="@ratType=2" Bounds="189, 264, 22, 23" TraceId="image3240"/>
+        <Enemy Id="enm1" Class="clsEnemyRat1" Bounds="233, 57, 22, 23" TraceId="image3141"/>
+        <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="68, 113, 22, 23" TraceId="image3347"/>
+        <Enemy Id="enm3" Class="clsEnemyRat2" Bounds="189, 264, 22, 23" TraceId="image3240"/>
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=2" Bounds="68, 175, 28, 19" TraceId="image3820"/>
         <Food Id="fd2" Class="clsFood" ClassParams="@fishType=3" Bounds="102, 145, 31, 20" TraceId="image3831"/>
         <Food Id="fd3" Class="clsFood" ClassParams="@fishType=4" Bounds="69, 26, 28, 22" TraceId="image3842"/>
