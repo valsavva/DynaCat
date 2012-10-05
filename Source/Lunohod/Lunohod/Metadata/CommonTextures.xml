@@ -16,6 +16,16 @@
         <Texture Id="txrExplosion" Source="boom_new"/>
         <Texture Id="txrBomb" Source="bomb"/>
         <Texture Id="txr_parachute" Source="parashut_03" />
+        
+        <Texture Id="txr_butter_8" Source="butter_08" />
+        <Texture Id="txr_butter_7" Source="butter_07" />
+        <Texture Id="txr_butter_1" Source="butter_01" />
+        <Texture Id="txr_butter_6" Source="butter_06" />
+        <Texture Id="txr_butter_3" Source="butter_03" />
+        <Texture Id="txr_butter_4" Source="butter_04" />
+        <Texture Id="txr_butter_5" Source="butter_05" />
+        <Texture Id="txr_butter_2" Source="butter_02" />
+
 
         <Texture Id="txrSmoke_1" Source="smoke_01"/>
         <Texture Id="txrSmoke_2" Source="smoke_02"/>
@@ -26,6 +36,7 @@
         <Texture Id="txrExitFlightFire" Source="exit_demo_fire_sprite_16x34x4"/>
         
         <Texture Id="txrRefrigerator" Source="refrigerator"/>
+        
         <!-- fishes -->
         
         <Texture Id="txrFishBones" Source="fish_bone_sht_33x20x3" />
@@ -61,33 +72,10 @@
         <Texture Id="txrBlowFlash3" Source="blow_flash_3_spr_50x54x3" />
         <Texture Id="txrBlowFlash4" Source="blow_flash_4_spr_37x35x3" />
 
-        <Texture Id="txr_butter_8" Source="butter_08" />
-        <Texture Id="txr_butter_7" Source="butter_07" />
-        <Texture Id="txr_butter_1" Source="butter_01" />
-        <Texture Id="txr_butter_6" Source="butter_06" />
-        <Texture Id="txr_butter_3" Source="butter_03" />
-        <Texture Id="txr_butter_4" Source="butter_04" />
-        <Texture Id="txr_butter_5" Source="butter_05" />
-        <Texture Id="txr_butter_2" Source="butter_02" />
-
-    </Resources>
 
     <!-- hero -->
 
-
-    <Resources RootFolder="Textures">
-        <Texture Id="txrHeroDefault" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroEating" Source="Cat_eat_Spr_100x100x3"/>
-        <Texture Id="txrHeroGottaEShock" Source="Cat_lightning_Spr_100x100x3"/>
-        <Texture Id="txrHeroGottaDamage" Source="Cat_beating_sht_100x100x5" />
-        <Texture Id="txrHeroDying" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroWaitingExplosion" Source="Cat_waits_001"/>
-        <Texture Id="txrHeroGoodExplosion" Source="Cat_smile0001"/>
-        <Texture Id="txrHeroBadExplosion" Source="Cat_eats0002"/>
-        <Texture Id="txrHeroScareLeft" Source="Cat_scare_left_Spr_100x100x3"/>
-        <Texture Id="txrHeroScareRight" Source="Cat_scare_right_Spr_100x100x3"/>
-        <Texture Id="txrHeroSurprised" Source="Cat_question_spr_100x100x2"/>
-        <Texture Id="txrHeroExit" Source="Cat_0000_norm"/>
-        <Texture Id="txrHeroDeform" Source="Cat_deform_sht_100x100x4"/>
+        <Texture Id="txrHero" Source="hero"/>
+        
     </Resources>
 </Include>

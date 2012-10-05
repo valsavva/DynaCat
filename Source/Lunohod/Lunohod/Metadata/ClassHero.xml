@@ -16,6 +16,8 @@
                 hero.Height=24;
                 @heroLastDirection=1"/>
 
+            <Sprite Id="this_txrHero" TextureId="txrHero" Bounds="-7, -32, 47, 59" FrameBounds="0,0,47,59" FrameCount="5" CurrentFrame="0"/>
+
 <!-- States 
 
             hero.IsDead         : /major/ hero dying
@@ -39,13 +41,11 @@
                          anmHeroDying.Start()"
                          StayTriggered="true"
                          Group="sttHeroStates">
-<!--                <Image Id="imgHeroDying" TextureId="txrHeroDying" Bounds="-33, -46, 100, 100"/>-->
-                <Sprite Id="this_shtHeroDying" TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="5"/>
             </BoolTrigger>
             
             <SequenceSet Id="anmHeroDying">
-           		<Do Action="this_shtHeroDying.CurrentFrame=system.Rnd(0,4)" />
-                <NumAnimation Duration="0.1" Target="this_shtHeroDying.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+           		<Do Action="this_txrHero.CurrentFrame=system.Rnd(3,7)" />
+                <NumAnimation Duration="0.1" Target="this_txrHero.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
                 <Do Action="system.StartScreen('ScreenLevelFailed.xml')"/>
             </SequenceSet>
             
@@ -56,20 +56,20 @@
                          anmHeroExit.Start()"
                          StayTriggered="true"
                          Group="sttHeroStates">
-                <Image TextureId="txrHeroExit" Bounds="-33, -46, 100, 100"/>
             </BoolTrigger>
             
             <SequenceSet Id="anmHeroExit" RepeatCount="1">
-                <Delay Duration="0.3" />
-                <!--<Do Action="hero.Depth=exit.Depth+0.1" />-->
+                <Do Action="this_txrHero.CurrentFrame=1" />
+                <Delay Duration="0.15" />
+                <Do Action="this_txrHero.CurrentFrame=2" />
+                <Delay Duration="0.15" />
+                <Do Action="this_txrHero.CurrentFrame=0" />
                 <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
                 <Do Action="hero.X=-7777777;hero.Y=-7777777" />
             </SequenceSet>
 
             <!--sttPortIn : /major/ hero goes to teleport entry-->
-            <BoolTrigger Condition="hero:sttPortIn" EnterAction="this_shtHeroDeform.CurrentFrame=@heroLastDirection-1" Group="sttHeroStates" >
-                <Sprite Id="this_shtHeroDeform" TextureId="txrHeroDeform" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="4"/>
-            </BoolTrigger>
+            <BoolTrigger Condition="hero:sttPortIn" EnterAction="this_txrHero.CurrentFrame=@heroLastDirection+7" Group="sttHeroStates" />
 
             <!-- sttElecticShock : /major/ gotta electic shock -->
             <BoolTrigger Condition="hero:sttElecticShock" 
@@ -78,14 +78,13 @@
                          hero:-sttEating;hero:-sttGoodExplosion"
                          ExitAction="anmElecticShock.Stop()"
                          Group="sttHeroStates">
-                <Sprite Id="sprHeroGottaEShock" TextureId="txrHeroGottaEShock" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="3"/>
                 <Group Id="this_imgWhiteLight" IsRoot="true" Bounds="0,0,480,320" BackColor="#FFFFFF" Opacity="0" Depth="0.001">
                     <Image TextureId="blank"/>
                 </Group>
             </BoolTrigger>
 
             <SequenceSet Id="anmElecticShock" RepeatCount="1">
-                <NumAnimation From="0" To="2" Duration="0.5" Target="sprHeroGottaEShock.CurrentFrame" RepeatCount="1" Fill="End"/>
+                <NumAnimation From="15" To="17" Duration="0.5" Target="this_txrHero.CurrentFrame" RepeatCount="1" Fill="End"/>
                 <Do Action="hero:-sttElecticShock" />
             </SequenceSet>
 
@@ -96,61 +95,60 @@
                          EnterAction="anmHeroGottaDamage.Start();
                          hero:-sttEating;hero:-sttGoodExplosion"
                          Group="sttHeroStates">
-                <Sprite Id="this_shtHeroGottaDamage" TextureId="txrHeroGottaDamage" Bounds="-33, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="5"/>
-                <!--<NumAnimation From="0" To="4" Duration="2.5" Target="this_shtHeroGottaDamage.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>-->
             </BoolTrigger>
             
-            <Sprite Id="this_sprBlowFlash1" TextureId="txrBlowFlash1" Bounds="-13,-15,57,56" FrameBounds="0,0,57,56" FrameCount="3" Enabled="false" Depth="0.08" />
-            <Sprite Id="this_sprBlowFlash2" TextureId="txrBlowFlash2" Bounds="-15,-22,64,64" FrameBounds="0,0,64,64" FrameCount="3" Enabled="false" Depth="0.08" />
-            <Sprite Id="this_sprBlowFlash3" TextureId="txrBlowFlash3" Bounds="-10,-12,50,54" FrameBounds="0,0,50,54" FrameCount="3" Enabled="false" Depth="0.08" />
-            <Sprite Id="this_sprBlowFlash4" TextureId="txrBlowFlash4" Bounds="-3,-7,37,35" FrameBounds="0,0,37,35" FrameCount="3" Enabled="false" Depth="0.08" />
+            <Sprite Id="this_sprBlowFlash1" TextureId="txrBlowFlash1" Bounds="-13,-15,57,56" FrameBounds="0,0,57,56" FrameCount="3" Opacity="0" Depth="0.08" />
+            <Sprite Id="this_sprBlowFlash2" TextureId="txrBlowFlash2" Bounds="-15,-22,64,64" FrameBounds="0,0,64,64" FrameCount="3" Opacity="0" Depth="0.08" />
+            <Sprite Id="this_sprBlowFlash3" TextureId="txrBlowFlash3" Bounds="-10,-12,50,54" FrameBounds="0,0,50,54" FrameCount="3" Opacity="0" Depth="0.08" />
+            <Sprite Id="this_sprBlowFlash4" TextureId="txrBlowFlash4" Bounds="-3,-7,37,35" FrameBounds="0,0,37,35" FrameCount="3" Opacity="0" Depth="0.08" />
 
             <ParallelSet Id="anmHeroGottaDamage" RepeatCount="0">
                 <SequenceSet RepeatCount="1">
                     <Delay Duration="0.3" />
-                    <Do Action="this_shtHeroGottaDamage.CurrentFrame=system.Rnd(0,4)" RepeatCount="1"/>
+                    <Do Action="this_txrHero.CurrentFrame=system.Rnd(3,7)" RepeatCount="1"/>
                     <Delay Duration="0.5" />
                     <Do Action="hero:-sttGottaDamage" />
                 </SequenceSet>
                 <RandomSet RepeatCount="1">
+                    
                     <SequenceSet RepeatCount="1">
                         <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                        <Do Action="this_sprBlowFlash1.Enable();
+                        <Do Action="this_sprBlowFlash1.Opacity=1;
                             this_sprBlowFlash1.X=this_sprBlowFlash1.X+@this_flashDX;
                             this_sprBlowFlash1.Y=this_sprBlowFlash1.Y+@this_flashDY" />
                         <NumAnimation From="0" To="2" Duration="0.3" Target="this_sprBlowFlash1.CurrentFrame" RepeatCount="1" Fill="End"/>
-                        <Do Action="this_sprBlowFlash1.Disable();
+                        <Do Action="this_sprBlowFlash1.Opacity=0;
                             this_sprBlowFlash1.X=this_sprBlowFlash1.X-@this_flashDX
                             this_sprBlowFlash1.Y=this_sprBlowFlash1.Y-@this_flashDY" />
 
                         <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                        <Do Action="this_sprBlowFlash4.Enable();
+                        <Do Action="this_sprBlowFlash4.Opacity=1;
                             this_sprBlowFlash4.X=this_sprBlowFlash4.X+@this_flashDX;
                             this_sprBlowFlash4.Y=this_sprBlowFlash4.Y+@this_flashDY" />
                         <NumAnimation From="0" To="2" Duration="0.2" Target="this_sprBlowFlash4.CurrentFrame" RepeatCount="1" Fill="End"/>
-                        <Do Action="this_sprBlowFlash4.Disable();
+                        <Do Action="this_sprBlowFlash4.Opacity=0;
                             this_sprBlowFlash4.X=this_sprBlowFlash4.X-@this_flashDX
                             this_sprBlowFlash4.Y=this_sprBlowFlash4.Y-@this_flashDY" />
                     </SequenceSet>
                 
                     <SequenceSet RepeatCount="1">
                         <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                        <Do Action="this_sprBlowFlash2.Enable();
+                        <Do Action="this_sprBlowFlash2.Opacity=1;
                             this_sprBlowFlash2.X=this_sprBlowFlash2.X+@this_flashDX;
                             this_sprBlowFlash2.Y=this_sprBlowFlash2.Y+@this_flashDY" />
                         <NumAnimation From="0" To="2" Duration="0.5" Target="this_sprBlowFlash2.CurrentFrame" RepeatCount="1" Fill="End"/>
-                        <Do Action="this_sprBlowFlash2.Disable();
+                        <Do Action="this_sprBlowFlash2.Opacity=0;
                             this_sprBlowFlash2.X=this_sprBlowFlash2.X-@this_flashDX
                             this_sprBlowFlash2.Y=this_sprBlowFlash2.Y-@this_flashDY" />
                     </SequenceSet>
                 
                     <SequenceSet RepeatCount="1">
                         <Do Action="@this_flashDX=system.Rnd(-16,16);@this_flashDY=system.Rnd(-12,12)" />
-                        <Do Action="this_sprBlowFlash3.Enable();
+                        <Do Action="this_sprBlowFlash3.Opacity=1;
                             this_sprBlowFlash3.X=this_sprBlowFlash3.X+@this_flashDX;
                             this_sprBlowFlash3.Y=this_sprBlowFlash3.Y+@this_flashDY" />
                         <NumAnimation From="0" To="2" Duration="0.5" Target="this_sprBlowFlash3.CurrentFrame" RepeatCount="1" Fill="End"/>
-                        <Do Action="this_sprBlowFlash3.Disable();
+                        <Do Action="this_sprBlowFlash3.Opacity=0;
                             this_sprBlowFlash3.X=this_sprBlowFlash3.X-@this_flashDX
                             this_sprBlowFlash3.Y=this_sprBlowFlash3.Y-@this_flashDY" />             
                     </SequenceSet>
@@ -163,10 +161,9 @@
                          EnterAction="anmHeroEating.Start()" 
                          ExitAction="anmHeroEating.Stop()"
                          Group="sttHeroStates">
-                <Sprite Id="sprHeroEating" TextureId="txrHeroEating" Bounds="-33, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="3"/>
             </BoolTrigger>
             <SequenceSet Id="anmHeroEating" RepeatCount="1">
-                <NumAnimation From="0" To="2" Duration="0.5" Target="sprHeroEating.CurrentFrame" RepeatCount="1" Fill="End"/>
+                <NumAnimation From="12" To="14" Duration="0.5" Target="this_txrHero.CurrentFrame" RepeatCount="1" Fill="End"/>
                 <RandomSet>
                     <Delay Duration="0.1" />
                     <Delay Duration="0.25" />
@@ -178,16 +175,16 @@
 
             <!-- sttWaitingExplosion : /minor/ hero fire a bomb -->
             <BoolTrigger Condition="hero:sttWaitingExplosion" 
+                         EnterAction="this_txrHero.CurrentFrame=23"
                          Group="sttHeroStates">
-                <Image TextureId="txrHeroWaitingExplosion" Bounds="-35, -46, 100, 100"/>
             </BoolTrigger>
 
             <!-- sttGoodExplosion : /minor/ explosion - good one! -->
             <BoolTrigger Condition="hero:sttGoodExplosion" 
-                         EnterAction="anmGoodExplosion.Start()" 
+                         EnterAction="anmGoodExplosion.Start();
+                         this_txrHero.CurrentFrame=22" 
                          ExitAction="anmGoodExplosion.Stop()"
                          Group="sttHeroStates">
-                <Image TextureId="txrHeroGoodExplosion" Bounds="-33, -46, 100, 100"/>
             </BoolTrigger>
             <SequenceSet Id="anmGoodExplosion">
                 <Delay Duration="1" />
@@ -197,10 +194,10 @@
             <!-- sttBadExplosion : /minor/ explosion - bad -->
             <BoolTrigger Condition="hero:sttBadExplosion" 
                          EnterAction="anmBadExplosion.Start();
+                         this_txrHero.CurrentFrame=13;
                          SFX:+hasBadExplosion"
                          ExitAction="anmBadExplosion.Stop()"
                          Group="sttHeroStates">
-                <Image TextureId="txrHeroBadExplosion" Bounds="-33, -46, 100, 100"/>
             </BoolTrigger>
             <SequenceSet Id="anmBadExplosion">
                 <Delay Duration="1" />
@@ -210,32 +207,27 @@
             <!-- OnOilMotion : /minor/ hero on the Oil -->
             <BoolTrigger Condition="hero:OnOilMotion" 
                          Group="sttHeroStates" >
-                <Sprite TextureId="txrHeroSurprised" Bounds="-35, -46, 100, 100"  FrameBounds="0,0,100,100" FrameCount="2">
-                    <NumAnimation From="0" To="1" Duration="0.4" Target="CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
-                </Sprite>
+                <NumAnimation From="18" To="19" Duration="0.4" Target="this_txrHero.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
             </BoolTrigger>
  
             <!-- Magneted : /minor/ beamed by magnet waves -->
-            <BoolTrigger Condition="hero:Magneted" Group="sttHeroStates" >
-                <Sprite Id="shtHeroSurprised" TextureId="txrHeroSurprised" Bounds="-35, -46, 100, 100" FrameBounds="0,0,100,100" FrameCount="2">
-                    <NumAnimation From="0" To="1" Duration="0.4" Target="CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
-                </Sprite>
+            <BoolTrigger Condition="hero:Magneted" 
+                         Group="sttHeroStates" >
+                <NumAnimation From="18" To="19" Duration="0.4" Target="this_txrHero.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
             </BoolTrigger>
 
             <BoolTrigger Condition="hero:Magneted and not hero:Magneting" 
                          EnterAction="setHeroSurQuake.Start()" 
                          ExitAction="setHeroSurQuake.Stop();setHeroSurQuakeEnd.Start()" />
             <SequenceSet Id="setHeroSurQuake" RepeatCount="0">
-                <NumAnimation Target="shtHeroSurprised.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
-                <NumAnimation Target="shtHeroSurprised.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
+                <NumAnimation Target="this_txrHero.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
+                <NumAnimation Target="this_txrHero.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
             </SequenceSet>
 
-            <NumAnimation Id="setHeroSurQuakeEnd" Target="shtHeroSurprised.X" From="shtHeroSurprised.X" To="-33" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
+            <NumAnimation Id="setHeroSurQuakeEnd" Target="this_txrHero.X" From="this_txrHero.X" To="-7" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
 
             <!-- default -->
-			<BoolTrigger Group="sttHeroStates">
-                <Image TextureId="txrHeroDefault" Bounds="-33, -46, 100, 100"/>
-			</BoolTrigger>
+			<BoolTrigger Group="sttHeroStates" EnterAction="this_txrHero.CurrentFrame=0"/>
 
         </Hero>
 		
