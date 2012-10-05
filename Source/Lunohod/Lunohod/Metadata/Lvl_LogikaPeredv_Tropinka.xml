@@ -10,6 +10,7 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
+        <Texture Id="txr_tailsGray" Source="tailsGray" />
         <Texture Id="txr_tailsBlue" Source="tailsBlue" />
         <Texture Id="txr_second_phon_index3" Source="second_phon_index3" />
         <Texture Id="txr_second_phon_grill_with_fan_2" Source="second_phon_grill_with_fan_2" />
@@ -25,8 +26,17 @@
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_box_old_2" Source="box_old_2" />
     </Resources>
-    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image4212"/>
+    <Layer Id="_background" BackColor="#FFFFFFFF">
+        <Image Id="dfltMask1" TextureId="txr_tailsGray" BackColor="#C7C7FF" Bounds="0, 0, 480, 320" TraceId="image4212"/>
+        <Image Id="dfltMask1a" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image4212"/>
+        <SequenceSet Id="zzzz" RepeatCount="0" InProgress="true">
+            <Do Action="dfltMask1.Disable();dfltMask1a.Disable()" />
+            <Delay Duration="1" />            
+            <Do Action="dfltMask1.Enable();dfltMask1a.Disable()" />
+            <Delay Duration="5" />
+            <Do Action="dfltMask1.Disable();dfltMask1a.Enable()" />
+            <Delay Duration="5" />
+        </SequenceSet>
     </Layer>
     <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_second_phon_index3" Bounds="62, 63, 38, 35" Stretch="true" TraceId="image3144"/>
