@@ -12,7 +12,6 @@
     <Resources RootFolder="Textures">
         <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_second_phon_crack" Source="second_phon_crack" />
-        <Texture Id="txr_second_phon_plate2" Source="second_phon_plate2" />
         <Texture Id="txr_web_01" Source="web_01" />
         <Texture Id="txr_traces_singl" Source="traces_singl" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
@@ -33,8 +32,6 @@
     </Layer>
     <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_second_phon_crack" Bounds="311, 283, 107, 45" Stretch="true" TraceId="image4217"/>
-        <Image Id="dfltMask3" TextureId="txr_second_phon_plate2" Bounds="288, 204, 26, 20" Stretch="true" TraceId="image4272"/>
-        <Image Id="dfltMask4" TextureId="txr_second_phon_plate2" Bounds="314, 204, 26, 20" Stretch="true" TraceId="image4275"/>
         <Image Id="dfltMask5" TextureId="txr_web_01" Bounds="315, 102, 25, 29" Stretch="true" Opacity="0.58" TraceId="image3527"/>
     </Layer>
     <Layer Id="_traces" Opacity="0.5" CacheContent="true" BackColor="#FFFFFFFF">

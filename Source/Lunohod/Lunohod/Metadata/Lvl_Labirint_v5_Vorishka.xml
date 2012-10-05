@@ -9,13 +9,11 @@
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
         <Texture Id="txr_bckg_brick" Source="bckg_brick" />
-        <Texture Id="txr_second_phon_communications2" Source="second_phon_communications2" />
-        <Texture Id="txr_second_phon_communications_2" Source="second_phon_communications_2" />
-        <Texture Id="txr_second_phon_communications_2_hor_me" Source="second_phon_communications_2_hor_me" />
         <Texture Id="txr_second_phon_ventilation_grille" Source="second_phon_ventilation_grille" />
         <Texture Id="txr_second_phon_tank" Source="second_phon_tank" />
         <Texture Id="txr_second_phon_ladder" Source="second_phon_ladder" />
         <Texture Id="txr_second_phon_crack" Source="second_phon_crack" />
+        <Texture Id="txr_second_phon_communications" Source="second_phon_communications" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
         <Texture Id="txr_texture_brick_1" Source="texture_brick_1" />
         <Texture Id="txr_texture_brick_2" Source="texture_brick_2" />
@@ -46,22 +44,20 @@
         <Block Id="blk14" Bounds="340, 184, 52, 60" Edges="Stick" TraceId="image3349"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="0, 0, 80, 320"/>
-		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="80, 0, 80, 320"/>
-		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="160, 0, 80, 320"/>
-		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="240, 0, 80, 320"/>
-		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="320, 0, 80, 320"/>
-		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="400, 0, 80, 320"/>
+        <Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="0, 0, 80, 320"/>
+        <Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="80, 0, 80, 320"/>
+        <Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="160, 0, 80, 320"/>
+        <Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="240, 0, 80, 320"/>
+        <Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="320, 0, 80, 320"/>
+        <Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask2" TextureId="txr_second_phon_communications2" Bounds="77, 58, 49, 78" Rotation="90" Stretch="true" TraceId="image3247-4"/>
-        <Image Id="dfltMask3" TextureId="txr_second_phon_communications_2" Bounds="77, 177, 52, 88" Rotation="90" Stretch="true" TraceId="image3258-0"/>
-        <Image Id="dfltMask4" TextureId="txr_second_phon_communications_2_hor_me" Bounds="72, 106, 72, 18" Rotation="90" Stretch="true" TraceId="image3269-9"/>
-        <Image Id="dfltMask5" TextureId="txr_second_phon_ventilation_grille" Bounds="419, 24, 34, 32" Stretch="true" TraceId="image3280"/>
-        <Image Id="dfltMask6" TextureId="txr_second_phon_tank" Bounds="333, 262, 29, 36" Stretch="true" TraceId="image3291"/>
-        <Image Id="dfltMask7" TextureId="txr_second_phon_ladder" Bounds="437, 197, 30, 109" Rotation="30" Stretch="true" TraceId="image3302-4"/>
-        <Image Id="dfltMask8" TextureId="txr_second_phon_tank" Bounds="362, 259, 27, 34" Stretch="true" TraceId="image3305"/>
-        <Image Id="dfltMask9" TextureId="txr_second_phon_crack" Bounds="434, 63, 53, 25" Stretch="true" TraceId="image3315"/>
+        <Image Id="dfltMask1" TextureId="txr_second_phon_ventilation_grille" Bounds="419, 24, 34, 32" Stretch="true" TraceId="image3280"/>
+        <Image Id="dfltMask2" TextureId="txr_second_phon_tank" Bounds="333, 262, 29, 36" Stretch="true" TraceId="image3291"/>
+        <Image Id="dfltMask3" TextureId="txr_second_phon_ladder" Bounds="437, 197, 30, 109" Rotation="30" Stretch="true" TraceId="image3302-4"/>
+        <Image Id="dfltMask4" TextureId="txr_second_phon_tank" Bounds="362, 259, 27, 34" Stretch="true" TraceId="image3305"/>
+        <Image Id="dfltMask5" TextureId="txr_second_phon_crack" Bounds="434, 63, 53, 25" Stretch="true" TraceId="image3315"/>
+        <Image Id="dfltMask6" TextureId="txr_second_phon_communications" Bounds="81, 79, 85, 64" Rotation="90" Stretch="true" TraceId="image3236"/>
     </Layer>
     <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask10" TextureId="txr_texture_brick_clean" Bounds="-8, 0, 26, 20" TraceId="image3016-1"/>
@@ -243,7 +239,7 @@
         <BoolTrigger Condition="not enm1:IntersectHero and not enm1_setDying.InProgress">
             <NumAnimation Id="anm1" From="0" To="-133" Target="enm1.X" Duration="5" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image4164"/>
         </BoolTrigger>
-        
+
         <Enemy Id="enm2" Class="clsEnemyRat3" Bounds="176, 259, 24, 25" TraceId="image4296"/>
         <Do Action="enm2:+Walker" InProgress="true" RepeatCount="1"/>
         <BoolTrigger Condition="not enm2:IntersectHero and not enm2_setDying.InProgress">
