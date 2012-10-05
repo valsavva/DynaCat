@@ -8,7 +8,7 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_circular_saw_50" Source="circular_saw_50" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
         <Texture Id="txr_texture_brick_1" Source="texture_brick_1" />
@@ -18,7 +18,6 @@
         <Texture Id="txr_detal_3" Source="detal_3" />
         <Texture Id="txr_box_b_004" Source="box_b_004" />
         <Texture Id="txr_box_b_009" Source="box_b_009" />
-        <Texture Id="txr__dash+interface" Source="_dash+interface" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="0, 0, 134, 208" Edges="Stick" TraceId="image3810"/>
@@ -37,7 +36,12 @@
         <Block Id="blk14" Bounds="314, 208, 78, 36" Edges="Bounce" TraceId="image3362"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3839"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemySaw" Bounds="72, 192, 50, 50" TraceId="image3335">

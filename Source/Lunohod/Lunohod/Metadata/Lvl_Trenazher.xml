@@ -16,7 +16,7 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_tailsBlue" Source="tailsBlue" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_wire_004" Source="wire_004" />
         <Texture Id="txr_wire_003" Source="wire_003" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
@@ -39,7 +39,12 @@
         <Block Id="blk6" Bounds="0, 180, 480, 50" Edges="Stick" TraceId="image3321"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image3931"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="trenAct1" BackColor="#FFFFFFFF">
         <Enemy Id="enm1" Class="clsEnemyRat3" Bounds="304, 113, 24, 25" TraceId="image3349"/>

@@ -43,7 +43,12 @@
         <Block Id="blk20" Bounds="434, 80, 40, 40" Edges="Stick" TraceId="image3348"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsGreen" Bounds="0, 0, 480, 320" TraceId="image3527"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_second_phon_ventilation_grille" Bounds="37, 16, 30, 30" Stretch="true" TraceId="image3574"/>

@@ -36,7 +36,12 @@
         <Block Bounds="100, 30, 30, 30" Edges="Bounce" TraceId="image3669"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsGreen" Bounds="0, 0, 480, 320" TraceId="image3459"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="_traces" Opacity="0.5" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_traces_singl" Bounds="62, 69,  25,  18" TraceId="image3201"/>

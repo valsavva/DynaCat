@@ -9,7 +9,7 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_circular_saw_50" Source="circular_saw_50" />
         <Texture Id="txr_box_old_1" Source="box_old_1" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
@@ -19,7 +19,6 @@
         <Texture Id="txr_detal_3" Source="detal_3" />
         <Texture Id="txr_box_b_016" Source="box_b_016" />
         <Texture Id="txr_graffiti_dynacat" Source="graffiti_dynacat" />
-        <Texture Id="txr__dash+interface" Source="_dash+interface" />
     </Resources>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="122, -180, 407, 224" Edges="Stick" TraceId="image3815"/>
@@ -36,7 +35,12 @@
         <Block Id="blk12" Bounds="-52, 44, 52, 40" Edges="Stick" TraceId="image3438"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="0, 0, 480, 320" TraceId="image3839"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Group Id="grp_Saws">
@@ -341,9 +345,6 @@
         <Group Id="exit" Class="clsExit" Bounds="432, 234, 37, 54" TraceId="image3049" />
     </Layer>
     <Layer Id="upmask" BackColor="#FFFFFFFF">
-    </Layer>
-    <Layer Id="dash" Opacity="0.61805558" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask231" TextureId="txr__dash+interface" Bounds="0, 0, 480, 320" TraceId="image3278"/>
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />

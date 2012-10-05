@@ -89,10 +89,15 @@
     </Class>
 
 	<Resources RootFolder="Textures">
-        <Texture Id="txr_tailsBrown" Source="tailsBrown" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsBrown" Bounds="0, 0, 480, 320" TraceId="image3058"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-173, 0, 159, 320" Edges="Bounce" TraceId="image3041"/>

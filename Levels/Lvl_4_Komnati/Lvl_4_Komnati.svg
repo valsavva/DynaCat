@@ -3,13 +3,13 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="480" height="320" id="svg2" version="1.1" inkscape:version="0.48.1 " sodipodi:docname="Lvl_4_Komnati.svg" style="display:inline" inkscape:export-filename="D:\Lunohod\Levels\Lvl_4_Komnati\Lvl_4_Komnati.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90">
     <defs id="defs4" />
-    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1" inkscape:cx="266.70765" inkscape:cy="160.4206" inkscape:document-units="px" inkscape:current-layer="layer2" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="false" inkscape:guide-bbox="true">
+    <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.2505495" inkscape:cx="162.99324" inkscape:cy="170.66337" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" width="480px" inkscape:showpageshadow="false" inkscape:window-width="1280" inkscape:window-height="744" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" showguides="true" inkscape:guide-bbox="true">
         <sodipodi:guide orientation="0,1" position="320,256" id="guide3018" />
         <sodipodi:guide orientation="0,1" position="160,64" id="guide3020" />
         <sodipodi:guide orientation="1,0" position="400,192" id="guide3022" />
         <sodipodi:guide orientation="1,0" position="80,128" id="guide3024" />
-        <sodipodi:guide orientation="0,1" position="240,160" id="guide3005" />
-        <sodipodi:guide orientation="1,0" position="240,160" id="guide3007" />
+        <sodipodi:guide orientation="0,1" position="263.88401,146.33568" id="guide3005" />
+        <sodipodi:guide orientation="1,0" position="231.09842,181.52021" id="guide3007" />
         <sodipodi:guide orientation="1,0" position="0,160" id="guide3072" />
         <sodipodi:guide orientation="1,0" position="480,160" id="guide3074" />
         <sodipodi:guide orientation="0,1" position="240,320" id="guide3076" />
@@ -22,7 +22,7 @@
             <cc:Work rdf:about="">
                 <dc:format>image/svg+xml</dc:format>
                 <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
+                <dc:title />
             </cc:Work>
         </rdf:RDF>
     </metadata>
@@ -42,11 +42,20 @@
         <image y="-48" x="5" id="image4219" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockBounce/BlockBounce.png" height="222" width="24.145971" />
         <image width="24.145971" height="178" xlink:href="file:///D:/Lunohod/Grfx/objects/unvisible/BlockBounce/BlockBounce.png" id="image4221" x="219" y="46" />
     </g>
-    <g inkscape:groupmode="layer" id="layer1" inkscape:label="_background" style="display:inline" sodipodi:insensitive="true">
-        <image width="480" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/brickBlue.png" id="image3328" x="194" y="10" />
-        <image y="10" x="-250" id="image3325" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/tailsGreen.png" height="320" width="480" />
-        <image y="-146" x="-246" id="image3074" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/brickBlue.png" height="320" width="480" />
-        <image y="-150" x="232" id="image3314" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/tailsBrown.png" height="320" width="480" />
+    <g inkscape:groupmode="layer" id="layer1" inkscape:label="_background" style="display:inline">
+        <image width="80" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" id="image3192" x="471.09842" y="-0.3356781" />
+        <image y="-0.3356781" x="391.09842" id="image3190" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" height="320" width="80" />
+        <image width="80" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" id="image3188" x="311.09842" y="-0.3356781" />
+        <image y="-0.3356781" x="231.09842" id="image3186" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" height="320" width="80" />
+        <image width="80" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" id="image3180" x="151.09842" y="-0.3356781" />
+        <image y="-0.3356781" x="71.098419" id="image3182" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" height="320" width="80" />
+        <image width="80" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" id="image3184" x="-8.9015808" y="-0.3356781" />
+        <image width="80" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" id="image3178" x="391.09842" y="-146.33568" />
+        <image y="-146.33568" x="311.09842" id="image3176" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" height="320" width="80" />
+        <image width="80" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" id="image3174" x="231.09842" y="-146.33568" />
+        <image y="-146.33568" x="151.09842" id="image3166" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" height="320" width="80" />
+        <image width="80" height="320" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" id="image3169" x="71.098419" y="-146.33568" />
+        <image y="-146.33568" x="-8.9015808" id="image3172" xlink:href="file:///D:/Lunohod/Grfx/design/backgrounds/bckg_brick.png" height="320" width="80" />
     </g>
     <g inkscape:groupmode="layer" id="layer8" inkscape:label="_design" style="display:inline" sodipodi:insensitive="true">
         <image style="display:inline" width="20" height="26" xlink:href="file:///D:/Lunohod/Grfx/design/wall/MetalConstruction/detal_me1.png" id="image3171" x="20" y="150" />

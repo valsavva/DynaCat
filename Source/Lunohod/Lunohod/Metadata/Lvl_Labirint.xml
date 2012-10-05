@@ -8,7 +8,7 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_brickGreen" Source="brickGreen" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_second_phon_communications_2" Source="second_phon_communications_2" />
         <Texture Id="txr_second_phon_communications2" Source="second_phon_communications2" />
         <Texture Id="txr_second_phon_communications" Source="second_phon_communications" />
@@ -25,7 +25,12 @@
         <Texture Id="txr_wire_003" Source="wire_003" />
     </Resources>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickGreen" Bounds="0, 0, 480, 320" TraceId="image3203"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="_secondbckg" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_second_phon_communications_2" Bounds="7, 114, 70, 118" TraceId="image3834"/>

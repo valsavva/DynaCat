@@ -12,13 +12,13 @@
     <Include File="ClassTower.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_brickGreen" Source="brickGreen" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_wire_003" Source="wire_003" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
         <Texture Id="txr_box_30x30_017" Source="box_30x30_017" />
         <Texture Id="txr_wire_001" Source="wire_001" />
         <Texture Id="txr_wire_002" Source="wire_002" />
-        <Texture Id="txr_brickBlue" Source="brickBlue" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_box1" Source="box_30x30_009" />
         <Texture Id="txr_box2" Source="box_30x30_008" />
         <Texture Id="txr_texture_brick_clean" Source="texture_brick_clean" />
@@ -27,7 +27,12 @@
         <Texture Id="txr_TeleportEntryLeft" Source="TeleportEntryLeft" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickGreen" Bounds="0, 0, 480, 320" TraceId="image3248"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="0, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="80, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="160, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="240, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="320, 0, 80, 320"/>
+		<Image TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="400, 0, 80, 320"/>
     </Layer>
     <Layer Id="blocks" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="200, 0, 80, 130" Edges="Stick" TraceId="image3023"/>

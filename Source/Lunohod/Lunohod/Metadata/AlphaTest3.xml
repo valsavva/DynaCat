@@ -13,7 +13,7 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassFood.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_tailsBlue" Source="tailsBlue" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image3013"/>

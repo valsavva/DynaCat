@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SVG to XGAME xml converter v1.6.15 -->
+<!-- SVG to XGAME xml converter v1.6.21 -->
 <!-- source: D:\Lunohod\Levels\Lvl_4_Komnati\Lvl_4_Komnati.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="Lvl_4_Komnati" Bounds="0, 0, 480, 320">
     <Include File="ClassFood.xml" />
@@ -11,9 +11,7 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_brickBlue" Source="brickBlue" />
-        <Texture Id="txr_tailsGreen" Source="tailsGreen" />
-        <Texture Id="txr_tailsBrown" Source="tailsBrown" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_detal_me1" Source="detal_me1" />
         <Texture Id="txr_TeleportTubeHor" Source="TeleportTubeHor" />
         <Texture Id="txr_TeleportTubeVert" Source="TeleportTubeVert" />
@@ -40,36 +38,48 @@
         <Block Id="blk14" Bounds="219, 46, 24, 178" Edges="Bounce" TraceId="image4221"/>
     </Layer>
     <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_brickBlue" Bounds="194, 10, 480, 320" TraceId="image3328"/>
-        <Image Id="dfltMask2" TextureId="txr_tailsGreen" Bounds="-250, 10, 480, 320" TraceId="image3325"/>
-        <Image Id="dfltMask3" TextureId="txr_brickBlue" Bounds="-246, -146, 480, 320" TraceId="image3074"/>
-        <Image Id="dfltMask4" TextureId="txr_tailsBrown" Bounds="232, -150, 480, 320" TraceId="image3314"/>
+        <Image Id="dfltMask1" TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="471, 0, 80, 320" TraceId="image3192"/>
+        <Image Id="dfltMask2" TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="391, 0, 80, 320" TraceId="image3190"/>
+        <Image Id="dfltMask3" TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="311, 0, 80, 320" TraceId="image3188"/>
+        <Image Id="dfltMask4" TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="231, 0, 80, 320" TraceId="image3186"/>
+        
+        <Image Id="dfltMask5" TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="151, 0, 80, 320" TraceId="image3180"/>
+        <Image Id="dfltMask6" TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="71, 0, 80, 320" TraceId="image3182"/>
+        <Image Id="dfltMask7" TextureId="txr_bckg_brick" BackColor="#C0EDDD" Bounds="-9, 0, 80, 320" TraceId="image3184"/>
+        
+        <Image Id="dfltMask8" TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="391, -146, 80, 320" TraceId="image3178"/>
+        <Image Id="dfltMask9" TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="311, -146, 80, 320" TraceId="image3176"/>
+        <Image Id="dfltMask10" TextureId="txr_bckg_brick" BackColor="#FFE5BF" Bounds="231, -146, 80, 320" TraceId="image3174"/>
+        
+        <Image Id="dfltMask11" TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="151, -146, 80, 320" TraceId="image3166"/>
+        <Image Id="dfltMask12" TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="71, -146, 80, 320" TraceId="image3169"/>
+        <Image Id="dfltMask13" TextureId="txr_bckg_brick" BackColor="#CCCCFF" Bounds="-9, -146, 80, 320" TraceId="image3172"/>
     </Layer>
     <Layer Id="_design" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask5" TextureId="txr_detal_me1" Bounds="20, 150, 20, 26" TraceId="image3171"/>
-        <Image Id="dfltMask6" TextureId="txr_detal_me1" Bounds="40, 150, 20, 26" TraceId="image3173"/>
-        <Image Id="dfltMask7" TextureId="txr_detal_me1" Bounds="60, 150, 20, 26" TraceId="image3175"/>
-        <Image Id="dfltMask8" TextureId="txr_detal_me1" Bounds="80, 150, 20, 26" TraceId="image3177"/>
-        <Image Id="dfltMask9" TextureId="txr_detal_me1" Bounds="100, 150, 20, 26" TraceId="image3179"/>
-        <Image Id="dfltMask10" TextureId="txr_detal_me1" Bounds="120, 150, 20, 26" TraceId="image3181"/>
-        <Image Id="dfltMask11" TextureId="txr_detal_me1" Bounds="140, 150, 20, 26" TraceId="image3183"/>
-        <Image Id="dfltMask12" TextureId="txr_detal_me1" Bounds="160, 150, 20, 26" TraceId="image3185"/>
-        <Image Id="dfltMask13" TextureId="txr_detal_me1" Bounds="180, 150, 20, 26" TraceId="image3187"/>
-        <Image Id="dfltMask14" TextureId="txr_detal_me1" Bounds="200, 150, 20, 26" TraceId="image3189"/>
-        <Image Id="dfltMask15" TextureId="txr_detal_me1" Bounds="220, 150, 20, 26" TraceId="image3191"/>
-        <Image Id="dfltMask16" TextureId="txr_detal_me1" Bounds="240, 150, 20, 26" TraceId="image3193"/>
-        <Image Id="dfltMask17" TextureId="txr_detal_me1" Bounds="260, 150, 20, 26" TraceId="image3195"/>
-        <Image Id="dfltMask18" TextureId="txr_detal_me1" Bounds="280, 150, 20, 26" TraceId="image3197"/>
-        <Image Id="dfltMask19" TextureId="txr_detal_me1" Bounds="300, 150, 20, 26" TraceId="image3199"/>
-        <Image Id="dfltMask20" TextureId="txr_detal_me1" Bounds="320, 150, 20, 26" TraceId="image3201"/>
-        <Image Id="dfltMask21" TextureId="txr_detal_me1" Bounds="340, 150, 20, 26" TraceId="image3203"/>
-        <Image Id="dfltMask22" TextureId="txr_detal_me1" Bounds="360, 150, 20, 26" TraceId="image3205"/>
-        <Image Id="dfltMask23" TextureId="txr_detal_me1" Bounds="380, 150, 20, 26" TraceId="image3207"/>
-        <Image Id="dfltMask24" TextureId="txr_detal_me1" Bounds="400, 150, 20, 26" TraceId="image3209"/>
-        <Image Id="dfltMask25" TextureId="txr_detal_me1" Bounds="420, 150, 20, 26" TraceId="image3211"/>
-        <Image Id="dfltMask26" TextureId="txr_detal_me1" Bounds="440, 150, 20, 26" TraceId="image3213"/>
-        <Image Id="dfltMask27" TextureId="txr_detal_me1" Bounds="-4, 150, 20, 26" TraceId="image3990"/>
-        <Image Id="dfltMask28" TextureId="txr_detal_me1" Bounds="460, 150, 20, 26" TraceId="image3992"/>
+        <Image Id="dfltMask14" TextureId="txr_detal_me1" Bounds="20, 150, 20, 26" TraceId="image3171"/>
+        <Image Id="dfltMask15" TextureId="txr_detal_me1" Bounds="40, 150, 20, 26" TraceId="image3173"/>
+        <Image Id="dfltMask16" TextureId="txr_detal_me1" Bounds="60, 150, 20, 26" TraceId="image3175"/>
+        <Image Id="dfltMask17" TextureId="txr_detal_me1" Bounds="80, 150, 20, 26" TraceId="image3177"/>
+        <Image Id="dfltMask18" TextureId="txr_detal_me1" Bounds="100, 150, 20, 26" TraceId="image3179"/>
+        <Image Id="dfltMask19" TextureId="txr_detal_me1" Bounds="120, 150, 20, 26" TraceId="image3181"/>
+        <Image Id="dfltMask20" TextureId="txr_detal_me1" Bounds="140, 150, 20, 26" TraceId="image3183"/>
+        <Image Id="dfltMask21" TextureId="txr_detal_me1" Bounds="160, 150, 20, 26" TraceId="image3185"/>
+        <Image Id="dfltMask22" TextureId="txr_detal_me1" Bounds="180, 150, 20, 26" TraceId="image3187"/>
+        <Image Id="dfltMask23" TextureId="txr_detal_me1" Bounds="200, 150, 20, 26" TraceId="image3189"/>
+        <Image Id="dfltMask24" TextureId="txr_detal_me1" Bounds="220, 150, 20, 26" TraceId="image3191"/>
+        <Image Id="dfltMask25" TextureId="txr_detal_me1" Bounds="240, 150, 20, 26" TraceId="image3193"/>
+        <Image Id="dfltMask26" TextureId="txr_detal_me1" Bounds="260, 150, 20, 26" TraceId="image3195"/>
+        <Image Id="dfltMask27" TextureId="txr_detal_me1" Bounds="280, 150, 20, 26" TraceId="image3197"/>
+        <Image Id="dfltMask28" TextureId="txr_detal_me1" Bounds="300, 150, 20, 26" TraceId="image3199"/>
+        <Image Id="dfltMask29" TextureId="txr_detal_me1" Bounds="320, 150, 20, 26" TraceId="image3201"/>
+        <Image Id="dfltMask30" TextureId="txr_detal_me1" Bounds="340, 150, 20, 26" TraceId="image3203"/>
+        <Image Id="dfltMask31" TextureId="txr_detal_me1" Bounds="360, 150, 20, 26" TraceId="image3205"/>
+        <Image Id="dfltMask32" TextureId="txr_detal_me1" Bounds="380, 150, 20, 26" TraceId="image3207"/>
+        <Image Id="dfltMask33" TextureId="txr_detal_me1" Bounds="400, 150, 20, 26" TraceId="image3209"/>
+        <Image Id="dfltMask34" TextureId="txr_detal_me1" Bounds="420, 150, 20, 26" TraceId="image3211"/>
+        <Image Id="dfltMask35" TextureId="txr_detal_me1" Bounds="440, 150, 20, 26" TraceId="image3213"/>
+        <Image Id="dfltMask36" TextureId="txr_detal_me1" Bounds="-4, 150, 20, 26" TraceId="image3990"/>
+        <Image Id="dfltMask37" TextureId="txr_detal_me1" Bounds="460, 150, 20, 26" TraceId="image3992"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Food Id="fd1" Class="clsFood" ClassParams="@fishType=6" Bounds="92, 98, 22, 27" TraceId="image3164"/>
@@ -81,58 +91,58 @@
         <Food Id="fd7" Class="clsFood" ClassParams="@fishType=5" Bounds="363, 287, 27, 20" TraceId="image3208"/>
     </Layer>
     <Layer Id="_portsDesign" CacheContent="true" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask29" TextureId="txr_TeleportTubeHor" Bounds="186, 34, 40, 56" TraceId="image4037"/>
-        <Image Id="dfltMask30" TextureId="txr_TeleportTubeHor" Bounds="230, 178, 40, 56" TraceId="image4035"/>
-        <Image Id="dfltMask31" TextureId="txr_TeleportTubeVert" Bounds="-12, 296, 56, 40" TraceId="image4033"/>
-        <Image Id="dfltMask32" TextureId="txr_TeleportTubeVert" Bounds="166, 268, 56, 40" TraceId="image4029"/>
-        <Image Id="dfltMask33" TextureId="txr_TeleportTubeVert" Bounds="166, 124, 56, 40" TraceId="image4027"/>
-        <Image Id="dfltMask34" TextureId="txr_TeleportTubeVert" Bounds="202, 150, 56, 40" TraceId="image4019"/>
-        <Image Id="dfltMask35" TextureId="txr_TeleportEntryLeft" Bounds="178, 34, 24, 56" TraceId="image3843"/>
-        <Image Id="dfltMask36" TextureId="txr_TeleportTubeVert" Bounds="202, 98, 56, 40" TraceId="image3832"/>
-        <Image Id="dfltMask37" TextureId="txr_TeleportTubeVert" Bounds="202, 138, 56, 40" TraceId="image3846"/>
-        <Image Id="dfltMask38" TextureId="txr_TeleportTubeVert" Bounds="202, 68, 56, 40" TraceId="image3862"/>
-        <Image Id="dfltMask39" TextureId="txr_TeleportTubeHor" Bounds="158, 84, 40, 56" TraceId="image3152"/>
-        <Image Id="dfltMask40" TextureId="txr_TeleportTubeVert" Bounds="166, 144, 56, 40" TraceId="image3039"/>
-        <Image Id="dfltMask41" TextureId="txr_TeleportTubeVert" Bounds="446, 70, 56, 40" TraceId="image3045"/>
-        <Image Id="dfltMask42" TextureId="txr_TeleportTubeVert" Bounds="446, 110, 56, 40" TraceId="image3047"/>
-        <Image Id="dfltMask43" TextureId="txr_TeleportTubeVert" Bounds="446, 30, 56, 40" TraceId="image3054"/>
-        <Image Id="dfltMask44" TextureId="txr_TeleportTubeHor" Bounds="444, -14, 40, 56" TraceId="image3062"/>
-        <Image Id="dfltMask45" TextureId="txr_TeleportEntryLeft" Bounds="422, -14, 24, 56" TraceId="image3064"/>
-        <Image Id="dfltMask46" TextureId="txr_TeleportEntryRight" Bounds="230, -14, 24, 56" TraceId="image3066"/>
-        <Image Id="dfltMask47" TextureId="txr_TeleportTubeHor" Bounds="190, -14, 40, 56" TraceId="image3072"/>
-        <Image Id="dfltMask48" TextureId="txr_TeleportTubeHor" Bounds="156, -14, 40, 56" TraceId="image3075"/>
-        <Image Id="dfltMask49" TextureId="txr_TeleportTubeHor" Bounds="116, -14, 40, 56" TraceId="image3077"/>
-        <Image Id="dfltMask50" TextureId="txr_TeleportTubeHor" Bounds="76, -14, 40, 56" TraceId="image3079"/>
-        <Image Id="dfltMask51" TextureId="txr_TeleportTubeHor" Bounds="36, -14, 40, 56" TraceId="image3081"/>
-        <Image Id="dfltMask52" TextureId="txr_TeleportTubeHor" Bounds="24, -14, 40, 56" TraceId="image3083"/>
-        <Image Id="dfltMask53" TextureId="txr_TeleportTubeVert" Bounds="-12, 26, 56, 40" TraceId="image3085"/>
-        <Image Id="dfltMask54" TextureId="txr_TeleportTubeVert" Bounds="-12, 66, 56, 40" TraceId="image3087"/>
-        <Image Id="dfltMask55" TextureId="txr_TeleportTubeVert" Bounds="-12, 136, 56, 40" TraceId="image3089"/>
-        <Image Id="dfltMask56" TextureId="txr_TeleportEntryDown" Bounds="-12, 164, 56, 24" TraceId="image3101"/>
-        <Image Id="dfltMask57" TextureId="txr_TeleportEntryUp" Bounds="-12, 276, 56, 24" TraceId="image3112"/>
-        <Image Id="dfltMask58" TextureId="txr_TeleportTubeHor" Bounds="162, 292, 40, 56" TraceId="image3115"/>
-        <Image Id="dfltMask59" TextureId="txr_TeleportTubeHor" Bounds="124, 292, 40, 56" TraceId="image3117"/>
-        <Image Id="dfltMask60" TextureId="txr_TeleportTubeHor" Bounds="108, 292, 40, 56" TraceId="image3119"/>
-        <Image Id="dfltMask61" TextureId="txr_TeleportTubeHor" Bounds="68, 292, 40, 56" TraceId="image3121"/>
-        <Image Id="dfltMask62" TextureId="txr_TeleportTubeHor" Bounds="28, 292, 40, 56" TraceId="image3123"/>
-        <Image Id="dfltMask63" TextureId="txr_TeleportTubeVert" Bounds="166, 172, 56, 40" TraceId="image3132"/>
-        <Image Id="dfltMask64" TextureId="txr_TeleportTubeVert" Bounds="166, 210, 56, 40" TraceId="image3134"/>
-        <Image Id="dfltMask65" TextureId="txr_TeleportTubeVert" Bounds="166, 248, 56, 40" TraceId="image3136"/>
-        <Image Id="dfltMask66" TextureId="txr_TeleportKoleno" Bounds="166, 294, 56, 56" TraceId="image3140"/>
-        <Image Id="dfltMask67" TextureId="txr_TeleportKoleno" Bounds="-12, 294, 56, 56" TraceId="image3142"/>
-        <Image Id="dfltMask68" TextureId="txr_TeleportKoleno" Bounds="-12, -10, 56, 56" TraceId="image3144"/>
-        <Image Id="dfltMask69" TextureId="txr_TeleportKoleno" Bounds="448, -10, 56, 56" TraceId="image3146"/>
-        <Image Id="dfltMask70" TextureId="txr_TeleportKoleno" Bounds="168, 86, 56, 56" TraceId="image3158"/>
-        <Image Id="dfltMask71" TextureId="txr_TeleportTubeVert" Bounds="-12, 106, 56, 40" TraceId="image3217"/>
-        <Image Id="dfltMask72" TextureId="txr_TeleportKoleno" Bounds="204, 36, 56, 56" TraceId="image3070"/>
-        <Image Id="dfltMask73" TextureId="txr_TeleportTubeVert" Bounds="446, 168, 56, 40" TraceId="image3886"/>
-        <Image Id="dfltMask74" TextureId="txr_TeleportTubeVert" Bounds="446, 142, 56, 40" TraceId="image3888"/>
-        <Image Id="dfltMask75" TextureId="txr_TeleportEntryRight" Bounds="260, 178, 24, 56" TraceId="image4015"/>
-        <Image Id="dfltMask76" TextureId="txr_TeleportKoleno" Bounds="204, 180, 56, 56" TraceId="image4017"/>
-        <Image Id="dfltMask77" TextureId="txr_TeleportTubeHor" Bounds="444, 178, 40, 56" TraceId="image4021"/>
-        <Image Id="dfltMask78" TextureId="txr_TeleportEntryLeft" Bounds="422, 178, 24, 56" TraceId="image4023"/>
-        <Image Id="dfltMask79" TextureId="txr_TeleportKoleno" Bounds="448, 182, 56, 56" TraceId="image4025"/>
-        <Image Id="dfltMask80" TextureId="txr_TeleportEntryLeft" Bounds="144, 84, 24, 56" TraceId="image4041"/>
+        <Image Id="dfltMask38" TextureId="txr_TeleportTubeHor" Bounds="186, 34, 40, 56" TraceId="image4037"/>
+        <Image Id="dfltMask39" TextureId="txr_TeleportTubeHor" Bounds="230, 178, 40, 56" TraceId="image4035"/>
+        <Image Id="dfltMask40" TextureId="txr_TeleportTubeVert" Bounds="-12, 296, 56, 40" TraceId="image4033"/>
+        <Image Id="dfltMask41" TextureId="txr_TeleportTubeVert" Bounds="166, 268, 56, 40" TraceId="image4029"/>
+        <Image Id="dfltMask42" TextureId="txr_TeleportTubeVert" Bounds="166, 124, 56, 40" TraceId="image4027"/>
+        <Image Id="dfltMask43" TextureId="txr_TeleportTubeVert" Bounds="202, 150, 56, 40" TraceId="image4019"/>
+        <Image Id="dfltMask44" TextureId="txr_TeleportEntryLeft" Bounds="178, 34, 24, 56" TraceId="image3843"/>
+        <Image Id="dfltMask45" TextureId="txr_TeleportTubeVert" Bounds="202, 98, 56, 40" TraceId="image3832"/>
+        <Image Id="dfltMask46" TextureId="txr_TeleportTubeVert" Bounds="202, 138, 56, 40" TraceId="image3846"/>
+        <Image Id="dfltMask47" TextureId="txr_TeleportTubeVert" Bounds="202, 68, 56, 40" TraceId="image3862"/>
+        <Image Id="dfltMask48" TextureId="txr_TeleportTubeHor" Bounds="158, 84, 40, 56" TraceId="image3152"/>
+        <Image Id="dfltMask49" TextureId="txr_TeleportTubeVert" Bounds="166, 144, 56, 40" TraceId="image3039"/>
+        <Image Id="dfltMask50" TextureId="txr_TeleportTubeVert" Bounds="446, 70, 56, 40" TraceId="image3045"/>
+        <Image Id="dfltMask51" TextureId="txr_TeleportTubeVert" Bounds="446, 110, 56, 40" TraceId="image3047"/>
+        <Image Id="dfltMask52" TextureId="txr_TeleportTubeVert" Bounds="446, 30, 56, 40" TraceId="image3054"/>
+        <Image Id="dfltMask53" TextureId="txr_TeleportTubeHor" Bounds="444, -14, 40, 56" TraceId="image3062"/>
+        <Image Id="dfltMask54" TextureId="txr_TeleportEntryLeft" Bounds="422, -14, 24, 56" TraceId="image3064"/>
+        <Image Id="dfltMask55" TextureId="txr_TeleportEntryRight" Bounds="230, -14, 24, 56" TraceId="image3066"/>
+        <Image Id="dfltMask56" TextureId="txr_TeleportTubeHor" Bounds="190, -14, 40, 56" TraceId="image3072"/>
+        <Image Id="dfltMask57" TextureId="txr_TeleportTubeHor" Bounds="156, -14, 40, 56" TraceId="image3075"/>
+        <Image Id="dfltMask58" TextureId="txr_TeleportTubeHor" Bounds="116, -14, 40, 56" TraceId="image3077"/>
+        <Image Id="dfltMask59" TextureId="txr_TeleportTubeHor" Bounds="76, -14, 40, 56" TraceId="image3079"/>
+        <Image Id="dfltMask60" TextureId="txr_TeleportTubeHor" Bounds="36, -14, 40, 56" TraceId="image3081"/>
+        <Image Id="dfltMask61" TextureId="txr_TeleportTubeHor" Bounds="24, -14, 40, 56" TraceId="image3083"/>
+        <Image Id="dfltMask62" TextureId="txr_TeleportTubeVert" Bounds="-12, 26, 56, 40" TraceId="image3085"/>
+        <Image Id="dfltMask63" TextureId="txr_TeleportTubeVert" Bounds="-12, 66, 56, 40" TraceId="image3087"/>
+        <Image Id="dfltMask64" TextureId="txr_TeleportTubeVert" Bounds="-12, 136, 56, 40" TraceId="image3089"/>
+        <Image Id="dfltMask65" TextureId="txr_TeleportEntryDown" Bounds="-12, 164, 56, 24" TraceId="image3101"/>
+        <Image Id="dfltMask66" TextureId="txr_TeleportEntryUp" Bounds="-12, 276, 56, 24" TraceId="image3112"/>
+        <Image Id="dfltMask67" TextureId="txr_TeleportTubeHor" Bounds="162, 292, 40, 56" TraceId="image3115"/>
+        <Image Id="dfltMask68" TextureId="txr_TeleportTubeHor" Bounds="124, 292, 40, 56" TraceId="image3117"/>
+        <Image Id="dfltMask69" TextureId="txr_TeleportTubeHor" Bounds="108, 292, 40, 56" TraceId="image3119"/>
+        <Image Id="dfltMask70" TextureId="txr_TeleportTubeHor" Bounds="68, 292, 40, 56" TraceId="image3121"/>
+        <Image Id="dfltMask71" TextureId="txr_TeleportTubeHor" Bounds="28, 292, 40, 56" TraceId="image3123"/>
+        <Image Id="dfltMask72" TextureId="txr_TeleportTubeVert" Bounds="166, 172, 56, 40" TraceId="image3132"/>
+        <Image Id="dfltMask73" TextureId="txr_TeleportTubeVert" Bounds="166, 210, 56, 40" TraceId="image3134"/>
+        <Image Id="dfltMask74" TextureId="txr_TeleportTubeVert" Bounds="166, 248, 56, 40" TraceId="image3136"/>
+        <Image Id="dfltMask75" TextureId="txr_TeleportKoleno" Bounds="166, 294, 56, 56" TraceId="image3140"/>
+        <Image Id="dfltMask76" TextureId="txr_TeleportKoleno" Bounds="-12, 294, 56, 56" TraceId="image3142"/>
+        <Image Id="dfltMask77" TextureId="txr_TeleportKoleno" Bounds="-12, -10, 56, 56" TraceId="image3144"/>
+        <Image Id="dfltMask78" TextureId="txr_TeleportKoleno" Bounds="448, -10, 56, 56" TraceId="image3146"/>
+        <Image Id="dfltMask79" TextureId="txr_TeleportKoleno" Bounds="168, 86, 56, 56" TraceId="image3158"/>
+        <Image Id="dfltMask80" TextureId="txr_TeleportTubeVert" Bounds="-12, 106, 56, 40" TraceId="image3217"/>
+        <Image Id="dfltMask81" TextureId="txr_TeleportKoleno" Bounds="204, 36, 56, 56" TraceId="image3070"/>
+        <Image Id="dfltMask82" TextureId="txr_TeleportTubeVert" Bounds="446, 168, 56, 40" TraceId="image3886"/>
+        <Image Id="dfltMask83" TextureId="txr_TeleportTubeVert" Bounds="446, 142, 56, 40" TraceId="image3888"/>
+        <Image Id="dfltMask84" TextureId="txr_TeleportEntryRight" Bounds="260, 178, 24, 56" TraceId="image4015"/>
+        <Image Id="dfltMask85" TextureId="txr_TeleportKoleno" Bounds="204, 180, 56, 56" TraceId="image4017"/>
+        <Image Id="dfltMask86" TextureId="txr_TeleportTubeHor" Bounds="444, 178, 40, 56" TraceId="image4021"/>
+        <Image Id="dfltMask87" TextureId="txr_TeleportEntryLeft" Bounds="422, 178, 24, 56" TraceId="image4023"/>
+        <Image Id="dfltMask88" TextureId="txr_TeleportKoleno" Bounds="448, 182, 56, 56" TraceId="image4025"/>
+        <Image Id="dfltMask89" TextureId="txr_TeleportEntryLeft" Bounds="144, 84, 24, 56" TraceId="image4041"/>
     </Layer>
     <Layer Id="portsAction" BackColor="#FFFFFFFF">
         <Group Id="grpTlp1" Bounds="182, 34, 12, 56" TraceId="image3903" />
@@ -149,6 +159,9 @@
         </SequenceSet>
         <Group Id="grpTlp6" Bounds="426, 178, 12, 56" TraceId="image4054" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp6" EnterAction="setTlp6.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp6">
             <SequenceSet Id="setTlp6Entry" Class="clsTeleportEntry" ClassParams="@entryX=426,@entryY=178,@delay=0"/>
             <SequenceSet Id="setTlp7Koleno" Class="clsTeleportKoleno" ClassParams="@X=448,@Y=182,@delay=0" TraceId="image4078" />
@@ -158,6 +171,9 @@
         </SequenceSet>
         <Group Id="grpTlp11" Bounds="238, 0, 12, 42" TraceId="image4093" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp11" EnterAction="setTlp11.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp11">
             <SequenceSet Id="setTlp11Entry" Class="clsTeleportEntry" ClassParams="@entryX=238,@entryY=0,@delay=0"/>
             <SequenceSet Id="setTlp12Tube" Class="clsTeleportTube" ClassParams="@horX=192,@horY=-14,@vertX=-7777777,@vertY=-7777777,@delay=0,@duration=1.24,@delta=-156"/>
@@ -167,6 +183,9 @@
         </SequenceSet>
         <Group Id="grpTlp16" Bounds="0, 281, 44, 12" TraceId="image4118" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp16" EnterAction="setTlp16.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp16">
             <SequenceSet Id="setTlp16Entry" Class="clsTeleportEntry" ClassParams="@entryX=0,@entryY=281,@delay=0"/>
             <SequenceSet Id="setTlp17Koleno" Class="clsTeleportKoleno" ClassParams="@X=-12,@Y=294,@delay=0" TraceId="image4121" />
@@ -180,6 +199,9 @@
     <Layer Id="portsAction vv" BackColor="#FFFFFFFF">
         <Group Id="grpTlp23" Bounds="148, 84, 12, 56" TraceId="image4164" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp23" EnterAction="setTlp23.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp23">
             <SequenceSet Id="setTlp23Entry" Class="clsTeleportEntry" ClassParams="@entryX=148,@entryY=84,@delay=0"/>
             <SequenceSet Id="setTlp24Koleno" Class="clsTeleportKoleno" ClassParams="@X=168,@Y=86,@delay=0" TraceId="image4184" />
@@ -191,6 +213,9 @@
         </SequenceSet>
         <Group Id="grpTlp30" Bounds="0, 172, 44, 12" TraceId="image4190" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp30" EnterAction="setTlp30.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp30">
             <SequenceSet Id="setTlp30Entry" Class="clsTeleportEntry" ClassParams="@entryX=0,@entryY=172,@delay=0"/>
             <SequenceSet Id="setTlp31Tube" Class="clsTeleportTube" ClassParams="@horX=-7777777,@horY=-7777777,@vertX=-12,@vertY=149,@delay=0,@duration=0.89,@delta=-112"/>
@@ -200,6 +225,9 @@
         </SequenceSet>
         <Group Id="grpTlp35" Bounds="426, 0, 12, 42" TraceId="image4154" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp35" EnterAction="setTlp35.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp35">
             <SequenceSet Id="setTlp35Entry" Class="clsTeleportEntry" ClassParams="@entryX=426,@entryY=0,@delay=0"/>
             <SequenceSet Id="setTlp36Koleno" Class="clsTeleportKoleno" ClassParams="@X=448,@Y=-10,@delay=0" TraceId="image4160" />
@@ -209,6 +237,9 @@
         </SequenceSet>
         <Group Id="grpTlp40" Bounds="269, 178, 12, 56" TraceId="image4144" />
         <IntersectionTrigger ObjectId1="hero" ObjectId2="grpTlp40" EnterAction="setTlp40.Start()"/>
+        <Image Id="imgTeleportTubeHorHero" TextureId="txrTeleportTubeHorHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportTubeVertHero" TextureId="txrTeleportTubeVertHero" Location="-7777777,-7777777" Enabled="true"/>
+        <Image Id="imgTeleportKoleno" TextureId="txrTeleportKoleno" RotationCenter="28,28" Location="-7777777,-7777777" Enabled="true"/>
         <SequenceSet Id="setTlp40">
             <SequenceSet Id="setTlp40Entry" Class="clsTeleportEntry" ClassParams="@entryX=269,@entryY=178,@delay=0"/>
             <SequenceSet Id="setTlp41Koleno" Class="clsTeleportKoleno" ClassParams="@X=204,@Y=180,@delay=0" TraceId="image4150" />
@@ -225,7 +256,7 @@
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard.xml" />
 </Level>
-<!-- Food=7 Enemy=0 Block=14 DesignImage=80 Animation=0 Teleport Animations=44 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
+<!-- Food=7 Enemy=0 Block=14 DesignImage=89 Animation=0 Teleport Animations=44 FoodPack=0 Oil Barrel=0 dealy sec=0 -->
 <!-- -->
 <!-- Food Points = 630 -->
 <!-- 1% = 6.3; 45% = 283.5; 90% = 567 -->
