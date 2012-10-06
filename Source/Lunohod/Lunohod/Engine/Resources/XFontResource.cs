@@ -24,7 +24,7 @@ namespace Lunohod.Objects
 		{
 			base.InitializeMainThread(p);
 
-            font = LoadResource<SpriteFont>(p.Game.Content, "FontDescriptionProcessor", "spritefont", "xnb");
+            font = LoadResource<SpriteFont>(p.Content, "FontDescriptionProcessor", "spritefont", "xnb");
 		}
 		
 		public override void Dispose()

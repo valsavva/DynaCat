@@ -51,7 +51,7 @@ namespace Lunohod.Objects
                 this.image = spriteSheet.Image;
             }
             else
-                image = LoadResource<Texture2D>(p.Game.Content, "TextureProcessor", "png", "xnb");
+                image = LoadResource<Texture2D>(p.Content, "TextureProcessor", "png", "xnb");
 		}
 
 		public override void Dispose()

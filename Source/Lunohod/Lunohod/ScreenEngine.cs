@@ -5,6 +5,7 @@ using Lunohod.Objects;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 
 namespace Lunohod
 {
@@ -13,7 +14,9 @@ namespace Lunohod
 		protected GameEngine game;
 		// Loading screen
 		public ScreenEngine Owner;
-		
+
+        public ContentManager Content;
+
 		// cycle parameters
 		protected InitializeParameters initializeParameters;
 		protected UpdateParameters updateParameters;
@@ -49,6 +52,7 @@ namespace Lunohod
 		public ScreenEngine(GameEngine game, string fileName)
 		{
 			this.game = game;
+            this.Content = new ContentManager(game.Services, GameEngine.ContentRootDirectory);
 			this.FileName = fileName;
 
 			this.CurrentEvents = new Dictionary<string, bool>();
@@ -243,6 +247,10 @@ namespace Lunohod
 
 			this.spriteBatch.Dispose();
 			this.spriteBatch = null;
+
+            this.Content.Unload();
+            this.Content.Dispose();
+            this.Content = null;
 			
 			this.obstacles = null;
 		}

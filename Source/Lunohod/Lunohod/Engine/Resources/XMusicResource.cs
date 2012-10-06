@@ -29,7 +29,7 @@ namespace Lunohod.Objects
 		{
 			base.InitializeMainThread(p);
 
-            this.song = LoadResource<Song>(p.Game.Content, "SongProcessor", "mp3", "wma", "Mp3Importer");
+            this.song = LoadResource<Song>(p.Content, "SongProcessor", "mp3", "wma", "Mp3Importer");
 		}
 		public override void Dispose()
 		{

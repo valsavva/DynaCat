@@ -23,7 +23,7 @@ namespace Lunohod.Objects
             // read file
             XResourceBundle r = (XResourceBundle)this.Parent;
             string mapFilePath = Path.ChangeExtension(this.Source, "xml");
-            mapFilePath = Path.Combine(Directory.GetCurrentDirectory(), p.Game.Content.RootDirectory, r.RootFolder.Replace('/', Path.DirectorySeparatorChar), mapFilePath);
+            mapFilePath = Path.Combine(Directory.GetCurrentDirectory(), p.Content.RootDirectory, r.RootFolder.Replace('/', Path.DirectorySeparatorChar), mapFilePath);
 
             if (!File.Exists(mapFilePath))
                 throw new InvalidOperationException(string.Format("Could not find spritesheet map file: {0}", mapFilePath));
