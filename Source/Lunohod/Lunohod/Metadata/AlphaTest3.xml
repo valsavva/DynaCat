@@ -16,7 +16,7 @@
         <Texture Id="txr_bckg_brick" Source="bckg_brick" />
     </Resources>
     <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_tailsBlue" Bounds="0, 0, 480, 320" TraceId="image3013"/>
+        <Image Id="dfltMask1" TextureId="txr_bckg_brick" Bounds="0, 0, 480, 320" TraceId="image3013"/>
     </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-50, -54, 50, 429" Edges="Stick" TraceId="image3056"/>
