@@ -10,21 +10,17 @@
         <Texture Id="txr_semafor_green" Source="semafor_green" />
     </Resources>    
 
-    <Sound Id="sndTrainBell1" FileId="sndTrain_bell" Volume="0" Pitch="0"/>
-    <Sound Id="sndTrainBell2" FileId="sndTrain_bell" Volume="0" Pitch="0"/>
+    <Sound Id="sndTrainBell" FileId="sndTrain_bell" Volume="0" Pitch="0"/>
 
     <ParallelSet Id="setTrainStart" RepeatCount="1" InProgress="false">
-        <SequenceSet RepeatCount="8" >
-            <Do Action="sndTrainBell1.Start()" />
-            <Delay Duration="0.27" />
-            <Do Action="sndTrainBell2.Start()" />
+        <SequenceSet RepeatCount="16" >
+            <Do Action="sndTrainBell.Start()" />
             <Delay Duration="0.27" />
         </SequenceSet>
         <SequenceSet RepeatCount="1">
-            <Do Action="sndTrainBell1.Volume=0.3;sndTrainBell2.Volume=0.3" />
+            <Do Action="sndTrainBell.Volume=0.3" />
             <Delay Duration="1.5" />
-            <NumAnimation Target="sndTrainBell1.Volume,sndTrainBell2.Volume" From="0.3,0.3" To="0,0" Duration="4" Fill="End"/>
-            <Do Action="sndTrainBell1.Volume=0;sndTrainBell2.Volume=0" />
+            <NumAnimation Target="sndTrainBell.Volume" From="0.3" To="0" Duration="4" Fill="End"/>
         </SequenceSet>
         <!--<SequenceSet RepeatCount="1">
             <Delay Duration="3" />
