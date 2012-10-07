@@ -16,6 +16,8 @@ namespace Lunohod.Objects
             base.InitializeMainThread(p);
 
             ParseMapFile(p);
+
+			p.Game.SpriteSheets.Add(this);
         }
 
         private void ParseMapFile(InitializeParameters p)
@@ -44,5 +46,12 @@ namespace Lunohod.Objects
                 );
             }
         }
+
+		public override void Dispose()
+		{
+			GameEngine.Instance.SpriteSheets.Remove(this);
+
+			base.Dispose();
+		}
     }
 }

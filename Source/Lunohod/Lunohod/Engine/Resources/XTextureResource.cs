@@ -30,35 +30,28 @@ namespace Lunohod.Objects
 		{
 			base.InitializeMainThread(p);
 
-            XSpriteSheetResource spriteSheet = null;
+			for(int i = 0; i < p.Game.SpriteSheets.Count; i++)
+			{
+				var spriteSheet = p.Game.SpriteSheets[i];
 
-            if (p.Game.GlobalSpriteSheets != null)
-            {
-                foreach (XSpriteSheetResource tmpSheet in p.Game.GlobalSpriteSheets)
-                {
-                    if (tmpSheet.Map.ContainsKey(this.Source))
-                    {
-                        spriteSheet = tmpSheet;
-                        break;
-                    }
-                }
+				if (spriteSheet.Map.ContainsKey(this.Source))
+				{
+					this.SourceRectangle = spriteSheet.Map[this.Source];
+					this.image = spriteSheet.Image;
+					return;
+				}
+			}
 
-            }
+			try
+			{
 
-            if (spriteSheet != null)
-            {
-                this.SourceRectangle = spriteSheet.Map[this.Source];
-                this.image = spriteSheet.Image;
-            }
-            else
-                image = LoadResource<Texture2D>(p.Content, "TextureProcessor", "png", "xnb");
-		}
+	        image = LoadResource<Texture2D>(p.Content, "TextureProcessor", "png", "xnb");
+			}catch(Exception ex)
+			{
+				ex = ex;
 
-		public override void Dispose()
-		{
-			//image.Dispose();
-
-			base.Dispose();
+				throw;
+			}
 		}
 	}
 }
