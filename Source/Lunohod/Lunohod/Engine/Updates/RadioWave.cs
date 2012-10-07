@@ -11,7 +11,7 @@ namespace Lunohod
 		private TimeSpan time;
 		
 		private double textureDiameter;
-		private Texture2D texture;
+		private XTextureResource texture;
 		private System.Drawing.RectangleF bounds;
 
 		public RadioWave()
@@ -57,9 +57,9 @@ namespace Lunohod
                 return;
 
 			if (this.IsHeroActive)
-				p.SpriteBatch.Draw(texture, bounds, Color.White);
+				p.SpriteBatch.Draw(texture.Image, bounds, texture.SourceRectangle, Color.White);
 			else
-				p.SpriteBatch.Draw(texture, bounds, Color.Gray);
+				p.SpriteBatch.Draw(texture.Image, bounds, texture.SourceRectangle, Color.Gray);
 		}
 	}
 }

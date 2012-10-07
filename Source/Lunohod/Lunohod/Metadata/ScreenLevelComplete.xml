@@ -10,7 +10,9 @@
 	<Include File="ClassSmoke.xml" />
     
     <Resources RootFolder="Global">
-<!--        <Texture Id="txrBackground" Source="scr_victory_bg" />-->
+    	<SpriteSheet Source="scr_victory" />
+    
+        <Texture Id="txrBackground" Source="scr_victory_bg" />
         <Texture Id="txrStars" Source="scr_victory_stars" />
         <Texture Id="txrAlarm" Source="scr_victory_alarm" />
         <Texture Id="txrHeart" Source="scr_victory_heart" />
@@ -18,14 +20,12 @@
         <Texture Id="txrBadgeGlow" Source="scr_victory_badge_glow" />
         <Texture Id="txrStamp" Source="scr_victory_stamp" />
         
-        <Texture Id="txr_Victory_new_BG" Source="Victory_new_BG" />
-        <Texture Id="txr_Victory_new_Light_Cat" Source="Victory_new_Light_Cat" />
-        <Texture Id="txrLight_yellow" Source="light_yellow" />
-        <Texture Id="txr_Victory_new_Spark_Cat" Source="Victory_new_Spark_Cat" />
-        <Texture Id="txr_Victory_new_Panel2" Source="Victory_new_Panel2" />
-        <Texture Id="txr_Victory_new_Cat" Source="Victory_new_Cat" />
-        <Texture Id="txrShining_star" Source="shining_star" />
-        <Font Id="fntSystem" Source="Splash14Font"/>
+        <Texture Id="txr_Victory_new_Light_Cat" Source="scr_victory_light_cat" />
+        <Texture Id="txrLight_yellow" Source="scr_victory_light_yellow" />
+        <Texture Id="txr_Victory_new_Spark_Cat" Source="scr_victory_spark_cat" />
+        <Texture Id="txr_Victory_new_Panel2" Source="scr_victory_panel" />
+        <Texture Id="txr_Victory_new_Cat" Source="scr_victory_cat" />
+        <Texture Id="txrShining_star" Source="scr_victory_shining_star" />
     </Resources>
     
     <Resources RootFolder="Sound">
@@ -35,7 +35,11 @@
     	<SoundFile Id="sfMusicEQdThemeLoop" Source="musicEQdThemeLoop"/>
         <SoundFile Id="sfScoreRatchet" Source="sfxScoreRatchet"/>
     </Resources>
-        
+
+	<Layer Id="background">
+        <Image TextureId="txrBackground"/>
+	</Layer>        
+                        
     <Layer Id="backg">
      	<Sound Id="sndVictoryMusic" FileId="sfMusicVictory" Volume="1"/>
         <Sound Id="sndCompleteMusic" FileId="sfMusicComplete" Volume="1"/>
@@ -53,7 +57,6 @@
             <Do Action="sndCompleteMusic.Start()" InProgress="true" RepeatCount="1"/>
         </SequenceSet>
      
-        <Image Id="dfltMask1" TextureId="txr_Victory_new_BG" Bounds="0, 0, 480, 320" TraceId="image3105"/>
         <Image Id="imgVictory_new_Light_Cat" TextureId="txr_Victory_new_Light_Cat" Bounds="106, -17, 284, 274" TraceId="image3093">
         	<NumAnimation Target="imgVictory_new_Light_Cat.Opacity" From="0.8" To="0.5" Duration="2" Autoreverse="true" RepeatCount="0"  InProgress="true"/>
         </Image>
@@ -79,8 +82,8 @@
         
         <Group Id="grpVictoryPanel">
 	        <Image Id="imgVictory_new_Panel2" TextureId="txr_Victory_new_Panel2" Bounds="125, 459, 249, 161" TraceId="image3027" />
-    		<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="211, 495" Color="#000000"/>
-			<Text FontId="fntSystem" Text="=system.Str(system.Round(dispScore.X))" Location="210, 493" />
+    		<Text FontId="Splash14Font" Text="=system.Str(system.Round(dispScore.X))" Location="211, 495" Color="#000000"/>
+			<Text FontId="Splash14Font" Text="=system.Str(system.Round(dispScore.X))" Location="210, 493" />
 			
         	<NumAnimation Id="anmVictory_new_Panel2" Target="grpVictoryPanel.Y" From="0" To="-298" Duration="0.3" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
 		</Group>

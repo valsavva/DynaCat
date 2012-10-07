@@ -4,11 +4,11 @@
 	<Class Id="clsMuteButton">
 		<Group>
 			<TapArea Action="system.IsMute=not system.IsMute;" />
-			<BoolTrigger Condition="system.IsMute">
-                <Sprite TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="17" />
-			</BoolTrigger>
 			<BoolTrigger Condition="not system.IsMute">
-                <Sprite TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" CurrentFrame="8" />
+                <Sprite TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="3" CurrentFrame="16" />
+			</BoolTrigger>
+			<BoolTrigger Condition="system.IsMute">
+                <Sprite TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="3" CurrentFrame="17" />
 			</BoolTrigger>
 		</Group>
 	</Class>

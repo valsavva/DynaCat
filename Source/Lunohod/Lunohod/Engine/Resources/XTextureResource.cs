@@ -30,6 +30,9 @@ namespace Lunohod.Objects
 		{
 			base.InitializeMainThread(p);
 
+			if (this.image != null)
+				return;
+
 			for(int i = 0; i < p.Game.SpriteSheets.Count; i++)
 			{
 				var spriteSheet = p.Game.SpriteSheets[i];
@@ -45,7 +48,8 @@ namespace Lunohod.Objects
 			try
 			{
 
-	        image = LoadResource<Texture2D>(p.Content, "TextureProcessor", "png", "xnb");
+	        	image = LoadResource<Texture2D>(p.Content, "TextureProcessor", "png", "xnb");
+
 			}catch(Exception ex)
 			{
 				ex = ex;

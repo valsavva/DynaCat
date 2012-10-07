@@ -5,15 +5,15 @@
 		<Group>
 	    	<Group Id="this_grpInit">
 		    	<BoolTrigger Condition="'@BtnImg'=='back'" Action="this_sprUnpressed.CurrentFrame=00" />
-		    	<BoolTrigger Condition="'@BtnImg'=='exit'" Action="this_sprUnpressed.CurrentFrame=01" />
-		    	<BoolTrigger Condition="'@BtnImg'=='forwind'" Action="this_sprUnpressed.CurrentFrame=02" />
-		    	<BoolTrigger Condition="'@BtnImg'=='info'" Action="this_sprUnpressed.CurrentFrame=03" />
-		    	<BoolTrigger Condition="'@BtnImg'=='next'" Action="this_sprUnpressed.CurrentFrame=04" />
-		    	<BoolTrigger Condition="'@BtnImg'=='play'" Action="this_sprUnpressed.CurrentFrame=05" />
-		    	<BoolTrigger Condition="'@BtnImg'=='question'" Action="this_sprUnpressed.CurrentFrame=06" />
-		    	<BoolTrigger Condition="'@BtnImg'=='restart'" Action="this_sprUnpressed.CurrentFrame=07" />
-		    	<BoolTrigger Condition="'@BtnImg'=='sound'" Action="this_sprUnpressed.CurrentFrame=08" />
-		    	<Do Action="this_sprPressed.CurrentFrame=this_sprUnpressed.CurrentFrame+9" InProgress="true" />
+		    	<BoolTrigger Condition="'@BtnImg'=='exit'" Action="this_sprUnpressed.CurrentFrame=02" />
+		    	<BoolTrigger Condition="'@BtnImg'=='forwind'" Action="this_sprUnpressed.CurrentFrame=04" />
+		    	<BoolTrigger Condition="'@BtnImg'=='info'" Action="this_sprUnpressed.CurrentFrame=06" />
+		    	<BoolTrigger Condition="'@BtnImg'=='next'" Action="this_sprUnpressed.CurrentFrame=08" />
+		    	<BoolTrigger Condition="'@BtnImg'=='play'" Action="this_sprUnpressed.CurrentFrame=10" />
+		    	<BoolTrigger Condition="'@BtnImg'=='question'" Action="this_sprUnpressed.CurrentFrame=12" />
+		    	<BoolTrigger Condition="'@BtnImg'=='restart'" Action="this_sprUnpressed.CurrentFrame=14" />
+		    	<BoolTrigger Condition="'@BtnImg'=='sound'" Action="this_sprUnpressed.CurrentFrame=16" />
+		    	<Do Action="this_sprPressed.CurrentFrame=this_sprUnpressed.CurrentFrame+1" InProgress="true" />
 		    	<Do Action="this_grpInit.Disable()" />
 	    	</Group>
 
@@ -31,12 +31,12 @@
             <!-- state : basic, not pressed -->
             <BoolTrigger Condition="not this_setPressed.InProgress" 
                          Group="this_sttButton">
-                <Sprite Id="this_sprUnpressed" TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" />
+                <Sprite Id="this_sprUnpressed" TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="3" />
             </BoolTrigger>
             
             <!-- state : pressed -->
             <BoolTrigger Group="this_sttButton">
-                <Sprite Id="this_sprPressed" TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="9" />
+                <Sprite Id="this_sprPressed" TextureId="txrButtons" Bounds="-3,-3,67,68" FrameBounds="0,0,67,68" FrameCount="3" />
             </BoolTrigger>
 		</Group>
 	</Class>

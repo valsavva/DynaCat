@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:2b7f0e2304affae4888da4d716af0680$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="scr_death.png" width="512" height="1024">
+    <sprite n="scr_death_bg" x="2" y="2" w="480" h="320"/>
+    <sprite n="scr_death_cat_skull_01" x="326" y="465" w="95" h="139"/>
+    <sprite n="scr_death_cat_skull_02" x="326" y="324" w="95" h="139"/>
+    <sprite n="scr_death_n_red_sparks" x="2" y="324" w="322" h="303"/>
+    <sprite n="scr_death_n_sparks_01" x="2" y="629" w="235" h="211"/>
+</TextureAtlas>

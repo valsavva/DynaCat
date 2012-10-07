@@ -49,6 +49,9 @@ namespace Lunohod.Objects
 		{
 			base.InitializeMainThread(p);
 
+			if (this.soundEffect != null)
+				return;
+
             this.soundEffect = LoadResource<SoundEffect>(p.Content, "SoundEffectProcessor", "wav", "xnb");
 
 			if (this.NumberOfInstances > 0)

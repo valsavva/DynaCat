@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Game Bounds="0,0,480,320" StartScreen="ScreenMain.xml" PauseScreen="ScreenPause.xml" ShowFPS="true" CpsLimit="4" CpsTimeSpan="2">
-    <Resources RootFolder="Global">
-        <Texture Id="blank" Source="blank" />
-        <Font Id="SystemFont" Source="SystemFont" />
-        <Texture Id="wave0400" Source="wave0400" />
-    </Resources>
-    
-    <Resources Id="GlobalSpriteSheets" RootFolder="Textures">
-        <SpriteSheet Id="seriesAll" Source="seriesAll" />
+    <Resources RootFolder="Sound">
+        <MusicFile Id="sfGameMusic" Source="DynacatMusic"/>
     </Resources>
 
+    <Resources RootFolder="Textures">
+        <SpriteSheet Source="seriesAll" />
+    </Resources>
+
+    <Resources RootFolder="Global">
+        <SpriteSheet Source="scr_main" />
+        
+        <Texture Id="blank" Source="blank" />
+        <Texture Id="wave0400" Source="wave0400" />
+        <Font Id="SystemFont" Source="SystemFont" />
+    </Resources>
+    
     <Levels>
 
         <!-- These are default setting

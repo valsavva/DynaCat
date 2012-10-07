@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Include>
 
-	<!-- Resources -->
-    <Resources RootFolder="Global">
-        <Texture Id="blank" Source="blank" />
-		<Font Id="SystemFont" Source="SystemFont" />
-        <!--<Font Id="Splash14Font" Source="Splash14Font" />
-        <Font Id="Splash16Font" Source="Splash16Font" />-->
-    </Resources>
-
     <Resources RootFolder="Textures">
         <Texture Id="txrHeroHealth000" Source="heroHealth000"/>
         <Texture Id="txrHeroHealth020" Source="heroHealth020"/>

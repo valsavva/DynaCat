@@ -6,10 +6,11 @@
     <Include File="ClassUIButton.xml" />
   
     <Resources RootFolder="Global">
+    	<SpriteSheet Source="scr_credits" />
+
         <Texture Id="txrBackground" Source="scr_credits_bg" />
         <Texture Id="txrFrame" Source="scr_credits_frame" />
         <Texture Id="txrPanel" Source="scr_credits_panel" />
-        <Font Id="Splash14Font" Source="Splash14Font" />
         <Texture Id="txrLogo" Source="nomnomlogo_round" />
     </Resources>
   

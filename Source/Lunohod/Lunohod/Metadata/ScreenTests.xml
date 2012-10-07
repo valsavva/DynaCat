@@ -8,7 +8,7 @@
                 <NumAnimation Target="this.Scale" From="1" To="1.2" Duration="0.3" Autoreverse="true" RepeatCount="1"/>
                 <Do Action="system.StartLevel(@levelNum)"/>
             </SequenceSet>
-			<Text Id="this_text" FontId="fntSystem" Origin="50,10" Location="50,10" Text="=system.GetLevelName(@levelNum)" Color="#000000"/>
+			<Text Id="this_text" FontId="SystemFont" Origin="50,10" Location="50,10" Text="=system.GetLevelName(@levelNum)" Color="#000000"/>
 			<RandomSet RepeatCount="0" InProgress="true">
 				<NumAnimation Target="this_text.Rotation" Autoreverse="true" RepeatCount="10" Duration="0.05" Fill="Reset">
 					<KeyFrame Time="0" Value="0"/>
@@ -33,17 +33,17 @@
 		<Group>
 			<TapArea Action="@screenNum=@screenNumParam"/>
 			<BoolTrigger Condition="@screenNum==@screenNumParam" Group="text">
-				<Text FontId="fntSystem" Text="='Tests0' + system.Str(@screenNumParam)" Color="#CC0000" Location="0,75" Rotation="-90"/>
+				<Text FontId="SystemFont" Text="='Tests0' + system.Str(@screenNumParam)" Color="#CC0000" Location="0,75" Rotation="-90"/>
 			</BoolTrigger>
 			<BoolTrigger Group="text">
-				<Text FontId="fntSystem" Text="='Tests0' + system.Str(@screenNumParam)" Color="#CCCCCC" Location="0,75" Rotation="-90"/>
+				<Text FontId="SystemFont" Text="='Tests0' + system.Str(@screenNumParam)" Color="#CCCCCC" Location="0,75" Rotation="-90"/>
 			</BoolTrigger>
 		</Group>
 	</Class>
 	
 	<Resources RootFolder="Global">
 		<Texture Id="blank" Source="blank"/>
-		<Font Id="fntSystem" Source="SystemFont"/>
+		<Font Id="SystemFont" Source="SystemFont"/>
 	</Resources>
 
 	<Do Action="@screenNum=0" InProgress="true" />
@@ -187,7 +187,7 @@
 		</BoolTrigger>
 		<Group Bounds="430,50,50,100">
 			<TapArea Action="system.CloseCurrentScreen()" />
-			<Text Text="back" FontId="fntSystem" Color="#FF0000" Rotation="90" Origin="0,20" />
+			<Text Text="back" FontId="SystemFont" Color="#FF0000" Rotation="90" Origin="0,20" />
 		</Group>
 	</Layer>
 </Screen>

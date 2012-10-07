@@ -4,7 +4,6 @@
     <Resources RootFolder="Global">
 		<Texture Id="txrBlank" Source="blank" />
         <Font Id="Splash14Font" Source="Splash14Font" />
-		<Font Id="fntSystem" Source="SystemFont" />
         <Texture Id="txrButtons" Source="ui_buttons" />
     </Resources>
 

@@ -9,6 +9,8 @@
     <Include File="ClassUILevelNumberPanel.xml" />
 
     <Resources RootFolder="Global">
+    	<SpriteSheet Source="scr_pause" />
+    
         <Texture Id="txrPanel" Source="scr_pause_panel" />
         <Texture Id="txrWire01" Source="scr_pause_wire01" />
         <Texture Id="txrWire02" Source="scr_pause_wire02" />
@@ -28,7 +30,7 @@
 			<Image Id="imgWire03" TextureId="txrWire03" Bounds="85,0,337,111" />
 			<Image Id="imgWire04" TextureId="txrWire04" Bounds="160,0,207,103" />
 
-			<Image TextureId="txrPanel" />
+			<Image TextureId="txrPanel" Location="20,0" />
 				
 			<Group Id="grpLevelNumberPanel" Bounds="97,67,100,100" Class="clsLevelNumberPanel" Rotation="7.5" />
 			

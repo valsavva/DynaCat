@@ -1,10 +1,5 @@
 <!--<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest4" Bounds="0, 0, 480, 320">-->
 <Include>
-	<Resources RootFolder="Global">
-		<Texture Id="blank" Source="blank"/>
-		<Font Id="SystemFont" Source="SystemFont"/>
-	</Resources>
-    
     <!--<BoolTrigger Condition="hero:Tunneling">
         <Text FontId="SystemFont" Location="10,25"  Text="'Tunneling'" Color="#000000" />
     </BoolTrigger>

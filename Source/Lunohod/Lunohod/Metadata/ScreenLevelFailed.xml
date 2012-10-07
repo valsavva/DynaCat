@@ -8,13 +8,13 @@
     <Include File="ClassUILevelNumberPanel.xml" />
 
     <Resources RootFolder="Global">
-        <Texture Id="txrBackground" Source="death_BG" />
-        <Texture Id="txr_Death_n_red_sparks" Source="Death_n_red_sparks" />
-        <Texture Id="txr_Death_n_sparks_01" Source="Death_n_sparks_01" />
-        <Texture Id="txr_Death_Cat_skull_01" Source="Death_Cat_skull_01" />
-        <Texture Id="txr_Death_Cat_skull_02" Source="Death_Cat_skull_02" />
-        
-        <Font Id="fntSystem" Source="SystemFont"/>
+    	<SpriteSheet Source="scr_death" />
+
+        <Texture Id="txrBackground" Source="scr_death_bg" />
+        <Texture Id="txr_Death_n_red_sparks" Source="scr_death_n_red_sparks" />
+        <Texture Id="txr_Death_n_sparks_01" Source="scr_death_n_sparks_01" />
+        <Texture Id="txr_Death_Cat_skull_01" Source="scr_death_cat_skull_01" />
+        <Texture Id="txr_Death_Cat_skull_02" Source="scr_death_cat_skull_02" />
     </Resources>
 
 	<Layer Id="background">

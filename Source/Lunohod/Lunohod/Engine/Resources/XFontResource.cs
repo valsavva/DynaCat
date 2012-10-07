@@ -24,6 +24,9 @@ namespace Lunohod.Objects
 		{
 			base.InitializeMainThread(p);
 
+			if (this.font != null)
+				return;
+
             font = LoadResource<SpriteFont>(p.Content, "FontDescriptionProcessor", "spritefont", "xnb");
 		}
 		

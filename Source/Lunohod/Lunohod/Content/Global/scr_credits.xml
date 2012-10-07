@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:27c2d8847cad80ee009d1d8442043102$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="scr_credits.png" width="512" height="1024">
+    <sprite n="scr_credits_bg" x="2" y="646" w="480" h="320"/>
+    <sprite n="scr_credits_frame" x="2" y="324" w="480" h="320"/>
+    <sprite n="scr_credits_panel" x="2" y="2" w="480" h="320"/>
+</TextureAtlas>

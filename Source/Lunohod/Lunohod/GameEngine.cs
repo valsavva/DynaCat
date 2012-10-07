@@ -32,7 +32,7 @@ namespace Lunohod
 		
 		public Texture2D BlankTexture { get; private set; }
 		public SpriteFont SystemFont { get; private set; }
-		public List<Texture2D> WaveTextures { get; private set; }
+		public List<XTextureResource> WaveTextures { get; private set; }
         public List<XSpriteSheetResource> SpriteSheets { get; private set; }
         
 		public const int MinWaveTextureDiameter = 400;
@@ -583,11 +583,11 @@ namespace Lunohod
             this.BlankTexture = ((XTextureResource)this.GameObject.FindLocal("blank")).Image;
 			this.SystemFont = ((XFontResource)this.GameObject.FindLocal("SystemFont")).Font;
 			
-			this.WaveTextures = new List<Texture2D>();
+			this.WaveTextures = new List<XTextureResource>();
 			for (int i = MinWaveTextureDiameter; i <= MaxWaveTextureDiameter; i += WaveTextureDiameterStep)
 			{
 				string textureId = "wave" + i.ToString("0000");
-				this.WaveTextures.Add(((XTextureResource)this.GameObject.FindLocal(textureId)).Image);
+				this.WaveTextures.Add((XTextureResource)this.GameObject.FindLocal(textureId));
 			}
 		}
 		
