@@ -206,7 +206,7 @@
                 <NumAnimation From="0" To="-60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3654"/>
             </ParallelSet>
             <NumAnimation From="0" To="-250" Target="hero.Y" Duration="2.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3656"/>
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <NumAnimation From="0" To="400" Target="hero.X" Duration="4.75" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3645"/>
             <NumAnimation From="0" To="250" Target="hero.Y" Duration="2.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3623"/>
@@ -224,7 +224,7 @@
                 <NumAnimation From="0" To="-60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3654"/>
             </ParallelSet>
             <NumAnimation From="0" To="-250" Target="hero.Y" Duration="2.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3656"/>
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <NumAnimation From="0" To="400" Target="hero.X" Duration="4.75" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3645"/>
             <NumAnimation From="0" To="250" Target="hero.Y" Duration="2.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3623"/>
@@ -242,7 +242,7 @@
                 <NumAnimation From="0" To="-60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3654"/>
             </ParallelSet>
             <NumAnimation From="0" To="-250" Target="hero.Y" Duration="2.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3656"/>
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <NumAnimation From="0" To="400" Target="hero.X" Duration="4.75" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3645"/>
             <NumAnimation From="0" To="250" Target="hero.Y" Duration="2.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3623"/>

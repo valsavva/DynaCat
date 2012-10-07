@@ -1,24 +1,22 @@
 <Include>
     <Resources RootFolder="Sound">
         
-        <SoundFile Id="sfHeroShout1" Source="heroShout1"/>
         <SoundFile Id="sfHeroShout5" Source="heroShout5"/>
         <SoundFile Id="sfHeroShout6" Source="heroShout6"/>
         <SoundFile Id="sfHeroShout7" Source="heroShout7"/>
         <SoundFile Id="sfHeroShout8" Source="heroShout8"/>
         <SoundFile Id="sfHeroShout9" Source="heroShout9"/>
+        
         <SoundFile Id="sfHeroOops1" Source="heroOops1"/>
         <SoundFile Id="sfHeroOops2" Source="heroOops2"/>
-        <SoundFile Id="sfHeroMuttering2" Source="heroMuttering2"/>
+        <!--<SoundFile Id="sfHeroMuttering2" Source="heroMuttering2"/>
         <SoundFile Id="sfHeroMuttering3" Source="heroMuttering3"/>
-        <SoundFile Id="sfHeroMuttering4" Source="heroMuttering4"/>
-        <SoundFile Id="sfHeroLaugh1" Source="heroLaugh1"/>
-        <SoundFile Id="sfHeroLaugh3" Source="heroLaugh3"/>
+        <SoundFile Id="sfHeroMuttering4" Source="heroMuttering4"/>-->
         <SoundFile Id="sfHeroLaugh4" Source="heroLaugh4"/>
-        <SoundFile Id="sfHeroLaugh5" Source="heroLaugh5"/>
         <SoundFile Id="sfHeroLaugh6" Source="heroLaugh6"/>
         <SoundFile Id="sfHeroLaugh7" Source="heroLaugh7"/>
         <SoundFile Id="sfHeroLaugh8" Source="heroLaugh8"/>
+        
         <SoundFile Id="sfHeroYeah4" Source="heroYeah4"/>
         <SoundFile Id="sfHeroYeah6" Source="heroYeah6"/>
         
@@ -52,7 +50,6 @@
 
         <SoundFile Id="sfChomp1" Source="sfxChomp1"/>
         <SoundFile Id="sfChomp2" Source="sfxChomp2"/>
-        <SoundFile Id="sfChomp3" Source="sfxChomp3"/>
         
         <SoundFile Id="sfAlarm" Source="sfxAlarm"/>
         <!--<SoundFile Id="sfGoldBell" Source="sfxGoldBell"/>-->
@@ -179,7 +176,6 @@
             <SequenceSet Id="this_setHeroGottaDamage" RepeatCount="1">
                 <Delay Duration="0.2" />
                 <RandomSet RepeatCount="1">
-                    <Sound FileId="sfHeroShout1" Volume="1"/>
                     <Sound FileId="sfHeroShout5" Volume="1"/>
                     <Sound FileId="sfHeroShout6" Volume="1"/>
                     <Sound FileId="sfHeroShout7" Volume="1"/>
@@ -212,10 +208,10 @@
                 </RandomSet>
             </SequenceSet>           
             
-            <!-- muttering -->
+            <!-- muttering 
             <BoolTrigger Condition="hero:OnOilMotion or hero:Magneted" EnterAction="this_wait.Start()"/>
             <SequenceSet Id="this_wait" RepeatCount="1">
-                <Delay Duration="0.5"/>
+                <Delay Duration="1"/>
                 <Do Action="this:longTime" />
             </SequenceSet>
 
@@ -224,18 +220,15 @@
                 <Sound FileId="sfHeroMuttering2" Volume="0.4"/>
                 <Sound FileId="sfHeroMuttering3" Volume="0.4"/>
                 <Sound FileId="sfHeroMuttering4" Volume="0.4"/>
-            </RandomSet>
+            </RandomSet>-->
             
             <!-- lol:health and time bonus! -->
             <BoolTrigger Condition="this:Laugh" EnterAction="this_setHeroLaugh.Start()"/>
             <SequenceSet Id="this_setHeroLaugh" RepeatCount="1">
-	            <ParallelSet RepeatCount="1">
+	            <ParallelSet Probabilities="5,5,5,1" RepeatCount="1">
 	            	<Do Action="this_sndExitFlight.Volume=0.3" />
 		            <RandomSet RepeatCount="1">
-		                <Sound FileId="sfHeroLaugh1" Volume="0.6"/>
-		                <Sound FileId="sfHeroLaugh3" Volume="0.6"/>
 		                <Sound FileId="sfHeroLaugh4" Volume="0.6"/>
-		                <Sound FileId="sfHeroLaugh5" Volume="0.6"/>
 		                <Sound FileId="sfHeroLaugh6" Volume="0.6"/>
 		                <Sound FileId="sfHeroLaugh7" Volume="0.6"/>
 		                <Sound FileId="sfHeroLaugh8" Volume="0.6"/>
@@ -276,7 +269,8 @@
             <RandomSet Id="this_setChompOnce" RepeatCount="1">
                 <Sound FileId="sfChomp1" Volume="0.3"/>
                 <Sound FileId="sfChomp2" Volume="0.3"/>
-                <Sound FileId="sfChomp3" Volume="0.3"/>
+                <Sound FileId="sfChomp1" Volume="0.3" Pitch="0.2"/>
+                <Sound FileId="sfChomp2" Volume="0.3" Pitch="0.2"/>
             </RandomSet>
 
             <!-- good juggler -->
@@ -325,6 +319,10 @@
                 <Sound FileId="sfExplosion2" Volume="1"/>
                 <Sound FileId="sfExplosion1" Volume="1" Pitch="-0.2"/>
                 <Sound FileId="sfExplosion2" Volume="1" Pitch="-0.2"/>
+                <Sound FileId="sfExplosion1" Volume="1" Pitch="0.2"/>
+                <Sound FileId="sfExplosion2" Volume="1" Pitch="0.2"/>
+                <Sound FileId="sfExplosion1" Volume="1" Pitch="0.1"/>
+                <Sound FileId="sfExplosion2" Volume="1" Pitch="-0.1"/>
             </RandomSet>
             
          
@@ -334,6 +332,9 @@
                 <Sound FileId="sfDrop1" Volume="0.9"/>
                 <Sound FileId="sfDrop2" Volume="0.9"/>
                 <Sound FileId="sfDrop3" Volume="0.9"/>
+                <Sound FileId="sfDrop1" Volume="0.9" Pitch="-0.1"/>
+                <Sound FileId="sfDrop2" Volume="0.9" Pitch="-0.1"/>
+                <Sound FileId="sfDrop3" Volume="0.9" Pitch="-0.1"/>
             </RandomSet>
             
             <!-- alarm -->
