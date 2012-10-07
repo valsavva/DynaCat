@@ -6,5 +6,5 @@
 	</Resources>
 
 	<Include File="ScreenSeriesLevelsTemplate.xml" />
-	<Layer Id="levelsLayer" Class="clsLevelsLayer" ClassParams="@layerSeriesNum=2"/>
+	<Layer Id="levelsLayer" Class="clsLevelsLayer" ClassParams="@layerSeriesNum=3"/>
 </Screen>
