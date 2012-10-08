@@ -8,7 +8,7 @@
     <Include File="ClassHero.xml" />
     <Include File="ClassExit.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_tailsGreen" Source="tailsGreen" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_second_phon_ventilation_grille" Source="second_phon_ventilation_grille" />
         <Texture Id="txr_second_phon_grill_with_fan_2" Source="second_phon_grill_with_fan_2" />
         <Texture Id="txr_second_phon_communications2" Source="second_phon_communications2" />

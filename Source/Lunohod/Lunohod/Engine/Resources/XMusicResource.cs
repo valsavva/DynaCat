@@ -29,6 +29,9 @@ namespace Lunohod.Objects
 		{
 			base.InitializeMainThread(p);
 
+			if (this.song != null)
+				return;
+
             this.song = LoadResource<Song>(p.Content, "SongProcessor", "mp3", "wma", "Mp3Importer");
 		}
 		public override void Dispose()

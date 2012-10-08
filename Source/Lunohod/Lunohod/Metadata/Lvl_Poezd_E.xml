@@ -346,7 +346,7 @@
             <Do Action="tower:+LevelWithParachutes" InProgress="true"/>
             <Do Action="hero.SetTransaction(false, true, true)" />
 
-            <!--<Do Action="sndTrainStart.Start()" />-->
+            <!--<Do Action="setTrainStart.Start()" />-->
 
             <Do Action="Action1.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -363,7 +363,7 @@
             <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
             <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Do Action="Action2.Enable();grpAirplane:FlyThroughScreen" />
             <Delay Duration="2" />
             <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
@@ -380,7 +380,7 @@
             <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
             <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Do Action="Action3.Enable();grpAirplane:FlyThroughScreen" />
             <Delay Duration="2" />
             <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
@@ -398,7 +398,7 @@
             <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
             <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Do Action="Action4.Enable();grpAirplane:FlyThroughScreen" />
             <Delay Duration="2" />
             <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
@@ -416,7 +416,7 @@
             <NumAnimation From="0" To="414" Target="hero.X" Duration="4.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3233"/>
             <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Do Action="Action5.Enable();grpAirplane:FlyThroughScreen" />
             <Delay Duration="2" />
             <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
@@ -435,7 +435,7 @@
             <NumAnimation From="0" To="-20" Target="hero.Y" Duration="0.23" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="HAND"/>
 
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Do Action="Action6.Enable();grpAirplane:FlyThroughScreen" />
             <Delay Duration="2" />
             <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />

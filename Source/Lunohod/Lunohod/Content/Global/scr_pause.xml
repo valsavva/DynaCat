@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:ec03ce8a44ca560ac5ddae42de887c76$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="scr_pause.png" width="512" height="512">
+    <sprite n="scr_pause_panel" x="2" y="2" w="444" h="244"/>
+    <sprite n="scr_pause_wire01" x="341" y="248" w="133" h="99"/>
+    <sprite n="scr_pause_wire02" x="211" y="361" w="196" h="62"/>
+    <sprite n="scr_pause_wire03" x="2" y="248" w="337" h="111"/>
+    <sprite n="scr_pause_wire04" x="2" y="361" w="207" h="103"/>
+</TextureAtlas>

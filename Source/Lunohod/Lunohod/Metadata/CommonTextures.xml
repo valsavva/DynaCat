@@ -4,29 +4,19 @@
     <Resources RootFolder="Global">
 		<Texture Id="txrBlank" Source="blank" />
         <Font Id="Splash14Font" Source="Splash14Font" />
-		<Font Id="fntSystem" Source="SystemFont" />
         <Texture Id="txrButtons" Source="ui_buttons" />
     </Resources>
 
     <Resources RootFolder="Sound">
         <SoundFile Id="sndButtonTapped" Source="sfxClick"/>
 	</Resources>
-	
+
     <Resources RootFolder="Textures">
         <Texture Id="txrExplosion" Source="boom_new"/>
         <Texture Id="txrBomb" Source="bomb"/>
-        <Texture Id="txr_parachute" Source="parashut_03" />
-        
-        <Texture Id="txr_butter_8" Source="butter_08" />
-        <Texture Id="txr_butter_7" Source="butter_07" />
-        <Texture Id="txr_butter_1" Source="butter_01" />
-        <Texture Id="txr_butter_6" Source="butter_06" />
-        <Texture Id="txr_butter_3" Source="butter_03" />
-        <Texture Id="txr_butter_4" Source="butter_04" />
-        <Texture Id="txr_butter_5" Source="butter_05" />
-        <Texture Id="txr_butter_2" Source="butter_02" />
 
-
+		<Texture Id="txr_parachute" Source="parashut_03" />
+                
         <Texture Id="txrSmoke_1" Source="smoke_01"/>
         <Texture Id="txrSmoke_2" Source="smoke_02"/>
         <Texture Id="txrSmoke_3" Source="smoke_03"/>

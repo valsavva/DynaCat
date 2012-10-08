@@ -133,8 +133,8 @@
         <Image Id="dfltMask56" TextureId="txr_stone_03n" Bounds="145, 135, 15, 16" TraceId="image4329"/>
         <Image Id="dfltMask57" TextureId="txr_stone_03n" Bounds="133, 208, 15, 16" TraceId="image4300"/>
         <Image Id="dfltMask58" TextureId="txr_bones_04n" Bounds="269, 200, 15, 18" TraceId="image3208"/>
-        <Image Id="dfltMask59" TextureId="txr_bones_06n" Bounds="119, 286, 18, 9" TraceId="image3219"/>
-        <Image Id="dfltMask60" TextureId="txr_bones_08n" Bounds="109, 295, 21, 13" TraceId="image3230"/>
+        <Image Id="dfltMask59" TextureId="txr_bones_06n" Bounds="91, 208,  18,  9" TraceId="image3219"/>
+        <Image Id="dfltMask60" TextureId="txr_bones_08n" Bounds="81, 217,  21,  13" TraceId="image3230"/>
     </Layer>
     <Layer Id="actionTHE" BackColor="#FFFFFFFF">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
@@ -162,3 +162,4 @@
 <!-- 1% = 3.9; 45% = 175.5; 90% = 351 -->
 <!-- minPointsFood = 70 (17.9%) -->
 <!-- minPointsEnemy = 50 (12.8%) -->
+

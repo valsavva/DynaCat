@@ -1,21 +1,36 @@
 <Include>
+    <!-- ALSO in the Poni lvl-->
+    
     <Resources RootFolder="Sound">
-        <SoundFile Id="sndTrain_bells" Source="sfxTranBells"/>
+        <SoundFile Id="sndTrain_bell" Source="sfxTranBell"/>
     </Resources>
     
     <Resources RootFolder="Textures">
         <Texture Id="txr_semafor_red" Source="semafor_red" />
         <Texture Id="txr_semafor_green" Source="semafor_green" />
-    </Resources>
-    
-    <!--<Do Action="dashboard:+NoArrows" InProgress="true"/>-->
-    
-    
-    <!-- sound ALSO in the Poni lvl-->
-    <Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.3" Pitch="0"/>
+    </Resources>    
+
+    <Sound Id="sndTrainBell" FileId="sndTrain_bell" Volume="0" Pitch="0"/>
+
+    <ParallelSet Id="setTrainStart" RepeatCount="1" InProgress="false">
+        <SequenceSet RepeatCount="16" >
+            <Do Action="sndTrainBell.Start()" />
+            <Delay Duration="0.27" />
+        </SequenceSet>
+        <SequenceSet RepeatCount="1">
+            <Do Action="sndTrainBell.Volume=0.3" />
+            <Delay Duration="1.5" />
+            <NumAnimation Target="sndTrainBell.Volume" From="0.3" To="0" Duration="4" Fill="End"/>
+        </SequenceSet>
+        <!--<SequenceSet RepeatCount="1">
+            <Delay Duration="3" />
+            <NumAnimation Target="sndTrainBell.Pitch" From="0" To="-0.2" Duration="3" />
+        </SequenceSet>-->
+        
+    </ParallelSet>
     
     <SequenceSet InProgress="true" RepeatCount="1">
-        <Do Action="sndTrainStart.Start()" />
+        <Do Action="setTrainStart.Start()" />
         <Delay Duration="2" />
         <Do Action="img_semafor_red.Disable();img_semafor_green.Enable()" />
     </SequenceSet>

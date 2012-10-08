@@ -277,6 +277,12 @@ namespace Lunohod.Objects
 			set { GameEngine.Instance.IsMute = value; }
 		}
 
+		public bool SoundEffectsPaused
+		{
+			get { return GameEngine.Instance.SoundEffectsPaused; }
+			set { GameEngine.Instance.SoundEffectsPaused = value; }
+		}
+
 		public void OpenUrl(string url)
 		{
 #if IPHONE
@@ -291,6 +297,7 @@ namespace Lunohod.Objects
 			switch(propertyName)
 			{
 				case "IsMute" : getter = () => this.IsMute; setter = (v) => this.IsMute = v; break;
+				case "SoundEffectsPaused" : getter = () => this.SoundEffectsPaused; setter = (v) => this.SoundEffectsPaused = v; break;
 				default:
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}

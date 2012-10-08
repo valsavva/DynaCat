@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:1a59fc6531ef0d2326ee4a099b03ca49$ -->
+<!-- $TexturePacker:SmartUpdate:e0460a9944c91b5cd5e4b98801aad3f6$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -27,9 +27,9 @@ r => 'y' only set if sprite is rotated
     <sprite n="blow_flash_2_spr_64x64x3" x="2" y="914" w="192" h="64"/>
     <sprite n="blow_flash_3_spr_50x54x3" x="826" y="622" w="150" h="54"/>
     <sprite n="blow_flash_4_spr_37x35x3" x="826" y="830" w="111" h="35"/>
-    <sprite n="bomb" x="172" y="1009" w="31" h="9"/>
+    <sprite n="bomb" x="481" y="917" w="31" h="9"/>
     <sprite n="boom_new" x="454" y="640" w="208" h="177"/>
-    <sprite n="box_old_1" x="963" y="246" w="30" h="30"/>
+    <sprite n="box_old_1" x="963" y="310" w="30" h="30"/>
     <sprite n="btnRectBomb" x="926" y="429" w="61" h="84"/>
     <sprite n="btnRectDown1" x="826" y="930" w="84" h="61"/>
     <sprite n="btnRectDown2" x="932" y="515" w="83" h="61"/>
@@ -41,10 +41,10 @@ r => 'y' only set if sprite is rotated
     <sprite n="clock" x="196" y="937" w="390" h="30"/>
     <sprite n="exit_demo_fire_sprite_16x34x4" x="932" y="578" w="64" h="34"/>
     <sprite n="fishType01" x="627" y="851" w="32" h="21"/>
-    <sprite n="fishType02" x="963" y="302" w="28" h="19"/>
+    <sprite n="fishType02" x="536" y="991" w="28" h="19"/>
     <sprite n="fishType03" x="664" y="788" w="31" h="20"/>
-    <sprite n="fishType04" x="963" y="278" w="28" h="22"/>
-    <sprite n="fishType05" x="995" y="54" w="27" h="20"/>
+    <sprite n="fishType04" x="566" y="991" w="28" h="22"/>
+    <sprite n="fishType05" x="995" y="118" w="27" h="20"/>
     <sprite n="fishType06" x="172" y="980" w="22" h="27"/>
     <sprite n="fishType07" x="948" y="798" w="32" h="30"/>
     <sprite n="fish_bone_sht_33x20x3" x="536" y="969" w="99" h="20"/>
@@ -55,19 +55,22 @@ r => 'y' only set if sprite is rotated
     <sprite n="fish_spr_42x38_type05" x="196" y="969" w="168" h="38"/>
     <sprite n="fish_spr_42x38_type06" x="454" y="877" w="168" h="38"/>
     <sprite n="fish_spr_42x38_type07" x="2" y="980" w="168" h="38"/>
+    <sprite n="helpTextArrow1" x="998" y="893" w="13" h="40"/>
+    <sprite n="helpTextArrow2" x="217" y="576" w="13" h="40"/>
     <sprite n="hero" x="217" y="640" w="235" h="295"/>
-    <sprite n="heroHealth000" x="963" y="214" w="30" h="30"/>
-    <sprite n="heroHealth020" x="963" y="182" w="30" h="30"/>
-    <sprite n="heroHealth040" x="963" y="150" w="30" h="30"/>
-    <sprite n="heroHealth060" x="963" y="118" w="30" h="30"/>
+    <sprite n="heroHealth000" x="963" y="278" w="30" h="30"/>
+    <sprite n="heroHealth020" x="963" y="246" w="30" h="30"/>
+    <sprite n="heroHealth040" x="963" y="214" w="30" h="30"/>
+    <sprite n="heroHealth060" x="963" y="182" w="30" h="30"/>
     <sprite n="heroHealth080" x="664" y="756" w="30" h="30"/>
-    <sprite n="heroHealth100" x="963" y="86" w="30" h="30"/>
+    <sprite n="heroHealth100" x="963" y="150" w="30" h="30"/>
+    <sprite n="parashut_03" x="963" y="2" w="53" h="62"/>
     <sprite n="refrigerator" x="715" y="2" w="246" h="339"/>
     <sprite n="smoke_01" x="664" y="724" w="30" h="30"/>
     <sprite n="smoke_02" x="627" y="819" w="30" h="30"/>
-    <sprite n="smoke_03" x="963" y="54" w="30" h="30"/>
+    <sprite n="smoke_03" x="963" y="118" w="30" h="30"/>
     <sprite n="smoke_04" x="664" y="692" w="30" h="30"/>
-    <sprite n="smoke_05" x="963" y="2" w="50" h="50"/>
+    <sprite n="smoke_05" x="963" y="66" w="50" h="50"/>
     <sprite n="traces_singl" x="454" y="917" w="25" h="18"/>
     <sprite n="web_01" x="664" y="640" w="42" h="50"/>
 </TextureAtlas>

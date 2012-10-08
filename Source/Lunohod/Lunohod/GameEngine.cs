@@ -32,8 +32,8 @@ namespace Lunohod
 		
 		public Texture2D BlankTexture { get; private set; }
 		public SpriteFont SystemFont { get; private set; }
-		public List<Texture2D> WaveTextures { get; private set; }
-        public List<XSpriteSheetResource> GlobalSpriteSheets { get; private set; }
+		public List<XTextureResource> WaveTextures { get; private set; }
+        public List<XSpriteSheetResource> SpriteSheets { get; private set; }
         
 		public const int MinWaveTextureDiameter = 400;
         public const int MaxWaveTextureDiameter = 400;
@@ -63,6 +63,8 @@ namespace Lunohod
 		private LevelEngine loadingLevel;
 		private IAsyncResult loadingResult;
 
+		private bool soundEffectsPaused;
+
 		public bool InBackground;
 
 		public bool IsMute
@@ -82,7 +84,20 @@ namespace Lunohod
 			}
 		}
         
+		public bool SoundEffectsPaused
+		{
+			get { return this.soundEffectsPaused; }
+			set
+			{
+				this.soundEffectsPaused = value;
+
+				if (SoundEffectsPausedChanged != null)
+					SoundEffectsPausedChanged(this, null);
+			}
+		}
+
 		public event EventHandler MuteChanged;
+		public event EventHandler SoundEffectsPausedChanged;
 
 		public ScreenEngine ScreenEngine
 		{
@@ -118,6 +133,8 @@ namespace Lunohod
 		public GameEngine()
 		{
 			GameEngine.Instance = this;
+
+			this.SpriteSheets = new List<XSpriteSheetResource>();
 			
 			screenEngines = new List<ScreenEngine>();
 			
@@ -578,17 +595,14 @@ namespace Lunohod
 		
 		void PrepareGlobals()
 		{
-            var bundle = this.GameObject.FindLocal("GlobalSpriteSheets") as XResourceBundle;
-            this.GlobalSpriteSheets = bundle.Subcomponents.Cast<XSpriteSheetResource>().ToList();
-            
             this.BlankTexture = ((XTextureResource)this.GameObject.FindLocal("blank")).Image;
 			this.SystemFont = ((XFontResource)this.GameObject.FindLocal("SystemFont")).Font;
 			
-			this.WaveTextures = new List<Texture2D>();
+			this.WaveTextures = new List<XTextureResource>();
 			for (int i = MinWaveTextureDiameter; i <= MaxWaveTextureDiameter; i += WaveTextureDiameterStep)
 			{
 				string textureId = "wave" + i.ToString("0000");
-				this.WaveTextures.Add(((XTextureResource)this.GameObject.FindLocal(textureId)).Image);
+				this.WaveTextures.Add((XTextureResource)this.GameObject.FindLocal(textureId));
 			}
 		}
 		

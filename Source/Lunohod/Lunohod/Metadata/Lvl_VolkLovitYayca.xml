@@ -12,7 +12,7 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassEnemyElectricity1.xml" />
     <Resources RootFolder="Textures">
-        <Texture Id="txr_tailsGreen" Source="tailsGreen" />
+        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
         <Texture Id="txr_traces_singl" Source="traces_singl" />
         <Texture Id="txr_box_30x30_008" Source="box_30x30_008" />
         <Texture Id="txr_box_30x30_009" Source="box_30x30_009" />

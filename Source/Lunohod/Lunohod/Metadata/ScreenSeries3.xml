@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Bounds="0,0,480,320">
+    
+    <Resources RootFolder="Textures">
+        <SpriteSheet Id="series2" Source="series2" />
+    </Resources>
+    
 	<Include File="ScreenSeriesLevelsTemplate.xml" />
 	<Layer Id="levelsLayer" Class="clsLevelsLayer" ClassParams="@layerSeriesNum=2"/>
 </Screen>

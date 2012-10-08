@@ -208,7 +208,7 @@
             <Do Action="grpAirplane:FlyThroughScreen" />
             <NumAnimation From="0" To="-60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3151"/>
             <NumAnimation From="0" To="-40" Target="hero.Y" Duration="0.48" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3153"/>
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Delay Duration="0.8" />
 
 
@@ -225,7 +225,7 @@
             <Do Action="grpAirplane:FlyThroughScreen" />
             <NumAnimation From="0" To="-60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3151"/>
             <NumAnimation From="0" To="-40" Target="hero.Y" Duration="0.48" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3153"/>
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Delay Duration="0.8" />
 
 
@@ -242,7 +242,7 @@
             <Do Action="grpAirplane:FlyThroughScreen" />
             <NumAnimation From="0" To="-60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3151"/>
             <NumAnimation From="0" To="-40" Target="hero.Y" Duration="0.48" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3153"/>
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Delay Duration="0.8" />
 
 
@@ -259,7 +259,7 @@
             <Do Action="grpAirplane:FlyThroughScreen" />
             <NumAnimation From="0" To="-60" Target="hero.X" Duration="0.71" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3151"/>
             <NumAnimation From="0" To="-40" Target="hero.Y" Duration="0.48" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3153"/>
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
             <Delay Duration="0.8" />
 
 

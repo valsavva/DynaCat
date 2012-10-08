@@ -9,13 +9,20 @@ namespace Lunohod.Objects
 {
     public class XSpriteSheetResource : XTextureResource
     {
-        public Dictionary<string, System.Drawing.RectangleF> Map = new Dictionary<string,System.Drawing.RectangleF>(StringComparer.InvariantCultureIgnoreCase);
+		public Dictionary<string, System.Drawing.RectangleF> Map;
 
         public override void InitializeMainThread(InitializeParameters p)
         {
             base.InitializeMainThread(p);
 
+			if (this.Map != null)
+				return;
+
+			this.Map = new Dictionary<string,System.Drawing.RectangleF>(StringComparer.InvariantCultureIgnoreCase);
+
             ParseMapFile(p);
+
+			p.Game.SpriteSheets.Add(this);
         }
 
         private void ParseMapFile(InitializeParameters p)
@@ -44,5 +51,12 @@ namespace Lunohod.Objects
                 );
             }
         }
+
+		public override void Dispose()
+		{
+			GameEngine.Instance.SpriteSheets.Remove(this);
+
+			base.Dispose();
+		}
     }
 }

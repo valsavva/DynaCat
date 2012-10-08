@@ -9,6 +9,8 @@
     <Include File="ClassUILevelNumberPanel.xml" />
 
     <Resources RootFolder="Global">
+    	<SpriteSheet Source="scr_pause" />
+    
         <Texture Id="txrPanel" Source="scr_pause_panel" />
         <Texture Id="txrWire01" Source="scr_pause_wire01" />
         <Texture Id="txrWire02" Source="scr_pause_wire02" />
@@ -20,6 +22,9 @@
 		<Image TextureId="txrBlank" BackColor="#333333" Opacity="0.6"/>
 	</Layer>
 	<Layer>
+		
+		<BoolTrigger Condition="system:screenActivated" EnterAction="system.SoundEffectsPaused=true"/>
+		
 		<Group Id="grpAssembly" Bounds="0,-320,480,320">
 
 			
@@ -28,19 +33,19 @@
 			<Image Id="imgWire03" TextureId="txrWire03" Bounds="85,0,337,111" />
 			<Image Id="imgWire04" TextureId="txrWire04" Bounds="160,0,207,103" />
 
-			<Image TextureId="txrPanel" />
+			<Image TextureId="txrPanel" Location="20,0" />
 				
 			<Group Id="grpLevelNumberPanel" Bounds="97,67,100,100" Class="clsLevelNumberPanel" Rotation="7.5" />
 			
 			<!-- buttons -->
 			<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=restart" Bounds="35, 40, 62, 62">
-			    <BoolTrigger Condition="btnRestart:Action" EnterAction="system:dismissScreen;system.RestartLevel();" />
+			    <BoolTrigger Condition="btnRestart:Action" EnterAction="system:dismissScreen;system.RestartLevel();system.SoundEffectsPaused=false" />
 			</Group>
 			<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="31, 103, 62, 62">
-			    <BoolTrigger Condition="btnHome:Action" EnterAction="system:dismissScreen;system.AbandonLevel();" />
+			    <BoolTrigger Condition="btnHome:Action" EnterAction="system:dismissScreen;system.AbandonLevel();system.SoundEffectsPaused=false" />
 			</Group>
 			<Group Id="btnResume" Class="clsButton" ClassParams="@BtnImg=play" Bounds="339, 167, 62, 62">
-			    <BoolTrigger Condition="btnResume:Action" EnterAction="grpAssemblyRemove.Start()" />
+			    <BoolTrigger Condition="btnResume:Action" EnterAction="grpAssemblyRemove.Start();system.SoundEffectsPaused=false" />
 			</Group>
 			<Group Id="btnMute" Bounds="391,32,62,62" Class="clsMuteButton" />
 			

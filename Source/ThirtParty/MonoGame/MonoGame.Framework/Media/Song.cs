@@ -42,29 +42,77 @@ using System;
 using System.IO;
 
 using Microsoft.Xna.Framework.Audio;
-﻿
+
+#if IPHONE
+using MonoTouch.Foundation;
+using MonoTouch.AVFoundation;
+#endif
+
 namespace Microsoft.Xna.Framework.Media
 {
-    public class Song : IEquatable<Song>, IDisposable
-    {
+	public sealed class Song : IEquatable<Song>, IDisposable
+	{
+#if IPHONE
+		private AVAudioPlayer _sound;
+#elif PSS
+		private PSSuiteSong _sound;
+#elif !WINRT
 		private SoundEffectInstance _sound;
+#endif
+		
 		private string _name;
-		private int _playCount;
+		private int _playCount = 0;   
 		
 		internal Song(string fileName)
 		{			
 			_name = fileName;
+			
+#if IPHONE
+			_sound = AVAudioPlayer.FromUrl(NSUrl.FromFilename(fileName));
+			_sound.NumberOfLoops = 0;
+			_sound.FinishedPlaying += OnFinishedPlaying;
+#elif PSS
+			_sound = new PSSuiteSong(_name);
+#elif !WINRT       
 			_sound = new SoundEffect(_name).CreateInstance();
+#endif
+		}
+		
+		public string FilePath
+		{
+			get { return _name; }
 		}
 		
 		public void Dispose()
-        {
-			_sound.Dispose();
-        }
-		
-		public bool Equals(Song song) 
 		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+		
+		void Dispose(bool disposing)
+		{
+#if !WINRT
+			if (disposing)
+			{
+				if (_sound != null)
+				{
+#if IPHONE
+					_sound.FinishedPlaying -= OnFinishedPlaying;
+#endif
+					_sound.Dispose();
+					_sound = null;
+				}
+			}
+#endif
+		}
+		
+		public bool Equals(Song song) 		
+		{
+#if WINRT
+			return song != null && song.FilePath == FilePath;
+#else
 			return ((object)song != null) && (Name == song.Name);
+#endif
 		}
 		
 		public override int GetHashCode ()
@@ -88,71 +136,74 @@ namespace Microsoft.Xna.Framework.Media
 			{
 				return (object)song2 == null;
 			}
-
+			
 			return song1.Equals(song2);
 		}
 		
 		public static bool operator !=(Song song1, Song song2)
 		{
-		  return ! (song1 == song2);
+			return ! (song1 == song2);
+		}
+		
+#if !WINRT
+		internal delegate void FinishedPlayingHandler(object sender, EventArgs args);
+		event FinishedPlayingHandler DonePlaying;
+		
+		internal void OnFinishedPlaying (object sender, EventArgs args)
+		{
+			if (DonePlaying == null)
+				return;
+			
+			DonePlaying(sender, args);
+		}
+		
+		/// <summary>
+		/// Set the event handler for "Finished Playing". Done this way to prevent multiple bindings.
+		/// </summary>
+		internal void SetEventHandler(FinishedPlayingHandler handler)
+		{
+			if (DonePlaying != null)
+				return;
+			
+			DonePlaying += handler;
 		}
 		
 		internal void Play()
-		{			
-			if ( _sound != null )
-			{
-				_sound.Play();
-				_playCount++;
-			}
-        }
-
+		{	
+			if ( _sound == null )
+				return;
+			
+			_sound.Play();
+			
+			_playCount++;
+		}
+		
 		internal void Resume()
 		{
-			if ( _sound != null )
-			{
-				_sound.Resume();
-			}
+			if (_sound == null)
+				return;			
+#if IPHONE
+			_sound.Play();
+#else
+			_sound.Resume();
+#endif
 		}
 		
 		internal void Pause()
-		{			
-			if ( _sound != null )
-			{
-				_sound.Pause();
-			}
-        }
+		{			            
+			if ( _sound == null )
+				return;
+			
+			_sound.Pause();
+		}
 		
 		internal void Stop()
 		{
-			if ( _sound != null )
-			{
-				_sound.Stop();
-			}
-		}
-		
-		internal bool Loop
-		{
-			get
-			{
-				if ( _sound != null )
-				{
-					return _sound.IsLooped;
-				}
-				else
-				{
-				 	return false;	
-				}
-			}
-			set 
-			{
-				if ( _sound != null )
-				{
-					if ( _sound.IsLooped != value )
-					{
-						_sound.IsLooped = value;
-					}
-				}
-			}
+			if ( _sound == null )
+				return;
+			
+			_sound.Stop();
+			_playCount = 0;
 		}
 		
 		internal float Volume
@@ -160,107 +211,83 @@ namespace Microsoft.Xna.Framework.Media
 			get
 			{
 				if (_sound != null)
-				{
 					return _sound.Volume;
-				}
 				else
-				{
 					return 0.0f;
-				}
 			}
 			
 			set
 			{
-				if ( _sound != null )
-				{
-					if ( _sound.Volume != value )
-					{
-						_sound.Volume = value;
-					}
-				}
+				if ( _sound != null && _sound.Volume != value )
+					_sound.Volume = value;
 			}			
 		}
+#endif // !WINRT
 		
-        public TimeSpan Duration
-        {
-            get
-            {
-				if ( _sound != null )
-				{
-					//return new TimeSpan(0,0,(int)_sound.Duration);
-					return new TimeSpan(0);
-				}
-				else
-				{
-					return new TimeSpan(0);
-				}
-				
-            }
-        }
+		// TODO: Implement
+		public TimeSpan Duration
+		{
+			get
+			{
+				return new TimeSpan(0);
+			}
+		}
 		
+		// TODO: Implement
 		public TimeSpan Position
-        {
-            get
-            {
-				if ( _sound != null )
-				{
-					//return new TimeSpan(0,0,(int)_sound.CurrentPosition);
-					return new TimeSpan(0);
-				}
-				else
-				{
-					return new TimeSpan(0);
-				}
-            }
-        }
-
-        public bool IsProtected
-        {
-            get
-            {
+		{
+			get
+			{
+				return new TimeSpan(0);				
+			}
+		}
+		
+		public bool IsProtected
+		{
+			get
+			{
 				return false;
-            }
-        }
-
-        public bool IsRated
-        {
-            get
-            {
+			}
+		}
+		
+		public bool IsRated
+		{
+			get
+			{
 				return false;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
+			}
+		}
+		
+		public string Name
+		{
+			get
+			{
 				return Path.GetFileNameWithoutExtension(_name);
-            }
-        }
-
-        public int PlayCount
-        {
-            get
-            {
+			}
+		}
+		
+		public int PlayCount
+		{
+			get
+			{
 				return _playCount;
-            }
-        }
-
-        public int Rating
-        {
-            get
-            {
+			}
+		}
+		
+		public int Rating
+		{
+			get
+			{
 				return 0;
-            }
-        }
-
-        public int TrackNumber
-        {
-            get
-            {
+			}
+		}
+		
+		public int TrackNumber
+		{
+			get
+			{
 				return 0;
-            }
-        }
-    }
+			}
+		}
+	}
 }
-

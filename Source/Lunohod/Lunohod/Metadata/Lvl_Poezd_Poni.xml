@@ -334,7 +334,7 @@
             <Do Action="tower:+LevelWithParachutes" InProgress="true"/>
             <Do Action="hero.SetTransaction(false, true, true)" />
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <Do Action="Action1.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -350,7 +350,7 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <Do Action="Action2.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -366,7 +366,7 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <Do Action="Action3.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -382,7 +382,7 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <Do Action="Action4.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -398,7 +398,7 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <Do Action="Action5.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -414,7 +414,7 @@
             <NumAnimation From="0" To="-104" Target="hero.X" Duration="1" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3387"/>
             <NumAnimation From="0" To="-80" Target="hero.Y" Duration="0.95" IsDelta="true" Autoreverse="false" RepeatCount="1" TraceId="image3391"/>
 
-            <Do Action="sndTrainStart.Start()" />
+            <Do Action="setTrainStart.Start()" />
 
             <Do Action="Action_End.Enable()" />
             <Do Action="grpAirplane:FlyThroughScreen" />
@@ -449,18 +449,32 @@
     </Layer>
     
     <Resources RootFolder="Sound">
-        <SoundFile Id="sndTrain_bells" Source="sfxTranBells"/>
+        <SoundFile Id="sndTrain_bell" Source="sfxTranBell"/>
     </Resources>
     
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
+        <Sound Id="sndTrainBell1" FileId="sndTrain_bell" Volume="0" Pitch="0"/>
+        <Sound Id="sndTrainBell2" FileId="sndTrain_bell" Volume="0" Pitch="0"/>
 
-        <Resources RootFolder="Textures">
-            <Texture Id="txr_semafor_red" Source="semafor_red" />
-            <Texture Id="txr_semafor_green" Source="semafor_green" />
-        </Resources>
-        <Do Action="dashboard:+NoArrows" InProgress="true"/>
-    	<Sound Id="sndTrainStart" FileId="sndTrain_bells" Volume="0.3" Pitch="0"/>
+        <ParallelSet Id="setTrainStart" RepeatCount="1" InProgress="false">
+            <SequenceSet RepeatCount="8" >
+                <Do Action="sndTrainBell1.Start()" />
+                <Delay Duration="0.27" />
+                <Do Action="sndTrainBell2.Start()" />
+                <Delay Duration="0.27" />
+            </SequenceSet>
+            <SequenceSet RepeatCount="1">
+                <Do Action="sndTrainBell1.Volume=0.3;sndTrainBell2.Volume=0.3" />
+                <Delay Duration="1.5" />
+                <NumAnimation Target="sndTrainBell1.Volume,sndTrainBell2.Volume" From="0.3,0.3" To="0,0" Duration="4" Fill="End"/>
+                <Do Action="sndTrainBell1.Volume=0;sndTrainBell2.Volume=0" />
+            </SequenceSet>
+            <!--<SequenceSet RepeatCount="1">
+            <Delay Duration="3" />
+            <NumAnimation Target="sndTrainBell.Pitch" From="0" To="-0.2" Duration="3" />
+        </SequenceSet>-->
 
+        </ParallelSet>
     </Layer>
     <!-- HAND EDIT <<< -->
     <Include File="ClassExplosion.xml" />

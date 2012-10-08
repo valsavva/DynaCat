@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:00a8c699d7a8f7741c09d9420986116e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="scr_main.png" width="1024" height="1024">
+    <sprite n="blank" x="966" y="2" w="1" h="1"/>
+    <sprite n="level_number_panel" x="855" y="632" w="111" h="111"/>
+    <sprite n="nomnomlogo_round" x="2" y="936" w="85" h="64"/>
+    <sprite n="numbers" x="327" y="888" w="350" h="31"/>
+    <sprite n="scr_levels_bg" x="484" y="2" w="480" h="320"/>
+    <sprite n="scr_levels_names" x="89" y="936" w="387" h="58"/>
+    <sprite n="scr_levels_other" x="204" y="888" w="121" h="36"/>
+    <sprite n="scr_levels_panels" x="478" y="921" w="375" h="51"/>
+    <sprite n="scr_main_bg" x="2" y="2" w="480" h="320"/>
+    <sprite n="scr_main_logo" x="355" y="745" w="198" h="116"/>
+    <sprite n="scr_main_panel01" x="855" y="478" w="149" h="152"/>
+    <sprite n="scr_main_panel02" x="855" y="324" w="149" h="152"/>
+    <sprite n="scr_main_panel03" x="204" y="734" w="149" h="152"/>
+    <sprite n="ui_buttons" x="2" y="324" w="201" h="408"/>
+    <sprite n="wave0400" x="2" y="734" w="200" h="200"/>
+</TextureAtlas>

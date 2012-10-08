@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Screen Bounds="0,0,480,320">
+
+    <Resources RootFolder="Textures">
+        <SpriteSheet Id="series1" Source="series1" />
+
+        <Texture Id="txr_butter_8" Source="butter_08" />
+        <Texture Id="txr_butter_7" Source="butter_07" />
+        <Texture Id="txr_butter_1" Source="butter_01" />
+        <Texture Id="txr_butter_6" Source="butter_06" />
+        <Texture Id="txr_butter_3" Source="butter_03" />
+        <Texture Id="txr_butter_4" Source="butter_04" />
+        <Texture Id="txr_butter_5" Source="butter_05" />
+        <Texture Id="txr_butter_2" Source="butter_02" />
+   </Resources>
+	
 	<Include File="ScreenSeriesLevelsTemplate.xml" />
 	<Layer Id="levelsLayer" Class="clsLevelsLayer" ClassParams="@layerSeriesNum=1"/>
 </Screen>

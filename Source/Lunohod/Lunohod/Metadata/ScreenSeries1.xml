@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<Screen Bounds="0,0,480,320">
-	<Include File="ScreenSeriesLevelsTemplate.xml" />
-	<Layer Id="levelsLayer" Class="clsLevelsLayer" ClassParams="@layerSeriesNum=0"/>
-</Screen>
