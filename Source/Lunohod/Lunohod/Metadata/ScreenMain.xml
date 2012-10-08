@@ -22,7 +22,7 @@
 			<Image TextureId="txrSeriesPanel@seriesNumberParam" StretchMode="ActualSize" />
 			<TapArea Action="this_setAnimatePress.Start()" />
             <SequenceSet Id="this_setAnimatePress">
-                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.2" Autoreverse="true" RepeatCount="1"/>
+                <NumAnimation Target="this.Scale" From="1" To="1.05" Duration="0.15" Autoreverse="true" RepeatCount="1"/>
                 <Do Action="system.StartSeries(@seriesNumberParam);" />
             </SequenceSet>
 			<Text Text="=system.Str(system.GetSeriesScore(@seriesNumberParam))" Location="65,125" FontId="Splash14Font" Scale="0.7" />
