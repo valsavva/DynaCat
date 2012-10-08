@@ -18,9 +18,13 @@
     </Resources>
 
 	<Class Id="clsSeriesPanel">
-		<Group>
+        <Group RotationCenter="72,74">
 			<Image TextureId="txrSeriesPanel@seriesNumberParam" StretchMode="ActualSize" />
-			<TapArea Action="system.StartSeries(@seriesNumberParam);" />
+			<TapArea Action="this_setAnimatePress.Start()" />
+            <SequenceSet Id="this_setAnimatePress">
+                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.2" Autoreverse="true" RepeatCount="1"/>
+                <Do Action="system.StartSeries(@seriesNumberParam);" />
+            </SequenceSet>
 			<Text Text="=system.Str(system.GetSeriesScore(@seriesNumberParam))" Location="65,125" FontId="Splash14Font" Scale="0.7" />
 			<Text Text="=system.Str(system.GetSeriesStars(@seriesNumberParam))+'/'+system.Str(system.GetSeriesAvailableStars(@seriesNumberParam))" Location="27,95" FontId="Splash14Font" Scale="0.7" />
 			<Text Text="=system.Str(system.GetSeriesBadges(@seriesNumberParam))+'/'+system.Str(system.GetSeriesLevelCount(@seriesNumberParam))" Location="95,95" FontId="Splash14Font" Scale="0.7" />
@@ -227,9 +231,9 @@
 
         <Image TextureId="txrLogo" Location="140,-20"/>
 
-        <Group Bounds="010,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
-		<Group Bounds="165,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
-		<Group Bounds="320,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
+        <Group Id="grpSeries1Panel" Bounds="010,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
+        <Group Id="grpSeries1Pane2" Bounds="165,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
+        <Group Id="grpSeries1Pane3" Bounds="320,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
 		
 		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=info" Bounds="20, 245,62,62">
 		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />
