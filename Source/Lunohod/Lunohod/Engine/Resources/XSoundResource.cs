@@ -31,7 +31,7 @@ namespace Lunohod.Objects
 		/// The number of instances of the current sound effect. Default value is 3. If set to zero or a negative value, the number of instances will not be limited.
 		/// </summary>
 		[XmlAttribute]
-		public int NumberOfInstances = 3;
+		public int NumberOfInstances = 1;
 		/// <summary>
 		/// The maximum number of instances that can start playing at once.
 		/// This handles the situation when more than one events of the same type and having the same sound effect happen at the same time.
