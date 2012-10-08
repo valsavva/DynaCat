@@ -20,16 +20,16 @@
         <SoundFile Id="sfHeroYeah4" Source="heroYeah4"/>
         <SoundFile Id="sfHeroYeah6" Source="heroYeah6"/>
         
-        <!--<SoundFile Id="sfExplosion1" Source="sfxExplosion1" NumberOfInstances="3"/>
-        <SoundFile Id="sfExplosion2" Source="sfxExplosion2" NumberOfInstances="3"/>-->
+        <SoundFile Id="sfExplosion1" Source="sfxExplosion1" NumberOfInstances="3"/>
+        <SoundFile Id="sfExplosion2" Source="sfxExplosion2" NumberOfInstances="3"/>
         
         <SoundFile Id="sfHiss" Source="sfxHiss" NumberOfInstances="2"/>
         
-        <SoundFile Id="sfHeroEating1" Source="sfxEating1"/>
-        <SoundFile Id="sfHeroEating2" Source="sfxEating2"/>
-        <SoundFile Id="sfHeroEating3GoldFish" Source="sfxEating3Gold"/>
-        <SoundFile Id="sfBounce1" Source="sfxBounce1"/>
-        <SoundFile Id="sfBounce2" Source="sfxBounce2"/>
+        <SoundFile Id="sfHeroEating1" Source="sfxEating1" NumberOfInstances="2"/>
+        <SoundFile Id="sfHeroEating2" Source="sfxEating2" NumberOfInstances="2"/>
+        <SoundFile Id="sfHeroEating3GoldFish" Source="sfxEating3Gold" NumberOfInstances="2"/>
+        <SoundFile Id="sfBounce1" Source="sfxBounce1" NumberOfInstances="2"/>
+        <SoundFile Id="sfBounce2" Source="sfxBounce2" NumberOfInstances="2"/>
         <SoundFile Id="sfStick1" Source="sfxStick1"/>
         <SoundFile Id="sfStick2" Source="sfxStick2"/>
         <SoundFile Id="sfPortIn" Source="sfxHarmUp"/>
@@ -54,9 +54,9 @@
         
         <SoundFile Id="sfAlarm" Source="sfxAlarm"/>
         <!--<SoundFile Id="sfGoldBell" Source="sfxGoldBell"/>-->
-        <SoundFile Id="sfDrop1" Source="sfxDrop1"/>
-        <SoundFile Id="sfDrop2" Source="sfxDrop2"/>
-        <SoundFile Id="sfDrop3" Source="sfxDrop3"/>
+        <SoundFile Id="sfDrop1" Source="sfxDrop1" NumberOfInstances="2"/>
+        <SoundFile Id="sfDrop2" Source="sfxDrop2" NumberOfInstances="2"/>
+        <SoundFile Id="sfDrop3" Source="sfxDrop3" NumberOfInstances="2"/>
         <SoundFile Id="sfRadarWorkLoop" Source="sfxRadarWorkLoop"/>
         <SoundFile Id="sfExitEndLevel" Source="sfxExitEndLevel"/>
     </Resources>
@@ -309,11 +309,11 @@
             <Sound Id="this_sndExitFlight" FileId="sfExitEndLevel" Volume="0.6"/>
             
 <!-- MISC -->
-            <!-- hiss - moved to class explosion
+            <!-- hiss -->
             <BoolTrigger Condition="this:BombHiss" EnterAction="this_sndBombHiss.Start()"/>
-            <Sound Id="this_sndBombHiss" FileId="sfHiss" Volume="0.2"/>-->
+            <Sound Id="this_sndBombHiss" FileId="sfHiss" Volume="0.2"/>
 
-			<!-- explosion - moved to class explosion
+			<!-- explosion -->
             <BoolTrigger Condition="this:Explosion" EnterAction="this_setExplosion.Start()"/>
             <RandomSet Id="this_setExplosion" RepeatCount="1">
                 <Sound FileId="sfExplosion1" Volume="1"/>
@@ -324,7 +324,7 @@
                 <Sound FileId="sfExplosion2" Volume="1" Pitch="0.2"/>
                 <Sound FileId="sfExplosion1" Volume="1" Pitch="0.1"/>
                 <Sound FileId="sfExplosion2" Volume="1" Pitch="-0.1"/>
-            </RandomSet>-->
+            </RandomSet>
             
          
             <!-- parashute open -->
