@@ -7,9 +7,6 @@
         <Image TextureId="txrBlank" BackColor="#333333" Opacity="0.6"/>
     </Layer>
     <Layer>
-			<BoolTrigger Condition="system:screenActivated" EnterAction="@currentMusicVolume=sndGameMusic.Volume;sndGameMusic.Volume=0" />
-			<NumAnimation Id="anmMusicVolumeDown" Target="sndGameMusic.Volume" From="@currentMusicVolume" To="0" Duration="0.5" RepeatCount="1"/>
-
             <Text Text="Loading" FontId="Splash14Font" Location="201,122" Color="#000000" />
             <Text Text="Loading" FontId="Splash14Font" Location="200,120" Color="#EEEEEE" />
 
