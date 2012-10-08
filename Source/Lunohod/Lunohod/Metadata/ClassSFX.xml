@@ -28,8 +28,8 @@
         <SoundFile Id="sfHeroEating1" Source="sfxEating1" NumberOfInstances="2"/>
         <SoundFile Id="sfHeroEating2" Source="sfxEating2" NumberOfInstances="2"/>
         <SoundFile Id="sfHeroEating3GoldFish" Source="sfxEating3Gold" NumberOfInstances="2"/>
-        <SoundFile Id="sfBounce1" Source="sfxBounce1" NumberOfInstances="2"/>
-        <SoundFile Id="sfBounce2" Source="sfxBounce2" NumberOfInstances="2"/>
+        <SoundFile Id="sfBounce1" Source="sfxBounce1" />
+        <SoundFile Id="sfBounce2" Source="sfxBounce2" />
         <SoundFile Id="sfStick1" Source="sfxStick1"/>
         <SoundFile Id="sfStick2" Source="sfxStick2"/>
         <SoundFile Id="sfPortIn" Source="sfxHarmUp"/>
@@ -54,9 +54,9 @@
         
         <SoundFile Id="sfAlarm" Source="sfxAlarm"/>
         <!--<SoundFile Id="sfGoldBell" Source="sfxGoldBell"/>-->
-        <SoundFile Id="sfDrop1" Source="sfxDrop1" NumberOfInstances="2"/>
-        <SoundFile Id="sfDrop2" Source="sfxDrop2" NumberOfInstances="2"/>
-        <SoundFile Id="sfDrop3" Source="sfxDrop3" NumberOfInstances="2"/>
+        <SoundFile Id="sfDrop1" Source="sfxDrop1"/>
+        <SoundFile Id="sfDrop2" Source="sfxDrop2"/>
+        <SoundFile Id="sfDrop3" Source="sfxDrop3"/>
         <SoundFile Id="sfRadarWorkLoop" Source="sfxRadarWorkLoop"/>
         <SoundFile Id="sfExitEndLevel" Source="sfxExitEndLevel"/>
     </Resources>
