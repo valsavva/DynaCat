@@ -18,6 +18,8 @@ namespace Lunohod.Objects
 		private XSoundResource soundFile;
 		internal SoundEffectInstance soundEffectInstance;
 
+		private bool isSystemPaused;
+		
 		[XmlAttribute]
 		public double Pitch = 0;
 		
@@ -28,6 +30,8 @@ namespace Lunohod.Objects
 		{
 			base.Initialize(p);
 			
+			GameEngine.Instance.SoundEffectsPausedChanged += HandleSystemPause;
+
 			PerfMon.Start("Other-Sfx");
 
 			this.soundFile = (XSoundResource)this.FindGlobal(this.FileId);
@@ -39,6 +43,18 @@ namespace Lunohod.Objects
 		
 			PerfMon.Stop("Other-Sfx");
         }
+		
+		protected virtual void HandleSystemPause(object sender, EventArgs e)
+		{
+			if (GameEngine.Instance.SoundEffectsPaused)
+			{
+				this.isSystemPaused = this.IsPlaying;
+				((IRunnable)this).Pause();
+			} else if (this.isSystemPaused)
+			{
+				((IRunnable)this).Resume();
+			}
+		}
 		
 		protected override void AdjustVolumeImpl(double volume)
 		{
@@ -63,6 +79,11 @@ namespace Lunohod.Objects
                 // noop for now
             }
         }
+
+		private bool IsPlaying
+		{
+			get { return this.soundFile.VerifyInstance(this) && this.soundEffectInstance.State == SoundState.Playing; }
+		}
 
         public bool IsPaused
         {
@@ -135,6 +156,8 @@ namespace Lunohod.Objects
 		public override void Dispose()
 		{
 			this.Stop();
+
+			GameEngine.Instance.SoundEffectsPausedChanged -= HandleSystemPause;
 
 			base.Dispose();
 		}

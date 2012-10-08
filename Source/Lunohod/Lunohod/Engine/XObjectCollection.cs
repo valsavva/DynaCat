@@ -63,6 +63,9 @@ namespace Lunohod.Objects
 		
 		new public void InsertRange(int index, IEnumerable<XObject> collection)
 		{
+			if (collection == null)
+				return;
+
 			base.InsertRange(index, collection);
 			
 			foreach(var o in collection)

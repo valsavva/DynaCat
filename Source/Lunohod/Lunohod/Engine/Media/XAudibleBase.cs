@@ -45,7 +45,7 @@ namespace Lunohod
 			GameEngine.Instance.MuteChanged += HandleMuteChanged;
 		}
 
-		void HandleMuteChanged (object sender, EventArgs e)
+		void HandleMuteChanged(object sender, EventArgs e)
 		{
 			AdjustVolume();
 		}

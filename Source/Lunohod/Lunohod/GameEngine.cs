@@ -63,6 +63,8 @@ namespace Lunohod
 		private LevelEngine loadingLevel;
 		private IAsyncResult loadingResult;
 
+		private bool soundEffectsPaused;
+
 		public bool InBackground;
 
 		public bool IsMute
@@ -82,7 +84,20 @@ namespace Lunohod
 			}
 		}
         
+		public bool SoundEffectsPaused
+		{
+			get { return this.soundEffectsPaused; }
+			set
+			{
+				this.soundEffectsPaused = value;
+
+				if (SoundEffectsPausedChanged != null)
+					SoundEffectsPausedChanged(this, null);
+			}
+		}
+
 		public event EventHandler MuteChanged;
+		public event EventHandler SoundEffectsPausedChanged;
 
 		public ScreenEngine ScreenEngine
 		{
