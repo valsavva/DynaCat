@@ -175,7 +175,9 @@
             </BoolTrigger>
 
             <!-- walk -->
-            <BoolTrigger Condition="this:Walker" Group="this_sttStates">
+            <BoolTrigger Condition="this:Walker"
+                         ExitAction="this_sprMain.CurrentFrame=1"
+                         Group="this_sttStates">
                 <NumAnimation From="0" To="2" Duration="0.225" Target="this_sprMain.CurrentFrame" InProgress="true" RepeatCount="0" Autoreverse="true"/>
             </BoolTrigger>
 
