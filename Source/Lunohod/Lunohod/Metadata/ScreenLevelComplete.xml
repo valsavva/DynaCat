@@ -40,7 +40,7 @@
 	</Layer>        
                         
     <Layer Id="backg">
-     	<Sound Id="sndVictoryMusic" FileId="sfMusicVictory" Volume="1"/>
+        <Sound Id="sndVictoryMusic" FileId="sfMusicVictory" Volume="1"/>
         <Sound Id="sndCompleteMusic" FileId="sfMusicComplete" Volume="1"/>
 
         <BoolTrigger Condition="hero.Score>0" EnterAction="setMusicVictory.Start()" />
@@ -107,8 +107,9 @@
 	</Layer>
 
 	<Layer>
-	
-		<Class Id="clsObjAnimation">
+        <BoolTrigger Condition="system:screenActivated" EnterAction="system.StopLevelSoundEffects()"/>
+
+        <Class Id="clsObjAnimation">
 			<SequenceSet RepeatCount="1">
 				<Do Action="@ObjName.Y=@ObjName.Y-500; @ObjName.X=@ObjName.X-@starDX" />
 				<Delay Duration="@starDelay" />
