@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:9446f9b313f2ac062efb8373398bbf4b$ -->
+<!-- $TexturePacker:SmartUpdate:0cabe3f697650c7bdd231afb1867ec31$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -14,7 +14,6 @@ oH => sprite's original height (only available if trimmed)
 r => 'y' only set if sprite is rotated
 -->
 <TextureAtlas imagePath="scr_main.png" width="1024" height="1024">
-    <sprite n="blank" x="999" y="2" w="1" h="1"/>
     <sprite n="level_number_panel" x="153" y="867" w="111" h="111"/>
     <sprite n="nomnomlogo_round" x="912" y="2" w="85" h="64"/>
     <sprite n="numbers" x="205" y="770" w="350" h="31"/>

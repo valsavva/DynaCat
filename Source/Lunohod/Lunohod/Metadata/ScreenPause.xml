@@ -18,8 +18,8 @@
         <Texture Id="txrWire04" Source="scr_pause_wire04" />
     </Resources>
 
-	<Layer Id="background">
-		<Image TextureId="txrBlank" BackColor="#333333" Opacity="0.6"/>
+	<Layer Id="background" BackColor="#000000" Opacity="0.5">
+		<Image TextureId="txrBlank"/>
 	</Layer>
 	<Layer>
 		

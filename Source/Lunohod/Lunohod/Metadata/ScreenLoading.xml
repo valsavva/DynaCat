@@ -3,8 +3,8 @@
 <Screen Bounds="0,0,480,320" IsModal="true">
     <Include File="CommonScreenFunctionality.xml" />
 
-    <Layer Id="background">
-        <Image TextureId="txrBlank" BackColor="#333333" Opacity="0.6"/>
+    <Layer Id="background" BackColor="#000000" Opacity="0.5">
+        <Image TextureId="txrBlank"/>
     </Layer>
     <Layer>
             <Text Text="Loading" FontId="Splash14Font" Location="201,122" Color="#000000" />
