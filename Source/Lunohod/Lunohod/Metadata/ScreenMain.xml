@@ -15,20 +15,24 @@
         <Texture Id="txrSeriesPanel2" Source="scr_main_panel02" />
         <Texture Id="txrSeriesPanel3" Source="scr_main_panel03" />
         <Texture Id="txrLogo" Source="scr_main_logo" />
+        <!--<Texture Id="txrLabels" Source="scr_levels_names" />-->
     </Resources>
 
 	<Class Id="clsSeriesPanel">
         <Group RotationCenter="72,74">
+            <!--<Do Action="this_Label.CurrentFrame=@seriesNumberParam-1" InProgress="true" RepeatCount="1" />-->
 			<Image TextureId="txrSeriesPanel@seriesNumberParam" StretchMode="ActualSize" />
-			<TapArea Action="this_setAnimatePress.Start()" />
+            <!--<Sprite Id="this_Label" TextureId="txrLabels" Bounds="34,4,91,41" FrameBounds="0,0,129,58" />-->
+            <TapArea Action="this_setAnimatePress.Start()" />
             <SequenceSet Id="this_setAnimatePress">
-                <NumAnimation Target="this.Scale" From="1" To="1.05" Duration="0.15" Autoreverse="true" RepeatCount="1"/>
+                <Do Action="imgHeroAnm.Opacity=0;imgRat1Anm.Opacity=0" />
+                <NumAnimation Target="this.Scale" From="1" To="1.05" Duration="0.2" Autoreverse="true" RepeatCount="1"/>
                 <Do Action="system.StartSeries(@seriesNumberParam);" />
             </SequenceSet>
 			<Text Text="=system.Str(system.GetSeriesScore(@seriesNumberParam))" Location="65,125" FontId="Splash14Font" Scale="0.7" />
 			<Text Text="=system.Str(system.GetSeriesStars(@seriesNumberParam))+'/'+system.Str(system.GetSeriesAvailableStars(@seriesNumberParam))" Location="27,95" FontId="Splash14Font" Scale="0.7" />
 			<Text Text="=system.Str(system.GetSeriesBadges(@seriesNumberParam))+'/'+system.Str(system.GetSeriesLevelCount(@seriesNumberParam))" Location="95,95" FontId="Splash14Font" Scale="0.7" />
-		</Group>
+        </Group>
 	</Class>
 
 	<Layer Id="background">
@@ -41,185 +45,71 @@
 
 	<Layer>
         
-<!-- animations -->
-        <Group Id="grpHeroAnm" Opacity="0">
-            <Do Id="anmHeroShadow" Action="imgHeroShadow.X=(grpHeroAnm.X-217)/7-10;imgHeroShadow.Y=(grpHeroAnm.Y-50)/15-24" RepeatCount="0" InProgress="true"/>
-            <Sprite Id="imgHeroShadow" TextureId="txrHero" Bounds="-10, -24, 67, 89" FrameBounds="0,0,47,59" FrameCount="5" CurrentFrame="0" Opacity="0.4" BackColor="#000000"/>
-            <Sprite Id="imgHeroAnm" TextureId="txrHero" Bounds="0, 0, 47, 59" FrameBounds="0,0,47,59" FrameCount="5" CurrentFrame="0" Opacity="1"/>
-        </Group>
-
-        <Group Id="grpRat1Anm" Opacity="0">
-            <Do Id="anmRat1Shadow" Action="imgRat1Shadow.X=(grpRat1Anm.X-217)/7-10;imgRat1Shadow.Y=(grpRat1Anm.Y-50)/15-24" RepeatCount="0" InProgress="true"/>
-            <Sprite Id="imgRat1Shadow" TextureId="txrEnemyRat2Sheet" Bounds="-10, -24, 80, 82" FrameBounds="0,0,60,52" FrameCount="4" CurrentFrame="1" Opacity="0.4" BackColor="#000000"/>
-            <Sprite Id="imgRat1Anm" TextureId="txrEnemyRat2Sheet" Bounds="0, 0, 60, 52" FrameBounds="0,0,60,52" FrameCount="4" CurrentFrame="1"/>
-        </Group>
-        
+<!-- animations -->        
         <!-- 1: hero comes, looks around and returns -->
         <Class Id="clsMSAnimation1">
             <SequenceSet RepeatCount="1">
-                <Do Action="grpHeroAnm.Opacity=1;
-                    grpHeroAnm.X=@heroStartX-@heroDX;
-                    grpHeroAnm.Y=@heroStartY-@heroDY" />
-                <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="@heroDX,@heroDY" Duration="0.35" IsDelta="true" RepeatCount="1" Fill="End" />
-                <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="@heroDX/20,@heroDY/20" Duration="0.1" IsDelta="true" RepeatCount="2" Autoreverse="true" Fill="End" />
-                <Delay Duration="0.7" />
+                <Do Action="imgHeroAnm.X=@heroStartX;
+                    imgHeroAnm.Y=@heroStartY" />
+                <NumAnimation Target="imgHeroAnm.Opacity" From="0" To="1" Duration="2" RepeatCount="1" Fill="End"/>
+                <Delay Duration="0.8" />
                 <Do Action="imgHeroAnm.CurrentFrame=1" />
-                <Delay Duration="0.4" />
+                <Delay Duration="0.8" />
                 <Do Action="imgHeroAnm.CurrentFrame=2" />
-                <Delay Duration="0.4" />
+                <Delay Duration="0.8" />
                 <RandomSet RepeatCount="1" >
                     <Do Action="imgHeroAnm.CurrentFrame=14" />
                     <Do Action="imgHeroAnm.CurrentFrame=13" />
                     <Do Action="imgHeroAnm.CurrentFrame=18" />
                     <Do Action="imgHeroAnm.CurrentFrame=22" />
                 </RandomSet>
-                <Delay Duration="0.7" />
-                <RandomSet RepeatCount="1">
-                    <SequenceSet RepeatCount="1">
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="0,-10" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="0,90" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                    </SequenceSet>
-                    <SequenceSet RepeatCount="1">
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="0,10" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="0,-90" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                    </SequenceSet>
-                    <SequenceSet RepeatCount="1">
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="-10,0" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="500,0" Duration="0.5" IsDelta="true" RepeatCount="1" Fill="End" />
-                    </SequenceSet>
-                    <SequenceSet RepeatCount="1">
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="10,0" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                        <NumAnimation Target="grpHeroAnm.X,grpHeroAnm.Y" From="0,0" To="-500,0" Duration="0.5" IsDelta="true" RepeatCount="1" Fill="End" />
-                    </SequenceSet>
-                </RandomSet>
-                <Do Action="grpHeroAnm.Opacity=0;imgHeroAnm.CurrentFrame=0" />
-            </SequenceSet>
-        </Class>
-
-        <!-- 2: slink -->
-        <Class Id="clsMSAnimation2">
-            <SequenceSet RepeatCount="1">
-                <Do Action="grpHeroAnm.Opacity=1;
-                    grpHeroAnm.X=@heroStartX;
-                    grpHeroAnm.Y=@heroStartY" />
-                <NumAnimation Target="grpHeroAnm.Y" From="0" To="-72" Duration="0.3" IsDelta="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="1" />
-                <NumAnimation Target="grpHeroAnm.Y" From="0" To="-8" Duration="0.6" IsDelta="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.6" />
-                <NumAnimation Target="grpHeroAnm.Y" From="0" To="2" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                <Delay Duration="0.4" />
-                <NumAnimation Target="grpHeroAnm.X" From="0" To="@heroDX" Duration="1" IsDelta="true" RepeatCount="1" Fill="End" />
-                <RandomSet RepeatCount="1">
-                    <Delay Duration="0.6" />
-                    <SequenceSet RepeatCount="1">
-                        <Delay Duration="0.6" />
-                        <NumAnimation Target="grpHeroAnm.Y" From="0" To="-2" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                        <Delay Duration="0.4" />
-                        <NumAnimation Target="grpHeroAnm.Y" From="0" To="2" Duration="0.2" IsDelta="true" RepeatCount="1" Fill="End" />
-                        <Delay Duration="0.4" />
-                        <NumAnimation Target="grpHeroAnm.X" From="0" To="(-1)*@heroDX" Duration="1.5" IsDelta="true" RepeatCount="1" Fill="End" />
-                        <Delay Duration="0.6" />
-                    </SequenceSet>
-                </RandomSet>
-                <NumAnimation Target="grpHeroAnm.Y" From="0" To="72" Duration="0.3" IsDelta="true" RepeatCount="1" Fill="End" />
-                <Do Action="grpHeroAnm.Opacity=0;imgHeroAnm.CurrentFrame=0" />
+                <Delay Duration="1.5" />
+                <NumAnimation Target="imgHeroAnm.Opacity" From="imgHeroAnm.Opacity" To="0" Duration="3" RepeatCount="1" Fill="End"/>
+                <Do Action="imgHeroAnm.CurrentFrame=0" />
             </SequenceSet>
         </Class>
         
         <!-- rat1 -->
         <Class Id="clsMSAnimationRat1">
             <SequenceSet RepeatCount="1">
-                <Do Action="grpRat1Anm.Opacity=1;
-                    grpRat1Anm.X=@Rat1StartX;
-                    grpRat1Anm.Y=@Rat1StartY" />
-                <ParallelSet RepeatCount="1">
-                    <NumAnimation Target="imgRat1Anm.CurrentFrame,imgRat1Shadow.CurrentFrame" From="0,0" To="2,2" Duration="0.225" InProgress="true" RepeatTime="2" Autoreverse="true"/>
-                    <NumAnimation Target="grpRat1Anm.X,grpRat1Anm.Y" From="0,0" To="@Rat1DX,@Rat1DY" Duration="2" IsDelta="true" RepeatCount="1" Fill="End" />
-                </ParallelSet>
-                <Do Action="imgRat1Anm.CurrentFrame=1;imgRat1Shadow.CurrentFrame=1" />
+                <Do Action="imgRat1Anm.X=@Rat1StartX;
+                    imgRat1Anm.Y=@Rat1StartY" />
+                <Do Action="imgRat1Anm.CurrentFrame=1" />
+                <NumAnimation Target="imgRat1Anm.Opacity" From="0" To="1" Duration="2" RepeatCount="1" Fill="End"/>
                 <Delay Duration="0.4" />
-                <Do Action="imgRat1Anm.CurrentFrame=3;imgRat1Shadow.CurrentFrame=3" />
+                <Do Action="imgRat1Anm.CurrentFrame=3" />
                 <Delay Duration="0.8" />
-                <Do Action="imgRat1Anm.CurrentFrame=6;imgRat1Shadow.CurrentFrame=6" />
+                <Do Action="imgRat1Anm.CurrentFrame=6" />
                 <Delay Duration="0.8" />
-                <Do Action="imgRat1Anm.CurrentFrame=1;imgRat1Shadow.CurrentFrame=1" />
+                <Do Action="imgRat1Anm.CurrentFrame=1" />
                 <Delay Duration="0.125" />
                 <RandomSet RepeatCount="1">
-                    <NumAnimation Target="imgRat1Anm.CurrentFrame,imgRat1Shadow.CurrentFrame" From="9,9" To="29,29" Duration="2.625" RepeatCount="1" Fill="End"/>
+                    <NumAnimation Target="imgRat1Anm.CurrentFrame" From="9" To="29" Duration="2.625" RepeatCount="1" Fill="End"/>
                     <SequenceSet RepeatCount="1">
-                        <NumAnimation From="30,30" To="38,38" Duration="1.125" Target="imgRat1Anm.CurrentFrame,imgRat1Shadow.CurrentFrame"  RepeatCount="1" Fill="End"/>
-                        <NumAnimation From="39,39" To="40,40" Duration="0.25" Target="imgRat1Anm.CurrentFrame,imgRat1Shadow.CurrentFrame" RepeatCount="3" Fill="End"/>
-                        <NumAnimation From="41,41" To="43,43" Duration="0.375" Target="imgRat1Anm.CurrentFrame,imgRat1Shadow.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <NumAnimation From="30" To="38" Duration="1.125" Target="imgRat1Anm.CurrentFrame"  RepeatCount="1" Fill="End"/>
+                        <NumAnimation From="39" To="40" Duration="0.25" Target="imgRat1Anm.CurrentFrame" RepeatCount="3" Fill="End"/>
+                        <NumAnimation From="41" To="43" Duration="0.375" Target="imgRat1Anm.CurrentFrame" RepeatCount="1" Fill="End"/>
                     </SequenceSet>
                 </RandomSet>
-                <Do Action="imgRat1Anm.CurrentFrame=1;imgRat1Shadow.CurrentFrame=1" />
-                <Delay Duration="0.5" />
-                <ParallelSet RepeatCount="1">
-                    <NumAnimation Target="imgRat1Anm.CurrentFrame,imgRat1Shadow.CurrentFrame" From="0,0" To="2,2" Duration="0.225" InProgress="true" RepeatTime="2" Autoreverse="true"/>
-                    <NumAnimation Target="grpRat1Anm.X,grpRat1Anm.Y" From="0,0" To="-@Rat1DX,-@Rat1DY" Duration="2" IsDelta="true" RepeatCount="1" Fill="End" />
-                </ParallelSet>
-                <Do Action="grpRat1Anm.Opacity=0" />
+                <Do Action="imgRat1Anm.CurrentFrame=1" />
+                <Delay Duration="1.5" />
+                <NumAnimation Target="imgRat1Anm.Opacity" From="imgRat1Anm.Opacity" To="0" Duration="3" RepeatCount="1" Fill="End"/>
             </SequenceSet>
         </Class>
         
         <!-- main loop -->
         <SequenceSet RepeatCount="0" InProgress="true">
-            <RandomSet RepeatCount="1" Probabilities="2,2,2,2,2,2,2,2,1,1,1,1,1,1,3, 6,6,6">
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=62,@heroStartY=0,@heroDX=0,@heroDY=-80" />
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=62,@heroStartY=0,@heroDX=80,@heroDY=0" />
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=62,@heroStartY=0,@heroDX=0,@heroDY=80" />
-                
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=370,@heroStartY=0,@heroDX=0,@heroDY=-80" />
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=370,@heroStartY=0,@heroDX=-80,@heroDY=0" />
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=370,@heroStartY=0,@heroDX=0,@heroDY=80" />
+            <Do Action="@anmPause=system.Rnd(7,10)" />
+            <Delay Duration="@anmPause" />
+            <RandomSet RepeatCount="1">
+                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=89,@heroStartY=85"/>
+                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=245,@heroStartY=85"/>
+                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=405,@heroStartY=85"/>
 
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=214,@heroStartY=230,@heroDX=0,@heroDY=-80" />
-                <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=214,@heroStartY=230,@heroDX=0,@heroDY=80" />
-
-                <SequenceSet Class="clsMSAnimation2" ClassParams="@heroStartX=22,@heroStartY=119,@heroDX=80" />
-                <SequenceSet Class="clsMSAnimation2" ClassParams="@heroStartX=102,@heroStartY=119,@heroDX=-80" />
-                
-                <SequenceSet Class="clsMSAnimation2" ClassParams="@heroStartX=182,@heroStartY=119,@heroDX=80" />
-                <SequenceSet Class="clsMSAnimation2" ClassParams="@heroStartX=262,@heroStartY=119,@heroDX=-80" />
-                
-                <SequenceSet Class="clsMSAnimation2" ClassParams="@heroStartX=328,@heroStartY=119,@heroDX=80" />
-                <SequenceSet Class="clsMSAnimation2" ClassParams="@heroStartX=408,@heroStartY=119,@heroDX=-80" />
-                
-                <!-- hero shadow's gag -->
-                <SequenceSet RepeatCount="1">
-                    <Do Action="grpHeroAnm.Opacity=1;
-                    grpHeroAnm.X=214;
-                    grpHeroAnm.Y=310" />
-                    <NumAnimation Target="grpHeroAnm.Y" From="0" To="-80" Duration="0.35" IsDelta="true" RepeatCount="1" Fill="End" />
-                    <NumAnimation Target="grpHeroAnm.Y" From="0" To="-4" Duration="0.1" IsDelta="true" RepeatCount="2" Autoreverse="true" Fill="End" />
-                    <Delay Duration="0.7" />
-                    <Do Action="imgHeroAnm.CurrentFrame=1" />
-                    <Delay Duration="0.4" />
-                    <Do Action="imgHeroAnm.CurrentFrame=2" />
-                    <Delay Duration="0.4" />
-                    <Do Action="imgHeroAnm.CurrentFrame=0" />
-                    <Do Action="anmHeroShadow.Stop()" />
-                    <NumAnimation Target="imgHeroAnm.X,imgHeroShadow.X" From="0,0" To="-30,30" IsDelta="true" Duration="1.5" RepeatCount="1" />
-                    <Do Action="imgHeroAnm.CurrentFrame=2" />
-                    <Delay Duration="0.4" />
-                    <Do Action="imgHeroAnm.CurrentFrame=24;imgHeroShadow.CurrentFrame=24;imgHeroShadow.FlipEffects='Horizontally'" />
-                    <Delay Duration="0.2" />
-                    <NumAnimation Target="imgHeroAnm.X,imgHeroShadow.X" From="0,0" To="-2,2" IsDelta="true" Autoreverse="true" Duration="0.075" RepeatCount="4" />
-                    <NumAnimation Target="imgHeroAnm.X,imgHeroShadow.X" From="0,0" To="-300,300" IsDelta="true" Autoreverse="false" Duration="0.2" RepeatCount="1" />
-                    <Do Action="grpHeroAnm.Opacity=0;
-                    imgHeroAnm.X=0;
-                    imgHeroAnm.Y=0;
-                    imgHeroAnm.CurrentFrame=0;
-                    imgHeroShadow.CurrentFrame=0;
-                    imgHeroShadow.FlipEffects='None'
-                    anmHeroShadow.Start()" />
-                </SequenceSet>
-
-                <SequenceSet Class="clsMSAnimationRat1" ClassParams="@Rat1StartX=-46,@Rat1StartY=20,@Rat1DX=100,@Rat1DY=0"/>
-                <SequenceSet Class="clsMSAnimationRat1" ClassParams="@Rat1StartX=480,@Rat1StartY=20,@Rat1DX=-120,@Rat1DY=0"/>
-                <SequenceSet Class="clsMSAnimationRat1" ClassParams="@Rat1StartX=200,@Rat1StartY=310,@Rat1DX=0,@Rat1DY=-80"/>
+                <SequenceSet Class="clsMSAnimationRat1" ClassParams="@Rat1StartX=81,@Rat1StartY=90"/>
+                <SequenceSet Class="clsMSAnimationRat1" ClassParams="@Rat1StartX=238,@Rat1StartY=90"/>
+                <SequenceSet Class="clsMSAnimationRat1" ClassParams="@Rat1StartX=394,@Rat1StartY=90"/>
             </RandomSet>
-            <Delay Duration="0.5" />
         </SequenceSet>
                 
 <!-- bttns -->
@@ -234,8 +124,14 @@
         <Group Id="grpSeries1Panel" Bounds="010,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=1" />
         <Group Id="grpSeries1Pane2" Bounds="165,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=2" />
         <Group Id="grpSeries1Pane3" Bounds="320,080,149,152" Class="clsSeriesPanel" ClassParams="@seriesNumberParam=3" />
-		
-		<Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=info" Bounds="20, 245,62,62">
+
+        <Sprite Id="imgHeroAnm" TextureId="txrHero" Bounds="0, 0, 47, 59" FrameBounds="0,0,47,59" FrameCount="5" CurrentFrame="0" Opacity="0"/>
+        <Sprite Id="imgRat1Anm" TextureId="txrEnemyRat2Sheet" Bounds="0, 0, 60, 52" FrameBounds="0,0,60,52" FrameCount="4" CurrentFrame="1" Opacity="0"/>
+
+        
+       
+        
+        <Group Id="btnCredits" Class="clsButton" ClassParams="@BtnImg=info" Bounds="20, 245,62,62">
 		    <BoolTrigger Condition="btnCredits:Action" EnterAction="system.StartScreen('ScreenCredits.xml')" />
 		</Group>
 		<Group Id="btnMute" Bounds="85,245,62,62" Class="clsMuteButton" />
