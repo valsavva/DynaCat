@@ -45,10 +45,6 @@
             </IntersectionTrigger>
 
             <SequenceSet Id="this_setExit" InProgress="false">
-                <Do Action="@heroDepartPointX=hero.X;
-                            @heroDepartPointY=hero.Y;                             
-                            @heroDestPointX=exit.X;                             
-                            @heroDestPointY=exit.Y+10"/>
 <!--                <Delay Duration="0.8"/>-->
                 <Do Action="SFX:EndLevel"/>
                 <Delay Duration="0.12"/>

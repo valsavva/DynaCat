@@ -65,7 +65,7 @@
     </Layer>
     <Layer Id="oil1" BackColor="#FFFFFFFF">
         <Group Id="grpOil2" Enabled="false">
-            <Group Id="grpOilArea2" Class="clsOil" Bounds="100, 122, 39, 84" TraceId="image3085-1"/>
+            <Group Id="grpOilArea2" Class="clsOil" Bounds="100, 122, 39, 60" TraceId="image3085-1"/>
             <Image Id="img20" Class="clsOilSpot" ClassParams="@appearanceTime=1,@txrNum=6" Bounds="102, 137, 36, 49" TraceId="image3323" />
             <Image Id="img21" Class="clsOilSpot" ClassParams="@appearanceTime=2,@txrNum=1" Bounds="104, 119, 19, 17" TraceId="image3334" />
             <Image Id="img22" Class="clsOilSpot" ClassParams="@appearanceTime=3,@txrNum=2" Bounds="112, 180, 27, 20" TraceId="image3345" />
@@ -136,7 +136,7 @@
         <Enemy Id="enm2" Class="clsEnemyRat2" Bounds="378, 74, 22, 23" TraceId="image3117"/>
         <Enemy Id="enm3" Class="clsEnemyRat1" Bounds="264, 135, 22, 23" TraceId="image3128-1"/>
     </Layer>
-    <Layer Id="actionTHE" BackColor="#FFFFFFFF">
+    <Layer Id="actionTHE">
         <Tower Id="tower" Bounds="0, 0, 30, 30" Class="clsTower" TraceId="image3038"/>
         <Group Id="exit" Class="clsExit" Bounds="101, 210, 37, 54" TraceId="image3049" />
         <Hero Id="hero" Class="clsHero" Bounds="223, 42, 33, 24" TraceId="image3606"/>

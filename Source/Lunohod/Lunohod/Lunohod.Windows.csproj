@@ -759,6 +759,7 @@
     </Content>
     <Content Include="Metadata\LvL_1D_FF.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\Lvl_1D_Perekrestok.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
