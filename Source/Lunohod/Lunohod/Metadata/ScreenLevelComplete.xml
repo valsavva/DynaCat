@@ -66,7 +66,7 @@
 	        <Image Id="imgLight_yellow2" TextureId="txrLight" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" BackColor="#ffc46f"/>  
 		        <ParallelSet RepeatCount="1" InProgress="true">
 			        <SequenceSet>
-			        	<Delay Duration="3" />
+			        	<Delay Duration="23" />
 			        	<Do Action="sndMusicEQdThemeLoop.Start();system:DncStrs" />
 		        		<NumAnimation Target="imgLight_yellow2.Opacity,imgLight_yellow.Opacity" From="0,0" To="0.4,0.4" Duration="1" Autoreverse="false" RepeatCount="1" Fill="Hold"  InProgress="true"/>
 			        </SequenceSet>
@@ -225,15 +225,7 @@
                 <Do Action="grpHealthBonusPoints.Disable()"/>
             </SequenceSet>
 		</Image>
-		
-		<BoolTrigger Condition="(levelScore.HasBadge)" >
-			<Sound Id="sndChimes" FileId="sfChimes" Volume="0.07"/> 
-			<SequenceSet RepeatCount="1" InProgress="true">
-				<Delay Duration="3" />
-				<Do Action="sndChimes.Start()"/>
-			</SequenceSet>
-		</BoolTrigger>
-		
+		        
 		<Class Id="clsShiningStarAnimation">
 			<SequenceSet RepeatCount="1" InProgress="true">
 				<Do Action="system:+bonusAnmEnd" />
@@ -279,7 +271,6 @@
 		<ParallelSet Id="setStar1">
 			<SequenceSet Class="clsObjAnimation" ClassParams="@ObjName=sprStar1, @starDX=200, @starDelay=0, @SplashObjName=imgStar1Splash"/>
 			<SequenceSet RepeatCount="1">
-<!--				<Delay Duration="0.4" />-->
 				<Do Action="sndScoreRatchet.Start()" />
 				<NumAnimation Target="dispScore.X" From="0" To="levelScore.Score" Duration="0.6" RepeatCount="1" Fill="Hold"/>
 				<Do Action="sndScoreRatchet.Stop();system:+BonusAnmStart;system:+StampAnmStart" />
@@ -298,13 +289,15 @@
 			<NumAnimation Target="dispScore.X" From="levelScore.Score" To="levelScore.TotalScore" Duration="0.6" RepeatCount="1" Fill="Hold"/>
 			<Do Action="sndScoreRatchet.Stop()" />
 		</SequenceSet>
-		
-		<SequenceSet Id="setBadge" RepeatCount="1">
+
+        <Sound Id="sndChimes" FileId="sfChimes" Volume="0.07"/>
+
+        <SequenceSet Id="setBadge" RepeatCount="1">
 			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="100,-300" Duration="0.2" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
 			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="-2,6" Duration="0.1" IsDelta="true" Autoreverse="true" RepeatCount="1" InProgress="true"/>
 			<NumAnimation Target="grpBadge.X,grpBadge.Y" From="0,0" To="-1,3" Duration="0.2" IsDelta="true" Autoreverse="true" RepeatCount="1" InProgress="true"/>
-<!--			<NumAnimation Target="imgBadge.Rotation" From="0" To="180" Duration="0.125" IsDelta="true" Autoreverse="false" RepeatCount="1" InProgress="true"/>
-			<NumAnimation Target="imgBadge.Rotation" From="-2" To="2" Duration="0.125" IsDelta="true" Autoreverse="true" RepeatCount="1.125" InProgress="true"/>-->
+            <Delay Duration="0.5" />
+            <Do Action="sndChimes.Start()" />
 		</SequenceSet>
 		
 		<SequenceSet Id="setStamp" RepeatCount="1">
