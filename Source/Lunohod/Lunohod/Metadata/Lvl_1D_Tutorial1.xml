@@ -27,15 +27,18 @@
         <Block Id="blk3" Bounds="-11, 16, 54, 144" Edges="Stick" TraceId="image3265"/>
         <Block Id="blk4" Bounds="479, 16, 54, 144" Edges="Stick" TraceId="image3267"/>
     </Layer>
-    <Layer Id="_background" CacheContent="true" BackColor="#FFFFFFFF">
+    <Layer Id="_background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" Opacity="1"/>
-        <Image Id="dfltMask1a" TextureId="txr_under_land_BG_01n" Location="0,0" StretchMode="ActualSize" Opacity="0"/>
+        <!-- REMOVE IN RELEASE! >>>>>>>> -->
+        <Image Id="dfltMask1a" TextureId="txr_under_land_BG_01n" Bounds="-5, -5, 490, 340" Opacity="0"/>
         <SequenceSet RepeatCount="0" InProgress="true">
             <Do Action="dfltMask1.Opacity=1;dfltMask1a.Opacity=0" />
-            <Delay Duration="1" />
+            <Delay Duration="3" />
             <Do Action="dfltMask1.Opacity=0;dfltMask1a.Opacity=1" />
-            <Delay Duration="1" />
+            <Delay Duration="3" />
         </SequenceSet>
+        <!-- <<<<<<<<<<<<<<<< REMOVE IN RELEASE!-->
+        
     </Layer>
     <Layer Id="_Laz" CacheContent="true" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_hor_01n" Bounds="300, 78, 46, 36" TraceId="image3028"/>
