@@ -23,7 +23,7 @@
 	</Layer>
 	<Layer>
 		
-		<BoolTrigger Condition="system:screenActivated" EnterAction="system.SoundEffectsPaused=true"/>
+		<BoolTrigger Condition="system:screenActivated" EnterAction="system.PauseLevelSoundEffects(true)"/>
 		
 		<Group Id="grpAssembly" Bounds="0,-320,480,320">
 
@@ -39,13 +39,13 @@
 			
 			<!-- buttons -->
 			<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=restart" Bounds="35, 40, 62, 62">
-			    <BoolTrigger Condition="btnRestart:Action" EnterAction="system:dismissScreen;system.RestartLevel();system.SoundEffectsPaused=false" />
+			    <BoolTrigger Condition="btnRestart:Action" EnterAction="system:dismissScreen;system.RestartLevel();system.PauseLevelSoundEffects(false)" />
 			</Group>
 			<Group Id="btnHome" Class="clsButton" ClassParams="@BtnImg=exit" Bounds="31, 103, 62, 62">
-			    <BoolTrigger Condition="btnHome:Action" EnterAction="system:dismissScreen;system.AbandonLevel();system.SoundEffectsPaused=false" />
+			    <BoolTrigger Condition="btnHome:Action" EnterAction="system:dismissScreen;system.AbandonLevel();system.PauseLevelSoundEffects(false)" />
 			</Group>
 			<Group Id="btnResume" Class="clsButton" ClassParams="@BtnImg=play" Bounds="339, 167, 62, 62">
-			    <BoolTrigger Condition="btnResume:Action" EnterAction="grpAssemblyRemove.Start();system.SoundEffectsPaused=false" />
+			    <BoolTrigger Condition="btnResume:Action" EnterAction="grpAssemblyRemove.Start();system.PauseLevelSoundEffects(false)" />
 			</Group>
 			<Group Id="btnMute" Bounds="391,32,62,62" Class="clsMuteButton" />
 			

@@ -91,13 +91,20 @@ namespace Lunohod
 			{
 				this.soundEffectsPaused = value;
 
-				if (SoundEffectsPausedChanged != null)
-					SoundEffectsPausedChanged(this, null);
-			}
+                if (PauseLevelSoundEffects != null)
+                    PauseLevelSoundEffects(this, null);
+            }
 		}
 
+        public void StopSoundEffects()
+        {
+            if (StopLevelSoundEffects != null)
+                StopLevelSoundEffects(this, null);
+        }
+
 		public event EventHandler MuteChanged;
-		public event EventHandler SoundEffectsPausedChanged;
+        public event EventHandler PauseLevelSoundEffects;
+        public event EventHandler StopLevelSoundEffects;
 
 		public ScreenEngine ScreenEngine
 		{

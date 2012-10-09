@@ -29,8 +29,9 @@ namespace Lunohod.Objects
 		public override void Initialize(InitializeParameters p)
 		{
 			base.Initialize(p);
-			
-			GameEngine.Instance.SoundEffectsPausedChanged += HandleSystemPause;
+
+            GameEngine.Instance.PauseLevelSoundEffects += HandleSystemPause;
+            GameEngine.Instance.StopLevelSoundEffects += HandleSystemStop;
 
 			PerfMon.Start("Other-Sfx");
 
@@ -44,7 +45,12 @@ namespace Lunohod.Objects
 			PerfMon.Stop("Other-Sfx");
         }
 		
-		protected virtual void HandleSystemPause(object sender, EventArgs e)
+		private void HandleSystemStop(object sender, EventArgs e)
+        {
+            ((IRunnable)this).Stop();
+        }
+
+		private void HandleSystemPause(object sender, EventArgs e)
 		{
 			if (GameEngine.Instance.SoundEffectsPaused)
 			{
@@ -157,7 +163,8 @@ namespace Lunohod.Objects
 		{
 			this.Stop();
 
-			GameEngine.Instance.SoundEffectsPausedChanged -= HandleSystemPause;
+            GameEngine.Instance.PauseLevelSoundEffects -= HandleSystemPause;
+            GameEngine.Instance.StopLevelSoundEffects -= HandleSystemStop;
 
 			base.Dispose();
 		}

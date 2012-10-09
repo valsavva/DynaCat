@@ -536,10 +536,6 @@
     <Content Include="Metadata\ClassEnemyElectricity2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Metadata\ClassEnemyRat.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Metadata\ClassEnemyRat1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -958,9 +954,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Metadata\ScreenTests.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Metadata\Textures.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="app.config" />

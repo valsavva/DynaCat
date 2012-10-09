@@ -21,7 +21,6 @@
         <Texture Id="txrStamp" Source="scr_victory_stamp" />
         
         <Texture Id="txr_Victory_new_Light_Cat" Source="scr_victory_light_cat" />
-        <Texture Id="txrLight_yellow" Source="scr_victory_light_yellow" />
         <Texture Id="txr_Victory_new_Spark_Cat" Source="scr_victory_spark_cat" />
         <Texture Id="txr_Victory_new_Panel2" Source="scr_victory_panel" />
         <Texture Id="txr_Victory_new_Cat" Source="scr_victory_cat" />
@@ -41,7 +40,7 @@
 	</Layer>        
                         
     <Layer Id="backg">
-     	<Sound Id="sndVictoryMusic" FileId="sfMusicVictory" Volume="1"/>
+        <Sound Id="sndVictoryMusic" FileId="sfMusicVictory" Volume="1"/>
         <Sound Id="sndCompleteMusic" FileId="sfMusicComplete" Volume="1"/>
 
         <BoolTrigger Condition="hero.Score>0" EnterAction="setMusicVictory.Start()" />
@@ -63,11 +62,11 @@
         
 		<Sound Id="sndMusicEQdThemeLoop" FileId="sfMusicEQdThemeLoop" Volume="1" IsLooped="true"/>
         <BoolTrigger Condition="(levelScore.HasBadge) and (system:bonusAnmEnd)" >
-	        <Image Id="imgLight_yellow" TextureId="txrLight_yellow" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" TraceId="image3093"/>
-	        <Image Id="imgLight_yellow2" TextureId="txrLight_yellow" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" TraceId="image3093"/>  
+	        <Image Id="imgLight_yellow" TextureId="txrLight" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" BackColor="#ffc46f"/>
+	        <Image Id="imgLight_yellow2" TextureId="txrLight" Bounds="36, -102, 600, 554" RotationCenter="208,200" Opacity="0" BackColor="#ffc46f"/>  
 		        <ParallelSet RepeatCount="1" InProgress="true">
 			        <SequenceSet>
-			        	<Delay Duration="23" />
+			        	<Delay Duration="3" />
 			        	<Do Action="sndMusicEQdThemeLoop.Start();system:DncStrs" />
 		        		<NumAnimation Target="imgLight_yellow2.Opacity,imgLight_yellow.Opacity" From="0,0" To="0.4,0.4" Duration="1" Autoreverse="false" RepeatCount="1" Fill="Hold"  InProgress="true"/>
 			        </SequenceSet>
@@ -108,8 +107,9 @@
 	</Layer>
 
 	<Layer>
-	
-		<Class Id="clsObjAnimation">
+        <BoolTrigger Condition="system:screenActivated" EnterAction="system.StopLevelSoundEffects()"/>
+
+        <Class Id="clsObjAnimation">
 			<SequenceSet RepeatCount="1">
 				<Do Action="@ObjName.Y=@ObjName.Y-500; @ObjName.X=@ObjName.X-@starDX" />
 				<Delay Duration="@starDelay" />

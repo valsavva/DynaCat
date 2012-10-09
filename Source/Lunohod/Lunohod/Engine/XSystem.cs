@@ -277,11 +277,14 @@ namespace Lunohod.Objects
 			set { GameEngine.Instance.IsMute = value; }
 		}
 
-		public bool SoundEffectsPaused
+		public void PauseLevelSoundEffects(bool pause)
 		{
-			get { return GameEngine.Instance.SoundEffectsPaused; }
-			set { GameEngine.Instance.SoundEffectsPaused = value; }
+			GameEngine.Instance.SoundEffectsPaused = pause; 
 		}
+		public void StopLevelSoundEffects()
+        {
+            GameEngine.Instance.StopSoundEffects();
+        }
 
 		public void OpenUrl(string url)
 		{
@@ -297,7 +300,6 @@ namespace Lunohod.Objects
 			switch(propertyName)
 			{
 				case "IsMute" : getter = () => this.IsMute; setter = (v) => this.IsMute = v; break;
-				case "SoundEffectsPaused" : getter = () => this.SoundEffectsPaused; setter = (v) => this.SoundEffectsPaused = v; break;
 				default:
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}
@@ -371,6 +373,8 @@ namespace Lunohod.Objects
                 case "StartNextLevel": method = (ps) => StartNextLevel(); break;
                 case "WriteLine": method = (ps) => WriteLine(ps[0].GetStrValue(), ps.GetRange(1, ps.Count - 1).Select(p => p.GetObjValue()).ToArray()); break;
                 case "OpenUrl": method = (ps) => OpenUrl(ps[0].GetStrValue()); break;
+                case "PauseLevelSoundEffects": method = (ps) => PauseLevelSoundEffects(ps[0].GetBoolValue()); break;
+                case "StopLevelSoundEffects": method = (ps) => StopLevelSoundEffects(); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

@@ -176,8 +176,8 @@
     </Layer>
     <Layer Id="Semafor" BackColor="#FFFFFFFF">
         <Include File="includeSemafor.xml" />
-        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="368, 242, 44, 67" TraceId="image3081" />
-        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="368, 242, 44, 67" Enabled="false" TraceId="image3081" />
+        <Image Id="img_semafor_red" TextureId="txr_semafor_red" Bounds="388, 242,  44,  67" TraceId="image3081" />
+        <Image Id="img_semafor_green" TextureId="txr_semafor_green" Bounds="388, 242,  44,  67" Enabled="false" TraceId="image3081" />
     </Layer>
     <Include File="ClassExplosion.xml" />
     <Include File="Dashboard_Poezd_Series.xml" />
@@ -187,3 +187,4 @@
 <!-- Food Points = 1000 -->
 <!-- 1% = 10; 45% = 450; 90% = 900 -->
 <!-- minPointsFood = 70 (7%) -->
+

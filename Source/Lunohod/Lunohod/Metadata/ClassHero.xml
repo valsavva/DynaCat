@@ -16,7 +16,7 @@
                 hero.Height=24;
                 @heroLastDirection=1"/>
 
-            <Sprite Id="this_txrHero" TextureId="txrHero" Bounds="-7, -32, 47, 59" FrameBounds="0,0,47,59" FrameCount="5" CurrentFrame="0"/>
+            <Sprite Id="this_sprHero" TextureId="txrHero" Bounds="-7, -32, 47, 59" FrameBounds="0,0,47,59" FrameCount="5" CurrentFrame="0"/>
 
 <!-- States 
 
@@ -44,8 +44,8 @@
             </BoolTrigger>
             
             <SequenceSet Id="anmHeroDying">
-           		<Do Action="this_txrHero.CurrentFrame=system.Rnd(3,7)" />
-                <NumAnimation Duration="0.1" Target="this_txrHero.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
+           		<Do Action="this_sprHero.CurrentFrame=system.Rnd(3,7)" />
+                <NumAnimation Duration="0.1" Target="this_sprHero.Opacity" Autoreverse="true" From="1" To="0" RepeatCount="5"/>
                 <Do Action="system.StartScreen('ScreenLevelFailed.xml')"/>
             </SequenceSet>
             
@@ -59,17 +59,17 @@
             </BoolTrigger>
             
             <SequenceSet Id="anmHeroExit" RepeatCount="1">
-                <Do Action="this_txrHero.CurrentFrame=1" />
+                <Do Action="this_sprHero.CurrentFrame=1" />
                 <Delay Duration="0.15" />
-                <Do Action="this_txrHero.CurrentFrame=2" />
+                <Do Action="this_sprHero.CurrentFrame=2" />
                 <Delay Duration="0.15" />
-                <Do Action="this_txrHero.CurrentFrame=0" />
+                <Do Action="this_sprHero.CurrentFrame=0" />
                 <NumAnimation Target="hero.X,hero.Y,hero.Opacity" From="@heroDepartPointX,@heroDepartPointY,1" To="@heroDestPointX,@heroDestPointY,0" Duration="0.5" InProgress="true" RepeatCount="1" Fill="End"/>
                 <Do Action="hero.X=-7777777;hero.Y=-7777777" />
             </SequenceSet>
 
             <!--sttPortIn : /major/ hero goes to teleport entry-->
-            <BoolTrigger Condition="hero:sttPortIn" EnterAction="this_txrHero.CurrentFrame=@heroLastDirection+7" Group="sttHeroStates" />
+            <BoolTrigger Condition="hero:sttPortIn" EnterAction="this_sprHero.CurrentFrame=@heroLastDirection+7" Group="sttHeroStates" />
 
             <!-- sttElecticShock : /major/ gotta electic shock -->
             <BoolTrigger Condition="hero:sttElecticShock" 
@@ -84,7 +84,7 @@
             </BoolTrigger>
 
             <SequenceSet Id="anmElecticShock" RepeatCount="1">
-                <NumAnimation From="15" To="17" Duration="0.5" Target="this_txrHero.CurrentFrame" RepeatCount="1" Fill="End"/>
+                <NumAnimation From="15" To="17" Duration="0.5" Target="this_sprHero.CurrentFrame" RepeatCount="1" Fill="End"/>
                 <Do Action="hero:-sttElecticShock" />
             </SequenceSet>
 
@@ -105,7 +105,7 @@
             <ParallelSet Id="anmHeroGottaDamage" RepeatCount="0">
                 <SequenceSet RepeatCount="1">
                     <Delay Duration="0.3" />
-                    <Do Action="this_txrHero.CurrentFrame=system.Rnd(3,7)" RepeatCount="1"/>
+                    <Do Action="this_sprHero.CurrentFrame=system.Rnd(3,7)" RepeatCount="1"/>
                     <Delay Duration="0.5" />
                     <Do Action="hero:-sttGottaDamage" />
                 </SequenceSet>
@@ -163,7 +163,7 @@
                          Group="sttHeroStates">
             </BoolTrigger>
             <SequenceSet Id="anmHeroEating" RepeatCount="1">
-                <NumAnimation From="12" To="14" Duration="0.5" Target="this_txrHero.CurrentFrame" RepeatCount="1" Fill="End"/>
+                <NumAnimation From="12" To="14" Duration="0.5" Target="this_sprHero.CurrentFrame" RepeatCount="1" Fill="End"/>
                 <RandomSet>
                     <Delay Duration="0.1" />
                     <Delay Duration="0.25" />
@@ -175,14 +175,14 @@
 
             <!-- sttWaitingExplosion : /minor/ hero fire a bomb -->
             <BoolTrigger Condition="hero:sttWaitingExplosion" 
-                         EnterAction="this_txrHero.CurrentFrame=23"
+                         EnterAction="this_sprHero.CurrentFrame=23"
                          Group="sttHeroStates">
             </BoolTrigger>
 
             <!-- sttGoodExplosion : /minor/ explosion - good one! -->
             <BoolTrigger Condition="hero:sttGoodExplosion" 
                          EnterAction="anmGoodExplosion.Start();
-                         this_txrHero.CurrentFrame=22" 
+                         this_sprHero.CurrentFrame=22" 
                          ExitAction="anmGoodExplosion.Stop()"
                          Group="sttHeroStates">
             </BoolTrigger>
@@ -194,7 +194,7 @@
             <!-- sttBadExplosion : /minor/ explosion - bad -->
             <BoolTrigger Condition="hero:sttBadExplosion" 
                          EnterAction="anmBadExplosion.Start();
-                         this_txrHero.CurrentFrame=13;
+                         this_sprHero.CurrentFrame=13;
                          SFX:+hasBadExplosion"
                          ExitAction="anmBadExplosion.Stop()"
                          Group="sttHeroStates">
@@ -207,27 +207,27 @@
             <!-- OnOilMotion : /minor/ hero on the Oil -->
             <BoolTrigger Condition="hero:OnOilMotion" 
                          Group="sttHeroStates" >
-                <NumAnimation From="18" To="19" Duration="0.4" Target="this_txrHero.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
+                <NumAnimation From="18" To="19" Duration="0.4" Target="this_sprHero.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
             </BoolTrigger>
  
             <!-- Magneted : /minor/ beamed by magnet waves -->
             <BoolTrigger Condition="hero:Magneted" 
                          Group="sttHeroStates" >
-                <NumAnimation From="18" To="19" Duration="0.4" Target="this_txrHero.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
+                <NumAnimation From="18" To="19" Duration="0.4" Target="this_sprHero.CurrentFrame" RepeatCount="0" Fill="End" InProgress="true"/>
             </BoolTrigger>
 
             <BoolTrigger Condition="hero:Magneted and not hero:Magneting" 
                          EnterAction="setHeroSurQuake.Start()" 
                          ExitAction="setHeroSurQuake.Stop();setHeroSurQuakeEnd.Start()" />
             <SequenceSet Id="setHeroSurQuake" RepeatCount="0">
-                <NumAnimation Target="this_txrHero.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
-                <NumAnimation Target="this_txrHero.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
+                <NumAnimation Target="this_sprHero.X" From="0" To="-3" Duration="0.08" Fill="End" IsDelta="true" RepeatCount="1"/>
+                <NumAnimation Target="this_sprHero.X" From="-3" To="3" Duration="0.08" Fill="End" IsDelta="true" Autoreverse="true" RepeatCount="0"/>
             </SequenceSet>
 
-            <NumAnimation Id="setHeroSurQuakeEnd" Target="this_txrHero.X" From="this_txrHero.X" To="-7" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
+            <NumAnimation Id="setHeroSurQuakeEnd" Target="this_sprHero.X" From="this_sprHero.X" To="-7" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
 
             <!-- default -->
-			<BoolTrigger Group="sttHeroStates" EnterAction="this_txrHero.CurrentFrame=0"/>
+			<BoolTrigger Group="sttHeroStates" EnterAction="this_sprHero.CurrentFrame=0"/>
 
         </Hero>
 		

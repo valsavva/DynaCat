@@ -64,7 +64,9 @@
         </RandomSet>
     </Layer>
 	<Layer>
-		<Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel"/>
+        <BoolTrigger Condition="system:screenActivated" EnterAction="system.StopLevelSoundEffects()"/>
+
+        <Group Id="grpLevelNumberPanel" Bounds="25,15,100,100" Class="clsLevelNumberPanel"/>
 		
 		<Group Id="btnRestart" Class="clsButton" ClassParams="@BtnImg=restart" Bounds="40, 190, 62, 62">
 		    <BoolTrigger Condition="btnRestart:Action" EnterAction="system.CloseCurrentScreen();system.RestartLevel();" />
