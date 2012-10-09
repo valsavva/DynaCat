@@ -3,7 +3,7 @@
 <Screen Bounds="0,0,480,320" IsModal="true">
     <Include File="CommonScreenFunctionality.xml" />
 
-    <Layer Id="background" BackColor="#000000" Opacity="0.5">
+    <Layer Id="background" BackColor="#333333" Opacity="0.6">
         <Image TextureId="txrBlank"/>
     </Layer>
     <Layer>
