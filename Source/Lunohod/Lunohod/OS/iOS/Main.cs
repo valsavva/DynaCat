@@ -107,7 +107,7 @@ namespace Lunohod
 
 		private void GotoBackgroundMode()
 		{
-			if (Program.game == null)
+			if (Program.game == null || game.InBackground)
 				return;
 
 			game.InBackground = true;
@@ -124,5 +124,9 @@ namespace Lunohod
 			game.InBackground = false;
 		}
 	
+		public override void OnResignActivation(UIApplication application)
+		{
+			GotoBackgroundMode();
+		}
 	}    
 }
