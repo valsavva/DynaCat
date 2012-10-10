@@ -6,6 +6,7 @@ using MonoTouch.UIKit;
 using MonoTouch.AudioToolbox;
 using Microsoft.Xna.Framework;
 using System.IO;
+using MonoTouch.AVFoundation;
 
 namespace Lunohod
 {
@@ -45,6 +46,9 @@ namespace Lunohod
 
 		public override void FinishedLaunching(UIApplication app)
         {
+			NSError err;
+			AVAudioSession.SharedInstance().SetCategory(AVAudioSession.CategoryAmbient, out err);
+
 			var image = new UIImage(@"splash.png");
 			UIImageView view = new UIImageView(image);
 
