@@ -2,4 +2,8 @@
 
 <Include>
 	<Group Id="SFX" Class="clsSFX" />
+
+	<Do Action="@currentMusicVolume=sndGameMusic.Volume;" InProgress="true" />
+	<BoolTrigger Condition="(system:screenActivated) and (sndGameMusic.Volume>0)" EnterAction="anmMusicVolumeDown.Start()" />
+	<NumAnimation Id="anmMusicVolumeDown" Target="sndGameMusic.Volume" From="@currentMusicVolume" To="0" Duration="1.2" RepeatCount="1" Fill="Hold"/>
 </Include>

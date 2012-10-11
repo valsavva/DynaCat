@@ -48,12 +48,8 @@
 				
 				<!-- button animation -->
 	            <SequenceSet Id="this_setPress">
-					<Do Action="@currentMusicVolume=sndGameMusic.Volume;" />
-	            	<ParallelSet>
-		                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.15" Autoreverse="true" RepeatCount="1"/>
-						<NumAnimation Id="anmMusicVolumeDown" Target="sndGameMusic.Volume" From="@currentMusicVolume" To="0" Duration="0.5" RepeatCount="1"/>
-	            	</ParallelSet>
-		            <Do Action="sndGameMusic.Volume=0;system.StartSeriesLevel(@seriesNum,@levelNum)"/>
+	                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.15" Autoreverse="true" RepeatCount="1"/>
+		            <Do Action="system.StartSeriesLevel(@seriesNum,@levelNum)"/>
 	            </SequenceSet>
 	            
 	            <!-- tap area -->
