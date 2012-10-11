@@ -2,7 +2,6 @@
 <!-- SVG to XGAME xml converter v1.6.20 -->
 <!-- source: D:\Lunohod\Levels\AlphaTest\AlphaTest3.svg -->
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/Lunohod/Documentation/schema0.xsd" Name="AlphaTest3" Bounds="0, 0, 480, 320">
-    <Include File="ClassEnemyRat.xml" />
     <Include File="ClassEnemyRat1.xml" />
     <Include File="ClassEnemyRat2.xml" />
     <Include File="ClassEnemyRat3.xml" />
@@ -12,12 +11,6 @@
     <Include File="ClassExit.xml" />
     <Include File="ClassHero.xml" />
     <Include File="ClassFood.xml" />
-    <Resources RootFolder="Textures">
-        <Texture Id="txr_bckg_brick" Source="bckg_brick" />
-    </Resources>
-    <Layer Id="background" BackColor="#FFFFFFFF">
-        <Image Id="dfltMask1" TextureId="txr_bckg_brick" Bounds="0, 0, 480, 320" TraceId="image3013"/>
-    </Layer>
     <Layer Id="action" BackColor="#FFFFFFFF">
         <Block Id="blk1" Bounds="-50, -54, 50, 429" Edges="Stick" TraceId="image3056"/>
         <Block Id="blk2" Bounds="480, -60, 50, 432" Edges="Stick" TraceId="image3070"/>
@@ -29,10 +22,10 @@
 
         <Group Id="grp_g3050">
             <Enemy Id="enm4" Class="clsEnemyRat4" Bounds="29, 270, 24, 25" TraceId="image3073"/>
-            <Do Action="enm4:+Walker" InProgress="true" RepeatCount="1"/>
+            <!--<Do Action="enm4:+Walker" InProgress="true" RepeatCount="1"/>
             <BoolTrigger Condition="not enm4:IntersectHero and not enm4_setDying.InProgress">
                 <NumAnimation Id="anm1" From="0" To="361" Target="enm4.X" Duration="8.6" IsDelta="true" Autoreverse="true" InProgress="true" RepeatCount="0" TraceId="image3032"/>
-            </BoolTrigger>
+            </BoolTrigger>-->
         </Group>
         
         <Enemy Id="enm5" Class="clsEnemyRat7"  Bounds="258, 234, 26, 28" TraceId="image3251"/>

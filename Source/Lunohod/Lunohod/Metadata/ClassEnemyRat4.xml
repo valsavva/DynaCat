@@ -138,17 +138,47 @@
 
             <!-- on rest -->
             <BoolTrigger Condition="not this:Walker" EnterAction="this_onRest.Start()" Group="this_sttStates">
-
-            <SequenceSet Id="this_onRest" InProgress="false" RepeatCount="0">
-                <Do Action="@this_delay=system.Rnd(10,20)" />
-                <Delay Duration="@this_delay" />
-                <RandomSet RepeatCount="1">
+                <RandomSet Id="this_onRest" InProgress="false" RepeatCount="0" Probabilities="3,1,1">
                     <SequenceSet RepeatCount="1">
+                        <Do Action="@this_delay=system.Rnd(5,10)" />
+                        <Delay Duration="@this_delay" />
+                        <RandomSet RepeatCount="1">
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=6" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=3" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=3" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=6" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=6" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=3" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                        </RandomSet>
+                    </SequenceSet>
+                    <SequenceSet RepeatCount="1">
+                        <Do Action="@this_delay=system.Rnd(10,20)" />
+                        <Delay Duration="@this_delay" />
                         <Do Action="SFX:GoodJuggler" />
                         <NumAnimation From="9" To="21" Duration="1.625" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
                         <Do Action="this_sprMain.CurrentFrame=1" />
                     </SequenceSet>
                     <SequenceSet RepeatCount="1">
+                        <Do Action="@this_delay=system.Rnd(10,20)" />
+                        <Delay Duration="@this_delay" />
                         <NumAnimation From="22" To="28" Duration="0.875" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
                         <Delay Duration="0.8" />
                         <NumAnimation From="29" To="30" Duration="0.25" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
@@ -157,8 +187,6 @@
                         <Do Action="this_sprMain.CurrentFrame=1" />
                     </SequenceSet>
                 </RandomSet>
-            </SequenceSet>
-
             </BoolTrigger>
 
             <!-- walk -->

@@ -138,23 +138,55 @@
 
             <!-- on rest -->
             <BoolTrigger Condition="not this:Walker" EnterAction="this_onRest.Start()" Group="this_sttStates">
-
-            <SequenceSet Id="this_onRest" InProgress="false" RepeatCount="0">
-                <Do Action="@this_delay=system.Rnd(10,20)" />
-                <Delay Duration="@this_delay" />
-                <ParallelSet RepeatCount="1">
+                <RandomSet Id="this_onRest" InProgress="false" RepeatCount="0" Probabilities="3,1">
                     <SequenceSet RepeatCount="1">
-                        <Delay Duration="2.600"/>
-                        <Do Action="SFX:Parashute" />
+                        <Do Action="@this_delay=system.Rnd(5,10)" />
+                        <Delay Duration="@this_delay" />
+                        <RandomSet RepeatCount="1">
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=6" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=3" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=3" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=6" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=6" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                            <SequenceSet RepeatCount="1">
+                                <Do Action="this_sprMain.CurrentFrame=3" />
+                                <Delay Duration="1" />
+                                <Do Action="this_sprMain.CurrentFrame=1" />
+                            </SequenceSet>
+                        </RandomSet>
                     </SequenceSet>
                     <SequenceSet RepeatCount="1">
-                        <NumAnimation From="9" To="13" Duration="0.625" Target="this_sprMain.CurrentFrame" RepeatCount="3" Fill="End"/>
-                        <NumAnimation From="14" To="22" Duration="1.125" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
-                        <Do Action="this_sprMain.CurrentFrame=1" />
+                        <Do Action="@this_delay=system.Rnd(10,20)" />
+                        <Delay Duration="@this_delay" />
+                        <SequenceSet RepeatCount="1">
+                            <ParallelSet RepeatCount="1">
+                                <SequenceSet RepeatCount="1">
+                                    <Delay Duration="2.600"/>
+                                    <Do Action="SFX:Parashute" />
+                                </SequenceSet>
+                                <SequenceSet RepeatCount="1">
+                                    <NumAnimation From="9" To="13" Duration="0.625" Target="this_sprMain.CurrentFrame" RepeatCount="3" Fill="End"/>
+                                    <NumAnimation From="14" To="22" Duration="1.125" Target="this_sprMain.CurrentFrame" RepeatCount="1" Fill="End"/>
+                                    <Do Action="this_sprMain.CurrentFrame=1" />
+                                </SequenceSet>
+                            </ParallelSet>
+                        </SequenceSet>
                     </SequenceSet>
-                </ParallelSet>
-            </SequenceSet>
-
+                </RandomSet>
             </BoolTrigger>
 
             <!-- walk -->
