@@ -524,8 +524,6 @@
     <Content Include="Metadata\Lvl_Labirint.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\icon_iphone_114x114.png" />
-    <Content Include="Graphics\icon_iphone_57x57.png" />
     <Content Include="Graphics\launch_iphone_320x480.png" />
     <Content Include="Graphics\launch_iphone_640x960.png" />
     <Content Include="Metadata\ClassHelpText.xml">
@@ -792,8 +790,6 @@
     <Content Include="Content\Textures\seriesAll.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\DC6_icon_004.png" />
-    <Content Include="Graphics\DC6_icon_004s.png" />
     <Content Include="Metadata\ScreenSeries4.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -839,6 +835,8 @@
     <Content Include="Content\Global\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Graphics\ico4_114.png" />
+    <Content Include="Graphics\ico4_57.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
