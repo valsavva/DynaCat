@@ -9,10 +9,10 @@
 	    <Text FontId="SystemFont" Location="10,25"  Text="'***********STICK***************'" Color="#000000" />
 	</BoolTrigger>-->
     
-	<!-- 	
-    <Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />
-    <Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(system.Round(hero.X)) + ')(' + system.Str(system.Round(hero.Y)) + ')'" Color="#000000" />
-    -->
+	 	
+    <!--<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="='(' + system.Str(@heroSpeed1) + ')(' + system.Str(@heroTime4) + ') ' + system.Str(system.Round(hero.Speed))" Color="#000000" />-->
+    <!--<Text Id="txtValue2" FontId="SystemFont" Location="0,34"  Text="='(' + system.Str(system.Round(hero.X)) + ')(' + system.Str(system.Round(hero.Y)) + ')'" Color="#000000" />-->
+    <!--<Text Id="txtValue1" FontId="SystemFont" Location="0,25"  Text="=system.Str(system.Round(hero.Speed))" Color="#000000" />-->
 	
 	<!-- Global variables. Will be moved out here. 
 	<Do Action="@heroBaseSpeed=60;@heroBaseTime=3.95;" InProgress="true"/>
@@ -57,19 +57,19 @@
 
     <BoolTrigger Condition="hero:OnOilMotion and anmDeceleration.InProgress"
                  EnterAction="hero.Speed=120" />
-    
+
+    <!-- Inertia -->
+    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();anmOnOilSpeed.Stop();hero:-Inertia" />
+    <BoolTrigger Condition="not hero:Magneted and hero:Inertia" EnterAction="hero:-Inertia;anmDeceleration.Start();system.WriteLine('- - - Inertia - - -')" />
+
     <BoolTrigger Condition="hero:Magneting" EnterAction="anmMagnetSpeed.Start()" ExitAction="anmMagnetSpeed.Stop()" Group="heroSpeedAnm"/>
     <BoolTrigger Condition="hero:sttElecticShock" EnterAction="anmElectricShockSpeed.Start()" Group="heroSpeedAnm"/>
     <BoolTrigger Condition="system:left" EnterAction="anmDeceleration.Start();@heroLastDirection=1" Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:right" EnterAction="anmDeceleration.Start();@heroLastDirection=2"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:up" EnterAction="anmDeceleration.Start();@heroLastDirection=3"  Group="heroSpeedAnm"/>
 	<BoolTrigger Condition="system:down" EnterAction="anmDeceleration.Start();@heroLastDirection=4"  Group="heroSpeedAnm"/>
-	
-	<!-- Inertia -->
-    <BoolTrigger Condition="hero:stick" EnterAction="anmDeceleration.Stop();anmMagnetSpeed.Stop();anmOnOilSpeed.Stop();hero:-Inertia" />
-	<BoolTrigger Condition="not hero:Magneted and hero:Inertia" EnterAction="hero:-Inertia;anmDeceleration.Start();system.WriteLine('- - - Inertia - - -')" />
-	
-	<!-- tonneling with magnet pole 
+
+    <!-- tonneling with magnet pole 
     <BoolTrigger Condition="hero:stick and hero:Magneted" EnterAction="hero:+Tunneling" />
 	<BoolTrigger Condition="not hero:stick and hero:Tunneling" EnterAction="hero:-Tunneling" />
     -->
