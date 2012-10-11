@@ -29,7 +29,7 @@
     </Layer>
     <Layer Id="_background" BackColor="#FFFFFFFF">
         <Image Id="dfltMask1" TextureId="txr_under_land_BG_01n" Bounds="0, 0, 480, 320" Opacity="1"/>
-        <!-- REMOVE IN RELEASE! >>>>>>>> -->
+        <!-- REMOVE IN RELEASE! >>>>>>>> 
         <Image Id="dfltMask1a" TextureId="txr_under_land_BG_01n" Bounds="-5, -5, 490, 340" Opacity="0"/>
         <SequenceSet RepeatCount="0" InProgress="true">
             <Do Action="dfltMask1.Opacity=1;dfltMask1a.Opacity=0" />
@@ -37,7 +37,7 @@
             <Do Action="dfltMask1.Opacity=0;dfltMask1a.Opacity=1" />
             <Delay Duration="3" />
         </SequenceSet>
-        <!-- <<<<<<<<<<<<<<<< REMOVE IN RELEASE!-->
+         <<<<<<<<<<<<<<<< REMOVE IN RELEASE!-->
         
     </Layer>
     <Layer Id="_Laz" CacheContent="true" BackColor="#FFFFFFFF">
