@@ -55,14 +55,14 @@
         </Group>
 
         <Group Id="grpRat3Anm" Opacity="0">
-            <Do Id="anmRat3Shadow" Action="imgRat3Shadow.X=(grpRat3Anm.X-217)/7-10;imgRat3Shadow.Y=(grpRat3Anm.Y-50)/15-24" RepeatCount="0" InProgress="true"/>
-            <Sprite Id="imgRat3Shadow" TextureId="txrEnemyRat3Sheet" Bounds="-10, -24, 80, 82" FrameBounds="0,0,71,42" FrameCount="3" CurrentFrame="1" Opacity="0.18" BackColor="#000000"/>
+            <Do Id="anmRat3Shadow" Action="imgRat3Shadow.X=(grpRat3Anm.X-217)/7-10;imgRat3Shadow.Y=(grpRat3Anm.Y-50)/15-10" RepeatCount="0" InProgress="true"/>
+            <Sprite Id="imgRat3Shadow" TextureId="txrEnemyRat3Sheet" Bounds="-10, -24, 98, 55" FrameBounds="0,0,71,42" FrameCount="3" CurrentFrame="1" Opacity="0.18" BackColor="#000000"/>
             <Sprite Id="imgRat3Anm" TextureId="txrEnemyRat3Sheet" Bounds="0,0,71,42" FrameBounds="0,0,71,42" FrameCount="3" CurrentFrame="1"/>
         </Group>
 
         <Group Id="grpRat4Anm" Opacity="0">
-            <Do Id="anmRat4Shadow" Action="imgRat4Shadow.X=(grpRat4Anm.X-217)/7-10;imgRat4Shadow.Y=(grpRat4Anm.Y-50)/15-24" RepeatCount="0" InProgress="true"/>
-            <Sprite Id="imgRat4Shadow" TextureId="txrEnemyRat4Sheet" Bounds="-10, -54, 80,82" FrameBounds="0,0,67,68" FrameCount="7" CurrentFrame="1" Opacity="0.18" BackColor="#000000"/>
+            <Do Id="anmRat4Shadow" Action="imgRat4Shadow.X=(grpRat4Anm.X-217)/7-10;imgRat4Shadow.Y=(grpRat4Anm.Y-50)/15-50" RepeatCount="0" InProgress="true"/>
+            <Sprite Id="imgRat4Shadow" TextureId="txrEnemyRat4Sheet" Bounds="-10, 0, 91, 92" FrameBounds="0,0,67,68" FrameCount="7" CurrentFrame="1" Opacity="0.18" BackColor="#000000"/>
             <Sprite Id="imgRat4Anm" TextureId="txrEnemyRat4Sheet" Bounds="0,-30,67,68" FrameBounds="0,0,67,68" FrameCount="7" CurrentFrame="1"/>
         </Group>
 
@@ -193,8 +193,8 @@
                 <Do Action="imgRat3Anm.CurrentFrame=1;imgRat3Shadow.CurrentFrame=1" />
                 <Delay Duration="0.125" />
                 <SequenceSet RepeatCount="1">
-                    <NumAnimation From="9" To="13" Duration="0.625" Target="imgRat3Anm.CurrentFrame" RepeatCount="3" Fill="End"/>
-                    <NumAnimation From="14" To="22" Duration="1.125" Target="imgRat3Anm.CurrentFrame" RepeatCount="1" Fill="End"/>
+                    <NumAnimation From="9,9" To="13,13" Duration="0.625" Target="imgRat3Anm.CurrentFrame,imgRat3Shadow.CurrentFrame" RepeatCount="3" Fill="End"/>
+                    <NumAnimation From="14,14" To="22,22" Duration="1.125" Target="imgRat3Anm.CurrentFrame,imgRat3Shadow.CurrentFrame" RepeatCount="1" Fill="End"/>
                 </SequenceSet>
                 <Do Action="imgRat3Anm.CurrentFrame=1;imgRat3Shadow.CurrentFrame=1" />
                 <Delay Duration="0.5" />
@@ -226,14 +226,14 @@
                 <Delay Duration="0.125" />
                 <RandomSet RepeatCount="1">
                     <SequenceSet RepeatCount="1">
-                        <NumAnimation From="9" To="21" Duration="1.625" Target="imgRat4Anm.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <NumAnimation From="9,9" To="21,21" Duration="1.625" Target="imgRat4Anm.CurrentFrame,imgRat4Shadow.CurrentFrame" RepeatCount="1" Fill="End"/>
                     </SequenceSet>
                     <SequenceSet RepeatCount="1">
-                        <NumAnimation From="22" To="28" Duration="0.875" Target="imgRat4Anm.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <NumAnimation From="22,22" To="28,28" Duration="0.875" Target="imgRat4Anm.CurrentFrame,imgRat4Shadow.CurrentFrame" RepeatCount="1" Fill="End"/>
                         <Delay Duration="0.8" />
-                        <NumAnimation From="29" To="30" Duration="0.25" Target="imgRat4Anm.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <NumAnimation From="29,29" To="30,30" Duration="0.25" Target="imgRat4Anm.CurrentFrame,imgRat4Shadow.CurrentFrame" RepeatCount="1" Fill="End"/>
                         <Delay Duration="1" />
-                        <NumAnimation From="31" To="33" Duration="0.375" Target="imgRat4Anm.CurrentFrame" RepeatCount="1" Fill="End"/>
+                        <NumAnimation From="31,31" To="33,33" Duration="0.375" Target="imgRat4Anm.CurrentFrame,imgRat4Shadow.CurrentFrame" RepeatCount="1" Fill="End"/>
                     </SequenceSet>
                 </RandomSet>
                 <Do Action="imgRat4Anm.CurrentFrame=1;imgRat4Shadow.CurrentFrame=1" />
@@ -250,6 +250,7 @@
         <SequenceSet RepeatCount="0" InProgress="true">
             <Do Action="@delay_length=system.Rnd(0,4)+5" />
             <Delay Duration="@delay_length" />
+            <!--<Do Action="background.Opacity=1-background.Opacity" />-->
             <RandomSet RepeatCount="1" Probabilities="2,2,2, 2,2,2, 2,2, 1,1, 1,1, 1,1, 3, 2,2,2, 2,2,2, 2,2,2">
                 <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=62,@heroStartY=0,@heroDX=0,@heroDY=-80" />
                 <SequenceSet Class="clsMSAnimation1" ClassParams="@heroStartX=62,@heroStartY=0,@heroDX=80,@heroDY=0" />
