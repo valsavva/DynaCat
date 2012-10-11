@@ -156,7 +156,7 @@
                 <Delay Duration="0.8" />
                 <Do Action="imgRat2Anm.CurrentFrame=1;imgRat2Shadow.CurrentFrame=1" />
                 <Delay Duration="0.125" />
-                <RandomSet RepeatCount="1">
+                <RandomSet RepeatCount="1" Probabilities="4,1">
                     <NumAnimation Target="imgRat2Anm.CurrentFrame,imgRat2Shadow.CurrentFrame" From="9,9" To="29,29" Duration="2.625" RepeatCount="1" Fill="End"/>
                     <SequenceSet RepeatCount="1">
                         <NumAnimation From="30,30" To="38,38" Duration="1.125" Target="imgRat2Anm.CurrentFrame,imgRat2Shadow.CurrentFrame"  RepeatCount="1" Fill="End"/>
