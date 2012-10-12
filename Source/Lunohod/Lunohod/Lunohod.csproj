@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Lunohod</RootNamespace>
     <AssemblyName>Lunohod</AssemblyName>
-    <ReleaseVersion>0.08</ReleaseVersion>
+    <ReleaseVersion>0.09</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>True</DebugSymbols>
@@ -63,7 +63,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <IpaPackageName />
+    <IpaPackageName>
+    </IpaPackageName>
     <MtouchI18n />
     <BuildIpa>True</BuildIpa>
     <DefineConstants>IPHONE</DefineConstants>
