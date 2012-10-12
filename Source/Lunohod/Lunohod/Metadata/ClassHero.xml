@@ -232,50 +232,51 @@
             <NumAnimation Id="setHeroSurQuakeEnd" Target="this_sprHero.X" From="this_sprHero.X" To="-7" Duration="0.08" Fill="End" IsDelta="false" RepeatCount="1"/>
 
 
-            <SequenceSet Id="anmEyes" RepeatCount="0">
-                <RandomSet RepeatCount="1">
-                    <Delay Duration="3" />
-                    <Delay Duration="5" />
-                    <Delay Duration="7" />
-                    <Delay Duration="9" />
-                    <Delay Duration="11" />
-                </RandomSet>
-                <RandomSet RepeatCount="1">
-                    <SequenceSet RepeatCount="1">
-                        <Do Action="this_sprHero.CurrentFrame=1" />
-                        <Delay Duration="0.4" />
-                        <Do Action="this_sprHero.CurrentFrame=2" />
-                        <Delay Duration="0.4" />
-                    </SequenceSet>
-                    <SequenceSet RepeatCount="1">
-                        <Do Action="this_sprHero.CurrentFrame=2" />
-                        <Delay Duration="0.4" />
-                        <Do Action="this_sprHero.CurrentFrame=1" />
-                        <Delay Duration="0.4" />
-                    </SequenceSet>
-                    <SequenceSet RepeatCount="1">
-                        <Do Action="this_sprHero.CurrentFrame=1" />
-                        <Delay Duration="0.4" />
-                    </SequenceSet>
-                    <SequenceSet RepeatCount="1">
-                        <Do Action="this_sprHero.CurrentFrame=2" />
-                        <Delay Duration="0.4" />
-                    </SequenceSet>
-                    <SequenceSet RepeatCount="2">
-                        <Do Action="this_sprHero.CurrentFrame=1" />
-                        <Delay Duration="0.4" />
-                        <Do Action="this_sprHero.CurrentFrame=2" />
-                        <Delay Duration="0.4" />
-                    </SequenceSet>
-                </RandomSet>
-                <Do Action="this_sprHero.CurrentFrame=0" />
-            </SequenceSet>
             
             <!-- default -->
-			<BoolTrigger Group="sttHeroStates" 
+            <BoolTrigger Group="sttHeroStates"
                          EnterAction="this_sprHero.CurrentFrame=0;
-                         anmEyes.Start()"/>
-
+                         anmEyes.Start()">
+                <SequenceSet Id="anmEyes" RepeatCount="0">
+                    <RandomSet RepeatCount="1">
+                        <Delay Duration="3" />
+                        <Delay Duration="5" />
+                        <Delay Duration="7" />
+                        <Delay Duration="9" />
+                        <Delay Duration="11" />
+                    </RandomSet>
+                    <RandomSet RepeatCount="1">
+                        <SequenceSet RepeatCount="1">
+                            <Do Action="this_sprHero.CurrentFrame=1" />
+                            <Delay Duration="0.4" />
+                            <Do Action="this_sprHero.CurrentFrame=2" />
+                            <Delay Duration="0.4" />
+                        </SequenceSet>
+                        <SequenceSet RepeatCount="1">
+                            <Do Action="this_sprHero.CurrentFrame=2" />
+                            <Delay Duration="0.4" />
+                            <Do Action="this_sprHero.CurrentFrame=1" />
+                            <Delay Duration="0.4" />
+                        </SequenceSet>
+                        <SequenceSet RepeatCount="1">
+                            <Do Action="this_sprHero.CurrentFrame=1" />
+                            <Delay Duration="0.4" />
+                        </SequenceSet>
+                        <SequenceSet RepeatCount="1">
+                            <Do Action="this_sprHero.CurrentFrame=2" />
+                            <Delay Duration="0.4" />
+                        </SequenceSet>
+                        <SequenceSet RepeatCount="2">
+                            <Do Action="this_sprHero.CurrentFrame=1" />
+                            <Delay Duration="0.4" />
+                            <Do Action="this_sprHero.CurrentFrame=2" />
+                            <Delay Duration="0.4" />
+                        </SequenceSet>
+                    </RandomSet>
+                    <Do Action="this_sprHero.CurrentFrame=0" />
+                </SequenceSet>
+            </BoolTrigger>
+            
         </Hero>
 		
 	</Class>
