@@ -767,25 +767,7 @@
     <Content Include="Content\Sound\skeletonFX_enemy_dead_scream_1.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\series1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\series2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\series3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Textures\seriesAll.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\series1.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\series2.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\series3.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\seriesAll.xml">
@@ -838,6 +820,17 @@
     </Content>
     <Content Include="Graphics\ico4_114.png" />
     <Content Include="Graphics\ico4_57.png" />
+    <Content Include="Content\Textures\electric_wave.png" />
+    <Content Include="Content\Textures\series1a.png" />
+    <Content Include="Content\Textures\series1b.png" />
+    <Content Include="Content\Textures\series2a.png" />
+    <Content Include="Content\Textures\series2b.png" />
+    <Content Include="Content\Textures\series3a.png" />
+    <Content Include="Content\Textures\series1a.xml" />
+    <Content Include="Content\Textures\series1b.xml" />
+    <Content Include="Content\Textures\series2a.xml" />
+    <Content Include="Content\Textures\series2b.xml" />
+    <Content Include="Content\Textures\series3a.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj">
