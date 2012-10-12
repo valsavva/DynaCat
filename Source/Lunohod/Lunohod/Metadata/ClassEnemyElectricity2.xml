@@ -42,8 +42,16 @@
     			</RandomSet>
             </ParallelSet>
             <!-- default -->
-            <Sprite Id="this_mainView" TextureId="txrElectricityWave" Location="-1,0" FrameBounds="0,0,264,28">
-                <NumAnimation From="0" To="1" Duration="0.2" Autoreverse="false" Target="CurrentFrame" InProgress="true"/>
+            <Sprite Id="this_mainView" TextureId="txrElectricityWave" Location="1,0" FrameCount="1" FrameBounds="0,0,256,28">
+                <ParallelSet InProgress="true">
+                    <NumAnimation Target="this_mainView.CurrentFrame" From="0" To="1" Duration="0.2" Autoreverse="false" RepeatCount="0"/>
+                    <SequenceSet RepeatCount="0">
+                        <Do Action="this_mainView.FlipEffects='Horizontally'" />
+                        <Delay Duration="0.7" />
+                        <Do Action="this_mainView.FlipEffects='None'" />
+                        <Delay Duration="0.7" />
+                    </SequenceSet>
+                </ParallelSet>
             </Sprite>
 
             <SequenceSet InProgress="true" RepeatCount="0">

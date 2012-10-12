@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:2160df9c9446436ac54bd7a898f82156$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="series2a.png" width="512" height="512">
+    <sprite n="TeleportKoleno" x="372" y="212" w="56" h="56"/>
+    <sprite n="TeleportTubeHor" x="371" y="337" w="40" h="56"/>
+    <sprite n="TeleportTubeVert" x="59" y="469" w="56" h="40"/>
+    <sprite n="bones_01" x="146" y="377" w="35" h="31"/>
+    <sprite n="bones_03" x="491" y="80" w="15" h="18"/>
+    <sprite n="bones_04" x="350" y="423" w="15" h="19"/>
+    <sprite n="bones_05" x="372" y="270" w="18" h="9"/>
+    <sprite n="bones_09" x="481" y="276" w="19" h="23"/>
+    <sprite n="box_old_3" x="146" y="410" w="30" h="30"/>
+    <sprite n="box_strip_01" x="464" y="150" w="39" h="63"/>
+    <sprite n="box_strip_02" x="413" y="337" w="47" h="53"/>
+    <sprite n="column_01n" x="490" y="2" w="13" h="30"/>
+    <sprite n="column_02n" x="490" y="34" w="15" h="27"/>
+    <sprite n="column_03n" x="64" y="358" w="14" h="27"/>
+    <sprite n="grass_01" x="93" y="361" w="46" h="22"/>
+    <sprite n="grass_02" x="475" y="380" w="32" h="27"/>
+    <sprite n="grass_03" x="487" y="237" w="21" h="20"/>
+    <sprite n="grass_04" x="141" y="361" w="33" h="14"/>
+    <sprite n="grass_05" x="371" y="395" w="55" h="44"/>
+    <sprite n="grass_06" x="408" y="84" w="46" h="21"/>
+    <sprite n="grass_07" x="2" y="460" w="55" h="44"/>
+    <sprite n="grass_08" x="456" y="84" w="33" h="14"/>
+    <sprite n="grass_09" x="487" y="215" w="21" h="20"/>
+    <sprite n="grass_10" x="475" y="100" w="32" h="27"/>
+    <sprite n="hemps_01" x="475" y="409" w="32" h="26"/>
+    <sprite n="hemps_02" x="475" y="437" w="31" h="24"/>
+    <sprite n="hemps_03" x="462" y="337" w="43" h="41"/>
+    <sprite n="hill_01" x="244" y="107" w="115" h="46"/>
+    <sprite n="hill_02" x="247" y="281" w="117" h="75"/>
+    <sprite n="hill_03" x="361" y="107" w="112" h="41"/>
+    <sprite n="lake_01" x="231" y="358" w="138" h="63"/>
+    <sprite n="lake_02" x="244" y="2" w="162" h="103"/>
+    <sprite n="lake_03" x="366" y="281" w="113" h="54"/>
+    <sprite n="level_BG" x="2" y="2" w="240" h="160"/>
+    <sprite n="plane_01n_spr_84x74x3" x="2" y="164" w="252" h="74"/>
+    <sprite n="railwayCross" x="224" y="465" w="40" h="40"/>
+    <sprite n="railwayHor1" x="451" y="463" w="40" h="40"/>
+    <sprite n="railwayHor2" x="409" y="441" w="40" h="40"/>
+    <sprite n="railwayHor3" x="367" y="441" w="40" h="40"/>
+    <sprite n="railwayHor4" x="308" y="423" w="40" h="40"/>
+    <sprite n="railwayHor5" x="266" y="423" w="40" h="40"/>
+    <sprite n="railwayHor6" x="224" y="423" w="40" h="40"/>
+    <sprite n="railwayTurn180a" x="185" y="240" w="60" h="100"/>
+    <sprite n="railwayTurn180b" x="2" y="358" w="60" h="100"/>
+    <sprite n="railwayTurn90a" x="64" y="387" w="80" h="80"/>
+    <sprite n="railwayTurn90b" x="408" y="2" w="80" h="80"/>
+    <sprite n="railway_end_horiz" x="308" y="465" w="40" h="40"/>
+    <sprite n="railway_end_vertic" x="266" y="465" w="40" h="40"/>
+    <sprite n="semafor_green" x="178" y="411" w="44" h="67"/>
+    <sprite n="semafor_red" x="185" y="342" w="44" h="67"/>
+    <sprite n="stone_01" x="80" y="370" w="10" h="8"/>
+    <sprite n="stone_02" x="490" y="63" w="20" h="15"/>
+    <sprite n="stone_03" x="481" y="323" w="17" h="12"/>
+    <sprite n="stone_04" x="117" y="470" w="45" h="35"/>
+    <sprite n="stone_05" x="475" y="129" w="23" h="18"/>
+    <sprite n="stone_06" x="428" y="392" w="45" h="47"/>
+    <sprite n="stone_07" x="146" y="442" w="27" h="26"/>
+    <sprite n="stone_brown_01" x="487" y="259" w="15" h="12"/>
+    <sprite n="stone_brown_02" x="80" y="358" w="11" h="10"/>
+    <sprite n="stone_brown_03" x="451" y="441" w="15" h="16"/>
+    <sprite n="texture_brick_1" x="350" y="483" w="26" h="20"/>
+    <sprite n="texture_brick_3" x="192" y="480" w="26" h="20"/>
+    <sprite n="texture_brick_5" x="164" y="480" w="26" h="20"/>
+    <sprite n="texture_brick_clean" x="481" y="301" w="26" h="20"/>
+    <sprite n="tree_01" x="2" y="240" w="91" h="116"/>
+    <sprite n="tree_02" x="95" y="240" w="88" h="119"/>
+    <sprite n="tree_03" x="256" y="155" w="114" h="124"/>
+    <sprite n="tree_04" x="372" y="150" w="90" h="60"/>
+    <sprite n="web_02" x="430" y="215" w="55" h="59"/>
+</TextureAtlas>

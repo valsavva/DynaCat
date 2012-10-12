@@ -3,7 +3,8 @@
 <Screen Bounds="0,0,480,320">
     
     <Resources RootFolder="Textures">
-        <SpriteSheet Id="series2" Source="series2" />
+        <SpriteSheet Id="series2a" Source="series2a" />
+        <SpriteSheet Id="series2b" Source="series2b" />
     </Resources>
     
 	<Include File="ScreenSeriesLevelsTemplate.xml" />

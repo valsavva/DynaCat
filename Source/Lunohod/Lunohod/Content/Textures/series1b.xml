@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:aff0c9fd0704e9ab2c84fd3266d4a584$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="series1b.png" width="512" height="256">
+    <sprite n="butter_01" x="467" y="140" w="19" h="17"/>
+    <sprite n="butter_02" x="468" y="76" w="27" h="20"/>
+    <sprite n="butter_03" x="468" y="44" w="33" h="30"/>
+    <sprite n="butter_04" x="468" y="119" w="28" h="19"/>
+    <sprite n="butter_05" x="468" y="2" w="32" h="40"/>
+    <sprite n="butter_06" x="168" y="131" w="58" h="49"/>
+    <sprite n="butter_07" x="468" y="98" w="34" h="19"/>
+    <sprite n="butter_08" x="168" y="182" w="47" h="22"/>
+    <sprite n="laz_baza_02n" x="85" y="131" w="81" h="106"/>
+    <sprite n="laz_baza_08n" x="2" y="131" w="81" h="106"/>
+    <sprite n="laz_fork_1" x="250" y="128" w="122" h="92"/>
+    <sprite n="laz_fork_2" x="126" y="37" w="122" h="92"/>
+    <sprite n="laz_fork_3" x="2" y="37" w="122" h="92"/>
+    <sprite n="laz_home" x="250" y="37" w="80" h="80"/>
+    <sprite n="radar_wave_spr_87x33x4" x="2" y="2" w="348" h="33"/>
+    <sprite n="tree_01" x="374" y="128" w="91" h="116"/>
+    <sprite n="tree_03" x="352" y="2" w="114" h="124"/>
+</TextureAtlas>
