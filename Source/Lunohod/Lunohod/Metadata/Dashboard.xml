@@ -94,8 +94,8 @@
 
 
         <!--<TapArea Bounds="430,00,60,60" Event="system:endLevel"/>-->
-        <TapArea Bounds="0,0,60,60" Action="hero.Health=7777777"/>
-         <!--GOD MODE -->
+        <!--<TapArea Bounds="0,0,60,60" Action="hero.Health=7777777"/>
+         GOD MODE -->
 
         <!-- ** Animation parameters adjustment. Need to remove this at some point. ** 
         <TapArea Bounds="0,0,50,60" Action="system:heroReduceSpeed;system:heroSpeedRecalculate;">

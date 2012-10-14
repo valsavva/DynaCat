@@ -19,8 +19,9 @@
         </SequenceSet>
         <SequenceSet RepeatCount="1">
             <Do Action="sndTrainBell.Volume=0.3" />
-            <Delay Duration="1.5" />
-            <NumAnimation Target="sndTrainBell.Volume" From="0.3" To="0" Duration="4" Fill="End"/>
+            <Delay Duration="1.2" />
+            <NumAnimation Target="sndTrainBell.Volume" From="0.3" To="0" Duration="4.3" Fill="Hold"/>
+            <Do Action="sndTrainBell.Volume=0" />
         </SequenceSet>
         <!--<SequenceSet RepeatCount="1">
             <Delay Duration="3" />
