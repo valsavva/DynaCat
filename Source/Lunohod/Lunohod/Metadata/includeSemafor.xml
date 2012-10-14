@@ -13,7 +13,7 @@
     <Sound Id="sndTrainBell" FileId="sndTrain_bell" Volume="0" Pitch="0"/>
 
     <ParallelSet Id="setTrainStart" RepeatCount="1" InProgress="false">
-        <SequenceSet RepeatCount="16" >
+        <SequenceSet RepeatCount="14" >
             <Do Action="sndTrainBell.Start()" />
             <Delay Duration="0.27" />
         </SequenceSet>
