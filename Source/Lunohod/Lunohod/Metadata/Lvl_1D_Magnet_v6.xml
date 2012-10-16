@@ -40,9 +40,7 @@
     </Layer>
     <Layer Id="laz2" BackColor="#FFFFFFFF">
         <Image Id="dfltMask2" TextureId="txr_laz_fork_2" Bounds="300, 26, 122, 92" TraceId="image3102"/>
-        <Image Id="dfltMask3" TextureId="txr_under_land_BG_01n" Bounds="386, 0, 480, 320" TraceId="image3125"/>
         <Image Id="dfltMask4" TextureId="txr_laz_fork_2" Bounds="182, 298, 122, 92" Rotation="180" Stretch="true" TraceId="image3117"/>
-        <Image Id="dfltMask5" TextureId="txr_under_land_BG_01n" Bounds="-397, 0, 480, 320" TraceId="image3090-1"/>
         <Image Id="dfltMask6" TextureId="txr_laz_fork_3" Bounds="60, 26, 122, 92" TraceId="image3113-1"/>
         <Image Id="dfltMask7" TextureId="txr_laz_fork_3" Bounds="422, 298, 122, 92" Rotation="180" Stretch="true" TraceId="image3119"/>
         <Image Id="dfltMask8" TextureId="txr_laz_vert_02n" Bounds="98, 114, 46, 36" TraceId="image3129"/>
