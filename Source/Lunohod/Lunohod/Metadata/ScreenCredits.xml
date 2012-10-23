@@ -55,16 +55,16 @@
 				<Do Action="txtTeam.Y=@creditsY;@creditsY=@creditsY+25" InProgress="true"/>
 	            <Text Id="txtTeam" Text="Our team:" FontId="Splash14Font" Color="#FFDDDD" />
 
-	            <Do Action="@creditsLine='Airat Davletshin  - graphics design'" InProgress="true"/>
-	            <Group Id="t01" Class="clsShift"/>
-	            <Do Action="@creditsLine='Ruslan Suleymanov - graphics design'" InProgress="true"/>
-	            <Group Id="t02" Class="clsShift"/>
 	            <Do Action="@creditsLine='Vlad Savvateev    - level design,'" InProgress="true"/>
 	            <Group Id="t03" Class="clsShift"/>
 	            <Do Action="@creditsLine='                    original music / sfx'" InProgress="true"/>
 	            <Group Id="t04" Class="clsShift"/>
 	            <Do Action="@creditsLine='Val Savvateev     - programming'" InProgress="true"/>
 	            <Group Id="t05" Class="clsShift"/>
+	            <Do Action="@creditsLine='Ruslan Suleymanov - graphics design'" InProgress="true"/>
+	            <Group Id="t02" Class="clsShift"/>
+	            <Do Action="@creditsLine='Airat Davletshin  - graphics design'" InProgress="true"/>
+	            <Group Id="t01" Class="clsShift"/>
 
 	        	<!-- Special Thanks -->
 				<Do Action="@creditsY=@creditsY+30;txtThanks.Y=@creditsY;@creditsY=@creditsY+25" InProgress="true"/>
