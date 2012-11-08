@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D3106B11-6847-4C7F-BA46-C1086EDEC350}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Lunohod</RootNamespace>
     <AssemblyName>Lunohod</AssemblyName>
     <ReleaseVersion>0.09</ReleaseVersion>
@@ -77,7 +77,6 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Info.plist" />
     <None Include="Performance.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -97,7 +96,6 @@
     <Compile Include="Engine\XTapArea.cs" />
     <Compile Include="Engine\XObject.cs" />
     <Compile Include="Engine\XSprite.cs" />
-    <Compile Include="OS\iOS\Main.cs" />
     <Compile Include="LevelEngine.cs" />
     <Compile Include="Engine\Animation\XNumAnimation.cs" />
     <Compile Include="Engine\Animation\XAnimationFillBehavior.cs" />
@@ -194,6 +192,7 @@
     <Compile Include="Engine\Media\XAudibleBase.cs" />
     <Compile Include="GameEngine_threading.cs" />
     <Compile Include="Engine\Resources\XSpriteSheetResource.cs" />
+    <Compile Include="OS\iOS\Main.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -201,12 +200,12 @@
     <Folder Include="Content\Global\" />
     <Folder Include="Engine\" />
     <Folder Include="Engine\Animation\" />
-    <Folder Include="OS\iOS\" />
     <Folder Include="Engine\Resources\" />
     <Folder Include="Engine\Media\" />
     <Folder Include="Engine\Sets\" />
     <Folder Include="Engine\Accessors\" />
     <Folder Include="Content\Textures\" />
+    <Folder Include="OS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Metadata\Game.xml">
@@ -525,8 +524,6 @@
     <Content Include="Metadata\Lvl_Labirint.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\launch_iphone_320x480.png" />
-    <Content Include="Graphics\launch_iphone_640x960.png" />
     <Content Include="Metadata\ClassHelpText.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -818,8 +815,6 @@
     <Content Include="Content\Global\blank.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\ico4_114.png" />
-    <Content Include="Graphics\ico4_57.png" />
     <Content Include="Content\Textures\electric_wave.png" />
     <Content Include="Content\Textures\series1a.png" />
     <Content Include="Content\Textures\series1b.png" />

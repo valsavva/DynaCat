@@ -31,7 +31,7 @@ namespace Lunohod
 		}
 	}
 
-    [Register("AppDelegate")]
+    //[Register("AppDelegate")]
     public class Program : UIApplicationDelegate
     {
 		internal static GameEngine game;
@@ -74,7 +74,7 @@ namespace Lunohod
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 			appStart = System.Diagnostics.Process.GetCurrentProcess().StartTime.ToUniversalTime();
 

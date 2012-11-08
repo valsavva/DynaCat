@@ -9,14 +9,32 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lidgren.Network.iOS", "..\T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Framework.iOS", "..\ThirtParty\MonoGame\MonoGame.Framework\MonoGame.Framework.iOS.csproj", "{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynaCat", "DynaCat\DynaCat.csproj", "{4E36AFEF-686E-424B-9F97-B297B2EC830C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynaCatFree", "DynaCatFree\DynaCatFree.csproj", "{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 		Debug|iPhone = Debug|iPhone
 		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Release|iPhone.Build.0 = Release|iPhone
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{4E36AFEF-686E-424B-9F97-B297B2EC830C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{734EAA48-F1CA-481A-B391-0285BC0E8B40}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
@@ -41,13 +59,25 @@ Global
 		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Release|iPhone.Build.0 = Release|iPhone
 		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Debug|iPhone.Build.0 = Debug|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Release|iPhone.ActiveCfg = Release|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Release|iPhone.Build.0 = Release|iPhone
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{E6F0465E-CFA6-4CEE-831A-E4A1B20ABECC}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{734EAA48-F1CA-481A-B391-0285BC0E8B40} = {E21ED8F7-4ABF-42AF-9593-75442041545A}
 		{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47} = {E21ED8F7-4ABF-42AF-9593-75442041545A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Lunohod\Lunohod.csproj
+		StartupItem = DynaCat\DynaCat.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

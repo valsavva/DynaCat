@@ -336,7 +336,7 @@ namespace Lunohod
 			}
 
 #if IPHONE
-			Lunohod.Program.FinishShowingSplash();
+			//Lunohod.Program.FinishShowingSplash();
 #endif
 		}
 
