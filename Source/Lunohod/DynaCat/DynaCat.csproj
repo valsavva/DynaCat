@@ -99,7 +99,7 @@
     <Folder Include="Graphics\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Graphics\icon_iphone_114.png" />
-    <Content Include="Graphics\icon_iphone_57.png" />
+    <BundleResource Include="Graphics\icon_iphone_114.png" />
+    <BundleResource Include="Graphics\icon_iphone_57.png" />
   </ItemGroup>
 </Project>

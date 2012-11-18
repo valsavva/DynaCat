@@ -101,7 +101,7 @@
     <Folder Include="Graphics\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Graphics\icon_iphone_114_FREE.png" />
-    <Content Include="Graphics\icon_iphone_57_FREE.png" />
+    <BundleResource Include="Graphics\icon_iphone_114_FREE.png" />
+    <BundleResource Include="Graphics\icon_iphone_57_FREE.png" />
   </ItemGroup>
 </Project>
