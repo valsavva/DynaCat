@@ -17,6 +17,7 @@ namespace DynaCatFree
 		/// </summary>
 		public static void Main(string[] args)
 		{
+			Lunohod.GameEngine.IsFreeVersion = true;
 			Lunohod.Program.Main(args);
 		}
 	}    

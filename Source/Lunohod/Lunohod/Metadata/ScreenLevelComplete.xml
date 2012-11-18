@@ -99,11 +99,21 @@
 		    <BoolTrigger Condition="btnHome:Action" EnterAction="system.CloseCurrentScreen();system.AbandonLevel();" />
 		</Group>
 
-        <BoolTrigger Id="trgLevelNumberCheck" Condition="levelInfo.LevelNumber==(system.GetSeriesLevelCount(levelInfo.SeriesNumber) - 1)"
-                     EnterAction="trgLevelNumberCheck.Disable();" Action="btnNextLevel.Disable()" />
-		<Group Id="btnNextLevel" Class="clsButton" ClassParams="@BtnImg=forwind" Bounds="380, 256, 62, 62">
-		    <BoolTrigger Condition="btnNextLevel:Action" EnterAction="system.CloseCurrentScreen();system.StartNextLevel();" />
-		</Group>
+		<!-- Next level button logic -->
+		<BoolTrigger Condition="system.IsFreeVersion and (levelInfo.LevelNumber == 7)" Group="freeVersionCheck">
+			<Group Id="btnNextLevelUpgrade" Class="clsButton" ClassParams="@BtnImg=forwind" Bounds="380, 256, 62, 62">
+					<Image TextureId="txrUpgrade" Location="-10,40" Rotation="-33" />
+			    <BoolTrigger Condition="btnNextLevelUpgrade:Action" EnterAction="system.OpenUrl('http://www.nomnomapps.com');" />
+			</Group>
+		</BoolTrigger>
+		
+		<BoolTrigger Group="freeVersionCheck">
+	        <BoolTrigger Id="trgLevelNumberCheck" Condition="levelInfo.LevelNumber==(system.GetSeriesLevelCount(levelInfo.SeriesNumber) - 1)"
+	                     EnterAction="trgLevelNumberCheck.Disable();" Action="btnNextLevel.Disable()" />
+			<Group Id="btnNextLevel" Class="clsButton" ClassParams="@BtnImg=forwind" Bounds="380, 256, 62, 62">
+			    <BoolTrigger Condition="btnNextLevel:Action" EnterAction="system.CloseCurrentScreen();system.StartNextLevel();" />
+			</Group>
+		</BoolTrigger>
 	</Layer>
 
 	<Layer>

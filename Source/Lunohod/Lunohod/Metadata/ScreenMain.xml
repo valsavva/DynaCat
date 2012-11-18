@@ -15,6 +15,7 @@
         <Texture Id="txrSeriesPanel2" Source="scr_main_panel02" />
         <Texture Id="txrSeriesPanel3" Source="scr_main_panel03" />
         <Texture Id="txrLogo" Source="scr_main_logo" />
+        <Texture Id="txrButtonFullVersion" Source="ui_buttons_full_version" />
     </Resources>
 
     <Class Id="clsSeriesPanel">
@@ -334,5 +335,11 @@
         </Group>
         <Group Id="btnMute" Bounds="85,245,62,62" Class="clsMuteButton" />
 
+		<BoolTrigger Condition="system.IsFreeVersion">
+			<Group Id="btnFullVersion" Bounds="300,245,184,71">
+				<TapArea Action="system.OpenUrl('http://www.nomnomapps.com')" />
+				<Sprite TextureId="txrButtonFullVersion" Bounds="-3,-3,184,71" FrameBounds="0,0,184,71" FrameCount="1" CurrentFrame="1" />
+			</Group>
+		</BoolTrigger>
     </Layer>
 </Screen>

@@ -11,6 +11,7 @@
         <Texture Id="txrLevelNames" Source="scr_levels_names" />
         <Texture Id="txrPanels" Source="scr_levels_panels" />
         <Texture Id="txrOther" Source="scr_levels_other" />
+        <Texture Id="txrUpgrade" Source="scr_levels_upgrade" />
         <Texture Id="txrNumbers" Source="numbers" />
     </Resources>
 
@@ -46,48 +47,56 @@
 					RepeatCount="0"
 				/>
 				
-				<!-- button animation -->
-	            <SequenceSet Id="this_setPress">
-	                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.15" Autoreverse="true" RepeatCount="1"/>
-		            <Do Action="system.StartSeriesLevel(@seriesNum,@levelNum)"/>
-	            </SequenceSet>
-	            
-	            <!-- tap area -->
-	            <BoolTrigger Condition="@this_isUnlocked">
-					<TapArea Action="this_setPress.Start()"/>
-	            </BoolTrigger>
-
-
 				<!-- panel with numbers -->
 				<Group Id="this_grpLevelPanel">
 	            	<Sprite Id="this_sprPanel" TextureId="txrPanels" Location="0,0" FrameBounds="0,0,94,51"/>
 		            <Sprite Id="this_sprNumber1" TextureId="txrNumbers" Location="6,5" FrameBounds="0,0,35,31"/>
 		            <Sprite Id="this_sprNumber2" TextureId="txrNumbers" Location="23,5" FrameBounds="0,0,35,31"/>
 	            </Group>
-	            
-				<!-- stars -->
-	            <BoolTrigger Condition="@this_numberOfStars>0">
-	            	<Sprite TextureId="txrOther" Location="23,30" FrameBounds="101,0,19,19" />
-	            </BoolTrigger>
-	            <BoolTrigger Condition="@this_numberOfStars>1">
-	            	<Sprite TextureId="txrOther" Location="35,30" FrameBounds="101,0,19,19" />
-	            </BoolTrigger>
-	            <BoolTrigger Condition="@this_numberOfStars>2">
-	            	<Sprite TextureId="txrOther" Location="50,30" FrameBounds="101,0,19,19" />
-	            </BoolTrigger>
-	            
-				<!-- badge -->
-	            <BoolTrigger Condition="@this_isUnlocked and @this_hasBadge">
-	            	<Sprite TextureId="txrOther" Location="48,0" FrameBounds="0,0,38,36" CurrentFrame="1" />
-	            </BoolTrigger>
-	            <BoolTrigger Condition="@this_isUnlocked and not @this_hasBadge">
-	            	<Sprite TextureId="txrOther" Location="48,0" FrameBounds="0,0,38,36" CurrentFrame="0" />
+
+	            <!-- free version lock -->	            
+				<BoolTrigger Condition="system.IsFreeVersion and (@levelNum >= 8)" Group="freeVersionCheck">
+	            	<Image TextureId="txrUpgrade" Location="18,40" Rotation="-33" />
+					<TapArea Action="system.OpenUrl('http://www.nomnomapps.com')" />
 	            </BoolTrigger>
 
-				<!-- padlock -->
-	            <BoolTrigger Condition="not @this_isUnlocked">
-	            	<Sprite TextureId="txrOther" Location="50,0" FrameBounds="76,0,27,33"/>
-	            </BoolTrigger>
+				<BoolTrigger  Group="freeVersionCheck">
+					<!-- button animation -->
+		            <SequenceSet Id="this_setPress">
+		                <NumAnimation Target="this.Scale" From="1" To="1.1" Duration="0.15" Autoreverse="true" RepeatCount="1"/>
+			            <Do Action="system.StartSeriesLevel(@seriesNum,@levelNum)"/>
+		            </SequenceSet>
+		            
+		            <!-- tap area -->
+		            <BoolTrigger Condition="@this_isUnlocked">
+						<TapArea Action="this_setPress.Start()"/>
+		            </BoolTrigger>
+
+
+					<!-- stars -->
+		            <BoolTrigger Condition="@this_numberOfStars>0">
+		            	<Sprite TextureId="txrOther" Location="23,30" FrameBounds="101,0,19,19" />
+		            </BoolTrigger>
+		            <BoolTrigger Condition="@this_numberOfStars>1">
+		            	<Sprite TextureId="txrOther" Location="35,30" FrameBounds="101,0,19,19" />
+		            </BoolTrigger>
+		            <BoolTrigger Condition="@this_numberOfStars>2">
+		            	<Sprite TextureId="txrOther" Location="50,30" FrameBounds="101,0,19,19" />
+		            </BoolTrigger>
+		            
+					<!-- badge -->
+		            <BoolTrigger Condition="@this_isUnlocked and @this_hasBadge">
+		            	<Sprite TextureId="txrOther" Location="48,0" FrameBounds="0,0,38,36" CurrentFrame="1" />
+		            </BoolTrigger>
+		            <BoolTrigger Condition="@this_isUnlocked and not @this_hasBadge">
+		            	<Sprite TextureId="txrOther" Location="48,0" FrameBounds="0,0,38,36" CurrentFrame="0" />
+		            </BoolTrigger>
+
+					<!-- padlock -->
+		            <BoolTrigger Condition="not @this_isUnlocked">
+		            	<Sprite TextureId="txrOther" Location="50,0" FrameBounds="76,0,27,33"/>
+		            </BoolTrigger>
+				</BoolTrigger>
 			</BoolTrigger>
 		</Group>
 	</Class>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://texturepacker.com-->
-<!-- $TexturePacker:SmartUpdate:0cabe3f697650c7bdd231afb1867ec31$ -->
+<!-- $TexturePacker:SmartUpdate:b2be182f963da14244aa31a17559bca5$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -14,19 +14,21 @@ oH => sprite's original height (only available if trimmed)
 r => 'y' only set if sprite is rotated
 -->
 <TextureAtlas imagePath="scr_main.png" width="1024" height="1024">
-    <sprite n="level_number_panel" x="153" y="867" w="111" h="111"/>
+    <sprite n="level_number_panel" x="391" y="860" w="111" h="111"/>
     <sprite n="nomnomlogo_round" x="912" y="2" w="85" h="64"/>
-    <sprite n="numbers" x="205" y="770" w="350" h="31"/>
+    <sprite n="numbers" x="2" y="985" w="350" h="31"/>
     <sprite n="scr_levels_bg" x="430" y="324" w="480" h="320"/>
-    <sprite n="scr_levels_names" x="2" y="807" w="387" h="58"/>
-    <sprite n="scr_levels_other" x="405" y="646" w="121" h="36"/>
-    <sprite n="scr_levels_panels" x="205" y="717" w="375" h="51"/>
+    <sprite n="scr_levels_names" x="2" y="925" w="387" h="58"/>
+    <sprite n="scr_levels_other" x="354" y="985" w="121" h="36"/>
+    <sprite n="scr_levels_panels" x="202" y="807" w="375" h="51"/>
+    <sprite n="scr_levels_upgrade" x="912" y="68" w="82" h="37"/>
     <sprite n="scr_light_white" x="2" y="2" w="426" h="393"/>
     <sprite n="scr_main_bg" x="430" y="2" w="480" h="320"/>
-    <sprite n="scr_main_logo" x="205" y="599" w="198" h="116"/>
-    <sprite n="scr_main_panel01" x="2" y="867" w="149" h="152"/>
-    <sprite n="scr_main_panel02" x="391" y="803" w="149" h="152"/>
-    <sprite n="scr_main_panel03" x="557" y="770" w="149" h="152"/>
+    <sprite n="scr_main_logo" x="2" y="807" w="198" h="116"/>
+    <sprite n="scr_main_panel01" x="391" y="646" w="149" h="152"/>
+    <sprite n="scr_main_panel02" x="579" y="646" w="149" h="152"/>
+    <sprite n="scr_main_panel03" x="504" y="860" w="149" h="152"/>
     <sprite n="ui_buttons" x="2" y="397" w="201" h="408"/>
+    <sprite n="ui_buttons_full_version" x="205" y="599" w="184" h="142"/>
     <sprite n="wave0400" x="205" y="397" w="200" h="200"/>
 </TextureAtlas>

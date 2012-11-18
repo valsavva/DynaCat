@@ -41,7 +41,8 @@ namespace Lunohod
 		public const int MaxWaveTravelDistance = 577;
 		
 		//public Stopwatch gameWatch = new Stopwatch();
-		
+
+		public static bool IsFreeVersion;
 		public static GameEngine Instance { get; private set; }
 		
 		public XGame GameObject { get; private set; }

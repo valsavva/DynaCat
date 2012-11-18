@@ -276,7 +276,13 @@ namespace Lunohod.Objects
 			get { return GameEngine.Instance.IsMute; }
 			set { GameEngine.Instance.IsMute = value; }
 		}
-
+		
+		public bool IsFreeVersion
+		{
+			get { return GameEngine.IsFreeVersion; }
+			set { }
+		}
+		
 		public void PauseLevelSoundEffects(bool pause)
 		{
 			GameEngine.Instance.SoundEffectsPaused = pause; 
@@ -300,6 +306,7 @@ namespace Lunohod.Objects
 			switch(propertyName)
 			{
 				case "IsMute" : getter = () => this.IsMute; setter = (v) => this.IsMute = v; break;
+				case "IsFreeVersion" : getter = () => this.IsFreeVersion; setter = null; break;
 				default:
 					base.GetProperty(propertyName, out getter, out setter); break;
 			}
