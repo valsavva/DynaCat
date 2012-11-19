@@ -8,11 +8,15 @@
 	<array>
 		<string>Graphics/icon_iphone_57.png</string>
 		<string>Graphics/icon_iphone_114.png</string>
+		<string>Graphics/icon_iphone_29.png</string>
+		<string>Graphics/icon_iphone_58.png</string>
 	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.nomnomapps.DynaCat</string>
 	<key>CFBundleVersion</key>
-	<string>0.09</string>
+	<string>1.0</string>
 	<key>MinimumOSVersion</key>
-	<string>4.0</string>
+	<string>4.3</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
