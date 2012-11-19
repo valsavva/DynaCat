@@ -169,8 +169,8 @@ namespace Lunohod
             this.Scale = Vector3.One;
 #else
 			this.Scale2D = new Vector2(
-				(float)this.Window.ClientBounds.Width / 480f,
-				(float)this.Window.ClientBounds.Height / 320f
+				(float)this.Window.ClientBounds.Height / 480f,
+				(float)this.Window.ClientBounds.Width / 320f
 			);
 			this.Scale = new Vector3(
 				this.Scale2D.X,
