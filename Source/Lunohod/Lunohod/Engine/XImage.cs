@@ -72,6 +72,15 @@ namespace Lunohod.Objects
 		{
 			if (this.PropState.ScreenBounds.HasValue)
 			{
+				this.tmpBounds = this.PropState.ScreenBounds.Value;
+				if (GameEngine.Instance.Scale2D != Vector2.One)
+				{
+					var bounds = this.PropState.ScreenBounds.Value;
+					bounds.Width += 1;
+					bounds.Height += 1;
+					this.PropState.ScreenBounds = bounds;
+				}
+
 				// first resolve the actual way we want to draw the image
 				XImageStretchMode actualStretchMode = this.StretchMode;
 
@@ -90,6 +99,8 @@ namespace Lunohod.Objects
 					DrawStretched(p);
 				else
 					DrawTiles(p);
+
+				this.PropState.ScreenBounds = this.tmpBounds;
 			}
 			base.Draw(p);
 		}
