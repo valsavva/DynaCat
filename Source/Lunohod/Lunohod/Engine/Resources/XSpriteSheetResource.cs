@@ -41,7 +41,7 @@ namespace Lunohod.Objects
             foreach (XmlElement spriteNode in doc.DocumentElement.ChildNodes)
             {
                 this.Map.Add(
-                    spriteNode.GetAttribute("n"),
+                    Path.GetFileNameWithoutExtension(spriteNode.GetAttribute("n")),
                     new System.Drawing.RectangleF(
                         float.Parse(spriteNode.GetAttribute("x")),
                         float.Parse(spriteNode.GetAttribute("y")),
