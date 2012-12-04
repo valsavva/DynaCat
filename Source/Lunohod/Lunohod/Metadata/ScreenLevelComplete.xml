@@ -103,7 +103,7 @@
 		<BoolTrigger Condition="system.IsFreeVersion and (levelInfo.LevelNumber == 7)" Group="freeVersionCheck">
 			<Group Id="btnNextLevelUpgrade" Class="clsButton" ClassParams="@BtnImg=forwind" Bounds="380, 256, 62, 62">
 					<Image TextureId="txrUpgrade" Location="-10,40" Rotation="-33" />
-			    <BoolTrigger Condition="btnNextLevelUpgrade:Action" EnterAction="system.OpenUrl('http://www.nomnomapps.com');" />
+			    <BoolTrigger Condition="btnNextLevelUpgrade:Action" EnterAction="NavigateToFullVersion()" />
 			</Group>
 		</BoolTrigger>
 		

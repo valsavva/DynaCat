@@ -301,6 +301,12 @@ namespace Lunohod.Objects
 #endif
         }
 
+		public void NavigateToFullVersion()
+		{
+			//https://itunes.apple.com/us/app/dynacat/id580010503?ls=1&mt=8
+			this.OpenUrl(@"http://itunes.apple.com/us/app/id284417350?mt=8");
+		}
+
 		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
 		{
 			switch(propertyName)
@@ -382,6 +388,7 @@ namespace Lunohod.Objects
                 case "OpenUrl": method = (ps) => OpenUrl(ps[0].GetStrValue()); break;
                 case "PauseLevelSoundEffects": method = (ps) => PauseLevelSoundEffects(ps[0].GetBoolValue()); break;
                 case "StopLevelSoundEffects": method = (ps) => StopLevelSoundEffects(); break;
+				case "NavigateToFullVersion": method = (ps) => NavigateToFullVersion(); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

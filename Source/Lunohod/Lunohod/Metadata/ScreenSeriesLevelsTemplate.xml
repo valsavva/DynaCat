@@ -57,7 +57,7 @@
 	            <!-- free version lock -->	            
 				<BoolTrigger Condition="system.IsFreeVersion and (@levelNum >= 8)" Group="freeVersionCheck">
 	            	<Image TextureId="txrUpgrade" Location="18,40" Rotation="-33" />
-					<TapArea Action="system.OpenUrl('http://www.nomnomapps.com')" />
+					<TapArea Action="system.NavigateToFullVersion()" />
 	            </BoolTrigger>
 
 				<BoolTrigger  Group="freeVersionCheck">
