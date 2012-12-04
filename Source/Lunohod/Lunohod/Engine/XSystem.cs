@@ -303,8 +303,7 @@ namespace Lunohod.Objects
 
 		public void NavigateToFullVersion()
 		{
-			//https://itunes.apple.com/us/app/dynacat/id580010503?ls=1&mt=8
-			this.OpenUrl(@"http://itunes.apple.com/us/app/id284417350?mt=8");
+			this.OpenUrl(@"http://itunes.apple.com/us/app/id580010503?mt=8");
 		}
 
 		public override void GetProperty(string propertyName, out Func<bool> getter, out Action<bool> setter)
