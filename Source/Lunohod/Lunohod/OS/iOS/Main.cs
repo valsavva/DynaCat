@@ -122,10 +122,14 @@ namespace Lunohod
 
 		private void GotoForegroundMode()
 		{
-			if (Program.game == null)
+			if (Program.game == null || !game.InBackground)
 				return;
 
-			game.InBackground = false;
+            game.SettingsFile.LaunchNumber++;
+            game.SaveSettings();
+            game.reviewAsked = false;
+
+            game.InBackground = false;
 		}
 	
 		public override void OnResignActivation(UIApplication application)

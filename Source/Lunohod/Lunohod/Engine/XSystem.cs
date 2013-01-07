@@ -301,6 +301,63 @@ namespace Lunohod.Objects
 #endif
         }
 
+		public void AskForReview()
+        {
+#if IPHONE
+            if (game.reviewAsked)
+                return;
+
+            var settings = game.SettingsFile;
+
+            if (!settings.AskForReiew)
+                return;
+
+            if ((settings.LaunchNumber - 2) % 4 != 0)
+                return;
+
+            game.reviewAsked = true;
+
+            MonoTouch.UIKit.UIAlertView x = null;
+
+            if (this.IsFreeVersion)
+                x = new MonoTouch.UIKit.UIAlertView("", "Please rate our game", null, null, "Shure!", "Later");
+            else
+                x = new MonoTouch.UIKit.UIAlertView("", "Please rate our game", null, null, "Shure!", "Later", "Don't ask anymore");
+
+            // hold a global reference to the dialog object, go it doesn't get picked up by the GC
+            game.iOSDialogWindow = x;
+            x.Show();
+
+            x.Clicked += (sender, buttonArgs) => {
+
+                // "never"
+                if (buttonArgs.ButtonIndex == 2)
+                {
+                    game.SettingsFile.AskForReiew = false;
+                    game.SaveSettings();
+                    return;
+                }
+                // "later"
+                else if (buttonArgs.ButtonIndex == 1)
+                {
+                    return;
+                }
+                // "Sure!"
+                else
+                {
+
+                    if (this.IsFreeVersion)
+                        this.OpenUrl(@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=584313299&pageNumber=0&sortOrdering=1&type=Purple+Software&mt=8");
+                    else
+                        this.OpenUrl(@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=580010503&pageNumber=0&sortOrdering=1&type=Purple+Software&mt=8");
+
+                    game.SettingsFile.AskForReiew = false;
+                    game.SaveSettings();
+                }
+            };    
+#endif
+		}
+
 		public void NavigateToFullVersion()
 		{
 			this.OpenUrl(@"http://itunes.apple.com/us/app/id580010503?mt=8");
@@ -388,6 +445,7 @@ namespace Lunohod.Objects
                 case "PauseLevelSoundEffects": method = (ps) => PauseLevelSoundEffects(ps[0].GetBoolValue()); break;
                 case "StopLevelSoundEffects": method = (ps) => StopLevelSoundEffects(); break;
 				case "NavigateToFullVersion": method = (ps) => NavigateToFullVersion(); break;
+                case "AskForReview": method = (ps) => AskForReview(); break;
                 default:
 					base.GetMethod(methodName, out method); break;
             }

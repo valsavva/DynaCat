@@ -64,6 +64,9 @@ namespace Lunohod
 		private LevelEngine loadingLevel;
 		private IAsyncResult loadingResult;
 
+        internal object iOSDialogWindow;
+        internal bool reviewAsked;
+
 		private bool soundEffectsPaused;
 
 		public bool InBackground;
@@ -186,12 +189,12 @@ namespace Lunohod
 
 #region Loading/Saving score
 		
-		private void LoadSettings()
+		public void LoadSettings()
 		{
 			this.SettingsFile = LoadFromContainerOrCreateNew(SettingsFileName, () => new XSettingsFile());
 		}
 		
-		private void SaveSettings()
+		public void SaveSettings()
 		{
 			SaveToContainer(SettingsFileName, this.SettingsFile);
 		}
@@ -322,7 +325,9 @@ namespace Lunohod
 			ChooseStorageDevice();
 			
 			LoadSettings();
-			
+            this.SettingsFile.LaunchNumber++;
+            SaveSettings();
+
 			LoadScore();
 			
 			LoadScreen(GameObject.StartScreen);
@@ -411,7 +416,7 @@ namespace Lunohod
 		public void LoadScreen(string fileName)
 		{
 #if IPHONE
-			MonoTouch.UIKit.UIApplication.SharedApplication.BeginIgnoringInteractionEvents();
+			//MonoTouch.UIKit.UIApplication.SharedApplication.BeginIgnoringInteractionEvents();
 #endif
 			var newScreenEngine = new ScreenEngine(this, fileName);
 

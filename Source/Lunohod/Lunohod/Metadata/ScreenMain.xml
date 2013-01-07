@@ -342,4 +342,6 @@
 			</Group>
 		</BoolTrigger>
     </Layer>
+
+	<Do Action="system.AskForReview()" InProgress="true" RepeatCount="0" />
 </Screen>
