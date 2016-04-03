@@ -1,7 +1,7 @@
 # dynacat
-The source code of the platformer game called "DynaCat" by nomnomapps. This game was released on Apple Store in 2012 
-Game trailer: http://tinyurl.com/DynaCatTrailer
-Game level walk-throughs: http://tinyurl.com/DynaCatWalkthrough
+The source code of the platformer game called "DynaCat" by nomnomapps. This game was released on Apple Store in 2012  
+Game trailer: http://tinyurl.com/DynaCatTrailer  
+Game level walk-throughs: http://tinyurl.com/DynaCatWalkthrough  
 
 In the heart of the game is the game engine - "XGame". It allows for easy creation of simple, platformer-type games.
 Also can be used for generic multi-platform apps with game-ified UI.
